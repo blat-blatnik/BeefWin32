@@ -45,30 +45,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Query(BSTR progID, BSTR queryCriteria, out int32 errorIndex, out IUnknown* ppInterface) mut
-			{
-				return VT.Query(ref this, progID, queryCriteria, out errorIndex, out ppInterface);
-			}
-			public HRESULT Store(BSTR ProgID, ref IUnknown pInterface) mut
-			{
-				return VT.Store(ref this, ProgID, ref pInterface);
-			}
-			public HRESULT Remove(BSTR progID, BSTR queryCriteria, out int32 errorIndex) mut
-			{
-				return VT.Remove(ref this, progID, queryCriteria, out errorIndex);
-			}
-			public HRESULT get_EventObjectChangeEventClassID(out BSTR pbstrEventClassID) mut
-			{
-				return VT.get_EventObjectChangeEventClassID(ref this, out pbstrEventClassID);
-			}
-			public HRESULT QueryS(BSTR progID, BSTR queryCriteria, out IUnknown* ppInterface) mut
-			{
-				return VT.QueryS(ref this, progID, queryCriteria, out ppInterface);
-			}
-			public HRESULT RemoveS(BSTR progID, BSTR queryCriteria) mut
-			{
-				return VT.RemoveS(ref this, progID, queryCriteria);
-			}
+			public HRESULT Query(BSTR progID, BSTR queryCriteria, out int32 errorIndex, out IUnknown* ppInterface) mut => VT.Query(ref this, progID, queryCriteria, out errorIndex, out ppInterface);
+			public HRESULT Store(BSTR ProgID, ref IUnknown pInterface) mut => VT.Store(ref this, ProgID, ref pInterface);
+			public HRESULT Remove(BSTR progID, BSTR queryCriteria, out int32 errorIndex) mut => VT.Remove(ref this, progID, queryCriteria, out errorIndex);
+			public HRESULT get_EventObjectChangeEventClassID(out BSTR pbstrEventClassID) mut => VT.get_EventObjectChangeEventClassID(ref this, out pbstrEventClassID);
+			public HRESULT QueryS(BSTR progID, BSTR queryCriteria, out IUnknown* ppInterface) mut => VT.QueryS(ref this, progID, queryCriteria, out ppInterface);
+			public HRESULT RemoveS(BSTR progID, BSTR queryCriteria) mut => VT.RemoveS(ref this, progID, queryCriteria);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -87,62 +70,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PublisherID(out BSTR pbstrPublisherID) mut
-			{
-				return VT.get_PublisherID(ref this, out pbstrPublisherID);
-			}
-			public HRESULT put_PublisherID(BSTR bstrPublisherID) mut
-			{
-				return VT.put_PublisherID(ref this, bstrPublisherID);
-			}
-			public HRESULT get_PublisherName(out BSTR pbstrPublisherName) mut
-			{
-				return VT.get_PublisherName(ref this, out pbstrPublisherName);
-			}
-			public HRESULT put_PublisherName(BSTR bstrPublisherName) mut
-			{
-				return VT.put_PublisherName(ref this, bstrPublisherName);
-			}
-			public HRESULT get_PublisherType(out BSTR pbstrPublisherType) mut
-			{
-				return VT.get_PublisherType(ref this, out pbstrPublisherType);
-			}
-			public HRESULT put_PublisherType(BSTR bstrPublisherType) mut
-			{
-				return VT.put_PublisherType(ref this, bstrPublisherType);
-			}
-			public HRESULT get_OwnerSID(out BSTR pbstrOwnerSID) mut
-			{
-				return VT.get_OwnerSID(ref this, out pbstrOwnerSID);
-			}
-			public HRESULT put_OwnerSID(BSTR bstrOwnerSID) mut
-			{
-				return VT.put_OwnerSID(ref this, bstrOwnerSID);
-			}
-			public HRESULT get_Description(out BSTR pbstrDescription) mut
-			{
-				return VT.get_Description(ref this, out pbstrDescription);
-			}
-			public HRESULT put_Description(BSTR bstrDescription) mut
-			{
-				return VT.put_Description(ref this, bstrDescription);
-			}
-			public HRESULT GetDefaultProperty(BSTR bstrPropertyName, out VARIANT propertyValue) mut
-			{
-				return VT.GetDefaultProperty(ref this, bstrPropertyName, out propertyValue);
-			}
-			public HRESULT PutDefaultProperty(BSTR bstrPropertyName, ref VARIANT propertyValue) mut
-			{
-				return VT.PutDefaultProperty(ref this, bstrPropertyName, ref propertyValue);
-			}
-			public HRESULT RemoveDefaultProperty(BSTR bstrPropertyName) mut
-			{
-				return VT.RemoveDefaultProperty(ref this, bstrPropertyName);
-			}
-			public HRESULT GetDefaultPropertyCollection(out IEventObjectCollection* collection) mut
-			{
-				return VT.GetDefaultPropertyCollection(ref this, out collection);
-			}
+			public HRESULT get_PublisherID(out BSTR pbstrPublisherID) mut => VT.get_PublisherID(ref this, out pbstrPublisherID);
+			public HRESULT put_PublisherID(BSTR bstrPublisherID) mut => VT.put_PublisherID(ref this, bstrPublisherID);
+			public HRESULT get_PublisherName(out BSTR pbstrPublisherName) mut => VT.get_PublisherName(ref this, out pbstrPublisherName);
+			public HRESULT put_PublisherName(BSTR bstrPublisherName) mut => VT.put_PublisherName(ref this, bstrPublisherName);
+			public HRESULT get_PublisherType(out BSTR pbstrPublisherType) mut => VT.get_PublisherType(ref this, out pbstrPublisherType);
+			public HRESULT put_PublisherType(BSTR bstrPublisherType) mut => VT.put_PublisherType(ref this, bstrPublisherType);
+			public HRESULT get_OwnerSID(out BSTR pbstrOwnerSID) mut => VT.get_OwnerSID(ref this, out pbstrOwnerSID);
+			public HRESULT put_OwnerSID(BSTR bstrOwnerSID) mut => VT.put_OwnerSID(ref this, bstrOwnerSID);
+			public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
+			public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
+			public HRESULT GetDefaultProperty(BSTR bstrPropertyName, out VARIANT propertyValue) mut => VT.GetDefaultProperty(ref this, bstrPropertyName, out propertyValue);
+			public HRESULT PutDefaultProperty(BSTR bstrPropertyName, ref VARIANT propertyValue) mut => VT.PutDefaultProperty(ref this, bstrPropertyName, ref propertyValue);
+			public HRESULT RemoveDefaultProperty(BSTR bstrPropertyName) mut => VT.RemoveDefaultProperty(ref this, bstrPropertyName);
+			public HRESULT GetDefaultPropertyCollection(out IEventObjectCollection* collection) mut => VT.GetDefaultPropertyCollection(ref this, out collection);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -169,62 +111,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventClassID(out BSTR pbstrEventClassID) mut
-			{
-				return VT.get_EventClassID(ref this, out pbstrEventClassID);
-			}
-			public HRESULT put_EventClassID(BSTR bstrEventClassID) mut
-			{
-				return VT.put_EventClassID(ref this, bstrEventClassID);
-			}
-			public HRESULT get_EventClassName(out BSTR pbstrEventClassName) mut
-			{
-				return VT.get_EventClassName(ref this, out pbstrEventClassName);
-			}
-			public HRESULT put_EventClassName(BSTR bstrEventClassName) mut
-			{
-				return VT.put_EventClassName(ref this, bstrEventClassName);
-			}
-			public HRESULT get_OwnerSID(out BSTR pbstrOwnerSID) mut
-			{
-				return VT.get_OwnerSID(ref this, out pbstrOwnerSID);
-			}
-			public HRESULT put_OwnerSID(BSTR bstrOwnerSID) mut
-			{
-				return VT.put_OwnerSID(ref this, bstrOwnerSID);
-			}
-			public HRESULT get_FiringInterfaceID(out BSTR pbstrFiringInterfaceID) mut
-			{
-				return VT.get_FiringInterfaceID(ref this, out pbstrFiringInterfaceID);
-			}
-			public HRESULT put_FiringInterfaceID(BSTR bstrFiringInterfaceID) mut
-			{
-				return VT.put_FiringInterfaceID(ref this, bstrFiringInterfaceID);
-			}
-			public HRESULT get_Description(out BSTR pbstrDescription) mut
-			{
-				return VT.get_Description(ref this, out pbstrDescription);
-			}
-			public HRESULT put_Description(BSTR bstrDescription) mut
-			{
-				return VT.put_Description(ref this, bstrDescription);
-			}
-			public HRESULT get_CustomConfigCLSID(out BSTR pbstrCustomConfigCLSID) mut
-			{
-				return VT.get_CustomConfigCLSID(ref this, out pbstrCustomConfigCLSID);
-			}
-			public HRESULT put_CustomConfigCLSID(BSTR bstrCustomConfigCLSID) mut
-			{
-				return VT.put_CustomConfigCLSID(ref this, bstrCustomConfigCLSID);
-			}
-			public HRESULT get_TypeLib(out BSTR pbstrTypeLib) mut
-			{
-				return VT.get_TypeLib(ref this, out pbstrTypeLib);
-			}
-			public HRESULT put_TypeLib(BSTR bstrTypeLib) mut
-			{
-				return VT.put_TypeLib(ref this, bstrTypeLib);
-			}
+			public HRESULT get_EventClassID(out BSTR pbstrEventClassID) mut => VT.get_EventClassID(ref this, out pbstrEventClassID);
+			public HRESULT put_EventClassID(BSTR bstrEventClassID) mut => VT.put_EventClassID(ref this, bstrEventClassID);
+			public HRESULT get_EventClassName(out BSTR pbstrEventClassName) mut => VT.get_EventClassName(ref this, out pbstrEventClassName);
+			public HRESULT put_EventClassName(BSTR bstrEventClassName) mut => VT.put_EventClassName(ref this, bstrEventClassName);
+			public HRESULT get_OwnerSID(out BSTR pbstrOwnerSID) mut => VT.get_OwnerSID(ref this, out pbstrOwnerSID);
+			public HRESULT put_OwnerSID(BSTR bstrOwnerSID) mut => VT.put_OwnerSID(ref this, bstrOwnerSID);
+			public HRESULT get_FiringInterfaceID(out BSTR pbstrFiringInterfaceID) mut => VT.get_FiringInterfaceID(ref this, out pbstrFiringInterfaceID);
+			public HRESULT put_FiringInterfaceID(BSTR bstrFiringInterfaceID) mut => VT.put_FiringInterfaceID(ref this, bstrFiringInterfaceID);
+			public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
+			public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
+			public HRESULT get_CustomConfigCLSID(out BSTR pbstrCustomConfigCLSID) mut => VT.get_CustomConfigCLSID(ref this, out pbstrCustomConfigCLSID);
+			public HRESULT put_CustomConfigCLSID(BSTR bstrCustomConfigCLSID) mut => VT.put_CustomConfigCLSID(ref this, bstrCustomConfigCLSID);
+			public HRESULT get_TypeLib(out BSTR pbstrTypeLib) mut => VT.get_TypeLib(ref this, out pbstrTypeLib);
+			public HRESULT put_TypeLib(BSTR bstrTypeLib) mut => VT.put_TypeLib(ref this, bstrTypeLib);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -251,38 +152,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PublisherID(out BSTR pbstrPublisherID) mut
-			{
-				return VT.get_PublisherID(ref this, out pbstrPublisherID);
-			}
-			public HRESULT put_PublisherID(BSTR bstrPublisherID) mut
-			{
-				return VT.put_PublisherID(ref this, bstrPublisherID);
-			}
-			public HRESULT get_MultiInterfacePublisherFilterCLSID(out BSTR pbstrPubFilCLSID) mut
-			{
-				return VT.get_MultiInterfacePublisherFilterCLSID(ref this, out pbstrPubFilCLSID);
-			}
-			public HRESULT put_MultiInterfacePublisherFilterCLSID(BSTR bstrPubFilCLSID) mut
-			{
-				return VT.put_MultiInterfacePublisherFilterCLSID(ref this, bstrPubFilCLSID);
-			}
-			public HRESULT get_AllowInprocActivation(out BOOL pfAllowInprocActivation) mut
-			{
-				return VT.get_AllowInprocActivation(ref this, out pfAllowInprocActivation);
-			}
-			public HRESULT put_AllowInprocActivation(BOOL fAllowInprocActivation) mut
-			{
-				return VT.put_AllowInprocActivation(ref this, fAllowInprocActivation);
-			}
-			public HRESULT get_FireInParallel(out BOOL pfFireInParallel) mut
-			{
-				return VT.get_FireInParallel(ref this, out pfFireInParallel);
-			}
-			public HRESULT put_FireInParallel(BOOL fFireInParallel) mut
-			{
-				return VT.put_FireInParallel(ref this, fFireInParallel);
-			}
+			public HRESULT get_PublisherID(out BSTR pbstrPublisherID) mut => VT.get_PublisherID(ref this, out pbstrPublisherID);
+			public HRESULT put_PublisherID(BSTR bstrPublisherID) mut => VT.put_PublisherID(ref this, bstrPublisherID);
+			public HRESULT get_MultiInterfacePublisherFilterCLSID(out BSTR pbstrPubFilCLSID) mut => VT.get_MultiInterfacePublisherFilterCLSID(ref this, out pbstrPubFilCLSID);
+			public HRESULT put_MultiInterfacePublisherFilterCLSID(BSTR bstrPubFilCLSID) mut => VT.put_MultiInterfacePublisherFilterCLSID(ref this, bstrPubFilCLSID);
+			public HRESULT get_AllowInprocActivation(out BOOL pfAllowInprocActivation) mut => VT.get_AllowInprocActivation(ref this, out pfAllowInprocActivation);
+			public HRESULT put_AllowInprocActivation(BOOL fAllowInprocActivation) mut => VT.put_AllowInprocActivation(ref this, fAllowInprocActivation);
+			public HRESULT get_FireInParallel(out BOOL pfFireInParallel) mut => VT.get_FireInParallel(ref this, out pfFireInParallel);
+			public HRESULT put_FireInParallel(BOOL fFireInParallel) mut => VT.put_FireInParallel(ref this, fFireInParallel);
+
 			[CRepr]
 			public struct VTable : IEventClass.VTable
 			{
@@ -303,142 +181,41 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SubscriptionID(out BSTR pbstrSubscriptionID) mut
-			{
-				return VT.get_SubscriptionID(ref this, out pbstrSubscriptionID);
-			}
-			public HRESULT put_SubscriptionID(BSTR bstrSubscriptionID) mut
-			{
-				return VT.put_SubscriptionID(ref this, bstrSubscriptionID);
-			}
-			public HRESULT get_SubscriptionName(out BSTR pbstrSubscriptionName) mut
-			{
-				return VT.get_SubscriptionName(ref this, out pbstrSubscriptionName);
-			}
-			public HRESULT put_SubscriptionName(BSTR bstrSubscriptionName) mut
-			{
-				return VT.put_SubscriptionName(ref this, bstrSubscriptionName);
-			}
-			public HRESULT get_PublisherID(out BSTR pbstrPublisherID) mut
-			{
-				return VT.get_PublisherID(ref this, out pbstrPublisherID);
-			}
-			public HRESULT put_PublisherID(BSTR bstrPublisherID) mut
-			{
-				return VT.put_PublisherID(ref this, bstrPublisherID);
-			}
-			public HRESULT get_EventClassID(out BSTR pbstrEventClassID) mut
-			{
-				return VT.get_EventClassID(ref this, out pbstrEventClassID);
-			}
-			public HRESULT put_EventClassID(BSTR bstrEventClassID) mut
-			{
-				return VT.put_EventClassID(ref this, bstrEventClassID);
-			}
-			public HRESULT get_MethodName(out BSTR pbstrMethodName) mut
-			{
-				return VT.get_MethodName(ref this, out pbstrMethodName);
-			}
-			public HRESULT put_MethodName(BSTR bstrMethodName) mut
-			{
-				return VT.put_MethodName(ref this, bstrMethodName);
-			}
-			public HRESULT get_SubscriberCLSID(out BSTR pbstrSubscriberCLSID) mut
-			{
-				return VT.get_SubscriberCLSID(ref this, out pbstrSubscriberCLSID);
-			}
-			public HRESULT put_SubscriberCLSID(BSTR bstrSubscriberCLSID) mut
-			{
-				return VT.put_SubscriberCLSID(ref this, bstrSubscriberCLSID);
-			}
-			public HRESULT get_SubscriberInterface(out IUnknown* ppSubscriberInterface) mut
-			{
-				return VT.get_SubscriberInterface(ref this, out ppSubscriberInterface);
-			}
-			public HRESULT put_SubscriberInterface(ref IUnknown pSubscriberInterface) mut
-			{
-				return VT.put_SubscriberInterface(ref this, ref pSubscriberInterface);
-			}
-			public HRESULT get_PerUser(out BOOL pfPerUser) mut
-			{
-				return VT.get_PerUser(ref this, out pfPerUser);
-			}
-			public HRESULT put_PerUser(BOOL fPerUser) mut
-			{
-				return VT.put_PerUser(ref this, fPerUser);
-			}
-			public HRESULT get_OwnerSID(out BSTR pbstrOwnerSID) mut
-			{
-				return VT.get_OwnerSID(ref this, out pbstrOwnerSID);
-			}
-			public HRESULT put_OwnerSID(BSTR bstrOwnerSID) mut
-			{
-				return VT.put_OwnerSID(ref this, bstrOwnerSID);
-			}
-			public HRESULT get_Enabled(out BOOL pfEnabled) mut
-			{
-				return VT.get_Enabled(ref this, out pfEnabled);
-			}
-			public HRESULT put_Enabled(BOOL fEnabled) mut
-			{
-				return VT.put_Enabled(ref this, fEnabled);
-			}
-			public HRESULT get_Description(out BSTR pbstrDescription) mut
-			{
-				return VT.get_Description(ref this, out pbstrDescription);
-			}
-			public HRESULT put_Description(BSTR bstrDescription) mut
-			{
-				return VT.put_Description(ref this, bstrDescription);
-			}
-			public HRESULT get_MachineName(out BSTR pbstrMachineName) mut
-			{
-				return VT.get_MachineName(ref this, out pbstrMachineName);
-			}
-			public HRESULT put_MachineName(BSTR bstrMachineName) mut
-			{
-				return VT.put_MachineName(ref this, bstrMachineName);
-			}
-			public HRESULT GetPublisherProperty(BSTR bstrPropertyName, out VARIANT propertyValue) mut
-			{
-				return VT.GetPublisherProperty(ref this, bstrPropertyName, out propertyValue);
-			}
-			public HRESULT PutPublisherProperty(BSTR bstrPropertyName, ref VARIANT propertyValue) mut
-			{
-				return VT.PutPublisherProperty(ref this, bstrPropertyName, ref propertyValue);
-			}
-			public HRESULT RemovePublisherProperty(BSTR bstrPropertyName) mut
-			{
-				return VT.RemovePublisherProperty(ref this, bstrPropertyName);
-			}
-			public HRESULT GetPublisherPropertyCollection(out IEventObjectCollection* collection) mut
-			{
-				return VT.GetPublisherPropertyCollection(ref this, out collection);
-			}
-			public HRESULT GetSubscriberProperty(BSTR bstrPropertyName, out VARIANT propertyValue) mut
-			{
-				return VT.GetSubscriberProperty(ref this, bstrPropertyName, out propertyValue);
-			}
-			public HRESULT PutSubscriberProperty(BSTR bstrPropertyName, ref VARIANT propertyValue) mut
-			{
-				return VT.PutSubscriberProperty(ref this, bstrPropertyName, ref propertyValue);
-			}
-			public HRESULT RemoveSubscriberProperty(BSTR bstrPropertyName) mut
-			{
-				return VT.RemoveSubscriberProperty(ref this, bstrPropertyName);
-			}
-			public HRESULT GetSubscriberPropertyCollection(out IEventObjectCollection* collection) mut
-			{
-				return VT.GetSubscriberPropertyCollection(ref this, out collection);
-			}
-			public HRESULT get_InterfaceID(out BSTR pbstrInterfaceID) mut
-			{
-				return VT.get_InterfaceID(ref this, out pbstrInterfaceID);
-			}
-			public HRESULT put_InterfaceID(BSTR bstrInterfaceID) mut
-			{
-				return VT.put_InterfaceID(ref this, bstrInterfaceID);
-			}
+			public HRESULT get_SubscriptionID(out BSTR pbstrSubscriptionID) mut => VT.get_SubscriptionID(ref this, out pbstrSubscriptionID);
+			public HRESULT put_SubscriptionID(BSTR bstrSubscriptionID) mut => VT.put_SubscriptionID(ref this, bstrSubscriptionID);
+			public HRESULT get_SubscriptionName(out BSTR pbstrSubscriptionName) mut => VT.get_SubscriptionName(ref this, out pbstrSubscriptionName);
+			public HRESULT put_SubscriptionName(BSTR bstrSubscriptionName) mut => VT.put_SubscriptionName(ref this, bstrSubscriptionName);
+			public HRESULT get_PublisherID(out BSTR pbstrPublisherID) mut => VT.get_PublisherID(ref this, out pbstrPublisherID);
+			public HRESULT put_PublisherID(BSTR bstrPublisherID) mut => VT.put_PublisherID(ref this, bstrPublisherID);
+			public HRESULT get_EventClassID(out BSTR pbstrEventClassID) mut => VT.get_EventClassID(ref this, out pbstrEventClassID);
+			public HRESULT put_EventClassID(BSTR bstrEventClassID) mut => VT.put_EventClassID(ref this, bstrEventClassID);
+			public HRESULT get_MethodName(out BSTR pbstrMethodName) mut => VT.get_MethodName(ref this, out pbstrMethodName);
+			public HRESULT put_MethodName(BSTR bstrMethodName) mut => VT.put_MethodName(ref this, bstrMethodName);
+			public HRESULT get_SubscriberCLSID(out BSTR pbstrSubscriberCLSID) mut => VT.get_SubscriberCLSID(ref this, out pbstrSubscriberCLSID);
+			public HRESULT put_SubscriberCLSID(BSTR bstrSubscriberCLSID) mut => VT.put_SubscriberCLSID(ref this, bstrSubscriberCLSID);
+			public HRESULT get_SubscriberInterface(out IUnknown* ppSubscriberInterface) mut => VT.get_SubscriberInterface(ref this, out ppSubscriberInterface);
+			public HRESULT put_SubscriberInterface(ref IUnknown pSubscriberInterface) mut => VT.put_SubscriberInterface(ref this, ref pSubscriberInterface);
+			public HRESULT get_PerUser(out BOOL pfPerUser) mut => VT.get_PerUser(ref this, out pfPerUser);
+			public HRESULT put_PerUser(BOOL fPerUser) mut => VT.put_PerUser(ref this, fPerUser);
+			public HRESULT get_OwnerSID(out BSTR pbstrOwnerSID) mut => VT.get_OwnerSID(ref this, out pbstrOwnerSID);
+			public HRESULT put_OwnerSID(BSTR bstrOwnerSID) mut => VT.put_OwnerSID(ref this, bstrOwnerSID);
+			public HRESULT get_Enabled(out BOOL pfEnabled) mut => VT.get_Enabled(ref this, out pfEnabled);
+			public HRESULT put_Enabled(BOOL fEnabled) mut => VT.put_Enabled(ref this, fEnabled);
+			public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
+			public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
+			public HRESULT get_MachineName(out BSTR pbstrMachineName) mut => VT.get_MachineName(ref this, out pbstrMachineName);
+			public HRESULT put_MachineName(BSTR bstrMachineName) mut => VT.put_MachineName(ref this, bstrMachineName);
+			public HRESULT GetPublisherProperty(BSTR bstrPropertyName, out VARIANT propertyValue) mut => VT.GetPublisherProperty(ref this, bstrPropertyName, out propertyValue);
+			public HRESULT PutPublisherProperty(BSTR bstrPropertyName, ref VARIANT propertyValue) mut => VT.PutPublisherProperty(ref this, bstrPropertyName, ref propertyValue);
+			public HRESULT RemovePublisherProperty(BSTR bstrPropertyName) mut => VT.RemovePublisherProperty(ref this, bstrPropertyName);
+			public HRESULT GetPublisherPropertyCollection(out IEventObjectCollection* collection) mut => VT.GetPublisherPropertyCollection(ref this, out collection);
+			public HRESULT GetSubscriberProperty(BSTR bstrPropertyName, out VARIANT propertyValue) mut => VT.GetSubscriberProperty(ref this, bstrPropertyName, out propertyValue);
+			public HRESULT PutSubscriberProperty(BSTR bstrPropertyName, ref VARIANT propertyValue) mut => VT.PutSubscriberProperty(ref this, bstrPropertyName, ref propertyValue);
+			public HRESULT RemoveSubscriberProperty(BSTR bstrPropertyName) mut => VT.RemoveSubscriberProperty(ref this, bstrPropertyName);
+			public HRESULT GetSubscriberPropertyCollection(out IEventObjectCollection* collection) mut => VT.GetSubscriberPropertyCollection(ref this, out collection);
+			public HRESULT get_InterfaceID(out BSTR pbstrInterfaceID) mut => VT.get_InterfaceID(ref this, out pbstrInterfaceID);
+			public HRESULT put_InterfaceID(BSTR bstrInterfaceID) mut => VT.put_InterfaceID(ref this, bstrInterfaceID);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -485,10 +262,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FireSubscription(ref IEventSubscription subscription) mut
-			{
-				return VT.FireSubscription(ref this, ref subscription);
-			}
+			public HRESULT FireSubscription(ref IEventSubscription subscription) mut => VT.FireSubscription(ref this, ref subscription);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -502,14 +277,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(BSTR methodName, ref IDispatch dispUserDefined) mut
-			{
-				return VT.Initialize(ref this, methodName, ref dispUserDefined);
-			}
-			public HRESULT PrepareToFire(BSTR methodName, ref IFiringControl firingControl) mut
-			{
-				return VT.PrepareToFire(ref this, methodName, ref firingControl);
-			}
+			public HRESULT Initialize(BSTR methodName, ref IDispatch dispUserDefined) mut => VT.Initialize(ref this, methodName, ref dispUserDefined);
+			public HRESULT PrepareToFire(BSTR methodName, ref IFiringControl firingControl) mut => VT.PrepareToFire(ref this, methodName, ref firingControl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -524,14 +294,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IMultiInterfaceEventControl pEIC) mut
-			{
-				return VT.Initialize(ref this, ref pEIC);
-			}
-			public HRESULT PrepareToFire(in Guid iid, BSTR methodName, ref IFiringControl firingControl) mut
-			{
-				return VT.PrepareToFire(ref this, iid, methodName, ref firingControl);
-			}
+			public HRESULT Initialize(ref IMultiInterfaceEventControl pEIC) mut => VT.Initialize(ref this, ref pEIC);
+			public HRESULT PrepareToFire(in Guid iid, BSTR methodName, ref IFiringControl firingControl) mut => VT.PrepareToFire(ref this, iid, methodName, ref firingControl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -546,18 +311,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ChangedSubscription(EOC_ChangeType changeType, BSTR bstrSubscriptionID) mut
-			{
-				return VT.ChangedSubscription(ref this, changeType, bstrSubscriptionID);
-			}
-			public HRESULT ChangedEventClass(EOC_ChangeType changeType, BSTR bstrEventClassID) mut
-			{
-				return VT.ChangedEventClass(ref this, changeType, bstrEventClassID);
-			}
-			public HRESULT ChangedPublisher(EOC_ChangeType changeType, BSTR bstrPublisherID) mut
-			{
-				return VT.ChangedPublisher(ref this, changeType, bstrPublisherID);
-			}
+			public HRESULT ChangedSubscription(EOC_ChangeType changeType, BSTR bstrSubscriptionID) mut => VT.ChangedSubscription(ref this, changeType, bstrSubscriptionID);
+			public HRESULT ChangedEventClass(EOC_ChangeType changeType, BSTR bstrEventClassID) mut => VT.ChangedEventClass(ref this, changeType, bstrEventClassID);
+			public HRESULT ChangedPublisher(EOC_ChangeType changeType, BSTR bstrPublisherID) mut => VT.ChangedPublisher(ref this, changeType, bstrPublisherID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -573,14 +330,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ChangedSubscription(ref COMEVENTSYSCHANGEINFO pInfo) mut
-			{
-				return VT.ChangedSubscription(ref this, ref pInfo);
-			}
-			public HRESULT ChangedEventClass(ref COMEVENTSYSCHANGEINFO pInfo) mut
-			{
-				return VT.ChangedEventClass(ref this, ref pInfo);
-			}
+			public HRESULT ChangedSubscription(ref COMEVENTSYSCHANGEINFO pInfo) mut => VT.ChangedSubscription(ref this, ref pInfo);
+			public HRESULT ChangedEventClass(ref COMEVENTSYSCHANGEINFO pInfo) mut => VT.ChangedEventClass(ref this, ref pInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -595,22 +347,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out IEnumEventObject* ppInterface) mut
-			{
-				return VT.Clone(ref this, out ppInterface);
-			}
-			public HRESULT Next(uint32 cReqElem, IUnknown** ppInterface, out uint32 cRetElem) mut
-			{
-				return VT.Next(ref this, cReqElem, ppInterface, out cRetElem);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 cSkipElem) mut
-			{
-				return VT.Skip(ref this, cSkipElem);
-			}
+			public HRESULT Clone(out IEnumEventObject* ppInterface) mut => VT.Clone(ref this, out ppInterface);
+			public HRESULT Next(uint32 cReqElem, IUnknown** ppInterface, out uint32 cRetElem) mut => VT.Next(ref this, cReqElem, ppInterface, out cRetElem);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 cSkipElem) mut => VT.Skip(ref this, cSkipElem);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -627,30 +368,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IUnknown* ppUnkEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out ppUnkEnum);
-			}
-			public HRESULT get_Item(BSTR objectID, out VARIANT pItem) mut
-			{
-				return VT.get_Item(ref this, objectID, out pItem);
-			}
-			public HRESULT get_NewEnum(out IEnumEventObject* ppEnum) mut
-			{
-				return VT.get_NewEnum(ref this, out ppEnum);
-			}
-			public HRESULT get_Count(out int32 pCount) mut
-			{
-				return VT.get_Count(ref this, out pCount);
-			}
-			public HRESULT Add(ref VARIANT item, BSTR objectID) mut
-			{
-				return VT.Add(ref this, ref item, objectID);
-			}
-			public HRESULT Remove(BSTR objectID) mut
-			{
-				return VT.Remove(ref this, objectID);
-			}
+			public HRESULT get__NewEnum(out IUnknown* ppUnkEnum) mut => VT.get__NewEnum(ref this, out ppUnkEnum);
+			public HRESULT get_Item(BSTR objectID, out VARIANT pItem) mut => VT.get_Item(ref this, objectID, out pItem);
+			public HRESULT get_NewEnum(out IEnumEventObject* ppEnum) mut => VT.get_NewEnum(ref this, out ppEnum);
+			public HRESULT get_Count(out int32 pCount) mut => VT.get_Count(ref this, out pCount);
+			public HRESULT Add(ref VARIANT item, BSTR objectID) mut => VT.Add(ref this, ref item, objectID);
+			public HRESULT Remove(BSTR objectID) mut => VT.Remove(ref this, objectID);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -669,22 +393,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR propertyName) mut
-			{
-				return VT.get_Name(ref this, out propertyName);
-			}
-			public HRESULT put_Name(BSTR propertyName) mut
-			{
-				return VT.put_Name(ref this, propertyName);
-			}
-			public HRESULT get_Value(out VARIANT propertyValue) mut
-			{
-				return VT.get_Value(ref this, out propertyValue);
-			}
-			public HRESULT put_Value(ref VARIANT propertyValue) mut
-			{
-				return VT.put_Value(ref this, ref propertyValue);
-			}
+			public HRESULT get_Name(out BSTR propertyName) mut => VT.get_Name(ref this, out propertyName);
+			public HRESULT put_Name(BSTR propertyName) mut => VT.put_Name(ref this, propertyName);
+			public HRESULT get_Value(out VARIANT propertyValue) mut => VT.get_Value(ref this, out propertyValue);
+			public HRESULT put_Value(ref VARIANT propertyValue) mut => VT.put_Value(ref this, ref propertyValue);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -701,26 +414,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPublisherFilter(BSTR methodName, ref IPublisherFilter pPublisherFilter) mut
-			{
-				return VT.SetPublisherFilter(ref this, methodName, ref pPublisherFilter);
-			}
-			public HRESULT get_AllowInprocActivation(out BOOL pfAllowInprocActivation) mut
-			{
-				return VT.get_AllowInprocActivation(ref this, out pfAllowInprocActivation);
-			}
-			public HRESULT put_AllowInprocActivation(BOOL fAllowInprocActivation) mut
-			{
-				return VT.put_AllowInprocActivation(ref this, fAllowInprocActivation);
-			}
-			public HRESULT GetSubscriptions(BSTR methodName, BSTR optionalCriteria, ref int32 optionalErrorIndex, out IEventObjectCollection* ppCollection) mut
-			{
-				return VT.GetSubscriptions(ref this, methodName, optionalCriteria, ref optionalErrorIndex, out ppCollection);
-			}
-			public HRESULT SetDefaultQuery(BSTR methodName, BSTR criteria, out int32 errorIndex) mut
-			{
-				return VT.SetDefaultQuery(ref this, methodName, criteria, out errorIndex);
-			}
+			public HRESULT SetPublisherFilter(BSTR methodName, ref IPublisherFilter pPublisherFilter) mut => VT.SetPublisherFilter(ref this, methodName, ref pPublisherFilter);
+			public HRESULT get_AllowInprocActivation(out BOOL pfAllowInprocActivation) mut => VT.get_AllowInprocActivation(ref this, out pfAllowInprocActivation);
+			public HRESULT put_AllowInprocActivation(BOOL fAllowInprocActivation) mut => VT.put_AllowInprocActivation(ref this, fAllowInprocActivation);
+			public HRESULT GetSubscriptions(BSTR methodName, BSTR optionalCriteria, ref int32 optionalErrorIndex, out IEventObjectCollection* ppCollection) mut => VT.GetSubscriptions(ref this, methodName, optionalCriteria, ref optionalErrorIndex, out ppCollection);
+			public HRESULT SetDefaultQuery(BSTR methodName, BSTR criteria, out int32 errorIndex) mut => VT.SetDefaultQuery(ref this, methodName, criteria, out errorIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -738,34 +437,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMultiInterfacePublisherFilter(ref IMultiInterfacePublisherFilter classFilter) mut
-			{
-				return VT.SetMultiInterfacePublisherFilter(ref this, ref classFilter);
-			}
-			public HRESULT GetSubscriptions(in Guid eventIID, BSTR bstrMethodName, BSTR optionalCriteria, ref int32 optionalErrorIndex, out IEventObjectCollection* ppCollection) mut
-			{
-				return VT.GetSubscriptions(ref this, eventIID, bstrMethodName, optionalCriteria, ref optionalErrorIndex, out ppCollection);
-			}
-			public HRESULT SetDefaultQuery(in Guid eventIID, BSTR bstrMethodName, BSTR bstrCriteria, out int32 errorIndex) mut
-			{
-				return VT.SetDefaultQuery(ref this, eventIID, bstrMethodName, bstrCriteria, out errorIndex);
-			}
-			public HRESULT get_AllowInprocActivation(out BOOL pfAllowInprocActivation) mut
-			{
-				return VT.get_AllowInprocActivation(ref this, out pfAllowInprocActivation);
-			}
-			public HRESULT put_AllowInprocActivation(BOOL fAllowInprocActivation) mut
-			{
-				return VT.put_AllowInprocActivation(ref this, fAllowInprocActivation);
-			}
-			public HRESULT get_FireInParallel(out BOOL pfFireInParallel) mut
-			{
-				return VT.get_FireInParallel(ref this, out pfFireInParallel);
-			}
-			public HRESULT put_FireInParallel(BOOL fFireInParallel) mut
-			{
-				return VT.put_FireInParallel(ref this, fFireInParallel);
-			}
+			public HRESULT SetMultiInterfacePublisherFilter(ref IMultiInterfacePublisherFilter classFilter) mut => VT.SetMultiInterfacePublisherFilter(ref this, ref classFilter);
+			public HRESULT GetSubscriptions(in Guid eventIID, BSTR bstrMethodName, BSTR optionalCriteria, ref int32 optionalErrorIndex, out IEventObjectCollection* ppCollection) mut => VT.GetSubscriptions(ref this, eventIID, bstrMethodName, optionalCriteria, ref optionalErrorIndex, out ppCollection);
+			public HRESULT SetDefaultQuery(in Guid eventIID, BSTR bstrMethodName, BSTR bstrCriteria, out int32 errorIndex) mut => VT.SetDefaultQuery(ref this, eventIID, bstrMethodName, bstrCriteria, out errorIndex);
+			public HRESULT get_AllowInprocActivation(out BOOL pfAllowInprocActivation) mut => VT.get_AllowInprocActivation(ref this, out pfAllowInprocActivation);
+			public HRESULT put_AllowInprocActivation(BOOL fAllowInprocActivation) mut => VT.put_AllowInprocActivation(ref this, fAllowInprocActivation);
+			public HRESULT get_FireInParallel(out BOOL pfFireInParallel) mut => VT.get_FireInParallel(ref this, out pfFireInParallel);
+			public HRESULT put_FireInParallel(BOOL fFireInParallel) mut => VT.put_FireInParallel(ref this, fFireInParallel);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -785,6 +464,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

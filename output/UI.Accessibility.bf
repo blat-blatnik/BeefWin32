@@ -1755,10 +1755,8 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateProvider(ref IRawElementProviderWindowlessSite pSite, out IRawElementProviderSimple* ppProvider) mut
-			{
-				return VT.CreateProvider(ref this, ref pSite, out ppProvider);
-			}
+			public HRESULT CreateProvider(ref IRawElementProviderWindowlessSite pSite, out IRawElementProviderSimple* ppProvider) mut => VT.CreateProvider(ref this, ref pSite, out ppProvider);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1770,14 +1768,9 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBoundaryRectangle(out UiaRect pUiaRect) mut
-			{
-				return VT.GetBoundaryRectangle(ref this, out pUiaRect);
-			}
-			public HRESULT IsVisible() mut
-			{
-				return VT.IsVisible(ref this);
-			}
+			public HRESULT GetBoundaryRectangle(out UiaRect pUiaRect) mut => VT.GetBoundaryRectangle(ref this, out pUiaRect);
+			public HRESULT IsVisible() mut => VT.IsVisible(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1792,90 +1785,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_accParent(out IDispatch* ppdispParent) mut
-			{
-				return VT.get_accParent(ref this, out ppdispParent);
-			}
-			public HRESULT get_accChildCount(out int32 pcountChildren) mut
-			{
-				return VT.get_accChildCount(ref this, out pcountChildren);
-			}
-			public HRESULT get_accChild(VARIANT varChild, out IDispatch* ppdispChild) mut
-			{
-				return VT.get_accChild(ref this, varChild, out ppdispChild);
-			}
-			public HRESULT get_accName(VARIANT varChild, out BSTR pszName) mut
-			{
-				return VT.get_accName(ref this, varChild, out pszName);
-			}
-			public HRESULT get_accValue(VARIANT varChild, out BSTR pszValue) mut
-			{
-				return VT.get_accValue(ref this, varChild, out pszValue);
-			}
-			public HRESULT get_accDescription(VARIANT varChild, out BSTR pszDescription) mut
-			{
-				return VT.get_accDescription(ref this, varChild, out pszDescription);
-			}
-			public HRESULT get_accRole(VARIANT varChild, out VARIANT pvarRole) mut
-			{
-				return VT.get_accRole(ref this, varChild, out pvarRole);
-			}
-			public HRESULT get_accState(VARIANT varChild, out VARIANT pvarState) mut
-			{
-				return VT.get_accState(ref this, varChild, out pvarState);
-			}
-			public HRESULT get_accHelp(VARIANT varChild, out BSTR pszHelp) mut
-			{
-				return VT.get_accHelp(ref this, varChild, out pszHelp);
-			}
-			public HRESULT get_accHelpTopic(out BSTR pszHelpFile, VARIANT varChild, out int32 pidTopic) mut
-			{
-				return VT.get_accHelpTopic(ref this, out pszHelpFile, varChild, out pidTopic);
-			}
-			public HRESULT get_accKeyboardShortcut(VARIANT varChild, out BSTR pszKeyboardShortcut) mut
-			{
-				return VT.get_accKeyboardShortcut(ref this, varChild, out pszKeyboardShortcut);
-			}
-			public HRESULT get_accFocus(out VARIANT pvarChild) mut
-			{
-				return VT.get_accFocus(ref this, out pvarChild);
-			}
-			public HRESULT get_accSelection(out VARIANT pvarChildren) mut
-			{
-				return VT.get_accSelection(ref this, out pvarChildren);
-			}
-			public HRESULT get_accDefaultAction(VARIANT varChild, out BSTR pszDefaultAction) mut
-			{
-				return VT.get_accDefaultAction(ref this, varChild, out pszDefaultAction);
-			}
-			public HRESULT accSelect(int32 flagsSelect, VARIANT varChild) mut
-			{
-				return VT.accSelect(ref this, flagsSelect, varChild);
-			}
-			public HRESULT accLocation(out int32 pxLeft, out int32 pyTop, out int32 pcxWidth, out int32 pcyHeight, VARIANT varChild) mut
-			{
-				return VT.accLocation(ref this, out pxLeft, out pyTop, out pcxWidth, out pcyHeight, varChild);
-			}
-			public HRESULT accNavigate(int32 navDir, VARIANT varStart, out VARIANT pvarEndUpAt) mut
-			{
-				return VT.accNavigate(ref this, navDir, varStart, out pvarEndUpAt);
-			}
-			public HRESULT accHitTest(int32 xLeft, int32 yTop, out VARIANT pvarChild) mut
-			{
-				return VT.accHitTest(ref this, xLeft, yTop, out pvarChild);
-			}
-			public HRESULT accDoDefaultAction(VARIANT varChild) mut
-			{
-				return VT.accDoDefaultAction(ref this, varChild);
-			}
-			public HRESULT put_accName(VARIANT varChild, BSTR szName) mut
-			{
-				return VT.put_accName(ref this, varChild, szName);
-			}
-			public HRESULT put_accValue(VARIANT varChild, BSTR szValue) mut
-			{
-				return VT.put_accValue(ref this, varChild, szValue);
-			}
+			public HRESULT get_accParent(out IDispatch* ppdispParent) mut => VT.get_accParent(ref this, out ppdispParent);
+			public HRESULT get_accChildCount(out int32 pcountChildren) mut => VT.get_accChildCount(ref this, out pcountChildren);
+			public HRESULT get_accChild(VARIANT varChild, out IDispatch* ppdispChild) mut => VT.get_accChild(ref this, varChild, out ppdispChild);
+			public HRESULT get_accName(VARIANT varChild, out BSTR pszName) mut => VT.get_accName(ref this, varChild, out pszName);
+			public HRESULT get_accValue(VARIANT varChild, out BSTR pszValue) mut => VT.get_accValue(ref this, varChild, out pszValue);
+			public HRESULT get_accDescription(VARIANT varChild, out BSTR pszDescription) mut => VT.get_accDescription(ref this, varChild, out pszDescription);
+			public HRESULT get_accRole(VARIANT varChild, out VARIANT pvarRole) mut => VT.get_accRole(ref this, varChild, out pvarRole);
+			public HRESULT get_accState(VARIANT varChild, out VARIANT pvarState) mut => VT.get_accState(ref this, varChild, out pvarState);
+			public HRESULT get_accHelp(VARIANT varChild, out BSTR pszHelp) mut => VT.get_accHelp(ref this, varChild, out pszHelp);
+			public HRESULT get_accHelpTopic(out BSTR pszHelpFile, VARIANT varChild, out int32 pidTopic) mut => VT.get_accHelpTopic(ref this, out pszHelpFile, varChild, out pidTopic);
+			public HRESULT get_accKeyboardShortcut(VARIANT varChild, out BSTR pszKeyboardShortcut) mut => VT.get_accKeyboardShortcut(ref this, varChild, out pszKeyboardShortcut);
+			public HRESULT get_accFocus(out VARIANT pvarChild) mut => VT.get_accFocus(ref this, out pvarChild);
+			public HRESULT get_accSelection(out VARIANT pvarChildren) mut => VT.get_accSelection(ref this, out pvarChildren);
+			public HRESULT get_accDefaultAction(VARIANT varChild, out BSTR pszDefaultAction) mut => VT.get_accDefaultAction(ref this, varChild, out pszDefaultAction);
+			public HRESULT accSelect(int32 flagsSelect, VARIANT varChild) mut => VT.accSelect(ref this, flagsSelect, varChild);
+			public HRESULT accLocation(out int32 pxLeft, out int32 pyTop, out int32 pcxWidth, out int32 pcyHeight, VARIANT varChild) mut => VT.accLocation(ref this, out pxLeft, out pyTop, out pcxWidth, out pcyHeight, varChild);
+			public HRESULT accNavigate(int32 navDir, VARIANT varStart, out VARIANT pvarEndUpAt) mut => VT.accNavigate(ref this, navDir, varStart, out pvarEndUpAt);
+			public HRESULT accHitTest(int32 xLeft, int32 yTop, out VARIANT pvarChild) mut => VT.accHitTest(ref this, xLeft, yTop, out pvarChild);
+			public HRESULT accDoDefaultAction(VARIANT varChild) mut => VT.accDoDefaultAction(ref this, varChild);
+			public HRESULT put_accName(VARIANT varChild, BSTR szName) mut => VT.put_accName(ref this, varChild, szName);
+			public HRESULT put_accValue(VARIANT varChild, BSTR szValue) mut => VT.put_accValue(ref this, varChild, szValue);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1909,10 +1840,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AccessibleObjectFromID(int32 hwnd, int32 lObjectID, out IAccessible* pIAccessible) mut
-			{
-				return VT.AccessibleObjectFromID(ref this, hwnd, lObjectID, out pIAccessible);
-			}
+			public HRESULT AccessibleObjectFromID(int32 hwnd, int32 lObjectID, out IAccessible* pIAccessible) mut => VT.AccessibleObjectFromID(ref this, hwnd, lObjectID, out pIAccessible);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1926,22 +1855,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AcquireObjectIdRange(int32 rangeSize, ref IAccessibleHandler pRangeOwner, out int32 pRangeBase) mut
-			{
-				return VT.AcquireObjectIdRange(ref this, rangeSize, ref pRangeOwner, out pRangeBase);
-			}
-			public HRESULT ReleaseObjectIdRange(int32 rangeBase, ref IAccessibleHandler pRangeOwner) mut
-			{
-				return VT.ReleaseObjectIdRange(ref this, rangeBase, ref pRangeOwner);
-			}
-			public HRESULT QueryObjectIdRanges(ref IAccessibleHandler pRangesOwner, out SAFEARRAY* psaRanges) mut
-			{
-				return VT.QueryObjectIdRanges(ref this, ref pRangesOwner, out psaRanges);
-			}
-			public HRESULT GetParentAccessible(out IAccessible* ppParent) mut
-			{
-				return VT.GetParentAccessible(ref this, out ppParent);
-			}
+			public HRESULT AcquireObjectIdRange(int32 rangeSize, ref IAccessibleHandler pRangeOwner, out int32 pRangeBase) mut => VT.AcquireObjectIdRange(ref this, rangeSize, ref pRangeOwner, out pRangeBase);
+			public HRESULT ReleaseObjectIdRange(int32 rangeBase, ref IAccessibleHandler pRangeOwner) mut => VT.ReleaseObjectIdRange(ref this, rangeBase, ref pRangeOwner);
+			public HRESULT QueryObjectIdRanges(ref IAccessibleHandler pRangesOwner, out SAFEARRAY* psaRanges) mut => VT.QueryObjectIdRanges(ref this, ref pRangesOwner, out psaRanges);
+			public HRESULT GetParentAccessible(out IAccessible* ppParent) mut => VT.GetParentAccessible(ref this, out ppParent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1958,10 +1876,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIdentityString(uint32 dwIDChild, uint8** ppIDString, out uint32 pdwIDStringLen) mut
-			{
-				return VT.GetIdentityString(ref this, dwIDChild, ppIDString, out pdwIDStringLen);
-			}
+			public HRESULT GetIdentityString(uint32 dwIDChild, uint8** ppIDString, out uint32 pdwIDStringLen) mut => VT.GetIdentityString(ref this, dwIDChild, ppIDString, out pdwIDStringLen);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1975,10 +1891,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropValue(uint8* pIDString, uint32 dwIDStringLen, Guid idProp, out VARIANT pvarValue, out BOOL pfHasProp) mut
-			{
-				return VT.GetPropValue(ref this, pIDString, dwIDStringLen, idProp, out pvarValue, out pfHasProp);
-			}
+			public HRESULT GetPropValue(uint8* pIDString, uint32 dwIDStringLen, Guid idProp, out VARIANT pvarValue, out BOOL pfHasProp) mut => VT.GetPropValue(ref this, pIDString, dwIDStringLen, idProp, out pvarValue, out pfHasProp);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1992,66 +1906,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPropValue(uint8* pIDString, uint32 dwIDStringLen, Guid idProp, VARIANT @var) mut
-			{
-				return VT.SetPropValue(ref this, pIDString, dwIDStringLen, idProp, @var);
-			}
-			public HRESULT SetPropServer(uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps, ref IAccPropServer pServer, AnnoScope annoScope) mut
-			{
-				return VT.SetPropServer(ref this, pIDString, dwIDStringLen, paProps, cProps, ref pServer, annoScope);
-			}
-			public HRESULT ClearProps(uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps) mut
-			{
-				return VT.ClearProps(ref this, pIDString, dwIDStringLen, paProps, cProps);
-			}
-			public HRESULT SetHwndProp(HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, VARIANT @var) mut
-			{
-				return VT.SetHwndProp(ref this, hwnd, idObject, idChild, idProp, @var);
-			}
-			public HRESULT SetHwndPropStr(HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, PWSTR str) mut
-			{
-				return VT.SetHwndPropStr(ref this, hwnd, idObject, idChild, idProp, str);
-			}
-			public HRESULT SetHwndPropServer(HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps, ref IAccPropServer pServer, AnnoScope annoScope) mut
-			{
-				return VT.SetHwndPropServer(ref this, hwnd, idObject, idChild, paProps, cProps, ref pServer, annoScope);
-			}
-			public HRESULT ClearHwndProps(HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps) mut
-			{
-				return VT.ClearHwndProps(ref this, hwnd, idObject, idChild, paProps, cProps);
-			}
-			public HRESULT ComposeHwndIdentityString(HWND hwnd, uint32 idObject, uint32 idChild, uint8** ppIDString, out uint32 pdwIDStringLen) mut
-			{
-				return VT.ComposeHwndIdentityString(ref this, hwnd, idObject, idChild, ppIDString, out pdwIDStringLen);
-			}
-			public HRESULT DecomposeHwndIdentityString(uint8* pIDString, uint32 dwIDStringLen, out HWND phwnd, out uint32 pidObject, out uint32 pidChild) mut
-			{
-				return VT.DecomposeHwndIdentityString(ref this, pIDString, dwIDStringLen, out phwnd, out pidObject, out pidChild);
-			}
-			public HRESULT SetHmenuProp(HMENU hmenu, uint32 idChild, Guid idProp, VARIANT @var) mut
-			{
-				return VT.SetHmenuProp(ref this, hmenu, idChild, idProp, @var);
-			}
-			public HRESULT SetHmenuPropStr(HMENU hmenu, uint32 idChild, Guid idProp, PWSTR str) mut
-			{
-				return VT.SetHmenuPropStr(ref this, hmenu, idChild, idProp, str);
-			}
-			public HRESULT SetHmenuPropServer(HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps, ref IAccPropServer pServer, AnnoScope annoScope) mut
-			{
-				return VT.SetHmenuPropServer(ref this, hmenu, idChild, paProps, cProps, ref pServer, annoScope);
-			}
-			public HRESULT ClearHmenuProps(HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps) mut
-			{
-				return VT.ClearHmenuProps(ref this, hmenu, idChild, paProps, cProps);
-			}
-			public HRESULT ComposeHmenuIdentityString(HMENU hmenu, uint32 idChild, uint8** ppIDString, out uint32 pdwIDStringLen) mut
-			{
-				return VT.ComposeHmenuIdentityString(ref this, hmenu, idChild, ppIDString, out pdwIDStringLen);
-			}
-			public HRESULT DecomposeHmenuIdentityString(uint8* pIDString, uint32 dwIDStringLen, out HMENU phmenu, out uint32 pidChild) mut
-			{
-				return VT.DecomposeHmenuIdentityString(ref this, pIDString, dwIDStringLen, out phmenu, out pidChild);
-			}
+			public HRESULT SetPropValue(uint8* pIDString, uint32 dwIDStringLen, Guid idProp, VARIANT @var) mut => VT.SetPropValue(ref this, pIDString, dwIDStringLen, idProp, @var);
+			public HRESULT SetPropServer(uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps, ref IAccPropServer pServer, AnnoScope annoScope) mut => VT.SetPropServer(ref this, pIDString, dwIDStringLen, paProps, cProps, ref pServer, annoScope);
+			public HRESULT ClearProps(uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps) mut => VT.ClearProps(ref this, pIDString, dwIDStringLen, paProps, cProps);
+			public HRESULT SetHwndProp(HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, VARIANT @var) mut => VT.SetHwndProp(ref this, hwnd, idObject, idChild, idProp, @var);
+			public HRESULT SetHwndPropStr(HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, PWSTR str) mut => VT.SetHwndPropStr(ref this, hwnd, idObject, idChild, idProp, str);
+			public HRESULT SetHwndPropServer(HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps, ref IAccPropServer pServer, AnnoScope annoScope) mut => VT.SetHwndPropServer(ref this, hwnd, idObject, idChild, paProps, cProps, ref pServer, annoScope);
+			public HRESULT ClearHwndProps(HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps) mut => VT.ClearHwndProps(ref this, hwnd, idObject, idChild, paProps, cProps);
+			public HRESULT ComposeHwndIdentityString(HWND hwnd, uint32 idObject, uint32 idChild, uint8** ppIDString, out uint32 pdwIDStringLen) mut => VT.ComposeHwndIdentityString(ref this, hwnd, idObject, idChild, ppIDString, out pdwIDStringLen);
+			public HRESULT DecomposeHwndIdentityString(uint8* pIDString, uint32 dwIDStringLen, out HWND phwnd, out uint32 pidObject, out uint32 pidChild) mut => VT.DecomposeHwndIdentityString(ref this, pIDString, dwIDStringLen, out phwnd, out pidObject, out pidChild);
+			public HRESULT SetHmenuProp(HMENU hmenu, uint32 idChild, Guid idProp, VARIANT @var) mut => VT.SetHmenuProp(ref this, hmenu, idChild, idProp, @var);
+			public HRESULT SetHmenuPropStr(HMENU hmenu, uint32 idChild, Guid idProp, PWSTR str) mut => VT.SetHmenuPropStr(ref this, hmenu, idChild, idProp, str);
+			public HRESULT SetHmenuPropServer(HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps, ref IAccPropServer pServer, AnnoScope annoScope) mut => VT.SetHmenuPropServer(ref this, hmenu, idChild, paProps, cProps, ref pServer, annoScope);
+			public HRESULT ClearHmenuProps(HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps) mut => VT.ClearHmenuProps(ref this, hmenu, idChild, paProps, cProps);
+			public HRESULT ComposeHmenuIdentityString(HMENU hmenu, uint32 idChild, uint8** ppIDString, out uint32 pdwIDStringLen) mut => VT.ComposeHmenuIdentityString(ref this, hmenu, idChild, ppIDString, out pdwIDStringLen);
+			public HRESULT DecomposeHmenuIdentityString(uint8* pIDString, uint32 dwIDStringLen, out HMENU phmenu, out uint32 pidChild) mut => VT.DecomposeHmenuIdentityString(ref this, pIDString, dwIDStringLen, out phmenu, out pidChild);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2079,22 +1949,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProviderOptions(out ProviderOptions pRetVal) mut
-			{
-				return VT.get_ProviderOptions(ref this, out pRetVal);
-			}
-			public HRESULT GetPatternProvider(int32 patternId, out IUnknown* pRetVal) mut
-			{
-				return VT.GetPatternProvider(ref this, patternId, out pRetVal);
-			}
-			public HRESULT GetPropertyValue(int32 propertyId, out VARIANT pRetVal) mut
-			{
-				return VT.GetPropertyValue(ref this, propertyId, out pRetVal);
-			}
-			public HRESULT get_HostRawElementProvider(out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.get_HostRawElementProvider(ref this, out pRetVal);
-			}
+			public HRESULT get_ProviderOptions(out ProviderOptions pRetVal) mut => VT.get_ProviderOptions(ref this, out pRetVal);
+			public HRESULT GetPatternProvider(int32 patternId, out IUnknown* pRetVal) mut => VT.GetPatternProvider(ref this, patternId, out pRetVal);
+			public HRESULT GetPropertyValue(int32 propertyId, out VARIANT pRetVal) mut => VT.GetPropertyValue(ref this, propertyId, out pRetVal);
+			public HRESULT get_HostRawElementProvider(out IRawElementProviderSimple* pRetVal) mut => VT.get_HostRawElementProvider(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2111,22 +1970,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectForChild(int32 idChild, out IAccessibleEx* pRetVal) mut
-			{
-				return VT.GetObjectForChild(ref this, idChild, out pRetVal);
-			}
-			public HRESULT GetIAccessiblePair(out IAccessible* ppAcc, out int32 pidChild) mut
-			{
-				return VT.GetIAccessiblePair(ref this, out ppAcc, out pidChild);
-			}
-			public HRESULT GetRuntimeId(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetRuntimeId(ref this, out pRetVal);
-			}
-			public HRESULT ConvertReturnedElement(ref IRawElementProviderSimple pIn, out IAccessibleEx* ppRetValOut) mut
-			{
-				return VT.ConvertReturnedElement(ref this, ref pIn, out ppRetValOut);
-			}
+			public HRESULT GetObjectForChild(int32 idChild, out IAccessibleEx* pRetVal) mut => VT.GetObjectForChild(ref this, idChild, out pRetVal);
+			public HRESULT GetIAccessiblePair(out IAccessible* ppAcc, out int32 pidChild) mut => VT.GetIAccessiblePair(ref this, out ppAcc, out pidChild);
+			public HRESULT GetRuntimeId(out SAFEARRAY* pRetVal) mut => VT.GetRuntimeId(ref this, out pRetVal);
+			public HRESULT ConvertReturnedElement(ref IRawElementProviderSimple pIn, out IAccessibleEx* ppRetValOut) mut => VT.ConvertReturnedElement(ref this, ref pIn, out ppRetValOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2143,10 +1991,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowContextMenu() mut
-			{
-				return VT.ShowContextMenu(ref this);
-			}
+			public HRESULT ShowContextMenu() mut => VT.ShowContextMenu(ref this);
+
 			[CRepr]
 			public struct VTable : IRawElementProviderSimple.VTable
 			{
@@ -2160,10 +2006,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMetadataValue(int32 targetId, int32 metadataId, out VARIANT returnVal) mut
-			{
-				return VT.GetMetadataValue(ref this, targetId, metadataId, out returnVal);
-			}
+			public HRESULT GetMetadataValue(int32 targetId, int32 metadataId, out VARIANT returnVal) mut => VT.GetMetadataValue(ref this, targetId, metadataId, out returnVal);
+
 			[CRepr]
 			public struct VTable : IRawElementProviderSimple2.VTable
 			{
@@ -2177,14 +2021,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ElementProviderFromPoint(double x, double y, out IRawElementProviderFragment* pRetVal) mut
-			{
-				return VT.ElementProviderFromPoint(ref this, x, y, out pRetVal);
-			}
-			public HRESULT GetFocus(out IRawElementProviderFragment* pRetVal) mut
-			{
-				return VT.GetFocus(ref this, out pRetVal);
-			}
+			public HRESULT ElementProviderFromPoint(double x, double y, out IRawElementProviderFragment* pRetVal) mut => VT.ElementProviderFromPoint(ref this, x, y, out pRetVal);
+			public HRESULT GetFocus(out IRawElementProviderFragment* pRetVal) mut => VT.GetFocus(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2199,30 +2038,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Navigate(NavigateDirection direction, out IRawElementProviderFragment* pRetVal) mut
-			{
-				return VT.Navigate(ref this, direction, out pRetVal);
-			}
-			public HRESULT GetRuntimeId(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetRuntimeId(ref this, out pRetVal);
-			}
-			public HRESULT get_BoundingRectangle(out UiaRect pRetVal) mut
-			{
-				return VT.get_BoundingRectangle(ref this, out pRetVal);
-			}
-			public HRESULT GetEmbeddedFragmentRoots(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetEmbeddedFragmentRoots(ref this, out pRetVal);
-			}
-			public HRESULT SetFocus() mut
-			{
-				return VT.SetFocus(ref this);
-			}
-			public HRESULT get_FragmentRoot(out IRawElementProviderFragmentRoot* pRetVal) mut
-			{
-				return VT.get_FragmentRoot(ref this, out pRetVal);
-			}
+			public HRESULT Navigate(NavigateDirection direction, out IRawElementProviderFragment* pRetVal) mut => VT.Navigate(ref this, direction, out pRetVal);
+			public HRESULT GetRuntimeId(out SAFEARRAY* pRetVal) mut => VT.GetRuntimeId(ref this, out pRetVal);
+			public HRESULT get_BoundingRectangle(out UiaRect pRetVal) mut => VT.get_BoundingRectangle(ref this, out pRetVal);
+			public HRESULT GetEmbeddedFragmentRoots(out SAFEARRAY* pRetVal) mut => VT.GetEmbeddedFragmentRoots(ref this, out pRetVal);
+			public HRESULT SetFocus() mut => VT.SetFocus(ref this);
+			public HRESULT get_FragmentRoot(out IRawElementProviderFragmentRoot* pRetVal) mut => VT.get_FragmentRoot(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2241,14 +2063,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AdviseEventAdded(int32 eventId, ref SAFEARRAY propertyIDs) mut
-			{
-				return VT.AdviseEventAdded(ref this, eventId, ref propertyIDs);
-			}
-			public HRESULT AdviseEventRemoved(int32 eventId, ref SAFEARRAY propertyIDs) mut
-			{
-				return VT.AdviseEventRemoved(ref this, eventId, ref propertyIDs);
-			}
+			public HRESULT AdviseEventAdded(int32 eventId, ref SAFEARRAY propertyIDs) mut => VT.AdviseEventAdded(ref this, eventId, ref propertyIDs);
+			public HRESULT AdviseEventRemoved(int32 eventId, ref SAFEARRAY propertyIDs) mut => VT.AdviseEventRemoved(ref this, eventId, ref propertyIDs);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2263,10 +2080,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOverrideProviderForHwnd(HWND hwnd, out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.GetOverrideProviderForHwnd(ref this, hwnd, out pRetVal);
-			}
+			public HRESULT GetOverrideProviderForHwnd(HWND hwnd, out IRawElementProviderSimple* pRetVal) mut => VT.GetOverrideProviderForHwnd(ref this, hwnd, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2280,18 +2095,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddAutomationPropertyChangedEvent(ref IRawElementProviderSimple pProvider, int32 id, VARIANT newValue) mut
-			{
-				return VT.AddAutomationPropertyChangedEvent(ref this, ref pProvider, id, newValue);
-			}
-			public HRESULT AddAutomationEvent(ref IRawElementProviderSimple pProvider, int32 id) mut
-			{
-				return VT.AddAutomationEvent(ref this, ref pProvider, id);
-			}
-			public HRESULT AddStructureChangedEvent(ref IRawElementProviderSimple pProvider, StructureChangeType structureChangeType, ref SAFEARRAY runtimeId) mut
-			{
-				return VT.AddStructureChangedEvent(ref this, ref pProvider, structureChangeType, ref runtimeId);
-			}
+			public HRESULT AddAutomationPropertyChangedEvent(ref IRawElementProviderSimple pProvider, int32 id, VARIANT newValue) mut => VT.AddAutomationPropertyChangedEvent(ref this, ref pProvider, id, newValue);
+			public HRESULT AddAutomationEvent(ref IRawElementProviderSimple pProvider, int32 id) mut => VT.AddAutomationEvent(ref this, ref pProvider, id);
+			public HRESULT AddStructureChangedEvent(ref IRawElementProviderSimple pProvider, StructureChangeType structureChangeType, ref SAFEARRAY runtimeId) mut => VT.AddStructureChangedEvent(ref this, ref pProvider, structureChangeType, ref runtimeId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2307,10 +2114,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RespondToWinEvent(uint32 idWinEvent, HWND hwnd, int32 idObject, int32 idChild, ref IProxyProviderWinEventSink pSink) mut
-			{
-				return VT.RespondToWinEvent(ref this, idWinEvent, hwnd, idObject, idChild, ref pSink);
-			}
+			public HRESULT RespondToWinEvent(uint32 idWinEvent, HWND hwnd, int32 idObject, int32 idChild, ref IProxyProviderWinEventSink pSink) mut => VT.RespondToWinEvent(ref this, idWinEvent, hwnd, idObject, idChild, ref pSink);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2324,14 +2129,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAdjacentFragment(NavigateDirection direction, out IRawElementProviderFragment* ppParent) mut
-			{
-				return VT.GetAdjacentFragment(ref this, direction, out ppParent);
-			}
-			public HRESULT GetRuntimeIdPrefix(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetRuntimeIdPrefix(ref this, out pRetVal);
-			}
+			public HRESULT GetAdjacentFragment(NavigateDirection direction, out IRawElementProviderFragment* ppParent) mut => VT.GetAdjacentFragment(ref this, direction, out ppParent);
+			public HRESULT GetRuntimeIdPrefix(out SAFEARRAY* pRetVal) mut => VT.GetRuntimeIdPrefix(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2346,14 +2146,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEmbeddedFragmentRoots(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetEmbeddedFragmentRoots(ref this, out pRetVal);
-			}
-			public HRESULT GetObjectIdForProvider(ref IRawElementProviderSimple pProvider, out int32 pidObject) mut
-			{
-				return VT.GetObjectIdForProvider(ref this, ref pProvider, out pidObject);
-			}
+			public HRESULT GetEmbeddedFragmentRoots(out SAFEARRAY* pRetVal) mut => VT.GetEmbeddedFragmentRoots(ref this, out pRetVal);
+			public HRESULT GetObjectIdForProvider(ref IRawElementProviderSimple pProvider, out int32 pidObject) mut => VT.GetObjectIdForProvider(ref this, ref pProvider, out pidObject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2368,10 +2163,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEmbeddedAccessibles(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetEmbeddedAccessibles(ref this, out pRetVal);
-			}
+			public HRESULT GetEmbeddedAccessibles(out SAFEARRAY* pRetVal) mut => VT.GetEmbeddedAccessibles(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2385,14 +2178,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDockPosition(DockPosition dockPosition) mut
-			{
-				return VT.SetDockPosition(ref this, dockPosition);
-			}
-			public HRESULT get_DockPosition(out DockPosition pRetVal) mut
-			{
-				return VT.get_DockPosition(ref this, out pRetVal);
-			}
+			public HRESULT SetDockPosition(DockPosition dockPosition) mut => VT.SetDockPosition(ref this, dockPosition);
+			public HRESULT get_DockPosition(out DockPosition pRetVal) mut => VT.get_DockPosition(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2407,18 +2195,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Expand() mut
-			{
-				return VT.Expand(ref this);
-			}
-			public HRESULT Collapse() mut
-			{
-				return VT.Collapse(ref this);
-			}
-			public HRESULT get_ExpandCollapseState(out ExpandCollapseState pRetVal) mut
-			{
-				return VT.get_ExpandCollapseState(ref this, out pRetVal);
-			}
+			public HRESULT Expand() mut => VT.Expand(ref this);
+			public HRESULT Collapse() mut => VT.Collapse(ref this);
+			public HRESULT get_ExpandCollapseState(out ExpandCollapseState pRetVal) mut => VT.get_ExpandCollapseState(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2434,18 +2214,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItem(int32 row, int32 column, out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.GetItem(ref this, row, column, out pRetVal);
-			}
-			public HRESULT get_RowCount(out int32 pRetVal) mut
-			{
-				return VT.get_RowCount(ref this, out pRetVal);
-			}
-			public HRESULT get_ColumnCount(out int32 pRetVal) mut
-			{
-				return VT.get_ColumnCount(ref this, out pRetVal);
-			}
+			public HRESULT GetItem(int32 row, int32 column, out IRawElementProviderSimple* pRetVal) mut => VT.GetItem(ref this, row, column, out pRetVal);
+			public HRESULT get_RowCount(out int32 pRetVal) mut => VT.get_RowCount(ref this, out pRetVal);
+			public HRESULT get_ColumnCount(out int32 pRetVal) mut => VT.get_ColumnCount(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2461,26 +2233,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Row(out int32 pRetVal) mut
-			{
-				return VT.get_Row(ref this, out pRetVal);
-			}
-			public HRESULT get_Column(out int32 pRetVal) mut
-			{
-				return VT.get_Column(ref this, out pRetVal);
-			}
-			public HRESULT get_RowSpan(out int32 pRetVal) mut
-			{
-				return VT.get_RowSpan(ref this, out pRetVal);
-			}
-			public HRESULT get_ColumnSpan(out int32 pRetVal) mut
-			{
-				return VT.get_ColumnSpan(ref this, out pRetVal);
-			}
-			public HRESULT get_ContainingGrid(out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.get_ContainingGrid(ref this, out pRetVal);
-			}
+			public HRESULT get_Row(out int32 pRetVal) mut => VT.get_Row(ref this, out pRetVal);
+			public HRESULT get_Column(out int32 pRetVal) mut => VT.get_Column(ref this, out pRetVal);
+			public HRESULT get_RowSpan(out int32 pRetVal) mut => VT.get_RowSpan(ref this, out pRetVal);
+			public HRESULT get_ColumnSpan(out int32 pRetVal) mut => VT.get_ColumnSpan(ref this, out pRetVal);
+			public HRESULT get_ContainingGrid(out IRawElementProviderSimple* pRetVal) mut => VT.get_ContainingGrid(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2498,10 +2256,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Invoke() mut
-			{
-				return VT.Invoke(ref this);
-			}
+			public HRESULT Invoke() mut => VT.Invoke(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2515,22 +2271,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetViewName(int32 viewId, out BSTR pRetVal) mut
-			{
-				return VT.GetViewName(ref this, viewId, out pRetVal);
-			}
-			public HRESULT SetCurrentView(int32 viewId) mut
-			{
-				return VT.SetCurrentView(ref this, viewId);
-			}
-			public HRESULT get_CurrentView(out int32 pRetVal) mut
-			{
-				return VT.get_CurrentView(ref this, out pRetVal);
-			}
-			public HRESULT GetSupportedViews(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetSupportedViews(ref this, out pRetVal);
-			}
+			public HRESULT GetViewName(int32 viewId, out BSTR pRetVal) mut => VT.GetViewName(ref this, viewId, out pRetVal);
+			public HRESULT SetCurrentView(int32 viewId) mut => VT.SetCurrentView(ref this, viewId);
+			public HRESULT get_CurrentView(out int32 pRetVal) mut => VT.get_CurrentView(ref this, out pRetVal);
+			public HRESULT GetSupportedViews(out SAFEARRAY* pRetVal) mut => VT.GetSupportedViews(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2547,34 +2292,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetValue(double val) mut
-			{
-				return VT.SetValue(ref this, val);
-			}
-			public HRESULT get_Value(out double pRetVal) mut
-			{
-				return VT.get_Value(ref this, out pRetVal);
-			}
-			public HRESULT get_IsReadOnly(out BOOL pRetVal) mut
-			{
-				return VT.get_IsReadOnly(ref this, out pRetVal);
-			}
-			public HRESULT get_Maximum(out double pRetVal) mut
-			{
-				return VT.get_Maximum(ref this, out pRetVal);
-			}
-			public HRESULT get_Minimum(out double pRetVal) mut
-			{
-				return VT.get_Minimum(ref this, out pRetVal);
-			}
-			public HRESULT get_LargeChange(out double pRetVal) mut
-			{
-				return VT.get_LargeChange(ref this, out pRetVal);
-			}
-			public HRESULT get_SmallChange(out double pRetVal) mut
-			{
-				return VT.get_SmallChange(ref this, out pRetVal);
-			}
+			public HRESULT SetValue(double val) mut => VT.SetValue(ref this, val);
+			public HRESULT get_Value(out double pRetVal) mut => VT.get_Value(ref this, out pRetVal);
+			public HRESULT get_IsReadOnly(out BOOL pRetVal) mut => VT.get_IsReadOnly(ref this, out pRetVal);
+			public HRESULT get_Maximum(out double pRetVal) mut => VT.get_Maximum(ref this, out pRetVal);
+			public HRESULT get_Minimum(out double pRetVal) mut => VT.get_Minimum(ref this, out pRetVal);
+			public HRESULT get_LargeChange(out double pRetVal) mut => VT.get_LargeChange(ref this, out pRetVal);
+			public HRESULT get_SmallChange(out double pRetVal) mut => VT.get_SmallChange(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2594,10 +2319,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ScrollIntoView() mut
-			{
-				return VT.ScrollIntoView(ref this);
-			}
+			public HRESULT ScrollIntoView() mut => VT.ScrollIntoView(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2611,18 +2334,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSelection(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetSelection(ref this, out pRetVal);
-			}
-			public HRESULT get_CanSelectMultiple(out BOOL pRetVal) mut
-			{
-				return VT.get_CanSelectMultiple(ref this, out pRetVal);
-			}
-			public HRESULT get_IsSelectionRequired(out BOOL pRetVal) mut
-			{
-				return VT.get_IsSelectionRequired(ref this, out pRetVal);
-			}
+			public HRESULT GetSelection(out SAFEARRAY* pRetVal) mut => VT.GetSelection(ref this, out pRetVal);
+			public HRESULT get_CanSelectMultiple(out BOOL pRetVal) mut => VT.get_CanSelectMultiple(ref this, out pRetVal);
+			public HRESULT get_IsSelectionRequired(out BOOL pRetVal) mut => VT.get_IsSelectionRequired(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2638,22 +2353,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FirstSelectedItem(out IRawElementProviderSimple* retVal) mut
-			{
-				return VT.get_FirstSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_LastSelectedItem(out IRawElementProviderSimple* retVal) mut
-			{
-				return VT.get_LastSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_CurrentSelectedItem(out IRawElementProviderSimple* retVal) mut
-			{
-				return VT.get_CurrentSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_ItemCount(out int32 retVal) mut
-			{
-				return VT.get_ItemCount(ref this, out retVal);
-			}
+			public HRESULT get_FirstSelectedItem(out IRawElementProviderSimple* retVal) mut => VT.get_FirstSelectedItem(ref this, out retVal);
+			public HRESULT get_LastSelectedItem(out IRawElementProviderSimple* retVal) mut => VT.get_LastSelectedItem(ref this, out retVal);
+			public HRESULT get_CurrentSelectedItem(out IRawElementProviderSimple* retVal) mut => VT.get_CurrentSelectedItem(ref this, out retVal);
+			public HRESULT get_ItemCount(out int32 retVal) mut => VT.get_ItemCount(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : ISelectionProvider.VTable
 			{
@@ -2670,38 +2374,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Scroll(ScrollAmount horizontalAmount, ScrollAmount verticalAmount) mut
-			{
-				return VT.Scroll(ref this, horizontalAmount, verticalAmount);
-			}
-			public HRESULT SetScrollPercent(double horizontalPercent, double verticalPercent) mut
-			{
-				return VT.SetScrollPercent(ref this, horizontalPercent, verticalPercent);
-			}
-			public HRESULT get_HorizontalScrollPercent(out double pRetVal) mut
-			{
-				return VT.get_HorizontalScrollPercent(ref this, out pRetVal);
-			}
-			public HRESULT get_VerticalScrollPercent(out double pRetVal) mut
-			{
-				return VT.get_VerticalScrollPercent(ref this, out pRetVal);
-			}
-			public HRESULT get_HorizontalViewSize(out double pRetVal) mut
-			{
-				return VT.get_HorizontalViewSize(ref this, out pRetVal);
-			}
-			public HRESULT get_VerticalViewSize(out double pRetVal) mut
-			{
-				return VT.get_VerticalViewSize(ref this, out pRetVal);
-			}
-			public HRESULT get_HorizontallyScrollable(out BOOL pRetVal) mut
-			{
-				return VT.get_HorizontallyScrollable(ref this, out pRetVal);
-			}
-			public HRESULT get_VerticallyScrollable(out BOOL pRetVal) mut
-			{
-				return VT.get_VerticallyScrollable(ref this, out pRetVal);
-			}
+			public HRESULT Scroll(ScrollAmount horizontalAmount, ScrollAmount verticalAmount) mut => VT.Scroll(ref this, horizontalAmount, verticalAmount);
+			public HRESULT SetScrollPercent(double horizontalPercent, double verticalPercent) mut => VT.SetScrollPercent(ref this, horizontalPercent, verticalPercent);
+			public HRESULT get_HorizontalScrollPercent(out double pRetVal) mut => VT.get_HorizontalScrollPercent(ref this, out pRetVal);
+			public HRESULT get_VerticalScrollPercent(out double pRetVal) mut => VT.get_VerticalScrollPercent(ref this, out pRetVal);
+			public HRESULT get_HorizontalViewSize(out double pRetVal) mut => VT.get_HorizontalViewSize(ref this, out pRetVal);
+			public HRESULT get_VerticalViewSize(out double pRetVal) mut => VT.get_VerticalViewSize(ref this, out pRetVal);
+			public HRESULT get_HorizontallyScrollable(out BOOL pRetVal) mut => VT.get_HorizontallyScrollable(ref this, out pRetVal);
+			public HRESULT get_VerticallyScrollable(out BOOL pRetVal) mut => VT.get_VerticallyScrollable(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2722,26 +2403,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Select() mut
-			{
-				return VT.Select(ref this);
-			}
-			public HRESULT AddToSelection() mut
-			{
-				return VT.AddToSelection(ref this);
-			}
-			public HRESULT RemoveFromSelection() mut
-			{
-				return VT.RemoveFromSelection(ref this);
-			}
-			public HRESULT get_IsSelected(out BOOL pRetVal) mut
-			{
-				return VT.get_IsSelected(ref this, out pRetVal);
-			}
-			public HRESULT get_SelectionContainer(out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.get_SelectionContainer(ref this, out pRetVal);
-			}
+			public HRESULT Select() mut => VT.Select(ref this);
+			public HRESULT AddToSelection() mut => VT.AddToSelection(ref this);
+			public HRESULT RemoveFromSelection() mut => VT.RemoveFromSelection(ref this);
+			public HRESULT get_IsSelected(out BOOL pRetVal) mut => VT.get_IsSelected(ref this, out pRetVal);
+			public HRESULT get_SelectionContainer(out IRawElementProviderSimple* pRetVal) mut => VT.get_SelectionContainer(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2759,14 +2426,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartListening(SynchronizedInputType inputType) mut
-			{
-				return VT.StartListening(ref this, inputType);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
+			public HRESULT StartListening(SynchronizedInputType inputType) mut => VT.StartListening(ref this, inputType);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2781,18 +2443,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRowHeaders(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetRowHeaders(ref this, out pRetVal);
-			}
-			public HRESULT GetColumnHeaders(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetColumnHeaders(ref this, out pRetVal);
-			}
-			public HRESULT get_RowOrColumnMajor(out RowOrColumnMajor pRetVal) mut
-			{
-				return VT.get_RowOrColumnMajor(ref this, out pRetVal);
-			}
+			public HRESULT GetRowHeaders(out SAFEARRAY* pRetVal) mut => VT.GetRowHeaders(ref this, out pRetVal);
+			public HRESULT GetColumnHeaders(out SAFEARRAY* pRetVal) mut => VT.GetColumnHeaders(ref this, out pRetVal);
+			public HRESULT get_RowOrColumnMajor(out RowOrColumnMajor pRetVal) mut => VT.get_RowOrColumnMajor(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2808,14 +2462,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRowHeaderItems(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetRowHeaderItems(ref this, out pRetVal);
-			}
-			public HRESULT GetColumnHeaderItems(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetColumnHeaderItems(ref this, out pRetVal);
-			}
+			public HRESULT GetRowHeaderItems(out SAFEARRAY* pRetVal) mut => VT.GetRowHeaderItems(ref this, out pRetVal);
+			public HRESULT GetColumnHeaderItems(out SAFEARRAY* pRetVal) mut => VT.GetColumnHeaderItems(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2830,14 +2479,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Toggle() mut
-			{
-				return VT.Toggle(ref this);
-			}
-			public HRESULT get_ToggleState(out ToggleState pRetVal) mut
-			{
-				return VT.get_ToggleState(ref this, out pRetVal);
-			}
+			public HRESULT Toggle() mut => VT.Toggle(ref this);
+			public HRESULT get_ToggleState(out ToggleState pRetVal) mut => VT.get_ToggleState(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2852,30 +2496,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Move(double x, double y) mut
-			{
-				return VT.Move(ref this, x, y);
-			}
-			public HRESULT Resize(double width, double height) mut
-			{
-				return VT.Resize(ref this, width, height);
-			}
-			public HRESULT Rotate(double degrees) mut
-			{
-				return VT.Rotate(ref this, degrees);
-			}
-			public HRESULT get_CanMove(out BOOL pRetVal) mut
-			{
-				return VT.get_CanMove(ref this, out pRetVal);
-			}
-			public HRESULT get_CanResize(out BOOL pRetVal) mut
-			{
-				return VT.get_CanResize(ref this, out pRetVal);
-			}
-			public HRESULT get_CanRotate(out BOOL pRetVal) mut
-			{
-				return VT.get_CanRotate(ref this, out pRetVal);
-			}
+			public HRESULT Move(double x, double y) mut => VT.Move(ref this, x, y);
+			public HRESULT Resize(double width, double height) mut => VT.Resize(ref this, width, height);
+			public HRESULT Rotate(double degrees) mut => VT.Rotate(ref this, degrees);
+			public HRESULT get_CanMove(out BOOL pRetVal) mut => VT.get_CanMove(ref this, out pRetVal);
+			public HRESULT get_CanResize(out BOOL pRetVal) mut => VT.get_CanResize(ref this, out pRetVal);
+			public HRESULT get_CanRotate(out BOOL pRetVal) mut => VT.get_CanRotate(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2894,18 +2521,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetValue(PWSTR val) mut
-			{
-				return VT.SetValue(ref this, val);
-			}
-			public HRESULT get_Value(out BSTR pRetVal) mut
-			{
-				return VT.get_Value(ref this, out pRetVal);
-			}
-			public HRESULT get_IsReadOnly(out BOOL pRetVal) mut
-			{
-				return VT.get_IsReadOnly(ref this, out pRetVal);
-			}
+			public HRESULT SetValue(PWSTR val) mut => VT.SetValue(ref this, val);
+			public HRESULT get_Value(out BSTR pRetVal) mut => VT.get_Value(ref this, out pRetVal);
+			public HRESULT get_IsReadOnly(out BOOL pRetVal) mut => VT.get_IsReadOnly(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2921,42 +2540,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetVisualState(WindowVisualState state) mut
-			{
-				return VT.SetVisualState(ref this, state);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT WaitForInputIdle(int32 milliseconds, out BOOL pRetVal) mut
-			{
-				return VT.WaitForInputIdle(ref this, milliseconds, out pRetVal);
-			}
-			public HRESULT get_CanMaximize(out BOOL pRetVal) mut
-			{
-				return VT.get_CanMaximize(ref this, out pRetVal);
-			}
-			public HRESULT get_CanMinimize(out BOOL pRetVal) mut
-			{
-				return VT.get_CanMinimize(ref this, out pRetVal);
-			}
-			public HRESULT get_IsModal(out BOOL pRetVal) mut
-			{
-				return VT.get_IsModal(ref this, out pRetVal);
-			}
-			public HRESULT get_WindowVisualState(out WindowVisualState pRetVal) mut
-			{
-				return VT.get_WindowVisualState(ref this, out pRetVal);
-			}
-			public HRESULT get_WindowInteractionState(out WindowInteractionState pRetVal) mut
-			{
-				return VT.get_WindowInteractionState(ref this, out pRetVal);
-			}
-			public HRESULT get_IsTopmost(out BOOL pRetVal) mut
-			{
-				return VT.get_IsTopmost(ref this, out pRetVal);
-			}
+			public HRESULT SetVisualState(WindowVisualState state) mut => VT.SetVisualState(ref this, state);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT WaitForInputIdle(int32 milliseconds, out BOOL pRetVal) mut => VT.WaitForInputIdle(ref this, milliseconds, out pRetVal);
+			public HRESULT get_CanMaximize(out BOOL pRetVal) mut => VT.get_CanMaximize(ref this, out pRetVal);
+			public HRESULT get_CanMinimize(out BOOL pRetVal) mut => VT.get_CanMinimize(ref this, out pRetVal);
+			public HRESULT get_IsModal(out BOOL pRetVal) mut => VT.get_IsModal(ref this, out pRetVal);
+			public HRESULT get_WindowVisualState(out WindowVisualState pRetVal) mut => VT.get_WindowVisualState(ref this, out pRetVal);
+			public HRESULT get_WindowInteractionState(out WindowInteractionState pRetVal) mut => VT.get_WindowInteractionState(ref this, out pRetVal);
+			public HRESULT get_IsTopmost(out BOOL pRetVal) mut => VT.get_IsTopmost(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2978,62 +2571,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Select(int32 flagsSelect) mut
-			{
-				return VT.Select(ref this, flagsSelect);
-			}
-			public HRESULT DoDefaultAction() mut
-			{
-				return VT.DoDefaultAction(ref this);
-			}
-			public HRESULT SetValue(PWSTR szValue) mut
-			{
-				return VT.SetValue(ref this, szValue);
-			}
-			public HRESULT GetIAccessible(out IAccessible* ppAccessible) mut
-			{
-				return VT.GetIAccessible(ref this, out ppAccessible);
-			}
-			public HRESULT get_ChildId(out int32 pRetVal) mut
-			{
-				return VT.get_ChildId(ref this, out pRetVal);
-			}
-			public HRESULT get_Name(out BSTR pszName) mut
-			{
-				return VT.get_Name(ref this, out pszName);
-			}
-			public HRESULT get_Value(out BSTR pszValue) mut
-			{
-				return VT.get_Value(ref this, out pszValue);
-			}
-			public HRESULT get_Description(out BSTR pszDescription) mut
-			{
-				return VT.get_Description(ref this, out pszDescription);
-			}
-			public HRESULT get_Role(out uint32 pdwRole) mut
-			{
-				return VT.get_Role(ref this, out pdwRole);
-			}
-			public HRESULT get_State(out uint32 pdwState) mut
-			{
-				return VT.get_State(ref this, out pdwState);
-			}
-			public HRESULT get_Help(out BSTR pszHelp) mut
-			{
-				return VT.get_Help(ref this, out pszHelp);
-			}
-			public HRESULT get_KeyboardShortcut(out BSTR pszKeyboardShortcut) mut
-			{
-				return VT.get_KeyboardShortcut(ref this, out pszKeyboardShortcut);
-			}
-			public HRESULT GetSelection(out SAFEARRAY* pvarSelectedChildren) mut
-			{
-				return VT.GetSelection(ref this, out pvarSelectedChildren);
-			}
-			public HRESULT get_DefaultAction(out BSTR pszDefaultAction) mut
-			{
-				return VT.get_DefaultAction(ref this, out pszDefaultAction);
-			}
+			public HRESULT Select(int32 flagsSelect) mut => VT.Select(ref this, flagsSelect);
+			public HRESULT DoDefaultAction() mut => VT.DoDefaultAction(ref this);
+			public HRESULT SetValue(PWSTR szValue) mut => VT.SetValue(ref this, szValue);
+			public HRESULT GetIAccessible(out IAccessible* ppAccessible) mut => VT.GetIAccessible(ref this, out ppAccessible);
+			public HRESULT get_ChildId(out int32 pRetVal) mut => VT.get_ChildId(ref this, out pRetVal);
+			public HRESULT get_Name(out BSTR pszName) mut => VT.get_Name(ref this, out pszName);
+			public HRESULT get_Value(out BSTR pszValue) mut => VT.get_Value(ref this, out pszValue);
+			public HRESULT get_Description(out BSTR pszDescription) mut => VT.get_Description(ref this, out pszDescription);
+			public HRESULT get_Role(out uint32 pdwRole) mut => VT.get_Role(ref this, out pdwRole);
+			public HRESULT get_State(out uint32 pdwState) mut => VT.get_State(ref this, out pdwState);
+			public HRESULT get_Help(out BSTR pszHelp) mut => VT.get_Help(ref this, out pszHelp);
+			public HRESULT get_KeyboardShortcut(out BSTR pszKeyboardShortcut) mut => VT.get_KeyboardShortcut(ref this, out pszKeyboardShortcut);
+			public HRESULT GetSelection(out SAFEARRAY* pvarSelectedChildren) mut => VT.GetSelection(ref this, out pvarSelectedChildren);
+			public HRESULT get_DefaultAction(out BSTR pszDefaultAction) mut => VT.get_DefaultAction(ref this, out pszDefaultAction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3060,10 +2612,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindItemByProperty(ref IRawElementProviderSimple pStartAfter, int32 propertyId, VARIANT value, out IRawElementProviderSimple* pFound) mut
-			{
-				return VT.FindItemByProperty(ref this, ref pStartAfter, propertyId, value, out pFound);
-			}
+			public HRESULT FindItemByProperty(ref IRawElementProviderSimple pStartAfter, int32 propertyId, VARIANT value, out IRawElementProviderSimple* pFound) mut => VT.FindItemByProperty(ref this, ref pStartAfter, propertyId, value, out pFound);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3077,10 +2627,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Realize() mut
-			{
-				return VT.Realize(ref this);
-			}
+			public HRESULT Realize() mut => VT.Realize(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3094,10 +2642,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUnderlyingObjectModel(out IUnknown* ppUnknown) mut
-			{
-				return VT.GetUnderlyingObjectModel(ref this, out ppUnknown);
-			}
+			public HRESULT GetUnderlyingObjectModel(out IUnknown* ppUnknown) mut => VT.GetUnderlyingObjectModel(ref this, out ppUnknown);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3111,26 +2657,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AnnotationTypeId(out int32 retVal) mut
-			{
-				return VT.get_AnnotationTypeId(ref this, out retVal);
-			}
-			public HRESULT get_AnnotationTypeName(out BSTR retVal) mut
-			{
-				return VT.get_AnnotationTypeName(ref this, out retVal);
-			}
-			public HRESULT get_Author(out BSTR retVal) mut
-			{
-				return VT.get_Author(ref this, out retVal);
-			}
-			public HRESULT get_DateTime(out BSTR retVal) mut
-			{
-				return VT.get_DateTime(ref this, out retVal);
-			}
-			public HRESULT get_Target(out IRawElementProviderSimple* retVal) mut
-			{
-				return VT.get_Target(ref this, out retVal);
-			}
+			public HRESULT get_AnnotationTypeId(out int32 retVal) mut => VT.get_AnnotationTypeId(ref this, out retVal);
+			public HRESULT get_AnnotationTypeName(out BSTR retVal) mut => VT.get_AnnotationTypeName(ref this, out retVal);
+			public HRESULT get_Author(out BSTR retVal) mut => VT.get_Author(ref this, out retVal);
+			public HRESULT get_DateTime(out BSTR retVal) mut => VT.get_DateTime(ref this, out retVal);
+			public HRESULT get_Target(out IRawElementProviderSimple* retVal) mut => VT.get_Target(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3148,34 +2680,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StyleId(out int32 retVal) mut
-			{
-				return VT.get_StyleId(ref this, out retVal);
-			}
-			public HRESULT get_StyleName(out BSTR retVal) mut
-			{
-				return VT.get_StyleName(ref this, out retVal);
-			}
-			public HRESULT get_FillColor(out int32 retVal) mut
-			{
-				return VT.get_FillColor(ref this, out retVal);
-			}
-			public HRESULT get_FillPatternStyle(out BSTR retVal) mut
-			{
-				return VT.get_FillPatternStyle(ref this, out retVal);
-			}
-			public HRESULT get_Shape(out BSTR retVal) mut
-			{
-				return VT.get_Shape(ref this, out retVal);
-			}
-			public HRESULT get_FillPatternColor(out int32 retVal) mut
-			{
-				return VT.get_FillPatternColor(ref this, out retVal);
-			}
-			public HRESULT get_ExtendedProperties(out BSTR retVal) mut
-			{
-				return VT.get_ExtendedProperties(ref this, out retVal);
-			}
+			public HRESULT get_StyleId(out int32 retVal) mut => VT.get_StyleId(ref this, out retVal);
+			public HRESULT get_StyleName(out BSTR retVal) mut => VT.get_StyleName(ref this, out retVal);
+			public HRESULT get_FillColor(out int32 retVal) mut => VT.get_FillColor(ref this, out retVal);
+			public HRESULT get_FillPatternStyle(out BSTR retVal) mut => VT.get_FillPatternStyle(ref this, out retVal);
+			public HRESULT get_Shape(out BSTR retVal) mut => VT.get_Shape(ref this, out retVal);
+			public HRESULT get_FillPatternColor(out int32 retVal) mut => VT.get_FillPatternColor(ref this, out retVal);
+			public HRESULT get_ExtendedProperties(out BSTR retVal) mut => VT.get_ExtendedProperties(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3195,10 +2707,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemByName(PWSTR name, out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.GetItemByName(ref this, name, out pRetVal);
-			}
+			public HRESULT GetItemByName(PWSTR name, out IRawElementProviderSimple* pRetVal) mut => VT.GetItemByName(ref this, name, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3212,18 +2722,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Formula(out BSTR pRetVal) mut
-			{
-				return VT.get_Formula(ref this, out pRetVal);
-			}
-			public HRESULT GetAnnotationObjects(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetAnnotationObjects(ref this, out pRetVal);
-			}
-			public HRESULT GetAnnotationTypes(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetAnnotationTypes(ref this, out pRetVal);
-			}
+			public HRESULT get_Formula(out BSTR pRetVal) mut => VT.get_Formula(ref this, out pRetVal);
+			public HRESULT GetAnnotationObjects(out SAFEARRAY* pRetVal) mut => VT.GetAnnotationObjects(ref this, out pRetVal);
+			public HRESULT GetAnnotationTypes(out SAFEARRAY* pRetVal) mut => VT.GetAnnotationTypes(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3239,30 +2741,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Zoom(double zoom) mut
-			{
-				return VT.Zoom(ref this, zoom);
-			}
-			public HRESULT get_CanZoom(out BOOL pRetVal) mut
-			{
-				return VT.get_CanZoom(ref this, out pRetVal);
-			}
-			public HRESULT get_ZoomLevel(out double pRetVal) mut
-			{
-				return VT.get_ZoomLevel(ref this, out pRetVal);
-			}
-			public HRESULT get_ZoomMinimum(out double pRetVal) mut
-			{
-				return VT.get_ZoomMinimum(ref this, out pRetVal);
-			}
-			public HRESULT get_ZoomMaximum(out double pRetVal) mut
-			{
-				return VT.get_ZoomMaximum(ref this, out pRetVal);
-			}
-			public HRESULT ZoomByUnit(ZoomUnit zoomUnit) mut
-			{
-				return VT.ZoomByUnit(ref this, zoomUnit);
-			}
+			public HRESULT Zoom(double zoom) mut => VT.Zoom(ref this, zoom);
+			public HRESULT get_CanZoom(out BOOL pRetVal) mut => VT.get_CanZoom(ref this, out pRetVal);
+			public HRESULT get_ZoomLevel(out double pRetVal) mut => VT.get_ZoomLevel(ref this, out pRetVal);
+			public HRESULT get_ZoomMinimum(out double pRetVal) mut => VT.get_ZoomMinimum(ref this, out pRetVal);
+			public HRESULT get_ZoomMaximum(out double pRetVal) mut => VT.get_ZoomMaximum(ref this, out pRetVal);
+			public HRESULT ZoomByUnit(ZoomUnit zoomUnit) mut => VT.ZoomByUnit(ref this, zoomUnit);
+
 			[CRepr]
 			public struct VTable : ITransformProvider.VTable
 			{
@@ -3281,22 +2766,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IsGrabbed(out BOOL pRetVal) mut
-			{
-				return VT.get_IsGrabbed(ref this, out pRetVal);
-			}
-			public HRESULT get_DropEffect(out BSTR pRetVal) mut
-			{
-				return VT.get_DropEffect(ref this, out pRetVal);
-			}
-			public HRESULT get_DropEffects(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.get_DropEffects(ref this, out pRetVal);
-			}
-			public HRESULT GetGrabbedItems(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetGrabbedItems(ref this, out pRetVal);
-			}
+			public HRESULT get_IsGrabbed(out BOOL pRetVal) mut => VT.get_IsGrabbed(ref this, out pRetVal);
+			public HRESULT get_DropEffect(out BSTR pRetVal) mut => VT.get_DropEffect(ref this, out pRetVal);
+			public HRESULT get_DropEffects(out SAFEARRAY* pRetVal) mut => VT.get_DropEffects(ref this, out pRetVal);
+			public HRESULT GetGrabbedItems(out SAFEARRAY* pRetVal) mut => VT.GetGrabbedItems(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3313,14 +2787,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DropTargetEffect(out BSTR pRetVal) mut
-			{
-				return VT.get_DropTargetEffect(ref this, out pRetVal);
-			}
-			public HRESULT get_DropTargetEffects(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.get_DropTargetEffects(ref this, out pRetVal);
-			}
+			public HRESULT get_DropTargetEffect(out BSTR pRetVal) mut => VT.get_DropTargetEffect(ref this, out pRetVal);
+			public HRESULT get_DropTargetEffects(out SAFEARRAY* pRetVal) mut => VT.get_DropTargetEffects(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3335,78 +2804,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.Clone(ref this, out pRetVal);
-			}
-			public HRESULT Compare(ref ITextRangeProvider range, out BOOL pRetVal) mut
-			{
-				return VT.Compare(ref this, ref range, out pRetVal);
-			}
-			public HRESULT CompareEndpoints(TextPatternRangeEndpoint endpoint, ref ITextRangeProvider targetRange, TextPatternRangeEndpoint targetEndpoint, out int32 pRetVal) mut
-			{
-				return VT.CompareEndpoints(ref this, endpoint, ref targetRange, targetEndpoint, out pRetVal);
-			}
-			public HRESULT ExpandToEnclosingUnit(TextUnit unit) mut
-			{
-				return VT.ExpandToEnclosingUnit(ref this, unit);
-			}
-			public HRESULT FindAttribute(int32 attributeId, VARIANT val, BOOL backward, out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.FindAttribute(ref this, attributeId, val, backward, out pRetVal);
-			}
-			public HRESULT FindText(BSTR text, BOOL backward, BOOL ignoreCase, out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.FindText(ref this, text, backward, ignoreCase, out pRetVal);
-			}
-			public HRESULT GetAttributeValue(int32 attributeId, out VARIANT pRetVal) mut
-			{
-				return VT.GetAttributeValue(ref this, attributeId, out pRetVal);
-			}
-			public HRESULT GetBoundingRectangles(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetBoundingRectangles(ref this, out pRetVal);
-			}
-			public HRESULT GetEnclosingElement(out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.GetEnclosingElement(ref this, out pRetVal);
-			}
-			public HRESULT GetText(int32 maxLength, out BSTR pRetVal) mut
-			{
-				return VT.GetText(ref this, maxLength, out pRetVal);
-			}
-			public HRESULT Move(TextUnit unit, int32 count, out int32 pRetVal) mut
-			{
-				return VT.Move(ref this, unit, count, out pRetVal);
-			}
-			public HRESULT MoveEndpointByUnit(TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, out int32 pRetVal) mut
-			{
-				return VT.MoveEndpointByUnit(ref this, endpoint, unit, count, out pRetVal);
-			}
-			public HRESULT MoveEndpointByRange(TextPatternRangeEndpoint endpoint, ref ITextRangeProvider targetRange, TextPatternRangeEndpoint targetEndpoint) mut
-			{
-				return VT.MoveEndpointByRange(ref this, endpoint, ref targetRange, targetEndpoint);
-			}
-			public HRESULT Select() mut
-			{
-				return VT.Select(ref this);
-			}
-			public HRESULT AddToSelection() mut
-			{
-				return VT.AddToSelection(ref this);
-			}
-			public HRESULT RemoveFromSelection() mut
-			{
-				return VT.RemoveFromSelection(ref this);
-			}
-			public HRESULT ScrollIntoView(BOOL alignToTop) mut
-			{
-				return VT.ScrollIntoView(ref this, alignToTop);
-			}
-			public HRESULT GetChildren(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetChildren(ref this, out pRetVal);
-			}
+			public HRESULT Clone(out ITextRangeProvider* pRetVal) mut => VT.Clone(ref this, out pRetVal);
+			public HRESULT Compare(ref ITextRangeProvider range, out BOOL pRetVal) mut => VT.Compare(ref this, ref range, out pRetVal);
+			public HRESULT CompareEndpoints(TextPatternRangeEndpoint endpoint, ref ITextRangeProvider targetRange, TextPatternRangeEndpoint targetEndpoint, out int32 pRetVal) mut => VT.CompareEndpoints(ref this, endpoint, ref targetRange, targetEndpoint, out pRetVal);
+			public HRESULT ExpandToEnclosingUnit(TextUnit unit) mut => VT.ExpandToEnclosingUnit(ref this, unit);
+			public HRESULT FindAttribute(int32 attributeId, VARIANT val, BOOL backward, out ITextRangeProvider* pRetVal) mut => VT.FindAttribute(ref this, attributeId, val, backward, out pRetVal);
+			public HRESULT FindText(BSTR text, BOOL backward, BOOL ignoreCase, out ITextRangeProvider* pRetVal) mut => VT.FindText(ref this, text, backward, ignoreCase, out pRetVal);
+			public HRESULT GetAttributeValue(int32 attributeId, out VARIANT pRetVal) mut => VT.GetAttributeValue(ref this, attributeId, out pRetVal);
+			public HRESULT GetBoundingRectangles(out SAFEARRAY* pRetVal) mut => VT.GetBoundingRectangles(ref this, out pRetVal);
+			public HRESULT GetEnclosingElement(out IRawElementProviderSimple* pRetVal) mut => VT.GetEnclosingElement(ref this, out pRetVal);
+			public HRESULT GetText(int32 maxLength, out BSTR pRetVal) mut => VT.GetText(ref this, maxLength, out pRetVal);
+			public HRESULT Move(TextUnit unit, int32 count, out int32 pRetVal) mut => VT.Move(ref this, unit, count, out pRetVal);
+			public HRESULT MoveEndpointByUnit(TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, out int32 pRetVal) mut => VT.MoveEndpointByUnit(ref this, endpoint, unit, count, out pRetVal);
+			public HRESULT MoveEndpointByRange(TextPatternRangeEndpoint endpoint, ref ITextRangeProvider targetRange, TextPatternRangeEndpoint targetEndpoint) mut => VT.MoveEndpointByRange(ref this, endpoint, ref targetRange, targetEndpoint);
+			public HRESULT Select() mut => VT.Select(ref this);
+			public HRESULT AddToSelection() mut => VT.AddToSelection(ref this);
+			public HRESULT RemoveFromSelection() mut => VT.RemoveFromSelection(ref this);
+			public HRESULT ScrollIntoView(BOOL alignToTop) mut => VT.ScrollIntoView(ref this, alignToTop);
+			public HRESULT GetChildren(out SAFEARRAY* pRetVal) mut => VT.GetChildren(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3437,30 +2853,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSelection(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetSelection(ref this, out pRetVal);
-			}
-			public HRESULT GetVisibleRanges(out SAFEARRAY* pRetVal) mut
-			{
-				return VT.GetVisibleRanges(ref this, out pRetVal);
-			}
-			public HRESULT RangeFromChild(ref IRawElementProviderSimple childElement, out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.RangeFromChild(ref this, ref childElement, out pRetVal);
-			}
-			public HRESULT RangeFromPoint(UiaPoint point, out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.RangeFromPoint(ref this, point, out pRetVal);
-			}
-			public HRESULT get_DocumentRange(out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.get_DocumentRange(ref this, out pRetVal);
-			}
-			public HRESULT get_SupportedTextSelection(out SupportedTextSelection pRetVal) mut
-			{
-				return VT.get_SupportedTextSelection(ref this, out pRetVal);
-			}
+			public HRESULT GetSelection(out SAFEARRAY* pRetVal) mut => VT.GetSelection(ref this, out pRetVal);
+			public HRESULT GetVisibleRanges(out SAFEARRAY* pRetVal) mut => VT.GetVisibleRanges(ref this, out pRetVal);
+			public HRESULT RangeFromChild(ref IRawElementProviderSimple childElement, out ITextRangeProvider* pRetVal) mut => VT.RangeFromChild(ref this, ref childElement, out pRetVal);
+			public HRESULT RangeFromPoint(UiaPoint point, out ITextRangeProvider* pRetVal) mut => VT.RangeFromPoint(ref this, point, out pRetVal);
+			public HRESULT get_DocumentRange(out ITextRangeProvider* pRetVal) mut => VT.get_DocumentRange(ref this, out pRetVal);
+			public HRESULT get_SupportedTextSelection(out SupportedTextSelection pRetVal) mut => VT.get_SupportedTextSelection(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3479,14 +2878,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RangeFromAnnotation(ref IRawElementProviderSimple annotationElement, out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.RangeFromAnnotation(ref this, ref annotationElement, out pRetVal);
-			}
-			public HRESULT GetCaretRange(out BOOL isActive, out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.GetCaretRange(ref this, out isActive, out pRetVal);
-			}
+			public HRESULT RangeFromAnnotation(ref IRawElementProviderSimple annotationElement, out ITextRangeProvider* pRetVal) mut => VT.RangeFromAnnotation(ref this, ref annotationElement, out pRetVal);
+			public HRESULT GetCaretRange(out BOOL isActive, out ITextRangeProvider* pRetVal) mut => VT.GetCaretRange(ref this, out isActive, out pRetVal);
+
 			[CRepr]
 			public struct VTable : ITextProvider.VTable
 			{
@@ -3501,14 +2895,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetActiveComposition(out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.GetActiveComposition(ref this, out pRetVal);
-			}
-			public HRESULT GetConversionTarget(out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.GetConversionTarget(ref this, out pRetVal);
-			}
+			public HRESULT GetActiveComposition(out ITextRangeProvider* pRetVal) mut => VT.GetActiveComposition(ref this, out pRetVal);
+			public HRESULT GetConversionTarget(out ITextRangeProvider* pRetVal) mut => VT.GetConversionTarget(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : ITextProvider.VTable
 			{
@@ -3523,10 +2912,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowContextMenu() mut
-			{
-				return VT.ShowContextMenu(ref this);
-			}
+			public HRESULT ShowContextMenu() mut => VT.ShowContextMenu(ref this);
+
 			[CRepr]
 			public struct VTable : ITextRangeProvider.VTable
 			{
@@ -3540,14 +2927,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TextContainer(out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.get_TextContainer(ref this, out pRetVal);
-			}
-			public HRESULT get_TextRange(out ITextRangeProvider* pRetVal) mut
-			{
-				return VT.get_TextRange(ref this, out pRetVal);
-			}
+			public HRESULT get_TextContainer(out IRawElementProviderSimple* pRetVal) mut => VT.get_TextContainer(ref this, out pRetVal);
+			public HRESULT get_TextRange(out ITextRangeProvider* pRetVal) mut => VT.get_TextRange(ref this, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3562,10 +2944,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Navigate(NavigateDirection direction, out IRawElementProviderSimple* pRetVal) mut
-			{
-				return VT.Navigate(ref this, direction, out pRetVal);
-			}
+			public HRESULT Navigate(NavigateDirection direction, out IRawElementProviderSimple* pRetVal) mut => VT.Navigate(ref this, direction, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3579,14 +2959,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperty(uint32 index, BOOL cached, UIAutomationType type, void* pPtr) mut
-			{
-				return VT.GetProperty(ref this, index, cached, type, pPtr);
-			}
-			public HRESULT CallMethod(uint32 index, in UIAutomationParameter pParams, uint32 cParams) mut
-			{
-				return VT.CallMethod(ref this, index, pParams, cParams);
-			}
+			public HRESULT GetProperty(uint32 index, BOOL cached, UIAutomationType type, void* pPtr) mut => VT.GetProperty(ref this, index, cached, type, pPtr);
+			public HRESULT CallMethod(uint32 index, in UIAutomationParameter pParams, uint32 cParams) mut => VT.CallMethod(ref this, index, pParams, cParams);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3601,14 +2976,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateClientWrapper(ref IUIAutomationPatternInstance pPatternInstance, out IUnknown* pClientWrapper) mut
-			{
-				return VT.CreateClientWrapper(ref this, ref pPatternInstance, out pClientWrapper);
-			}
-			public HRESULT Dispatch(ref IUnknown pTarget, uint32 index, in UIAutomationParameter pParams, uint32 cParams) mut
-			{
-				return VT.Dispatch(ref this, ref pTarget, index, pParams, cParams);
-			}
+			public HRESULT CreateClientWrapper(ref IUIAutomationPatternInstance pPatternInstance, out IUnknown* pClientWrapper) mut => VT.CreateClientWrapper(ref this, ref pPatternInstance, out pClientWrapper);
+			public HRESULT Dispatch(ref IUnknown pTarget, uint32 index, in UIAutomationParameter pParams, uint32 cParams) mut => VT.Dispatch(ref this, ref pTarget, index, pParams, cParams);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3623,18 +2993,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterProperty(in UIAutomationPropertyInfo property, out int32 propertyId) mut
-			{
-				return VT.RegisterProperty(ref this, property, out propertyId);
-			}
-			public HRESULT RegisterEvent(in UIAutomationEventInfo event, out int32 eventId) mut
-			{
-				return VT.RegisterEvent(ref this, event, out eventId);
-			}
-			public HRESULT RegisterPattern(in UIAutomationPatternInfo pattern, out int32 pPatternId, out int32 pPatternAvailablePropertyId, uint32 propertyIdCount, int32* pPropertyIds, uint32 eventIdCount, int32* pEventIds) mut
-			{
-				return VT.RegisterPattern(ref this, pattern, out pPatternId, out pPatternAvailablePropertyId, propertyIdCount, pPropertyIds, eventIdCount, pEventIds);
-			}
+			public HRESULT RegisterProperty(in UIAutomationPropertyInfo property, out int32 propertyId) mut => VT.RegisterProperty(ref this, property, out propertyId);
+			public HRESULT RegisterEvent(in UIAutomationEventInfo event, out int32 eventId) mut => VT.RegisterEvent(ref this, event, out eventId);
+			public HRESULT RegisterPattern(in UIAutomationPatternInfo pattern, out int32 pPatternId, out int32 pPatternAvailablePropertyId, uint32 propertyIdCount, int32* pPropertyIds, uint32 eventIdCount, int32* pEventIds) mut => VT.RegisterPattern(ref this, pattern, out pPatternId, out pPatternAvailablePropertyId, propertyIdCount, pPropertyIds, eventIdCount, pEventIds);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3650,334 +3012,89 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFocus() mut
-			{
-				return VT.SetFocus(ref this);
-			}
-			public HRESULT GetRuntimeId(out SAFEARRAY* runtimeId) mut
-			{
-				return VT.GetRuntimeId(ref this, out runtimeId);
-			}
-			public HRESULT FindFirst(TreeScope @scope, ref IUIAutomationCondition condition, out IUIAutomationElement* found) mut
-			{
-				return VT.FindFirst(ref this, @scope, ref condition, out found);
-			}
-			public HRESULT FindAll(TreeScope @scope, ref IUIAutomationCondition condition, out IUIAutomationElementArray* found) mut
-			{
-				return VT.FindAll(ref this, @scope, ref condition, out found);
-			}
-			public HRESULT FindFirstBuildCache(TreeScope @scope, ref IUIAutomationCondition condition, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* found) mut
-			{
-				return VT.FindFirstBuildCache(ref this, @scope, ref condition, ref cacheRequest, out found);
-			}
-			public HRESULT FindAllBuildCache(TreeScope @scope, ref IUIAutomationCondition condition, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElementArray* found) mut
-			{
-				return VT.FindAllBuildCache(ref this, @scope, ref condition, ref cacheRequest, out found);
-			}
-			public HRESULT BuildUpdatedCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* updatedElement) mut
-			{
-				return VT.BuildUpdatedCache(ref this, ref cacheRequest, out updatedElement);
-			}
-			public HRESULT GetCurrentPropertyValue(int32 propertyId, out VARIANT retVal) mut
-			{
-				return VT.GetCurrentPropertyValue(ref this, propertyId, out retVal);
-			}
-			public HRESULT GetCurrentPropertyValueEx(int32 propertyId, BOOL ignoreDefaultValue, out VARIANT retVal) mut
-			{
-				return VT.GetCurrentPropertyValueEx(ref this, propertyId, ignoreDefaultValue, out retVal);
-			}
-			public HRESULT GetCachedPropertyValue(int32 propertyId, out VARIANT retVal) mut
-			{
-				return VT.GetCachedPropertyValue(ref this, propertyId, out retVal);
-			}
-			public HRESULT GetCachedPropertyValueEx(int32 propertyId, BOOL ignoreDefaultValue, out VARIANT retVal) mut
-			{
-				return VT.GetCachedPropertyValueEx(ref this, propertyId, ignoreDefaultValue, out retVal);
-			}
-			public HRESULT GetCurrentPatternAs(int32 patternId, in Guid riid, void** patternObject) mut
-			{
-				return VT.GetCurrentPatternAs(ref this, patternId, riid, patternObject);
-			}
-			public HRESULT GetCachedPatternAs(int32 patternId, in Guid riid, void** patternObject) mut
-			{
-				return VT.GetCachedPatternAs(ref this, patternId, riid, patternObject);
-			}
-			public HRESULT GetCurrentPattern(int32 patternId, out IUnknown* patternObject) mut
-			{
-				return VT.GetCurrentPattern(ref this, patternId, out patternObject);
-			}
-			public HRESULT GetCachedPattern(int32 patternId, out IUnknown* patternObject) mut
-			{
-				return VT.GetCachedPattern(ref this, patternId, out patternObject);
-			}
-			public HRESULT GetCachedParent(out IUIAutomationElement* parent) mut
-			{
-				return VT.GetCachedParent(ref this, out parent);
-			}
-			public HRESULT GetCachedChildren(out IUIAutomationElementArray* children) mut
-			{
-				return VT.GetCachedChildren(ref this, out children);
-			}
-			public HRESULT get_CurrentProcessId(out int32 retVal) mut
-			{
-				return VT.get_CurrentProcessId(ref this, out retVal);
-			}
-			public HRESULT get_CurrentControlType(out int32 retVal) mut
-			{
-				return VT.get_CurrentControlType(ref this, out retVal);
-			}
-			public HRESULT get_CurrentLocalizedControlType(out BSTR retVal) mut
-			{
-				return VT.get_CurrentLocalizedControlType(ref this, out retVal);
-			}
-			public HRESULT get_CurrentName(out BSTR retVal) mut
-			{
-				return VT.get_CurrentName(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAcceleratorKey(out BSTR retVal) mut
-			{
-				return VT.get_CurrentAcceleratorKey(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAccessKey(out BSTR retVal) mut
-			{
-				return VT.get_CurrentAccessKey(ref this, out retVal);
-			}
-			public HRESULT get_CurrentHasKeyboardFocus(out BOOL retVal) mut
-			{
-				return VT.get_CurrentHasKeyboardFocus(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsKeyboardFocusable(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsKeyboardFocusable(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsEnabled(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsEnabled(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAutomationId(out BSTR retVal) mut
-			{
-				return VT.get_CurrentAutomationId(ref this, out retVal);
-			}
-			public HRESULT get_CurrentClassName(out BSTR retVal) mut
-			{
-				return VT.get_CurrentClassName(ref this, out retVal);
-			}
-			public HRESULT get_CurrentHelpText(out BSTR retVal) mut
-			{
-				return VT.get_CurrentHelpText(ref this, out retVal);
-			}
-			public HRESULT get_CurrentCulture(out int32 retVal) mut
-			{
-				return VT.get_CurrentCulture(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsControlElement(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsControlElement(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsContentElement(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsContentElement(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsPassword(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsPassword(ref this, out retVal);
-			}
-			public HRESULT get_CurrentNativeWindowHandle(HWND retVal) mut
-			{
-				return VT.get_CurrentNativeWindowHandle(ref this, retVal);
-			}
-			public HRESULT get_CurrentItemType(out BSTR retVal) mut
-			{
-				return VT.get_CurrentItemType(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsOffscreen(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsOffscreen(ref this, out retVal);
-			}
-			public HRESULT get_CurrentOrientation(out OrientationType retVal) mut
-			{
-				return VT.get_CurrentOrientation(ref this, out retVal);
-			}
-			public HRESULT get_CurrentFrameworkId(out BSTR retVal) mut
-			{
-				return VT.get_CurrentFrameworkId(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsRequiredForForm(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsRequiredForForm(ref this, out retVal);
-			}
-			public HRESULT get_CurrentItemStatus(out BSTR retVal) mut
-			{
-				return VT.get_CurrentItemStatus(ref this, out retVal);
-			}
-			public HRESULT get_CurrentBoundingRectangle(out RECT retVal) mut
-			{
-				return VT.get_CurrentBoundingRectangle(ref this, out retVal);
-			}
-			public HRESULT get_CurrentLabeledBy(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CurrentLabeledBy(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAriaRole(out BSTR retVal) mut
-			{
-				return VT.get_CurrentAriaRole(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAriaProperties(out BSTR retVal) mut
-			{
-				return VT.get_CurrentAriaProperties(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsDataValidForForm(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsDataValidForForm(ref this, out retVal);
-			}
-			public HRESULT get_CurrentControllerFor(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CurrentControllerFor(ref this, out retVal);
-			}
-			public HRESULT get_CurrentDescribedBy(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CurrentDescribedBy(ref this, out retVal);
-			}
-			public HRESULT get_CurrentFlowsTo(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CurrentFlowsTo(ref this, out retVal);
-			}
-			public HRESULT get_CurrentProviderDescription(out BSTR retVal) mut
-			{
-				return VT.get_CurrentProviderDescription(ref this, out retVal);
-			}
-			public HRESULT get_CachedProcessId(out int32 retVal) mut
-			{
-				return VT.get_CachedProcessId(ref this, out retVal);
-			}
-			public HRESULT get_CachedControlType(out int32 retVal) mut
-			{
-				return VT.get_CachedControlType(ref this, out retVal);
-			}
-			public HRESULT get_CachedLocalizedControlType(out BSTR retVal) mut
-			{
-				return VT.get_CachedLocalizedControlType(ref this, out retVal);
-			}
-			public HRESULT get_CachedName(out BSTR retVal) mut
-			{
-				return VT.get_CachedName(ref this, out retVal);
-			}
-			public HRESULT get_CachedAcceleratorKey(out BSTR retVal) mut
-			{
-				return VT.get_CachedAcceleratorKey(ref this, out retVal);
-			}
-			public HRESULT get_CachedAccessKey(out BSTR retVal) mut
-			{
-				return VT.get_CachedAccessKey(ref this, out retVal);
-			}
-			public HRESULT get_CachedHasKeyboardFocus(out BOOL retVal) mut
-			{
-				return VT.get_CachedHasKeyboardFocus(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsKeyboardFocusable(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsKeyboardFocusable(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsEnabled(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsEnabled(ref this, out retVal);
-			}
-			public HRESULT get_CachedAutomationId(out BSTR retVal) mut
-			{
-				return VT.get_CachedAutomationId(ref this, out retVal);
-			}
-			public HRESULT get_CachedClassName(out BSTR retVal) mut
-			{
-				return VT.get_CachedClassName(ref this, out retVal);
-			}
-			public HRESULT get_CachedHelpText(out BSTR retVal) mut
-			{
-				return VT.get_CachedHelpText(ref this, out retVal);
-			}
-			public HRESULT get_CachedCulture(out int32 retVal) mut
-			{
-				return VT.get_CachedCulture(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsControlElement(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsControlElement(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsContentElement(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsContentElement(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsPassword(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsPassword(ref this, out retVal);
-			}
-			public HRESULT get_CachedNativeWindowHandle(HWND retVal) mut
-			{
-				return VT.get_CachedNativeWindowHandle(ref this, retVal);
-			}
-			public HRESULT get_CachedItemType(out BSTR retVal) mut
-			{
-				return VT.get_CachedItemType(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsOffscreen(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsOffscreen(ref this, out retVal);
-			}
-			public HRESULT get_CachedOrientation(out OrientationType retVal) mut
-			{
-				return VT.get_CachedOrientation(ref this, out retVal);
-			}
-			public HRESULT get_CachedFrameworkId(out BSTR retVal) mut
-			{
-				return VT.get_CachedFrameworkId(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsRequiredForForm(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsRequiredForForm(ref this, out retVal);
-			}
-			public HRESULT get_CachedItemStatus(out BSTR retVal) mut
-			{
-				return VT.get_CachedItemStatus(ref this, out retVal);
-			}
-			public HRESULT get_CachedBoundingRectangle(out RECT retVal) mut
-			{
-				return VT.get_CachedBoundingRectangle(ref this, out retVal);
-			}
-			public HRESULT get_CachedLabeledBy(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CachedLabeledBy(ref this, out retVal);
-			}
-			public HRESULT get_CachedAriaRole(out BSTR retVal) mut
-			{
-				return VT.get_CachedAriaRole(ref this, out retVal);
-			}
-			public HRESULT get_CachedAriaProperties(out BSTR retVal) mut
-			{
-				return VT.get_CachedAriaProperties(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsDataValidForForm(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsDataValidForForm(ref this, out retVal);
-			}
-			public HRESULT get_CachedControllerFor(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CachedControllerFor(ref this, out retVal);
-			}
-			public HRESULT get_CachedDescribedBy(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CachedDescribedBy(ref this, out retVal);
-			}
-			public HRESULT get_CachedFlowsTo(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CachedFlowsTo(ref this, out retVal);
-			}
-			public HRESULT get_CachedProviderDescription(out BSTR retVal) mut
-			{
-				return VT.get_CachedProviderDescription(ref this, out retVal);
-			}
-			public HRESULT GetClickablePoint(out POINT clickable, out BOOL gotClickable) mut
-			{
-				return VT.GetClickablePoint(ref this, out clickable, out gotClickable);
-			}
+			public HRESULT SetFocus() mut => VT.SetFocus(ref this);
+			public HRESULT GetRuntimeId(out SAFEARRAY* runtimeId) mut => VT.GetRuntimeId(ref this, out runtimeId);
+			public HRESULT FindFirst(TreeScope @scope, ref IUIAutomationCondition condition, out IUIAutomationElement* found) mut => VT.FindFirst(ref this, @scope, ref condition, out found);
+			public HRESULT FindAll(TreeScope @scope, ref IUIAutomationCondition condition, out IUIAutomationElementArray* found) mut => VT.FindAll(ref this, @scope, ref condition, out found);
+			public HRESULT FindFirstBuildCache(TreeScope @scope, ref IUIAutomationCondition condition, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* found) mut => VT.FindFirstBuildCache(ref this, @scope, ref condition, ref cacheRequest, out found);
+			public HRESULT FindAllBuildCache(TreeScope @scope, ref IUIAutomationCondition condition, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElementArray* found) mut => VT.FindAllBuildCache(ref this, @scope, ref condition, ref cacheRequest, out found);
+			public HRESULT BuildUpdatedCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* updatedElement) mut => VT.BuildUpdatedCache(ref this, ref cacheRequest, out updatedElement);
+			public HRESULT GetCurrentPropertyValue(int32 propertyId, out VARIANT retVal) mut => VT.GetCurrentPropertyValue(ref this, propertyId, out retVal);
+			public HRESULT GetCurrentPropertyValueEx(int32 propertyId, BOOL ignoreDefaultValue, out VARIANT retVal) mut => VT.GetCurrentPropertyValueEx(ref this, propertyId, ignoreDefaultValue, out retVal);
+			public HRESULT GetCachedPropertyValue(int32 propertyId, out VARIANT retVal) mut => VT.GetCachedPropertyValue(ref this, propertyId, out retVal);
+			public HRESULT GetCachedPropertyValueEx(int32 propertyId, BOOL ignoreDefaultValue, out VARIANT retVal) mut => VT.GetCachedPropertyValueEx(ref this, propertyId, ignoreDefaultValue, out retVal);
+			public HRESULT GetCurrentPatternAs(int32 patternId, in Guid riid, void** patternObject) mut => VT.GetCurrentPatternAs(ref this, patternId, riid, patternObject);
+			public HRESULT GetCachedPatternAs(int32 patternId, in Guid riid, void** patternObject) mut => VT.GetCachedPatternAs(ref this, patternId, riid, patternObject);
+			public HRESULT GetCurrentPattern(int32 patternId, out IUnknown* patternObject) mut => VT.GetCurrentPattern(ref this, patternId, out patternObject);
+			public HRESULT GetCachedPattern(int32 patternId, out IUnknown* patternObject) mut => VT.GetCachedPattern(ref this, patternId, out patternObject);
+			public HRESULT GetCachedParent(out IUIAutomationElement* parent) mut => VT.GetCachedParent(ref this, out parent);
+			public HRESULT GetCachedChildren(out IUIAutomationElementArray* children) mut => VT.GetCachedChildren(ref this, out children);
+			public HRESULT get_CurrentProcessId(out int32 retVal) mut => VT.get_CurrentProcessId(ref this, out retVal);
+			public HRESULT get_CurrentControlType(out int32 retVal) mut => VT.get_CurrentControlType(ref this, out retVal);
+			public HRESULT get_CurrentLocalizedControlType(out BSTR retVal) mut => VT.get_CurrentLocalizedControlType(ref this, out retVal);
+			public HRESULT get_CurrentName(out BSTR retVal) mut => VT.get_CurrentName(ref this, out retVal);
+			public HRESULT get_CurrentAcceleratorKey(out BSTR retVal) mut => VT.get_CurrentAcceleratorKey(ref this, out retVal);
+			public HRESULT get_CurrentAccessKey(out BSTR retVal) mut => VT.get_CurrentAccessKey(ref this, out retVal);
+			public HRESULT get_CurrentHasKeyboardFocus(out BOOL retVal) mut => VT.get_CurrentHasKeyboardFocus(ref this, out retVal);
+			public HRESULT get_CurrentIsKeyboardFocusable(out BOOL retVal) mut => VT.get_CurrentIsKeyboardFocusable(ref this, out retVal);
+			public HRESULT get_CurrentIsEnabled(out BOOL retVal) mut => VT.get_CurrentIsEnabled(ref this, out retVal);
+			public HRESULT get_CurrentAutomationId(out BSTR retVal) mut => VT.get_CurrentAutomationId(ref this, out retVal);
+			public HRESULT get_CurrentClassName(out BSTR retVal) mut => VT.get_CurrentClassName(ref this, out retVal);
+			public HRESULT get_CurrentHelpText(out BSTR retVal) mut => VT.get_CurrentHelpText(ref this, out retVal);
+			public HRESULT get_CurrentCulture(out int32 retVal) mut => VT.get_CurrentCulture(ref this, out retVal);
+			public HRESULT get_CurrentIsControlElement(out BOOL retVal) mut => VT.get_CurrentIsControlElement(ref this, out retVal);
+			public HRESULT get_CurrentIsContentElement(out BOOL retVal) mut => VT.get_CurrentIsContentElement(ref this, out retVal);
+			public HRESULT get_CurrentIsPassword(out BOOL retVal) mut => VT.get_CurrentIsPassword(ref this, out retVal);
+			public HRESULT get_CurrentNativeWindowHandle(HWND retVal) mut => VT.get_CurrentNativeWindowHandle(ref this, retVal);
+			public HRESULT get_CurrentItemType(out BSTR retVal) mut => VT.get_CurrentItemType(ref this, out retVal);
+			public HRESULT get_CurrentIsOffscreen(out BOOL retVal) mut => VT.get_CurrentIsOffscreen(ref this, out retVal);
+			public HRESULT get_CurrentOrientation(out OrientationType retVal) mut => VT.get_CurrentOrientation(ref this, out retVal);
+			public HRESULT get_CurrentFrameworkId(out BSTR retVal) mut => VT.get_CurrentFrameworkId(ref this, out retVal);
+			public HRESULT get_CurrentIsRequiredForForm(out BOOL retVal) mut => VT.get_CurrentIsRequiredForForm(ref this, out retVal);
+			public HRESULT get_CurrentItemStatus(out BSTR retVal) mut => VT.get_CurrentItemStatus(ref this, out retVal);
+			public HRESULT get_CurrentBoundingRectangle(out RECT retVal) mut => VT.get_CurrentBoundingRectangle(ref this, out retVal);
+			public HRESULT get_CurrentLabeledBy(out IUIAutomationElement* retVal) mut => VT.get_CurrentLabeledBy(ref this, out retVal);
+			public HRESULT get_CurrentAriaRole(out BSTR retVal) mut => VT.get_CurrentAriaRole(ref this, out retVal);
+			public HRESULT get_CurrentAriaProperties(out BSTR retVal) mut => VT.get_CurrentAriaProperties(ref this, out retVal);
+			public HRESULT get_CurrentIsDataValidForForm(out BOOL retVal) mut => VT.get_CurrentIsDataValidForForm(ref this, out retVal);
+			public HRESULT get_CurrentControllerFor(out IUIAutomationElementArray* retVal) mut => VT.get_CurrentControllerFor(ref this, out retVal);
+			public HRESULT get_CurrentDescribedBy(out IUIAutomationElementArray* retVal) mut => VT.get_CurrentDescribedBy(ref this, out retVal);
+			public HRESULT get_CurrentFlowsTo(out IUIAutomationElementArray* retVal) mut => VT.get_CurrentFlowsTo(ref this, out retVal);
+			public HRESULT get_CurrentProviderDescription(out BSTR retVal) mut => VT.get_CurrentProviderDescription(ref this, out retVal);
+			public HRESULT get_CachedProcessId(out int32 retVal) mut => VT.get_CachedProcessId(ref this, out retVal);
+			public HRESULT get_CachedControlType(out int32 retVal) mut => VT.get_CachedControlType(ref this, out retVal);
+			public HRESULT get_CachedLocalizedControlType(out BSTR retVal) mut => VT.get_CachedLocalizedControlType(ref this, out retVal);
+			public HRESULT get_CachedName(out BSTR retVal) mut => VT.get_CachedName(ref this, out retVal);
+			public HRESULT get_CachedAcceleratorKey(out BSTR retVal) mut => VT.get_CachedAcceleratorKey(ref this, out retVal);
+			public HRESULT get_CachedAccessKey(out BSTR retVal) mut => VT.get_CachedAccessKey(ref this, out retVal);
+			public HRESULT get_CachedHasKeyboardFocus(out BOOL retVal) mut => VT.get_CachedHasKeyboardFocus(ref this, out retVal);
+			public HRESULT get_CachedIsKeyboardFocusable(out BOOL retVal) mut => VT.get_CachedIsKeyboardFocusable(ref this, out retVal);
+			public HRESULT get_CachedIsEnabled(out BOOL retVal) mut => VT.get_CachedIsEnabled(ref this, out retVal);
+			public HRESULT get_CachedAutomationId(out BSTR retVal) mut => VT.get_CachedAutomationId(ref this, out retVal);
+			public HRESULT get_CachedClassName(out BSTR retVal) mut => VT.get_CachedClassName(ref this, out retVal);
+			public HRESULT get_CachedHelpText(out BSTR retVal) mut => VT.get_CachedHelpText(ref this, out retVal);
+			public HRESULT get_CachedCulture(out int32 retVal) mut => VT.get_CachedCulture(ref this, out retVal);
+			public HRESULT get_CachedIsControlElement(out BOOL retVal) mut => VT.get_CachedIsControlElement(ref this, out retVal);
+			public HRESULT get_CachedIsContentElement(out BOOL retVal) mut => VT.get_CachedIsContentElement(ref this, out retVal);
+			public HRESULT get_CachedIsPassword(out BOOL retVal) mut => VT.get_CachedIsPassword(ref this, out retVal);
+			public HRESULT get_CachedNativeWindowHandle(HWND retVal) mut => VT.get_CachedNativeWindowHandle(ref this, retVal);
+			public HRESULT get_CachedItemType(out BSTR retVal) mut => VT.get_CachedItemType(ref this, out retVal);
+			public HRESULT get_CachedIsOffscreen(out BOOL retVal) mut => VT.get_CachedIsOffscreen(ref this, out retVal);
+			public HRESULT get_CachedOrientation(out OrientationType retVal) mut => VT.get_CachedOrientation(ref this, out retVal);
+			public HRESULT get_CachedFrameworkId(out BSTR retVal) mut => VT.get_CachedFrameworkId(ref this, out retVal);
+			public HRESULT get_CachedIsRequiredForForm(out BOOL retVal) mut => VT.get_CachedIsRequiredForForm(ref this, out retVal);
+			public HRESULT get_CachedItemStatus(out BSTR retVal) mut => VT.get_CachedItemStatus(ref this, out retVal);
+			public HRESULT get_CachedBoundingRectangle(out RECT retVal) mut => VT.get_CachedBoundingRectangle(ref this, out retVal);
+			public HRESULT get_CachedLabeledBy(out IUIAutomationElement* retVal) mut => VT.get_CachedLabeledBy(ref this, out retVal);
+			public HRESULT get_CachedAriaRole(out BSTR retVal) mut => VT.get_CachedAriaRole(ref this, out retVal);
+			public HRESULT get_CachedAriaProperties(out BSTR retVal) mut => VT.get_CachedAriaProperties(ref this, out retVal);
+			public HRESULT get_CachedIsDataValidForForm(out BOOL retVal) mut => VT.get_CachedIsDataValidForForm(ref this, out retVal);
+			public HRESULT get_CachedControllerFor(out IUIAutomationElementArray* retVal) mut => VT.get_CachedControllerFor(ref this, out retVal);
+			public HRESULT get_CachedDescribedBy(out IUIAutomationElementArray* retVal) mut => VT.get_CachedDescribedBy(ref this, out retVal);
+			public HRESULT get_CachedFlowsTo(out IUIAutomationElementArray* retVal) mut => VT.get_CachedFlowsTo(ref this, out retVal);
+			public HRESULT get_CachedProviderDescription(out BSTR retVal) mut => VT.get_CachedProviderDescription(ref this, out retVal);
+			public HRESULT GetClickablePoint(out POINT clickable, out BOOL gotClickable) mut => VT.GetClickablePoint(ref this, out clickable, out gotClickable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4072,14 +3189,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Length(out int32 length) mut
-			{
-				return VT.get_Length(ref this, out length);
-			}
-			public HRESULT GetElement(int32 index, out IUIAutomationElement* element) mut
-			{
-				return VT.GetElement(ref this, index, out element);
-			}
+			public HRESULT get_Length(out int32 length) mut => VT.get_Length(ref this, out length);
+			public HRESULT GetElement(int32 index, out IUIAutomationElement* element) mut => VT.GetElement(ref this, index, out element);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4094,6 +3206,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4106,10 +3219,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BooleanValue(out BOOL boolVal) mut
-			{
-				return VT.get_BooleanValue(ref this, out boolVal);
-			}
+			public HRESULT get_BooleanValue(out BOOL boolVal) mut => VT.get_BooleanValue(ref this, out boolVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
@@ -4123,18 +3234,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PropertyId(out int32 propertyId) mut
-			{
-				return VT.get_PropertyId(ref this, out propertyId);
-			}
-			public HRESULT get_PropertyValue(out VARIANT propertyValue) mut
-			{
-				return VT.get_PropertyValue(ref this, out propertyValue);
-			}
-			public HRESULT get_PropertyConditionFlags(out PropertyConditionFlags flags) mut
-			{
-				return VT.get_PropertyConditionFlags(ref this, out flags);
-			}
+			public HRESULT get_PropertyId(out int32 propertyId) mut => VT.get_PropertyId(ref this, out propertyId);
+			public HRESULT get_PropertyValue(out VARIANT propertyValue) mut => VT.get_PropertyValue(ref this, out propertyValue);
+			public HRESULT get_PropertyConditionFlags(out PropertyConditionFlags flags) mut => VT.get_PropertyConditionFlags(ref this, out flags);
+
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
@@ -4150,18 +3253,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ChildCount(out int32 childCount) mut
-			{
-				return VT.get_ChildCount(ref this, out childCount);
-			}
-			public HRESULT GetChildrenAsNativeArray(IUIAutomationCondition*** childArray, out int32 childArrayCount) mut
-			{
-				return VT.GetChildrenAsNativeArray(ref this, childArray, out childArrayCount);
-			}
-			public HRESULT GetChildren(out SAFEARRAY* childArray) mut
-			{
-				return VT.GetChildren(ref this, out childArray);
-			}
+			public HRESULT get_ChildCount(out int32 childCount) mut => VT.get_ChildCount(ref this, out childCount);
+			public HRESULT GetChildrenAsNativeArray(IUIAutomationCondition*** childArray, out int32 childArrayCount) mut => VT.GetChildrenAsNativeArray(ref this, childArray, out childArrayCount);
+			public HRESULT GetChildren(out SAFEARRAY* childArray) mut => VT.GetChildren(ref this, out childArray);
+
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
@@ -4177,18 +3272,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ChildCount(out int32 childCount) mut
-			{
-				return VT.get_ChildCount(ref this, out childCount);
-			}
-			public HRESULT GetChildrenAsNativeArray(IUIAutomationCondition*** childArray, out int32 childArrayCount) mut
-			{
-				return VT.GetChildrenAsNativeArray(ref this, childArray, out childArrayCount);
-			}
-			public HRESULT GetChildren(out SAFEARRAY* childArray) mut
-			{
-				return VT.GetChildren(ref this, out childArray);
-			}
+			public HRESULT get_ChildCount(out int32 childCount) mut => VT.get_ChildCount(ref this, out childCount);
+			public HRESULT GetChildrenAsNativeArray(IUIAutomationCondition*** childArray, out int32 childArrayCount) mut => VT.GetChildrenAsNativeArray(ref this, childArray, out childArrayCount);
+			public HRESULT GetChildren(out SAFEARRAY* childArray) mut => VT.GetChildren(ref this, out childArray);
+
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
@@ -4204,10 +3291,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetChild(out IUIAutomationCondition* condition) mut
-			{
-				return VT.GetChild(ref this, out condition);
-			}
+			public HRESULT GetChild(out IUIAutomationCondition* condition) mut => VT.GetChild(ref this, out condition);
+
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
@@ -4221,42 +3306,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddProperty(int32 propertyId) mut
-			{
-				return VT.AddProperty(ref this, propertyId);
-			}
-			public HRESULT AddPattern(int32 patternId) mut
-			{
-				return VT.AddPattern(ref this, patternId);
-			}
-			public HRESULT Clone(out IUIAutomationCacheRequest* clonedRequest) mut
-			{
-				return VT.Clone(ref this, out clonedRequest);
-			}
-			public HRESULT get_TreeScope(out TreeScope @scope) mut
-			{
-				return VT.get_TreeScope(ref this, out @scope);
-			}
-			public HRESULT put_TreeScope(TreeScope @scope) mut
-			{
-				return VT.put_TreeScope(ref this, @scope);
-			}
-			public HRESULT get_TreeFilter(out IUIAutomationCondition* filter) mut
-			{
-				return VT.get_TreeFilter(ref this, out filter);
-			}
-			public HRESULT put_TreeFilter(ref IUIAutomationCondition filter) mut
-			{
-				return VT.put_TreeFilter(ref this, ref filter);
-			}
-			public HRESULT get_AutomationElementMode(out AutomationElementMode mode) mut
-			{
-				return VT.get_AutomationElementMode(ref this, out mode);
-			}
-			public HRESULT put_AutomationElementMode(AutomationElementMode mode) mut
-			{
-				return VT.put_AutomationElementMode(ref this, mode);
-			}
+			public HRESULT AddProperty(int32 propertyId) mut => VT.AddProperty(ref this, propertyId);
+			public HRESULT AddPattern(int32 patternId) mut => VT.AddPattern(ref this, patternId);
+			public HRESULT Clone(out IUIAutomationCacheRequest* clonedRequest) mut => VT.Clone(ref this, out clonedRequest);
+			public HRESULT get_TreeScope(out TreeScope @scope) mut => VT.get_TreeScope(ref this, out @scope);
+			public HRESULT put_TreeScope(TreeScope @scope) mut => VT.put_TreeScope(ref this, @scope);
+			public HRESULT get_TreeFilter(out IUIAutomationCondition* filter) mut => VT.get_TreeFilter(ref this, out filter);
+			public HRESULT put_TreeFilter(ref IUIAutomationCondition filter) mut => VT.put_TreeFilter(ref this, ref filter);
+			public HRESULT get_AutomationElementMode(out AutomationElementMode mode) mut => VT.get_AutomationElementMode(ref this, out mode);
+			public HRESULT put_AutomationElementMode(AutomationElementMode mode) mut => VT.put_AutomationElementMode(ref this, mode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4278,58 +3337,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetParentElement(ref IUIAutomationElement element, out IUIAutomationElement* parent) mut
-			{
-				return VT.GetParentElement(ref this, ref element, out parent);
-			}
-			public HRESULT GetFirstChildElement(ref IUIAutomationElement element, out IUIAutomationElement* first) mut
-			{
-				return VT.GetFirstChildElement(ref this, ref element, out first);
-			}
-			public HRESULT GetLastChildElement(ref IUIAutomationElement element, out IUIAutomationElement* last) mut
-			{
-				return VT.GetLastChildElement(ref this, ref element, out last);
-			}
-			public HRESULT GetNextSiblingElement(ref IUIAutomationElement element, out IUIAutomationElement* next) mut
-			{
-				return VT.GetNextSiblingElement(ref this, ref element, out next);
-			}
-			public HRESULT GetPreviousSiblingElement(ref IUIAutomationElement element, out IUIAutomationElement* previous) mut
-			{
-				return VT.GetPreviousSiblingElement(ref this, ref element, out previous);
-			}
-			public HRESULT NormalizeElement(ref IUIAutomationElement element, out IUIAutomationElement* normalized) mut
-			{
-				return VT.NormalizeElement(ref this, ref element, out normalized);
-			}
-			public HRESULT GetParentElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* parent) mut
-			{
-				return VT.GetParentElementBuildCache(ref this, ref element, ref cacheRequest, out parent);
-			}
-			public HRESULT GetFirstChildElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* first) mut
-			{
-				return VT.GetFirstChildElementBuildCache(ref this, ref element, ref cacheRequest, out first);
-			}
-			public HRESULT GetLastChildElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* last) mut
-			{
-				return VT.GetLastChildElementBuildCache(ref this, ref element, ref cacheRequest, out last);
-			}
-			public HRESULT GetNextSiblingElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* next) mut
-			{
-				return VT.GetNextSiblingElementBuildCache(ref this, ref element, ref cacheRequest, out next);
-			}
-			public HRESULT GetPreviousSiblingElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* previous) mut
-			{
-				return VT.GetPreviousSiblingElementBuildCache(ref this, ref element, ref cacheRequest, out previous);
-			}
-			public HRESULT NormalizeElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* normalized) mut
-			{
-				return VT.NormalizeElementBuildCache(ref this, ref element, ref cacheRequest, out normalized);
-			}
-			public HRESULT get_Condition(out IUIAutomationCondition* condition) mut
-			{
-				return VT.get_Condition(ref this, out condition);
-			}
+			public HRESULT GetParentElement(ref IUIAutomationElement element, out IUIAutomationElement* parent) mut => VT.GetParentElement(ref this, ref element, out parent);
+			public HRESULT GetFirstChildElement(ref IUIAutomationElement element, out IUIAutomationElement* first) mut => VT.GetFirstChildElement(ref this, ref element, out first);
+			public HRESULT GetLastChildElement(ref IUIAutomationElement element, out IUIAutomationElement* last) mut => VT.GetLastChildElement(ref this, ref element, out last);
+			public HRESULT GetNextSiblingElement(ref IUIAutomationElement element, out IUIAutomationElement* next) mut => VT.GetNextSiblingElement(ref this, ref element, out next);
+			public HRESULT GetPreviousSiblingElement(ref IUIAutomationElement element, out IUIAutomationElement* previous) mut => VT.GetPreviousSiblingElement(ref this, ref element, out previous);
+			public HRESULT NormalizeElement(ref IUIAutomationElement element, out IUIAutomationElement* normalized) mut => VT.NormalizeElement(ref this, ref element, out normalized);
+			public HRESULT GetParentElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* parent) mut => VT.GetParentElementBuildCache(ref this, ref element, ref cacheRequest, out parent);
+			public HRESULT GetFirstChildElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* first) mut => VT.GetFirstChildElementBuildCache(ref this, ref element, ref cacheRequest, out first);
+			public HRESULT GetLastChildElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* last) mut => VT.GetLastChildElementBuildCache(ref this, ref element, ref cacheRequest, out last);
+			public HRESULT GetNextSiblingElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* next) mut => VT.GetNextSiblingElementBuildCache(ref this, ref element, ref cacheRequest, out next);
+			public HRESULT GetPreviousSiblingElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* previous) mut => VT.GetPreviousSiblingElementBuildCache(ref this, ref element, ref cacheRequest, out previous);
+			public HRESULT NormalizeElementBuildCache(ref IUIAutomationElement element, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* normalized) mut => VT.NormalizeElementBuildCache(ref this, ref element, ref cacheRequest, out normalized);
+			public HRESULT get_Condition(out IUIAutomationCondition* condition) mut => VT.get_Condition(ref this, out condition);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4355,10 +3376,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleAutomationEvent(ref IUIAutomationElement sender, int32 eventId) mut
-			{
-				return VT.HandleAutomationEvent(ref this, ref sender, eventId);
-			}
+			public HRESULT HandleAutomationEvent(ref IUIAutomationElement sender, int32 eventId) mut => VT.HandleAutomationEvent(ref this, ref sender, eventId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4372,10 +3391,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandlePropertyChangedEvent(ref IUIAutomationElement sender, int32 propertyId, VARIANT newValue) mut
-			{
-				return VT.HandlePropertyChangedEvent(ref this, ref sender, propertyId, newValue);
-			}
+			public HRESULT HandlePropertyChangedEvent(ref IUIAutomationElement sender, int32 propertyId, VARIANT newValue) mut => VT.HandlePropertyChangedEvent(ref this, ref sender, propertyId, newValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4389,10 +3406,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleStructureChangedEvent(ref IUIAutomationElement sender, StructureChangeType changeType, ref SAFEARRAY runtimeId) mut
-			{
-				return VT.HandleStructureChangedEvent(ref this, ref sender, changeType, ref runtimeId);
-			}
+			public HRESULT HandleStructureChangedEvent(ref IUIAutomationElement sender, StructureChangeType changeType, ref SAFEARRAY runtimeId) mut => VT.HandleStructureChangedEvent(ref this, ref sender, changeType, ref runtimeId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4406,10 +3421,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleFocusChangedEvent(ref IUIAutomationElement sender) mut
-			{
-				return VT.HandleFocusChangedEvent(ref this, ref sender);
-			}
+			public HRESULT HandleFocusChangedEvent(ref IUIAutomationElement sender) mut => VT.HandleFocusChangedEvent(ref this, ref sender);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4423,10 +3436,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleTextEditTextChangedEvent(ref IUIAutomationElement sender, TextEditChangeType textEditChangeType, ref SAFEARRAY eventStrings) mut
-			{
-				return VT.HandleTextEditTextChangedEvent(ref this, ref sender, textEditChangeType, ref eventStrings);
-			}
+			public HRESULT HandleTextEditTextChangedEvent(ref IUIAutomationElement sender, TextEditChangeType textEditChangeType, ref SAFEARRAY eventStrings) mut => VT.HandleTextEditTextChangedEvent(ref this, ref sender, textEditChangeType, ref eventStrings);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4440,10 +3451,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleChangesEvent(ref IUIAutomationElement sender, UiaChangeInfo* uiaChanges, int32 changesCount) mut
-			{
-				return VT.HandleChangesEvent(ref this, ref sender, uiaChanges, changesCount);
-			}
+			public HRESULT HandleChangesEvent(ref IUIAutomationElement sender, UiaChangeInfo* uiaChanges, int32 changesCount) mut => VT.HandleChangesEvent(ref this, ref sender, uiaChanges, changesCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4457,10 +3466,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleNotificationEvent(ref IUIAutomationElement sender, NotificationKind notificationKind, NotificationProcessing notificationProcessing, BSTR displayString, BSTR activityId) mut
-			{
-				return VT.HandleNotificationEvent(ref this, ref sender, notificationKind, notificationProcessing, displayString, activityId);
-			}
+			public HRESULT HandleNotificationEvent(ref IUIAutomationElement sender, NotificationKind notificationKind, NotificationProcessing notificationProcessing, BSTR displayString, BSTR activityId) mut => VT.HandleNotificationEvent(ref this, ref sender, notificationKind, notificationProcessing, displayString, activityId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4474,10 +3481,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Invoke() mut
-			{
-				return VT.Invoke(ref this);
-			}
+			public HRESULT Invoke() mut => VT.Invoke(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4491,18 +3496,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDockPosition(DockPosition dockPos) mut
-			{
-				return VT.SetDockPosition(ref this, dockPos);
-			}
-			public HRESULT get_CurrentDockPosition(out DockPosition retVal) mut
-			{
-				return VT.get_CurrentDockPosition(ref this, out retVal);
-			}
-			public HRESULT get_CachedDockPosition(out DockPosition retVal) mut
-			{
-				return VT.get_CachedDockPosition(ref this, out retVal);
-			}
+			public HRESULT SetDockPosition(DockPosition dockPos) mut => VT.SetDockPosition(ref this, dockPos);
+			public HRESULT get_CurrentDockPosition(out DockPosition retVal) mut => VT.get_CurrentDockPosition(ref this, out retVal);
+			public HRESULT get_CachedDockPosition(out DockPosition retVal) mut => VT.get_CachedDockPosition(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4518,22 +3515,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Expand() mut
-			{
-				return VT.Expand(ref this);
-			}
-			public HRESULT Collapse() mut
-			{
-				return VT.Collapse(ref this);
-			}
-			public HRESULT get_CurrentExpandCollapseState(out ExpandCollapseState retVal) mut
-			{
-				return VT.get_CurrentExpandCollapseState(ref this, out retVal);
-			}
-			public HRESULT get_CachedExpandCollapseState(out ExpandCollapseState retVal) mut
-			{
-				return VT.get_CachedExpandCollapseState(ref this, out retVal);
-			}
+			public HRESULT Expand() mut => VT.Expand(ref this);
+			public HRESULT Collapse() mut => VT.Collapse(ref this);
+			public HRESULT get_CurrentExpandCollapseState(out ExpandCollapseState retVal) mut => VT.get_CurrentExpandCollapseState(ref this, out retVal);
+			public HRESULT get_CachedExpandCollapseState(out ExpandCollapseState retVal) mut => VT.get_CachedExpandCollapseState(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4550,26 +3536,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItem(int32 row, int32 column, out IUIAutomationElement* element) mut
-			{
-				return VT.GetItem(ref this, row, column, out element);
-			}
-			public HRESULT get_CurrentRowCount(out int32 retVal) mut
-			{
-				return VT.get_CurrentRowCount(ref this, out retVal);
-			}
-			public HRESULT get_CurrentColumnCount(out int32 retVal) mut
-			{
-				return VT.get_CurrentColumnCount(ref this, out retVal);
-			}
-			public HRESULT get_CachedRowCount(out int32 retVal) mut
-			{
-				return VT.get_CachedRowCount(ref this, out retVal);
-			}
-			public HRESULT get_CachedColumnCount(out int32 retVal) mut
-			{
-				return VT.get_CachedColumnCount(ref this, out retVal);
-			}
+			public HRESULT GetItem(int32 row, int32 column, out IUIAutomationElement* element) mut => VT.GetItem(ref this, row, column, out element);
+			public HRESULT get_CurrentRowCount(out int32 retVal) mut => VT.get_CurrentRowCount(ref this, out retVal);
+			public HRESULT get_CurrentColumnCount(out int32 retVal) mut => VT.get_CurrentColumnCount(ref this, out retVal);
+			public HRESULT get_CachedRowCount(out int32 retVal) mut => VT.get_CachedRowCount(ref this, out retVal);
+			public HRESULT get_CachedColumnCount(out int32 retVal) mut => VT.get_CachedColumnCount(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4587,46 +3559,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentContainingGrid(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CurrentContainingGrid(ref this, out retVal);
-			}
-			public HRESULT get_CurrentRow(out int32 retVal) mut
-			{
-				return VT.get_CurrentRow(ref this, out retVal);
-			}
-			public HRESULT get_CurrentColumn(out int32 retVal) mut
-			{
-				return VT.get_CurrentColumn(ref this, out retVal);
-			}
-			public HRESULT get_CurrentRowSpan(out int32 retVal) mut
-			{
-				return VT.get_CurrentRowSpan(ref this, out retVal);
-			}
-			public HRESULT get_CurrentColumnSpan(out int32 retVal) mut
-			{
-				return VT.get_CurrentColumnSpan(ref this, out retVal);
-			}
-			public HRESULT get_CachedContainingGrid(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CachedContainingGrid(ref this, out retVal);
-			}
-			public HRESULT get_CachedRow(out int32 retVal) mut
-			{
-				return VT.get_CachedRow(ref this, out retVal);
-			}
-			public HRESULT get_CachedColumn(out int32 retVal) mut
-			{
-				return VT.get_CachedColumn(ref this, out retVal);
-			}
-			public HRESULT get_CachedRowSpan(out int32 retVal) mut
-			{
-				return VT.get_CachedRowSpan(ref this, out retVal);
-			}
-			public HRESULT get_CachedColumnSpan(out int32 retVal) mut
-			{
-				return VT.get_CachedColumnSpan(ref this, out retVal);
-			}
+			public HRESULT get_CurrentContainingGrid(out IUIAutomationElement* retVal) mut => VT.get_CurrentContainingGrid(ref this, out retVal);
+			public HRESULT get_CurrentRow(out int32 retVal) mut => VT.get_CurrentRow(ref this, out retVal);
+			public HRESULT get_CurrentColumn(out int32 retVal) mut => VT.get_CurrentColumn(ref this, out retVal);
+			public HRESULT get_CurrentRowSpan(out int32 retVal) mut => VT.get_CurrentRowSpan(ref this, out retVal);
+			public HRESULT get_CurrentColumnSpan(out int32 retVal) mut => VT.get_CurrentColumnSpan(ref this, out retVal);
+			public HRESULT get_CachedContainingGrid(out IUIAutomationElement* retVal) mut => VT.get_CachedContainingGrid(ref this, out retVal);
+			public HRESULT get_CachedRow(out int32 retVal) mut => VT.get_CachedRow(ref this, out retVal);
+			public HRESULT get_CachedColumn(out int32 retVal) mut => VT.get_CachedColumn(ref this, out retVal);
+			public HRESULT get_CachedRowSpan(out int32 retVal) mut => VT.get_CachedRowSpan(ref this, out retVal);
+			public HRESULT get_CachedColumnSpan(out int32 retVal) mut => VT.get_CachedColumnSpan(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4649,30 +3592,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetViewName(int32 view, out BSTR name) mut
-			{
-				return VT.GetViewName(ref this, view, out name);
-			}
-			public HRESULT SetCurrentView(int32 view) mut
-			{
-				return VT.SetCurrentView(ref this, view);
-			}
-			public HRESULT get_CurrentCurrentView(out int32 retVal) mut
-			{
-				return VT.get_CurrentCurrentView(ref this, out retVal);
-			}
-			public HRESULT GetCurrentSupportedViews(out SAFEARRAY* retVal) mut
-			{
-				return VT.GetCurrentSupportedViews(ref this, out retVal);
-			}
-			public HRESULT get_CachedCurrentView(out int32 retVal) mut
-			{
-				return VT.get_CachedCurrentView(ref this, out retVal);
-			}
-			public HRESULT GetCachedSupportedViews(out SAFEARRAY* retVal) mut
-			{
-				return VT.GetCachedSupportedViews(ref this, out retVal);
-			}
+			public HRESULT GetViewName(int32 view, out BSTR name) mut => VT.GetViewName(ref this, view, out name);
+			public HRESULT SetCurrentView(int32 view) mut => VT.SetCurrentView(ref this, view);
+			public HRESULT get_CurrentCurrentView(out int32 retVal) mut => VT.get_CurrentCurrentView(ref this, out retVal);
+			public HRESULT GetCurrentSupportedViews(out SAFEARRAY* retVal) mut => VT.GetCurrentSupportedViews(ref this, out retVal);
+			public HRESULT get_CachedCurrentView(out int32 retVal) mut => VT.get_CachedCurrentView(ref this, out retVal);
+			public HRESULT GetCachedSupportedViews(out SAFEARRAY* retVal) mut => VT.GetCachedSupportedViews(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4691,10 +3617,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUnderlyingObjectModel(out IUnknown* retVal) mut
-			{
-				return VT.GetUnderlyingObjectModel(ref this, out retVal);
-			}
+			public HRESULT GetUnderlyingObjectModel(out IUnknown* retVal) mut => VT.GetUnderlyingObjectModel(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4708,58 +3632,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetValue(double val) mut
-			{
-				return VT.SetValue(ref this, val);
-			}
-			public HRESULT get_CurrentValue(out double retVal) mut
-			{
-				return VT.get_CurrentValue(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsReadOnly(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsReadOnly(ref this, out retVal);
-			}
-			public HRESULT get_CurrentMaximum(out double retVal) mut
-			{
-				return VT.get_CurrentMaximum(ref this, out retVal);
-			}
-			public HRESULT get_CurrentMinimum(out double retVal) mut
-			{
-				return VT.get_CurrentMinimum(ref this, out retVal);
-			}
-			public HRESULT get_CurrentLargeChange(out double retVal) mut
-			{
-				return VT.get_CurrentLargeChange(ref this, out retVal);
-			}
-			public HRESULT get_CurrentSmallChange(out double retVal) mut
-			{
-				return VT.get_CurrentSmallChange(ref this, out retVal);
-			}
-			public HRESULT get_CachedValue(out double retVal) mut
-			{
-				return VT.get_CachedValue(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsReadOnly(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsReadOnly(ref this, out retVal);
-			}
-			public HRESULT get_CachedMaximum(out double retVal) mut
-			{
-				return VT.get_CachedMaximum(ref this, out retVal);
-			}
-			public HRESULT get_CachedMinimum(out double retVal) mut
-			{
-				return VT.get_CachedMinimum(ref this, out retVal);
-			}
-			public HRESULT get_CachedLargeChange(out double retVal) mut
-			{
-				return VT.get_CachedLargeChange(ref this, out retVal);
-			}
-			public HRESULT get_CachedSmallChange(out double retVal) mut
-			{
-				return VT.get_CachedSmallChange(ref this, out retVal);
-			}
+			public HRESULT SetValue(double val) mut => VT.SetValue(ref this, val);
+			public HRESULT get_CurrentValue(out double retVal) mut => VT.get_CurrentValue(ref this, out retVal);
+			public HRESULT get_CurrentIsReadOnly(out BOOL retVal) mut => VT.get_CurrentIsReadOnly(ref this, out retVal);
+			public HRESULT get_CurrentMaximum(out double retVal) mut => VT.get_CurrentMaximum(ref this, out retVal);
+			public HRESULT get_CurrentMinimum(out double retVal) mut => VT.get_CurrentMinimum(ref this, out retVal);
+			public HRESULT get_CurrentLargeChange(out double retVal) mut => VT.get_CurrentLargeChange(ref this, out retVal);
+			public HRESULT get_CurrentSmallChange(out double retVal) mut => VT.get_CurrentSmallChange(ref this, out retVal);
+			public HRESULT get_CachedValue(out double retVal) mut => VT.get_CachedValue(ref this, out retVal);
+			public HRESULT get_CachedIsReadOnly(out BOOL retVal) mut => VT.get_CachedIsReadOnly(ref this, out retVal);
+			public HRESULT get_CachedMaximum(out double retVal) mut => VT.get_CachedMaximum(ref this, out retVal);
+			public HRESULT get_CachedMinimum(out double retVal) mut => VT.get_CachedMinimum(ref this, out retVal);
+			public HRESULT get_CachedLargeChange(out double retVal) mut => VT.get_CachedLargeChange(ref this, out retVal);
+			public HRESULT get_CachedSmallChange(out double retVal) mut => VT.get_CachedSmallChange(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4785,62 +3671,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Scroll(ScrollAmount horizontalAmount, ScrollAmount verticalAmount) mut
-			{
-				return VT.Scroll(ref this, horizontalAmount, verticalAmount);
-			}
-			public HRESULT SetScrollPercent(double horizontalPercent, double verticalPercent) mut
-			{
-				return VT.SetScrollPercent(ref this, horizontalPercent, verticalPercent);
-			}
-			public HRESULT get_CurrentHorizontalScrollPercent(out double retVal) mut
-			{
-				return VT.get_CurrentHorizontalScrollPercent(ref this, out retVal);
-			}
-			public HRESULT get_CurrentVerticalScrollPercent(out double retVal) mut
-			{
-				return VT.get_CurrentVerticalScrollPercent(ref this, out retVal);
-			}
-			public HRESULT get_CurrentHorizontalViewSize(out double retVal) mut
-			{
-				return VT.get_CurrentHorizontalViewSize(ref this, out retVal);
-			}
-			public HRESULT get_CurrentVerticalViewSize(out double retVal) mut
-			{
-				return VT.get_CurrentVerticalViewSize(ref this, out retVal);
-			}
-			public HRESULT get_CurrentHorizontallyScrollable(out BOOL retVal) mut
-			{
-				return VT.get_CurrentHorizontallyScrollable(ref this, out retVal);
-			}
-			public HRESULT get_CurrentVerticallyScrollable(out BOOL retVal) mut
-			{
-				return VT.get_CurrentVerticallyScrollable(ref this, out retVal);
-			}
-			public HRESULT get_CachedHorizontalScrollPercent(out double retVal) mut
-			{
-				return VT.get_CachedHorizontalScrollPercent(ref this, out retVal);
-			}
-			public HRESULT get_CachedVerticalScrollPercent(out double retVal) mut
-			{
-				return VT.get_CachedVerticalScrollPercent(ref this, out retVal);
-			}
-			public HRESULT get_CachedHorizontalViewSize(out double retVal) mut
-			{
-				return VT.get_CachedHorizontalViewSize(ref this, out retVal);
-			}
-			public HRESULT get_CachedVerticalViewSize(out double retVal) mut
-			{
-				return VT.get_CachedVerticalViewSize(ref this, out retVal);
-			}
-			public HRESULT get_CachedHorizontallyScrollable(out BOOL retVal) mut
-			{
-				return VT.get_CachedHorizontallyScrollable(ref this, out retVal);
-			}
-			public HRESULT get_CachedVerticallyScrollable(out BOOL retVal) mut
-			{
-				return VT.get_CachedVerticallyScrollable(ref this, out retVal);
-			}
+			public HRESULT Scroll(ScrollAmount horizontalAmount, ScrollAmount verticalAmount) mut => VT.Scroll(ref this, horizontalAmount, verticalAmount);
+			public HRESULT SetScrollPercent(double horizontalPercent, double verticalPercent) mut => VT.SetScrollPercent(ref this, horizontalPercent, verticalPercent);
+			public HRESULT get_CurrentHorizontalScrollPercent(out double retVal) mut => VT.get_CurrentHorizontalScrollPercent(ref this, out retVal);
+			public HRESULT get_CurrentVerticalScrollPercent(out double retVal) mut => VT.get_CurrentVerticalScrollPercent(ref this, out retVal);
+			public HRESULT get_CurrentHorizontalViewSize(out double retVal) mut => VT.get_CurrentHorizontalViewSize(ref this, out retVal);
+			public HRESULT get_CurrentVerticalViewSize(out double retVal) mut => VT.get_CurrentVerticalViewSize(ref this, out retVal);
+			public HRESULT get_CurrentHorizontallyScrollable(out BOOL retVal) mut => VT.get_CurrentHorizontallyScrollable(ref this, out retVal);
+			public HRESULT get_CurrentVerticallyScrollable(out BOOL retVal) mut => VT.get_CurrentVerticallyScrollable(ref this, out retVal);
+			public HRESULT get_CachedHorizontalScrollPercent(out double retVal) mut => VT.get_CachedHorizontalScrollPercent(ref this, out retVal);
+			public HRESULT get_CachedVerticalScrollPercent(out double retVal) mut => VT.get_CachedVerticalScrollPercent(ref this, out retVal);
+			public HRESULT get_CachedHorizontalViewSize(out double retVal) mut => VT.get_CachedHorizontalViewSize(ref this, out retVal);
+			public HRESULT get_CachedVerticalViewSize(out double retVal) mut => VT.get_CachedVerticalViewSize(ref this, out retVal);
+			public HRESULT get_CachedHorizontallyScrollable(out BOOL retVal) mut => VT.get_CachedHorizontallyScrollable(ref this, out retVal);
+			public HRESULT get_CachedVerticallyScrollable(out BOOL retVal) mut => VT.get_CachedVerticallyScrollable(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4867,10 +3712,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ScrollIntoView() mut
-			{
-				return VT.ScrollIntoView(ref this);
-			}
+			public HRESULT ScrollIntoView() mut => VT.ScrollIntoView(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4884,30 +3727,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrentSelection(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCurrentSelection(ref this, out retVal);
-			}
-			public HRESULT get_CurrentCanSelectMultiple(out BOOL retVal) mut
-			{
-				return VT.get_CurrentCanSelectMultiple(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsSelectionRequired(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsSelectionRequired(ref this, out retVal);
-			}
-			public HRESULT GetCachedSelection(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCachedSelection(ref this, out retVal);
-			}
-			public HRESULT get_CachedCanSelectMultiple(out BOOL retVal) mut
-			{
-				return VT.get_CachedCanSelectMultiple(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsSelectionRequired(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsSelectionRequired(ref this, out retVal);
-			}
+			public HRESULT GetCurrentSelection(out IUIAutomationElementArray* retVal) mut => VT.GetCurrentSelection(ref this, out retVal);
+			public HRESULT get_CurrentCanSelectMultiple(out BOOL retVal) mut => VT.get_CurrentCanSelectMultiple(ref this, out retVal);
+			public HRESULT get_CurrentIsSelectionRequired(out BOOL retVal) mut => VT.get_CurrentIsSelectionRequired(ref this, out retVal);
+			public HRESULT GetCachedSelection(out IUIAutomationElementArray* retVal) mut => VT.GetCachedSelection(ref this, out retVal);
+			public HRESULT get_CachedCanSelectMultiple(out BOOL retVal) mut => VT.get_CachedCanSelectMultiple(ref this, out retVal);
+			public HRESULT get_CachedIsSelectionRequired(out BOOL retVal) mut => VT.get_CachedIsSelectionRequired(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4926,38 +3752,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentFirstSelectedItem(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CurrentFirstSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_CurrentLastSelectedItem(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CurrentLastSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_CurrentCurrentSelectedItem(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CurrentCurrentSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_CurrentItemCount(out int32 retVal) mut
-			{
-				return VT.get_CurrentItemCount(ref this, out retVal);
-			}
-			public HRESULT get_CachedFirstSelectedItem(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CachedFirstSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_CachedLastSelectedItem(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CachedLastSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_CachedCurrentSelectedItem(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CachedCurrentSelectedItem(ref this, out retVal);
-			}
-			public HRESULT get_CachedItemCount(out int32 retVal) mut
-			{
-				return VT.get_CachedItemCount(ref this, out retVal);
-			}
+			public HRESULT get_CurrentFirstSelectedItem(out IUIAutomationElement* retVal) mut => VT.get_CurrentFirstSelectedItem(ref this, out retVal);
+			public HRESULT get_CurrentLastSelectedItem(out IUIAutomationElement* retVal) mut => VT.get_CurrentLastSelectedItem(ref this, out retVal);
+			public HRESULT get_CurrentCurrentSelectedItem(out IUIAutomationElement* retVal) mut => VT.get_CurrentCurrentSelectedItem(ref this, out retVal);
+			public HRESULT get_CurrentItemCount(out int32 retVal) mut => VT.get_CurrentItemCount(ref this, out retVal);
+			public HRESULT get_CachedFirstSelectedItem(out IUIAutomationElement* retVal) mut => VT.get_CachedFirstSelectedItem(ref this, out retVal);
+			public HRESULT get_CachedLastSelectedItem(out IUIAutomationElement* retVal) mut => VT.get_CachedLastSelectedItem(ref this, out retVal);
+			public HRESULT get_CachedCurrentSelectedItem(out IUIAutomationElement* retVal) mut => VT.get_CachedCurrentSelectedItem(ref this, out retVal);
+			public HRESULT get_CachedItemCount(out int32 retVal) mut => VT.get_CachedItemCount(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationSelectionPattern.VTable
 			{
@@ -4978,34 +3781,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Select() mut
-			{
-				return VT.Select(ref this);
-			}
-			public HRESULT AddToSelection() mut
-			{
-				return VT.AddToSelection(ref this);
-			}
-			public HRESULT RemoveFromSelection() mut
-			{
-				return VT.RemoveFromSelection(ref this);
-			}
-			public HRESULT get_CurrentIsSelected(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsSelected(ref this, out retVal);
-			}
-			public HRESULT get_CurrentSelectionContainer(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CurrentSelectionContainer(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsSelected(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsSelected(ref this, out retVal);
-			}
-			public HRESULT get_CachedSelectionContainer(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CachedSelectionContainer(ref this, out retVal);
-			}
+			public HRESULT Select() mut => VT.Select(ref this);
+			public HRESULT AddToSelection() mut => VT.AddToSelection(ref this);
+			public HRESULT RemoveFromSelection() mut => VT.RemoveFromSelection(ref this);
+			public HRESULT get_CurrentIsSelected(out BOOL retVal) mut => VT.get_CurrentIsSelected(ref this, out retVal);
+			public HRESULT get_CurrentSelectionContainer(out IUIAutomationElement* retVal) mut => VT.get_CurrentSelectionContainer(ref this, out retVal);
+			public HRESULT get_CachedIsSelected(out BOOL retVal) mut => VT.get_CachedIsSelected(ref this, out retVal);
+			public HRESULT get_CachedSelectionContainer(out IUIAutomationElement* retVal) mut => VT.get_CachedSelectionContainer(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5025,14 +3808,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartListening(SynchronizedInputType inputType) mut
-			{
-				return VT.StartListening(ref this, inputType);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
+			public HRESULT StartListening(SynchronizedInputType inputType) mut => VT.StartListening(ref this, inputType);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5047,30 +3825,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrentRowHeaders(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCurrentRowHeaders(ref this, out retVal);
-			}
-			public HRESULT GetCurrentColumnHeaders(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCurrentColumnHeaders(ref this, out retVal);
-			}
-			public HRESULT get_CurrentRowOrColumnMajor(out RowOrColumnMajor retVal) mut
-			{
-				return VT.get_CurrentRowOrColumnMajor(ref this, out retVal);
-			}
-			public HRESULT GetCachedRowHeaders(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCachedRowHeaders(ref this, out retVal);
-			}
-			public HRESULT GetCachedColumnHeaders(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCachedColumnHeaders(ref this, out retVal);
-			}
-			public HRESULT get_CachedRowOrColumnMajor(out RowOrColumnMajor retVal) mut
-			{
-				return VT.get_CachedRowOrColumnMajor(ref this, out retVal);
-			}
+			public HRESULT GetCurrentRowHeaders(out IUIAutomationElementArray* retVal) mut => VT.GetCurrentRowHeaders(ref this, out retVal);
+			public HRESULT GetCurrentColumnHeaders(out IUIAutomationElementArray* retVal) mut => VT.GetCurrentColumnHeaders(ref this, out retVal);
+			public HRESULT get_CurrentRowOrColumnMajor(out RowOrColumnMajor retVal) mut => VT.get_CurrentRowOrColumnMajor(ref this, out retVal);
+			public HRESULT GetCachedRowHeaders(out IUIAutomationElementArray* retVal) mut => VT.GetCachedRowHeaders(ref this, out retVal);
+			public HRESULT GetCachedColumnHeaders(out IUIAutomationElementArray* retVal) mut => VT.GetCachedColumnHeaders(ref this, out retVal);
+			public HRESULT get_CachedRowOrColumnMajor(out RowOrColumnMajor retVal) mut => VT.get_CachedRowOrColumnMajor(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5089,22 +3850,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrentRowHeaderItems(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCurrentRowHeaderItems(ref this, out retVal);
-			}
-			public HRESULT GetCurrentColumnHeaderItems(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCurrentColumnHeaderItems(ref this, out retVal);
-			}
-			public HRESULT GetCachedRowHeaderItems(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCachedRowHeaderItems(ref this, out retVal);
-			}
-			public HRESULT GetCachedColumnHeaderItems(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCachedColumnHeaderItems(ref this, out retVal);
-			}
+			public HRESULT GetCurrentRowHeaderItems(out IUIAutomationElementArray* retVal) mut => VT.GetCurrentRowHeaderItems(ref this, out retVal);
+			public HRESULT GetCurrentColumnHeaderItems(out IUIAutomationElementArray* retVal) mut => VT.GetCurrentColumnHeaderItems(ref this, out retVal);
+			public HRESULT GetCachedRowHeaderItems(out IUIAutomationElementArray* retVal) mut => VT.GetCachedRowHeaderItems(ref this, out retVal);
+			public HRESULT GetCachedColumnHeaderItems(out IUIAutomationElementArray* retVal) mut => VT.GetCachedColumnHeaderItems(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5121,18 +3871,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Toggle() mut
-			{
-				return VT.Toggle(ref this);
-			}
-			public HRESULT get_CurrentToggleState(out ToggleState retVal) mut
-			{
-				return VT.get_CurrentToggleState(ref this, out retVal);
-			}
-			public HRESULT get_CachedToggleState(out ToggleState retVal) mut
-			{
-				return VT.get_CachedToggleState(ref this, out retVal);
-			}
+			public HRESULT Toggle() mut => VT.Toggle(ref this);
+			public HRESULT get_CurrentToggleState(out ToggleState retVal) mut => VT.get_CurrentToggleState(ref this, out retVal);
+			public HRESULT get_CachedToggleState(out ToggleState retVal) mut => VT.get_CachedToggleState(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5148,42 +3890,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Move(double x, double y) mut
-			{
-				return VT.Move(ref this, x, y);
-			}
-			public HRESULT Resize(double width, double height) mut
-			{
-				return VT.Resize(ref this, width, height);
-			}
-			public HRESULT Rotate(double degrees) mut
-			{
-				return VT.Rotate(ref this, degrees);
-			}
-			public HRESULT get_CurrentCanMove(out BOOL retVal) mut
-			{
-				return VT.get_CurrentCanMove(ref this, out retVal);
-			}
-			public HRESULT get_CurrentCanResize(out BOOL retVal) mut
-			{
-				return VT.get_CurrentCanResize(ref this, out retVal);
-			}
-			public HRESULT get_CurrentCanRotate(out BOOL retVal) mut
-			{
-				return VT.get_CurrentCanRotate(ref this, out retVal);
-			}
-			public HRESULT get_CachedCanMove(out BOOL retVal) mut
-			{
-				return VT.get_CachedCanMove(ref this, out retVal);
-			}
-			public HRESULT get_CachedCanResize(out BOOL retVal) mut
-			{
-				return VT.get_CachedCanResize(ref this, out retVal);
-			}
-			public HRESULT get_CachedCanRotate(out BOOL retVal) mut
-			{
-				return VT.get_CachedCanRotate(ref this, out retVal);
-			}
+			public HRESULT Move(double x, double y) mut => VT.Move(ref this, x, y);
+			public HRESULT Resize(double width, double height) mut => VT.Resize(ref this, width, height);
+			public HRESULT Rotate(double degrees) mut => VT.Rotate(ref this, degrees);
+			public HRESULT get_CurrentCanMove(out BOOL retVal) mut => VT.get_CurrentCanMove(ref this, out retVal);
+			public HRESULT get_CurrentCanResize(out BOOL retVal) mut => VT.get_CurrentCanResize(ref this, out retVal);
+			public HRESULT get_CurrentCanRotate(out BOOL retVal) mut => VT.get_CurrentCanRotate(ref this, out retVal);
+			public HRESULT get_CachedCanMove(out BOOL retVal) mut => VT.get_CachedCanMove(ref this, out retVal);
+			public HRESULT get_CachedCanResize(out BOOL retVal) mut => VT.get_CachedCanResize(ref this, out retVal);
+			public HRESULT get_CachedCanRotate(out BOOL retVal) mut => VT.get_CachedCanRotate(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5205,26 +3921,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetValue(BSTR val) mut
-			{
-				return VT.SetValue(ref this, val);
-			}
-			public HRESULT get_CurrentValue(out BSTR retVal) mut
-			{
-				return VT.get_CurrentValue(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsReadOnly(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsReadOnly(ref this, out retVal);
-			}
-			public HRESULT get_CachedValue(out BSTR retVal) mut
-			{
-				return VT.get_CachedValue(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsReadOnly(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsReadOnly(ref this, out retVal);
-			}
+			public HRESULT SetValue(BSTR val) mut => VT.SetValue(ref this, val);
+			public HRESULT get_CurrentValue(out BSTR retVal) mut => VT.get_CurrentValue(ref this, out retVal);
+			public HRESULT get_CurrentIsReadOnly(out BOOL retVal) mut => VT.get_CurrentIsReadOnly(ref this, out retVal);
+			public HRESULT get_CachedValue(out BSTR retVal) mut => VT.get_CachedValue(ref this, out retVal);
+			public HRESULT get_CachedIsReadOnly(out BOOL retVal) mut => VT.get_CachedIsReadOnly(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5242,66 +3944,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT WaitForInputIdle(int32 milliseconds, out BOOL success) mut
-			{
-				return VT.WaitForInputIdle(ref this, milliseconds, out success);
-			}
-			public HRESULT SetWindowVisualState(WindowVisualState state) mut
-			{
-				return VT.SetWindowVisualState(ref this, state);
-			}
-			public HRESULT get_CurrentCanMaximize(out BOOL retVal) mut
-			{
-				return VT.get_CurrentCanMaximize(ref this, out retVal);
-			}
-			public HRESULT get_CurrentCanMinimize(out BOOL retVal) mut
-			{
-				return VT.get_CurrentCanMinimize(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsModal(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsModal(ref this, out retVal);
-			}
-			public HRESULT get_CurrentIsTopmost(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsTopmost(ref this, out retVal);
-			}
-			public HRESULT get_CurrentWindowVisualState(out WindowVisualState retVal) mut
-			{
-				return VT.get_CurrentWindowVisualState(ref this, out retVal);
-			}
-			public HRESULT get_CurrentWindowInteractionState(out WindowInteractionState retVal) mut
-			{
-				return VT.get_CurrentWindowInteractionState(ref this, out retVal);
-			}
-			public HRESULT get_CachedCanMaximize(out BOOL retVal) mut
-			{
-				return VT.get_CachedCanMaximize(ref this, out retVal);
-			}
-			public HRESULT get_CachedCanMinimize(out BOOL retVal) mut
-			{
-				return VT.get_CachedCanMinimize(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsModal(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsModal(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsTopmost(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsTopmost(ref this, out retVal);
-			}
-			public HRESULT get_CachedWindowVisualState(out WindowVisualState retVal) mut
-			{
-				return VT.get_CachedWindowVisualState(ref this, out retVal);
-			}
-			public HRESULT get_CachedWindowInteractionState(out WindowInteractionState retVal) mut
-			{
-				return VT.get_CachedWindowInteractionState(ref this, out retVal);
-			}
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT WaitForInputIdle(int32 milliseconds, out BOOL success) mut => VT.WaitForInputIdle(ref this, milliseconds, out success);
+			public HRESULT SetWindowVisualState(WindowVisualState state) mut => VT.SetWindowVisualState(ref this, state);
+			public HRESULT get_CurrentCanMaximize(out BOOL retVal) mut => VT.get_CurrentCanMaximize(ref this, out retVal);
+			public HRESULT get_CurrentCanMinimize(out BOOL retVal) mut => VT.get_CurrentCanMinimize(ref this, out retVal);
+			public HRESULT get_CurrentIsModal(out BOOL retVal) mut => VT.get_CurrentIsModal(ref this, out retVal);
+			public HRESULT get_CurrentIsTopmost(out BOOL retVal) mut => VT.get_CurrentIsTopmost(ref this, out retVal);
+			public HRESULT get_CurrentWindowVisualState(out WindowVisualState retVal) mut => VT.get_CurrentWindowVisualState(ref this, out retVal);
+			public HRESULT get_CurrentWindowInteractionState(out WindowInteractionState retVal) mut => VT.get_CurrentWindowInteractionState(ref this, out retVal);
+			public HRESULT get_CachedCanMaximize(out BOOL retVal) mut => VT.get_CachedCanMaximize(ref this, out retVal);
+			public HRESULT get_CachedCanMinimize(out BOOL retVal) mut => VT.get_CachedCanMinimize(ref this, out retVal);
+			public HRESULT get_CachedIsModal(out BOOL retVal) mut => VT.get_CachedIsModal(ref this, out retVal);
+			public HRESULT get_CachedIsTopmost(out BOOL retVal) mut => VT.get_CachedIsTopmost(ref this, out retVal);
+			public HRESULT get_CachedWindowVisualState(out WindowVisualState retVal) mut => VT.get_CachedWindowVisualState(ref this, out retVal);
+			public HRESULT get_CachedWindowInteractionState(out WindowInteractionState retVal) mut => VT.get_CachedWindowInteractionState(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5329,78 +3987,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out IUIAutomationTextRange* clonedRange) mut
-			{
-				return VT.Clone(ref this, out clonedRange);
-			}
-			public HRESULT Compare(ref IUIAutomationTextRange range, out BOOL areSame) mut
-			{
-				return VT.Compare(ref this, ref range, out areSame);
-			}
-			public HRESULT CompareEndpoints(TextPatternRangeEndpoint srcEndPoint, ref IUIAutomationTextRange range, TextPatternRangeEndpoint targetEndPoint, out int32 compValue) mut
-			{
-				return VT.CompareEndpoints(ref this, srcEndPoint, ref range, targetEndPoint, out compValue);
-			}
-			public HRESULT ExpandToEnclosingUnit(TextUnit textUnit) mut
-			{
-				return VT.ExpandToEnclosingUnit(ref this, textUnit);
-			}
-			public HRESULT FindAttribute(int32 attr, VARIANT val, BOOL backward, out IUIAutomationTextRange* found) mut
-			{
-				return VT.FindAttribute(ref this, attr, val, backward, out found);
-			}
-			public HRESULT FindText(BSTR text, BOOL backward, BOOL ignoreCase, out IUIAutomationTextRange* found) mut
-			{
-				return VT.FindText(ref this, text, backward, ignoreCase, out found);
-			}
-			public HRESULT GetAttributeValue(int32 attr, out VARIANT value) mut
-			{
-				return VT.GetAttributeValue(ref this, attr, out value);
-			}
-			public HRESULT GetBoundingRectangles(out SAFEARRAY* boundingRects) mut
-			{
-				return VT.GetBoundingRectangles(ref this, out boundingRects);
-			}
-			public HRESULT GetEnclosingElement(out IUIAutomationElement* enclosingElement) mut
-			{
-				return VT.GetEnclosingElement(ref this, out enclosingElement);
-			}
-			public HRESULT GetText(int32 maxLength, out BSTR text) mut
-			{
-				return VT.GetText(ref this, maxLength, out text);
-			}
-			public HRESULT Move(TextUnit unit, int32 count, out int32 moved) mut
-			{
-				return VT.Move(ref this, unit, count, out moved);
-			}
-			public HRESULT MoveEndpointByUnit(TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, out int32 moved) mut
-			{
-				return VT.MoveEndpointByUnit(ref this, endpoint, unit, count, out moved);
-			}
-			public HRESULT MoveEndpointByRange(TextPatternRangeEndpoint srcEndPoint, ref IUIAutomationTextRange range, TextPatternRangeEndpoint targetEndPoint) mut
-			{
-				return VT.MoveEndpointByRange(ref this, srcEndPoint, ref range, targetEndPoint);
-			}
-			public HRESULT Select() mut
-			{
-				return VT.Select(ref this);
-			}
-			public HRESULT AddToSelection() mut
-			{
-				return VT.AddToSelection(ref this);
-			}
-			public HRESULT RemoveFromSelection() mut
-			{
-				return VT.RemoveFromSelection(ref this);
-			}
-			public HRESULT ScrollIntoView(BOOL alignToTop) mut
-			{
-				return VT.ScrollIntoView(ref this, alignToTop);
-			}
-			public HRESULT GetChildren(out IUIAutomationElementArray* children) mut
-			{
-				return VT.GetChildren(ref this, out children);
-			}
+			public HRESULT Clone(out IUIAutomationTextRange* clonedRange) mut => VT.Clone(ref this, out clonedRange);
+			public HRESULT Compare(ref IUIAutomationTextRange range, out BOOL areSame) mut => VT.Compare(ref this, ref range, out areSame);
+			public HRESULT CompareEndpoints(TextPatternRangeEndpoint srcEndPoint, ref IUIAutomationTextRange range, TextPatternRangeEndpoint targetEndPoint, out int32 compValue) mut => VT.CompareEndpoints(ref this, srcEndPoint, ref range, targetEndPoint, out compValue);
+			public HRESULT ExpandToEnclosingUnit(TextUnit textUnit) mut => VT.ExpandToEnclosingUnit(ref this, textUnit);
+			public HRESULT FindAttribute(int32 attr, VARIANT val, BOOL backward, out IUIAutomationTextRange* found) mut => VT.FindAttribute(ref this, attr, val, backward, out found);
+			public HRESULT FindText(BSTR text, BOOL backward, BOOL ignoreCase, out IUIAutomationTextRange* found) mut => VT.FindText(ref this, text, backward, ignoreCase, out found);
+			public HRESULT GetAttributeValue(int32 attr, out VARIANT value) mut => VT.GetAttributeValue(ref this, attr, out value);
+			public HRESULT GetBoundingRectangles(out SAFEARRAY* boundingRects) mut => VT.GetBoundingRectangles(ref this, out boundingRects);
+			public HRESULT GetEnclosingElement(out IUIAutomationElement* enclosingElement) mut => VT.GetEnclosingElement(ref this, out enclosingElement);
+			public HRESULT GetText(int32 maxLength, out BSTR text) mut => VT.GetText(ref this, maxLength, out text);
+			public HRESULT Move(TextUnit unit, int32 count, out int32 moved) mut => VT.Move(ref this, unit, count, out moved);
+			public HRESULT MoveEndpointByUnit(TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, out int32 moved) mut => VT.MoveEndpointByUnit(ref this, endpoint, unit, count, out moved);
+			public HRESULT MoveEndpointByRange(TextPatternRangeEndpoint srcEndPoint, ref IUIAutomationTextRange range, TextPatternRangeEndpoint targetEndPoint) mut => VT.MoveEndpointByRange(ref this, srcEndPoint, ref range, targetEndPoint);
+			public HRESULT Select() mut => VT.Select(ref this);
+			public HRESULT AddToSelection() mut => VT.AddToSelection(ref this);
+			public HRESULT RemoveFromSelection() mut => VT.RemoveFromSelection(ref this);
+			public HRESULT ScrollIntoView(BOOL alignToTop) mut => VT.ScrollIntoView(ref this, alignToTop);
+			public HRESULT GetChildren(out IUIAutomationElementArray* children) mut => VT.GetChildren(ref this, out children);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5431,10 +4036,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowContextMenu() mut
-			{
-				return VT.ShowContextMenu(ref this);
-			}
+			public HRESULT ShowContextMenu() mut => VT.ShowContextMenu(ref this);
+
 			[CRepr]
 			public struct VTable : IUIAutomationTextRange.VTable
 			{
@@ -5448,18 +4051,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEnclosingElementBuildCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* enclosingElement) mut
-			{
-				return VT.GetEnclosingElementBuildCache(ref this, ref cacheRequest, out enclosingElement);
-			}
-			public HRESULT GetChildrenBuildCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElementArray* children) mut
-			{
-				return VT.GetChildrenBuildCache(ref this, ref cacheRequest, out children);
-			}
-			public HRESULT GetAttributeValues(int32* attributeIds, int32 attributeIdCount, out SAFEARRAY* attributeValues) mut
-			{
-				return VT.GetAttributeValues(ref this, attributeIds, attributeIdCount, out attributeValues);
-			}
+			public HRESULT GetEnclosingElementBuildCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* enclosingElement) mut => VT.GetEnclosingElementBuildCache(ref this, ref cacheRequest, out enclosingElement);
+			public HRESULT GetChildrenBuildCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElementArray* children) mut => VT.GetChildrenBuildCache(ref this, ref cacheRequest, out children);
+			public HRESULT GetAttributeValues(int32* attributeIds, int32 attributeIdCount, out SAFEARRAY* attributeValues) mut => VT.GetAttributeValues(ref this, attributeIds, attributeIdCount, out attributeValues);
+
 			[CRepr]
 			public struct VTable : IUIAutomationTextRange2.VTable
 			{
@@ -5475,14 +4070,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Length(out int32 length) mut
-			{
-				return VT.get_Length(ref this, out length);
-			}
-			public HRESULT GetElement(int32 index, out IUIAutomationTextRange* element) mut
-			{
-				return VT.GetElement(ref this, index, out element);
-			}
+			public HRESULT get_Length(out int32 length) mut => VT.get_Length(ref this, out length);
+			public HRESULT GetElement(int32 index, out IUIAutomationTextRange* element) mut => VT.GetElement(ref this, index, out element);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5497,30 +4087,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RangeFromPoint(POINT pt, out IUIAutomationTextRange* range) mut
-			{
-				return VT.RangeFromPoint(ref this, pt, out range);
-			}
-			public HRESULT RangeFromChild(ref IUIAutomationElement child, out IUIAutomationTextRange* range) mut
-			{
-				return VT.RangeFromChild(ref this, ref child, out range);
-			}
-			public HRESULT GetSelection(out IUIAutomationTextRangeArray* ranges) mut
-			{
-				return VT.GetSelection(ref this, out ranges);
-			}
-			public HRESULT GetVisibleRanges(out IUIAutomationTextRangeArray* ranges) mut
-			{
-				return VT.GetVisibleRanges(ref this, out ranges);
-			}
-			public HRESULT get_DocumentRange(out IUIAutomationTextRange* range) mut
-			{
-				return VT.get_DocumentRange(ref this, out range);
-			}
-			public HRESULT get_SupportedTextSelection(out SupportedTextSelection supportedTextSelection) mut
-			{
-				return VT.get_SupportedTextSelection(ref this, out supportedTextSelection);
-			}
+			public HRESULT RangeFromPoint(POINT pt, out IUIAutomationTextRange* range) mut => VT.RangeFromPoint(ref this, pt, out range);
+			public HRESULT RangeFromChild(ref IUIAutomationElement child, out IUIAutomationTextRange* range) mut => VT.RangeFromChild(ref this, ref child, out range);
+			public HRESULT GetSelection(out IUIAutomationTextRangeArray* ranges) mut => VT.GetSelection(ref this, out ranges);
+			public HRESULT GetVisibleRanges(out IUIAutomationTextRangeArray* ranges) mut => VT.GetVisibleRanges(ref this, out ranges);
+			public HRESULT get_DocumentRange(out IUIAutomationTextRange* range) mut => VT.get_DocumentRange(ref this, out range);
+			public HRESULT get_SupportedTextSelection(out SupportedTextSelection supportedTextSelection) mut => VT.get_SupportedTextSelection(ref this, out supportedTextSelection);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5539,14 +4112,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RangeFromAnnotation(ref IUIAutomationElement annotation, out IUIAutomationTextRange* range) mut
-			{
-				return VT.RangeFromAnnotation(ref this, ref annotation, out range);
-			}
-			public HRESULT GetCaretRange(out BOOL isActive, out IUIAutomationTextRange* range) mut
-			{
-				return VT.GetCaretRange(ref this, out isActive, out range);
-			}
+			public HRESULT RangeFromAnnotation(ref IUIAutomationElement annotation, out IUIAutomationTextRange* range) mut => VT.RangeFromAnnotation(ref this, ref annotation, out range);
+			public HRESULT GetCaretRange(out BOOL isActive, out IUIAutomationTextRange* range) mut => VT.GetCaretRange(ref this, out isActive, out range);
+
 			[CRepr]
 			public struct VTable : IUIAutomationTextPattern.VTable
 			{
@@ -5561,14 +4129,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetActiveComposition(out IUIAutomationTextRange* range) mut
-			{
-				return VT.GetActiveComposition(ref this, out range);
-			}
-			public HRESULT GetConversionTarget(out IUIAutomationTextRange* range) mut
-			{
-				return VT.GetConversionTarget(ref this, out range);
-			}
+			public HRESULT GetActiveComposition(out IUIAutomationTextRange* range) mut => VT.GetActiveComposition(ref this, out range);
+			public HRESULT GetConversionTarget(out IUIAutomationTextRange* range) mut => VT.GetConversionTarget(ref this, out range);
+
 			[CRepr]
 			public struct VTable : IUIAutomationTextPattern.VTable
 			{
@@ -5583,10 +4146,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Navigate(NavigateDirection direction, out IUIAutomationElement* pRetVal) mut
-			{
-				return VT.Navigate(ref this, direction, out pRetVal);
-			}
+			public HRESULT Navigate(NavigateDirection direction, out IUIAutomationElement* pRetVal) mut => VT.Navigate(ref this, direction, out pRetVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5600,10 +4161,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleActiveTextPositionChangedEvent(ref IUIAutomationElement sender, ref IUIAutomationTextRange range) mut
-			{
-				return VT.HandleActiveTextPositionChangedEvent(ref this, ref sender, ref range);
-			}
+			public HRESULT HandleActiveTextPositionChangedEvent(ref IUIAutomationElement sender, ref IUIAutomationTextRange range) mut => VT.HandleActiveTextPositionChangedEvent(ref this, ref sender, ref range);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5617,102 +4176,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Select(int32 flagsSelect) mut
-			{
-				return VT.Select(ref this, flagsSelect);
-			}
-			public HRESULT DoDefaultAction() mut
-			{
-				return VT.DoDefaultAction(ref this);
-			}
-			public HRESULT SetValue(PWSTR szValue) mut
-			{
-				return VT.SetValue(ref this, szValue);
-			}
-			public HRESULT get_CurrentChildId(out int32 pRetVal) mut
-			{
-				return VT.get_CurrentChildId(ref this, out pRetVal);
-			}
-			public HRESULT get_CurrentName(out BSTR pszName) mut
-			{
-				return VT.get_CurrentName(ref this, out pszName);
-			}
-			public HRESULT get_CurrentValue(out BSTR pszValue) mut
-			{
-				return VT.get_CurrentValue(ref this, out pszValue);
-			}
-			public HRESULT get_CurrentDescription(out BSTR pszDescription) mut
-			{
-				return VT.get_CurrentDescription(ref this, out pszDescription);
-			}
-			public HRESULT get_CurrentRole(out uint32 pdwRole) mut
-			{
-				return VT.get_CurrentRole(ref this, out pdwRole);
-			}
-			public HRESULT get_CurrentState(out uint32 pdwState) mut
-			{
-				return VT.get_CurrentState(ref this, out pdwState);
-			}
-			public HRESULT get_CurrentHelp(out BSTR pszHelp) mut
-			{
-				return VT.get_CurrentHelp(ref this, out pszHelp);
-			}
-			public HRESULT get_CurrentKeyboardShortcut(out BSTR pszKeyboardShortcut) mut
-			{
-				return VT.get_CurrentKeyboardShortcut(ref this, out pszKeyboardShortcut);
-			}
-			public HRESULT GetCurrentSelection(out IUIAutomationElementArray* pvarSelectedChildren) mut
-			{
-				return VT.GetCurrentSelection(ref this, out pvarSelectedChildren);
-			}
-			public HRESULT get_CurrentDefaultAction(out BSTR pszDefaultAction) mut
-			{
-				return VT.get_CurrentDefaultAction(ref this, out pszDefaultAction);
-			}
-			public HRESULT get_CachedChildId(out int32 pRetVal) mut
-			{
-				return VT.get_CachedChildId(ref this, out pRetVal);
-			}
-			public HRESULT get_CachedName(out BSTR pszName) mut
-			{
-				return VT.get_CachedName(ref this, out pszName);
-			}
-			public HRESULT get_CachedValue(out BSTR pszValue) mut
-			{
-				return VT.get_CachedValue(ref this, out pszValue);
-			}
-			public HRESULT get_CachedDescription(out BSTR pszDescription) mut
-			{
-				return VT.get_CachedDescription(ref this, out pszDescription);
-			}
-			public HRESULT get_CachedRole(out uint32 pdwRole) mut
-			{
-				return VT.get_CachedRole(ref this, out pdwRole);
-			}
-			public HRESULT get_CachedState(out uint32 pdwState) mut
-			{
-				return VT.get_CachedState(ref this, out pdwState);
-			}
-			public HRESULT get_CachedHelp(out BSTR pszHelp) mut
-			{
-				return VT.get_CachedHelp(ref this, out pszHelp);
-			}
-			public HRESULT get_CachedKeyboardShortcut(out BSTR pszKeyboardShortcut) mut
-			{
-				return VT.get_CachedKeyboardShortcut(ref this, out pszKeyboardShortcut);
-			}
-			public HRESULT GetCachedSelection(out IUIAutomationElementArray* pvarSelectedChildren) mut
-			{
-				return VT.GetCachedSelection(ref this, out pvarSelectedChildren);
-			}
-			public HRESULT get_CachedDefaultAction(out BSTR pszDefaultAction) mut
-			{
-				return VT.get_CachedDefaultAction(ref this, out pszDefaultAction);
-			}
-			public HRESULT GetIAccessible(out IAccessible* ppAccessible) mut
-			{
-				return VT.GetIAccessible(ref this, out ppAccessible);
-			}
+			public HRESULT Select(int32 flagsSelect) mut => VT.Select(ref this, flagsSelect);
+			public HRESULT DoDefaultAction() mut => VT.DoDefaultAction(ref this);
+			public HRESULT SetValue(PWSTR szValue) mut => VT.SetValue(ref this, szValue);
+			public HRESULT get_CurrentChildId(out int32 pRetVal) mut => VT.get_CurrentChildId(ref this, out pRetVal);
+			public HRESULT get_CurrentName(out BSTR pszName) mut => VT.get_CurrentName(ref this, out pszName);
+			public HRESULT get_CurrentValue(out BSTR pszValue) mut => VT.get_CurrentValue(ref this, out pszValue);
+			public HRESULT get_CurrentDescription(out BSTR pszDescription) mut => VT.get_CurrentDescription(ref this, out pszDescription);
+			public HRESULT get_CurrentRole(out uint32 pdwRole) mut => VT.get_CurrentRole(ref this, out pdwRole);
+			public HRESULT get_CurrentState(out uint32 pdwState) mut => VT.get_CurrentState(ref this, out pdwState);
+			public HRESULT get_CurrentHelp(out BSTR pszHelp) mut => VT.get_CurrentHelp(ref this, out pszHelp);
+			public HRESULT get_CurrentKeyboardShortcut(out BSTR pszKeyboardShortcut) mut => VT.get_CurrentKeyboardShortcut(ref this, out pszKeyboardShortcut);
+			public HRESULT GetCurrentSelection(out IUIAutomationElementArray* pvarSelectedChildren) mut => VT.GetCurrentSelection(ref this, out pvarSelectedChildren);
+			public HRESULT get_CurrentDefaultAction(out BSTR pszDefaultAction) mut => VT.get_CurrentDefaultAction(ref this, out pszDefaultAction);
+			public HRESULT get_CachedChildId(out int32 pRetVal) mut => VT.get_CachedChildId(ref this, out pRetVal);
+			public HRESULT get_CachedName(out BSTR pszName) mut => VT.get_CachedName(ref this, out pszName);
+			public HRESULT get_CachedValue(out BSTR pszValue) mut => VT.get_CachedValue(ref this, out pszValue);
+			public HRESULT get_CachedDescription(out BSTR pszDescription) mut => VT.get_CachedDescription(ref this, out pszDescription);
+			public HRESULT get_CachedRole(out uint32 pdwRole) mut => VT.get_CachedRole(ref this, out pdwRole);
+			public HRESULT get_CachedState(out uint32 pdwState) mut => VT.get_CachedState(ref this, out pdwState);
+			public HRESULT get_CachedHelp(out BSTR pszHelp) mut => VT.get_CachedHelp(ref this, out pszHelp);
+			public HRESULT get_CachedKeyboardShortcut(out BSTR pszKeyboardShortcut) mut => VT.get_CachedKeyboardShortcut(ref this, out pszKeyboardShortcut);
+			public HRESULT GetCachedSelection(out IUIAutomationElementArray* pvarSelectedChildren) mut => VT.GetCachedSelection(ref this, out pvarSelectedChildren);
+			public HRESULT get_CachedDefaultAction(out BSTR pszDefaultAction) mut => VT.get_CachedDefaultAction(ref this, out pszDefaultAction);
+			public HRESULT GetIAccessible(out IAccessible* ppAccessible) mut => VT.GetIAccessible(ref this, out ppAccessible);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5749,10 +4237,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindItemByProperty(ref IUIAutomationElement pStartAfter, int32 propertyId, VARIANT value, out IUIAutomationElement* pFound) mut
-			{
-				return VT.FindItemByProperty(ref this, ref pStartAfter, propertyId, value, out pFound);
-			}
+			public HRESULT FindItemByProperty(ref IUIAutomationElement pStartAfter, int32 propertyId, VARIANT value, out IUIAutomationElement* pFound) mut => VT.FindItemByProperty(ref this, ref pStartAfter, propertyId, value, out pFound);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5766,10 +4252,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Realize() mut
-			{
-				return VT.Realize(ref this);
-			}
+			public HRESULT Realize() mut => VT.Realize(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5783,46 +4267,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentAnnotationTypeId(out int32 retVal) mut
-			{
-				return VT.get_CurrentAnnotationTypeId(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAnnotationTypeName(out BSTR retVal) mut
-			{
-				return VT.get_CurrentAnnotationTypeName(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAuthor(out BSTR retVal) mut
-			{
-				return VT.get_CurrentAuthor(ref this, out retVal);
-			}
-			public HRESULT get_CurrentDateTime(out BSTR retVal) mut
-			{
-				return VT.get_CurrentDateTime(ref this, out retVal);
-			}
-			public HRESULT get_CurrentTarget(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CurrentTarget(ref this, out retVal);
-			}
-			public HRESULT get_CachedAnnotationTypeId(out int32 retVal) mut
-			{
-				return VT.get_CachedAnnotationTypeId(ref this, out retVal);
-			}
-			public HRESULT get_CachedAnnotationTypeName(out BSTR retVal) mut
-			{
-				return VT.get_CachedAnnotationTypeName(ref this, out retVal);
-			}
-			public HRESULT get_CachedAuthor(out BSTR retVal) mut
-			{
-				return VT.get_CachedAuthor(ref this, out retVal);
-			}
-			public HRESULT get_CachedDateTime(out BSTR retVal) mut
-			{
-				return VT.get_CachedDateTime(ref this, out retVal);
-			}
-			public HRESULT get_CachedTarget(out IUIAutomationElement* retVal) mut
-			{
-				return VT.get_CachedTarget(ref this, out retVal);
-			}
+			public HRESULT get_CurrentAnnotationTypeId(out int32 retVal) mut => VT.get_CurrentAnnotationTypeId(ref this, out retVal);
+			public HRESULT get_CurrentAnnotationTypeName(out BSTR retVal) mut => VT.get_CurrentAnnotationTypeName(ref this, out retVal);
+			public HRESULT get_CurrentAuthor(out BSTR retVal) mut => VT.get_CurrentAuthor(ref this, out retVal);
+			public HRESULT get_CurrentDateTime(out BSTR retVal) mut => VT.get_CurrentDateTime(ref this, out retVal);
+			public HRESULT get_CurrentTarget(out IUIAutomationElement* retVal) mut => VT.get_CurrentTarget(ref this, out retVal);
+			public HRESULT get_CachedAnnotationTypeId(out int32 retVal) mut => VT.get_CachedAnnotationTypeId(ref this, out retVal);
+			public HRESULT get_CachedAnnotationTypeName(out BSTR retVal) mut => VT.get_CachedAnnotationTypeName(ref this, out retVal);
+			public HRESULT get_CachedAuthor(out BSTR retVal) mut => VT.get_CachedAuthor(ref this, out retVal);
+			public HRESULT get_CachedDateTime(out BSTR retVal) mut => VT.get_CachedDateTime(ref this, out retVal);
+			public HRESULT get_CachedTarget(out IUIAutomationElement* retVal) mut => VT.get_CachedTarget(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5845,70 +4300,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentStyleId(out int32 retVal) mut
-			{
-				return VT.get_CurrentStyleId(ref this, out retVal);
-			}
-			public HRESULT get_CurrentStyleName(out BSTR retVal) mut
-			{
-				return VT.get_CurrentStyleName(ref this, out retVal);
-			}
-			public HRESULT get_CurrentFillColor(out int32 retVal) mut
-			{
-				return VT.get_CurrentFillColor(ref this, out retVal);
-			}
-			public HRESULT get_CurrentFillPatternStyle(out BSTR retVal) mut
-			{
-				return VT.get_CurrentFillPatternStyle(ref this, out retVal);
-			}
-			public HRESULT get_CurrentShape(out BSTR retVal) mut
-			{
-				return VT.get_CurrentShape(ref this, out retVal);
-			}
-			public HRESULT get_CurrentFillPatternColor(out int32 retVal) mut
-			{
-				return VT.get_CurrentFillPatternColor(ref this, out retVal);
-			}
-			public HRESULT get_CurrentExtendedProperties(out BSTR retVal) mut
-			{
-				return VT.get_CurrentExtendedProperties(ref this, out retVal);
-			}
-			public HRESULT GetCurrentExtendedPropertiesAsArray(out ExtendedProperty* propertyArray, out int32 propertyCount) mut
-			{
-				return VT.GetCurrentExtendedPropertiesAsArray(ref this, out propertyArray, out propertyCount);
-			}
-			public HRESULT get_CachedStyleId(out int32 retVal) mut
-			{
-				return VT.get_CachedStyleId(ref this, out retVal);
-			}
-			public HRESULT get_CachedStyleName(out BSTR retVal) mut
-			{
-				return VT.get_CachedStyleName(ref this, out retVal);
-			}
-			public HRESULT get_CachedFillColor(out int32 retVal) mut
-			{
-				return VT.get_CachedFillColor(ref this, out retVal);
-			}
-			public HRESULT get_CachedFillPatternStyle(out BSTR retVal) mut
-			{
-				return VT.get_CachedFillPatternStyle(ref this, out retVal);
-			}
-			public HRESULT get_CachedShape(out BSTR retVal) mut
-			{
-				return VT.get_CachedShape(ref this, out retVal);
-			}
-			public HRESULT get_CachedFillPatternColor(out int32 retVal) mut
-			{
-				return VT.get_CachedFillPatternColor(ref this, out retVal);
-			}
-			public HRESULT get_CachedExtendedProperties(out BSTR retVal) mut
-			{
-				return VT.get_CachedExtendedProperties(ref this, out retVal);
-			}
-			public HRESULT GetCachedExtendedPropertiesAsArray(out ExtendedProperty* propertyArray, out int32 propertyCount) mut
-			{
-				return VT.GetCachedExtendedPropertiesAsArray(ref this, out propertyArray, out propertyCount);
-			}
+			public HRESULT get_CurrentStyleId(out int32 retVal) mut => VT.get_CurrentStyleId(ref this, out retVal);
+			public HRESULT get_CurrentStyleName(out BSTR retVal) mut => VT.get_CurrentStyleName(ref this, out retVal);
+			public HRESULT get_CurrentFillColor(out int32 retVal) mut => VT.get_CurrentFillColor(ref this, out retVal);
+			public HRESULT get_CurrentFillPatternStyle(out BSTR retVal) mut => VT.get_CurrentFillPatternStyle(ref this, out retVal);
+			public HRESULT get_CurrentShape(out BSTR retVal) mut => VT.get_CurrentShape(ref this, out retVal);
+			public HRESULT get_CurrentFillPatternColor(out int32 retVal) mut => VT.get_CurrentFillPatternColor(ref this, out retVal);
+			public HRESULT get_CurrentExtendedProperties(out BSTR retVal) mut => VT.get_CurrentExtendedProperties(ref this, out retVal);
+			public HRESULT GetCurrentExtendedPropertiesAsArray(out ExtendedProperty* propertyArray, out int32 propertyCount) mut => VT.GetCurrentExtendedPropertiesAsArray(ref this, out propertyArray, out propertyCount);
+			public HRESULT get_CachedStyleId(out int32 retVal) mut => VT.get_CachedStyleId(ref this, out retVal);
+			public HRESULT get_CachedStyleName(out BSTR retVal) mut => VT.get_CachedStyleName(ref this, out retVal);
+			public HRESULT get_CachedFillColor(out int32 retVal) mut => VT.get_CachedFillColor(ref this, out retVal);
+			public HRESULT get_CachedFillPatternStyle(out BSTR retVal) mut => VT.get_CachedFillPatternStyle(ref this, out retVal);
+			public HRESULT get_CachedShape(out BSTR retVal) mut => VT.get_CachedShape(ref this, out retVal);
+			public HRESULT get_CachedFillPatternColor(out int32 retVal) mut => VT.get_CachedFillPatternColor(ref this, out retVal);
+			public HRESULT get_CachedExtendedProperties(out BSTR retVal) mut => VT.get_CachedExtendedProperties(ref this, out retVal);
+			public HRESULT GetCachedExtendedPropertiesAsArray(out ExtendedProperty* propertyArray, out int32 propertyCount) mut => VT.GetCachedExtendedPropertiesAsArray(ref this, out propertyArray, out propertyCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5937,10 +4345,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemByName(BSTR name, out IUIAutomationElement* element) mut
-			{
-				return VT.GetItemByName(ref this, name, out element);
-			}
+			public HRESULT GetItemByName(BSTR name, out IUIAutomationElement* element) mut => VT.GetItemByName(ref this, name, out element);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5954,30 +4360,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentFormula(out BSTR retVal) mut
-			{
-				return VT.get_CurrentFormula(ref this, out retVal);
-			}
-			public HRESULT GetCurrentAnnotationObjects(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCurrentAnnotationObjects(ref this, out retVal);
-			}
-			public HRESULT GetCurrentAnnotationTypes(out SAFEARRAY* retVal) mut
-			{
-				return VT.GetCurrentAnnotationTypes(ref this, out retVal);
-			}
-			public HRESULT get_CachedFormula(out BSTR retVal) mut
-			{
-				return VT.get_CachedFormula(ref this, out retVal);
-			}
-			public HRESULT GetCachedAnnotationObjects(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCachedAnnotationObjects(ref this, out retVal);
-			}
-			public HRESULT GetCachedAnnotationTypes(out SAFEARRAY* retVal) mut
-			{
-				return VT.GetCachedAnnotationTypes(ref this, out retVal);
-			}
+			public HRESULT get_CurrentFormula(out BSTR retVal) mut => VT.get_CurrentFormula(ref this, out retVal);
+			public HRESULT GetCurrentAnnotationObjects(out IUIAutomationElementArray* retVal) mut => VT.GetCurrentAnnotationObjects(ref this, out retVal);
+			public HRESULT GetCurrentAnnotationTypes(out SAFEARRAY* retVal) mut => VT.GetCurrentAnnotationTypes(ref this, out retVal);
+			public HRESULT get_CachedFormula(out BSTR retVal) mut => VT.get_CachedFormula(ref this, out retVal);
+			public HRESULT GetCachedAnnotationObjects(out IUIAutomationElementArray* retVal) mut => VT.GetCachedAnnotationObjects(ref this, out retVal);
+			public HRESULT GetCachedAnnotationTypes(out SAFEARRAY* retVal) mut => VT.GetCachedAnnotationTypes(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5996,46 +4385,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Zoom(double zoomValue) mut
-			{
-				return VT.Zoom(ref this, zoomValue);
-			}
-			public HRESULT ZoomByUnit(ZoomUnit zoomUnit) mut
-			{
-				return VT.ZoomByUnit(ref this, zoomUnit);
-			}
-			public HRESULT get_CurrentCanZoom(out BOOL retVal) mut
-			{
-				return VT.get_CurrentCanZoom(ref this, out retVal);
-			}
-			public HRESULT get_CachedCanZoom(out BOOL retVal) mut
-			{
-				return VT.get_CachedCanZoom(ref this, out retVal);
-			}
-			public HRESULT get_CurrentZoomLevel(out double retVal) mut
-			{
-				return VT.get_CurrentZoomLevel(ref this, out retVal);
-			}
-			public HRESULT get_CachedZoomLevel(out double retVal) mut
-			{
-				return VT.get_CachedZoomLevel(ref this, out retVal);
-			}
-			public HRESULT get_CurrentZoomMinimum(out double retVal) mut
-			{
-				return VT.get_CurrentZoomMinimum(ref this, out retVal);
-			}
-			public HRESULT get_CachedZoomMinimum(out double retVal) mut
-			{
-				return VT.get_CachedZoomMinimum(ref this, out retVal);
-			}
-			public HRESULT get_CurrentZoomMaximum(out double retVal) mut
-			{
-				return VT.get_CurrentZoomMaximum(ref this, out retVal);
-			}
-			public HRESULT get_CachedZoomMaximum(out double retVal) mut
-			{
-				return VT.get_CachedZoomMaximum(ref this, out retVal);
-			}
+			public HRESULT Zoom(double zoomValue) mut => VT.Zoom(ref this, zoomValue);
+			public HRESULT ZoomByUnit(ZoomUnit zoomUnit) mut => VT.ZoomByUnit(ref this, zoomUnit);
+			public HRESULT get_CurrentCanZoom(out BOOL retVal) mut => VT.get_CurrentCanZoom(ref this, out retVal);
+			public HRESULT get_CachedCanZoom(out BOOL retVal) mut => VT.get_CachedCanZoom(ref this, out retVal);
+			public HRESULT get_CurrentZoomLevel(out double retVal) mut => VT.get_CurrentZoomLevel(ref this, out retVal);
+			public HRESULT get_CachedZoomLevel(out double retVal) mut => VT.get_CachedZoomLevel(ref this, out retVal);
+			public HRESULT get_CurrentZoomMinimum(out double retVal) mut => VT.get_CurrentZoomMinimum(ref this, out retVal);
+			public HRESULT get_CachedZoomMinimum(out double retVal) mut => VT.get_CachedZoomMinimum(ref this, out retVal);
+			public HRESULT get_CurrentZoomMaximum(out double retVal) mut => VT.get_CurrentZoomMaximum(ref this, out retVal);
+			public HRESULT get_CachedZoomMaximum(out double retVal) mut => VT.get_CachedZoomMaximum(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationTransformPattern.VTable
 			{
@@ -6058,14 +4418,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TextContainer(out IUIAutomationElement* container) mut
-			{
-				return VT.get_TextContainer(ref this, out container);
-			}
-			public HRESULT get_TextRange(out IUIAutomationTextRange* range) mut
-			{
-				return VT.get_TextRange(ref this, out range);
-			}
+			public HRESULT get_TextContainer(out IUIAutomationElement* container) mut => VT.get_TextContainer(ref this, out container);
+			public HRESULT get_TextRange(out IUIAutomationTextRange* range) mut => VT.get_TextRange(ref this, out range);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6080,38 +4435,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentIsGrabbed(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsGrabbed(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsGrabbed(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsGrabbed(ref this, out retVal);
-			}
-			public HRESULT get_CurrentDropEffect(out BSTR retVal) mut
-			{
-				return VT.get_CurrentDropEffect(ref this, out retVal);
-			}
-			public HRESULT get_CachedDropEffect(out BSTR retVal) mut
-			{
-				return VT.get_CachedDropEffect(ref this, out retVal);
-			}
-			public HRESULT get_CurrentDropEffects(out SAFEARRAY* retVal) mut
-			{
-				return VT.get_CurrentDropEffects(ref this, out retVal);
-			}
-			public HRESULT get_CachedDropEffects(out SAFEARRAY* retVal) mut
-			{
-				return VT.get_CachedDropEffects(ref this, out retVal);
-			}
-			public HRESULT GetCurrentGrabbedItems(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCurrentGrabbedItems(ref this, out retVal);
-			}
-			public HRESULT GetCachedGrabbedItems(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.GetCachedGrabbedItems(ref this, out retVal);
-			}
+			public HRESULT get_CurrentIsGrabbed(out BOOL retVal) mut => VT.get_CurrentIsGrabbed(ref this, out retVal);
+			public HRESULT get_CachedIsGrabbed(out BOOL retVal) mut => VT.get_CachedIsGrabbed(ref this, out retVal);
+			public HRESULT get_CurrentDropEffect(out BSTR retVal) mut => VT.get_CurrentDropEffect(ref this, out retVal);
+			public HRESULT get_CachedDropEffect(out BSTR retVal) mut => VT.get_CachedDropEffect(ref this, out retVal);
+			public HRESULT get_CurrentDropEffects(out SAFEARRAY* retVal) mut => VT.get_CurrentDropEffects(ref this, out retVal);
+			public HRESULT get_CachedDropEffects(out SAFEARRAY* retVal) mut => VT.get_CachedDropEffects(ref this, out retVal);
+			public HRESULT GetCurrentGrabbedItems(out IUIAutomationElementArray* retVal) mut => VT.GetCurrentGrabbedItems(ref this, out retVal);
+			public HRESULT GetCachedGrabbedItems(out IUIAutomationElementArray* retVal) mut => VT.GetCachedGrabbedItems(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6132,22 +4464,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentDropTargetEffect(out BSTR retVal) mut
-			{
-				return VT.get_CurrentDropTargetEffect(ref this, out retVal);
-			}
-			public HRESULT get_CachedDropTargetEffect(out BSTR retVal) mut
-			{
-				return VT.get_CachedDropTargetEffect(ref this, out retVal);
-			}
-			public HRESULT get_CurrentDropTargetEffects(out SAFEARRAY* retVal) mut
-			{
-				return VT.get_CurrentDropTargetEffects(ref this, out retVal);
-			}
-			public HRESULT get_CachedDropTargetEffects(out SAFEARRAY* retVal) mut
-			{
-				return VT.get_CachedDropTargetEffects(ref this, out retVal);
-			}
+			public HRESULT get_CurrentDropTargetEffect(out BSTR retVal) mut => VT.get_CurrentDropTargetEffect(ref this, out retVal);
+			public HRESULT get_CachedDropTargetEffect(out BSTR retVal) mut => VT.get_CachedDropTargetEffect(ref this, out retVal);
+			public HRESULT get_CurrentDropTargetEffects(out SAFEARRAY* retVal) mut => VT.get_CurrentDropTargetEffects(ref this, out retVal);
+			public HRESULT get_CachedDropTargetEffects(out SAFEARRAY* retVal) mut => VT.get_CachedDropTargetEffects(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6164,30 +4485,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentOptimizeForVisualContent(out BOOL retVal) mut
-			{
-				return VT.get_CurrentOptimizeForVisualContent(ref this, out retVal);
-			}
-			public HRESULT get_CachedOptimizeForVisualContent(out BOOL retVal) mut
-			{
-				return VT.get_CachedOptimizeForVisualContent(ref this, out retVal);
-			}
-			public HRESULT get_CurrentLiveSetting(out LiveSetting retVal) mut
-			{
-				return VT.get_CurrentLiveSetting(ref this, out retVal);
-			}
-			public HRESULT get_CachedLiveSetting(out LiveSetting retVal) mut
-			{
-				return VT.get_CachedLiveSetting(ref this, out retVal);
-			}
-			public HRESULT get_CurrentFlowsFrom(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CurrentFlowsFrom(ref this, out retVal);
-			}
-			public HRESULT get_CachedFlowsFrom(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CachedFlowsFrom(ref this, out retVal);
-			}
+			public HRESULT get_CurrentOptimizeForVisualContent(out BOOL retVal) mut => VT.get_CurrentOptimizeForVisualContent(ref this, out retVal);
+			public HRESULT get_CachedOptimizeForVisualContent(out BOOL retVal) mut => VT.get_CachedOptimizeForVisualContent(ref this, out retVal);
+			public HRESULT get_CurrentLiveSetting(out LiveSetting retVal) mut => VT.get_CurrentLiveSetting(ref this, out retVal);
+			public HRESULT get_CachedLiveSetting(out LiveSetting retVal) mut => VT.get_CachedLiveSetting(ref this, out retVal);
+			public HRESULT get_CurrentFlowsFrom(out IUIAutomationElementArray* retVal) mut => VT.get_CurrentFlowsFrom(ref this, out retVal);
+			public HRESULT get_CachedFlowsFrom(out IUIAutomationElementArray* retVal) mut => VT.get_CachedFlowsFrom(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationElement.VTable
 			{
@@ -6206,18 +4510,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowContextMenu() mut
-			{
-				return VT.ShowContextMenu(ref this);
-			}
-			public HRESULT get_CurrentIsPeripheral(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsPeripheral(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsPeripheral(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsPeripheral(ref this, out retVal);
-			}
+			public HRESULT ShowContextMenu() mut => VT.ShowContextMenu(ref this);
+			public HRESULT get_CurrentIsPeripheral(out BOOL retVal) mut => VT.get_CurrentIsPeripheral(ref this, out retVal);
+			public HRESULT get_CachedIsPeripheral(out BOOL retVal) mut => VT.get_CachedIsPeripheral(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationElement2.VTable
 			{
@@ -6233,46 +4529,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentPositionInSet(out int32 retVal) mut
-			{
-				return VT.get_CurrentPositionInSet(ref this, out retVal);
-			}
-			public HRESULT get_CurrentSizeOfSet(out int32 retVal) mut
-			{
-				return VT.get_CurrentSizeOfSet(ref this, out retVal);
-			}
-			public HRESULT get_CurrentLevel(out int32 retVal) mut
-			{
-				return VT.get_CurrentLevel(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAnnotationTypes(out SAFEARRAY* retVal) mut
-			{
-				return VT.get_CurrentAnnotationTypes(ref this, out retVal);
-			}
-			public HRESULT get_CurrentAnnotationObjects(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CurrentAnnotationObjects(ref this, out retVal);
-			}
-			public HRESULT get_CachedPositionInSet(out int32 retVal) mut
-			{
-				return VT.get_CachedPositionInSet(ref this, out retVal);
-			}
-			public HRESULT get_CachedSizeOfSet(out int32 retVal) mut
-			{
-				return VT.get_CachedSizeOfSet(ref this, out retVal);
-			}
-			public HRESULT get_CachedLevel(out int32 retVal) mut
-			{
-				return VT.get_CachedLevel(ref this, out retVal);
-			}
-			public HRESULT get_CachedAnnotationTypes(out SAFEARRAY* retVal) mut
-			{
-				return VT.get_CachedAnnotationTypes(ref this, out retVal);
-			}
-			public HRESULT get_CachedAnnotationObjects(out IUIAutomationElementArray* retVal) mut
-			{
-				return VT.get_CachedAnnotationObjects(ref this, out retVal);
-			}
+			public HRESULT get_CurrentPositionInSet(out int32 retVal) mut => VT.get_CurrentPositionInSet(ref this, out retVal);
+			public HRESULT get_CurrentSizeOfSet(out int32 retVal) mut => VT.get_CurrentSizeOfSet(ref this, out retVal);
+			public HRESULT get_CurrentLevel(out int32 retVal) mut => VT.get_CurrentLevel(ref this, out retVal);
+			public HRESULT get_CurrentAnnotationTypes(out SAFEARRAY* retVal) mut => VT.get_CurrentAnnotationTypes(ref this, out retVal);
+			public HRESULT get_CurrentAnnotationObjects(out IUIAutomationElementArray* retVal) mut => VT.get_CurrentAnnotationObjects(ref this, out retVal);
+			public HRESULT get_CachedPositionInSet(out int32 retVal) mut => VT.get_CachedPositionInSet(ref this, out retVal);
+			public HRESULT get_CachedSizeOfSet(out int32 retVal) mut => VT.get_CachedSizeOfSet(ref this, out retVal);
+			public HRESULT get_CachedLevel(out int32 retVal) mut => VT.get_CachedLevel(ref this, out retVal);
+			public HRESULT get_CachedAnnotationTypes(out SAFEARRAY* retVal) mut => VT.get_CachedAnnotationTypes(ref this, out retVal);
+			public HRESULT get_CachedAnnotationObjects(out IUIAutomationElementArray* retVal) mut => VT.get_CachedAnnotationObjects(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationElement3.VTable
 			{
@@ -6295,22 +4562,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentLandmarkType(out int32 retVal) mut
-			{
-				return VT.get_CurrentLandmarkType(ref this, out retVal);
-			}
-			public HRESULT get_CurrentLocalizedLandmarkType(out BSTR retVal) mut
-			{
-				return VT.get_CurrentLocalizedLandmarkType(ref this, out retVal);
-			}
-			public HRESULT get_CachedLandmarkType(out int32 retVal) mut
-			{
-				return VT.get_CachedLandmarkType(ref this, out retVal);
-			}
-			public HRESULT get_CachedLocalizedLandmarkType(out BSTR retVal) mut
-			{
-				return VT.get_CachedLocalizedLandmarkType(ref this, out retVal);
-			}
+			public HRESULT get_CurrentLandmarkType(out int32 retVal) mut => VT.get_CurrentLandmarkType(ref this, out retVal);
+			public HRESULT get_CurrentLocalizedLandmarkType(out BSTR retVal) mut => VT.get_CurrentLocalizedLandmarkType(ref this, out retVal);
+			public HRESULT get_CachedLandmarkType(out int32 retVal) mut => VT.get_CachedLandmarkType(ref this, out retVal);
+			public HRESULT get_CachedLocalizedLandmarkType(out BSTR retVal) mut => VT.get_CachedLocalizedLandmarkType(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationElement4.VTable
 			{
@@ -6327,14 +4583,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentFullDescription(out BSTR retVal) mut
-			{
-				return VT.get_CurrentFullDescription(ref this, out retVal);
-			}
-			public HRESULT get_CachedFullDescription(out BSTR retVal) mut
-			{
-				return VT.get_CachedFullDescription(ref this, out retVal);
-			}
+			public HRESULT get_CurrentFullDescription(out BSTR retVal) mut => VT.get_CurrentFullDescription(ref this, out retVal);
+			public HRESULT get_CachedFullDescription(out BSTR retVal) mut => VT.get_CachedFullDescription(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationElement5.VTable
 			{
@@ -6349,26 +4600,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindFirstWithOptions(TreeScope @scope, ref IUIAutomationCondition condition, TreeTraversalOptions traversalOptions, ref IUIAutomationElement root, out IUIAutomationElement* found) mut
-			{
-				return VT.FindFirstWithOptions(ref this, @scope, ref condition, traversalOptions, ref root, out found);
-			}
-			public HRESULT FindAllWithOptions(TreeScope @scope, ref IUIAutomationCondition condition, TreeTraversalOptions traversalOptions, ref IUIAutomationElement root, out IUIAutomationElementArray* found) mut
-			{
-				return VT.FindAllWithOptions(ref this, @scope, ref condition, traversalOptions, ref root, out found);
-			}
-			public HRESULT FindFirstWithOptionsBuildCache(TreeScope @scope, ref IUIAutomationCondition condition, ref IUIAutomationCacheRequest cacheRequest, TreeTraversalOptions traversalOptions, ref IUIAutomationElement root, out IUIAutomationElement* found) mut
-			{
-				return VT.FindFirstWithOptionsBuildCache(ref this, @scope, ref condition, ref cacheRequest, traversalOptions, ref root, out found);
-			}
-			public HRESULT FindAllWithOptionsBuildCache(TreeScope @scope, ref IUIAutomationCondition condition, ref IUIAutomationCacheRequest cacheRequest, TreeTraversalOptions traversalOptions, ref IUIAutomationElement root, out IUIAutomationElementArray* found) mut
-			{
-				return VT.FindAllWithOptionsBuildCache(ref this, @scope, ref condition, ref cacheRequest, traversalOptions, ref root, out found);
-			}
-			public HRESULT GetCurrentMetadataValue(int32 targetId, int32 metadataId, out VARIANT returnVal) mut
-			{
-				return VT.GetCurrentMetadataValue(ref this, targetId, metadataId, out returnVal);
-			}
+			public HRESULT FindFirstWithOptions(TreeScope @scope, ref IUIAutomationCondition condition, TreeTraversalOptions traversalOptions, ref IUIAutomationElement root, out IUIAutomationElement* found) mut => VT.FindFirstWithOptions(ref this, @scope, ref condition, traversalOptions, ref root, out found);
+			public HRESULT FindAllWithOptions(TreeScope @scope, ref IUIAutomationCondition condition, TreeTraversalOptions traversalOptions, ref IUIAutomationElement root, out IUIAutomationElementArray* found) mut => VT.FindAllWithOptions(ref this, @scope, ref condition, traversalOptions, ref root, out found);
+			public HRESULT FindFirstWithOptionsBuildCache(TreeScope @scope, ref IUIAutomationCondition condition, ref IUIAutomationCacheRequest cacheRequest, TreeTraversalOptions traversalOptions, ref IUIAutomationElement root, out IUIAutomationElement* found) mut => VT.FindFirstWithOptionsBuildCache(ref this, @scope, ref condition, ref cacheRequest, traversalOptions, ref root, out found);
+			public HRESULT FindAllWithOptionsBuildCache(TreeScope @scope, ref IUIAutomationCondition condition, ref IUIAutomationCacheRequest cacheRequest, TreeTraversalOptions traversalOptions, ref IUIAutomationElement root, out IUIAutomationElementArray* found) mut => VT.FindAllWithOptionsBuildCache(ref this, @scope, ref condition, ref cacheRequest, traversalOptions, ref root, out found);
+			public HRESULT GetCurrentMetadataValue(int32 targetId, int32 metadataId, out VARIANT returnVal) mut => VT.GetCurrentMetadataValue(ref this, targetId, metadataId, out returnVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationElement6.VTable
 			{
@@ -6386,14 +4623,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentHeadingLevel(out int32 retVal) mut
-			{
-				return VT.get_CurrentHeadingLevel(ref this, out retVal);
-			}
-			public HRESULT get_CachedHeadingLevel(out int32 retVal) mut
-			{
-				return VT.get_CachedHeadingLevel(ref this, out retVal);
-			}
+			public HRESULT get_CurrentHeadingLevel(out int32 retVal) mut => VT.get_CurrentHeadingLevel(ref this, out retVal);
+			public HRESULT get_CachedHeadingLevel(out int32 retVal) mut => VT.get_CachedHeadingLevel(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationElement7.VTable
 			{
@@ -6408,14 +4640,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentIsDialog(out BOOL retVal) mut
-			{
-				return VT.get_CurrentIsDialog(ref this, out retVal);
-			}
-			public HRESULT get_CachedIsDialog(out BOOL retVal) mut
-			{
-				return VT.get_CachedIsDialog(ref this, out retVal);
-			}
+			public HRESULT get_CurrentIsDialog(out BOOL retVal) mut => VT.get_CurrentIsDialog(ref this, out retVal);
+			public HRESULT get_CachedIsDialog(out BOOL retVal) mut => VT.get_CachedIsDialog(ref this, out retVal);
+
 			[CRepr]
 			public struct VTable : IUIAutomationElement8.VTable
 			{
@@ -6430,14 +4657,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateProvider(HWND hwnd, int32 idObject, int32 idChild, out IRawElementProviderSimple* provider) mut
-			{
-				return VT.CreateProvider(ref this, hwnd, idObject, idChild, out provider);
-			}
-			public HRESULT get_ProxyFactoryId(out BSTR factoryId) mut
-			{
-				return VT.get_ProxyFactoryId(ref this, out factoryId);
-			}
+			public HRESULT CreateProvider(HWND hwnd, int32 idObject, int32 idChild, out IRawElementProviderSimple* provider) mut => VT.CreateProvider(ref this, hwnd, idObject, idChild, out provider);
+			public HRESULT get_ProxyFactoryId(out BSTR factoryId) mut => VT.get_ProxyFactoryId(ref this, out factoryId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6452,58 +4674,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProxyFactory(out IUIAutomationProxyFactory* factory) mut
-			{
-				return VT.get_ProxyFactory(ref this, out factory);
-			}
-			public HRESULT get_ClassName(out BSTR className) mut
-			{
-				return VT.get_ClassName(ref this, out className);
-			}
-			public HRESULT get_ImageName(out BSTR imageName) mut
-			{
-				return VT.get_ImageName(ref this, out imageName);
-			}
-			public HRESULT get_AllowSubstringMatch(out BOOL allowSubstringMatch) mut
-			{
-				return VT.get_AllowSubstringMatch(ref this, out allowSubstringMatch);
-			}
-			public HRESULT get_CanCheckBaseClass(out BOOL canCheckBaseClass) mut
-			{
-				return VT.get_CanCheckBaseClass(ref this, out canCheckBaseClass);
-			}
-			public HRESULT get_NeedsAdviseEvents(out BOOL adviseEvents) mut
-			{
-				return VT.get_NeedsAdviseEvents(ref this, out adviseEvents);
-			}
-			public HRESULT put_ClassName(PWSTR className) mut
-			{
-				return VT.put_ClassName(ref this, className);
-			}
-			public HRESULT put_ImageName(PWSTR imageName) mut
-			{
-				return VT.put_ImageName(ref this, imageName);
-			}
-			public HRESULT put_AllowSubstringMatch(BOOL allowSubstringMatch) mut
-			{
-				return VT.put_AllowSubstringMatch(ref this, allowSubstringMatch);
-			}
-			public HRESULT put_CanCheckBaseClass(BOOL canCheckBaseClass) mut
-			{
-				return VT.put_CanCheckBaseClass(ref this, canCheckBaseClass);
-			}
-			public HRESULT put_NeedsAdviseEvents(BOOL adviseEvents) mut
-			{
-				return VT.put_NeedsAdviseEvents(ref this, adviseEvents);
-			}
-			public HRESULT SetWinEventsForAutomationEvent(int32 eventId, int32 propertyId, ref SAFEARRAY winEvents) mut
-			{
-				return VT.SetWinEventsForAutomationEvent(ref this, eventId, propertyId, ref winEvents);
-			}
-			public HRESULT GetWinEventsForAutomationEvent(int32 eventId, int32 propertyId, out SAFEARRAY* winEvents) mut
-			{
-				return VT.GetWinEventsForAutomationEvent(ref this, eventId, propertyId, out winEvents);
-			}
+			public HRESULT get_ProxyFactory(out IUIAutomationProxyFactory* factory) mut => VT.get_ProxyFactory(ref this, out factory);
+			public HRESULT get_ClassName(out BSTR className) mut => VT.get_ClassName(ref this, out className);
+			public HRESULT get_ImageName(out BSTR imageName) mut => VT.get_ImageName(ref this, out imageName);
+			public HRESULT get_AllowSubstringMatch(out BOOL allowSubstringMatch) mut => VT.get_AllowSubstringMatch(ref this, out allowSubstringMatch);
+			public HRESULT get_CanCheckBaseClass(out BOOL canCheckBaseClass) mut => VT.get_CanCheckBaseClass(ref this, out canCheckBaseClass);
+			public HRESULT get_NeedsAdviseEvents(out BOOL adviseEvents) mut => VT.get_NeedsAdviseEvents(ref this, out adviseEvents);
+			public HRESULT put_ClassName(PWSTR className) mut => VT.put_ClassName(ref this, className);
+			public HRESULT put_ImageName(PWSTR imageName) mut => VT.put_ImageName(ref this, imageName);
+			public HRESULT put_AllowSubstringMatch(BOOL allowSubstringMatch) mut => VT.put_AllowSubstringMatch(ref this, allowSubstringMatch);
+			public HRESULT put_CanCheckBaseClass(BOOL canCheckBaseClass) mut => VT.put_CanCheckBaseClass(ref this, canCheckBaseClass);
+			public HRESULT put_NeedsAdviseEvents(BOOL adviseEvents) mut => VT.put_NeedsAdviseEvents(ref this, adviseEvents);
+			public HRESULT SetWinEventsForAutomationEvent(int32 eventId, int32 propertyId, ref SAFEARRAY winEvents) mut => VT.SetWinEventsForAutomationEvent(ref this, eventId, propertyId, ref winEvents);
+			public HRESULT GetWinEventsForAutomationEvent(int32 eventId, int32 propertyId, out SAFEARRAY* winEvents) mut => VT.GetWinEventsForAutomationEvent(ref this, eventId, propertyId, out winEvents);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6529,42 +4713,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out uint32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT GetTable(out SAFEARRAY* table) mut
-			{
-				return VT.GetTable(ref this, out table);
-			}
-			public HRESULT GetEntry(uint32 index, out IUIAutomationProxyFactoryEntry* entry) mut
-			{
-				return VT.GetEntry(ref this, index, out entry);
-			}
-			public HRESULT SetTable(ref SAFEARRAY factoryList) mut
-			{
-				return VT.SetTable(ref this, ref factoryList);
-			}
-			public HRESULT InsertEntries(uint32 before, ref SAFEARRAY factoryList) mut
-			{
-				return VT.InsertEntries(ref this, before, ref factoryList);
-			}
-			public HRESULT InsertEntry(uint32 before, ref IUIAutomationProxyFactoryEntry factory) mut
-			{
-				return VT.InsertEntry(ref this, before, ref factory);
-			}
-			public HRESULT RemoveEntry(uint32 index) mut
-			{
-				return VT.RemoveEntry(ref this, index);
-			}
-			public HRESULT ClearTable() mut
-			{
-				return VT.ClearTable(ref this);
-			}
-			public HRESULT RestoreDefaultTable() mut
-			{
-				return VT.RestoreDefaultTable(ref this);
-			}
+			public HRESULT get_Count(out uint32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT GetTable(out SAFEARRAY* table) mut => VT.GetTable(ref this, out table);
+			public HRESULT GetEntry(uint32 index, out IUIAutomationProxyFactoryEntry* entry) mut => VT.GetEntry(ref this, index, out entry);
+			public HRESULT SetTable(ref SAFEARRAY factoryList) mut => VT.SetTable(ref this, ref factoryList);
+			public HRESULT InsertEntries(uint32 before, ref SAFEARRAY factoryList) mut => VT.InsertEntries(ref this, before, ref factoryList);
+			public HRESULT InsertEntry(uint32 before, ref IUIAutomationProxyFactoryEntry factory) mut => VT.InsertEntry(ref this, before, ref factory);
+			public HRESULT RemoveEntry(uint32 index) mut => VT.RemoveEntry(ref this, index);
+			public HRESULT ClearTable() mut => VT.ClearTable(ref this);
+			public HRESULT RestoreDefaultTable() mut => VT.RestoreDefaultTable(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6586,34 +4744,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddActiveTextPositionChangedEventHandler(TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationActiveTextPositionChangedEventHandler handler) mut
-			{
-				return VT.AddActiveTextPositionChangedEventHandler(ref this, @scope, ref cacheRequest, ref handler);
-			}
-			public HRESULT AddAutomationEventHandler(int32 eventId, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationEventHandler handler) mut
-			{
-				return VT.AddAutomationEventHandler(ref this, eventId, @scope, ref cacheRequest, ref handler);
-			}
-			public HRESULT AddChangesEventHandler(TreeScope @scope, int32* changeTypes, int32 changesCount, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationChangesEventHandler handler) mut
-			{
-				return VT.AddChangesEventHandler(ref this, @scope, changeTypes, changesCount, ref cacheRequest, ref handler);
-			}
-			public HRESULT AddNotificationEventHandler(TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationNotificationEventHandler handler) mut
-			{
-				return VT.AddNotificationEventHandler(ref this, @scope, ref cacheRequest, ref handler);
-			}
-			public HRESULT AddPropertyChangedEventHandler(TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationPropertyChangedEventHandler handler, int32* propertyArray, int32 propertyCount) mut
-			{
-				return VT.AddPropertyChangedEventHandler(ref this, @scope, ref cacheRequest, ref handler, propertyArray, propertyCount);
-			}
-			public HRESULT AddStructureChangedEventHandler(TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationStructureChangedEventHandler handler) mut
-			{
-				return VT.AddStructureChangedEventHandler(ref this, @scope, ref cacheRequest, ref handler);
-			}
-			public HRESULT AddTextEditTextChangedEventHandler(TreeScope @scope, TextEditChangeType textEditChangeType, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationTextEditTextChangedEventHandler handler) mut
-			{
-				return VT.AddTextEditTextChangedEventHandler(ref this, @scope, textEditChangeType, ref cacheRequest, ref handler);
-			}
+			public HRESULT AddActiveTextPositionChangedEventHandler(TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationActiveTextPositionChangedEventHandler handler) mut => VT.AddActiveTextPositionChangedEventHandler(ref this, @scope, ref cacheRequest, ref handler);
+			public HRESULT AddAutomationEventHandler(int32 eventId, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationEventHandler handler) mut => VT.AddAutomationEventHandler(ref this, eventId, @scope, ref cacheRequest, ref handler);
+			public HRESULT AddChangesEventHandler(TreeScope @scope, int32* changeTypes, int32 changesCount, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationChangesEventHandler handler) mut => VT.AddChangesEventHandler(ref this, @scope, changeTypes, changesCount, ref cacheRequest, ref handler);
+			public HRESULT AddNotificationEventHandler(TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationNotificationEventHandler handler) mut => VT.AddNotificationEventHandler(ref this, @scope, ref cacheRequest, ref handler);
+			public HRESULT AddPropertyChangedEventHandler(TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationPropertyChangedEventHandler handler, int32* propertyArray, int32 propertyCount) mut => VT.AddPropertyChangedEventHandler(ref this, @scope, ref cacheRequest, ref handler, propertyArray, propertyCount);
+			public HRESULT AddStructureChangedEventHandler(TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationStructureChangedEventHandler handler) mut => VT.AddStructureChangedEventHandler(ref this, @scope, ref cacheRequest, ref handler);
+			public HRESULT AddTextEditTextChangedEventHandler(TreeScope @scope, TextEditChangeType textEditChangeType, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationTextEditTextChangedEventHandler handler) mut => VT.AddTextEditTextChangedEventHandler(ref this, @scope, textEditChangeType, ref cacheRequest, ref handler);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6633,226 +4771,62 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CompareElements(ref IUIAutomationElement el1, ref IUIAutomationElement el2, out BOOL areSame) mut
-			{
-				return VT.CompareElements(ref this, ref el1, ref el2, out areSame);
-			}
-			public HRESULT CompareRuntimeIds(ref SAFEARRAY runtimeId1, ref SAFEARRAY runtimeId2, out BOOL areSame) mut
-			{
-				return VT.CompareRuntimeIds(ref this, ref runtimeId1, ref runtimeId2, out areSame);
-			}
-			public HRESULT GetRootElement(out IUIAutomationElement* root) mut
-			{
-				return VT.GetRootElement(ref this, out root);
-			}
-			public HRESULT ElementFromHandle(HWND hwnd, out IUIAutomationElement* element) mut
-			{
-				return VT.ElementFromHandle(ref this, hwnd, out element);
-			}
-			public HRESULT ElementFromPoint(POINT pt, out IUIAutomationElement* element) mut
-			{
-				return VT.ElementFromPoint(ref this, pt, out element);
-			}
-			public HRESULT GetFocusedElement(out IUIAutomationElement* element) mut
-			{
-				return VT.GetFocusedElement(ref this, out element);
-			}
-			public HRESULT GetRootElementBuildCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* root) mut
-			{
-				return VT.GetRootElementBuildCache(ref this, ref cacheRequest, out root);
-			}
-			public HRESULT ElementFromHandleBuildCache(HWND hwnd, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* element) mut
-			{
-				return VT.ElementFromHandleBuildCache(ref this, hwnd, ref cacheRequest, out element);
-			}
-			public HRESULT ElementFromPointBuildCache(POINT pt, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* element) mut
-			{
-				return VT.ElementFromPointBuildCache(ref this, pt, ref cacheRequest, out element);
-			}
-			public HRESULT GetFocusedElementBuildCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* element) mut
-			{
-				return VT.GetFocusedElementBuildCache(ref this, ref cacheRequest, out element);
-			}
-			public HRESULT CreateTreeWalker(ref IUIAutomationCondition pCondition, out IUIAutomationTreeWalker* walker) mut
-			{
-				return VT.CreateTreeWalker(ref this, ref pCondition, out walker);
-			}
-			public HRESULT get_ControlViewWalker(out IUIAutomationTreeWalker* walker) mut
-			{
-				return VT.get_ControlViewWalker(ref this, out walker);
-			}
-			public HRESULT get_ContentViewWalker(out IUIAutomationTreeWalker* walker) mut
-			{
-				return VT.get_ContentViewWalker(ref this, out walker);
-			}
-			public HRESULT get_RawViewWalker(out IUIAutomationTreeWalker* walker) mut
-			{
-				return VT.get_RawViewWalker(ref this, out walker);
-			}
-			public HRESULT get_RawViewCondition(out IUIAutomationCondition* condition) mut
-			{
-				return VT.get_RawViewCondition(ref this, out condition);
-			}
-			public HRESULT get_ControlViewCondition(out IUIAutomationCondition* condition) mut
-			{
-				return VT.get_ControlViewCondition(ref this, out condition);
-			}
-			public HRESULT get_ContentViewCondition(out IUIAutomationCondition* condition) mut
-			{
-				return VT.get_ContentViewCondition(ref this, out condition);
-			}
-			public HRESULT CreateCacheRequest(out IUIAutomationCacheRequest* cacheRequest) mut
-			{
-				return VT.CreateCacheRequest(ref this, out cacheRequest);
-			}
-			public HRESULT CreateTrueCondition(out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateTrueCondition(ref this, out newCondition);
-			}
-			public HRESULT CreateFalseCondition(out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateFalseCondition(ref this, out newCondition);
-			}
-			public HRESULT CreatePropertyCondition(int32 propertyId, VARIANT value, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreatePropertyCondition(ref this, propertyId, value, out newCondition);
-			}
-			public HRESULT CreatePropertyConditionEx(int32 propertyId, VARIANT value, PropertyConditionFlags flags, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreatePropertyConditionEx(ref this, propertyId, value, flags, out newCondition);
-			}
-			public HRESULT CreateAndCondition(ref IUIAutomationCondition condition1, ref IUIAutomationCondition condition2, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateAndCondition(ref this, ref condition1, ref condition2, out newCondition);
-			}
-			public HRESULT CreateAndConditionFromArray(ref SAFEARRAY conditions, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateAndConditionFromArray(ref this, ref conditions, out newCondition);
-			}
-			public HRESULT CreateAndConditionFromNativeArray(IUIAutomationCondition** conditions, int32 conditionCount, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateAndConditionFromNativeArray(ref this, conditions, conditionCount, out newCondition);
-			}
-			public HRESULT CreateOrCondition(ref IUIAutomationCondition condition1, ref IUIAutomationCondition condition2, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateOrCondition(ref this, ref condition1, ref condition2, out newCondition);
-			}
-			public HRESULT CreateOrConditionFromArray(ref SAFEARRAY conditions, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateOrConditionFromArray(ref this, ref conditions, out newCondition);
-			}
-			public HRESULT CreateOrConditionFromNativeArray(IUIAutomationCondition** conditions, int32 conditionCount, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateOrConditionFromNativeArray(ref this, conditions, conditionCount, out newCondition);
-			}
-			public HRESULT CreateNotCondition(ref IUIAutomationCondition condition, out IUIAutomationCondition* newCondition) mut
-			{
-				return VT.CreateNotCondition(ref this, ref condition, out newCondition);
-			}
-			public HRESULT AddAutomationEventHandler(int32 eventId, ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationEventHandler handler) mut
-			{
-				return VT.AddAutomationEventHandler(ref this, eventId, ref element, @scope, ref cacheRequest, ref handler);
-			}
-			public HRESULT RemoveAutomationEventHandler(int32 eventId, ref IUIAutomationElement element, ref IUIAutomationEventHandler handler) mut
-			{
-				return VT.RemoveAutomationEventHandler(ref this, eventId, ref element, ref handler);
-			}
-			public HRESULT AddPropertyChangedEventHandlerNativeArray(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationPropertyChangedEventHandler handler, int32* propertyArray, int32 propertyCount) mut
-			{
-				return VT.AddPropertyChangedEventHandlerNativeArray(ref this, ref element, @scope, ref cacheRequest, ref handler, propertyArray, propertyCount);
-			}
-			public HRESULT AddPropertyChangedEventHandler(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationPropertyChangedEventHandler handler, ref SAFEARRAY propertyArray) mut
-			{
-				return VT.AddPropertyChangedEventHandler(ref this, ref element, @scope, ref cacheRequest, ref handler, ref propertyArray);
-			}
-			public HRESULT RemovePropertyChangedEventHandler(ref IUIAutomationElement element, ref IUIAutomationPropertyChangedEventHandler handler) mut
-			{
-				return VT.RemovePropertyChangedEventHandler(ref this, ref element, ref handler);
-			}
-			public HRESULT AddStructureChangedEventHandler(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationStructureChangedEventHandler handler) mut
-			{
-				return VT.AddStructureChangedEventHandler(ref this, ref element, @scope, ref cacheRequest, ref handler);
-			}
-			public HRESULT RemoveStructureChangedEventHandler(ref IUIAutomationElement element, ref IUIAutomationStructureChangedEventHandler handler) mut
-			{
-				return VT.RemoveStructureChangedEventHandler(ref this, ref element, ref handler);
-			}
-			public HRESULT AddFocusChangedEventHandler(ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationFocusChangedEventHandler handler) mut
-			{
-				return VT.AddFocusChangedEventHandler(ref this, ref cacheRequest, ref handler);
-			}
-			public HRESULT RemoveFocusChangedEventHandler(ref IUIAutomationFocusChangedEventHandler handler) mut
-			{
-				return VT.RemoveFocusChangedEventHandler(ref this, ref handler);
-			}
-			public HRESULT RemoveAllEventHandlers() mut
-			{
-				return VT.RemoveAllEventHandlers(ref this);
-			}
-			public HRESULT IntNativeArrayToSafeArray(int32* array, int32 arrayCount, out SAFEARRAY* safeArray) mut
-			{
-				return VT.IntNativeArrayToSafeArray(ref this, array, arrayCount, out safeArray);
-			}
-			public HRESULT IntSafeArrayToNativeArray(ref SAFEARRAY intArray, int32** array, out int32 arrayCount) mut
-			{
-				return VT.IntSafeArrayToNativeArray(ref this, ref intArray, array, out arrayCount);
-			}
-			public HRESULT RectToVariant(RECT rc, out VARIANT @var) mut
-			{
-				return VT.RectToVariant(ref this, rc, out @var);
-			}
-			public HRESULT VariantToRect(VARIANT @var, out RECT rc) mut
-			{
-				return VT.VariantToRect(ref this, @var, out rc);
-			}
-			public HRESULT SafeArrayToRectNativeArray(ref SAFEARRAY rects, RECT** rectArray, out int32 rectArrayCount) mut
-			{
-				return VT.SafeArrayToRectNativeArray(ref this, ref rects, rectArray, out rectArrayCount);
-			}
-			public HRESULT CreateProxyFactoryEntry(ref IUIAutomationProxyFactory factory, out IUIAutomationProxyFactoryEntry* factoryEntry) mut
-			{
-				return VT.CreateProxyFactoryEntry(ref this, ref factory, out factoryEntry);
-			}
-			public HRESULT get_ProxyFactoryMapping(out IUIAutomationProxyFactoryMapping* factoryMapping) mut
-			{
-				return VT.get_ProxyFactoryMapping(ref this, out factoryMapping);
-			}
-			public HRESULT GetPropertyProgrammaticName(int32 property, out BSTR name) mut
-			{
-				return VT.GetPropertyProgrammaticName(ref this, property, out name);
-			}
-			public HRESULT GetPatternProgrammaticName(int32 pattern, out BSTR name) mut
-			{
-				return VT.GetPatternProgrammaticName(ref this, pattern, out name);
-			}
-			public HRESULT PollForPotentialSupportedPatterns(ref IUIAutomationElement pElement, out SAFEARRAY* patternIds, out SAFEARRAY* patternNames) mut
-			{
-				return VT.PollForPotentialSupportedPatterns(ref this, ref pElement, out patternIds, out patternNames);
-			}
-			public HRESULT PollForPotentialSupportedProperties(ref IUIAutomationElement pElement, out SAFEARRAY* propertyIds, out SAFEARRAY* propertyNames) mut
-			{
-				return VT.PollForPotentialSupportedProperties(ref this, ref pElement, out propertyIds, out propertyNames);
-			}
-			public HRESULT CheckNotSupported(VARIANT value, out BOOL isNotSupported) mut
-			{
-				return VT.CheckNotSupported(ref this, value, out isNotSupported);
-			}
-			public HRESULT get_ReservedNotSupportedValue(out IUnknown* notSupportedValue) mut
-			{
-				return VT.get_ReservedNotSupportedValue(ref this, out notSupportedValue);
-			}
-			public HRESULT get_ReservedMixedAttributeValue(out IUnknown* mixedAttributeValue) mut
-			{
-				return VT.get_ReservedMixedAttributeValue(ref this, out mixedAttributeValue);
-			}
-			public HRESULT ElementFromIAccessible(ref IAccessible accessible, int32 childId, out IUIAutomationElement* element) mut
-			{
-				return VT.ElementFromIAccessible(ref this, ref accessible, childId, out element);
-			}
-			public HRESULT ElementFromIAccessibleBuildCache(ref IAccessible accessible, int32 childId, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* element) mut
-			{
-				return VT.ElementFromIAccessibleBuildCache(ref this, ref accessible, childId, ref cacheRequest, out element);
-			}
+			public HRESULT CompareElements(ref IUIAutomationElement el1, ref IUIAutomationElement el2, out BOOL areSame) mut => VT.CompareElements(ref this, ref el1, ref el2, out areSame);
+			public HRESULT CompareRuntimeIds(ref SAFEARRAY runtimeId1, ref SAFEARRAY runtimeId2, out BOOL areSame) mut => VT.CompareRuntimeIds(ref this, ref runtimeId1, ref runtimeId2, out areSame);
+			public HRESULT GetRootElement(out IUIAutomationElement* root) mut => VT.GetRootElement(ref this, out root);
+			public HRESULT ElementFromHandle(HWND hwnd, out IUIAutomationElement* element) mut => VT.ElementFromHandle(ref this, hwnd, out element);
+			public HRESULT ElementFromPoint(POINT pt, out IUIAutomationElement* element) mut => VT.ElementFromPoint(ref this, pt, out element);
+			public HRESULT GetFocusedElement(out IUIAutomationElement* element) mut => VT.GetFocusedElement(ref this, out element);
+			public HRESULT GetRootElementBuildCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* root) mut => VT.GetRootElementBuildCache(ref this, ref cacheRequest, out root);
+			public HRESULT ElementFromHandleBuildCache(HWND hwnd, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* element) mut => VT.ElementFromHandleBuildCache(ref this, hwnd, ref cacheRequest, out element);
+			public HRESULT ElementFromPointBuildCache(POINT pt, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* element) mut => VT.ElementFromPointBuildCache(ref this, pt, ref cacheRequest, out element);
+			public HRESULT GetFocusedElementBuildCache(ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* element) mut => VT.GetFocusedElementBuildCache(ref this, ref cacheRequest, out element);
+			public HRESULT CreateTreeWalker(ref IUIAutomationCondition pCondition, out IUIAutomationTreeWalker* walker) mut => VT.CreateTreeWalker(ref this, ref pCondition, out walker);
+			public HRESULT get_ControlViewWalker(out IUIAutomationTreeWalker* walker) mut => VT.get_ControlViewWalker(ref this, out walker);
+			public HRESULT get_ContentViewWalker(out IUIAutomationTreeWalker* walker) mut => VT.get_ContentViewWalker(ref this, out walker);
+			public HRESULT get_RawViewWalker(out IUIAutomationTreeWalker* walker) mut => VT.get_RawViewWalker(ref this, out walker);
+			public HRESULT get_RawViewCondition(out IUIAutomationCondition* condition) mut => VT.get_RawViewCondition(ref this, out condition);
+			public HRESULT get_ControlViewCondition(out IUIAutomationCondition* condition) mut => VT.get_ControlViewCondition(ref this, out condition);
+			public HRESULT get_ContentViewCondition(out IUIAutomationCondition* condition) mut => VT.get_ContentViewCondition(ref this, out condition);
+			public HRESULT CreateCacheRequest(out IUIAutomationCacheRequest* cacheRequest) mut => VT.CreateCacheRequest(ref this, out cacheRequest);
+			public HRESULT CreateTrueCondition(out IUIAutomationCondition* newCondition) mut => VT.CreateTrueCondition(ref this, out newCondition);
+			public HRESULT CreateFalseCondition(out IUIAutomationCondition* newCondition) mut => VT.CreateFalseCondition(ref this, out newCondition);
+			public HRESULT CreatePropertyCondition(int32 propertyId, VARIANT value, out IUIAutomationCondition* newCondition) mut => VT.CreatePropertyCondition(ref this, propertyId, value, out newCondition);
+			public HRESULT CreatePropertyConditionEx(int32 propertyId, VARIANT value, PropertyConditionFlags flags, out IUIAutomationCondition* newCondition) mut => VT.CreatePropertyConditionEx(ref this, propertyId, value, flags, out newCondition);
+			public HRESULT CreateAndCondition(ref IUIAutomationCondition condition1, ref IUIAutomationCondition condition2, out IUIAutomationCondition* newCondition) mut => VT.CreateAndCondition(ref this, ref condition1, ref condition2, out newCondition);
+			public HRESULT CreateAndConditionFromArray(ref SAFEARRAY conditions, out IUIAutomationCondition* newCondition) mut => VT.CreateAndConditionFromArray(ref this, ref conditions, out newCondition);
+			public HRESULT CreateAndConditionFromNativeArray(IUIAutomationCondition** conditions, int32 conditionCount, out IUIAutomationCondition* newCondition) mut => VT.CreateAndConditionFromNativeArray(ref this, conditions, conditionCount, out newCondition);
+			public HRESULT CreateOrCondition(ref IUIAutomationCondition condition1, ref IUIAutomationCondition condition2, out IUIAutomationCondition* newCondition) mut => VT.CreateOrCondition(ref this, ref condition1, ref condition2, out newCondition);
+			public HRESULT CreateOrConditionFromArray(ref SAFEARRAY conditions, out IUIAutomationCondition* newCondition) mut => VT.CreateOrConditionFromArray(ref this, ref conditions, out newCondition);
+			public HRESULT CreateOrConditionFromNativeArray(IUIAutomationCondition** conditions, int32 conditionCount, out IUIAutomationCondition* newCondition) mut => VT.CreateOrConditionFromNativeArray(ref this, conditions, conditionCount, out newCondition);
+			public HRESULT CreateNotCondition(ref IUIAutomationCondition condition, out IUIAutomationCondition* newCondition) mut => VT.CreateNotCondition(ref this, ref condition, out newCondition);
+			public HRESULT AddAutomationEventHandler(int32 eventId, ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationEventHandler handler) mut => VT.AddAutomationEventHandler(ref this, eventId, ref element, @scope, ref cacheRequest, ref handler);
+			public HRESULT RemoveAutomationEventHandler(int32 eventId, ref IUIAutomationElement element, ref IUIAutomationEventHandler handler) mut => VT.RemoveAutomationEventHandler(ref this, eventId, ref element, ref handler);
+			public HRESULT AddPropertyChangedEventHandlerNativeArray(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationPropertyChangedEventHandler handler, int32* propertyArray, int32 propertyCount) mut => VT.AddPropertyChangedEventHandlerNativeArray(ref this, ref element, @scope, ref cacheRequest, ref handler, propertyArray, propertyCount);
+			public HRESULT AddPropertyChangedEventHandler(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationPropertyChangedEventHandler handler, ref SAFEARRAY propertyArray) mut => VT.AddPropertyChangedEventHandler(ref this, ref element, @scope, ref cacheRequest, ref handler, ref propertyArray);
+			public HRESULT RemovePropertyChangedEventHandler(ref IUIAutomationElement element, ref IUIAutomationPropertyChangedEventHandler handler) mut => VT.RemovePropertyChangedEventHandler(ref this, ref element, ref handler);
+			public HRESULT AddStructureChangedEventHandler(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationStructureChangedEventHandler handler) mut => VT.AddStructureChangedEventHandler(ref this, ref element, @scope, ref cacheRequest, ref handler);
+			public HRESULT RemoveStructureChangedEventHandler(ref IUIAutomationElement element, ref IUIAutomationStructureChangedEventHandler handler) mut => VT.RemoveStructureChangedEventHandler(ref this, ref element, ref handler);
+			public HRESULT AddFocusChangedEventHandler(ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationFocusChangedEventHandler handler) mut => VT.AddFocusChangedEventHandler(ref this, ref cacheRequest, ref handler);
+			public HRESULT RemoveFocusChangedEventHandler(ref IUIAutomationFocusChangedEventHandler handler) mut => VT.RemoveFocusChangedEventHandler(ref this, ref handler);
+			public HRESULT RemoveAllEventHandlers() mut => VT.RemoveAllEventHandlers(ref this);
+			public HRESULT IntNativeArrayToSafeArray(int32* array, int32 arrayCount, out SAFEARRAY* safeArray) mut => VT.IntNativeArrayToSafeArray(ref this, array, arrayCount, out safeArray);
+			public HRESULT IntSafeArrayToNativeArray(ref SAFEARRAY intArray, int32** array, out int32 arrayCount) mut => VT.IntSafeArrayToNativeArray(ref this, ref intArray, array, out arrayCount);
+			public HRESULT RectToVariant(RECT rc, out VARIANT @var) mut => VT.RectToVariant(ref this, rc, out @var);
+			public HRESULT VariantToRect(VARIANT @var, out RECT rc) mut => VT.VariantToRect(ref this, @var, out rc);
+			public HRESULT SafeArrayToRectNativeArray(ref SAFEARRAY rects, RECT** rectArray, out int32 rectArrayCount) mut => VT.SafeArrayToRectNativeArray(ref this, ref rects, rectArray, out rectArrayCount);
+			public HRESULT CreateProxyFactoryEntry(ref IUIAutomationProxyFactory factory, out IUIAutomationProxyFactoryEntry* factoryEntry) mut => VT.CreateProxyFactoryEntry(ref this, ref factory, out factoryEntry);
+			public HRESULT get_ProxyFactoryMapping(out IUIAutomationProxyFactoryMapping* factoryMapping) mut => VT.get_ProxyFactoryMapping(ref this, out factoryMapping);
+			public HRESULT GetPropertyProgrammaticName(int32 property, out BSTR name) mut => VT.GetPropertyProgrammaticName(ref this, property, out name);
+			public HRESULT GetPatternProgrammaticName(int32 pattern, out BSTR name) mut => VT.GetPatternProgrammaticName(ref this, pattern, out name);
+			public HRESULT PollForPotentialSupportedPatterns(ref IUIAutomationElement pElement, out SAFEARRAY* patternIds, out SAFEARRAY* patternNames) mut => VT.PollForPotentialSupportedPatterns(ref this, ref pElement, out patternIds, out patternNames);
+			public HRESULT PollForPotentialSupportedProperties(ref IUIAutomationElement pElement, out SAFEARRAY* propertyIds, out SAFEARRAY* propertyNames) mut => VT.PollForPotentialSupportedProperties(ref this, ref pElement, out propertyIds, out propertyNames);
+			public HRESULT CheckNotSupported(VARIANT value, out BOOL isNotSupported) mut => VT.CheckNotSupported(ref this, value, out isNotSupported);
+			public HRESULT get_ReservedNotSupportedValue(out IUnknown* notSupportedValue) mut => VT.get_ReservedNotSupportedValue(ref this, out notSupportedValue);
+			public HRESULT get_ReservedMixedAttributeValue(out IUnknown* mixedAttributeValue) mut => VT.get_ReservedMixedAttributeValue(ref this, out mixedAttributeValue);
+			public HRESULT ElementFromIAccessible(ref IAccessible accessible, int32 childId, out IUIAutomationElement* element) mut => VT.ElementFromIAccessible(ref this, ref accessible, childId, out element);
+			public HRESULT ElementFromIAccessibleBuildCache(ref IAccessible accessible, int32 childId, ref IUIAutomationCacheRequest cacheRequest, out IUIAutomationElement* element) mut => VT.ElementFromIAccessibleBuildCache(ref this, ref accessible, childId, ref cacheRequest, out element);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6920,30 +4894,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AutoSetFocus(out BOOL autoSetFocus) mut
-			{
-				return VT.get_AutoSetFocus(ref this, out autoSetFocus);
-			}
-			public HRESULT put_AutoSetFocus(BOOL autoSetFocus) mut
-			{
-				return VT.put_AutoSetFocus(ref this, autoSetFocus);
-			}
-			public HRESULT get_ConnectionTimeout(out uint32 timeout) mut
-			{
-				return VT.get_ConnectionTimeout(ref this, out timeout);
-			}
-			public HRESULT put_ConnectionTimeout(uint32 timeout) mut
-			{
-				return VT.put_ConnectionTimeout(ref this, timeout);
-			}
-			public HRESULT get_TransactionTimeout(out uint32 timeout) mut
-			{
-				return VT.get_TransactionTimeout(ref this, out timeout);
-			}
-			public HRESULT put_TransactionTimeout(uint32 timeout) mut
-			{
-				return VT.put_TransactionTimeout(ref this, timeout);
-			}
+			public HRESULT get_AutoSetFocus(out BOOL autoSetFocus) mut => VT.get_AutoSetFocus(ref this, out autoSetFocus);
+			public HRESULT put_AutoSetFocus(BOOL autoSetFocus) mut => VT.put_AutoSetFocus(ref this, autoSetFocus);
+			public HRESULT get_ConnectionTimeout(out uint32 timeout) mut => VT.get_ConnectionTimeout(ref this, out timeout);
+			public HRESULT put_ConnectionTimeout(uint32 timeout) mut => VT.put_ConnectionTimeout(ref this, timeout);
+			public HRESULT get_TransactionTimeout(out uint32 timeout) mut => VT.get_TransactionTimeout(ref this, out timeout);
+			public HRESULT put_TransactionTimeout(uint32 timeout) mut => VT.put_TransactionTimeout(ref this, timeout);
+
 			[CRepr]
 			public struct VTable : IUIAutomation.VTable
 			{
@@ -6962,14 +4919,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddTextEditTextChangedEventHandler(ref IUIAutomationElement element, TreeScope @scope, TextEditChangeType textEditChangeType, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationTextEditTextChangedEventHandler handler) mut
-			{
-				return VT.AddTextEditTextChangedEventHandler(ref this, ref element, @scope, textEditChangeType, ref cacheRequest, ref handler);
-			}
-			public HRESULT RemoveTextEditTextChangedEventHandler(ref IUIAutomationElement element, ref IUIAutomationTextEditTextChangedEventHandler handler) mut
-			{
-				return VT.RemoveTextEditTextChangedEventHandler(ref this, ref element, ref handler);
-			}
+			public HRESULT AddTextEditTextChangedEventHandler(ref IUIAutomationElement element, TreeScope @scope, TextEditChangeType textEditChangeType, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationTextEditTextChangedEventHandler handler) mut => VT.AddTextEditTextChangedEventHandler(ref this, ref element, @scope, textEditChangeType, ref cacheRequest, ref handler);
+			public HRESULT RemoveTextEditTextChangedEventHandler(ref IUIAutomationElement element, ref IUIAutomationTextEditTextChangedEventHandler handler) mut => VT.RemoveTextEditTextChangedEventHandler(ref this, ref element, ref handler);
+
 			[CRepr]
 			public struct VTable : IUIAutomation2.VTable
 			{
@@ -6984,14 +4936,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddChangesEventHandler(ref IUIAutomationElement element, TreeScope @scope, int32* changeTypes, int32 changesCount, ref IUIAutomationCacheRequest pCacheRequest, ref IUIAutomationChangesEventHandler handler) mut
-			{
-				return VT.AddChangesEventHandler(ref this, ref element, @scope, changeTypes, changesCount, ref pCacheRequest, ref handler);
-			}
-			public HRESULT RemoveChangesEventHandler(ref IUIAutomationElement element, ref IUIAutomationChangesEventHandler handler) mut
-			{
-				return VT.RemoveChangesEventHandler(ref this, ref element, ref handler);
-			}
+			public HRESULT AddChangesEventHandler(ref IUIAutomationElement element, TreeScope @scope, int32* changeTypes, int32 changesCount, ref IUIAutomationCacheRequest pCacheRequest, ref IUIAutomationChangesEventHandler handler) mut => VT.AddChangesEventHandler(ref this, ref element, @scope, changeTypes, changesCount, ref pCacheRequest, ref handler);
+			public HRESULT RemoveChangesEventHandler(ref IUIAutomationElement element, ref IUIAutomationChangesEventHandler handler) mut => VT.RemoveChangesEventHandler(ref this, ref element, ref handler);
+
 			[CRepr]
 			public struct VTable : IUIAutomation3.VTable
 			{
@@ -7006,14 +4953,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddNotificationEventHandler(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationNotificationEventHandler handler) mut
-			{
-				return VT.AddNotificationEventHandler(ref this, ref element, @scope, ref cacheRequest, ref handler);
-			}
-			public HRESULT RemoveNotificationEventHandler(ref IUIAutomationElement element, ref IUIAutomationNotificationEventHandler handler) mut
-			{
-				return VT.RemoveNotificationEventHandler(ref this, ref element, ref handler);
-			}
+			public HRESULT AddNotificationEventHandler(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationNotificationEventHandler handler) mut => VT.AddNotificationEventHandler(ref this, ref element, @scope, ref cacheRequest, ref handler);
+			public HRESULT RemoveNotificationEventHandler(ref IUIAutomationElement element, ref IUIAutomationNotificationEventHandler handler) mut => VT.RemoveNotificationEventHandler(ref this, ref element, ref handler);
+
 			[CRepr]
 			public struct VTable : IUIAutomation4.VTable
 			{
@@ -7028,42 +4970,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEventHandlerGroup(out IUIAutomationEventHandlerGroup* handlerGroup) mut
-			{
-				return VT.CreateEventHandlerGroup(ref this, out handlerGroup);
-			}
-			public HRESULT AddEventHandlerGroup(ref IUIAutomationElement element, ref IUIAutomationEventHandlerGroup handlerGroup) mut
-			{
-				return VT.AddEventHandlerGroup(ref this, ref element, ref handlerGroup);
-			}
-			public HRESULT RemoveEventHandlerGroup(ref IUIAutomationElement element, ref IUIAutomationEventHandlerGroup handlerGroup) mut
-			{
-				return VT.RemoveEventHandlerGroup(ref this, ref element, ref handlerGroup);
-			}
-			public HRESULT get_ConnectionRecoveryBehavior(out ConnectionRecoveryBehaviorOptions connectionRecoveryBehaviorOptions) mut
-			{
-				return VT.get_ConnectionRecoveryBehavior(ref this, out connectionRecoveryBehaviorOptions);
-			}
-			public HRESULT put_ConnectionRecoveryBehavior(ConnectionRecoveryBehaviorOptions connectionRecoveryBehaviorOptions) mut
-			{
-				return VT.put_ConnectionRecoveryBehavior(ref this, connectionRecoveryBehaviorOptions);
-			}
-			public HRESULT get_CoalesceEvents(out CoalesceEventsOptions coalesceEventsOptions) mut
-			{
-				return VT.get_CoalesceEvents(ref this, out coalesceEventsOptions);
-			}
-			public HRESULT put_CoalesceEvents(CoalesceEventsOptions coalesceEventsOptions) mut
-			{
-				return VT.put_CoalesceEvents(ref this, coalesceEventsOptions);
-			}
-			public HRESULT AddActiveTextPositionChangedEventHandler(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationActiveTextPositionChangedEventHandler handler) mut
-			{
-				return VT.AddActiveTextPositionChangedEventHandler(ref this, ref element, @scope, ref cacheRequest, ref handler);
-			}
-			public HRESULT RemoveActiveTextPositionChangedEventHandler(ref IUIAutomationElement element, ref IUIAutomationActiveTextPositionChangedEventHandler handler) mut
-			{
-				return VT.RemoveActiveTextPositionChangedEventHandler(ref this, ref element, ref handler);
-			}
+			public HRESULT CreateEventHandlerGroup(out IUIAutomationEventHandlerGroup* handlerGroup) mut => VT.CreateEventHandlerGroup(ref this, out handlerGroup);
+			public HRESULT AddEventHandlerGroup(ref IUIAutomationElement element, ref IUIAutomationEventHandlerGroup handlerGroup) mut => VT.AddEventHandlerGroup(ref this, ref element, ref handlerGroup);
+			public HRESULT RemoveEventHandlerGroup(ref IUIAutomationElement element, ref IUIAutomationEventHandlerGroup handlerGroup) mut => VT.RemoveEventHandlerGroup(ref this, ref element, ref handlerGroup);
+			public HRESULT get_ConnectionRecoveryBehavior(out ConnectionRecoveryBehaviorOptions connectionRecoveryBehaviorOptions) mut => VT.get_ConnectionRecoveryBehavior(ref this, out connectionRecoveryBehaviorOptions);
+			public HRESULT put_ConnectionRecoveryBehavior(ConnectionRecoveryBehaviorOptions connectionRecoveryBehaviorOptions) mut => VT.put_ConnectionRecoveryBehavior(ref this, connectionRecoveryBehaviorOptions);
+			public HRESULT get_CoalesceEvents(out CoalesceEventsOptions coalesceEventsOptions) mut => VT.get_CoalesceEvents(ref this, out coalesceEventsOptions);
+			public HRESULT put_CoalesceEvents(CoalesceEventsOptions coalesceEventsOptions) mut => VT.put_CoalesceEvents(ref this, coalesceEventsOptions);
+			public HRESULT AddActiveTextPositionChangedEventHandler(ref IUIAutomationElement element, TreeScope @scope, ref IUIAutomationCacheRequest cacheRequest, ref IUIAutomationActiveTextPositionChangedEventHandler handler) mut => VT.AddActiveTextPositionChangedEventHandler(ref this, ref element, @scope, ref cacheRequest, ref handler);
+			public HRESULT RemoveActiveTextPositionChangedEventHandler(ref IUIAutomationElement element, ref IUIAutomationActiveTextPositionChangedEventHandler handler) mut => VT.RemoveActiveTextPositionChangedEventHandler(ref this, ref element, ref handler);
+
 			[CRepr]
 			public struct VTable : IUIAutomation5.VTable
 			{

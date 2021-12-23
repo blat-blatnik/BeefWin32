@@ -113,82 +113,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateAnimationVariable(double initialValue, out IUIAnimationVariable* variable) mut
-			{
-				return VT.CreateAnimationVariable(ref this, initialValue, out variable);
-			}
-			public HRESULT ScheduleTransition(ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, double timeNow) mut
-			{
-				return VT.ScheduleTransition(ref this, ref variable, ref transition, timeNow);
-			}
-			public HRESULT CreateStoryboard(out IUIAnimationStoryboard* storyboard) mut
-			{
-				return VT.CreateStoryboard(ref this, out storyboard);
-			}
-			public HRESULT FinishAllStoryboards(double completionDeadline) mut
-			{
-				return VT.FinishAllStoryboards(ref this, completionDeadline);
-			}
-			public HRESULT AbandonAllStoryboards() mut
-			{
-				return VT.AbandonAllStoryboards(ref this);
-			}
-			public HRESULT Update(double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult) mut
-			{
-				return VT.Update(ref this, timeNow, updateResult);
-			}
-			public HRESULT GetVariableFromTag(IUnknown* object, uint32 id, out IUIAnimationVariable* variable) mut
-			{
-				return VT.GetVariableFromTag(ref this, object, id, out variable);
-			}
-			public HRESULT GetStoryboardFromTag(IUnknown* object, uint32 id, out IUIAnimationStoryboard* storyboard) mut
-			{
-				return VT.GetStoryboardFromTag(ref this, object, id, out storyboard);
-			}
-			public HRESULT GetStatus(out UI_ANIMATION_MANAGER_STATUS status) mut
-			{
-				return VT.GetStatus(ref this, out status);
-			}
-			public HRESULT SetAnimationMode(UI_ANIMATION_MODE mode) mut
-			{
-				return VT.SetAnimationMode(ref this, mode);
-			}
-			public HRESULT Pause() mut
-			{
-				return VT.Pause(ref this);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
-			public HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler* handler) mut
-			{
-				return VT.SetManagerEventHandler(ref this, handler);
-			}
-			public HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison* comparison) mut
-			{
-				return VT.SetCancelPriorityComparison(ref this, comparison);
-			}
-			public HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison* comparison) mut
-			{
-				return VT.SetTrimPriorityComparison(ref this, comparison);
-			}
-			public HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison* comparison) mut
-			{
-				return VT.SetCompressPriorityComparison(ref this, comparison);
-			}
-			public HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison* comparison) mut
-			{
-				return VT.SetConcludePriorityComparison(ref this, comparison);
-			}
-			public HRESULT SetDefaultLongestAcceptableDelay(double delay) mut
-			{
-				return VT.SetDefaultLongestAcceptableDelay(ref this, delay);
-			}
-			public HRESULT Shutdown() mut
-			{
-				return VT.Shutdown(ref this);
-			}
+			public HRESULT CreateAnimationVariable(double initialValue, out IUIAnimationVariable* variable) mut => VT.CreateAnimationVariable(ref this, initialValue, out variable);
+			public HRESULT ScheduleTransition(ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, double timeNow) mut => VT.ScheduleTransition(ref this, ref variable, ref transition, timeNow);
+			public HRESULT CreateStoryboard(out IUIAnimationStoryboard* storyboard) mut => VT.CreateStoryboard(ref this, out storyboard);
+			public HRESULT FinishAllStoryboards(double completionDeadline) mut => VT.FinishAllStoryboards(ref this, completionDeadline);
+			public HRESULT AbandonAllStoryboards() mut => VT.AbandonAllStoryboards(ref this);
+			public HRESULT Update(double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult) mut => VT.Update(ref this, timeNow, updateResult);
+			public HRESULT GetVariableFromTag(IUnknown* object, uint32 id, out IUIAnimationVariable* variable) mut => VT.GetVariableFromTag(ref this, object, id, out variable);
+			public HRESULT GetStoryboardFromTag(IUnknown* object, uint32 id, out IUIAnimationStoryboard* storyboard) mut => VT.GetStoryboardFromTag(ref this, object, id, out storyboard);
+			public HRESULT GetStatus(out UI_ANIMATION_MANAGER_STATUS status) mut => VT.GetStatus(ref this, out status);
+			public HRESULT SetAnimationMode(UI_ANIMATION_MODE mode) mut => VT.SetAnimationMode(ref this, mode);
+			public HRESULT Pause() mut => VT.Pause(ref this);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+			public HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler* handler) mut => VT.SetManagerEventHandler(ref this, handler);
+			public HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison* comparison) mut => VT.SetCancelPriorityComparison(ref this, comparison);
+			public HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison* comparison) mut => VT.SetTrimPriorityComparison(ref this, comparison);
+			public HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison* comparison) mut => VT.SetCompressPriorityComparison(ref this, comparison);
+			public HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison* comparison) mut => VT.SetConcludePriorityComparison(ref this, comparison);
+			public HRESULT SetDefaultLongestAcceptableDelay(double delay) mut => VT.SetDefaultLongestAcceptableDelay(ref this, delay);
+			public HRESULT Shutdown() mut => VT.Shutdown(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -220,62 +164,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetValue(out double value) mut
-			{
-				return VT.GetValue(ref this, out value);
-			}
-			public HRESULT GetFinalValue(out double finalValue) mut
-			{
-				return VT.GetFinalValue(ref this, out finalValue);
-			}
-			public HRESULT GetPreviousValue(out double previousValue) mut
-			{
-				return VT.GetPreviousValue(ref this, out previousValue);
-			}
-			public HRESULT GetIntegerValue(out int32 value) mut
-			{
-				return VT.GetIntegerValue(ref this, out value);
-			}
-			public HRESULT GetFinalIntegerValue(out int32 finalValue) mut
-			{
-				return VT.GetFinalIntegerValue(ref this, out finalValue);
-			}
-			public HRESULT GetPreviousIntegerValue(out int32 previousValue) mut
-			{
-				return VT.GetPreviousIntegerValue(ref this, out previousValue);
-			}
-			public HRESULT GetCurrentStoryboard(out IUIAnimationStoryboard* storyboard) mut
-			{
-				return VT.GetCurrentStoryboard(ref this, out storyboard);
-			}
-			public HRESULT SetLowerBound(double bound) mut
-			{
-				return VT.SetLowerBound(ref this, bound);
-			}
-			public HRESULT SetUpperBound(double bound) mut
-			{
-				return VT.SetUpperBound(ref this, bound);
-			}
-			public HRESULT SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode) mut
-			{
-				return VT.SetRoundingMode(ref this, mode);
-			}
-			public HRESULT SetTag(IUnknown* object, uint32 id) mut
-			{
-				return VT.SetTag(ref this, object, id);
-			}
-			public HRESULT GetTag(IUnknown** object, uint32* id) mut
-			{
-				return VT.GetTag(ref this, object, id);
-			}
-			public HRESULT SetVariableChangeHandler(IUIAnimationVariableChangeHandler* handler) mut
-			{
-				return VT.SetVariableChangeHandler(ref this, handler);
-			}
-			public HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler* handler) mut
-			{
-				return VT.SetVariableIntegerChangeHandler(ref this, handler);
-			}
+			public HRESULT GetValue(out double value) mut => VT.GetValue(ref this, out value);
+			public HRESULT GetFinalValue(out double finalValue) mut => VT.GetFinalValue(ref this, out finalValue);
+			public HRESULT GetPreviousValue(out double previousValue) mut => VT.GetPreviousValue(ref this, out previousValue);
+			public HRESULT GetIntegerValue(out int32 value) mut => VT.GetIntegerValue(ref this, out value);
+			public HRESULT GetFinalIntegerValue(out int32 finalValue) mut => VT.GetFinalIntegerValue(ref this, out finalValue);
+			public HRESULT GetPreviousIntegerValue(out int32 previousValue) mut => VT.GetPreviousIntegerValue(ref this, out previousValue);
+			public HRESULT GetCurrentStoryboard(out IUIAnimationStoryboard* storyboard) mut => VT.GetCurrentStoryboard(ref this, out storyboard);
+			public HRESULT SetLowerBound(double bound) mut => VT.SetLowerBound(ref this, bound);
+			public HRESULT SetUpperBound(double bound) mut => VT.SetUpperBound(ref this, bound);
+			public HRESULT SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode) mut => VT.SetRoundingMode(ref this, mode);
+			public HRESULT SetTag(IUnknown* object, uint32 id) mut => VT.SetTag(ref this, object, id);
+			public HRESULT GetTag(IUnknown** object, uint32* id) mut => VT.GetTag(ref this, object, id);
+			public HRESULT SetVariableChangeHandler(IUIAnimationVariableChangeHandler* handler) mut => VT.SetVariableChangeHandler(ref this, handler);
+			public HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler* handler) mut => VT.SetVariableIntegerChangeHandler(ref this, handler);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -302,74 +205,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddTransition(ref IUIAnimationVariable variable, ref IUIAnimationTransition transition) mut
-			{
-				return VT.AddTransition(ref this, ref variable, ref transition);
-			}
-			public HRESULT AddKeyframeAtOffset(UI_ANIMATION_KEYFRAME existingKeyframe, double offset, out UI_ANIMATION_KEYFRAME keyframe) mut
-			{
-				return VT.AddKeyframeAtOffset(ref this, existingKeyframe, offset, out keyframe);
-			}
-			public HRESULT AddKeyframeAfterTransition(ref IUIAnimationTransition transition, out UI_ANIMATION_KEYFRAME keyframe) mut
-			{
-				return VT.AddKeyframeAfterTransition(ref this, ref transition, out keyframe);
-			}
-			public HRESULT AddTransitionAtKeyframe(ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, UI_ANIMATION_KEYFRAME startKeyframe) mut
-			{
-				return VT.AddTransitionAtKeyframe(ref this, ref variable, ref transition, startKeyframe);
-			}
-			public HRESULT AddTransitionBetweenKeyframes(ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe) mut
-			{
-				return VT.AddTransitionBetweenKeyframes(ref this, ref variable, ref transition, startKeyframe, endKeyframe);
-			}
-			public HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, int32 repetitionCount) mut
-			{
-				return VT.RepeatBetweenKeyframes(ref this, startKeyframe, endKeyframe, repetitionCount);
-			}
-			public HRESULT HoldVariable(ref IUIAnimationVariable variable) mut
-			{
-				return VT.HoldVariable(ref this, ref variable);
-			}
-			public HRESULT SetLongestAcceptableDelay(double delay) mut
-			{
-				return VT.SetLongestAcceptableDelay(ref this, delay);
-			}
-			public HRESULT Schedule(double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult) mut
-			{
-				return VT.Schedule(ref this, timeNow, schedulingResult);
-			}
-			public HRESULT Conclude() mut
-			{
-				return VT.Conclude(ref this);
-			}
-			public HRESULT Finish(double completionDeadline) mut
-			{
-				return VT.Finish(ref this, completionDeadline);
-			}
-			public HRESULT Abandon() mut
-			{
-				return VT.Abandon(ref this);
-			}
-			public HRESULT SetTag(IUnknown* object, uint32 id) mut
-			{
-				return VT.SetTag(ref this, object, id);
-			}
-			public HRESULT GetTag(IUnknown** object, uint32* id) mut
-			{
-				return VT.GetTag(ref this, object, id);
-			}
-			public HRESULT GetStatus(out UI_ANIMATION_STORYBOARD_STATUS status) mut
-			{
-				return VT.GetStatus(ref this, out status);
-			}
-			public HRESULT GetElapsedTime(out double elapsedTime) mut
-			{
-				return VT.GetElapsedTime(ref this, out elapsedTime);
-			}
-			public HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler* handler) mut
-			{
-				return VT.SetStoryboardEventHandler(ref this, handler);
-			}
+			public HRESULT AddTransition(ref IUIAnimationVariable variable, ref IUIAnimationTransition transition) mut => VT.AddTransition(ref this, ref variable, ref transition);
+			public HRESULT AddKeyframeAtOffset(UI_ANIMATION_KEYFRAME existingKeyframe, double offset, out UI_ANIMATION_KEYFRAME keyframe) mut => VT.AddKeyframeAtOffset(ref this, existingKeyframe, offset, out keyframe);
+			public HRESULT AddKeyframeAfterTransition(ref IUIAnimationTransition transition, out UI_ANIMATION_KEYFRAME keyframe) mut => VT.AddKeyframeAfterTransition(ref this, ref transition, out keyframe);
+			public HRESULT AddTransitionAtKeyframe(ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, UI_ANIMATION_KEYFRAME startKeyframe) mut => VT.AddTransitionAtKeyframe(ref this, ref variable, ref transition, startKeyframe);
+			public HRESULT AddTransitionBetweenKeyframes(ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe) mut => VT.AddTransitionBetweenKeyframes(ref this, ref variable, ref transition, startKeyframe, endKeyframe);
+			public HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, int32 repetitionCount) mut => VT.RepeatBetweenKeyframes(ref this, startKeyframe, endKeyframe, repetitionCount);
+			public HRESULT HoldVariable(ref IUIAnimationVariable variable) mut => VT.HoldVariable(ref this, ref variable);
+			public HRESULT SetLongestAcceptableDelay(double delay) mut => VT.SetLongestAcceptableDelay(ref this, delay);
+			public HRESULT Schedule(double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult) mut => VT.Schedule(ref this, timeNow, schedulingResult);
+			public HRESULT Conclude() mut => VT.Conclude(ref this);
+			public HRESULT Finish(double completionDeadline) mut => VT.Finish(ref this, completionDeadline);
+			public HRESULT Abandon() mut => VT.Abandon(ref this);
+			public HRESULT SetTag(IUnknown* object, uint32 id) mut => VT.SetTag(ref this, object, id);
+			public HRESULT GetTag(IUnknown** object, uint32* id) mut => VT.GetTag(ref this, object, id);
+			public HRESULT GetStatus(out UI_ANIMATION_STORYBOARD_STATUS status) mut => VT.GetStatus(ref this, out status);
+			public HRESULT GetElapsedTime(out double elapsedTime) mut => VT.GetElapsedTime(ref this, out elapsedTime);
+			public HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler* handler) mut => VT.SetStoryboardEventHandler(ref this, handler);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -399,22 +252,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetInitialValue(double value) mut
-			{
-				return VT.SetInitialValue(ref this, value);
-			}
-			public HRESULT SetInitialVelocity(double velocity) mut
-			{
-				return VT.SetInitialVelocity(ref this, velocity);
-			}
-			public HRESULT IsDurationKnown() mut
-			{
-				return VT.IsDurationKnown(ref this);
-			}
-			public HRESULT GetDuration(out double duration) mut
-			{
-				return VT.GetDuration(ref this, out duration);
-			}
+			public HRESULT SetInitialValue(double value) mut => VT.SetInitialValue(ref this, value);
+			public HRESULT SetInitialVelocity(double velocity) mut => VT.SetInitialVelocity(ref this, velocity);
+			public HRESULT IsDurationKnown() mut => VT.IsDurationKnown(ref this);
+			public HRESULT GetDuration(out double duration) mut => VT.GetDuration(ref this, out duration);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -431,10 +273,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnManagerStatusChanged(UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus) mut
-			{
-				return VT.OnManagerStatusChanged(ref this, newStatus, previousStatus);
-			}
+			public HRESULT OnManagerStatusChanged(UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus) mut => VT.OnManagerStatusChanged(ref this, newStatus, previousStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -448,10 +288,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnValueChanged(ref IUIAnimationStoryboard storyboard, ref IUIAnimationVariable variable, double newValue, double previousValue) mut
-			{
-				return VT.OnValueChanged(ref this, ref storyboard, ref variable, newValue, previousValue);
-			}
+			public HRESULT OnValueChanged(ref IUIAnimationStoryboard storyboard, ref IUIAnimationVariable variable, double newValue, double previousValue) mut => VT.OnValueChanged(ref this, ref storyboard, ref variable, newValue, previousValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -465,10 +303,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnIntegerValueChanged(ref IUIAnimationStoryboard storyboard, ref IUIAnimationVariable variable, int32 newValue, int32 previousValue) mut
-			{
-				return VT.OnIntegerValueChanged(ref this, ref storyboard, ref variable, newValue, previousValue);
-			}
+			public HRESULT OnIntegerValueChanged(ref IUIAnimationStoryboard storyboard, ref IUIAnimationVariable variable, int32 newValue, int32 previousValue) mut => VT.OnIntegerValueChanged(ref this, ref storyboard, ref variable, newValue, previousValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -482,14 +318,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStoryboardStatusChanged(ref IUIAnimationStoryboard storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus) mut
-			{
-				return VT.OnStoryboardStatusChanged(ref this, ref storyboard, newStatus, previousStatus);
-			}
-			public HRESULT OnStoryboardUpdated(ref IUIAnimationStoryboard storyboard) mut
-			{
-				return VT.OnStoryboardUpdated(ref this, ref storyboard);
-			}
+			public HRESULT OnStoryboardStatusChanged(ref IUIAnimationStoryboard storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus) mut => VT.OnStoryboardStatusChanged(ref this, ref storyboard, newStatus, previousStatus);
+			public HRESULT OnStoryboardUpdated(ref IUIAnimationStoryboard storyboard) mut => VT.OnStoryboardUpdated(ref this, ref storyboard);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -504,10 +335,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HasPriority(ref IUIAnimationStoryboard scheduledStoryboard, ref IUIAnimationStoryboard newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect) mut
-			{
-				return VT.HasPriority(ref this, ref scheduledStoryboard, ref newStoryboard, priorityEffect);
-			}
+			public HRESULT HasPriority(ref IUIAnimationStoryboard scheduledStoryboard, ref IUIAnimationStoryboard newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect) mut => VT.HasPriority(ref this, ref scheduledStoryboard, ref newStoryboard, priorityEffect);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -521,54 +350,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstantaneousTransition(double finalValue, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateInstantaneousTransition(ref this, finalValue, out transition);
-			}
-			public HRESULT CreateConstantTransition(double duration, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateConstantTransition(ref this, duration, out transition);
-			}
-			public HRESULT CreateDiscreteTransition(double delay, double finalValue, double hold, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateDiscreteTransition(ref this, delay, finalValue, hold, out transition);
-			}
-			public HRESULT CreateLinearTransition(double duration, double finalValue, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateLinearTransition(ref this, duration, finalValue, out transition);
-			}
-			public HRESULT CreateLinearTransitionFromSpeed(double speed, double finalValue, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateLinearTransitionFromSpeed(ref this, speed, finalValue, out transition);
-			}
-			public HRESULT CreateSinusoidalTransitionFromVelocity(double duration, double period, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateSinusoidalTransitionFromVelocity(ref this, duration, period, out transition);
-			}
-			public HRESULT CreateSinusoidalTransitionFromRange(double duration, double minimumValue, double maximumValue, double period, UI_ANIMATION_SLOPE slope, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateSinusoidalTransitionFromRange(ref this, duration, minimumValue, maximumValue, period, slope, out transition);
-			}
-			public HRESULT CreateAccelerateDecelerateTransition(double duration, double finalValue, double accelerationRatio, double decelerationRatio, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateAccelerateDecelerateTransition(ref this, duration, finalValue, accelerationRatio, decelerationRatio, out transition);
-			}
-			public HRESULT CreateReversalTransition(double duration, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateReversalTransition(ref this, duration, out transition);
-			}
-			public HRESULT CreateCubicTransition(double duration, double finalValue, double finalVelocity, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateCubicTransition(ref this, duration, finalValue, finalVelocity, out transition);
-			}
-			public HRESULT CreateSmoothStopTransition(double maximumDuration, double finalValue, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateSmoothStopTransition(ref this, maximumDuration, finalValue, out transition);
-			}
-			public HRESULT CreateParabolicTransitionFromAcceleration(double finalValue, double finalVelocity, double acceleration, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateParabolicTransitionFromAcceleration(ref this, finalValue, finalVelocity, acceleration, out transition);
-			}
+			public HRESULT CreateInstantaneousTransition(double finalValue, out IUIAnimationTransition* transition) mut => VT.CreateInstantaneousTransition(ref this, finalValue, out transition);
+			public HRESULT CreateConstantTransition(double duration, out IUIAnimationTransition* transition) mut => VT.CreateConstantTransition(ref this, duration, out transition);
+			public HRESULT CreateDiscreteTransition(double delay, double finalValue, double hold, out IUIAnimationTransition* transition) mut => VT.CreateDiscreteTransition(ref this, delay, finalValue, hold, out transition);
+			public HRESULT CreateLinearTransition(double duration, double finalValue, out IUIAnimationTransition* transition) mut => VT.CreateLinearTransition(ref this, duration, finalValue, out transition);
+			public HRESULT CreateLinearTransitionFromSpeed(double speed, double finalValue, out IUIAnimationTransition* transition) mut => VT.CreateLinearTransitionFromSpeed(ref this, speed, finalValue, out transition);
+			public HRESULT CreateSinusoidalTransitionFromVelocity(double duration, double period, out IUIAnimationTransition* transition) mut => VT.CreateSinusoidalTransitionFromVelocity(ref this, duration, period, out transition);
+			public HRESULT CreateSinusoidalTransitionFromRange(double duration, double minimumValue, double maximumValue, double period, UI_ANIMATION_SLOPE slope, out IUIAnimationTransition* transition) mut => VT.CreateSinusoidalTransitionFromRange(ref this, duration, minimumValue, maximumValue, period, slope, out transition);
+			public HRESULT CreateAccelerateDecelerateTransition(double duration, double finalValue, double accelerationRatio, double decelerationRatio, out IUIAnimationTransition* transition) mut => VT.CreateAccelerateDecelerateTransition(ref this, duration, finalValue, accelerationRatio, decelerationRatio, out transition);
+			public HRESULT CreateReversalTransition(double duration, out IUIAnimationTransition* transition) mut => VT.CreateReversalTransition(ref this, duration, out transition);
+			public HRESULT CreateCubicTransition(double duration, double finalValue, double finalVelocity, out IUIAnimationTransition* transition) mut => VT.CreateCubicTransition(ref this, duration, finalValue, finalVelocity, out transition);
+			public HRESULT CreateSmoothStopTransition(double maximumDuration, double finalValue, out IUIAnimationTransition* transition) mut => VT.CreateSmoothStopTransition(ref this, maximumDuration, finalValue, out transition);
+			public HRESULT CreateParabolicTransitionFromAcceleration(double finalValue, double finalVelocity, double acceleration, out IUIAnimationTransition* transition) mut => VT.CreateParabolicTransitionFromAcceleration(ref this, finalValue, finalVelocity, acceleration, out transition);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -593,34 +387,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetInitialValueAndVelocity(double initialValue, double initialVelocity) mut
-			{
-				return VT.SetInitialValueAndVelocity(ref this, initialValue, initialVelocity);
-			}
-			public HRESULT SetDuration(double duration) mut
-			{
-				return VT.SetDuration(ref this, duration);
-			}
-			public HRESULT GetDuration(out double duration) mut
-			{
-				return VT.GetDuration(ref this, out duration);
-			}
-			public HRESULT GetFinalValue(out double value) mut
-			{
-				return VT.GetFinalValue(ref this, out value);
-			}
-			public HRESULT InterpolateValue(double offset, out double value) mut
-			{
-				return VT.InterpolateValue(ref this, offset, out value);
-			}
-			public HRESULT InterpolateVelocity(double offset, out double velocity) mut
-			{
-				return VT.InterpolateVelocity(ref this, offset, out velocity);
-			}
-			public HRESULT GetDependencies(out UI_ANIMATION_DEPENDENCIES initialValueDependencies, out UI_ANIMATION_DEPENDENCIES initialVelocityDependencies, out UI_ANIMATION_DEPENDENCIES durationDependencies) mut
-			{
-				return VT.GetDependencies(ref this, out initialValueDependencies, out initialVelocityDependencies, out durationDependencies);
-			}
+			public HRESULT SetInitialValueAndVelocity(double initialValue, double initialVelocity) mut => VT.SetInitialValueAndVelocity(ref this, initialValue, initialVelocity);
+			public HRESULT SetDuration(double duration) mut => VT.SetDuration(ref this, duration);
+			public HRESULT GetDuration(out double duration) mut => VT.GetDuration(ref this, out duration);
+			public HRESULT GetFinalValue(out double value) mut => VT.GetFinalValue(ref this, out value);
+			public HRESULT InterpolateValue(double offset, out double value) mut => VT.InterpolateValue(ref this, offset, out value);
+			public HRESULT InterpolateVelocity(double offset, out double velocity) mut => VT.InterpolateVelocity(ref this, offset, out velocity);
+			public HRESULT GetDependencies(out UI_ANIMATION_DEPENDENCIES initialValueDependencies, out UI_ANIMATION_DEPENDENCIES initialVelocityDependencies, out UI_ANIMATION_DEPENDENCIES durationDependencies) mut => VT.GetDependencies(ref this, out initialValueDependencies, out initialVelocityDependencies, out durationDependencies);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -640,10 +414,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateTransition(ref IUIAnimationInterpolator interpolator, out IUIAnimationTransition* transition) mut
-			{
-				return VT.CreateTransition(ref this, ref interpolator, out transition);
-			}
+			public HRESULT CreateTransition(ref IUIAnimationInterpolator interpolator, out IUIAnimationTransition* transition) mut => VT.CreateTransition(ref this, ref interpolator, out transition);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -657,34 +429,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTimerUpdateHandler(IUIAnimationTimerUpdateHandler* updateHandler, UI_ANIMATION_IDLE_BEHAVIOR idleBehavior) mut
-			{
-				return VT.SetTimerUpdateHandler(ref this, updateHandler, idleBehavior);
-			}
-			public HRESULT SetTimerEventHandler(IUIAnimationTimerEventHandler* handler) mut
-			{
-				return VT.SetTimerEventHandler(ref this, handler);
-			}
-			public HRESULT Enable() mut
-			{
-				return VT.Enable(ref this);
-			}
-			public HRESULT Disable() mut
-			{
-				return VT.Disable(ref this);
-			}
-			public HRESULT IsEnabled() mut
-			{
-				return VT.IsEnabled(ref this);
-			}
-			public HRESULT GetTime(out double seconds) mut
-			{
-				return VT.GetTime(ref this, out seconds);
-			}
-			public HRESULT SetFrameRateThreshold(uint32 framesPerSecond) mut
-			{
-				return VT.SetFrameRateThreshold(ref this, framesPerSecond);
-			}
+			public HRESULT SetTimerUpdateHandler(IUIAnimationTimerUpdateHandler* updateHandler, UI_ANIMATION_IDLE_BEHAVIOR idleBehavior) mut => VT.SetTimerUpdateHandler(ref this, updateHandler, idleBehavior);
+			public HRESULT SetTimerEventHandler(IUIAnimationTimerEventHandler* handler) mut => VT.SetTimerEventHandler(ref this, handler);
+			public HRESULT Enable() mut => VT.Enable(ref this);
+			public HRESULT Disable() mut => VT.Disable(ref this);
+			public HRESULT IsEnabled() mut => VT.IsEnabled(ref this);
+			public HRESULT GetTime(out double seconds) mut => VT.GetTime(ref this, out seconds);
+			public HRESULT SetFrameRateThreshold(uint32 framesPerSecond) mut => VT.SetFrameRateThreshold(ref this, framesPerSecond);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -704,18 +456,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnUpdate(double timeNow, out UI_ANIMATION_UPDATE_RESULT result) mut
-			{
-				return VT.OnUpdate(ref this, timeNow, out result);
-			}
-			public HRESULT SetTimerClientEventHandler(ref IUIAnimationTimerClientEventHandler handler) mut
-			{
-				return VT.SetTimerClientEventHandler(ref this, ref handler);
-			}
-			public HRESULT ClearTimerClientEventHandler() mut
-			{
-				return VT.ClearTimerClientEventHandler(ref this);
-			}
+			public HRESULT OnUpdate(double timeNow, out UI_ANIMATION_UPDATE_RESULT result) mut => VT.OnUpdate(ref this, timeNow, out result);
+			public HRESULT SetTimerClientEventHandler(ref IUIAnimationTimerClientEventHandler handler) mut => VT.SetTimerClientEventHandler(ref this, ref handler);
+			public HRESULT ClearTimerClientEventHandler() mut => VT.ClearTimerClientEventHandler(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -731,10 +475,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnTimerClientStatusChanged(UI_ANIMATION_TIMER_CLIENT_STATUS newStatus, UI_ANIMATION_TIMER_CLIENT_STATUS previousStatus) mut
-			{
-				return VT.OnTimerClientStatusChanged(ref this, newStatus, previousStatus);
-			}
+			public HRESULT OnTimerClientStatusChanged(UI_ANIMATION_TIMER_CLIENT_STATUS newStatus, UI_ANIMATION_TIMER_CLIENT_STATUS previousStatus) mut => VT.OnTimerClientStatusChanged(ref this, newStatus, previousStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -748,18 +490,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnPreUpdate() mut
-			{
-				return VT.OnPreUpdate(ref this);
-			}
-			public HRESULT OnPostUpdate() mut
-			{
-				return VT.OnPostUpdate(ref this);
-			}
-			public HRESULT OnRenderingTooSlow(uint32 framesPerSecond) mut
-			{
-				return VT.OnRenderingTooSlow(ref this, framesPerSecond);
-			}
+			public HRESULT OnPreUpdate() mut => VT.OnPreUpdate(ref this);
+			public HRESULT OnPostUpdate() mut => VT.OnPostUpdate(ref this);
+			public HRESULT OnRenderingTooSlow(uint32 framesPerSecond) mut => VT.OnRenderingTooSlow(ref this, framesPerSecond);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -775,90 +509,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateAnimationVectorVariable(double* initialValue, uint32 cDimension, out IUIAnimationVariable2* variable) mut
-			{
-				return VT.CreateAnimationVectorVariable(ref this, initialValue, cDimension, out variable);
-			}
-			public HRESULT CreateAnimationVariable(double initialValue, out IUIAnimationVariable2* variable) mut
-			{
-				return VT.CreateAnimationVariable(ref this, initialValue, out variable);
-			}
-			public HRESULT ScheduleTransition(ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, double timeNow) mut
-			{
-				return VT.ScheduleTransition(ref this, ref variable, ref transition, timeNow);
-			}
-			public HRESULT CreateStoryboard(out IUIAnimationStoryboard2* storyboard) mut
-			{
-				return VT.CreateStoryboard(ref this, out storyboard);
-			}
-			public HRESULT FinishAllStoryboards(double completionDeadline) mut
-			{
-				return VT.FinishAllStoryboards(ref this, completionDeadline);
-			}
-			public HRESULT AbandonAllStoryboards() mut
-			{
-				return VT.AbandonAllStoryboards(ref this);
-			}
-			public HRESULT Update(double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult) mut
-			{
-				return VT.Update(ref this, timeNow, updateResult);
-			}
-			public HRESULT GetVariableFromTag(IUnknown* object, uint32 id, out IUIAnimationVariable2* variable) mut
-			{
-				return VT.GetVariableFromTag(ref this, object, id, out variable);
-			}
-			public HRESULT GetStoryboardFromTag(IUnknown* object, uint32 id, out IUIAnimationStoryboard2* storyboard) mut
-			{
-				return VT.GetStoryboardFromTag(ref this, object, id, out storyboard);
-			}
-			public HRESULT EstimateNextEventTime(out double seconds) mut
-			{
-				return VT.EstimateNextEventTime(ref this, out seconds);
-			}
-			public HRESULT GetStatus(out UI_ANIMATION_MANAGER_STATUS status) mut
-			{
-				return VT.GetStatus(ref this, out status);
-			}
-			public HRESULT SetAnimationMode(UI_ANIMATION_MODE mode) mut
-			{
-				return VT.SetAnimationMode(ref this, mode);
-			}
-			public HRESULT Pause() mut
-			{
-				return VT.Pause(ref this);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
-			public HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler2* handler, BOOL fRegisterForNextAnimationEvent) mut
-			{
-				return VT.SetManagerEventHandler(ref this, handler, fRegisterForNextAnimationEvent);
-			}
-			public HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison2* comparison) mut
-			{
-				return VT.SetCancelPriorityComparison(ref this, comparison);
-			}
-			public HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison2* comparison) mut
-			{
-				return VT.SetTrimPriorityComparison(ref this, comparison);
-			}
-			public HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison2* comparison) mut
-			{
-				return VT.SetCompressPriorityComparison(ref this, comparison);
-			}
-			public HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison2* comparison) mut
-			{
-				return VT.SetConcludePriorityComparison(ref this, comparison);
-			}
-			public HRESULT SetDefaultLongestAcceptableDelay(double delay) mut
-			{
-				return VT.SetDefaultLongestAcceptableDelay(ref this, delay);
-			}
-			public HRESULT Shutdown() mut
-			{
-				return VT.Shutdown(ref this);
-			}
+			public HRESULT CreateAnimationVectorVariable(double* initialValue, uint32 cDimension, out IUIAnimationVariable2* variable) mut => VT.CreateAnimationVectorVariable(ref this, initialValue, cDimension, out variable);
+			public HRESULT CreateAnimationVariable(double initialValue, out IUIAnimationVariable2* variable) mut => VT.CreateAnimationVariable(ref this, initialValue, out variable);
+			public HRESULT ScheduleTransition(ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, double timeNow) mut => VT.ScheduleTransition(ref this, ref variable, ref transition, timeNow);
+			public HRESULT CreateStoryboard(out IUIAnimationStoryboard2* storyboard) mut => VT.CreateStoryboard(ref this, out storyboard);
+			public HRESULT FinishAllStoryboards(double completionDeadline) mut => VT.FinishAllStoryboards(ref this, completionDeadline);
+			public HRESULT AbandonAllStoryboards() mut => VT.AbandonAllStoryboards(ref this);
+			public HRESULT Update(double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult) mut => VT.Update(ref this, timeNow, updateResult);
+			public HRESULT GetVariableFromTag(IUnknown* object, uint32 id, out IUIAnimationVariable2* variable) mut => VT.GetVariableFromTag(ref this, object, id, out variable);
+			public HRESULT GetStoryboardFromTag(IUnknown* object, uint32 id, out IUIAnimationStoryboard2* storyboard) mut => VT.GetStoryboardFromTag(ref this, object, id, out storyboard);
+			public HRESULT EstimateNextEventTime(out double seconds) mut => VT.EstimateNextEventTime(ref this, out seconds);
+			public HRESULT GetStatus(out UI_ANIMATION_MANAGER_STATUS status) mut => VT.GetStatus(ref this, out status);
+			public HRESULT SetAnimationMode(UI_ANIMATION_MODE mode) mut => VT.SetAnimationMode(ref this, mode);
+			public HRESULT Pause() mut => VT.Pause(ref this);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+			public HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler2* handler, BOOL fRegisterForNextAnimationEvent) mut => VT.SetManagerEventHandler(ref this, handler, fRegisterForNextAnimationEvent);
+			public HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison2* comparison) mut => VT.SetCancelPriorityComparison(ref this, comparison);
+			public HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison2* comparison) mut => VT.SetTrimPriorityComparison(ref this, comparison);
+			public HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison2* comparison) mut => VT.SetCompressPriorityComparison(ref this, comparison);
+			public HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison2* comparison) mut => VT.SetConcludePriorityComparison(ref this, comparison);
+			public HRESULT SetDefaultLongestAcceptableDelay(double delay) mut => VT.SetDefaultLongestAcceptableDelay(ref this, delay);
+			public HRESULT Shutdown() mut => VT.Shutdown(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -892,110 +564,33 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDimension(out uint32 dimension) mut
-			{
-				return VT.GetDimension(ref this, out dimension);
-			}
-			public HRESULT GetValue(out double value) mut
-			{
-				return VT.GetValue(ref this, out value);
-			}
-			public HRESULT GetVectorValue(double* value, uint32 cDimension) mut
-			{
-				return VT.GetVectorValue(ref this, value, cDimension);
-			}
-			public HRESULT GetCurve(ref IDCompositionAnimation animation) mut
-			{
-				return VT.GetCurve(ref this, ref animation);
-			}
-			public HRESULT GetVectorCurve(IDCompositionAnimation** animation, uint32 cDimension) mut
-			{
-				return VT.GetVectorCurve(ref this, animation, cDimension);
-			}
-			public HRESULT GetFinalValue(out double finalValue) mut
-			{
-				return VT.GetFinalValue(ref this, out finalValue);
-			}
-			public HRESULT GetFinalVectorValue(double* finalValue, uint32 cDimension) mut
-			{
-				return VT.GetFinalVectorValue(ref this, finalValue, cDimension);
-			}
-			public HRESULT GetPreviousValue(out double previousValue) mut
-			{
-				return VT.GetPreviousValue(ref this, out previousValue);
-			}
-			public HRESULT GetPreviousVectorValue(double* previousValue, uint32 cDimension) mut
-			{
-				return VT.GetPreviousVectorValue(ref this, previousValue, cDimension);
-			}
-			public HRESULT GetIntegerValue(out int32 value) mut
-			{
-				return VT.GetIntegerValue(ref this, out value);
-			}
-			public HRESULT GetIntegerVectorValue(int32* value, uint32 cDimension) mut
-			{
-				return VT.GetIntegerVectorValue(ref this, value, cDimension);
-			}
-			public HRESULT GetFinalIntegerValue(out int32 finalValue) mut
-			{
-				return VT.GetFinalIntegerValue(ref this, out finalValue);
-			}
-			public HRESULT GetFinalIntegerVectorValue(int32* finalValue, uint32 cDimension) mut
-			{
-				return VT.GetFinalIntegerVectorValue(ref this, finalValue, cDimension);
-			}
-			public HRESULT GetPreviousIntegerValue(out int32 previousValue) mut
-			{
-				return VT.GetPreviousIntegerValue(ref this, out previousValue);
-			}
-			public HRESULT GetPreviousIntegerVectorValue(int32* previousValue, uint32 cDimension) mut
-			{
-				return VT.GetPreviousIntegerVectorValue(ref this, previousValue, cDimension);
-			}
-			public HRESULT GetCurrentStoryboard(out IUIAnimationStoryboard2* storyboard) mut
-			{
-				return VT.GetCurrentStoryboard(ref this, out storyboard);
-			}
-			public HRESULT SetLowerBound(double bound) mut
-			{
-				return VT.SetLowerBound(ref this, bound);
-			}
-			public HRESULT SetLowerBoundVector(double* bound, uint32 cDimension) mut
-			{
-				return VT.SetLowerBoundVector(ref this, bound, cDimension);
-			}
-			public HRESULT SetUpperBound(double bound) mut
-			{
-				return VT.SetUpperBound(ref this, bound);
-			}
-			public HRESULT SetUpperBoundVector(double* bound, uint32 cDimension) mut
-			{
-				return VT.SetUpperBoundVector(ref this, bound, cDimension);
-			}
-			public HRESULT SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode) mut
-			{
-				return VT.SetRoundingMode(ref this, mode);
-			}
-			public HRESULT SetTag(IUnknown* object, uint32 id) mut
-			{
-				return VT.SetTag(ref this, object, id);
-			}
-			public HRESULT GetTag(IUnknown** object, uint32* id) mut
-			{
-				return VT.GetTag(ref this, object, id);
-			}
-			public HRESULT SetVariableChangeHandler(IUIAnimationVariableChangeHandler2* handler, BOOL fRegisterForNextAnimationEvent) mut
-			{
-				return VT.SetVariableChangeHandler(ref this, handler, fRegisterForNextAnimationEvent);
-			}
-			public HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler2* handler, BOOL fRegisterForNextAnimationEvent) mut
-			{
-				return VT.SetVariableIntegerChangeHandler(ref this, handler, fRegisterForNextAnimationEvent);
-			}
-			public HRESULT SetVariableCurveChangeHandler(IUIAnimationVariableCurveChangeHandler2* handler) mut
-			{
-				return VT.SetVariableCurveChangeHandler(ref this, handler);
-			}
+			public HRESULT GetDimension(out uint32 dimension) mut => VT.GetDimension(ref this, out dimension);
+			public HRESULT GetValue(out double value) mut => VT.GetValue(ref this, out value);
+			public HRESULT GetVectorValue(double* value, uint32 cDimension) mut => VT.GetVectorValue(ref this, value, cDimension);
+			public HRESULT GetCurve(ref IDCompositionAnimation animation) mut => VT.GetCurve(ref this, ref animation);
+			public HRESULT GetVectorCurve(IDCompositionAnimation** animation, uint32 cDimension) mut => VT.GetVectorCurve(ref this, animation, cDimension);
+			public HRESULT GetFinalValue(out double finalValue) mut => VT.GetFinalValue(ref this, out finalValue);
+			public HRESULT GetFinalVectorValue(double* finalValue, uint32 cDimension) mut => VT.GetFinalVectorValue(ref this, finalValue, cDimension);
+			public HRESULT GetPreviousValue(out double previousValue) mut => VT.GetPreviousValue(ref this, out previousValue);
+			public HRESULT GetPreviousVectorValue(double* previousValue, uint32 cDimension) mut => VT.GetPreviousVectorValue(ref this, previousValue, cDimension);
+			public HRESULT GetIntegerValue(out int32 value) mut => VT.GetIntegerValue(ref this, out value);
+			public HRESULT GetIntegerVectorValue(int32* value, uint32 cDimension) mut => VT.GetIntegerVectorValue(ref this, value, cDimension);
+			public HRESULT GetFinalIntegerValue(out int32 finalValue) mut => VT.GetFinalIntegerValue(ref this, out finalValue);
+			public HRESULT GetFinalIntegerVectorValue(int32* finalValue, uint32 cDimension) mut => VT.GetFinalIntegerVectorValue(ref this, finalValue, cDimension);
+			public HRESULT GetPreviousIntegerValue(out int32 previousValue) mut => VT.GetPreviousIntegerValue(ref this, out previousValue);
+			public HRESULT GetPreviousIntegerVectorValue(int32* previousValue, uint32 cDimension) mut => VT.GetPreviousIntegerVectorValue(ref this, previousValue, cDimension);
+			public HRESULT GetCurrentStoryboard(out IUIAnimationStoryboard2* storyboard) mut => VT.GetCurrentStoryboard(ref this, out storyboard);
+			public HRESULT SetLowerBound(double bound) mut => VT.SetLowerBound(ref this, bound);
+			public HRESULT SetLowerBoundVector(double* bound, uint32 cDimension) mut => VT.SetLowerBoundVector(ref this, bound, cDimension);
+			public HRESULT SetUpperBound(double bound) mut => VT.SetUpperBound(ref this, bound);
+			public HRESULT SetUpperBoundVector(double* bound, uint32 cDimension) mut => VT.SetUpperBoundVector(ref this, bound, cDimension);
+			public HRESULT SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode) mut => VT.SetRoundingMode(ref this, mode);
+			public HRESULT SetTag(IUnknown* object, uint32 id) mut => VT.SetTag(ref this, object, id);
+			public HRESULT GetTag(IUnknown** object, uint32* id) mut => VT.GetTag(ref this, object, id);
+			public HRESULT SetVariableChangeHandler(IUIAnimationVariableChangeHandler2* handler, BOOL fRegisterForNextAnimationEvent) mut => VT.SetVariableChangeHandler(ref this, handler, fRegisterForNextAnimationEvent);
+			public HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler2* handler, BOOL fRegisterForNextAnimationEvent) mut => VT.SetVariableIntegerChangeHandler(ref this, handler, fRegisterForNextAnimationEvent);
+			public HRESULT SetVariableCurveChangeHandler(IUIAnimationVariableCurveChangeHandler2* handler) mut => VT.SetVariableCurveChangeHandler(ref this, handler);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1034,34 +629,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDimension(out uint32 dimension) mut
-			{
-				return VT.GetDimension(ref this, out dimension);
-			}
-			public HRESULT SetInitialValue(double value) mut
-			{
-				return VT.SetInitialValue(ref this, value);
-			}
-			public HRESULT SetInitialVectorValue(double* value, uint32 cDimension) mut
-			{
-				return VT.SetInitialVectorValue(ref this, value, cDimension);
-			}
-			public HRESULT SetInitialVelocity(double velocity) mut
-			{
-				return VT.SetInitialVelocity(ref this, velocity);
-			}
-			public HRESULT SetInitialVectorVelocity(double* velocity, uint32 cDimension) mut
-			{
-				return VT.SetInitialVectorVelocity(ref this, velocity, cDimension);
-			}
-			public HRESULT IsDurationKnown() mut
-			{
-				return VT.IsDurationKnown(ref this);
-			}
-			public HRESULT GetDuration(out double duration) mut
-			{
-				return VT.GetDuration(ref this, out duration);
-			}
+			public HRESULT GetDimension(out uint32 dimension) mut => VT.GetDimension(ref this, out dimension);
+			public HRESULT SetInitialValue(double value) mut => VT.SetInitialValue(ref this, value);
+			public HRESULT SetInitialVectorValue(double* value, uint32 cDimension) mut => VT.SetInitialVectorValue(ref this, value, cDimension);
+			public HRESULT SetInitialVelocity(double velocity) mut => VT.SetInitialVelocity(ref this, velocity);
+			public HRESULT SetInitialVectorVelocity(double* velocity, uint32 cDimension) mut => VT.SetInitialVectorVelocity(ref this, velocity, cDimension);
+			public HRESULT IsDurationKnown() mut => VT.IsDurationKnown(ref this);
+			public HRESULT GetDuration(out double duration) mut => VT.GetDuration(ref this, out duration);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1081,10 +656,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnManagerStatusChanged(UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus) mut
-			{
-				return VT.OnManagerStatusChanged(ref this, newStatus, previousStatus);
-			}
+			public HRESULT OnManagerStatusChanged(UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus) mut => VT.OnManagerStatusChanged(ref this, newStatus, previousStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1098,10 +671,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnValueChanged(ref IUIAnimationStoryboard2 storyboard, ref IUIAnimationVariable2 variable, double* newValue, double* previousValue, uint32 cDimension) mut
-			{
-				return VT.OnValueChanged(ref this, ref storyboard, ref variable, newValue, previousValue, cDimension);
-			}
+			public HRESULT OnValueChanged(ref IUIAnimationStoryboard2 storyboard, ref IUIAnimationVariable2 variable, double* newValue, double* previousValue, uint32 cDimension) mut => VT.OnValueChanged(ref this, ref storyboard, ref variable, newValue, previousValue, cDimension);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1115,10 +686,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnIntegerValueChanged(ref IUIAnimationStoryboard2 storyboard, ref IUIAnimationVariable2 variable, int32* newValue, int32* previousValue, uint32 cDimension) mut
-			{
-				return VT.OnIntegerValueChanged(ref this, ref storyboard, ref variable, newValue, previousValue, cDimension);
-			}
+			public HRESULT OnIntegerValueChanged(ref IUIAnimationStoryboard2 storyboard, ref IUIAnimationVariable2 variable, int32* newValue, int32* previousValue, uint32 cDimension) mut => VT.OnIntegerValueChanged(ref this, ref storyboard, ref variable, newValue, previousValue, cDimension);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1132,10 +701,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnCurveChanged(ref IUIAnimationVariable2 variable) mut
-			{
-				return VT.OnCurveChanged(ref this, ref variable);
-			}
+			public HRESULT OnCurveChanged(ref IUIAnimationVariable2 variable) mut => VT.OnCurveChanged(ref this, ref variable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1149,14 +716,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStoryboardStatusChanged(ref IUIAnimationStoryboard2 storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus) mut
-			{
-				return VT.OnStoryboardStatusChanged(ref this, ref storyboard, newStatus, previousStatus);
-			}
-			public HRESULT OnStoryboardUpdated(ref IUIAnimationStoryboard2 storyboard) mut
-			{
-				return VT.OnStoryboardUpdated(ref this, ref storyboard);
-			}
+			public HRESULT OnStoryboardStatusChanged(ref IUIAnimationStoryboard2 storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus) mut => VT.OnStoryboardStatusChanged(ref this, ref storyboard, newStatus, previousStatus);
+			public HRESULT OnStoryboardUpdated(ref IUIAnimationStoryboard2 storyboard) mut => VT.OnStoryboardUpdated(ref this, ref storyboard);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1171,10 +733,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnLoopIterationChanged(ref IUIAnimationStoryboard2 storyboard, uint id, uint32 newIterationCount, uint32 oldIterationCount) mut
-			{
-				return VT.OnLoopIterationChanged(ref this, ref storyboard, id, newIterationCount, oldIterationCount);
-			}
+			public HRESULT OnLoopIterationChanged(ref IUIAnimationStoryboard2 storyboard, uint id, uint32 newIterationCount, uint32 oldIterationCount) mut => VT.OnLoopIterationChanged(ref this, ref storyboard, id, newIterationCount, oldIterationCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1188,10 +748,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HasPriority(ref IUIAnimationStoryboard2 scheduledStoryboard, ref IUIAnimationStoryboard2 newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect) mut
-			{
-				return VT.HasPriority(ref this, ref scheduledStoryboard, ref newStoryboard, priorityEffect);
-			}
+			public HRESULT HasPriority(ref IUIAnimationStoryboard2 scheduledStoryboard, ref IUIAnimationStoryboard2 newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect) mut => VT.HasPriority(ref this, ref scheduledStoryboard, ref newStoryboard, priorityEffect);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1205,82 +763,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstantaneousTransition(double finalValue, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateInstantaneousTransition(ref this, finalValue, out transition);
-			}
-			public HRESULT CreateInstantaneousVectorTransition(double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateInstantaneousVectorTransition(ref this, finalValue, cDimension, out transition);
-			}
-			public HRESULT CreateConstantTransition(double duration, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateConstantTransition(ref this, duration, out transition);
-			}
-			public HRESULT CreateDiscreteTransition(double delay, double finalValue, double hold, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateDiscreteTransition(ref this, delay, finalValue, hold, out transition);
-			}
-			public HRESULT CreateDiscreteVectorTransition(double delay, double* finalValue, uint32 cDimension, double hold, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateDiscreteVectorTransition(ref this, delay, finalValue, cDimension, hold, out transition);
-			}
-			public HRESULT CreateLinearTransition(double duration, double finalValue, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateLinearTransition(ref this, duration, finalValue, out transition);
-			}
-			public HRESULT CreateLinearVectorTransition(double duration, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateLinearVectorTransition(ref this, duration, finalValue, cDimension, out transition);
-			}
-			public HRESULT CreateLinearTransitionFromSpeed(double speed, double finalValue, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateLinearTransitionFromSpeed(ref this, speed, finalValue, out transition);
-			}
-			public HRESULT CreateLinearVectorTransitionFromSpeed(double speed, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateLinearVectorTransitionFromSpeed(ref this, speed, finalValue, cDimension, out transition);
-			}
-			public HRESULT CreateSinusoidalTransitionFromVelocity(double duration, double period, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateSinusoidalTransitionFromVelocity(ref this, duration, period, out transition);
-			}
-			public HRESULT CreateSinusoidalTransitionFromRange(double duration, double minimumValue, double maximumValue, double period, UI_ANIMATION_SLOPE slope, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateSinusoidalTransitionFromRange(ref this, duration, minimumValue, maximumValue, period, slope, out transition);
-			}
-			public HRESULT CreateAccelerateDecelerateTransition(double duration, double finalValue, double accelerationRatio, double decelerationRatio, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateAccelerateDecelerateTransition(ref this, duration, finalValue, accelerationRatio, decelerationRatio, out transition);
-			}
-			public HRESULT CreateReversalTransition(double duration, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateReversalTransition(ref this, duration, out transition);
-			}
-			public HRESULT CreateCubicTransition(double duration, double finalValue, double finalVelocity, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateCubicTransition(ref this, duration, finalValue, finalVelocity, out transition);
-			}
-			public HRESULT CreateCubicVectorTransition(double duration, double* finalValue, double* finalVelocity, uint32 cDimension, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateCubicVectorTransition(ref this, duration, finalValue, finalVelocity, cDimension, out transition);
-			}
-			public HRESULT CreateSmoothStopTransition(double maximumDuration, double finalValue, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateSmoothStopTransition(ref this, maximumDuration, finalValue, out transition);
-			}
-			public HRESULT CreateParabolicTransitionFromAcceleration(double finalValue, double finalVelocity, double acceleration, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateParabolicTransitionFromAcceleration(ref this, finalValue, finalVelocity, acceleration, out transition);
-			}
-			public HRESULT CreateCubicBezierLinearTransition(double duration, double finalValue, double x1, double y1, double x2, double y2, out IUIAnimationTransition2* ppTransition) mut
-			{
-				return VT.CreateCubicBezierLinearTransition(ref this, duration, finalValue, x1, y1, x2, y2, out ppTransition);
-			}
-			public HRESULT CreateCubicBezierLinearVectorTransition(double duration, double* finalValue, uint32 cDimension, double x1, double y1, double x2, double y2, out IUIAnimationTransition2* ppTransition) mut
-			{
-				return VT.CreateCubicBezierLinearVectorTransition(ref this, duration, finalValue, cDimension, x1, y1, x2, y2, out ppTransition);
-			}
+			public HRESULT CreateInstantaneousTransition(double finalValue, out IUIAnimationTransition2* transition) mut => VT.CreateInstantaneousTransition(ref this, finalValue, out transition);
+			public HRESULT CreateInstantaneousVectorTransition(double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) mut => VT.CreateInstantaneousVectorTransition(ref this, finalValue, cDimension, out transition);
+			public HRESULT CreateConstantTransition(double duration, out IUIAnimationTransition2* transition) mut => VT.CreateConstantTransition(ref this, duration, out transition);
+			public HRESULT CreateDiscreteTransition(double delay, double finalValue, double hold, out IUIAnimationTransition2* transition) mut => VT.CreateDiscreteTransition(ref this, delay, finalValue, hold, out transition);
+			public HRESULT CreateDiscreteVectorTransition(double delay, double* finalValue, uint32 cDimension, double hold, out IUIAnimationTransition2* transition) mut => VT.CreateDiscreteVectorTransition(ref this, delay, finalValue, cDimension, hold, out transition);
+			public HRESULT CreateLinearTransition(double duration, double finalValue, out IUIAnimationTransition2* transition) mut => VT.CreateLinearTransition(ref this, duration, finalValue, out transition);
+			public HRESULT CreateLinearVectorTransition(double duration, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) mut => VT.CreateLinearVectorTransition(ref this, duration, finalValue, cDimension, out transition);
+			public HRESULT CreateLinearTransitionFromSpeed(double speed, double finalValue, out IUIAnimationTransition2* transition) mut => VT.CreateLinearTransitionFromSpeed(ref this, speed, finalValue, out transition);
+			public HRESULT CreateLinearVectorTransitionFromSpeed(double speed, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) mut => VT.CreateLinearVectorTransitionFromSpeed(ref this, speed, finalValue, cDimension, out transition);
+			public HRESULT CreateSinusoidalTransitionFromVelocity(double duration, double period, out IUIAnimationTransition2* transition) mut => VT.CreateSinusoidalTransitionFromVelocity(ref this, duration, period, out transition);
+			public HRESULT CreateSinusoidalTransitionFromRange(double duration, double minimumValue, double maximumValue, double period, UI_ANIMATION_SLOPE slope, out IUIAnimationTransition2* transition) mut => VT.CreateSinusoidalTransitionFromRange(ref this, duration, minimumValue, maximumValue, period, slope, out transition);
+			public HRESULT CreateAccelerateDecelerateTransition(double duration, double finalValue, double accelerationRatio, double decelerationRatio, out IUIAnimationTransition2* transition) mut => VT.CreateAccelerateDecelerateTransition(ref this, duration, finalValue, accelerationRatio, decelerationRatio, out transition);
+			public HRESULT CreateReversalTransition(double duration, out IUIAnimationTransition2* transition) mut => VT.CreateReversalTransition(ref this, duration, out transition);
+			public HRESULT CreateCubicTransition(double duration, double finalValue, double finalVelocity, out IUIAnimationTransition2* transition) mut => VT.CreateCubicTransition(ref this, duration, finalValue, finalVelocity, out transition);
+			public HRESULT CreateCubicVectorTransition(double duration, double* finalValue, double* finalVelocity, uint32 cDimension, out IUIAnimationTransition2* transition) mut => VT.CreateCubicVectorTransition(ref this, duration, finalValue, finalVelocity, cDimension, out transition);
+			public HRESULT CreateSmoothStopTransition(double maximumDuration, double finalValue, out IUIAnimationTransition2* transition) mut => VT.CreateSmoothStopTransition(ref this, maximumDuration, finalValue, out transition);
+			public HRESULT CreateParabolicTransitionFromAcceleration(double finalValue, double finalVelocity, double acceleration, out IUIAnimationTransition2* transition) mut => VT.CreateParabolicTransitionFromAcceleration(ref this, finalValue, finalVelocity, acceleration, out transition);
+			public HRESULT CreateCubicBezierLinearTransition(double duration, double finalValue, double x1, double y1, double x2, double y2, out IUIAnimationTransition2* ppTransition) mut => VT.CreateCubicBezierLinearTransition(ref this, duration, finalValue, x1, y1, x2, y2, out ppTransition);
+			public HRESULT CreateCubicBezierLinearVectorTransition(double duration, double* finalValue, uint32 cDimension, double x1, double y1, double x2, double y2, out IUIAnimationTransition2* ppTransition) mut => VT.CreateCubicBezierLinearVectorTransition(ref this, duration, finalValue, cDimension, x1, y1, x2, y2, out ppTransition);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1312,14 +814,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddCubic(uint32 dimension, double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient) mut
-			{
-				return VT.AddCubic(ref this, dimension, beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
-			}
-			public HRESULT AddSinusoidal(uint32 dimension, double beginOffset, float bias, float amplitude, float frequency, float phase) mut
-			{
-				return VT.AddSinusoidal(ref this, dimension, beginOffset, bias, amplitude, frequency, phase);
-			}
+			public HRESULT AddCubic(uint32 dimension, double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient) mut => VT.AddCubic(ref this, dimension, beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
+			public HRESULT AddSinusoidal(uint32 dimension, double beginOffset, float bias, float amplitude, float frequency, float phase) mut => VT.AddSinusoidal(ref this, dimension, beginOffset, bias, amplitude, frequency, phase);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1334,42 +831,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDimension(out uint32 dimension) mut
-			{
-				return VT.GetDimension(ref this, out dimension);
-			}
-			public HRESULT SetInitialValueAndVelocity(double* initialValue, double* initialVelocity, uint32 cDimension) mut
-			{
-				return VT.SetInitialValueAndVelocity(ref this, initialValue, initialVelocity, cDimension);
-			}
-			public HRESULT SetDuration(double duration) mut
-			{
-				return VT.SetDuration(ref this, duration);
-			}
-			public HRESULT GetDuration(out double duration) mut
-			{
-				return VT.GetDuration(ref this, out duration);
-			}
-			public HRESULT GetFinalValue(double* value, uint32 cDimension) mut
-			{
-				return VT.GetFinalValue(ref this, value, cDimension);
-			}
-			public HRESULT InterpolateValue(double offset, double* value, uint32 cDimension) mut
-			{
-				return VT.InterpolateValue(ref this, offset, value, cDimension);
-			}
-			public HRESULT InterpolateVelocity(double offset, double* velocity, uint32 cDimension) mut
-			{
-				return VT.InterpolateVelocity(ref this, offset, velocity, cDimension);
-			}
-			public HRESULT GetPrimitiveInterpolation(ref IUIAnimationPrimitiveInterpolation interpolation, uint32 cDimension) mut
-			{
-				return VT.GetPrimitiveInterpolation(ref this, ref interpolation, cDimension);
-			}
-			public HRESULT GetDependencies(out UI_ANIMATION_DEPENDENCIES initialValueDependencies, out UI_ANIMATION_DEPENDENCIES initialVelocityDependencies, out UI_ANIMATION_DEPENDENCIES durationDependencies) mut
-			{
-				return VT.GetDependencies(ref this, out initialValueDependencies, out initialVelocityDependencies, out durationDependencies);
-			}
+			public HRESULT GetDimension(out uint32 dimension) mut => VT.GetDimension(ref this, out dimension);
+			public HRESULT SetInitialValueAndVelocity(double* initialValue, double* initialVelocity, uint32 cDimension) mut => VT.SetInitialValueAndVelocity(ref this, initialValue, initialVelocity, cDimension);
+			public HRESULT SetDuration(double duration) mut => VT.SetDuration(ref this, duration);
+			public HRESULT GetDuration(out double duration) mut => VT.GetDuration(ref this, out duration);
+			public HRESULT GetFinalValue(double* value, uint32 cDimension) mut => VT.GetFinalValue(ref this, value, cDimension);
+			public HRESULT InterpolateValue(double offset, double* value, uint32 cDimension) mut => VT.InterpolateValue(ref this, offset, value, cDimension);
+			public HRESULT InterpolateVelocity(double offset, double* velocity, uint32 cDimension) mut => VT.InterpolateVelocity(ref this, offset, velocity, cDimension);
+			public HRESULT GetPrimitiveInterpolation(ref IUIAnimationPrimitiveInterpolation interpolation, uint32 cDimension) mut => VT.GetPrimitiveInterpolation(ref this, ref interpolation, cDimension);
+			public HRESULT GetDependencies(out UI_ANIMATION_DEPENDENCIES initialValueDependencies, out UI_ANIMATION_DEPENDENCIES initialVelocityDependencies, out UI_ANIMATION_DEPENDENCIES durationDependencies) mut => VT.GetDependencies(ref this, out initialValueDependencies, out initialVelocityDependencies, out durationDependencies);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1391,10 +862,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateTransition(ref IUIAnimationInterpolator2 interpolator, out IUIAnimationTransition2* transition) mut
-			{
-				return VT.CreateTransition(ref this, ref interpolator, out transition);
-			}
+			public HRESULT CreateTransition(ref IUIAnimationInterpolator2 interpolator, out IUIAnimationTransition2* transition) mut => VT.CreateTransition(ref this, ref interpolator, out transition);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1408,78 +877,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddTransition(ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition) mut
-			{
-				return VT.AddTransition(ref this, ref variable, ref transition);
-			}
-			public HRESULT AddKeyframeAtOffset(UI_ANIMATION_KEYFRAME existingKeyframe, double offset, out UI_ANIMATION_KEYFRAME keyframe) mut
-			{
-				return VT.AddKeyframeAtOffset(ref this, existingKeyframe, offset, out keyframe);
-			}
-			public HRESULT AddKeyframeAfterTransition(ref IUIAnimationTransition2 transition, out UI_ANIMATION_KEYFRAME keyframe) mut
-			{
-				return VT.AddKeyframeAfterTransition(ref this, ref transition, out keyframe);
-			}
-			public HRESULT AddTransitionAtKeyframe(ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, UI_ANIMATION_KEYFRAME startKeyframe) mut
-			{
-				return VT.AddTransitionAtKeyframe(ref this, ref variable, ref transition, startKeyframe);
-			}
-			public HRESULT AddTransitionBetweenKeyframes(ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe) mut
-			{
-				return VT.AddTransitionBetweenKeyframes(ref this, ref variable, ref transition, startKeyframe, endKeyframe);
-			}
-			public HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, uint id, BOOL fRegisterForNextAnimationEvent) mut
-			{
-				return VT.RepeatBetweenKeyframes(ref this, startKeyframe, endKeyframe, cRepetition, repeatMode, pIterationChangeHandler, id, fRegisterForNextAnimationEvent);
-			}
-			public HRESULT HoldVariable(ref IUIAnimationVariable2 variable) mut
-			{
-				return VT.HoldVariable(ref this, ref variable);
-			}
-			public HRESULT SetLongestAcceptableDelay(double delay) mut
-			{
-				return VT.SetLongestAcceptableDelay(ref this, delay);
-			}
-			public HRESULT SetSkipDuration(double secondsDuration) mut
-			{
-				return VT.SetSkipDuration(ref this, secondsDuration);
-			}
-			public HRESULT Schedule(double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult) mut
-			{
-				return VT.Schedule(ref this, timeNow, schedulingResult);
-			}
-			public HRESULT Conclude() mut
-			{
-				return VT.Conclude(ref this);
-			}
-			public HRESULT Finish(double completionDeadline) mut
-			{
-				return VT.Finish(ref this, completionDeadline);
-			}
-			public HRESULT Abandon() mut
-			{
-				return VT.Abandon(ref this);
-			}
-			public HRESULT SetTag(IUnknown* object, uint32 id) mut
-			{
-				return VT.SetTag(ref this, object, id);
-			}
-			public HRESULT GetTag(IUnknown** object, uint32* id) mut
-			{
-				return VT.GetTag(ref this, object, id);
-			}
-			public HRESULT GetStatus(out UI_ANIMATION_STORYBOARD_STATUS status) mut
-			{
-				return VT.GetStatus(ref this, out status);
-			}
-			public HRESULT GetElapsedTime(out double elapsedTime) mut
-			{
-				return VT.GetElapsedTime(ref this, out elapsedTime);
-			}
-			public HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler2* handler, BOOL fRegisterStatusChangeForNextAnimationEvent, BOOL fRegisterUpdateForNextAnimationEvent) mut
-			{
-				return VT.SetStoryboardEventHandler(ref this, handler, fRegisterStatusChangeForNextAnimationEvent, fRegisterUpdateForNextAnimationEvent);
-			}
+			public HRESULT AddTransition(ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition) mut => VT.AddTransition(ref this, ref variable, ref transition);
+			public HRESULT AddKeyframeAtOffset(UI_ANIMATION_KEYFRAME existingKeyframe, double offset, out UI_ANIMATION_KEYFRAME keyframe) mut => VT.AddKeyframeAtOffset(ref this, existingKeyframe, offset, out keyframe);
+			public HRESULT AddKeyframeAfterTransition(ref IUIAnimationTransition2 transition, out UI_ANIMATION_KEYFRAME keyframe) mut => VT.AddKeyframeAfterTransition(ref this, ref transition, out keyframe);
+			public HRESULT AddTransitionAtKeyframe(ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, UI_ANIMATION_KEYFRAME startKeyframe) mut => VT.AddTransitionAtKeyframe(ref this, ref variable, ref transition, startKeyframe);
+			public HRESULT AddTransitionBetweenKeyframes(ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe) mut => VT.AddTransitionBetweenKeyframes(ref this, ref variable, ref transition, startKeyframe, endKeyframe);
+			public HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, uint id, BOOL fRegisterForNextAnimationEvent) mut => VT.RepeatBetweenKeyframes(ref this, startKeyframe, endKeyframe, cRepetition, repeatMode, pIterationChangeHandler, id, fRegisterForNextAnimationEvent);
+			public HRESULT HoldVariable(ref IUIAnimationVariable2 variable) mut => VT.HoldVariable(ref this, ref variable);
+			public HRESULT SetLongestAcceptableDelay(double delay) mut => VT.SetLongestAcceptableDelay(ref this, delay);
+			public HRESULT SetSkipDuration(double secondsDuration) mut => VT.SetSkipDuration(ref this, secondsDuration);
+			public HRESULT Schedule(double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult) mut => VT.Schedule(ref this, timeNow, schedulingResult);
+			public HRESULT Conclude() mut => VT.Conclude(ref this);
+			public HRESULT Finish(double completionDeadline) mut => VT.Finish(ref this, completionDeadline);
+			public HRESULT Abandon() mut => VT.Abandon(ref this);
+			public HRESULT SetTag(IUnknown* object, uint32 id) mut => VT.SetTag(ref this, object, id);
+			public HRESULT GetTag(IUnknown** object, uint32* id) mut => VT.GetTag(ref this, object, id);
+			public HRESULT GetStatus(out UI_ANIMATION_STORYBOARD_STATUS status) mut => VT.GetStatus(ref this, out status);
+			public HRESULT GetElapsedTime(out double elapsedTime) mut => VT.GetElapsedTime(ref this, out elapsedTime);
+			public HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler2* handler, BOOL fRegisterStatusChangeForNextAnimationEvent, BOOL fRegisterUpdateForNextAnimationEvent) mut => VT.SetStoryboardEventHandler(ref this, handler, fRegisterStatusChangeForNextAnimationEvent, fRegisterUpdateForNextAnimationEvent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

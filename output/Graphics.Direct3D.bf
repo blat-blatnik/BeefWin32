@@ -778,14 +778,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void* GetBufferPointer() mut
-			{
-				return VT.GetBufferPointer(ref this);
-			}
-			public uint GetBufferSize() mut
-			{
-				return VT.GetBufferSize(ref this);
-			}
+			public void* GetBufferPointer() mut => VT.GetBufferPointer(ref this);
+			public uint GetBufferSize() mut => VT.GetBufferSize(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -800,14 +795,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterDestructionCallback(PFN_DESTRUCTION_CALLBACK callbackFn, void* pData, out uint32 pCallbackID) mut
-			{
-				return VT.RegisterDestructionCallback(ref this, callbackFn, pData, out pCallbackID);
-			}
-			public HRESULT UnregisterDestructionCallback(uint32 callbackID) mut
-			{
-				return VT.UnregisterDestructionCallback(ref this, callbackID);
-			}
+			public HRESULT RegisterDestructionCallback(PFN_DESTRUCTION_CALLBACK callbackFn, void* pData, out uint32 pCallbackID) mut => VT.RegisterDestructionCallback(ref this, callbackFn, pData, out pCallbackID);
+			public HRESULT UnregisterDestructionCallback(uint32 callbackID) mut => VT.UnregisterDestructionCallback(ref this, callbackID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -821,14 +811,9 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, PSTR pFileName, void* pParentData, void** ppData, out uint32 pBytes) mut
-			{
-				return VT.Open(ref this, IncludeType, pFileName, pParentData, ppData, out pBytes);
-			}
-			public HRESULT Close(void* pData) mut
-			{
-				return VT.Close(ref this, pData);
-			}
+			public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, PSTR pFileName, void* pParentData, void** ppData, out uint32 pBytes) mut => VT.Open(ref this, IncludeType, pFileName, pParentData, ppData, out pBytes);
+			public HRESULT Close(void* pData) mut => VT.Close(ref this, pData);
+
 			[CRepr]
 			public struct VTable
 			{

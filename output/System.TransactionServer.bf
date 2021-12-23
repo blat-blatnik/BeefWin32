@@ -84,22 +84,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCollection(BSTR bstrCollName, out IDispatch* ppCatalogCollection) mut
-			{
-				return VT.GetCollection(ref this, bstrCollName, out ppCatalogCollection);
-			}
-			public HRESULT Connect(BSTR bstrConnectString, out IDispatch* ppCatalogCollection) mut
-			{
-				return VT.Connect(ref this, bstrConnectString, out ppCatalogCollection);
-			}
-			public HRESULT get_MajorVersion(out int32 retval) mut
-			{
-				return VT.get_MajorVersion(ref this, out retval);
-			}
-			public HRESULT get_MinorVersion(out int32 retval) mut
-			{
-				return VT.get_MinorVersion(ref this, out retval);
-			}
+			public HRESULT GetCollection(BSTR bstrCollName, out IDispatch* ppCatalogCollection) mut => VT.GetCollection(ref this, bstrCollName, out ppCatalogCollection);
+			public HRESULT Connect(BSTR bstrConnectString, out IDispatch* ppCatalogCollection) mut => VT.Connect(ref this, bstrConnectString, out ppCatalogCollection);
+			public HRESULT get_MajorVersion(out int32 retval) mut => VT.get_MajorVersion(ref this, out retval);
+			public HRESULT get_MinorVersion(out int32 retval) mut => VT.get_MinorVersion(ref this, out retval);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -116,22 +105,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InstallComponent(BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) mut
-			{
-				return VT.InstallComponent(ref this, bstrDLLFile, bstrTypelibFile, bstrProxyStubDLLFile);
-			}
-			public HRESULT ImportComponent(BSTR bstrCLSID) mut
-			{
-				return VT.ImportComponent(ref this, bstrCLSID);
-			}
-			public HRESULT ImportComponentByName(BSTR bstrProgID) mut
-			{
-				return VT.ImportComponentByName(ref this, bstrProgID);
-			}
-			public HRESULT GetCLSIDs(BSTR bstrDLLFile, BSTR bstrTypelibFile, out SAFEARRAY* aCLSIDs) mut
-			{
-				return VT.GetCLSIDs(ref this, bstrDLLFile, bstrTypelibFile, out aCLSIDs);
-			}
+			public HRESULT InstallComponent(BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) mut => VT.InstallComponent(ref this, bstrDLLFile, bstrTypelibFile, bstrProxyStubDLLFile);
+			public HRESULT ImportComponent(BSTR bstrCLSID) mut => VT.ImportComponent(ref this, bstrCLSID);
+			public HRESULT ImportComponentByName(BSTR bstrProgID) mut => VT.ImportComponentByName(ref this, bstrProgID);
+			public HRESULT GetCLSIDs(BSTR bstrDLLFile, BSTR bstrTypelibFile, out SAFEARRAY* aCLSIDs) mut => VT.GetCLSIDs(ref this, bstrDLLFile, bstrTypelibFile, out aCLSIDs);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -148,18 +126,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InstallPackage(BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) mut
-			{
-				return VT.InstallPackage(ref this, bstrPackageFile, bstrInstallPath, lOptions);
-			}
-			public HRESULT ExportPackage(BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) mut
-			{
-				return VT.ExportPackage(ref this, bstrPackageID, bstrPackageFile, lOptions);
-			}
-			public HRESULT ShutdownPackage(BSTR bstrPackageID) mut
-			{
-				return VT.ShutdownPackage(ref this, bstrPackageID);
-			}
+			public HRESULT InstallPackage(BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) mut => VT.InstallPackage(ref this, bstrPackageFile, bstrInstallPath, lOptions);
+			public HRESULT ExportPackage(BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) mut => VT.ExportPackage(ref this, bstrPackageID, bstrPackageFile, lOptions);
+			public HRESULT ShutdownPackage(BSTR bstrPackageID) mut => VT.ShutdownPackage(ref this, bstrPackageID);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -175,14 +145,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InstallRemoteComponent(BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) mut
-			{
-				return VT.InstallRemoteComponent(ref this, bstrServer, bstrPackageID, bstrCLSID);
-			}
-			public HRESULT InstallRemoteComponentByName(BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) mut
-			{
-				return VT.InstallRemoteComponentByName(ref this, bstrServer, bstrPackageName, bstrProgID);
-			}
+			public HRESULT InstallRemoteComponent(BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) mut => VT.InstallRemoteComponent(ref this, bstrServer, bstrPackageID, bstrCLSID);
+			public HRESULT InstallRemoteComponentByName(BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) mut => VT.InstallRemoteComponentByName(ref this, bstrServer, bstrPackageName, bstrProgID);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -197,14 +162,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AssociateRole(BSTR bstrRoleID) mut
-			{
-				return VT.AssociateRole(ref this, bstrRoleID);
-			}
-			public HRESULT AssociateRoleByName(BSTR bstrRoleName) mut
-			{
-				return VT.AssociateRoleByName(ref this, bstrRoleName);
-			}
+			public HRESULT AssociateRole(BSTR bstrRoleID) mut => VT.AssociateRole(ref this, bstrRoleID);
+			public HRESULT AssociateRoleByName(BSTR bstrRoleName) mut => VT.AssociateRoleByName(ref this, bstrRoleName);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

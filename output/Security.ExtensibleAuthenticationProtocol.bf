@@ -962,14 +962,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddProtocol(PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, ref IUnknown pRouter, uint uReserved1) mut
-			{
-				return VT.AddProtocol(ref this, pszMachineName, dwTransportId, dwProtocolId, hWnd, dwFlags, ref pRouter, uReserved1);
-			}
-			public HRESULT RemoveProtocol(PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, ref IUnknown pRouter, uint uReserved1) mut
-			{
-				return VT.RemoveProtocol(ref this, pszMachineName, dwTransportId, dwProtocolId, hWnd, dwFlags, ref pRouter, uReserved1);
-			}
+			public HRESULT AddProtocol(PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, ref IUnknown pRouter, uint uReserved1) mut => VT.AddProtocol(ref this, pszMachineName, dwTransportId, dwProtocolId, hWnd, dwFlags, ref pRouter, uReserved1);
+			public HRESULT RemoveProtocol(PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, ref IUnknown pRouter, uint uReserved1) mut => VT.RemoveProtocol(ref this, pszMachineName, dwTransportId, dwProtocolId, hWnd, dwFlags, ref pRouter, uReserved1);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -984,26 +979,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszMachineName, out uint puConnectionParam) mut
-			{
-				return VT.Initialize(ref this, pszMachineName, out puConnectionParam);
-			}
-			public HRESULT Uninitialize(uint uConnectionParam) mut
-			{
-				return VT.Uninitialize(ref this, uConnectionParam);
-			}
-			public HRESULT Configure(uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) mut
-			{
-				return VT.Configure(ref this, uConnectionParam, hWnd, dwFlags, uReserved1, uReserved2);
-			}
-			public HRESULT Activate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut
-			{
-				return VT.Activate(ref this, uConnectionParam, uReserved1, uReserved2);
-			}
-			public HRESULT Deactivate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut
-			{
-				return VT.Deactivate(ref this, uConnectionParam, uReserved1, uReserved2);
-			}
+			public HRESULT Initialize(PWSTR pszMachineName, out uint puConnectionParam) mut => VT.Initialize(ref this, pszMachineName, out puConnectionParam);
+			public HRESULT Uninitialize(uint uConnectionParam) mut => VT.Uninitialize(ref this, uConnectionParam);
+			public HRESULT Configure(uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) mut => VT.Configure(ref this, uConnectionParam, hWnd, dwFlags, uReserved1, uReserved2);
+			public HRESULT Activate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut => VT.Activate(ref this, uConnectionParam, uReserved1, uReserved2);
+			public HRESULT Deactivate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut => VT.Deactivate(ref this, uConnectionParam, uReserved1, uReserved2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1021,26 +1002,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszMachineName, out uint puConnectionParam) mut
-			{
-				return VT.Initialize(ref this, pszMachineName, out puConnectionParam);
-			}
-			public HRESULT Uninitialize(uint uConnectionParam) mut
-			{
-				return VT.Uninitialize(ref this, uConnectionParam);
-			}
-			public HRESULT Configure(uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) mut
-			{
-				return VT.Configure(ref this, uConnectionParam, hWnd, dwFlags, uReserved1, uReserved2);
-			}
-			public HRESULT Activate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut
-			{
-				return VT.Activate(ref this, uConnectionParam, uReserved1, uReserved2);
-			}
-			public HRESULT Deactivate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut
-			{
-				return VT.Deactivate(ref this, uConnectionParam, uReserved1, uReserved2);
-			}
+			public HRESULT Initialize(PWSTR pszMachineName, out uint puConnectionParam) mut => VT.Initialize(ref this, pszMachineName, out puConnectionParam);
+			public HRESULT Uninitialize(uint uConnectionParam) mut => VT.Uninitialize(ref this, uConnectionParam);
+			public HRESULT Configure(uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) mut => VT.Configure(ref this, uConnectionParam, hWnd, dwFlags, uReserved1, uReserved2);
+			public HRESULT Activate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut => VT.Activate(ref this, uConnectionParam, uReserved1, uReserved2);
+			public HRESULT Deactivate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut => VT.Deactivate(ref this, uConnectionParam, uReserved1, uReserved2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1058,26 +1025,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszMachineName, uint32 dwEapTypeId, out uint puConnectionParam) mut
-			{
-				return VT.Initialize(ref this, pszMachineName, dwEapTypeId, out puConnectionParam);
-			}
-			public HRESULT Uninitialize(uint32 dwEapTypeId, uint uConnectionParam) mut
-			{
-				return VT.Uninitialize(ref this, dwEapTypeId, uConnectionParam);
-			}
-			public HRESULT ServerInvokeConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint uReserved1, uint uReserved2) mut
-			{
-				return VT.ServerInvokeConfigUI(ref this, dwEapTypeId, uConnectionParam, hWnd, uReserved1, uReserved2);
-			}
-			public HRESULT RouterInvokeConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8** ppConnectionDataOut, out uint32 pdwSizeOfConnectionDataOut) mut
-			{
-				return VT.RouterInvokeConfigUI(ref this, dwEapTypeId, uConnectionParam, hwndParent, dwFlags, pConnectionDataIn, dwSizeOfConnectionDataIn, ppConnectionDataOut, out pdwSizeOfConnectionDataOut);
-			}
-			public HRESULT RouterInvokeCredentialsUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8* pUserDataIn, uint32 dwSizeOfUserDataIn, uint8** ppUserDataOut, out uint32 pdwSizeOfUserDataOut) mut
-			{
-				return VT.RouterInvokeCredentialsUI(ref this, dwEapTypeId, uConnectionParam, hwndParent, dwFlags, pConnectionDataIn, dwSizeOfConnectionDataIn, pUserDataIn, dwSizeOfUserDataIn, ppUserDataOut, out pdwSizeOfUserDataOut);
-			}
+			public HRESULT Initialize(PWSTR pszMachineName, uint32 dwEapTypeId, out uint puConnectionParam) mut => VT.Initialize(ref this, pszMachineName, dwEapTypeId, out puConnectionParam);
+			public HRESULT Uninitialize(uint32 dwEapTypeId, uint uConnectionParam) mut => VT.Uninitialize(ref this, dwEapTypeId, uConnectionParam);
+			public HRESULT ServerInvokeConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint uReserved1, uint uReserved2) mut => VT.ServerInvokeConfigUI(ref this, dwEapTypeId, uConnectionParam, hWnd, uReserved1, uReserved2);
+			public HRESULT RouterInvokeConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8** ppConnectionDataOut, out uint32 pdwSizeOfConnectionDataOut) mut => VT.RouterInvokeConfigUI(ref this, dwEapTypeId, uConnectionParam, hwndParent, dwFlags, pConnectionDataIn, dwSizeOfConnectionDataIn, ppConnectionDataOut, out pdwSizeOfConnectionDataOut);
+			public HRESULT RouterInvokeCredentialsUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8* pUserDataIn, uint32 dwSizeOfUserDataIn, uint8** ppUserDataOut, out uint32 pdwSizeOfUserDataOut) mut => VT.RouterInvokeCredentialsUI(ref this, dwEapTypeId, uConnectionParam, hwndParent, dwFlags, pConnectionDataIn, dwSizeOfConnectionDataIn, pUserDataIn, dwSizeOfUserDataIn, ppUserDataOut, out pdwSizeOfUserDataOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1095,14 +1048,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ServerInvokeConfigUI2(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut) mut
-			{
-				return VT.ServerInvokeConfigUI2(ref this, dwEapTypeId, uConnectionParam, hWnd, pConfigDataIn, dwSizeOfConfigDataIn, out ppConfigDataOut, out pdwSizeOfConfigDataOut);
-			}
-			public HRESULT GetGlobalConfig(uint32 dwEapTypeId, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut) mut
-			{
-				return VT.GetGlobalConfig(ref this, dwEapTypeId, out ppConfigDataOut, out pdwSizeOfConfigDataOut);
-			}
+			public HRESULT ServerInvokeConfigUI2(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut) mut => VT.ServerInvokeConfigUI2(ref this, dwEapTypeId, uConnectionParam, hWnd, pConfigDataIn, dwSizeOfConfigDataIn, out ppConfigDataOut, out pdwSizeOfConfigDataOut);
+			public HRESULT GetGlobalConfig(uint32 dwEapTypeId, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut) mut => VT.GetGlobalConfig(ref this, dwEapTypeId, out ppConfigDataOut, out pdwSizeOfConfigDataOut);
+
 			[CRepr]
 			public struct VTable : IEAPProviderConfig.VTable
 			{
@@ -1117,10 +1065,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ServerInvokeCertificateConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut, uint uReserved) mut
-			{
-				return VT.ServerInvokeCertificateConfigUI(ref this, dwEapTypeId, uConnectionParam, hWnd, pConfigDataIn, dwSizeOfConfigDataIn, out ppConfigDataOut, out pdwSizeOfConfigDataOut, uReserved);
-			}
+			public HRESULT ServerInvokeCertificateConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut, uint uReserved) mut => VT.ServerInvokeCertificateConfigUI(ref this, dwEapTypeId, uConnectionParam, hWnd, pConfigDataIn, dwSizeOfConfigDataIn, out ppConfigDataOut, out pdwSizeOfConfigDataOut, uReserved);
+
 			[CRepr]
 			public struct VTable : IEAPProviderConfig2.VTable
 			{

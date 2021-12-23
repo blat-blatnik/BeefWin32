@@ -356,10 +356,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszFilePath, uint32 grfMode) mut
-			{
-				return VT.Initialize(ref this, pszFilePath, grfMode);
-			}
+			public HRESULT Initialize(PWSTR pszFilePath, uint32 grfMode) mut => VT.Initialize(ref this, pszFilePath, grfMode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -373,10 +371,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IStream pstream, uint32 grfMode) mut
-			{
-				return VT.Initialize(ref this, ref pstream, grfMode);
-			}
+			public HRESULT Initialize(ref IStream pstream, uint32 grfMode) mut => VT.Initialize(ref this, ref pstream, grfMode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -390,26 +386,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 cProps) mut
-			{
-				return VT.GetCount(ref this, out cProps);
-			}
-			public HRESULT GetAt(uint32 iProp, out PROPERTYKEY pkey) mut
-			{
-				return VT.GetAt(ref this, iProp, out pkey);
-			}
-			public HRESULT GetValue(in PROPERTYKEY key, out PROPVARIANT pv) mut
-			{
-				return VT.GetValue(ref this, key, out pv);
-			}
-			public HRESULT SetValue(in PROPERTYKEY key, in PROPVARIANT propvar) mut
-			{
-				return VT.SetValue(ref this, key, propvar);
-			}
-			public HRESULT Commit() mut
-			{
-				return VT.Commit(ref this);
-			}
+			public HRESULT GetCount(out uint32 cProps) mut => VT.GetCount(ref this, out cProps);
+			public HRESULT GetAt(uint32 iProp, out PROPERTYKEY pkey) mut => VT.GetAt(ref this, iProp, out pkey);
+			public HRESULT GetValue(in PROPERTYKEY key, out PROPVARIANT pv) mut => VT.GetValue(ref this, key, out pv);
+			public HRESULT SetValue(in PROPERTYKEY key, in PROPVARIANT propvar) mut => VT.SetValue(ref this, key, propvar);
+			public HRESULT Commit() mut => VT.Commit(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -427,22 +409,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNamedValue(PWSTR pszName, out PROPVARIANT ppropvar) mut
-			{
-				return VT.GetNamedValue(ref this, pszName, out ppropvar);
-			}
-			public HRESULT SetNamedValue(PWSTR pszName, in PROPVARIANT propvar) mut
-			{
-				return VT.SetNamedValue(ref this, pszName, propvar);
-			}
-			public HRESULT GetNameCount(out uint32 pdwCount) mut
-			{
-				return VT.GetNameCount(ref this, out pdwCount);
-			}
-			public HRESULT GetNameAt(uint32 iProp, out BSTR pbstrName) mut
-			{
-				return VT.GetNameAt(ref this, iProp, out pbstrName);
-			}
+			public HRESULT GetNamedValue(PWSTR pszName, out PROPVARIANT ppropvar) mut => VT.GetNamedValue(ref this, pszName, out ppropvar);
+			public HRESULT SetNamedValue(PWSTR pszName, in PROPVARIANT propvar) mut => VT.SetNamedValue(ref this, pszName, propvar);
+			public HRESULT GetNameCount(out uint32 pdwCount) mut => VT.GetNameCount(ref this, out pdwCount);
+			public HRESULT GetNameAt(uint32 iProp, out BSTR pbstrName) mut => VT.GetNameAt(ref this, iProp, out pbstrName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -459,14 +430,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPropertyKey(in PROPERTYKEY key) mut
-			{
-				return VT.SetPropertyKey(ref this, key);
-			}
-			public HRESULT GetPropertyKey(out PROPERTYKEY pkey) mut
-			{
-				return VT.GetPropertyKey(ref this, out pkey);
-			}
+			public HRESULT SetPropertyKey(in PROPERTYKEY key) mut => VT.SetPropertyKey(ref this, key);
+			public HRESULT GetPropertyKey(out PROPERTYKEY pkey) mut => VT.GetPropertyKey(ref this, out pkey);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -481,10 +447,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ApplyToPropVariant(in PROPVARIANT propvarIn, out PROPVARIANT ppropvarOut) mut
-			{
-				return VT.ApplyToPropVariant(ref this, propvarIn, out ppropvarOut);
-			}
+			public HRESULT ApplyToPropVariant(in PROPVARIANT propvarIn, out PROPVARIANT ppropvarOut) mut => VT.ApplyToPropVariant(ref this, propvarIn, out ppropvarOut);
+
 			[CRepr]
 			public struct VTable : IObjectWithPropertyKey.VTable
 			{
@@ -498,34 +462,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pcOperations) mut
-			{
-				return VT.GetCount(ref this, out pcOperations);
-			}
-			public HRESULT GetAt(uint32 iIndex, in Guid riid, void** ppv) mut
-			{
-				return VT.GetAt(ref this, iIndex, riid, ppv);
-			}
-			public HRESULT InsertAt(uint32 iIndex, ref IPropertyChange ppropChange) mut
-			{
-				return VT.InsertAt(ref this, iIndex, ref ppropChange);
-			}
-			public HRESULT Append(ref IPropertyChange ppropChange) mut
-			{
-				return VT.Append(ref this, ref ppropChange);
-			}
-			public HRESULT AppendOrReplace(ref IPropertyChange ppropChange) mut
-			{
-				return VT.AppendOrReplace(ref this, ref ppropChange);
-			}
-			public HRESULT RemoveAt(uint32 iIndex) mut
-			{
-				return VT.RemoveAt(ref this, iIndex);
-			}
-			public HRESULT IsKeyInArray(in PROPERTYKEY key) mut
-			{
-				return VT.IsKeyInArray(ref this, key);
-			}
+			public HRESULT GetCount(out uint32 pcOperations) mut => VT.GetCount(ref this, out pcOperations);
+			public HRESULT GetAt(uint32 iIndex, in Guid riid, void** ppv) mut => VT.GetAt(ref this, iIndex, riid, ppv);
+			public HRESULT InsertAt(uint32 iIndex, ref IPropertyChange ppropChange) mut => VT.InsertAt(ref this, iIndex, ref ppropChange);
+			public HRESULT Append(ref IPropertyChange ppropChange) mut => VT.Append(ref this, ref ppropChange);
+			public HRESULT AppendOrReplace(ref IPropertyChange ppropChange) mut => VT.AppendOrReplace(ref this, ref ppropChange);
+			public HRESULT RemoveAt(uint32 iIndex) mut => VT.RemoveAt(ref this, iIndex);
+			public HRESULT IsKeyInArray(in PROPERTYKEY key) mut => VT.IsKeyInArray(ref this, key);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -545,10 +489,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsPropertyWritable(in PROPERTYKEY key) mut
-			{
-				return VT.IsPropertyWritable(ref this, key);
-			}
+			public HRESULT IsPropertyWritable(in PROPERTYKEY key) mut => VT.IsPropertyWritable(ref this, key);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -562,22 +504,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetState(in PROPERTYKEY key, out PSC_STATE pstate) mut
-			{
-				return VT.GetState(ref this, key, out pstate);
-			}
-			public HRESULT GetValueAndState(in PROPERTYKEY key, out PROPVARIANT ppropvar, out PSC_STATE pstate) mut
-			{
-				return VT.GetValueAndState(ref this, key, out ppropvar, out pstate);
-			}
-			public HRESULT SetState(in PROPERTYKEY key, PSC_STATE state) mut
-			{
-				return VT.SetState(ref this, key, state);
-			}
-			public HRESULT SetValueAndState(in PROPERTYKEY key, in PROPVARIANT ppropvar, PSC_STATE state) mut
-			{
-				return VT.SetValueAndState(ref this, key, ppropvar, state);
-			}
+			public HRESULT GetState(in PROPERTYKEY key, out PSC_STATE pstate) mut => VT.GetState(ref this, key, out pstate);
+			public HRESULT GetValueAndState(in PROPERTYKEY key, out PROPVARIANT ppropvar, out PSC_STATE pstate) mut => VT.GetValueAndState(ref this, key, out ppropvar, out pstate);
+			public HRESULT SetState(in PROPERTYKEY key, PSC_STATE state) mut => VT.SetState(ref this, key, state);
+			public HRESULT SetValueAndState(in PROPERTYKEY key, in PROPVARIANT ppropvar, PSC_STATE state) mut => VT.SetValueAndState(ref this, key, ppropvar, state);
+
 			[CRepr]
 			public struct VTable : IPropertyStore.VTable
 			{
@@ -594,26 +525,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEnumType(out PROPENUMTYPE penumtype) mut
-			{
-				return VT.GetEnumType(ref this, out penumtype);
-			}
-			public HRESULT GetValue(out PROPVARIANT ppropvar) mut
-			{
-				return VT.GetValue(ref this, out ppropvar);
-			}
-			public HRESULT GetRangeMinValue(out PROPVARIANT ppropvarMin) mut
-			{
-				return VT.GetRangeMinValue(ref this, out ppropvarMin);
-			}
-			public HRESULT GetRangeSetValue(out PROPVARIANT ppropvarSet) mut
-			{
-				return VT.GetRangeSetValue(ref this, out ppropvarSet);
-			}
-			public HRESULT GetDisplayText(out PWSTR ppszDisplay) mut
-			{
-				return VT.GetDisplayText(ref this, out ppszDisplay);
-			}
+			public HRESULT GetEnumType(out PROPENUMTYPE penumtype) mut => VT.GetEnumType(ref this, out penumtype);
+			public HRESULT GetValue(out PROPVARIANT ppropvar) mut => VT.GetValue(ref this, out ppropvar);
+			public HRESULT GetRangeMinValue(out PROPVARIANT ppropvarMin) mut => VT.GetRangeMinValue(ref this, out ppropvarMin);
+			public HRESULT GetRangeSetValue(out PROPVARIANT ppropvarSet) mut => VT.GetRangeSetValue(ref this, out ppropvarSet);
+			public HRESULT GetDisplayText(out PWSTR ppszDisplay) mut => VT.GetDisplayText(ref this, out ppszDisplay);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -631,10 +548,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetImageReference(out PWSTR ppszImageRes) mut
-			{
-				return VT.GetImageReference(ref this, out ppszImageRes);
-			}
+			public HRESULT GetImageReference(out PWSTR ppszImageRes) mut => VT.GetImageReference(ref this, out ppszImageRes);
+
 			[CRepr]
 			public struct VTable : IPropertyEnumType.VTable
 			{
@@ -648,22 +563,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pctypes) mut
-			{
-				return VT.GetCount(ref this, out pctypes);
-			}
-			public HRESULT GetAt(uint32 itype, in Guid riid, void** ppv) mut
-			{
-				return VT.GetAt(ref this, itype, riid, ppv);
-			}
-			public HRESULT GetConditionAt(uint32 nIndex, in Guid riid, void** ppv) mut
-			{
-				return VT.GetConditionAt(ref this, nIndex, riid, ppv);
-			}
-			public HRESULT FindMatchingIndex(in PROPVARIANT propvarCmp, out uint32 pnIndex) mut
-			{
-				return VT.FindMatchingIndex(ref this, propvarCmp, out pnIndex);
-			}
+			public HRESULT GetCount(out uint32 pctypes) mut => VT.GetCount(ref this, out pctypes);
+			public HRESULT GetAt(uint32 itype, in Guid riid, void** ppv) mut => VT.GetAt(ref this, itype, riid, ppv);
+			public HRESULT GetConditionAt(uint32 nIndex, in Guid riid, void** ppv) mut => VT.GetConditionAt(ref this, nIndex, riid, ppv);
+			public HRESULT FindMatchingIndex(in PROPVARIANT propvarCmp, out uint32 pnIndex) mut => VT.FindMatchingIndex(ref this, propvarCmp, out pnIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -680,90 +584,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyKey(out PROPERTYKEY pkey) mut
-			{
-				return VT.GetPropertyKey(ref this, out pkey);
-			}
-			public HRESULT GetCanonicalName(out PWSTR ppszName) mut
-			{
-				return VT.GetCanonicalName(ref this, out ppszName);
-			}
-			public HRESULT GetPropertyType(out uint16 pvartype) mut
-			{
-				return VT.GetPropertyType(ref this, out pvartype);
-			}
-			public HRESULT GetDisplayName(out PWSTR ppszName) mut
-			{
-				return VT.GetDisplayName(ref this, out ppszName);
-			}
-			public HRESULT GetEditInvitation(out PWSTR ppszInvite) mut
-			{
-				return VT.GetEditInvitation(ref this, out ppszInvite);
-			}
-			public HRESULT GetTypeFlags(PROPDESC_TYPE_FLAGS mask, out PROPDESC_TYPE_FLAGS ppdtFlags) mut
-			{
-				return VT.GetTypeFlags(ref this, mask, out ppdtFlags);
-			}
-			public HRESULT GetViewFlags(out PROPDESC_VIEW_FLAGS ppdvFlags) mut
-			{
-				return VT.GetViewFlags(ref this, out ppdvFlags);
-			}
-			public HRESULT GetDefaultColumnWidth(out uint32 pcxChars) mut
-			{
-				return VT.GetDefaultColumnWidth(ref this, out pcxChars);
-			}
-			public HRESULT GetDisplayType(out PROPDESC_DISPLAYTYPE pdisplaytype) mut
-			{
-				return VT.GetDisplayType(ref this, out pdisplaytype);
-			}
-			public HRESULT GetColumnState(out uint32 pcsFlags) mut
-			{
-				return VT.GetColumnState(ref this, out pcsFlags);
-			}
-			public HRESULT GetGroupingRange(out PROPDESC_GROUPING_RANGE pgr) mut
-			{
-				return VT.GetGroupingRange(ref this, out pgr);
-			}
-			public HRESULT GetRelativeDescriptionType(out PROPDESC_RELATIVEDESCRIPTION_TYPE prdt) mut
-			{
-				return VT.GetRelativeDescriptionType(ref this, out prdt);
-			}
-			public HRESULT GetRelativeDescription(in PROPVARIANT propvar1, in PROPVARIANT propvar2, out PWSTR ppszDesc1, out PWSTR ppszDesc2) mut
-			{
-				return VT.GetRelativeDescription(ref this, propvar1, propvar2, out ppszDesc1, out ppszDesc2);
-			}
-			public HRESULT GetSortDescription(out PROPDESC_SORTDESCRIPTION psd) mut
-			{
-				return VT.GetSortDescription(ref this, out psd);
-			}
-			public HRESULT GetSortDescriptionLabel(BOOL fDescending, out PWSTR ppszDescription) mut
-			{
-				return VT.GetSortDescriptionLabel(ref this, fDescending, out ppszDescription);
-			}
-			public HRESULT GetAggregationType(out PROPDESC_AGGREGATION_TYPE paggtype) mut
-			{
-				return VT.GetAggregationType(ref this, out paggtype);
-			}
-			public HRESULT GetConditionType(out PROPDESC_CONDITION_TYPE pcontype, out CONDITION_OPERATION popDefault) mut
-			{
-				return VT.GetConditionType(ref this, out pcontype, out popDefault);
-			}
-			public HRESULT GetEnumTypeList(in Guid riid, void** ppv) mut
-			{
-				return VT.GetEnumTypeList(ref this, riid, ppv);
-			}
-			public HRESULT CoerceToCanonicalValue(out PROPVARIANT ppropvar) mut
-			{
-				return VT.CoerceToCanonicalValue(ref this, out ppropvar);
-			}
-			public HRESULT FormatForDisplay(in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdfFlags, out PWSTR ppszDisplay) mut
-			{
-				return VT.FormatForDisplay(ref this, propvar, pdfFlags, out ppszDisplay);
-			}
-			public HRESULT IsValueCanonical(in PROPVARIANT propvar) mut
-			{
-				return VT.IsValueCanonical(ref this, propvar);
-			}
+			public HRESULT GetPropertyKey(out PROPERTYKEY pkey) mut => VT.GetPropertyKey(ref this, out pkey);
+			public HRESULT GetCanonicalName(out PWSTR ppszName) mut => VT.GetCanonicalName(ref this, out ppszName);
+			public HRESULT GetPropertyType(out uint16 pvartype) mut => VT.GetPropertyType(ref this, out pvartype);
+			public HRESULT GetDisplayName(out PWSTR ppszName) mut => VT.GetDisplayName(ref this, out ppszName);
+			public HRESULT GetEditInvitation(out PWSTR ppszInvite) mut => VT.GetEditInvitation(ref this, out ppszInvite);
+			public HRESULT GetTypeFlags(PROPDESC_TYPE_FLAGS mask, out PROPDESC_TYPE_FLAGS ppdtFlags) mut => VT.GetTypeFlags(ref this, mask, out ppdtFlags);
+			public HRESULT GetViewFlags(out PROPDESC_VIEW_FLAGS ppdvFlags) mut => VT.GetViewFlags(ref this, out ppdvFlags);
+			public HRESULT GetDefaultColumnWidth(out uint32 pcxChars) mut => VT.GetDefaultColumnWidth(ref this, out pcxChars);
+			public HRESULT GetDisplayType(out PROPDESC_DISPLAYTYPE pdisplaytype) mut => VT.GetDisplayType(ref this, out pdisplaytype);
+			public HRESULT GetColumnState(out uint32 pcsFlags) mut => VT.GetColumnState(ref this, out pcsFlags);
+			public HRESULT GetGroupingRange(out PROPDESC_GROUPING_RANGE pgr) mut => VT.GetGroupingRange(ref this, out pgr);
+			public HRESULT GetRelativeDescriptionType(out PROPDESC_RELATIVEDESCRIPTION_TYPE prdt) mut => VT.GetRelativeDescriptionType(ref this, out prdt);
+			public HRESULT GetRelativeDescription(in PROPVARIANT propvar1, in PROPVARIANT propvar2, out PWSTR ppszDesc1, out PWSTR ppszDesc2) mut => VT.GetRelativeDescription(ref this, propvar1, propvar2, out ppszDesc1, out ppszDesc2);
+			public HRESULT GetSortDescription(out PROPDESC_SORTDESCRIPTION psd) mut => VT.GetSortDescription(ref this, out psd);
+			public HRESULT GetSortDescriptionLabel(BOOL fDescending, out PWSTR ppszDescription) mut => VT.GetSortDescriptionLabel(ref this, fDescending, out ppszDescription);
+			public HRESULT GetAggregationType(out PROPDESC_AGGREGATION_TYPE paggtype) mut => VT.GetAggregationType(ref this, out paggtype);
+			public HRESULT GetConditionType(out PROPDESC_CONDITION_TYPE pcontype, out CONDITION_OPERATION popDefault) mut => VT.GetConditionType(ref this, out pcontype, out popDefault);
+			public HRESULT GetEnumTypeList(in Guid riid, void** ppv) mut => VT.GetEnumTypeList(ref this, riid, ppv);
+			public HRESULT CoerceToCanonicalValue(out PROPVARIANT ppropvar) mut => VT.CoerceToCanonicalValue(ref this, out ppropvar);
+			public HRESULT FormatForDisplay(in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdfFlags, out PWSTR ppszDisplay) mut => VT.FormatForDisplay(ref this, propvar, pdfFlags, out ppszDisplay);
+			public HRESULT IsValueCanonical(in PROPVARIANT propvar) mut => VT.IsValueCanonical(ref this, propvar);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -797,10 +639,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetImageReferenceForValue(in PROPVARIANT propvar, out PWSTR ppszImageRes) mut
-			{
-				return VT.GetImageReferenceForValue(ref this, propvar, out ppszImageRes);
-			}
+			public HRESULT GetImageReferenceForValue(in PROPVARIANT propvar, out PWSTR ppszImageRes) mut => VT.GetImageReferenceForValue(ref this, propvar, out ppszImageRes);
+
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
@@ -814,14 +654,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSortByAlias(in Guid riid, void** ppv) mut
-			{
-				return VT.GetSortByAlias(ref this, riid, ppv);
-			}
-			public HRESULT GetAdditionalSortByAliases(in Guid riid, void** ppv) mut
-			{
-				return VT.GetAdditionalSortByAliases(ref this, riid, ppv);
-			}
+			public HRESULT GetSortByAlias(in Guid riid, void** ppv) mut => VT.GetSortByAlias(ref this, riid, ppv);
+			public HRESULT GetAdditionalSortByAliases(in Guid riid, void** ppv) mut => VT.GetAdditionalSortByAliases(ref this, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
@@ -836,22 +671,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSearchInfoFlags(out PROPDESC_SEARCHINFO_FLAGS ppdsiFlags) mut
-			{
-				return VT.GetSearchInfoFlags(ref this, out ppdsiFlags);
-			}
-			public HRESULT GetColumnIndexType(out PROPDESC_COLUMNINDEX_TYPE ppdciType) mut
-			{
-				return VT.GetColumnIndexType(ref this, out ppdciType);
-			}
-			public HRESULT GetProjectionString(out PWSTR ppszProjection) mut
-			{
-				return VT.GetProjectionString(ref this, out ppszProjection);
-			}
-			public HRESULT GetMaxSize(out uint32 pcbMaxSize) mut
-			{
-				return VT.GetMaxSize(ref this, out pcbMaxSize);
-			}
+			public HRESULT GetSearchInfoFlags(out PROPDESC_SEARCHINFO_FLAGS ppdsiFlags) mut => VT.GetSearchInfoFlags(ref this, out ppdsiFlags);
+			public HRESULT GetColumnIndexType(out PROPDESC_COLUMNINDEX_TYPE ppdciType) mut => VT.GetColumnIndexType(ref this, out ppdciType);
+			public HRESULT GetProjectionString(out PWSTR ppszProjection) mut => VT.GetProjectionString(ref this, out ppszProjection);
+			public HRESULT GetMaxSize(out uint32 pcbMaxSize) mut => VT.GetMaxSize(ref this, out pcbMaxSize);
+
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
@@ -868,10 +692,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRelatedProperty(PWSTR pszRelationshipName, in Guid riid, void** ppv) mut
-			{
-				return VT.GetRelatedProperty(ref this, pszRelationshipName, riid, ppv);
-			}
+			public HRESULT GetRelatedProperty(PWSTR pszRelationshipName, in Guid riid, void** ppv) mut => VT.GetRelatedProperty(ref this, pszRelationshipName, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
@@ -885,42 +707,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyDescription(in PROPERTYKEY propkey, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyDescription(ref this, propkey, riid, ppv);
-			}
-			public HRESULT GetPropertyDescriptionByName(PWSTR pszCanonicalName, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyDescriptionByName(ref this, pszCanonicalName, riid, ppv);
-			}
-			public HRESULT GetPropertyDescriptionListFromString(PWSTR pszPropList, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyDescriptionListFromString(ref this, pszPropList, riid, ppv);
-			}
-			public HRESULT EnumeratePropertyDescriptions(PROPDESC_ENUMFILTER filterOn, in Guid riid, void** ppv) mut
-			{
-				return VT.EnumeratePropertyDescriptions(ref this, filterOn, riid, ppv);
-			}
-			public HRESULT FormatForDisplay(in PROPERTYKEY key, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdff, char16* pszText, uint32 cchText) mut
-			{
-				return VT.FormatForDisplay(ref this, key, propvar, pdff, pszText, cchText);
-			}
-			public HRESULT FormatForDisplayAlloc(in PROPERTYKEY key, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdff, out PWSTR ppszDisplay) mut
-			{
-				return VT.FormatForDisplayAlloc(ref this, key, propvar, pdff, out ppszDisplay);
-			}
-			public HRESULT RegisterPropertySchema(PWSTR pszPath) mut
-			{
-				return VT.RegisterPropertySchema(ref this, pszPath);
-			}
-			public HRESULT UnregisterPropertySchema(PWSTR pszPath) mut
-			{
-				return VT.UnregisterPropertySchema(ref this, pszPath);
-			}
-			public HRESULT RefreshPropertySchema() mut
-			{
-				return VT.RefreshPropertySchema(ref this);
-			}
+			public HRESULT GetPropertyDescription(in PROPERTYKEY propkey, in Guid riid, void** ppv) mut => VT.GetPropertyDescription(ref this, propkey, riid, ppv);
+			public HRESULT GetPropertyDescriptionByName(PWSTR pszCanonicalName, in Guid riid, void** ppv) mut => VT.GetPropertyDescriptionByName(ref this, pszCanonicalName, riid, ppv);
+			public HRESULT GetPropertyDescriptionListFromString(PWSTR pszPropList, in Guid riid, void** ppv) mut => VT.GetPropertyDescriptionListFromString(ref this, pszPropList, riid, ppv);
+			public HRESULT EnumeratePropertyDescriptions(PROPDESC_ENUMFILTER filterOn, in Guid riid, void** ppv) mut => VT.EnumeratePropertyDescriptions(ref this, filterOn, riid, ppv);
+			public HRESULT FormatForDisplay(in PROPERTYKEY key, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdff, char16* pszText, uint32 cchText) mut => VT.FormatForDisplay(ref this, key, propvar, pdff, pszText, cchText);
+			public HRESULT FormatForDisplayAlloc(in PROPERTYKEY key, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdff, out PWSTR ppszDisplay) mut => VT.FormatForDisplayAlloc(ref this, key, propvar, pdff, out ppszDisplay);
+			public HRESULT RegisterPropertySchema(PWSTR pszPath) mut => VT.RegisterPropertySchema(ref this, pszPath);
+			public HRESULT UnregisterPropertySchema(PWSTR pszPath) mut => VT.UnregisterPropertySchema(ref this, pszPath);
+			public HRESULT RefreshPropertySchema() mut => VT.RefreshPropertySchema(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -942,14 +738,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pcElem) mut
-			{
-				return VT.GetCount(ref this, out pcElem);
-			}
-			public HRESULT GetAt(uint32 iElem, in Guid riid, void** ppv) mut
-			{
-				return VT.GetAt(ref this, iElem, riid, ppv);
-			}
+			public HRESULT GetCount(out uint32 pcElem) mut => VT.GetCount(ref this, out pcElem);
+			public HRESULT GetAt(uint32 iElem, in Guid riid, void** ppv) mut => VT.GetAt(ref this, iElem, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -964,14 +755,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, ref IUnknown pUnkFactory, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyStore(ref this, flags, ref pUnkFactory, riid, ppv);
-			}
-			public HRESULT GetPropertyStoreForKeys(in PROPERTYKEY rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyStoreForKeys(ref this, rgKeys, cKeys, flags, riid, ppv);
-			}
+			public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, ref IUnknown pUnkFactory, in Guid riid, void** ppv) mut => VT.GetPropertyStore(ref this, flags, ref pUnkFactory, riid, ppv);
+			public HRESULT GetPropertyStoreForKeys(in PROPERTYKEY rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) mut => VT.GetPropertyStoreForKeys(ref this, rgKeys, cKeys, flags, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -986,10 +772,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDelayedPropertyStore(GETPROPERTYSTOREFLAGS flags, uint32 dwStoreId, in Guid riid, void** ppv) mut
-			{
-				return VT.GetDelayedPropertyStore(ref this, flags, dwStoreId, riid, ppv);
-			}
+			public HRESULT GetDelayedPropertyStore(GETPROPERTYSTOREFLAGS flags, uint32 dwStoreId, in Guid riid, void** ppv) mut => VT.GetDelayedPropertyStore(ref this, flags, dwStoreId, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IPropertyStoreFactory.VTable
 			{
@@ -1003,18 +787,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFlags(int32 flags) mut
-			{
-				return VT.SetFlags(ref this, flags);
-			}
-			public HRESULT SetPropertyStorage(ref SERIALIZEDPROPSTORAGE psps, uint32 cb) mut
-			{
-				return VT.SetPropertyStorage(ref this, ref psps, cb);
-			}
-			public HRESULT GetPropertyStorage(out SERIALIZEDPROPSTORAGE* ppsps, out uint32 pcb) mut
-			{
-				return VT.GetPropertyStorage(ref this, out ppsps, out pcb);
-			}
+			public HRESULT SetFlags(int32 flags) mut => VT.SetFlags(ref this, flags);
+			public HRESULT SetPropertyStorage(ref SERIALIZEDPROPSTORAGE psps, uint32 cb) mut => VT.SetPropertyStorage(ref this, ref psps, cb);
+			public HRESULT GetPropertyStorage(out SERIALIZEDPROPSTORAGE* ppsps, out uint32 pcb) mut => VT.GetPropertyStorage(ref this, out ppsps, out pcb);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1030,14 +806,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyStorageSize(out uint32 pcb) mut
-			{
-				return VT.GetPropertyStorageSize(ref this, out pcb);
-			}
-			public HRESULT GetPropertyStorageBuffer(out SERIALIZEDPROPSTORAGE psps, uint32 cb, out uint32 pcbWritten) mut
-			{
-				return VT.GetPropertyStorageBuffer(ref this, out psps, cb, out pcbWritten);
-			}
+			public HRESULT GetPropertyStorageSize(out uint32 pcb) mut => VT.GetPropertyStorageSize(ref this, out pcb);
+			public HRESULT GetPropertyStorageBuffer(out SERIALIZEDPROPSTORAGE psps, uint32 cb, out uint32 pcbWritten) mut => VT.GetPropertyStorageBuffer(ref this, out psps, cb, out pcbWritten);
+
 			[CRepr]
 			public struct VTable : IPersistSerializedPropStorage.VTable
 			{
@@ -1052,10 +823,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SchemaRefreshed() mut
-			{
-				return VT.SchemaRefreshed(ref this);
-			}
+			public HRESULT SchemaRefreshed() mut => VT.SchemaRefreshed(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1069,10 +838,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateObject(in Guid clsid, ref IUnknown pUnkOuter, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateObject(ref this, clsid, ref pUnkOuter, riid, ppv);
-			}
+			public HRESULT CreateObject(in Guid clsid, ref IUnknown pUnkOuter, in Guid riid, void** ppv) mut => VT.CreateObject(ref this, clsid, ref pUnkOuter, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1086,38 +853,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ParsePropertyName(PWSTR pszName, out Guid pfmtid, out uint32 ppid, out uint32 pchEaten) mut
-			{
-				return VT.ParsePropertyName(ref this, pszName, out pfmtid, out ppid, out pchEaten);
-			}
-			public HRESULT GetCannonicalName(in Guid fmtid, uint32 pid, char16* pwszText, uint32 cchText) mut
-			{
-				return VT.GetCannonicalName(ref this, fmtid, pid, pwszText, cchText);
-			}
-			public HRESULT GetDisplayName(in Guid fmtid, uint32 pid, PROPERTYUI_NAME_FLAGS flags, char16* pwszText, uint32 cchText) mut
-			{
-				return VT.GetDisplayName(ref this, fmtid, pid, flags, pwszText, cchText);
-			}
-			public HRESULT GetPropertyDescription(in Guid fmtid, uint32 pid, char16* pwszText, uint32 cchText) mut
-			{
-				return VT.GetPropertyDescription(ref this, fmtid, pid, pwszText, cchText);
-			}
-			public HRESULT GetDefaultWidth(in Guid fmtid, uint32 pid, out uint32 pcxChars) mut
-			{
-				return VT.GetDefaultWidth(ref this, fmtid, pid, out pcxChars);
-			}
-			public HRESULT ComGetFlags(in Guid fmtid, uint32 pid, out PROPERTYUI_FLAGS pflags) mut
-			{
-				return VT.ComGetFlags(ref this, fmtid, pid, out pflags);
-			}
-			public HRESULT FormatForDisplay(in Guid fmtid, uint32 pid, in PROPVARIANT ppropvar, PROPERTYUI_FORMAT_FLAGS puiff, char16* pwszText, uint32 cchText) mut
-			{
-				return VT.FormatForDisplay(ref this, fmtid, pid, ppropvar, puiff, pwszText, cchText);
-			}
-			public HRESULT GetHelpInfo(in Guid fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, out uint32 puHelpID) mut
-			{
-				return VT.GetHelpInfo(ref this, fmtid, pid, pwszHelpFile, cch, out puHelpID);
-			}
+			public HRESULT ParsePropertyName(PWSTR pszName, out Guid pfmtid, out uint32 ppid, out uint32 pchEaten) mut => VT.ParsePropertyName(ref this, pszName, out pfmtid, out ppid, out pchEaten);
+			public HRESULT GetCannonicalName(in Guid fmtid, uint32 pid, char16* pwszText, uint32 cchText) mut => VT.GetCannonicalName(ref this, fmtid, pid, pwszText, cchText);
+			public HRESULT GetDisplayName(in Guid fmtid, uint32 pid, PROPERTYUI_NAME_FLAGS flags, char16* pwszText, uint32 cchText) mut => VT.GetDisplayName(ref this, fmtid, pid, flags, pwszText, cchText);
+			public HRESULT GetPropertyDescription(in Guid fmtid, uint32 pid, char16* pwszText, uint32 cchText) mut => VT.GetPropertyDescription(ref this, fmtid, pid, pwszText, cchText);
+			public HRESULT GetDefaultWidth(in Guid fmtid, uint32 pid, out uint32 pcxChars) mut => VT.GetDefaultWidth(ref this, fmtid, pid, out pcxChars);
+			public HRESULT ComGetFlags(in Guid fmtid, uint32 pid, out PROPERTYUI_FLAGS pflags) mut => VT.ComGetFlags(ref this, fmtid, pid, out pflags);
+			public HRESULT FormatForDisplay(in Guid fmtid, uint32 pid, in PROPVARIANT ppropvar, PROPERTYUI_FORMAT_FLAGS puiff, char16* pwszText, uint32 cchText) mut => VT.FormatForDisplay(ref this, fmtid, pid, ppropvar, puiff, pwszText, cchText);
+			public HRESULT GetHelpInfo(in Guid fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, out uint32 puHelpID) mut => VT.GetHelpInfo(ref this, fmtid, pid, pwszHelpFile, cch, out puHelpID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

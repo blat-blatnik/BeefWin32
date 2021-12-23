@@ -27,10 +27,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Launch(PWSTR appUserModelId, PWSTR arguments, in IsolatedAppLauncherTelemetryParameters telemetryParameters) mut
-			{
-				return VT.Launch(ref this, appUserModelId, arguments, telemetryParameters);
-			}
+			public HRESULT Launch(PWSTR appUserModelId, PWSTR arguments, in IsolatedAppLauncherTelemetryParameters telemetryParameters) mut => VT.Launch(ref this, appUserModelId, arguments, telemetryParameters);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

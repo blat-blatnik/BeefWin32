@@ -60,26 +60,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectionMade(BSTR bstrConnection, uint32 ulType, ref SENS_QOCINFO lpQOCInfo) mut
-			{
-				return VT.ConnectionMade(ref this, bstrConnection, ulType, ref lpQOCInfo);
-			}
-			public HRESULT ConnectionMadeNoQOCInfo(BSTR bstrConnection, uint32 ulType) mut
-			{
-				return VT.ConnectionMadeNoQOCInfo(ref this, bstrConnection, ulType);
-			}
-			public HRESULT ConnectionLost(BSTR bstrConnection, SENS_CONNECTION_TYPE ulType) mut
-			{
-				return VT.ConnectionLost(ref this, bstrConnection, ulType);
-			}
-			public HRESULT DestinationReachable(BSTR bstrDestination, BSTR bstrConnection, uint32 ulType, ref SENS_QOCINFO lpQOCInfo) mut
-			{
-				return VT.DestinationReachable(ref this, bstrDestination, bstrConnection, ulType, ref lpQOCInfo);
-			}
-			public HRESULT DestinationReachableNoQOCInfo(BSTR bstrDestination, BSTR bstrConnection, uint32 ulType) mut
-			{
-				return VT.DestinationReachableNoQOCInfo(ref this, bstrDestination, bstrConnection, ulType);
-			}
+			public HRESULT ConnectionMade(BSTR bstrConnection, uint32 ulType, ref SENS_QOCINFO lpQOCInfo) mut => VT.ConnectionMade(ref this, bstrConnection, ulType, ref lpQOCInfo);
+			public HRESULT ConnectionMadeNoQOCInfo(BSTR bstrConnection, uint32 ulType) mut => VT.ConnectionMadeNoQOCInfo(ref this, bstrConnection, ulType);
+			public HRESULT ConnectionLost(BSTR bstrConnection, SENS_CONNECTION_TYPE ulType) mut => VT.ConnectionLost(ref this, bstrConnection, ulType);
+			public HRESULT DestinationReachable(BSTR bstrDestination, BSTR bstrConnection, uint32 ulType, ref SENS_QOCINFO lpQOCInfo) mut => VT.DestinationReachable(ref this, bstrDestination, bstrConnection, ulType, ref lpQOCInfo);
+			public HRESULT DestinationReachableNoQOCInfo(BSTR bstrDestination, BSTR bstrConnection, uint32 ulType) mut => VT.DestinationReachableNoQOCInfo(ref this, bstrDestination, bstrConnection, ulType);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -97,18 +83,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnACPower() mut
-			{
-				return VT.OnACPower(ref this);
-			}
-			public HRESULT OnBatteryPower(uint32 dwBatteryLifePercent) mut
-			{
-				return VT.OnBatteryPower(ref this, dwBatteryLifePercent);
-			}
-			public HRESULT BatteryLow(uint32 dwBatteryLifePercent) mut
-			{
-				return VT.BatteryLow(ref this, dwBatteryLifePercent);
-			}
+			public HRESULT OnACPower() mut => VT.OnACPower(ref this);
+			public HRESULT OnBatteryPower(uint32 dwBatteryLifePercent) mut => VT.OnBatteryPower(ref this, dwBatteryLifePercent);
+			public HRESULT BatteryLow(uint32 dwBatteryLifePercent) mut => VT.BatteryLow(ref this, dwBatteryLifePercent);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -124,34 +102,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Logon(BSTR bstrUserName) mut
-			{
-				return VT.Logon(ref this, bstrUserName);
-			}
-			public HRESULT Logoff(BSTR bstrUserName) mut
-			{
-				return VT.Logoff(ref this, bstrUserName);
-			}
-			public HRESULT StartShell(BSTR bstrUserName) mut
-			{
-				return VT.StartShell(ref this, bstrUserName);
-			}
-			public HRESULT DisplayLock(BSTR bstrUserName) mut
-			{
-				return VT.DisplayLock(ref this, bstrUserName);
-			}
-			public HRESULT DisplayUnlock(BSTR bstrUserName) mut
-			{
-				return VT.DisplayUnlock(ref this, bstrUserName);
-			}
-			public HRESULT StartScreenSaver(BSTR bstrUserName) mut
-			{
-				return VT.StartScreenSaver(ref this, bstrUserName);
-			}
-			public HRESULT StopScreenSaver(BSTR bstrUserName) mut
-			{
-				return VT.StopScreenSaver(ref this, bstrUserName);
-			}
+			public HRESULT Logon(BSTR bstrUserName) mut => VT.Logon(ref this, bstrUserName);
+			public HRESULT Logoff(BSTR bstrUserName) mut => VT.Logoff(ref this, bstrUserName);
+			public HRESULT StartShell(BSTR bstrUserName) mut => VT.StartShell(ref this, bstrUserName);
+			public HRESULT DisplayLock(BSTR bstrUserName) mut => VT.DisplayLock(ref this, bstrUserName);
+			public HRESULT DisplayUnlock(BSTR bstrUserName) mut => VT.DisplayUnlock(ref this, bstrUserName);
+			public HRESULT StartScreenSaver(BSTR bstrUserName) mut => VT.StartScreenSaver(ref this, bstrUserName);
+			public HRESULT StopScreenSaver(BSTR bstrUserName) mut => VT.StopScreenSaver(ref this, bstrUserName);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -171,26 +129,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Logon(BSTR bstrUserName, uint32 dwSessionId) mut
-			{
-				return VT.Logon(ref this, bstrUserName, dwSessionId);
-			}
-			public HRESULT Logoff(BSTR bstrUserName, uint32 dwSessionId) mut
-			{
-				return VT.Logoff(ref this, bstrUserName, dwSessionId);
-			}
-			public HRESULT SessionDisconnect(BSTR bstrUserName, uint32 dwSessionId) mut
-			{
-				return VT.SessionDisconnect(ref this, bstrUserName, dwSessionId);
-			}
-			public HRESULT SessionReconnect(BSTR bstrUserName, uint32 dwSessionId) mut
-			{
-				return VT.SessionReconnect(ref this, bstrUserName, dwSessionId);
-			}
-			public HRESULT PostShell(BSTR bstrUserName, uint32 dwSessionId) mut
-			{
-				return VT.PostShell(ref this, bstrUserName, dwSessionId);
-			}
+			public HRESULT Logon(BSTR bstrUserName, uint32 dwSessionId) mut => VT.Logon(ref this, bstrUserName, dwSessionId);
+			public HRESULT Logoff(BSTR bstrUserName, uint32 dwSessionId) mut => VT.Logoff(ref this, bstrUserName, dwSessionId);
+			public HRESULT SessionDisconnect(BSTR bstrUserName, uint32 dwSessionId) mut => VT.SessionDisconnect(ref this, bstrUserName, dwSessionId);
+			public HRESULT SessionReconnect(BSTR bstrUserName, uint32 dwSessionId) mut => VT.SessionReconnect(ref this, bstrUserName, dwSessionId);
+			public HRESULT PostShell(BSTR bstrUserName, uint32 dwSessionId) mut => VT.PostShell(ref this, bstrUserName, dwSessionId);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

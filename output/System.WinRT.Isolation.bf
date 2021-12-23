@@ -14,10 +14,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetHostHwndInterop(HWND containerHwnd, out HWND hostHwnd) mut
-			{
-				return VT.GetHostHwndInterop(ref this, containerHwnd, out hostHwnd);
-			}
+			public HRESULT GetHostHwndInterop(HWND containerHwnd, out HWND hostHwnd) mut => VT.GetHostHwndInterop(ref this, containerHwnd, out hostHwnd);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

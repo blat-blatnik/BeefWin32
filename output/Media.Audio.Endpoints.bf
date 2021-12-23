@@ -40,10 +40,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ResetToDefault(uint32 ResetFlags) mut
-			{
-				return VT.ResetToDefault(ref this, ResetFlags);
-			}
+			public HRESULT ResetToDefault(uint32 ResetFlags) mut => VT.ResetToDefault(ref this, ResetFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -57,18 +55,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVolumeChannelCount(out uint32 pu32ChannelCount) mut
-			{
-				return VT.GetVolumeChannelCount(ref this, out pu32ChannelCount);
-			}
-			public HRESULT SetChannelVolumes(uint32 u32ChannelCount, ref float pf32Volumes, AUDIO_CURVE_TYPE u32CurveType, ref int64 pCurveDuration) mut
-			{
-				return VT.SetChannelVolumes(ref this, u32ChannelCount, ref pf32Volumes, u32CurveType, ref pCurveDuration);
-			}
-			public HRESULT GetChannelVolumes(uint32 u32ChannelCount, out float pf32Volumes) mut
-			{
-				return VT.GetChannelVolumes(ref this, u32ChannelCount, out pf32Volumes);
-			}
+			public HRESULT GetVolumeChannelCount(out uint32 pu32ChannelCount) mut => VT.GetVolumeChannelCount(ref this, out pu32ChannelCount);
+			public HRESULT SetChannelVolumes(uint32 u32ChannelCount, ref float pf32Volumes, AUDIO_CURVE_TYPE u32CurveType, ref int64 pCurveDuration) mut => VT.SetChannelVolumes(ref this, u32ChannelCount, ref pf32Volumes, u32CurveType, ref pCurveDuration);
+			public HRESULT GetChannelVolumes(uint32 u32ChannelCount, out float pf32Volumes) mut => VT.GetChannelVolumes(ref this, u32ChannelCount, out pf32Volumes);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -84,14 +74,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMute(uint8 bMuted) mut
-			{
-				return VT.SetMute(ref this, bMuted);
-			}
-			public HRESULT GetMute(out uint8 pbMuted) mut
-			{
-				return VT.GetMute(ref this, out pbMuted);
-			}
+			public HRESULT SetMute(uint8 bMuted) mut => VT.SetMute(ref this, bMuted);
+			public HRESULT GetMute(out uint8 pbMuted) mut => VT.GetMute(ref this, out pbMuted);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -106,14 +91,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMeterChannelCount(out uint32 pu32ChannelCount) mut
-			{
-				return VT.GetMeterChannelCount(ref this, out pu32ChannelCount);
-			}
-			public HRESULT GetMeteringData(uint32 u32ChannelCount, out float pf32PeakValues) mut
-			{
-				return VT.GetMeteringData(ref this, u32ChannelCount, out pf32PeakValues);
-			}
+			public HRESULT GetMeterChannelCount(out uint32 pu32ChannelCount) mut => VT.GetMeterChannelCount(ref this, out pu32ChannelCount);
+			public HRESULT GetMeteringData(uint32 u32ChannelCount, out float pf32PeakValues) mut => VT.GetMeteringData(ref this, u32ChannelCount, out pf32PeakValues);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -128,14 +108,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL IsLastBufferControlSupported() mut
-			{
-				return VT.IsLastBufferControlSupported(ref this);
-			}
-			public void ReleaseOutputDataPointerForLastBuffer(in APO_CONNECTION_PROPERTY pConnectionProperty) mut
-			{
-				VT.ReleaseOutputDataPointerForLastBuffer(ref this, pConnectionProperty);
-			}
+			public BOOL IsLastBufferControlSupported() mut => VT.IsLastBufferControlSupported(ref this);
+			public void ReleaseOutputDataPointerForLastBuffer(in APO_CONNECTION_PROPERTY pConnectionProperty) mut => VT.ReleaseOutputDataPointerForLastBuffer(ref this, pConnectionProperty);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -150,14 +125,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetLocalEffectsState(BOOL bEnabled) mut
-			{
-				return VT.SetLocalEffectsState(ref this, bEnabled);
-			}
-			public HRESULT GetLocalEffectsState(out BOOL pbEnabled) mut
-			{
-				return VT.GetLocalEffectsState(ref this, out pbEnabled);
-			}
+			public HRESULT SetLocalEffectsState(BOOL bEnabled) mut => VT.SetLocalEffectsState(ref this, bEnabled);
+			public HRESULT GetLocalEffectsState(out BOOL pbEnabled) mut => VT.GetLocalEffectsState(ref this, out pbEnabled);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -172,26 +142,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAvailableOffloadConnectorCount(PWSTR _pwstrDeviceId, uint32 _uConnectorId, out uint32 _pAvailableConnectorInstanceCount) mut
-			{
-				return VT.GetAvailableOffloadConnectorCount(ref this, _pwstrDeviceId, _uConnectorId, out _pAvailableConnectorInstanceCount);
-			}
-			public HRESULT GetEngineFormat(ref IMMDevice pDevice, BOOL _bRequestDeviceFormat, out WAVEFORMATEX* _ppwfxFormat) mut
-			{
-				return VT.GetEngineFormat(ref this, ref pDevice, _bRequestDeviceFormat, out _ppwfxFormat);
-			}
-			public HRESULT SetEngineDeviceFormat(ref IMMDevice pDevice, out WAVEFORMATEX _pwfxFormat) mut
-			{
-				return VT.SetEngineDeviceFormat(ref this, ref pDevice, out _pwfxFormat);
-			}
-			public HRESULT SetGfxState(ref IMMDevice pDevice, BOOL _bEnable) mut
-			{
-				return VT.SetGfxState(ref this, ref pDevice, _bEnable);
-			}
-			public HRESULT GetGfxState(ref IMMDevice pDevice, out BOOL _pbEnable) mut
-			{
-				return VT.GetGfxState(ref this, ref pDevice, out _pbEnable);
-			}
+			public HRESULT GetAvailableOffloadConnectorCount(PWSTR _pwstrDeviceId, uint32 _uConnectorId, out uint32 _pAvailableConnectorInstanceCount) mut => VT.GetAvailableOffloadConnectorCount(ref this, _pwstrDeviceId, _uConnectorId, out _pAvailableConnectorInstanceCount);
+			public HRESULT GetEngineFormat(ref IMMDevice pDevice, BOOL _bRequestDeviceFormat, out WAVEFORMATEX* _ppwfxFormat) mut => VT.GetEngineFormat(ref this, ref pDevice, _bRequestDeviceFormat, out _ppwfxFormat);
+			public HRESULT SetEngineDeviceFormat(ref IMMDevice pDevice, out WAVEFORMATEX _pwfxFormat) mut => VT.SetEngineDeviceFormat(ref this, ref pDevice, out _pwfxFormat);
+			public HRESULT SetGfxState(ref IMMDevice pDevice, BOOL _bEnable) mut => VT.SetGfxState(ref this, ref pDevice, _bEnable);
+			public HRESULT GetGfxState(ref IMMDevice pDevice, out BOOL _pbEnable) mut => VT.GetGfxState(ref this, ref pDevice, out _pbEnable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -209,10 +165,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnNotify(out AUDIO_VOLUME_NOTIFICATION_DATA pNotify) mut
-			{
-				return VT.OnNotify(ref this, out pNotify);
-			}
+			public HRESULT OnNotify(out AUDIO_VOLUME_NOTIFICATION_DATA pNotify) mut => VT.OnNotify(ref this, out pNotify);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -226,78 +180,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterControlChangeNotify(ref IAudioEndpointVolumeCallback pNotify) mut
-			{
-				return VT.RegisterControlChangeNotify(ref this, ref pNotify);
-			}
-			public HRESULT UnregisterControlChangeNotify(ref IAudioEndpointVolumeCallback pNotify) mut
-			{
-				return VT.UnregisterControlChangeNotify(ref this, ref pNotify);
-			}
-			public HRESULT GetChannelCount(out uint32 pnChannelCount) mut
-			{
-				return VT.GetChannelCount(ref this, out pnChannelCount);
-			}
-			public HRESULT SetMasterVolumeLevel(float fLevelDB, in Guid pguidEventContext) mut
-			{
-				return VT.SetMasterVolumeLevel(ref this, fLevelDB, pguidEventContext);
-			}
-			public HRESULT SetMasterVolumeLevelScalar(float fLevel, in Guid pguidEventContext) mut
-			{
-				return VT.SetMasterVolumeLevelScalar(ref this, fLevel, pguidEventContext);
-			}
-			public HRESULT GetMasterVolumeLevel(out float pfLevelDB) mut
-			{
-				return VT.GetMasterVolumeLevel(ref this, out pfLevelDB);
-			}
-			public HRESULT GetMasterVolumeLevelScalar(out float pfLevel) mut
-			{
-				return VT.GetMasterVolumeLevelScalar(ref this, out pfLevel);
-			}
-			public HRESULT SetChannelVolumeLevel(uint32 nChannel, float fLevelDB, in Guid pguidEventContext) mut
-			{
-				return VT.SetChannelVolumeLevel(ref this, nChannel, fLevelDB, pguidEventContext);
-			}
-			public HRESULT SetChannelVolumeLevelScalar(uint32 nChannel, float fLevel, in Guid pguidEventContext) mut
-			{
-				return VT.SetChannelVolumeLevelScalar(ref this, nChannel, fLevel, pguidEventContext);
-			}
-			public HRESULT GetChannelVolumeLevel(uint32 nChannel, out float pfLevelDB) mut
-			{
-				return VT.GetChannelVolumeLevel(ref this, nChannel, out pfLevelDB);
-			}
-			public HRESULT GetChannelVolumeLevelScalar(uint32 nChannel, out float pfLevel) mut
-			{
-				return VT.GetChannelVolumeLevelScalar(ref this, nChannel, out pfLevel);
-			}
-			public HRESULT SetMute(BOOL bMute, in Guid pguidEventContext) mut
-			{
-				return VT.SetMute(ref this, bMute, pguidEventContext);
-			}
-			public HRESULT GetMute(out BOOL pbMute) mut
-			{
-				return VT.GetMute(ref this, out pbMute);
-			}
-			public HRESULT GetVolumeStepInfo(out uint32 pnStep, out uint32 pnStepCount) mut
-			{
-				return VT.GetVolumeStepInfo(ref this, out pnStep, out pnStepCount);
-			}
-			public HRESULT VolumeStepUp(in Guid pguidEventContext) mut
-			{
-				return VT.VolumeStepUp(ref this, pguidEventContext);
-			}
-			public HRESULT VolumeStepDown(in Guid pguidEventContext) mut
-			{
-				return VT.VolumeStepDown(ref this, pguidEventContext);
-			}
-			public HRESULT QueryHardwareSupport(out uint32 pdwHardwareSupportMask) mut
-			{
-				return VT.QueryHardwareSupport(ref this, out pdwHardwareSupportMask);
-			}
-			public HRESULT GetVolumeRange(out float pflVolumeMindB, out float pflVolumeMaxdB, out float pflVolumeIncrementdB) mut
-			{
-				return VT.GetVolumeRange(ref this, out pflVolumeMindB, out pflVolumeMaxdB, out pflVolumeIncrementdB);
-			}
+			public HRESULT RegisterControlChangeNotify(ref IAudioEndpointVolumeCallback pNotify) mut => VT.RegisterControlChangeNotify(ref this, ref pNotify);
+			public HRESULT UnregisterControlChangeNotify(ref IAudioEndpointVolumeCallback pNotify) mut => VT.UnregisterControlChangeNotify(ref this, ref pNotify);
+			public HRESULT GetChannelCount(out uint32 pnChannelCount) mut => VT.GetChannelCount(ref this, out pnChannelCount);
+			public HRESULT SetMasterVolumeLevel(float fLevelDB, in Guid pguidEventContext) mut => VT.SetMasterVolumeLevel(ref this, fLevelDB, pguidEventContext);
+			public HRESULT SetMasterVolumeLevelScalar(float fLevel, in Guid pguidEventContext) mut => VT.SetMasterVolumeLevelScalar(ref this, fLevel, pguidEventContext);
+			public HRESULT GetMasterVolumeLevel(out float pfLevelDB) mut => VT.GetMasterVolumeLevel(ref this, out pfLevelDB);
+			public HRESULT GetMasterVolumeLevelScalar(out float pfLevel) mut => VT.GetMasterVolumeLevelScalar(ref this, out pfLevel);
+			public HRESULT SetChannelVolumeLevel(uint32 nChannel, float fLevelDB, in Guid pguidEventContext) mut => VT.SetChannelVolumeLevel(ref this, nChannel, fLevelDB, pguidEventContext);
+			public HRESULT SetChannelVolumeLevelScalar(uint32 nChannel, float fLevel, in Guid pguidEventContext) mut => VT.SetChannelVolumeLevelScalar(ref this, nChannel, fLevel, pguidEventContext);
+			public HRESULT GetChannelVolumeLevel(uint32 nChannel, out float pfLevelDB) mut => VT.GetChannelVolumeLevel(ref this, nChannel, out pfLevelDB);
+			public HRESULT GetChannelVolumeLevelScalar(uint32 nChannel, out float pfLevel) mut => VT.GetChannelVolumeLevelScalar(ref this, nChannel, out pfLevel);
+			public HRESULT SetMute(BOOL bMute, in Guid pguidEventContext) mut => VT.SetMute(ref this, bMute, pguidEventContext);
+			public HRESULT GetMute(out BOOL pbMute) mut => VT.GetMute(ref this, out pbMute);
+			public HRESULT GetVolumeStepInfo(out uint32 pnStep, out uint32 pnStepCount) mut => VT.GetVolumeStepInfo(ref this, out pnStep, out pnStepCount);
+			public HRESULT VolumeStepUp(in Guid pguidEventContext) mut => VT.VolumeStepUp(ref this, pguidEventContext);
+			public HRESULT VolumeStepDown(in Guid pguidEventContext) mut => VT.VolumeStepDown(ref this, pguidEventContext);
+			public HRESULT QueryHardwareSupport(out uint32 pdwHardwareSupportMask) mut => VT.QueryHardwareSupport(ref this, out pdwHardwareSupportMask);
+			public HRESULT GetVolumeRange(out float pflVolumeMindB, out float pflVolumeMaxdB, out float pflVolumeIncrementdB) mut => VT.GetVolumeRange(ref this, out pflVolumeMindB, out pflVolumeMaxdB, out pflVolumeIncrementdB);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -328,10 +229,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVolumeRangeChannel(uint32 iChannel, out float pflVolumeMindB, out float pflVolumeMaxdB, out float pflVolumeIncrementdB) mut
-			{
-				return VT.GetVolumeRangeChannel(ref this, iChannel, out pflVolumeMindB, out pflVolumeMaxdB, out pflVolumeIncrementdB);
-			}
+			public HRESULT GetVolumeRangeChannel(uint32 iChannel, out float pflVolumeMindB, out float pflVolumeMaxdB, out float pflVolumeIncrementdB) mut => VT.GetVolumeRangeChannel(ref this, iChannel, out pflVolumeMindB, out pflVolumeMaxdB, out pflVolumeIncrementdB);
+
 			[CRepr]
 			public struct VTable : IAudioEndpointVolume.VTable
 			{
@@ -345,22 +244,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPeakValue(out float pfPeak) mut
-			{
-				return VT.GetPeakValue(ref this, out pfPeak);
-			}
-			public HRESULT GetMeteringChannelCount(out uint32 pnChannelCount) mut
-			{
-				return VT.GetMeteringChannelCount(ref this, out pnChannelCount);
-			}
-			public HRESULT GetChannelsPeakValues(uint32 u32ChannelCount, float* afPeakValues) mut
-			{
-				return VT.GetChannelsPeakValues(ref this, u32ChannelCount, afPeakValues);
-			}
-			public HRESULT QueryHardwareSupport(out uint32 pdwHardwareSupportMask) mut
-			{
-				return VT.QueryHardwareSupport(ref this, out pdwHardwareSupportMask);
-			}
+			public HRESULT GetPeakValue(out float pfPeak) mut => VT.GetPeakValue(ref this, out pfPeak);
+			public HRESULT GetMeteringChannelCount(out uint32 pnChannelCount) mut => VT.GetMeteringChannelCount(ref this, out pnChannelCount);
+			public HRESULT GetChannelsPeakValues(uint32 u32ChannelCount, float* afPeakValues) mut => VT.GetChannelsPeakValues(ref this, u32ChannelCount, afPeakValues);
+			public HRESULT QueryHardwareSupport(out uint32 pdwHardwareSupportMask) mut => VT.QueryHardwareSupport(ref this, out pdwHardwareSupportMask);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

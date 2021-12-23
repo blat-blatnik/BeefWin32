@@ -14,14 +14,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** printManager) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, printManager);
-			}
-			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.ShowPrintUIForWindowAsync(ref this, appWindow, riid, asyncOperation);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** printManager) mut => VT.GetForWindow(ref this, appWindow, riid, printManager);
+			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, in Guid riid, void** asyncOperation) mut => VT.ShowPrintUIForWindowAsync(ref this, appWindow, riid, asyncOperation);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -36,14 +31,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** printManager) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, printManager);
-			}
-			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.ShowPrintUIForWindowAsync(ref this, appWindow, riid, asyncOperation);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** printManager) mut => VT.GetForWindow(ref this, appWindow, riid, printManager);
+			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, in Guid riid, void** asyncOperation) mut => VT.ShowPrintUIForWindowAsync(ref this, appWindow, riid, asyncOperation);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -58,26 +48,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDocumentSequencePrintTicket(ref IStream documentSequencePrintTicket) mut
-			{
-				return VT.SetDocumentSequencePrintTicket(ref this, ref documentSequencePrintTicket);
-			}
-			public HRESULT SetDocumentSequenceUri(PWSTR documentSequenceUri) mut
-			{
-				return VT.SetDocumentSequenceUri(ref this, documentSequenceUri);
-			}
-			public HRESULT AddDocumentData(uint32 documentId, ref IStream documentPrintTicket, PWSTR documentUri) mut
-			{
-				return VT.AddDocumentData(ref this, documentId, ref documentPrintTicket, documentUri);
-			}
-			public HRESULT AddPage(uint32 documentId, uint32 pageId, ref IXpsOMPageReference pageReference, PWSTR pageUri) mut
-			{
-				return VT.AddPage(ref this, documentId, pageId, ref pageReference, pageUri);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT SetDocumentSequencePrintTicket(ref IStream documentSequencePrintTicket) mut => VT.SetDocumentSequencePrintTicket(ref this, ref documentSequencePrintTicket);
+			public HRESULT SetDocumentSequenceUri(PWSTR documentSequenceUri) mut => VT.SetDocumentSequenceUri(ref this, documentSequenceUri);
+			public HRESULT AddDocumentData(uint32 documentId, ref IStream documentPrintTicket, PWSTR documentUri) mut => VT.AddDocumentData(ref this, documentId, ref documentPrintTicket, documentUri);
+			public HRESULT AddPage(uint32 documentId, uint32 pageId, ref IXpsOMPageReference pageReference, PWSTR pageUri) mut => VT.AddPage(ref this, documentId, pageId, ref pageReference, pageUri);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -95,10 +71,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Failed(HRESULT XpsError) mut
-			{
-				return VT.Failed(ref this, XpsError);
-			}
+			public HRESULT Failed(HRESULT XpsError) mut => VT.Failed(ref this, XpsError);
+
 			[CRepr]
 			public struct VTable : IPrintWorkflowXpsReceiver.VTable
 			{
@@ -112,14 +86,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartXpsOMGeneration(ref IPrintWorkflowXpsReceiver receiver) mut
-			{
-				return VT.StartXpsOMGeneration(ref this, ref receiver);
-			}
-			public HRESULT get_ObjectFactory(out IXpsOMObjectFactory1* value) mut
-			{
-				return VT.get_ObjectFactory(ref this, out value);
-			}
+			public HRESULT StartXpsOMGeneration(ref IPrintWorkflowXpsReceiver receiver) mut => VT.StartXpsOMGeneration(ref this, ref receiver);
+			public HRESULT get_ObjectFactory(out IXpsOMObjectFactory1* value) mut => VT.get_ObjectFactory(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -134,10 +103,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DocumentPackageTarget(out IXpsDocumentPackageTarget* value) mut
-			{
-				return VT.get_DocumentPackageTarget(ref this, out value);
-			}
+			public HRESULT get_DocumentPackageTarget(out IXpsDocumentPackageTarget* value) mut => VT.get_DocumentPackageTarget(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -151,18 +118,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PrinterQueue(out IPrinterQueue* value) mut
-			{
-				return VT.get_PrinterQueue(ref this, out value);
-			}
-			public HRESULT get_DriverProperties(out IPrinterPropertyBag* value) mut
-			{
-				return VT.get_DriverProperties(ref this, out value);
-			}
-			public HRESULT get_UserProperties(out IPrinterPropertyBag* value) mut
-			{
-				return VT.get_UserProperties(ref this, out value);
-			}
+			public HRESULT get_PrinterQueue(out IPrinterQueue* value) mut => VT.get_PrinterQueue(ref this, out value);
+			public HRESULT get_DriverProperties(out IPrinterPropertyBag* value) mut => VT.get_DriverProperties(ref this, out value);
+			public HRESULT get_UserProperties(out IPrinterPropertyBag* value) mut => VT.get_UserProperties(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

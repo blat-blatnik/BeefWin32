@@ -30,14 +30,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RenderPageToSurface(ref IUnknown pdfPage, ref IDXGISurface pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) mut
-			{
-				return VT.RenderPageToSurface(ref this, ref pdfPage, ref pSurface, offset, pRenderParams);
-			}
-			public HRESULT RenderPageToDeviceContext(ref IUnknown pdfPage, ref ID2D1DeviceContext pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) mut
-			{
-				return VT.RenderPageToDeviceContext(ref this, ref pdfPage, ref pD2DDeviceContext, pRenderParams);
-			}
+			public HRESULT RenderPageToSurface(ref IUnknown pdfPage, ref IDXGISurface pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) mut => VT.RenderPageToSurface(ref this, ref pdfPage, ref pSurface, offset, pRenderParams);
+			public HRESULT RenderPageToDeviceContext(ref IUnknown pdfPage, ref ID2D1DeviceContext pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) mut => VT.RenderPageToDeviceContext(ref this, ref pdfPage, ref pD2DDeviceContext, pRenderParams);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

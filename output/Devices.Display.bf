@@ -2966,22 +2966,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) mut
-			{
-				return VT.GetConnectedIDs(ref this, wszAdaptorName, out pulCount, out pulID, ulFlags);
-			}
-			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) mut
-			{
-				return VT.GetActiveTopology(ref this, wszAdaptorName, ulSourceID, out pulCount, out pulTargetID);
-			}
-			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) mut
-			{
-				return VT.SetActiveTopology(ref this, wszAdaptorName, ulSourceID, ulCount, ref pulTargetID);
-			}
-			public HRESULT Commit(BOOL fFinalCall) mut
-			{
-				return VT.Commit(ref this, fFinalCall);
-			}
+			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) mut => VT.GetConnectedIDs(ref this, wszAdaptorName, out pulCount, out pulID, ulFlags);
+			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) mut => VT.GetActiveTopology(ref this, wszAdaptorName, ulSourceID, out pulCount, out pulTargetID);
+			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) mut => VT.SetActiveTopology(ref this, wszAdaptorName, ulSourceID, ulCount, ref pulTargetID);
+			public HRESULT Commit(BOOL fFinalCall) mut => VT.Commit(ref this, fFinalCall);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2998,30 +2987,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) mut
-			{
-				return VT.GetConnectedIDs(ref this, wszAdaptorName, out pulCount, out pulID, ulFlags);
-			}
-			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) mut
-			{
-				return VT.GetActiveTopology(ref this, wszAdaptorName, ulSourceID, out pulCount, out pulTargetID);
-			}
-			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) mut
-			{
-				return VT.SetActiveTopology(ref this, wszAdaptorName, ulSourceID, ulCount, ref pulTargetID);
-			}
-			public HRESULT Commit() mut
-			{
-				return VT.Commit(ref this);
-			}
-			public HRESULT SetConfiguration(ref IStream pIStream, out uint32 pulStatus) mut
-			{
-				return VT.SetConfiguration(ref this, ref pIStream, out pulStatus);
-			}
-			public HRESULT GetProceedOnNewConfiguration() mut
-			{
-				return VT.GetProceedOnNewConfiguration(ref this);
-			}
+			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) mut => VT.GetConnectedIDs(ref this, wszAdaptorName, out pulCount, out pulID, ulFlags);
+			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) mut => VT.GetActiveTopology(ref this, wszAdaptorName, ulSourceID, out pulCount, out pulTargetID);
+			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) mut => VT.SetActiveTopology(ref this, wszAdaptorName, ulSourceID, ulCount, ref pulTargetID);
+			public HRESULT Commit() mut => VT.Commit(ref this);
+			public HRESULT SetConfiguration(ref IStream pIStream, out uint32 pulStatus) mut => VT.SetConfiguration(ref this, ref pIStream, out pulStatus);
+			public HRESULT GetProceedOnNewConfiguration() mut => VT.GetProceedOnNewConfiguration(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

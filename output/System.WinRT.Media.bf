@@ -19,10 +19,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetData(in Guid riid, void** ppv) mut
-			{
-				return VT.GetData(ref this, riid, ppv);
-			}
+			public HRESULT GetData(in Guid riid, void** ppv) mut => VT.GetData(ref this, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -36,14 +34,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetData(in Guid riid, void** ppv) mut
-			{
-				return VT.GetData(ref this, riid, ppv);
-			}
-			public HRESULT GetDevice(in Guid riid, void** ppv) mut
-			{
-				return VT.GetDevice(ref this, riid, ppv);
-			}
+			public HRESULT GetData(in Guid riid, void** ppv) mut => VT.GetData(ref this, riid, ppv);
+			public HRESULT GetDevice(in Guid riid, void** ppv) mut => VT.GetDevice(ref this, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -58,10 +51,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromMFSample(ref IMFSample data, BOOL forceReadOnly, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateFromMFSample(ref this, ref data, forceReadOnly, riid, ppv);
-			}
+			public HRESULT CreateFromMFSample(ref IMFSample data, BOOL forceReadOnly, in Guid riid, void** ppv) mut => VT.CreateFromMFSample(ref this, ref data, forceReadOnly, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -75,10 +66,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromMFSample(ref IMFSample data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateFromMFSample(ref this, ref data, subtype, width, height, forceReadOnly, minDisplayAperture, device, riid, ppv);
-			}
+			public HRESULT CreateFromMFSample(ref IMFSample data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, in Guid riid, void** ppv) mut => VT.CreateFromMFSample(ref this, ref data, subtype, width, height, forceReadOnly, minDisplayAperture, device, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{

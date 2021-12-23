@@ -14,30 +14,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginDraw(RECT* updateRect, in Guid iid, void** updateObject, out POINT updateOffset) mut
-			{
-				return VT.BeginDraw(ref this, updateRect, iid, updateObject, out updateOffset);
-			}
-			public HRESULT EndDraw() mut
-			{
-				return VT.EndDraw(ref this);
-			}
-			public HRESULT Resize(SIZE sizePixels) mut
-			{
-				return VT.Resize(ref this, sizePixels);
-			}
-			public HRESULT Scroll(RECT* scrollRect, RECT* clipRect, int32 offsetX, int32 offsetY) mut
-			{
-				return VT.Scroll(ref this, scrollRect, clipRect, offsetX, offsetY);
-			}
-			public HRESULT ResumeDraw() mut
-			{
-				return VT.ResumeDraw(ref this);
-			}
-			public HRESULT SuspendDraw() mut
-			{
-				return VT.SuspendDraw(ref this);
-			}
+			public HRESULT BeginDraw(RECT* updateRect, in Guid iid, void** updateObject, out POINT updateOffset) mut => VT.BeginDraw(ref this, updateRect, iid, updateObject, out updateOffset);
+			public HRESULT EndDraw() mut => VT.EndDraw(ref this);
+			public HRESULT Resize(SIZE sizePixels) mut => VT.Resize(ref this, sizePixels);
+			public HRESULT Scroll(RECT* scrollRect, RECT* clipRect, int32 offsetX, int32 offsetY) mut => VT.Scroll(ref this, scrollRect, clipRect, offsetX, offsetY);
+			public HRESULT ResumeDraw() mut => VT.ResumeDraw(ref this);
+			public HRESULT SuspendDraw() mut => VT.SuspendDraw(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -56,10 +39,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CopySurface(ref IUnknown destinationResource, int32 destinationOffsetX, int32 destinationOffsetY, RECT* sourceRectangle) mut
-			{
-				return VT.CopySurface(ref this, ref destinationResource, destinationOffsetX, destinationOffsetY, sourceRectangle);
-			}
+			public HRESULT CopySurface(ref IUnknown destinationResource, int32 destinationOffsetX, int32 destinationOffsetY, RECT* sourceRectangle) mut => VT.CopySurface(ref this, ref destinationResource, destinationOffsetX, destinationOffsetY, sourceRectangle);
+
 			[CRepr]
 			public struct VTable : ICompositionDrawingSurfaceInterop.VTable
 			{
@@ -73,14 +54,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRenderingDevice(out IUnknown* value) mut
-			{
-				return VT.GetRenderingDevice(ref this, out value);
-			}
-			public HRESULT SetRenderingDevice(ref IUnknown value) mut
-			{
-				return VT.SetRenderingDevice(ref this, ref value);
-			}
+			public HRESULT GetRenderingDevice(out IUnknown* value) mut => VT.GetRenderingDevice(ref this, out value);
+			public HRESULT SetRenderingDevice(ref IUnknown value) mut => VT.SetRenderingDevice(ref this, ref value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -95,18 +71,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, void* result) mut
-			{
-				return VT.CreateCompositionSurfaceForHandle(ref this, swapChain, result);
-			}
-			public HRESULT CreateCompositionSurfaceForSwapChain(ref IUnknown swapChain, void* result) mut
-			{
-				return VT.CreateCompositionSurfaceForSwapChain(ref this, ref swapChain, result);
-			}
-			public HRESULT CreateGraphicsDevice(ref IUnknown renderingDevice, void* result) mut
-			{
-				return VT.CreateGraphicsDevice(ref this, ref renderingDevice, result);
-			}
+			public HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, void* result) mut => VT.CreateCompositionSurfaceForHandle(ref this, swapChain, result);
+			public HRESULT CreateCompositionSurfaceForSwapChain(ref IUnknown swapChain, void* result) mut => VT.CreateCompositionSurfaceForSwapChain(ref this, ref swapChain, result);
+			public HRESULT CreateGraphicsDevice(ref IUnknown renderingDevice, void* result) mut => VT.CreateGraphicsDevice(ref this, ref renderingDevice, result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -122,10 +90,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSwapChain(ref IUnknown swapChain) mut
-			{
-				return VT.SetSwapChain(ref this, ref swapChain);
-			}
+			public HRESULT SetSwapChain(ref IUnknown swapChain) mut => VT.SetSwapChain(ref this, ref swapChain);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -139,10 +105,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TryRedirectForManipulation(in POINTER_INFO pointerInfo) mut
-			{
-				return VT.TryRedirectForManipulation(ref this, pointerInfo);
-			}
+			public HRESULT TryRedirectForManipulation(in POINTER_INFO pointerInfo) mut => VT.TryRedirectForManipulation(ref this, pointerInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -156,10 +120,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND hwnd, void* result) mut
-			{
-				return VT.GetForWindow(ref this, hwnd, result);
-			}
+			public HRESULT GetForWindow(HWND hwnd, void* result) mut => VT.GetForWindow(ref this, hwnd, result);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -173,14 +135,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, void* result) mut
-			{
-				return VT.CreateDesktopWindowTarget(ref this, hwndTarget, isTopmost, result);
-			}
-			public HRESULT EnsureOnThread(uint32 threadId) mut
-			{
-				return VT.EnsureOnThread(ref this, threadId);
-			}
+			public HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, void* result) mut => VT.CreateDesktopWindowTarget(ref this, hwndTarget, isTopmost, result);
+			public HRESULT EnsureOnThread(uint32 threadId) mut => VT.EnsureOnThread(ref this, threadId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -195,10 +152,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Hwnd(out HWND value) mut
-			{
-				return VT.get_Hwnd(ref this, out value);
-			}
+			public HRESULT get_Hwnd(out HWND value) mut => VT.get_Hwnd(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

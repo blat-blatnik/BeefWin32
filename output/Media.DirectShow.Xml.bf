@@ -18,18 +18,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BuildFromXML(ref IGraphBuilder pGraph, ref IXMLElement pxml) mut
-			{
-				return VT.BuildFromXML(ref this, ref pGraph, ref pxml);
-			}
-			public HRESULT SaveToXML(ref IGraphBuilder pGraph, out BSTR pbstrxml) mut
-			{
-				return VT.SaveToXML(ref this, ref pGraph, out pbstrxml);
-			}
-			public HRESULT BuildFromXMLFile(ref IGraphBuilder pGraph, PWSTR wszFileName, PWSTR wszBaseURL) mut
-			{
-				return VT.BuildFromXMLFile(ref this, ref pGraph, wszFileName, wszBaseURL);
-			}
+			public HRESULT BuildFromXML(ref IGraphBuilder pGraph, ref IXMLElement pxml) mut => VT.BuildFromXML(ref this, ref pGraph, ref pxml);
+			public HRESULT SaveToXML(ref IGraphBuilder pGraph, out BSTR pbstrxml) mut => VT.SaveToXML(ref this, ref pGraph, out pbstrxml);
+			public HRESULT BuildFromXMLFile(ref IGraphBuilder pGraph, PWSTR wszFileName, PWSTR wszBaseURL) mut => VT.BuildFromXMLFile(ref this, ref pGraph, wszFileName, wszBaseURL);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

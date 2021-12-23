@@ -5661,54 +5661,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProviderName(out BSTR pVal) mut
-			{
-				return VT.get_ProviderName(ref this, out pVal);
-			}
-			public HRESULT put_ProviderName(BSTR bstrVal) mut
-			{
-				return VT.put_ProviderName(ref this, bstrVal);
-			}
-			public HRESULT get_Length(out int32 pVal) mut
-			{
-				return VT.get_Length(ref this, out pVal);
-			}
-			public HRESULT put_Length(int32 lVal) mut
-			{
-				return VT.put_Length(ref this, lVal);
-			}
-			public HRESULT get_Existing(out int16 pVal) mut
-			{
-				return VT.get_Existing(ref this, out pVal);
-			}
-			public HRESULT put_Existing(int16 bVal) mut
-			{
-				return VT.put_Existing(ref this, bVal);
-			}
-			public HRESULT get_ContainerName(out BSTR pVal) mut
-			{
-				return VT.get_ContainerName(ref this, out pVal);
-			}
-			public HRESULT put_ContainerName(BSTR bstrVal) mut
-			{
-				return VT.put_ContainerName(ref this, bstrVal);
-			}
-			public HRESULT get_HashAlgorithm(out BSTR pVal) mut
-			{
-				return VT.get_HashAlgorithm(ref this, out pVal);
-			}
-			public HRESULT put_HashAlgorithm(BSTR bstrVal) mut
-			{
-				return VT.put_HashAlgorithm(ref this, bstrVal);
-			}
-			public HRESULT get_ExistingCACertificate(out VARIANT pVal) mut
-			{
-				return VT.get_ExistingCACertificate(ref this, out pVal);
-			}
-			public HRESULT put_ExistingCACertificate(VARIANT varVal) mut
-			{
-				return VT.put_ExistingCACertificate(ref this, varVal);
-			}
+			public HRESULT get_ProviderName(out BSTR pVal) mut => VT.get_ProviderName(ref this, out pVal);
+			public HRESULT put_ProviderName(BSTR bstrVal) mut => VT.put_ProviderName(ref this, bstrVal);
+			public HRESULT get_Length(out int32 pVal) mut => VT.get_Length(ref this, out pVal);
+			public HRESULT put_Length(int32 lVal) mut => VT.put_Length(ref this, lVal);
+			public HRESULT get_Existing(out int16 pVal) mut => VT.get_Existing(ref this, out pVal);
+			public HRESULT put_Existing(int16 bVal) mut => VT.put_Existing(ref this, bVal);
+			public HRESULT get_ContainerName(out BSTR pVal) mut => VT.get_ContainerName(ref this, out pVal);
+			public HRESULT put_ContainerName(BSTR bstrVal) mut => VT.put_ContainerName(ref this, bstrVal);
+			public HRESULT get_HashAlgorithm(out BSTR pVal) mut => VT.get_HashAlgorithm(ref this, out pVal);
+			public HRESULT put_HashAlgorithm(BSTR bstrVal) mut => VT.put_HashAlgorithm(ref this, bstrVal);
+			public HRESULT get_ExistingCACertificate(out VARIANT pVal) mut => VT.get_ExistingCACertificate(ref this, out pVal);
+			public HRESULT put_ExistingCACertificate(VARIANT varVal) mut => VT.put_ExistingCACertificate(ref this, varVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5733,22 +5698,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IUnknown* ppVal) mut
-			{
-				return VT.get__NewEnum(ref this, out ppVal);
-			}
-			public HRESULT get_Item(int32 Index, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, Index, out pVal);
-			}
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT Add(ref ICertSrvSetupKeyInformation pIKeyInformation) mut
-			{
-				return VT.Add(ref this, ref pIKeyInformation);
-			}
+			public HRESULT get__NewEnum(out IUnknown* ppVal) mut => VT.get__NewEnum(ref this, out ppVal);
+			public HRESULT get_Item(int32 Index, out VARIANT pVal) mut => VT.get_Item(ref this, Index, out pVal);
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT Add(ref ICertSrvSetupKeyInformation pIKeyInformation) mut => VT.Add(ref this, ref pIKeyInformation);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5765,86 +5719,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CAErrorId(out int32 pVal) mut
-			{
-				return VT.get_CAErrorId(ref this, out pVal);
-			}
-			public HRESULT get_CAErrorString(out BSTR pVal) mut
-			{
-				return VT.get_CAErrorString(ref this, out pVal);
-			}
-			public HRESULT InitializeDefaults(int16 bServer, int16 bClient) mut
-			{
-				return VT.InitializeDefaults(ref this, bServer, bClient);
-			}
-			public HRESULT GetCASetupProperty(CASetupProperty propertyId, out VARIANT pPropertyValue) mut
-			{
-				return VT.GetCASetupProperty(ref this, propertyId, out pPropertyValue);
-			}
-			public HRESULT SetCASetupProperty(CASetupProperty propertyId, ref VARIANT pPropertyValue) mut
-			{
-				return VT.SetCASetupProperty(ref this, propertyId, ref pPropertyValue);
-			}
-			public HRESULT IsPropertyEditable(CASetupProperty propertyId, out int16 pbEditable) mut
-			{
-				return VT.IsPropertyEditable(ref this, propertyId, out pbEditable);
-			}
-			public HRESULT GetSupportedCATypes(out VARIANT pCATypes) mut
-			{
-				return VT.GetSupportedCATypes(ref this, out pCATypes);
-			}
-			public HRESULT GetProviderNameList(out VARIANT pVal) mut
-			{
-				return VT.GetProviderNameList(ref this, out pVal);
-			}
-			public HRESULT GetKeyLengthList(BSTR bstrProviderName, out VARIANT pVal) mut
-			{
-				return VT.GetKeyLengthList(ref this, bstrProviderName, out pVal);
-			}
-			public HRESULT GetHashAlgorithmList(BSTR bstrProviderName, out VARIANT pVal) mut
-			{
-				return VT.GetHashAlgorithmList(ref this, bstrProviderName, out pVal);
-			}
-			public HRESULT GetPrivateKeyContainerList(BSTR bstrProviderName, out VARIANT pVal) mut
-			{
-				return VT.GetPrivateKeyContainerList(ref this, bstrProviderName, out pVal);
-			}
-			public HRESULT GetExistingCACertificates(out ICertSrvSetupKeyInformationCollection* ppVal) mut
-			{
-				return VT.GetExistingCACertificates(ref this, out ppVal);
-			}
-			public HRESULT CAImportPFX(BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, out ICertSrvSetupKeyInformation* ppVal) mut
-			{
-				return VT.CAImportPFX(ref this, bstrFileName, bstrPasswd, bOverwriteExistingKey, out ppVal);
-			}
-			public HRESULT SetCADistinguishedName(BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) mut
-			{
-				return VT.SetCADistinguishedName(ref this, bstrCADN, bIgnoreUnicode, bOverwriteExistingKey, bOverwriteExistingCAInDS);
-			}
-			public HRESULT SetDatabaseInformation(BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) mut
-			{
-				return VT.SetDatabaseInformation(ref this, bstrDBDirectory, bstrLogDirectory, bstrSharedFolder, bForceOverwrite);
-			}
-			public HRESULT SetParentCAInformation(BSTR bstrCAConfiguration) mut
-			{
-				return VT.SetParentCAInformation(ref this, bstrCAConfiguration);
-			}
-			public HRESULT SetWebCAInformation(BSTR bstrCAConfiguration) mut
-			{
-				return VT.SetWebCAInformation(ref this, bstrCAConfiguration);
-			}
-			public HRESULT Install() mut
-			{
-				return VT.Install(ref this);
-			}
-			public HRESULT PreUnInstall(int16 bClientOnly) mut
-			{
-				return VT.PreUnInstall(ref this, bClientOnly);
-			}
-			public HRESULT PostUnInstall() mut
-			{
-				return VT.PostUnInstall(ref this);
-			}
+			public HRESULT get_CAErrorId(out int32 pVal) mut => VT.get_CAErrorId(ref this, out pVal);
+			public HRESULT get_CAErrorString(out BSTR pVal) mut => VT.get_CAErrorString(ref this, out pVal);
+			public HRESULT InitializeDefaults(int16 bServer, int16 bClient) mut => VT.InitializeDefaults(ref this, bServer, bClient);
+			public HRESULT GetCASetupProperty(CASetupProperty propertyId, out VARIANT pPropertyValue) mut => VT.GetCASetupProperty(ref this, propertyId, out pPropertyValue);
+			public HRESULT SetCASetupProperty(CASetupProperty propertyId, ref VARIANT pPropertyValue) mut => VT.SetCASetupProperty(ref this, propertyId, ref pPropertyValue);
+			public HRESULT IsPropertyEditable(CASetupProperty propertyId, out int16 pbEditable) mut => VT.IsPropertyEditable(ref this, propertyId, out pbEditable);
+			public HRESULT GetSupportedCATypes(out VARIANT pCATypes) mut => VT.GetSupportedCATypes(ref this, out pCATypes);
+			public HRESULT GetProviderNameList(out VARIANT pVal) mut => VT.GetProviderNameList(ref this, out pVal);
+			public HRESULT GetKeyLengthList(BSTR bstrProviderName, out VARIANT pVal) mut => VT.GetKeyLengthList(ref this, bstrProviderName, out pVal);
+			public HRESULT GetHashAlgorithmList(BSTR bstrProviderName, out VARIANT pVal) mut => VT.GetHashAlgorithmList(ref this, bstrProviderName, out pVal);
+			public HRESULT GetPrivateKeyContainerList(BSTR bstrProviderName, out VARIANT pVal) mut => VT.GetPrivateKeyContainerList(ref this, bstrProviderName, out pVal);
+			public HRESULT GetExistingCACertificates(out ICertSrvSetupKeyInformationCollection* ppVal) mut => VT.GetExistingCACertificates(ref this, out ppVal);
+			public HRESULT CAImportPFX(BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, out ICertSrvSetupKeyInformation* ppVal) mut => VT.CAImportPFX(ref this, bstrFileName, bstrPasswd, bOverwriteExistingKey, out ppVal);
+			public HRESULT SetCADistinguishedName(BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) mut => VT.SetCADistinguishedName(ref this, bstrCADN, bIgnoreUnicode, bOverwriteExistingKey, bOverwriteExistingCAInDS);
+			public HRESULT SetDatabaseInformation(BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) mut => VT.SetDatabaseInformation(ref this, bstrDBDirectory, bstrLogDirectory, bstrSharedFolder, bForceOverwrite);
+			public HRESULT SetParentCAInformation(BSTR bstrCAConfiguration) mut => VT.SetParentCAInformation(ref this, bstrCAConfiguration);
+			public HRESULT SetWebCAInformation(BSTR bstrCAConfiguration) mut => VT.SetWebCAInformation(ref this, bstrCAConfiguration);
+			public HRESULT Install() mut => VT.Install(ref this);
+			public HRESULT PreUnInstall(int16 bClientOnly) mut => VT.PreUnInstall(ref this, bClientOnly);
+			public HRESULT PostUnInstall() mut => VT.PostUnInstall(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5877,54 +5772,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MSCEPErrorId(out int32 pVal) mut
-			{
-				return VT.get_MSCEPErrorId(ref this, out pVal);
-			}
-			public HRESULT get_MSCEPErrorString(out BSTR pVal) mut
-			{
-				return VT.get_MSCEPErrorString(ref this, out pVal);
-			}
-			public HRESULT InitializeDefaults() mut
-			{
-				return VT.InitializeDefaults(ref this);
-			}
-			public HRESULT GetMSCEPSetupProperty(MSCEPSetupProperty propertyId, out VARIANT pVal) mut
-			{
-				return VT.GetMSCEPSetupProperty(ref this, propertyId, out pVal);
-			}
-			public HRESULT SetMSCEPSetupProperty(MSCEPSetupProperty propertyId, ref VARIANT pPropertyValue) mut
-			{
-				return VT.SetMSCEPSetupProperty(ref this, propertyId, ref pPropertyValue);
-			}
-			public HRESULT SetAccountInformation(BSTR bstrUserName, BSTR bstrPassword) mut
-			{
-				return VT.SetAccountInformation(ref this, bstrUserName, bstrPassword);
-			}
-			public HRESULT IsMSCEPStoreEmpty(out int16 pbEmpty) mut
-			{
-				return VT.IsMSCEPStoreEmpty(ref this, out pbEmpty);
-			}
-			public HRESULT GetProviderNameList(int16 bExchange, out VARIANT pVal) mut
-			{
-				return VT.GetProviderNameList(ref this, bExchange, out pVal);
-			}
-			public HRESULT GetKeyLengthList(int16 bExchange, BSTR bstrProviderName, out VARIANT pVal) mut
-			{
-				return VT.GetKeyLengthList(ref this, bExchange, bstrProviderName, out pVal);
-			}
-			public HRESULT Install() mut
-			{
-				return VT.Install(ref this);
-			}
-			public HRESULT PreUnInstall() mut
-			{
-				return VT.PreUnInstall(ref this);
-			}
-			public HRESULT PostUnInstall() mut
-			{
-				return VT.PostUnInstall(ref this);
-			}
+			public HRESULT get_MSCEPErrorId(out int32 pVal) mut => VT.get_MSCEPErrorId(ref this, out pVal);
+			public HRESULT get_MSCEPErrorString(out BSTR pVal) mut => VT.get_MSCEPErrorString(ref this, out pVal);
+			public HRESULT InitializeDefaults() mut => VT.InitializeDefaults(ref this);
+			public HRESULT GetMSCEPSetupProperty(MSCEPSetupProperty propertyId, out VARIANT pVal) mut => VT.GetMSCEPSetupProperty(ref this, propertyId, out pVal);
+			public HRESULT SetMSCEPSetupProperty(MSCEPSetupProperty propertyId, ref VARIANT pPropertyValue) mut => VT.SetMSCEPSetupProperty(ref this, propertyId, ref pPropertyValue);
+			public HRESULT SetAccountInformation(BSTR bstrUserName, BSTR bstrPassword) mut => VT.SetAccountInformation(ref this, bstrUserName, bstrPassword);
+			public HRESULT IsMSCEPStoreEmpty(out int16 pbEmpty) mut => VT.IsMSCEPStoreEmpty(ref this, out pbEmpty);
+			public HRESULT GetProviderNameList(int16 bExchange, out VARIANT pVal) mut => VT.GetProviderNameList(ref this, bExchange, out pVal);
+			public HRESULT GetKeyLengthList(int16 bExchange, BSTR bstrProviderName, out VARIANT pVal) mut => VT.GetKeyLengthList(ref this, bExchange, bstrProviderName, out pVal);
+			public HRESULT Install() mut => VT.Install(ref this);
+			public HRESULT PreUnInstall() mut => VT.PreUnInstall(ref this);
+			public HRESULT PostUnInstall() mut => VT.PostUnInstall(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5949,34 +5809,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ErrorString(out BSTR pVal) mut
-			{
-				return VT.get_ErrorString(ref this, out pVal);
-			}
-			public HRESULT InitializeInstallDefaults() mut
-			{
-				return VT.InitializeInstallDefaults(ref this);
-			}
-			public HRESULT GetProperty(CESSetupProperty propertyId, out VARIANT pPropertyValue) mut
-			{
-				return VT.GetProperty(ref this, propertyId, out pPropertyValue);
-			}
-			public HRESULT SetProperty(CESSetupProperty propertyId, ref VARIANT pPropertyValue) mut
-			{
-				return VT.SetProperty(ref this, propertyId, ref pPropertyValue);
-			}
-			public HRESULT SetApplicationPoolCredentials(BSTR bstrUsername, BSTR bstrPassword) mut
-			{
-				return VT.SetApplicationPoolCredentials(ref this, bstrUsername, bstrPassword);
-			}
-			public HRESULT Install() mut
-			{
-				return VT.Install(ref this);
-			}
-			public HRESULT UnInstall(ref VARIANT pCAConfig, ref VARIANT pAuthentication) mut
-			{
-				return VT.UnInstall(ref this, ref pCAConfig, ref pAuthentication);
-			}
+			public HRESULT get_ErrorString(out BSTR pVal) mut => VT.get_ErrorString(ref this, out pVal);
+			public HRESULT InitializeInstallDefaults() mut => VT.InitializeInstallDefaults(ref this);
+			public HRESULT GetProperty(CESSetupProperty propertyId, out VARIANT pPropertyValue) mut => VT.GetProperty(ref this, propertyId, out pPropertyValue);
+			public HRESULT SetProperty(CESSetupProperty propertyId, ref VARIANT pPropertyValue) mut => VT.SetProperty(ref this, propertyId, ref pPropertyValue);
+			public HRESULT SetApplicationPoolCredentials(BSTR bstrUsername, BSTR bstrPassword) mut => VT.SetApplicationPoolCredentials(ref this, bstrUsername, bstrPassword);
+			public HRESULT Install() mut => VT.Install(ref this);
+			public HRESULT UnInstall(ref VARIANT pCAConfig, ref VARIANT pAuthentication) mut => VT.UnInstall(ref this, ref pCAConfig, ref pAuthentication);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5996,30 +5836,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ErrorString(out BSTR pVal) mut
-			{
-				return VT.get_ErrorString(ref this, out pVal);
-			}
-			public HRESULT InitializeInstallDefaults() mut
-			{
-				return VT.InitializeInstallDefaults(ref this);
-			}
-			public HRESULT GetProperty(CEPSetupProperty propertyId, out VARIANT pPropertyValue) mut
-			{
-				return VT.GetProperty(ref this, propertyId, out pPropertyValue);
-			}
-			public HRESULT SetProperty(CEPSetupProperty propertyId, ref VARIANT pPropertyValue) mut
-			{
-				return VT.SetProperty(ref this, propertyId, ref pPropertyValue);
-			}
-			public HRESULT Install() mut
-			{
-				return VT.Install(ref this);
-			}
-			public HRESULT UnInstall(ref VARIANT pAuthKeyBasedRenewal) mut
-			{
-				return VT.UnInstall(ref this, ref pAuthKeyBasedRenewal);
-			}
+			public HRESULT get_ErrorString(out BSTR pVal) mut => VT.get_ErrorString(ref this, out pVal);
+			public HRESULT InitializeInstallDefaults() mut => VT.InitializeInstallDefaults(ref this);
+			public HRESULT GetProperty(CEPSetupProperty propertyId, out VARIANT pPropertyValue) mut => VT.GetProperty(ref this, propertyId, out pPropertyValue);
+			public HRESULT SetProperty(CEPSetupProperty propertyId, ref VARIANT pPropertyValue) mut => VT.SetProperty(ref this, propertyId, ref pPropertyValue);
+			public HRESULT Install() mut => VT.Install(ref this);
+			public HRESULT UnInstall(ref VARIANT pAuthKeyBasedRenewal) mut => VT.UnInstall(ref this, ref pAuthKeyBasedRenewal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

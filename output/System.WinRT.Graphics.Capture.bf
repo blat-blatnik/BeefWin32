@@ -14,14 +14,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateForWindow(HWND window, in Guid riid, void** result) mut
-			{
-				return VT.CreateForWindow(ref this, window, riid, result);
-			}
-			public HRESULT CreateForMonitor(HMONITOR monitor, in Guid riid, void** result) mut
-			{
-				return VT.CreateForMonitor(ref this, monitor, riid, result);
-			}
+			public HRESULT CreateForWindow(HWND window, in Guid riid, void** result) mut => VT.CreateForWindow(ref this, window, riid, result);
+			public HRESULT CreateForMonitor(HMONITOR monitor, in Guid riid, void** result) mut => VT.CreateForMonitor(ref this, monitor, riid, result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

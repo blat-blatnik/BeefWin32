@@ -34,18 +34,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDevice(ref IDXGIDevice device) mut
-			{
-				return VT.SetDevice(ref this, ref device);
-			}
-			public HRESULT BeginDraw(RECT updateRect, out IDXGISurface* surface, out POINT offset) mut
-			{
-				return VT.BeginDraw(ref this, updateRect, out surface, out offset);
-			}
-			public HRESULT EndDraw() mut
-			{
-				return VT.EndDraw(ref this);
-			}
+			public HRESULT SetDevice(ref IDXGIDevice device) mut => VT.SetDevice(ref this, ref device);
+			public HRESULT BeginDraw(RECT updateRect, out IDXGISurface* surface, out POINT offset) mut => VT.BeginDraw(ref this, updateRect, out surface, out offset);
+			public HRESULT EndDraw() mut => VT.EndDraw(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -61,10 +53,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdatesNeeded() mut
-			{
-				return VT.UpdatesNeeded(ref this);
-			}
+			public HRESULT UpdatesNeeded() mut => VT.UpdatesNeeded(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -78,30 +68,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Invalidate(RECT updateRect) mut
-			{
-				return VT.Invalidate(ref this, updateRect);
-			}
-			public HRESULT GetUpdateRectCount(out uint32 count) mut
-			{
-				return VT.GetUpdateRectCount(ref this, out count);
-			}
-			public HRESULT GetUpdateRects(RECT* updates, uint32 count) mut
-			{
-				return VT.GetUpdateRects(ref this, updates, count);
-			}
-			public HRESULT GetVisibleBounds(out RECT bounds) mut
-			{
-				return VT.GetVisibleBounds(ref this, out bounds);
-			}
-			public HRESULT RegisterForUpdatesNeeded(IVirtualSurfaceUpdatesCallbackNative* callback) mut
-			{
-				return VT.RegisterForUpdatesNeeded(ref this, callback);
-			}
-			public HRESULT Resize(int32 newWidth, int32 newHeight) mut
-			{
-				return VT.Resize(ref this, newWidth, newHeight);
-			}
+			public HRESULT Invalidate(RECT updateRect) mut => VT.Invalidate(ref this, updateRect);
+			public HRESULT GetUpdateRectCount(out uint32 count) mut => VT.GetUpdateRectCount(ref this, out count);
+			public HRESULT GetUpdateRects(RECT* updates, uint32 count) mut => VT.GetUpdateRects(ref this, updates, count);
+			public HRESULT GetVisibleBounds(out RECT bounds) mut => VT.GetVisibleBounds(ref this, out bounds);
+			public HRESULT RegisterForUpdatesNeeded(IVirtualSurfaceUpdatesCallbackNative* callback) mut => VT.RegisterForUpdatesNeeded(ref this, callback);
+			public HRESULT Resize(int32 newWidth, int32 newHeight) mut => VT.Resize(ref this, newWidth, newHeight);
+
 			[CRepr]
 			public struct VTable : ISurfaceImageSourceNative.VTable
 			{
@@ -120,10 +93,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSwapChain(ref IDXGISwapChain swapChain) mut
-			{
-				return VT.SetSwapChain(ref this, ref swapChain);
-			}
+			public HRESULT SetSwapChain(ref IDXGISwapChain swapChain) mut => VT.SetSwapChain(ref this, ref swapChain);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -137,10 +108,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FlushAllSurfacesWithDevice(ref IUnknown device) mut
-			{
-				return VT.FlushAllSurfacesWithDevice(ref this, ref device);
-			}
+			public HRESULT FlushAllSurfacesWithDevice(ref IUnknown device) mut => VT.FlushAllSurfacesWithDevice(ref this, ref device);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -154,26 +123,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDevice(ref IUnknown device) mut
-			{
-				return VT.SetDevice(ref this, ref device);
-			}
-			public HRESULT BeginDraw(in RECT updateRect, in Guid iid, void** updateObject, out POINT offset) mut
-			{
-				return VT.BeginDraw(ref this, updateRect, iid, updateObject, out offset);
-			}
-			public HRESULT EndDraw() mut
-			{
-				return VT.EndDraw(ref this);
-			}
-			public HRESULT SuspendDraw() mut
-			{
-				return VT.SuspendDraw(ref this);
-			}
-			public HRESULT ResumeDraw() mut
-			{
-				return VT.ResumeDraw(ref this);
-			}
+			public HRESULT SetDevice(ref IUnknown device) mut => VT.SetDevice(ref this, ref device);
+			public HRESULT BeginDraw(in RECT updateRect, in Guid iid, void** updateObject, out POINT offset) mut => VT.BeginDraw(ref this, updateRect, iid, updateObject, out offset);
+			public HRESULT EndDraw() mut => VT.EndDraw(ref this);
+			public HRESULT SuspendDraw() mut => VT.SuspendDraw(ref this);
+			public HRESULT ResumeDraw() mut => VT.ResumeDraw(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -191,10 +146,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSwapChain(ref IDXGISwapChain swapChain) mut
-			{
-				return VT.SetSwapChain(ref this, ref swapChain);
-			}
+			public HRESULT SetSwapChain(ref IDXGISwapChain swapChain) mut => VT.SetSwapChain(ref this, ref swapChain);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -208,10 +161,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSwapChainHandle(HANDLE swapChainHandle) mut
-			{
-				return VT.SetSwapChainHandle(ref this, swapChainHandle);
-			}
+			public HRESULT SetSwapChainHandle(HANDLE swapChainHandle) mut => VT.SetSwapChainHandle(ref this, swapChainHandle);
+
 			[CRepr]
 			public struct VTable : ISwapChainPanelNative.VTable
 			{
@@ -225,14 +176,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AttachToWindow(HWND parentWnd) mut
-			{
-				return VT.AttachToWindow(ref this, parentWnd);
-			}
-			public HRESULT get_WindowHandle(out HWND hWnd) mut
-			{
-				return VT.get_WindowHandle(ref this, out hWnd);
-			}
+			public HRESULT AttachToWindow(HWND parentWnd) mut => VT.AttachToWindow(ref this, parentWnd);
+			public HRESULT get_WindowHandle(out HWND hWnd) mut => VT.get_WindowHandle(ref this, out hWnd);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -247,10 +193,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PreTranslateMessage(in MSG message, out BOOL result) mut
-			{
-				return VT.PreTranslateMessage(ref this, message, out result);
-			}
+			public HRESULT PreTranslateMessage(in MSG message, out BOOL result) mut => VT.PreTranslateMessage(ref this, message, out result);
+
 			[CRepr]
 			public struct VTable : IDesktopWindowXamlSourceNative.VTable
 			{
@@ -264,22 +208,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 AddRefFromReferenceTracker() mut
-			{
-				return VT.AddRefFromReferenceTracker(ref this);
-			}
-			public uint32 ReleaseFromReferenceTracker() mut
-			{
-				return VT.ReleaseFromReferenceTracker(ref this);
-			}
-			public HRESULT Peg() mut
-			{
-				return VT.Peg(ref this);
-			}
-			public HRESULT Unpeg() mut
-			{
-				return VT.Unpeg(ref this);
-			}
+			public uint32 AddRefFromReferenceTracker() mut => VT.AddRefFromReferenceTracker(ref this);
+			public uint32 ReleaseFromReferenceTracker() mut => VT.ReleaseFromReferenceTracker(ref this);
+			public HRESULT Peg() mut => VT.Peg(ref this);
+			public HRESULT Unpeg() mut => VT.Unpeg(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -296,34 +229,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectFromTrackerSource() mut
-			{
-				return VT.ConnectFromTrackerSource(ref this);
-			}
-			public HRESULT DisconnectFromTrackerSource() mut
-			{
-				return VT.DisconnectFromTrackerSource(ref this);
-			}
-			public HRESULT FindTrackerTargets(ref IFindReferenceTargetsCallback callback) mut
-			{
-				return VT.FindTrackerTargets(ref this, ref callback);
-			}
-			public HRESULT GetReferenceTrackerManager(out IReferenceTrackerManager* value) mut
-			{
-				return VT.GetReferenceTrackerManager(ref this, out value);
-			}
-			public HRESULT AddRefFromTrackerSource() mut
-			{
-				return VT.AddRefFromTrackerSource(ref this);
-			}
-			public HRESULT ReleaseFromTrackerSource() mut
-			{
-				return VT.ReleaseFromTrackerSource(ref this);
-			}
-			public HRESULT PegFromTrackerSource() mut
-			{
-				return VT.PegFromTrackerSource(ref this);
-			}
+			public HRESULT ConnectFromTrackerSource() mut => VT.ConnectFromTrackerSource(ref this);
+			public HRESULT DisconnectFromTrackerSource() mut => VT.DisconnectFromTrackerSource(ref this);
+			public HRESULT FindTrackerTargets(ref IFindReferenceTargetsCallback callback) mut => VT.FindTrackerTargets(ref this, ref callback);
+			public HRESULT GetReferenceTrackerManager(out IReferenceTrackerManager* value) mut => VT.GetReferenceTrackerManager(ref this, out value);
+			public HRESULT AddRefFromTrackerSource() mut => VT.AddRefFromTrackerSource(ref this);
+			public HRESULT ReleaseFromTrackerSource() mut => VT.ReleaseFromTrackerSource(ref this);
+			public HRESULT PegFromTrackerSource() mut => VT.PegFromTrackerSource(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -343,22 +256,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReferenceTrackingStarted() mut
-			{
-				return VT.ReferenceTrackingStarted(ref this);
-			}
-			public HRESULT FindTrackerTargetsCompleted(uint8 findFailed) mut
-			{
-				return VT.FindTrackerTargetsCompleted(ref this, findFailed);
-			}
-			public HRESULT ReferenceTrackingCompleted() mut
-			{
-				return VT.ReferenceTrackingCompleted(ref this);
-			}
-			public HRESULT SetReferenceTrackerHost(ref IReferenceTrackerHost value) mut
-			{
-				return VT.SetReferenceTrackerHost(ref this, ref value);
-			}
+			public HRESULT ReferenceTrackingStarted() mut => VT.ReferenceTrackingStarted(ref this);
+			public HRESULT FindTrackerTargetsCompleted(uint8 findFailed) mut => VT.FindTrackerTargetsCompleted(ref this, findFailed);
+			public HRESULT ReferenceTrackingCompleted() mut => VT.ReferenceTrackingCompleted(ref this);
+			public HRESULT SetReferenceTrackerHost(ref IReferenceTrackerHost value) mut => VT.SetReferenceTrackerHost(ref this, ref value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -375,10 +277,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FoundTrackerTarget(ref IReferenceTrackerTarget target) mut
-			{
-				return VT.FoundTrackerTarget(ref this, ref target);
-			}
+			public HRESULT FoundTrackerTarget(ref IReferenceTrackerTarget target) mut => VT.FoundTrackerTarget(ref this, ref target);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -392,30 +292,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DisconnectUnusedReferenceSources(XAML_REFERENCETRACKER_DISCONNECT options) mut
-			{
-				return VT.DisconnectUnusedReferenceSources(ref this, options);
-			}
-			public HRESULT ReleaseDisconnectedReferenceSources() mut
-			{
-				return VT.ReleaseDisconnectedReferenceSources(ref this);
-			}
-			public HRESULT NotifyEndOfReferenceTrackingOnThread() mut
-			{
-				return VT.NotifyEndOfReferenceTrackingOnThread(ref this);
-			}
-			public HRESULT GetTrackerTarget(ref IUnknown unknown, out IReferenceTrackerTarget* newReference) mut
-			{
-				return VT.GetTrackerTarget(ref this, ref unknown, out newReference);
-			}
-			public HRESULT AddMemoryPressure(uint64 bytesAllocated) mut
-			{
-				return VT.AddMemoryPressure(ref this, bytesAllocated);
-			}
-			public HRESULT RemoveMemoryPressure(uint64 bytesAllocated) mut
-			{
-				return VT.RemoveMemoryPressure(ref this, bytesAllocated);
-			}
+			public HRESULT DisconnectUnusedReferenceSources(XAML_REFERENCETRACKER_DISCONNECT options) mut => VT.DisconnectUnusedReferenceSources(ref this, options);
+			public HRESULT ReleaseDisconnectedReferenceSources() mut => VT.ReleaseDisconnectedReferenceSources(ref this);
+			public HRESULT NotifyEndOfReferenceTrackingOnThread() mut => VT.NotifyEndOfReferenceTrackingOnThread(ref this);
+			public HRESULT GetTrackerTarget(ref IUnknown unknown, out IReferenceTrackerTarget* newReference) mut => VT.GetTrackerTarget(ref this, ref unknown, out newReference);
+			public HRESULT AddMemoryPressure(uint64 bytesAllocated) mut => VT.AddMemoryPressure(ref this, bytesAllocated);
+			public HRESULT RemoveMemoryPressure(uint64 bytesAllocated) mut => VT.RemoveMemoryPressure(ref this, bytesAllocated);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -434,6 +317,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -446,22 +330,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateTrackerHandle(out TrackerHandle__* returnValue) mut
-			{
-				return VT.CreateTrackerHandle(ref this, out returnValue);
-			}
-			public HRESULT DeleteTrackerHandle(ref TrackerHandle__ handle) mut
-			{
-				return VT.DeleteTrackerHandle(ref this, ref handle);
-			}
-			public HRESULT SetTrackerValue(ref TrackerHandle__ handle, ref IUnknown value) mut
-			{
-				return VT.SetTrackerValue(ref this, ref handle, ref value);
-			}
-			public uint8 TryGetSafeTrackerValue(ref TrackerHandle__ handle, out IUnknown* returnValue) mut
-			{
-				return VT.TryGetSafeTrackerValue(ref this, ref handle, out returnValue);
-			}
+			public HRESULT CreateTrackerHandle(out TrackerHandle__* returnValue) mut => VT.CreateTrackerHandle(ref this, out returnValue);
+			public HRESULT DeleteTrackerHandle(ref TrackerHandle__ handle) mut => VT.DeleteTrackerHandle(ref this, ref handle);
+			public HRESULT SetTrackerValue(ref TrackerHandle__ handle, ref IUnknown value) mut => VT.SetTrackerValue(ref this, ref handle, ref value);
+			public uint8 TryGetSafeTrackerValue(ref TrackerHandle__ handle, out IUnknown* returnValue) mut => VT.TryGetSafeTrackerValue(ref this, ref handle, out returnValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

@@ -243,78 +243,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(uint32 celt, HELPER_ATTRIBUTE* rgAttributes) mut
-			{
-				return VT.Initialize(ref this, celt, rgAttributes);
-			}
-			public HRESULT GetDiagnosticsInfo(out DiagnosticsInfo* ppInfo) mut
-			{
-				return VT.GetDiagnosticsInfo(ref this, out ppInfo);
-			}
-			public HRESULT GetKeyAttributes(out uint32 pcelt, HELPER_ATTRIBUTE** pprgAttributes) mut
-			{
-				return VT.GetKeyAttributes(ref this, out pcelt, pprgAttributes);
-			}
-			public HRESULT LowHealth(PWSTR pwszInstanceDescription, out PWSTR ppwszDescription, out int32 pDeferredTime, out DIAGNOSIS_STATUS pStatus) mut
-			{
-				return VT.LowHealth(ref this, pwszInstanceDescription, out ppwszDescription, out pDeferredTime, out pStatus);
-			}
-			public HRESULT HighUtilization(PWSTR pwszInstanceDescription, out PWSTR ppwszDescription, out int32 pDeferredTime, out DIAGNOSIS_STATUS pStatus) mut
-			{
-				return VT.HighUtilization(ref this, pwszInstanceDescription, out ppwszDescription, out pDeferredTime, out pStatus);
-			}
-			public HRESULT GetLowerHypotheses(out uint32 pcelt, HYPOTHESIS** pprgHypotheses) mut
-			{
-				return VT.GetLowerHypotheses(ref this, out pcelt, pprgHypotheses);
-			}
-			public HRESULT GetDownStreamHypotheses(out uint32 pcelt, HYPOTHESIS** pprgHypotheses) mut
-			{
-				return VT.GetDownStreamHypotheses(ref this, out pcelt, pprgHypotheses);
-			}
-			public HRESULT GetHigherHypotheses(out uint32 pcelt, HYPOTHESIS** pprgHypotheses) mut
-			{
-				return VT.GetHigherHypotheses(ref this, out pcelt, pprgHypotheses);
-			}
-			public HRESULT GetUpStreamHypotheses(out uint32 pcelt, HYPOTHESIS** pprgHypotheses) mut
-			{
-				return VT.GetUpStreamHypotheses(ref this, out pcelt, pprgHypotheses);
-			}
-			public HRESULT Repair(ref RepairInfo pInfo, out int32 pDeferredTime, out REPAIR_STATUS pStatus) mut
-			{
-				return VT.Repair(ref this, ref pInfo, out pDeferredTime, out pStatus);
-			}
-			public HRESULT Validate(PROBLEM_TYPE problem, out int32 pDeferredTime, out REPAIR_STATUS pStatus) mut
-			{
-				return VT.Validate(ref this, problem, out pDeferredTime, out pStatus);
-			}
-			public HRESULT GetRepairInfo(PROBLEM_TYPE problem, out uint32 pcelt, RepairInfo** ppInfo) mut
-			{
-				return VT.GetRepairInfo(ref this, problem, out pcelt, ppInfo);
-			}
-			public HRESULT GetLifeTime(out LIFE_TIME pLifeTime) mut
-			{
-				return VT.GetLifeTime(ref this, out pLifeTime);
-			}
-			public HRESULT SetLifeTime(LIFE_TIME lifeTime) mut
-			{
-				return VT.SetLifeTime(ref this, lifeTime);
-			}
-			public HRESULT GetCacheTime(out FILETIME pCacheTime) mut
-			{
-				return VT.GetCacheTime(ref this, out pCacheTime);
-			}
-			public HRESULT GetAttributes(out uint32 pcelt, HELPER_ATTRIBUTE** pprgAttributes) mut
-			{
-				return VT.GetAttributes(ref this, out pcelt, pprgAttributes);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
-			public HRESULT Cleanup() mut
-			{
-				return VT.Cleanup(ref this);
-			}
+			public HRESULT Initialize(uint32 celt, HELPER_ATTRIBUTE* rgAttributes) mut => VT.Initialize(ref this, celt, rgAttributes);
+			public HRESULT GetDiagnosticsInfo(out DiagnosticsInfo* ppInfo) mut => VT.GetDiagnosticsInfo(ref this, out ppInfo);
+			public HRESULT GetKeyAttributes(out uint32 pcelt, HELPER_ATTRIBUTE** pprgAttributes) mut => VT.GetKeyAttributes(ref this, out pcelt, pprgAttributes);
+			public HRESULT LowHealth(PWSTR pwszInstanceDescription, out PWSTR ppwszDescription, out int32 pDeferredTime, out DIAGNOSIS_STATUS pStatus) mut => VT.LowHealth(ref this, pwszInstanceDescription, out ppwszDescription, out pDeferredTime, out pStatus);
+			public HRESULT HighUtilization(PWSTR pwszInstanceDescription, out PWSTR ppwszDescription, out int32 pDeferredTime, out DIAGNOSIS_STATUS pStatus) mut => VT.HighUtilization(ref this, pwszInstanceDescription, out ppwszDescription, out pDeferredTime, out pStatus);
+			public HRESULT GetLowerHypotheses(out uint32 pcelt, HYPOTHESIS** pprgHypotheses) mut => VT.GetLowerHypotheses(ref this, out pcelt, pprgHypotheses);
+			public HRESULT GetDownStreamHypotheses(out uint32 pcelt, HYPOTHESIS** pprgHypotheses) mut => VT.GetDownStreamHypotheses(ref this, out pcelt, pprgHypotheses);
+			public HRESULT GetHigherHypotheses(out uint32 pcelt, HYPOTHESIS** pprgHypotheses) mut => VT.GetHigherHypotheses(ref this, out pcelt, pprgHypotheses);
+			public HRESULT GetUpStreamHypotheses(out uint32 pcelt, HYPOTHESIS** pprgHypotheses) mut => VT.GetUpStreamHypotheses(ref this, out pcelt, pprgHypotheses);
+			public HRESULT Repair(ref RepairInfo pInfo, out int32 pDeferredTime, out REPAIR_STATUS pStatus) mut => VT.Repair(ref this, ref pInfo, out pDeferredTime, out pStatus);
+			public HRESULT Validate(PROBLEM_TYPE problem, out int32 pDeferredTime, out REPAIR_STATUS pStatus) mut => VT.Validate(ref this, problem, out pDeferredTime, out pStatus);
+			public HRESULT GetRepairInfo(PROBLEM_TYPE problem, out uint32 pcelt, RepairInfo** ppInfo) mut => VT.GetRepairInfo(ref this, problem, out pcelt, ppInfo);
+			public HRESULT GetLifeTime(out LIFE_TIME pLifeTime) mut => VT.GetLifeTime(ref this, out pLifeTime);
+			public HRESULT SetLifeTime(LIFE_TIME lifeTime) mut => VT.SetLifeTime(ref this, lifeTime);
+			public HRESULT GetCacheTime(out FILETIME pCacheTime) mut => VT.GetCacheTime(ref this, out pCacheTime);
+			public HRESULT GetAttributes(out uint32 pcelt, HELPER_ATTRIBUTE** pprgAttributes) mut => VT.GetAttributes(ref this, out pcelt, pprgAttributes);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+			public HRESULT Cleanup() mut => VT.Cleanup(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -345,10 +292,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateUtilityInstance(in Guid riid, void** ppvObject) mut
-			{
-				return VT.CreateUtilityInstance(ref this, riid, ppvObject);
-			}
+			public HRESULT CreateUtilityInstance(in Guid riid, void** ppvObject) mut => VT.CreateUtilityInstance(ref this, riid, ppvObject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -362,18 +307,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReconfirmLowHealth(uint32 celt, HypothesisResult* pResults, out PWSTR ppwszUpdatedDescription, out DIAGNOSIS_STATUS pUpdatedStatus) mut
-			{
-				return VT.ReconfirmLowHealth(ref this, celt, pResults, out ppwszUpdatedDescription, out pUpdatedStatus);
-			}
-			public HRESULT SetUtilities(ref INetDiagHelperUtilFactory pUtilities) mut
-			{
-				return VT.SetUtilities(ref this, ref pUtilities);
-			}
-			public HRESULT ReproduceFailure() mut
-			{
-				return VT.ReproduceFailure(ref this);
-			}
+			public HRESULT ReconfirmLowHealth(uint32 celt, HypothesisResult* pResults, out PWSTR ppwszUpdatedDescription, out DIAGNOSIS_STATUS pUpdatedStatus) mut => VT.ReconfirmLowHealth(ref this, celt, pResults, out ppwszUpdatedDescription, out pUpdatedStatus);
+			public HRESULT SetUtilities(ref INetDiagHelperUtilFactory pUtilities) mut => VT.SetUtilities(ref this, ref pUtilities);
+			public HRESULT ReproduceFailure() mut => VT.ReproduceFailure(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -389,10 +326,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAttributeInfo(out uint32 pcelt, HelperAttributeInfo** pprgAttributeInfos) mut
-			{
-				return VT.GetAttributeInfo(ref this, out pcelt, pprgAttributeInfos);
-			}
+			public HRESULT GetAttributeInfo(out uint32 pcelt, HelperAttributeInfo** pprgAttributeInfos) mut => VT.GetAttributeInfo(ref this, out pcelt, pprgAttributeInfos);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -406,10 +341,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ResolveAttributes(uint32 celt, HELPER_ATTRIBUTE* rgKeyAttributes, out uint32 pcelt, HELPER_ATTRIBUTE** prgMatchValues) mut
-			{
-				return VT.ResolveAttributes(ref this, celt, rgKeyAttributes, out pcelt, prgMatchValues);
-			}
+			public HRESULT ResolveAttributes(uint32 celt, HELPER_ATTRIBUTE* rgKeyAttributes, out uint32 pcelt, HELPER_ATTRIBUTE** prgMatchValues) mut => VT.ResolveAttributes(ref this, celt, rgKeyAttributes, out pcelt, prgMatchValues);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

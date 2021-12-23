@@ -67,10 +67,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CheckConsistency(PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, uint32 cVolumes, PWSTR* rgwszSourceVolumePath, PWSTR* rgwszSnapshotVolumePath, out IWsbApplicationAsync* ppAsync) mut
-			{
-				return VT.CheckConsistency(ref this, wszWriterMetadata, wszComponentName, wszComponentLogicalPath, cVolumes, rgwszSourceVolumePath, rgwszSnapshotVolumePath, out ppAsync);
-			}
+			public HRESULT CheckConsistency(PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, uint32 cVolumes, PWSTR* rgwszSourceVolumePath, PWSTR* rgwszSnapshotVolumePath, out IWsbApplicationAsync* ppAsync) mut => VT.CheckConsistency(ref this, wszWriterMetadata, wszComponentName, wszComponentLogicalPath, cVolumes, rgwszSourceVolumePath, rgwszSnapshotVolumePath, out ppAsync);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -84,22 +82,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PreRestore(PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) mut
-			{
-				return VT.PreRestore(ref this, wszWriterMetadata, wszComponentName, wszComponentLogicalPath, bNoRollForward);
-			}
-			public HRESULT PostRestore(PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) mut
-			{
-				return VT.PostRestore(ref this, wszWriterMetadata, wszComponentName, wszComponentLogicalPath, bNoRollForward);
-			}
-			public HRESULT OrderComponents(uint32 cComponents, PWSTR* rgComponentName, PWSTR* rgComponentLogicalPaths, PWSTR** prgComponentName, PWSTR** prgComponentLogicalPath) mut
-			{
-				return VT.OrderComponents(ref this, cComponents, rgComponentName, rgComponentLogicalPaths, prgComponentName, prgComponentLogicalPath);
-			}
-			public HRESULT IsRollForwardSupported(out uint8 pbRollForwardSupported) mut
-			{
-				return VT.IsRollForwardSupported(ref this, out pbRollForwardSupported);
-			}
+			public HRESULT PreRestore(PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) mut => VT.PreRestore(ref this, wszWriterMetadata, wszComponentName, wszComponentLogicalPath, bNoRollForward);
+			public HRESULT PostRestore(PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) mut => VT.PostRestore(ref this, wszWriterMetadata, wszComponentName, wszComponentLogicalPath, bNoRollForward);
+			public HRESULT OrderComponents(uint32 cComponents, PWSTR* rgComponentName, PWSTR* rgComponentLogicalPaths, PWSTR** prgComponentName, PWSTR** prgComponentLogicalPath) mut => VT.OrderComponents(ref this, cComponents, rgComponentName, rgComponentLogicalPaths, prgComponentName, prgComponentLogicalPath);
+			public HRESULT IsRollForwardSupported(out uint8 pbRollForwardSupported) mut => VT.IsRollForwardSupported(ref this, out pbRollForwardSupported);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -116,14 +103,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryStatus(out HRESULT phrResult) mut
-			{
-				return VT.QueryStatus(ref this, out phrResult);
-			}
-			public HRESULT Abort() mut
-			{
-				return VT.Abort(ref this);
-			}
+			public HRESULT QueryStatus(out HRESULT phrResult) mut => VT.QueryStatus(ref this, out phrResult);
+			public HRESULT Abort() mut => VT.Abort(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

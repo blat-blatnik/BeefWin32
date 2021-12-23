@@ -5951,10 +5951,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT YouAreAReplica(uint32 ulcOtherReplicas, IMoniker** rgpmkOtherReplicas) mut
-			{
-				return VT.YouAreAReplica(ref this, ulcOtherReplicas, rgpmkOtherReplicas);
-			}
+			public HRESULT YouAreAReplica(uint32 ulcOtherReplicas, IMoniker** rgpmkOtherReplicas) mut => VT.YouAreAReplica(ref this, ulcOtherReplicas, rgpmkOtherReplicas);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5968,18 +5966,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryContextMenu(HMENU hmenu, uint32 indexMenu, uint32 idCmdFirst, uint32 idCmdLast, uint32 uFlags) mut
-			{
-				return VT.QueryContextMenu(ref this, hmenu, indexMenu, idCmdFirst, idCmdLast, uFlags);
-			}
-			public HRESULT InvokeCommand(ref CMINVOKECOMMANDINFO pici) mut
-			{
-				return VT.InvokeCommand(ref this, ref pici);
-			}
-			public HRESULT GetCommandString(uint idCmd, uint32 uType, out uint32 pReserved, PSTR pszName, uint32 cchMax) mut
-			{
-				return VT.GetCommandString(ref this, idCmd, uType, out pReserved, pszName, cchMax);
-			}
+			public HRESULT QueryContextMenu(HMENU hmenu, uint32 indexMenu, uint32 idCmdFirst, uint32 idCmdLast, uint32 uFlags) mut => VT.QueryContextMenu(ref this, hmenu, indexMenu, idCmdFirst, idCmdLast, uFlags);
+			public HRESULT InvokeCommand(ref CMINVOKECOMMANDINFO pici) mut => VT.InvokeCommand(ref this, ref pici);
+			public HRESULT GetCommandString(uint idCmd, uint32 uType, out uint32 pReserved, PSTR pszName, uint32 cchMax) mut => VT.GetCommandString(ref this, idCmd, uType, out pReserved, pszName, cchMax);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5995,10 +5985,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleMenuMsg(uint32 uMsg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.HandleMenuMsg(ref this, uMsg, wParam, lParam);
-			}
+			public HRESULT HandleMenuMsg(uint32 uMsg, WPARAM wParam, LPARAM lParam) mut => VT.HandleMenuMsg(ref this, uMsg, wParam, lParam);
+
 			[CRepr]
 			public struct VTable : IContextMenu.VTable
 			{
@@ -6012,10 +6000,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleMenuMsg2(uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) mut
-			{
-				return VT.HandleMenuMsg2(ref this, uMsg, wParam, lParam, plResult);
-			}
+			public HRESULT HandleMenuMsg2(uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) mut => VT.HandleMenuMsg2(ref this, uMsg, wParam, lParam, plResult);
+
 			[CRepr]
 			public struct VTable : IContextMenu2.VTable
 			{
@@ -6029,34 +6015,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetKeyState(uint32 grfKeyState) mut
-			{
-				return VT.SetKeyState(ref this, grfKeyState);
-			}
-			public HRESULT SetParameters(PWSTR pszParameters) mut
-			{
-				return VT.SetParameters(ref this, pszParameters);
-			}
-			public HRESULT SetPosition(POINT pt) mut
-			{
-				return VT.SetPosition(ref this, pt);
-			}
-			public HRESULT SetShowWindow(int32 nShow) mut
-			{
-				return VT.SetShowWindow(ref this, nShow);
-			}
-			public HRESULT SetNoShowUI(BOOL fNoShowUI) mut
-			{
-				return VT.SetNoShowUI(ref this, fNoShowUI);
-			}
-			public HRESULT SetDirectory(PWSTR pszDirectory) mut
-			{
-				return VT.SetDirectory(ref this, pszDirectory);
-			}
-			public HRESULT Execute() mut
-			{
-				return VT.Execute(ref this);
-			}
+			public HRESULT SetKeyState(uint32 grfKeyState) mut => VT.SetKeyState(ref this, grfKeyState);
+			public HRESULT SetParameters(PWSTR pszParameters) mut => VT.SetParameters(ref this, pszParameters);
+			public HRESULT SetPosition(POINT pt) mut => VT.SetPosition(ref this, pt);
+			public HRESULT SetShowWindow(int32 nShow) mut => VT.SetShowWindow(ref this, nShow);
+			public HRESULT SetNoShowUI(BOOL fNoShowUI) mut => VT.SetNoShowUI(ref this, fNoShowUI);
+			public HRESULT SetDirectory(PWSTR pszDirectory) mut => VT.SetDirectory(ref this, pszDirectory);
+			public HRESULT Execute() mut => VT.Execute(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6076,10 +6042,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref ITEMIDLIST pidl) mut
-			{
-				return VT.Initialize(ref this, ref pidl);
-			}
+			public HRESULT Initialize(ref ITEMIDLIST pidl) mut => VT.Initialize(ref this, ref pidl);
+
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
@@ -6093,26 +6057,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Run() mut
-			{
-				return VT.Run(ref this);
-			}
-			public HRESULT Kill(BOOL bWait) mut
-			{
-				return VT.Kill(ref this, bWait);
-			}
-			public HRESULT Suspend() mut
-			{
-				return VT.Suspend(ref this);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
-			public uint32 IsRunning() mut
-			{
-				return VT.IsRunning(ref this);
-			}
+			public HRESULT Run() mut => VT.Run(ref this);
+			public HRESULT Kill(BOOL bWait) mut => VT.Kill(ref this, bWait);
+			public HRESULT Suspend() mut => VT.Suspend(ref this);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+			public uint32 IsRunning() mut => VT.IsRunning(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6130,22 +6080,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddTask(ref IRunnableTask prt, in Guid rtoid, uint lParam, uint32 dwPriority) mut
-			{
-				return VT.AddTask(ref this, ref prt, rtoid, lParam, dwPriority);
-			}
-			public HRESULT RemoveTasks(in Guid rtoid, uint lParam, BOOL bWaitIfRunning) mut
-			{
-				return VT.RemoveTasks(ref this, rtoid, lParam, bWaitIfRunning);
-			}
-			public uint32 CountTasks(in Guid rtoid) mut
-			{
-				return VT.CountTasks(ref this, rtoid);
-			}
-			public HRESULT Status(uint32 dwReleaseStatus, uint32 dwThreadTimeout) mut
-			{
-				return VT.Status(ref this, dwReleaseStatus, dwThreadTimeout);
-			}
+			public HRESULT AddTask(ref IRunnableTask prt, in Guid rtoid, uint lParam, uint32 dwPriority) mut => VT.AddTask(ref this, ref prt, rtoid, lParam, dwPriority);
+			public HRESULT RemoveTasks(in Guid rtoid, uint lParam, BOOL bWaitIfRunning) mut => VT.RemoveTasks(ref this, rtoid, lParam, bWaitIfRunning);
+			public uint32 CountTasks(in Guid rtoid) mut => VT.CountTasks(ref this, rtoid);
+			public HRESULT Status(uint32 dwReleaseStatus, uint32 dwThreadTimeout) mut => VT.Status(ref this, dwReleaseStatus, dwThreadTimeout);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6162,10 +6101,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurFolder(out ITEMIDLIST* ppidl) mut
-			{
-				return VT.GetCurFolder(ref this, out ppidl);
-			}
+			public HRESULT GetCurFolder(out ITEMIDLIST* ppidl) mut => VT.GetCurFolder(ref this, out ppidl);
+
 			[CRepr]
 			public struct VTable : IPersistFolder.VTable
 			{
@@ -6179,14 +6116,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeEx(ref IBindCtx pbc, ref ITEMIDLIST pidlRoot, in PERSIST_FOLDER_TARGET_INFO ppfti) mut
-			{
-				return VT.InitializeEx(ref this, ref pbc, ref pidlRoot, ppfti);
-			}
-			public HRESULT GetFolderTargetInfo(out PERSIST_FOLDER_TARGET_INFO ppfti) mut
-			{
-				return VT.GetFolderTargetInfo(ref this, out ppfti);
-			}
+			public HRESULT InitializeEx(ref IBindCtx pbc, ref ITEMIDLIST pidlRoot, in PERSIST_FOLDER_TARGET_INFO ppfti) mut => VT.InitializeEx(ref this, ref pbc, ref pidlRoot, ppfti);
+			public HRESULT GetFolderTargetInfo(out PERSIST_FOLDER_TARGET_INFO ppfti) mut => VT.GetFolderTargetInfo(ref this, out ppfti);
+
 			[CRepr]
 			public struct VTable : IPersistFolder2.VTable
 			{
@@ -6201,14 +6133,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetIDList(ref ITEMIDLIST pidl) mut
-			{
-				return VT.SetIDList(ref this, ref pidl);
-			}
-			public HRESULT GetIDList(out ITEMIDLIST* ppidl) mut
-			{
-				return VT.GetIDList(ref this, out ppidl);
-			}
+			public HRESULT SetIDList(ref ITEMIDLIST pidl) mut => VT.SetIDList(ref this, ref pidl);
+			public HRESULT GetIDList(out ITEMIDLIST* ppidl) mut => VT.GetIDList(ref this, out ppidl);
+
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
@@ -6223,22 +6150,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITEMIDLIST** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumIDList* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, ITEMIDLIST** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumIDList* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6255,22 +6171,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITEMIDLIST** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumFullIDList* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, ITEMIDLIST** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumFullIDList* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6287,14 +6192,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Merge(PWSTR localFilePath, PWSTR serverFilePath, out MERGE_UPDATE_STATUS updateStatus) mut
-			{
-				return VT.Merge(ref this, localFilePath, serverFilePath, out updateStatus);
-			}
-			public HRESULT ShowResolveConflictUIAsync(PWSTR localFilePath, HMONITOR monitorToDisplayOn) mut
-			{
-				return VT.ShowResolveConflictUIAsync(ref this, localFilePath, monitorToDisplayOn);
-			}
+			public HRESULT Merge(PWSTR localFilePath, PWSTR serverFilePath, out MERGE_UPDATE_STATUS updateStatus) mut => VT.Merge(ref this, localFilePath, serverFilePath, out updateStatus);
+			public HRESULT ShowResolveConflictUIAsync(PWSTR localFilePath, HMONITOR monitorToDisplayOn) mut => VT.ShowResolveConflictUIAsync(ref this, localFilePath, monitorToDisplayOn);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6309,14 +6209,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMode(FOLDER_ENUM_MODE feMode) mut
-			{
-				return VT.SetMode(ref this, feMode);
-			}
-			public HRESULT GetMode(out FOLDER_ENUM_MODE pfeMode) mut
-			{
-				return VT.GetMode(ref this, out pfeMode);
-			}
+			public HRESULT SetMode(FOLDER_ENUM_MODE feMode) mut => VT.SetMode(ref this, feMode);
+			public HRESULT GetMode(out FOLDER_ENUM_MODE pfeMode) mut => VT.GetMode(ref this, out pfeMode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6331,14 +6226,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetItem(ref IShellItem psi) mut
-			{
-				return VT.SetItem(ref this, ref psi);
-			}
-			public HRESULT GetItem(in Guid riid, void** ppv) mut
-			{
-				return VT.GetItem(ref this, riid, ppv);
-			}
+			public HRESULT SetItem(ref IShellItem psi) mut => VT.SetItem(ref this, ref psi);
+			public HRESULT GetItem(in Guid riid, void** ppv) mut => VT.GetItem(ref this, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6353,46 +6243,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ParseDisplayName(HWND hwnd, ref IBindCtx pbc, PWSTR pszDisplayName, out uint32 pchEaten, out ITEMIDLIST* ppidl, out uint32 pdwAttributes) mut
-			{
-				return VT.ParseDisplayName(ref this, hwnd, ref pbc, pszDisplayName, out pchEaten, out ppidl, out pdwAttributes);
-			}
-			public HRESULT EnumObjects(HWND hwnd, uint32 grfFlags, out IEnumIDList* ppenumIDList) mut
-			{
-				return VT.EnumObjects(ref this, hwnd, grfFlags, out ppenumIDList);
-			}
-			public HRESULT BindToObject(ref ITEMIDLIST pidl, ref IBindCtx pbc, in Guid riid, void** ppv) mut
-			{
-				return VT.BindToObject(ref this, ref pidl, ref pbc, riid, ppv);
-			}
-			public HRESULT BindToStorage(ref ITEMIDLIST pidl, ref IBindCtx pbc, in Guid riid, void** ppv) mut
-			{
-				return VT.BindToStorage(ref this, ref pidl, ref pbc, riid, ppv);
-			}
-			public HRESULT CompareIDs(LPARAM lParam, ref ITEMIDLIST pidl1, ref ITEMIDLIST pidl2) mut
-			{
-				return VT.CompareIDs(ref this, lParam, ref pidl1, ref pidl2);
-			}
-			public HRESULT CreateViewObject(HWND hwndOwner, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateViewObject(ref this, hwndOwner, riid, ppv);
-			}
-			public HRESULT GetAttributesOf(uint32 cidl, ITEMIDLIST** apidl, out uint32 rgfInOut) mut
-			{
-				return VT.GetAttributesOf(ref this, cidl, apidl, out rgfInOut);
-			}
-			public HRESULT GetUIObjectOf(HWND hwndOwner, uint32 cidl, ITEMIDLIST** apidl, in Guid riid, out uint32 rgfReserved, void** ppv) mut
-			{
-				return VT.GetUIObjectOf(ref this, hwndOwner, cidl, apidl, riid, out rgfReserved, ppv);
-			}
-			public HRESULT GetDisplayNameOf(ref ITEMIDLIST pidl, uint32 uFlags, out STRRET pName) mut
-			{
-				return VT.GetDisplayNameOf(ref this, ref pidl, uFlags, out pName);
-			}
-			public HRESULT SetNameOf(HWND hwnd, ref ITEMIDLIST pidl, PWSTR pszName, uint32 uFlags, ITEMIDLIST** ppidlOut) mut
-			{
-				return VT.SetNameOf(ref this, hwnd, ref pidl, pszName, uFlags, ppidlOut);
-			}
+			public HRESULT ParseDisplayName(HWND hwnd, ref IBindCtx pbc, PWSTR pszDisplayName, out uint32 pchEaten, out ITEMIDLIST* ppidl, out uint32 pdwAttributes) mut => VT.ParseDisplayName(ref this, hwnd, ref pbc, pszDisplayName, out pchEaten, out ppidl, out pdwAttributes);
+			public HRESULT EnumObjects(HWND hwnd, uint32 grfFlags, out IEnumIDList* ppenumIDList) mut => VT.EnumObjects(ref this, hwnd, grfFlags, out ppenumIDList);
+			public HRESULT BindToObject(ref ITEMIDLIST pidl, ref IBindCtx pbc, in Guid riid, void** ppv) mut => VT.BindToObject(ref this, ref pidl, ref pbc, riid, ppv);
+			public HRESULT BindToStorage(ref ITEMIDLIST pidl, ref IBindCtx pbc, in Guid riid, void** ppv) mut => VT.BindToStorage(ref this, ref pidl, ref pbc, riid, ppv);
+			public HRESULT CompareIDs(LPARAM lParam, ref ITEMIDLIST pidl1, ref ITEMIDLIST pidl2) mut => VT.CompareIDs(ref this, lParam, ref pidl1, ref pidl2);
+			public HRESULT CreateViewObject(HWND hwndOwner, in Guid riid, void** ppv) mut => VT.CreateViewObject(ref this, hwndOwner, riid, ppv);
+			public HRESULT GetAttributesOf(uint32 cidl, ITEMIDLIST** apidl, out uint32 rgfInOut) mut => VT.GetAttributesOf(ref this, cidl, apidl, out rgfInOut);
+			public HRESULT GetUIObjectOf(HWND hwndOwner, uint32 cidl, ITEMIDLIST** apidl, in Guid riid, out uint32 rgfReserved, void** ppv) mut => VT.GetUIObjectOf(ref this, hwndOwner, cidl, apidl, riid, out rgfReserved, ppv);
+			public HRESULT GetDisplayNameOf(ref ITEMIDLIST pidl, uint32 uFlags, out STRRET pName) mut => VT.GetDisplayNameOf(ref this, ref pidl, uFlags, out pName);
+			public HRESULT SetNameOf(HWND hwnd, ref ITEMIDLIST pidl, PWSTR pszName, uint32 uFlags, ITEMIDLIST** ppidlOut) mut => VT.SetNameOf(ref this, hwnd, ref pidl, pszName, uFlags, ppidlOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6415,22 +6276,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, EXTRASEARCH* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumExtraSearch* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, EXTRASEARCH* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumExtraSearch* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6447,34 +6297,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDefaultSearchGUID(out Guid pguid) mut
-			{
-				return VT.GetDefaultSearchGUID(ref this, out pguid);
-			}
-			public HRESULT EnumSearches(out IEnumExtraSearch* ppenum) mut
-			{
-				return VT.EnumSearches(ref this, out ppenum);
-			}
-			public HRESULT GetDefaultColumn(uint32 dwRes, out uint32 pSort, out uint32 pDisplay) mut
-			{
-				return VT.GetDefaultColumn(ref this, dwRes, out pSort, out pDisplay);
-			}
-			public HRESULT GetDefaultColumnState(uint32 iColumn, out uint32 pcsFlags) mut
-			{
-				return VT.GetDefaultColumnState(ref this, iColumn, out pcsFlags);
-			}
-			public HRESULT GetDetailsEx(ref ITEMIDLIST pidl, in PROPERTYKEY pscid, out VARIANT pv) mut
-			{
-				return VT.GetDetailsEx(ref this, ref pidl, pscid, out pv);
-			}
-			public HRESULT GetDetailsOf(ref ITEMIDLIST pidl, uint32 iColumn, out SHELLDETAILS psd) mut
-			{
-				return VT.GetDetailsOf(ref this, ref pidl, iColumn, out psd);
-			}
-			public HRESULT MapColumnToSCID(uint32 iColumn, out PROPERTYKEY pscid) mut
-			{
-				return VT.MapColumnToSCID(ref this, iColumn, out pscid);
-			}
+			public HRESULT GetDefaultSearchGUID(out Guid pguid) mut => VT.GetDefaultSearchGUID(ref this, out pguid);
+			public HRESULT EnumSearches(out IEnumExtraSearch* ppenum) mut => VT.EnumSearches(ref this, out ppenum);
+			public HRESULT GetDefaultColumn(uint32 dwRes, out uint32 pSort, out uint32 pDisplay) mut => VT.GetDefaultColumn(ref this, dwRes, out pSort, out pDisplay);
+			public HRESULT GetDefaultColumnState(uint32 iColumn, out uint32 pcsFlags) mut => VT.GetDefaultColumnState(ref this, iColumn, out pcsFlags);
+			public HRESULT GetDetailsEx(ref ITEMIDLIST pidl, in PROPERTYKEY pscid, out VARIANT pv) mut => VT.GetDetailsEx(ref this, ref pidl, pscid, out pv);
+			public HRESULT GetDetailsOf(ref ITEMIDLIST pidl, uint32 iColumn, out SHELLDETAILS psd) mut => VT.GetDetailsOf(ref this, ref pidl, iColumn, out psd);
+			public HRESULT MapColumnToSCID(uint32 iColumn, out PROPERTYKEY pscid) mut => VT.MapColumnToSCID(ref this, iColumn, out pscid);
+
 			[CRepr]
 			public struct VTable : IShellFolder.VTable
 			{
@@ -6494,50 +6324,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TranslateAccelerator(ref MSG pmsg) mut
-			{
-				return VT.TranslateAccelerator(ref this, ref pmsg);
-			}
-			public HRESULT EnableModeless(BOOL fEnable) mut
-			{
-				return VT.EnableModeless(ref this, fEnable);
-			}
-			public HRESULT UIActivate(uint32 uState) mut
-			{
-				return VT.UIActivate(ref this, uState);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT CreateViewWindow(ref IShellView psvPrevious, ref FOLDERSETTINGS pfs, ref IShellBrowser psb, ref RECT prcView, out HWND phWnd) mut
-			{
-				return VT.CreateViewWindow(ref this, ref psvPrevious, ref pfs, ref psb, ref prcView, out phWnd);
-			}
-			public HRESULT DestroyViewWindow() mut
-			{
-				return VT.DestroyViewWindow(ref this);
-			}
-			public HRESULT GetCurrentInfo(out FOLDERSETTINGS pfs) mut
-			{
-				return VT.GetCurrentInfo(ref this, out pfs);
-			}
-			public HRESULT AddPropertySheetPages(uint32 dwReserved, LPFNSVADDPROPSHEETPAGE pfn, LPARAM lparam) mut
-			{
-				return VT.AddPropertySheetPages(ref this, dwReserved, pfn, lparam);
-			}
-			public HRESULT SaveViewState() mut
-			{
-				return VT.SaveViewState(ref this);
-			}
-			public HRESULT SelectItem(ref ITEMIDLIST pidlItem, uint32 uFlags) mut
-			{
-				return VT.SelectItem(ref this, ref pidlItem, uFlags);
-			}
-			public HRESULT GetItemObject(uint32 uItem, in Guid riid, void** ppv) mut
-			{
-				return VT.GetItemObject(ref this, uItem, riid, ppv);
-			}
+			public HRESULT TranslateAccelerator(ref MSG pmsg) mut => VT.TranslateAccelerator(ref this, ref pmsg);
+			public HRESULT EnableModeless(BOOL fEnable) mut => VT.EnableModeless(ref this, fEnable);
+			public HRESULT UIActivate(uint32 uState) mut => VT.UIActivate(ref this, uState);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT CreateViewWindow(ref IShellView psvPrevious, ref FOLDERSETTINGS pfs, ref IShellBrowser psb, ref RECT prcView, out HWND phWnd) mut => VT.CreateViewWindow(ref this, ref psvPrevious, ref pfs, ref psb, ref prcView, out phWnd);
+			public HRESULT DestroyViewWindow() mut => VT.DestroyViewWindow(ref this);
+			public HRESULT GetCurrentInfo(out FOLDERSETTINGS pfs) mut => VT.GetCurrentInfo(ref this, out pfs);
+			public HRESULT AddPropertySheetPages(uint32 dwReserved, LPFNSVADDPROPSHEETPAGE pfn, LPARAM lparam) mut => VT.AddPropertySheetPages(ref this, dwReserved, pfn, lparam);
+			public HRESULT SaveViewState() mut => VT.SaveViewState(ref this);
+			public HRESULT SelectItem(ref ITEMIDLIST pidlItem, uint32 uFlags) mut => VT.SelectItem(ref this, ref pidlItem, uFlags);
+			public HRESULT GetItemObject(uint32 uItem, in Guid riid, void** ppv) mut => VT.GetItemObject(ref this, uItem, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IOleWindow.VTable
 			{
@@ -6561,22 +6359,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetView(out Guid pvid, uint32 uView) mut
-			{
-				return VT.GetView(ref this, out pvid, uView);
-			}
-			public HRESULT CreateViewWindow2(ref SV2CVW2_PARAMS lpParams) mut
-			{
-				return VT.CreateViewWindow2(ref this, ref lpParams);
-			}
-			public HRESULT HandleRename(ref ITEMIDLIST pidlNew) mut
-			{
-				return VT.HandleRename(ref this, ref pidlNew);
-			}
-			public HRESULT SelectAndPositionItem(ref ITEMIDLIST pidlItem, uint32 uFlags, ref POINT ppt) mut
-			{
-				return VT.SelectAndPositionItem(ref this, ref pidlItem, uFlags, ref ppt);
-			}
+			public HRESULT GetView(out Guid pvid, uint32 uView) mut => VT.GetView(ref this, out pvid, uView);
+			public HRESULT CreateViewWindow2(ref SV2CVW2_PARAMS lpParams) mut => VT.CreateViewWindow2(ref this, ref lpParams);
+			public HRESULT HandleRename(ref ITEMIDLIST pidlNew) mut => VT.HandleRename(ref this, ref pidlNew);
+			public HRESULT SelectAndPositionItem(ref ITEMIDLIST pidlItem, uint32 uFlags, ref POINT ppt) mut => VT.SelectAndPositionItem(ref this, ref pidlItem, uFlags, ref ppt);
+
 			[CRepr]
 			public struct VTable : IShellView.VTable
 			{
@@ -6593,62 +6380,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrentViewMode(out uint32 pViewMode) mut
-			{
-				return VT.GetCurrentViewMode(ref this, out pViewMode);
-			}
-			public HRESULT SetCurrentViewMode(uint32 ViewMode) mut
-			{
-				return VT.SetCurrentViewMode(ref this, ViewMode);
-			}
-			public HRESULT GetFolder(in Guid riid, void** ppv) mut
-			{
-				return VT.GetFolder(ref this, riid, ppv);
-			}
-			public HRESULT Item(int32 iItemIndex, out ITEMIDLIST* ppidl) mut
-			{
-				return VT.Item(ref this, iItemIndex, out ppidl);
-			}
-			public HRESULT ItemCount(uint32 uFlags, out int32 pcItems) mut
-			{
-				return VT.ItemCount(ref this, uFlags, out pcItems);
-			}
-			public HRESULT Items(uint32 uFlags, in Guid riid, void** ppv) mut
-			{
-				return VT.Items(ref this, uFlags, riid, ppv);
-			}
-			public HRESULT GetSelectionMarkedItem(out int32 piItem) mut
-			{
-				return VT.GetSelectionMarkedItem(ref this, out piItem);
-			}
-			public HRESULT GetFocusedItem(out int32 piItem) mut
-			{
-				return VT.GetFocusedItem(ref this, out piItem);
-			}
-			public HRESULT GetItemPosition(ref ITEMIDLIST pidl, out POINT ppt) mut
-			{
-				return VT.GetItemPosition(ref this, ref pidl, out ppt);
-			}
-			public HRESULT GetSpacing(out POINT ppt) mut
-			{
-				return VT.GetSpacing(ref this, out ppt);
-			}
-			public HRESULT GetDefaultSpacing(out POINT ppt) mut
-			{
-				return VT.GetDefaultSpacing(ref this, out ppt);
-			}
-			public HRESULT GetAutoArrange() mut
-			{
-				return VT.GetAutoArrange(ref this);
-			}
-			public HRESULT SelectItem(int32 iItem, uint32 dwFlags) mut
-			{
-				return VT.SelectItem(ref this, iItem, dwFlags);
-			}
-			public HRESULT SelectAndPositionItems(uint32 cidl, ITEMIDLIST** apidl, POINT* apt, uint32 dwFlags) mut
-			{
-				return VT.SelectAndPositionItems(ref this, cidl, apidl, apt, dwFlags);
-			}
+			public HRESULT GetCurrentViewMode(out uint32 pViewMode) mut => VT.GetCurrentViewMode(ref this, out pViewMode);
+			public HRESULT SetCurrentViewMode(uint32 ViewMode) mut => VT.SetCurrentViewMode(ref this, ViewMode);
+			public HRESULT GetFolder(in Guid riid, void** ppv) mut => VT.GetFolder(ref this, riid, ppv);
+			public HRESULT Item(int32 iItemIndex, out ITEMIDLIST* ppidl) mut => VT.Item(ref this, iItemIndex, out ppidl);
+			public HRESULT ItemCount(uint32 uFlags, out int32 pcItems) mut => VT.ItemCount(ref this, uFlags, out pcItems);
+			public HRESULT Items(uint32 uFlags, in Guid riid, void** ppv) mut => VT.Items(ref this, uFlags, riid, ppv);
+			public HRESULT GetSelectionMarkedItem(out int32 piItem) mut => VT.GetSelectionMarkedItem(ref this, out piItem);
+			public HRESULT GetFocusedItem(out int32 piItem) mut => VT.GetFocusedItem(ref this, out piItem);
+			public HRESULT GetItemPosition(ref ITEMIDLIST pidl, out POINT ppt) mut => VT.GetItemPosition(ref this, ref pidl, out ppt);
+			public HRESULT GetSpacing(out POINT ppt) mut => VT.GetSpacing(ref this, out ppt);
+			public HRESULT GetDefaultSpacing(out POINT ppt) mut => VT.GetDefaultSpacing(ref this, out ppt);
+			public HRESULT GetAutoArrange() mut => VT.GetAutoArrange(ref this);
+			public HRESULT SelectItem(int32 iItem, uint32 dwFlags) mut => VT.SelectItem(ref this, iItem, dwFlags);
+			public HRESULT SelectAndPositionItems(uint32 cidl, ITEMIDLIST** apidl, POINT* apt, uint32 dwFlags) mut => VT.SelectAndPositionItems(ref this, cidl, apidl, apt, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6675,106 +6421,32 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetGroupBy(in PROPERTYKEY key, BOOL fAscending) mut
-			{
-				return VT.SetGroupBy(ref this, key, fAscending);
-			}
-			public HRESULT GetGroupBy(out PROPERTYKEY pkey, BOOL* pfAscending) mut
-			{
-				return VT.GetGroupBy(ref this, out pkey, pfAscending);
-			}
-			public HRESULT SetViewProperty(ref ITEMIDLIST pidl, in PROPERTYKEY propkey, in PROPVARIANT propvar) mut
-			{
-				return VT.SetViewProperty(ref this, ref pidl, propkey, propvar);
-			}
-			public HRESULT GetViewProperty(ref ITEMIDLIST pidl, in PROPERTYKEY propkey, out PROPVARIANT ppropvar) mut
-			{
-				return VT.GetViewProperty(ref this, ref pidl, propkey, out ppropvar);
-			}
-			public HRESULT SetTileViewProperties(ref ITEMIDLIST pidl, PWSTR pszPropList) mut
-			{
-				return VT.SetTileViewProperties(ref this, ref pidl, pszPropList);
-			}
-			public HRESULT SetExtendedTileViewProperties(ref ITEMIDLIST pidl, PWSTR pszPropList) mut
-			{
-				return VT.SetExtendedTileViewProperties(ref this, ref pidl, pszPropList);
-			}
-			public HRESULT SetText(FVTEXTTYPE iType, PWSTR pwszText) mut
-			{
-				return VT.SetText(ref this, iType, pwszText);
-			}
-			public HRESULT SetCurrentFolderFlags(uint32 dwMask, uint32 dwFlags) mut
-			{
-				return VT.SetCurrentFolderFlags(ref this, dwMask, dwFlags);
-			}
-			public HRESULT GetCurrentFolderFlags(out uint32 pdwFlags) mut
-			{
-				return VT.GetCurrentFolderFlags(ref this, out pdwFlags);
-			}
-			public HRESULT GetSortColumnCount(out int32 pcColumns) mut
-			{
-				return VT.GetSortColumnCount(ref this, out pcColumns);
-			}
-			public HRESULT SetSortColumns(SORTCOLUMN* rgSortColumns, int32 cColumns) mut
-			{
-				return VT.SetSortColumns(ref this, rgSortColumns, cColumns);
-			}
-			public HRESULT GetSortColumns(SORTCOLUMN* rgSortColumns, int32 cColumns) mut
-			{
-				return VT.GetSortColumns(ref this, rgSortColumns, cColumns);
-			}
-			public HRESULT GetItem(int32 iItem, in Guid riid, void** ppv) mut
-			{
-				return VT.GetItem(ref this, iItem, riid, ppv);
-			}
-			public HRESULT GetVisibleItem(int32 iStart, BOOL fPrevious, out int32 piItem) mut
-			{
-				return VT.GetVisibleItem(ref this, iStart, fPrevious, out piItem);
-			}
-			public HRESULT GetSelectedItem(int32 iStart, out int32 piItem) mut
-			{
-				return VT.GetSelectedItem(ref this, iStart, out piItem);
-			}
-			public HRESULT GetSelection(BOOL fNoneImpliesFolder, out IShellItemArray* ppsia) mut
-			{
-				return VT.GetSelection(ref this, fNoneImpliesFolder, out ppsia);
-			}
-			public HRESULT GetSelectionState(ref ITEMIDLIST pidl, out uint32 pdwFlags) mut
-			{
-				return VT.GetSelectionState(ref this, ref pidl, out pdwFlags);
-			}
-			public HRESULT InvokeVerbOnSelection(PSTR pszVerb) mut
-			{
-				return VT.InvokeVerbOnSelection(ref this, pszVerb);
-			}
-			public HRESULT SetViewModeAndIconSize(FOLDERVIEWMODE uViewMode, int32 iImageSize) mut
-			{
-				return VT.SetViewModeAndIconSize(ref this, uViewMode, iImageSize);
-			}
-			public HRESULT GetViewModeAndIconSize(out FOLDERVIEWMODE puViewMode, out int32 piImageSize) mut
-			{
-				return VT.GetViewModeAndIconSize(ref this, out puViewMode, out piImageSize);
-			}
-			public HRESULT SetGroupSubsetCount(uint32 cVisibleRows) mut
-			{
-				return VT.SetGroupSubsetCount(ref this, cVisibleRows);
-			}
-			public HRESULT GetGroupSubsetCount(out uint32 pcVisibleRows) mut
-			{
-				return VT.GetGroupSubsetCount(ref this, out pcVisibleRows);
-			}
-			public HRESULT SetRedraw(BOOL fRedrawOn) mut
-			{
-				return VT.SetRedraw(ref this, fRedrawOn);
-			}
-			public HRESULT IsMoveInSameFolder() mut
-			{
-				return VT.IsMoveInSameFolder(ref this);
-			}
-			public HRESULT DoRename() mut
-			{
-				return VT.DoRename(ref this);
-			}
+			public HRESULT SetGroupBy(in PROPERTYKEY key, BOOL fAscending) mut => VT.SetGroupBy(ref this, key, fAscending);
+			public HRESULT GetGroupBy(out PROPERTYKEY pkey, BOOL* pfAscending) mut => VT.GetGroupBy(ref this, out pkey, pfAscending);
+			public HRESULT SetViewProperty(ref ITEMIDLIST pidl, in PROPERTYKEY propkey, in PROPVARIANT propvar) mut => VT.SetViewProperty(ref this, ref pidl, propkey, propvar);
+			public HRESULT GetViewProperty(ref ITEMIDLIST pidl, in PROPERTYKEY propkey, out PROPVARIANT ppropvar) mut => VT.GetViewProperty(ref this, ref pidl, propkey, out ppropvar);
+			public HRESULT SetTileViewProperties(ref ITEMIDLIST pidl, PWSTR pszPropList) mut => VT.SetTileViewProperties(ref this, ref pidl, pszPropList);
+			public HRESULT SetExtendedTileViewProperties(ref ITEMIDLIST pidl, PWSTR pszPropList) mut => VT.SetExtendedTileViewProperties(ref this, ref pidl, pszPropList);
+			public HRESULT SetText(FVTEXTTYPE iType, PWSTR pwszText) mut => VT.SetText(ref this, iType, pwszText);
+			public HRESULT SetCurrentFolderFlags(uint32 dwMask, uint32 dwFlags) mut => VT.SetCurrentFolderFlags(ref this, dwMask, dwFlags);
+			public HRESULT GetCurrentFolderFlags(out uint32 pdwFlags) mut => VT.GetCurrentFolderFlags(ref this, out pdwFlags);
+			public HRESULT GetSortColumnCount(out int32 pcColumns) mut => VT.GetSortColumnCount(ref this, out pcColumns);
+			public HRESULT SetSortColumns(SORTCOLUMN* rgSortColumns, int32 cColumns) mut => VT.SetSortColumns(ref this, rgSortColumns, cColumns);
+			public HRESULT GetSortColumns(SORTCOLUMN* rgSortColumns, int32 cColumns) mut => VT.GetSortColumns(ref this, rgSortColumns, cColumns);
+			public HRESULT GetItem(int32 iItem, in Guid riid, void** ppv) mut => VT.GetItem(ref this, iItem, riid, ppv);
+			public HRESULT GetVisibleItem(int32 iStart, BOOL fPrevious, out int32 piItem) mut => VT.GetVisibleItem(ref this, iStart, fPrevious, out piItem);
+			public HRESULT GetSelectedItem(int32 iStart, out int32 piItem) mut => VT.GetSelectedItem(ref this, iStart, out piItem);
+			public HRESULT GetSelection(BOOL fNoneImpliesFolder, out IShellItemArray* ppsia) mut => VT.GetSelection(ref this, fNoneImpliesFolder, out ppsia);
+			public HRESULT GetSelectionState(ref ITEMIDLIST pidl, out uint32 pdwFlags) mut => VT.GetSelectionState(ref this, ref pidl, out pdwFlags);
+			public HRESULT InvokeVerbOnSelection(PSTR pszVerb) mut => VT.InvokeVerbOnSelection(ref this, pszVerb);
+			public HRESULT SetViewModeAndIconSize(FOLDERVIEWMODE uViewMode, int32 iImageSize) mut => VT.SetViewModeAndIconSize(ref this, uViewMode, iImageSize);
+			public HRESULT GetViewModeAndIconSize(out FOLDERVIEWMODE puViewMode, out int32 piImageSize) mut => VT.GetViewModeAndIconSize(ref this, out puViewMode, out piImageSize);
+			public HRESULT SetGroupSubsetCount(uint32 cVisibleRows) mut => VT.SetGroupSubsetCount(ref this, cVisibleRows);
+			public HRESULT GetGroupSubsetCount(out uint32 pcVisibleRows) mut => VT.GetGroupSubsetCount(ref this, out pcVisibleRows);
+			public HRESULT SetRedraw(BOOL fRedrawOn) mut => VT.SetRedraw(ref this, fRedrawOn);
+			public HRESULT IsMoveInSameFolder() mut => VT.IsMoveInSameFolder(ref this);
+			public HRESULT DoRename() mut => VT.DoRename(ref this);
+
 			[CRepr]
 			public struct VTable : IFolderView.VTable
 			{
@@ -6812,34 +6484,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetColumnPropertyList(in Guid riid, void** ppv) mut
-			{
-				return VT.GetColumnPropertyList(ref this, riid, ppv);
-			}
-			public HRESULT GetGroupByProperty(out PROPERTYKEY pkey, out BOOL pfGroupAscending) mut
-			{
-				return VT.GetGroupByProperty(ref this, out pkey, out pfGroupAscending);
-			}
-			public HRESULT GetViewMode(out FOLDERLOGICALVIEWMODE plvm) mut
-			{
-				return VT.GetViewMode(ref this, out plvm);
-			}
-			public HRESULT GetIconSize(out uint32 puIconSize) mut
-			{
-				return VT.GetIconSize(ref this, out puIconSize);
-			}
-			public HRESULT GetFolderFlags(out FOLDERFLAGS pfolderMask, out FOLDERFLAGS pfolderFlags) mut
-			{
-				return VT.GetFolderFlags(ref this, out pfolderMask, out pfolderFlags);
-			}
-			public HRESULT GetSortColumns(SORTCOLUMN* rgSortColumns, uint32 cColumnsIn, out uint32 pcColumnsOut) mut
-			{
-				return VT.GetSortColumns(ref this, rgSortColumns, cColumnsIn, out pcColumnsOut);
-			}
-			public HRESULT GetGroupSubsetCount(out uint32 pcVisibleRows) mut
-			{
-				return VT.GetGroupSubsetCount(ref this, out pcVisibleRows);
-			}
+			public HRESULT GetColumnPropertyList(in Guid riid, void** ppv) mut => VT.GetColumnPropertyList(ref this, riid, ppv);
+			public HRESULT GetGroupByProperty(out PROPERTYKEY pkey, out BOOL pfGroupAscending) mut => VT.GetGroupByProperty(ref this, out pkey, out pfGroupAscending);
+			public HRESULT GetViewMode(out FOLDERLOGICALVIEWMODE plvm) mut => VT.GetViewMode(ref this, out plvm);
+			public HRESULT GetIconSize(out uint32 puIconSize) mut => VT.GetIconSize(ref this, out puIconSize);
+			public HRESULT GetFolderFlags(out FOLDERFLAGS pfolderMask, out FOLDERFLAGS pfolderFlags) mut => VT.GetFolderFlags(ref this, out pfolderMask, out pfolderFlags);
+			public HRESULT GetSortColumns(SORTCOLUMN* rgSortColumns, uint32 cColumnsIn, out uint32 pcColumnsOut) mut => VT.GetSortColumns(ref this, rgSortColumns, cColumnsIn, out pcColumnsOut);
+			public HRESULT GetGroupSubsetCount(out uint32 pcVisibleRows) mut => VT.GetGroupSubsetCount(ref this, out pcVisibleRows);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6859,10 +6511,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref ITEMIDLIST pidl, ref ITEMIDLIST pidlTarget, uint32 uDisplayType, PWSTR pszResName, PWSTR pszProvider) mut
-			{
-				return VT.Initialize(ref this, ref pidl, ref pidlTarget, uDisplayType, pszResName, pszProvider);
-			}
+			public HRESULT Initialize(ref ITEMIDLIST pidl, ref ITEMIDLIST pidlTarget, uint32 uDisplayType, PWSTR pszResName, PWSTR pszProvider) mut => VT.Initialize(ref this, ref pidl, ref pidlTarget, uDisplayType, pszResName, pszProvider);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6876,18 +6526,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResourceDisplayType(out uint32 displayType) mut
-			{
-				return VT.GetResourceDisplayType(ref this, out displayType);
-			}
-			public HRESULT GetIDList(out ITEMIDLIST* idList) mut
-			{
-				return VT.GetIDList(ref this, out idList);
-			}
-			public HRESULT GetProvider(uint32 itemIdCount, ITEMIDLIST** itemIds, uint32 providerMaxLength, char16* provider) mut
-			{
-				return VT.GetProvider(ref this, itemIdCount, itemIds, providerMaxLength, provider);
-			}
+			public HRESULT GetResourceDisplayType(out uint32 displayType) mut => VT.GetResourceDisplayType(ref this, out displayType);
+			public HRESULT GetIDList(out ITEMIDLIST* idList) mut => VT.GetIDList(ref this, out idList);
+			public HRESULT GetProvider(uint32 itemIdCount, ITEMIDLIST** itemIds, uint32 providerMaxLength, char16* provider) mut => VT.GetProvider(ref this, itemIdCount, itemIds, providerMaxLength, provider);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6903,18 +6545,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBackgroundColor(uint32 color) mut
-			{
-				return VT.SetBackgroundColor(ref this, color);
-			}
-			public HRESULT SetFont(in LOGFONTW plf) mut
-			{
-				return VT.SetFont(ref this, plf);
-			}
-			public HRESULT SetTextColor(uint32 color) mut
-			{
-				return VT.SetTextColor(ref this, color);
-			}
+			public HRESULT SetBackgroundColor(uint32 color) mut => VT.SetBackgroundColor(ref this, color);
+			public HRESULT SetFont(in LOGFONTW plf) mut => VT.SetFont(ref this, plf);
+			public HRESULT SetTextColor(uint32 color) mut => VT.SetTextColor(ref this, color);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6930,18 +6564,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnDefaultCommand(ref IShellView ppshv) mut
-			{
-				return VT.OnDefaultCommand(ref this, ref ppshv);
-			}
-			public HRESULT OnStateChange(ref IShellView ppshv, uint32 uChange) mut
-			{
-				return VT.OnStateChange(ref this, ref ppshv, uChange);
-			}
-			public HRESULT IncludeObject(ref IShellView ppshv, ref ITEMIDLIST pidl) mut
-			{
-				return VT.IncludeObject(ref this, ref ppshv, ref pidl);
-			}
+			public HRESULT OnDefaultCommand(ref IShellView ppshv) mut => VT.OnDefaultCommand(ref this, ref ppshv);
+			public HRESULT OnStateChange(ref IShellView ppshv, uint32 uChange) mut => VT.OnStateChange(ref this, ref ppshv, uChange);
+			public HRESULT IncludeObject(ref IShellView ppshv, ref ITEMIDLIST pidl) mut => VT.IncludeObject(ref this, ref ppshv, ref pidl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6957,18 +6583,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Notify(ref IShellView ppshv, uint32 dwNotifyType) mut
-			{
-				return VT.Notify(ref this, ref ppshv, dwNotifyType);
-			}
-			public HRESULT GetDefaultMenuText(ref IShellView ppshv, char16* pszText, int32 cchMax) mut
-			{
-				return VT.GetDefaultMenuText(ref this, ref ppshv, pszText, cchMax);
-			}
-			public HRESULT GetViewFlags(out uint32 pdwFlags) mut
-			{
-				return VT.GetViewFlags(ref this, out pdwFlags);
-			}
+			public HRESULT Notify(ref IShellView ppshv, uint32 dwNotifyType) mut => VT.Notify(ref this, ref ppshv, dwNotifyType);
+			public HRESULT GetDefaultMenuText(ref IShellView ppshv, char16* pszText, int32 cchMax) mut => VT.GetDefaultMenuText(ref this, ref ppshv, pszText, cchMax);
+			public HRESULT GetViewFlags(out uint32 pdwFlags) mut => VT.GetViewFlags(ref this, out pdwFlags);
+
 			[CRepr]
 			public struct VTable : ICommDlgBrowser.VTable
 			{
@@ -6984,26 +6602,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetColumnInfo(in PROPERTYKEY propkey, in CM_COLUMNINFO pcmci) mut
-			{
-				return VT.SetColumnInfo(ref this, propkey, pcmci);
-			}
-			public HRESULT GetColumnInfo(in PROPERTYKEY propkey, out CM_COLUMNINFO pcmci) mut
-			{
-				return VT.GetColumnInfo(ref this, propkey, out pcmci);
-			}
-			public HRESULT GetColumnCount(CM_ENUM_FLAGS dwFlags, out uint32 puCount) mut
-			{
-				return VT.GetColumnCount(ref this, dwFlags, out puCount);
-			}
-			public HRESULT GetColumns(CM_ENUM_FLAGS dwFlags, PROPERTYKEY* rgkeyOrder, uint32 cColumns) mut
-			{
-				return VT.GetColumns(ref this, dwFlags, rgkeyOrder, cColumns);
-			}
-			public HRESULT SetColumns(PROPERTYKEY* rgkeyOrder, uint32 cVisible) mut
-			{
-				return VT.SetColumns(ref this, rgkeyOrder, cVisible);
-			}
+			public HRESULT SetColumnInfo(in PROPERTYKEY propkey, in CM_COLUMNINFO pcmci) mut => VT.SetColumnInfo(ref this, propkey, pcmci);
+			public HRESULT GetColumnInfo(in PROPERTYKEY propkey, out CM_COLUMNINFO pcmci) mut => VT.GetColumnInfo(ref this, propkey, out pcmci);
+			public HRESULT GetColumnCount(CM_ENUM_FLAGS dwFlags, out uint32 puCount) mut => VT.GetColumnCount(ref this, dwFlags, out puCount);
+			public HRESULT GetColumns(CM_ENUM_FLAGS dwFlags, PROPERTYKEY* rgkeyOrder, uint32 cColumns) mut => VT.GetColumns(ref this, dwFlags, rgkeyOrder, cColumns);
+			public HRESULT SetColumns(PROPERTYKEY* rgkeyOrder, uint32 cVisible) mut => VT.SetColumns(ref this, rgkeyOrder, cVisible);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7021,10 +6625,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFilter(ref IUnknown punk) mut
-			{
-				return VT.SetFilter(ref this, ref punk);
-			}
+			public HRESULT SetFilter(ref IUnknown punk) mut => VT.SetFilter(ref this, ref punk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7038,14 +6640,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShouldShow(ref IShellFolder psf, ref ITEMIDLIST pidlFolder, ref ITEMIDLIST pidlItem) mut
-			{
-				return VT.ShouldShow(ref this, ref psf, ref pidlFolder, ref pidlItem);
-			}
-			public HRESULT GetEnumFlags(ref IShellFolder psf, ref ITEMIDLIST pidlFolder, out HWND phwnd, out uint32 pgrfFlags) mut
-			{
-				return VT.GetEnumFlags(ref this, ref psf, ref pidlFolder, out phwnd, out pgrfFlags);
-			}
+			public HRESULT ShouldShow(ref IShellFolder psf, ref ITEMIDLIST pidlFolder, ref ITEMIDLIST pidlItem) mut => VT.ShouldShow(ref this, ref psf, ref pidlFolder, ref pidlItem);
+			public HRESULT GetEnumFlags(ref IShellFolder psf, ref ITEMIDLIST pidlFolder, out HWND phwnd, out uint32 pgrfFlags) mut => VT.GetEnumFlags(ref this, ref psf, ref pidlFolder, out phwnd, out pgrfFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7060,10 +6657,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnFocusChangeIS(ref IUnknown punkObj, BOOL fSetFocus) mut
-			{
-				return VT.OnFocusChangeIS(ref this, ref punkObj, fSetFocus);
-			}
+			public HRESULT OnFocusChangeIS(ref IUnknown punkObj, BOOL fSetFocus) mut => VT.OnFocusChangeIS(ref this, ref punkObj, fSetFocus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7077,18 +6672,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UIActivateIO(BOOL fActivate, ref MSG pMsg) mut
-			{
-				return VT.UIActivateIO(ref this, fActivate, ref pMsg);
-			}
-			public HRESULT HasFocusIO() mut
-			{
-				return VT.HasFocusIO(ref this);
-			}
-			public HRESULT TranslateAcceleratorIO(ref MSG pMsg) mut
-			{
-				return VT.TranslateAcceleratorIO(ref this, ref pMsg);
-			}
+			public HRESULT UIActivateIO(BOOL fActivate, ref MSG pMsg) mut => VT.UIActivateIO(ref this, fActivate, ref pMsg);
+			public HRESULT HasFocusIO() mut => VT.HasFocusIO(ref this);
+			public HRESULT TranslateAcceleratorIO(ref MSG pMsg) mut => VT.TranslateAcceleratorIO(ref this, ref pMsg);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7104,10 +6691,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TranslateAcceleratorGlobal(ref MSG pMsg) mut
-			{
-				return VT.TranslateAcceleratorGlobal(ref this, ref pMsg);
-			}
+			public HRESULT TranslateAcceleratorGlobal(ref MSG pMsg) mut => VT.TranslateAcceleratorGlobal(ref this, ref pMsg);
+
 			[CRepr]
 			public struct VTable : IInputObject.VTable
 			{
@@ -7121,10 +6706,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIconOf(ref ITEMIDLIST pidl, uint32 flags, out int32 pIconIndex) mut
-			{
-				return VT.GetIconOf(ref this, ref pidl, flags, out pIconIndex);
-			}
+			public HRESULT GetIconOf(ref ITEMIDLIST pidl, uint32 flags, out int32 pIconIndex) mut => VT.GetIconOf(ref this, ref pidl, flags, out pIconIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7138,58 +6721,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InsertMenusSB(HMENU hmenuShared, out OleMenuGroupWidths lpMenuWidths) mut
-			{
-				return VT.InsertMenusSB(ref this, hmenuShared, out lpMenuWidths);
-			}
-			public HRESULT SetMenuSB(HMENU hmenuShared, int holemenuRes, HWND hwndActiveObject) mut
-			{
-				return VT.SetMenuSB(ref this, hmenuShared, holemenuRes, hwndActiveObject);
-			}
-			public HRESULT RemoveMenusSB(HMENU hmenuShared) mut
-			{
-				return VT.RemoveMenusSB(ref this, hmenuShared);
-			}
-			public HRESULT SetStatusTextSB(PWSTR pszStatusText) mut
-			{
-				return VT.SetStatusTextSB(ref this, pszStatusText);
-			}
-			public HRESULT EnableModelessSB(BOOL fEnable) mut
-			{
-				return VT.EnableModelessSB(ref this, fEnable);
-			}
-			public HRESULT TranslateAcceleratorSB(ref MSG pmsg, uint16 wID) mut
-			{
-				return VT.TranslateAcceleratorSB(ref this, ref pmsg, wID);
-			}
-			public HRESULT BrowseObject(ref ITEMIDLIST pidl, uint32 wFlags) mut
-			{
-				return VT.BrowseObject(ref this, ref pidl, wFlags);
-			}
-			public HRESULT GetViewStateStream(uint32 grfMode, out IStream* ppStrm) mut
-			{
-				return VT.GetViewStateStream(ref this, grfMode, out ppStrm);
-			}
-			public HRESULT GetControlWindow(uint32 id, out HWND phwnd) mut
-			{
-				return VT.GetControlWindow(ref this, id, out phwnd);
-			}
-			public HRESULT SendControlMsg(uint32 id, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pret) mut
-			{
-				return VT.SendControlMsg(ref this, id, uMsg, wParam, lParam, pret);
-			}
-			public HRESULT QueryActiveShellView(out IShellView* ppshv) mut
-			{
-				return VT.QueryActiveShellView(ref this, out ppshv);
-			}
-			public HRESULT OnViewWindowActive(ref IShellView pshv) mut
-			{
-				return VT.OnViewWindowActive(ref this, ref pshv);
-			}
-			public HRESULT SetToolbarItems(TBBUTTON* lpButtons, uint32 nButtons, uint32 uFlags) mut
-			{
-				return VT.SetToolbarItems(ref this, lpButtons, nButtons, uFlags);
-			}
+			public HRESULT InsertMenusSB(HMENU hmenuShared, out OleMenuGroupWidths lpMenuWidths) mut => VT.InsertMenusSB(ref this, hmenuShared, out lpMenuWidths);
+			public HRESULT SetMenuSB(HMENU hmenuShared, int holemenuRes, HWND hwndActiveObject) mut => VT.SetMenuSB(ref this, hmenuShared, holemenuRes, hwndActiveObject);
+			public HRESULT RemoveMenusSB(HMENU hmenuShared) mut => VT.RemoveMenusSB(ref this, hmenuShared);
+			public HRESULT SetStatusTextSB(PWSTR pszStatusText) mut => VT.SetStatusTextSB(ref this, pszStatusText);
+			public HRESULT EnableModelessSB(BOOL fEnable) mut => VT.EnableModelessSB(ref this, fEnable);
+			public HRESULT TranslateAcceleratorSB(ref MSG pmsg, uint16 wID) mut => VT.TranslateAcceleratorSB(ref this, ref pmsg, wID);
+			public HRESULT BrowseObject(ref ITEMIDLIST pidl, uint32 wFlags) mut => VT.BrowseObject(ref this, ref pidl, wFlags);
+			public HRESULT GetViewStateStream(uint32 grfMode, out IStream* ppStrm) mut => VT.GetViewStateStream(ref this, grfMode, out ppStrm);
+			public HRESULT GetControlWindow(uint32 id, out HWND phwnd) mut => VT.GetControlWindow(ref this, id, out phwnd);
+			public HRESULT SendControlMsg(uint32 id, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pret) mut => VT.SendControlMsg(ref this, id, uMsg, wParam, lParam, pret);
+			public HRESULT QueryActiveShellView(out IShellView* ppshv) mut => VT.QueryActiveShellView(ref this, out ppshv);
+			public HRESULT OnViewWindowActive(ref IShellView pshv) mut => VT.OnViewWindowActive(ref this, ref pshv);
+			public HRESULT SetToolbarItems(TBBUTTON* lpButtons, uint32 nButtons, uint32 uFlags) mut => VT.SetToolbarItems(ref this, lpButtons, nButtons, uFlags);
+
 			[CRepr]
 			public struct VTable : IOleWindow.VTable
 			{
@@ -7215,14 +6760,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ProfferService(in Guid serviceId, ref IServiceProvider serviceProvider, out uint32 cookie) mut
-			{
-				return VT.ProfferService(ref this, serviceId, ref serviceProvider, out cookie);
-			}
-			public HRESULT RevokeService(uint32 cookie) mut
-			{
-				return VT.RevokeService(ref this, cookie);
-			}
+			public HRESULT ProfferService(in Guid serviceId, ref IServiceProvider serviceProvider, out uint32 cookie) mut => VT.ProfferService(ref this, serviceId, ref serviceProvider, out cookie);
+			public HRESULT RevokeService(uint32 cookie) mut => VT.RevokeService(ref this, cookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7237,10 +6777,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetServiceIds(out uint32 serviceIdCount, Guid** serviceIds) mut
-			{
-				return VT.GetServiceIds(ref this, out serviceIdCount, serviceIds);
-			}
+			public HRESULT GetServiceIds(out uint32 serviceIdCount, Guid** serviceIds) mut => VT.GetServiceIds(ref this, out serviceIdCount, serviceIds);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7254,26 +6792,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BindToHandler(ref IBindCtx pbc, in Guid bhid, in Guid riid, void** ppv) mut
-			{
-				return VT.BindToHandler(ref this, ref pbc, bhid, riid, ppv);
-			}
-			public HRESULT GetParent(out IShellItem* ppsi) mut
-			{
-				return VT.GetParent(ref this, out ppsi);
-			}
-			public HRESULT GetDisplayName(SIGDN sigdnName, out PWSTR ppszName) mut
-			{
-				return VT.GetDisplayName(ref this, sigdnName, out ppszName);
-			}
-			public HRESULT GetAttributes(uint32 sfgaoMask, out uint32 psfgaoAttribs) mut
-			{
-				return VT.GetAttributes(ref this, sfgaoMask, out psfgaoAttribs);
-			}
-			public HRESULT Compare(ref IShellItem psi, uint32 hint, out int32 piOrder) mut
-			{
-				return VT.Compare(ref this, ref psi, hint, out piOrder);
-			}
+			public HRESULT BindToHandler(ref IBindCtx pbc, in Guid bhid, in Guid riid, void** ppv) mut => VT.BindToHandler(ref this, ref pbc, bhid, riid, ppv);
+			public HRESULT GetParent(out IShellItem* ppsi) mut => VT.GetParent(ref this, out ppsi);
+			public HRESULT GetDisplayName(SIGDN sigdnName, out PWSTR ppszName) mut => VT.GetDisplayName(ref this, sigdnName, out ppszName);
+			public HRESULT GetAttributes(uint32 sfgaoMask, out uint32 psfgaoAttribs) mut => VT.GetAttributes(ref this, sfgaoMask, out psfgaoAttribs);
+			public HRESULT Compare(ref IShellItem psi, uint32 hint, out int32 piOrder) mut => VT.Compare(ref this, ref psi, hint, out piOrder);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7291,58 +6815,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyStore(ref this, flags, riid, ppv);
-			}
-			public HRESULT GetPropertyStoreWithCreateObject(GETPROPERTYSTOREFLAGS flags, ref IUnknown punkCreateObject, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyStoreWithCreateObject(ref this, flags, ref punkCreateObject, riid, ppv);
-			}
-			public HRESULT GetPropertyStoreForKeys(PROPERTYKEY* rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyStoreForKeys(ref this, rgKeys, cKeys, flags, riid, ppv);
-			}
-			public HRESULT GetPropertyDescriptionList(in PROPERTYKEY keyType, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyDescriptionList(ref this, keyType, riid, ppv);
-			}
-			public HRESULT Update(ref IBindCtx pbc) mut
-			{
-				return VT.Update(ref this, ref pbc);
-			}
-			public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT ppropvar) mut
-			{
-				return VT.GetProperty(ref this, key, out ppropvar);
-			}
-			public HRESULT GetCLSID(in PROPERTYKEY key, out Guid pclsid) mut
-			{
-				return VT.GetCLSID(ref this, key, out pclsid);
-			}
-			public HRESULT GetFileTime(in PROPERTYKEY key, out FILETIME pft) mut
-			{
-				return VT.GetFileTime(ref this, key, out pft);
-			}
-			public HRESULT GetInt32(in PROPERTYKEY key, out int32 pi) mut
-			{
-				return VT.GetInt32(ref this, key, out pi);
-			}
-			public HRESULT GetString(in PROPERTYKEY key, out PWSTR ppsz) mut
-			{
-				return VT.GetString(ref this, key, out ppsz);
-			}
-			public HRESULT GetUInt32(in PROPERTYKEY key, out uint32 pui) mut
-			{
-				return VT.GetUInt32(ref this, key, out pui);
-			}
-			public HRESULT GetUInt64(in PROPERTYKEY key, out uint64 pull) mut
-			{
-				return VT.GetUInt64(ref this, key, out pull);
-			}
-			public HRESULT GetBool(in PROPERTYKEY key, out BOOL pf) mut
-			{
-				return VT.GetBool(ref this, key, out pf);
-			}
+			public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) mut => VT.GetPropertyStore(ref this, flags, riid, ppv);
+			public HRESULT GetPropertyStoreWithCreateObject(GETPROPERTYSTOREFLAGS flags, ref IUnknown punkCreateObject, in Guid riid, void** ppv) mut => VT.GetPropertyStoreWithCreateObject(ref this, flags, ref punkCreateObject, riid, ppv);
+			public HRESULT GetPropertyStoreForKeys(PROPERTYKEY* rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) mut => VT.GetPropertyStoreForKeys(ref this, rgKeys, cKeys, flags, riid, ppv);
+			public HRESULT GetPropertyDescriptionList(in PROPERTYKEY keyType, in Guid riid, void** ppv) mut => VT.GetPropertyDescriptionList(ref this, keyType, riid, ppv);
+			public HRESULT Update(ref IBindCtx pbc) mut => VT.Update(ref this, ref pbc);
+			public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT ppropvar) mut => VT.GetProperty(ref this, key, out ppropvar);
+			public HRESULT GetCLSID(in PROPERTYKEY key, out Guid pclsid) mut => VT.GetCLSID(ref this, key, out pclsid);
+			public HRESULT GetFileTime(in PROPERTYKEY key, out FILETIME pft) mut => VT.GetFileTime(ref this, key, out pft);
+			public HRESULT GetInt32(in PROPERTYKEY key, out int32 pi) mut => VT.GetInt32(ref this, key, out pi);
+			public HRESULT GetString(in PROPERTYKEY key, out PWSTR ppsz) mut => VT.GetString(ref this, key, out ppsz);
+			public HRESULT GetUInt32(in PROPERTYKEY key, out uint32 pui) mut => VT.GetUInt32(ref this, key, out pui);
+			public HRESULT GetUInt64(in PROPERTYKEY key, out uint64 pull) mut => VT.GetUInt64(ref this, key, out pull);
+			public HRESULT GetBool(in PROPERTYKEY key, out BOOL pf) mut => VT.GetBool(ref this, key, out pf);
+
 			[CRepr]
 			public struct VTable : IShellItem.VTable
 			{
@@ -7368,10 +6854,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetImage(SIZE size, SIIGBF flags, out HBITMAP phbm) mut
-			{
-				return VT.GetImage(ref this, size, flags, out phbm);
-			}
+			public HRESULT GetImage(SIZE size, SIIGBF flags, out HBITMAP phbm) mut => VT.GetImage(ref this, size, flags, out phbm);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7385,22 +6869,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IShellItem** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumShellItems* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, IShellItem** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumShellItems* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7417,34 +6890,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateProgress(uint64 ullSizeCurrent, uint64 ullSizeTotal, int32 nFilesCurrent, int32 nFilesTotal, int32 nFoldersCurrent, int32 nFoldersTotal) mut
-			{
-				return VT.UpdateProgress(ref this, ullSizeCurrent, ullSizeTotal, nFilesCurrent, nFilesTotal, nFoldersCurrent, nFoldersTotal);
-			}
-			public HRESULT UpdateTransferState(uint32 ts) mut
-			{
-				return VT.UpdateTransferState(ref this, ts);
-			}
-			public HRESULT ConfirmOverwrite(ref IShellItem psiSource, ref IShellItem psiDestParent, PWSTR pszName) mut
-			{
-				return VT.ConfirmOverwrite(ref this, ref psiSource, ref psiDestParent, pszName);
-			}
-			public HRESULT ConfirmEncryptionLoss(ref IShellItem psiSource) mut
-			{
-				return VT.ConfirmEncryptionLoss(ref this, ref psiSource);
-			}
-			public HRESULT FileFailure(ref IShellItem psi, PWSTR pszItem, HRESULT hrError, char16* pszRename, uint32 cchRename) mut
-			{
-				return VT.FileFailure(ref this, ref psi, pszItem, hrError, pszRename, cchRename);
-			}
-			public HRESULT SubStreamFailure(ref IShellItem psi, PWSTR pszStreamName, HRESULT hrError) mut
-			{
-				return VT.SubStreamFailure(ref this, ref psi, pszStreamName, hrError);
-			}
-			public HRESULT PropertyFailure(ref IShellItem psi, in PROPERTYKEY pkey, HRESULT hrError) mut
-			{
-				return VT.PropertyFailure(ref this, ref psi, pkey, hrError);
-			}
+			public HRESULT UpdateProgress(uint64 ullSizeCurrent, uint64 ullSizeTotal, int32 nFilesCurrent, int32 nFilesTotal, int32 nFoldersCurrent, int32 nFoldersTotal) mut => VT.UpdateProgress(ref this, ullSizeCurrent, ullSizeTotal, nFilesCurrent, nFilesTotal, nFoldersCurrent, nFoldersTotal);
+			public HRESULT UpdateTransferState(uint32 ts) mut => VT.UpdateTransferState(ref this, ts);
+			public HRESULT ConfirmOverwrite(ref IShellItem psiSource, ref IShellItem psiDestParent, PWSTR pszName) mut => VT.ConfirmOverwrite(ref this, ref psiSource, ref psiDestParent, pszName);
+			public HRESULT ConfirmEncryptionLoss(ref IShellItem psiSource) mut => VT.ConfirmEncryptionLoss(ref this, ref psiSource);
+			public HRESULT FileFailure(ref IShellItem psi, PWSTR pszItem, HRESULT hrError, char16* pszRename, uint32 cchRename) mut => VT.FileFailure(ref this, ref psi, pszItem, hrError, pszRename, cchRename);
+			public HRESULT SubStreamFailure(ref IShellItem psi, PWSTR pszStreamName, HRESULT hrError) mut => VT.SubStreamFailure(ref this, ref psi, pszStreamName, hrError);
+			public HRESULT PropertyFailure(ref IShellItem psi, in PROPERTYKEY pkey, HRESULT hrError) mut => VT.PropertyFailure(ref this, ref psi, pkey, hrError);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7464,58 +6917,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Advise(ref ITransferAdviseSink psink, out uint32 pdwCookie) mut
-			{
-				return VT.Advise(ref this, ref psink, out pdwCookie);
-			}
-			public HRESULT Unadvise(uint32 dwCookie) mut
-			{
-				return VT.Unadvise(ref this, dwCookie);
-			}
-			public HRESULT SetProperties(ref IPropertyChangeArray pproparray) mut
-			{
-				return VT.SetProperties(ref this, ref pproparray);
-			}
-			public HRESULT OpenItem(ref IShellItem psi, uint32 flags, in Guid riid, void** ppv) mut
-			{
-				return VT.OpenItem(ref this, ref psi, flags, riid, ppv);
-			}
-			public HRESULT MoveItem(ref IShellItem psi, ref IShellItem psiParentDst, PWSTR pszNameDst, uint32 flags, out IShellItem* ppsiNew) mut
-			{
-				return VT.MoveItem(ref this, ref psi, ref psiParentDst, pszNameDst, flags, out ppsiNew);
-			}
-			public HRESULT RecycleItem(ref IShellItem psiSource, ref IShellItem psiParentDest, uint32 flags, out IShellItem* ppsiNewDest) mut
-			{
-				return VT.RecycleItem(ref this, ref psiSource, ref psiParentDest, flags, out ppsiNewDest);
-			}
-			public HRESULT RemoveItem(ref IShellItem psiSource, uint32 flags) mut
-			{
-				return VT.RemoveItem(ref this, ref psiSource, flags);
-			}
-			public HRESULT RenameItem(ref IShellItem psiSource, PWSTR pszNewName, uint32 flags, out IShellItem* ppsiNewDest) mut
-			{
-				return VT.RenameItem(ref this, ref psiSource, pszNewName, flags, out ppsiNewDest);
-			}
-			public HRESULT LinkItem(ref IShellItem psiSource, ref IShellItem psiParentDest, PWSTR pszNewName, uint32 flags, out IShellItem* ppsiNewDest) mut
-			{
-				return VT.LinkItem(ref this, ref psiSource, ref psiParentDest, pszNewName, flags, out ppsiNewDest);
-			}
-			public HRESULT ApplyPropertiesToItem(ref IShellItem psiSource, out IShellItem* ppsiNew) mut
-			{
-				return VT.ApplyPropertiesToItem(ref this, ref psiSource, out ppsiNew);
-			}
-			public HRESULT GetDefaultDestinationName(ref IShellItem psiSource, ref IShellItem psiParentDest, out PWSTR ppszDestinationName) mut
-			{
-				return VT.GetDefaultDestinationName(ref this, ref psiSource, ref psiParentDest, out ppszDestinationName);
-			}
-			public HRESULT EnterFolder(ref IShellItem psiChildFolderDest) mut
-			{
-				return VT.EnterFolder(ref this, ref psiChildFolderDest);
-			}
-			public HRESULT LeaveFolder(ref IShellItem psiChildFolderDest) mut
-			{
-				return VT.LeaveFolder(ref this, ref psiChildFolderDest);
-			}
+			public HRESULT Advise(ref ITransferAdviseSink psink, out uint32 pdwCookie) mut => VT.Advise(ref this, ref psink, out pdwCookie);
+			public HRESULT Unadvise(uint32 dwCookie) mut => VT.Unadvise(ref this, dwCookie);
+			public HRESULT SetProperties(ref IPropertyChangeArray pproparray) mut => VT.SetProperties(ref this, ref pproparray);
+			public HRESULT OpenItem(ref IShellItem psi, uint32 flags, in Guid riid, void** ppv) mut => VT.OpenItem(ref this, ref psi, flags, riid, ppv);
+			public HRESULT MoveItem(ref IShellItem psi, ref IShellItem psiParentDst, PWSTR pszNameDst, uint32 flags, out IShellItem* ppsiNew) mut => VT.MoveItem(ref this, ref psi, ref psiParentDst, pszNameDst, flags, out ppsiNew);
+			public HRESULT RecycleItem(ref IShellItem psiSource, ref IShellItem psiParentDest, uint32 flags, out IShellItem* ppsiNewDest) mut => VT.RecycleItem(ref this, ref psiSource, ref psiParentDest, flags, out ppsiNewDest);
+			public HRESULT RemoveItem(ref IShellItem psiSource, uint32 flags) mut => VT.RemoveItem(ref this, ref psiSource, flags);
+			public HRESULT RenameItem(ref IShellItem psiSource, PWSTR pszNewName, uint32 flags, out IShellItem* ppsiNewDest) mut => VT.RenameItem(ref this, ref psiSource, pszNewName, flags, out ppsiNewDest);
+			public HRESULT LinkItem(ref IShellItem psiSource, ref IShellItem psiParentDest, PWSTR pszNewName, uint32 flags, out IShellItem* ppsiNewDest) mut => VT.LinkItem(ref this, ref psiSource, ref psiParentDest, pszNewName, flags, out ppsiNewDest);
+			public HRESULT ApplyPropertiesToItem(ref IShellItem psiSource, out IShellItem* ppsiNew) mut => VT.ApplyPropertiesToItem(ref this, ref psiSource, out ppsiNew);
+			public HRESULT GetDefaultDestinationName(ref IShellItem psiSource, ref IShellItem psiParentDest, out PWSTR ppszDestinationName) mut => VT.GetDefaultDestinationName(ref this, ref psiSource, ref psiParentDest, out ppszDestinationName);
+			public HRESULT EnterFolder(ref IShellItem psiChildFolderDest) mut => VT.EnterFolder(ref this, ref psiChildFolderDest);
+			public HRESULT LeaveFolder(ref IShellItem psiChildFolderDest) mut => VT.LeaveFolder(ref this, ref psiChildFolderDest);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7541,22 +6956,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, SHELL_ITEM_RESOURCE* psir, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, psir, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumResources* ppenumr) mut
-			{
-				return VT.Clone(ref this, out ppenumr);
-			}
+			public HRESULT Next(uint32 celt, SHELL_ITEM_RESOURCE* psir, out uint32 pceltFetched) mut => VT.Next(ref this, celt, psir, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumResources* ppenumr) mut => VT.Clone(ref this, out ppenumr);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7573,46 +6977,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAttributes(out uint32 pdwAttributes) mut
-			{
-				return VT.GetAttributes(ref this, out pdwAttributes);
-			}
-			public HRESULT GetSize(out uint64 pullSize) mut
-			{
-				return VT.GetSize(ref this, out pullSize);
-			}
-			public HRESULT GetTimes(out FILETIME pftCreation, out FILETIME pftWrite, out FILETIME pftAccess) mut
-			{
-				return VT.GetTimes(ref this, out pftCreation, out pftWrite, out pftAccess);
-			}
-			public HRESULT SetTimes(in FILETIME pftCreation, in FILETIME pftWrite, in FILETIME pftAccess) mut
-			{
-				return VT.SetTimes(ref this, pftCreation, pftWrite, pftAccess);
-			}
-			public HRESULT GetResourceDescription(in SHELL_ITEM_RESOURCE pcsir, out PWSTR ppszDescription) mut
-			{
-				return VT.GetResourceDescription(ref this, pcsir, out ppszDescription);
-			}
-			public HRESULT EnumResources(out IEnumResources* ppenumr) mut
-			{
-				return VT.EnumResources(ref this, out ppenumr);
-			}
-			public HRESULT SupportsResource(in SHELL_ITEM_RESOURCE pcsir) mut
-			{
-				return VT.SupportsResource(ref this, pcsir);
-			}
-			public HRESULT OpenResource(in SHELL_ITEM_RESOURCE pcsir, in Guid riid, void** ppv) mut
-			{
-				return VT.OpenResource(ref this, pcsir, riid, ppv);
-			}
-			public HRESULT CreateResource(in SHELL_ITEM_RESOURCE pcsir, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateResource(ref this, pcsir, riid, ppv);
-			}
-			public HRESULT MarkForDelete() mut
-			{
-				return VT.MarkForDelete(ref this);
-			}
+			public HRESULT GetAttributes(out uint32 pdwAttributes) mut => VT.GetAttributes(ref this, out pdwAttributes);
+			public HRESULT GetSize(out uint64 pullSize) mut => VT.GetSize(ref this, out pullSize);
+			public HRESULT GetTimes(out FILETIME pftCreation, out FILETIME pftWrite, out FILETIME pftAccess) mut => VT.GetTimes(ref this, out pftCreation, out pftWrite, out pftAccess);
+			public HRESULT SetTimes(in FILETIME pftCreation, in FILETIME pftWrite, in FILETIME pftAccess) mut => VT.SetTimes(ref this, pftCreation, pftWrite, pftAccess);
+			public HRESULT GetResourceDescription(in SHELL_ITEM_RESOURCE pcsir, out PWSTR ppszDescription) mut => VT.GetResourceDescription(ref this, pcsir, out ppszDescription);
+			public HRESULT EnumResources(out IEnumResources* ppenumr) mut => VT.EnumResources(ref this, out ppenumr);
+			public HRESULT SupportsResource(in SHELL_ITEM_RESOURCE pcsir) mut => VT.SupportsResource(ref this, pcsir);
+			public HRESULT OpenResource(in SHELL_ITEM_RESOURCE pcsir, in Guid riid, void** ppv) mut => VT.OpenResource(ref this, pcsir, riid, ppv);
+			public HRESULT CreateResource(in SHELL_ITEM_RESOURCE pcsir, in Guid riid, void** ppv) mut => VT.CreateResource(ref this, pcsir, riid, ppv);
+			public HRESULT MarkForDelete() mut => VT.MarkForDelete(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7635,18 +7010,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Advise(ref ITransferAdviseSink psink, out uint32 pdwCookie) mut
-			{
-				return VT.Advise(ref this, ref psink, out pdwCookie);
-			}
-			public HRESULT Unadvise(uint32 dwCookie) mut
-			{
-				return VT.Unadvise(ref this, dwCookie);
-			}
-			public HRESULT CreateItem(PWSTR pszName, uint32 dwAttributes, uint64 ullSize, uint32 flags, in Guid riidItem, void** ppvItem, in Guid riidResources, void** ppvResources) mut
-			{
-				return VT.CreateItem(ref this, pszName, dwAttributes, ullSize, flags, riidItem, ppvItem, riidResources, ppvResources);
-			}
+			public HRESULT Advise(ref ITransferAdviseSink psink, out uint32 pdwCookie) mut => VT.Advise(ref this, ref psink, out pdwCookie);
+			public HRESULT Unadvise(uint32 dwCookie) mut => VT.Unadvise(ref this, dwCookie);
+			public HRESULT CreateItem(PWSTR pszName, uint32 dwAttributes, uint64 ullSize, uint32 flags, in Guid riidItem, void** ppvItem, in Guid riidResources, void** ppvResources) mut => VT.CreateItem(ref this, pszName, dwAttributes, ullSize, flags, riidItem, ppvItem, riidResources, ppvResources);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7662,70 +7029,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartOperations() mut
-			{
-				return VT.StartOperations(ref this);
-			}
-			public HRESULT FinishOperations(HRESULT hrResult) mut
-			{
-				return VT.FinishOperations(ref this, hrResult);
-			}
-			public HRESULT PreRenameItem(uint32 dwFlags, ref IShellItem psiItem, PWSTR pszNewName) mut
-			{
-				return VT.PreRenameItem(ref this, dwFlags, ref psiItem, pszNewName);
-			}
-			public HRESULT PostRenameItem(uint32 dwFlags, ref IShellItem psiItem, PWSTR pszNewName, HRESULT hrRename, ref IShellItem psiNewlyCreated) mut
-			{
-				return VT.PostRenameItem(ref this, dwFlags, ref psiItem, pszNewName, hrRename, ref psiNewlyCreated);
-			}
-			public HRESULT PreMoveItem(uint32 dwFlags, ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName) mut
-			{
-				return VT.PreMoveItem(ref this, dwFlags, ref psiItem, ref psiDestinationFolder, pszNewName);
-			}
-			public HRESULT PostMoveItem(uint32 dwFlags, ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName, HRESULT hrMove, ref IShellItem psiNewlyCreated) mut
-			{
-				return VT.PostMoveItem(ref this, dwFlags, ref psiItem, ref psiDestinationFolder, pszNewName, hrMove, ref psiNewlyCreated);
-			}
-			public HRESULT PreCopyItem(uint32 dwFlags, ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName) mut
-			{
-				return VT.PreCopyItem(ref this, dwFlags, ref psiItem, ref psiDestinationFolder, pszNewName);
-			}
-			public HRESULT PostCopyItem(uint32 dwFlags, ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName, HRESULT hrCopy, ref IShellItem psiNewlyCreated) mut
-			{
-				return VT.PostCopyItem(ref this, dwFlags, ref psiItem, ref psiDestinationFolder, pszNewName, hrCopy, ref psiNewlyCreated);
-			}
-			public HRESULT PreDeleteItem(uint32 dwFlags, ref IShellItem psiItem) mut
-			{
-				return VT.PreDeleteItem(ref this, dwFlags, ref psiItem);
-			}
-			public HRESULT PostDeleteItem(uint32 dwFlags, ref IShellItem psiItem, HRESULT hrDelete, ref IShellItem psiNewlyCreated) mut
-			{
-				return VT.PostDeleteItem(ref this, dwFlags, ref psiItem, hrDelete, ref psiNewlyCreated);
-			}
-			public HRESULT PreNewItem(uint32 dwFlags, ref IShellItem psiDestinationFolder, PWSTR pszNewName) mut
-			{
-				return VT.PreNewItem(ref this, dwFlags, ref psiDestinationFolder, pszNewName);
-			}
-			public HRESULT PostNewItem(uint32 dwFlags, ref IShellItem psiDestinationFolder, PWSTR pszNewName, PWSTR pszTemplateName, uint32 dwFileAttributes, HRESULT hrNew, ref IShellItem psiNewItem) mut
-			{
-				return VT.PostNewItem(ref this, dwFlags, ref psiDestinationFolder, pszNewName, pszTemplateName, dwFileAttributes, hrNew, ref psiNewItem);
-			}
-			public HRESULT UpdateProgress(uint32 iWorkTotal, uint32 iWorkSoFar) mut
-			{
-				return VT.UpdateProgress(ref this, iWorkTotal, iWorkSoFar);
-			}
-			public HRESULT ResetTimer() mut
-			{
-				return VT.ResetTimer(ref this);
-			}
-			public HRESULT PauseTimer() mut
-			{
-				return VT.PauseTimer(ref this);
-			}
-			public HRESULT ResumeTimer() mut
-			{
-				return VT.ResumeTimer(ref this);
-			}
+			public HRESULT StartOperations() mut => VT.StartOperations(ref this);
+			public HRESULT FinishOperations(HRESULT hrResult) mut => VT.FinishOperations(ref this, hrResult);
+			public HRESULT PreRenameItem(uint32 dwFlags, ref IShellItem psiItem, PWSTR pszNewName) mut => VT.PreRenameItem(ref this, dwFlags, ref psiItem, pszNewName);
+			public HRESULT PostRenameItem(uint32 dwFlags, ref IShellItem psiItem, PWSTR pszNewName, HRESULT hrRename, ref IShellItem psiNewlyCreated) mut => VT.PostRenameItem(ref this, dwFlags, ref psiItem, pszNewName, hrRename, ref psiNewlyCreated);
+			public HRESULT PreMoveItem(uint32 dwFlags, ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName) mut => VT.PreMoveItem(ref this, dwFlags, ref psiItem, ref psiDestinationFolder, pszNewName);
+			public HRESULT PostMoveItem(uint32 dwFlags, ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName, HRESULT hrMove, ref IShellItem psiNewlyCreated) mut => VT.PostMoveItem(ref this, dwFlags, ref psiItem, ref psiDestinationFolder, pszNewName, hrMove, ref psiNewlyCreated);
+			public HRESULT PreCopyItem(uint32 dwFlags, ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName) mut => VT.PreCopyItem(ref this, dwFlags, ref psiItem, ref psiDestinationFolder, pszNewName);
+			public HRESULT PostCopyItem(uint32 dwFlags, ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName, HRESULT hrCopy, ref IShellItem psiNewlyCreated) mut => VT.PostCopyItem(ref this, dwFlags, ref psiItem, ref psiDestinationFolder, pszNewName, hrCopy, ref psiNewlyCreated);
+			public HRESULT PreDeleteItem(uint32 dwFlags, ref IShellItem psiItem) mut => VT.PreDeleteItem(ref this, dwFlags, ref psiItem);
+			public HRESULT PostDeleteItem(uint32 dwFlags, ref IShellItem psiItem, HRESULT hrDelete, ref IShellItem psiNewlyCreated) mut => VT.PostDeleteItem(ref this, dwFlags, ref psiItem, hrDelete, ref psiNewlyCreated);
+			public HRESULT PreNewItem(uint32 dwFlags, ref IShellItem psiDestinationFolder, PWSTR pszNewName) mut => VT.PreNewItem(ref this, dwFlags, ref psiDestinationFolder, pszNewName);
+			public HRESULT PostNewItem(uint32 dwFlags, ref IShellItem psiDestinationFolder, PWSTR pszNewName, PWSTR pszTemplateName, uint32 dwFileAttributes, HRESULT hrNew, ref IShellItem psiNewItem) mut => VT.PostNewItem(ref this, dwFlags, ref psiDestinationFolder, pszNewName, pszTemplateName, dwFileAttributes, hrNew, ref psiNewItem);
+			public HRESULT UpdateProgress(uint32 iWorkTotal, uint32 iWorkSoFar) mut => VT.UpdateProgress(ref this, iWorkTotal, iWorkSoFar);
+			public HRESULT ResetTimer() mut => VT.ResetTimer(ref this);
+			public HRESULT PauseTimer() mut => VT.PauseTimer(ref this);
+			public HRESULT ResumeTimer() mut => VT.ResumeTimer(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7754,34 +7074,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BindToHandler(ref IBindCtx pbc, in Guid bhid, in Guid riid, void** ppvOut) mut
-			{
-				return VT.BindToHandler(ref this, ref pbc, bhid, riid, ppvOut);
-			}
-			public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyStore(ref this, flags, riid, ppv);
-			}
-			public HRESULT GetPropertyDescriptionList(in PROPERTYKEY keyType, in Guid riid, void** ppv) mut
-			{
-				return VT.GetPropertyDescriptionList(ref this, keyType, riid, ppv);
-			}
-			public HRESULT GetAttributes(SIATTRIBFLAGS AttribFlags, uint32 sfgaoMask, out uint32 psfgaoAttribs) mut
-			{
-				return VT.GetAttributes(ref this, AttribFlags, sfgaoMask, out psfgaoAttribs);
-			}
-			public HRESULT GetCount(out uint32 pdwNumItems) mut
-			{
-				return VT.GetCount(ref this, out pdwNumItems);
-			}
-			public HRESULT GetItemAt(uint32 dwIndex, out IShellItem* ppsi) mut
-			{
-				return VT.GetItemAt(ref this, dwIndex, out ppsi);
-			}
-			public HRESULT EnumItems(out IEnumShellItems* ppenumShellItems) mut
-			{
-				return VT.EnumItems(ref this, out ppenumShellItems);
-			}
+			public HRESULT BindToHandler(ref IBindCtx pbc, in Guid bhid, in Guid riid, void** ppvOut) mut => VT.BindToHandler(ref this, ref pbc, bhid, riid, ppvOut);
+			public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) mut => VT.GetPropertyStore(ref this, flags, riid, ppv);
+			public HRESULT GetPropertyDescriptionList(in PROPERTYKEY keyType, in Guid riid, void** ppv) mut => VT.GetPropertyDescriptionList(ref this, keyType, riid, ppv);
+			public HRESULT GetAttributes(SIATTRIBFLAGS AttribFlags, uint32 sfgaoMask, out uint32 psfgaoAttribs) mut => VT.GetAttributes(ref this, AttribFlags, sfgaoMask, out psfgaoAttribs);
+			public HRESULT GetCount(out uint32 pdwNumItems) mut => VT.GetCount(ref this, out pdwNumItems);
+			public HRESULT GetItemAt(uint32 dwIndex, out IShellItem* ppsi) mut => VT.GetItemAt(ref this, dwIndex, out ppsi);
+			public HRESULT EnumItems(out IEnumShellItems* ppenumShellItems) mut => VT.EnumItems(ref this, out ppenumShellItems);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7801,10 +7101,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IShellItem psi, uint32 grfMode) mut
-			{
-				return VT.Initialize(ref this, ref psi, grfMode);
-			}
+			public HRESULT Initialize(ref IShellItem psi, uint32 grfMode) mut => VT.Initialize(ref this, ref psi, grfMode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7818,14 +7116,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSelection(ref IShellItemArray psia) mut
-			{
-				return VT.SetSelection(ref this, ref psia);
-			}
-			public HRESULT GetSelection(in Guid riid, void** ppv) mut
-			{
-				return VT.GetSelection(ref this, riid, ppv);
-			}
+			public HRESULT SetSelection(ref IShellItemArray psia) mut => VT.SetSelection(ref this, ref psia);
+			public HRESULT GetSelection(in Guid riid, void** ppv) mut => VT.GetSelection(ref this, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7840,10 +7133,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RemoveBackReferences() mut
-			{
-				return VT.RemoveBackReferences(ref this);
-			}
+			public HRESULT RemoveBackReferences() mut => VT.RemoveBackReferences(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7857,30 +7148,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CanCategorizeOnSCID(in PROPERTYKEY pscid) mut
-			{
-				return VT.CanCategorizeOnSCID(ref this, pscid);
-			}
-			public HRESULT GetDefaultCategory(out Guid pguid, out PROPERTYKEY pscid) mut
-			{
-				return VT.GetDefaultCategory(ref this, out pguid, out pscid);
-			}
-			public HRESULT GetCategoryForSCID(in PROPERTYKEY pscid, out Guid pguid) mut
-			{
-				return VT.GetCategoryForSCID(ref this, pscid, out pguid);
-			}
-			public HRESULT EnumCategories(out IEnumGUID* penum) mut
-			{
-				return VT.EnumCategories(ref this, out penum);
-			}
-			public HRESULT GetCategoryName(in Guid pguid, char16* pszName, uint32 cch) mut
-			{
-				return VT.GetCategoryName(ref this, pguid, pszName, cch);
-			}
-			public HRESULT CreateCategory(in Guid pguid, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateCategory(ref this, pguid, riid, ppv);
-			}
+			public HRESULT CanCategorizeOnSCID(in PROPERTYKEY pscid) mut => VT.CanCategorizeOnSCID(ref this, pscid);
+			public HRESULT GetDefaultCategory(out Guid pguid, out PROPERTYKEY pscid) mut => VT.GetDefaultCategory(ref this, out pguid, out pscid);
+			public HRESULT GetCategoryForSCID(in PROPERTYKEY pscid, out Guid pguid) mut => VT.GetCategoryForSCID(ref this, pscid, out pguid);
+			public HRESULT EnumCategories(out IEnumGUID* penum) mut => VT.EnumCategories(ref this, out penum);
+			public HRESULT GetCategoryName(in Guid pguid, char16* pszName, uint32 cch) mut => VT.GetCategoryName(ref this, pguid, pszName, cch);
+			public HRESULT CreateCategory(in Guid pguid, in Guid riid, void** ppv) mut => VT.CreateCategory(ref this, pguid, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7899,22 +7173,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDescription(char16* pszDesc, uint32 cch) mut
-			{
-				return VT.GetDescription(ref this, pszDesc, cch);
-			}
-			public HRESULT GetCategory(uint32 cidl, ITEMIDLIST** apidl, uint32* rgCategoryIds) mut
-			{
-				return VT.GetCategory(ref this, cidl, apidl, rgCategoryIds);
-			}
-			public HRESULT GetCategoryInfo(uint32 dwCategoryId, out CATEGORY_INFO pci) mut
-			{
-				return VT.GetCategoryInfo(ref this, dwCategoryId, out pci);
-			}
-			public HRESULT CompareCategory(CATSORT_FLAGS csfFlags, uint32 dwCategoryId1, uint32 dwCategoryId2) mut
-			{
-				return VT.CompareCategory(ref this, csfFlags, dwCategoryId1, dwCategoryId2);
-			}
+			public HRESULT GetDescription(char16* pszDesc, uint32 cch) mut => VT.GetDescription(ref this, pszDesc, cch);
+			public HRESULT GetCategory(uint32 cidl, ITEMIDLIST** apidl, uint32* rgCategoryIds) mut => VT.GetCategory(ref this, cidl, apidl, rgCategoryIds);
+			public HRESULT GetCategoryInfo(uint32 dwCategoryId, out CATEGORY_INFO pci) mut => VT.GetCategoryInfo(ref this, dwCategoryId, out pci);
+			public HRESULT CompareCategory(CATSORT_FLAGS csfFlags, uint32 dwCategoryId1, uint32 dwCategoryId2) mut => VT.CompareCategory(ref this, csfFlags, dwCategoryId1, dwCategoryId2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7931,26 +7194,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DragEnter(HWND hwndTarget, ref IDataObject pDataObject, ref POINT ppt, uint32 dwEffect) mut
-			{
-				return VT.DragEnter(ref this, hwndTarget, ref pDataObject, ref ppt, dwEffect);
-			}
-			public HRESULT DragLeave() mut
-			{
-				return VT.DragLeave(ref this);
-			}
-			public HRESULT DragOver(ref POINT ppt, uint32 dwEffect) mut
-			{
-				return VT.DragOver(ref this, ref ppt, dwEffect);
-			}
-			public HRESULT Drop(ref IDataObject pDataObject, ref POINT ppt, uint32 dwEffect) mut
-			{
-				return VT.Drop(ref this, ref pDataObject, ref ppt, dwEffect);
-			}
-			public HRESULT Show(BOOL fShow) mut
-			{
-				return VT.Show(ref this, fShow);
-			}
+			public HRESULT DragEnter(HWND hwndTarget, ref IDataObject pDataObject, ref POINT ppt, uint32 dwEffect) mut => VT.DragEnter(ref this, hwndTarget, ref pDataObject, ref ppt, dwEffect);
+			public HRESULT DragLeave() mut => VT.DragLeave(ref this);
+			public HRESULT DragOver(ref POINT ppt, uint32 dwEffect) mut => VT.DragOver(ref this, ref ppt, dwEffect);
+			public HRESULT Drop(ref IDataObject pDataObject, ref POINT ppt, uint32 dwEffect) mut => VT.Drop(ref this, ref pDataObject, ref ppt, dwEffect);
+			public HRESULT Show(BOOL fShow) mut => VT.Show(ref this, fShow);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7968,14 +7217,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeFromBitmap(ref SHDRAGIMAGE pshdi, ref IDataObject pDataObject) mut
-			{
-				return VT.InitializeFromBitmap(ref this, ref pshdi, ref pDataObject);
-			}
-			public HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, ref IDataObject pDataObject) mut
-			{
-				return VT.InitializeFromWindow(ref this, hwnd, ppt, ref pDataObject);
-			}
+			public HRESULT InitializeFromBitmap(ref SHDRAGIMAGE pshdi, ref IDataObject pDataObject) mut => VT.InitializeFromBitmap(ref this, ref pshdi, ref pDataObject);
+			public HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, ref IDataObject pDataObject) mut => VT.InitializeFromWindow(ref this, hwnd, ppt, ref pDataObject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7990,78 +7234,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPath(uint8* pszFile, int32 cch, out WIN32_FIND_DATAA pfd, uint32 fFlags) mut
-			{
-				return VT.GetPath(ref this, pszFile, cch, out pfd, fFlags);
-			}
-			public HRESULT GetIDList(out ITEMIDLIST* ppidl) mut
-			{
-				return VT.GetIDList(ref this, out ppidl);
-			}
-			public HRESULT SetIDList(ref ITEMIDLIST pidl) mut
-			{
-				return VT.SetIDList(ref this, ref pidl);
-			}
-			public HRESULT GetDescription(uint8* pszName, int32 cch) mut
-			{
-				return VT.GetDescription(ref this, pszName, cch);
-			}
-			public HRESULT SetDescription(PSTR pszName) mut
-			{
-				return VT.SetDescription(ref this, pszName);
-			}
-			public HRESULT GetWorkingDirectory(uint8* pszDir, int32 cch) mut
-			{
-				return VT.GetWorkingDirectory(ref this, pszDir, cch);
-			}
-			public HRESULT SetWorkingDirectory(PSTR pszDir) mut
-			{
-				return VT.SetWorkingDirectory(ref this, pszDir);
-			}
-			public HRESULT GetArguments(uint8* pszArgs, int32 cch) mut
-			{
-				return VT.GetArguments(ref this, pszArgs, cch);
-			}
-			public HRESULT SetArguments(PSTR pszArgs) mut
-			{
-				return VT.SetArguments(ref this, pszArgs);
-			}
-			public HRESULT GetHotkey(out uint16 pwHotkey) mut
-			{
-				return VT.GetHotkey(ref this, out pwHotkey);
-			}
-			public HRESULT SetHotkey(uint16 wHotkey) mut
-			{
-				return VT.SetHotkey(ref this, wHotkey);
-			}
-			public HRESULT GetShowCmd(out int32 piShowCmd) mut
-			{
-				return VT.GetShowCmd(ref this, out piShowCmd);
-			}
-			public HRESULT SetShowCmd(int32 iShowCmd) mut
-			{
-				return VT.SetShowCmd(ref this, iShowCmd);
-			}
-			public HRESULT GetIconLocation(uint8* pszIconPath, int32 cch, out int32 piIcon) mut
-			{
-				return VT.GetIconLocation(ref this, pszIconPath, cch, out piIcon);
-			}
-			public HRESULT SetIconLocation(PSTR pszIconPath, int32 iIcon) mut
-			{
-				return VT.SetIconLocation(ref this, pszIconPath, iIcon);
-			}
-			public HRESULT SetRelativePath(PSTR pszPathRel, uint32 dwReserved) mut
-			{
-				return VT.SetRelativePath(ref this, pszPathRel, dwReserved);
-			}
-			public HRESULT Resolve(HWND hwnd, uint32 fFlags) mut
-			{
-				return VT.Resolve(ref this, hwnd, fFlags);
-			}
-			public HRESULT SetPath(PSTR pszFile) mut
-			{
-				return VT.SetPath(ref this, pszFile);
-			}
+			public HRESULT GetPath(uint8* pszFile, int32 cch, out WIN32_FIND_DATAA pfd, uint32 fFlags) mut => VT.GetPath(ref this, pszFile, cch, out pfd, fFlags);
+			public HRESULT GetIDList(out ITEMIDLIST* ppidl) mut => VT.GetIDList(ref this, out ppidl);
+			public HRESULT SetIDList(ref ITEMIDLIST pidl) mut => VT.SetIDList(ref this, ref pidl);
+			public HRESULT GetDescription(uint8* pszName, int32 cch) mut => VT.GetDescription(ref this, pszName, cch);
+			public HRESULT SetDescription(PSTR pszName) mut => VT.SetDescription(ref this, pszName);
+			public HRESULT GetWorkingDirectory(uint8* pszDir, int32 cch) mut => VT.GetWorkingDirectory(ref this, pszDir, cch);
+			public HRESULT SetWorkingDirectory(PSTR pszDir) mut => VT.SetWorkingDirectory(ref this, pszDir);
+			public HRESULT GetArguments(uint8* pszArgs, int32 cch) mut => VT.GetArguments(ref this, pszArgs, cch);
+			public HRESULT SetArguments(PSTR pszArgs) mut => VT.SetArguments(ref this, pszArgs);
+			public HRESULT GetHotkey(out uint16 pwHotkey) mut => VT.GetHotkey(ref this, out pwHotkey);
+			public HRESULT SetHotkey(uint16 wHotkey) mut => VT.SetHotkey(ref this, wHotkey);
+			public HRESULT GetShowCmd(out int32 piShowCmd) mut => VT.GetShowCmd(ref this, out piShowCmd);
+			public HRESULT SetShowCmd(int32 iShowCmd) mut => VT.SetShowCmd(ref this, iShowCmd);
+			public HRESULT GetIconLocation(uint8* pszIconPath, int32 cch, out int32 piIcon) mut => VT.GetIconLocation(ref this, pszIconPath, cch, out piIcon);
+			public HRESULT SetIconLocation(PSTR pszIconPath, int32 iIcon) mut => VT.SetIconLocation(ref this, pszIconPath, iIcon);
+			public HRESULT SetRelativePath(PSTR pszPathRel, uint32 dwReserved) mut => VT.SetRelativePath(ref this, pszPathRel, dwReserved);
+			public HRESULT Resolve(HWND hwnd, uint32 fFlags) mut => VT.Resolve(ref this, hwnd, fFlags);
+			public HRESULT SetPath(PSTR pszFile) mut => VT.SetPath(ref this, pszFile);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8092,78 +7283,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPath(char16* pszFile, int32 cch, out WIN32_FIND_DATAW pfd, uint32 fFlags) mut
-			{
-				return VT.GetPath(ref this, pszFile, cch, out pfd, fFlags);
-			}
-			public HRESULT GetIDList(out ITEMIDLIST* ppidl) mut
-			{
-				return VT.GetIDList(ref this, out ppidl);
-			}
-			public HRESULT SetIDList(ref ITEMIDLIST pidl) mut
-			{
-				return VT.SetIDList(ref this, ref pidl);
-			}
-			public HRESULT GetDescription(char16* pszName, int32 cch) mut
-			{
-				return VT.GetDescription(ref this, pszName, cch);
-			}
-			public HRESULT SetDescription(PWSTR pszName) mut
-			{
-				return VT.SetDescription(ref this, pszName);
-			}
-			public HRESULT GetWorkingDirectory(char16* pszDir, int32 cch) mut
-			{
-				return VT.GetWorkingDirectory(ref this, pszDir, cch);
-			}
-			public HRESULT SetWorkingDirectory(PWSTR pszDir) mut
-			{
-				return VT.SetWorkingDirectory(ref this, pszDir);
-			}
-			public HRESULT GetArguments(char16* pszArgs, int32 cch) mut
-			{
-				return VT.GetArguments(ref this, pszArgs, cch);
-			}
-			public HRESULT SetArguments(PWSTR pszArgs) mut
-			{
-				return VT.SetArguments(ref this, pszArgs);
-			}
-			public HRESULT GetHotkey(out uint16 pwHotkey) mut
-			{
-				return VT.GetHotkey(ref this, out pwHotkey);
-			}
-			public HRESULT SetHotkey(uint16 wHotkey) mut
-			{
-				return VT.SetHotkey(ref this, wHotkey);
-			}
-			public HRESULT GetShowCmd(out int32 piShowCmd) mut
-			{
-				return VT.GetShowCmd(ref this, out piShowCmd);
-			}
-			public HRESULT SetShowCmd(int32 iShowCmd) mut
-			{
-				return VT.SetShowCmd(ref this, iShowCmd);
-			}
-			public HRESULT GetIconLocation(char16* pszIconPath, int32 cch, out int32 piIcon) mut
-			{
-				return VT.GetIconLocation(ref this, pszIconPath, cch, out piIcon);
-			}
-			public HRESULT SetIconLocation(PWSTR pszIconPath, int32 iIcon) mut
-			{
-				return VT.SetIconLocation(ref this, pszIconPath, iIcon);
-			}
-			public HRESULT SetRelativePath(PWSTR pszPathRel, uint32 dwReserved) mut
-			{
-				return VT.SetRelativePath(ref this, pszPathRel, dwReserved);
-			}
-			public HRESULT Resolve(HWND hwnd, uint32 fFlags) mut
-			{
-				return VT.Resolve(ref this, hwnd, fFlags);
-			}
-			public HRESULT SetPath(PWSTR pszFile) mut
-			{
-				return VT.SetPath(ref this, pszFile);
-			}
+			public HRESULT GetPath(char16* pszFile, int32 cch, out WIN32_FIND_DATAW pfd, uint32 fFlags) mut => VT.GetPath(ref this, pszFile, cch, out pfd, fFlags);
+			public HRESULT GetIDList(out ITEMIDLIST* ppidl) mut => VT.GetIDList(ref this, out ppidl);
+			public HRESULT SetIDList(ref ITEMIDLIST pidl) mut => VT.SetIDList(ref this, ref pidl);
+			public HRESULT GetDescription(char16* pszName, int32 cch) mut => VT.GetDescription(ref this, pszName, cch);
+			public HRESULT SetDescription(PWSTR pszName) mut => VT.SetDescription(ref this, pszName);
+			public HRESULT GetWorkingDirectory(char16* pszDir, int32 cch) mut => VT.GetWorkingDirectory(ref this, pszDir, cch);
+			public HRESULT SetWorkingDirectory(PWSTR pszDir) mut => VT.SetWorkingDirectory(ref this, pszDir);
+			public HRESULT GetArguments(char16* pszArgs, int32 cch) mut => VT.GetArguments(ref this, pszArgs, cch);
+			public HRESULT SetArguments(PWSTR pszArgs) mut => VT.SetArguments(ref this, pszArgs);
+			public HRESULT GetHotkey(out uint16 pwHotkey) mut => VT.GetHotkey(ref this, out pwHotkey);
+			public HRESULT SetHotkey(uint16 wHotkey) mut => VT.SetHotkey(ref this, wHotkey);
+			public HRESULT GetShowCmd(out int32 piShowCmd) mut => VT.GetShowCmd(ref this, out piShowCmd);
+			public HRESULT SetShowCmd(int32 iShowCmd) mut => VT.SetShowCmd(ref this, iShowCmd);
+			public HRESULT GetIconLocation(char16* pszIconPath, int32 cch, out int32 piIcon) mut => VT.GetIconLocation(ref this, pszIconPath, cch, out piIcon);
+			public HRESULT SetIconLocation(PWSTR pszIconPath, int32 iIcon) mut => VT.SetIconLocation(ref this, pszIconPath, iIcon);
+			public HRESULT SetRelativePath(PWSTR pszPathRel, uint32 dwReserved) mut => VT.SetRelativePath(ref this, pszPathRel, dwReserved);
+			public HRESULT Resolve(HWND hwnd, uint32 fFlags) mut => VT.Resolve(ref this, hwnd, fFlags);
+			public HRESULT SetPath(PWSTR pszFile) mut => VT.SetPath(ref this, pszFile);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8194,26 +7332,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddDataBlock(void* pDataBlock) mut
-			{
-				return VT.AddDataBlock(ref this, pDataBlock);
-			}
-			public HRESULT CopyDataBlock(uint32 dwSig, void** ppDataBlock) mut
-			{
-				return VT.CopyDataBlock(ref this, dwSig, ppDataBlock);
-			}
-			public HRESULT RemoveDataBlock(uint32 dwSig) mut
-			{
-				return VT.RemoveDataBlock(ref this, dwSig);
-			}
-			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pdwFlags);
-			}
-			public HRESULT SetFlags(uint32 dwFlags) mut
-			{
-				return VT.SetFlags(ref this, dwFlags);
-			}
+			public HRESULT AddDataBlock(void* pDataBlock) mut => VT.AddDataBlock(ref this, pDataBlock);
+			public HRESULT CopyDataBlock(uint32 dwSig, void** ppDataBlock) mut => VT.CopyDataBlock(ref this, dwSig, ppDataBlock);
+			public HRESULT RemoveDataBlock(uint32 dwSig) mut => VT.RemoveDataBlock(ref this, dwSig);
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut => VT.ComGetFlags(ref this, out pdwFlags);
+			public HRESULT SetFlags(uint32 dwFlags) mut => VT.SetFlags(ref this, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8231,10 +7355,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ResolveShellLink(ref IUnknown punkLink, HWND hwnd, uint32 fFlags) mut
-			{
-				return VT.ResolveShellLink(ref this, ref punkLink, hwnd, fFlags);
-			}
+			public HRESULT ResolveShellLink(ref IUnknown punkLink, HWND hwnd, uint32 fFlags) mut => VT.ResolveShellLink(ref this, ref punkLink, hwnd, fFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8248,14 +7370,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(uint32 flags, PWSTR pszTitle, PWSTR pszCancel) mut
-			{
-				return VT.Initialize(ref this, flags, pszTitle, pszCancel);
-			}
-			public HRESULT Stop() mut
-			{
-				return VT.Stop(ref this);
-			}
+			public HRESULT Initialize(uint32 flags, PWSTR pszTitle, PWSTR pszCancel) mut => VT.Initialize(ref this, flags, pszTitle, pszCancel);
+			public HRESULT Stop() mut => VT.Stop(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8270,30 +7387,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin(SPACTION action, uint32 flags) mut
-			{
-				return VT.Begin(ref this, action, flags);
-			}
-			public HRESULT UpdateProgress(uint64 ulCompleted, uint64 ulTotal) mut
-			{
-				return VT.UpdateProgress(ref this, ulCompleted, ulTotal);
-			}
-			public HRESULT UpdateText(SPTEXT sptext, PWSTR pszText, BOOL fMayCompact) mut
-			{
-				return VT.UpdateText(ref this, sptext, pszText, fMayCompact);
-			}
-			public HRESULT QueryCancel(out BOOL pfCancelled) mut
-			{
-				return VT.QueryCancel(ref this, out pfCancelled);
-			}
-			public HRESULT ResetCancel() mut
-			{
-				return VT.ResetCancel(ref this);
-			}
-			public HRESULT End() mut
-			{
-				return VT.End(ref this);
-			}
+			public HRESULT Begin(SPACTION action, uint32 flags) mut => VT.Begin(ref this, action, flags);
+			public HRESULT UpdateProgress(uint64 ulCompleted, uint64 ulTotal) mut => VT.UpdateProgress(ref this, ulCompleted, ulTotal);
+			public HRESULT UpdateText(SPTEXT sptext, PWSTR pszText, BOOL fMayCompact) mut => VT.UpdateText(ref this, sptext, pszText, fMayCompact);
+			public HRESULT QueryCancel(out BOOL pfCancelled) mut => VT.QueryCancel(ref this, out pfCancelled);
+			public HRESULT ResetCancel() mut => VT.ResetCancel(ref this);
+			public HRESULT End() mut => VT.End(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8312,10 +7412,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID) mut
-			{
-				return VT.Initialize(ref this, pidlFolder, pdtobj, hkeyProgID);
-			}
+			public HRESULT Initialize(ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID) mut => VT.Initialize(ref this, pidlFolder, pdtobj, hkeyProgID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8329,14 +7427,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPages(LPFNSVADDPROPSHEETPAGE pfnAddPage, LPARAM lParam) mut
-			{
-				return VT.AddPages(ref this, pfnAddPage, lParam);
-			}
-			public HRESULT ReplacePage(uint32 uPageID, LPFNSVADDPROPSHEETPAGE pfnReplaceWith, LPARAM lParam) mut
-			{
-				return VT.ReplacePage(ref this, uPageID, pfnReplaceWith, lParam);
-			}
+			public HRESULT AddPages(LPFNSVADDPROPSHEETPAGE pfnAddPage, LPARAM lParam) mut => VT.AddPages(ref this, pfnAddPage, lParam);
+			public HRESULT ReplacePage(uint32 uPageID, LPFNSVADDPROPSHEETPAGE pfnReplaceWith, LPARAM lParam) mut => VT.ReplacePage(ref this, uPageID, pfnReplaceWith, lParam);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8351,10 +7444,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszMachine, BOOL bEnumerating) mut
-			{
-				return VT.Initialize(ref this, pszMachine, bEnumerating);
-			}
+			public HRESULT Initialize(PWSTR pszMachine, BOOL bEnumerating) mut => VT.Initialize(ref this, pszMachine, bEnumerating);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8368,10 +7459,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryContinue() mut
-			{
-				return VT.QueryContinue(ref this);
-			}
+			public HRESULT QueryContinue() mut => VT.QueryContinue(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8385,10 +7474,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCancelEvent(out HANDLE phEvent) mut
-			{
-				return VT.GetCancelEvent(ref this, out phEvent);
-			}
+			public HRESULT GetCancelEvent(out HANDLE phEvent) mut => VT.GetCancelEvent(ref this, out phEvent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8402,26 +7489,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBalloonInfo(PWSTR pszTitle, PWSTR pszText, uint32 dwInfoFlags) mut
-			{
-				return VT.SetBalloonInfo(ref this, pszTitle, pszText, dwInfoFlags);
-			}
-			public HRESULT SetBalloonRetry(uint32 dwShowTime, uint32 dwInterval, uint32 cRetryCount) mut
-			{
-				return VT.SetBalloonRetry(ref this, dwShowTime, dwInterval, cRetryCount);
-			}
-			public HRESULT SetIconInfo(HICON hIcon, PWSTR pszToolTip) mut
-			{
-				return VT.SetIconInfo(ref this, hIcon, pszToolTip);
-			}
-			public HRESULT Show(ref IQueryContinue pqc, uint32 dwContinuePollInterval) mut
-			{
-				return VT.Show(ref this, ref pqc, dwContinuePollInterval);
-			}
-			public HRESULT PlaySound(PWSTR pszSoundName) mut
-			{
-				return VT.PlaySound(ref this, pszSoundName);
-			}
+			public HRESULT SetBalloonInfo(PWSTR pszTitle, PWSTR pszText, uint32 dwInfoFlags) mut => VT.SetBalloonInfo(ref this, pszTitle, pszText, dwInfoFlags);
+			public HRESULT SetBalloonRetry(uint32 dwShowTime, uint32 dwInterval, uint32 cRetryCount) mut => VT.SetBalloonRetry(ref this, dwShowTime, dwInterval, cRetryCount);
+			public HRESULT SetIconInfo(HICON hIcon, PWSTR pszToolTip) mut => VT.SetIconInfo(ref this, hIcon, pszToolTip);
+			public HRESULT Show(ref IQueryContinue pqc, uint32 dwContinuePollInterval) mut => VT.Show(ref this, ref pqc, dwContinuePollInterval);
+			public HRESULT PlaySound(PWSTR pszSoundName) mut => VT.PlaySound(ref this, pszSoundName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8439,14 +7512,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetValidCharacters(out PWSTR ppwszValidChars, out PWSTR ppwszInvalidChars) mut
-			{
-				return VT.GetValidCharacters(ref this, out ppwszValidChars, out ppwszInvalidChars);
-			}
-			public HRESULT GetMaxLength(PWSTR pszName, out int32 piMaxNameLen) mut
-			{
-				return VT.GetMaxLength(ref this, pszName, out piMaxNameLen);
-			}
+			public HRESULT GetValidCharacters(out PWSTR ppwszValidChars, out PWSTR ppwszInvalidChars) mut => VT.GetValidCharacters(ref this, out ppwszValidChars, out ppwszInvalidChars);
+			public HRESULT GetMaxLength(PWSTR pszName, out int32 piMaxNameLen) mut => VT.GetMaxLength(ref this, pszName, out piMaxNameLen);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8461,54 +7529,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDisplayName(PWSTR pszDisplayName) mut
-			{
-				return VT.SetDisplayName(ref this, pszDisplayName);
-			}
-			public HRESULT SetFolderTypeID(Guid ftid) mut
-			{
-				return VT.SetFolderTypeID(ref this, ftid);
-			}
-			public HRESULT SetFolderLogicalViewMode(FOLDERLOGICALVIEWMODE flvm) mut
-			{
-				return VT.SetFolderLogicalViewMode(ref this, flvm);
-			}
-			public HRESULT SetIconSize(int32 iIconSize) mut
-			{
-				return VT.SetIconSize(ref this, iIconSize);
-			}
-			public HRESULT SetVisibleColumns(uint32 cVisibleColumns, PROPERTYKEY* rgKey) mut
-			{
-				return VT.SetVisibleColumns(ref this, cVisibleColumns, rgKey);
-			}
-			public HRESULT SetSortColumns(uint32 cSortColumns, SORTCOLUMN* rgSortColumns) mut
-			{
-				return VT.SetSortColumns(ref this, cSortColumns, rgSortColumns);
-			}
-			public HRESULT SetGroupColumn(in PROPERTYKEY keyGroup) mut
-			{
-				return VT.SetGroupColumn(ref this, keyGroup);
-			}
-			public HRESULT SetStacks(uint32 cStackKeys, PROPERTYKEY* rgStackKeys) mut
-			{
-				return VT.SetStacks(ref this, cStackKeys, rgStackKeys);
-			}
-			public HRESULT SetScope(ref IShellItemArray psiaScope) mut
-			{
-				return VT.SetScope(ref this, ref psiaScope);
-			}
-			public HRESULT SetCondition(ref ICondition pCondition) mut
-			{
-				return VT.SetCondition(ref this, ref pCondition);
-			}
-			public HRESULT GetShellItem(in Guid riid, void** ppv) mut
-			{
-				return VT.GetShellItem(ref this, riid, ppv);
-			}
-			public HRESULT GetIDList(out ITEMIDLIST* ppidl) mut
-			{
-				return VT.GetIDList(ref this, out ppidl);
-			}
+			public HRESULT SetDisplayName(PWSTR pszDisplayName) mut => VT.SetDisplayName(ref this, pszDisplayName);
+			public HRESULT SetFolderTypeID(Guid ftid) mut => VT.SetFolderTypeID(ref this, ftid);
+			public HRESULT SetFolderLogicalViewMode(FOLDERLOGICALVIEWMODE flvm) mut => VT.SetFolderLogicalViewMode(ref this, flvm);
+			public HRESULT SetIconSize(int32 iIconSize) mut => VT.SetIconSize(ref this, iIconSize);
+			public HRESULT SetVisibleColumns(uint32 cVisibleColumns, PROPERTYKEY* rgKey) mut => VT.SetVisibleColumns(ref this, cVisibleColumns, rgKey);
+			public HRESULT SetSortColumns(uint32 cSortColumns, SORTCOLUMN* rgSortColumns) mut => VT.SetSortColumns(ref this, cSortColumns, rgSortColumns);
+			public HRESULT SetGroupColumn(in PROPERTYKEY keyGroup) mut => VT.SetGroupColumn(ref this, keyGroup);
+			public HRESULT SetStacks(uint32 cStackKeys, PROPERTYKEY* rgStackKeys) mut => VT.SetStacks(ref this, cStackKeys, rgStackKeys);
+			public HRESULT SetScope(ref IShellItemArray psiaScope) mut => VT.SetScope(ref this, ref psiaScope);
+			public HRESULT SetCondition(ref ICondition pCondition) mut => VT.SetCondition(ref this, ref pCondition);
+			public HRESULT GetShellItem(in Guid riid, void** ppv) mut => VT.GetShellItem(ref this, riid, ppv);
+			public HRESULT GetIDList(out ITEMIDLIST* ppidl) mut => VT.GetIDList(ref this, out ppidl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8533,14 +7566,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLocation(char16* pszPathBuffer, uint32 cch, out uint32 pdwPriority, in SIZE prgSize, uint32 dwRecClrDepth, out uint32 pdwFlags) mut
-			{
-				return VT.GetLocation(ref this, pszPathBuffer, cch, out pdwPriority, prgSize, dwRecClrDepth, out pdwFlags);
-			}
-			public HRESULT Extract(out HBITMAP phBmpThumbnail) mut
-			{
-				return VT.Extract(ref this, out phBmpThumbnail);
-			}
+			public HRESULT GetLocation(char16* pszPathBuffer, uint32 cch, out uint32 pdwPriority, in SIZE prgSize, uint32 dwRecClrDepth, out uint32 pdwFlags) mut => VT.GetLocation(ref this, pszPathBuffer, cch, out pdwPriority, prgSize, dwRecClrDepth, out pdwFlags);
+			public HRESULT Extract(out HBITMAP phBmpThumbnail) mut => VT.Extract(ref this, out phBmpThumbnail);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8555,10 +7583,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDateStamp(out FILETIME pDateStamp) mut
-			{
-				return VT.GetDateStamp(ref this, out pDateStamp);
-			}
+			public HRESULT GetDateStamp(out FILETIME pDateStamp) mut => VT.GetDateStamp(ref this, out pDateStamp);
+
 			[CRepr]
 			public struct VTable : IExtractImage.VTable
 			{
@@ -8572,10 +7598,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetThumbnailHandler(ref ITEMIDLIST pidlChild, ref IBindCtx pbc, in Guid riid, void** ppv) mut
-			{
-				return VT.GetThumbnailHandler(ref this, ref pidlChild, ref pbc, riid, ppv);
-			}
+			public HRESULT GetThumbnailHandler(ref ITEMIDLIST pidlChild, ref IBindCtx pbc, in Guid riid, void** ppv) mut => VT.GetThumbnailHandler(ref this, ref pidlChild, ref pbc, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8589,14 +7613,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetParentAndItem(ref ITEMIDLIST pidlParent, ref IShellFolder psf, ref ITEMIDLIST pidlChild) mut
-			{
-				return VT.SetParentAndItem(ref this, ref pidlParent, ref psf, ref pidlChild);
-			}
-			public HRESULT GetParentAndItem(ITEMIDLIST** ppidlParent, IShellFolder** ppsf, ITEMIDLIST** ppidlChild) mut
-			{
-				return VT.GetParentAndItem(ref this, ppidlParent, ppsf, ppidlChild);
-			}
+			public HRESULT SetParentAndItem(ref ITEMIDLIST pidlParent, ref IShellFolder psf, ref ITEMIDLIST pidlChild) mut => VT.SetParentAndItem(ref this, ref pidlParent, ref psf, ref pidlChild);
+			public HRESULT GetParentAndItem(ITEMIDLIST** ppidlParent, IShellFolder** ppsf, ITEMIDLIST** ppidlChild) mut => VT.GetParentAndItem(ref this, ppidlParent, ppsf, ppidlChild);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8611,18 +7630,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowDW(BOOL fShow) mut
-			{
-				return VT.ShowDW(ref this, fShow);
-			}
-			public HRESULT CloseDW(uint32 dwReserved) mut
-			{
-				return VT.CloseDW(ref this, dwReserved);
-			}
-			public HRESULT ResizeBorderDW(ref RECT prcBorder, ref IUnknown punkToolbarSite, BOOL fReserved) mut
-			{
-				return VT.ResizeBorderDW(ref this, ref prcBorder, ref punkToolbarSite, fReserved);
-			}
+			public HRESULT ShowDW(BOOL fShow) mut => VT.ShowDW(ref this, fShow);
+			public HRESULT CloseDW(uint32 dwReserved) mut => VT.CloseDW(ref this, dwReserved);
+			public HRESULT ResizeBorderDW(ref RECT prcBorder, ref IUnknown punkToolbarSite, BOOL fReserved) mut => VT.ResizeBorderDW(ref this, ref prcBorder, ref punkToolbarSite, fReserved);
+
 			[CRepr]
 			public struct VTable : IOleWindow.VTable
 			{
@@ -8638,10 +7649,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBandInfo(uint32 dwBandID, uint32 dwViewMode, out DESKBANDINFO pdbi) mut
-			{
-				return VT.GetBandInfo(ref this, dwBandID, dwViewMode, out pdbi);
-			}
+			public HRESULT GetBandInfo(uint32 dwBandID, uint32 dwViewMode, out DESKBANDINFO pdbi) mut => VT.GetBandInfo(ref this, dwBandID, dwViewMode, out pdbi);
+
 			[CRepr]
 			public struct VTable : IDockingWindow.VTable
 			{
@@ -8655,10 +7664,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDefaultBandWidth(uint32 dwBandID, uint32 dwViewMode, out int32 pnWidth) mut
-			{
-				return VT.GetDefaultBandWidth(ref this, dwBandID, dwViewMode, out pnWidth);
-			}
+			public HRESULT GetDefaultBandWidth(uint32 dwBandID, uint32 dwViewMode, out int32 pnWidth) mut => VT.GetDefaultBandWidth(ref this, dwBandID, dwViewMode, out pnWidth);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8672,26 +7679,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HrInit() mut
-			{
-				return VT.HrInit(ref this);
-			}
-			public HRESULT AddTab(HWND hwnd) mut
-			{
-				return VT.AddTab(ref this, hwnd);
-			}
-			public HRESULT DeleteTab(HWND hwnd) mut
-			{
-				return VT.DeleteTab(ref this, hwnd);
-			}
-			public HRESULT ActivateTab(HWND hwnd) mut
-			{
-				return VT.ActivateTab(ref this, hwnd);
-			}
-			public HRESULT SetActiveAlt(HWND hwnd) mut
-			{
-				return VT.SetActiveAlt(ref this, hwnd);
-			}
+			public HRESULT HrInit() mut => VT.HrInit(ref this);
+			public HRESULT AddTab(HWND hwnd) mut => VT.AddTab(ref this, hwnd);
+			public HRESULT DeleteTab(HWND hwnd) mut => VT.DeleteTab(ref this, hwnd);
+			public HRESULT ActivateTab(HWND hwnd) mut => VT.ActivateTab(ref this, hwnd);
+			public HRESULT SetActiveAlt(HWND hwnd) mut => VT.SetActiveAlt(ref this, hwnd);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8709,10 +7702,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen) mut
-			{
-				return VT.MarkFullscreenWindow(ref this, hwnd, fFullscreen);
-			}
+			public HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen) mut => VT.MarkFullscreenWindow(ref this, hwnd, fFullscreen);
+
 			[CRepr]
 			public struct VTable : ITaskbarList.VTable
 			{
@@ -8726,54 +7717,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProgressValue(HWND hwnd, uint64 ullCompleted, uint64 ullTotal) mut
-			{
-				return VT.SetProgressValue(ref this, hwnd, ullCompleted, ullTotal);
-			}
-			public HRESULT SetProgressState(HWND hwnd, TBPFLAG tbpFlags) mut
-			{
-				return VT.SetProgressState(ref this, hwnd, tbpFlags);
-			}
-			public HRESULT RegisterTab(HWND hwndTab, HWND hwndMDI) mut
-			{
-				return VT.RegisterTab(ref this, hwndTab, hwndMDI);
-			}
-			public HRESULT UnregisterTab(HWND hwndTab) mut
-			{
-				return VT.UnregisterTab(ref this, hwndTab);
-			}
-			public HRESULT SetTabOrder(HWND hwndTab, HWND hwndInsertBefore) mut
-			{
-				return VT.SetTabOrder(ref this, hwndTab, hwndInsertBefore);
-			}
-			public HRESULT SetTabActive(HWND hwndTab, HWND hwndMDI, uint32 dwReserved) mut
-			{
-				return VT.SetTabActive(ref this, hwndTab, hwndMDI, dwReserved);
-			}
-			public HRESULT ThumbBarAddButtons(HWND hwnd, uint32 cButtons, THUMBBUTTON* pButton) mut
-			{
-				return VT.ThumbBarAddButtons(ref this, hwnd, cButtons, pButton);
-			}
-			public HRESULT ThumbBarUpdateButtons(HWND hwnd, uint32 cButtons, THUMBBUTTON* pButton) mut
-			{
-				return VT.ThumbBarUpdateButtons(ref this, hwnd, cButtons, pButton);
-			}
-			public HRESULT ThumbBarSetImageList(HWND hwnd, HIMAGELIST himl) mut
-			{
-				return VT.ThumbBarSetImageList(ref this, hwnd, himl);
-			}
-			public HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, PWSTR pszDescription) mut
-			{
-				return VT.SetOverlayIcon(ref this, hwnd, hIcon, pszDescription);
-			}
-			public HRESULT SetThumbnailTooltip(HWND hwnd, PWSTR pszTip) mut
-			{
-				return VT.SetThumbnailTooltip(ref this, hwnd, pszTip);
-			}
-			public HRESULT SetThumbnailClip(HWND hwnd, ref RECT prcClip) mut
-			{
-				return VT.SetThumbnailClip(ref this, hwnd, ref prcClip);
-			}
+			public HRESULT SetProgressValue(HWND hwnd, uint64 ullCompleted, uint64 ullTotal) mut => VT.SetProgressValue(ref this, hwnd, ullCompleted, ullTotal);
+			public HRESULT SetProgressState(HWND hwnd, TBPFLAG tbpFlags) mut => VT.SetProgressState(ref this, hwnd, tbpFlags);
+			public HRESULT RegisterTab(HWND hwndTab, HWND hwndMDI) mut => VT.RegisterTab(ref this, hwndTab, hwndMDI);
+			public HRESULT UnregisterTab(HWND hwndTab) mut => VT.UnregisterTab(ref this, hwndTab);
+			public HRESULT SetTabOrder(HWND hwndTab, HWND hwndInsertBefore) mut => VT.SetTabOrder(ref this, hwndTab, hwndInsertBefore);
+			public HRESULT SetTabActive(HWND hwndTab, HWND hwndMDI, uint32 dwReserved) mut => VT.SetTabActive(ref this, hwndTab, hwndMDI, dwReserved);
+			public HRESULT ThumbBarAddButtons(HWND hwnd, uint32 cButtons, THUMBBUTTON* pButton) mut => VT.ThumbBarAddButtons(ref this, hwnd, cButtons, pButton);
+			public HRESULT ThumbBarUpdateButtons(HWND hwnd, uint32 cButtons, THUMBBUTTON* pButton) mut => VT.ThumbBarUpdateButtons(ref this, hwnd, cButtons, pButton);
+			public HRESULT ThumbBarSetImageList(HWND hwnd, HIMAGELIST himl) mut => VT.ThumbBarSetImageList(ref this, hwnd, himl);
+			public HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, PWSTR pszDescription) mut => VT.SetOverlayIcon(ref this, hwnd, hIcon, pszDescription);
+			public HRESULT SetThumbnailTooltip(HWND hwnd, PWSTR pszTip) mut => VT.SetThumbnailTooltip(ref this, hwnd, pszTip);
+			public HRESULT SetThumbnailClip(HWND hwnd, ref RECT prcClip) mut => VT.SetThumbnailClip(ref this, hwnd, ref prcClip);
+
 			[CRepr]
 			public struct VTable : ITaskbarList2.VTable
 			{
@@ -8798,10 +7754,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTabProperties(HWND hwndTab, STPFLAG stpFlags) mut
-			{
-				return VT.SetTabProperties(ref this, hwndTab, stpFlags);
-			}
+			public HRESULT SetTabProperties(HWND hwndTab, STPFLAG stpFlags) mut => VT.SetTabProperties(ref this, hwndTab, stpFlags);
+
 			[CRepr]
 			public struct VTable : ITaskbarList3.VTable
 			{
@@ -8815,22 +7769,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnNavigationPending(ref ITEMIDLIST pidlFolder) mut
-			{
-				return VT.OnNavigationPending(ref this, ref pidlFolder);
-			}
-			public HRESULT OnViewCreated(ref IShellView psv) mut
-			{
-				return VT.OnViewCreated(ref this, ref psv);
-			}
-			public HRESULT OnNavigationComplete(ref ITEMIDLIST pidlFolder) mut
-			{
-				return VT.OnNavigationComplete(ref this, ref pidlFolder);
-			}
-			public HRESULT OnNavigationFailed(ref ITEMIDLIST pidlFolder) mut
-			{
-				return VT.OnNavigationFailed(ref this, ref pidlFolder);
-			}
+			public HRESULT OnNavigationPending(ref ITEMIDLIST pidlFolder) mut => VT.OnNavigationPending(ref this, ref pidlFolder);
+			public HRESULT OnViewCreated(ref IShellView psv) mut => VT.OnViewCreated(ref this, ref psv);
+			public HRESULT OnNavigationComplete(ref ITEMIDLIST pidlFolder) mut => VT.OnNavigationComplete(ref this, ref pidlFolder);
+			public HRESULT OnNavigationFailed(ref ITEMIDLIST pidlFolder) mut => VT.OnNavigationFailed(ref this, ref pidlFolder);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8847,66 +7790,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HWND hwndParent, in RECT prc, FOLDERSETTINGS* pfs) mut
-			{
-				return VT.Initialize(ref this, hwndParent, prc, pfs);
-			}
-			public HRESULT Destroy() mut
-			{
-				return VT.Destroy(ref this);
-			}
-			public HRESULT SetRect(int* phdwp, RECT rcBrowser) mut
-			{
-				return VT.SetRect(ref this, phdwp, rcBrowser);
-			}
-			public HRESULT SetPropertyBag(PWSTR pszPropertyBag) mut
-			{
-				return VT.SetPropertyBag(ref this, pszPropertyBag);
-			}
-			public HRESULT SetEmptyText(PWSTR pszEmptyText) mut
-			{
-				return VT.SetEmptyText(ref this, pszEmptyText);
-			}
-			public HRESULT SetFolderSettings(in FOLDERSETTINGS pfs) mut
-			{
-				return VT.SetFolderSettings(ref this, pfs);
-			}
-			public HRESULT Advise(ref IExplorerBrowserEvents psbe, out uint32 pdwCookie) mut
-			{
-				return VT.Advise(ref this, ref psbe, out pdwCookie);
-			}
-			public HRESULT Unadvise(uint32 dwCookie) mut
-			{
-				return VT.Unadvise(ref this, dwCookie);
-			}
-			public HRESULT SetOptions(EXPLORER_BROWSER_OPTIONS dwFlag) mut
-			{
-				return VT.SetOptions(ref this, dwFlag);
-			}
-			public HRESULT GetOptions(out EXPLORER_BROWSER_OPTIONS pdwFlag) mut
-			{
-				return VT.GetOptions(ref this, out pdwFlag);
-			}
-			public HRESULT BrowseToIDList(ref ITEMIDLIST pidl, uint32 uFlags) mut
-			{
-				return VT.BrowseToIDList(ref this, ref pidl, uFlags);
-			}
-			public HRESULT BrowseToObject(ref IUnknown punk, uint32 uFlags) mut
-			{
-				return VT.BrowseToObject(ref this, ref punk, uFlags);
-			}
-			public HRESULT FillFromObject(ref IUnknown punk, EXPLORER_BROWSER_FILL_FLAGS dwFlags) mut
-			{
-				return VT.FillFromObject(ref this, ref punk, dwFlags);
-			}
-			public HRESULT RemoveAll() mut
-			{
-				return VT.RemoveAll(ref this);
-			}
-			public HRESULT GetCurrentView(in Guid riid, void** ppv) mut
-			{
-				return VT.GetCurrentView(ref this, riid, ppv);
-			}
+			public HRESULT Initialize(HWND hwndParent, in RECT prc, FOLDERSETTINGS* pfs) mut => VT.Initialize(ref this, hwndParent, prc, pfs);
+			public HRESULT Destroy() mut => VT.Destroy(ref this);
+			public HRESULT SetRect(int* phdwp, RECT rcBrowser) mut => VT.SetRect(ref this, phdwp, rcBrowser);
+			public HRESULT SetPropertyBag(PWSTR pszPropertyBag) mut => VT.SetPropertyBag(ref this, pszPropertyBag);
+			public HRESULT SetEmptyText(PWSTR pszEmptyText) mut => VT.SetEmptyText(ref this, pszEmptyText);
+			public HRESULT SetFolderSettings(in FOLDERSETTINGS pfs) mut => VT.SetFolderSettings(ref this, pfs);
+			public HRESULT Advise(ref IExplorerBrowserEvents psbe, out uint32 pdwCookie) mut => VT.Advise(ref this, ref psbe, out pdwCookie);
+			public HRESULT Unadvise(uint32 dwCookie) mut => VT.Unadvise(ref this, dwCookie);
+			public HRESULT SetOptions(EXPLORER_BROWSER_OPTIONS dwFlag) mut => VT.SetOptions(ref this, dwFlag);
+			public HRESULT GetOptions(out EXPLORER_BROWSER_OPTIONS pdwFlag) mut => VT.GetOptions(ref this, out pdwFlag);
+			public HRESULT BrowseToIDList(ref ITEMIDLIST pidl, uint32 uFlags) mut => VT.BrowseToIDList(ref this, ref pidl, uFlags);
+			public HRESULT BrowseToObject(ref IUnknown punk, uint32 uFlags) mut => VT.BrowseToObject(ref this, ref punk, uFlags);
+			public HRESULT FillFromObject(ref IUnknown punk, EXPLORER_BROWSER_FILL_FLAGS dwFlags) mut => VT.FillFromObject(ref this, ref punk, dwFlags);
+			public HRESULT RemoveAll() mut => VT.RemoveAll(ref this);
+			public HRESULT GetCurrentView(in Guid riid, void** ppv) mut => VT.GetCurrentView(ref this, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8934,22 +7833,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, in Guid riid, void** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, riid, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumObjects* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, in Guid riid, void** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, riid, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumObjects* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8966,50 +7854,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartProgressDialog(HWND hwndOwner, uint32 flags) mut
-			{
-				return VT.StartProgressDialog(ref this, hwndOwner, flags);
-			}
-			public HRESULT StopProgressDialog() mut
-			{
-				return VT.StopProgressDialog(ref this);
-			}
-			public HRESULT SetOperation(SPACTION action) mut
-			{
-				return VT.SetOperation(ref this, action);
-			}
-			public HRESULT SetMode(uint32 mode) mut
-			{
-				return VT.SetMode(ref this, mode);
-			}
-			public HRESULT UpdateProgress(uint64 ullPointsCurrent, uint64 ullPointsTotal, uint64 ullSizeCurrent, uint64 ullSizeTotal, uint64 ullItemsCurrent, uint64 ullItemsTotal) mut
-			{
-				return VT.UpdateProgress(ref this, ullPointsCurrent, ullPointsTotal, ullSizeCurrent, ullSizeTotal, ullItemsCurrent, ullItemsTotal);
-			}
-			public HRESULT UpdateLocations(ref IShellItem psiSource, ref IShellItem psiTarget, ref IShellItem psiItem) mut
-			{
-				return VT.UpdateLocations(ref this, ref psiSource, ref psiTarget, ref psiItem);
-			}
-			public HRESULT ResetTimer() mut
-			{
-				return VT.ResetTimer(ref this);
-			}
-			public HRESULT PauseTimer() mut
-			{
-				return VT.PauseTimer(ref this);
-			}
-			public HRESULT ResumeTimer() mut
-			{
-				return VT.ResumeTimer(ref this);
-			}
-			public HRESULT GetMilliseconds(out uint64 pullElapsed, out uint64 pullRemaining) mut
-			{
-				return VT.GetMilliseconds(ref this, out pullElapsed, out pullRemaining);
-			}
-			public HRESULT GetOperationStatus(out PDOPSTATUS popstatus) mut
-			{
-				return VT.GetOperationStatus(ref this, out popstatus);
-			}
+			public HRESULT StartProgressDialog(HWND hwndOwner, uint32 flags) mut => VT.StartProgressDialog(ref this, hwndOwner, flags);
+			public HRESULT StopProgressDialog() mut => VT.StopProgressDialog(ref this);
+			public HRESULT SetOperation(SPACTION action) mut => VT.SetOperation(ref this, action);
+			public HRESULT SetMode(uint32 mode) mut => VT.SetMode(ref this, mode);
+			public HRESULT UpdateProgress(uint64 ullPointsCurrent, uint64 ullPointsTotal, uint64 ullSizeCurrent, uint64 ullSizeTotal, uint64 ullItemsCurrent, uint64 ullItemsTotal) mut => VT.UpdateProgress(ref this, ullPointsCurrent, ullPointsTotal, ullSizeCurrent, ullSizeTotal, ullItemsCurrent, ullItemsTotal);
+			public HRESULT UpdateLocations(ref IShellItem psiSource, ref IShellItem psiTarget, ref IShellItem psiItem) mut => VT.UpdateLocations(ref this, ref psiSource, ref psiTarget, ref psiItem);
+			public HRESULT ResetTimer() mut => VT.ResetTimer(ref this);
+			public HRESULT PauseTimer() mut => VT.PauseTimer(ref this);
+			public HRESULT ResumeTimer() mut => VT.ResumeTimer(ref this);
+			public HRESULT GetMilliseconds(out uint64 pullElapsed, out uint64 pullRemaining) mut => VT.GetMilliseconds(ref this, out pullElapsed, out pullRemaining);
+			public HRESULT GetOperationStatus(out PDOPSTATUS popstatus) mut => VT.GetOperationStatus(ref this, out popstatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9033,14 +7889,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetCancelInformation(uint32 dwThreadID, uint32 uMsgCancel) mut
-			{
-				return VT.SetCancelInformation(ref this, dwThreadID, uMsgCancel);
-			}
-			public HRESULT GetCancelInformation(uint32* pdwThreadID, uint32* puMsgCancel) mut
-			{
-				return VT.GetCancelInformation(ref this, pdwThreadID, puMsgCancel);
-			}
+			public HRESULT SetCancelInformation(uint32 dwThreadID, uint32 uMsgCancel) mut => VT.SetCancelInformation(ref this, dwThreadID, uMsgCancel);
+			public HRESULT GetCancelInformation(uint32* pdwThreadID, uint32* puMsgCancel) mut => VT.GetCancelInformation(ref this, pdwThreadID, puMsgCancel);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9055,86 +7906,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Advise(ref IFileOperationProgressSink pfops, out uint32 pdwCookie) mut
-			{
-				return VT.Advise(ref this, ref pfops, out pdwCookie);
-			}
-			public HRESULT Unadvise(uint32 dwCookie) mut
-			{
-				return VT.Unadvise(ref this, dwCookie);
-			}
-			public HRESULT SetOperationFlags(uint32 dwOperationFlags) mut
-			{
-				return VT.SetOperationFlags(ref this, dwOperationFlags);
-			}
-			public HRESULT SetProgressMessage(PWSTR pszMessage) mut
-			{
-				return VT.SetProgressMessage(ref this, pszMessage);
-			}
-			public HRESULT SetProgressDialog(ref IOperationsProgressDialog popd) mut
-			{
-				return VT.SetProgressDialog(ref this, ref popd);
-			}
-			public HRESULT SetProperties(ref IPropertyChangeArray pproparray) mut
-			{
-				return VT.SetProperties(ref this, ref pproparray);
-			}
-			public HRESULT SetOwnerWindow(HWND hwndOwner) mut
-			{
-				return VT.SetOwnerWindow(ref this, hwndOwner);
-			}
-			public HRESULT ApplyPropertiesToItem(ref IShellItem psiItem) mut
-			{
-				return VT.ApplyPropertiesToItem(ref this, ref psiItem);
-			}
-			public HRESULT ApplyPropertiesToItems(ref IUnknown punkItems) mut
-			{
-				return VT.ApplyPropertiesToItems(ref this, ref punkItems);
-			}
-			public HRESULT RenameItem(ref IShellItem psiItem, PWSTR pszNewName, ref IFileOperationProgressSink pfopsItem) mut
-			{
-				return VT.RenameItem(ref this, ref psiItem, pszNewName, ref pfopsItem);
-			}
-			public HRESULT RenameItems(ref IUnknown pUnkItems, PWSTR pszNewName) mut
-			{
-				return VT.RenameItems(ref this, ref pUnkItems, pszNewName);
-			}
-			public HRESULT MoveItem(ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName, ref IFileOperationProgressSink pfopsItem) mut
-			{
-				return VT.MoveItem(ref this, ref psiItem, ref psiDestinationFolder, pszNewName, ref pfopsItem);
-			}
-			public HRESULT MoveItems(ref IUnknown punkItems, ref IShellItem psiDestinationFolder) mut
-			{
-				return VT.MoveItems(ref this, ref punkItems, ref psiDestinationFolder);
-			}
-			public HRESULT CopyItem(ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszCopyName, ref IFileOperationProgressSink pfopsItem) mut
-			{
-				return VT.CopyItem(ref this, ref psiItem, ref psiDestinationFolder, pszCopyName, ref pfopsItem);
-			}
-			public HRESULT CopyItems(ref IUnknown punkItems, ref IShellItem psiDestinationFolder) mut
-			{
-				return VT.CopyItems(ref this, ref punkItems, ref psiDestinationFolder);
-			}
-			public HRESULT DeleteItem(ref IShellItem psiItem, ref IFileOperationProgressSink pfopsItem) mut
-			{
-				return VT.DeleteItem(ref this, ref psiItem, ref pfopsItem);
-			}
-			public HRESULT DeleteItems(ref IUnknown punkItems) mut
-			{
-				return VT.DeleteItems(ref this, ref punkItems);
-			}
-			public HRESULT NewItem(ref IShellItem psiDestinationFolder, uint32 dwFileAttributes, PWSTR pszName, PWSTR pszTemplateName, ref IFileOperationProgressSink pfopsItem) mut
-			{
-				return VT.NewItem(ref this, ref psiDestinationFolder, dwFileAttributes, pszName, pszTemplateName, ref pfopsItem);
-			}
-			public HRESULT PerformOperations() mut
-			{
-				return VT.PerformOperations(ref this);
-			}
-			public HRESULT GetAnyOperationsAborted(out BOOL pfAnyOperationsAborted) mut
-			{
-				return VT.GetAnyOperationsAborted(ref this, out pfAnyOperationsAborted);
-			}
+			public HRESULT Advise(ref IFileOperationProgressSink pfops, out uint32 pdwCookie) mut => VT.Advise(ref this, ref pfops, out pdwCookie);
+			public HRESULT Unadvise(uint32 dwCookie) mut => VT.Unadvise(ref this, dwCookie);
+			public HRESULT SetOperationFlags(uint32 dwOperationFlags) mut => VT.SetOperationFlags(ref this, dwOperationFlags);
+			public HRESULT SetProgressMessage(PWSTR pszMessage) mut => VT.SetProgressMessage(ref this, pszMessage);
+			public HRESULT SetProgressDialog(ref IOperationsProgressDialog popd) mut => VT.SetProgressDialog(ref this, ref popd);
+			public HRESULT SetProperties(ref IPropertyChangeArray pproparray) mut => VT.SetProperties(ref this, ref pproparray);
+			public HRESULT SetOwnerWindow(HWND hwndOwner) mut => VT.SetOwnerWindow(ref this, hwndOwner);
+			public HRESULT ApplyPropertiesToItem(ref IShellItem psiItem) mut => VT.ApplyPropertiesToItem(ref this, ref psiItem);
+			public HRESULT ApplyPropertiesToItems(ref IUnknown punkItems) mut => VT.ApplyPropertiesToItems(ref this, ref punkItems);
+			public HRESULT RenameItem(ref IShellItem psiItem, PWSTR pszNewName, ref IFileOperationProgressSink pfopsItem) mut => VT.RenameItem(ref this, ref psiItem, pszNewName, ref pfopsItem);
+			public HRESULT RenameItems(ref IUnknown pUnkItems, PWSTR pszNewName) mut => VT.RenameItems(ref this, ref pUnkItems, pszNewName);
+			public HRESULT MoveItem(ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszNewName, ref IFileOperationProgressSink pfopsItem) mut => VT.MoveItem(ref this, ref psiItem, ref psiDestinationFolder, pszNewName, ref pfopsItem);
+			public HRESULT MoveItems(ref IUnknown punkItems, ref IShellItem psiDestinationFolder) mut => VT.MoveItems(ref this, ref punkItems, ref psiDestinationFolder);
+			public HRESULT CopyItem(ref IShellItem psiItem, ref IShellItem psiDestinationFolder, PWSTR pszCopyName, ref IFileOperationProgressSink pfopsItem) mut => VT.CopyItem(ref this, ref psiItem, ref psiDestinationFolder, pszCopyName, ref pfopsItem);
+			public HRESULT CopyItems(ref IUnknown punkItems, ref IShellItem psiDestinationFolder) mut => VT.CopyItems(ref this, ref punkItems, ref psiDestinationFolder);
+			public HRESULT DeleteItem(ref IShellItem psiItem, ref IFileOperationProgressSink pfopsItem) mut => VT.DeleteItem(ref this, ref psiItem, ref pfopsItem);
+			public HRESULT DeleteItems(ref IUnknown punkItems) mut => VT.DeleteItems(ref this, ref punkItems);
+			public HRESULT NewItem(ref IShellItem psiDestinationFolder, uint32 dwFileAttributes, PWSTR pszName, PWSTR pszTemplateName, ref IFileOperationProgressSink pfopsItem) mut => VT.NewItem(ref this, ref psiDestinationFolder, dwFileAttributes, pszName, pszTemplateName, ref pfopsItem);
+			public HRESULT PerformOperations() mut => VT.PerformOperations(ref this);
+			public HRESULT GetAnyOperationsAborted(out BOOL pfAnyOperationsAborted) mut => VT.GetAnyOperationsAborted(ref this, out pfAnyOperationsAborted);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9167,10 +7959,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOperationFlags2(FILE_OPERATION_FLAGS2 operationFlags2) mut
-			{
-				return VT.SetOperationFlags2(ref this, operationFlags2);
-			}
+			public HRESULT SetOperationFlags2(FILE_OPERATION_FLAGS2 operationFlags2) mut => VT.SetOperationFlags2(ref this, operationFlags2);
+
 			[CRepr]
 			public struct VTable : IFileOperation.VTable
 			{
@@ -9184,10 +7974,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryObject(in Guid guidObject, in Guid riid, void** ppvOut) mut
-			{
-				return VT.QueryObject(ref this, guidObject, riid, ppvOut);
-			}
+			public HRESULT QueryObject(in Guid guidObject, in Guid riid, void** ppvOut) mut => VT.QueryObject(ref this, guidObject, riid, ppvOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9201,22 +7989,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FoundItem(ref IShellFolder psf, ref ITEMIDLIST pidl) mut
-			{
-				return VT.FoundItem(ref this, ref psf, ref pidl);
-			}
-			public HRESULT EnterFolder(ref IShellFolder psf, ref ITEMIDLIST pidl) mut
-			{
-				return VT.EnterFolder(ref this, ref psf, ref pidl);
-			}
-			public HRESULT LeaveFolder(ref IShellFolder psf, ref ITEMIDLIST pidl) mut
-			{
-				return VT.LeaveFolder(ref this, ref psf, ref pidl);
-			}
-			public HRESULT InitializeProgressDialog(out PWSTR ppszTitle, out PWSTR ppszCancel) mut
-			{
-				return VT.InitializeProgressDialog(ref this, out ppszTitle, out ppszCancel);
-			}
+			public HRESULT FoundItem(ref IShellFolder psf, ref ITEMIDLIST pidl) mut => VT.FoundItem(ref this, ref psf, ref pidl);
+			public HRESULT EnterFolder(ref IShellFolder psf, ref ITEMIDLIST pidl) mut => VT.EnterFolder(ref this, ref psf, ref pidl);
+			public HRESULT LeaveFolder(ref IShellFolder psf, ref ITEMIDLIST pidl) mut => VT.LeaveFolder(ref this, ref psf, ref pidl);
+			public HRESULT InitializeProgressDialog(out PWSTR ppszTitle, out PWSTR ppszCancel) mut => VT.InitializeProgressDialog(ref this, out ppszTitle, out ppszCancel);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9233,10 +8010,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WalkComplete(HRESULT hr) mut
-			{
-				return VT.WalkComplete(ref this, hr);
-			}
+			public HRESULT WalkComplete(HRESULT hr) mut => VT.WalkComplete(ref this, hr);
+
 			[CRepr]
 			public struct VTable : INamespaceWalkCB.VTable
 			{
@@ -9250,14 +8025,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Walk(ref IUnknown punkToWalk, uint32 dwFlags, int32 cDepth, ref INamespaceWalkCB pnswcb) mut
-			{
-				return VT.Walk(ref this, ref punkToWalk, dwFlags, cDepth, ref pnswcb);
-			}
-			public HRESULT GetIDArrayResult(out uint32 pcItems, ITEMIDLIST*** prgpidl) mut
-			{
-				return VT.GetIDArrayResult(ref this, out pcItems, prgpidl);
-			}
+			public HRESULT Walk(ref IUnknown punkToWalk, uint32 dwFlags, int32 cDepth, ref INamespaceWalkCB pnswcb) mut => VT.Walk(ref this, ref punkToWalk, dwFlags, cDepth, ref pnswcb);
+			public HRESULT GetIDArrayResult(out uint32 pcItems, ITEMIDLIST*** prgpidl) mut => VT.GetIDArrayResult(ref this, out pcItems, prgpidl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9272,38 +8042,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddBand(ref IUnknown punk) mut
-			{
-				return VT.AddBand(ref this, ref punk);
-			}
-			public HRESULT EnumBands(uint32 uBand, out uint32 pdwBandID) mut
-			{
-				return VT.EnumBands(ref this, uBand, out pdwBandID);
-			}
-			public HRESULT QueryBand(uint32 dwBandID, IDeskBand** ppstb, uint32* pdwState, char16* pszName, int32 cchName) mut
-			{
-				return VT.QueryBand(ref this, dwBandID, ppstb, pdwState, pszName, cchName);
-			}
-			public HRESULT SetBandState(uint32 dwBandID, uint32 dwMask, uint32 dwState) mut
-			{
-				return VT.SetBandState(ref this, dwBandID, dwMask, dwState);
-			}
-			public HRESULT RemoveBand(uint32 dwBandID) mut
-			{
-				return VT.RemoveBand(ref this, dwBandID);
-			}
-			public HRESULT GetBandObject(uint32 dwBandID, in Guid riid, void** ppv) mut
-			{
-				return VT.GetBandObject(ref this, dwBandID, riid, ppv);
-			}
-			public HRESULT SetBandSiteInfo(in BANDSITEINFO pbsinfo) mut
-			{
-				return VT.SetBandSiteInfo(ref this, pbsinfo);
-			}
-			public HRESULT GetBandSiteInfo(out BANDSITEINFO pbsinfo) mut
-			{
-				return VT.GetBandSiteInfo(ref this, out pbsinfo);
-			}
+			public HRESULT AddBand(ref IUnknown punk) mut => VT.AddBand(ref this, ref punk);
+			public HRESULT EnumBands(uint32 uBand, out uint32 pdwBandID) mut => VT.EnumBands(ref this, uBand, out pdwBandID);
+			public HRESULT QueryBand(uint32 dwBandID, IDeskBand** ppstb, uint32* pdwState, char16* pszName, int32 cchName) mut => VT.QueryBand(ref this, dwBandID, ppstb, pdwState, pszName, cchName);
+			public HRESULT SetBandState(uint32 dwBandID, uint32 dwMask, uint32 dwState) mut => VT.SetBandState(ref this, dwBandID, dwMask, dwState);
+			public HRESULT RemoveBand(uint32 dwBandID) mut => VT.RemoveBand(ref this, dwBandID);
+			public HRESULT GetBandObject(uint32 dwBandID, in Guid riid, void** ppv) mut => VT.GetBandObject(ref this, dwBandID, riid, ppv);
+			public HRESULT SetBandSiteInfo(in BANDSITEINFO pbsinfo) mut => VT.SetBandSiteInfo(ref this, pbsinfo);
+			public HRESULT GetBandSiteInfo(out BANDSITEINFO pbsinfo) mut => VT.GetBandSiteInfo(ref this, out pbsinfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9324,10 +8071,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Show(HWND hwndOwner) mut
-			{
-				return VT.Show(ref this, hwndOwner);
-			}
+			public HRESULT Show(HWND hwndOwner) mut => VT.Show(ref this, hwndOwner);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9341,10 +8086,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DoContextMenuPopup(ref IUnknown punkContextMenu, uint32 fFlags, POINT pt) mut
-			{
-				return VT.DoContextMenuPopup(ref this, ref punkContextMenu, fFlags, pt);
-			}
+			public HRESULT DoContextMenuPopup(ref IUnknown punkContextMenu, uint32 fFlags, POINT pt) mut => VT.DoContextMenuPopup(ref this, ref punkContextMenu, fFlags, pt);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9358,14 +8101,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsMenuMessage(ref MSG pmsg) mut
-			{
-				return VT.IsMenuMessage(ref this, ref pmsg);
-			}
-			public HRESULT TranslateMenuMessage(out MSG pmsg, out LRESULT plRet) mut
-			{
-				return VT.TranslateMenuMessage(ref this, out pmsg, out plRet);
-			}
+			public HRESULT IsMenuMessage(ref MSG pmsg) mut => VT.IsMenuMessage(ref this, ref pmsg);
+			public HRESULT TranslateMenuMessage(out MSG pmsg, out LRESULT plRet) mut => VT.TranslateMenuMessage(ref this, out pmsg, out plRet);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9380,14 +8118,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCheckState(out BOOL pbCheck) mut
-			{
-				return VT.GetCheckState(ref this, out pbCheck);
-			}
-			public HRESULT SetCheckState(BOOL bCheck) mut
-			{
-				return VT.SetCheckState(ref this, bCheck);
-			}
+			public HRESULT GetCheckState(out BOOL pbCheck) mut => VT.GetCheckState(ref this, out pbCheck);
+			public HRESULT SetCheckState(BOOL bCheck) mut => VT.SetCheckState(ref this, bCheck);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9402,18 +8135,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetClient(IUnknown* punkClient) mut
-			{
-				return VT.SetClient(ref this, punkClient);
-			}
-			public HRESULT GetClient(out IUnknown* ppunkClient) mut
-			{
-				return VT.GetClient(ref this, out ppunkClient);
-			}
-			public HRESULT OnPosRectChangeDB(ref RECT prc) mut
-			{
-				return VT.OnPosRectChangeDB(ref this, ref prc);
-			}
+			public HRESULT SetClient(IUnknown* punkClient) mut => VT.SetClient(ref this, punkClient);
+			public HRESULT GetClient(out IUnknown* ppunkClient) mut => VT.GetClient(ref this, out ppunkClient);
+			public HRESULT OnPosRectChangeDB(ref RECT prc) mut => VT.OnPosRectChangeDB(ref this, ref prc);
+
 			[CRepr]
 			public struct VTable : IOleWindow.VTable
 			{
@@ -9429,18 +8154,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Popup(ref POINTL ppt, RECTL* prcExclude, int32 dwFlags) mut
-			{
-				return VT.Popup(ref this, ref ppt, prcExclude, dwFlags);
-			}
-			public HRESULT OnSelect(uint32 dwSelectType) mut
-			{
-				return VT.OnSelect(ref this, dwSelectType);
-			}
-			public HRESULT SetSubMenu(ref IMenuPopup pmp, BOOL fSet) mut
-			{
-				return VT.SetSubMenu(ref this, ref pmp, fSet);
-			}
+			public HRESULT Popup(ref POINTL ppt, RECTL* prcExclude, int32 dwFlags) mut => VT.Popup(ref this, ref ppt, prcExclude, dwFlags);
+			public HRESULT OnSelect(uint32 dwSelectType) mut => VT.OnSelect(ref this, dwSelectType);
+			public HRESULT SetSubMenu(ref IMenuPopup pmp, BOOL fSet) mut => VT.SetSubMenu(ref this, ref pmp, fSet);
+
 			[CRepr]
 			public struct VTable : IDeskBar.VTable
 			{
@@ -9456,26 +8173,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAppName(out PWSTR ppszName) mut
-			{
-				return VT.GetAppName(ref this, out ppszName);
-			}
-			public HRESULT GetUsage(out FILE_USAGE_TYPE pfut) mut
-			{
-				return VT.GetUsage(ref this, out pfut);
-			}
-			public HRESULT GetCapabilities(out uint32 pdwCapFlags) mut
-			{
-				return VT.GetCapabilities(ref this, out pdwCapFlags);
-			}
-			public HRESULT GetSwitchToHWND(out HWND phwnd) mut
-			{
-				return VT.GetSwitchToHWND(ref this, out phwnd);
-			}
-			public HRESULT CloseFile() mut
-			{
-				return VT.CloseFile(ref this);
-			}
+			public HRESULT GetAppName(out PWSTR ppszName) mut => VT.GetAppName(ref this, out ppszName);
+			public HRESULT GetUsage(out FILE_USAGE_TYPE pfut) mut => VT.GetUsage(ref this, out pfut);
+			public HRESULT GetCapabilities(out uint32 pdwCapFlags) mut => VT.GetCapabilities(ref this, out pdwCapFlags);
+			public HRESULT GetSwitchToHWND(out HWND phwnd) mut => VT.GetSwitchToHWND(ref this, out phwnd);
+			public HRESULT CloseFile() mut => VT.CloseFile(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9493,34 +8196,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnFileOk(ref IFileDialog pfd) mut
-			{
-				return VT.OnFileOk(ref this, ref pfd);
-			}
-			public HRESULT OnFolderChanging(ref IFileDialog pfd, ref IShellItem psiFolder) mut
-			{
-				return VT.OnFolderChanging(ref this, ref pfd, ref psiFolder);
-			}
-			public HRESULT OnFolderChange(ref IFileDialog pfd) mut
-			{
-				return VT.OnFolderChange(ref this, ref pfd);
-			}
-			public HRESULT OnSelectionChange(ref IFileDialog pfd) mut
-			{
-				return VT.OnSelectionChange(ref this, ref pfd);
-			}
-			public HRESULT OnShareViolation(ref IFileDialog pfd, ref IShellItem psi, out FDE_SHAREVIOLATION_RESPONSE pResponse) mut
-			{
-				return VT.OnShareViolation(ref this, ref pfd, ref psi, out pResponse);
-			}
-			public HRESULT OnTypeChange(ref IFileDialog pfd) mut
-			{
-				return VT.OnTypeChange(ref this, ref pfd);
-			}
-			public HRESULT OnOverwrite(ref IFileDialog pfd, ref IShellItem psi, out FDE_OVERWRITE_RESPONSE pResponse) mut
-			{
-				return VT.OnOverwrite(ref this, ref pfd, ref psi, out pResponse);
-			}
+			public HRESULT OnFileOk(ref IFileDialog pfd) mut => VT.OnFileOk(ref this, ref pfd);
+			public HRESULT OnFolderChanging(ref IFileDialog pfd, ref IShellItem psiFolder) mut => VT.OnFolderChanging(ref this, ref pfd, ref psiFolder);
+			public HRESULT OnFolderChange(ref IFileDialog pfd) mut => VT.OnFolderChange(ref this, ref pfd);
+			public HRESULT OnSelectionChange(ref IFileDialog pfd) mut => VT.OnSelectionChange(ref this, ref pfd);
+			public HRESULT OnShareViolation(ref IFileDialog pfd, ref IShellItem psi, out FDE_SHAREVIOLATION_RESPONSE pResponse) mut => VT.OnShareViolation(ref this, ref pfd, ref psi, out pResponse);
+			public HRESULT OnTypeChange(ref IFileDialog pfd) mut => VT.OnTypeChange(ref this, ref pfd);
+			public HRESULT OnOverwrite(ref IFileDialog pfd, ref IShellItem psi, out FDE_OVERWRITE_RESPONSE pResponse) mut => VT.OnOverwrite(ref this, ref pfd, ref psi, out pResponse);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9540,98 +8223,30 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFileTypes(uint32 cFileTypes, COMDLG_FILTERSPEC* rgFilterSpec) mut
-			{
-				return VT.SetFileTypes(ref this, cFileTypes, rgFilterSpec);
-			}
-			public HRESULT SetFileTypeIndex(uint32 iFileType) mut
-			{
-				return VT.SetFileTypeIndex(ref this, iFileType);
-			}
-			public HRESULT GetFileTypeIndex(out uint32 piFileType) mut
-			{
-				return VT.GetFileTypeIndex(ref this, out piFileType);
-			}
-			public HRESULT Advise(ref IFileDialogEvents pfde, out uint32 pdwCookie) mut
-			{
-				return VT.Advise(ref this, ref pfde, out pdwCookie);
-			}
-			public HRESULT Unadvise(uint32 dwCookie) mut
-			{
-				return VT.Unadvise(ref this, dwCookie);
-			}
-			public HRESULT SetOptions(uint32 fos) mut
-			{
-				return VT.SetOptions(ref this, fos);
-			}
-			public HRESULT GetOptions(out uint32 pfos) mut
-			{
-				return VT.GetOptions(ref this, out pfos);
-			}
-			public HRESULT SetDefaultFolder(ref IShellItem psi) mut
-			{
-				return VT.SetDefaultFolder(ref this, ref psi);
-			}
-			public HRESULT SetFolder(ref IShellItem psi) mut
-			{
-				return VT.SetFolder(ref this, ref psi);
-			}
-			public HRESULT GetFolder(out IShellItem* ppsi) mut
-			{
-				return VT.GetFolder(ref this, out ppsi);
-			}
-			public HRESULT GetCurrentSelection(out IShellItem* ppsi) mut
-			{
-				return VT.GetCurrentSelection(ref this, out ppsi);
-			}
-			public HRESULT SetFileName(PWSTR pszName) mut
-			{
-				return VT.SetFileName(ref this, pszName);
-			}
-			public HRESULT GetFileName(out PWSTR pszName) mut
-			{
-				return VT.GetFileName(ref this, out pszName);
-			}
-			public HRESULT SetTitle(PWSTR pszTitle) mut
-			{
-				return VT.SetTitle(ref this, pszTitle);
-			}
-			public HRESULT SetOkButtonLabel(PWSTR pszText) mut
-			{
-				return VT.SetOkButtonLabel(ref this, pszText);
-			}
-			public HRESULT SetFileNameLabel(PWSTR pszLabel) mut
-			{
-				return VT.SetFileNameLabel(ref this, pszLabel);
-			}
-			public HRESULT GetResult(out IShellItem* ppsi) mut
-			{
-				return VT.GetResult(ref this, out ppsi);
-			}
-			public HRESULT AddPlace(ref IShellItem psi, FDAP fdap) mut
-			{
-				return VT.AddPlace(ref this, ref psi, fdap);
-			}
-			public HRESULT SetDefaultExtension(PWSTR pszDefaultExtension) mut
-			{
-				return VT.SetDefaultExtension(ref this, pszDefaultExtension);
-			}
-			public HRESULT Close(HRESULT hr) mut
-			{
-				return VT.Close(ref this, hr);
-			}
-			public HRESULT SetClientGuid(in Guid guid) mut
-			{
-				return VT.SetClientGuid(ref this, guid);
-			}
-			public HRESULT ClearClientData() mut
-			{
-				return VT.ClearClientData(ref this);
-			}
-			public HRESULT SetFilter(ref IShellItemFilter pFilter) mut
-			{
-				return VT.SetFilter(ref this, ref pFilter);
-			}
+			public HRESULT SetFileTypes(uint32 cFileTypes, COMDLG_FILTERSPEC* rgFilterSpec) mut => VT.SetFileTypes(ref this, cFileTypes, rgFilterSpec);
+			public HRESULT SetFileTypeIndex(uint32 iFileType) mut => VT.SetFileTypeIndex(ref this, iFileType);
+			public HRESULT GetFileTypeIndex(out uint32 piFileType) mut => VT.GetFileTypeIndex(ref this, out piFileType);
+			public HRESULT Advise(ref IFileDialogEvents pfde, out uint32 pdwCookie) mut => VT.Advise(ref this, ref pfde, out pdwCookie);
+			public HRESULT Unadvise(uint32 dwCookie) mut => VT.Unadvise(ref this, dwCookie);
+			public HRESULT SetOptions(uint32 fos) mut => VT.SetOptions(ref this, fos);
+			public HRESULT GetOptions(out uint32 pfos) mut => VT.GetOptions(ref this, out pfos);
+			public HRESULT SetDefaultFolder(ref IShellItem psi) mut => VT.SetDefaultFolder(ref this, ref psi);
+			public HRESULT SetFolder(ref IShellItem psi) mut => VT.SetFolder(ref this, ref psi);
+			public HRESULT GetFolder(out IShellItem* ppsi) mut => VT.GetFolder(ref this, out ppsi);
+			public HRESULT GetCurrentSelection(out IShellItem* ppsi) mut => VT.GetCurrentSelection(ref this, out ppsi);
+			public HRESULT SetFileName(PWSTR pszName) mut => VT.SetFileName(ref this, pszName);
+			public HRESULT GetFileName(out PWSTR pszName) mut => VT.GetFileName(ref this, out pszName);
+			public HRESULT SetTitle(PWSTR pszTitle) mut => VT.SetTitle(ref this, pszTitle);
+			public HRESULT SetOkButtonLabel(PWSTR pszText) mut => VT.SetOkButtonLabel(ref this, pszText);
+			public HRESULT SetFileNameLabel(PWSTR pszLabel) mut => VT.SetFileNameLabel(ref this, pszLabel);
+			public HRESULT GetResult(out IShellItem* ppsi) mut => VT.GetResult(ref this, out ppsi);
+			public HRESULT AddPlace(ref IShellItem psi, FDAP fdap) mut => VT.AddPlace(ref this, ref psi, fdap);
+			public HRESULT SetDefaultExtension(PWSTR pszDefaultExtension) mut => VT.SetDefaultExtension(ref this, pszDefaultExtension);
+			public HRESULT Close(HRESULT hr) mut => VT.Close(ref this, hr);
+			public HRESULT SetClientGuid(in Guid guid) mut => VT.SetClientGuid(ref this, guid);
+			public HRESULT ClearClientData() mut => VT.ClearClientData(ref this);
+			public HRESULT SetFilter(ref IShellItemFilter pFilter) mut => VT.SetFilter(ref this, ref pFilter);
+
 			[CRepr]
 			public struct VTable : IModalWindow.VTable
 			{
@@ -9667,26 +8282,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSaveAsItem(ref IShellItem psi) mut
-			{
-				return VT.SetSaveAsItem(ref this, ref psi);
-			}
-			public HRESULT SetProperties(ref IPropertyStore pStore) mut
-			{
-				return VT.SetProperties(ref this, ref pStore);
-			}
-			public HRESULT SetCollectedProperties(ref IPropertyDescriptionList pList, BOOL fAppendDefault) mut
-			{
-				return VT.SetCollectedProperties(ref this, ref pList, fAppendDefault);
-			}
-			public HRESULT GetProperties(out IPropertyStore* ppStore) mut
-			{
-				return VT.GetProperties(ref this, out ppStore);
-			}
-			public HRESULT ApplyProperties(ref IShellItem psi, ref IPropertyStore pStore, HWND hwnd, ref IFileOperationProgressSink pSink) mut
-			{
-				return VT.ApplyProperties(ref this, ref psi, ref pStore, hwnd, ref pSink);
-			}
+			public HRESULT SetSaveAsItem(ref IShellItem psi) mut => VT.SetSaveAsItem(ref this, ref psi);
+			public HRESULT SetProperties(ref IPropertyStore pStore) mut => VT.SetProperties(ref this, ref pStore);
+			public HRESULT SetCollectedProperties(ref IPropertyDescriptionList pList, BOOL fAppendDefault) mut => VT.SetCollectedProperties(ref this, ref pList, fAppendDefault);
+			public HRESULT GetProperties(out IPropertyStore* ppStore) mut => VT.GetProperties(ref this, out ppStore);
+			public HRESULT ApplyProperties(ref IShellItem psi, ref IPropertyStore pStore, HWND hwnd, ref IFileOperationProgressSink pSink) mut => VT.ApplyProperties(ref this, ref psi, ref pStore, hwnd, ref pSink);
+
 			[CRepr]
 			public struct VTable : IFileDialog.VTable
 			{
@@ -9704,14 +8305,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResults(out IShellItemArray* ppenum) mut
-			{
-				return VT.GetResults(ref this, out ppenum);
-			}
-			public HRESULT GetSelectedItems(out IShellItemArray* ppsai) mut
-			{
-				return VT.GetSelectedItems(ref this, out ppsai);
-			}
+			public HRESULT GetResults(out IShellItemArray* ppenum) mut => VT.GetResults(ref this, out ppenum);
+			public HRESULT GetSelectedItems(out IShellItemArray* ppsai) mut => VT.GetSelectedItems(ref this, out ppsai);
+
 			[CRepr]
 			public struct VTable : IFileDialog.VTable
 			{
@@ -9726,114 +8322,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnableOpenDropDown(uint32 dwIDCtl) mut
-			{
-				return VT.EnableOpenDropDown(ref this, dwIDCtl);
-			}
-			public HRESULT AddMenu(uint32 dwIDCtl, PWSTR pszLabel) mut
-			{
-				return VT.AddMenu(ref this, dwIDCtl, pszLabel);
-			}
-			public HRESULT AddPushButton(uint32 dwIDCtl, PWSTR pszLabel) mut
-			{
-				return VT.AddPushButton(ref this, dwIDCtl, pszLabel);
-			}
-			public HRESULT AddComboBox(uint32 dwIDCtl) mut
-			{
-				return VT.AddComboBox(ref this, dwIDCtl);
-			}
-			public HRESULT AddRadioButtonList(uint32 dwIDCtl) mut
-			{
-				return VT.AddRadioButtonList(ref this, dwIDCtl);
-			}
-			public HRESULT AddCheckButton(uint32 dwIDCtl, PWSTR pszLabel, BOOL bChecked) mut
-			{
-				return VT.AddCheckButton(ref this, dwIDCtl, pszLabel, bChecked);
-			}
-			public HRESULT AddEditBox(uint32 dwIDCtl, PWSTR pszText) mut
-			{
-				return VT.AddEditBox(ref this, dwIDCtl, pszText);
-			}
-			public HRESULT AddSeparator(uint32 dwIDCtl) mut
-			{
-				return VT.AddSeparator(ref this, dwIDCtl);
-			}
-			public HRESULT AddText(uint32 dwIDCtl, PWSTR pszText) mut
-			{
-				return VT.AddText(ref this, dwIDCtl, pszText);
-			}
-			public HRESULT SetControlLabel(uint32 dwIDCtl, PWSTR pszLabel) mut
-			{
-				return VT.SetControlLabel(ref this, dwIDCtl, pszLabel);
-			}
-			public HRESULT GetControlState(uint32 dwIDCtl, out CDCONTROLSTATEF pdwState) mut
-			{
-				return VT.GetControlState(ref this, dwIDCtl, out pdwState);
-			}
-			public HRESULT SetControlState(uint32 dwIDCtl, CDCONTROLSTATEF dwState) mut
-			{
-				return VT.SetControlState(ref this, dwIDCtl, dwState);
-			}
-			public HRESULT GetEditBoxText(uint32 dwIDCtl, out uint16* ppszText) mut
-			{
-				return VT.GetEditBoxText(ref this, dwIDCtl, out ppszText);
-			}
-			public HRESULT SetEditBoxText(uint32 dwIDCtl, PWSTR pszText) mut
-			{
-				return VT.SetEditBoxText(ref this, dwIDCtl, pszText);
-			}
-			public HRESULT GetCheckButtonState(uint32 dwIDCtl, out BOOL pbChecked) mut
-			{
-				return VT.GetCheckButtonState(ref this, dwIDCtl, out pbChecked);
-			}
-			public HRESULT SetCheckButtonState(uint32 dwIDCtl, BOOL bChecked) mut
-			{
-				return VT.SetCheckButtonState(ref this, dwIDCtl, bChecked);
-			}
-			public HRESULT AddControlItem(uint32 dwIDCtl, uint32 dwIDItem, PWSTR pszLabel) mut
-			{
-				return VT.AddControlItem(ref this, dwIDCtl, dwIDItem, pszLabel);
-			}
-			public HRESULT RemoveControlItem(uint32 dwIDCtl, uint32 dwIDItem) mut
-			{
-				return VT.RemoveControlItem(ref this, dwIDCtl, dwIDItem);
-			}
-			public HRESULT RemoveAllControlItems(uint32 dwIDCtl) mut
-			{
-				return VT.RemoveAllControlItems(ref this, dwIDCtl);
-			}
-			public HRESULT GetControlItemState(uint32 dwIDCtl, uint32 dwIDItem, out CDCONTROLSTATEF pdwState) mut
-			{
-				return VT.GetControlItemState(ref this, dwIDCtl, dwIDItem, out pdwState);
-			}
-			public HRESULT SetControlItemState(uint32 dwIDCtl, uint32 dwIDItem, CDCONTROLSTATEF dwState) mut
-			{
-				return VT.SetControlItemState(ref this, dwIDCtl, dwIDItem, dwState);
-			}
-			public HRESULT GetSelectedControlItem(uint32 dwIDCtl, out uint32 pdwIDItem) mut
-			{
-				return VT.GetSelectedControlItem(ref this, dwIDCtl, out pdwIDItem);
-			}
-			public HRESULT SetSelectedControlItem(uint32 dwIDCtl, uint32 dwIDItem) mut
-			{
-				return VT.SetSelectedControlItem(ref this, dwIDCtl, dwIDItem);
-			}
-			public HRESULT StartVisualGroup(uint32 dwIDCtl, PWSTR pszLabel) mut
-			{
-				return VT.StartVisualGroup(ref this, dwIDCtl, pszLabel);
-			}
-			public HRESULT EndVisualGroup() mut
-			{
-				return VT.EndVisualGroup(ref this);
-			}
-			public HRESULT MakeProminent(uint32 dwIDCtl) mut
-			{
-				return VT.MakeProminent(ref this, dwIDCtl);
-			}
-			public HRESULT SetControlItemText(uint32 dwIDCtl, uint32 dwIDItem, PWSTR pszLabel) mut
-			{
-				return VT.SetControlItemText(ref this, dwIDCtl, dwIDItem, pszLabel);
-			}
+			public HRESULT EnableOpenDropDown(uint32 dwIDCtl) mut => VT.EnableOpenDropDown(ref this, dwIDCtl);
+			public HRESULT AddMenu(uint32 dwIDCtl, PWSTR pszLabel) mut => VT.AddMenu(ref this, dwIDCtl, pszLabel);
+			public HRESULT AddPushButton(uint32 dwIDCtl, PWSTR pszLabel) mut => VT.AddPushButton(ref this, dwIDCtl, pszLabel);
+			public HRESULT AddComboBox(uint32 dwIDCtl) mut => VT.AddComboBox(ref this, dwIDCtl);
+			public HRESULT AddRadioButtonList(uint32 dwIDCtl) mut => VT.AddRadioButtonList(ref this, dwIDCtl);
+			public HRESULT AddCheckButton(uint32 dwIDCtl, PWSTR pszLabel, BOOL bChecked) mut => VT.AddCheckButton(ref this, dwIDCtl, pszLabel, bChecked);
+			public HRESULT AddEditBox(uint32 dwIDCtl, PWSTR pszText) mut => VT.AddEditBox(ref this, dwIDCtl, pszText);
+			public HRESULT AddSeparator(uint32 dwIDCtl) mut => VT.AddSeparator(ref this, dwIDCtl);
+			public HRESULT AddText(uint32 dwIDCtl, PWSTR pszText) mut => VT.AddText(ref this, dwIDCtl, pszText);
+			public HRESULT SetControlLabel(uint32 dwIDCtl, PWSTR pszLabel) mut => VT.SetControlLabel(ref this, dwIDCtl, pszLabel);
+			public HRESULT GetControlState(uint32 dwIDCtl, out CDCONTROLSTATEF pdwState) mut => VT.GetControlState(ref this, dwIDCtl, out pdwState);
+			public HRESULT SetControlState(uint32 dwIDCtl, CDCONTROLSTATEF dwState) mut => VT.SetControlState(ref this, dwIDCtl, dwState);
+			public HRESULT GetEditBoxText(uint32 dwIDCtl, out uint16* ppszText) mut => VT.GetEditBoxText(ref this, dwIDCtl, out ppszText);
+			public HRESULT SetEditBoxText(uint32 dwIDCtl, PWSTR pszText) mut => VT.SetEditBoxText(ref this, dwIDCtl, pszText);
+			public HRESULT GetCheckButtonState(uint32 dwIDCtl, out BOOL pbChecked) mut => VT.GetCheckButtonState(ref this, dwIDCtl, out pbChecked);
+			public HRESULT SetCheckButtonState(uint32 dwIDCtl, BOOL bChecked) mut => VT.SetCheckButtonState(ref this, dwIDCtl, bChecked);
+			public HRESULT AddControlItem(uint32 dwIDCtl, uint32 dwIDItem, PWSTR pszLabel) mut => VT.AddControlItem(ref this, dwIDCtl, dwIDItem, pszLabel);
+			public HRESULT RemoveControlItem(uint32 dwIDCtl, uint32 dwIDItem) mut => VT.RemoveControlItem(ref this, dwIDCtl, dwIDItem);
+			public HRESULT RemoveAllControlItems(uint32 dwIDCtl) mut => VT.RemoveAllControlItems(ref this, dwIDCtl);
+			public HRESULT GetControlItemState(uint32 dwIDCtl, uint32 dwIDItem, out CDCONTROLSTATEF pdwState) mut => VT.GetControlItemState(ref this, dwIDCtl, dwIDItem, out pdwState);
+			public HRESULT SetControlItemState(uint32 dwIDCtl, uint32 dwIDItem, CDCONTROLSTATEF dwState) mut => VT.SetControlItemState(ref this, dwIDCtl, dwIDItem, dwState);
+			public HRESULT GetSelectedControlItem(uint32 dwIDCtl, out uint32 pdwIDItem) mut => VT.GetSelectedControlItem(ref this, dwIDCtl, out pdwIDItem);
+			public HRESULT SetSelectedControlItem(uint32 dwIDCtl, uint32 dwIDItem) mut => VT.SetSelectedControlItem(ref this, dwIDCtl, dwIDItem);
+			public HRESULT StartVisualGroup(uint32 dwIDCtl, PWSTR pszLabel) mut => VT.StartVisualGroup(ref this, dwIDCtl, pszLabel);
+			public HRESULT EndVisualGroup() mut => VT.EndVisualGroup(ref this);
+			public HRESULT MakeProminent(uint32 dwIDCtl) mut => VT.MakeProminent(ref this, dwIDCtl);
+			public HRESULT SetControlItemText(uint32 dwIDCtl, uint32 dwIDItem, PWSTR pszLabel) mut => VT.SetControlItemText(ref this, dwIDCtl, dwIDItem, pszLabel);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9873,30 +8389,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryCurrentDefault(PWSTR pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, out PWSTR ppszAssociation) mut
-			{
-				return VT.QueryCurrentDefault(ref this, pszQuery, atQueryType, alQueryLevel, out ppszAssociation);
-			}
-			public HRESULT QueryAppIsDefault(PWSTR pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, PWSTR pszAppRegistryName, out BOOL pfDefault) mut
-			{
-				return VT.QueryAppIsDefault(ref this, pszQuery, atQueryType, alQueryLevel, pszAppRegistryName, out pfDefault);
-			}
-			public HRESULT QueryAppIsDefaultAll(ASSOCIATIONLEVEL alQueryLevel, PWSTR pszAppRegistryName, out BOOL pfDefault) mut
-			{
-				return VT.QueryAppIsDefaultAll(ref this, alQueryLevel, pszAppRegistryName, out pfDefault);
-			}
-			public HRESULT SetAppAsDefault(PWSTR pszAppRegistryName, PWSTR pszSet, ASSOCIATIONTYPE atSetType) mut
-			{
-				return VT.SetAppAsDefault(ref this, pszAppRegistryName, pszSet, atSetType);
-			}
-			public HRESULT SetAppAsDefaultAll(PWSTR pszAppRegistryName) mut
-			{
-				return VT.SetAppAsDefaultAll(ref this, pszAppRegistryName);
-			}
-			public HRESULT ClearUserAssociations() mut
-			{
-				return VT.ClearUserAssociations(ref this);
-			}
+			public HRESULT QueryCurrentDefault(PWSTR pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, out PWSTR ppszAssociation) mut => VT.QueryCurrentDefault(ref this, pszQuery, atQueryType, alQueryLevel, out ppszAssociation);
+			public HRESULT QueryAppIsDefault(PWSTR pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, PWSTR pszAppRegistryName, out BOOL pfDefault) mut => VT.QueryAppIsDefault(ref this, pszQuery, atQueryType, alQueryLevel, pszAppRegistryName, out pfDefault);
+			public HRESULT QueryAppIsDefaultAll(ASSOCIATIONLEVEL alQueryLevel, PWSTR pszAppRegistryName, out BOOL pfDefault) mut => VT.QueryAppIsDefaultAll(ref this, alQueryLevel, pszAppRegistryName, out pfDefault);
+			public HRESULT SetAppAsDefault(PWSTR pszAppRegistryName, PWSTR pszSet, ASSOCIATIONTYPE atSetType) mut => VT.SetAppAsDefault(ref this, pszAppRegistryName, pszSet, atSetType);
+			public HRESULT SetAppAsDefaultAll(PWSTR pszAppRegistryName) mut => VT.SetAppAsDefaultAll(ref this, pszAppRegistryName);
+			public HRESULT ClearUserAssociations() mut => VT.ClearUserAssociations(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9915,10 +8414,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetItemAlloc(ref IMalloc pmalloc) mut
-			{
-				return VT.SetItemAlloc(ref this, ref pmalloc);
-			}
+			public HRESULT SetItemAlloc(ref IMalloc pmalloc) mut => VT.SetItemAlloc(ref this, ref pmalloc);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9932,10 +8429,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFrameOptions(uint32 dwMask, out uint32 pdwOptions) mut
-			{
-				return VT.GetFrameOptions(ref this, dwMask, out pdwOptions);
-			}
+			public HRESULT GetFrameOptions(uint32 dwMask, out uint32 pdwOptions) mut => VT.GetFrameOptions(ref this, dwMask, out pdwOptions);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9949,10 +8444,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EvaluateNewWindow(PWSTR pszUrl, PWSTR pszName, PWSTR pszUrlContext, PWSTR pszFeatures, BOOL fReplace, uint32 dwFlags, uint32 dwUserActionTime) mut
-			{
-				return VT.EvaluateNewWindow(ref this, pszUrl, pszName, pszUrlContext, pszFeatures, fReplace, dwFlags, dwUserActionTime);
-			}
+			public HRESULT EvaluateNewWindow(PWSTR pszUrl, PWSTR pszName, PWSTR pszUrlContext, PWSTR pszFeatures, BOOL fReplace, uint32 dwFlags, uint32 dwUserActionTime) mut => VT.EvaluateNewWindow(ref this, pszUrl, pszName, pszUrlContext, pszFeatures, fReplace, dwFlags, dwUserActionTime);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -9966,54 +8459,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetClientTitle(PWSTR pszTitle) mut
-			{
-				return VT.SetClientTitle(ref this, pszTitle);
-			}
-			public HRESULT SetClientGuid(in Guid guid) mut
-			{
-				return VT.SetClientGuid(ref this, guid);
-			}
-			public HRESULT SetLocalPath(PWSTR pszLocalPath) mut
-			{
-				return VT.SetLocalPath(ref this, pszLocalPath);
-			}
-			public HRESULT SetFileName(PWSTR pszFileName) mut
-			{
-				return VT.SetFileName(ref this, pszFileName);
-			}
-			public HRESULT SetSource(PWSTR pszSource) mut
-			{
-				return VT.SetSource(ref this, pszSource);
-			}
-			public HRESULT SetReferrer(PWSTR pszReferrer) mut
-			{
-				return VT.SetReferrer(ref this, pszReferrer);
-			}
-			public HRESULT CheckPolicy() mut
-			{
-				return VT.CheckPolicy(ref this);
-			}
-			public HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, out ATTACHMENT_ACTION paction) mut
-			{
-				return VT.Prompt(ref this, hwnd, prompt, out paction);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT Execute(HWND hwnd, PWSTR pszVerb, HANDLE* phProcess) mut
-			{
-				return VT.Execute(ref this, hwnd, pszVerb, phProcess);
-			}
-			public HRESULT SaveWithUI(HWND hwnd) mut
-			{
-				return VT.SaveWithUI(ref this, hwnd);
-			}
-			public HRESULT ClearClientState() mut
-			{
-				return VT.ClearClientState(ref this);
-			}
+			public HRESULT SetClientTitle(PWSTR pszTitle) mut => VT.SetClientTitle(ref this, pszTitle);
+			public HRESULT SetClientGuid(in Guid guid) mut => VT.SetClientGuid(ref this, guid);
+			public HRESULT SetLocalPath(PWSTR pszLocalPath) mut => VT.SetLocalPath(ref this, pszLocalPath);
+			public HRESULT SetFileName(PWSTR pszFileName) mut => VT.SetFileName(ref this, pszFileName);
+			public HRESULT SetSource(PWSTR pszSource) mut => VT.SetSource(ref this, pszSource);
+			public HRESULT SetReferrer(PWSTR pszReferrer) mut => VT.SetReferrer(ref this, pszReferrer);
+			public HRESULT CheckPolicy() mut => VT.CheckPolicy(ref this);
+			public HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, out ATTACHMENT_ACTION paction) mut => VT.Prompt(ref this, hwnd, prompt, out paction);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT Execute(HWND hwnd, PWSTR pszVerb, HANDLE* phProcess) mut => VT.Execute(ref this, hwnd, pszVerb, phProcess);
+			public HRESULT SaveWithUI(HWND hwnd) mut => VT.SaveWithUI(ref this, hwnd);
+			public HRESULT ClearClientState() mut => VT.ClearClientState(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10038,10 +8496,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CallbackSM(out SMDATA psmd, uint32 uMsg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.CallbackSM(ref this, out psmd, uMsg, wParam, lParam);
-			}
+			public HRESULT CallbackSM(out SMDATA psmd, uint32 uMsg, WPARAM wParam, LPARAM lParam) mut => VT.CallbackSM(ref this, out psmd, uMsg, wParam, lParam);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10055,42 +8511,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IShellMenuCallback* psmc, uint32 uId, uint32 uIdAncestor, uint32 dwFlags) mut
-			{
-				return VT.Initialize(ref this, psmc, uId, uIdAncestor, dwFlags);
-			}
-			public HRESULT GetMenuInfo(IShellMenuCallback** ppsmc, uint32* puId, uint32* puIdAncestor, uint32* pdwFlags) mut
-			{
-				return VT.GetMenuInfo(ref this, ppsmc, puId, puIdAncestor, pdwFlags);
-			}
-			public HRESULT SetShellFolder(IShellFolder* psf, ITEMIDLIST* pidlFolder, HKEY hKey, uint32 dwFlags) mut
-			{
-				return VT.SetShellFolder(ref this, psf, pidlFolder, hKey, dwFlags);
-			}
-			public HRESULT GetShellFolder(out uint32 pdwFlags, out ITEMIDLIST* ppidl, in Guid riid, void** ppv) mut
-			{
-				return VT.GetShellFolder(ref this, out pdwFlags, out ppidl, riid, ppv);
-			}
-			public HRESULT SetMenu(HMENU hmenu, HWND hwnd, uint32 dwFlags) mut
-			{
-				return VT.SetMenu(ref this, hmenu, hwnd, dwFlags);
-			}
-			public HRESULT GetMenu(HMENU* phmenu, HWND* phwnd, uint32* pdwFlags) mut
-			{
-				return VT.GetMenu(ref this, phmenu, phwnd, pdwFlags);
-			}
-			public HRESULT InvalidateItem(SMDATA* psmd, uint32 dwFlags) mut
-			{
-				return VT.InvalidateItem(ref this, psmd, dwFlags);
-			}
-			public HRESULT GetState(out SMDATA psmd) mut
-			{
-				return VT.GetState(ref this, out psmd);
-			}
-			public HRESULT SetMenuToolbar(ref IUnknown punk, uint32 dwFlags) mut
-			{
-				return VT.SetMenuToolbar(ref this, ref punk, dwFlags);
-			}
+			public HRESULT Initialize(IShellMenuCallback* psmc, uint32 uId, uint32 uIdAncestor, uint32 dwFlags) mut => VT.Initialize(ref this, psmc, uId, uIdAncestor, dwFlags);
+			public HRESULT GetMenuInfo(IShellMenuCallback** ppsmc, uint32* puId, uint32* puIdAncestor, uint32* pdwFlags) mut => VT.GetMenuInfo(ref this, ppsmc, puId, puIdAncestor, pdwFlags);
+			public HRESULT SetShellFolder(IShellFolder* psf, ITEMIDLIST* pidlFolder, HKEY hKey, uint32 dwFlags) mut => VT.SetShellFolder(ref this, psf, pidlFolder, hKey, dwFlags);
+			public HRESULT GetShellFolder(out uint32 pdwFlags, out ITEMIDLIST* ppidl, in Guid riid, void** ppv) mut => VT.GetShellFolder(ref this, out pdwFlags, out ppidl, riid, ppv);
+			public HRESULT SetMenu(HMENU hmenu, HWND hwnd, uint32 dwFlags) mut => VT.SetMenu(ref this, hmenu, hwnd, dwFlags);
+			public HRESULT GetMenu(HMENU* phmenu, HWND* phwnd, uint32* pdwFlags) mut => VT.GetMenu(ref this, phmenu, phwnd, pdwFlags);
+			public HRESULT InvalidateItem(SMDATA* psmd, uint32 dwFlags) mut => VT.InvalidateItem(ref this, psmd, dwFlags);
+			public HRESULT GetState(out SMDATA psmd) mut => VT.GetState(ref this, out psmd);
+			public HRESULT SetMenuToolbar(ref IUnknown punk, uint32 dwFlags) mut => VT.SetMenuToolbar(ref this, ref punk, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10112,42 +8542,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetId(out Guid pkfid) mut
-			{
-				return VT.GetId(ref this, out pkfid);
-			}
-			public HRESULT GetCategory(out KF_CATEGORY pCategory) mut
-			{
-				return VT.GetCategory(ref this, out pCategory);
-			}
-			public HRESULT GetShellItem(uint32 dwFlags, in Guid riid, void** ppv) mut
-			{
-				return VT.GetShellItem(ref this, dwFlags, riid, ppv);
-			}
-			public HRESULT GetPath(uint32 dwFlags, out PWSTR ppszPath) mut
-			{
-				return VT.GetPath(ref this, dwFlags, out ppszPath);
-			}
-			public HRESULT SetPath(uint32 dwFlags, PWSTR pszPath) mut
-			{
-				return VT.SetPath(ref this, dwFlags, pszPath);
-			}
-			public HRESULT GetIDList(uint32 dwFlags, out ITEMIDLIST* ppidl) mut
-			{
-				return VT.GetIDList(ref this, dwFlags, out ppidl);
-			}
-			public HRESULT GetFolderType(out Guid pftid) mut
-			{
-				return VT.GetFolderType(ref this, out pftid);
-			}
-			public HRESULT GetRedirectionCapabilities(out uint32 pCapabilities) mut
-			{
-				return VT.GetRedirectionCapabilities(ref this, out pCapabilities);
-			}
-			public HRESULT GetFolderDefinition(out KNOWNFOLDER_DEFINITION pKFD) mut
-			{
-				return VT.GetFolderDefinition(ref this, out pKFD);
-			}
+			public HRESULT GetId(out Guid pkfid) mut => VT.GetId(ref this, out pkfid);
+			public HRESULT GetCategory(out KF_CATEGORY pCategory) mut => VT.GetCategory(ref this, out pCategory);
+			public HRESULT GetShellItem(uint32 dwFlags, in Guid riid, void** ppv) mut => VT.GetShellItem(ref this, dwFlags, riid, ppv);
+			public HRESULT GetPath(uint32 dwFlags, out PWSTR ppszPath) mut => VT.GetPath(ref this, dwFlags, out ppszPath);
+			public HRESULT SetPath(uint32 dwFlags, PWSTR pszPath) mut => VT.SetPath(ref this, dwFlags, pszPath);
+			public HRESULT GetIDList(uint32 dwFlags, out ITEMIDLIST* ppidl) mut => VT.GetIDList(ref this, dwFlags, out ppidl);
+			public HRESULT GetFolderType(out Guid pftid) mut => VT.GetFolderType(ref this, out pftid);
+			public HRESULT GetRedirectionCapabilities(out uint32 pCapabilities) mut => VT.GetRedirectionCapabilities(ref this, out pCapabilities);
+			public HRESULT GetFolderDefinition(out KNOWNFOLDER_DEFINITION pKFD) mut => VT.GetFolderDefinition(ref this, out pKFD);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10169,46 +8573,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FolderIdFromCsidl(int32 nCsidl, out Guid pfid) mut
-			{
-				return VT.FolderIdFromCsidl(ref this, nCsidl, out pfid);
-			}
-			public HRESULT FolderIdToCsidl(in Guid rfid, out int32 pnCsidl) mut
-			{
-				return VT.FolderIdToCsidl(ref this, rfid, out pnCsidl);
-			}
-			public HRESULT GetFolderIds(Guid** ppKFId, out uint32 pCount) mut
-			{
-				return VT.GetFolderIds(ref this, ppKFId, out pCount);
-			}
-			public HRESULT GetFolder(in Guid rfid, out IKnownFolder* ppkf) mut
-			{
-				return VT.GetFolder(ref this, rfid, out ppkf);
-			}
-			public HRESULT GetFolderByName(PWSTR pszCanonicalName, out IKnownFolder* ppkf) mut
-			{
-				return VT.GetFolderByName(ref this, pszCanonicalName, out ppkf);
-			}
-			public HRESULT RegisterFolder(in Guid rfid, in KNOWNFOLDER_DEFINITION pKFD) mut
-			{
-				return VT.RegisterFolder(ref this, rfid, pKFD);
-			}
-			public HRESULT UnregisterFolder(in Guid rfid) mut
-			{
-				return VT.UnregisterFolder(ref this, rfid);
-			}
-			public HRESULT FindFolderFromPath(PWSTR pszPath, FFFP_MODE mode, out IKnownFolder* ppkf) mut
-			{
-				return VT.FindFolderFromPath(ref this, pszPath, mode, out ppkf);
-			}
-			public HRESULT FindFolderFromIDList(ref ITEMIDLIST pidl, out IKnownFolder* ppkf) mut
-			{
-				return VT.FindFolderFromIDList(ref this, ref pidl, out ppkf);
-			}
-			public HRESULT Redirect(in Guid rfid, HWND hwnd, uint32 flags, PWSTR pszTargetPath, uint32 cFolders, Guid* pExclusion, PWSTR* ppszError) mut
-			{
-				return VT.Redirect(ref this, rfid, hwnd, flags, pszTargetPath, cFolders, pExclusion, ppszError);
-			}
+			public HRESULT FolderIdFromCsidl(int32 nCsidl, out Guid pfid) mut => VT.FolderIdFromCsidl(ref this, nCsidl, out pfid);
+			public HRESULT FolderIdToCsidl(in Guid rfid, out int32 pnCsidl) mut => VT.FolderIdToCsidl(ref this, rfid, out pnCsidl);
+			public HRESULT GetFolderIds(Guid** ppKFId, out uint32 pCount) mut => VT.GetFolderIds(ref this, ppKFId, out pCount);
+			public HRESULT GetFolder(in Guid rfid, out IKnownFolder* ppkf) mut => VT.GetFolder(ref this, rfid, out ppkf);
+			public HRESULT GetFolderByName(PWSTR pszCanonicalName, out IKnownFolder* ppkf) mut => VT.GetFolderByName(ref this, pszCanonicalName, out ppkf);
+			public HRESULT RegisterFolder(in Guid rfid, in KNOWNFOLDER_DEFINITION pKFD) mut => VT.RegisterFolder(ref this, rfid, pKFD);
+			public HRESULT UnregisterFolder(in Guid rfid) mut => VT.UnregisterFolder(ref this, rfid);
+			public HRESULT FindFolderFromPath(PWSTR pszPath, FFFP_MODE mode, out IKnownFolder* ppkf) mut => VT.FindFolderFromPath(ref this, pszPath, mode, out ppkf);
+			public HRESULT FindFolderFromIDList(ref ITEMIDLIST pidl, out IKnownFolder* ppkf) mut => VT.FindFolderFromIDList(ref this, ref pidl, out ppkf);
+			public HRESULT Redirect(in Guid rfid, HWND hwnd, uint32 flags, PWSTR pszTargetPath, uint32 cFolders, Guid* pExclusion, PWSTR* ppszError) mut => VT.Redirect(ref this, rfid, hwnd, flags, pszTargetPath, cFolders, pExclusion, ppszError);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10231,34 +8606,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role) mut
-			{
-				return VT.CreateShare(ref this, dsid, role);
-			}
-			public HRESULT DeleteShare(DEF_SHARE_ID dsid) mut
-			{
-				return VT.DeleteShare(ref this, dsid);
-			}
-			public HRESULT ShareExists(DEF_SHARE_ID dsid) mut
-			{
-				return VT.ShareExists(ref this, dsid);
-			}
-			public HRESULT GetSharePermissions(DEF_SHARE_ID dsid, out SHARE_ROLE pRole) mut
-			{
-				return VT.GetSharePermissions(ref this, dsid, out pRole);
-			}
-			public HRESULT SharePrinters() mut
-			{
-				return VT.SharePrinters(ref this);
-			}
-			public HRESULT StopSharingPrinters() mut
-			{
-				return VT.StopSharingPrinters(ref this);
-			}
-			public HRESULT ArePrintersShared() mut
-			{
-				return VT.ArePrintersShared(ref this);
-			}
+			public HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role) mut => VT.CreateShare(ref this, dsid, role);
+			public HRESULT DeleteShare(DEF_SHARE_ID dsid) mut => VT.DeleteShare(ref this, dsid);
+			public HRESULT ShareExists(DEF_SHARE_ID dsid) mut => VT.ShareExists(ref this, dsid);
+			public HRESULT GetSharePermissions(DEF_SHARE_ID dsid, out SHARE_ROLE pRole) mut => VT.GetSharePermissions(ref this, dsid, out pRole);
+			public HRESULT SharePrinters() mut => VT.SharePrinters(ref this);
+			public HRESULT StopSharingPrinters() mut => VT.StopSharingPrinters(ref this);
+			public HRESULT ArePrintersShared() mut => VT.ArePrintersShared(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10278,14 +8633,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemIDList(out ITEMIDLIST* ppidl) mut
-			{
-				return VT.GetItemIDList(ref this, out ppidl);
-			}
-			public HRESULT GetItem(out IShellItem* ppsi) mut
-			{
-				return VT.GetItem(ref this, out ppsi);
-			}
+			public HRESULT GetItemIDList(out ITEMIDLIST* ppidl) mut => VT.GetItemIDList(ref this, out ppidl);
+			public HRESULT GetItem(out IShellItem* ppsi) mut => VT.GetItem(ref this, out ppsi);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10300,6 +8650,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IRelatedItem.VTable
 			{
@@ -10312,6 +8663,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IRelatedItem.VTable
 			{
@@ -10324,6 +8676,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IRelatedItem.VTable
 			{
@@ -10336,6 +8689,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IRelatedItem.VTable
 			{
@@ -10348,6 +8702,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IRelatedItem.VTable
 			{
@@ -10360,6 +8715,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IRelatedItem.VTable
 			{
@@ -10372,6 +8728,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IRelatedItem.VTable
 			{
@@ -10384,10 +8741,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDestinationStream(out IStream* ppstm) mut
-			{
-				return VT.GetDestinationStream(ref this, out ppstm);
-			}
+			public HRESULT GetDestinationStream(out IStream* ppstm) mut => VT.GetDestinationStream(ref this, out ppstm);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10401,34 +8756,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCreateFlags(out uint32 pdwCreationFlags) mut
-			{
-				return VT.GetCreateFlags(ref this, out pdwCreationFlags);
-			}
-			public HRESULT SetCreateFlags(uint32 dwCreationFlags) mut
-			{
-				return VT.SetCreateFlags(ref this, dwCreationFlags);
-			}
-			public HRESULT AddCreateFlags(uint32 dwCreationFlags) mut
-			{
-				return VT.AddCreateFlags(ref this, dwCreationFlags);
-			}
-			public HRESULT SetHotKey(uint16 wHotKey) mut
-			{
-				return VT.SetHotKey(ref this, wHotKey);
-			}
-			public HRESULT AddStartupFlags(uint32 dwStartupInfoFlags) mut
-			{
-				return VT.AddStartupFlags(ref this, dwStartupInfoFlags);
-			}
-			public HRESULT SetTitle(PWSTR pszTitle) mut
-			{
-				return VT.SetTitle(ref this, pszTitle);
-			}
-			public HRESULT SetEnvironmentVariable(PWSTR pszName, PWSTR pszValue) mut
-			{
-				return VT.SetEnvironmentVariable(ref this, pszName, pszValue);
-			}
+			public HRESULT GetCreateFlags(out uint32 pdwCreationFlags) mut => VT.GetCreateFlags(ref this, out pdwCreationFlags);
+			public HRESULT SetCreateFlags(uint32 dwCreationFlags) mut => VT.SetCreateFlags(ref this, dwCreationFlags);
+			public HRESULT AddCreateFlags(uint32 dwCreationFlags) mut => VT.AddCreateFlags(ref this, dwCreationFlags);
+			public HRESULT SetHotKey(uint16 wHotKey) mut => VT.SetHotKey(ref this, wHotKey);
+			public HRESULT AddStartupFlags(uint32 dwStartupInfoFlags) mut => VT.AddStartupFlags(ref this, dwStartupInfoFlags);
+			public HRESULT SetTitle(PWSTR pszTitle) mut => VT.SetTitle(ref this, pszTitle);
+			public HRESULT SetEnvironmentVariable(PWSTR pszName, PWSTR pszValue) mut => VT.SetEnvironmentVariable(ref this, pszName, pszValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10448,10 +8783,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnCreating(ref ICreateProcessInputs pcpi) mut
-			{
-				return VT.OnCreating(ref this, ref pcpi);
-			}
+			public HRESULT OnCreating(ref ICreateProcessInputs pcpi) mut => VT.OnCreating(ref this, ref pcpi);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10465,14 +8798,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAssociatedWindow(HWND value) mut
-			{
-				return VT.SetAssociatedWindow(ref this, value);
-			}
-			public HRESULT SetTabGroupingPreference(uint32 value) mut
-			{
-				return VT.SetTabGroupingPreference(ref this, value);
-			}
+			public HRESULT SetAssociatedWindow(HWND value) mut => VT.SetAssociatedWindow(ref this, value);
+			public HRESULT SetTabGroupingPreference(uint32 value) mut => VT.SetTabGroupingPreference(ref this, value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10487,10 +8815,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateContext(ref ILaunchUIContext context) mut
-			{
-				return VT.UpdateContext(ref this, ref context);
-			}
+			public HRESULT UpdateContext(ref ILaunchUIContext context) mut => VT.UpdateContext(ref this, ref context);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10504,14 +8830,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IncludeItems(out int32 pflags) mut
-			{
-				return VT.IncludeItems(ref this, out pflags);
-			}
-			public HRESULT SelectAndEditItem(ref ITEMIDLIST pidlItem, int32 flags) mut
-			{
-				return VT.SelectAndEditItem(ref this, ref pidlItem, flags);
-			}
+			public HRESULT IncludeItems(out int32 pflags) mut => VT.IncludeItems(ref this, out pflags);
+			public HRESULT SelectAndEditItem(ref ITEMIDLIST pidlItem, int32 flags) mut => VT.SelectAndEditItem(ref this, ref pidlItem, flags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10526,10 +8847,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IBindCtx pbc) mut
-			{
-				return VT.Initialize(ref this, ref pbc);
-			}
+			public HRESULT Initialize(ref IBindCtx pbc) mut => VT.Initialize(ref this, ref pbc);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10543,14 +8862,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IncludeItem(ref IShellItem psi) mut
-			{
-				return VT.IncludeItem(ref this, ref psi);
-			}
-			public HRESULT GetEnumFlagsForItem(ref IShellItem psi, out uint32 pgrfFlags) mut
-			{
-				return VT.GetEnumFlagsForItem(ref this, ref psi, out pgrfFlags);
-			}
+			public HRESULT IncludeItem(ref IShellItem psi) mut => VT.IncludeItem(ref this, ref psi);
+			public HRESULT GetEnumFlagsForItem(ref IShellItem psi, out uint32 pgrfFlags) mut => VT.GetEnumFlagsForItem(ref this, ref psi, out pgrfFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10565,82 +8879,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HWND hwndParent, ref RECT prc, uint32 nsctsFlags) mut
-			{
-				return VT.Initialize(ref this, hwndParent, ref prc, nsctsFlags);
-			}
-			public HRESULT TreeAdvise(ref IUnknown punk, out uint32 pdwCookie) mut
-			{
-				return VT.TreeAdvise(ref this, ref punk, out pdwCookie);
-			}
-			public HRESULT TreeUnadvise(uint32 dwCookie) mut
-			{
-				return VT.TreeUnadvise(ref this, dwCookie);
-			}
-			public HRESULT AppendRoot(ref IShellItem psiRoot, uint32 grfEnumFlags, uint32 grfRootStyle, ref IShellItemFilter pif) mut
-			{
-				return VT.AppendRoot(ref this, ref psiRoot, grfEnumFlags, grfRootStyle, ref pif);
-			}
-			public HRESULT InsertRoot(int32 iIndex, ref IShellItem psiRoot, uint32 grfEnumFlags, uint32 grfRootStyle, ref IShellItemFilter pif) mut
-			{
-				return VT.InsertRoot(ref this, iIndex, ref psiRoot, grfEnumFlags, grfRootStyle, ref pif);
-			}
-			public HRESULT RemoveRoot(ref IShellItem psiRoot) mut
-			{
-				return VT.RemoveRoot(ref this, ref psiRoot);
-			}
-			public HRESULT RemoveAllRoots() mut
-			{
-				return VT.RemoveAllRoots(ref this);
-			}
-			public HRESULT GetRootItems(out IShellItemArray* ppsiaRootItems) mut
-			{
-				return VT.GetRootItems(ref this, out ppsiaRootItems);
-			}
-			public HRESULT SetItemState(ref IShellItem psi, uint32 nstcisMask, uint32 nstcisFlags) mut
-			{
-				return VT.SetItemState(ref this, ref psi, nstcisMask, nstcisFlags);
-			}
-			public HRESULT GetItemState(ref IShellItem psi, uint32 nstcisMask, out uint32 pnstcisFlags) mut
-			{
-				return VT.GetItemState(ref this, ref psi, nstcisMask, out pnstcisFlags);
-			}
-			public HRESULT GetSelectedItems(out IShellItemArray* psiaItems) mut
-			{
-				return VT.GetSelectedItems(ref this, out psiaItems);
-			}
-			public HRESULT GetItemCustomState(ref IShellItem psi, out int32 piStateNumber) mut
-			{
-				return VT.GetItemCustomState(ref this, ref psi, out piStateNumber);
-			}
-			public HRESULT SetItemCustomState(ref IShellItem psi, int32 iStateNumber) mut
-			{
-				return VT.SetItemCustomState(ref this, ref psi, iStateNumber);
-			}
-			public HRESULT EnsureItemVisible(ref IShellItem psi) mut
-			{
-				return VT.EnsureItemVisible(ref this, ref psi);
-			}
-			public HRESULT SetTheme(PWSTR pszTheme) mut
-			{
-				return VT.SetTheme(ref this, pszTheme);
-			}
-			public HRESULT GetNextItem(ref IShellItem psi, NSTCGNI nstcgi, out IShellItem* ppsiNext) mut
-			{
-				return VT.GetNextItem(ref this, ref psi, nstcgi, out ppsiNext);
-			}
-			public HRESULT HitTest(ref POINT ppt, out IShellItem* ppsiOut) mut
-			{
-				return VT.HitTest(ref this, ref ppt, out ppsiOut);
-			}
-			public HRESULT GetItemRect(ref IShellItem psi, out RECT prect) mut
-			{
-				return VT.GetItemRect(ref this, ref psi, out prect);
-			}
-			public HRESULT CollapseAll() mut
-			{
-				return VT.CollapseAll(ref this);
-			}
+			public HRESULT Initialize(HWND hwndParent, ref RECT prc, uint32 nsctsFlags) mut => VT.Initialize(ref this, hwndParent, ref prc, nsctsFlags);
+			public HRESULT TreeAdvise(ref IUnknown punk, out uint32 pdwCookie) mut => VT.TreeAdvise(ref this, ref punk, out pdwCookie);
+			public HRESULT TreeUnadvise(uint32 dwCookie) mut => VT.TreeUnadvise(ref this, dwCookie);
+			public HRESULT AppendRoot(ref IShellItem psiRoot, uint32 grfEnumFlags, uint32 grfRootStyle, ref IShellItemFilter pif) mut => VT.AppendRoot(ref this, ref psiRoot, grfEnumFlags, grfRootStyle, ref pif);
+			public HRESULT InsertRoot(int32 iIndex, ref IShellItem psiRoot, uint32 grfEnumFlags, uint32 grfRootStyle, ref IShellItemFilter pif) mut => VT.InsertRoot(ref this, iIndex, ref psiRoot, grfEnumFlags, grfRootStyle, ref pif);
+			public HRESULT RemoveRoot(ref IShellItem psiRoot) mut => VT.RemoveRoot(ref this, ref psiRoot);
+			public HRESULT RemoveAllRoots() mut => VT.RemoveAllRoots(ref this);
+			public HRESULT GetRootItems(out IShellItemArray* ppsiaRootItems) mut => VT.GetRootItems(ref this, out ppsiaRootItems);
+			public HRESULT SetItemState(ref IShellItem psi, uint32 nstcisMask, uint32 nstcisFlags) mut => VT.SetItemState(ref this, ref psi, nstcisMask, nstcisFlags);
+			public HRESULT GetItemState(ref IShellItem psi, uint32 nstcisMask, out uint32 pnstcisFlags) mut => VT.GetItemState(ref this, ref psi, nstcisMask, out pnstcisFlags);
+			public HRESULT GetSelectedItems(out IShellItemArray* psiaItems) mut => VT.GetSelectedItems(ref this, out psiaItems);
+			public HRESULT GetItemCustomState(ref IShellItem psi, out int32 piStateNumber) mut => VT.GetItemCustomState(ref this, ref psi, out piStateNumber);
+			public HRESULT SetItemCustomState(ref IShellItem psi, int32 iStateNumber) mut => VT.SetItemCustomState(ref this, ref psi, iStateNumber);
+			public HRESULT EnsureItemVisible(ref IShellItem psi) mut => VT.EnsureItemVisible(ref this, ref psi);
+			public HRESULT SetTheme(PWSTR pszTheme) mut => VT.SetTheme(ref this, pszTheme);
+			public HRESULT GetNextItem(ref IShellItem psi, NSTCGNI nstcgi, out IShellItem* ppsiNext) mut => VT.GetNextItem(ref this, ref psi, nstcgi, out ppsiNext);
+			public HRESULT HitTest(ref POINT ppt, out IShellItem* ppsiOut) mut => VT.HitTest(ref this, ref ppt, out ppsiOut);
+			public HRESULT GetItemRect(ref IShellItem psi, out RECT prect) mut => VT.GetItemRect(ref this, ref psi, out prect);
+			public HRESULT CollapseAll() mut => VT.CollapseAll(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10672,10 +8930,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFolderCapabilities(NSTCFOLDERCAPABILITIES nfcMask, out NSTCFOLDERCAPABILITIES pnfcValue) mut
-			{
-				return VT.GetFolderCapabilities(ref this, nfcMask, out pnfcValue);
-			}
+			public HRESULT GetFolderCapabilities(NSTCFOLDERCAPABILITIES nfcMask, out NSTCFOLDERCAPABILITIES pnfcValue) mut => VT.GetFolderCapabilities(ref this, nfcMask, out pnfcValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10689,34 +8945,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetWindow(HWND hwnd, in RECT prc) mut
-			{
-				return VT.SetWindow(ref this, hwnd, prc);
-			}
-			public HRESULT SetRect(in RECT prc) mut
-			{
-				return VT.SetRect(ref this, prc);
-			}
-			public HRESULT DoPreview() mut
-			{
-				return VT.DoPreview(ref this);
-			}
-			public HRESULT Unload() mut
-			{
-				return VT.Unload(ref this);
-			}
-			public HRESULT SetFocus() mut
-			{
-				return VT.SetFocus(ref this);
-			}
-			public HRESULT QueryFocus(out HWND phwnd) mut
-			{
-				return VT.QueryFocus(ref this, out phwnd);
-			}
-			public HRESULT TranslateAccelerator(ref MSG pmsg) mut
-			{
-				return VT.TranslateAccelerator(ref this, ref pmsg);
-			}
+			public HRESULT SetWindow(HWND hwnd, in RECT prc) mut => VT.SetWindow(ref this, hwnd, prc);
+			public HRESULT SetRect(in RECT prc) mut => VT.SetRect(ref this, prc);
+			public HRESULT DoPreview() mut => VT.DoPreview(ref this);
+			public HRESULT Unload() mut => VT.Unload(ref this);
+			public HRESULT SetFocus() mut => VT.SetFocus(ref this);
+			public HRESULT QueryFocus(out HWND phwnd) mut => VT.QueryFocus(ref this, out phwnd);
+			public HRESULT TranslateAccelerator(ref MSG pmsg) mut => VT.TranslateAccelerator(ref this, ref pmsg);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10736,14 +8972,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWindowContext(out PREVIEWHANDLERFRAMEINFO pinfo) mut
-			{
-				return VT.GetWindowContext(ref this, out pinfo);
-			}
-			public HRESULT TranslateAccelerator(ref MSG pmsg) mut
-			{
-				return VT.TranslateAccelerator(ref this, ref pmsg);
-			}
+			public HRESULT GetWindowContext(out PREVIEWHANDLERFRAMEINFO pinfo) mut => VT.GetWindowContext(ref this, out pinfo);
+			public HRESULT TranslateAccelerator(ref MSG pmsg) mut => VT.TranslateAccelerator(ref this, ref pmsg);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10758,10 +8989,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPaneState(in Guid ep, out uint32 peps) mut
-			{
-				return VT.GetPaneState(ref this, ep, out peps);
-			}
+			public HRESULT GetPaneState(in Guid ep, out uint32 peps) mut => VT.GetPaneState(ref this, ep, out peps);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10775,10 +9004,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CallBack(IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint32 uMsg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.CallBack(ref this, psf, hwndOwner, pdtobj, uMsg, wParam, lParam);
-			}
+			public HRESULT CallBack(IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint32 uMsg, WPARAM wParam, LPARAM lParam) mut => VT.CallBack(ref this, psf, hwndOwner, pdtobj, uMsg, wParam, lParam);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10792,30 +9019,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFlags(uint32 uFlags) mut
-			{
-				return VT.SetFlags(ref this, uFlags);
-			}
-			public HRESULT SetKey(HKEY hkey) mut
-			{
-				return VT.SetKey(ref this, hkey);
-			}
-			public HRESULT SetNormalIcon(PWSTR pszFile, int32 iIcon) mut
-			{
-				return VT.SetNormalIcon(ref this, pszFile, iIcon);
-			}
-			public HRESULT SetOpenIcon(PWSTR pszFile, int32 iIcon) mut
-			{
-				return VT.SetOpenIcon(ref this, pszFile, iIcon);
-			}
-			public HRESULT SetShortcutIcon(PWSTR pszFile, int32 iIcon) mut
-			{
-				return VT.SetShortcutIcon(ref this, pszFile, iIcon);
-			}
-			public HRESULT SetDefaultIcon(PWSTR pszFile, int32 iIcon) mut
-			{
-				return VT.SetDefaultIcon(ref this, pszFile, iIcon);
-			}
+			public HRESULT SetFlags(uint32 uFlags) mut => VT.SetFlags(ref this, uFlags);
+			public HRESULT SetKey(HKEY hkey) mut => VT.SetKey(ref this, hkey);
+			public HRESULT SetNormalIcon(PWSTR pszFile, int32 iIcon) mut => VT.SetNormalIcon(ref this, pszFile, iIcon);
+			public HRESULT SetOpenIcon(PWSTR pszFile, int32 iIcon) mut => VT.SetOpenIcon(ref this, pszFile, iIcon);
+			public HRESULT SetShortcutIcon(PWSTR pszFile, int32 iIcon) mut => VT.SetShortcutIcon(ref this, pszFile, iIcon);
+			public HRESULT SetDefaultIcon(PWSTR pszFile, int32 iIcon) mut => VT.SetDefaultIcon(ref this, pszFile, iIcon);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10834,38 +9044,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTitle(ref IShellItemArray psiItemArray, out PWSTR ppszName) mut
-			{
-				return VT.GetTitle(ref this, ref psiItemArray, out ppszName);
-			}
-			public HRESULT GetIcon(ref IShellItemArray psiItemArray, out PWSTR ppszIcon) mut
-			{
-				return VT.GetIcon(ref this, ref psiItemArray, out ppszIcon);
-			}
-			public HRESULT GetToolTip(ref IShellItemArray psiItemArray, out PWSTR ppszInfotip) mut
-			{
-				return VT.GetToolTip(ref this, ref psiItemArray, out ppszInfotip);
-			}
-			public HRESULT GetCanonicalName(out Guid pguidCommandName) mut
-			{
-				return VT.GetCanonicalName(ref this, out pguidCommandName);
-			}
-			public HRESULT GetState(ref IShellItemArray psiItemArray, BOOL fOkToBeSlow, out uint32 pCmdState) mut
-			{
-				return VT.GetState(ref this, ref psiItemArray, fOkToBeSlow, out pCmdState);
-			}
-			public HRESULT Invoke(ref IShellItemArray psiItemArray, ref IBindCtx pbc) mut
-			{
-				return VT.Invoke(ref this, ref psiItemArray, ref pbc);
-			}
-			public HRESULT ComGetFlags(out uint32 pFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pFlags);
-			}
-			public HRESULT EnumSubCommands(out IEnumExplorerCommand* ppEnum) mut
-			{
-				return VT.EnumSubCommands(ref this, out ppEnum);
-			}
+			public HRESULT GetTitle(ref IShellItemArray psiItemArray, out PWSTR ppszName) mut => VT.GetTitle(ref this, ref psiItemArray, out ppszName);
+			public HRESULT GetIcon(ref IShellItemArray psiItemArray, out PWSTR ppszIcon) mut => VT.GetIcon(ref this, ref psiItemArray, out ppszIcon);
+			public HRESULT GetToolTip(ref IShellItemArray psiItemArray, out PWSTR ppszInfotip) mut => VT.GetToolTip(ref this, ref psiItemArray, out ppszInfotip);
+			public HRESULT GetCanonicalName(out Guid pguidCommandName) mut => VT.GetCanonicalName(ref this, out pguidCommandName);
+			public HRESULT GetState(ref IShellItemArray psiItemArray, BOOL fOkToBeSlow, out uint32 pCmdState) mut => VT.GetState(ref this, ref psiItemArray, fOkToBeSlow, out pCmdState);
+			public HRESULT Invoke(ref IShellItemArray psiItemArray, ref IBindCtx pbc) mut => VT.Invoke(ref this, ref psiItemArray, ref pbc);
+			public HRESULT ComGetFlags(out uint32 pFlags) mut => VT.ComGetFlags(ref this, out pFlags);
+			public HRESULT EnumSubCommands(out IEnumExplorerCommand* ppEnum) mut => VT.EnumSubCommands(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10886,10 +9073,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetState(ref IShellItemArray psiItemArray, BOOL fOkToBeSlow, out uint32 pCmdState) mut
-			{
-				return VT.GetState(ref this, ref psiItemArray, fOkToBeSlow, out pCmdState);
-			}
+			public HRESULT GetState(ref IShellItemArray psiItemArray, BOOL fOkToBeSlow, out uint32 pCmdState) mut => VT.GetState(ref this, ref psiItemArray, fOkToBeSlow, out pCmdState);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10903,10 +9088,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszCommandName, ref IPropertyBag ppb) mut
-			{
-				return VT.Initialize(ref this, pszCommandName, ref ppb);
-			}
+			public HRESULT Initialize(PWSTR pszCommandName, ref IPropertyBag ppb) mut => VT.Initialize(ref this, pszCommandName, ref ppb);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10920,22 +9103,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IExplorerCommand** pUICommand, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, pUICommand, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumExplorerCommand* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, IExplorerCommand** pUICommand, uint32* pceltFetched) mut => VT.Next(ref this, celt, pUICommand, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumExplorerCommand* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10952,14 +9124,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCommands(ref IUnknown punkSite, in Guid riid, void** ppv) mut
-			{
-				return VT.GetCommands(ref this, ref punkSite, riid, ppv);
-			}
-			public HRESULT GetCommand(in Guid rguidCommandId, in Guid riid, void** ppv) mut
-			{
-				return VT.GetCommand(ref this, rguidCommandId, riid, ppv);
-			}
+			public HRESULT GetCommands(ref IUnknown punkSite, in Guid riid, void** ppv) mut => VT.GetCommands(ref this, ref punkSite, riid, ppv);
+			public HRESULT GetCommand(in Guid rguidCommandId, in Guid riid, void** ppv) mut => VT.GetCommand(ref this, rguidCommandId, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -10974,18 +9141,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(PWSTR pszName, PWSTR pszPage, ref IUnknown punkSite) mut
-			{
-				return VT.Open(ref this, pszName, pszPage, ref punkSite);
-			}
-			public HRESULT GetPath(PWSTR pszName, char16* pszPath, uint32 cchPath) mut
-			{
-				return VT.GetPath(ref this, pszName, pszPath, cchPath);
-			}
-			public HRESULT GetCurrentView(out CPVIEW pView) mut
-			{
-				return VT.GetCurrentView(ref this, out pView);
-			}
+			public HRESULT Open(PWSTR pszName, PWSTR pszPage, ref IUnknown punkSite) mut => VT.Open(ref this, pszName, pszPage, ref punkSite);
+			public HRESULT GetPath(PWSTR pszName, char16* pszPath, uint32 cchPath) mut => VT.GetPath(ref this, pszName, pszPath, cchPath);
+			public HRESULT GetCurrentView(out CPVIEW pView) mut => VT.GetCurrentView(ref this, out pView);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11001,14 +9160,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFindData(in WIN32_FIND_DATAW pfd) mut
-			{
-				return VT.SetFindData(ref this, pfd);
-			}
-			public HRESULT GetFindData(out WIN32_FIND_DATAW pfd) mut
-			{
-				return VT.GetFindData(ref this, out pfd);
-			}
+			public HRESULT SetFindData(in WIN32_FIND_DATAW pfd) mut => VT.SetFindData(ref this, pfd);
+			public HRESULT GetFindData(out WIN32_FIND_DATAW pfd) mut => VT.GetFindData(ref this, out pfd);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11023,22 +9177,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFileID(LARGE_INTEGER liFileID) mut
-			{
-				return VT.SetFileID(ref this, liFileID);
-			}
-			public HRESULT GetFileID(out LARGE_INTEGER pliFileID) mut
-			{
-				return VT.GetFileID(ref this, out pliFileID);
-			}
-			public HRESULT SetJunctionCLSID(in Guid clsid) mut
-			{
-				return VT.SetJunctionCLSID(ref this, clsid);
-			}
-			public HRESULT GetJunctionCLSID(out Guid pclsid) mut
-			{
-				return VT.GetJunctionCLSID(ref this, out pclsid);
-			}
+			public HRESULT SetFileID(LARGE_INTEGER liFileID) mut => VT.SetFileID(ref this, liFileID);
+			public HRESULT GetFileID(out LARGE_INTEGER pliFileID) mut => VT.GetFileID(ref this, out pliFileID);
+			public HRESULT SetJunctionCLSID(in Guid clsid) mut => VT.SetJunctionCLSID(ref this, clsid);
+			public HRESULT GetJunctionCLSID(out Guid pclsid) mut => VT.GetJunctionCLSID(ref this, out pclsid);
+
 			[CRepr]
 			public struct VTable : IFileSystemBindData.VTable
 			{
@@ -11055,42 +9198,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAppID(PWSTR pszAppID) mut
-			{
-				return VT.SetAppID(ref this, pszAppID);
-			}
-			public HRESULT BeginList(out uint32 pcMinSlots, in Guid riid, void** ppv) mut
-			{
-				return VT.BeginList(ref this, out pcMinSlots, riid, ppv);
-			}
-			public HRESULT AppendCategory(PWSTR pszCategory, ref IObjectArray poa) mut
-			{
-				return VT.AppendCategory(ref this, pszCategory, ref poa);
-			}
-			public HRESULT AppendKnownCategory(KNOWNDESTCATEGORY category) mut
-			{
-				return VT.AppendKnownCategory(ref this, category);
-			}
-			public HRESULT AddUserTasks(ref IObjectArray poa) mut
-			{
-				return VT.AddUserTasks(ref this, ref poa);
-			}
-			public HRESULT CommitList() mut
-			{
-				return VT.CommitList(ref this);
-			}
-			public HRESULT GetRemovedDestinations(in Guid riid, void** ppv) mut
-			{
-				return VT.GetRemovedDestinations(ref this, riid, ppv);
-			}
-			public HRESULT DeleteList(PWSTR pszAppID) mut
-			{
-				return VT.DeleteList(ref this, pszAppID);
-			}
-			public HRESULT AbortList() mut
-			{
-				return VT.AbortList(ref this);
-			}
+			public HRESULT SetAppID(PWSTR pszAppID) mut => VT.SetAppID(ref this, pszAppID);
+			public HRESULT BeginList(out uint32 pcMinSlots, in Guid riid, void** ppv) mut => VT.BeginList(ref this, out pcMinSlots, riid, ppv);
+			public HRESULT AppendCategory(PWSTR pszCategory, ref IObjectArray poa) mut => VT.AppendCategory(ref this, pszCategory, ref poa);
+			public HRESULT AppendKnownCategory(KNOWNDESTCATEGORY category) mut => VT.AppendKnownCategory(ref this, category);
+			public HRESULT AddUserTasks(ref IObjectArray poa) mut => VT.AddUserTasks(ref this, ref poa);
+			public HRESULT CommitList() mut => VT.CommitList(ref this);
+			public HRESULT GetRemovedDestinations(in Guid riid, void** ppv) mut => VT.GetRemovedDestinations(ref this, riid, ppv);
+			public HRESULT DeleteList(PWSTR pszAppID) mut => VT.DeleteList(ref this, pszAppID);
+			public HRESULT AbortList() mut => VT.AbortList(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11112,18 +9229,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAppID(PWSTR pszAppID) mut
-			{
-				return VT.SetAppID(ref this, pszAppID);
-			}
-			public HRESULT RemoveDestination(ref IUnknown punk) mut
-			{
-				return VT.RemoveDestination(ref this, ref punk);
-			}
-			public HRESULT RemoveAllDestinations() mut
-			{
-				return VT.RemoveAllDestinations(ref this);
-			}
+			public HRESULT SetAppID(PWSTR pszAppID) mut => VT.SetAppID(ref this, pszAppID);
+			public HRESULT RemoveDestination(ref IUnknown punk) mut => VT.RemoveDestination(ref this, ref punk);
+			public HRESULT RemoveAllDestinations() mut => VT.RemoveAllDestinations(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11139,14 +9248,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAppID(PWSTR pszAppID) mut
-			{
-				return VT.SetAppID(ref this, pszAppID);
-			}
-			public HRESULT GetList(APPDOCLISTTYPE listtype, uint32 cItemsDesired, in Guid riid, void** ppv) mut
-			{
-				return VT.GetList(ref this, listtype, cItemsDesired, riid, ppv);
-			}
+			public HRESULT SetAppID(PWSTR pszAppID) mut => VT.SetAppID(ref this, pszAppID);
+			public HRESULT GetList(APPDOCLISTTYPE listtype, uint32 cItemsDesired, in Guid riid, void** ppv) mut => VT.GetList(ref this, listtype, cItemsDesired, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11161,14 +9265,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAppID(PWSTR pszAppID) mut
-			{
-				return VT.SetAppID(ref this, pszAppID);
-			}
-			public HRESULT GetAppID(out PWSTR ppszAppID) mut
-			{
-				return VT.GetAppID(ref this, out ppszAppID);
-			}
+			public HRESULT SetAppID(PWSTR pszAppID) mut => VT.SetAppID(ref this, pszAppID);
+			public HRESULT GetAppID(out PWSTR ppszAppID) mut => VT.GetAppID(ref this, out ppszAppID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11183,14 +9282,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProgID(PWSTR pszProgID) mut
-			{
-				return VT.SetProgID(ref this, pszProgID);
-			}
-			public HRESULT GetProgID(out PWSTR ppszProgID) mut
-			{
-				return VT.GetProgID(ref this, out ppszProgID);
-			}
+			public HRESULT SetProgID(PWSTR pszProgID) mut => VT.SetProgID(ref this, pszProgID);
+			public HRESULT GetProgID(out PWSTR ppszProgID) mut => VT.GetProgID(ref this, out ppszProgID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11205,10 +9299,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Update(IBindCtx* pbc, ref ITEMIDLIST pidlIn, out ITEMIDLIST* ppidlOut) mut
-			{
-				return VT.Update(ref this, pbc, ref pidlIn, out ppidlOut);
-			}
+			public HRESULT Update(IBindCtx* pbc, ref ITEMIDLIST pidlIn, out ITEMIDLIST* ppidlOut) mut => VT.Update(ref this, pbc, ref pidlIn, out ppidlOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11222,70 +9314,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetWallpaper(PWSTR monitorID, PWSTR wallpaper) mut
-			{
-				return VT.SetWallpaper(ref this, monitorID, wallpaper);
-			}
-			public HRESULT GetWallpaper(PWSTR monitorID, out PWSTR wallpaper) mut
-			{
-				return VT.GetWallpaper(ref this, monitorID, out wallpaper);
-			}
-			public HRESULT GetMonitorDevicePathAt(uint32 monitorIndex, out PWSTR monitorID) mut
-			{
-				return VT.GetMonitorDevicePathAt(ref this, monitorIndex, out monitorID);
-			}
-			public HRESULT GetMonitorDevicePathCount(out uint32 count) mut
-			{
-				return VT.GetMonitorDevicePathCount(ref this, out count);
-			}
-			public HRESULT GetMonitorRECT(PWSTR monitorID, out RECT displayRect) mut
-			{
-				return VT.GetMonitorRECT(ref this, monitorID, out displayRect);
-			}
-			public HRESULT SetBackgroundColor(uint32 color) mut
-			{
-				return VT.SetBackgroundColor(ref this, color);
-			}
-			public HRESULT GetBackgroundColor(out uint32 color) mut
-			{
-				return VT.GetBackgroundColor(ref this, out color);
-			}
-			public HRESULT SetPosition(DESKTOP_WALLPAPER_POSITION position) mut
-			{
-				return VT.SetPosition(ref this, position);
-			}
-			public HRESULT GetPosition(out DESKTOP_WALLPAPER_POSITION position) mut
-			{
-				return VT.GetPosition(ref this, out position);
-			}
-			public HRESULT SetSlideshow(ref IShellItemArray items) mut
-			{
-				return VT.SetSlideshow(ref this, ref items);
-			}
-			public HRESULT GetSlideshow(out IShellItemArray* items) mut
-			{
-				return VT.GetSlideshow(ref this, out items);
-			}
-			public HRESULT SetSlideshowOptions(DESKTOP_SLIDESHOW_OPTIONS options, uint32 slideshowTick) mut
-			{
-				return VT.SetSlideshowOptions(ref this, options, slideshowTick);
-			}
-			public HRESULT GetSlideshowOptions(out DESKTOP_SLIDESHOW_OPTIONS options, out uint32 slideshowTick) mut
-			{
-				return VT.GetSlideshowOptions(ref this, out options, out slideshowTick);
-			}
-			public HRESULT AdvanceSlideshow(PWSTR monitorID, DESKTOP_SLIDESHOW_DIRECTION direction) mut
-			{
-				return VT.AdvanceSlideshow(ref this, monitorID, direction);
-			}
-			public HRESULT GetStatus(out DESKTOP_SLIDESHOW_STATE state) mut
-			{
-				return VT.GetStatus(ref this, out state);
-			}
-			public HRESULT Enable(BOOL enable) mut
-			{
-				return VT.Enable(ref this, enable);
-			}
+			public HRESULT SetWallpaper(PWSTR monitorID, PWSTR wallpaper) mut => VT.SetWallpaper(ref this, monitorID, wallpaper);
+			public HRESULT GetWallpaper(PWSTR monitorID, out PWSTR wallpaper) mut => VT.GetWallpaper(ref this, monitorID, out wallpaper);
+			public HRESULT GetMonitorDevicePathAt(uint32 monitorIndex, out PWSTR monitorID) mut => VT.GetMonitorDevicePathAt(ref this, monitorIndex, out monitorID);
+			public HRESULT GetMonitorDevicePathCount(out uint32 count) mut => VT.GetMonitorDevicePathCount(ref this, out count);
+			public HRESULT GetMonitorRECT(PWSTR monitorID, out RECT displayRect) mut => VT.GetMonitorRECT(ref this, monitorID, out displayRect);
+			public HRESULT SetBackgroundColor(uint32 color) mut => VT.SetBackgroundColor(ref this, color);
+			public HRESULT GetBackgroundColor(out uint32 color) mut => VT.GetBackgroundColor(ref this, out color);
+			public HRESULT SetPosition(DESKTOP_WALLPAPER_POSITION position) mut => VT.SetPosition(ref this, position);
+			public HRESULT GetPosition(out DESKTOP_WALLPAPER_POSITION position) mut => VT.GetPosition(ref this, out position);
+			public HRESULT SetSlideshow(ref IShellItemArray items) mut => VT.SetSlideshow(ref this, ref items);
+			public HRESULT GetSlideshow(out IShellItemArray* items) mut => VT.GetSlideshow(ref this, out items);
+			public HRESULT SetSlideshowOptions(DESKTOP_SLIDESHOW_OPTIONS options, uint32 slideshowTick) mut => VT.SetSlideshowOptions(ref this, options, slideshowTick);
+			public HRESULT GetSlideshowOptions(out DESKTOP_SLIDESHOW_OPTIONS options, out uint32 slideshowTick) mut => VT.GetSlideshowOptions(ref this, out options, out slideshowTick);
+			public HRESULT AdvanceSlideshow(PWSTR monitorID, DESKTOP_SLIDESHOW_DIRECTION direction) mut => VT.AdvanceSlideshow(ref this, monitorID, direction);
+			public HRESULT GetStatus(out DESKTOP_SLIDESHOW_STATE state) mut => VT.GetStatus(ref this, out state);
+			public HRESULT Enable(BOOL enable) mut => VT.Enable(ref this, enable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11314,14 +9359,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsMember(out BOOL member) mut
-			{
-				return VT.IsMember(ref this, out member);
-			}
-			public HRESULT ShowSharingWizard(HWND owner, out HOMEGROUPSHARINGCHOICES sharingchoices) mut
-			{
-				return VT.ShowSharingWizard(ref this, owner, out sharingchoices);
-			}
+			public HRESULT IsMember(out BOOL member) mut => VT.IsMember(ref this, out member);
+			public HRESULT ShowSharingWizard(HWND owner, out HOMEGROUPSHARINGCHOICES sharingchoices) mut => VT.ShowSharingWizard(ref this, owner, out sharingchoices);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11336,10 +9376,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IPropertyStore pps) mut
-			{
-				return VT.Initialize(ref this, ref pps);
-			}
+			public HRESULT Initialize(ref IPropertyStore pps) mut => VT.Initialize(ref this, ref pps);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11353,10 +9391,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResults(HWND hwnd, PWSTR pszQuery, uint32 dwStartIndex, uint32 dwCount, in Guid riid, void** ppv) mut
-			{
-				return VT.GetResults(ref this, hwnd, pszQuery, dwStartIndex, dwCount, riid, ppv);
-			}
+			public HRESULT GetResults(HWND hwnd, PWSTR pszQuery, uint32 dwStartIndex, uint32 dwCount, in Guid riid, void** ppv) mut => VT.GetResults(ref this, hwnd, pszQuery, dwStartIndex, dwCount, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11370,74 +9406,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LoadLibraryFromItem(ref IShellItem psiLibrary, uint32 grfMode) mut
-			{
-				return VT.LoadLibraryFromItem(ref this, ref psiLibrary, grfMode);
-			}
-			public HRESULT LoadLibraryFromKnownFolder(in Guid kfidLibrary, uint32 grfMode) mut
-			{
-				return VT.LoadLibraryFromKnownFolder(ref this, kfidLibrary, grfMode);
-			}
-			public HRESULT AddFolder(ref IShellItem psiLocation) mut
-			{
-				return VT.AddFolder(ref this, ref psiLocation);
-			}
-			public HRESULT RemoveFolder(ref IShellItem psiLocation) mut
-			{
-				return VT.RemoveFolder(ref this, ref psiLocation);
-			}
-			public HRESULT GetFolders(LIBRARYFOLDERFILTER lff, in Guid riid, void** ppv) mut
-			{
-				return VT.GetFolders(ref this, lff, riid, ppv);
-			}
-			public HRESULT ResolveFolder(ref IShellItem psiFolderToResolve, uint32 dwTimeout, in Guid riid, void** ppv) mut
-			{
-				return VT.ResolveFolder(ref this, ref psiFolderToResolve, dwTimeout, riid, ppv);
-			}
-			public HRESULT GetDefaultSaveFolder(DEFAULTSAVEFOLDERTYPE dsft, in Guid riid, void** ppv) mut
-			{
-				return VT.GetDefaultSaveFolder(ref this, dsft, riid, ppv);
-			}
-			public HRESULT SetDefaultSaveFolder(DEFAULTSAVEFOLDERTYPE dsft, ref IShellItem psi) mut
-			{
-				return VT.SetDefaultSaveFolder(ref this, dsft, ref psi);
-			}
-			public HRESULT GetOptions(out LIBRARYOPTIONFLAGS plofOptions) mut
-			{
-				return VT.GetOptions(ref this, out plofOptions);
-			}
-			public HRESULT SetOptions(LIBRARYOPTIONFLAGS lofMask, LIBRARYOPTIONFLAGS lofOptions) mut
-			{
-				return VT.SetOptions(ref this, lofMask, lofOptions);
-			}
-			public HRESULT GetFolderType(out Guid pftid) mut
-			{
-				return VT.GetFolderType(ref this, out pftid);
-			}
-			public HRESULT SetFolderType(in Guid ftid) mut
-			{
-				return VT.SetFolderType(ref this, ftid);
-			}
-			public HRESULT GetIcon(out PWSTR ppszIcon) mut
-			{
-				return VT.GetIcon(ref this, out ppszIcon);
-			}
-			public HRESULT SetIcon(PWSTR pszIcon) mut
-			{
-				return VT.SetIcon(ref this, pszIcon);
-			}
-			public HRESULT Commit() mut
-			{
-				return VT.Commit(ref this);
-			}
-			public HRESULT Save(ref IShellItem psiFolderToSaveIn, PWSTR pszLibraryName, LIBRARYSAVEFLAGS lsf, out IShellItem* ppsiSavedTo) mut
-			{
-				return VT.Save(ref this, ref psiFolderToSaveIn, pszLibraryName, lsf, out ppsiSavedTo);
-			}
-			public HRESULT SaveInKnownFolder(in Guid kfidToSaveIn, PWSTR pszLibraryName, LIBRARYSAVEFLAGS lsf, out IShellItem* ppsiSavedTo) mut
-			{
-				return VT.SaveInKnownFolder(ref this, kfidToSaveIn, pszLibraryName, lsf, out ppsiSavedTo);
-			}
+			public HRESULT LoadLibraryFromItem(ref IShellItem psiLibrary, uint32 grfMode) mut => VT.LoadLibraryFromItem(ref this, ref psiLibrary, grfMode);
+			public HRESULT LoadLibraryFromKnownFolder(in Guid kfidLibrary, uint32 grfMode) mut => VT.LoadLibraryFromKnownFolder(ref this, kfidLibrary, grfMode);
+			public HRESULT AddFolder(ref IShellItem psiLocation) mut => VT.AddFolder(ref this, ref psiLocation);
+			public HRESULT RemoveFolder(ref IShellItem psiLocation) mut => VT.RemoveFolder(ref this, ref psiLocation);
+			public HRESULT GetFolders(LIBRARYFOLDERFILTER lff, in Guid riid, void** ppv) mut => VT.GetFolders(ref this, lff, riid, ppv);
+			public HRESULT ResolveFolder(ref IShellItem psiFolderToResolve, uint32 dwTimeout, in Guid riid, void** ppv) mut => VT.ResolveFolder(ref this, ref psiFolderToResolve, dwTimeout, riid, ppv);
+			public HRESULT GetDefaultSaveFolder(DEFAULTSAVEFOLDERTYPE dsft, in Guid riid, void** ppv) mut => VT.GetDefaultSaveFolder(ref this, dsft, riid, ppv);
+			public HRESULT SetDefaultSaveFolder(DEFAULTSAVEFOLDERTYPE dsft, ref IShellItem psi) mut => VT.SetDefaultSaveFolder(ref this, dsft, ref psi);
+			public HRESULT GetOptions(out LIBRARYOPTIONFLAGS plofOptions) mut => VT.GetOptions(ref this, out plofOptions);
+			public HRESULT SetOptions(LIBRARYOPTIONFLAGS lofMask, LIBRARYOPTIONFLAGS lofOptions) mut => VT.SetOptions(ref this, lofMask, lofOptions);
+			public HRESULT GetFolderType(out Guid pftid) mut => VT.GetFolderType(ref this, out pftid);
+			public HRESULT SetFolderType(in Guid ftid) mut => VT.SetFolderType(ref this, ftid);
+			public HRESULT GetIcon(out PWSTR ppszIcon) mut => VT.GetIcon(ref this, out ppszIcon);
+			public HRESULT SetIcon(PWSTR pszIcon) mut => VT.SetIcon(ref this, pszIcon);
+			public HRESULT Commit() mut => VT.Commit(ref this);
+			public HRESULT Save(ref IShellItem psiFolderToSaveIn, PWSTR pszLibraryName, LIBRARYSAVEFLAGS lsf, out IShellItem* ppsiSavedTo) mut => VT.Save(ref this, ref psiFolderToSaveIn, pszLibraryName, lsf, out ppsiSavedTo);
+			public HRESULT SaveInKnownFolder(in Guid kfidToSaveIn, PWSTR pszLibraryName, LIBRARYSAVEFLAGS lsf, out IShellItem* ppsiSavedTo) mut => VT.SaveInKnownFolder(ref this, kfidToSaveIn, pszLibraryName, lsf, out ppsiSavedTo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11467,22 +9453,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HWND hwnd, IContextMenuCB* pcmcb, ITEMIDLIST* pidlFolder, IShellFolder* psf, uint32 cidl, ITEMIDLIST** apidl, IUnknown* punkAssociation, uint32 cKeys, HKEY* aKeys) mut
-			{
-				return VT.Initialize(ref this, hwnd, pcmcb, pidlFolder, psf, cidl, apidl, punkAssociation, cKeys, aKeys);
-			}
-			public HRESULT SetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues) mut
-			{
-				return VT.SetMenuRestrictions(ref this, dfmrValues);
-			}
-			public HRESULT GetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, out DEFAULT_FOLDER_MENU_RESTRICTIONS pdfmrValues) mut
-			{
-				return VT.GetMenuRestrictions(ref this, dfmrMask, out pdfmrValues);
-			}
-			public HRESULT SetHandlerClsid(in Guid rclsid) mut
-			{
-				return VT.SetHandlerClsid(ref this, rclsid);
-			}
+			public HRESULT Initialize(HWND hwnd, IContextMenuCB* pcmcb, ITEMIDLIST* pidlFolder, IShellFolder* psf, uint32 cidl, ITEMIDLIST** apidl, IUnknown* punkAssociation, uint32 cKeys, HKEY* aKeys) mut => VT.Initialize(ref this, hwnd, pcmcb, pidlFolder, psf, cidl, apidl, punkAssociation, cKeys, aKeys);
+			public HRESULT SetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues) mut => VT.SetMenuRestrictions(ref this, dfmrValues);
+			public HRESULT GetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, out DEFAULT_FOLDER_MENU_RESTRICTIONS pdfmrValues) mut => VT.GetMenuRestrictions(ref this, dfmrMask, out pdfmrValues);
+			public HRESULT SetHandlerClsid(in Guid rclsid) mut => VT.SetHandlerClsid(ref this, rclsid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11499,18 +9474,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateApplication(PWSTR appUserModelId, PWSTR arguments, ACTIVATEOPTIONS options, out uint32 processId) mut
-			{
-				return VT.ActivateApplication(ref this, appUserModelId, arguments, options, out processId);
-			}
-			public HRESULT ActivateForFile(PWSTR appUserModelId, ref IShellItemArray itemArray, PWSTR verb, out uint32 processId) mut
-			{
-				return VT.ActivateForFile(ref this, appUserModelId, ref itemArray, verb, out processId);
-			}
-			public HRESULT ActivateForProtocol(PWSTR appUserModelId, ref IShellItemArray itemArray, out uint32 processId) mut
-			{
-				return VT.ActivateForProtocol(ref this, appUserModelId, ref itemArray, out processId);
-			}
+			public HRESULT ActivateApplication(PWSTR appUserModelId, PWSTR arguments, ACTIVATEOPTIONS options, out uint32 processId) mut => VT.ActivateApplication(ref this, appUserModelId, arguments, options, out processId);
+			public HRESULT ActivateForFile(PWSTR appUserModelId, ref IShellItemArray itemArray, PWSTR verb, out uint32 processId) mut => VT.ActivateForFile(ref this, appUserModelId, ref itemArray, verb, out processId);
+			public HRESULT ActivateForProtocol(PWSTR appUserModelId, ref IShellItemArray itemArray, out uint32 processId) mut => VT.ActivateForProtocol(ref this, appUserModelId, ref itemArray, out processId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11526,18 +9493,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsWindowOnCurrentVirtualDesktop(HWND topLevelWindow, out BOOL onCurrentDesktop) mut
-			{
-				return VT.IsWindowOnCurrentVirtualDesktop(ref this, topLevelWindow, out onCurrentDesktop);
-			}
-			public HRESULT GetWindowDesktopId(HWND topLevelWindow, out Guid desktopId) mut
-			{
-				return VT.GetWindowDesktopId(ref this, topLevelWindow, out desktopId);
-			}
-			public HRESULT MoveWindowToDesktop(HWND topLevelWindow, in Guid desktopId) mut
-			{
-				return VT.MoveWindowToDesktop(ref this, topLevelWindow, desktopId);
-			}
+			public HRESULT IsWindowOnCurrentVirtualDesktop(HWND topLevelWindow, out BOOL onCurrentDesktop) mut => VT.IsWindowOnCurrentVirtualDesktop(ref this, topLevelWindow, out onCurrentDesktop);
+			public HRESULT GetWindowDesktopId(HWND topLevelWindow, out Guid desktopId) mut => VT.GetWindowDesktopId(ref this, topLevelWindow, out desktopId);
+			public HRESULT MoveWindowToDesktop(HWND topLevelWindow, in Guid desktopId) mut => VT.MoveWindowToDesktop(ref this, topLevelWindow, desktopId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11553,14 +9512,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SupportsSelection() mut
-			{
-				return VT.SupportsSelection(ref this);
-			}
-			public HRESULT Invoke() mut
-			{
-				return VT.Invoke(ref this);
-			}
+			public HRESULT SupportsSelection() mut => VT.SupportsSelection(ref this);
+			public HRESULT Invoke() mut => VT.Invoke(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11575,34 +9529,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR ppsz) mut
-			{
-				return VT.GetName(ref this, out ppsz);
-			}
-			public HRESULT GetUIName(out PWSTR ppsz) mut
-			{
-				return VT.GetUIName(ref this, out ppsz);
-			}
-			public HRESULT GetIconLocation(out PWSTR ppszPath, out int32 pIndex) mut
-			{
-				return VT.GetIconLocation(ref this, out ppszPath, out pIndex);
-			}
-			public HRESULT IsRecommended() mut
-			{
-				return VT.IsRecommended(ref this);
-			}
-			public HRESULT MakeDefault(PWSTR pszDescription) mut
-			{
-				return VT.MakeDefault(ref this, pszDescription);
-			}
-			public HRESULT Invoke(ref IDataObject pdo) mut
-			{
-				return VT.Invoke(ref this, ref pdo);
-			}
-			public HRESULT CreateInvoker(ref IDataObject pdo, out IAssocHandlerInvoker* ppInvoker) mut
-			{
-				return VT.CreateInvoker(ref this, ref pdo, out ppInvoker);
-			}
+			public HRESULT GetName(out PWSTR ppsz) mut => VT.GetName(ref this, out ppsz);
+			public HRESULT GetUIName(out PWSTR ppsz) mut => VT.GetUIName(ref this, out ppsz);
+			public HRESULT GetIconLocation(out PWSTR ppszPath, out int32 pIndex) mut => VT.GetIconLocation(ref this, out ppszPath, out pIndex);
+			public HRESULT IsRecommended() mut => VT.IsRecommended(ref this);
+			public HRESULT MakeDefault(PWSTR pszDescription) mut => VT.MakeDefault(ref this, pszDescription);
+			public HRESULT Invoke(ref IDataObject pdo) mut => VT.Invoke(ref this, ref pdo);
+			public HRESULT CreateInvoker(ref IDataObject pdo, out IAssocHandlerInvoker* ppInvoker) mut => VT.CreateInvoker(ref this, ref pdo, out ppInvoker);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11622,10 +9556,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IAssocHandler** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
+			public HRESULT Next(uint32 celt, IAssocHandler** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11639,14 +9571,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDataObject(out IDataObject* dataObject) mut
-			{
-				return VT.GetDataObject(ref this, out dataObject);
-			}
-			public HRESULT SetDataObject(ref IDataObject dataObject) mut
-			{
-				return VT.SetDataObject(ref this, ref dataObject);
-			}
+			public HRESULT GetDataObject(out IDataObject* dataObject) mut => VT.GetDataObject(ref this, out dataObject);
+			public HRESULT SetDataObject(ref IDataObject dataObject) mut => VT.SetDataObject(ref this, ref dataObject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11661,14 +9588,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** dataTransferManager) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, dataTransferManager);
-			}
-			public HRESULT ShowShareUIForWindow(HWND appWindow) mut
-			{
-				return VT.ShowShareUIForWindow(ref this, appWindow);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** dataTransferManager) mut => VT.GetForWindow(ref this, appWindow, riid, dataTransferManager);
+			public HRESULT ShowShareUIForWindow(HWND appWindow) mut => VT.ShowShareUIForWindow(ref this, appWindow);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11683,14 +9605,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Showing(ref RECT prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView) mut
-			{
-				return VT.Showing(ref this, ref prcInputPaneScreenLocation, fEnsureFocusedElementInView);
-			}
-			public HRESULT Hiding(BOOL fEnsureFocusedElementInView) mut
-			{
-				return VT.Hiding(ref this, fEnsureFocusedElementInView);
-			}
+			public HRESULT Showing(ref RECT prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView) mut => VT.Showing(ref this, ref prcInputPaneScreenLocation, fEnsureFocusedElementInView);
+			public HRESULT Hiding(BOOL fEnsureFocusedElementInView) mut => VT.Hiding(ref this, fEnsureFocusedElementInView);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11705,22 +9622,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Advise(ref IUnknown pWindow, ref IFrameworkInputPaneHandler pHandler, out uint32 pdwCookie) mut
-			{
-				return VT.Advise(ref this, ref pWindow, ref pHandler, out pdwCookie);
-			}
-			public HRESULT AdviseWithHWND(HWND hwnd, ref IFrameworkInputPaneHandler pHandler, out uint32 pdwCookie) mut
-			{
-				return VT.AdviseWithHWND(ref this, hwnd, ref pHandler, out pdwCookie);
-			}
-			public HRESULT Unadvise(uint32 dwCookie) mut
-			{
-				return VT.Unadvise(ref this, dwCookie);
-			}
-			public HRESULT Location(out RECT prcInputPaneScreenLocation) mut
-			{
-				return VT.Location(ref this, out prcInputPaneScreenLocation);
-			}
+			public HRESULT Advise(ref IUnknown pWindow, ref IFrameworkInputPaneHandler pHandler, out uint32 pdwCookie) mut => VT.Advise(ref this, ref pWindow, ref pHandler, out pdwCookie);
+			public HRESULT AdviseWithHWND(HWND hwnd, ref IFrameworkInputPaneHandler pHandler, out uint32 pdwCookie) mut => VT.AdviseWithHWND(ref this, hwnd, ref pHandler, out pdwCookie);
+			public HRESULT Unadvise(uint32 dwCookie) mut => VT.Unadvise(ref this, dwCookie);
+			public HRESULT Location(out RECT prcInputPaneScreenLocation) mut => VT.Location(ref this, out prcInputPaneScreenLocation);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11737,14 +9643,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AppVisibilityOnMonitorChanged(HMONITOR hMonitor, MONITOR_APP_VISIBILITY previousMode, MONITOR_APP_VISIBILITY currentMode) mut
-			{
-				return VT.AppVisibilityOnMonitorChanged(ref this, hMonitor, previousMode, currentMode);
-			}
-			public HRESULT LauncherVisibilityChange(BOOL currentVisibleState) mut
-			{
-				return VT.LauncherVisibilityChange(ref this, currentVisibleState);
-			}
+			public HRESULT AppVisibilityOnMonitorChanged(HMONITOR hMonitor, MONITOR_APP_VISIBILITY previousMode, MONITOR_APP_VISIBILITY currentMode) mut => VT.AppVisibilityOnMonitorChanged(ref this, hMonitor, previousMode, currentMode);
+			public HRESULT LauncherVisibilityChange(BOOL currentVisibleState) mut => VT.LauncherVisibilityChange(ref this, currentVisibleState);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11759,22 +9660,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAppVisibilityOnMonitor(HMONITOR hMonitor, out MONITOR_APP_VISIBILITY pMode) mut
-			{
-				return VT.GetAppVisibilityOnMonitor(ref this, hMonitor, out pMode);
-			}
-			public HRESULT IsLauncherVisible(out BOOL pfVisible) mut
-			{
-				return VT.IsLauncherVisible(ref this, out pfVisible);
-			}
-			public HRESULT Advise(ref IAppVisibilityEvents pCallback, out uint32 pdwCookie) mut
-			{
-				return VT.Advise(ref this, ref pCallback, out pdwCookie);
-			}
-			public HRESULT Unadvise(uint32 dwCookie) mut
-			{
-				return VT.Unadvise(ref this, dwCookie);
-			}
+			public HRESULT GetAppVisibilityOnMonitor(HMONITOR hMonitor, out MONITOR_APP_VISIBILITY pMode) mut => VT.GetAppVisibilityOnMonitor(ref this, hMonitor, out pMode);
+			public HRESULT IsLauncherVisible(out BOOL pfVisible) mut => VT.IsLauncherVisible(ref this, out pfVisible);
+			public HRESULT Advise(ref IAppVisibilityEvents pCallback, out uint32 pdwCookie) mut => VT.Advise(ref this, ref pCallback, out pdwCookie);
+			public HRESULT Unadvise(uint32 dwCookie) mut => VT.Unadvise(ref this, dwCookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11791,10 +9681,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStateChanged(PWSTR pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState) mut
-			{
-				return VT.OnStateChanged(ref this, pszPackageFullName, pesNewState);
-			}
+			public HRESULT OnStateChanged(PWSTR pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState) mut => VT.OnStateChanged(ref this, pszPackageFullName, pesNewState);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11808,66 +9696,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnableDebugging(PWSTR packageFullName, PWSTR debuggerCommandLine, PWSTR environment) mut
-			{
-				return VT.EnableDebugging(ref this, packageFullName, debuggerCommandLine, environment);
-			}
-			public HRESULT DisableDebugging(PWSTR packageFullName) mut
-			{
-				return VT.DisableDebugging(ref this, packageFullName);
-			}
-			public HRESULT Suspend(PWSTR packageFullName) mut
-			{
-				return VT.Suspend(ref this, packageFullName);
-			}
-			public HRESULT Resume(PWSTR packageFullName) mut
-			{
-				return VT.Resume(ref this, packageFullName);
-			}
-			public HRESULT TerminateAllProcesses(PWSTR packageFullName) mut
-			{
-				return VT.TerminateAllProcesses(ref this, packageFullName);
-			}
-			public HRESULT SetTargetSessionId(uint32 sessionId) mut
-			{
-				return VT.SetTargetSessionId(ref this, sessionId);
-			}
-			public HRESULT EnumerateBackgroundTasks(PWSTR packageFullName, out uint32 taskCount, out Guid* taskIds, out PWSTR* taskNames) mut
-			{
-				return VT.EnumerateBackgroundTasks(ref this, packageFullName, out taskCount, out taskIds, out taskNames);
-			}
-			public HRESULT ActivateBackgroundTask(in Guid taskId) mut
-			{
-				return VT.ActivateBackgroundTask(ref this, taskId);
-			}
-			public HRESULT StartServicing(PWSTR packageFullName) mut
-			{
-				return VT.StartServicing(ref this, packageFullName);
-			}
-			public HRESULT StopServicing(PWSTR packageFullName) mut
-			{
-				return VT.StopServicing(ref this, packageFullName);
-			}
-			public HRESULT StartSessionRedirection(PWSTR packageFullName, uint32 sessionId) mut
-			{
-				return VT.StartSessionRedirection(ref this, packageFullName, sessionId);
-			}
-			public HRESULT StopSessionRedirection(PWSTR packageFullName) mut
-			{
-				return VT.StopSessionRedirection(ref this, packageFullName);
-			}
-			public HRESULT GetPackageExecutionState(PWSTR packageFullName, out PACKAGE_EXECUTION_STATE packageExecutionState) mut
-			{
-				return VT.GetPackageExecutionState(ref this, packageFullName, out packageExecutionState);
-			}
-			public HRESULT RegisterForPackageStateChanges(PWSTR packageFullName, ref IPackageExecutionStateChangeNotification pPackageExecutionStateChangeNotification, out uint32 pdwCookie) mut
-			{
-				return VT.RegisterForPackageStateChanges(ref this, packageFullName, ref pPackageExecutionStateChangeNotification, out pdwCookie);
-			}
-			public HRESULT UnregisterForPackageStateChanges(uint32 dwCookie) mut
-			{
-				return VT.UnregisterForPackageStateChanges(ref this, dwCookie);
-			}
+			public HRESULT EnableDebugging(PWSTR packageFullName, PWSTR debuggerCommandLine, PWSTR environment) mut => VT.EnableDebugging(ref this, packageFullName, debuggerCommandLine, environment);
+			public HRESULT DisableDebugging(PWSTR packageFullName) mut => VT.DisableDebugging(ref this, packageFullName);
+			public HRESULT Suspend(PWSTR packageFullName) mut => VT.Suspend(ref this, packageFullName);
+			public HRESULT Resume(PWSTR packageFullName) mut => VT.Resume(ref this, packageFullName);
+			public HRESULT TerminateAllProcesses(PWSTR packageFullName) mut => VT.TerminateAllProcesses(ref this, packageFullName);
+			public HRESULT SetTargetSessionId(uint32 sessionId) mut => VT.SetTargetSessionId(ref this, sessionId);
+			public HRESULT EnumerateBackgroundTasks(PWSTR packageFullName, out uint32 taskCount, out Guid* taskIds, out PWSTR* taskNames) mut => VT.EnumerateBackgroundTasks(ref this, packageFullName, out taskCount, out taskIds, out taskNames);
+			public HRESULT ActivateBackgroundTask(in Guid taskId) mut => VT.ActivateBackgroundTask(ref this, taskId);
+			public HRESULT StartServicing(PWSTR packageFullName) mut => VT.StartServicing(ref this, packageFullName);
+			public HRESULT StopServicing(PWSTR packageFullName) mut => VT.StopServicing(ref this, packageFullName);
+			public HRESULT StartSessionRedirection(PWSTR packageFullName, uint32 sessionId) mut => VT.StartSessionRedirection(ref this, packageFullName, sessionId);
+			public HRESULT StopSessionRedirection(PWSTR packageFullName) mut => VT.StopSessionRedirection(ref this, packageFullName);
+			public HRESULT GetPackageExecutionState(PWSTR packageFullName, out PACKAGE_EXECUTION_STATE packageExecutionState) mut => VT.GetPackageExecutionState(ref this, packageFullName, out packageExecutionState);
+			public HRESULT RegisterForPackageStateChanges(PWSTR packageFullName, ref IPackageExecutionStateChangeNotification pPackageExecutionStateChangeNotification, out uint32 pdwCookie) mut => VT.RegisterForPackageStateChanges(ref this, packageFullName, ref pPackageExecutionStateChangeNotification, out pdwCookie);
+			public HRESULT UnregisterForPackageStateChanges(uint32 dwCookie) mut => VT.UnregisterForPackageStateChanges(ref this, dwCookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11895,10 +9739,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumerateApps(PWSTR packageFullName, out uint32 appCount, out PWSTR* appUserModelIds, out PWSTR* appDisplayNames) mut
-			{
-				return VT.EnumerateApps(ref this, packageFullName, out appCount, out appUserModelIds, out appDisplayNames);
-			}
+			public HRESULT EnumerateApps(PWSTR packageFullName, out uint32 appCount, out PWSTR* appUserModelIds, out PWSTR* appDisplayNames) mut => VT.EnumerateApps(ref this, packageFullName, out appCount, out appUserModelIds, out appDisplayNames);
+
 			[CRepr]
 			public struct VTable : IPackageDebugSettings.VTable
 			{
@@ -11912,18 +9754,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterAsChild(HANDLE processHandle) mut
-			{
-				return VT.RegisterAsChild(ref this, processHandle);
-			}
-			public HRESULT GroupChildWithParent(HANDLE childProcessHandle) mut
-			{
-				return VT.GroupChildWithParent(ref this, childProcessHandle);
-			}
-			public HRESULT UngroupChildFromParent(HANDLE childProcessHandle) mut
-			{
-				return VT.UngroupChildFromParent(ref this, childProcessHandle);
-			}
+			public HRESULT RegisterAsChild(HANDLE processHandle) mut => VT.RegisterAsChild(ref this, processHandle);
+			public HRESULT GroupChildWithParent(HANDLE childProcessHandle) mut => VT.GroupChildWithParent(ref this, childProcessHandle);
+			public HRESULT UngroupChildFromParent(HANDLE childProcessHandle) mut => VT.UngroupChildFromParent(ref this, childProcessHandle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11939,10 +9773,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetValue(out AHE_TYPE pahe) mut
-			{
-				return VT.GetValue(ref this, out pahe);
-			}
+			public HRESULT GetValue(out AHE_TYPE pahe) mut => VT.GetValue(ref this, out pahe);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11956,10 +9788,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUIMode(out EC_HOST_UI_MODE pUIMode) mut
-			{
-				return VT.GetUIMode(ref this, out pUIMode);
-			}
+			public HRESULT GetUIMode(out EC_HOST_UI_MODE pUIMode) mut => VT.GetUIMode(ref this, out pUIMode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -11973,30 +9803,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetNativeDisplaySize(SIZE nativeDisplaySizePixels) mut
-			{
-				return VT.SetNativeDisplaySize(ref this, nativeDisplaySizePixels);
-			}
-			public HRESULT SetScaleFactor(DEVICE_SCALE_FACTOR scaleFactor) mut
-			{
-				return VT.SetScaleFactor(ref this, scaleFactor);
-			}
-			public HRESULT SetApplicationViewState(APPLICATION_VIEW_STATE viewState) mut
-			{
-				return VT.SetApplicationViewState(ref this, viewState);
-			}
-			public HRESULT ComputeApplicationSize(out SIZE applicationSizePixels) mut
-			{
-				return VT.ComputeApplicationSize(ref this, out applicationSizePixels);
-			}
-			public HRESULT IsApplicationViewStateSupported(APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, out BOOL supported) mut
-			{
-				return VT.IsApplicationViewStateSupported(ref this, viewState, nativeDisplaySizePixels, scaleFactor, out supported);
-			}
-			public HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind) mut
-			{
-				return VT.TriggerEdgeGesture(ref this, edgeGestureKind);
-			}
+			public HRESULT SetNativeDisplaySize(SIZE nativeDisplaySizePixels) mut => VT.SetNativeDisplaySize(ref this, nativeDisplaySizePixels);
+			public HRESULT SetScaleFactor(DEVICE_SCALE_FACTOR scaleFactor) mut => VT.SetScaleFactor(ref this, scaleFactor);
+			public HRESULT SetApplicationViewState(APPLICATION_VIEW_STATE viewState) mut => VT.SetApplicationViewState(ref this, viewState);
+			public HRESULT ComputeApplicationSize(out SIZE applicationSizePixels) mut => VT.ComputeApplicationSize(ref this, out applicationSizePixels);
+			public HRESULT IsApplicationViewStateSupported(APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, out BOOL supported) mut => VT.IsApplicationViewStateSupported(ref this, viewState, nativeDisplaySizePixels, scaleFactor, out supported);
+			public HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind) mut => VT.TriggerEdgeGesture(ref this, edgeGestureKind);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12015,34 +9828,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetNativeDisplayOrientation(NATIVE_DISPLAY_ORIENTATION nativeDisplayOrientation) mut
-			{
-				return VT.SetNativeDisplayOrientation(ref this, nativeDisplayOrientation);
-			}
-			public HRESULT SetApplicationViewOrientation(APPLICATION_VIEW_ORIENTATION viewOrientation) mut
-			{
-				return VT.SetApplicationViewOrientation(ref this, viewOrientation);
-			}
-			public HRESULT SetAdjacentDisplayEdges(ADJACENT_DISPLAY_EDGES adjacentDisplayEdges) mut
-			{
-				return VT.SetAdjacentDisplayEdges(ref this, adjacentDisplayEdges);
-			}
-			public HRESULT SetIsOnLockScreen(BOOL isOnLockScreen) mut
-			{
-				return VT.SetIsOnLockScreen(ref this, isOnLockScreen);
-			}
-			public HRESULT SetApplicationViewMinWidth(APPLICATION_VIEW_MIN_WIDTH viewMinWidth) mut
-			{
-				return VT.SetApplicationViewMinWidth(ref this, viewMinWidth);
-			}
-			public HRESULT GetApplicationSizeBounds(out SIZE minApplicationSizePixels, out SIZE maxApplicationSizePixels) mut
-			{
-				return VT.GetApplicationSizeBounds(ref this, out minApplicationSizePixels, out maxApplicationSizePixels);
-			}
-			public HRESULT GetApplicationViewOrientation(SIZE applicationSizePixels, out APPLICATION_VIEW_ORIENTATION viewOrientation) mut
-			{
-				return VT.GetApplicationViewOrientation(ref this, applicationSizePixels, out viewOrientation);
-			}
+			public HRESULT SetNativeDisplayOrientation(NATIVE_DISPLAY_ORIENTATION nativeDisplayOrientation) mut => VT.SetNativeDisplayOrientation(ref this, nativeDisplayOrientation);
+			public HRESULT SetApplicationViewOrientation(APPLICATION_VIEW_ORIENTATION viewOrientation) mut => VT.SetApplicationViewOrientation(ref this, viewOrientation);
+			public HRESULT SetAdjacentDisplayEdges(ADJACENT_DISPLAY_EDGES adjacentDisplayEdges) mut => VT.SetAdjacentDisplayEdges(ref this, adjacentDisplayEdges);
+			public HRESULT SetIsOnLockScreen(BOOL isOnLockScreen) mut => VT.SetIsOnLockScreen(ref this, isOnLockScreen);
+			public HRESULT SetApplicationViewMinWidth(APPLICATION_VIEW_MIN_WIDTH viewMinWidth) mut => VT.SetApplicationViewMinWidth(ref this, viewMinWidth);
+			public HRESULT GetApplicationSizeBounds(out SIZE minApplicationSizePixels, out SIZE maxApplicationSizePixels) mut => VT.GetApplicationSizeBounds(ref this, out minApplicationSizePixels, out maxApplicationSizePixels);
+			public HRESULT GetApplicationViewOrientation(SIZE applicationSizePixels, out APPLICATION_VIEW_ORIENTATION viewOrientation) mut => VT.GetApplicationViewOrientation(ref this, applicationSizePixels, out viewOrientation);
+
 			[CRepr]
 			public struct VTable : IApplicationDesignModeSettings.VTable
 			{
@@ -12062,10 +9855,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMonitor(out HMONITOR monitor) mut
-			{
-				return VT.GetMonitor(ref this, out monitor);
-			}
+			public HRESULT GetMonitor(out HMONITOR monitor) mut => VT.GetMonitor(ref this, out monitor);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12079,14 +9870,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSourceViewToPosition(out HWND hwnd) mut
-			{
-				return VT.GetSourceViewToPosition(ref this, out hwnd);
-			}
-			public HRESULT GetSourceViewSizePreference(out APPLICATION_VIEW_SIZE_PREFERENCE sourceSizeAfterLaunch) mut
-			{
-				return VT.GetSourceViewSizePreference(ref this, out sourceSizeAfterLaunch);
-			}
+			public HRESULT GetSourceViewToPosition(out HWND hwnd) mut => VT.GetSourceViewToPosition(ref this, out hwnd);
+			public HRESULT GetSourceViewSizePreference(out APPLICATION_VIEW_SIZE_PREFERENCE sourceSizeAfterLaunch) mut => VT.GetSourceViewSizePreference(ref this, out sourceSizeAfterLaunch);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12101,10 +9887,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTargetViewSizePreference(out APPLICATION_VIEW_SIZE_PREFERENCE targetSizeOnLaunch) mut
-			{
-				return VT.GetTargetViewSizePreference(ref this, out targetSizeOnLaunch);
-			}
+			public HRESULT GetTargetViewSizePreference(out APPLICATION_VIEW_SIZE_PREFERENCE targetSizeOnLaunch) mut => VT.GetTargetViewSizePreference(ref this, out targetSizeOnLaunch);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12118,10 +9902,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAppUserModelId(out PWSTR launchingApp) mut
-			{
-				return VT.GetAppUserModelId(ref this, out launchingApp);
-			}
+			public HRESULT GetAppUserModelId(out PWSTR launchingApp) mut => VT.GetAppUserModelId(ref this, out launchingApp);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12135,10 +9917,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HWND hwnd) mut
-			{
-				return VT.Initialize(ref this, hwnd);
-			}
+			public HRESULT Initialize(HWND hwnd) mut => VT.Initialize(ref this, hwnd);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12152,18 +9932,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetApplicationDisplayName(out PWSTR value) mut
-			{
-				return VT.GetApplicationDisplayName(ref this, out value);
-			}
-			public HRESULT GetApplicationPublisher(out PWSTR value) mut
-			{
-				return VT.GetApplicationPublisher(ref this, out value);
-			}
-			public HRESULT GetApplicationIconReference(out PWSTR value) mut
-			{
-				return VT.GetApplicationIconReference(ref this, out value);
-			}
+			public HRESULT GetApplicationDisplayName(out PWSTR value) mut => VT.GetApplicationDisplayName(ref this, out value);
+			public HRESULT GetApplicationPublisher(out PWSTR value) mut => VT.GetApplicationPublisher(ref this, out value);
+			public HRESULT GetApplicationIconReference(out PWSTR value) mut => VT.GetApplicationIconReference(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12179,10 +9951,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetApplicationId(out PWSTR value) mut
-			{
-				return VT.GetApplicationId(ref this, out value);
-			}
+			public HRESULT GetApplicationId(out PWSTR value) mut => VT.GetApplicationId(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IHandlerInfo.VTable
 			{
@@ -12196,14 +9966,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeforeCoCreateInstance(in Guid clsidHandler, ref IShellItemArray itemsBeingActivated, ref IHandlerInfo handlerInfo) mut
-			{
-				return VT.BeforeCoCreateInstance(ref this, clsidHandler, ref itemsBeingActivated, ref handlerInfo);
-			}
-			public HRESULT BeforeCreateProcess(PWSTR applicationPath, PWSTR commandLine, ref IHandlerInfo handlerInfo) mut
-			{
-				return VT.BeforeCreateProcess(ref this, applicationPath, commandLine, ref handlerInfo);
-			}
+			public HRESULT BeforeCoCreateInstance(in Guid clsidHandler, ref IShellItemArray itemsBeingActivated, ref IHandlerInfo handlerInfo) mut => VT.BeforeCoCreateInstance(ref this, clsidHandler, ref itemsBeingActivated, ref handlerInfo);
+			public HRESULT BeforeCreateProcess(PWSTR applicationPath, PWSTR commandLine, ref IHandlerInfo handlerInfo) mut => VT.BeforeCreateProcess(ref this, applicationPath, commandLine, ref handlerInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12218,26 +9983,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMonitor(out HMONITOR value) mut
-			{
-				return VT.GetMonitor(ref this, out value);
-			}
-			public HRESULT GetInvokePoint(out POINT value) mut
-			{
-				return VT.GetInvokePoint(ref this, out value);
-			}
-			public HRESULT GetShowCommand(out int32 value) mut
-			{
-				return VT.GetShowCommand(ref this, out value);
-			}
-			public HRESULT GetShowUI(out BOOL value) mut
-			{
-				return VT.GetShowUI(ref this, out value);
-			}
-			public HRESULT GetKeyState(out uint32 value) mut
-			{
-				return VT.GetKeyState(ref this, out value);
-			}
+			public HRESULT GetMonitor(out HMONITOR value) mut => VT.GetMonitor(ref this, out value);
+			public HRESULT GetInvokePoint(out POINT value) mut => VT.GetInvokePoint(ref this, out value);
+			public HRESULT GetShowCommand(out int32 value) mut => VT.GetShowCommand(ref this, out value);
+			public HRESULT GetShowUI(out BOOL value) mut => VT.GetShowUI(ref this, out value);
+			public HRESULT GetKeyState(out uint32 value) mut => VT.GetKeyState(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12255,10 +10006,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowContactCardForWindow(HWND appWindow, ref IUnknown contact, in RECT selection, FLYOUT_PLACEMENT preferredPlacement) mut
-			{
-				return VT.ShowContactCardForWindow(ref this, appWindow, ref contact, selection, preferredPlacement);
-			}
+			public HRESULT ShowContactCardForWindow(HWND appWindow, ref IUnknown contact, in RECT selection, FLYOUT_PLACEMENT preferredPlacement) mut => VT.ShowContactCardForWindow(ref this, appWindow, ref contact, selection, preferredPlacement);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12272,18 +10021,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsMemberOf(PWSTR pwszPath, uint32 dwAttrib) mut
-			{
-				return VT.IsMemberOf(ref this, pwszPath, dwAttrib);
-			}
-			public HRESULT GetOverlayInfo(char16* pwszIconFile, int32 cchMax, out int32 pIndex, out uint32 pdwFlags) mut
-			{
-				return VT.GetOverlayInfo(ref this, pwszIconFile, cchMax, out pIndex, out pdwFlags);
-			}
-			public HRESULT GetPriority(out int32 pPriority) mut
-			{
-				return VT.GetPriority(ref this, out pPriority);
-			}
+			public HRESULT IsMemberOf(PWSTR pwszPath, uint32 dwAttrib) mut => VT.IsMemberOf(ref this, pwszPath, dwAttrib);
+			public HRESULT GetOverlayInfo(char16* pwszIconFile, int32 cchMax, out int32 pIndex, out uint32 pdwFlags) mut => VT.GetOverlayInfo(ref this, pwszIconFile, cchMax, out pIndex, out pdwFlags);
+			public HRESULT GetPriority(out int32 pPriority) mut => VT.GetPriority(ref this, out pPriority);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12299,10 +10040,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnBannerEvent(in BANNER_NOTIFICATION notification) mut
-			{
-				return VT.OnBannerEvent(ref this, notification);
-			}
+			public HRESULT OnBannerEvent(in BANNER_NOTIFICATION notification) mut => VT.OnBannerEvent(ref this, notification);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12316,18 +10055,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 columnCount) mut
-			{
-				return VT.GetCount(ref this, out columnCount);
-			}
-			public HRESULT GetAt(uint32 index, out SORTCOLUMN sortcolumn) mut
-			{
-				return VT.GetAt(ref this, index, out sortcolumn);
-			}
-			public HRESULT GetSortType(out SORT_ORDER_TYPE type) mut
-			{
-				return VT.GetSortType(ref this, out type);
-			}
+			public HRESULT GetCount(out uint32 columnCount) mut => VT.GetCount(ref this, out columnCount);
+			public HRESULT GetAt(uint32 index, out SORTCOLUMN sortcolumn) mut => VT.GetAt(ref this, index, out sortcolumn);
+			public HRESULT GetSortType(out SORT_ORDER_TYPE type) mut => VT.GetSortType(ref this, out type);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12343,30 +10074,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetKeyCount(out int32 keyCount) mut
-			{
-				return VT.GetKeyCount(ref this, out keyCount);
-			}
-			public HRESULT GetKeyAt(int32 index, out PROPERTYKEY pkey) mut
-			{
-				return VT.GetKeyAt(ref this, index, out pkey);
-			}
-			public HRESULT AppendKey(in PROPERTYKEY key) mut
-			{
-				return VT.AppendKey(ref this, key);
-			}
-			public HRESULT DeleteKey(int32 index) mut
-			{
-				return VT.DeleteKey(ref this, index);
-			}
-			public HRESULT IsKeyInStore(in PROPERTYKEY key) mut
-			{
-				return VT.IsKeyInStore(ref this, key);
-			}
-			public HRESULT RemoveKey(in PROPERTYKEY key) mut
-			{
-				return VT.RemoveKey(ref this, key);
-			}
+			public HRESULT GetKeyCount(out int32 keyCount) mut => VT.GetKeyCount(ref this, out keyCount);
+			public HRESULT GetKeyAt(int32 index, out PROPERTYKEY pkey) mut => VT.GetKeyAt(ref this, index, out pkey);
+			public HRESULT AppendKey(in PROPERTYKEY key) mut => VT.AppendKey(ref this, key);
+			public HRESULT DeleteKey(int32 index) mut => VT.DeleteKey(ref this, index);
+			public HRESULT IsKeyInStore(in PROPERTYKEY key) mut => VT.IsKeyInStore(ref this, key);
+			public HRESULT RemoveKey(in PROPERTYKEY key) mut => VT.RemoveKey(ref this, key);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12385,14 +10099,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCodePage(out uint32 puiCodePage) mut
-			{
-				return VT.GetCodePage(ref this, out puiCodePage);
-			}
-			public HRESULT SetCodePage(uint32 uiCodePage) mut
-			{
-				return VT.SetCodePage(ref this, uiCodePage);
-			}
+			public HRESULT GetCodePage(out uint32 puiCodePage) mut => VT.GetCodePage(ref this, out puiCodePage);
+			public HRESULT SetCodePage(uint32 uiCodePage) mut => VT.SetCodePage(ref this, uiCodePage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12407,14 +10116,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFolderViewOptions(FOLDERVIEWOPTIONS fvoMask, FOLDERVIEWOPTIONS fvoFlags) mut
-			{
-				return VT.SetFolderViewOptions(ref this, fvoMask, fvoFlags);
-			}
-			public HRESULT GetFolderViewOptions(out FOLDERVIEWOPTIONS pfvoFlags) mut
-			{
-				return VT.GetFolderViewOptions(ref this, out pfvoFlags);
-			}
+			public HRESULT SetFolderViewOptions(FOLDERVIEWOPTIONS fvoMask, FOLDERVIEWOPTIONS fvoFlags) mut => VT.SetFolderViewOptions(ref this, fvoMask, fvoFlags);
+			public HRESULT GetFolderViewOptions(out FOLDERVIEWOPTIONS pfvoFlags) mut => VT.GetFolderViewOptions(ref this, out pfvoFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12429,10 +10133,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateViewWindow3(ref IShellBrowser psbOwner, ref IShellView psvPrev, uint32 dwViewFlags, FOLDERFLAGS dwMask, FOLDERFLAGS dwFlags, FOLDERVIEWMODE fvMode, in Guid pvid, in RECT prcView, out HWND phwndView) mut
-			{
-				return VT.CreateViewWindow3(ref this, ref psbOwner, ref psvPrev, dwViewFlags, dwMask, dwFlags, fvMode, pvid, prcView, out phwndView);
-			}
+			public HRESULT CreateViewWindow3(ref IShellBrowser psbOwner, ref IShellView psvPrev, uint32 dwViewFlags, FOLDERFLAGS dwMask, FOLDERFLAGS dwFlags, FOLDERVIEWMODE fvMode, in Guid pvid, in RECT prcView, out HWND phwndView) mut => VT.CreateViewWindow3(ref this, ref psbOwner, ref psvPrev, dwViewFlags, dwMask, dwFlags, fvMode, pvid, prcView, out phwndView);
+
 			[CRepr]
 			public struct VTable : IShellView2.VTable
 			{
@@ -12446,14 +10148,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCondition(in Guid riid, void** ppv) mut
-			{
-				return VT.GetCondition(ref this, riid, ppv);
-			}
-			public HRESULT GetText(out PWSTR ppsz) mut
-			{
-				return VT.GetText(ref this, out ppsz);
-			}
+			public HRESULT GetCondition(in Guid riid, void** ppv) mut => VT.GetCondition(ref this, riid, ppv);
+			public HRESULT GetText(out PWSTR ppsz) mut => VT.GetText(ref this, out ppsz);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12468,38 +10165,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf) mut
-			{
-				return VT.SetWatermark(ref this, hbmp, vpwf);
-			}
-			public HRESULT SetColor(VPCOLORFLAGS vpcf, uint32 cr) mut
-			{
-				return VT.SetColor(ref this, vpcf, cr);
-			}
-			public HRESULT GetColor(VPCOLORFLAGS vpcf, out uint32 pcr) mut
-			{
-				return VT.GetColor(ref this, vpcf, out pcr);
-			}
-			public HRESULT SetItemHeight(int32 cyItemInPixels) mut
-			{
-				return VT.SetItemHeight(ref this, cyItemInPixels);
-			}
-			public HRESULT GetItemHeight(out int32 cyItemInPixels) mut
-			{
-				return VT.GetItemHeight(ref this, out cyItemInPixels);
-			}
-			public HRESULT SetFont(in LOGFONTW plf, BOOL bRedraw) mut
-			{
-				return VT.SetFont(ref this, plf, bRedraw);
-			}
-			public HRESULT GetFont(out LOGFONTW plf) mut
-			{
-				return VT.GetFont(ref this, out plf);
-			}
-			public HRESULT SetTheme(PWSTR pszSubAppName, PWSTR pszSubIdList) mut
-			{
-				return VT.SetTheme(ref this, pszSubAppName, pszSubIdList);
-			}
+			public HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf) mut => VT.SetWatermark(ref this, hbmp, vpwf);
+			public HRESULT SetColor(VPCOLORFLAGS vpcf, uint32 cr) mut => VT.SetColor(ref this, vpcf, cr);
+			public HRESULT GetColor(VPCOLORFLAGS vpcf, out uint32 pcr) mut => VT.GetColor(ref this, vpcf, out pcr);
+			public HRESULT SetItemHeight(int32 cyItemInPixels) mut => VT.SetItemHeight(ref this, cyItemInPixels);
+			public HRESULT GetItemHeight(out int32 cyItemInPixels) mut => VT.GetItemHeight(ref this, out cyItemInPixels);
+			public HRESULT SetFont(in LOGFONTW plf, BOOL bRedraw) mut => VT.SetFont(ref this, plf, bRedraw);
+			public HRESULT GetFont(out LOGFONTW plf) mut => VT.GetFont(ref this, out plf);
+			public HRESULT SetTheme(PWSTR pszSubAppName, PWSTR pszSubIdList) mut => VT.SetTheme(ref this, pszSubAppName, pszSubIdList);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12520,18 +10194,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnColumnClicked(ref IShellView ppshv, int32 iColumn) mut
-			{
-				return VT.OnColumnClicked(ref this, ref ppshv, iColumn);
-			}
-			public HRESULT GetCurrentFilter(char16* pszFileSpec, int32 cchFileSpec) mut
-			{
-				return VT.GetCurrentFilter(ref this, pszFileSpec, cchFileSpec);
-			}
-			public HRESULT OnPreViewCreated(ref IShellView ppshv) mut
-			{
-				return VT.OnPreViewCreated(ref this, ref ppshv);
-			}
+			public HRESULT OnColumnClicked(ref IShellView ppshv, int32 iColumn) mut => VT.OnColumnClicked(ref this, ref ppshv, iColumn);
+			public HRESULT GetCurrentFilter(char16* pszFileSpec, int32 cchFileSpec) mut => VT.GetCurrentFilter(ref this, pszFileSpec, cchFileSpec);
+			public HRESULT OnPreViewCreated(ref IShellView ppshv) mut => VT.OnPreViewCreated(ref this, ref ppshv);
+
 			[CRepr]
 			public struct VTable : ICommDlgBrowser2.VTable
 			{
@@ -12547,10 +10213,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnPictureChange(PWSTR pszUserName) mut
-			{
-				return VT.OnPictureChange(ref this, pszUserName);
-			}
+			public HRESULT OnPictureChange(PWSTR pszUserName) mut => VT.OnPictureChange(ref this, pszUserName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12564,22 +10228,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReadAsync(void* pv, uint32 cb, uint32* pcbRead, ref OVERLAPPED lpOverlapped) mut
-			{
-				return VT.ReadAsync(ref this, pv, cb, pcbRead, ref lpOverlapped);
-			}
-			public HRESULT WriteAsync(void* lpBuffer, uint32 cb, uint32* pcbWritten, ref OVERLAPPED lpOverlapped) mut
-			{
-				return VT.WriteAsync(ref this, lpBuffer, cb, pcbWritten, ref lpOverlapped);
-			}
-			public HRESULT OverlappedResult(ref OVERLAPPED lpOverlapped, out uint32 lpNumberOfBytesTransferred, BOOL bWait) mut
-			{
-				return VT.OverlappedResult(ref this, ref lpOverlapped, out lpNumberOfBytesTransferred, bWait);
-			}
-			public HRESULT CancelIo() mut
-			{
-				return VT.CancelIo(ref this);
-			}
+			public HRESULT ReadAsync(void* pv, uint32 cb, uint32* pcbRead, ref OVERLAPPED lpOverlapped) mut => VT.ReadAsync(ref this, pv, cb, pcbRead, ref lpOverlapped);
+			public HRESULT WriteAsync(void* lpBuffer, uint32 cb, uint32* pcbWritten, ref OVERLAPPED lpOverlapped) mut => VT.WriteAsync(ref this, lpBuffer, cb, pcbWritten, ref lpOverlapped);
+			public HRESULT OverlappedResult(ref OVERLAPPED lpOverlapped, out uint32 lpNumberOfBytesTransferred, BOOL bWait) mut => VT.OverlappedResult(ref this, ref lpOverlapped, out lpNumberOfBytesTransferred, bWait);
+			public HRESULT CancelIo() mut => VT.CancelIo(ref this);
+
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
@@ -12596,10 +10249,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSectorSize(out uint32 pcbSectorSize) mut
-			{
-				return VT.GetSectorSize(ref this, out pcbSectorSize);
-			}
+			public HRESULT GetSectorSize(out uint32 pcbSectorSize) mut => VT.GetSectorSize(ref this, out pcbSectorSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12613,10 +10264,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFlags(uint32 dwFlags) mut
-			{
-				return VT.SetFlags(ref this, dwFlags);
-			}
+			public HRESULT SetFlags(uint32 dwFlags) mut => VT.SetFlags(ref this, dwFlags);
+
 			[CRepr]
 			public struct VTable : IDragSourceHelper.VTable
 			{
@@ -12630,18 +10279,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszParams) mut
-			{
-				return VT.Initialize(ref this, pszParams);
-			}
-			public HRESULT HandleEvent(PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType) mut
-			{
-				return VT.HandleEvent(ref this, pszDeviceID, pszAltDeviceID, pszEventType);
-			}
-			public HRESULT HandleEventWithContent(PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType, PWSTR pszContentTypeHandler, ref IDataObject pdataobject) mut
-			{
-				return VT.HandleEventWithContent(ref this, pszDeviceID, pszAltDeviceID, pszEventType, pszContentTypeHandler, ref pdataobject);
-			}
+			public HRESULT Initialize(PWSTR pszParams) mut => VT.Initialize(ref this, pszParams);
+			public HRESULT HandleEvent(PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType) mut => VT.HandleEvent(ref this, pszDeviceID, pszAltDeviceID, pszEventType);
+			public HRESULT HandleEventWithContent(PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType, PWSTR pszContentTypeHandler, ref IDataObject pdataobject) mut => VT.HandleEventWithContent(ref this, pszDeviceID, pszAltDeviceID, pszEventType, pszContentTypeHandler, ref pdataobject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12657,10 +10298,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleEventWithHWND(PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType, HWND hwndOwner) mut
-			{
-				return VT.HandleEventWithHWND(ref this, pszDeviceID, pszAltDeviceID, pszEventType, hwndOwner);
-			}
+			public HRESULT HandleEventWithHWND(PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType, HWND hwndOwner) mut => VT.HandleEventWithHWND(ref this, pszDeviceID, pszAltDeviceID, pszEventType, hwndOwner);
+
 			[CRepr]
 			public struct VTable : IHWEventHandler.VTable
 			{
@@ -12674,10 +10313,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AllowAutoPlay(PWSTR pszPath, uint32 dwContentType, PWSTR pszLabel, uint32 dwSerialNumber) mut
-			{
-				return VT.AllowAutoPlay(ref this, pszPath, dwContentType, pszLabel, dwSerialNumber);
-			}
+			public HRESULT AllowAutoPlay(PWSTR pszPath, uint32 dwContentType, PWSTR pszLabel, uint32 dwSerialNumber) mut => VT.AllowAutoPlay(ref this, pszPath, dwContentType, pszLabel, dwSerialNumber);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12691,10 +10328,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDynamicInfo(PWSTR pszDeviceID, uint32 dwContentType, out PWSTR ppszAction) mut
-			{
-				return VT.GetDynamicInfo(ref this, pszDeviceID, dwContentType, out ppszAction);
-			}
+			public HRESULT GetDynamicInfo(PWSTR pszDeviceID, uint32 dwContentType, out PWSTR ppszAction) mut => VT.GetDynamicInfo(ref this, pszDeviceID, dwContentType, out ppszAction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12708,18 +10343,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnBalloonUserClick(ref POINT pt) mut
-			{
-				return VT.OnBalloonUserClick(ref this, ref pt);
-			}
-			public HRESULT OnLeftClick(ref POINT pt) mut
-			{
-				return VT.OnLeftClick(ref this, ref pt);
-			}
-			public HRESULT OnContextMenu(ref POINT pt) mut
-			{
-				return VT.OnContextMenu(ref this, ref pt);
-			}
+			public HRESULT OnBalloonUserClick(ref POINT pt) mut => VT.OnBalloonUserClick(ref this, ref pt);
+			public HRESULT OnLeftClick(ref POINT pt) mut => VT.OnLeftClick(ref this, ref pt);
+			public HRESULT OnContextMenu(ref POINT pt) mut => VT.OnContextMenu(ref this, ref pt);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12735,26 +10362,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBalloonInfo(PWSTR pszTitle, PWSTR pszText, uint32 dwInfoFlags) mut
-			{
-				return VT.SetBalloonInfo(ref this, pszTitle, pszText, dwInfoFlags);
-			}
-			public HRESULT SetBalloonRetry(uint32 dwShowTime, uint32 dwInterval, uint32 cRetryCount) mut
-			{
-				return VT.SetBalloonRetry(ref this, dwShowTime, dwInterval, cRetryCount);
-			}
-			public HRESULT SetIconInfo(HICON hIcon, PWSTR pszToolTip) mut
-			{
-				return VT.SetIconInfo(ref this, hIcon, pszToolTip);
-			}
-			public HRESULT Show(ref IQueryContinue pqc, uint32 dwContinuePollInterval, ref IUserNotificationCallback pSink) mut
-			{
-				return VT.Show(ref this, ref pqc, dwContinuePollInterval, ref pSink);
-			}
-			public HRESULT PlaySound(PWSTR pszSoundName) mut
-			{
-				return VT.PlaySound(ref this, pszSoundName);
-			}
+			public HRESULT SetBalloonInfo(PWSTR pszTitle, PWSTR pszText, uint32 dwInfoFlags) mut => VT.SetBalloonInfo(ref this, pszTitle, pszText, dwInfoFlags);
+			public HRESULT SetBalloonRetry(uint32 dwShowTime, uint32 dwInterval, uint32 cRetryCount) mut => VT.SetBalloonRetry(ref this, dwShowTime, dwInterval, cRetryCount);
+			public HRESULT SetIconInfo(HICON hIcon, PWSTR pszToolTip) mut => VT.SetIconInfo(ref this, hIcon, pszToolTip);
+			public HRESULT Show(ref IQueryContinue pqc, uint32 dwContinuePollInterval, ref IUserNotificationCallback pSink) mut => VT.Show(ref this, ref pqc, dwContinuePollInterval, ref pSink);
+			public HRESULT PlaySound(PWSTR pszSoundName) mut => VT.PlaySound(ref this, pszSoundName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12772,18 +10385,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CanRenderComposited(out BOOL pfCanRenderComposited) mut
-			{
-				return VT.CanRenderComposited(ref this, out pfCanRenderComposited);
-			}
-			public HRESULT SetCompositionState(BOOL fCompositionEnabled) mut
-			{
-				return VT.SetCompositionState(ref this, fCompositionEnabled);
-			}
-			public HRESULT GetCompositionState(out BOOL pfCompositionEnabled) mut
-			{
-				return VT.GetCompositionState(ref this, out pfCompositionEnabled);
-			}
+			public HRESULT CanRenderComposited(out BOOL pfCanRenderComposited) mut => VT.CanRenderComposited(ref this, out pfCanRenderComposited);
+			public HRESULT SetCompositionState(BOOL fCompositionEnabled) mut => VT.SetCompositionState(ref this, fCompositionEnabled);
+			public HRESULT GetCompositionState(out BOOL pfCompositionEnabled) mut => VT.GetCompositionState(ref this, out pfCompositionEnabled);
+
 			[CRepr]
 			public struct VTable : IDeskBand.VTable
 			{
@@ -12799,10 +10404,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RemoveFromList(ref IShellItem pitem) mut
-			{
-				return VT.RemoveFromList(ref this, ref pitem);
-			}
+			public HRESULT RemoveFromList(ref IShellItem pitem) mut => VT.RemoveFromList(ref this, ref pitem);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12816,18 +10419,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRecorderDriveLetter(char16* pszDrive, uint32 cch) mut
-			{
-				return VT.GetRecorderDriveLetter(ref this, pszDrive, cch);
-			}
-			public HRESULT Burn(HWND hwnd) mut
-			{
-				return VT.Burn(ref this, hwnd);
-			}
-			public HRESULT HasRecordableDrive(out BOOL pfHasRecorder) mut
-			{
-				return VT.HasRecordableDrive(ref this, out pfHasRecorder);
-			}
+			public HRESULT GetRecorderDriveLetter(char16* pszDrive, uint32 cch) mut => VT.GetRecorderDriveLetter(ref this, pszDrive, cch);
+			public HRESULT Burn(HWND hwnd) mut => VT.Burn(ref this, hwnd);
+			public HRESULT HasRecordableDrive(out BOOL pfHasRecorder) mut => VT.HasRecordableDrive(ref this, out pfHasRecorder);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12843,18 +10438,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPreviousPage(out HPROPSHEETPAGE phpage) mut
-			{
-				return VT.GetPreviousPage(ref this, out phpage);
-			}
-			public HRESULT GetNextPage(out HPROPSHEETPAGE phpage) mut
-			{
-				return VT.GetNextPage(ref this, out phpage);
-			}
-			public HRESULT GetCancelledPage(out HPROPSHEETPAGE phpage) mut
-			{
-				return VT.GetCancelledPage(ref this, out phpage);
-			}
+			public HRESULT GetPreviousPage(out HPROPSHEETPAGE phpage) mut => VT.GetPreviousPage(ref this, out phpage);
+			public HRESULT GetNextPage(out HPROPSHEETPAGE phpage) mut => VT.GetNextPage(ref this, out phpage);
+			public HRESULT GetCancelledPage(out HPROPSHEETPAGE phpage) mut => VT.GetCancelledPage(ref this, out phpage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12870,18 +10457,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPages(HPROPSHEETPAGE* aPages, uint32 cPages, out uint32 pnPagesAdded) mut
-			{
-				return VT.AddPages(ref this, aPages, cPages, out pnPagesAdded);
-			}
-			public HRESULT GetFirstPage(out HPROPSHEETPAGE phpage) mut
-			{
-				return VT.GetFirstPage(ref this, out phpage);
-			}
-			public HRESULT GetLastPage(out HPROPSHEETPAGE phpage) mut
-			{
-				return VT.GetLastPage(ref this, out phpage);
-			}
+			public HRESULT AddPages(HPROPSHEETPAGE* aPages, uint32 cPages, out uint32 pnPagesAdded) mut => VT.AddPages(ref this, aPages, cPages, out pnPagesAdded);
+			public HRESULT GetFirstPage(out HPROPSHEETPAGE phpage) mut => VT.GetFirstPage(ref this, out phpage);
+			public HRESULT GetLastPage(out HPROPSHEETPAGE phpage) mut => VT.GetLastPage(ref this, out phpage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12897,14 +10476,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetInitialURL(PWSTR pszURL) mut
-			{
-				return VT.SetInitialURL(ref this, pszURL);
-			}
-			public HRESULT SetErrorURL(PWSTR pszErrorURL) mut
-			{
-				return VT.SetErrorURL(ref this, pszErrorURL);
-			}
+			public HRESULT SetInitialURL(PWSTR pszURL) mut => VT.SetInitialURL(ref this, pszURL);
+			public HRESULT SetErrorURL(PWSTR pszErrorURL) mut => VT.SetErrorURL(ref this, pszErrorURL);
+
 			[CRepr]
 			public struct VTable : IWizardExtension.VTable
 			{
@@ -12919,14 +10493,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IDataObject* pdo, uint32 dwOptions, PWSTR pszServiceScope) mut
-			{
-				return VT.Initialize(ref this, pdo, dwOptions, pszServiceScope);
-			}
-			public HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest) mut
-			{
-				return VT.GetTransferManifest(ref this, phrFromTransfer, pdocManifest);
-			}
+			public HRESULT Initialize(IDataObject* pdo, uint32 dwOptions, PWSTR pszServiceScope) mut => VT.Initialize(ref this, pdo, dwOptions, pszServiceScope);
+			public HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest) mut => VT.GetTransferManifest(ref this, phrFromTransfer, pdocManifest);
+
 			[CRepr]
 			public struct VTable : IWizardExtension.VTable
 			{
@@ -12941,10 +10510,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HWND hwndParent, ref IDataObject pdo, ref RECT prc) mut
-			{
-				return VT.Initialize(ref this, hwndParent, ref pdo, ref prc);
-			}
+			public HRESULT Initialize(HWND hwndParent, ref IDataObject pdo, ref RECT prc) mut => VT.Initialize(ref this, hwndParent, ref pdo, ref prc);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12958,10 +10525,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAccessibleName(PWSTR pszName) mut
-			{
-				return VT.SetAccessibleName(ref this, pszName);
-			}
+			public HRESULT SetAccessibleName(PWSTR pszName) mut => VT.SetAccessibleName(ref this, pszName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -12975,26 +10540,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddItem(ref IShellItem psi) mut
-			{
-				return VT.AddItem(ref this, ref psi);
-			}
-			public HRESULT AddIDList(ref ITEMIDLIST pidl, ITEMIDLIST** ppidlAdded) mut
-			{
-				return VT.AddIDList(ref this, ref pidl, ppidlAdded);
-			}
-			public HRESULT RemoveItem(ref IShellItem psi) mut
-			{
-				return VT.RemoveItem(ref this, ref psi);
-			}
-			public HRESULT RemoveIDList(ref ITEMIDLIST pidl) mut
-			{
-				return VT.RemoveIDList(ref this, ref pidl);
-			}
-			public HRESULT RemoveAll() mut
-			{
-				return VT.RemoveAll(ref this);
-			}
+			public HRESULT AddItem(ref IShellItem psi) mut => VT.AddItem(ref this, ref psi);
+			public HRESULT AddIDList(ref ITEMIDLIST pidl, ITEMIDLIST** ppidlAdded) mut => VT.AddIDList(ref this, ref pidl, ppidlAdded);
+			public HRESULT RemoveItem(ref IShellItem psi) mut => VT.RemoveItem(ref this, ref psi);
+			public HRESULT RemoveIDList(ref ITEMIDLIST pidl) mut => VT.RemoveIDList(ref this, ref pidl);
+			public HRESULT RemoveAll() mut => VT.RemoveAll(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13012,14 +10563,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDropDownStatus(out uint32 pdwFlags, out PWSTR ppwszString) mut
-			{
-				return VT.GetDropDownStatus(ref this, out pdwFlags, out ppwszString);
-			}
-			public HRESULT ResetEnumerator() mut
-			{
-				return VT.ResetEnumerator(ref this);
-			}
+			public HRESULT GetDropDownStatus(out uint32 pdwFlags, out PWSTR ppwszString) mut => VT.GetDropDownStatus(ref this, out pdwFlags, out ppwszString);
+			public HRESULT ResetEnumerator() mut => VT.ResetEnumerator(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13034,10 +10580,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedActionTypes(out uint32 pdwActions) mut
-			{
-				return VT.GetSupportedActionTypes(ref this, out pdwActions);
-			}
+			public HRESULT GetSupportedActionTypes(out uint32 pdwActions) mut => VT.GetSupportedActionTypes(ref this, out pdwActions);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13051,10 +10595,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumReady() mut
-			{
-				return VT.EnumReady(ref this);
-			}
+			public HRESULT EnumReady() mut => VT.EnumReady(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13068,14 +10610,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetEnumReadyCallback(ref IEnumReadyCallback percb) mut
-			{
-				return VT.SetEnumReadyCallback(ref this, ref percb);
-			}
-			public HRESULT CreateEnumIDListFromContents(ref ITEMIDLIST pidlFolder, uint32 dwEnumFlags, out IEnumIDList* ppEnumIDList) mut
-			{
-				return VT.CreateEnumIDListFromContents(ref this, ref pidlFolder, dwEnumFlags, out ppEnumIDList);
-			}
+			public HRESULT SetEnumReadyCallback(ref IEnumReadyCallback percb) mut => VT.SetEnumReadyCallback(ref this, ref percb);
+			public HRESULT CreateEnumIDListFromContents(ref ITEMIDLIST pidlFolder, uint32 dwEnumFlags, out IEnumIDList* ppEnumIDList) mut => VT.CreateEnumIDListFromContents(ref this, ref pidlFolder, dwEnumFlags, out ppEnumIDList);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13090,10 +10627,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InsertItem(ref ITEMIDLIST pidl) mut
-			{
-				return VT.InsertItem(ref this, ref pidl);
-			}
+			public HRESULT InsertItem(ref ITEMIDLIST pidl) mut => VT.InsertItem(ref this, ref pidl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13107,22 +10642,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetCascade(BOOL fCascade) mut
-			{
-				return VT.SetCascade(ref this, fCascade);
-			}
-			public HRESULT SetAccelerators(BOOL fAccelerators) mut
-			{
-				return VT.SetAccelerators(ref this, fAccelerators);
-			}
-			public HRESULT SetNoIcons(BOOL fNoIcons) mut
-			{
-				return VT.SetNoIcons(ref this, fNoIcons);
-			}
-			public HRESULT SetNoText(BOOL fNoText) mut
-			{
-				return VT.SetNoText(ref this, fNoText);
-			}
+			public HRESULT SetCascade(BOOL fCascade) mut => VT.SetCascade(ref this, fCascade);
+			public HRESULT SetAccelerators(BOOL fAccelerators) mut => VT.SetAccelerators(ref this, fAccelerators);
+			public HRESULT SetNoIcons(BOOL fNoIcons) mut => VT.SetNoIcons(ref this, fNoIcons);
+			public HRESULT SetNoText(BOOL fNoText) mut => VT.SetNoText(ref this, fNoText);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13139,10 +10663,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RecompressImage(ref IShellItem psi, int32 cx, int32 cy, int32 iQuality, ref IStorage pstg, out IStream* ppstrmOut) mut
-			{
-				return VT.RecompressImage(ref this, ref psi, cx, cy, iQuality, ref pstg, out ppstrmOut);
-			}
+			public HRESULT RecompressImage(ref IShellItem psi, int32 cx, int32 cy, int32 iQuality, ref IStorage pstg, out IStream* ppstrmOut) mut => VT.RecompressImage(ref this, ref psi, cx, cy, iQuality, ref pstg, out ppstrmOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13156,22 +10678,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnItemSelected(ref IFileDialogCustomize pfdc, uint32 dwIDCtl, uint32 dwIDItem) mut
-			{
-				return VT.OnItemSelected(ref this, ref pfdc, dwIDCtl, dwIDItem);
-			}
-			public HRESULT OnButtonClicked(ref IFileDialogCustomize pfdc, uint32 dwIDCtl) mut
-			{
-				return VT.OnButtonClicked(ref this, ref pfdc, dwIDCtl);
-			}
-			public HRESULT OnCheckButtonToggled(ref IFileDialogCustomize pfdc, uint32 dwIDCtl, BOOL bChecked) mut
-			{
-				return VT.OnCheckButtonToggled(ref this, ref pfdc, dwIDCtl, bChecked);
-			}
-			public HRESULT OnControlActivating(ref IFileDialogCustomize pfdc, uint32 dwIDCtl) mut
-			{
-				return VT.OnControlActivating(ref this, ref pfdc, dwIDCtl);
-			}
+			public HRESULT OnItemSelected(ref IFileDialogCustomize pfdc, uint32 dwIDCtl, uint32 dwIDItem) mut => VT.OnItemSelected(ref this, ref pfdc, dwIDCtl, dwIDItem);
+			public HRESULT OnButtonClicked(ref IFileDialogCustomize pfdc, uint32 dwIDCtl) mut => VT.OnButtonClicked(ref this, ref pfdc, dwIDCtl);
+			public HRESULT OnCheckButtonToggled(ref IFileDialogCustomize pfdc, uint32 dwIDCtl, BOOL bChecked) mut => VT.OnCheckButtonToggled(ref this, ref pfdc, dwIDCtl, bChecked);
+			public HRESULT OnControlActivating(ref IFileDialogCustomize pfdc, uint32 dwIDCtl) mut => VT.OnControlActivating(ref this, ref pfdc, dwIDCtl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13188,14 +10699,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetCancelButtonLabel(PWSTR pszLabel) mut
-			{
-				return VT.SetCancelButtonLabel(ref this, pszLabel);
-			}
-			public HRESULT SetNavigationRoot(ref IShellItem psi) mut
-			{
-				return VT.SetNavigationRoot(ref this, ref psi);
-			}
+			public HRESULT SetCancelButtonLabel(PWSTR pszLabel) mut => VT.SetCancelButtonLabel(ref this, pszLabel);
+			public HRESULT SetNavigationRoot(ref IShellItem psi) mut => VT.SetNavigationRoot(ref this, ref psi);
+
 			[CRepr]
 			public struct VTable : IFileDialog.VTable
 			{
@@ -13210,10 +10716,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LaunchAdvancedAssociationUI(PWSTR pszAppRegistryName) mut
-			{
-				return VT.LaunchAdvancedAssociationUI(ref this, pszAppRegistryName);
-			}
+			public HRESULT LaunchAdvancedAssociationUI(PWSTR pszAppRegistryName) mut => VT.LaunchAdvancedAssociationUI(ref this, pszAppRegistryName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13227,10 +10731,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Run(PWSTR pszArgs) mut
-			{
-				return VT.Run(ref this, pszArgs);
-			}
+			public HRESULT Run(PWSTR pszArgs) mut => VT.Run(ref this, pszArgs);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13244,10 +10746,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AreSnapshotsAvailable(PWSTR pszPath, BOOL fOkToBeSlow, out BOOL pfAvailable) mut
-			{
-				return VT.AreSnapshotsAvailable(ref this, pszPath, fOkToBeSlow, out pfAvailable);
-			}
+			public HRESULT AreSnapshotsAvailable(PWSTR pszPath, BOOL fOkToBeSlow, out BOOL pfAvailable) mut => VT.AreSnapshotsAvailable(ref this, pszPath, fOkToBeSlow, out pfAvailable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13261,6 +10761,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IRelatedItem.VTable
 			{
@@ -13273,22 +10774,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetControlStyle(uint32 nstcsMask, uint32 nstcsStyle) mut
-			{
-				return VT.SetControlStyle(ref this, nstcsMask, nstcsStyle);
-			}
-			public HRESULT GetControlStyle(uint32 nstcsMask, out uint32 pnstcsStyle) mut
-			{
-				return VT.GetControlStyle(ref this, nstcsMask, out pnstcsStyle);
-			}
-			public HRESULT SetControlStyle2(NSTCSTYLE2 nstcsMask, NSTCSTYLE2 nstcsStyle) mut
-			{
-				return VT.SetControlStyle2(ref this, nstcsMask, nstcsStyle);
-			}
-			public HRESULT GetControlStyle2(NSTCSTYLE2 nstcsMask, out NSTCSTYLE2 pnstcsStyle) mut
-			{
-				return VT.GetControlStyle2(ref this, nstcsMask, out pnstcsStyle);
-			}
+			public HRESULT SetControlStyle(uint32 nstcsMask, uint32 nstcsStyle) mut => VT.SetControlStyle(ref this, nstcsMask, nstcsStyle);
+			public HRESULT GetControlStyle(uint32 nstcsMask, out uint32 pnstcsStyle) mut => VT.GetControlStyle(ref this, nstcsMask, out pnstcsStyle);
+			public HRESULT SetControlStyle2(NSTCSTYLE2 nstcsMask, NSTCSTYLE2 nstcsStyle) mut => VT.SetControlStyle2(ref this, nstcsMask, nstcsStyle);
+			public HRESULT GetControlStyle2(NSTCSTYLE2 nstcsMask, out NSTCSTYLE2 pnstcsStyle) mut => VT.GetControlStyle2(ref this, nstcsMask, out pnstcsStyle);
+
 			[CRepr]
 			public struct VTable : INameSpaceTreeControl.VTable
 			{
@@ -13305,78 +10795,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnItemClick(ref IShellItem psi, uint32 nstceHitTest, uint32 nstceClickType) mut
-			{
-				return VT.OnItemClick(ref this, ref psi, nstceHitTest, nstceClickType);
-			}
-			public HRESULT OnPropertyItemCommit(ref IShellItem psi) mut
-			{
-				return VT.OnPropertyItemCommit(ref this, ref psi);
-			}
-			public HRESULT OnItemStateChanging(ref IShellItem psi, uint32 nstcisMask, uint32 nstcisState) mut
-			{
-				return VT.OnItemStateChanging(ref this, ref psi, nstcisMask, nstcisState);
-			}
-			public HRESULT OnItemStateChanged(ref IShellItem psi, uint32 nstcisMask, uint32 nstcisState) mut
-			{
-				return VT.OnItemStateChanged(ref this, ref psi, nstcisMask, nstcisState);
-			}
-			public HRESULT OnSelectionChanged(ref IShellItemArray psiaSelection) mut
-			{
-				return VT.OnSelectionChanged(ref this, ref psiaSelection);
-			}
-			public HRESULT OnKeyboardInput(uint32 uMsg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.OnKeyboardInput(ref this, uMsg, wParam, lParam);
-			}
-			public HRESULT OnBeforeExpand(ref IShellItem psi) mut
-			{
-				return VT.OnBeforeExpand(ref this, ref psi);
-			}
-			public HRESULT OnAfterExpand(ref IShellItem psi) mut
-			{
-				return VT.OnAfterExpand(ref this, ref psi);
-			}
-			public HRESULT OnBeginLabelEdit(ref IShellItem psi) mut
-			{
-				return VT.OnBeginLabelEdit(ref this, ref psi);
-			}
-			public HRESULT OnEndLabelEdit(ref IShellItem psi) mut
-			{
-				return VT.OnEndLabelEdit(ref this, ref psi);
-			}
-			public HRESULT OnGetToolTip(ref IShellItem psi, char16* pszTip, int32 cchTip) mut
-			{
-				return VT.OnGetToolTip(ref this, ref psi, pszTip, cchTip);
-			}
-			public HRESULT OnBeforeItemDelete(ref IShellItem psi) mut
-			{
-				return VT.OnBeforeItemDelete(ref this, ref psi);
-			}
-			public HRESULT OnItemAdded(ref IShellItem psi, BOOL fIsRoot) mut
-			{
-				return VT.OnItemAdded(ref this, ref psi, fIsRoot);
-			}
-			public HRESULT OnItemDeleted(ref IShellItem psi, BOOL fIsRoot) mut
-			{
-				return VT.OnItemDeleted(ref this, ref psi, fIsRoot);
-			}
-			public HRESULT OnBeforeContextMenu(IShellItem* psi, in Guid riid, void** ppv) mut
-			{
-				return VT.OnBeforeContextMenu(ref this, psi, riid, ppv);
-			}
-			public HRESULT OnAfterContextMenu(IShellItem* psi, ref IContextMenu pcmIn, in Guid riid, void** ppv) mut
-			{
-				return VT.OnAfterContextMenu(ref this, psi, ref pcmIn, riid, ppv);
-			}
-			public HRESULT OnBeforeStateImageChange(ref IShellItem psi) mut
-			{
-				return VT.OnBeforeStateImageChange(ref this, ref psi);
-			}
-			public HRESULT OnGetDefaultIconIndex(ref IShellItem psi, out int32 piDefaultIcon, out int32 piOpenIcon) mut
-			{
-				return VT.OnGetDefaultIconIndex(ref this, ref psi, out piDefaultIcon, out piOpenIcon);
-			}
+			public HRESULT OnItemClick(ref IShellItem psi, uint32 nstceHitTest, uint32 nstceClickType) mut => VT.OnItemClick(ref this, ref psi, nstceHitTest, nstceClickType);
+			public HRESULT OnPropertyItemCommit(ref IShellItem psi) mut => VT.OnPropertyItemCommit(ref this, ref psi);
+			public HRESULT OnItemStateChanging(ref IShellItem psi, uint32 nstcisMask, uint32 nstcisState) mut => VT.OnItemStateChanging(ref this, ref psi, nstcisMask, nstcisState);
+			public HRESULT OnItemStateChanged(ref IShellItem psi, uint32 nstcisMask, uint32 nstcisState) mut => VT.OnItemStateChanged(ref this, ref psi, nstcisMask, nstcisState);
+			public HRESULT OnSelectionChanged(ref IShellItemArray psiaSelection) mut => VT.OnSelectionChanged(ref this, ref psiaSelection);
+			public HRESULT OnKeyboardInput(uint32 uMsg, WPARAM wParam, LPARAM lParam) mut => VT.OnKeyboardInput(ref this, uMsg, wParam, lParam);
+			public HRESULT OnBeforeExpand(ref IShellItem psi) mut => VT.OnBeforeExpand(ref this, ref psi);
+			public HRESULT OnAfterExpand(ref IShellItem psi) mut => VT.OnAfterExpand(ref this, ref psi);
+			public HRESULT OnBeginLabelEdit(ref IShellItem psi) mut => VT.OnBeginLabelEdit(ref this, ref psi);
+			public HRESULT OnEndLabelEdit(ref IShellItem psi) mut => VT.OnEndLabelEdit(ref this, ref psi);
+			public HRESULT OnGetToolTip(ref IShellItem psi, char16* pszTip, int32 cchTip) mut => VT.OnGetToolTip(ref this, ref psi, pszTip, cchTip);
+			public HRESULT OnBeforeItemDelete(ref IShellItem psi) mut => VT.OnBeforeItemDelete(ref this, ref psi);
+			public HRESULT OnItemAdded(ref IShellItem psi, BOOL fIsRoot) mut => VT.OnItemAdded(ref this, ref psi, fIsRoot);
+			public HRESULT OnItemDeleted(ref IShellItem psi, BOOL fIsRoot) mut => VT.OnItemDeleted(ref this, ref psi, fIsRoot);
+			public HRESULT OnBeforeContextMenu(IShellItem* psi, in Guid riid, void** ppv) mut => VT.OnBeforeContextMenu(ref this, psi, riid, ppv);
+			public HRESULT OnAfterContextMenu(IShellItem* psi, ref IContextMenu pcmIn, in Guid riid, void** ppv) mut => VT.OnAfterContextMenu(ref this, psi, ref pcmIn, riid, ppv);
+			public HRESULT OnBeforeStateImageChange(ref IShellItem psi) mut => VT.OnBeforeStateImageChange(ref this, ref psi);
+			public HRESULT OnGetDefaultIconIndex(ref IShellItem psi, out int32 piDefaultIcon, out int32 piOpenIcon) mut => VT.OnGetDefaultIconIndex(ref this, ref psi, out piDefaultIcon, out piOpenIcon);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13407,30 +10844,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnDragEnter(IShellItem* psiOver, ref IShellItemArray psiaData, BOOL fOutsideSource, uint32 grfKeyState, out uint32 pdwEffect) mut
-			{
-				return VT.OnDragEnter(ref this, psiOver, ref psiaData, fOutsideSource, grfKeyState, out pdwEffect);
-			}
-			public HRESULT OnDragOver(IShellItem* psiOver, ref IShellItemArray psiaData, uint32 grfKeyState, out uint32 pdwEffect) mut
-			{
-				return VT.OnDragOver(ref this, psiOver, ref psiaData, grfKeyState, out pdwEffect);
-			}
-			public HRESULT OnDragPosition(IShellItem* psiOver, ref IShellItemArray psiaData, int32 iNewPosition, int32 iOldPosition) mut
-			{
-				return VT.OnDragPosition(ref this, psiOver, ref psiaData, iNewPosition, iOldPosition);
-			}
-			public HRESULT OnDrop(IShellItem* psiOver, ref IShellItemArray psiaData, int32 iPosition, uint32 grfKeyState, out uint32 pdwEffect) mut
-			{
-				return VT.OnDrop(ref this, psiOver, ref psiaData, iPosition, grfKeyState, out pdwEffect);
-			}
-			public HRESULT OnDropPosition(IShellItem* psiOver, ref IShellItemArray psiaData, int32 iNewPosition, int32 iOldPosition) mut
-			{
-				return VT.OnDropPosition(ref this, psiOver, ref psiaData, iNewPosition, iOldPosition);
-			}
-			public HRESULT OnDragLeave(IShellItem* psiOver) mut
-			{
-				return VT.OnDragLeave(ref this, psiOver);
-			}
+			public HRESULT OnDragEnter(IShellItem* psiOver, ref IShellItemArray psiaData, BOOL fOutsideSource, uint32 grfKeyState, out uint32 pdwEffect) mut => VT.OnDragEnter(ref this, psiOver, ref psiaData, fOutsideSource, grfKeyState, out pdwEffect);
+			public HRESULT OnDragOver(IShellItem* psiOver, ref IShellItemArray psiaData, uint32 grfKeyState, out uint32 pdwEffect) mut => VT.OnDragOver(ref this, psiOver, ref psiaData, grfKeyState, out pdwEffect);
+			public HRESULT OnDragPosition(IShellItem* psiOver, ref IShellItemArray psiaData, int32 iNewPosition, int32 iOldPosition) mut => VT.OnDragPosition(ref this, psiOver, ref psiaData, iNewPosition, iOldPosition);
+			public HRESULT OnDrop(IShellItem* psiOver, ref IShellItemArray psiaData, int32 iPosition, uint32 grfKeyState, out uint32 pdwEffect) mut => VT.OnDrop(ref this, psiOver, ref psiaData, iPosition, grfKeyState, out pdwEffect);
+			public HRESULT OnDropPosition(IShellItem* psiOver, ref IShellItemArray psiaData, int32 iNewPosition, int32 iOldPosition) mut => VT.OnDropPosition(ref this, psiOver, ref psiaData, iNewPosition, iOldPosition);
+			public HRESULT OnDragLeave(IShellItem* psiOver) mut => VT.OnDragLeave(ref this, psiOver);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13449,18 +10869,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnGetDefaultAccessibilityAction(ref IShellItem psi, out BSTR pbstrDefaultAction) mut
-			{
-				return VT.OnGetDefaultAccessibilityAction(ref this, ref psi, out pbstrDefaultAction);
-			}
-			public HRESULT OnDoDefaultAccessibilityAction(ref IShellItem psi) mut
-			{
-				return VT.OnDoDefaultAccessibilityAction(ref this, ref psi);
-			}
-			public HRESULT OnGetAccessibilityRole(ref IShellItem psi, out VARIANT pvarRole) mut
-			{
-				return VT.OnGetAccessibilityRole(ref this, ref psi, out pvarRole);
-			}
+			public HRESULT OnGetDefaultAccessibilityAction(ref IShellItem psi, out BSTR pbstrDefaultAction) mut => VT.OnGetDefaultAccessibilityAction(ref this, ref psi, out pbstrDefaultAction);
+			public HRESULT OnDoDefaultAccessibilityAction(ref IShellItem psi) mut => VT.OnDoDefaultAccessibilityAction(ref this, ref psi);
+			public HRESULT OnGetAccessibilityRole(ref IShellItem psi, out VARIANT pvarRole) mut => VT.OnGetAccessibilityRole(ref this, ref psi, out pvarRole);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13476,22 +10888,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PrePaint(HDC hdc, ref RECT prc, out LRESULT plres) mut
-			{
-				return VT.PrePaint(ref this, hdc, ref prc, out plres);
-			}
-			public HRESULT PostPaint(HDC hdc, ref RECT prc) mut
-			{
-				return VT.PostPaint(ref this, hdc, ref prc);
-			}
-			public HRESULT ItemPrePaint(HDC hdc, ref RECT prc, ref NSTCCUSTOMDRAW pnstccdItem, out uint32 pclrText, out uint32 pclrTextBk, out LRESULT plres) mut
-			{
-				return VT.ItemPrePaint(ref this, hdc, ref prc, ref pnstccdItem, out pclrText, out pclrTextBk, out plres);
-			}
-			public HRESULT ItemPostPaint(HDC hdc, ref RECT prc, ref NSTCCUSTOMDRAW pnstccdItem) mut
-			{
-				return VT.ItemPostPaint(ref this, hdc, ref prc, ref pnstccdItem);
-			}
+			public HRESULT PrePaint(HDC hdc, ref RECT prc, out LRESULT plres) mut => VT.PrePaint(ref this, hdc, ref prc, out plres);
+			public HRESULT PostPaint(HDC hdc, ref RECT prc) mut => VT.PostPaint(ref this, hdc, ref prc);
+			public HRESULT ItemPrePaint(HDC hdc, ref RECT prc, ref NSTCCUSTOMDRAW pnstccdItem, out uint32 pclrText, out uint32 pclrTextBk, out LRESULT plres) mut => VT.ItemPrePaint(ref this, hdc, ref prc, ref pnstccdItem, out pclrText, out pclrTextBk, out plres);
+			public HRESULT ItemPostPaint(HDC hdc, ref RECT prc, ref NSTCCUSTOMDRAW pnstccdItem) mut => VT.ItemPostPaint(ref this, hdc, ref prc, ref pnstccdItem);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13508,22 +10909,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowDeskBand(in Guid clsid) mut
-			{
-				return VT.ShowDeskBand(ref this, clsid);
-			}
-			public HRESULT HideDeskBand(in Guid clsid) mut
-			{
-				return VT.HideDeskBand(ref this, clsid);
-			}
-			public HRESULT IsDeskBandShown(in Guid clsid) mut
-			{
-				return VT.IsDeskBandShown(ref this, clsid);
-			}
-			public HRESULT DeskBandRegistrationChanged() mut
-			{
-				return VT.DeskBandRegistrationChanged(ref this);
-			}
+			public HRESULT ShowDeskBand(in Guid clsid) mut => VT.ShowDeskBand(ref this, clsid);
+			public HRESULT HideDeskBand(in Guid clsid) mut => VT.HideDeskBand(ref this, clsid);
+			public HRESULT IsDeskBandShown(in Guid clsid) mut => VT.IsDeskBandShown(ref this, clsid);
+			public HRESULT DeskBandRegistrationChanged() mut => VT.DeskBandRegistrationChanged(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13540,18 +10930,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateBand(in Guid rclsidBand, BOOL fAvailable, BOOL fVisible, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateBand(ref this, rclsidBand, fAvailable, fVisible, riid, ppv);
-			}
-			public HRESULT SetBandAvailability(in Guid rclsidBand, BOOL fAvailable) mut
-			{
-				return VT.SetBandAvailability(ref this, rclsidBand, fAvailable);
-			}
-			public HRESULT DestroyBand(in Guid rclsidBand) mut
-			{
-				return VT.DestroyBand(ref this, rclsidBand);
-			}
+			public HRESULT CreateBand(in Guid rclsidBand, BOOL fAvailable, BOOL fVisible, in Guid riid, void** ppv) mut => VT.CreateBand(ref this, rclsidBand, fAvailable, fVisible, riid, ppv);
+			public HRESULT SetBandAvailability(in Guid rclsidBand, BOOL fAvailable) mut => VT.SetBandAvailability(ref this, rclsidBand, fAvailable);
+			public HRESULT DestroyBand(in Guid rclsidBand) mut => VT.DestroyBand(ref this, rclsidBand);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13567,10 +10949,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComputerInfoChanged() mut
-			{
-				return VT.ComputerInfoChanged(ref this);
-			}
+			public HRESULT ComputerInfoChanged() mut => VT.ComputerInfoChanged(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13584,10 +10964,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RunGadget(PWSTR gadgetPath) mut
-			{
-				return VT.RunGadget(ref this, gadgetPath);
-			}
+			public HRESULT RunGadget(PWSTR gadgetPath) mut => VT.RunGadget(ref this, gadgetPath);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13601,10 +10979,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Undocked(UNDOCK_REASON undockReason) mut
-			{
-				return VT.Undocked(ref this, undockReason);
-			}
+			public HRESULT Undocked(UNDOCK_REASON undockReason) mut => VT.Undocked(ref this, undockReason);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13618,18 +10994,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAvailableSize(HMONITOR hMonitor, out uint32 pcxFixed, out uint32 pcyMax) mut
-			{
-				return VT.GetAvailableSize(ref this, hMonitor, out pcxFixed, out pcyMax);
-			}
-			public HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, uint32 cyRequested, ref IAccessibilityDockingServiceCallback pCallback) mut
-			{
-				return VT.DockWindow(ref this, hwnd, hMonitor, cyRequested, ref pCallback);
-			}
-			public HRESULT UndockWindow(HWND hwnd) mut
-			{
-				return VT.UndockWindow(ref this, hwnd);
-			}
+			public HRESULT GetAvailableSize(HMONITOR hMonitor, out uint32 pcxFixed, out uint32 pcyMax) mut => VT.GetAvailableSize(ref this, hMonitor, out pcxFixed, out pcyMax);
+			public HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, uint32 cyRequested, ref IAccessibilityDockingServiceCallback pCallback) mut => VT.DockWindow(ref this, hwnd, hMonitor, cyRequested, ref pCallback);
+			public HRESULT UndockWindow(HWND hwnd) mut => VT.UndockWindow(ref this, hwnd);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13645,22 +11013,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBanner(PWSTR providerIdentity, PWSTR subscriptionId, PWSTR contentId) mut
-			{
-				return VT.SetBanner(ref this, providerIdentity, subscriptionId, contentId);
-			}
-			public HRESULT ClearBanner(PWSTR providerIdentity, PWSTR subscriptionId) mut
-			{
-				return VT.ClearBanner(ref this, providerIdentity, subscriptionId);
-			}
-			public HRESULT ClearAllBanners(PWSTR providerIdentity) mut
-			{
-				return VT.ClearAllBanners(ref this, providerIdentity);
-			}
-			public HRESULT GetBanner(PWSTR providerIdentity, PWSTR subscriptionId, out PWSTR contentId) mut
-			{
-				return VT.GetBanner(ref this, providerIdentity, subscriptionId, out contentId);
-			}
+			public HRESULT SetBanner(PWSTR providerIdentity, PWSTR subscriptionId, PWSTR contentId) mut => VT.SetBanner(ref this, providerIdentity, subscriptionId, contentId);
+			public HRESULT ClearBanner(PWSTR providerIdentity, PWSTR subscriptionId) mut => VT.ClearBanner(ref this, providerIdentity, subscriptionId);
+			public HRESULT ClearAllBanners(PWSTR providerIdentity) mut => VT.ClearAllBanners(ref this, providerIdentity);
+			public HRESULT GetBanner(PWSTR providerIdentity, PWSTR subscriptionId, out PWSTR contentId) mut => VT.GetBanner(ref this, providerIdentity, subscriptionId, out contentId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13677,10 +11034,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CopyCallback(HWND hwnd, uint32 operation, uint32 flags, PWSTR srcFile, uint32 srcAttribs, PWSTR destFile, uint32 destAttribs, out uint32 result) mut
-			{
-				return VT.CopyCallback(ref this, hwnd, operation, flags, srcFile, srcAttribs, destFile, destAttribs, out result);
-			}
+			public HRESULT CopyCallback(HWND hwnd, uint32 operation, uint32 flags, PWSTR srcFile, uint32 srcAttribs, PWSTR destFile, uint32 destAttribs, out uint32 result) mut => VT.CopyCallback(ref this, hwnd, operation, flags, srcFile, srcAttribs, destFile, destAttribs, out result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -13694,106 +11049,32 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GoBack() mut
-			{
-				return VT.GoBack(ref this);
-			}
-			public HRESULT GoForward() mut
-			{
-				return VT.GoForward(ref this);
-			}
-			public HRESULT GoHome() mut
-			{
-				return VT.GoHome(ref this);
-			}
-			public HRESULT GoSearch() mut
-			{
-				return VT.GoSearch(ref this);
-			}
-			public HRESULT Navigate(BSTR URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers) mut
-			{
-				return VT.Navigate(ref this, URL, Flags, TargetFrameName, PostData, Headers);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Refresh2(VARIANT* Level) mut
-			{
-				return VT.Refresh2(ref this, Level);
-			}
-			public HRESULT Stop() mut
-			{
-				return VT.Stop(ref this);
-			}
-			public HRESULT get_Application(out IDispatch* ppDisp) mut
-			{
-				return VT.get_Application(ref this, out ppDisp);
-			}
-			public HRESULT get_Parent(out IDispatch* ppDisp) mut
-			{
-				return VT.get_Parent(ref this, out ppDisp);
-			}
-			public HRESULT get_Container(out IDispatch* ppDisp) mut
-			{
-				return VT.get_Container(ref this, out ppDisp);
-			}
-			public HRESULT get_Document(out IDispatch* ppDisp) mut
-			{
-				return VT.get_Document(ref this, out ppDisp);
-			}
-			public HRESULT get_TopLevelContainer(out int16 pBool) mut
-			{
-				return VT.get_TopLevelContainer(ref this, out pBool);
-			}
-			public HRESULT get_Type(out BSTR Type) mut
-			{
-				return VT.get_Type(ref this, out Type);
-			}
-			public HRESULT get_Left(out int32 pl) mut
-			{
-				return VT.get_Left(ref this, out pl);
-			}
-			public HRESULT put_Left(int32 Left) mut
-			{
-				return VT.put_Left(ref this, Left);
-			}
-			public HRESULT get_Top(out int32 pl) mut
-			{
-				return VT.get_Top(ref this, out pl);
-			}
-			public HRESULT put_Top(int32 Top) mut
-			{
-				return VT.put_Top(ref this, Top);
-			}
-			public HRESULT get_Width(out int32 pl) mut
-			{
-				return VT.get_Width(ref this, out pl);
-			}
-			public HRESULT put_Width(int32 Width) mut
-			{
-				return VT.put_Width(ref this, Width);
-			}
-			public HRESULT get_Height(out int32 pl) mut
-			{
-				return VT.get_Height(ref this, out pl);
-			}
-			public HRESULT put_Height(int32 Height) mut
-			{
-				return VT.put_Height(ref this, Height);
-			}
-			public HRESULT get_LocationName(out BSTR LocationName) mut
-			{
-				return VT.get_LocationName(ref this, out LocationName);
-			}
-			public HRESULT get_LocationURL(out BSTR LocationURL) mut
-			{
-				return VT.get_LocationURL(ref this, out LocationURL);
-			}
-			public HRESULT get_Busy(out int16 pBool) mut
-			{
-				return VT.get_Busy(ref this, out pBool);
-			}
+			public HRESULT GoBack() mut => VT.GoBack(ref this);
+			public HRESULT GoForward() mut => VT.GoForward(ref this);
+			public HRESULT GoHome() mut => VT.GoHome(ref this);
+			public HRESULT GoSearch() mut => VT.GoSearch(ref this);
+			public HRESULT Navigate(BSTR URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers) mut => VT.Navigate(ref this, URL, Flags, TargetFrameName, PostData, Headers);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Refresh2(VARIANT* Level) mut => VT.Refresh2(ref this, Level);
+			public HRESULT Stop() mut => VT.Stop(ref this);
+			public HRESULT get_Application(out IDispatch* ppDisp) mut => VT.get_Application(ref this, out ppDisp);
+			public HRESULT get_Parent(out IDispatch* ppDisp) mut => VT.get_Parent(ref this, out ppDisp);
+			public HRESULT get_Container(out IDispatch* ppDisp) mut => VT.get_Container(ref this, out ppDisp);
+			public HRESULT get_Document(out IDispatch* ppDisp) mut => VT.get_Document(ref this, out ppDisp);
+			public HRESULT get_TopLevelContainer(out int16 pBool) mut => VT.get_TopLevelContainer(ref this, out pBool);
+			public HRESULT get_Type(out BSTR Type) mut => VT.get_Type(ref this, out Type);
+			public HRESULT get_Left(out int32 pl) mut => VT.get_Left(ref this, out pl);
+			public HRESULT put_Left(int32 Left) mut => VT.put_Left(ref this, Left);
+			public HRESULT get_Top(out int32 pl) mut => VT.get_Top(ref this, out pl);
+			public HRESULT put_Top(int32 Top) mut => VT.put_Top(ref this, Top);
+			public HRESULT get_Width(out int32 pl) mut => VT.get_Width(ref this, out pl);
+			public HRESULT put_Width(int32 Width) mut => VT.put_Width(ref this, Width);
+			public HRESULT get_Height(out int32 pl) mut => VT.get_Height(ref this, out pl);
+			public HRESULT put_Height(int32 Height) mut => VT.put_Height(ref this, Height);
+			public HRESULT get_LocationName(out BSTR LocationName) mut => VT.get_LocationName(ref this, out LocationName);
+			public HRESULT get_LocationURL(out BSTR LocationURL) mut => VT.get_LocationURL(ref this, out LocationURL);
+			public HRESULT get_Busy(out int16 pBool) mut => VT.get_Busy(ref this, out pBool);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -13831,6 +11112,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -13843,86 +11125,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Quit() mut
-			{
-				return VT.Quit(ref this);
-			}
-			public HRESULT ClientToWindow(out int32 pcx, out int32 pcy) mut
-			{
-				return VT.ClientToWindow(ref this, out pcx, out pcy);
-			}
-			public HRESULT PutProperty(BSTR Property, VARIANT vtValue) mut
-			{
-				return VT.PutProperty(ref this, Property, vtValue);
-			}
-			public HRESULT GetProperty(BSTR Property, out VARIANT pvtValue) mut
-			{
-				return VT.GetProperty(ref this, Property, out pvtValue);
-			}
-			public HRESULT get_Name(out BSTR Name) mut
-			{
-				return VT.get_Name(ref this, out Name);
-			}
-			public HRESULT get_HWND(out SHANDLE_PTR pHWND) mut
-			{
-				return VT.get_HWND(ref this, out pHWND);
-			}
-			public HRESULT get_FullName(out BSTR FullName) mut
-			{
-				return VT.get_FullName(ref this, out FullName);
-			}
-			public HRESULT get_Path(out BSTR Path) mut
-			{
-				return VT.get_Path(ref this, out Path);
-			}
-			public HRESULT get_Visible(out int16 pBool) mut
-			{
-				return VT.get_Visible(ref this, out pBool);
-			}
-			public HRESULT put_Visible(int16 Value) mut
-			{
-				return VT.put_Visible(ref this, Value);
-			}
-			public HRESULT get_StatusBar(out int16 pBool) mut
-			{
-				return VT.get_StatusBar(ref this, out pBool);
-			}
-			public HRESULT put_StatusBar(int16 Value) mut
-			{
-				return VT.put_StatusBar(ref this, Value);
-			}
-			public HRESULT get_StatusText(out BSTR StatusText) mut
-			{
-				return VT.get_StatusText(ref this, out StatusText);
-			}
-			public HRESULT put_StatusText(BSTR StatusText) mut
-			{
-				return VT.put_StatusText(ref this, StatusText);
-			}
-			public HRESULT get_ToolBar(out int32 Value) mut
-			{
-				return VT.get_ToolBar(ref this, out Value);
-			}
-			public HRESULT put_ToolBar(int32 Value) mut
-			{
-				return VT.put_ToolBar(ref this, Value);
-			}
-			public HRESULT get_MenuBar(out int16 Value) mut
-			{
-				return VT.get_MenuBar(ref this, out Value);
-			}
-			public HRESULT put_MenuBar(int16 Value) mut
-			{
-				return VT.put_MenuBar(ref this, Value);
-			}
-			public HRESULT get_FullScreen(out int16 pbFullScreen) mut
-			{
-				return VT.get_FullScreen(ref this, out pbFullScreen);
-			}
-			public HRESULT put_FullScreen(int16 bFullScreen) mut
-			{
-				return VT.put_FullScreen(ref this, bFullScreen);
-			}
+			public HRESULT Quit() mut => VT.Quit(ref this);
+			public HRESULT ClientToWindow(out int32 pcx, out int32 pcy) mut => VT.ClientToWindow(ref this, out pcx, out pcy);
+			public HRESULT PutProperty(BSTR Property, VARIANT vtValue) mut => VT.PutProperty(ref this, Property, vtValue);
+			public HRESULT GetProperty(BSTR Property, out VARIANT pvtValue) mut => VT.GetProperty(ref this, Property, out pvtValue);
+			public HRESULT get_Name(out BSTR Name) mut => VT.get_Name(ref this, out Name);
+			public HRESULT get_HWND(out SHANDLE_PTR pHWND) mut => VT.get_HWND(ref this, out pHWND);
+			public HRESULT get_FullName(out BSTR FullName) mut => VT.get_FullName(ref this, out FullName);
+			public HRESULT get_Path(out BSTR Path) mut => VT.get_Path(ref this, out Path);
+			public HRESULT get_Visible(out int16 pBool) mut => VT.get_Visible(ref this, out pBool);
+			public HRESULT put_Visible(int16 Value) mut => VT.put_Visible(ref this, Value);
+			public HRESULT get_StatusBar(out int16 pBool) mut => VT.get_StatusBar(ref this, out pBool);
+			public HRESULT put_StatusBar(int16 Value) mut => VT.put_StatusBar(ref this, Value);
+			public HRESULT get_StatusText(out BSTR StatusText) mut => VT.get_StatusText(ref this, out StatusText);
+			public HRESULT put_StatusText(BSTR StatusText) mut => VT.put_StatusText(ref this, StatusText);
+			public HRESULT get_ToolBar(out int32 Value) mut => VT.get_ToolBar(ref this, out Value);
+			public HRESULT put_ToolBar(int32 Value) mut => VT.put_ToolBar(ref this, Value);
+			public HRESULT get_MenuBar(out int16 Value) mut => VT.get_MenuBar(ref this, out Value);
+			public HRESULT put_MenuBar(int16 Value) mut => VT.put_MenuBar(ref this, Value);
+			public HRESULT get_FullScreen(out int16 pbFullScreen) mut => VT.get_FullScreen(ref this, out pbFullScreen);
+			public HRESULT put_FullScreen(int16 bFullScreen) mut => VT.put_FullScreen(ref this, bFullScreen);
+
 			[CRepr]
 			public struct VTable : IWebBrowser.VTable
 			{
@@ -13955,82 +11178,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Navigate2(ref VARIANT URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers) mut
-			{
-				return VT.Navigate2(ref this, ref URL, Flags, TargetFrameName, PostData, Headers);
-			}
-			public HRESULT QueryStatusWB(OLECMDID cmdID, out OLECMDF pcmdf) mut
-			{
-				return VT.QueryStatusWB(ref this, cmdID, out pcmdf);
-			}
-			public HRESULT ExecWB(OLECMDID cmdID, OLECMDEXECOPT cmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut) mut
-			{
-				return VT.ExecWB(ref this, cmdID, cmdexecopt, pvaIn, pvaOut);
-			}
-			public HRESULT ShowBrowserBar(ref VARIANT pvaClsid, VARIANT* pvarShow, VARIANT* pvarSize) mut
-			{
-				return VT.ShowBrowserBar(ref this, ref pvaClsid, pvarShow, pvarSize);
-			}
-			public HRESULT get_ReadyState(out READYSTATE plReadyState) mut
-			{
-				return VT.get_ReadyState(ref this, out plReadyState);
-			}
-			public HRESULT get_Offline(out int16 pbOffline) mut
-			{
-				return VT.get_Offline(ref this, out pbOffline);
-			}
-			public HRESULT put_Offline(int16 bOffline) mut
-			{
-				return VT.put_Offline(ref this, bOffline);
-			}
-			public HRESULT get_Silent(out int16 pbSilent) mut
-			{
-				return VT.get_Silent(ref this, out pbSilent);
-			}
-			public HRESULT put_Silent(int16 bSilent) mut
-			{
-				return VT.put_Silent(ref this, bSilent);
-			}
-			public HRESULT get_RegisterAsBrowser(out int16 pbRegister) mut
-			{
-				return VT.get_RegisterAsBrowser(ref this, out pbRegister);
-			}
-			public HRESULT put_RegisterAsBrowser(int16 bRegister) mut
-			{
-				return VT.put_RegisterAsBrowser(ref this, bRegister);
-			}
-			public HRESULT get_RegisterAsDropTarget(out int16 pbRegister) mut
-			{
-				return VT.get_RegisterAsDropTarget(ref this, out pbRegister);
-			}
-			public HRESULT put_RegisterAsDropTarget(int16 bRegister) mut
-			{
-				return VT.put_RegisterAsDropTarget(ref this, bRegister);
-			}
-			public HRESULT get_TheaterMode(out int16 pbRegister) mut
-			{
-				return VT.get_TheaterMode(ref this, out pbRegister);
-			}
-			public HRESULT put_TheaterMode(int16 bRegister) mut
-			{
-				return VT.put_TheaterMode(ref this, bRegister);
-			}
-			public HRESULT get_AddressBar(out int16 Value) mut
-			{
-				return VT.get_AddressBar(ref this, out Value);
-			}
-			public HRESULT put_AddressBar(int16 Value) mut
-			{
-				return VT.put_AddressBar(ref this, Value);
-			}
-			public HRESULT get_Resizable(out int16 Value) mut
-			{
-				return VT.get_Resizable(ref this, out Value);
-			}
-			public HRESULT put_Resizable(int16 Value) mut
-			{
-				return VT.put_Resizable(ref this, Value);
-			}
+			public HRESULT Navigate2(ref VARIANT URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers) mut => VT.Navigate2(ref this, ref URL, Flags, TargetFrameName, PostData, Headers);
+			public HRESULT QueryStatusWB(OLECMDID cmdID, out OLECMDF pcmdf) mut => VT.QueryStatusWB(ref this, cmdID, out pcmdf);
+			public HRESULT ExecWB(OLECMDID cmdID, OLECMDEXECOPT cmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut) mut => VT.ExecWB(ref this, cmdID, cmdexecopt, pvaIn, pvaOut);
+			public HRESULT ShowBrowserBar(ref VARIANT pvaClsid, VARIANT* pvarShow, VARIANT* pvarSize) mut => VT.ShowBrowserBar(ref this, ref pvaClsid, pvarShow, pvarSize);
+			public HRESULT get_ReadyState(out READYSTATE plReadyState) mut => VT.get_ReadyState(ref this, out plReadyState);
+			public HRESULT get_Offline(out int16 pbOffline) mut => VT.get_Offline(ref this, out pbOffline);
+			public HRESULT put_Offline(int16 bOffline) mut => VT.put_Offline(ref this, bOffline);
+			public HRESULT get_Silent(out int16 pbSilent) mut => VT.get_Silent(ref this, out pbSilent);
+			public HRESULT put_Silent(int16 bSilent) mut => VT.put_Silent(ref this, bSilent);
+			public HRESULT get_RegisterAsBrowser(out int16 pbRegister) mut => VT.get_RegisterAsBrowser(ref this, out pbRegister);
+			public HRESULT put_RegisterAsBrowser(int16 bRegister) mut => VT.put_RegisterAsBrowser(ref this, bRegister);
+			public HRESULT get_RegisterAsDropTarget(out int16 pbRegister) mut => VT.get_RegisterAsDropTarget(ref this, out pbRegister);
+			public HRESULT put_RegisterAsDropTarget(int16 bRegister) mut => VT.put_RegisterAsDropTarget(ref this, bRegister);
+			public HRESULT get_TheaterMode(out int16 pbRegister) mut => VT.get_TheaterMode(ref this, out pbRegister);
+			public HRESULT put_TheaterMode(int16 bRegister) mut => VT.put_TheaterMode(ref this, bRegister);
+			public HRESULT get_AddressBar(out int16 Value) mut => VT.get_AddressBar(ref this, out Value);
+			public HRESULT put_AddressBar(int16 Value) mut => VT.put_AddressBar(ref this, Value);
+			public HRESULT get_Resizable(out int16 Value) mut => VT.get_Resizable(ref this, out Value);
+			public HRESULT put_Resizable(int16 Value) mut => VT.put_Resizable(ref this, Value);
+
 			[CRepr]
 			public struct VTable : IWebBrowserApp.VTable
 			{
@@ -14062,6 +11229,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -14074,6 +11242,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -14086,50 +11255,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 Count) mut
-			{
-				return VT.get_Count(ref this, out Count);
-			}
-			public HRESULT Item(VARIANT index, out IDispatch* Folder) mut
-			{
-				return VT.Item(ref this, index, out Folder);
-			}
-			public HRESULT _NewEnum(out IUnknown* ppunk) mut
-			{
-				return VT._NewEnum(ref this, out ppunk);
-			}
-			public HRESULT Register(ref IDispatch pid, int32 hwnd, int32 swClass, out int32 plCookie) mut
-			{
-				return VT.Register(ref this, ref pid, hwnd, swClass, out plCookie);
-			}
-			public HRESULT RegisterPending(int32 lThreadId, ref VARIANT pvarloc, ref VARIANT pvarlocRoot, int32 swClass, out int32 plCookie) mut
-			{
-				return VT.RegisterPending(ref this, lThreadId, ref pvarloc, ref pvarlocRoot, swClass, out plCookie);
-			}
-			public HRESULT Revoke(int32 lCookie) mut
-			{
-				return VT.Revoke(ref this, lCookie);
-			}
-			public HRESULT OnNavigate(int32 lCookie, ref VARIANT pvarLoc) mut
-			{
-				return VT.OnNavigate(ref this, lCookie, ref pvarLoc);
-			}
-			public HRESULT OnActivated(int32 lCookie, int16 fActive) mut
-			{
-				return VT.OnActivated(ref this, lCookie, fActive);
-			}
-			public HRESULT FindWindowSW(ref VARIANT pvarLoc, ref VARIANT pvarLocRoot, int32 swClass, out int32 phwnd, int32 swfwOptions, out IDispatch* ppdispOut) mut
-			{
-				return VT.FindWindowSW(ref this, ref pvarLoc, ref pvarLocRoot, swClass, out phwnd, swfwOptions, out ppdispOut);
-			}
-			public HRESULT OnCreated(int32 lCookie, ref IUnknown punk) mut
-			{
-				return VT.OnCreated(ref this, lCookie, ref punk);
-			}
-			public HRESULT ProcessAttachDetach(int16 fAttach) mut
-			{
-				return VT.ProcessAttachDetach(ref this, fAttach);
-			}
+			public HRESULT get_Count(out int32 Count) mut => VT.get_Count(ref this, out Count);
+			public HRESULT Item(VARIANT index, out IDispatch* Folder) mut => VT.Item(ref this, index, out Folder);
+			public HRESULT _NewEnum(out IUnknown* ppunk) mut => VT._NewEnum(ref this, out ppunk);
+			public HRESULT Register(ref IDispatch pid, int32 hwnd, int32 swClass, out int32 plCookie) mut => VT.Register(ref this, ref pid, hwnd, swClass, out plCookie);
+			public HRESULT RegisterPending(int32 lThreadId, ref VARIANT pvarloc, ref VARIANT pvarlocRoot, int32 swClass, out int32 plCookie) mut => VT.RegisterPending(ref this, lThreadId, ref pvarloc, ref pvarlocRoot, swClass, out plCookie);
+			public HRESULT Revoke(int32 lCookie) mut => VT.Revoke(ref this, lCookie);
+			public HRESULT OnNavigate(int32 lCookie, ref VARIANT pvarLoc) mut => VT.OnNavigate(ref this, lCookie, ref pvarLoc);
+			public HRESULT OnActivated(int32 lCookie, int16 fActive) mut => VT.OnActivated(ref this, lCookie, fActive);
+			public HRESULT FindWindowSW(ref VARIANT pvarLoc, ref VARIANT pvarLocRoot, int32 swClass, out int32 phwnd, int32 swfwOptions, out IDispatch* ppdispOut) mut => VT.FindWindowSW(ref this, ref pvarLoc, ref pvarLocRoot, swClass, out phwnd, swfwOptions, out ppdispOut);
+			public HRESULT OnCreated(int32 lCookie, ref IUnknown punk) mut => VT.OnCreated(ref this, lCookie, ref punk);
+			public HRESULT ProcessAttachDetach(int16 fAttach) mut => VT.ProcessAttachDetach(ref this, fAttach);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -14153,58 +11290,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ResetFirstBootMode() mut
-			{
-				return VT.ResetFirstBootMode(ref this);
-			}
-			public HRESULT ResetSafeMode() mut
-			{
-				return VT.ResetSafeMode(ref this);
-			}
-			public HRESULT RefreshOfflineDesktop() mut
-			{
-				return VT.RefreshOfflineDesktop(ref this);
-			}
-			public HRESULT AddFavorite(BSTR URL, VARIANT* Title) mut
-			{
-				return VT.AddFavorite(ref this, URL, Title);
-			}
-			public HRESULT AddChannel(BSTR URL) mut
-			{
-				return VT.AddChannel(ref this, URL);
-			}
-			public HRESULT AddDesktopComponent(BSTR URL, BSTR Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height) mut
-			{
-				return VT.AddDesktopComponent(ref this, URL, Type, Left, Top, Width, Height);
-			}
-			public HRESULT IsSubscribed(BSTR URL, out int16 pBool) mut
-			{
-				return VT.IsSubscribed(ref this, URL, out pBool);
-			}
-			public HRESULT NavigateAndFind(BSTR URL, BSTR strQuery, ref VARIANT varTargetFrame) mut
-			{
-				return VT.NavigateAndFind(ref this, URL, strQuery, ref varTargetFrame);
-			}
-			public HRESULT ImportExportFavorites(int16 fImport, BSTR strImpExpPath) mut
-			{
-				return VT.ImportExportFavorites(ref this, fImport, strImpExpPath);
-			}
-			public HRESULT AutoCompleteSaveForm(VARIANT* Form) mut
-			{
-				return VT.AutoCompleteSaveForm(ref this, Form);
-			}
-			public HRESULT AutoScan(BSTR strSearch, BSTR strFailureUrl, VARIANT* pvarTargetFrame) mut
-			{
-				return VT.AutoScan(ref this, strSearch, strFailureUrl, pvarTargetFrame);
-			}
-			public HRESULT AutoCompleteAttach(VARIANT* Reserved) mut
-			{
-				return VT.AutoCompleteAttach(ref this, Reserved);
-			}
-			public HRESULT ShowBrowserUI(BSTR bstrName, ref VARIANT pvarIn, out VARIANT pvarOut) mut
-			{
-				return VT.ShowBrowserUI(ref this, bstrName, ref pvarIn, out pvarOut);
-			}
+			public HRESULT ResetFirstBootMode() mut => VT.ResetFirstBootMode(ref this);
+			public HRESULT ResetSafeMode() mut => VT.ResetSafeMode(ref this);
+			public HRESULT RefreshOfflineDesktop() mut => VT.RefreshOfflineDesktop(ref this);
+			public HRESULT AddFavorite(BSTR URL, VARIANT* Title) mut => VT.AddFavorite(ref this, URL, Title);
+			public HRESULT AddChannel(BSTR URL) mut => VT.AddChannel(ref this, URL);
+			public HRESULT AddDesktopComponent(BSTR URL, BSTR Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height) mut => VT.AddDesktopComponent(ref this, URL, Type, Left, Top, Width, Height);
+			public HRESULT IsSubscribed(BSTR URL, out int16 pBool) mut => VT.IsSubscribed(ref this, URL, out pBool);
+			public HRESULT NavigateAndFind(BSTR URL, BSTR strQuery, ref VARIANT varTargetFrame) mut => VT.NavigateAndFind(ref this, URL, strQuery, ref varTargetFrame);
+			public HRESULT ImportExportFavorites(int16 fImport, BSTR strImpExpPath) mut => VT.ImportExportFavorites(ref this, fImport, strImpExpPath);
+			public HRESULT AutoCompleteSaveForm(VARIANT* Form) mut => VT.AutoCompleteSaveForm(ref this, Form);
+			public HRESULT AutoScan(BSTR strSearch, BSTR strFailureUrl, VARIANT* pvarTargetFrame) mut => VT.AutoScan(ref this, strSearch, strFailureUrl, pvarTargetFrame);
+			public HRESULT AutoCompleteAttach(VARIANT* Reserved) mut => VT.AutoCompleteAttach(ref this, Reserved);
+			public HRESULT ShowBrowserUI(BSTR bstrName, ref VARIANT pvarIn, out VARIANT pvarOut) mut => VT.ShowBrowserUI(ref this, bstrName, ref pvarIn, out pvarOut);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -14230,70 +11329,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddSearchProvider(BSTR URL) mut
-			{
-				return VT.AddSearchProvider(ref this, URL);
-			}
-			public HRESULT RunOnceShown() mut
-			{
-				return VT.RunOnceShown(ref this);
-			}
-			public HRESULT SkipRunOnce() mut
-			{
-				return VT.SkipRunOnce(ref this);
-			}
-			public HRESULT CustomizeSettings(int16 fSQM, int16 fPhishing, BSTR bstrLocale) mut
-			{
-				return VT.CustomizeSettings(ref this, fSQM, fPhishing, bstrLocale);
-			}
-			public HRESULT SqmEnabled(out int16 pfEnabled) mut
-			{
-				return VT.SqmEnabled(ref this, out pfEnabled);
-			}
-			public HRESULT PhishingEnabled(out int16 pfEnabled) mut
-			{
-				return VT.PhishingEnabled(ref this, out pfEnabled);
-			}
-			public HRESULT BrandImageUri(out BSTR pbstrUri) mut
-			{
-				return VT.BrandImageUri(ref this, out pbstrUri);
-			}
-			public HRESULT SkipTabsWelcome() mut
-			{
-				return VT.SkipTabsWelcome(ref this);
-			}
-			public HRESULT DiagnoseConnection() mut
-			{
-				return VT.DiagnoseConnection(ref this);
-			}
-			public HRESULT CustomizeClearType(int16 fSet) mut
-			{
-				return VT.CustomizeClearType(ref this, fSet);
-			}
-			public HRESULT IsSearchProviderInstalled(BSTR URL, out uint32 pdwResult) mut
-			{
-				return VT.IsSearchProviderInstalled(ref this, URL, out pdwResult);
-			}
-			public HRESULT IsSearchMigrated(out int16 pfMigrated) mut
-			{
-				return VT.IsSearchMigrated(ref this, out pfMigrated);
-			}
-			public HRESULT DefaultSearchProvider(out BSTR pbstrName) mut
-			{
-				return VT.DefaultSearchProvider(ref this, out pbstrName);
-			}
-			public HRESULT RunOnceRequiredSettingsComplete(int16 fComplete) mut
-			{
-				return VT.RunOnceRequiredSettingsComplete(ref this, fComplete);
-			}
-			public HRESULT RunOnceHasShown(out int16 pfShown) mut
-			{
-				return VT.RunOnceHasShown(ref this, out pfShown);
-			}
-			public HRESULT SearchGuideUrl(out BSTR pbstrUrl) mut
-			{
-				return VT.SearchGuideUrl(ref this, out pbstrUrl);
-			}
+			public HRESULT AddSearchProvider(BSTR URL) mut => VT.AddSearchProvider(ref this, URL);
+			public HRESULT RunOnceShown() mut => VT.RunOnceShown(ref this);
+			public HRESULT SkipRunOnce() mut => VT.SkipRunOnce(ref this);
+			public HRESULT CustomizeSettings(int16 fSQM, int16 fPhishing, BSTR bstrLocale) mut => VT.CustomizeSettings(ref this, fSQM, fPhishing, bstrLocale);
+			public HRESULT SqmEnabled(out int16 pfEnabled) mut => VT.SqmEnabled(ref this, out pfEnabled);
+			public HRESULT PhishingEnabled(out int16 pfEnabled) mut => VT.PhishingEnabled(ref this, out pfEnabled);
+			public HRESULT BrandImageUri(out BSTR pbstrUri) mut => VT.BrandImageUri(ref this, out pbstrUri);
+			public HRESULT SkipTabsWelcome() mut => VT.SkipTabsWelcome(ref this);
+			public HRESULT DiagnoseConnection() mut => VT.DiagnoseConnection(ref this);
+			public HRESULT CustomizeClearType(int16 fSet) mut => VT.CustomizeClearType(ref this, fSet);
+			public HRESULT IsSearchProviderInstalled(BSTR URL, out uint32 pdwResult) mut => VT.IsSearchProviderInstalled(ref this, URL, out pdwResult);
+			public HRESULT IsSearchMigrated(out int16 pfMigrated) mut => VT.IsSearchMigrated(ref this, out pfMigrated);
+			public HRESULT DefaultSearchProvider(out BSTR pbstrName) mut => VT.DefaultSearchProvider(ref this, out pbstrName);
+			public HRESULT RunOnceRequiredSettingsComplete(int16 fComplete) mut => VT.RunOnceRequiredSettingsComplete(ref this, fComplete);
+			public HRESULT RunOnceHasShown(out int16 pfShown) mut => VT.RunOnceHasShown(ref this, out pfShown);
+			public HRESULT SearchGuideUrl(out BSTR pbstrUrl) mut => VT.SearchGuideUrl(ref this, out pbstrUrl);
+
 			[CRepr]
 			public struct VTable : IShellUIHelper.VTable
 			{
@@ -14322,58 +11374,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddService(BSTR URL) mut
-			{
-				return VT.AddService(ref this, URL);
-			}
-			public HRESULT IsServiceInstalled(BSTR URL, BSTR Verb, out uint32 pdwResult) mut
-			{
-				return VT.IsServiceInstalled(ref this, URL, Verb, out pdwResult);
-			}
-			public HRESULT InPrivateFilteringEnabled(out int16 pfEnabled) mut
-			{
-				return VT.InPrivateFilteringEnabled(ref this, out pfEnabled);
-			}
-			public HRESULT AddToFavoritesBar(BSTR URL, BSTR Title, ref VARIANT Type) mut
-			{
-				return VT.AddToFavoritesBar(ref this, URL, Title, ref Type);
-			}
-			public HRESULT BuildNewTabPage() mut
-			{
-				return VT.BuildNewTabPage(ref this);
-			}
-			public HRESULT SetRecentlyClosedVisible(int16 fVisible) mut
-			{
-				return VT.SetRecentlyClosedVisible(ref this, fVisible);
-			}
-			public HRESULT SetActivitiesVisible(int16 fVisible) mut
-			{
-				return VT.SetActivitiesVisible(ref this, fVisible);
-			}
-			public HRESULT ContentDiscoveryReset() mut
-			{
-				return VT.ContentDiscoveryReset(ref this);
-			}
-			public HRESULT IsSuggestedSitesEnabled(out int16 pfEnabled) mut
-			{
-				return VT.IsSuggestedSitesEnabled(ref this, out pfEnabled);
-			}
-			public HRESULT EnableSuggestedSites(int16 fEnable) mut
-			{
-				return VT.EnableSuggestedSites(ref this, fEnable);
-			}
-			public HRESULT NavigateToSuggestedSites(BSTR bstrRelativeUrl) mut
-			{
-				return VT.NavigateToSuggestedSites(ref this, bstrRelativeUrl);
-			}
-			public HRESULT ShowTabsHelp() mut
-			{
-				return VT.ShowTabsHelp(ref this);
-			}
-			public HRESULT ShowInPrivateHelp() mut
-			{
-				return VT.ShowInPrivateHelp(ref this);
-			}
+			public HRESULT AddService(BSTR URL) mut => VT.AddService(ref this, URL);
+			public HRESULT IsServiceInstalled(BSTR URL, BSTR Verb, out uint32 pdwResult) mut => VT.IsServiceInstalled(ref this, URL, Verb, out pdwResult);
+			public HRESULT InPrivateFilteringEnabled(out int16 pfEnabled) mut => VT.InPrivateFilteringEnabled(ref this, out pfEnabled);
+			public HRESULT AddToFavoritesBar(BSTR URL, BSTR Title, ref VARIANT Type) mut => VT.AddToFavoritesBar(ref this, URL, Title, ref Type);
+			public HRESULT BuildNewTabPage() mut => VT.BuildNewTabPage(ref this);
+			public HRESULT SetRecentlyClosedVisible(int16 fVisible) mut => VT.SetRecentlyClosedVisible(ref this, fVisible);
+			public HRESULT SetActivitiesVisible(int16 fVisible) mut => VT.SetActivitiesVisible(ref this, fVisible);
+			public HRESULT ContentDiscoveryReset() mut => VT.ContentDiscoveryReset(ref this);
+			public HRESULT IsSuggestedSitesEnabled(out int16 pfEnabled) mut => VT.IsSuggestedSitesEnabled(ref this, out pfEnabled);
+			public HRESULT EnableSuggestedSites(int16 fEnable) mut => VT.EnableSuggestedSites(ref this, fEnable);
+			public HRESULT NavigateToSuggestedSites(BSTR bstrRelativeUrl) mut => VT.NavigateToSuggestedSites(ref this, bstrRelativeUrl);
+			public HRESULT ShowTabsHelp() mut => VT.ShowTabsHelp(ref this);
+			public HRESULT ShowInPrivateHelp() mut => VT.ShowInPrivateHelp(ref this);
+
 			[CRepr]
 			public struct VTable : IShellUIHelper2.VTable
 			{
@@ -14399,78 +11413,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT msIsSiteMode(out int16 pfSiteMode) mut
-			{
-				return VT.msIsSiteMode(ref this, out pfSiteMode);
-			}
-			public HRESULT msSiteModeShowThumbBar() mut
-			{
-				return VT.msSiteModeShowThumbBar(ref this);
-			}
-			public HRESULT msSiteModeAddThumbBarButton(BSTR bstrIconURL, BSTR bstrTooltip, out VARIANT pvarButtonID) mut
-			{
-				return VT.msSiteModeAddThumbBarButton(ref this, bstrIconURL, bstrTooltip, out pvarButtonID);
-			}
-			public HRESULT msSiteModeUpdateThumbBarButton(VARIANT ButtonID, int16 fEnabled, int16 fVisible) mut
-			{
-				return VT.msSiteModeUpdateThumbBarButton(ref this, ButtonID, fEnabled, fVisible);
-			}
-			public HRESULT msSiteModeSetIconOverlay(BSTR IconUrl, ref VARIANT pvarDescription) mut
-			{
-				return VT.msSiteModeSetIconOverlay(ref this, IconUrl, ref pvarDescription);
-			}
-			public HRESULT msSiteModeClearIconOverlay() mut
-			{
-				return VT.msSiteModeClearIconOverlay(ref this);
-			}
-			public HRESULT msAddSiteMode() mut
-			{
-				return VT.msAddSiteMode(ref this);
-			}
-			public HRESULT msSiteModeCreateJumpList(BSTR bstrHeader) mut
-			{
-				return VT.msSiteModeCreateJumpList(ref this, bstrHeader);
-			}
-			public HRESULT msSiteModeAddJumpListItem(BSTR bstrName, BSTR bstrActionUri, BSTR bstrIconUri, ref VARIANT pvarWindowType) mut
-			{
-				return VT.msSiteModeAddJumpListItem(ref this, bstrName, bstrActionUri, bstrIconUri, ref pvarWindowType);
-			}
-			public HRESULT msSiteModeClearJumpList() mut
-			{
-				return VT.msSiteModeClearJumpList(ref this);
-			}
-			public HRESULT msSiteModeShowJumpList() mut
-			{
-				return VT.msSiteModeShowJumpList(ref this);
-			}
-			public HRESULT msSiteModeAddButtonStyle(VARIANT uiButtonID, BSTR bstrIconUrl, BSTR bstrTooltip, out VARIANT pvarStyleID) mut
-			{
-				return VT.msSiteModeAddButtonStyle(ref this, uiButtonID, bstrIconUrl, bstrTooltip, out pvarStyleID);
-			}
-			public HRESULT msSiteModeShowButtonStyle(VARIANT uiButtonID, VARIANT uiStyleID) mut
-			{
-				return VT.msSiteModeShowButtonStyle(ref this, uiButtonID, uiStyleID);
-			}
-			public HRESULT msSiteModeActivate() mut
-			{
-				return VT.msSiteModeActivate(ref this);
-			}
-			public HRESULT msIsSiteModeFirstRun(int16 fPreserveState, out VARIANT puiFirstRun) mut
-			{
-				return VT.msIsSiteModeFirstRun(ref this, fPreserveState, out puiFirstRun);
-			}
-			public HRESULT msAddTrackingProtectionList(BSTR URL, BSTR bstrFilterName) mut
-			{
-				return VT.msAddTrackingProtectionList(ref this, URL, bstrFilterName);
-			}
-			public HRESULT msTrackingProtectionEnabled(out int16 pfEnabled) mut
-			{
-				return VT.msTrackingProtectionEnabled(ref this, out pfEnabled);
-			}
-			public HRESULT msActiveXFilteringEnabled(out int16 pfEnabled) mut
-			{
-				return VT.msActiveXFilteringEnabled(ref this, out pfEnabled);
-			}
+			public HRESULT msIsSiteMode(out int16 pfSiteMode) mut => VT.msIsSiteMode(ref this, out pfSiteMode);
+			public HRESULT msSiteModeShowThumbBar() mut => VT.msSiteModeShowThumbBar(ref this);
+			public HRESULT msSiteModeAddThumbBarButton(BSTR bstrIconURL, BSTR bstrTooltip, out VARIANT pvarButtonID) mut => VT.msSiteModeAddThumbBarButton(ref this, bstrIconURL, bstrTooltip, out pvarButtonID);
+			public HRESULT msSiteModeUpdateThumbBarButton(VARIANT ButtonID, int16 fEnabled, int16 fVisible) mut => VT.msSiteModeUpdateThumbBarButton(ref this, ButtonID, fEnabled, fVisible);
+			public HRESULT msSiteModeSetIconOverlay(BSTR IconUrl, ref VARIANT pvarDescription) mut => VT.msSiteModeSetIconOverlay(ref this, IconUrl, ref pvarDescription);
+			public HRESULT msSiteModeClearIconOverlay() mut => VT.msSiteModeClearIconOverlay(ref this);
+			public HRESULT msAddSiteMode() mut => VT.msAddSiteMode(ref this);
+			public HRESULT msSiteModeCreateJumpList(BSTR bstrHeader) mut => VT.msSiteModeCreateJumpList(ref this, bstrHeader);
+			public HRESULT msSiteModeAddJumpListItem(BSTR bstrName, BSTR bstrActionUri, BSTR bstrIconUri, ref VARIANT pvarWindowType) mut => VT.msSiteModeAddJumpListItem(ref this, bstrName, bstrActionUri, bstrIconUri, ref pvarWindowType);
+			public HRESULT msSiteModeClearJumpList() mut => VT.msSiteModeClearJumpList(ref this);
+			public HRESULT msSiteModeShowJumpList() mut => VT.msSiteModeShowJumpList(ref this);
+			public HRESULT msSiteModeAddButtonStyle(VARIANT uiButtonID, BSTR bstrIconUrl, BSTR bstrTooltip, out VARIANT pvarStyleID) mut => VT.msSiteModeAddButtonStyle(ref this, uiButtonID, bstrIconUrl, bstrTooltip, out pvarStyleID);
+			public HRESULT msSiteModeShowButtonStyle(VARIANT uiButtonID, VARIANT uiStyleID) mut => VT.msSiteModeShowButtonStyle(ref this, uiButtonID, uiStyleID);
+			public HRESULT msSiteModeActivate() mut => VT.msSiteModeActivate(ref this);
+			public HRESULT msIsSiteModeFirstRun(int16 fPreserveState, out VARIANT puiFirstRun) mut => VT.msIsSiteModeFirstRun(ref this, fPreserveState, out puiFirstRun);
+			public HRESULT msAddTrackingProtectionList(BSTR URL, BSTR bstrFilterName) mut => VT.msAddTrackingProtectionList(ref this, URL, bstrFilterName);
+			public HRESULT msTrackingProtectionEnabled(out int16 pfEnabled) mut => VT.msTrackingProtectionEnabled(ref this, out pfEnabled);
+			public HRESULT msActiveXFilteringEnabled(out int16 pfEnabled) mut => VT.msActiveXFilteringEnabled(ref this, out pfEnabled);
+
 			[CRepr]
 			public struct VTable : IShellUIHelper3.VTable
 			{
@@ -14501,34 +11462,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT msProvisionNetworks(BSTR bstrProvisioningXml, out VARIANT puiResult) mut
-			{
-				return VT.msProvisionNetworks(ref this, bstrProvisioningXml, out puiResult);
-			}
-			public HRESULT msReportSafeUrl() mut
-			{
-				return VT.msReportSafeUrl(ref this);
-			}
-			public HRESULT msSiteModeRefreshBadge() mut
-			{
-				return VT.msSiteModeRefreshBadge(ref this);
-			}
-			public HRESULT msSiteModeClearBadge() mut
-			{
-				return VT.msSiteModeClearBadge(ref this);
-			}
-			public HRESULT msDiagnoseConnectionUILess() mut
-			{
-				return VT.msDiagnoseConnectionUILess(ref this);
-			}
-			public HRESULT msLaunchNetworkClientHelp() mut
-			{
-				return VT.msLaunchNetworkClientHelp(ref this);
-			}
-			public HRESULT msChangeDefaultBrowser(int16 fChange) mut
-			{
-				return VT.msChangeDefaultBrowser(ref this, fChange);
-			}
+			public HRESULT msProvisionNetworks(BSTR bstrProvisioningXml, out VARIANT puiResult) mut => VT.msProvisionNetworks(ref this, bstrProvisioningXml, out puiResult);
+			public HRESULT msReportSafeUrl() mut => VT.msReportSafeUrl(ref this);
+			public HRESULT msSiteModeRefreshBadge() mut => VT.msSiteModeRefreshBadge(ref this);
+			public HRESULT msSiteModeClearBadge() mut => VT.msSiteModeClearBadge(ref this);
+			public HRESULT msDiagnoseConnectionUILess() mut => VT.msDiagnoseConnectionUILess(ref this);
+			public HRESULT msLaunchNetworkClientHelp() mut => VT.msLaunchNetworkClientHelp(ref this);
+			public HRESULT msChangeDefaultBrowser(int16 fChange) mut => VT.msChangeDefaultBrowser(ref this, fChange);
+
 			[CRepr]
 			public struct VTable : IShellUIHelper4.VTable
 			{
@@ -14548,62 +11489,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT msStopPeriodicTileUpdate() mut
-			{
-				return VT.msStopPeriodicTileUpdate(ref this);
-			}
-			public HRESULT msStartPeriodicTileUpdate(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence) mut
-			{
-				return VT.msStartPeriodicTileUpdate(ref this, pollingUris, startTime, uiUpdateRecurrence);
-			}
-			public HRESULT msStartPeriodicTileUpdateBatch(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence) mut
-			{
-				return VT.msStartPeriodicTileUpdateBatch(ref this, pollingUris, startTime, uiUpdateRecurrence);
-			}
-			public HRESULT msClearTile() mut
-			{
-				return VT.msClearTile(ref this);
-			}
-			public HRESULT msEnableTileNotificationQueue(int16 fChange) mut
-			{
-				return VT.msEnableTileNotificationQueue(ref this, fChange);
-			}
-			public HRESULT msPinnedSiteState(out VARIANT pvarSiteState) mut
-			{
-				return VT.msPinnedSiteState(ref this, out pvarSiteState);
-			}
-			public HRESULT msEnableTileNotificationQueueForSquare150x150(int16 fChange) mut
-			{
-				return VT.msEnableTileNotificationQueueForSquare150x150(ref this, fChange);
-			}
-			public HRESULT msEnableTileNotificationQueueForWide310x150(int16 fChange) mut
-			{
-				return VT.msEnableTileNotificationQueueForWide310x150(ref this, fChange);
-			}
-			public HRESULT msEnableTileNotificationQueueForSquare310x310(int16 fChange) mut
-			{
-				return VT.msEnableTileNotificationQueueForSquare310x310(ref this, fChange);
-			}
-			public HRESULT msScheduledTileNotification(BSTR bstrNotificationXml, BSTR bstrNotificationId, BSTR bstrNotificationTag, VARIANT startTime, VARIANT expirationTime) mut
-			{
-				return VT.msScheduledTileNotification(ref this, bstrNotificationXml, bstrNotificationId, bstrNotificationTag, startTime, expirationTime);
-			}
-			public HRESULT msRemoveScheduledTileNotification(BSTR bstrNotificationId) mut
-			{
-				return VT.msRemoveScheduledTileNotification(ref this, bstrNotificationId);
-			}
-			public HRESULT msStartPeriodicBadgeUpdate(BSTR pollingUri, VARIANT startTime, VARIANT uiUpdateRecurrence) mut
-			{
-				return VT.msStartPeriodicBadgeUpdate(ref this, pollingUri, startTime, uiUpdateRecurrence);
-			}
-			public HRESULT msStopPeriodicBadgeUpdate() mut
-			{
-				return VT.msStopPeriodicBadgeUpdate(ref this);
-			}
-			public HRESULT msLaunchInternetOptions() mut
-			{
-				return VT.msLaunchInternetOptions(ref this);
-			}
+			public HRESULT msStopPeriodicTileUpdate() mut => VT.msStopPeriodicTileUpdate(ref this);
+			public HRESULT msStartPeriodicTileUpdate(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence) mut => VT.msStartPeriodicTileUpdate(ref this, pollingUris, startTime, uiUpdateRecurrence);
+			public HRESULT msStartPeriodicTileUpdateBatch(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence) mut => VT.msStartPeriodicTileUpdateBatch(ref this, pollingUris, startTime, uiUpdateRecurrence);
+			public HRESULT msClearTile() mut => VT.msClearTile(ref this);
+			public HRESULT msEnableTileNotificationQueue(int16 fChange) mut => VT.msEnableTileNotificationQueue(ref this, fChange);
+			public HRESULT msPinnedSiteState(out VARIANT pvarSiteState) mut => VT.msPinnedSiteState(ref this, out pvarSiteState);
+			public HRESULT msEnableTileNotificationQueueForSquare150x150(int16 fChange) mut => VT.msEnableTileNotificationQueueForSquare150x150(ref this, fChange);
+			public HRESULT msEnableTileNotificationQueueForWide310x150(int16 fChange) mut => VT.msEnableTileNotificationQueueForWide310x150(ref this, fChange);
+			public HRESULT msEnableTileNotificationQueueForSquare310x310(int16 fChange) mut => VT.msEnableTileNotificationQueueForSquare310x310(ref this, fChange);
+			public HRESULT msScheduledTileNotification(BSTR bstrNotificationXml, BSTR bstrNotificationId, BSTR bstrNotificationTag, VARIANT startTime, VARIANT expirationTime) mut => VT.msScheduledTileNotification(ref this, bstrNotificationXml, bstrNotificationId, bstrNotificationTag, startTime, expirationTime);
+			public HRESULT msRemoveScheduledTileNotification(BSTR bstrNotificationId) mut => VT.msRemoveScheduledTileNotification(ref this, bstrNotificationId);
+			public HRESULT msStartPeriodicBadgeUpdate(BSTR pollingUri, VARIANT startTime, VARIANT uiUpdateRecurrence) mut => VT.msStartPeriodicBadgeUpdate(ref this, pollingUri, startTime, uiUpdateRecurrence);
+			public HRESULT msStopPeriodicBadgeUpdate() mut => VT.msStopPeriodicBadgeUpdate(ref this);
+			public HRESULT msLaunchInternetOptions() mut => VT.msLaunchInternetOptions(ref this);
+
 			[CRepr]
 			public struct VTable : IShellUIHelper5.VTable
 			{
@@ -14630,42 +11530,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetExperimentalFlag(BSTR bstrFlagString, int16 vfFlag) mut
-			{
-				return VT.SetExperimentalFlag(ref this, bstrFlagString, vfFlag);
-			}
-			public HRESULT GetExperimentalFlag(BSTR bstrFlagString, out int16 vfFlag) mut
-			{
-				return VT.GetExperimentalFlag(ref this, bstrFlagString, out vfFlag);
-			}
-			public HRESULT SetExperimentalValue(BSTR bstrValueString, uint32 dwValue) mut
-			{
-				return VT.SetExperimentalValue(ref this, bstrValueString, dwValue);
-			}
-			public HRESULT GetExperimentalValue(BSTR bstrValueString, out uint32 pdwValue) mut
-			{
-				return VT.GetExperimentalValue(ref this, bstrValueString, out pdwValue);
-			}
-			public HRESULT ResetAllExperimentalFlagsAndValues() mut
-			{
-				return VT.ResetAllExperimentalFlagsAndValues(ref this);
-			}
-			public HRESULT GetNeedIEAutoLaunchFlag(BSTR bstrUrl, out int16 flag) mut
-			{
-				return VT.GetNeedIEAutoLaunchFlag(ref this, bstrUrl, out flag);
-			}
-			public HRESULT SetNeedIEAutoLaunchFlag(BSTR bstrUrl, int16 flag) mut
-			{
-				return VT.SetNeedIEAutoLaunchFlag(ref this, bstrUrl, flag);
-			}
-			public HRESULT HasNeedIEAutoLaunchFlag(BSTR bstrUrl, out int16 exists) mut
-			{
-				return VT.HasNeedIEAutoLaunchFlag(ref this, bstrUrl, out exists);
-			}
-			public HRESULT LaunchIE(BSTR bstrUrl, int16 automated) mut
-			{
-				return VT.LaunchIE(ref this, bstrUrl, automated);
-			}
+			public HRESULT SetExperimentalFlag(BSTR bstrFlagString, int16 vfFlag) mut => VT.SetExperimentalFlag(ref this, bstrFlagString, vfFlag);
+			public HRESULT GetExperimentalFlag(BSTR bstrFlagString, out int16 vfFlag) mut => VT.GetExperimentalFlag(ref this, bstrFlagString, out vfFlag);
+			public HRESULT SetExperimentalValue(BSTR bstrValueString, uint32 dwValue) mut => VT.SetExperimentalValue(ref this, bstrValueString, dwValue);
+			public HRESULT GetExperimentalValue(BSTR bstrValueString, out uint32 pdwValue) mut => VT.GetExperimentalValue(ref this, bstrValueString, out pdwValue);
+			public HRESULT ResetAllExperimentalFlagsAndValues() mut => VT.ResetAllExperimentalFlagsAndValues(ref this);
+			public HRESULT GetNeedIEAutoLaunchFlag(BSTR bstrUrl, out int16 flag) mut => VT.GetNeedIEAutoLaunchFlag(ref this, bstrUrl, out flag);
+			public HRESULT SetNeedIEAutoLaunchFlag(BSTR bstrUrl, int16 flag) mut => VT.SetNeedIEAutoLaunchFlag(ref this, bstrUrl, flag);
+			public HRESULT HasNeedIEAutoLaunchFlag(BSTR bstrUrl, out int16 exists) mut => VT.HasNeedIEAutoLaunchFlag(ref this, bstrUrl, out exists);
+			public HRESULT LaunchIE(BSTR bstrUrl, int16 automated) mut => VT.LaunchIE(ref this, bstrUrl, automated);
+
 			[CRepr]
 			public struct VTable : IShellUIHelper6.VTable
 			{
@@ -14687,34 +11561,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCVListData(out BSTR pbstrResult) mut
-			{
-				return VT.GetCVListData(ref this, out pbstrResult);
-			}
-			public HRESULT GetCVListLocalData(out BSTR pbstrResult) mut
-			{
-				return VT.GetCVListLocalData(ref this, out pbstrResult);
-			}
-			public HRESULT GetEMIEListData(out BSTR pbstrResult) mut
-			{
-				return VT.GetEMIEListData(ref this, out pbstrResult);
-			}
-			public HRESULT GetEMIEListLocalData(out BSTR pbstrResult) mut
-			{
-				return VT.GetEMIEListLocalData(ref this, out pbstrResult);
-			}
-			public HRESULT OpenFavoritesPane() mut
-			{
-				return VT.OpenFavoritesPane(ref this);
-			}
-			public HRESULT OpenFavoritesSettings() mut
-			{
-				return VT.OpenFavoritesSettings(ref this);
-			}
-			public HRESULT LaunchInHVSI(BSTR bstrUrl) mut
-			{
-				return VT.LaunchInHVSI(ref this, bstrUrl);
-			}
+			public HRESULT GetCVListData(out BSTR pbstrResult) mut => VT.GetCVListData(ref this, out pbstrResult);
+			public HRESULT GetCVListLocalData(out BSTR pbstrResult) mut => VT.GetCVListLocalData(ref this, out pbstrResult);
+			public HRESULT GetEMIEListData(out BSTR pbstrResult) mut => VT.GetEMIEListData(ref this, out pbstrResult);
+			public HRESULT GetEMIEListLocalData(out BSTR pbstrResult) mut => VT.GetEMIEListLocalData(ref this, out pbstrResult);
+			public HRESULT OpenFavoritesPane() mut => VT.OpenFavoritesPane(ref this);
+			public HRESULT OpenFavoritesSettings() mut => VT.OpenFavoritesSettings(ref this);
+			public HRESULT LaunchInHVSI(BSTR bstrUrl) mut => VT.LaunchInHVSI(ref this, bstrUrl);
+
 			[CRepr]
 			public struct VTable : IShellUIHelper7.VTable
 			{
@@ -14734,10 +11588,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOSSku(out uint32 pdwResult) mut
-			{
-				return VT.GetOSSku(ref this, out pdwResult);
-			}
+			public HRESULT GetOSSku(out uint32 pdwResult) mut => VT.GetOSSku(ref this, out pdwResult);
+
 			[CRepr]
 			public struct VTable : IShellUIHelper8.VTable
 			{
@@ -14751,6 +11603,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -14763,58 +11616,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveSelectionUp() mut
-			{
-				return VT.MoveSelectionUp(ref this);
-			}
-			public HRESULT MoveSelectionDown() mut
-			{
-				return VT.MoveSelectionDown(ref this);
-			}
-			public HRESULT ResetSort() mut
-			{
-				return VT.ResetSort(ref this);
-			}
-			public HRESULT NewFolder() mut
-			{
-				return VT.NewFolder(ref this);
-			}
-			public HRESULT Synchronize() mut
-			{
-				return VT.Synchronize(ref this);
-			}
-			public HRESULT Import() mut
-			{
-				return VT.Import(ref this);
-			}
-			public HRESULT Export() mut
-			{
-				return VT.Export(ref this);
-			}
-			public HRESULT InvokeContextMenuCommand(BSTR strCommand) mut
-			{
-				return VT.InvokeContextMenuCommand(ref this, strCommand);
-			}
-			public HRESULT MoveSelectionTo() mut
-			{
-				return VT.MoveSelectionTo(ref this);
-			}
-			public HRESULT get_SubscriptionsEnabled(out int16 pBool) mut
-			{
-				return VT.get_SubscriptionsEnabled(ref this, out pBool);
-			}
-			public HRESULT CreateSubscriptionForSelection(out int16 pBool) mut
-			{
-				return VT.CreateSubscriptionForSelection(ref this, out pBool);
-			}
-			public HRESULT DeleteSubscriptionForSelection(out int16 pBool) mut
-			{
-				return VT.DeleteSubscriptionForSelection(ref this, out pBool);
-			}
-			public HRESULT SetRoot(BSTR bstrFullPath) mut
-			{
-				return VT.SetRoot(ref this, bstrFullPath);
-			}
+			public HRESULT MoveSelectionUp() mut => VT.MoveSelectionUp(ref this);
+			public HRESULT MoveSelectionDown() mut => VT.MoveSelectionDown(ref this);
+			public HRESULT ResetSort() mut => VT.ResetSort(ref this);
+			public HRESULT NewFolder() mut => VT.NewFolder(ref this);
+			public HRESULT Synchronize() mut => VT.Synchronize(ref this);
+			public HRESULT Import() mut => VT.Import(ref this);
+			public HRESULT Export() mut => VT.Export(ref this);
+			public HRESULT InvokeContextMenuCommand(BSTR strCommand) mut => VT.InvokeContextMenuCommand(ref this, strCommand);
+			public HRESULT MoveSelectionTo() mut => VT.MoveSelectionTo(ref this);
+			public HRESULT get_SubscriptionsEnabled(out int16 pBool) mut => VT.get_SubscriptionsEnabled(ref this, out pBool);
+			public HRESULT CreateSubscriptionForSelection(out int16 pBool) mut => VT.CreateSubscriptionForSelection(ref this, out pBool);
+			public HRESULT DeleteSubscriptionForSelection(out int16 pBool) mut => VT.DeleteSubscriptionForSelection(ref this, out pBool);
+			public HRESULT SetRoot(BSTR bstrFullPath) mut => VT.SetRoot(ref this, bstrFullPath);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -14840,90 +11655,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EnumOptions(out int32 pgrfEnumFlags) mut
-			{
-				return VT.get_EnumOptions(ref this, out pgrfEnumFlags);
-			}
-			public HRESULT put_EnumOptions(int32 lVal) mut
-			{
-				return VT.put_EnumOptions(ref this, lVal);
-			}
-			public HRESULT get_SelectedItem(out IDispatch* pItem) mut
-			{
-				return VT.get_SelectedItem(ref this, out pItem);
-			}
-			public HRESULT put_SelectedItem(ref IDispatch pItem) mut
-			{
-				return VT.put_SelectedItem(ref this, ref pItem);
-			}
-			public HRESULT get_Root(out VARIANT pvar) mut
-			{
-				return VT.get_Root(ref this, out pvar);
-			}
-			public HRESULT put_Root(VARIANT @var) mut
-			{
-				return VT.put_Root(ref this, @var);
-			}
-			public HRESULT get_Depth(out int32 piDepth) mut
-			{
-				return VT.get_Depth(ref this, out piDepth);
-			}
-			public HRESULT put_Depth(int32 iDepth) mut
-			{
-				return VT.put_Depth(ref this, iDepth);
-			}
-			public HRESULT get_Mode(out uint32 puMode) mut
-			{
-				return VT.get_Mode(ref this, out puMode);
-			}
-			public HRESULT put_Mode(uint32 uMode) mut
-			{
-				return VT.put_Mode(ref this, uMode);
-			}
-			public HRESULT get_Flags(out uint32 pdwFlags) mut
-			{
-				return VT.get_Flags(ref this, out pdwFlags);
-			}
-			public HRESULT put_Flags(uint32 dwFlags) mut
-			{
-				return VT.put_Flags(ref this, dwFlags);
-			}
-			public HRESULT put_TVFlags(uint32 dwFlags) mut
-			{
-				return VT.put_TVFlags(ref this, dwFlags);
-			}
-			public HRESULT get_TVFlags(out uint32 dwFlags) mut
-			{
-				return VT.get_TVFlags(ref this, out dwFlags);
-			}
-			public HRESULT get_Columns(out BSTR bstrColumns) mut
-			{
-				return VT.get_Columns(ref this, out bstrColumns);
-			}
-			public HRESULT put_Columns(BSTR bstrColumns) mut
-			{
-				return VT.put_Columns(ref this, bstrColumns);
-			}
-			public HRESULT get_CountViewTypes(out int32 piTypes) mut
-			{
-				return VT.get_CountViewTypes(ref this, out piTypes);
-			}
-			public HRESULT SetViewType(int32 iType) mut
-			{
-				return VT.SetViewType(ref this, iType);
-			}
-			public HRESULT SelectedItems(out IDispatch* ppid) mut
-			{
-				return VT.SelectedItems(ref this, out ppid);
-			}
-			public HRESULT Expand(VARIANT @var, int32 iDepth) mut
-			{
-				return VT.Expand(ref this, @var, iDepth);
-			}
-			public HRESULT UnselectAll() mut
-			{
-				return VT.UnselectAll(ref this);
-			}
+			public HRESULT get_EnumOptions(out int32 pgrfEnumFlags) mut => VT.get_EnumOptions(ref this, out pgrfEnumFlags);
+			public HRESULT put_EnumOptions(int32 lVal) mut => VT.put_EnumOptions(ref this, lVal);
+			public HRESULT get_SelectedItem(out IDispatch* pItem) mut => VT.get_SelectedItem(ref this, out pItem);
+			public HRESULT put_SelectedItem(ref IDispatch pItem) mut => VT.put_SelectedItem(ref this, ref pItem);
+			public HRESULT get_Root(out VARIANT pvar) mut => VT.get_Root(ref this, out pvar);
+			public HRESULT put_Root(VARIANT @var) mut => VT.put_Root(ref this, @var);
+			public HRESULT get_Depth(out int32 piDepth) mut => VT.get_Depth(ref this, out piDepth);
+			public HRESULT put_Depth(int32 iDepth) mut => VT.put_Depth(ref this, iDepth);
+			public HRESULT get_Mode(out uint32 puMode) mut => VT.get_Mode(ref this, out puMode);
+			public HRESULT put_Mode(uint32 uMode) mut => VT.put_Mode(ref this, uMode);
+			public HRESULT get_Flags(out uint32 pdwFlags) mut => VT.get_Flags(ref this, out pdwFlags);
+			public HRESULT put_Flags(uint32 dwFlags) mut => VT.put_Flags(ref this, dwFlags);
+			public HRESULT put_TVFlags(uint32 dwFlags) mut => VT.put_TVFlags(ref this, dwFlags);
+			public HRESULT get_TVFlags(out uint32 dwFlags) mut => VT.get_TVFlags(ref this, out dwFlags);
+			public HRESULT get_Columns(out BSTR bstrColumns) mut => VT.get_Columns(ref this, out bstrColumns);
+			public HRESULT put_Columns(BSTR bstrColumns) mut => VT.put_Columns(ref this, bstrColumns);
+			public HRESULT get_CountViewTypes(out int32 piTypes) mut => VT.get_CountViewTypes(ref this, out piTypes);
+			public HRESULT SetViewType(int32 iType) mut => VT.SetViewType(ref this, iType);
+			public HRESULT SelectedItems(out IDispatch* ppid) mut => VT.SelectedItems(ref this, out ppid);
+			public HRESULT Expand(VARIANT @var, int32 iDepth) mut => VT.Expand(ref this, @var, iDepth);
+			public HRESULT UnselectAll() mut => VT.UnselectAll(ref this);
+
 			[CRepr]
 			public struct VTable : IShellFavoritesNameSpace.VTable
 			{
@@ -14957,62 +11710,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT advanceError() mut
-			{
-				return VT.advanceError(ref this);
-			}
-			public HRESULT retreatError() mut
-			{
-				return VT.retreatError(ref this);
-			}
-			public HRESULT canAdvanceError(out BOOL pfCanAdvance) mut
-			{
-				return VT.canAdvanceError(ref this, out pfCanAdvance);
-			}
-			public HRESULT canRetreatError(out BOOL pfCanRetreat) mut
-			{
-				return VT.canRetreatError(ref this, out pfCanRetreat);
-			}
-			public HRESULT getErrorLine(out int32 plLine) mut
-			{
-				return VT.getErrorLine(ref this, out plLine);
-			}
-			public HRESULT getErrorChar(out int32 plChar) mut
-			{
-				return VT.getErrorChar(ref this, out plChar);
-			}
-			public HRESULT getErrorCode(out int32 plCode) mut
-			{
-				return VT.getErrorCode(ref this, out plCode);
-			}
-			public HRESULT getErrorMsg(out BSTR pstr) mut
-			{
-				return VT.getErrorMsg(ref this, out pstr);
-			}
-			public HRESULT getErrorUrl(out BSTR pstr) mut
-			{
-				return VT.getErrorUrl(ref this, out pstr);
-			}
-			public HRESULT getAlwaysShowLockState(out BOOL pfAlwaysShowLocked) mut
-			{
-				return VT.getAlwaysShowLockState(ref this, out pfAlwaysShowLocked);
-			}
-			public HRESULT getDetailsPaneOpen(out BOOL pfDetailsPaneOpen) mut
-			{
-				return VT.getDetailsPaneOpen(ref this, out pfDetailsPaneOpen);
-			}
-			public HRESULT setDetailsPaneOpen(BOOL fDetailsPaneOpen) mut
-			{
-				return VT.setDetailsPaneOpen(ref this, fDetailsPaneOpen);
-			}
-			public HRESULT getPerErrorDisplay(out BOOL pfPerErrorDisplay) mut
-			{
-				return VT.getPerErrorDisplay(ref this, out pfPerErrorDisplay);
-			}
-			public HRESULT setPerErrorDisplay(BOOL fPerErrorDisplay) mut
-			{
-				return VT.setPerErrorDisplay(ref this, fPerErrorDisplay);
-			}
+			public HRESULT advanceError() mut => VT.advanceError(ref this);
+			public HRESULT retreatError() mut => VT.retreatError(ref this);
+			public HRESULT canAdvanceError(out BOOL pfCanAdvance) mut => VT.canAdvanceError(ref this, out pfCanAdvance);
+			public HRESULT canRetreatError(out BOOL pfCanRetreat) mut => VT.canRetreatError(ref this, out pfCanRetreat);
+			public HRESULT getErrorLine(out int32 plLine) mut => VT.getErrorLine(ref this, out plLine);
+			public HRESULT getErrorChar(out int32 plChar) mut => VT.getErrorChar(ref this, out plChar);
+			public HRESULT getErrorCode(out int32 plCode) mut => VT.getErrorCode(ref this, out plCode);
+			public HRESULT getErrorMsg(out BSTR pstr) mut => VT.getErrorMsg(ref this, out pstr);
+			public HRESULT getErrorUrl(out BSTR pstr) mut => VT.getErrorUrl(ref this, out pstr);
+			public HRESULT getAlwaysShowLockState(out BOOL pfAlwaysShowLocked) mut => VT.getAlwaysShowLockState(ref this, out pfAlwaysShowLocked);
+			public HRESULT getDetailsPaneOpen(out BOOL pfDetailsPaneOpen) mut => VT.getDetailsPaneOpen(ref this, out pfDetailsPaneOpen);
+			public HRESULT setDetailsPaneOpen(BOOL fDetailsPaneOpen) mut => VT.setDetailsPaneOpen(ref this, fDetailsPaneOpen);
+			public HRESULT getPerErrorDisplay(out BOOL pfPerErrorDisplay) mut => VT.getPerErrorDisplay(ref this, out pfPerErrorDisplay);
+			public HRESULT setPerErrorDisplay(BOOL fPerErrorDisplay) mut => VT.setPerErrorDisplay(ref this, fPerErrorDisplay);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15039,10 +11751,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFolderView(ref IDispatch pdisp) mut
-			{
-				return VT.SetFolderView(ref this, ref pdisp);
-			}
+			public HRESULT SetFolderView(ref IDispatch pdisp) mut => VT.SetFolderView(ref this, ref pdisp);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15056,6 +11766,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15068,14 +11779,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR pbs) mut
-			{
-				return VT.get_Name(ref this, out pbs);
-			}
-			public HRESULT get_Value(out VARIANT pv) mut
-			{
-				return VT.get_Value(ref this, out pv);
-			}
+			public HRESULT get_Name(out BSTR pbs) mut => VT.get_Name(ref this, out pbs);
+			public HRESULT get_Value(out VARIANT pv) mut => VT.get_Value(ref this, out pv);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15090,74 +11796,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Application(out IDispatch* ppid) mut
-			{
-				return VT.get_Application(ref this, out ppid);
-			}
-			public HRESULT get_Parent(out IDispatch* ppid) mut
-			{
-				return VT.get_Parent(ref this, out ppid);
-			}
-			public HRESULT get_Name(out BSTR pbs) mut
-			{
-				return VT.get_Name(ref this, out pbs);
-			}
-			public HRESULT put_Name(BSTR bs) mut
-			{
-				return VT.put_Name(ref this, bs);
-			}
-			public HRESULT get_Path(out BSTR pbs) mut
-			{
-				return VT.get_Path(ref this, out pbs);
-			}
-			public HRESULT get_GetLink(out IDispatch* ppid) mut
-			{
-				return VT.get_GetLink(ref this, out ppid);
-			}
-			public HRESULT get_GetFolder(out IDispatch* ppid) mut
-			{
-				return VT.get_GetFolder(ref this, out ppid);
-			}
-			public HRESULT get_IsLink(out int16 pb) mut
-			{
-				return VT.get_IsLink(ref this, out pb);
-			}
-			public HRESULT get_IsFolder(out int16 pb) mut
-			{
-				return VT.get_IsFolder(ref this, out pb);
-			}
-			public HRESULT get_IsFileSystem(out int16 pb) mut
-			{
-				return VT.get_IsFileSystem(ref this, out pb);
-			}
-			public HRESULT get_IsBrowsable(out int16 pb) mut
-			{
-				return VT.get_IsBrowsable(ref this, out pb);
-			}
-			public HRESULT get_ModifyDate(out double pdt) mut
-			{
-				return VT.get_ModifyDate(ref this, out pdt);
-			}
-			public HRESULT put_ModifyDate(double dt) mut
-			{
-				return VT.put_ModifyDate(ref this, dt);
-			}
-			public HRESULT get_Size(out int32 pul) mut
-			{
-				return VT.get_Size(ref this, out pul);
-			}
-			public HRESULT get_Type(out BSTR pbs) mut
-			{
-				return VT.get_Type(ref this, out pbs);
-			}
-			public HRESULT Verbs(out FolderItemVerbs* ppfic) mut
-			{
-				return VT.Verbs(ref this, out ppfic);
-			}
-			public HRESULT InvokeVerb(VARIANT vVerb) mut
-			{
-				return VT.InvokeVerb(ref this, vVerb);
-			}
+			public HRESULT get_Application(out IDispatch* ppid) mut => VT.get_Application(ref this, out ppid);
+			public HRESULT get_Parent(out IDispatch* ppid) mut => VT.get_Parent(ref this, out ppid);
+			public HRESULT get_Name(out BSTR pbs) mut => VT.get_Name(ref this, out pbs);
+			public HRESULT put_Name(BSTR bs) mut => VT.put_Name(ref this, bs);
+			public HRESULT get_Path(out BSTR pbs) mut => VT.get_Path(ref this, out pbs);
+			public HRESULT get_GetLink(out IDispatch* ppid) mut => VT.get_GetLink(ref this, out ppid);
+			public HRESULT get_GetFolder(out IDispatch* ppid) mut => VT.get_GetFolder(ref this, out ppid);
+			public HRESULT get_IsLink(out int16 pb) mut => VT.get_IsLink(ref this, out pb);
+			public HRESULT get_IsFolder(out int16 pb) mut => VT.get_IsFolder(ref this, out pb);
+			public HRESULT get_IsFileSystem(out int16 pb) mut => VT.get_IsFileSystem(ref this, out pb);
+			public HRESULT get_IsBrowsable(out int16 pb) mut => VT.get_IsBrowsable(ref this, out pb);
+			public HRESULT get_ModifyDate(out double pdt) mut => VT.get_ModifyDate(ref this, out pdt);
+			public HRESULT put_ModifyDate(double dt) mut => VT.put_ModifyDate(ref this, dt);
+			public HRESULT get_Size(out int32 pul) mut => VT.get_Size(ref this, out pul);
+			public HRESULT get_Type(out BSTR pbs) mut => VT.get_Type(ref this, out pbs);
+			public HRESULT Verbs(out FolderItemVerbs* ppfic) mut => VT.Verbs(ref this, out ppfic);
+			public HRESULT InvokeVerb(VARIANT vVerb) mut => VT.InvokeVerb(ref this, vVerb);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15187,26 +11843,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get_Application(out IDispatch* ppid) mut
-			{
-				return VT.get_Application(ref this, out ppid);
-			}
-			public HRESULT get_Parent(out IDispatch* ppid) mut
-			{
-				return VT.get_Parent(ref this, out ppid);
-			}
-			public HRESULT Item(VARIANT index, out FolderItem* ppid) mut
-			{
-				return VT.Item(ref this, index, out ppid);
-			}
-			public HRESULT _NewEnum(out IUnknown* ppunk) mut
-			{
-				return VT._NewEnum(ref this, out ppunk);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get_Application(out IDispatch* ppid) mut => VT.get_Application(ref this, out ppid);
+			public HRESULT get_Parent(out IDispatch* ppid) mut => VT.get_Parent(ref this, out ppid);
+			public HRESULT Item(VARIANT index, out FolderItem* ppid) mut => VT.Item(ref this, index, out ppid);
+			public HRESULT _NewEnum(out IUnknown* ppunk) mut => VT._NewEnum(ref this, out ppunk);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15224,22 +11866,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Application(out IDispatch* ppid) mut
-			{
-				return VT.get_Application(ref this, out ppid);
-			}
-			public HRESULT get_Parent(out IDispatch* ppid) mut
-			{
-				return VT.get_Parent(ref this, out ppid);
-			}
-			public HRESULT get_Name(out BSTR pbs) mut
-			{
-				return VT.get_Name(ref this, out pbs);
-			}
-			public HRESULT DoIt() mut
-			{
-				return VT.DoIt(ref this);
-			}
+			public HRESULT get_Application(out IDispatch* ppid) mut => VT.get_Application(ref this, out ppid);
+			public HRESULT get_Parent(out IDispatch* ppid) mut => VT.get_Parent(ref this, out ppid);
+			public HRESULT get_Name(out BSTR pbs) mut => VT.get_Name(ref this, out pbs);
+			public HRESULT DoIt() mut => VT.DoIt(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15256,26 +11887,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get_Application(out IDispatch* ppid) mut
-			{
-				return VT.get_Application(ref this, out ppid);
-			}
-			public HRESULT get_Parent(out IDispatch* ppid) mut
-			{
-				return VT.get_Parent(ref this, out ppid);
-			}
-			public HRESULT Item(VARIANT index, out FolderItemVerb* ppid) mut
-			{
-				return VT.Item(ref this, index, out ppid);
-			}
-			public HRESULT _NewEnum(out IUnknown* ppunk) mut
-			{
-				return VT._NewEnum(ref this, out ppunk);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get_Application(out IDispatch* ppid) mut => VT.get_Application(ref this, out ppid);
+			public HRESULT get_Parent(out IDispatch* ppid) mut => VT.get_Parent(ref this, out ppid);
+			public HRESULT Item(VARIANT index, out FolderItemVerb* ppid) mut => VT.Item(ref this, index, out ppid);
+			public HRESULT _NewEnum(out IUnknown* ppunk) mut => VT._NewEnum(ref this, out ppunk);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15293,46 +11910,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Title(out BSTR pbs) mut
-			{
-				return VT.get_Title(ref this, out pbs);
-			}
-			public HRESULT get_Application(out IDispatch* ppid) mut
-			{
-				return VT.get_Application(ref this, out ppid);
-			}
-			public HRESULT get_Parent(out IDispatch* ppid) mut
-			{
-				return VT.get_Parent(ref this, out ppid);
-			}
-			public HRESULT get_ParentFolder(out Folder* ppsf) mut
-			{
-				return VT.get_ParentFolder(ref this, out ppsf);
-			}
-			public HRESULT Items(out FolderItems* ppid) mut
-			{
-				return VT.Items(ref this, out ppid);
-			}
-			public HRESULT ParseName(BSTR bName, out FolderItem* ppid) mut
-			{
-				return VT.ParseName(ref this, bName, out ppid);
-			}
-			public HRESULT NewFolder(BSTR bName, VARIANT vOptions) mut
-			{
-				return VT.NewFolder(ref this, bName, vOptions);
-			}
-			public HRESULT MoveHere(VARIANT vItem, VARIANT vOptions) mut
-			{
-				return VT.MoveHere(ref this, vItem, vOptions);
-			}
-			public HRESULT CopyHere(VARIANT vItem, VARIANT vOptions) mut
-			{
-				return VT.CopyHere(ref this, vItem, vOptions);
-			}
-			public HRESULT GetDetailsOf(VARIANT vItem, int32 iColumn, out BSTR pbs) mut
-			{
-				return VT.GetDetailsOf(ref this, vItem, iColumn, out pbs);
-			}
+			public HRESULT get_Title(out BSTR pbs) mut => VT.get_Title(ref this, out pbs);
+			public HRESULT get_Application(out IDispatch* ppid) mut => VT.get_Application(ref this, out ppid);
+			public HRESULT get_Parent(out IDispatch* ppid) mut => VT.get_Parent(ref this, out ppid);
+			public HRESULT get_ParentFolder(out Folder* ppsf) mut => VT.get_ParentFolder(ref this, out ppsf);
+			public HRESULT Items(out FolderItems* ppid) mut => VT.Items(ref this, out ppid);
+			public HRESULT ParseName(BSTR bName, out FolderItem* ppid) mut => VT.ParseName(ref this, bName, out ppid);
+			public HRESULT NewFolder(BSTR bName, VARIANT vOptions) mut => VT.NewFolder(ref this, bName, vOptions);
+			public HRESULT MoveHere(VARIANT vItem, VARIANT vOptions) mut => VT.MoveHere(ref this, vItem, vOptions);
+			public HRESULT CopyHere(VARIANT vItem, VARIANT vOptions) mut => VT.CopyHere(ref this, vItem, vOptions);
+			public HRESULT GetDetailsOf(VARIANT vItem, int32 iColumn, out BSTR pbs) mut => VT.GetDetailsOf(ref this, vItem, iColumn, out pbs);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15355,26 +11943,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Self(out FolderItem* ppfi) mut
-			{
-				return VT.get_Self(ref this, out ppfi);
-			}
-			public HRESULT get_OfflineStatus(out int32 pul) mut
-			{
-				return VT.get_OfflineStatus(ref this, out pul);
-			}
-			public HRESULT Synchronize() mut
-			{
-				return VT.Synchronize(ref this);
-			}
-			public HRESULT get_HaveToShowWebViewBarricade(out int16 pbHaveToShowWebViewBarricade) mut
-			{
-				return VT.get_HaveToShowWebViewBarricade(ref this, out pbHaveToShowWebViewBarricade);
-			}
-			public HRESULT DismissedWebViewBarricade() mut
-			{
-				return VT.DismissedWebViewBarricade(ref this);
-			}
+			public HRESULT get_Self(out FolderItem* ppfi) mut => VT.get_Self(ref this, out ppfi);
+			public HRESULT get_OfflineStatus(out int32 pul) mut => VT.get_OfflineStatus(ref this, out pul);
+			public HRESULT Synchronize() mut => VT.Synchronize(ref this);
+			public HRESULT get_HaveToShowWebViewBarricade(out int16 pbHaveToShowWebViewBarricade) mut => VT.get_HaveToShowWebViewBarricade(ref this, out pbHaveToShowWebViewBarricade);
+			public HRESULT DismissedWebViewBarricade() mut => VT.DismissedWebViewBarricade(ref this);
+
 			[CRepr]
 			public struct VTable : Folder.VTable
 			{
@@ -15392,14 +11966,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ShowWebViewBarricade(out int16 pbShowWebViewBarricade) mut
-			{
-				return VT.get_ShowWebViewBarricade(ref this, out pbShowWebViewBarricade);
-			}
-			public HRESULT put_ShowWebViewBarricade(int16 bShowWebViewBarricade) mut
-			{
-				return VT.put_ShowWebViewBarricade(ref this, bShowWebViewBarricade);
-			}
+			public HRESULT get_ShowWebViewBarricade(out int16 pbShowWebViewBarricade) mut => VT.get_ShowWebViewBarricade(ref this, out pbShowWebViewBarricade);
+			public HRESULT put_ShowWebViewBarricade(int16 bShowWebViewBarricade) mut => VT.put_ShowWebViewBarricade(ref this, bShowWebViewBarricade);
+
 			[CRepr]
 			public struct VTable : Folder2.VTable
 			{
@@ -15414,14 +11983,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InvokeVerbEx(VARIANT vVerb, VARIANT vArgs) mut
-			{
-				return VT.InvokeVerbEx(ref this, vVerb, vArgs);
-			}
-			public HRESULT ExtendedProperty(BSTR bstrPropName, out VARIANT pvRet) mut
-			{
-				return VT.ExtendedProperty(ref this, bstrPropName, out pvRet);
-			}
+			public HRESULT InvokeVerbEx(VARIANT vVerb, VARIANT vArgs) mut => VT.InvokeVerbEx(ref this, vVerb, vArgs);
+			public HRESULT ExtendedProperty(BSTR bstrPropName, out VARIANT pvRet) mut => VT.ExtendedProperty(ref this, bstrPropName, out pvRet);
+
 			[CRepr]
 			public struct VTable : FolderItem.VTable
 			{
@@ -15436,10 +12000,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InvokeVerbEx(VARIANT vVerb, VARIANT vArgs) mut
-			{
-				return VT.InvokeVerbEx(ref this, vVerb, vArgs);
-			}
+			public HRESULT InvokeVerbEx(VARIANT vVerb, VARIANT vArgs) mut => VT.InvokeVerbEx(ref this, vVerb, vArgs);
+
 			[CRepr]
 			public struct VTable : FolderItems.VTable
 			{
@@ -15453,14 +12015,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Filter(int32 grfFlags, BSTR bstrFileSpec) mut
-			{
-				return VT.Filter(ref this, grfFlags, bstrFileSpec);
-			}
-			public HRESULT get_Verbs(out FolderItemVerbs* ppfic) mut
-			{
-				return VT.get_Verbs(ref this, out ppfic);
-			}
+			public HRESULT Filter(int32 grfFlags, BSTR bstrFileSpec) mut => VT.Filter(ref this, grfFlags, bstrFileSpec);
+			public HRESULT get_Verbs(out FolderItemVerbs* ppfic) mut => VT.get_Verbs(ref this, out ppfic);
+
 			[CRepr]
 			public struct VTable : FolderItems2.VTable
 			{
@@ -15475,70 +12032,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Path(out BSTR pbs) mut
-			{
-				return VT.get_Path(ref this, out pbs);
-			}
-			public HRESULT put_Path(BSTR bs) mut
-			{
-				return VT.put_Path(ref this, bs);
-			}
-			public HRESULT get_Description(out BSTR pbs) mut
-			{
-				return VT.get_Description(ref this, out pbs);
-			}
-			public HRESULT put_Description(BSTR bs) mut
-			{
-				return VT.put_Description(ref this, bs);
-			}
-			public HRESULT get_WorkingDirectory(out BSTR pbs) mut
-			{
-				return VT.get_WorkingDirectory(ref this, out pbs);
-			}
-			public HRESULT put_WorkingDirectory(BSTR bs) mut
-			{
-				return VT.put_WorkingDirectory(ref this, bs);
-			}
-			public HRESULT get_Arguments(out BSTR pbs) mut
-			{
-				return VT.get_Arguments(ref this, out pbs);
-			}
-			public HRESULT put_Arguments(BSTR bs) mut
-			{
-				return VT.put_Arguments(ref this, bs);
-			}
-			public HRESULT get_Hotkey(out int32 piHK) mut
-			{
-				return VT.get_Hotkey(ref this, out piHK);
-			}
-			public HRESULT put_Hotkey(int32 iHK) mut
-			{
-				return VT.put_Hotkey(ref this, iHK);
-			}
-			public HRESULT get_ShowCommand(out int32 piShowCommand) mut
-			{
-				return VT.get_ShowCommand(ref this, out piShowCommand);
-			}
-			public HRESULT put_ShowCommand(int32 iShowCommand) mut
-			{
-				return VT.put_ShowCommand(ref this, iShowCommand);
-			}
-			public HRESULT Resolve(int32 fFlags) mut
-			{
-				return VT.Resolve(ref this, fFlags);
-			}
-			public HRESULT GetIconLocation(out BSTR pbs, out int32 piIcon) mut
-			{
-				return VT.GetIconLocation(ref this, out pbs, out piIcon);
-			}
-			public HRESULT SetIconLocation(BSTR bs, int32 iIcon) mut
-			{
-				return VT.SetIconLocation(ref this, bs, iIcon);
-			}
-			public HRESULT Save(VARIANT vWhere) mut
-			{
-				return VT.Save(ref this, vWhere);
-			}
+			public HRESULT get_Path(out BSTR pbs) mut => VT.get_Path(ref this, out pbs);
+			public HRESULT put_Path(BSTR bs) mut => VT.put_Path(ref this, bs);
+			public HRESULT get_Description(out BSTR pbs) mut => VT.get_Description(ref this, out pbs);
+			public HRESULT put_Description(BSTR bs) mut => VT.put_Description(ref this, bs);
+			public HRESULT get_WorkingDirectory(out BSTR pbs) mut => VT.get_WorkingDirectory(ref this, out pbs);
+			public HRESULT put_WorkingDirectory(BSTR bs) mut => VT.put_WorkingDirectory(ref this, bs);
+			public HRESULT get_Arguments(out BSTR pbs) mut => VT.get_Arguments(ref this, out pbs);
+			public HRESULT put_Arguments(BSTR bs) mut => VT.put_Arguments(ref this, bs);
+			public HRESULT get_Hotkey(out int32 piHK) mut => VT.get_Hotkey(ref this, out piHK);
+			public HRESULT put_Hotkey(int32 iHK) mut => VT.put_Hotkey(ref this, iHK);
+			public HRESULT get_ShowCommand(out int32 piShowCommand) mut => VT.get_ShowCommand(ref this, out piShowCommand);
+			public HRESULT put_ShowCommand(int32 iShowCommand) mut => VT.put_ShowCommand(ref this, iShowCommand);
+			public HRESULT Resolve(int32 fFlags) mut => VT.Resolve(ref this, fFlags);
+			public HRESULT GetIconLocation(out BSTR pbs, out int32 piIcon) mut => VT.GetIconLocation(ref this, out pbs, out piIcon);
+			public HRESULT SetIconLocation(BSTR bs, int32 iIcon) mut => VT.SetIconLocation(ref this, bs, iIcon);
+			public HRESULT Save(VARIANT vWhere) mut => VT.Save(ref this, vWhere);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15567,10 +12077,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Target(out FolderItem* ppfi) mut
-			{
-				return VT.get_Target(ref this, out ppfi);
-			}
+			public HRESULT get_Target(out FolderItem* ppfi) mut => VT.get_Target(ref this, out ppfi);
+
 			[CRepr]
 			public struct VTable : IShellLinkDual.VTable
 			{
@@ -15584,42 +12092,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Application(out IDispatch* ppid) mut
-			{
-				return VT.get_Application(ref this, out ppid);
-			}
-			public HRESULT get_Parent(out IDispatch* ppid) mut
-			{
-				return VT.get_Parent(ref this, out ppid);
-			}
-			public HRESULT get_Folder(out Folder* ppid) mut
-			{
-				return VT.get_Folder(ref this, out ppid);
-			}
-			public HRESULT SelectedItems(out FolderItems* ppid) mut
-			{
-				return VT.SelectedItems(ref this, out ppid);
-			}
-			public HRESULT get_FocusedItem(out FolderItem* ppid) mut
-			{
-				return VT.get_FocusedItem(ref this, out ppid);
-			}
-			public HRESULT SelectItem(ref VARIANT pvfi, int32 dwFlags) mut
-			{
-				return VT.SelectItem(ref this, ref pvfi, dwFlags);
-			}
-			public HRESULT PopupItemMenu(ref FolderItem pfi, VARIANT vx, VARIANT vy, out BSTR pbs) mut
-			{
-				return VT.PopupItemMenu(ref this, ref pfi, vx, vy, out pbs);
-			}
-			public HRESULT get_Script(out IDispatch* ppDisp) mut
-			{
-				return VT.get_Script(ref this, out ppDisp);
-			}
-			public HRESULT get_ViewOptions(out int32 plViewOptions) mut
-			{
-				return VT.get_ViewOptions(ref this, out plViewOptions);
-			}
+			public HRESULT get_Application(out IDispatch* ppid) mut => VT.get_Application(ref this, out ppid);
+			public HRESULT get_Parent(out IDispatch* ppid) mut => VT.get_Parent(ref this, out ppid);
+			public HRESULT get_Folder(out Folder* ppid) mut => VT.get_Folder(ref this, out ppid);
+			public HRESULT SelectedItems(out FolderItems* ppid) mut => VT.SelectedItems(ref this, out ppid);
+			public HRESULT get_FocusedItem(out FolderItem* ppid) mut => VT.get_FocusedItem(ref this, out ppid);
+			public HRESULT SelectItem(ref VARIANT pvfi, int32 dwFlags) mut => VT.SelectItem(ref this, ref pvfi, dwFlags);
+			public HRESULT PopupItemMenu(ref FolderItem pfi, VARIANT vx, VARIANT vy, out BSTR pbs) mut => VT.PopupItemMenu(ref this, ref pfi, vx, vy, out pbs);
+			public HRESULT get_Script(out IDispatch* ppDisp) mut => VT.get_Script(ref this, out ppDisp);
+			public HRESULT get_ViewOptions(out int32 plViewOptions) mut => VT.get_ViewOptions(ref this, out plViewOptions);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15641,18 +12123,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentViewMode(out uint32 pViewMode) mut
-			{
-				return VT.get_CurrentViewMode(ref this, out pViewMode);
-			}
-			public HRESULT put_CurrentViewMode(uint32 ViewMode) mut
-			{
-				return VT.put_CurrentViewMode(ref this, ViewMode);
-			}
-			public HRESULT SelectItemRelative(int32 iRelative) mut
-			{
-				return VT.SelectItemRelative(ref this, iRelative);
-			}
+			public HRESULT get_CurrentViewMode(out uint32 pViewMode) mut => VT.get_CurrentViewMode(ref this, out pViewMode);
+			public HRESULT put_CurrentViewMode(uint32 ViewMode) mut => VT.put_CurrentViewMode(ref this, ViewMode);
+			public HRESULT SelectItemRelative(int32 iRelative) mut => VT.SelectItemRelative(ref this, iRelative);
+
 			[CRepr]
 			public struct VTable : IShellFolderViewDual.VTable
 			{
@@ -15668,42 +12142,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_GroupBy(out BSTR pbstrGroupBy) mut
-			{
-				return VT.get_GroupBy(ref this, out pbstrGroupBy);
-			}
-			public HRESULT put_GroupBy(BSTR bstrGroupBy) mut
-			{
-				return VT.put_GroupBy(ref this, bstrGroupBy);
-			}
-			public HRESULT get_FolderFlags(out uint32 pdwFlags) mut
-			{
-				return VT.get_FolderFlags(ref this, out pdwFlags);
-			}
-			public HRESULT put_FolderFlags(uint32 dwFlags) mut
-			{
-				return VT.put_FolderFlags(ref this, dwFlags);
-			}
-			public HRESULT get_SortColumns(out BSTR pbstrSortColumns) mut
-			{
-				return VT.get_SortColumns(ref this, out pbstrSortColumns);
-			}
-			public HRESULT put_SortColumns(BSTR bstrSortColumns) mut
-			{
-				return VT.put_SortColumns(ref this, bstrSortColumns);
-			}
-			public HRESULT put_IconSize(int32 iIconSize) mut
-			{
-				return VT.put_IconSize(ref this, iIconSize);
-			}
-			public HRESULT get_IconSize(out int32 piIconSize) mut
-			{
-				return VT.get_IconSize(ref this, out piIconSize);
-			}
-			public HRESULT FilterView(BSTR bstrFilterText) mut
-			{
-				return VT.FilterView(ref this, bstrFilterText);
-			}
+			public HRESULT get_GroupBy(out BSTR pbstrGroupBy) mut => VT.get_GroupBy(ref this, out pbstrGroupBy);
+			public HRESULT put_GroupBy(BSTR bstrGroupBy) mut => VT.put_GroupBy(ref this, bstrGroupBy);
+			public HRESULT get_FolderFlags(out uint32 pdwFlags) mut => VT.get_FolderFlags(ref this, out pdwFlags);
+			public HRESULT put_FolderFlags(uint32 dwFlags) mut => VT.put_FolderFlags(ref this, dwFlags);
+			public HRESULT get_SortColumns(out BSTR pbstrSortColumns) mut => VT.get_SortColumns(ref this, out pbstrSortColumns);
+			public HRESULT put_SortColumns(BSTR bstrSortColumns) mut => VT.put_SortColumns(ref this, bstrSortColumns);
+			public HRESULT put_IconSize(int32 iIconSize) mut => VT.put_IconSize(ref this, iIconSize);
+			public HRESULT get_IconSize(out int32 piIconSize) mut => VT.get_IconSize(ref this, out piIconSize);
+			public HRESULT FilterView(BSTR bstrFilterText) mut => VT.FilterView(ref this, bstrFilterText);
+
 			[CRepr]
 			public struct VTable : IShellFolderViewDual2.VTable
 			{
@@ -15725,98 +12173,30 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Application(out IDispatch* ppid) mut
-			{
-				return VT.get_Application(ref this, out ppid);
-			}
-			public HRESULT get_Parent(out IDispatch* ppid) mut
-			{
-				return VT.get_Parent(ref this, out ppid);
-			}
-			public HRESULT NameSpace(VARIANT vDir, out Folder* ppsdf) mut
-			{
-				return VT.NameSpace(ref this, vDir, out ppsdf);
-			}
-			public HRESULT BrowseForFolder(int32 Hwnd, BSTR Title, int32 Options, VARIANT RootFolder, out Folder* ppsdf) mut
-			{
-				return VT.BrowseForFolder(ref this, Hwnd, Title, Options, RootFolder, out ppsdf);
-			}
-			public HRESULT Windows(out IDispatch* ppid) mut
-			{
-				return VT.Windows(ref this, out ppid);
-			}
-			public HRESULT Open(VARIANT vDir) mut
-			{
-				return VT.Open(ref this, vDir);
-			}
-			public HRESULT Explore(VARIANT vDir) mut
-			{
-				return VT.Explore(ref this, vDir);
-			}
-			public HRESULT MinimizeAll() mut
-			{
-				return VT.MinimizeAll(ref this);
-			}
-			public HRESULT UndoMinimizeALL() mut
-			{
-				return VT.UndoMinimizeALL(ref this);
-			}
-			public HRESULT FileRun() mut
-			{
-				return VT.FileRun(ref this);
-			}
-			public HRESULT CascadeWindows() mut
-			{
-				return VT.CascadeWindows(ref this);
-			}
-			public HRESULT TileVertically() mut
-			{
-				return VT.TileVertically(ref this);
-			}
-			public HRESULT TileHorizontally() mut
-			{
-				return VT.TileHorizontally(ref this);
-			}
-			public HRESULT ShutdownWindows() mut
-			{
-				return VT.ShutdownWindows(ref this);
-			}
-			public HRESULT Suspend() mut
-			{
-				return VT.Suspend(ref this);
-			}
-			public HRESULT EjectPC() mut
-			{
-				return VT.EjectPC(ref this);
-			}
-			public HRESULT SetTime() mut
-			{
-				return VT.SetTime(ref this);
-			}
-			public HRESULT TrayProperties() mut
-			{
-				return VT.TrayProperties(ref this);
-			}
-			public HRESULT Help() mut
-			{
-				return VT.Help(ref this);
-			}
-			public HRESULT FindFiles() mut
-			{
-				return VT.FindFiles(ref this);
-			}
-			public HRESULT FindComputer() mut
-			{
-				return VT.FindComputer(ref this);
-			}
-			public HRESULT RefreshMenu() mut
-			{
-				return VT.RefreshMenu(ref this);
-			}
-			public HRESULT ControlPanelItem(BSTR bstrDir) mut
-			{
-				return VT.ControlPanelItem(ref this, bstrDir);
-			}
+			public HRESULT get_Application(out IDispatch* ppid) mut => VT.get_Application(ref this, out ppid);
+			public HRESULT get_Parent(out IDispatch* ppid) mut => VT.get_Parent(ref this, out ppid);
+			public HRESULT NameSpace(VARIANT vDir, out Folder* ppsdf) mut => VT.NameSpace(ref this, vDir, out ppsdf);
+			public HRESULT BrowseForFolder(int32 Hwnd, BSTR Title, int32 Options, VARIANT RootFolder, out Folder* ppsdf) mut => VT.BrowseForFolder(ref this, Hwnd, Title, Options, RootFolder, out ppsdf);
+			public HRESULT Windows(out IDispatch* ppid) mut => VT.Windows(ref this, out ppid);
+			public HRESULT Open(VARIANT vDir) mut => VT.Open(ref this, vDir);
+			public HRESULT Explore(VARIANT vDir) mut => VT.Explore(ref this, vDir);
+			public HRESULT MinimizeAll() mut => VT.MinimizeAll(ref this);
+			public HRESULT UndoMinimizeALL() mut => VT.UndoMinimizeALL(ref this);
+			public HRESULT FileRun() mut => VT.FileRun(ref this);
+			public HRESULT CascadeWindows() mut => VT.CascadeWindows(ref this);
+			public HRESULT TileVertically() mut => VT.TileVertically(ref this);
+			public HRESULT TileHorizontally() mut => VT.TileHorizontally(ref this);
+			public HRESULT ShutdownWindows() mut => VT.ShutdownWindows(ref this);
+			public HRESULT Suspend() mut => VT.Suspend(ref this);
+			public HRESULT EjectPC() mut => VT.EjectPC(ref this);
+			public HRESULT SetTime() mut => VT.SetTime(ref this);
+			public HRESULT TrayProperties() mut => VT.TrayProperties(ref this);
+			public HRESULT Help() mut => VT.Help(ref this);
+			public HRESULT FindFiles() mut => VT.FindFiles(ref this);
+			public HRESULT FindComputer() mut => VT.FindComputer(ref this);
+			public HRESULT RefreshMenu() mut => VT.RefreshMenu(ref this);
+			public HRESULT ControlPanelItem(BSTR bstrDir) mut => VT.ControlPanelItem(ref this, bstrDir);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -15852,42 +12232,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsRestricted(BSTR Group, BSTR Restriction, out int32 plRestrictValue) mut
-			{
-				return VT.IsRestricted(ref this, Group, Restriction, out plRestrictValue);
-			}
-			public HRESULT ShellExecute(BSTR File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow) mut
-			{
-				return VT.ShellExecute(ref this, File, vArgs, vDir, vOperation, vShow);
-			}
-			public HRESULT FindPrinter(BSTR name, BSTR location, BSTR model) mut
-			{
-				return VT.FindPrinter(ref this, name, location, model);
-			}
-			public HRESULT GetSystemInformation(BSTR name, out VARIANT pv) mut
-			{
-				return VT.GetSystemInformation(ref this, name, out pv);
-			}
-			public HRESULT ServiceStart(BSTR ServiceName, VARIANT Persistent, out VARIANT pSuccess) mut
-			{
-				return VT.ServiceStart(ref this, ServiceName, Persistent, out pSuccess);
-			}
-			public HRESULT ServiceStop(BSTR ServiceName, VARIANT Persistent, out VARIANT pSuccess) mut
-			{
-				return VT.ServiceStop(ref this, ServiceName, Persistent, out pSuccess);
-			}
-			public HRESULT IsServiceRunning(BSTR ServiceName, out VARIANT pRunning) mut
-			{
-				return VT.IsServiceRunning(ref this, ServiceName, out pRunning);
-			}
-			public HRESULT CanStartStopService(BSTR ServiceName, out VARIANT pCanStartStop) mut
-			{
-				return VT.CanStartStopService(ref this, ServiceName, out pCanStartStop);
-			}
-			public HRESULT ShowBrowserBar(BSTR bstrClsid, VARIANT bShow, out VARIANT pSuccess) mut
-			{
-				return VT.ShowBrowserBar(ref this, bstrClsid, bShow, out pSuccess);
-			}
+			public HRESULT IsRestricted(BSTR Group, BSTR Restriction, out int32 plRestrictValue) mut => VT.IsRestricted(ref this, Group, Restriction, out plRestrictValue);
+			public HRESULT ShellExecute(BSTR File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow) mut => VT.ShellExecute(ref this, File, vArgs, vDir, vOperation, vShow);
+			public HRESULT FindPrinter(BSTR name, BSTR location, BSTR model) mut => VT.FindPrinter(ref this, name, location, model);
+			public HRESULT GetSystemInformation(BSTR name, out VARIANT pv) mut => VT.GetSystemInformation(ref this, name, out pv);
+			public HRESULT ServiceStart(BSTR ServiceName, VARIANT Persistent, out VARIANT pSuccess) mut => VT.ServiceStart(ref this, ServiceName, Persistent, out pSuccess);
+			public HRESULT ServiceStop(BSTR ServiceName, VARIANT Persistent, out VARIANT pSuccess) mut => VT.ServiceStop(ref this, ServiceName, Persistent, out pSuccess);
+			public HRESULT IsServiceRunning(BSTR ServiceName, out VARIANT pRunning) mut => VT.IsServiceRunning(ref this, ServiceName, out pRunning);
+			public HRESULT CanStartStopService(BSTR ServiceName, out VARIANT pCanStartStop) mut => VT.CanStartStopService(ref this, ServiceName, out pCanStartStop);
+			public HRESULT ShowBrowserBar(BSTR bstrClsid, VARIANT bShow, out VARIANT pSuccess) mut => VT.ShowBrowserBar(ref this, bstrClsid, bShow, out pSuccess);
+
 			[CRepr]
 			public struct VTable : IShellDispatch.VTable
 			{
@@ -15909,10 +12263,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddToRecent(VARIANT varFile, BSTR bstrCategory) mut
-			{
-				return VT.AddToRecent(ref this, varFile, bstrCategory);
-			}
+			public HRESULT AddToRecent(VARIANT varFile, BSTR bstrCategory) mut => VT.AddToRecent(ref this, varFile, bstrCategory);
+
 			[CRepr]
 			public struct VTable : IShellDispatch2.VTable
 			{
@@ -15926,22 +12278,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WindowsSecurity() mut
-			{
-				return VT.WindowsSecurity(ref this);
-			}
-			public HRESULT ToggleDesktop() mut
-			{
-				return VT.ToggleDesktop(ref this);
-			}
-			public HRESULT ExplorerPolicy(BSTR bstrPolicyName, out VARIANT pValue) mut
-			{
-				return VT.ExplorerPolicy(ref this, bstrPolicyName, out pValue);
-			}
-			public HRESULT GetSetting(int32 lSetting, out int16 pResult) mut
-			{
-				return VT.GetSetting(ref this, lSetting, out pResult);
-			}
+			public HRESULT WindowsSecurity() mut => VT.WindowsSecurity(ref this);
+			public HRESULT ToggleDesktop() mut => VT.ToggleDesktop(ref this);
+			public HRESULT ExplorerPolicy(BSTR bstrPolicyName, out VARIANT pValue) mut => VT.ExplorerPolicy(ref this, bstrPolicyName, out pValue);
+			public HRESULT GetSetting(int32 lSetting, out int16 pResult) mut => VT.GetSetting(ref this, lSetting, out pResult);
+
 			[CRepr]
 			public struct VTable : IShellDispatch3.VTable
 			{
@@ -15958,10 +12299,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WindowSwitcher() mut
-			{
-				return VT.WindowSwitcher(ref this);
-			}
+			public HRESULT WindowSwitcher() mut => VT.WindowSwitcher(ref this);
+
 			[CRepr]
 			public struct VTable : IShellDispatch4.VTable
 			{
@@ -15975,10 +12314,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SearchCommand() mut
-			{
-				return VT.SearchCommand(ref this);
-			}
+			public HRESULT SearchCommand() mut => VT.SearchCommand(ref this);
+
 			[CRepr]
 			public struct VTable : IShellDispatch5.VTable
 			{
@@ -15992,26 +12329,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFocus() mut
-			{
-				return VT.SetFocus(ref this);
-			}
-			public HRESULT SetSearchParameters(ref BSTR pbstrSearchID, int16 bNavToResults, ref VARIANT pvarScope, ref VARIANT pvarQueryFile) mut
-			{
-				return VT.SetSearchParameters(ref this, ref pbstrSearchID, bNavToResults, ref pvarScope, ref pvarQueryFile);
-			}
-			public HRESULT get_SearchID(out BSTR pbstrSearchID) mut
-			{
-				return VT.get_SearchID(ref this, out pbstrSearchID);
-			}
-			public HRESULT get_Scope(out VARIANT pvarScope) mut
-			{
-				return VT.get_Scope(ref this, out pvarScope);
-			}
-			public HRESULT get_QueryFile(out VARIANT pvarFile) mut
-			{
-				return VT.get_QueryFile(ref this, out pvarFile);
-			}
+			public HRESULT SetFocus() mut => VT.SetFocus(ref this);
+			public HRESULT SetSearchParameters(ref BSTR pbstrSearchID, int16 bNavToResults, ref VARIANT pvarScope, ref VARIANT pvarQueryFile) mut => VT.SetSearchParameters(ref this, ref pbstrSearchID, bNavToResults, ref pvarScope, ref pvarQueryFile);
+			public HRESULT get_SearchID(out BSTR pbstrSearchID) mut => VT.get_SearchID(ref this, out pbstrSearchID);
+			public HRESULT get_Scope(out VARIANT pvarScope) mut => VT.get_Scope(ref this, out pvarScope);
+			public HRESULT get_QueryFile(out VARIANT pvarFile) mut => VT.get_QueryFile(ref this, out pvarFile);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -16029,42 +12352,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FinalBack() mut
-			{
-				return VT.FinalBack(ref this);
-			}
-			public HRESULT FinalNext() mut
-			{
-				return VT.FinalNext(ref this);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
-			public HRESULT put_Caption(BSTR bstrCaption) mut
-			{
-				return VT.put_Caption(ref this, bstrCaption);
-			}
-			public HRESULT get_Caption(out BSTR pbstrCaption) mut
-			{
-				return VT.get_Caption(ref this, out pbstrCaption);
-			}
-			public HRESULT put_Property(BSTR bstrPropertyName, ref VARIANT pvProperty) mut
-			{
-				return VT.put_Property(ref this, bstrPropertyName, ref pvProperty);
-			}
-			public HRESULT get_Property(BSTR bstrPropertyName, out VARIANT pvProperty) mut
-			{
-				return VT.get_Property(ref this, bstrPropertyName, out pvProperty);
-			}
-			public HRESULT SetWizardButtons(int16 vfEnableBack, int16 vfEnableNext, int16 vfLastPage) mut
-			{
-				return VT.SetWizardButtons(ref this, vfEnableBack, vfEnableNext, vfLastPage);
-			}
-			public HRESULT SetHeaderText(BSTR bstrHeaderTitle, BSTR bstrHeaderSubtitle) mut
-			{
-				return VT.SetHeaderText(ref this, bstrHeaderTitle, bstrHeaderSubtitle);
-			}
+			public HRESULT FinalBack() mut => VT.FinalBack(ref this);
+			public HRESULT FinalNext() mut => VT.FinalNext(ref this);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+			public HRESULT put_Caption(BSTR bstrCaption) mut => VT.put_Caption(ref this, bstrCaption);
+			public HRESULT get_Caption(out BSTR pbstrCaption) mut => VT.get_Caption(ref this, out pbstrCaption);
+			public HRESULT put_Property(BSTR bstrPropertyName, ref VARIANT pvProperty) mut => VT.put_Property(ref this, bstrPropertyName, ref pvProperty);
+			public HRESULT get_Property(BSTR bstrPropertyName, out VARIANT pvProperty) mut => VT.get_Property(ref this, bstrPropertyName, out pvProperty);
+			public HRESULT SetWizardButtons(int16 vfEnableBack, int16 vfEnableNext, int16 vfLastPage) mut => VT.SetWizardButtons(ref this, vfEnableBack, vfEnableNext, vfLastPage);
+			public HRESULT SetHeaderText(BSTR bstrHeaderTitle, BSTR bstrHeaderSubtitle) mut => VT.SetHeaderText(ref this, bstrHeaderTitle, bstrHeaderSubtitle);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -16086,10 +12383,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SignString(BSTR value, out BSTR signedValue) mut
-			{
-				return VT.SignString(ref this, value, out signedValue);
-			}
+			public HRESULT SignString(BSTR value, out BSTR signedValue) mut => VT.SignString(ref this, value, out signedValue);
+
 			[CRepr]
 			public struct VTable : IWebWizardHost.VTable
 			{
@@ -16103,10 +12398,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PassportAuthenticate(BSTR bstrSignInUrl, out int16 pvfAuthenitcated) mut
-			{
-				return VT.PassportAuthenticate(ref this, bstrSignInUrl, out pvfAuthenitcated);
-			}
+			public HRESULT PassportAuthenticate(BSTR bstrSignInUrl, out int16 pvfAuthenitcated) mut => VT.PassportAuthenticate(ref this, bstrSignInUrl, out pvfAuthenitcated);
+
 			[CRepr]
 			public struct VTable : IWebWizardHost.VTable
 			{
@@ -16120,14 +12413,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Init(HWND hwndEdit, ref IUnknown punkACL, PWSTR pwszRegKeyPath, PWSTR pwszQuickComplete) mut
-			{
-				return VT.Init(ref this, hwndEdit, ref punkACL, pwszRegKeyPath, pwszQuickComplete);
-			}
-			public HRESULT Enable(BOOL fEnable) mut
-			{
-				return VT.Enable(ref this, fEnable);
-			}
+			public HRESULT Init(HWND hwndEdit, ref IUnknown punkACL, PWSTR pwszRegKeyPath, PWSTR pwszQuickComplete) mut => VT.Init(ref this, hwndEdit, ref punkACL, pwszRegKeyPath, pwszQuickComplete);
+			public HRESULT Enable(BOOL fEnable) mut => VT.Enable(ref this, fEnable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16142,14 +12430,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOptions(uint32 dwFlag) mut
-			{
-				return VT.SetOptions(ref this, dwFlag);
-			}
-			public HRESULT GetOptions(out uint32 pdwFlag) mut
-			{
-				return VT.GetOptions(ref this, out pdwFlag);
-			}
+			public HRESULT SetOptions(uint32 dwFlag) mut => VT.SetOptions(ref this, dwFlag);
+			public HRESULT GetOptions(out uint32 pdwFlag) mut => VT.GetOptions(ref this, out pdwFlag);
+
 			[CRepr]
 			public struct VTable : IAutoComplete.VTable
 			{
@@ -16164,18 +12447,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NextItem(char16* pszUrl, uint32 cchMax, out uint32 pulSortIndex) mut
-			{
-				return VT.NextItem(ref this, pszUrl, cchMax, out pulSortIndex);
-			}
-			public HRESULT SetEnumOptions(uint32 dwOptions) mut
-			{
-				return VT.SetEnumOptions(ref this, dwOptions);
-			}
-			public HRESULT GetEnumOptions(out uint32 pdwOptions) mut
-			{
-				return VT.GetEnumOptions(ref this, out pdwOptions);
-			}
+			public HRESULT NextItem(char16* pszUrl, uint32 cchMax, out uint32 pulSortIndex) mut => VT.NextItem(ref this, pszUrl, cchMax, out pulSortIndex);
+			public HRESULT SetEnumOptions(uint32 dwOptions) mut => VT.SetEnumOptions(ref this, dwOptions);
+			public HRESULT GetEnumOptions(out uint32 pdwOptions) mut => VT.GetEnumOptions(ref this, out pdwOptions);
+
 			[CRepr]
 			public struct VTable : IEnumString.VTable
 			{
@@ -16191,26 +12466,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAsyncMode(BOOL fDoOpAsync) mut
-			{
-				return VT.SetAsyncMode(ref this, fDoOpAsync);
-			}
-			public HRESULT GetAsyncMode(out BOOL pfIsOpAsync) mut
-			{
-				return VT.GetAsyncMode(ref this, out pfIsOpAsync);
-			}
-			public HRESULT StartOperation(IBindCtx* pbcReserved) mut
-			{
-				return VT.StartOperation(ref this, pbcReserved);
-			}
-			public HRESULT InOperation(out BOOL pfInAsyncOp) mut
-			{
-				return VT.InOperation(ref this, out pfInAsyncOp);
-			}
-			public HRESULT EndOperation(HRESULT hResult, ref IBindCtx pbcReserved, uint32 dwEffects) mut
-			{
-				return VT.EndOperation(ref this, hResult, ref pbcReserved, dwEffects);
-			}
+			public HRESULT SetAsyncMode(BOOL fDoOpAsync) mut => VT.SetAsyncMode(ref this, fDoOpAsync);
+			public HRESULT GetAsyncMode(out BOOL pfIsOpAsync) mut => VT.GetAsyncMode(ref this, out pfIsOpAsync);
+			public HRESULT StartOperation(IBindCtx* pbcReserved) mut => VT.StartOperation(ref this, pbcReserved);
+			public HRESULT InOperation(out BOOL pfInAsyncOp) mut => VT.InOperation(ref this, out pfInAsyncOp);
+			public HRESULT EndOperation(HRESULT hResult, ref IBindCtx pbcReserved, uint32 dwEffects) mut => VT.EndOperation(ref this, hResult, ref pbcReserved, dwEffects);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16228,14 +12489,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIconLocation(uint32 uFlags, uint8* pszIconFile, uint32 cchMax, out int32 piIndex, out uint32 pwFlags) mut
-			{
-				return VT.GetIconLocation(ref this, uFlags, pszIconFile, cchMax, out piIndex, out pwFlags);
-			}
-			public HRESULT Extract(PSTR pszFile, uint32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize) mut
-			{
-				return VT.Extract(ref this, pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
-			}
+			public HRESULT GetIconLocation(uint32 uFlags, uint8* pszIconFile, uint32 cchMax, out int32 piIndex, out uint32 pwFlags) mut => VT.GetIconLocation(ref this, uFlags, pszIconFile, cchMax, out piIndex, out pwFlags);
+			public HRESULT Extract(PSTR pszFile, uint32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize) mut => VT.Extract(ref this, pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16250,14 +12506,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIconLocation(uint32 uFlags, char16* pszIconFile, uint32 cchMax, out int32 piIndex, out uint32 pwFlags) mut
-			{
-				return VT.GetIconLocation(ref this, uFlags, pszIconFile, cchMax, out piIndex, out pwFlags);
-			}
-			public HRESULT Extract(PWSTR pszFile, uint32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize) mut
-			{
-				return VT.Extract(ref this, pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
-			}
+			public HRESULT GetIconLocation(uint32 uFlags, char16* pszIconFile, uint32 cchMax, out int32 piIndex, out uint32 pwFlags) mut => VT.GetIconLocation(ref this, uFlags, pszIconFile, cchMax, out piIndex, out pwFlags);
+			public HRESULT Extract(PWSTR pszFile, uint32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize) mut => VT.Extract(ref this, pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16272,26 +12523,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFileOverlayInfo(PWSTR pwszPath, uint32 dwAttrib, out int32 pIndex, uint32 dwflags) mut
-			{
-				return VT.GetFileOverlayInfo(ref this, pwszPath, dwAttrib, out pIndex, dwflags);
-			}
-			public HRESULT GetReservedOverlayInfo(PWSTR pwszPath, uint32 dwAttrib, out int32 pIndex, uint32 dwflags, int32 iReservedID) mut
-			{
-				return VT.GetReservedOverlayInfo(ref this, pwszPath, dwAttrib, out pIndex, dwflags, iReservedID);
-			}
-			public HRESULT RefreshOverlayImages(uint32 dwFlags) mut
-			{
-				return VT.RefreshOverlayImages(ref this, dwFlags);
-			}
-			public HRESULT LoadNonloadedOverlayIdentifiers() mut
-			{
-				return VT.LoadNonloadedOverlayIdentifiers(ref this);
-			}
-			public HRESULT OverlayIndexFromImageIndex(int32 iImage, out int32 piIndex, BOOL fAdd) mut
-			{
-				return VT.OverlayIndexFromImageIndex(ref this, iImage, out piIndex, fAdd);
-			}
+			public HRESULT GetFileOverlayInfo(PWSTR pwszPath, uint32 dwAttrib, out int32 pIndex, uint32 dwflags) mut => VT.GetFileOverlayInfo(ref this, pwszPath, dwAttrib, out pIndex, dwflags);
+			public HRESULT GetReservedOverlayInfo(PWSTR pwszPath, uint32 dwAttrib, out int32 pIndex, uint32 dwflags, int32 iReservedID) mut => VT.GetReservedOverlayInfo(ref this, pwszPath, dwAttrib, out pIndex, dwflags, iReservedID);
+			public HRESULT RefreshOverlayImages(uint32 dwFlags) mut => VT.RefreshOverlayImages(ref this, dwFlags);
+			public HRESULT LoadNonloadedOverlayIdentifiers() mut => VT.LoadNonloadedOverlayIdentifiers(ref this);
+			public HRESULT OverlayIndexFromImageIndex(int32 iImage, out int32 piIndex, BOOL fAdd) mut => VT.OverlayIndexFromImageIndex(ref this, iImage, out piIndex, fAdd);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16309,14 +12546,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOverlayIndex(ref ITEMIDLIST pidl, out int32 pIndex) mut
-			{
-				return VT.GetOverlayIndex(ref this, ref pidl, out pIndex);
-			}
-			public HRESULT GetOverlayIconIndex(ref ITEMIDLIST pidl, out int32 pIconIndex) mut
-			{
-				return VT.GetOverlayIconIndex(ref this, ref pidl, out pIconIndex);
-			}
+			public HRESULT GetOverlayIndex(ref ITEMIDLIST pidl, out int32 pIndex) mut => VT.GetOverlayIndex(ref this, ref pidl, out pIndex);
+			public HRESULT GetOverlayIconIndex(ref ITEMIDLIST pidl, out int32 pIconIndex) mut => VT.GetOverlayIconIndex(ref this, ref pidl, out pIconIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16331,10 +12563,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Translate(char16* pwszSearchURL, uint32 cchBufferSize) mut
-			{
-				return VT.Translate(ref this, pwszSearchURL, cchBufferSize);
-			}
+			public HRESULT Translate(char16* pwszSearchURL, uint32 cchBufferSize) mut => VT.Translate(ref this, pwszSearchURL, cchBufferSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16348,18 +12578,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSearchUrl(out BSTR pbstrSearchUrl) mut
-			{
-				return VT.GetSearchUrl(ref this, out pbstrSearchUrl);
-			}
-			public HRESULT GetSearchText(out BSTR pbstrSearchText) mut
-			{
-				return VT.GetSearchText(ref this, out pbstrSearchText);
-			}
-			public HRESULT GetSearchStyle(out uint32 pdwSearchStyle) mut
-			{
-				return VT.GetSearchStyle(ref this, out pdwSearchStyle);
-			}
+			public HRESULT GetSearchUrl(out BSTR pbstrSearchUrl) mut => VT.GetSearchUrl(ref this, out pbstrSearchUrl);
+			public HRESULT GetSearchText(out BSTR pbstrSearchText) mut => VT.GetSearchText(ref this, out pbstrSearchText);
+			public HRESULT GetSearchStyle(out uint32 pdwSearchStyle) mut => VT.GetSearchStyle(ref this, out pdwSearchStyle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16375,10 +12597,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TranslateWithSearchContext(char16* pwszSearchURL, uint32 cchBufferSize, ISearchContext* pSearchContext) mut
-			{
-				return VT.TranslateWithSearchContext(ref this, pwszSearchURL, cchBufferSize, pSearchContext);
-			}
+			public HRESULT TranslateWithSearchContext(char16* pwszSearchURL, uint32 cchBufferSize, ISearchContext* pSearchContext) mut => VT.TranslateWithSearchContext(ref this, pwszSearchURL, cchBufferSize, pSearchContext);
+
 			[CRepr]
 			public struct VTable : IURLSearchHook.VTable
 			{
@@ -16392,14 +12612,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDetailsOf(ITEMIDLIST* pidl, uint32 iColumn, out SHELLDETAILS pDetails) mut
-			{
-				return VT.GetDetailsOf(ref this, pidl, iColumn, out pDetails);
-			}
-			public HRESULT ColumnClick(uint32 iColumn) mut
-			{
-				return VT.ColumnClick(ref this, iColumn);
-			}
+			public HRESULT GetDetailsOf(ITEMIDLIST* pidl, uint32 iColumn, out SHELLDETAILS pDetails) mut => VT.GetDetailsOf(ref this, pidl, iColumn, out pDetails);
+			public HRESULT ColumnClick(uint32 iColumn) mut => VT.ColumnClick(ref this, iColumn);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16414,14 +12629,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Append(ref IUnknown punk) mut
-			{
-				return VT.Append(ref this, ref punk);
-			}
-			public HRESULT Remove(ref IUnknown punk) mut
-			{
-				return VT.Remove(ref this, ref punk);
-			}
+			public HRESULT Append(ref IUnknown punk) mut => VT.Append(ref this, ref punk);
+			public HRESULT Remove(ref IUnknown punk) mut => VT.Remove(ref this, ref punk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16436,10 +12646,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Expand(PWSTR pszExpand) mut
-			{
-				return VT.Expand(ref this, pszExpand);
-			}
+			public HRESULT Expand(PWSTR pszExpand) mut => VT.Expand(ref this, pszExpand);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16453,14 +12661,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOptions(uint32 dwFlag) mut
-			{
-				return VT.SetOptions(ref this, dwFlag);
-			}
-			public HRESULT GetOptions(out uint32 pdwFlag) mut
-			{
-				return VT.GetOptions(ref this, out pdwFlag);
-			}
+			public HRESULT SetOptions(uint32 dwFlag) mut => VT.SetOptions(ref this, dwFlag);
+			public HRESULT GetOptions(out uint32 pdwFlag) mut => VT.GetOptions(ref this, out pdwFlag);
+
 			[CRepr]
 			public struct VTable : IACList.VTable
 			{
@@ -16475,46 +12678,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartProgressDialog(HWND hwndParent, IUnknown* punkEnableModless, uint32 dwFlags, void* pvResevered) mut
-			{
-				return VT.StartProgressDialog(ref this, hwndParent, punkEnableModless, dwFlags, pvResevered);
-			}
-			public HRESULT StopProgressDialog() mut
-			{
-				return VT.StopProgressDialog(ref this);
-			}
-			public HRESULT SetTitle(PWSTR pwzTitle) mut
-			{
-				return VT.SetTitle(ref this, pwzTitle);
-			}
-			public HRESULT SetAnimation(HINSTANCE hInstAnimation, uint32 idAnimation) mut
-			{
-				return VT.SetAnimation(ref this, hInstAnimation, idAnimation);
-			}
-			public BOOL HasUserCancelled() mut
-			{
-				return VT.HasUserCancelled(ref this);
-			}
-			public HRESULT SetProgress(uint32 dwCompleted, uint32 dwTotal) mut
-			{
-				return VT.SetProgress(ref this, dwCompleted, dwTotal);
-			}
-			public HRESULT SetProgress64(uint64 ullCompleted, uint64 ullTotal) mut
-			{
-				return VT.SetProgress64(ref this, ullCompleted, ullTotal);
-			}
-			public HRESULT SetLine(uint32 dwLineNum, PWSTR pwzString, BOOL fCompactPath, void* pvResevered) mut
-			{
-				return VT.SetLine(ref this, dwLineNum, pwzString, fCompactPath, pvResevered);
-			}
-			public HRESULT SetCancelMsg(PWSTR pwzCancelMsg, void* pvResevered) mut
-			{
-				return VT.SetCancelMsg(ref this, pwzCancelMsg, pvResevered);
-			}
-			public HRESULT Timer(uint32 dwTimerAction, void* pvResevered) mut
-			{
-				return VT.Timer(ref this, dwTimerAction, pvResevered);
-			}
+			public HRESULT StartProgressDialog(HWND hwndParent, IUnknown* punkEnableModless, uint32 dwFlags, void* pvResevered) mut => VT.StartProgressDialog(ref this, hwndParent, punkEnableModless, dwFlags, pvResevered);
+			public HRESULT StopProgressDialog() mut => VT.StopProgressDialog(ref this);
+			public HRESULT SetTitle(PWSTR pwzTitle) mut => VT.SetTitle(ref this, pwzTitle);
+			public HRESULT SetAnimation(HINSTANCE hInstAnimation, uint32 idAnimation) mut => VT.SetAnimation(ref this, hInstAnimation, idAnimation);
+			public BOOL HasUserCancelled() mut => VT.HasUserCancelled(ref this);
+			public HRESULT SetProgress(uint32 dwCompleted, uint32 dwTotal) mut => VT.SetProgress(ref this, dwCompleted, dwTotal);
+			public HRESULT SetProgress64(uint64 ullCompleted, uint64 ullTotal) mut => VT.SetProgress64(ref this, ullCompleted, ullTotal);
+			public HRESULT SetLine(uint32 dwLineNum, PWSTR pwzString, BOOL fCompactPath, void* pvResevered) mut => VT.SetLine(ref this, dwLineNum, pwzString, fCompactPath, pvResevered);
+			public HRESULT SetCancelMsg(PWSTR pwzCancelMsg, void* pvResevered) mut => VT.SetCancelMsg(ref this, pwzCancelMsg, pvResevered);
+			public HRESULT Timer(uint32 dwTimerAction, void* pvResevered) mut => VT.Timer(ref this, dwTimerAction, pvResevered);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16537,18 +12711,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBorderDW(ref IUnknown punkObj, out RECT prcBorder) mut
-			{
-				return VT.GetBorderDW(ref this, ref punkObj, out prcBorder);
-			}
-			public HRESULT RequestBorderSpaceDW(ref IUnknown punkObj, ref RECT pbw) mut
-			{
-				return VT.RequestBorderSpaceDW(ref this, ref punkObj, ref pbw);
-			}
-			public HRESULT SetBorderSpaceDW(ref IUnknown punkObj, ref RECT pbw) mut
-			{
-				return VT.SetBorderSpaceDW(ref this, ref punkObj, ref pbw);
-			}
+			public HRESULT GetBorderDW(ref IUnknown punkObj, out RECT prcBorder) mut => VT.GetBorderDW(ref this, ref punkObj, out prcBorder);
+			public HRESULT RequestBorderSpaceDW(ref IUnknown punkObj, ref RECT pbw) mut => VT.RequestBorderSpaceDW(ref this, ref punkObj, ref pbw);
+			public HRESULT SetBorderSpaceDW(ref IUnknown punkObj, ref RECT pbw) mut => VT.SetBorderSpaceDW(ref this, ref punkObj, ref pbw);
+
 			[CRepr]
 			public struct VTable : IOleWindow.VTable
 			{
@@ -16564,10 +12730,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnChange(int32 lEvent, ITEMIDLIST* pidl1, ITEMIDLIST* pidl2) mut
-			{
-				return VT.OnChange(ref this, lEvent, pidl1, pidl2);
-			}
+			public HRESULT OnChange(int32 lEvent, ITEMIDLIST* pidl1, ITEMIDLIST* pidl2) mut => VT.OnChange(ref this, lEvent, pidl1, pidl2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16581,14 +12745,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInfoTip(QITIPF_FLAGS dwFlags, out PWSTR ppwszTip) mut
-			{
-				return VT.GetInfoTip(ref this, dwFlags, out ppwszTip);
-			}
-			public HRESULT GetInfoFlags(out uint32 pdwFlags) mut
-			{
-				return VT.GetInfoFlags(ref this, out pdwFlags);
-			}
+			public HRESULT GetInfoTip(QITIPF_FLAGS dwFlags, out PWSTR ppwszTip) mut => VT.GetInfoTip(ref this, dwFlags, out ppwszTip);
+			public HRESULT GetInfoFlags(out uint32 pdwFlags) mut => VT.GetInfoFlags(ref this, out pdwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16603,10 +12762,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MessageSFVCB(SFVM_MESSAGE_ID uMsg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.MessageSFVCB(ref this, uMsg, wParam, lParam);
-			}
+			public HRESULT MessageSFVCB(SFVM_MESSAGE_ID uMsg, WPARAM wParam, LPARAM lParam) mut => VT.MessageSFVCB(ref this, uMsg, wParam, lParam);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16620,118 +12777,35 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Rearrange(LPARAM lParamSort) mut
-			{
-				return VT.Rearrange(ref this, lParamSort);
-			}
-			public HRESULT GetArrangeParam(out LPARAM plParamSort) mut
-			{
-				return VT.GetArrangeParam(ref this, out plParamSort);
-			}
-			public HRESULT ArrangeGrid() mut
-			{
-				return VT.ArrangeGrid(ref this);
-			}
-			public HRESULT AutoArrange() mut
-			{
-				return VT.AutoArrange(ref this);
-			}
-			public HRESULT GetAutoArrange() mut
-			{
-				return VT.GetAutoArrange(ref this);
-			}
-			public HRESULT AddObject(ref ITEMIDLIST pidl, out uint32 puItem) mut
-			{
-				return VT.AddObject(ref this, ref pidl, out puItem);
-			}
-			public HRESULT GetObject(out ITEMIDLIST* ppidl, uint32 uItem) mut
-			{
-				return VT.GetObject(ref this, out ppidl, uItem);
-			}
-			public HRESULT RemoveObject(ITEMIDLIST* pidl, out uint32 puItem) mut
-			{
-				return VT.RemoveObject(ref this, pidl, out puItem);
-			}
-			public HRESULT GetObjectCount(out uint32 puCount) mut
-			{
-				return VT.GetObjectCount(ref this, out puCount);
-			}
-			public HRESULT SetObjectCount(uint32 uCount, uint32 dwFlags) mut
-			{
-				return VT.SetObjectCount(ref this, uCount, dwFlags);
-			}
-			public HRESULT UpdateObject(ref ITEMIDLIST pidlOld, ref ITEMIDLIST pidlNew, out uint32 puItem) mut
-			{
-				return VT.UpdateObject(ref this, ref pidlOld, ref pidlNew, out puItem);
-			}
-			public HRESULT RefreshObject(ref ITEMIDLIST pidl, out uint32 puItem) mut
-			{
-				return VT.RefreshObject(ref this, ref pidl, out puItem);
-			}
-			public HRESULT SetRedraw(BOOL bRedraw) mut
-			{
-				return VT.SetRedraw(ref this, bRedraw);
-			}
-			public HRESULT GetSelectedCount(out uint32 puSelected) mut
-			{
-				return VT.GetSelectedCount(ref this, out puSelected);
-			}
-			public HRESULT GetSelectedObjects(out ITEMIDLIST** pppidl, out uint32 puItems) mut
-			{
-				return VT.GetSelectedObjects(ref this, out pppidl, out puItems);
-			}
-			public HRESULT IsDropOnSource(IDropTarget* pDropTarget) mut
-			{
-				return VT.IsDropOnSource(ref this, pDropTarget);
-			}
-			public HRESULT GetDragPoint(out POINT ppt) mut
-			{
-				return VT.GetDragPoint(ref this, out ppt);
-			}
-			public HRESULT GetDropPoint(out POINT ppt) mut
-			{
-				return VT.GetDropPoint(ref this, out ppt);
-			}
-			public HRESULT MoveIcons(ref IDataObject pDataObject) mut
-			{
-				return VT.MoveIcons(ref this, ref pDataObject);
-			}
-			public HRESULT SetItemPos(ref ITEMIDLIST pidl, ref POINT ppt) mut
-			{
-				return VT.SetItemPos(ref this, ref pidl, ref ppt);
-			}
-			public HRESULT IsBkDropTarget(IDropTarget* pDropTarget) mut
-			{
-				return VT.IsBkDropTarget(ref this, pDropTarget);
-			}
-			public HRESULT SetClipboard(BOOL bMove) mut
-			{
-				return VT.SetClipboard(ref this, bMove);
-			}
-			public HRESULT SetPoints(ref IDataObject pDataObject) mut
-			{
-				return VT.SetPoints(ref this, ref pDataObject);
-			}
-			public HRESULT GetItemSpacing(out ITEMSPACING pSpacing) mut
-			{
-				return VT.GetItemSpacing(ref this, out pSpacing);
-			}
-			public HRESULT SetCallback(IShellFolderViewCB* pNewCB, IShellFolderViewCB** ppOldCB) mut
-			{
-				return VT.SetCallback(ref this, pNewCB, ppOldCB);
-			}
-			public HRESULT Select(SFVS_SELECT dwFlags) mut
-			{
-				return VT.Select(ref this, dwFlags);
-			}
-			public HRESULT QuerySupport(out uint32 pdwSupport) mut
-			{
-				return VT.QuerySupport(ref this, out pdwSupport);
-			}
-			public HRESULT SetAutomationObject(IDispatch* pdisp) mut
-			{
-				return VT.SetAutomationObject(ref this, pdisp);
-			}
+			public HRESULT Rearrange(LPARAM lParamSort) mut => VT.Rearrange(ref this, lParamSort);
+			public HRESULT GetArrangeParam(out LPARAM plParamSort) mut => VT.GetArrangeParam(ref this, out plParamSort);
+			public HRESULT ArrangeGrid() mut => VT.ArrangeGrid(ref this);
+			public HRESULT AutoArrange() mut => VT.AutoArrange(ref this);
+			public HRESULT GetAutoArrange() mut => VT.GetAutoArrange(ref this);
+			public HRESULT AddObject(ref ITEMIDLIST pidl, out uint32 puItem) mut => VT.AddObject(ref this, ref pidl, out puItem);
+			public HRESULT GetObject(out ITEMIDLIST* ppidl, uint32 uItem) mut => VT.GetObject(ref this, out ppidl, uItem);
+			public HRESULT RemoveObject(ITEMIDLIST* pidl, out uint32 puItem) mut => VT.RemoveObject(ref this, pidl, out puItem);
+			public HRESULT GetObjectCount(out uint32 puCount) mut => VT.GetObjectCount(ref this, out puCount);
+			public HRESULT SetObjectCount(uint32 uCount, uint32 dwFlags) mut => VT.SetObjectCount(ref this, uCount, dwFlags);
+			public HRESULT UpdateObject(ref ITEMIDLIST pidlOld, ref ITEMIDLIST pidlNew, out uint32 puItem) mut => VT.UpdateObject(ref this, ref pidlOld, ref pidlNew, out puItem);
+			public HRESULT RefreshObject(ref ITEMIDLIST pidl, out uint32 puItem) mut => VT.RefreshObject(ref this, ref pidl, out puItem);
+			public HRESULT SetRedraw(BOOL bRedraw) mut => VT.SetRedraw(ref this, bRedraw);
+			public HRESULT GetSelectedCount(out uint32 puSelected) mut => VT.GetSelectedCount(ref this, out puSelected);
+			public HRESULT GetSelectedObjects(out ITEMIDLIST** pppidl, out uint32 puItems) mut => VT.GetSelectedObjects(ref this, out pppidl, out puItems);
+			public HRESULT IsDropOnSource(IDropTarget* pDropTarget) mut => VT.IsDropOnSource(ref this, pDropTarget);
+			public HRESULT GetDragPoint(out POINT ppt) mut => VT.GetDragPoint(ref this, out ppt);
+			public HRESULT GetDropPoint(out POINT ppt) mut => VT.GetDropPoint(ref this, out ppt);
+			public HRESULT MoveIcons(ref IDataObject pDataObject) mut => VT.MoveIcons(ref this, ref pDataObject);
+			public HRESULT SetItemPos(ref ITEMIDLIST pidl, ref POINT ppt) mut => VT.SetItemPos(ref this, ref pidl, ref ppt);
+			public HRESULT IsBkDropTarget(IDropTarget* pDropTarget) mut => VT.IsBkDropTarget(ref this, pDropTarget);
+			public HRESULT SetClipboard(BOOL bMove) mut => VT.SetClipboard(ref this, bMove);
+			public HRESULT SetPoints(ref IDataObject pDataObject) mut => VT.SetPoints(ref this, ref pDataObject);
+			public HRESULT GetItemSpacing(out ITEMSPACING pSpacing) mut => VT.GetItemSpacing(ref this, out pSpacing);
+			public HRESULT SetCallback(IShellFolderViewCB* pNewCB, IShellFolderViewCB** ppOldCB) mut => VT.SetCallback(ref this, pNewCB, ppOldCB);
+			public HRESULT Select(SFVS_SELECT dwFlags) mut => VT.Select(ref this, dwFlags);
+			public HRESULT QuerySupport(out uint32 pdwSupport) mut => VT.QuerySupport(ref this, out pdwSupport);
+			public HRESULT SetAutomationObject(IDispatch* pdisp) mut => VT.SetAutomationObject(ref this, pdisp);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16772,18 +12846,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReadPropertyNPB(PWSTR pszBagname, PWSTR pszPropName, out PROPVARIANT pVar) mut
-			{
-				return VT.ReadPropertyNPB(ref this, pszBagname, pszPropName, out pVar);
-			}
-			public HRESULT WritePropertyNPB(PWSTR pszBagname, PWSTR pszPropName, ref PROPVARIANT pVar) mut
-			{
-				return VT.WritePropertyNPB(ref this, pszBagname, pszPropName, ref pVar);
-			}
-			public HRESULT RemovePropertyNPB(PWSTR pszBagname, PWSTR pszPropName) mut
-			{
-				return VT.RemovePropertyNPB(ref this, pszBagname, pszPropName);
-			}
+			public HRESULT ReadPropertyNPB(PWSTR pszBagname, PWSTR pszPropName, out PROPVARIANT pVar) mut => VT.ReadPropertyNPB(ref this, pszBagname, pszPropName, out pVar);
+			public HRESULT WritePropertyNPB(PWSTR pszBagname, PWSTR pszPropName, ref PROPVARIANT pVar) mut => VT.WritePropertyNPB(ref this, pszBagname, pszPropName, ref pVar);
+			public HRESULT RemovePropertyNPB(PWSTR pszBagname, PWSTR pszPropName) mut => VT.RemovePropertyNPB(ref this, pszBagname, pszPropName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16799,30 +12865,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetReferent(PSTR pcszReferent, HWND hwnd) mut
-			{
-				return VT.SetReferent(ref this, pcszReferent, hwnd);
-			}
-			public HRESULT GetReferent(uint8* pszReferent, int32 cchReferent) mut
-			{
-				return VT.GetReferent(ref this, pszReferent, cchReferent);
-			}
-			public HRESULT SetFolder(PSTR pcszFolder) mut
-			{
-				return VT.SetFolder(ref this, pcszFolder);
-			}
-			public HRESULT GetFolder(uint8* pszFolder, int32 cchFolder) mut
-			{
-				return VT.GetFolder(ref this, pszFolder, cchFolder);
-			}
-			public HRESULT GetName(uint8* pszName, int32 cchName) mut
-			{
-				return VT.GetName(ref this, pszName, cchName);
-			}
-			public HRESULT GetExtension(uint8* pszExtension, int32 cchExtension) mut
-			{
-				return VT.GetExtension(ref this, pszExtension, cchExtension);
-			}
+			public HRESULT SetReferent(PSTR pcszReferent, HWND hwnd) mut => VT.SetReferent(ref this, pcszReferent, hwnd);
+			public HRESULT GetReferent(uint8* pszReferent, int32 cchReferent) mut => VT.GetReferent(ref this, pszReferent, cchReferent);
+			public HRESULT SetFolder(PSTR pcszFolder) mut => VT.SetFolder(ref this, pcszFolder);
+			public HRESULT GetFolder(uint8* pszFolder, int32 cchFolder) mut => VT.GetFolder(ref this, pszFolder, cchFolder);
+			public HRESULT GetName(uint8* pszName, int32 cchName) mut => VT.GetName(ref this, pszName, cchName);
+			public HRESULT GetExtension(uint8* pszExtension, int32 cchExtension) mut => VT.GetExtension(ref this, pszExtension, cchExtension);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16841,30 +12890,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetReferent(PWSTR pcszReferent, HWND hwnd) mut
-			{
-				return VT.SetReferent(ref this, pcszReferent, hwnd);
-			}
-			public HRESULT GetReferent(char16* pszReferent, int32 cchReferent) mut
-			{
-				return VT.GetReferent(ref this, pszReferent, cchReferent);
-			}
-			public HRESULT SetFolder(PWSTR pcszFolder) mut
-			{
-				return VT.SetFolder(ref this, pcszFolder);
-			}
-			public HRESULT GetFolder(char16* pszFolder, int32 cchFolder) mut
-			{
-				return VT.GetFolder(ref this, pszFolder, cchFolder);
-			}
-			public HRESULT GetName(char16* pszName, int32 cchName) mut
-			{
-				return VT.GetName(ref this, pszName, cchName);
-			}
-			public HRESULT GetExtension(char16* pszExtension, int32 cchExtension) mut
-			{
-				return VT.GetExtension(ref this, pszExtension, cchExtension);
-			}
+			public HRESULT SetReferent(PWSTR pcszReferent, HWND hwnd) mut => VT.SetReferent(ref this, pcszReferent, hwnd);
+			public HRESULT GetReferent(char16* pszReferent, int32 cchReferent) mut => VT.GetReferent(ref this, pszReferent, cchReferent);
+			public HRESULT SetFolder(PWSTR pcszFolder) mut => VT.SetFolder(ref this, pcszFolder);
+			public HRESULT GetFolder(char16* pszFolder, int32 cchFolder) mut => VT.GetFolder(ref this, pszFolder, cchFolder);
+			public HRESULT GetName(char16* pszName, int32 cchName) mut => VT.GetName(ref this, pszName, cchName);
+			public HRESULT GetExtension(char16* pszExtension, int32 cchExtension) mut => VT.GetExtension(ref this, pszExtension, cchExtension);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16883,10 +12915,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 CopyCallback(HWND hwnd, uint32 wFunc, uint32 wFlags, PSTR pszSrcFile, uint32 dwSrcAttribs, PSTR pszDestFile, uint32 dwDestAttribs) mut
-			{
-				return VT.CopyCallback(ref this, hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
-			}
+			public uint32 CopyCallback(HWND hwnd, uint32 wFunc, uint32 wFlags, PSTR pszSrcFile, uint32 dwSrcAttribs, PSTR pszDestFile, uint32 dwDestAttribs) mut => VT.CopyCallback(ref this, hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16900,10 +12930,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 CopyCallback(HWND hwnd, uint32 wFunc, uint32 wFlags, PWSTR pszSrcFile, uint32 dwSrcAttribs, PWSTR pszDestFile, uint32 dwDestAttribs) mut
-			{
-				return VT.CopyCallback(ref this, hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
-			}
+			public uint32 CopyCallback(HWND hwnd, uint32 wFunc, uint32 wFlags, PWSTR pszSrcFile, uint32 dwSrcAttribs, PWSTR pszDestFile, uint32 dwDestAttribs) mut => VT.CopyCallback(ref this, hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16917,14 +12945,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDirectory(char16* pwzPath, uint32 cchSize) mut
-			{
-				return VT.GetDirectory(ref this, pwzPath, cchSize);
-			}
-			public HRESULT SetDirectory(PWSTR pwzPath) mut
-			{
-				return VT.SetDirectory(ref this, pwzPath);
-			}
+			public HRESULT GetDirectory(char16* pwzPath, uint32 cchSize) mut => VT.GetDirectory(ref this, pwzPath, cchSize);
+			public HRESULT SetDirectory(PWSTR pwzPath) mut => VT.SetDirectory(ref this, pwzPath);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16939,18 +12962,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddToolbar(ref IUnknown punkSrc, PWSTR pwszItem, uint32 dwAddFlags) mut
-			{
-				return VT.AddToolbar(ref this, ref punkSrc, pwszItem, dwAddFlags);
-			}
-			public HRESULT RemoveToolbar(ref IUnknown punkSrc, uint32 dwRemoveFlags) mut
-			{
-				return VT.RemoveToolbar(ref this, ref punkSrc, dwRemoveFlags);
-			}
-			public HRESULT FindToolbar(PWSTR pwszItem, in Guid riid, void** ppv) mut
-			{
-				return VT.FindToolbar(ref this, pwszItem, riid, ppv);
-			}
+			public HRESULT AddToolbar(ref IUnknown punkSrc, PWSTR pwszItem, uint32 dwAddFlags) mut => VT.AddToolbar(ref this, ref punkSrc, pwszItem, dwAddFlags);
+			public HRESULT RemoveToolbar(ref IUnknown punkSrc, uint32 dwRemoveFlags) mut => VT.RemoveToolbar(ref this, ref punkSrc, dwRemoveFlags);
+			public HRESULT FindToolbar(PWSTR pwszItem, in Guid riid, void** ppv) mut => VT.FindToolbar(ref this, pwszItem, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IOleWindow.VTable
 			{
@@ -16966,10 +12981,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CaptureThumbnail(in SIZE pMaxSize, ref IUnknown pHTMLDoc2, out HBITMAP phbmThumbnail) mut
-			{
-				return VT.CaptureThumbnail(ref this, pMaxSize, ref pHTMLDoc2, out phbmThumbnail);
-			}
+			public HRESULT CaptureThumbnail(in SIZE pMaxSize, ref IUnknown pHTMLDoc2, out HBITMAP phbmThumbnail) mut => VT.CaptureThumbnail(ref this, pMaxSize, ref pHTMLDoc2, out phbmThumbnail);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -16983,18 +12996,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeSFB(IShellFolder* psf, ITEMIDLIST* pidl) mut
-			{
-				return VT.InitializeSFB(ref this, psf, pidl);
-			}
-			public HRESULT SetBandInfoSFB(ref BANDINFOSFB pbi) mut
-			{
-				return VT.SetBandInfoSFB(ref this, ref pbi);
-			}
-			public HRESULT GetBandInfoSFB(out BANDINFOSFB pbi) mut
-			{
-				return VT.GetBandInfoSFB(ref this, out pbi);
-			}
+			public HRESULT InitializeSFB(IShellFolder* psf, ITEMIDLIST* pidl) mut => VT.InitializeSFB(ref this, psf, pidl);
+			public HRESULT SetBandInfoSFB(ref BANDINFOSFB pbi) mut => VT.SetBandInfoSFB(ref this, ref pbi);
+			public HRESULT GetBandInfoSFB(out BANDINFOSFB pbi) mut => VT.GetBandInfoSFB(ref this, out pbi);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17010,22 +13015,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDeskBarSite(IUnknown* punkSite) mut
-			{
-				return VT.SetDeskBarSite(ref this, punkSite);
-			}
-			public HRESULT SetModeDBC(uint32 dwMode) mut
-			{
-				return VT.SetModeDBC(ref this, dwMode);
-			}
-			public HRESULT UIActivateDBC(uint32 dwState) mut
-			{
-				return VT.UIActivateDBC(ref this, dwState);
-			}
-			public HRESULT GetSize(uint32 dwWhich, out RECT prc) mut
-			{
-				return VT.GetSize(ref this, dwWhich, out prc);
-			}
+			public HRESULT SetDeskBarSite(IUnknown* punkSite) mut => VT.SetDeskBarSite(ref this, punkSite);
+			public HRESULT SetModeDBC(uint32 dwMode) mut => VT.SetModeDBC(ref this, dwMode);
+			public HRESULT UIActivateDBC(uint32 dwState) mut => VT.UIActivateDBC(ref this, dwState);
+			public HRESULT GetSize(uint32 dwWhich, out RECT prc) mut => VT.GetSize(ref this, dwWhich, out prc);
+
 			[CRepr]
 			public struct VTable : IOleWindow.VTable
 			{
@@ -17042,18 +13036,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref SHCOLUMNINIT psci) mut
-			{
-				return VT.Initialize(ref this, ref psci);
-			}
-			public HRESULT GetColumnInfo(uint32 dwIndex, out SHCOLUMNINFO psci) mut
-			{
-				return VT.GetColumnInfo(ref this, dwIndex, out psci);
-			}
-			public HRESULT GetItemData(ref PROPERTYKEY pscid, ref SHCOLUMNDATA pscd, out VARIANT pvarData) mut
-			{
-				return VT.GetItemData(ref this, ref pscid, ref pscd, out pvarData);
-			}
+			public HRESULT Initialize(ref SHCOLUMNINIT psci) mut => VT.Initialize(ref this, ref psci);
+			public HRESULT GetColumnInfo(uint32 dwIndex, out SHCOLUMNINFO psci) mut => VT.GetColumnInfo(ref this, dwIndex, out psci);
+			public HRESULT GetItemData(ref PROPERTYKEY pscid, ref SHCOLUMNDATA pscd, out VARIANT pvarData) mut => VT.GetItemData(ref this, ref pscid, ref pscd, out pvarData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17069,10 +13055,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSetTitle(ref VARIANT pvTitle) mut
-			{
-				return VT.OnSetTitle(ref this, ref pvTitle);
-			}
+			public HRESULT OnSetTitle(ref VARIANT pvTitle) mut => VT.OnSetTitle(ref this, ref pvTitle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17086,10 +13070,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize() mut
-			{
-				return VT.Initialize(ref this);
-			}
+			public HRESULT Initialize() mut => VT.Initialize(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17103,22 +13085,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetIconSize(uint32 iIcon) mut
-			{
-				return VT.SetIconSize(ref this, iIcon);
-			}
-			public HRESULT GetIconSize(out uint32 piIcon) mut
-			{
-				return VT.GetIconSize(ref this, out piIcon);
-			}
-			public HRESULT SetBitmap(HBITMAP hBitmap) mut
-			{
-				return VT.SetBitmap(ref this, hBitmap);
-			}
-			public HRESULT GetBitmap(out HBITMAP phBitmap) mut
-			{
-				return VT.GetBitmap(ref this, out phBitmap);
-			}
+			public HRESULT SetIconSize(uint32 iIcon) mut => VT.SetIconSize(ref this, iIcon);
+			public HRESULT GetIconSize(out uint32 piIcon) mut => VT.GetIconSize(ref this, out piIcon);
+			public HRESULT SetBitmap(HBITMAP hBitmap) mut => VT.SetBitmap(ref this, hBitmap);
+			public HRESULT GetBitmap(out HBITMAP phBitmap) mut => VT.GetBitmap(ref this, out phBitmap);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17135,26 +13106,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Init(uint32 flags, PWSTR pszAssoc, HKEY hkProgid, HWND hwnd) mut
-			{
-				return VT.Init(ref this, flags, pszAssoc, hkProgid, hwnd);
-			}
-			public HRESULT GetString(uint32 flags, ASSOCSTR str, PWSTR pszExtra, char16* pszOut, out uint32 pcchOut) mut
-			{
-				return VT.GetString(ref this, flags, str, pszExtra, pszOut, out pcchOut);
-			}
-			public HRESULT GetKey(uint32 flags, ASSOCKEY key, PWSTR pszExtra, out HKEY phkeyOut) mut
-			{
-				return VT.GetKey(ref this, flags, key, pszExtra, out phkeyOut);
-			}
-			public HRESULT GetData(uint32 flags, ASSOCDATA data, PWSTR pszExtra, void* pvOut, uint32* pcbOut) mut
-			{
-				return VT.GetData(ref this, flags, data, pszExtra, pvOut, pcbOut);
-			}
-			public HRESULT GetEnum(uint32 flags, ASSOCENUM assocenum, PWSTR pszExtra, in Guid riid, void** ppvOut) mut
-			{
-				return VT.GetEnum(ref this, flags, assocenum, pszExtra, riid, ppvOut);
-			}
+			public HRESULT Init(uint32 flags, PWSTR pszAssoc, HKEY hkProgid, HWND hwnd) mut => VT.Init(ref this, flags, pszAssoc, hkProgid, hwnd);
+			public HRESULT GetString(uint32 flags, ASSOCSTR str, PWSTR pszExtra, char16* pszOut, out uint32 pcchOut) mut => VT.GetString(ref this, flags, str, pszExtra, pszOut, out pcchOut);
+			public HRESULT GetKey(uint32 flags, ASSOCKEY key, PWSTR pszExtra, out HKEY phkeyOut) mut => VT.GetKey(ref this, flags, key, pszExtra, out phkeyOut);
+			public HRESULT GetData(uint32 flags, ASSOCDATA data, PWSTR pszExtra, void* pvOut, uint32* pcbOut) mut => VT.GetData(ref this, flags, data, pszExtra, pvOut, pcbOut);
+			public HRESULT GetEnum(uint32 flags, ASSOCENUM assocenum, PWSTR pszExtra, in Guid riid, void** ppvOut) mut => VT.GetEnum(ref this, flags, assocenum, pszExtra, riid, ppvOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17172,26 +13129,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAppInfo(out APPINFODATA pai) mut
-			{
-				return VT.GetAppInfo(ref this, out pai);
-			}
-			public HRESULT GetPossibleActions(out uint32 pdwActions) mut
-			{
-				return VT.GetPossibleActions(ref this, out pdwActions);
-			}
-			public HRESULT GetSlowAppInfo(out SLOWAPPINFO psaid) mut
-			{
-				return VT.GetSlowAppInfo(ref this, out psaid);
-			}
-			public HRESULT GetCachedSlowAppInfo(out SLOWAPPINFO psaid) mut
-			{
-				return VT.GetCachedSlowAppInfo(ref this, out psaid);
-			}
-			public HRESULT IsInstalled() mut
-			{
-				return VT.IsInstalled(ref this);
-			}
+			public HRESULT GetAppInfo(out APPINFODATA pai) mut => VT.GetAppInfo(ref this, out pai);
+			public HRESULT GetPossibleActions(out uint32 pdwActions) mut => VT.GetPossibleActions(ref this, out pdwActions);
+			public HRESULT GetSlowAppInfo(out SLOWAPPINFO psaid) mut => VT.GetSlowAppInfo(ref this, out psaid);
+			public HRESULT GetCachedSlowAppInfo(out SLOWAPPINFO psaid) mut => VT.GetCachedSlowAppInfo(ref this, out psaid);
+			public HRESULT IsInstalled() mut => VT.IsInstalled(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17209,18 +13152,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Install(ref SYSTEMTIME pstInstall) mut
-			{
-				return VT.Install(ref this, ref pstInstall);
-			}
-			public HRESULT GetPublishedAppInfo(out PUBAPPINFO ppai) mut
-			{
-				return VT.GetPublishedAppInfo(ref this, out ppai);
-			}
-			public HRESULT Unschedule() mut
-			{
-				return VT.Unschedule(ref this);
-			}
+			public HRESULT Install(ref SYSTEMTIME pstInstall) mut => VT.Install(ref this, ref pstInstall);
+			public HRESULT GetPublishedAppInfo(out PUBAPPINFO ppai) mut => VT.GetPublishedAppInfo(ref this, out ppai);
+			public HRESULT Unschedule() mut => VT.Unschedule(ref this);
+
 			[CRepr]
 			public struct VTable : IShellApp.VTable
 			{
@@ -17236,10 +13171,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Install2(ref SYSTEMTIME pstInstall, HWND hwndParent) mut
-			{
-				return VT.Install2(ref this, ref pstInstall, hwndParent);
-			}
+			public HRESULT Install2(ref SYSTEMTIME pstInstall, HWND hwndParent) mut => VT.Install2(ref this, ref pstInstall, hwndParent);
+
 			[CRepr]
 			public struct VTable : IPublishedApp.VTable
 			{
@@ -17253,14 +13186,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(out IPublishedApp* pia) mut
-			{
-				return VT.Next(ref this, out pia);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT Next(out IPublishedApp* pia) mut => VT.Next(ref this, out pia);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17275,22 +13203,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNumberOfCategories(out uint32 pdwCat) mut
-			{
-				return VT.GetNumberOfCategories(ref this, out pdwCat);
-			}
-			public HRESULT GetCategories(out APPCATEGORYINFOLIST pAppCategoryList) mut
-			{
-				return VT.GetCategories(ref this, out pAppCategoryList);
-			}
-			public HRESULT GetNumberOfApps(out uint32 pdwApps) mut
-			{
-				return VT.GetNumberOfApps(ref this, out pdwApps);
-			}
-			public HRESULT EnumApps(ref Guid pAppCategoryId, out IEnumPublishedApps* ppepa) mut
-			{
-				return VT.EnumApps(ref this, ref pAppCategoryId, out ppepa);
-			}
+			public HRESULT GetNumberOfCategories(out uint32 pdwCat) mut => VT.GetNumberOfCategories(ref this, out pdwCat);
+			public HRESULT GetCategories(out APPCATEGORYINFOLIST pAppCategoryList) mut => VT.GetCategories(ref this, out pAppCategoryList);
+			public HRESULT GetNumberOfApps(out uint32 pdwApps) mut => VT.GetNumberOfApps(ref this, out pdwApps);
+			public HRESULT EnumApps(ref Guid pAppCategoryId, out IEnumPublishedApps* ppepa) mut => VT.EnumApps(ref this, ref pAppCategoryId, out ppepa);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17307,74 +13224,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Advise(ref ICredentialProviderCredentialEvents pcpce) mut
-			{
-				return VT.Advise(ref this, ref pcpce);
-			}
-			public HRESULT UnAdvise() mut
-			{
-				return VT.UnAdvise(ref this);
-			}
-			public HRESULT SetSelected(out BOOL pbAutoLogon) mut
-			{
-				return VT.SetSelected(ref this, out pbAutoLogon);
-			}
-			public HRESULT SetDeselected() mut
-			{
-				return VT.SetDeselected(ref this);
-			}
-			public HRESULT GetFieldState(uint32 dwFieldID, out CREDENTIAL_PROVIDER_FIELD_STATE pcpfs, out CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE pcpfis) mut
-			{
-				return VT.GetFieldState(ref this, dwFieldID, out pcpfs, out pcpfis);
-			}
-			public HRESULT GetStringValue(uint32 dwFieldID, out PWSTR ppsz) mut
-			{
-				return VT.GetStringValue(ref this, dwFieldID, out ppsz);
-			}
-			public HRESULT GetBitmapValue(uint32 dwFieldID, out HBITMAP phbmp) mut
-			{
-				return VT.GetBitmapValue(ref this, dwFieldID, out phbmp);
-			}
-			public HRESULT GetCheckboxValue(uint32 dwFieldID, out BOOL pbChecked, out PWSTR ppszLabel) mut
-			{
-				return VT.GetCheckboxValue(ref this, dwFieldID, out pbChecked, out ppszLabel);
-			}
-			public HRESULT GetSubmitButtonValue(uint32 dwFieldID, out uint32 pdwAdjacentTo) mut
-			{
-				return VT.GetSubmitButtonValue(ref this, dwFieldID, out pdwAdjacentTo);
-			}
-			public HRESULT GetComboBoxValueCount(uint32 dwFieldID, out uint32 pcItems, out uint32 pdwSelectedItem) mut
-			{
-				return VT.GetComboBoxValueCount(ref this, dwFieldID, out pcItems, out pdwSelectedItem);
-			}
-			public HRESULT GetComboBoxValueAt(uint32 dwFieldID, uint32 dwItem, out PWSTR ppszItem) mut
-			{
-				return VT.GetComboBoxValueAt(ref this, dwFieldID, dwItem, out ppszItem);
-			}
-			public HRESULT SetStringValue(uint32 dwFieldID, PWSTR psz) mut
-			{
-				return VT.SetStringValue(ref this, dwFieldID, psz);
-			}
-			public HRESULT SetCheckboxValue(uint32 dwFieldID, BOOL bChecked) mut
-			{
-				return VT.SetCheckboxValue(ref this, dwFieldID, bChecked);
-			}
-			public HRESULT SetComboBoxSelectedValue(uint32 dwFieldID, uint32 dwSelectedItem) mut
-			{
-				return VT.SetComboBoxSelectedValue(ref this, dwFieldID, dwSelectedItem);
-			}
-			public HRESULT CommandLinkClicked(uint32 dwFieldID) mut
-			{
-				return VT.CommandLinkClicked(ref this, dwFieldID);
-			}
-			public HRESULT GetSerialization(out CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE pcpgsr, out CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION pcpcs, PWSTR* ppszOptionalStatusText, out CREDENTIAL_PROVIDER_STATUS_ICON pcpsiOptionalStatusIcon) mut
-			{
-				return VT.GetSerialization(ref this, out pcpgsr, out pcpcs, ppszOptionalStatusText, out pcpsiOptionalStatusIcon);
-			}
-			public HRESULT ReportResult(NTSTATUS ntsStatus, NTSTATUS ntsSubstatus, PWSTR* ppszOptionalStatusText, out CREDENTIAL_PROVIDER_STATUS_ICON pcpsiOptionalStatusIcon) mut
-			{
-				return VT.ReportResult(ref this, ntsStatus, ntsSubstatus, ppszOptionalStatusText, out pcpsiOptionalStatusIcon);
-			}
+			public HRESULT Advise(ref ICredentialProviderCredentialEvents pcpce) mut => VT.Advise(ref this, ref pcpce);
+			public HRESULT UnAdvise() mut => VT.UnAdvise(ref this);
+			public HRESULT SetSelected(out BOOL pbAutoLogon) mut => VT.SetSelected(ref this, out pbAutoLogon);
+			public HRESULT SetDeselected() mut => VT.SetDeselected(ref this);
+			public HRESULT GetFieldState(uint32 dwFieldID, out CREDENTIAL_PROVIDER_FIELD_STATE pcpfs, out CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE pcpfis) mut => VT.GetFieldState(ref this, dwFieldID, out pcpfs, out pcpfis);
+			public HRESULT GetStringValue(uint32 dwFieldID, out PWSTR ppsz) mut => VT.GetStringValue(ref this, dwFieldID, out ppsz);
+			public HRESULT GetBitmapValue(uint32 dwFieldID, out HBITMAP phbmp) mut => VT.GetBitmapValue(ref this, dwFieldID, out phbmp);
+			public HRESULT GetCheckboxValue(uint32 dwFieldID, out BOOL pbChecked, out PWSTR ppszLabel) mut => VT.GetCheckboxValue(ref this, dwFieldID, out pbChecked, out ppszLabel);
+			public HRESULT GetSubmitButtonValue(uint32 dwFieldID, out uint32 pdwAdjacentTo) mut => VT.GetSubmitButtonValue(ref this, dwFieldID, out pdwAdjacentTo);
+			public HRESULT GetComboBoxValueCount(uint32 dwFieldID, out uint32 pcItems, out uint32 pdwSelectedItem) mut => VT.GetComboBoxValueCount(ref this, dwFieldID, out pcItems, out pdwSelectedItem);
+			public HRESULT GetComboBoxValueAt(uint32 dwFieldID, uint32 dwItem, out PWSTR ppszItem) mut => VT.GetComboBoxValueAt(ref this, dwFieldID, dwItem, out ppszItem);
+			public HRESULT SetStringValue(uint32 dwFieldID, PWSTR psz) mut => VT.SetStringValue(ref this, dwFieldID, psz);
+			public HRESULT SetCheckboxValue(uint32 dwFieldID, BOOL bChecked) mut => VT.SetCheckboxValue(ref this, dwFieldID, bChecked);
+			public HRESULT SetComboBoxSelectedValue(uint32 dwFieldID, uint32 dwSelectedItem) mut => VT.SetComboBoxSelectedValue(ref this, dwFieldID, dwSelectedItem);
+			public HRESULT CommandLinkClicked(uint32 dwFieldID) mut => VT.CommandLinkClicked(ref this, dwFieldID);
+			public HRESULT GetSerialization(out CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE pcpgsr, out CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION pcpcs, PWSTR* ppszOptionalStatusText, out CREDENTIAL_PROVIDER_STATUS_ICON pcpsiOptionalStatusIcon) mut => VT.GetSerialization(ref this, out pcpgsr, out pcpcs, ppszOptionalStatusText, out pcpsiOptionalStatusIcon);
+			public HRESULT ReportResult(NTSTATUS ntsStatus, NTSTATUS ntsSubstatus, PWSTR* ppszOptionalStatusText, out CREDENTIAL_PROVIDER_STATUS_ICON pcpsiOptionalStatusIcon) mut => VT.ReportResult(ref this, ntsStatus, ntsSubstatus, ppszOptionalStatusText, out pcpsiOptionalStatusIcon);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17404,10 +13271,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetStatusMessage(PWSTR psz) mut
-			{
-				return VT.SetStatusMessage(ref this, psz);
-			}
+			public HRESULT SetStatusMessage(PWSTR psz) mut => VT.SetStatusMessage(ref this, psz);
+
 			[CRepr]
 			public struct VTable : IQueryContinue.VTable
 			{
@@ -17421,14 +13286,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Connect(ref IQueryContinueWithStatus pqcws) mut
-			{
-				return VT.Connect(ref this, ref pqcws);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
+			public HRESULT Connect(ref IQueryContinueWithStatus pqcws) mut => VT.Connect(ref this, ref pqcws);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+
 			[CRepr]
 			public struct VTable : ICredentialProviderCredential.VTable
 			{
@@ -17443,46 +13303,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFieldState(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE cpfs) mut
-			{
-				return VT.SetFieldState(ref this, ref pcpc, dwFieldID, cpfs);
-			}
-			public HRESULT SetFieldInteractiveState(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE cpfis) mut
-			{
-				return VT.SetFieldInteractiveState(ref this, ref pcpc, dwFieldID, cpfis);
-			}
-			public HRESULT SetFieldString(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, PWSTR psz) mut
-			{
-				return VT.SetFieldString(ref this, ref pcpc, dwFieldID, psz);
-			}
-			public HRESULT SetFieldCheckbox(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, BOOL bChecked, PWSTR pszLabel) mut
-			{
-				return VT.SetFieldCheckbox(ref this, ref pcpc, dwFieldID, bChecked, pszLabel);
-			}
-			public HRESULT SetFieldBitmap(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, HBITMAP hbmp) mut
-			{
-				return VT.SetFieldBitmap(ref this, ref pcpc, dwFieldID, hbmp);
-			}
-			public HRESULT SetFieldComboBoxSelectedItem(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, uint32 dwSelectedItem) mut
-			{
-				return VT.SetFieldComboBoxSelectedItem(ref this, ref pcpc, dwFieldID, dwSelectedItem);
-			}
-			public HRESULT DeleteFieldComboBoxItem(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, uint32 dwItem) mut
-			{
-				return VT.DeleteFieldComboBoxItem(ref this, ref pcpc, dwFieldID, dwItem);
-			}
-			public HRESULT AppendFieldComboBoxItem(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, PWSTR pszItem) mut
-			{
-				return VT.AppendFieldComboBoxItem(ref this, ref pcpc, dwFieldID, pszItem);
-			}
-			public HRESULT SetFieldSubmitButton(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, uint32 dwAdjacentTo) mut
-			{
-				return VT.SetFieldSubmitButton(ref this, ref pcpc, dwFieldID, dwAdjacentTo);
-			}
-			public HRESULT OnCreatingWindow(out HWND phwndOwner) mut
-			{
-				return VT.OnCreatingWindow(ref this, out phwndOwner);
-			}
+			public HRESULT SetFieldState(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE cpfs) mut => VT.SetFieldState(ref this, ref pcpc, dwFieldID, cpfs);
+			public HRESULT SetFieldInteractiveState(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE cpfis) mut => VT.SetFieldInteractiveState(ref this, ref pcpc, dwFieldID, cpfis);
+			public HRESULT SetFieldString(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, PWSTR psz) mut => VT.SetFieldString(ref this, ref pcpc, dwFieldID, psz);
+			public HRESULT SetFieldCheckbox(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, BOOL bChecked, PWSTR pszLabel) mut => VT.SetFieldCheckbox(ref this, ref pcpc, dwFieldID, bChecked, pszLabel);
+			public HRESULT SetFieldBitmap(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, HBITMAP hbmp) mut => VT.SetFieldBitmap(ref this, ref pcpc, dwFieldID, hbmp);
+			public HRESULT SetFieldComboBoxSelectedItem(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, uint32 dwSelectedItem) mut => VT.SetFieldComboBoxSelectedItem(ref this, ref pcpc, dwFieldID, dwSelectedItem);
+			public HRESULT DeleteFieldComboBoxItem(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, uint32 dwItem) mut => VT.DeleteFieldComboBoxItem(ref this, ref pcpc, dwFieldID, dwItem);
+			public HRESULT AppendFieldComboBoxItem(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, PWSTR pszItem) mut => VT.AppendFieldComboBoxItem(ref this, ref pcpc, dwFieldID, pszItem);
+			public HRESULT SetFieldSubmitButton(ref ICredentialProviderCredential pcpc, uint32 dwFieldID, uint32 dwAdjacentTo) mut => VT.SetFieldSubmitButton(ref this, ref pcpc, dwFieldID, dwAdjacentTo);
+			public HRESULT OnCreatingWindow(out HWND phwndOwner) mut => VT.OnCreatingWindow(ref this, out phwndOwner);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17505,38 +13336,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetUsageScenario(CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, uint32 dwFlags) mut
-			{
-				return VT.SetUsageScenario(ref this, cpus, dwFlags);
-			}
-			public HRESULT SetSerialization(in CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION pcpcs) mut
-			{
-				return VT.SetSerialization(ref this, pcpcs);
-			}
-			public HRESULT Advise(ref ICredentialProviderEvents pcpe, uint upAdviseContext) mut
-			{
-				return VT.Advise(ref this, ref pcpe, upAdviseContext);
-			}
-			public HRESULT UnAdvise() mut
-			{
-				return VT.UnAdvise(ref this);
-			}
-			public HRESULT GetFieldDescriptorCount(out uint32 pdwCount) mut
-			{
-				return VT.GetFieldDescriptorCount(ref this, out pdwCount);
-			}
-			public HRESULT GetFieldDescriptorAt(uint32 dwIndex, out CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR* ppcpfd) mut
-			{
-				return VT.GetFieldDescriptorAt(ref this, dwIndex, out ppcpfd);
-			}
-			public HRESULT GetCredentialCount(out uint32 pdwCount, out uint32 pdwDefault, out BOOL pbAutoLogonWithDefault) mut
-			{
-				return VT.GetCredentialCount(ref this, out pdwCount, out pdwDefault, out pbAutoLogonWithDefault);
-			}
-			public HRESULT GetCredentialAt(uint32 dwIndex, out ICredentialProviderCredential* ppcpc) mut
-			{
-				return VT.GetCredentialAt(ref this, dwIndex, out ppcpc);
-			}
+			public HRESULT SetUsageScenario(CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, uint32 dwFlags) mut => VT.SetUsageScenario(ref this, cpus, dwFlags);
+			public HRESULT SetSerialization(in CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION pcpcs) mut => VT.SetSerialization(ref this, pcpcs);
+			public HRESULT Advise(ref ICredentialProviderEvents pcpe, uint upAdviseContext) mut => VT.Advise(ref this, ref pcpe, upAdviseContext);
+			public HRESULT UnAdvise() mut => VT.UnAdvise(ref this);
+			public HRESULT GetFieldDescriptorCount(out uint32 pdwCount) mut => VT.GetFieldDescriptorCount(ref this, out pdwCount);
+			public HRESULT GetFieldDescriptorAt(uint32 dwIndex, out CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR* ppcpfd) mut => VT.GetFieldDescriptorAt(ref this, dwIndex, out ppcpfd);
+			public HRESULT GetCredentialCount(out uint32 pdwCount, out uint32 pdwDefault, out BOOL pbAutoLogonWithDefault) mut => VT.GetCredentialCount(ref this, out pdwCount, out pdwDefault, out pbAutoLogonWithDefault);
+			public HRESULT GetCredentialAt(uint32 dwIndex, out ICredentialProviderCredential* ppcpc) mut => VT.GetCredentialAt(ref this, dwIndex, out ppcpc);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17557,10 +13365,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CredentialsChanged(uint upAdviseContext) mut
-			{
-				return VT.CredentialsChanged(ref this, upAdviseContext);
-			}
+			public HRESULT CredentialsChanged(uint upAdviseContext) mut => VT.CredentialsChanged(ref this, upAdviseContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17574,14 +13380,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Filter(CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, uint32 dwFlags, Guid* rgclsidProviders, BOOL* rgbAllow, uint32 cProviders) mut
-			{
-				return VT.Filter(ref this, cpus, dwFlags, rgclsidProviders, rgbAllow, cProviders);
-			}
-			public HRESULT UpdateRemoteCredential(in CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION pcpcsIn, out CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION pcpcsOut) mut
-			{
-				return VT.UpdateRemoteCredential(ref this, pcpcsIn, out pcpcsOut);
-			}
+			public HRESULT Filter(CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, uint32 dwFlags, Guid* rgclsidProviders, BOOL* rgbAllow, uint32 cProviders) mut => VT.Filter(ref this, cpus, dwFlags, rgclsidProviders, rgbAllow, cProviders);
+			public HRESULT UpdateRemoteCredential(in CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION pcpcsIn, out CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION pcpcsOut) mut => VT.UpdateRemoteCredential(ref this, pcpcsIn, out pcpcsOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17596,10 +13397,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUserSid(PWSTR* sid) mut
-			{
-				return VT.GetUserSid(ref this, sid);
-			}
+			public HRESULT GetUserSid(PWSTR* sid) mut => VT.GetUserSid(ref this, sid);
+
 			[CRepr]
 			public struct VTable : ICredentialProviderCredential.VTable
 			{
@@ -17613,10 +13412,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFieldOptions(uint32 fieldID, out CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS options) mut
-			{
-				return VT.GetFieldOptions(ref this, fieldID, out options);
-			}
+			public HRESULT GetFieldOptions(uint32 fieldID, out CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS options) mut => VT.GetFieldOptions(ref this, fieldID, out options);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17630,18 +13427,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginFieldUpdates() mut
-			{
-				return VT.BeginFieldUpdates(ref this);
-			}
-			public HRESULT EndFieldUpdates() mut
-			{
-				return VT.EndFieldUpdates(ref this);
-			}
-			public HRESULT SetFieldOptions(ref ICredentialProviderCredential credential, uint32 fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS options) mut
-			{
-				return VT.SetFieldOptions(ref this, ref credential, fieldID, options);
-			}
+			public HRESULT BeginFieldUpdates() mut => VT.BeginFieldUpdates(ref this);
+			public HRESULT EndFieldUpdates() mut => VT.EndFieldUpdates(ref this);
+			public HRESULT SetFieldOptions(ref ICredentialProviderCredential credential, uint32 fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS options) mut => VT.SetFieldOptions(ref this, ref credential, fieldID, options);
+
 			[CRepr]
 			public struct VTable : ICredentialProviderCredentialEvents.VTable
 			{
@@ -17657,22 +13446,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSid(out PWSTR sid) mut
-			{
-				return VT.GetSid(ref this, out sid);
-			}
-			public HRESULT GetProviderID(out Guid providerID) mut
-			{
-				return VT.GetProviderID(ref this, out providerID);
-			}
-			public HRESULT GetStringValue(in PROPERTYKEY key, out PWSTR stringValue) mut
-			{
-				return VT.GetStringValue(ref this, key, out stringValue);
-			}
-			public HRESULT GetValue(in PROPERTYKEY key, out PROPVARIANT value) mut
-			{
-				return VT.GetValue(ref this, key, out value);
-			}
+			public HRESULT GetSid(out PWSTR sid) mut => VT.GetSid(ref this, out sid);
+			public HRESULT GetProviderID(out Guid providerID) mut => VT.GetProviderID(ref this, out providerID);
+			public HRESULT GetStringValue(in PROPERTYKEY key, out PWSTR stringValue) mut => VT.GetStringValue(ref this, key, out stringValue);
+			public HRESULT GetValue(in PROPERTYKEY key, out PROPVARIANT value) mut => VT.GetValue(ref this, key, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17689,22 +13467,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProviderFilter(in Guid guidProviderToFilterTo) mut
-			{
-				return VT.SetProviderFilter(ref this, guidProviderToFilterTo);
-			}
-			public HRESULT GetAccountOptions(out CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS credentialProviderAccountOptions) mut
-			{
-				return VT.GetAccountOptions(ref this, out credentialProviderAccountOptions);
-			}
-			public HRESULT GetCount(out uint32 userCount) mut
-			{
-				return VT.GetCount(ref this, out userCount);
-			}
-			public HRESULT GetAt(uint32 userIndex, out ICredentialProviderUser* user) mut
-			{
-				return VT.GetAt(ref this, userIndex, out user);
-			}
+			public HRESULT SetProviderFilter(in Guid guidProviderToFilterTo) mut => VT.SetProviderFilter(ref this, guidProviderToFilterTo);
+			public HRESULT GetAccountOptions(out CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS credentialProviderAccountOptions) mut => VT.GetAccountOptions(ref this, out credentialProviderAccountOptions);
+			public HRESULT GetCount(out uint32 userCount) mut => VT.GetCount(ref this, out userCount);
+			public HRESULT GetAt(uint32 userIndex, out ICredentialProviderUser* user) mut => VT.GetAt(ref this, userIndex, out user);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17721,10 +13488,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetUserArray(ref ICredentialProviderUserArray users) mut
-			{
-				return VT.SetUserArray(ref this, ref users);
-			}
+			public HRESULT SetUserArray(ref ICredentialProviderUserArray users) mut => VT.SetUserArray(ref this, ref users);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17738,14 +13503,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetHandlerEnumerator(out IEnumString* ppenum) mut
-			{
-				return VT.GetHandlerEnumerator(ref this, out ppenum);
-			}
-			public HRESULT BindToHandler(PWSTR pszHandlerID, in Guid riid, void** ppv) mut
-			{
-				return VT.BindToHandler(ref this, pszHandlerID, riid, ppv);
-			}
+			public HRESULT GetHandlerEnumerator(out IEnumString* ppenum) mut => VT.GetHandlerEnumerator(ref this, out ppenum);
+			public HRESULT BindToHandler(PWSTR pszHandlerID, in Guid riid, void** ppv) mut => VT.BindToHandler(ref this, pszHandlerID, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17760,38 +13520,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR ppszName) mut
-			{
-				return VT.GetName(ref this, out ppszName);
-			}
-			public HRESULT GetHandlerInfo(out ISyncMgrHandlerInfo* ppHandlerInfo) mut
-			{
-				return VT.GetHandlerInfo(ref this, out ppHandlerInfo);
-			}
-			public HRESULT GetObject(in Guid rguidObjectID, in Guid riid, void** ppv) mut
-			{
-				return VT.GetObject(ref this, rguidObjectID, riid, ppv);
-			}
-			public HRESULT GetCapabilities(out SYNCMGR_HANDLER_CAPABILITIES pmCapabilities) mut
-			{
-				return VT.GetCapabilities(ref this, out pmCapabilities);
-			}
-			public HRESULT GetPolicies(out SYNCMGR_HANDLER_POLICIES pmPolicies) mut
-			{
-				return VT.GetPolicies(ref this, out pmPolicies);
-			}
-			public HRESULT Activate(BOOL fActivate) mut
-			{
-				return VT.Activate(ref this, fActivate);
-			}
-			public HRESULT Enable(BOOL fEnable) mut
-			{
-				return VT.Enable(ref this, fEnable);
-			}
-			public HRESULT Synchronize(PWSTR* ppszItemIDs, uint32 cItems, HWND hwndOwner, ref ISyncMgrSessionCreator pSessionCreator, ref IUnknown punk) mut
-			{
-				return VT.Synchronize(ref this, ppszItemIDs, cItems, hwndOwner, ref pSessionCreator, ref punk);
-			}
+			public HRESULT GetName(out PWSTR ppszName) mut => VT.GetName(ref this, out ppszName);
+			public HRESULT GetHandlerInfo(out ISyncMgrHandlerInfo* ppHandlerInfo) mut => VT.GetHandlerInfo(ref this, out ppHandlerInfo);
+			public HRESULT GetObject(in Guid rguidObjectID, in Guid riid, void** ppv) mut => VT.GetObject(ref this, rguidObjectID, riid, ppv);
+			public HRESULT GetCapabilities(out SYNCMGR_HANDLER_CAPABILITIES pmCapabilities) mut => VT.GetCapabilities(ref this, out pmCapabilities);
+			public HRESULT GetPolicies(out SYNCMGR_HANDLER_POLICIES pmPolicies) mut => VT.GetPolicies(ref this, out pmPolicies);
+			public HRESULT Activate(BOOL fActivate) mut => VT.Activate(ref this, fActivate);
+			public HRESULT Enable(BOOL fEnable) mut => VT.Enable(ref this, fEnable);
+			public HRESULT Synchronize(PWSTR* ppszItemIDs, uint32 cItems, HWND hwndOwner, ref ISyncMgrSessionCreator pSessionCreator, ref IUnknown punk) mut => VT.Synchronize(ref this, ppszItemIDs, cItems, hwndOwner, ref pSessionCreator, ref punk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17812,34 +13549,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetType(out SYNCMGR_HANDLER_TYPE pnType) mut
-			{
-				return VT.ComGetType(ref this, out pnType);
-			}
-			public HRESULT GetTypeLabel(out PWSTR ppszTypeLabel) mut
-			{
-				return VT.GetTypeLabel(ref this, out ppszTypeLabel);
-			}
-			public HRESULT GetComment(out PWSTR ppszComment) mut
-			{
-				return VT.GetComment(ref this, out ppszComment);
-			}
-			public HRESULT GetLastSyncTime(out FILETIME pftLastSync) mut
-			{
-				return VT.GetLastSyncTime(ref this, out pftLastSync);
-			}
-			public HRESULT IsActive() mut
-			{
-				return VT.IsActive(ref this);
-			}
-			public HRESULT IsEnabled() mut
-			{
-				return VT.IsEnabled(ref this);
-			}
-			public HRESULT IsConnected() mut
-			{
-				return VT.IsConnected(ref this);
-			}
+			public HRESULT ComGetType(out SYNCMGR_HANDLER_TYPE pnType) mut => VT.ComGetType(ref this, out pnType);
+			public HRESULT GetTypeLabel(out PWSTR ppszTypeLabel) mut => VT.GetTypeLabel(ref this, out ppszTypeLabel);
+			public HRESULT GetComment(out PWSTR ppszComment) mut => VT.GetComment(ref this, out ppszComment);
+			public HRESULT GetLastSyncTime(out FILETIME pftLastSync) mut => VT.GetLastSyncTime(ref this, out pftLastSync);
+			public HRESULT IsActive() mut => VT.IsActive(ref this);
+			public HRESULT IsEnabled() mut => VT.IsEnabled(ref this);
+			public HRESULT IsConnected() mut => VT.IsConnected(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17859,18 +13576,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSyncItem(PWSTR pszItemID, out ISyncMgrSyncItem* ppItem) mut
-			{
-				return VT.GetSyncItem(ref this, pszItemID, out ppItem);
-			}
-			public HRESULT GetSyncItemEnumerator(out IEnumSyncMgrSyncItems* ppenum) mut
-			{
-				return VT.GetSyncItemEnumerator(ref this, out ppenum);
-			}
-			public HRESULT GetSyncItemCount(out uint32 pcItems) mut
-			{
-				return VT.GetSyncItemCount(ref this, out pcItems);
-			}
+			public HRESULT GetSyncItem(PWSTR pszItemID, out ISyncMgrSyncItem* ppItem) mut => VT.GetSyncItem(ref this, pszItemID, out ppItem);
+			public HRESULT GetSyncItemEnumerator(out IEnumSyncMgrSyncItems* ppenum) mut => VT.GetSyncItemEnumerator(ref this, out ppenum);
+			public HRESULT GetSyncItemCount(out uint32 pcItems) mut => VT.GetSyncItemCount(ref this, out pcItems);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17886,38 +13595,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemID(out PWSTR ppszItemID) mut
-			{
-				return VT.GetItemID(ref this, out ppszItemID);
-			}
-			public HRESULT GetName(out PWSTR ppszName) mut
-			{
-				return VT.GetName(ref this, out ppszName);
-			}
-			public HRESULT GetItemInfo(out ISyncMgrSyncItemInfo* ppItemInfo) mut
-			{
-				return VT.GetItemInfo(ref this, out ppItemInfo);
-			}
-			public HRESULT GetObject(in Guid rguidObjectID, in Guid riid, void** ppv) mut
-			{
-				return VT.GetObject(ref this, rguidObjectID, riid, ppv);
-			}
-			public HRESULT GetCapabilities(out SYNCMGR_ITEM_CAPABILITIES pmCapabilities) mut
-			{
-				return VT.GetCapabilities(ref this, out pmCapabilities);
-			}
-			public HRESULT GetPolicies(out SYNCMGR_ITEM_POLICIES pmPolicies) mut
-			{
-				return VT.GetPolicies(ref this, out pmPolicies);
-			}
-			public HRESULT Enable(BOOL fEnable) mut
-			{
-				return VT.Enable(ref this, fEnable);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
+			public HRESULT GetItemID(out PWSTR ppszItemID) mut => VT.GetItemID(ref this, out ppszItemID);
+			public HRESULT GetName(out PWSTR ppszName) mut => VT.GetName(ref this, out ppszName);
+			public HRESULT GetItemInfo(out ISyncMgrSyncItemInfo* ppItemInfo) mut => VT.GetItemInfo(ref this, out ppItemInfo);
+			public HRESULT GetObject(in Guid rguidObjectID, in Guid riid, void** ppv) mut => VT.GetObject(ref this, rguidObjectID, riid, ppv);
+			public HRESULT GetCapabilities(out SYNCMGR_ITEM_CAPABILITIES pmCapabilities) mut => VT.GetCapabilities(ref this, out pmCapabilities);
+			public HRESULT GetPolicies(out SYNCMGR_ITEM_POLICIES pmPolicies) mut => VT.GetPolicies(ref this, out pmPolicies);
+			public HRESULT Enable(BOOL fEnable) mut => VT.Enable(ref this, fEnable);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17938,26 +13624,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTypeLabel(out PWSTR ppszTypeLabel) mut
-			{
-				return VT.GetTypeLabel(ref this, out ppszTypeLabel);
-			}
-			public HRESULT GetComment(out PWSTR ppszComment) mut
-			{
-				return VT.GetComment(ref this, out ppszComment);
-			}
-			public HRESULT GetLastSyncTime(out FILETIME pftLastSync) mut
-			{
-				return VT.GetLastSyncTime(ref this, out pftLastSync);
-			}
-			public HRESULT IsEnabled() mut
-			{
-				return VT.IsEnabled(ref this);
-			}
-			public HRESULT IsConnected() mut
-			{
-				return VT.IsConnected(ref this);
-			}
+			public HRESULT GetTypeLabel(out PWSTR ppszTypeLabel) mut => VT.GetTypeLabel(ref this, out ppszTypeLabel);
+			public HRESULT GetComment(out PWSTR ppszComment) mut => VT.GetComment(ref this, out ppszComment);
+			public HRESULT GetLastSyncTime(out FILETIME pftLastSync) mut => VT.GetLastSyncTime(ref this, out pftLastSync);
+			public HRESULT IsEnabled() mut => VT.IsEnabled(ref this);
+			public HRESULT IsConnected() mut => VT.IsConnected(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -17975,22 +13647,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ISyncMgrSyncItem** rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumSyncMgrSyncItems* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, ISyncMgrSyncItem** rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumSyncMgrSyncItems* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18007,10 +13668,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSession(PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems, out ISyncMgrSyncCallback* ppCallback) mut
-			{
-				return VT.CreateSession(ref this, pszHandlerID, ppszItemIDs, cItems, out ppCallback);
-			}
+			public HRESULT CreateSession(PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems, out ISyncMgrSyncCallback* ppCallback) mut => VT.CreateSession(ref this, pszHandlerID, ppszItemIDs, cItems, out ppCallback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18024,46 +13683,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReportProgress(PWSTR pszItemID, PWSTR pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, uint32 uCurrentStep, uint32 uMaxStep, out SYNCMGR_CANCEL_REQUEST pnCancelRequest) mut
-			{
-				return VT.ReportProgress(ref this, pszItemID, pszProgressText, nStatus, uCurrentStep, uMaxStep, out pnCancelRequest);
-			}
-			public HRESULT SetHandlerProgressText(PWSTR pszProgressText, out SYNCMGR_CANCEL_REQUEST pnCancelRequest) mut
-			{
-				return VT.SetHandlerProgressText(ref this, pszProgressText, out pnCancelRequest);
-			}
-			public HRESULT ReportEvent(PWSTR pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, PWSTR pszName, PWSTR pszDescription, PWSTR pszLinkText, PWSTR pszLinkReference, PWSTR pszContext, out Guid pguidEventID) mut
-			{
-				return VT.ReportEvent(ref this, pszItemID, nLevel, nFlags, pszName, pszDescription, pszLinkText, pszLinkReference, pszContext, out pguidEventID);
-			}
-			public HRESULT CanContinue(PWSTR pszItemID) mut
-			{
-				return VT.CanContinue(ref this, pszItemID);
-			}
-			public HRESULT QueryForAdditionalItems(out IEnumString* ppenumItemIDs, out IEnumUnknown* ppenumPunks) mut
-			{
-				return VT.QueryForAdditionalItems(ref this, out ppenumItemIDs, out ppenumPunks);
-			}
-			public HRESULT AddItemToSession(PWSTR pszItemID) mut
-			{
-				return VT.AddItemToSession(ref this, pszItemID);
-			}
-			public HRESULT AddIUnknownToSession(ref IUnknown punk) mut
-			{
-				return VT.AddIUnknownToSession(ref this, ref punk);
-			}
-			public HRESULT ProposeItem(ref ISyncMgrSyncItem pNewItem) mut
-			{
-				return VT.ProposeItem(ref this, ref pNewItem);
-			}
-			public HRESULT CommitItem(PWSTR pszItemID) mut
-			{
-				return VT.CommitItem(ref this, pszItemID);
-			}
-			public HRESULT ReportManualSync() mut
-			{
-				return VT.ReportManualSync(ref this);
-			}
+			public HRESULT ReportProgress(PWSTR pszItemID, PWSTR pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, uint32 uCurrentStep, uint32 uMaxStep, out SYNCMGR_CANCEL_REQUEST pnCancelRequest) mut => VT.ReportProgress(ref this, pszItemID, pszProgressText, nStatus, uCurrentStep, uMaxStep, out pnCancelRequest);
+			public HRESULT SetHandlerProgressText(PWSTR pszProgressText, out SYNCMGR_CANCEL_REQUEST pnCancelRequest) mut => VT.SetHandlerProgressText(ref this, pszProgressText, out pnCancelRequest);
+			public HRESULT ReportEvent(PWSTR pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, PWSTR pszName, PWSTR pszDescription, PWSTR pszLinkText, PWSTR pszLinkReference, PWSTR pszContext, out Guid pguidEventID) mut => VT.ReportEvent(ref this, pszItemID, nLevel, nFlags, pszName, pszDescription, pszLinkText, pszLinkReference, pszContext, out pguidEventID);
+			public HRESULT CanContinue(PWSTR pszItemID) mut => VT.CanContinue(ref this, pszItemID);
+			public HRESULT QueryForAdditionalItems(out IEnumString* ppenumItemIDs, out IEnumUnknown* ppenumPunks) mut => VT.QueryForAdditionalItems(ref this, out ppenumItemIDs, out ppenumPunks);
+			public HRESULT AddItemToSession(PWSTR pszItemID) mut => VT.AddItemToSession(ref this, pszItemID);
+			public HRESULT AddIUnknownToSession(ref IUnknown punk) mut => VT.AddIUnknownToSession(ref this, ref punk);
+			public HRESULT ProposeItem(ref ISyncMgrSyncItem pNewItem) mut => VT.ProposeItem(ref this, ref pNewItem);
+			public HRESULT CommitItem(PWSTR pszItemID) mut => VT.CommitItem(ref this, pszItemID);
+			public HRESULT ReportManualSync() mut => VT.ReportManualSync(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18086,10 +13716,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Run(HWND hwndOwner) mut
-			{
-				return VT.Run(ref this, hwndOwner);
-			}
+			public HRESULT Run(HWND hwndOwner) mut => VT.Run(ref this, hwndOwner);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18103,10 +13731,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Init(in Guid rguidEventID, ref ISyncMgrEvent pEvent) mut
-			{
-				return VT.Init(ref this, rguidEventID, ref pEvent);
-			}
+			public HRESULT Init(in Guid rguidEventID, ref ISyncMgrEvent pEvent) mut => VT.Init(ref this, rguidEventID, ref pEvent);
+
 			[CRepr]
 			public struct VTable : ISyncMgrUIOperation.VTable
 			{
@@ -18120,10 +13746,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitWizard(PWSTR pszHandlerID) mut
-			{
-				return VT.InitWizard(ref this, pszHandlerID);
-			}
+			public HRESULT InitWizard(PWSTR pszHandlerID) mut => VT.InitWizard(ref this, pszHandlerID);
+
 			[CRepr]
 			public struct VTable : ISyncMgrUIOperation.VTable
 			{
@@ -18137,10 +13761,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Result(SYNCMGR_PROGRESS_STATUS nStatus, uint32 cError, uint32 cConflicts) mut
-			{
-				return VT.Result(ref this, nStatus, cError, cConflicts);
-			}
+			public HRESULT Result(SYNCMGR_PROGRESS_STATUS nStatus, uint32 cError, uint32 cConflicts) mut => VT.Result(ref this, nStatus, cError, cConflicts);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18154,66 +13776,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartHandlerSync(PWSTR pszHandlerID, HWND hwndOwner, ref IUnknown punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ref ISyncMgrSyncResult pResult) mut
-			{
-				return VT.StartHandlerSync(ref this, pszHandlerID, hwndOwner, ref punk, nSyncControlFlags, ref pResult);
-			}
-			public HRESULT StartItemSync(PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems, HWND hwndOwner, ref IUnknown punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ref ISyncMgrSyncResult pResult) mut
-			{
-				return VT.StartItemSync(ref this, pszHandlerID, ppszItemIDs, cItems, hwndOwner, ref punk, nSyncControlFlags, ref pResult);
-			}
-			public HRESULT StartSyncAll(HWND hwndOwner) mut
-			{
-				return VT.StartSyncAll(ref this, hwndOwner);
-			}
-			public HRESULT StopHandlerSync(PWSTR pszHandlerID) mut
-			{
-				return VT.StopHandlerSync(ref this, pszHandlerID);
-			}
-			public HRESULT StopItemSync(PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems) mut
-			{
-				return VT.StopItemSync(ref this, pszHandlerID, ppszItemIDs, cItems);
-			}
-			public HRESULT StopSyncAll() mut
-			{
-				return VT.StopSyncAll(ref this);
-			}
-			public HRESULT UpdateHandlerCollection(in Guid rclsidCollectionID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut
-			{
-				return VT.UpdateHandlerCollection(ref this, rclsidCollectionID, nControlFlags);
-			}
-			public HRESULT UpdateHandler(PWSTR pszHandlerID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut
-			{
-				return VT.UpdateHandler(ref this, pszHandlerID, nControlFlags);
-			}
-			public HRESULT UpdateItem(PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut
-			{
-				return VT.UpdateItem(ref this, pszHandlerID, pszItemID, nControlFlags);
-			}
-			public HRESULT UpdateEvents(PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut
-			{
-				return VT.UpdateEvents(ref this, pszHandlerID, pszItemID, nControlFlags);
-			}
-			public HRESULT UpdateConflict(PWSTR pszHandlerID, PWSTR pszItemID, ref ISyncMgrConflict pConflict, SYNCMGR_UPDATE_REASON nReason) mut
-			{
-				return VT.UpdateConflict(ref this, pszHandlerID, pszItemID, ref pConflict, nReason);
-			}
-			public HRESULT UpdateConflicts(PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut
-			{
-				return VT.UpdateConflicts(ref this, pszHandlerID, pszItemID, nControlFlags);
-			}
-			public HRESULT ActivateHandler(BOOL fActivate, PWSTR pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) mut
-			{
-				return VT.ActivateHandler(ref this, fActivate, pszHandlerID, hwndOwner, nControlFlags);
-			}
-			public HRESULT EnableHandler(BOOL fEnable, PWSTR pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) mut
-			{
-				return VT.EnableHandler(ref this, fEnable, pszHandlerID, hwndOwner, nControlFlags);
-			}
-			public HRESULT EnableItem(BOOL fEnable, PWSTR pszHandlerID, PWSTR pszItemID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) mut
-			{
-				return VT.EnableItem(ref this, fEnable, pszHandlerID, pszItemID, hwndOwner, nControlFlags);
-			}
+			public HRESULT StartHandlerSync(PWSTR pszHandlerID, HWND hwndOwner, ref IUnknown punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ref ISyncMgrSyncResult pResult) mut => VT.StartHandlerSync(ref this, pszHandlerID, hwndOwner, ref punk, nSyncControlFlags, ref pResult);
+			public HRESULT StartItemSync(PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems, HWND hwndOwner, ref IUnknown punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ref ISyncMgrSyncResult pResult) mut => VT.StartItemSync(ref this, pszHandlerID, ppszItemIDs, cItems, hwndOwner, ref punk, nSyncControlFlags, ref pResult);
+			public HRESULT StartSyncAll(HWND hwndOwner) mut => VT.StartSyncAll(ref this, hwndOwner);
+			public HRESULT StopHandlerSync(PWSTR pszHandlerID) mut => VT.StopHandlerSync(ref this, pszHandlerID);
+			public HRESULT StopItemSync(PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems) mut => VT.StopItemSync(ref this, pszHandlerID, ppszItemIDs, cItems);
+			public HRESULT StopSyncAll() mut => VT.StopSyncAll(ref this);
+			public HRESULT UpdateHandlerCollection(in Guid rclsidCollectionID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut => VT.UpdateHandlerCollection(ref this, rclsidCollectionID, nControlFlags);
+			public HRESULT UpdateHandler(PWSTR pszHandlerID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut => VT.UpdateHandler(ref this, pszHandlerID, nControlFlags);
+			public HRESULT UpdateItem(PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut => VT.UpdateItem(ref this, pszHandlerID, pszItemID, nControlFlags);
+			public HRESULT UpdateEvents(PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut => VT.UpdateEvents(ref this, pszHandlerID, pszItemID, nControlFlags);
+			public HRESULT UpdateConflict(PWSTR pszHandlerID, PWSTR pszItemID, ref ISyncMgrConflict pConflict, SYNCMGR_UPDATE_REASON nReason) mut => VT.UpdateConflict(ref this, pszHandlerID, pszItemID, ref pConflict, nReason);
+			public HRESULT UpdateConflicts(PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) mut => VT.UpdateConflicts(ref this, pszHandlerID, pszItemID, nControlFlags);
+			public HRESULT ActivateHandler(BOOL fActivate, PWSTR pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) mut => VT.ActivateHandler(ref this, fActivate, pszHandlerID, hwndOwner, nControlFlags);
+			public HRESULT EnableHandler(BOOL fEnable, PWSTR pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) mut => VT.EnableHandler(ref this, fEnable, pszHandlerID, hwndOwner, nControlFlags);
+			public HRESULT EnableItem(BOOL fEnable, PWSTR pszHandlerID, PWSTR pszItemID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) mut => VT.EnableItem(ref this, fEnable, pszHandlerID, pszItemID, hwndOwner, nControlFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18241,22 +13819,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEventEnumerator(out IEnumSyncMgrEvents* ppenum) mut
-			{
-				return VT.GetEventEnumerator(ref this, out ppenum);
-			}
-			public HRESULT GetEventCount(out uint32 pcEvents) mut
-			{
-				return VT.GetEventCount(ref this, out pcEvents);
-			}
-			public HRESULT GetEvent(in Guid rguidEventID, out ISyncMgrEvent* ppEvent) mut
-			{
-				return VT.GetEvent(ref this, rguidEventID, out ppEvent);
-			}
-			public HRESULT RemoveEvent(Guid* pguidEventIDs, uint32 cEvents) mut
-			{
-				return VT.RemoveEvent(ref this, pguidEventIDs, cEvents);
-			}
+			public HRESULT GetEventEnumerator(out IEnumSyncMgrEvents* ppenum) mut => VT.GetEventEnumerator(ref this, out ppenum);
+			public HRESULT GetEventCount(out uint32 pcEvents) mut => VT.GetEventCount(ref this, out pcEvents);
+			public HRESULT GetEvent(in Guid rguidEventID, out ISyncMgrEvent* ppEvent) mut => VT.GetEvent(ref this, rguidEventID, out ppEvent);
+			public HRESULT RemoveEvent(Guid* pguidEventIDs, uint32 cEvents) mut => VT.RemoveEvent(ref this, pguidEventIDs, cEvents);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18273,50 +13840,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEventID(out Guid pguidEventID) mut
-			{
-				return VT.GetEventID(ref this, out pguidEventID);
-			}
-			public HRESULT GetHandlerID(PWSTR* ppszHandlerID) mut
-			{
-				return VT.GetHandlerID(ref this, ppszHandlerID);
-			}
-			public HRESULT GetItemID(PWSTR* ppszItemID) mut
-			{
-				return VT.GetItemID(ref this, ppszItemID);
-			}
-			public HRESULT GetLevel(out SYNCMGR_EVENT_LEVEL pnLevel) mut
-			{
-				return VT.GetLevel(ref this, out pnLevel);
-			}
-			public HRESULT ComGetFlags(out SYNCMGR_EVENT_FLAGS pnFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pnFlags);
-			}
-			public HRESULT GetTime(out FILETIME pfCreationTime) mut
-			{
-				return VT.GetTime(ref this, out pfCreationTime);
-			}
-			public HRESULT GetName(PWSTR* ppszName) mut
-			{
-				return VT.GetName(ref this, ppszName);
-			}
-			public HRESULT GetDescription(PWSTR* ppszDescription) mut
-			{
-				return VT.GetDescription(ref this, ppszDescription);
-			}
-			public HRESULT GetLinkText(PWSTR* ppszLinkText) mut
-			{
-				return VT.GetLinkText(ref this, ppszLinkText);
-			}
-			public HRESULT GetLinkReference(PWSTR* ppszLinkReference) mut
-			{
-				return VT.GetLinkReference(ref this, ppszLinkReference);
-			}
-			public HRESULT GetContext(PWSTR* ppszContext) mut
-			{
-				return VT.GetContext(ref this, ppszContext);
-			}
+			public HRESULT GetEventID(out Guid pguidEventID) mut => VT.GetEventID(ref this, out pguidEventID);
+			public HRESULT GetHandlerID(PWSTR* ppszHandlerID) mut => VT.GetHandlerID(ref this, ppszHandlerID);
+			public HRESULT GetItemID(PWSTR* ppszItemID) mut => VT.GetItemID(ref this, ppszItemID);
+			public HRESULT GetLevel(out SYNCMGR_EVENT_LEVEL pnLevel) mut => VT.GetLevel(ref this, out pnLevel);
+			public HRESULT ComGetFlags(out SYNCMGR_EVENT_FLAGS pnFlags) mut => VT.ComGetFlags(ref this, out pnFlags);
+			public HRESULT GetTime(out FILETIME pfCreationTime) mut => VT.GetTime(ref this, out pfCreationTime);
+			public HRESULT GetName(PWSTR* ppszName) mut => VT.GetName(ref this, ppszName);
+			public HRESULT GetDescription(PWSTR* ppszDescription) mut => VT.GetDescription(ref this, ppszDescription);
+			public HRESULT GetLinkText(PWSTR* ppszLinkText) mut => VT.GetLinkText(ref this, ppszLinkText);
+			public HRESULT GetLinkReference(PWSTR* ppszLinkReference) mut => VT.GetLinkReference(ref this, ppszLinkReference);
+			public HRESULT GetContext(PWSTR* ppszContext) mut => VT.GetContext(ref this, ppszContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18340,22 +13875,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ISyncMgrEvent** rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumSyncMgrEvents* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, ISyncMgrEvent** rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumSyncMgrEvents* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18372,22 +13896,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumConflicts(PWSTR pszHandlerID, PWSTR pszItemID, out IEnumSyncMgrConflict* ppEnum) mut
-			{
-				return VT.EnumConflicts(ref this, pszHandlerID, pszItemID, out ppEnum);
-			}
-			public HRESULT BindToConflict(in SYNCMGR_CONFLICT_ID_INFO pConflictIdInfo, in Guid riid, void** ppv) mut
-			{
-				return VT.BindToConflict(ref this, pConflictIdInfo, riid, ppv);
-			}
-			public HRESULT RemoveConflicts(SYNCMGR_CONFLICT_ID_INFO* rgConflictIdInfo, uint32 cConflicts) mut
-			{
-				return VT.RemoveConflicts(ref this, rgConflictIdInfo, cConflicts);
-			}
-			public HRESULT GetCount(PWSTR pszHandlerID, PWSTR pszItemID, out uint32 pnConflicts) mut
-			{
-				return VT.GetCount(ref this, pszHandlerID, pszItemID, out pnConflicts);
-			}
+			public HRESULT EnumConflicts(PWSTR pszHandlerID, PWSTR pszItemID, out IEnumSyncMgrConflict* ppEnum) mut => VT.EnumConflicts(ref this, pszHandlerID, pszItemID, out ppEnum);
+			public HRESULT BindToConflict(in SYNCMGR_CONFLICT_ID_INFO pConflictIdInfo, in Guid riid, void** ppv) mut => VT.BindToConflict(ref this, pConflictIdInfo, riid, ppv);
+			public HRESULT RemoveConflicts(SYNCMGR_CONFLICT_ID_INFO* rgConflictIdInfo, uint32 cConflicts) mut => VT.RemoveConflicts(ref this, rgConflictIdInfo, cConflicts);
+			public HRESULT GetCount(PWSTR pszHandlerID, PWSTR pszItemID, out uint32 pnConflicts) mut => VT.GetCount(ref this, pszHandlerID, pszItemID, out pnConflicts);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18404,22 +13917,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ISyncMgrConflict** rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumSyncMgrConflict* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, ISyncMgrConflict** rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumSyncMgrConflict* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18436,26 +13938,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperty(in PROPERTYKEY propkey, out PROPVARIANT ppropvar) mut
-			{
-				return VT.GetProperty(ref this, propkey, out ppropvar);
-			}
-			public HRESULT GetConflictIdInfo(out SYNCMGR_CONFLICT_ID_INFO pConflictIdInfo) mut
-			{
-				return VT.GetConflictIdInfo(ref this, out pConflictIdInfo);
-			}
-			public HRESULT GetItemsArray(out ISyncMgrConflictItems* ppArray) mut
-			{
-				return VT.GetItemsArray(ref this, out ppArray);
-			}
-			public HRESULT Resolve(ref ISyncMgrConflictResolveInfo pResolveInfo) mut
-			{
-				return VT.Resolve(ref this, ref pResolveInfo);
-			}
-			public HRESULT GetResolutionHandler(in Guid riid, void** ppvResolutionHandler) mut
-			{
-				return VT.GetResolutionHandler(ref this, riid, ppvResolutionHandler);
-			}
+			public HRESULT GetProperty(in PROPERTYKEY propkey, out PROPVARIANT ppropvar) mut => VT.GetProperty(ref this, propkey, out ppropvar);
+			public HRESULT GetConflictIdInfo(out SYNCMGR_CONFLICT_ID_INFO pConflictIdInfo) mut => VT.GetConflictIdInfo(ref this, out pConflictIdInfo);
+			public HRESULT GetItemsArray(out ISyncMgrConflictItems* ppArray) mut => VT.GetItemsArray(ref this, out ppArray);
+			public HRESULT Resolve(ref ISyncMgrConflictResolveInfo pResolveInfo) mut => VT.Resolve(ref this, ref pResolveInfo);
+			public HRESULT GetResolutionHandler(in Guid riid, void** ppvResolutionHandler) mut => VT.GetResolutionHandler(ref this, riid, ppvResolutionHandler);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18473,26 +13961,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryAbilities(out uint32 pdwAbilities) mut
-			{
-				return VT.QueryAbilities(ref this, out pdwAbilities);
-			}
-			public HRESULT KeepOther(ref IShellItem psiOther, out SYNCMGR_RESOLUTION_FEEDBACK pFeedback) mut
-			{
-				return VT.KeepOther(ref this, ref psiOther, out pFeedback);
-			}
-			public HRESULT KeepRecent(out SYNCMGR_RESOLUTION_FEEDBACK pFeedback) mut
-			{
-				return VT.KeepRecent(ref this, out pFeedback);
-			}
-			public HRESULT RemoveFromSyncSet(out SYNCMGR_RESOLUTION_FEEDBACK pFeedback) mut
-			{
-				return VT.RemoveFromSyncSet(ref this, out pFeedback);
-			}
-			public HRESULT KeepItems(ref ISyncMgrConflictResolutionItems pArray, out SYNCMGR_RESOLUTION_FEEDBACK pFeedback) mut
-			{
-				return VT.KeepItems(ref this, ref pArray, out pFeedback);
-			}
+			public HRESULT QueryAbilities(out uint32 pdwAbilities) mut => VT.QueryAbilities(ref this, out pdwAbilities);
+			public HRESULT KeepOther(ref IShellItem psiOther, out SYNCMGR_RESOLUTION_FEEDBACK pFeedback) mut => VT.KeepOther(ref this, ref psiOther, out pFeedback);
+			public HRESULT KeepRecent(out SYNCMGR_RESOLUTION_FEEDBACK pFeedback) mut => VT.KeepRecent(ref this, out pFeedback);
+			public HRESULT RemoveFromSyncSet(out SYNCMGR_RESOLUTION_FEEDBACK pFeedback) mut => VT.RemoveFromSyncSet(ref this, out pFeedback);
+			public HRESULT KeepItems(ref ISyncMgrConflictResolutionItems pArray, out SYNCMGR_RESOLUTION_FEEDBACK pFeedback) mut => VT.KeepItems(ref this, ref pArray, out pFeedback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18510,10 +13984,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PresentConflict(ref ISyncMgrConflict pConflict, ref ISyncMgrConflictResolveInfo pResolveInfo) mut
-			{
-				return VT.PresentConflict(ref this, ref pConflict, ref pResolveInfo);
-			}
+			public HRESULT PresentConflict(ref ISyncMgrConflict pConflict, ref ISyncMgrConflictResolveInfo pResolveInfo) mut => VT.PresentConflict(ref this, ref pConflict, ref pResolveInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18527,38 +13999,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIterationInfo(out uint32 pnCurrentConflict, out uint32 pcConflicts, out uint32 pcRemainingForApplyToAll) mut
-			{
-				return VT.GetIterationInfo(ref this, out pnCurrentConflict, out pcConflicts, out pcRemainingForApplyToAll);
-			}
-			public HRESULT GetPresenterNextStep(out SYNCMGR_PRESENTER_NEXT_STEP pnPresenterNextStep) mut
-			{
-				return VT.GetPresenterNextStep(ref this, out pnPresenterNextStep);
-			}
-			public HRESULT GetPresenterChoice(out SYNCMGR_PRESENTER_CHOICE pnPresenterChoice, out BOOL pfApplyToAll) mut
-			{
-				return VT.GetPresenterChoice(ref this, out pnPresenterChoice, out pfApplyToAll);
-			}
-			public HRESULT GetItemChoiceCount(out uint32 pcChoices) mut
-			{
-				return VT.GetItemChoiceCount(ref this, out pcChoices);
-			}
-			public HRESULT GetItemChoice(uint32 iChoice, out uint32 piChoiceIndex) mut
-			{
-				return VT.GetItemChoice(ref this, iChoice, out piChoiceIndex);
-			}
-			public HRESULT SetPresenterNextStep(SYNCMGR_PRESENTER_NEXT_STEP nPresenterNextStep) mut
-			{
-				return VT.SetPresenterNextStep(ref this, nPresenterNextStep);
-			}
-			public HRESULT SetPresenterChoice(SYNCMGR_PRESENTER_CHOICE nPresenterChoice, BOOL fApplyToAll) mut
-			{
-				return VT.SetPresenterChoice(ref this, nPresenterChoice, fApplyToAll);
-			}
-			public HRESULT SetItemChoices(out uint32 prgiConflictItemIndexes, uint32 cChoices) mut
-			{
-				return VT.SetItemChoices(ref this, out prgiConflictItemIndexes, cChoices);
-			}
+			public HRESULT GetIterationInfo(out uint32 pnCurrentConflict, out uint32 pcConflicts, out uint32 pcRemainingForApplyToAll) mut => VT.GetIterationInfo(ref this, out pnCurrentConflict, out pcConflicts, out pcRemainingForApplyToAll);
+			public HRESULT GetPresenterNextStep(out SYNCMGR_PRESENTER_NEXT_STEP pnPresenterNextStep) mut => VT.GetPresenterNextStep(ref this, out pnPresenterNextStep);
+			public HRESULT GetPresenterChoice(out SYNCMGR_PRESENTER_CHOICE pnPresenterChoice, out BOOL pfApplyToAll) mut => VT.GetPresenterChoice(ref this, out pnPresenterChoice, out pfApplyToAll);
+			public HRESULT GetItemChoiceCount(out uint32 pcChoices) mut => VT.GetItemChoiceCount(ref this, out pcChoices);
+			public HRESULT GetItemChoice(uint32 iChoice, out uint32 piChoiceIndex) mut => VT.GetItemChoice(ref this, iChoice, out piChoiceIndex);
+			public HRESULT SetPresenterNextStep(SYNCMGR_PRESENTER_NEXT_STEP nPresenterNextStep) mut => VT.SetPresenterNextStep(ref this, nPresenterNextStep);
+			public HRESULT SetPresenterChoice(SYNCMGR_PRESENTER_CHOICE nPresenterChoice, BOOL fApplyToAll) mut => VT.SetPresenterChoice(ref this, nPresenterChoice, fApplyToAll);
+			public HRESULT SetItemChoices(out uint32 prgiConflictItemIndexes, uint32 cChoices) mut => VT.SetItemChoices(ref this, out prgiConflictItemIndexes, cChoices);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18579,10 +14028,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConflictIDList(ref ISyncMgrConflict pConflict, out ITEMIDLIST* ppidlConflict) mut
-			{
-				return VT.GetConflictIDList(ref this, ref pConflict, out ppidlConflict);
-			}
+			public HRESULT GetConflictIDList(ref ISyncMgrConflict pConflict, out ITEMIDLIST* ppidlConflict) mut => VT.GetConflictIDList(ref this, ref pConflict, out ppidlConflict);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18596,14 +14043,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pCount) mut
-			{
-				return VT.GetCount(ref this, out pCount);
-			}
-			public HRESULT GetItem(uint32 iIndex, out CONFIRM_CONFLICT_ITEM pItemInfo) mut
-			{
-				return VT.GetItem(ref this, iIndex, out pItemInfo);
-			}
+			public HRESULT GetCount(out uint32 pCount) mut => VT.GetCount(ref this, out pCount);
+			public HRESULT GetItem(uint32 iIndex, out CONFIRM_CONFLICT_ITEM pItemInfo) mut => VT.GetItem(ref this, iIndex, out pItemInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18618,14 +14060,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pCount) mut
-			{
-				return VT.GetCount(ref this, out pCount);
-			}
-			public HRESULT GetItem(uint32 iIndex, out CONFIRM_CONFLICT_RESULT_INFO pItemInfo) mut
-			{
-				return VT.GetItem(ref this, iIndex, out pItemInfo);
-			}
+			public HRESULT GetCount(out uint32 pCount) mut => VT.GetCount(ref this, out pCount);
+			public HRESULT GetItem(uint32 iIndex, out CONFIRM_CONFLICT_RESULT_INFO pItemInfo) mut => VT.GetItem(ref this, iIndex, out pItemInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18640,10 +14077,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnableFocusTracking() mut
-			{
-				return VT.EnableFocusTracking(ref this);
-			}
+			public HRESULT EnableFocusTracking() mut => VT.EnableFocusTracking(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18657,10 +14092,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequireTouchInEditControl() mut
-			{
-				return VT.RequireTouchInEditControl(ref this);
-			}
+			public HRESULT RequireTouchInEditControl() mut => VT.RequireTouchInEditControl(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18674,26 +14107,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSharedBitmap(out HBITMAP phbm) mut
-			{
-				return VT.GetSharedBitmap(ref this, out phbm);
-			}
-			public HRESULT GetSize(out SIZE pSize) mut
-			{
-				return VT.GetSize(ref this, out pSize);
-			}
-			public HRESULT GetFormat(out WTS_ALPHATYPE pat) mut
-			{
-				return VT.GetFormat(ref this, out pat);
-			}
-			public HRESULT InitializeBitmap(HBITMAP hbm, WTS_ALPHATYPE wtsAT) mut
-			{
-				return VT.InitializeBitmap(ref this, hbm, wtsAT);
-			}
-			public HRESULT Detach(out HBITMAP phbm) mut
-			{
-				return VT.Detach(ref this, out phbm);
-			}
+			public HRESULT GetSharedBitmap(out HBITMAP phbm) mut => VT.GetSharedBitmap(ref this, out phbm);
+			public HRESULT GetSize(out SIZE pSize) mut => VT.GetSize(ref this, out pSize);
+			public HRESULT GetFormat(out WTS_ALPHATYPE pat) mut => VT.GetFormat(ref this, out pat);
+			public HRESULT InitializeBitmap(HBITMAP hbm, WTS_ALPHATYPE wtsAT) mut => VT.InitializeBitmap(ref this, hbm, wtsAT);
+			public HRESULT Detach(out HBITMAP phbm) mut => VT.Detach(ref this, out phbm);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18711,14 +14130,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetThumbnail(ref IShellItem pShellItem, uint32 cxyRequestedThumbSize, WTS_FLAGS flags, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags, WTS_THUMBNAILID* pThumbnailID) mut
-			{
-				return VT.GetThumbnail(ref this, ref pShellItem, cxyRequestedThumbSize, flags, ppvThumb, pOutFlags, pThumbnailID);
-			}
-			public HRESULT GetThumbnailByID(WTS_THUMBNAILID thumbnailID, uint32 cxyRequestedThumbSize, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags) mut
-			{
-				return VT.GetThumbnailByID(ref this, thumbnailID, cxyRequestedThumbSize, ppvThumb, pOutFlags);
-			}
+			public HRESULT GetThumbnail(ref IShellItem pShellItem, uint32 cxyRequestedThumbSize, WTS_FLAGS flags, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags, WTS_THUMBNAILID* pThumbnailID) mut => VT.GetThumbnail(ref this, ref pShellItem, cxyRequestedThumbSize, flags, ppvThumb, pOutFlags, pThumbnailID);
+			public HRESULT GetThumbnailByID(WTS_THUMBNAILID thumbnailID, uint32 cxyRequestedThumbSize, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags) mut => VT.GetThumbnailByID(ref this, thumbnailID, cxyRequestedThumbSize, ppvThumb, pOutFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18733,10 +14147,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetThumbnail(uint32 cx, out HBITMAP phbmp, out WTS_ALPHATYPE pdwAlpha) mut
-			{
-				return VT.GetThumbnail(ref this, cx, out phbmp, out pdwAlpha);
-			}
+			public HRESULT GetThumbnail(uint32 cx, out HBITMAP phbmp, out WTS_ALPHATYPE pdwAlpha) mut => VT.GetThumbnail(ref this, cx, out phbmp, out pdwAlpha);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18750,10 +14162,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetContext(WTS_CONTEXTFLAGS dwContext) mut
-			{
-				return VT.SetContext(ref this, dwContext);
-			}
+			public HRESULT SetContext(WTS_CONTEXTFLAGS dwContext) mut => VT.SetContext(ref this, dwContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18767,10 +14177,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PageInThumbnail(ref IShellItem psi, WTS_FLAGS wtsFlags, uint32 cxyRequestedThumbSize) mut
-			{
-				return VT.PageInThumbnail(ref this, ref psi, wtsFlags, cxyRequestedThumbSize);
-			}
+			public HRESULT PageInThumbnail(ref IShellItem psi, WTS_FLAGS wtsFlags, uint32 cxyRequestedThumbSize) mut => VT.PageInThumbnail(ref this, ref psi, wtsFlags, cxyRequestedThumbSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18784,22 +14192,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateIShellImageData(IShellImageData** ppshimg) mut
-			{
-				return VT.CreateIShellImageData(ref this, ppshimg);
-			}
-			public HRESULT CreateImageFromFile(PWSTR pszPath, IShellImageData** ppshimg) mut
-			{
-				return VT.CreateImageFromFile(ref this, pszPath, ppshimg);
-			}
-			public HRESULT CreateImageFromStream(IStream* pStream, IShellImageData** ppshimg) mut
-			{
-				return VT.CreateImageFromStream(ref this, pStream, ppshimg);
-			}
-			public HRESULT GetDataFormatFromPath(PWSTR pszPath, out Guid pDataFormat) mut
-			{
-				return VT.GetDataFormatFromPath(ref this, pszPath, out pDataFormat);
-			}
+			public HRESULT CreateIShellImageData(IShellImageData** ppshimg) mut => VT.CreateIShellImageData(ref this, ppshimg);
+			public HRESULT CreateImageFromFile(PWSTR pszPath, IShellImageData** ppshimg) mut => VT.CreateImageFromFile(ref this, pszPath, ppshimg);
+			public HRESULT CreateImageFromStream(IStream* pStream, IShellImageData** ppshimg) mut => VT.CreateImageFromStream(ref this, pStream, ppshimg);
+			public HRESULT GetDataFormatFromPath(PWSTR pszPath, out Guid pDataFormat) mut => VT.GetDataFormatFromPath(ref this, pszPath, out pDataFormat);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18816,126 +14213,37 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Decode(uint32 dwFlags, uint32 cxDesired, uint32 cyDesired) mut
-			{
-				return VT.Decode(ref this, dwFlags, cxDesired, cyDesired);
-			}
-			public HRESULT Draw(HDC hdc, out RECT prcDest, out RECT prcSrc) mut
-			{
-				return VT.Draw(ref this, hdc, out prcDest, out prcSrc);
-			}
-			public HRESULT NextFrame() mut
-			{
-				return VT.NextFrame(ref this);
-			}
-			public HRESULT NextPage() mut
-			{
-				return VT.NextPage(ref this);
-			}
-			public HRESULT PrevPage() mut
-			{
-				return VT.PrevPage(ref this);
-			}
-			public HRESULT IsTransparent() mut
-			{
-				return VT.IsTransparent(ref this);
-			}
-			public HRESULT IsAnimated() mut
-			{
-				return VT.IsAnimated(ref this);
-			}
-			public HRESULT IsVector() mut
-			{
-				return VT.IsVector(ref this);
-			}
-			public HRESULT IsMultipage() mut
-			{
-				return VT.IsMultipage(ref this);
-			}
-			public HRESULT IsEditable() mut
-			{
-				return VT.IsEditable(ref this);
-			}
-			public HRESULT IsPrintable() mut
-			{
-				return VT.IsPrintable(ref this);
-			}
-			public HRESULT IsDecoded() mut
-			{
-				return VT.IsDecoded(ref this);
-			}
-			public HRESULT GetCurrentPage(out uint32 pnPage) mut
-			{
-				return VT.GetCurrentPage(ref this, out pnPage);
-			}
-			public HRESULT GetPageCount(out uint32 pcPages) mut
-			{
-				return VT.GetPageCount(ref this, out pcPages);
-			}
-			public HRESULT SelectPage(uint32 iPage) mut
-			{
-				return VT.SelectPage(ref this, iPage);
-			}
-			public HRESULT GetSize(out SIZE pSize) mut
-			{
-				return VT.GetSize(ref this, out pSize);
-			}
-			public HRESULT GetRawDataFormat(out Guid pDataFormat) mut
-			{
-				return VT.GetRawDataFormat(ref this, out pDataFormat);
-			}
-			public HRESULT GetPixelFormat(out uint32 pFormat) mut
-			{
-				return VT.GetPixelFormat(ref this, out pFormat);
-			}
-			public HRESULT GetDelay(out uint32 pdwDelay) mut
-			{
-				return VT.GetDelay(ref this, out pdwDelay);
-			}
-			public HRESULT GetProperties(uint32 dwMode, out IPropertySetStorage* ppPropSet) mut
-			{
-				return VT.GetProperties(ref this, dwMode, out ppPropSet);
-			}
-			public HRESULT Rotate(uint32 dwAngle) mut
-			{
-				return VT.Rotate(ref this, dwAngle);
-			}
-			public HRESULT Scale(uint32 cx, uint32 cy, uint32 hints) mut
-			{
-				return VT.Scale(ref this, cx, cy, hints);
-			}
-			public HRESULT DiscardEdit() mut
-			{
-				return VT.DiscardEdit(ref this);
-			}
-			public HRESULT SetEncoderParams(ref IPropertyBag pbagEnc) mut
-			{
-				return VT.SetEncoderParams(ref this, ref pbagEnc);
-			}
-			public HRESULT DisplayName(PWSTR wszName, uint32 cch) mut
-			{
-				return VT.DisplayName(ref this, wszName, cch);
-			}
-			public HRESULT GetResolution(out uint32 puResolutionX, out uint32 puResolutionY) mut
-			{
-				return VT.GetResolution(ref this, out puResolutionX, out puResolutionY);
-			}
-			public HRESULT GetEncoderParams(out Guid pguidFmt, out uint8* ppEncParams) mut
-			{
-				return VT.GetEncoderParams(ref this, out pguidFmt, out ppEncParams);
-			}
-			public HRESULT RegisterAbort(ref IShellImageDataAbort pAbort, out IShellImageDataAbort* ppAbortPrev) mut
-			{
-				return VT.RegisterAbort(ref this, ref pAbort, out ppAbortPrev);
-			}
-			public HRESULT CloneFrame(out uint8* ppImg) mut
-			{
-				return VT.CloneFrame(ref this, out ppImg);
-			}
-			public HRESULT ReplaceFrame(out uint8 pImg) mut
-			{
-				return VT.ReplaceFrame(ref this, out pImg);
-			}
+			public HRESULT Decode(uint32 dwFlags, uint32 cxDesired, uint32 cyDesired) mut => VT.Decode(ref this, dwFlags, cxDesired, cyDesired);
+			public HRESULT Draw(HDC hdc, out RECT prcDest, out RECT prcSrc) mut => VT.Draw(ref this, hdc, out prcDest, out prcSrc);
+			public HRESULT NextFrame() mut => VT.NextFrame(ref this);
+			public HRESULT NextPage() mut => VT.NextPage(ref this);
+			public HRESULT PrevPage() mut => VT.PrevPage(ref this);
+			public HRESULT IsTransparent() mut => VT.IsTransparent(ref this);
+			public HRESULT IsAnimated() mut => VT.IsAnimated(ref this);
+			public HRESULT IsVector() mut => VT.IsVector(ref this);
+			public HRESULT IsMultipage() mut => VT.IsMultipage(ref this);
+			public HRESULT IsEditable() mut => VT.IsEditable(ref this);
+			public HRESULT IsPrintable() mut => VT.IsPrintable(ref this);
+			public HRESULT IsDecoded() mut => VT.IsDecoded(ref this);
+			public HRESULT GetCurrentPage(out uint32 pnPage) mut => VT.GetCurrentPage(ref this, out pnPage);
+			public HRESULT GetPageCount(out uint32 pcPages) mut => VT.GetPageCount(ref this, out pcPages);
+			public HRESULT SelectPage(uint32 iPage) mut => VT.SelectPage(ref this, iPage);
+			public HRESULT GetSize(out SIZE pSize) mut => VT.GetSize(ref this, out pSize);
+			public HRESULT GetRawDataFormat(out Guid pDataFormat) mut => VT.GetRawDataFormat(ref this, out pDataFormat);
+			public HRESULT GetPixelFormat(out uint32 pFormat) mut => VT.GetPixelFormat(ref this, out pFormat);
+			public HRESULT GetDelay(out uint32 pdwDelay) mut => VT.GetDelay(ref this, out pdwDelay);
+			public HRESULT GetProperties(uint32 dwMode, out IPropertySetStorage* ppPropSet) mut => VT.GetProperties(ref this, dwMode, out ppPropSet);
+			public HRESULT Rotate(uint32 dwAngle) mut => VT.Rotate(ref this, dwAngle);
+			public HRESULT Scale(uint32 cx, uint32 cy, uint32 hints) mut => VT.Scale(ref this, cx, cy, hints);
+			public HRESULT DiscardEdit() mut => VT.DiscardEdit(ref this);
+			public HRESULT SetEncoderParams(ref IPropertyBag pbagEnc) mut => VT.SetEncoderParams(ref this, ref pbagEnc);
+			public HRESULT DisplayName(PWSTR wszName, uint32 cch) mut => VT.DisplayName(ref this, wszName, cch);
+			public HRESULT GetResolution(out uint32 puResolutionX, out uint32 puResolutionY) mut => VT.GetResolution(ref this, out puResolutionX, out puResolutionY);
+			public HRESULT GetEncoderParams(out Guid pguidFmt, out uint8* ppEncParams) mut => VT.GetEncoderParams(ref this, out pguidFmt, out ppEncParams);
+			public HRESULT RegisterAbort(ref IShellImageDataAbort pAbort, out IShellImageDataAbort* ppAbortPrev) mut => VT.RegisterAbort(ref this, ref pAbort, out ppAbortPrev);
+			public HRESULT CloneFrame(out uint8* ppImg) mut => VT.CloneFrame(ref this, out ppImg);
+			public HRESULT ReplaceFrame(out uint8 pImg) mut => VT.ReplaceFrame(ref this, out pImg);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18978,10 +14286,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryAbort() mut
-			{
-				return VT.QueryAbort(ref this);
-			}
+			public HRESULT QueryAbort() mut => VT.QueryAbort(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -18995,14 +14301,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RetrieveProperties(PROPERTYKEY* propertiesToRetrieve, uint32 propertiesToRetrieveCount, out IPropertyStore* retrievedProperties) mut
-			{
-				return VT.RetrieveProperties(ref this, propertiesToRetrieve, propertiesToRetrieveCount, out retrievedProperties);
-			}
-			public HRESULT SaveProperties(ref IPropertyStore propertiesToSave) mut
-			{
-				return VT.SaveProperties(ref this, ref propertiesToSave);
-			}
+			public HRESULT RetrieveProperties(PROPERTYKEY* propertiesToRetrieve, uint32 propertiesToRetrieveCount, out IPropertyStore* retrievedProperties) mut => VT.RetrieveProperties(ref this, propertiesToRetrieve, propertiesToRetrieveCount, out retrievedProperties);
+			public HRESULT SaveProperties(ref IPropertyStore propertiesToSave) mut => VT.SaveProperties(ref this, ref propertiesToSave);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19017,18 +14318,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyHandlerFromPath(PWSTR path, out IStorageProviderPropertyHandler* propertyHandler) mut
-			{
-				return VT.GetPropertyHandlerFromPath(ref this, path, out propertyHandler);
-			}
-			public HRESULT GetPropertyHandlerFromUri(PWSTR uri, out IStorageProviderPropertyHandler* propertyHandler) mut
-			{
-				return VT.GetPropertyHandlerFromUri(ref this, uri, out propertyHandler);
-			}
-			public HRESULT GetPropertyHandlerFromFileId(PWSTR fileId, out IStorageProviderPropertyHandler* propertyHandler) mut
-			{
-				return VT.GetPropertyHandlerFromFileId(ref this, fileId, out propertyHandler);
-			}
+			public HRESULT GetPropertyHandlerFromPath(PWSTR path, out IStorageProviderPropertyHandler* propertyHandler) mut => VT.GetPropertyHandlerFromPath(ref this, path, out propertyHandler);
+			public HRESULT GetPropertyHandlerFromUri(PWSTR uri, out IStorageProviderPropertyHandler* propertyHandler) mut => VT.GetPropertyHandlerFromUri(ref this, uri, out propertyHandler);
+			public HRESULT GetPropertyHandlerFromFileId(PWSTR fileId, out IStorageProviderPropertyHandler* propertyHandler) mut => VT.GetPropertyHandlerFromFileId(ref this, fileId, out propertyHandler);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19044,42 +14337,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowPropertiesCompleted(HRESULT hr) mut
-			{
-				return VT.ShowPropertiesCompleted(ref this, hr);
-			}
-			public HRESULT PrepareForSyncCompleted(HRESULT hr) mut
-			{
-				return VT.PrepareForSyncCompleted(ref this, hr);
-			}
-			public HRESULT SynchronizeCompleted(HRESULT hr) mut
-			{
-				return VT.SynchronizeCompleted(ref this, hr);
-			}
-			public HRESULT ShowErrorCompleted(HRESULT hr, uint32 cItems, Guid* pItemIDs) mut
-			{
-				return VT.ShowErrorCompleted(ref this, hr, cItems, pItemIDs);
-			}
-			public HRESULT EnableModeless(BOOL fEnable) mut
-			{
-				return VT.EnableModeless(ref this, fEnable);
-			}
-			public HRESULT Progress(in Guid ItemID, in SYNCMGRPROGRESSITEM pSyncProgressItem) mut
-			{
-				return VT.Progress(ref this, ItemID, pSyncProgressItem);
-			}
-			public HRESULT LogError(uint32 dwErrorLevel, PWSTR pszErrorText, in SYNCMGRLOGERRORINFO pSyncLogError) mut
-			{
-				return VT.LogError(ref this, dwErrorLevel, pszErrorText, pSyncLogError);
-			}
-			public HRESULT DeleteLogError(in Guid ErrorID, uint32 dwReserved) mut
-			{
-				return VT.DeleteLogError(ref this, ErrorID, dwReserved);
-			}
-			public HRESULT EstablishConnection(PWSTR pwszConnection, uint32 dwReserved) mut
-			{
-				return VT.EstablishConnection(ref this, pwszConnection, dwReserved);
-			}
+			public HRESULT ShowPropertiesCompleted(HRESULT hr) mut => VT.ShowPropertiesCompleted(ref this, hr);
+			public HRESULT PrepareForSyncCompleted(HRESULT hr) mut => VT.PrepareForSyncCompleted(ref this, hr);
+			public HRESULT SynchronizeCompleted(HRESULT hr) mut => VT.SynchronizeCompleted(ref this, hr);
+			public HRESULT ShowErrorCompleted(HRESULT hr, uint32 cItems, Guid* pItemIDs) mut => VT.ShowErrorCompleted(ref this, hr, cItems, pItemIDs);
+			public HRESULT EnableModeless(BOOL fEnable) mut => VT.EnableModeless(ref this, fEnable);
+			public HRESULT Progress(in Guid ItemID, in SYNCMGRPROGRESSITEM pSyncProgressItem) mut => VT.Progress(ref this, ItemID, pSyncProgressItem);
+			public HRESULT LogError(uint32 dwErrorLevel, PWSTR pszErrorText, in SYNCMGRLOGERRORINFO pSyncLogError) mut => VT.LogError(ref this, dwErrorLevel, pszErrorText, pSyncLogError);
+			public HRESULT DeleteLogError(in Guid ErrorID, uint32 dwReserved) mut => VT.DeleteLogError(ref this, ErrorID, dwReserved);
+			public HRESULT EstablishConnection(PWSTR pwszConnection, uint32 dwReserved) mut => VT.EstablishConnection(ref this, pwszConnection, dwReserved);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19101,22 +14368,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, SYNCMGRITEM* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out ISyncMgrEnumItems* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, SYNCMGRITEM* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out ISyncMgrEnumItems* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19133,46 +14389,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(uint32 dwReserved, uint32 dwSyncMgrFlags, uint32 cbCookie, uint8* lpCookie) mut
-			{
-				return VT.Initialize(ref this, dwReserved, dwSyncMgrFlags, cbCookie, lpCookie);
-			}
-			public HRESULT GetHandlerInfo(out SYNCMGRHANDLERINFO* ppSyncMgrHandlerInfo) mut
-			{
-				return VT.GetHandlerInfo(ref this, out ppSyncMgrHandlerInfo);
-			}
-			public HRESULT EnumSyncMgrItems(out ISyncMgrEnumItems* ppSyncMgrEnumItems) mut
-			{
-				return VT.EnumSyncMgrItems(ref this, out ppSyncMgrEnumItems);
-			}
-			public HRESULT GetItemObject(in Guid ItemID, in Guid riid, void** ppv) mut
-			{
-				return VT.GetItemObject(ref this, ItemID, riid, ppv);
-			}
-			public HRESULT ShowProperties(HWND hWndParent, in Guid ItemID) mut
-			{
-				return VT.ShowProperties(ref this, hWndParent, ItemID);
-			}
-			public HRESULT SetProgressCallback(ref ISyncMgrSynchronizeCallback lpCallBack) mut
-			{
-				return VT.SetProgressCallback(ref this, ref lpCallBack);
-			}
-			public HRESULT PrepareForSync(uint32 cbNumItems, Guid* pItemIDs, HWND hWndParent, uint32 dwReserved) mut
-			{
-				return VT.PrepareForSync(ref this, cbNumItems, pItemIDs, hWndParent, dwReserved);
-			}
-			public HRESULT Synchronize(HWND hWndParent) mut
-			{
-				return VT.Synchronize(ref this, hWndParent);
-			}
-			public HRESULT SetItemStatus(in Guid pItemID, uint32 dwSyncMgrStatus) mut
-			{
-				return VT.SetItemStatus(ref this, pItemID, dwSyncMgrStatus);
-			}
-			public HRESULT ShowError(HWND hWndParent, in Guid ErrorID) mut
-			{
-				return VT.ShowError(ref this, hWndParent, ErrorID);
-			}
+			public HRESULT Initialize(uint32 dwReserved, uint32 dwSyncMgrFlags, uint32 cbCookie, uint8* lpCookie) mut => VT.Initialize(ref this, dwReserved, dwSyncMgrFlags, cbCookie, lpCookie);
+			public HRESULT GetHandlerInfo(out SYNCMGRHANDLERINFO* ppSyncMgrHandlerInfo) mut => VT.GetHandlerInfo(ref this, out ppSyncMgrHandlerInfo);
+			public HRESULT EnumSyncMgrItems(out ISyncMgrEnumItems* ppSyncMgrEnumItems) mut => VT.EnumSyncMgrItems(ref this, out ppSyncMgrEnumItems);
+			public HRESULT GetItemObject(in Guid ItemID, in Guid riid, void** ppv) mut => VT.GetItemObject(ref this, ItemID, riid, ppv);
+			public HRESULT ShowProperties(HWND hWndParent, in Guid ItemID) mut => VT.ShowProperties(ref this, hWndParent, ItemID);
+			public HRESULT SetProgressCallback(ref ISyncMgrSynchronizeCallback lpCallBack) mut => VT.SetProgressCallback(ref this, ref lpCallBack);
+			public HRESULT PrepareForSync(uint32 cbNumItems, Guid* pItemIDs, HWND hWndParent, uint32 dwReserved) mut => VT.PrepareForSync(ref this, cbNumItems, pItemIDs, hWndParent, dwReserved);
+			public HRESULT Synchronize(HWND hWndParent) mut => VT.Synchronize(ref this, hWndParent);
+			public HRESULT SetItemStatus(in Guid pItemID, uint32 dwSyncMgrStatus) mut => VT.SetItemStatus(ref this, pItemID, dwSyncMgrStatus);
+			public HRESULT ShowError(HWND hWndParent, in Guid ErrorID) mut => VT.ShowError(ref this, hWndParent, ErrorID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19195,14 +14422,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateItems(uint32 dwInvokeFlags, in Guid clsid, uint32 cbCookie, uint8* pCookie) mut
-			{
-				return VT.UpdateItems(ref this, dwInvokeFlags, clsid, cbCookie, pCookie);
-			}
-			public HRESULT UpdateAll() mut
-			{
-				return VT.UpdateAll(ref this);
-			}
+			public HRESULT UpdateItems(uint32 dwInvokeFlags, in Guid clsid, uint32 cbCookie, uint8* pCookie) mut => VT.UpdateItems(ref this, dwInvokeFlags, clsid, cbCookie, pCookie);
+			public HRESULT UpdateAll() mut => VT.UpdateAll(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19217,18 +14439,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterSyncMgrHandler(in Guid clsidHandler, PWSTR pwszDescription, uint32 dwSyncMgrRegisterFlags) mut
-			{
-				return VT.RegisterSyncMgrHandler(ref this, clsidHandler, pwszDescription, dwSyncMgrRegisterFlags);
-			}
-			public HRESULT UnregisterSyncMgrHandler(in Guid clsidHandler, uint32 dwReserved) mut
-			{
-				return VT.UnregisterSyncMgrHandler(ref this, clsidHandler, dwReserved);
-			}
-			public HRESULT GetHandlerRegistrationInfo(in Guid clsidHandler, out uint32 pdwSyncMgrRegisterFlags) mut
-			{
-				return VT.GetHandlerRegistrationInfo(ref this, clsidHandler, out pdwSyncMgrRegisterFlags);
-			}
+			public HRESULT RegisterSyncMgrHandler(in Guid clsidHandler, PWSTR pwszDescription, uint32 dwSyncMgrRegisterFlags) mut => VT.RegisterSyncMgrHandler(ref this, clsidHandler, pwszDescription, dwSyncMgrRegisterFlags);
+			public HRESULT UnregisterSyncMgrHandler(in Guid clsidHandler, uint32 dwReserved) mut => VT.UnregisterSyncMgrHandler(ref this, clsidHandler, dwReserved);
+			public HRESULT GetHandlerRegistrationInfo(in Guid clsidHandler, out uint32 pdwSyncMgrRegisterFlags) mut => VT.GetHandlerRegistrationInfo(ref this, clsidHandler, out pdwSyncMgrRegisterFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19244,14 +14458,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetThumbnailStream(PWSTR path, uint64 cacheId, ThumbnailStreamCacheOptions options, uint32 requestedThumbnailSize, out SIZE thumbnailSize, out IStream* thumbnailStream) mut
-			{
-				return VT.GetThumbnailStream(ref this, path, cacheId, options, requestedThumbnailSize, out thumbnailSize, out thumbnailStream);
-			}
-			public HRESULT SetThumbnailStream(PWSTR path, uint64 cacheId, SIZE thumbnailSize, ref IStream thumbnailStream) mut
-			{
-				return VT.SetThumbnailStream(ref this, path, cacheId, thumbnailSize, ref thumbnailStream);
-			}
+			public HRESULT GetThumbnailStream(PWSTR path, uint64 cacheId, ThumbnailStreamCacheOptions options, uint32 requestedThumbnailSize, out SIZE thumbnailSize, out IStream* thumbnailStream) mut => VT.GetThumbnailStream(ref this, path, cacheId, options, requestedThumbnailSize, out thumbnailSize, out thumbnailStream);
+			public HRESULT SetThumbnailStream(PWSTR path, uint64 cacheId, SIZE thumbnailSize, ref IStream thumbnailStream) mut => VT.SetThumbnailStream(ref this, path, cacheId, thumbnailSize, ref thumbnailStream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19266,14 +14475,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTitle(out PWSTR ppszTitle) mut
-			{
-				return VT.GetTitle(ref this, out ppszTitle);
-			}
-			public HRESULT GetURL(out PWSTR ppszURL) mut
-			{
-				return VT.GetURL(ref this, out ppszURL);
-			}
+			public HRESULT GetTitle(out PWSTR ppszTitle) mut => VT.GetTitle(ref this, out ppszTitle);
+			public HRESULT GetURL(out PWSTR ppszURL) mut => VT.GetURL(ref this, out ppszURL);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19288,18 +14492,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindWindowByIndex(uint32 dwID, out IUnknown* ppunk) mut
-			{
-				return VT.FindWindowByIndex(ref this, dwID, out ppunk);
-			}
-			public HRESULT GetWindowData(ref IStream pStream, out WINDOWDATA pWinData) mut
-			{
-				return VT.GetWindowData(ref this, ref pStream, out pWinData);
-			}
-			public HRESULT LoadHistoryPosition(PWSTR pszUrlLocation, uint32 dwPosition) mut
-			{
-				return VT.LoadHistoryPosition(ref this, pszUrlLocation, dwPosition);
-			}
+			public HRESULT FindWindowByIndex(uint32 dwID, out IUnknown* ppunk) mut => VT.FindWindowByIndex(ref this, dwID, out ppunk);
+			public HRESULT GetWindowData(ref IStream pStream, out WINDOWDATA pWinData) mut => VT.GetWindowData(ref this, ref pStream, out pWinData);
+			public HRESULT LoadHistoryPosition(PWSTR pszUrlLocation, uint32 dwPosition) mut => VT.LoadHistoryPosition(ref this, pszUrlLocation, dwPosition);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19315,22 +14511,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cElt, ITravelLogEntry** rgElt, out uint32 pcEltFetched) mut
-			{
-				return VT.Next(ref this, cElt, rgElt, out pcEltFetched);
-			}
-			public HRESULT Skip(uint32 cElt) mut
-			{
-				return VT.Skip(ref this, cElt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumTravelLogEntry* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cElt, ITravelLogEntry** rgElt, out uint32 pcEltFetched) mut => VT.Next(ref this, cElt, rgElt, out pcEltFetched);
+			public HRESULT Skip(uint32 cElt) mut => VT.Skip(ref this, cElt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumTravelLogEntry* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19347,34 +14532,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEntry(PWSTR pszUrl, PWSTR pszTitle, ref ITravelLogEntry ptleRelativeTo, BOOL fPrepend, out ITravelLogEntry* pptle) mut
-			{
-				return VT.CreateEntry(ref this, pszUrl, pszTitle, ref ptleRelativeTo, fPrepend, out pptle);
-			}
-			public HRESULT TravelTo(ref ITravelLogEntry ptle) mut
-			{
-				return VT.TravelTo(ref this, ref ptle);
-			}
-			public HRESULT EnumEntries(TLENUMF flags, out IEnumTravelLogEntry* ppenum) mut
-			{
-				return VT.EnumEntries(ref this, flags, out ppenum);
-			}
-			public HRESULT FindEntries(TLENUMF flags, PWSTR pszUrl, out IEnumTravelLogEntry* ppenum) mut
-			{
-				return VT.FindEntries(ref this, flags, pszUrl, out ppenum);
-			}
-			public HRESULT GetCount(TLENUMF flags, out uint32 pcEntries) mut
-			{
-				return VT.GetCount(ref this, flags, out pcEntries);
-			}
-			public HRESULT RemoveEntry(ref ITravelLogEntry ptle) mut
-			{
-				return VT.RemoveEntry(ref this, ref ptle);
-			}
-			public HRESULT GetRelativeEntry(int32 iOffset, out ITravelLogEntry* ptle) mut
-			{
-				return VT.GetRelativeEntry(ref this, iOffset, out ptle);
-			}
+			public HRESULT CreateEntry(PWSTR pszUrl, PWSTR pszTitle, ref ITravelLogEntry ptleRelativeTo, BOOL fPrepend, out ITravelLogEntry* pptle) mut => VT.CreateEntry(ref this, pszUrl, pszTitle, ref ptleRelativeTo, fPrepend, out pptle);
+			public HRESULT TravelTo(ref ITravelLogEntry ptle) mut => VT.TravelTo(ref this, ref ptle);
+			public HRESULT EnumEntries(TLENUMF flags, out IEnumTravelLogEntry* ppenum) mut => VT.EnumEntries(ref this, flags, out ppenum);
+			public HRESULT FindEntries(TLENUMF flags, PWSTR pszUrl, out IEnumTravelLogEntry* ppenum) mut => VT.FindEntries(ref this, flags, pszUrl, out ppenum);
+			public HRESULT GetCount(TLENUMF flags, out uint32 pcEntries) mut => VT.GetCount(ref this, flags, out pcEntries);
+			public HRESULT RemoveEntry(ref ITravelLogEntry ptle) mut => VT.RemoveEntry(ref this, ref ptle);
+			public HRESULT GetRelativeEntry(int32 iOffset, out ITravelLogEntry* ptle) mut => VT.GetRelativeEntry(ref this, iOffset, out ptle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19394,62 +14559,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetHlinkSite(ref IHlinkSite pihlSite, uint32 dwSiteData) mut
-			{
-				return VT.SetHlinkSite(ref this, ref pihlSite, dwSiteData);
-			}
-			public HRESULT GetHlinkSite(out IHlinkSite* ppihlSite, out uint32 pdwSiteData) mut
-			{
-				return VT.GetHlinkSite(ref this, out ppihlSite, out pdwSiteData);
-			}
-			public HRESULT SetMonikerReference(uint32 grfHLSETF, ref IMoniker pimkTarget, PWSTR pwzLocation) mut
-			{
-				return VT.SetMonikerReference(ref this, grfHLSETF, ref pimkTarget, pwzLocation);
-			}
-			public HRESULT GetMonikerReference(uint32 dwWhichRef, IMoniker** ppimkTarget, PWSTR* ppwzLocation) mut
-			{
-				return VT.GetMonikerReference(ref this, dwWhichRef, ppimkTarget, ppwzLocation);
-			}
-			public HRESULT SetStringReference(uint32 grfHLSETF, PWSTR pwzTarget, PWSTR pwzLocation) mut
-			{
-				return VT.SetStringReference(ref this, grfHLSETF, pwzTarget, pwzLocation);
-			}
-			public HRESULT GetStringReference(uint32 dwWhichRef, PWSTR* ppwzTarget, PWSTR* ppwzLocation) mut
-			{
-				return VT.GetStringReference(ref this, dwWhichRef, ppwzTarget, ppwzLocation);
-			}
-			public HRESULT SetFriendlyName(PWSTR pwzFriendlyName) mut
-			{
-				return VT.SetFriendlyName(ref this, pwzFriendlyName);
-			}
-			public HRESULT GetFriendlyName(uint32 grfHLFNAMEF, out PWSTR ppwzFriendlyName) mut
-			{
-				return VT.GetFriendlyName(ref this, grfHLFNAMEF, out ppwzFriendlyName);
-			}
-			public HRESULT SetTargetFrameName(PWSTR pwzTargetFrameName) mut
-			{
-				return VT.SetTargetFrameName(ref this, pwzTargetFrameName);
-			}
-			public HRESULT GetTargetFrameName(out PWSTR ppwzTargetFrameName) mut
-			{
-				return VT.GetTargetFrameName(ref this, out ppwzTargetFrameName);
-			}
-			public HRESULT GetMiscStatus(out uint32 pdwStatus) mut
-			{
-				return VT.GetMiscStatus(ref this, out pdwStatus);
-			}
-			public HRESULT Navigate(uint32 grfHLNF, ref IBindCtx pibc, ref IBindStatusCallback pibsc, ref IHlinkBrowseContext pihlbc) mut
-			{
-				return VT.Navigate(ref this, grfHLNF, ref pibc, ref pibsc, ref pihlbc);
-			}
-			public HRESULT SetAdditionalParams(PWSTR pwzAdditionalParams) mut
-			{
-				return VT.SetAdditionalParams(ref this, pwzAdditionalParams);
-			}
-			public HRESULT GetAdditionalParams(out PWSTR ppwzAdditionalParams) mut
-			{
-				return VT.GetAdditionalParams(ref this, out ppwzAdditionalParams);
-			}
+			public HRESULT SetHlinkSite(ref IHlinkSite pihlSite, uint32 dwSiteData) mut => VT.SetHlinkSite(ref this, ref pihlSite, dwSiteData);
+			public HRESULT GetHlinkSite(out IHlinkSite* ppihlSite, out uint32 pdwSiteData) mut => VT.GetHlinkSite(ref this, out ppihlSite, out pdwSiteData);
+			public HRESULT SetMonikerReference(uint32 grfHLSETF, ref IMoniker pimkTarget, PWSTR pwzLocation) mut => VT.SetMonikerReference(ref this, grfHLSETF, ref pimkTarget, pwzLocation);
+			public HRESULT GetMonikerReference(uint32 dwWhichRef, IMoniker** ppimkTarget, PWSTR* ppwzLocation) mut => VT.GetMonikerReference(ref this, dwWhichRef, ppimkTarget, ppwzLocation);
+			public HRESULT SetStringReference(uint32 grfHLSETF, PWSTR pwzTarget, PWSTR pwzLocation) mut => VT.SetStringReference(ref this, grfHLSETF, pwzTarget, pwzLocation);
+			public HRESULT GetStringReference(uint32 dwWhichRef, PWSTR* ppwzTarget, PWSTR* ppwzLocation) mut => VT.GetStringReference(ref this, dwWhichRef, ppwzTarget, ppwzLocation);
+			public HRESULT SetFriendlyName(PWSTR pwzFriendlyName) mut => VT.SetFriendlyName(ref this, pwzFriendlyName);
+			public HRESULT GetFriendlyName(uint32 grfHLFNAMEF, out PWSTR ppwzFriendlyName) mut => VT.GetFriendlyName(ref this, grfHLFNAMEF, out ppwzFriendlyName);
+			public HRESULT SetTargetFrameName(PWSTR pwzTargetFrameName) mut => VT.SetTargetFrameName(ref this, pwzTargetFrameName);
+			public HRESULT GetTargetFrameName(out PWSTR ppwzTargetFrameName) mut => VT.GetTargetFrameName(ref this, out ppwzTargetFrameName);
+			public HRESULT GetMiscStatus(out uint32 pdwStatus) mut => VT.GetMiscStatus(ref this, out pdwStatus);
+			public HRESULT Navigate(uint32 grfHLNF, ref IBindCtx pibc, ref IBindStatusCallback pibsc, ref IHlinkBrowseContext pihlbc) mut => VT.Navigate(ref this, grfHLNF, ref pibc, ref pibsc, ref pihlbc);
+			public HRESULT SetAdditionalParams(PWSTR pwzAdditionalParams) mut => VT.SetAdditionalParams(ref this, pwzAdditionalParams);
+			public HRESULT GetAdditionalParams(out PWSTR ppwzAdditionalParams) mut => VT.GetAdditionalParams(ref this, out ppwzAdditionalParams);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19476,22 +14600,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryService(uint32 dwSiteData, in Guid guidService, in Guid riid, out IUnknown* ppiunk) mut
-			{
-				return VT.QueryService(ref this, dwSiteData, guidService, riid, out ppiunk);
-			}
-			public HRESULT GetMoniker(uint32 dwSiteData, uint32 dwAssign, uint32 dwWhich, out IMoniker* ppimk) mut
-			{
-				return VT.GetMoniker(ref this, dwSiteData, dwAssign, dwWhich, out ppimk);
-			}
-			public HRESULT ReadyToNavigate(uint32 dwSiteData, uint32 dwReserved) mut
-			{
-				return VT.ReadyToNavigate(ref this, dwSiteData, dwReserved);
-			}
-			public HRESULT OnNavigationComplete(uint32 dwSiteData, uint32 dwreserved, HRESULT hrError, PWSTR pwzError) mut
-			{
-				return VT.OnNavigationComplete(ref this, dwSiteData, dwreserved, hrError, pwzError);
-			}
+			public HRESULT QueryService(uint32 dwSiteData, in Guid guidService, in Guid riid, out IUnknown* ppiunk) mut => VT.QueryService(ref this, dwSiteData, guidService, riid, out ppiunk);
+			public HRESULT GetMoniker(uint32 dwSiteData, uint32 dwAssign, uint32 dwWhich, out IMoniker* ppimk) mut => VT.GetMoniker(ref this, dwSiteData, dwAssign, dwWhich, out ppimk);
+			public HRESULT ReadyToNavigate(uint32 dwSiteData, uint32 dwReserved) mut => VT.ReadyToNavigate(ref this, dwSiteData, dwReserved);
+			public HRESULT OnNavigationComplete(uint32 dwSiteData, uint32 dwreserved, HRESULT hrError, PWSTR pwzError) mut => VT.OnNavigationComplete(ref this, dwSiteData, dwreserved, hrError, pwzError);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19508,26 +14621,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBrowseContext(ref IHlinkBrowseContext pihlbc) mut
-			{
-				return VT.SetBrowseContext(ref this, ref pihlbc);
-			}
-			public HRESULT GetBrowseContext(out IHlinkBrowseContext* ppihlbc) mut
-			{
-				return VT.GetBrowseContext(ref this, out ppihlbc);
-			}
-			public HRESULT Navigate(uint32 grfHLNF, PWSTR pwzJumpLocation) mut
-			{
-				return VT.Navigate(ref this, grfHLNF, pwzJumpLocation);
-			}
-			public HRESULT GetMoniker(PWSTR pwzLocation, uint32 dwAssign, out IMoniker* ppimkLocation) mut
-			{
-				return VT.GetMoniker(ref this, pwzLocation, dwAssign, out ppimkLocation);
-			}
-			public HRESULT GetFriendlyName(PWSTR pwzLocation, out PWSTR ppwzFriendlyName) mut
-			{
-				return VT.GetFriendlyName(ref this, pwzLocation, out ppwzFriendlyName);
-			}
+			public HRESULT SetBrowseContext(ref IHlinkBrowseContext pihlbc) mut => VT.SetBrowseContext(ref this, ref pihlbc);
+			public HRESULT GetBrowseContext(out IHlinkBrowseContext* ppihlbc) mut => VT.GetBrowseContext(ref this, out ppihlbc);
+			public HRESULT Navigate(uint32 grfHLNF, PWSTR pwzJumpLocation) mut => VT.Navigate(ref this, grfHLNF, pwzJumpLocation);
+			public HRESULT GetMoniker(PWSTR pwzLocation, uint32 dwAssign, out IMoniker* ppimkLocation) mut => VT.GetMoniker(ref this, pwzLocation, dwAssign, out ppimkLocation);
+			public HRESULT GetFriendlyName(PWSTR pwzLocation, out PWSTR ppwzFriendlyName) mut => VT.GetFriendlyName(ref this, pwzLocation, out ppwzFriendlyName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19545,26 +14644,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBrowseContext(ref IHlinkBrowseContext pihlbc) mut
-			{
-				return VT.SetBrowseContext(ref this, ref pihlbc);
-			}
-			public HRESULT GetBrowseContext(out IHlinkBrowseContext* ppihlbc) mut
-			{
-				return VT.GetBrowseContext(ref this, out ppihlbc);
-			}
-			public HRESULT Navigate(uint32 grfHLNF, ref IBindCtx pbc, ref IBindStatusCallback pibsc, ref IHlink pihlNavigate) mut
-			{
-				return VT.Navigate(ref this, grfHLNF, ref pbc, ref pibsc, ref pihlNavigate);
-			}
-			public HRESULT OnNavigate(uint32 grfHLNF, ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName, uint32 dwreserved) mut
-			{
-				return VT.OnNavigate(ref this, grfHLNF, ref pimkTarget, pwzLocation, pwzFriendlyName, dwreserved);
-			}
-			public HRESULT UpdateHlink(uint32 uHLID, ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) mut
-			{
-				return VT.UpdateHlink(ref this, uHLID, ref pimkTarget, pwzLocation, pwzFriendlyName);
-			}
+			public HRESULT SetBrowseContext(ref IHlinkBrowseContext pihlbc) mut => VT.SetBrowseContext(ref this, ref pihlbc);
+			public HRESULT GetBrowseContext(out IHlinkBrowseContext* ppihlbc) mut => VT.GetBrowseContext(ref this, out ppihlbc);
+			public HRESULT Navigate(uint32 grfHLNF, ref IBindCtx pbc, ref IBindStatusCallback pibsc, ref IHlink pihlNavigate) mut => VT.Navigate(ref this, grfHLNF, ref pbc, ref pibsc, ref pihlNavigate);
+			public HRESULT OnNavigate(uint32 grfHLNF, ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName, uint32 dwreserved) mut => VT.OnNavigate(ref this, grfHLNF, ref pimkTarget, pwzLocation, pwzFriendlyName, dwreserved);
+			public HRESULT UpdateHlink(uint32 uHLID, ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) mut => VT.UpdateHlink(ref this, uHLID, ref pimkTarget, pwzLocation, pwzFriendlyName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19582,22 +14667,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, out HLITEM rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, out rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumHLITEM* ppienumhlitem) mut
-			{
-				return VT.Clone(ref this, out ppienumhlitem);
-			}
+			public HRESULT Next(uint32 celt, out HLITEM rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumHLITEM* ppienumhlitem) mut => VT.Clone(ref this, out ppienumhlitem);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19614,62 +14688,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Register(uint32 reserved, ref IUnknown piunk, ref IMoniker pimk, out uint32 pdwRegister) mut
-			{
-				return VT.Register(ref this, reserved, ref piunk, ref pimk, out pdwRegister);
-			}
-			public HRESULT GetObject(ref IMoniker pimk, BOOL fBindIfRootRegistered, out IUnknown* ppiunk) mut
-			{
-				return VT.GetObject(ref this, ref pimk, fBindIfRootRegistered, out ppiunk);
-			}
-			public HRESULT Revoke(uint32 dwRegister) mut
-			{
-				return VT.Revoke(ref this, dwRegister);
-			}
-			public HRESULT SetBrowseWindowInfo(ref HLBWINFO phlbwi) mut
-			{
-				return VT.SetBrowseWindowInfo(ref this, ref phlbwi);
-			}
-			public HRESULT GetBrowseWindowInfo(out HLBWINFO phlbwi) mut
-			{
-				return VT.GetBrowseWindowInfo(ref this, out phlbwi);
-			}
-			public HRESULT SetInitialHlink(ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) mut
-			{
-				return VT.SetInitialHlink(ref this, ref pimkTarget, pwzLocation, pwzFriendlyName);
-			}
-			public HRESULT OnNavigateHlink(uint32 grfHLNF, ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName, out uint32 puHLID) mut
-			{
-				return VT.OnNavigateHlink(ref this, grfHLNF, ref pimkTarget, pwzLocation, pwzFriendlyName, out puHLID);
-			}
-			public HRESULT UpdateHlink(uint32 uHLID, ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) mut
-			{
-				return VT.UpdateHlink(ref this, uHLID, ref pimkTarget, pwzLocation, pwzFriendlyName);
-			}
-			public HRESULT EnumNavigationStack(uint32 dwReserved, uint32 grfHLFNAMEF, out IEnumHLITEM* ppienumhlitem) mut
-			{
-				return VT.EnumNavigationStack(ref this, dwReserved, grfHLFNAMEF, out ppienumhlitem);
-			}
-			public HRESULT QueryHlink(uint32 grfHLQF, uint32 uHLID) mut
-			{
-				return VT.QueryHlink(ref this, grfHLQF, uHLID);
-			}
-			public HRESULT GetHlink(uint32 uHLID, out IHlink* ppihl) mut
-			{
-				return VT.GetHlink(ref this, uHLID, out ppihl);
-			}
-			public HRESULT SetCurrentHlink(uint32 uHLID) mut
-			{
-				return VT.SetCurrentHlink(ref this, uHLID);
-			}
-			public HRESULT Clone(ref IUnknown piunkOuter, in Guid riid, out IUnknown* ppiunkObj) mut
-			{
-				return VT.Clone(ref this, ref piunkOuter, riid, out ppiunkObj);
-			}
-			public HRESULT Close(uint32 reserved) mut
-			{
-				return VT.Close(ref this, reserved);
-			}
+			public HRESULT Register(uint32 reserved, ref IUnknown piunk, ref IMoniker pimk, out uint32 pdwRegister) mut => VT.Register(ref this, reserved, ref piunk, ref pimk, out pdwRegister);
+			public HRESULT GetObject(ref IMoniker pimk, BOOL fBindIfRootRegistered, out IUnknown* ppiunk) mut => VT.GetObject(ref this, ref pimk, fBindIfRootRegistered, out ppiunk);
+			public HRESULT Revoke(uint32 dwRegister) mut => VT.Revoke(ref this, dwRegister);
+			public HRESULT SetBrowseWindowInfo(ref HLBWINFO phlbwi) mut => VT.SetBrowseWindowInfo(ref this, ref phlbwi);
+			public HRESULT GetBrowseWindowInfo(out HLBWINFO phlbwi) mut => VT.GetBrowseWindowInfo(ref this, out phlbwi);
+			public HRESULT SetInitialHlink(ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) mut => VT.SetInitialHlink(ref this, ref pimkTarget, pwzLocation, pwzFriendlyName);
+			public HRESULT OnNavigateHlink(uint32 grfHLNF, ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName, out uint32 puHLID) mut => VT.OnNavigateHlink(ref this, grfHLNF, ref pimkTarget, pwzLocation, pwzFriendlyName, out puHLID);
+			public HRESULT UpdateHlink(uint32 uHLID, ref IMoniker pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) mut => VT.UpdateHlink(ref this, uHLID, ref pimkTarget, pwzLocation, pwzFriendlyName);
+			public HRESULT EnumNavigationStack(uint32 dwReserved, uint32 grfHLFNAMEF, out IEnumHLITEM* ppienumhlitem) mut => VT.EnumNavigationStack(ref this, dwReserved, grfHLFNAMEF, out ppienumhlitem);
+			public HRESULT QueryHlink(uint32 grfHLQF, uint32 uHLID) mut => VT.QueryHlink(ref this, grfHLQF, uHLID);
+			public HRESULT GetHlink(uint32 uHLID, out IHlink* ppihl) mut => VT.GetHlink(ref this, uHLID, out ppihl);
+			public HRESULT SetCurrentHlink(uint32 uHLID) mut => VT.SetCurrentHlink(ref this, uHLID);
+			public HRESULT Clone(ref IUnknown piunkOuter, in Guid riid, out IUnknown* ppiunkObj) mut => VT.Clone(ref this, ref piunkOuter, riid, out ppiunkObj);
+			public HRESULT Close(uint32 reserved) mut => VT.Close(ref this, reserved);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19696,14 +14729,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAdditionalHeaders(PWSTR pwzAdditionalHeaders) mut
-			{
-				return VT.SetAdditionalHeaders(ref this, pwzAdditionalHeaders);
-			}
-			public HRESULT SetAuthenticateData(HWND phwnd, PWSTR pwzUsername, PWSTR pwzPassword) mut
-			{
-				return VT.SetAuthenticateData(ref this, phwnd, pwzUsername, pwzPassword);
-			}
+			public HRESULT SetAdditionalHeaders(PWSTR pwzAdditionalHeaders) mut => VT.SetAdditionalHeaders(ref this, pwzAdditionalHeaders);
+			public HRESULT SetAuthenticateData(HWND phwnd, PWSTR pwzUsername, PWSTR pwzPassword) mut => VT.SetAuthenticateData(ref this, phwnd, pwzUsername, pwzPassword);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19718,18 +14746,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Invoke(IUnknown* punk) mut
-			{
-				return VT.Invoke(ref this, punk);
-			}
-			public HRESULT Update(IUnknown* punk, BOOL fIsLocalAnchor) mut
-			{
-				return VT.Update(ref this, punk, fIsLocalAnchor);
-			}
-			public HRESULT GetPidl(ITEMIDLIST** ppidl) mut
-			{
-				return VT.GetPidl(ref this, ppidl);
-			}
+			public HRESULT Invoke(IUnknown* punk) mut => VT.Invoke(ref this, punk);
+			public HRESULT Update(IUnknown* punk, BOOL fIsLocalAnchor) mut => VT.Update(ref this, punk, fIsLocalAnchor);
+			public HRESULT GetPidl(ITEMIDLIST** ppidl) mut => VT.GetPidl(ref this, ppidl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19745,50 +14765,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddEntry(IUnknown* punk, BOOL fIsLocalAnchor) mut
-			{
-				return VT.AddEntry(ref this, punk, fIsLocalAnchor);
-			}
-			public HRESULT UpdateEntry(IUnknown* punk, BOOL fIsLocalAnchor) mut
-			{
-				return VT.UpdateEntry(ref this, punk, fIsLocalAnchor);
-			}
-			public HRESULT UpdateExternal(IUnknown* punk, IUnknown* punkHLBrowseContext) mut
-			{
-				return VT.UpdateExternal(ref this, punk, punkHLBrowseContext);
-			}
-			public HRESULT Travel(IUnknown* punk, int32 iOffset) mut
-			{
-				return VT.Travel(ref this, punk, iOffset);
-			}
-			public HRESULT GetTravelEntry(ref IUnknown punk, int32 iOffset, ITravelEntry** ppte) mut
-			{
-				return VT.GetTravelEntry(ref this, ref punk, iOffset, ppte);
-			}
-			public HRESULT FindTravelEntry(IUnknown* punk, ref ITEMIDLIST pidl, ITravelEntry** ppte) mut
-			{
-				return VT.FindTravelEntry(ref this, punk, ref pidl, ppte);
-			}
-			public HRESULT GetToolTipText(IUnknown* punk, int32 iOffset, int32 idsTemplate, char16* pwzText, uint32 cchText) mut
-			{
-				return VT.GetToolTipText(ref this, punk, iOffset, idsTemplate, pwzText, cchText);
-			}
-			public HRESULT InsertMenuEntries(IUnknown* punk, HMENU hmenu, int32 nPos, int32 idFirst, int32 idLast, uint32 dwFlags) mut
-			{
-				return VT.InsertMenuEntries(ref this, punk, hmenu, nPos, idFirst, idLast, dwFlags);
-			}
-			public HRESULT Clone(ITravelLog** pptl) mut
-			{
-				return VT.Clone(ref this, pptl);
-			}
-			public uint32 CountEntries(ref IUnknown punk) mut
-			{
-				return VT.CountEntries(ref this, ref punk);
-			}
-			public HRESULT Revert() mut
-			{
-				return VT.Revert(ref this);
-			}
+			public HRESULT AddEntry(IUnknown* punk, BOOL fIsLocalAnchor) mut => VT.AddEntry(ref this, punk, fIsLocalAnchor);
+			public HRESULT UpdateEntry(IUnknown* punk, BOOL fIsLocalAnchor) mut => VT.UpdateEntry(ref this, punk, fIsLocalAnchor);
+			public HRESULT UpdateExternal(IUnknown* punk, IUnknown* punkHLBrowseContext) mut => VT.UpdateExternal(ref this, punk, punkHLBrowseContext);
+			public HRESULT Travel(IUnknown* punk, int32 iOffset) mut => VT.Travel(ref this, punk, iOffset);
+			public HRESULT GetTravelEntry(ref IUnknown punk, int32 iOffset, ITravelEntry** ppte) mut => VT.GetTravelEntry(ref this, ref punk, iOffset, ppte);
+			public HRESULT FindTravelEntry(IUnknown* punk, ref ITEMIDLIST pidl, ITravelEntry** ppte) mut => VT.FindTravelEntry(ref this, punk, ref pidl, ppte);
+			public HRESULT GetToolTipText(IUnknown* punk, int32 iOffset, int32 idsTemplate, char16* pwzText, uint32 cchText) mut => VT.GetToolTipText(ref this, punk, iOffset, idsTemplate, pwzText, cchText);
+			public HRESULT InsertMenuEntries(IUnknown* punk, HMENU hmenu, int32 nPos, int32 idFirst, int32 idLast, uint32 dwFlags) mut => VT.InsertMenuEntries(ref this, punk, hmenu, nPos, idFirst, idLast, dwFlags);
+			public HRESULT Clone(ITravelLog** pptl) mut => VT.Clone(ref this, pptl);
+			public uint32 CountEntries(ref IUnknown punk) mut => VT.CountEntries(ref this, ref punk);
+			public HRESULT Revert() mut => VT.Revert(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19810,14 +14798,9 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DoInvokeIE4(out BOOL pf, void** ppv, int32 dispid, out DISPPARAMS pdispparams) mut
-			{
-				return VT.DoInvokeIE4(ref this, out pf, ppv, dispid, out pdispparams);
-			}
-			public HRESULT DoInvokePIDLIE4(int32 dispid, out ITEMIDLIST pidl, BOOL fCanCancel) mut
-			{
-				return VT.DoInvokePIDLIE4(ref this, dispid, out pidl, fCanCancel);
-			}
+			public HRESULT DoInvokeIE4(out BOOL pf, void** ppv, int32 dispid, out DISPPARAMS pdispparams) mut => VT.DoInvokeIE4(ref this, out pf, ppv, dispid, out pdispparams);
+			public HRESULT DoInvokePIDLIE4(int32 dispid, out ITEMIDLIST pidl, BOOL fCanCancel) mut => VT.DoInvokePIDLIE4(ref this, dispid, out pidl, fCanCancel);
+
 			[CRepr]
 			public struct VTable : IConnectionPoint.VTable
 			{
@@ -19832,18 +14815,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindCIE4ConnectionPoint(in Guid riid, out CIE4ConnectionPoint* ppccp) mut
-			{
-				return VT.FindCIE4ConnectionPoint(ref this, riid, out ppccp);
-			}
-			public HRESULT OnTranslateAccelerator(ref MSG pMsg, uint32 grfModifiers) mut
-			{
-				return VT.OnTranslateAccelerator(ref this, ref pMsg, grfModifiers);
-			}
-			public HRESULT OnInvoke(int32 dispidMember, in Guid iid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pVarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) mut
-			{
-				return VT.OnInvoke(ref this, dispidMember, iid, lcid, wFlags, ref pdispparams, out pVarResult, out pexcepinfo, out puArgErr);
-			}
+			public HRESULT FindCIE4ConnectionPoint(in Guid riid, out CIE4ConnectionPoint* ppccp) mut => VT.FindCIE4ConnectionPoint(ref this, riid, out ppccp);
+			public HRESULT OnTranslateAccelerator(ref MSG pMsg, uint32 grfModifiers) mut => VT.OnTranslateAccelerator(ref this, ref pMsg, grfModifiers);
+			public HRESULT OnInvoke(int32 dispidMember, in Guid iid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pVarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) mut => VT.OnInvoke(ref this, dispidMember, iid, lcid, wFlags, ref pdispparams, out pVarResult, out pexcepinfo, out puArgErr);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19859,18 +14834,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindConnectionPoint(in Guid riid, out IConnectionPoint* ppccp) mut
-			{
-				return VT.FindConnectionPoint(ref this, riid, out ppccp);
-			}
-			public HRESULT OnTranslateAccelerator(ref MSG pMsg, uint32 grfModifiers) mut
-			{
-				return VT.OnTranslateAccelerator(ref this, ref pMsg, grfModifiers);
-			}
-			public HRESULT OnInvoke(int32 dispidMember, in Guid iid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pVarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) mut
-			{
-				return VT.OnInvoke(ref this, dispidMember, iid, lcid, wFlags, ref pdispparams, out pVarResult, out pexcepinfo, out puArgErr);
-			}
+			public HRESULT FindConnectionPoint(in Guid riid, out IConnectionPoint* ppccp) mut => VT.FindConnectionPoint(ref this, riid, out ppccp);
+			public HRESULT OnTranslateAccelerator(ref MSG pMsg, uint32 grfModifiers) mut => VT.OnTranslateAccelerator(ref this, ref pMsg, grfModifiers);
+			public HRESULT OnInvoke(int32 dispidMember, in Guid iid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pVarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) mut => VT.OnInvoke(ref this, dispidMember, iid, lcid, wFlags, ref pdispparams, out pVarResult, out pexcepinfo, out puArgErr);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -19886,126 +14853,37 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetParentSite(out IOleInPlaceSite* ppipsite) mut
-			{
-				return VT.GetParentSite(ref this, out ppipsite);
-			}
-			public HRESULT SetTitle(ref IShellView psv, PWSTR pszName) mut
-			{
-				return VT.SetTitle(ref this, ref psv, pszName);
-			}
-			public HRESULT GetTitle(ref IShellView psv, char16* pszName, uint32 cchName) mut
-			{
-				return VT.GetTitle(ref this, ref psv, pszName, cchName);
-			}
-			public HRESULT GetOleObject(out IOleObject* ppobjv) mut
-			{
-				return VT.GetOleObject(ref this, out ppobjv);
-			}
-			public HRESULT GetTravelLog(ITravelLog** pptl) mut
-			{
-				return VT.GetTravelLog(ref this, pptl);
-			}
-			public HRESULT ShowControlWindow(uint32 id, BOOL fShow) mut
-			{
-				return VT.ShowControlWindow(ref this, id, fShow);
-			}
-			public HRESULT IsControlWindowShown(uint32 id, out BOOL pfShown) mut
-			{
-				return VT.IsControlWindowShown(ref this, id, out pfShown);
-			}
-			public HRESULT IEGetDisplayName(ref ITEMIDLIST pidl, PWSTR pwszName, uint32 uFlags) mut
-			{
-				return VT.IEGetDisplayName(ref this, ref pidl, pwszName, uFlags);
-			}
-			public HRESULT IEParseDisplayName(uint32 uiCP, PWSTR pwszPath, out ITEMIDLIST* ppidlOut) mut
-			{
-				return VT.IEParseDisplayName(ref this, uiCP, pwszPath, out ppidlOut);
-			}
-			public HRESULT DisplayParseError(HRESULT hres, PWSTR pwszPath) mut
-			{
-				return VT.DisplayParseError(ref this, hres, pwszPath);
-			}
-			public HRESULT NavigateToPidl(ref ITEMIDLIST pidl, uint32 grfHLNF) mut
-			{
-				return VT.NavigateToPidl(ref this, ref pidl, grfHLNF);
-			}
-			public HRESULT SetNavigateState(BNSTATE bnstate) mut
-			{
-				return VT.SetNavigateState(ref this, bnstate);
-			}
-			public HRESULT GetNavigateState(out BNSTATE pbnstate) mut
-			{
-				return VT.GetNavigateState(ref this, out pbnstate);
-			}
-			public HRESULT NotifyRedirect(ref IShellView psv, ref ITEMIDLIST pidl, out BOOL pfDidBrowse) mut
-			{
-				return VT.NotifyRedirect(ref this, ref psv, ref pidl, out pfDidBrowse);
-			}
-			public HRESULT UpdateWindowList() mut
-			{
-				return VT.UpdateWindowList(ref this);
-			}
-			public HRESULT UpdateBackForwardState() mut
-			{
-				return VT.UpdateBackForwardState(ref this);
-			}
-			public HRESULT SetFlags(uint32 dwFlags, uint32 dwFlagMask) mut
-			{
-				return VT.SetFlags(ref this, dwFlags, dwFlagMask);
-			}
-			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pdwFlags);
-			}
-			public HRESULT CanNavigateNow() mut
-			{
-				return VT.CanNavigateNow(ref this);
-			}
-			public HRESULT GetPidl(out ITEMIDLIST* ppidl) mut
-			{
-				return VT.GetPidl(ref this, out ppidl);
-			}
-			public HRESULT SetReferrer(ref ITEMIDLIST pidl) mut
-			{
-				return VT.SetReferrer(ref this, ref pidl);
-			}
-			public uint32 GetBrowserIndex() mut
-			{
-				return VT.GetBrowserIndex(ref this);
-			}
-			public HRESULT GetBrowserByIndex(uint32 dwID, out IUnknown* ppunk) mut
-			{
-				return VT.GetBrowserByIndex(ref this, dwID, out ppunk);
-			}
-			public HRESULT GetHistoryObject(out IOleObject* ppole, out IStream* pstm, out IBindCtx* ppbc) mut
-			{
-				return VT.GetHistoryObject(ref this, out ppole, out pstm, out ppbc);
-			}
-			public HRESULT SetHistoryObject(ref IOleObject pole, BOOL fIsLocalAnchor) mut
-			{
-				return VT.SetHistoryObject(ref this, ref pole, fIsLocalAnchor);
-			}
-			public HRESULT CacheOLEServer(ref IOleObject pole) mut
-			{
-				return VT.CacheOLEServer(ref this, ref pole);
-			}
-			public HRESULT GetSetCodePage(ref VARIANT pvarIn, out VARIANT pvarOut) mut
-			{
-				return VT.GetSetCodePage(ref this, ref pvarIn, out pvarOut);
-			}
-			public HRESULT OnHttpEquiv(ref IShellView psv, BOOL fDone, ref VARIANT pvarargIn, out VARIANT pvarargOut) mut
-			{
-				return VT.OnHttpEquiv(ref this, ref psv, fDone, ref pvarargIn, out pvarargOut);
-			}
-			public HRESULT GetPalette(out HPALETTE hpal) mut
-			{
-				return VT.GetPalette(ref this, out hpal);
-			}
-			public HRESULT RegisterWindow(BOOL fForceRegister, int32 swc) mut
-			{
-				return VT.RegisterWindow(ref this, fForceRegister, swc);
-			}
+			public HRESULT GetParentSite(out IOleInPlaceSite* ppipsite) mut => VT.GetParentSite(ref this, out ppipsite);
+			public HRESULT SetTitle(ref IShellView psv, PWSTR pszName) mut => VT.SetTitle(ref this, ref psv, pszName);
+			public HRESULT GetTitle(ref IShellView psv, char16* pszName, uint32 cchName) mut => VT.GetTitle(ref this, ref psv, pszName, cchName);
+			public HRESULT GetOleObject(out IOleObject* ppobjv) mut => VT.GetOleObject(ref this, out ppobjv);
+			public HRESULT GetTravelLog(ITravelLog** pptl) mut => VT.GetTravelLog(ref this, pptl);
+			public HRESULT ShowControlWindow(uint32 id, BOOL fShow) mut => VT.ShowControlWindow(ref this, id, fShow);
+			public HRESULT IsControlWindowShown(uint32 id, out BOOL pfShown) mut => VT.IsControlWindowShown(ref this, id, out pfShown);
+			public HRESULT IEGetDisplayName(ref ITEMIDLIST pidl, PWSTR pwszName, uint32 uFlags) mut => VT.IEGetDisplayName(ref this, ref pidl, pwszName, uFlags);
+			public HRESULT IEParseDisplayName(uint32 uiCP, PWSTR pwszPath, out ITEMIDLIST* ppidlOut) mut => VT.IEParseDisplayName(ref this, uiCP, pwszPath, out ppidlOut);
+			public HRESULT DisplayParseError(HRESULT hres, PWSTR pwszPath) mut => VT.DisplayParseError(ref this, hres, pwszPath);
+			public HRESULT NavigateToPidl(ref ITEMIDLIST pidl, uint32 grfHLNF) mut => VT.NavigateToPidl(ref this, ref pidl, grfHLNF);
+			public HRESULT SetNavigateState(BNSTATE bnstate) mut => VT.SetNavigateState(ref this, bnstate);
+			public HRESULT GetNavigateState(out BNSTATE pbnstate) mut => VT.GetNavigateState(ref this, out pbnstate);
+			public HRESULT NotifyRedirect(ref IShellView psv, ref ITEMIDLIST pidl, out BOOL pfDidBrowse) mut => VT.NotifyRedirect(ref this, ref psv, ref pidl, out pfDidBrowse);
+			public HRESULT UpdateWindowList() mut => VT.UpdateWindowList(ref this);
+			public HRESULT UpdateBackForwardState() mut => VT.UpdateBackForwardState(ref this);
+			public HRESULT SetFlags(uint32 dwFlags, uint32 dwFlagMask) mut => VT.SetFlags(ref this, dwFlags, dwFlagMask);
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut => VT.ComGetFlags(ref this, out pdwFlags);
+			public HRESULT CanNavigateNow() mut => VT.CanNavigateNow(ref this);
+			public HRESULT GetPidl(out ITEMIDLIST* ppidl) mut => VT.GetPidl(ref this, out ppidl);
+			public HRESULT SetReferrer(ref ITEMIDLIST pidl) mut => VT.SetReferrer(ref this, ref pidl);
+			public uint32 GetBrowserIndex() mut => VT.GetBrowserIndex(ref this);
+			public HRESULT GetBrowserByIndex(uint32 dwID, out IUnknown* ppunk) mut => VT.GetBrowserByIndex(ref this, dwID, out ppunk);
+			public HRESULT GetHistoryObject(out IOleObject* ppole, out IStream* pstm, out IBindCtx* ppbc) mut => VT.GetHistoryObject(ref this, out ppole, out pstm, out ppbc);
+			public HRESULT SetHistoryObject(ref IOleObject pole, BOOL fIsLocalAnchor) mut => VT.SetHistoryObject(ref this, ref pole, fIsLocalAnchor);
+			public HRESULT CacheOLEServer(ref IOleObject pole) mut => VT.CacheOLEServer(ref this, ref pole);
+			public HRESULT GetSetCodePage(ref VARIANT pvarIn, out VARIANT pvarOut) mut => VT.GetSetCodePage(ref this, ref pvarIn, out pvarOut);
+			public HRESULT OnHttpEquiv(ref IShellView psv, BOOL fDone, ref VARIANT pvarargIn, out VARIANT pvarargOut) mut => VT.OnHttpEquiv(ref this, ref psv, fDone, ref pvarargIn, out pvarargOut);
+			public HRESULT GetPalette(out HPALETTE hpal) mut => VT.GetPalette(ref this, out hpal);
+			public HRESULT RegisterWindow(BOOL fForceRegister, int32 swc) mut => VT.RegisterWindow(ref this, fForceRegister, swc);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -20048,10 +14926,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOwner(IUnknown* punkOwner) mut
-			{
-				return VT.SetOwner(ref this, punkOwner);
-			}
+			public HRESULT SetOwner(IUnknown* punkOwner) mut => VT.SetOwner(ref this, punkOwner);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -20065,254 +14941,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public LRESULT WndProcBS(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.WndProcBS(ref this, hwnd, uMsg, wParam, lParam);
-			}
-			public HRESULT SetAsDefFolderSettings() mut
-			{
-				return VT.SetAsDefFolderSettings(ref this);
-			}
-			public HRESULT GetViewRect(out RECT prc) mut
-			{
-				return VT.GetViewRect(ref this, out prc);
-			}
-			public HRESULT OnSize(WPARAM wParam) mut
-			{
-				return VT.OnSize(ref this, wParam);
-			}
-			public HRESULT OnCreate(ref CREATESTRUCTW pcs) mut
-			{
-				return VT.OnCreate(ref this, ref pcs);
-			}
-			public LRESULT OnCommand(WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.OnCommand(ref this, wParam, lParam);
-			}
-			public HRESULT OnDestroy() mut
-			{
-				return VT.OnDestroy(ref this);
-			}
-			public LRESULT OnNotify(ref NMHDR pnm) mut
-			{
-				return VT.OnNotify(ref this, ref pnm);
-			}
-			public HRESULT OnSetFocus() mut
-			{
-				return VT.OnSetFocus(ref this);
-			}
-			public HRESULT OnFrameWindowActivateBS(BOOL fActive) mut
-			{
-				return VT.OnFrameWindowActivateBS(ref this, fActive);
-			}
-			public HRESULT ReleaseShellView() mut
-			{
-				return VT.ReleaseShellView(ref this);
-			}
-			public HRESULT ActivatePendingView() mut
-			{
-				return VT.ActivatePendingView(ref this);
-			}
-			public HRESULT CreateViewWindow(ref IShellView psvNew, ref IShellView psvOld, ref RECT prcView, out HWND phwnd) mut
-			{
-				return VT.CreateViewWindow(ref this, ref psvNew, ref psvOld, ref prcView, out phwnd);
-			}
-			public HRESULT CreateBrowserPropSheetExt(in Guid riid, void** ppv) mut
-			{
-				return VT.CreateBrowserPropSheetExt(ref this, riid, ppv);
-			}
-			public HRESULT GetViewWindow(out HWND phwndView) mut
-			{
-				return VT.GetViewWindow(ref this, out phwndView);
-			}
-			public HRESULT GetBaseBrowserData(out BASEBROWSERDATALH* pbbd) mut
-			{
-				return VT.GetBaseBrowserData(ref this, out pbbd);
-			}
-			public BASEBROWSERDATALH* PutBaseBrowserData() mut
-			{
-				return VT.PutBaseBrowserData(ref this);
-			}
-			public HRESULT InitializeTravelLog(ref ITravelLog ptl, uint32 dw) mut
-			{
-				return VT.InitializeTravelLog(ref this, ref ptl, dw);
-			}
-			public HRESULT SetTopBrowser() mut
-			{
-				return VT.SetTopBrowser(ref this);
-			}
-			public HRESULT Offline(int32 iCmd) mut
-			{
-				return VT.Offline(ref this, iCmd);
-			}
-			public HRESULT AllowViewResize(BOOL f) mut
-			{
-				return VT.AllowViewResize(ref this, f);
-			}
-			public HRESULT SetActivateState(uint32 u) mut
-			{
-				return VT.SetActivateState(ref this, u);
-			}
-			public HRESULT UpdateSecureLockIcon(int32 eSecureLock) mut
-			{
-				return VT.UpdateSecureLockIcon(ref this, eSecureLock);
-			}
-			public HRESULT InitializeDownloadManager() mut
-			{
-				return VT.InitializeDownloadManager(ref this);
-			}
-			public HRESULT InitializeTransitionSite() mut
-			{
-				return VT.InitializeTransitionSite(ref this);
-			}
-			public HRESULT _Initialize(HWND hwnd, ref IUnknown pauto) mut
-			{
-				return VT._Initialize(ref this, hwnd, ref pauto);
-			}
-			public HRESULT _CancelPendingNavigationAsync() mut
-			{
-				return VT._CancelPendingNavigationAsync(ref this);
-			}
-			public HRESULT _CancelPendingView() mut
-			{
-				return VT._CancelPendingView(ref this);
-			}
-			public HRESULT _MaySaveChanges() mut
-			{
-				return VT._MaySaveChanges(ref this);
-			}
-			public HRESULT _PauseOrResumeView(BOOL fPaused) mut
-			{
-				return VT._PauseOrResumeView(ref this, fPaused);
-			}
-			public HRESULT _DisableModeless() mut
-			{
-				return VT._DisableModeless(ref this);
-			}
-			public HRESULT _NavigateToPidl2(ref ITEMIDLIST pidl, uint32 grfHLNF, uint32 dwFlags) mut
-			{
-				return VT._NavigateToPidl2(ref this, ref pidl, grfHLNF, dwFlags);
-			}
-			public HRESULT _TryShell2Rename(ref IShellView psv, ref ITEMIDLIST pidlNew) mut
-			{
-				return VT._TryShell2Rename(ref this, ref psv, ref pidlNew);
-			}
-			public HRESULT _SwitchActivationNow() mut
-			{
-				return VT._SwitchActivationNow(ref this);
-			}
-			public HRESULT _ExecChildren(ref IUnknown punkBar, BOOL fBroadcast, Guid* pguidCmdGroup, uint32 nCmdID, uint32 nCmdexecopt, VARIANT* pvarargIn, VARIANT* pvarargOut) mut
-			{
-				return VT._ExecChildren(ref this, ref punkBar, fBroadcast, pguidCmdGroup, nCmdID, nCmdexecopt, pvarargIn, pvarargOut);
-			}
-			public HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, uint32 uMsg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT._SendChildren(ref this, hwndBar, fBroadcast, uMsg, wParam, lParam);
-			}
-			public HRESULT GetFolderSetData(out FOLDERSETDATA pfsd) mut
-			{
-				return VT.GetFolderSetData(ref this, out pfsd);
-			}
-			public HRESULT _OnFocusChange(uint32 itb) mut
-			{
-				return VT._OnFocusChange(ref this, itb);
-			}
-			public HRESULT v_ShowHideChildWindows(BOOL fChildOnly) mut
-			{
-				return VT.v_ShowHideChildWindows(ref this, fChildOnly);
-			}
-			public uint32 _get_itbLastFocus() mut
-			{
-				return VT._get_itbLastFocus(ref this);
-			}
-			public HRESULT _put_itbLastFocus(uint32 itbLastFocus) mut
-			{
-				return VT._put_itbLastFocus(ref this, itbLastFocus);
-			}
-			public HRESULT _UIActivateView(uint32 uState) mut
-			{
-				return VT._UIActivateView(ref this, uState);
-			}
-			public HRESULT _GetViewBorderRect(out RECT prc) mut
-			{
-				return VT._GetViewBorderRect(ref this, out prc);
-			}
-			public HRESULT _UpdateViewRectSize() mut
-			{
-				return VT._UpdateViewRectSize(ref this);
-			}
-			public HRESULT _ResizeNextBorder(uint32 itb) mut
-			{
-				return VT._ResizeNextBorder(ref this, itb);
-			}
-			public HRESULT _ResizeView() mut
-			{
-				return VT._ResizeView(ref this);
-			}
-			public HRESULT _GetEffectiveClientArea(out RECT lprectBorder, HMONITOR hmon) mut
-			{
-				return VT._GetEffectiveClientArea(ref this, out lprectBorder, hmon);
-			}
-			public IStream* v_GetViewStream(out ITEMIDLIST pidl, uint32 grfMode, PWSTR pwszName) mut
-			{
-				return VT.v_GetViewStream(ref this, out pidl, grfMode, pwszName);
-			}
-			public LRESULT ForwardViewMsg(uint32 uMsg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.ForwardViewMsg(ref this, uMsg, wParam, lParam);
-			}
-			public HRESULT SetAcceleratorMenu(HACCEL hacc) mut
-			{
-				return VT.SetAcceleratorMenu(ref this, hacc);
-			}
-			public int32 _GetToolbarCount() mut
-			{
-				return VT._GetToolbarCount(ref this);
-			}
-			public TOOLBARITEM* _GetToolbarItem(int32 itb) mut
-			{
-				return VT._GetToolbarItem(ref this, itb);
-			}
-			public HRESULT _SaveToolbars(ref IStream pstm) mut
-			{
-				return VT._SaveToolbars(ref this, ref pstm);
-			}
-			public HRESULT _LoadToolbars(ref IStream pstm) mut
-			{
-				return VT._LoadToolbars(ref this, ref pstm);
-			}
-			public HRESULT _CloseAndReleaseToolbars(BOOL fClose) mut
-			{
-				return VT._CloseAndReleaseToolbars(ref this, fClose);
-			}
-			public HRESULT v_MayGetNextToolbarFocus(ref MSG lpMsg, uint32 itbNext, int32 citb, out TOOLBARITEM* pptbi, out HWND phwnd) mut
-			{
-				return VT.v_MayGetNextToolbarFocus(ref this, ref lpMsg, itbNext, citb, out pptbi, out phwnd);
-			}
-			public HRESULT _ResizeNextBorderHelper(uint32 itb, BOOL bUseHmonitor) mut
-			{
-				return VT._ResizeNextBorderHelper(ref this, itb, bUseHmonitor);
-			}
-			public uint32 _FindTBar(ref IUnknown punkSrc) mut
-			{
-				return VT._FindTBar(ref this, ref punkSrc);
-			}
-			public HRESULT _SetFocus(ref TOOLBARITEM ptbi, HWND hwnd, ref MSG lpMsg) mut
-			{
-				return VT._SetFocus(ref this, ref ptbi, hwnd, ref lpMsg);
-			}
-			public HRESULT v_MayTranslateAccelerator(out MSG pmsg) mut
-			{
-				return VT.v_MayTranslateAccelerator(ref this, out pmsg);
-			}
-			public HRESULT _GetBorderDWHelper(ref IUnknown punkSrc, out RECT lprectBorder, BOOL bUseHmonitor) mut
-			{
-				return VT._GetBorderDWHelper(ref this, ref punkSrc, out lprectBorder, bUseHmonitor);
-			}
-			public HRESULT v_CheckZoneCrossing(ref ITEMIDLIST pidl) mut
-			{
-				return VT.v_CheckZoneCrossing(ref this, ref pidl);
-			}
+			public LRESULT WndProcBS(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam) mut => VT.WndProcBS(ref this, hwnd, uMsg, wParam, lParam);
+			public HRESULT SetAsDefFolderSettings() mut => VT.SetAsDefFolderSettings(ref this);
+			public HRESULT GetViewRect(out RECT prc) mut => VT.GetViewRect(ref this, out prc);
+			public HRESULT OnSize(WPARAM wParam) mut => VT.OnSize(ref this, wParam);
+			public HRESULT OnCreate(ref CREATESTRUCTW pcs) mut => VT.OnCreate(ref this, ref pcs);
+			public LRESULT OnCommand(WPARAM wParam, LPARAM lParam) mut => VT.OnCommand(ref this, wParam, lParam);
+			public HRESULT OnDestroy() mut => VT.OnDestroy(ref this);
+			public LRESULT OnNotify(ref NMHDR pnm) mut => VT.OnNotify(ref this, ref pnm);
+			public HRESULT OnSetFocus() mut => VT.OnSetFocus(ref this);
+			public HRESULT OnFrameWindowActivateBS(BOOL fActive) mut => VT.OnFrameWindowActivateBS(ref this, fActive);
+			public HRESULT ReleaseShellView() mut => VT.ReleaseShellView(ref this);
+			public HRESULT ActivatePendingView() mut => VT.ActivatePendingView(ref this);
+			public HRESULT CreateViewWindow(ref IShellView psvNew, ref IShellView psvOld, ref RECT prcView, out HWND phwnd) mut => VT.CreateViewWindow(ref this, ref psvNew, ref psvOld, ref prcView, out phwnd);
+			public HRESULT CreateBrowserPropSheetExt(in Guid riid, void** ppv) mut => VT.CreateBrowserPropSheetExt(ref this, riid, ppv);
+			public HRESULT GetViewWindow(out HWND phwndView) mut => VT.GetViewWindow(ref this, out phwndView);
+			public HRESULT GetBaseBrowserData(out BASEBROWSERDATALH* pbbd) mut => VT.GetBaseBrowserData(ref this, out pbbd);
+			public BASEBROWSERDATALH* PutBaseBrowserData() mut => VT.PutBaseBrowserData(ref this);
+			public HRESULT InitializeTravelLog(ref ITravelLog ptl, uint32 dw) mut => VT.InitializeTravelLog(ref this, ref ptl, dw);
+			public HRESULT SetTopBrowser() mut => VT.SetTopBrowser(ref this);
+			public HRESULT Offline(int32 iCmd) mut => VT.Offline(ref this, iCmd);
+			public HRESULT AllowViewResize(BOOL f) mut => VT.AllowViewResize(ref this, f);
+			public HRESULT SetActivateState(uint32 u) mut => VT.SetActivateState(ref this, u);
+			public HRESULT UpdateSecureLockIcon(int32 eSecureLock) mut => VT.UpdateSecureLockIcon(ref this, eSecureLock);
+			public HRESULT InitializeDownloadManager() mut => VT.InitializeDownloadManager(ref this);
+			public HRESULT InitializeTransitionSite() mut => VT.InitializeTransitionSite(ref this);
+			public HRESULT _Initialize(HWND hwnd, ref IUnknown pauto) mut => VT._Initialize(ref this, hwnd, ref pauto);
+			public HRESULT _CancelPendingNavigationAsync() mut => VT._CancelPendingNavigationAsync(ref this);
+			public HRESULT _CancelPendingView() mut => VT._CancelPendingView(ref this);
+			public HRESULT _MaySaveChanges() mut => VT._MaySaveChanges(ref this);
+			public HRESULT _PauseOrResumeView(BOOL fPaused) mut => VT._PauseOrResumeView(ref this, fPaused);
+			public HRESULT _DisableModeless() mut => VT._DisableModeless(ref this);
+			public HRESULT _NavigateToPidl2(ref ITEMIDLIST pidl, uint32 grfHLNF, uint32 dwFlags) mut => VT._NavigateToPidl2(ref this, ref pidl, grfHLNF, dwFlags);
+			public HRESULT _TryShell2Rename(ref IShellView psv, ref ITEMIDLIST pidlNew) mut => VT._TryShell2Rename(ref this, ref psv, ref pidlNew);
+			public HRESULT _SwitchActivationNow() mut => VT._SwitchActivationNow(ref this);
+			public HRESULT _ExecChildren(ref IUnknown punkBar, BOOL fBroadcast, Guid* pguidCmdGroup, uint32 nCmdID, uint32 nCmdexecopt, VARIANT* pvarargIn, VARIANT* pvarargOut) mut => VT._ExecChildren(ref this, ref punkBar, fBroadcast, pguidCmdGroup, nCmdID, nCmdexecopt, pvarargIn, pvarargOut);
+			public HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, uint32 uMsg, WPARAM wParam, LPARAM lParam) mut => VT._SendChildren(ref this, hwndBar, fBroadcast, uMsg, wParam, lParam);
+			public HRESULT GetFolderSetData(out FOLDERSETDATA pfsd) mut => VT.GetFolderSetData(ref this, out pfsd);
+			public HRESULT _OnFocusChange(uint32 itb) mut => VT._OnFocusChange(ref this, itb);
+			public HRESULT v_ShowHideChildWindows(BOOL fChildOnly) mut => VT.v_ShowHideChildWindows(ref this, fChildOnly);
+			public uint32 _get_itbLastFocus() mut => VT._get_itbLastFocus(ref this);
+			public HRESULT _put_itbLastFocus(uint32 itbLastFocus) mut => VT._put_itbLastFocus(ref this, itbLastFocus);
+			public HRESULT _UIActivateView(uint32 uState) mut => VT._UIActivateView(ref this, uState);
+			public HRESULT _GetViewBorderRect(out RECT prc) mut => VT._GetViewBorderRect(ref this, out prc);
+			public HRESULT _UpdateViewRectSize() mut => VT._UpdateViewRectSize(ref this);
+			public HRESULT _ResizeNextBorder(uint32 itb) mut => VT._ResizeNextBorder(ref this, itb);
+			public HRESULT _ResizeView() mut => VT._ResizeView(ref this);
+			public HRESULT _GetEffectiveClientArea(out RECT lprectBorder, HMONITOR hmon) mut => VT._GetEffectiveClientArea(ref this, out lprectBorder, hmon);
+			public IStream* v_GetViewStream(out ITEMIDLIST pidl, uint32 grfMode, PWSTR pwszName) mut => VT.v_GetViewStream(ref this, out pidl, grfMode, pwszName);
+			public LRESULT ForwardViewMsg(uint32 uMsg, WPARAM wParam, LPARAM lParam) mut => VT.ForwardViewMsg(ref this, uMsg, wParam, lParam);
+			public HRESULT SetAcceleratorMenu(HACCEL hacc) mut => VT.SetAcceleratorMenu(ref this, hacc);
+			public int32 _GetToolbarCount() mut => VT._GetToolbarCount(ref this);
+			public TOOLBARITEM* _GetToolbarItem(int32 itb) mut => VT._GetToolbarItem(ref this, itb);
+			public HRESULT _SaveToolbars(ref IStream pstm) mut => VT._SaveToolbars(ref this, ref pstm);
+			public HRESULT _LoadToolbars(ref IStream pstm) mut => VT._LoadToolbars(ref this, ref pstm);
+			public HRESULT _CloseAndReleaseToolbars(BOOL fClose) mut => VT._CloseAndReleaseToolbars(ref this, fClose);
+			public HRESULT v_MayGetNextToolbarFocus(ref MSG lpMsg, uint32 itbNext, int32 citb, out TOOLBARITEM* pptbi, out HWND phwnd) mut => VT.v_MayGetNextToolbarFocus(ref this, ref lpMsg, itbNext, citb, out pptbi, out phwnd);
+			public HRESULT _ResizeNextBorderHelper(uint32 itb, BOOL bUseHmonitor) mut => VT._ResizeNextBorderHelper(ref this, itb, bUseHmonitor);
+			public uint32 _FindTBar(ref IUnknown punkSrc) mut => VT._FindTBar(ref this, ref punkSrc);
+			public HRESULT _SetFocus(ref TOOLBARITEM ptbi, HWND hwnd, ref MSG lpMsg) mut => VT._SetFocus(ref this, ref ptbi, hwnd, ref lpMsg);
+			public HRESULT v_MayTranslateAccelerator(out MSG pmsg) mut => VT.v_MayTranslateAccelerator(ref this, out pmsg);
+			public HRESULT _GetBorderDWHelper(ref IUnknown punkSrc, out RECT lprectBorder, BOOL bUseHmonitor) mut => VT._GetBorderDWHelper(ref this, ref punkSrc, out lprectBorder, bUseHmonitor);
+			public HRESULT v_CheckZoneCrossing(ref ITEMIDLIST pidl) mut => VT.v_CheckZoneCrossing(ref this, ref pidl);
+
 			[CRepr]
 			public struct VTable : IBrowserService.VTable
 			{
@@ -20387,14 +15078,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT _PositionViewWindow(HWND hwnd, ref RECT prc) mut
-			{
-				return VT._PositionViewWindow(ref this, hwnd, ref prc);
-			}
-			public HRESULT IEParseDisplayNameEx(uint32 uiCP, PWSTR pwszPath, uint32 dwFlags, out ITEMIDLIST* ppidlOut) mut
-			{
-				return VT.IEParseDisplayNameEx(ref this, uiCP, pwszPath, dwFlags, out ppidlOut);
-			}
+			public HRESULT _PositionViewWindow(HWND hwnd, ref RECT prc) mut => VT._PositionViewWindow(ref this, hwnd, ref prc);
+			public HRESULT IEParseDisplayNameEx(uint32 uiCP, PWSTR pwszPath, uint32 dwFlags, out ITEMIDLIST* ppidlOut) mut => VT.IEParseDisplayNameEx(ref this, uiCP, pwszPath, dwFlags, out ppidlOut);
+
 			[CRepr]
 			public struct VTable : IBrowserService2.VTable
 			{
@@ -20409,18 +15095,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateView(BOOL fPendingView) mut
-			{
-				return VT.ActivateView(ref this, fPendingView);
-			}
-			public HRESULT SaveViewState() mut
-			{
-				return VT.SaveViewState(ref this);
-			}
-			public HRESULT _ResizeAllBorders() mut
-			{
-				return VT._ResizeAllBorders(ref this);
-			}
+			public HRESULT ActivateView(BOOL fPendingView) mut => VT.ActivateView(ref this, fPendingView);
+			public HRESULT SaveViewState() mut => VT.SaveViewState(ref this);
+			public HRESULT _ResizeAllBorders() mut => VT._ResizeAllBorders(ref this);
+
 			[CRepr]
 			public struct VTable : IBrowserService3.VTable
 			{
@@ -20436,14 +15114,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetObscured(HWND hwndTB, ref IUnknown punkBand, uint32 dwSMSetFlags) mut
-			{
-				return VT.SetObscured(ref this, hwndTB, ref punkBand, dwSMSetFlags);
-			}
-			public HRESULT Popup(HWND hwnd, out POINTL ppt, out RECTL prcExclude, int32 dwFlags) mut
-			{
-				return VT.Popup(ref this, hwnd, out ppt, out prcExclude, dwFlags);
-			}
+			public HRESULT SetObscured(HWND hwndTB, ref IUnknown punkBand, uint32 dwSMSetFlags) mut => VT.SetObscured(ref this, hwndTB, ref punkBand, dwSMSetFlags);
+			public HRESULT Popup(HWND hwnd, out POINTL ppt, out RECTL prcExclude, int32 dwFlags) mut => VT.Popup(ref this, hwnd, out ppt, out prcExclude, dwFlags);
+
 			[CRepr]
 			public struct VTable : IShellMenu.VTable
 			{
@@ -20458,10 +15131,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TranscodeImage(IShellItem* pShellItem, uint32 uiMaxWidth, uint32 uiMaxHeight, uint32 flags, IStream* pvImage, out uint32 puiWidth, out uint32 puiHeight) mut
-			{
-				return VT.TranscodeImage(ref this, pShellItem, uiMaxWidth, uiMaxHeight, flags, pvImage, out puiWidth, out puiHeight);
-			}
+			public HRESULT TranscodeImage(IShellItem* pShellItem, uint32 uiMaxWidth, uint32 uiMaxHeight, uint32 flags, IStream* pvImage, out uint32 puiWidth, out uint32 puiHeight) mut => VT.TranscodeImage(ref this, pShellItem, uiMaxWidth, uiMaxHeight, flags, pvImage, out puiWidth, out puiHeight);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -20475,18 +15146,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetURL(PSTR pcszURL, uint32 dwInFlags) mut
-			{
-				return VT.SetURL(ref this, pcszURL, dwInFlags);
-			}
-			public HRESULT GetURL(out PSTR ppszURL) mut
-			{
-				return VT.GetURL(ref this, out ppszURL);
-			}
-			public HRESULT InvokeCommand(out urlinvokecommandinfoA purlici) mut
-			{
-				return VT.InvokeCommand(ref this, out purlici);
-			}
+			public HRESULT SetURL(PSTR pcszURL, uint32 dwInFlags) mut => VT.SetURL(ref this, pcszURL, dwInFlags);
+			public HRESULT GetURL(out PSTR ppszURL) mut => VT.GetURL(ref this, out ppszURL);
+			public HRESULT InvokeCommand(out urlinvokecommandinfoA purlici) mut => VT.InvokeCommand(ref this, out purlici);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -20502,18 +15165,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetURL(PWSTR pcszURL, uint32 dwInFlags) mut
-			{
-				return VT.SetURL(ref this, pcszURL, dwInFlags);
-			}
-			public HRESULT GetURL(out PWSTR ppszURL) mut
-			{
-				return VT.GetURL(ref this, out ppszURL);
-			}
-			public HRESULT InvokeCommand(out urlinvokecommandinfoW purlici) mut
-			{
-				return VT.InvokeCommand(ref this, out purlici);
-			}
+			public HRESULT SetURL(PWSTR pcszURL, uint32 dwInFlags) mut => VT.SetURL(ref this, pcszURL, dwInFlags);
+			public HRESULT GetURL(out PWSTR ppszURL) mut => VT.GetURL(ref this, out ppszURL);
+			public HRESULT InvokeCommand(out urlinvokecommandinfoW purlici) mut => VT.InvokeCommand(ref this, out purlici);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -20529,10 +15184,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddAnimation(ref IUnknown device, ref IDCompositionAnimation animation) mut
-			{
-				return VT.AddAnimation(ref this, ref device, ref animation);
-			}
+			public HRESULT AddAnimation(ref IUnknown device, ref IDCompositionAnimation animation) mut => VT.AddAnimation(ref this, ref device, ref animation);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

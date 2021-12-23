@@ -540,22 +540,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Dirty(out int16 pbDirty) mut
-			{
-				return VT.get_Dirty(ref this, out pbDirty);
-			}
-			public HRESULT Discard() mut
-			{
-				return VT.Discard(ref this);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Commit() mut
-			{
-				return VT.Commit(ref this);
-			}
+			public HRESULT get_Dirty(out int16 pbDirty) mut => VT.get_Dirty(ref this, out pbDirty);
+			public HRESULT Discard() mut => VT.Discard(ref this);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Commit() mut => VT.Commit(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -572,18 +561,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out uint32 pulCount) mut
-			{
-				return VT.get_Count(ref this, out pulCount);
-			}
-			public HRESULT get_Item(uint32 ulIndex, out IDispatch* ppVal) mut
-			{
-				return VT.get_Item(ref this, ulIndex, out ppVal);
-			}
-			public HRESULT get__NewEnum(out IUnknown* ppVal) mut
-			{
-				return VT.get__NewEnum(ref this, out ppVal);
-			}
+			public HRESULT get_Count(out uint32 pulCount) mut => VT.get_Count(ref this, out pulCount);
+			public HRESULT get_Item(uint32 ulIndex, out IDispatch* ppVal) mut => VT.get_Item(ref this, ulIndex, out ppVal);
+			public HRESULT get__NewEnum(out IUnknown* ppVal) mut => VT.get__NewEnum(ref this, out ppVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -599,10 +580,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWdsTransportServer(BSTR bszServerName, out IWdsTransportServer* ppWdsTransportServer) mut
-			{
-				return VT.GetWdsTransportServer(ref this, bszServerName, out ppWdsTransportServer);
-			}
+			public HRESULT GetWdsTransportServer(BSTR bszServerName, out IWdsTransportServer* ppWdsTransportServer) mut => VT.GetWdsTransportServer(ref this, bszServerName, out ppWdsTransportServer);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -616,26 +595,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR pbszName) mut
-			{
-				return VT.get_Name(ref this, out pbszName);
-			}
-			public HRESULT get_SetupManager(out IWdsTransportSetupManager* ppWdsTransportSetupManager) mut
-			{
-				return VT.get_SetupManager(ref this, out ppWdsTransportSetupManager);
-			}
-			public HRESULT get_ConfigurationManager(out IWdsTransportConfigurationManager* ppWdsTransportConfigurationManager) mut
-			{
-				return VT.get_ConfigurationManager(ref this, out ppWdsTransportConfigurationManager);
-			}
-			public HRESULT get_NamespaceManager(out IWdsTransportNamespaceManager* ppWdsTransportNamespaceManager) mut
-			{
-				return VT.get_NamespaceManager(ref this, out ppWdsTransportNamespaceManager);
-			}
-			public HRESULT DisconnectClient(uint32 ulClientId, WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) mut
-			{
-				return VT.DisconnectClient(ref this, ulClientId, DisconnectionType);
-			}
+			public HRESULT get_Name(out BSTR pbszName) mut => VT.get_Name(ref this, out pbszName);
+			public HRESULT get_SetupManager(out IWdsTransportSetupManager* ppWdsTransportSetupManager) mut => VT.get_SetupManager(ref this, out ppWdsTransportSetupManager);
+			public HRESULT get_ConfigurationManager(out IWdsTransportConfigurationManager* ppWdsTransportConfigurationManager) mut => VT.get_ConfigurationManager(ref this, out ppWdsTransportConfigurationManager);
+			public HRESULT get_NamespaceManager(out IWdsTransportNamespaceManager* ppWdsTransportNamespaceManager) mut => VT.get_NamespaceManager(ref this, out ppWdsTransportNamespaceManager);
+			public HRESULT DisconnectClient(uint32 ulClientId, WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) mut => VT.DisconnectClient(ref this, ulClientId, DisconnectionType);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -653,10 +618,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TftpManager(out IWdsTransportTftpManager* ppWdsTransportTftpManager) mut
-			{
-				return VT.get_TftpManager(ref this, out ppWdsTransportTftpManager);
-			}
+			public HRESULT get_TftpManager(out IWdsTransportTftpManager* ppWdsTransportTftpManager) mut => VT.get_TftpManager(ref this, out ppWdsTransportTftpManager);
+
 			[CRepr]
 			public struct VTable : IWdsTransportServer.VTable
 			{
@@ -670,26 +633,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Version(out uint64 pullVersion) mut
-			{
-				return VT.get_Version(ref this, out pullVersion);
-			}
-			public HRESULT get_InstalledFeatures(out uint32 pulInstalledFeatures) mut
-			{
-				return VT.get_InstalledFeatures(ref this, out pulInstalledFeatures);
-			}
-			public HRESULT get_Protocols(out uint32 pulProtocols) mut
-			{
-				return VT.get_Protocols(ref this, out pulProtocols);
-			}
-			public HRESULT RegisterContentProvider(BSTR bszName, BSTR bszDescription, BSTR bszFilePath, BSTR bszInitializationRoutine) mut
-			{
-				return VT.RegisterContentProvider(ref this, bszName, bszDescription, bszFilePath, bszInitializationRoutine);
-			}
-			public HRESULT DeregisterContentProvider(BSTR bszName) mut
-			{
-				return VT.DeregisterContentProvider(ref this, bszName);
-			}
+			public HRESULT get_Version(out uint64 pullVersion) mut => VT.get_Version(ref this, out pullVersion);
+			public HRESULT get_InstalledFeatures(out uint32 pulInstalledFeatures) mut => VT.get_InstalledFeatures(ref this, out pulInstalledFeatures);
+			public HRESULT get_Protocols(out uint32 pulProtocols) mut => VT.get_Protocols(ref this, out pulProtocols);
+			public HRESULT RegisterContentProvider(BSTR bszName, BSTR bszDescription, BSTR bszFilePath, BSTR bszInitializationRoutine) mut => VT.RegisterContentProvider(ref this, bszName, bszDescription, bszFilePath, bszInitializationRoutine);
+			public HRESULT DeregisterContentProvider(BSTR bszName) mut => VT.DeregisterContentProvider(ref this, bszName);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -707,14 +656,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TftpCapabilities(out uint32 pulTftpCapabilities) mut
-			{
-				return VT.get_TftpCapabilities(ref this, out pulTftpCapabilities);
-			}
-			public HRESULT get_ContentProviders(out IWdsTransportCollection* ppProviderCollection) mut
-			{
-				return VT.get_ContentProviders(ref this, out ppProviderCollection);
-			}
+			public HRESULT get_TftpCapabilities(out uint32 pulTftpCapabilities) mut => VT.get_TftpCapabilities(ref this, out pulTftpCapabilities);
+			public HRESULT get_ContentProviders(out IWdsTransportCollection* ppProviderCollection) mut => VT.get_ContentProviders(ref this, out ppProviderCollection);
+
 			[CRepr]
 			public struct VTable : IWdsTransportSetupManager.VTable
 			{
@@ -729,42 +673,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ServicePolicy(out IWdsTransportServicePolicy* ppWdsTransportServicePolicy) mut
-			{
-				return VT.get_ServicePolicy(ref this, out ppWdsTransportServicePolicy);
-			}
-			public HRESULT get_DiagnosticsPolicy(out IWdsTransportDiagnosticsPolicy* ppWdsTransportDiagnosticsPolicy) mut
-			{
-				return VT.get_DiagnosticsPolicy(ref this, out ppWdsTransportDiagnosticsPolicy);
-			}
-			public HRESULT get_WdsTransportServicesRunning(int16 bRealtimeStatus, out int16 pbServicesRunning) mut
-			{
-				return VT.get_WdsTransportServicesRunning(ref this, bRealtimeStatus, out pbServicesRunning);
-			}
-			public HRESULT EnableWdsTransportServices() mut
-			{
-				return VT.EnableWdsTransportServices(ref this);
-			}
-			public HRESULT DisableWdsTransportServices() mut
-			{
-				return VT.DisableWdsTransportServices(ref this);
-			}
-			public HRESULT StartWdsTransportServices() mut
-			{
-				return VT.StartWdsTransportServices(ref this);
-			}
-			public HRESULT StopWdsTransportServices() mut
-			{
-				return VT.StopWdsTransportServices(ref this);
-			}
-			public HRESULT RestartWdsTransportServices() mut
-			{
-				return VT.RestartWdsTransportServices(ref this);
-			}
-			public HRESULT NotifyWdsTransportServices(WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification) mut
-			{
-				return VT.NotifyWdsTransportServices(ref this, ServiceNotification);
-			}
+			public HRESULT get_ServicePolicy(out IWdsTransportServicePolicy* ppWdsTransportServicePolicy) mut => VT.get_ServicePolicy(ref this, out ppWdsTransportServicePolicy);
+			public HRESULT get_DiagnosticsPolicy(out IWdsTransportDiagnosticsPolicy* ppWdsTransportDiagnosticsPolicy) mut => VT.get_DiagnosticsPolicy(ref this, out ppWdsTransportDiagnosticsPolicy);
+			public HRESULT get_WdsTransportServicesRunning(int16 bRealtimeStatus, out int16 pbServicesRunning) mut => VT.get_WdsTransportServicesRunning(ref this, bRealtimeStatus, out pbServicesRunning);
+			public HRESULT EnableWdsTransportServices() mut => VT.EnableWdsTransportServices(ref this);
+			public HRESULT DisableWdsTransportServices() mut => VT.DisableWdsTransportServices(ref this);
+			public HRESULT StartWdsTransportServices() mut => VT.StartWdsTransportServices(ref this);
+			public HRESULT StopWdsTransportServices() mut => VT.StopWdsTransportServices(ref this);
+			public HRESULT RestartWdsTransportServices() mut => VT.RestartWdsTransportServices(ref this);
+			public HRESULT NotifyWdsTransportServices(WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification) mut => VT.NotifyWdsTransportServices(ref this, ServiceNotification);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -786,10 +704,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MulticastSessionPolicy(out IWdsTransportMulticastSessionPolicy* ppWdsTransportMulticastSessionPolicy) mut
-			{
-				return VT.get_MulticastSessionPolicy(ref this, out ppWdsTransportMulticastSessionPolicy);
-			}
+			public HRESULT get_MulticastSessionPolicy(out IWdsTransportMulticastSessionPolicy* ppWdsTransportMulticastSessionPolicy) mut => VT.get_MulticastSessionPolicy(ref this, out ppWdsTransportMulticastSessionPolicy);
+
 			[CRepr]
 			public struct VTable : IWdsTransportConfigurationManager.VTable
 			{
@@ -803,18 +719,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateNamespace(WDSTRANSPORT_NAMESPACE_TYPE NamespaceType, BSTR bszNamespaceName, BSTR bszContentProvider, BSTR bszConfiguration, out IWdsTransportNamespace* ppWdsTransportNamespace) mut
-			{
-				return VT.CreateNamespace(ref this, NamespaceType, bszNamespaceName, bszContentProvider, bszConfiguration, out ppWdsTransportNamespace);
-			}
-			public HRESULT RetrieveNamespace(BSTR bszNamespaceName, out IWdsTransportNamespace* ppWdsTransportNamespace) mut
-			{
-				return VT.RetrieveNamespace(ref this, bszNamespaceName, out ppWdsTransportNamespace);
-			}
-			public HRESULT RetrieveNamespaces(BSTR bszContentProvider, BSTR bszNamespaceName, int16 bIncludeTombstones, out IWdsTransportCollection* ppWdsTransportNamespaces) mut
-			{
-				return VT.RetrieveNamespaces(ref this, bszContentProvider, bszNamespaceName, bIncludeTombstones, out ppWdsTransportNamespaces);
-			}
+			public HRESULT CreateNamespace(WDSTRANSPORT_NAMESPACE_TYPE NamespaceType, BSTR bszNamespaceName, BSTR bszContentProvider, BSTR bszConfiguration, out IWdsTransportNamespace* ppWdsTransportNamespace) mut => VT.CreateNamespace(ref this, NamespaceType, bszNamespaceName, bszContentProvider, bszConfiguration, out ppWdsTransportNamespace);
+			public HRESULT RetrieveNamespace(BSTR bszNamespaceName, out IWdsTransportNamespace* ppWdsTransportNamespace) mut => VT.RetrieveNamespace(ref this, bszNamespaceName, out ppWdsTransportNamespace);
+			public HRESULT RetrieveNamespaces(BSTR bszContentProvider, BSTR bszNamespaceName, int16 bIncludeTombstones, out IWdsTransportCollection* ppWdsTransportNamespaces) mut => VT.RetrieveNamespaces(ref this, bszContentProvider, bszNamespaceName, bIncludeTombstones, out ppWdsTransportNamespaces);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -830,10 +738,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RetrieveTftpClients(out IWdsTransportCollection* ppWdsTransportTftpClients) mut
-			{
-				return VT.RetrieveTftpClients(ref this, out ppWdsTransportTftpClients);
-			}
+			public HRESULT RetrieveTftpClients(out IWdsTransportCollection* ppWdsTransportTftpClients) mut => VT.RetrieveTftpClients(ref this, out ppWdsTransportTftpClients);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -847,54 +753,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IpAddressSource(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, out WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE pSourceType) mut
-			{
-				return VT.get_IpAddressSource(ref this, AddressType, out pSourceType);
-			}
-			public HRESULT put_IpAddressSource(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType) mut
-			{
-				return VT.put_IpAddressSource(ref this, AddressType, SourceType);
-			}
-			public HRESULT get_StartIpAddress(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, out BSTR pbszStartIpAddress) mut
-			{
-				return VT.get_StartIpAddress(ref this, AddressType, out pbszStartIpAddress);
-			}
-			public HRESULT put_StartIpAddress(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR bszStartIpAddress) mut
-			{
-				return VT.put_StartIpAddress(ref this, AddressType, bszStartIpAddress);
-			}
-			public HRESULT get_EndIpAddress(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, out BSTR pbszEndIpAddress) mut
-			{
-				return VT.get_EndIpAddress(ref this, AddressType, out pbszEndIpAddress);
-			}
-			public HRESULT put_EndIpAddress(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR bszEndIpAddress) mut
-			{
-				return VT.put_EndIpAddress(ref this, AddressType, bszEndIpAddress);
-			}
-			public HRESULT get_StartPort(out uint32 pulStartPort) mut
-			{
-				return VT.get_StartPort(ref this, out pulStartPort);
-			}
-			public HRESULT put_StartPort(uint32 ulStartPort) mut
-			{
-				return VT.put_StartPort(ref this, ulStartPort);
-			}
-			public HRESULT get_EndPort(out uint32 pulEndPort) mut
-			{
-				return VT.get_EndPort(ref this, out pulEndPort);
-			}
-			public HRESULT put_EndPort(uint32 ulEndPort) mut
-			{
-				return VT.put_EndPort(ref this, ulEndPort);
-			}
-			public HRESULT get_NetworkProfile(out WDSTRANSPORT_NETWORK_PROFILE_TYPE pProfileType) mut
-			{
-				return VT.get_NetworkProfile(ref this, out pProfileType);
-			}
-			public HRESULT put_NetworkProfile(WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType) mut
-			{
-				return VT.put_NetworkProfile(ref this, ProfileType);
-			}
+			public HRESULT get_IpAddressSource(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, out WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE pSourceType) mut => VT.get_IpAddressSource(ref this, AddressType, out pSourceType);
+			public HRESULT put_IpAddressSource(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType) mut => VT.put_IpAddressSource(ref this, AddressType, SourceType);
+			public HRESULT get_StartIpAddress(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, out BSTR pbszStartIpAddress) mut => VT.get_StartIpAddress(ref this, AddressType, out pbszStartIpAddress);
+			public HRESULT put_StartIpAddress(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR bszStartIpAddress) mut => VT.put_StartIpAddress(ref this, AddressType, bszStartIpAddress);
+			public HRESULT get_EndIpAddress(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, out BSTR pbszEndIpAddress) mut => VT.get_EndIpAddress(ref this, AddressType, out pbszEndIpAddress);
+			public HRESULT put_EndIpAddress(WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR bszEndIpAddress) mut => VT.put_EndIpAddress(ref this, AddressType, bszEndIpAddress);
+			public HRESULT get_StartPort(out uint32 pulStartPort) mut => VT.get_StartPort(ref this, out pulStartPort);
+			public HRESULT put_StartPort(uint32 ulStartPort) mut => VT.put_StartPort(ref this, ulStartPort);
+			public HRESULT get_EndPort(out uint32 pulEndPort) mut => VT.get_EndPort(ref this, out pulEndPort);
+			public HRESULT put_EndPort(uint32 ulEndPort) mut => VT.put_EndPort(ref this, ulEndPort);
+			public HRESULT get_NetworkProfile(out WDSTRANSPORT_NETWORK_PROFILE_TYPE pProfileType) mut => VT.get_NetworkProfile(ref this, out pProfileType);
+			public HRESULT put_NetworkProfile(WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType) mut => VT.put_NetworkProfile(ref this, ProfileType);
+
 			[CRepr]
 			public struct VTable : IWdsTransportCacheable.VTable
 			{
@@ -919,30 +790,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UdpPortPolicy(out WDSTRANSPORT_UDP_PORT_POLICY pUdpPortPolicy) mut
-			{
-				return VT.get_UdpPortPolicy(ref this, out pUdpPortPolicy);
-			}
-			public HRESULT put_UdpPortPolicy(WDSTRANSPORT_UDP_PORT_POLICY UdpPortPolicy) mut
-			{
-				return VT.put_UdpPortPolicy(ref this, UdpPortPolicy);
-			}
-			public HRESULT get_TftpMaximumBlockSize(out uint32 pulTftpMaximumBlockSize) mut
-			{
-				return VT.get_TftpMaximumBlockSize(ref this, out pulTftpMaximumBlockSize);
-			}
-			public HRESULT put_TftpMaximumBlockSize(uint32 ulTftpMaximumBlockSize) mut
-			{
-				return VT.put_TftpMaximumBlockSize(ref this, ulTftpMaximumBlockSize);
-			}
-			public HRESULT get_EnableTftpVariableWindowExtension(out int16 pbEnableTftpVariableWindowExtension) mut
-			{
-				return VT.get_EnableTftpVariableWindowExtension(ref this, out pbEnableTftpVariableWindowExtension);
-			}
-			public HRESULT put_EnableTftpVariableWindowExtension(int16 bEnableTftpVariableWindowExtension) mut
-			{
-				return VT.put_EnableTftpVariableWindowExtension(ref this, bEnableTftpVariableWindowExtension);
-			}
+			public HRESULT get_UdpPortPolicy(out WDSTRANSPORT_UDP_PORT_POLICY pUdpPortPolicy) mut => VT.get_UdpPortPolicy(ref this, out pUdpPortPolicy);
+			public HRESULT put_UdpPortPolicy(WDSTRANSPORT_UDP_PORT_POLICY UdpPortPolicy) mut => VT.put_UdpPortPolicy(ref this, UdpPortPolicy);
+			public HRESULT get_TftpMaximumBlockSize(out uint32 pulTftpMaximumBlockSize) mut => VT.get_TftpMaximumBlockSize(ref this, out pulTftpMaximumBlockSize);
+			public HRESULT put_TftpMaximumBlockSize(uint32 ulTftpMaximumBlockSize) mut => VT.put_TftpMaximumBlockSize(ref this, ulTftpMaximumBlockSize);
+			public HRESULT get_EnableTftpVariableWindowExtension(out int16 pbEnableTftpVariableWindowExtension) mut => VT.get_EnableTftpVariableWindowExtension(ref this, out pbEnableTftpVariableWindowExtension);
+			public HRESULT put_EnableTftpVariableWindowExtension(int16 bEnableTftpVariableWindowExtension) mut => VT.put_EnableTftpVariableWindowExtension(ref this, bEnableTftpVariableWindowExtension);
+
 			[CRepr]
 			public struct VTable : IWdsTransportServicePolicy.VTable
 			{
@@ -961,22 +815,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Enabled(out int16 pbEnabled) mut
-			{
-				return VT.get_Enabled(ref this, out pbEnabled);
-			}
-			public HRESULT put_Enabled(int16 bEnabled) mut
-			{
-				return VT.put_Enabled(ref this, bEnabled);
-			}
-			public HRESULT get_Components(out uint32 pulComponents) mut
-			{
-				return VT.get_Components(ref this, out pulComponents);
-			}
-			public HRESULT put_Components(uint32 ulComponents) mut
-			{
-				return VT.put_Components(ref this, ulComponents);
-			}
+			public HRESULT get_Enabled(out int16 pbEnabled) mut => VT.get_Enabled(ref this, out pbEnabled);
+			public HRESULT put_Enabled(int16 bEnabled) mut => VT.put_Enabled(ref this, bEnabled);
+			public HRESULT get_Components(out uint32 pulComponents) mut => VT.get_Components(ref this, out pulComponents);
+			public HRESULT put_Components(uint32 ulComponents) mut => VT.put_Components(ref this, ulComponents);
+
 			[CRepr]
 			public struct VTable : IWdsTransportCacheable.VTable
 			{
@@ -993,38 +836,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SlowClientHandling(out WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE pSlowClientHandling) mut
-			{
-				return VT.get_SlowClientHandling(ref this, out pSlowClientHandling);
-			}
-			public HRESULT put_SlowClientHandling(WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE SlowClientHandling) mut
-			{
-				return VT.put_SlowClientHandling(ref this, SlowClientHandling);
-			}
-			public HRESULT get_AutoDisconnectThreshold(out uint32 pulThreshold) mut
-			{
-				return VT.get_AutoDisconnectThreshold(ref this, out pulThreshold);
-			}
-			public HRESULT put_AutoDisconnectThreshold(uint32 ulThreshold) mut
-			{
-				return VT.put_AutoDisconnectThreshold(ref this, ulThreshold);
-			}
-			public HRESULT get_MultistreamStreamCount(out uint32 pulStreamCount) mut
-			{
-				return VT.get_MultistreamStreamCount(ref this, out pulStreamCount);
-			}
-			public HRESULT put_MultistreamStreamCount(uint32 ulStreamCount) mut
-			{
-				return VT.put_MultistreamStreamCount(ref this, ulStreamCount);
-			}
-			public HRESULT get_SlowClientFallback(out int16 pbClientFallback) mut
-			{
-				return VT.get_SlowClientFallback(ref this, out pbClientFallback);
-			}
-			public HRESULT put_SlowClientFallback(int16 bClientFallback) mut
-			{
-				return VT.put_SlowClientFallback(ref this, bClientFallback);
-			}
+			public HRESULT get_SlowClientHandling(out WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE pSlowClientHandling) mut => VT.get_SlowClientHandling(ref this, out pSlowClientHandling);
+			public HRESULT put_SlowClientHandling(WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE SlowClientHandling) mut => VT.put_SlowClientHandling(ref this, SlowClientHandling);
+			public HRESULT get_AutoDisconnectThreshold(out uint32 pulThreshold) mut => VT.get_AutoDisconnectThreshold(ref this, out pulThreshold);
+			public HRESULT put_AutoDisconnectThreshold(uint32 ulThreshold) mut => VT.put_AutoDisconnectThreshold(ref this, ulThreshold);
+			public HRESULT get_MultistreamStreamCount(out uint32 pulStreamCount) mut => VT.get_MultistreamStreamCount(ref this, out pulStreamCount);
+			public HRESULT put_MultistreamStreamCount(uint32 ulStreamCount) mut => VT.put_MultistreamStreamCount(ref this, ulStreamCount);
+			public HRESULT get_SlowClientFallback(out int16 pbClientFallback) mut => VT.get_SlowClientFallback(ref this, out pbClientFallback);
+			public HRESULT put_SlowClientFallback(int16 bClientFallback) mut => VT.put_SlowClientFallback(ref this, bClientFallback);
+
 			[CRepr]
 			public struct VTable : IWdsTransportCacheable.VTable
 			{
@@ -1045,90 +865,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(out WDSTRANSPORT_NAMESPACE_TYPE pType) mut
-			{
-				return VT.get_Type(ref this, out pType);
-			}
-			public HRESULT get_Id(out uint32 pulId) mut
-			{
-				return VT.get_Id(ref this, out pulId);
-			}
-			public HRESULT get_Name(out BSTR pbszName) mut
-			{
-				return VT.get_Name(ref this, out pbszName);
-			}
-			public HRESULT put_Name(BSTR bszName) mut
-			{
-				return VT.put_Name(ref this, bszName);
-			}
-			public HRESULT get_FriendlyName(out BSTR pbszFriendlyName) mut
-			{
-				return VT.get_FriendlyName(ref this, out pbszFriendlyName);
-			}
-			public HRESULT put_FriendlyName(BSTR bszFriendlyName) mut
-			{
-				return VT.put_FriendlyName(ref this, bszFriendlyName);
-			}
-			public HRESULT get_Description(out BSTR pbszDescription) mut
-			{
-				return VT.get_Description(ref this, out pbszDescription);
-			}
-			public HRESULT put_Description(BSTR bszDescription) mut
-			{
-				return VT.put_Description(ref this, bszDescription);
-			}
-			public HRESULT get_ContentProvider(out BSTR pbszContentProvider) mut
-			{
-				return VT.get_ContentProvider(ref this, out pbszContentProvider);
-			}
-			public HRESULT put_ContentProvider(BSTR bszContentProvider) mut
-			{
-				return VT.put_ContentProvider(ref this, bszContentProvider);
-			}
-			public HRESULT get_Configuration(out BSTR pbszConfiguration) mut
-			{
-				return VT.get_Configuration(ref this, out pbszConfiguration);
-			}
-			public HRESULT put_Configuration(BSTR bszConfiguration) mut
-			{
-				return VT.put_Configuration(ref this, bszConfiguration);
-			}
-			public HRESULT get_Registered(out int16 pbRegistered) mut
-			{
-				return VT.get_Registered(ref this, out pbRegistered);
-			}
-			public HRESULT get_Tombstoned(out int16 pbTombstoned) mut
-			{
-				return VT.get_Tombstoned(ref this, out pbTombstoned);
-			}
-			public HRESULT get_TombstoneTime(out double pTombstoneTime) mut
-			{
-				return VT.get_TombstoneTime(ref this, out pTombstoneTime);
-			}
-			public HRESULT get_TransmissionStarted(out int16 pbTransmissionStarted) mut
-			{
-				return VT.get_TransmissionStarted(ref this, out pbTransmissionStarted);
-			}
-			public HRESULT Register() mut
-			{
-				return VT.Register(ref this);
-			}
-			public HRESULT Deregister(int16 bTerminateSessions) mut
-			{
-				return VT.Deregister(ref this, bTerminateSessions);
-			}
-			public HRESULT Clone(out IWdsTransportNamespace* ppWdsTransportNamespaceClone) mut
-			{
-				return VT.Clone(ref this, out ppWdsTransportNamespaceClone);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT RetrieveContents(out IWdsTransportCollection* ppWdsTransportContents) mut
-			{
-				return VT.RetrieveContents(ref this, out ppWdsTransportContents);
-			}
+			public HRESULT get_Type(out WDSTRANSPORT_NAMESPACE_TYPE pType) mut => VT.get_Type(ref this, out pType);
+			public HRESULT get_Id(out uint32 pulId) mut => VT.get_Id(ref this, out pulId);
+			public HRESULT get_Name(out BSTR pbszName) mut => VT.get_Name(ref this, out pbszName);
+			public HRESULT put_Name(BSTR bszName) mut => VT.put_Name(ref this, bszName);
+			public HRESULT get_FriendlyName(out BSTR pbszFriendlyName) mut => VT.get_FriendlyName(ref this, out pbszFriendlyName);
+			public HRESULT put_FriendlyName(BSTR bszFriendlyName) mut => VT.put_FriendlyName(ref this, bszFriendlyName);
+			public HRESULT get_Description(out BSTR pbszDescription) mut => VT.get_Description(ref this, out pbszDescription);
+			public HRESULT put_Description(BSTR bszDescription) mut => VT.put_Description(ref this, bszDescription);
+			public HRESULT get_ContentProvider(out BSTR pbszContentProvider) mut => VT.get_ContentProvider(ref this, out pbszContentProvider);
+			public HRESULT put_ContentProvider(BSTR bszContentProvider) mut => VT.put_ContentProvider(ref this, bszContentProvider);
+			public HRESULT get_Configuration(out BSTR pbszConfiguration) mut => VT.get_Configuration(ref this, out pbszConfiguration);
+			public HRESULT put_Configuration(BSTR bszConfiguration) mut => VT.put_Configuration(ref this, bszConfiguration);
+			public HRESULT get_Registered(out int16 pbRegistered) mut => VT.get_Registered(ref this, out pbRegistered);
+			public HRESULT get_Tombstoned(out int16 pbTombstoned) mut => VT.get_Tombstoned(ref this, out pbTombstoned);
+			public HRESULT get_TombstoneTime(out double pTombstoneTime) mut => VT.get_TombstoneTime(ref this, out pTombstoneTime);
+			public HRESULT get_TransmissionStarted(out int16 pbTransmissionStarted) mut => VT.get_TransmissionStarted(ref this, out pbTransmissionStarted);
+			public HRESULT Register() mut => VT.Register(ref this);
+			public HRESULT Deregister(int16 bTerminateSessions) mut => VT.Deregister(ref this, bTerminateSessions);
+			public HRESULT Clone(out IWdsTransportNamespace* ppWdsTransportNamespaceClone) mut => VT.Clone(ref this, out ppWdsTransportNamespaceClone);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT RetrieveContents(out IWdsTransportCollection* ppWdsTransportContents) mut => VT.RetrieveContents(ref this, out ppWdsTransportContents);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1162,6 +920,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IWdsTransportNamespace.VTable
 			{
@@ -1174,10 +933,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartTransmission() mut
-			{
-				return VT.StartTransmission(ref this);
-			}
+			public HRESULT StartTransmission() mut => VT.StartTransmission(ref this);
+
 			[CRepr]
 			public struct VTable : IWdsTransportNamespace.VTable
 			{
@@ -1191,6 +948,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IWdsTransportNamespaceScheduledCast.VTable
 			{
@@ -1203,22 +961,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MinimumClients(out uint32 pulMinimumClients) mut
-			{
-				return VT.get_MinimumClients(ref this, out pulMinimumClients);
-			}
-			public HRESULT put_MinimumClients(uint32 ulMinimumClients) mut
-			{
-				return VT.put_MinimumClients(ref this, ulMinimumClients);
-			}
-			public HRESULT get_StartTime(out double pStartTime) mut
-			{
-				return VT.get_StartTime(ref this, out pStartTime);
-			}
-			public HRESULT put_StartTime(double StartTime) mut
-			{
-				return VT.put_StartTime(ref this, StartTime);
-			}
+			public HRESULT get_MinimumClients(out uint32 pulMinimumClients) mut => VT.get_MinimumClients(ref this, out pulMinimumClients);
+			public HRESULT put_MinimumClients(uint32 ulMinimumClients) mut => VT.put_MinimumClients(ref this, ulMinimumClients);
+			public HRESULT get_StartTime(out double pStartTime) mut => VT.get_StartTime(ref this, out pStartTime);
+			public HRESULT put_StartTime(double StartTime) mut => VT.put_StartTime(ref this, StartTime);
+
 			[CRepr]
 			public struct VTable : IWdsTransportNamespaceScheduledCast.VTable
 			{
@@ -1235,26 +982,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Namespace(out IWdsTransportNamespace* ppWdsTransportNamespace) mut
-			{
-				return VT.get_Namespace(ref this, out ppWdsTransportNamespace);
-			}
-			public HRESULT get_Id(out uint32 pulId) mut
-			{
-				return VT.get_Id(ref this, out pulId);
-			}
-			public HRESULT get_Name(out BSTR pbszName) mut
-			{
-				return VT.get_Name(ref this, out pbszName);
-			}
-			public HRESULT RetrieveSessions(out IWdsTransportCollection* ppWdsTransportSessions) mut
-			{
-				return VT.RetrieveSessions(ref this, out ppWdsTransportSessions);
-			}
-			public HRESULT Terminate() mut
-			{
-				return VT.Terminate(ref this);
-			}
+			public HRESULT get_Namespace(out IWdsTransportNamespace* ppWdsTransportNamespace) mut => VT.get_Namespace(ref this, out ppWdsTransportNamespace);
+			public HRESULT get_Id(out uint32 pulId) mut => VT.get_Id(ref this, out pulId);
+			public HRESULT get_Name(out BSTR pbszName) mut => VT.get_Name(ref this, out pbszName);
+			public HRESULT RetrieveSessions(out IWdsTransportCollection* ppWdsTransportSessions) mut => VT.RetrieveSessions(ref this, out ppWdsTransportSessions);
+			public HRESULT Terminate() mut => VT.Terminate(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1272,38 +1005,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Content(out IWdsTransportContent* ppWdsTransportContent) mut
-			{
-				return VT.get_Content(ref this, out ppWdsTransportContent);
-			}
-			public HRESULT get_Id(out uint32 pulId) mut
-			{
-				return VT.get_Id(ref this, out pulId);
-			}
-			public HRESULT get_NetworkInterfaceName(out BSTR pbszNetworkInterfaceName) mut
-			{
-				return VT.get_NetworkInterfaceName(ref this, out pbszNetworkInterfaceName);
-			}
-			public HRESULT get_NetworkInterfaceAddress(out BSTR pbszNetworkInterfaceAddress) mut
-			{
-				return VT.get_NetworkInterfaceAddress(ref this, out pbszNetworkInterfaceAddress);
-			}
-			public HRESULT get_TransferRate(out uint32 pulTransferRate) mut
-			{
-				return VT.get_TransferRate(ref this, out pulTransferRate);
-			}
-			public HRESULT get_MasterClientId(out uint32 pulMasterClientId) mut
-			{
-				return VT.get_MasterClientId(ref this, out pulMasterClientId);
-			}
-			public HRESULT RetrieveClients(out IWdsTransportCollection* ppWdsTransportClients) mut
-			{
-				return VT.RetrieveClients(ref this, out ppWdsTransportClients);
-			}
-			public HRESULT Terminate() mut
-			{
-				return VT.Terminate(ref this);
-			}
+			public HRESULT get_Content(out IWdsTransportContent* ppWdsTransportContent) mut => VT.get_Content(ref this, out ppWdsTransportContent);
+			public HRESULT get_Id(out uint32 pulId) mut => VT.get_Id(ref this, out pulId);
+			public HRESULT get_NetworkInterfaceName(out BSTR pbszNetworkInterfaceName) mut => VT.get_NetworkInterfaceName(ref this, out pbszNetworkInterfaceName);
+			public HRESULT get_NetworkInterfaceAddress(out BSTR pbszNetworkInterfaceAddress) mut => VT.get_NetworkInterfaceAddress(ref this, out pbszNetworkInterfaceAddress);
+			public HRESULT get_TransferRate(out uint32 pulTransferRate) mut => VT.get_TransferRate(ref this, out pulTransferRate);
+			public HRESULT get_MasterClientId(out uint32 pulMasterClientId) mut => VT.get_MasterClientId(ref this, out pulMasterClientId);
+			public HRESULT RetrieveClients(out IWdsTransportCollection* ppWdsTransportClients) mut => VT.RetrieveClients(ref this, out ppWdsTransportClients);
+			public HRESULT Terminate() mut => VT.Terminate(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1324,54 +1034,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IWdsTransportSession* ppWdsTransportSession) mut
-			{
-				return VT.get_Session(ref this, out ppWdsTransportSession);
-			}
-			public HRESULT get_Id(out uint32 pulId) mut
-			{
-				return VT.get_Id(ref this, out pulId);
-			}
-			public HRESULT get_Name(out BSTR pbszName) mut
-			{
-				return VT.get_Name(ref this, out pbszName);
-			}
-			public HRESULT get_MacAddress(out BSTR pbszMacAddress) mut
-			{
-				return VT.get_MacAddress(ref this, out pbszMacAddress);
-			}
-			public HRESULT get_IpAddress(out BSTR pbszIpAddress) mut
-			{
-				return VT.get_IpAddress(ref this, out pbszIpAddress);
-			}
-			public HRESULT get_PercentCompletion(out uint32 pulPercentCompletion) mut
-			{
-				return VT.get_PercentCompletion(ref this, out pulPercentCompletion);
-			}
-			public HRESULT get_JoinDuration(out uint32 pulJoinDuration) mut
-			{
-				return VT.get_JoinDuration(ref this, out pulJoinDuration);
-			}
-			public HRESULT get_CpuUtilization(out uint32 pulCpuUtilization) mut
-			{
-				return VT.get_CpuUtilization(ref this, out pulCpuUtilization);
-			}
-			public HRESULT get_MemoryUtilization(out uint32 pulMemoryUtilization) mut
-			{
-				return VT.get_MemoryUtilization(ref this, out pulMemoryUtilization);
-			}
-			public HRESULT get_NetworkUtilization(out uint32 pulNetworkUtilization) mut
-			{
-				return VT.get_NetworkUtilization(ref this, out pulNetworkUtilization);
-			}
-			public HRESULT get_UserIdentity(out BSTR pbszUserIdentity) mut
-			{
-				return VT.get_UserIdentity(ref this, out pbszUserIdentity);
-			}
-			public HRESULT Disconnect(WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) mut
-			{
-				return VT.Disconnect(ref this, DisconnectionType);
-			}
+			public HRESULT get_Session(out IWdsTransportSession* ppWdsTransportSession) mut => VT.get_Session(ref this, out ppWdsTransportSession);
+			public HRESULT get_Id(out uint32 pulId) mut => VT.get_Id(ref this, out pulId);
+			public HRESULT get_Name(out BSTR pbszName) mut => VT.get_Name(ref this, out pbszName);
+			public HRESULT get_MacAddress(out BSTR pbszMacAddress) mut => VT.get_MacAddress(ref this, out pbszMacAddress);
+			public HRESULT get_IpAddress(out BSTR pbszIpAddress) mut => VT.get_IpAddress(ref this, out pbszIpAddress);
+			public HRESULT get_PercentCompletion(out uint32 pulPercentCompletion) mut => VT.get_PercentCompletion(ref this, out pulPercentCompletion);
+			public HRESULT get_JoinDuration(out uint32 pulJoinDuration) mut => VT.get_JoinDuration(ref this, out pulJoinDuration);
+			public HRESULT get_CpuUtilization(out uint32 pulCpuUtilization) mut => VT.get_CpuUtilization(ref this, out pulCpuUtilization);
+			public HRESULT get_MemoryUtilization(out uint32 pulMemoryUtilization) mut => VT.get_MemoryUtilization(ref this, out pulMemoryUtilization);
+			public HRESULT get_NetworkUtilization(out uint32 pulNetworkUtilization) mut => VT.get_NetworkUtilization(ref this, out pulNetworkUtilization);
+			public HRESULT get_UserIdentity(out BSTR pbszUserIdentity) mut => VT.get_UserIdentity(ref this, out pbszUserIdentity);
+			public HRESULT Disconnect(WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) mut => VT.Disconnect(ref this, DisconnectionType);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1396,34 +1071,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FileName(out BSTR pbszFileName) mut
-			{
-				return VT.get_FileName(ref this, out pbszFileName);
-			}
-			public HRESULT get_IpAddress(out BSTR pbszIpAddress) mut
-			{
-				return VT.get_IpAddress(ref this, out pbszIpAddress);
-			}
-			public HRESULT get_Timeout(out uint32 pulTimeout) mut
-			{
-				return VT.get_Timeout(ref this, out pulTimeout);
-			}
-			public HRESULT get_CurrentFileOffset(out uint64 pul64CurrentOffset) mut
-			{
-				return VT.get_CurrentFileOffset(ref this, out pul64CurrentOffset);
-			}
-			public HRESULT get_FileSize(out uint64 pul64FileSize) mut
-			{
-				return VT.get_FileSize(ref this, out pul64FileSize);
-			}
-			public HRESULT get_BlockSize(out uint32 pulBlockSize) mut
-			{
-				return VT.get_BlockSize(ref this, out pulBlockSize);
-			}
-			public HRESULT get_WindowSize(out uint32 pulWindowSize) mut
-			{
-				return VT.get_WindowSize(ref this, out pulWindowSize);
-			}
+			public HRESULT get_FileName(out BSTR pbszFileName) mut => VT.get_FileName(ref this, out pbszFileName);
+			public HRESULT get_IpAddress(out BSTR pbszIpAddress) mut => VT.get_IpAddress(ref this, out pbszIpAddress);
+			public HRESULT get_Timeout(out uint32 pulTimeout) mut => VT.get_Timeout(ref this, out pulTimeout);
+			public HRESULT get_CurrentFileOffset(out uint64 pul64CurrentOffset) mut => VT.get_CurrentFileOffset(ref this, out pul64CurrentOffset);
+			public HRESULT get_FileSize(out uint64 pul64FileSize) mut => VT.get_FileSize(ref this, out pul64FileSize);
+			public HRESULT get_BlockSize(out uint32 pulBlockSize) mut => VT.get_BlockSize(ref this, out pulBlockSize);
+			public HRESULT get_WindowSize(out uint32 pulWindowSize) mut => VT.get_WindowSize(ref this, out pulWindowSize);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1443,22 +1098,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR pbszName) mut
-			{
-				return VT.get_Name(ref this, out pbszName);
-			}
-			public HRESULT get_Description(out BSTR pbszDescription) mut
-			{
-				return VT.get_Description(ref this, out pbszDescription);
-			}
-			public HRESULT get_FilePath(out BSTR pbszFilePath) mut
-			{
-				return VT.get_FilePath(ref this, out pbszFilePath);
-			}
-			public HRESULT get_InitializationRoutine(out BSTR pbszInitializationRoutine) mut
-			{
-				return VT.get_InitializationRoutine(ref this, out pbszInitializationRoutine);
-			}
+			public HRESULT get_Name(out BSTR pbszName) mut => VT.get_Name(ref this, out pbszName);
+			public HRESULT get_Description(out BSTR pbszDescription) mut => VT.get_Description(ref this, out pbszDescription);
+			public HRESULT get_FilePath(out BSTR pbszFilePath) mut => VT.get_FilePath(ref this, out pbszFilePath);
+			public HRESULT get_InitializationRoutine(out BSTR pbszInitializationRoutine) mut => VT.get_InitializationRoutine(ref this, out pbszInitializationRoutine);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

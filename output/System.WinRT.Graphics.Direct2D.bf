@@ -31,30 +31,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEffectId(out Guid id) mut
-			{
-				return VT.GetEffectId(ref this, out id);
-			}
-			public HRESULT GetNamedPropertyMapping(PWSTR name, out uint32 index, out GRAPHICS_EFFECT_PROPERTY_MAPPING mapping) mut
-			{
-				return VT.GetNamedPropertyMapping(ref this, name, out index, out mapping);
-			}
-			public HRESULT GetPropertyCount(out uint32 count) mut
-			{
-				return VT.GetPropertyCount(ref this, out count);
-			}
-			public HRESULT GetProperty(uint32 index, void* value) mut
-			{
-				return VT.GetProperty(ref this, index, value);
-			}
-			public HRESULT GetSource(uint32 index, void* source) mut
-			{
-				return VT.GetSource(ref this, index, source);
-			}
-			public HRESULT GetSourceCount(out uint32 count) mut
-			{
-				return VT.GetSourceCount(ref this, out count);
-			}
+			public HRESULT GetEffectId(out Guid id) mut => VT.GetEffectId(ref this, out id);
+			public HRESULT GetNamedPropertyMapping(PWSTR name, out uint32 index, out GRAPHICS_EFFECT_PROPERTY_MAPPING mapping) mut => VT.GetNamedPropertyMapping(ref this, name, out index, out mapping);
+			public HRESULT GetPropertyCount(out uint32 count) mut => VT.GetPropertyCount(ref this, out count);
+			public HRESULT GetProperty(uint32 index, void* value) mut => VT.GetProperty(ref this, index, value);
+			public HRESULT GetSource(uint32 index, void* source) mut => VT.GetSource(ref this, index, source);
+			public HRESULT GetSourceCount(out uint32 count) mut => VT.GetSourceCount(ref this, out count);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -73,14 +56,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGeometry(out ID2D1Geometry* value) mut
-			{
-				return VT.GetGeometry(ref this, out value);
-			}
-			public HRESULT TryGetGeometryUsingFactory(ref ID2D1Factory factory, ID2D1Geometry** value) mut
-			{
-				return VT.TryGetGeometryUsingFactory(ref this, ref factory, value);
-			}
+			public HRESULT GetGeometry(out ID2D1Geometry* value) mut => VT.GetGeometry(ref this, out value);
+			public HRESULT TryGetGeometryUsingFactory(ref ID2D1Factory factory, ID2D1Geometry** value) mut => VT.TryGetGeometryUsingFactory(ref this, ref factory, value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

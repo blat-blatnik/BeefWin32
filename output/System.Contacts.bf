@@ -52,30 +52,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszAppName, PWSTR pszAppVersion) mut
-			{
-				return VT.Initialize(ref this, pszAppName, pszAppVersion);
-			}
-			public HRESULT Load(PWSTR pszContactID, out IContact* ppContact) mut
-			{
-				return VT.Load(ref this, pszContactID, out ppContact);
-			}
-			public HRESULT MergeContactIDs(PWSTR pszNewContactID, PWSTR pszOldContactID) mut
-			{
-				return VT.MergeContactIDs(ref this, pszNewContactID, pszOldContactID);
-			}
-			public HRESULT GetMeContact(out IContact* ppMeContact) mut
-			{
-				return VT.GetMeContact(ref this, out ppMeContact);
-			}
-			public HRESULT SetMeContact(ref IContact pMeContact) mut
-			{
-				return VT.SetMeContact(ref this, ref pMeContact);
-			}
-			public HRESULT GetContactCollection(out IContactCollection* ppContactCollection) mut
-			{
-				return VT.GetContactCollection(ref this, out ppContactCollection);
-			}
+			public HRESULT Initialize(PWSTR pszAppName, PWSTR pszAppVersion) mut => VT.Initialize(ref this, pszAppName, pszAppVersion);
+			public HRESULT Load(PWSTR pszContactID, out IContact* ppContact) mut => VT.Load(ref this, pszContactID, out ppContact);
+			public HRESULT MergeContactIDs(PWSTR pszNewContactID, PWSTR pszOldContactID) mut => VT.MergeContactIDs(ref this, pszNewContactID, pszOldContactID);
+			public HRESULT GetMeContact(out IContact* ppMeContact) mut => VT.GetMeContact(ref this, out ppMeContact);
+			public HRESULT SetMeContact(ref IContact pMeContact) mut => VT.SetMeContact(ref this, ref pMeContact);
+			public HRESULT GetContactCollection(out IContactCollection* ppContactCollection) mut => VT.GetContactCollection(ref this, out ppContactCollection);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -94,18 +77,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Next() mut
-			{
-				return VT.Next(ref this);
-			}
-			public HRESULT GetCurrent(out IContact* ppContact) mut
-			{
-				return VT.GetCurrent(ref this, out ppContact);
-			}
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Next() mut => VT.Next(ref this);
+			public HRESULT GetCurrent(out IContact* ppContact) mut => VT.GetCurrent(ref this, out ppContact);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -121,58 +96,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetString(PWSTR pszPropertyName, uint32 dwFlags, char16* pszValue, uint32 cchValue, out uint32 pdwcchPropertyValueRequired) mut
-			{
-				return VT.GetString(ref this, pszPropertyName, dwFlags, pszValue, cchValue, out pdwcchPropertyValueRequired);
-			}
-			public HRESULT GetDate(PWSTR pszPropertyName, uint32 dwFlags, out FILETIME pftDateTime) mut
-			{
-				return VT.GetDate(ref this, pszPropertyName, dwFlags, out pftDateTime);
-			}
-			public HRESULT GetBinary(PWSTR pszPropertyName, uint32 dwFlags, char16* pszContentType, uint32 cchContentType, out uint32 pdwcchContentTypeRequired, out IStream* ppStream) mut
-			{
-				return VT.GetBinary(ref this, pszPropertyName, dwFlags, pszContentType, cchContentType, out pdwcchContentTypeRequired, out ppStream);
-			}
-			public HRESULT GetLabels(PWSTR pszArrayElementName, uint32 dwFlags, char16* pszLabels, uint32 cchLabels, out uint32 pdwcchLabelsRequired) mut
-			{
-				return VT.GetLabels(ref this, pszArrayElementName, dwFlags, pszLabels, cchLabels, out pdwcchLabelsRequired);
-			}
-			public HRESULT SetString(PWSTR pszPropertyName, uint32 dwFlags, PWSTR pszValue) mut
-			{
-				return VT.SetString(ref this, pszPropertyName, dwFlags, pszValue);
-			}
-			public HRESULT SetDate(PWSTR pszPropertyName, uint32 dwFlags, FILETIME ftDateTime) mut
-			{
-				return VT.SetDate(ref this, pszPropertyName, dwFlags, ftDateTime);
-			}
-			public HRESULT SetBinary(PWSTR pszPropertyName, uint32 dwFlags, PWSTR pszContentType, ref IStream pStream) mut
-			{
-				return VT.SetBinary(ref this, pszPropertyName, dwFlags, pszContentType, ref pStream);
-			}
-			public HRESULT SetLabels(PWSTR pszArrayElementName, uint32 dwFlags, uint32 dwLabelCount, PWSTR* ppszLabels) mut
-			{
-				return VT.SetLabels(ref this, pszArrayElementName, dwFlags, dwLabelCount, ppszLabels);
-			}
-			public HRESULT CreateArrayNode(PWSTR pszArrayName, uint32 dwFlags, BOOL fAppend, char16* pszNewArrayElementName, uint32 cchNewArrayElementName, out uint32 pdwcchNewArrayElementNameRequired) mut
-			{
-				return VT.CreateArrayNode(ref this, pszArrayName, dwFlags, fAppend, pszNewArrayElementName, cchNewArrayElementName, out pdwcchNewArrayElementNameRequired);
-			}
-			public HRESULT DeleteProperty(PWSTR pszPropertyName, uint32 dwFlags) mut
-			{
-				return VT.DeleteProperty(ref this, pszPropertyName, dwFlags);
-			}
-			public HRESULT DeleteArrayNode(PWSTR pszArrayElementName, uint32 dwFlags) mut
-			{
-				return VT.DeleteArrayNode(ref this, pszArrayElementName, dwFlags);
-			}
-			public HRESULT DeleteLabels(PWSTR pszArrayElementName, uint32 dwFlags) mut
-			{
-				return VT.DeleteLabels(ref this, pszArrayElementName, dwFlags);
-			}
-			public HRESULT GetPropertyCollection(out IContactPropertyCollection* ppPropertyCollection, uint32 dwFlags, PWSTR pszMultiValueName, uint32 dwLabelCount, PWSTR* ppszLabels, BOOL fAnyLabelMatches) mut
-			{
-				return VT.GetPropertyCollection(ref this, out ppPropertyCollection, dwFlags, pszMultiValueName, dwLabelCount, ppszLabels, fAnyLabelMatches);
-			}
+			public HRESULT GetString(PWSTR pszPropertyName, uint32 dwFlags, char16* pszValue, uint32 cchValue, out uint32 pdwcchPropertyValueRequired) mut => VT.GetString(ref this, pszPropertyName, dwFlags, pszValue, cchValue, out pdwcchPropertyValueRequired);
+			public HRESULT GetDate(PWSTR pszPropertyName, uint32 dwFlags, out FILETIME pftDateTime) mut => VT.GetDate(ref this, pszPropertyName, dwFlags, out pftDateTime);
+			public HRESULT GetBinary(PWSTR pszPropertyName, uint32 dwFlags, char16* pszContentType, uint32 cchContentType, out uint32 pdwcchContentTypeRequired, out IStream* ppStream) mut => VT.GetBinary(ref this, pszPropertyName, dwFlags, pszContentType, cchContentType, out pdwcchContentTypeRequired, out ppStream);
+			public HRESULT GetLabels(PWSTR pszArrayElementName, uint32 dwFlags, char16* pszLabels, uint32 cchLabels, out uint32 pdwcchLabelsRequired) mut => VT.GetLabels(ref this, pszArrayElementName, dwFlags, pszLabels, cchLabels, out pdwcchLabelsRequired);
+			public HRESULT SetString(PWSTR pszPropertyName, uint32 dwFlags, PWSTR pszValue) mut => VT.SetString(ref this, pszPropertyName, dwFlags, pszValue);
+			public HRESULT SetDate(PWSTR pszPropertyName, uint32 dwFlags, FILETIME ftDateTime) mut => VT.SetDate(ref this, pszPropertyName, dwFlags, ftDateTime);
+			public HRESULT SetBinary(PWSTR pszPropertyName, uint32 dwFlags, PWSTR pszContentType, ref IStream pStream) mut => VT.SetBinary(ref this, pszPropertyName, dwFlags, pszContentType, ref pStream);
+			public HRESULT SetLabels(PWSTR pszArrayElementName, uint32 dwFlags, uint32 dwLabelCount, PWSTR* ppszLabels) mut => VT.SetLabels(ref this, pszArrayElementName, dwFlags, dwLabelCount, ppszLabels);
+			public HRESULT CreateArrayNode(PWSTR pszArrayName, uint32 dwFlags, BOOL fAppend, char16* pszNewArrayElementName, uint32 cchNewArrayElementName, out uint32 pdwcchNewArrayElementNameRequired) mut => VT.CreateArrayNode(ref this, pszArrayName, dwFlags, fAppend, pszNewArrayElementName, cchNewArrayElementName, out pdwcchNewArrayElementNameRequired);
+			public HRESULT DeleteProperty(PWSTR pszPropertyName, uint32 dwFlags) mut => VT.DeleteProperty(ref this, pszPropertyName, dwFlags);
+			public HRESULT DeleteArrayNode(PWSTR pszArrayElementName, uint32 dwFlags) mut => VT.DeleteArrayNode(ref this, pszArrayElementName, dwFlags);
+			public HRESULT DeleteLabels(PWSTR pszArrayElementName, uint32 dwFlags) mut => VT.DeleteLabels(ref this, pszArrayElementName, dwFlags);
+			public HRESULT GetPropertyCollection(out IContactPropertyCollection* ppPropertyCollection, uint32 dwFlags, PWSTR pszMultiValueName, uint32 dwLabelCount, PWSTR* ppszLabels, BOOL fAnyLabelMatches) mut => VT.GetPropertyCollection(ref this, out ppPropertyCollection, dwFlags, pszMultiValueName, dwLabelCount, ppszLabels, fAnyLabelMatches);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -198,18 +135,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContactID(char16* pszContactID, uint32 cchContactID, out uint32 pdwcchContactIDRequired) mut
-			{
-				return VT.GetContactID(ref this, pszContactID, cchContactID, out pdwcchContactIDRequired);
-			}
-			public HRESULT GetPath(char16* pszPath, uint32 cchPath, out uint32 pdwcchPathRequired) mut
-			{
-				return VT.GetPath(ref this, pszPath, cchPath, out pdwcchPathRequired);
-			}
-			public HRESULT CommitChanges(uint32 dwCommitFlags) mut
-			{
-				return VT.CommitChanges(ref this, dwCommitFlags);
-			}
+			public HRESULT GetContactID(char16* pszContactID, uint32 cchContactID, out uint32 pdwcchContactIDRequired) mut => VT.GetContactID(ref this, pszContactID, cchContactID, out pdwcchContactIDRequired);
+			public HRESULT GetPath(char16* pszPath, uint32 cchPath, out uint32 pdwcchPathRequired) mut => VT.GetPath(ref this, pszPath, cchPath, out pdwcchPathRequired);
+			public HRESULT CommitChanges(uint32 dwCommitFlags) mut => VT.CommitChanges(ref this, dwCommitFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -225,34 +154,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Next() mut
-			{
-				return VT.Next(ref this);
-			}
-			public HRESULT GetPropertyName(char16* pszPropertyName, uint32 cchPropertyName, out uint32 pdwcchPropertyNameRequired) mut
-			{
-				return VT.GetPropertyName(ref this, pszPropertyName, cchPropertyName, out pdwcchPropertyNameRequired);
-			}
-			public HRESULT GetPropertyType(out uint32 pdwType) mut
-			{
-				return VT.GetPropertyType(ref this, out pdwType);
-			}
-			public HRESULT GetPropertyVersion(out uint32 pdwVersion) mut
-			{
-				return VT.GetPropertyVersion(ref this, out pdwVersion);
-			}
-			public HRESULT GetPropertyModificationDate(out FILETIME pftModificationDate) mut
-			{
-				return VT.GetPropertyModificationDate(ref this, out pftModificationDate);
-			}
-			public HRESULT GetPropertyArrayElementID(char16* pszArrayElementID, uint32 cchArrayElementID, out uint32 pdwcchArrayElementIDRequired) mut
-			{
-				return VT.GetPropertyArrayElementID(ref this, pszArrayElementID, cchArrayElementID, out pdwcchArrayElementIDRequired);
-			}
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Next() mut => VT.Next(ref this);
+			public HRESULT GetPropertyName(char16* pszPropertyName, uint32 cchPropertyName, out uint32 pdwcchPropertyNameRequired) mut => VT.GetPropertyName(ref this, pszPropertyName, cchPropertyName, out pdwcchPropertyNameRequired);
+			public HRESULT GetPropertyType(out uint32 pdwType) mut => VT.GetPropertyType(ref this, out pdwType);
+			public HRESULT GetPropertyVersion(out uint32 pdwVersion) mut => VT.GetPropertyVersion(ref this, out pdwVersion);
+			public HRESULT GetPropertyModificationDate(out FILETIME pftModificationDate) mut => VT.GetPropertyModificationDate(ref this, out pftModificationDate);
+			public HRESULT GetPropertyArrayElementID(char16* pszArrayElementID, uint32 cchArrayElementID, out uint32 pdwcchArrayElementIDRequired) mut => VT.GetPropertyArrayElementID(ref this, pszArrayElementID, cchArrayElementID, out pdwcchArrayElementIDRequired);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -272,66 +181,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVersionInfo(out int32 plMajorVersion, out int32 plMinorVersion) mut
-			{
-				return VT.GetVersionInfo(ref this, out plMajorVersion, out plMinorVersion);
-			}
-			public HRESULT CreateOrOpenGroup(PWSTR pGroupName, CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS options, out BOOL pCreatedGroup, out IContactAggregationGroup* ppGroup) mut
-			{
-				return VT.CreateOrOpenGroup(ref this, pGroupName, options, out pCreatedGroup, out ppGroup);
-			}
-			public HRESULT CreateExternalContact(out IContactAggregationContact* ppItem) mut
-			{
-				return VT.CreateExternalContact(ref this, out ppItem);
-			}
-			public HRESULT CreateServerPerson(out IContactAggregationServerPerson* ppServerPerson) mut
-			{
-				return VT.CreateServerPerson(ref this, out ppServerPerson);
-			}
-			public HRESULT CreateServerContactLink(out IContactAggregationLink* ppServerContactLink) mut
-			{
-				return VT.CreateServerContactLink(ref this, out ppServerContactLink);
-			}
-			public HRESULT Flush() mut
-			{
-				return VT.Flush(ref this);
-			}
-			public HRESULT OpenAggregateContact(PWSTR pItemId, out IContactAggregationAggregate* ppItem) mut
-			{
-				return VT.OpenAggregateContact(ref this, pItemId, out ppItem);
-			}
-			public HRESULT OpenContact(PWSTR pItemId, out IContactAggregationContact* ppItem) mut
-			{
-				return VT.OpenContact(ref this, pItemId, out ppItem);
-			}
-			public HRESULT OpenServerContactLink(PWSTR pItemId, out IContactAggregationLink* ppItem) mut
-			{
-				return VT.OpenServerContactLink(ref this, pItemId, out ppItem);
-			}
-			public HRESULT OpenServerPerson(PWSTR pItemId, out IContactAggregationServerPerson* ppItem) mut
-			{
-				return VT.OpenServerPerson(ref this, pItemId, out ppItem);
-			}
-			public HRESULT get_Contacts(CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationContactCollection* ppItems) mut
-			{
-				return VT.get_Contacts(ref this, options, out ppItems);
-			}
-			public HRESULT get_AggregateContacts(CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationAggregateCollection* ppAggregates) mut
-			{
-				return VT.get_AggregateContacts(ref this, options, out ppAggregates);
-			}
-			public HRESULT get_Groups(CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationGroupCollection* ppGroups) mut
-			{
-				return VT.get_Groups(ref this, options, out ppGroups);
-			}
-			public HRESULT get_ServerPersons(out IContactAggregationServerPersonCollection* ppServerPersonCollection) mut
-			{
-				return VT.get_ServerPersons(ref this, out ppServerPersonCollection);
-			}
-			public HRESULT get_ServerContactLinks(PWSTR pPersonItemId, out IContactAggregationLinkCollection* ppServerContactLinkCollection) mut
-			{
-				return VT.get_ServerContactLinks(ref this, pPersonItemId, out ppServerContactLinkCollection);
-			}
+			public HRESULT GetVersionInfo(out int32 plMajorVersion, out int32 plMinorVersion) mut => VT.GetVersionInfo(ref this, out plMajorVersion, out plMinorVersion);
+			public HRESULT CreateOrOpenGroup(PWSTR pGroupName, CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS options, out BOOL pCreatedGroup, out IContactAggregationGroup* ppGroup) mut => VT.CreateOrOpenGroup(ref this, pGroupName, options, out pCreatedGroup, out ppGroup);
+			public HRESULT CreateExternalContact(out IContactAggregationContact* ppItem) mut => VT.CreateExternalContact(ref this, out ppItem);
+			public HRESULT CreateServerPerson(out IContactAggregationServerPerson* ppServerPerson) mut => VT.CreateServerPerson(ref this, out ppServerPerson);
+			public HRESULT CreateServerContactLink(out IContactAggregationLink* ppServerContactLink) mut => VT.CreateServerContactLink(ref this, out ppServerContactLink);
+			public HRESULT Flush() mut => VT.Flush(ref this);
+			public HRESULT OpenAggregateContact(PWSTR pItemId, out IContactAggregationAggregate* ppItem) mut => VT.OpenAggregateContact(ref this, pItemId, out ppItem);
+			public HRESULT OpenContact(PWSTR pItemId, out IContactAggregationContact* ppItem) mut => VT.OpenContact(ref this, pItemId, out ppItem);
+			public HRESULT OpenServerContactLink(PWSTR pItemId, out IContactAggregationLink* ppItem) mut => VT.OpenServerContactLink(ref this, pItemId, out ppItem);
+			public HRESULT OpenServerPerson(PWSTR pItemId, out IContactAggregationServerPerson* ppItem) mut => VT.OpenServerPerson(ref this, pItemId, out ppItem);
+			public HRESULT get_Contacts(CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationContactCollection* ppItems) mut => VT.get_Contacts(ref this, options, out ppItems);
+			public HRESULT get_AggregateContacts(CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationAggregateCollection* ppAggregates) mut => VT.get_AggregateContacts(ref this, options, out ppAggregates);
+			public HRESULT get_Groups(CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationGroupCollection* ppGroups) mut => VT.get_Groups(ref this, options, out ppGroups);
+			public HRESULT get_ServerPersons(out IContactAggregationServerPersonCollection* ppServerPersonCollection) mut => VT.get_ServerPersons(ref this, out ppServerPersonCollection);
+			public HRESULT get_ServerContactLinks(PWSTR pPersonItemId, out IContactAggregationLinkCollection* ppServerContactLinkCollection) mut => VT.get_ServerContactLinks(ref this, pPersonItemId, out ppServerContactLinkCollection);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -359,78 +224,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT MoveToAggregate(PWSTR pAggregateId) mut
-			{
-				return VT.MoveToAggregate(ref this, pAggregateId);
-			}
-			public HRESULT Unlink() mut
-			{
-				return VT.Unlink(ref this);
-			}
-			public HRESULT get_AccountId(out PWSTR ppAccountId) mut
-			{
-				return VT.get_AccountId(ref this, out ppAccountId);
-			}
-			public HRESULT put_AccountId(PWSTR pAccountId) mut
-			{
-				return VT.put_AccountId(ref this, pAccountId);
-			}
-			public HRESULT get_AggregateId(out PWSTR ppAggregateId) mut
-			{
-				return VT.get_AggregateId(ref this, out ppAggregateId);
-			}
-			public HRESULT get_Id(out PWSTR ppItemId) mut
-			{
-				return VT.get_Id(ref this, out ppItemId);
-			}
-			public HRESULT get_IsMe(out BOOL pIsMe) mut
-			{
-				return VT.get_IsMe(ref this, out pIsMe);
-			}
-			public HRESULT get_IsExternal(out BOOL pIsExternal) mut
-			{
-				return VT.get_IsExternal(ref this, out pIsExternal);
-			}
-			public HRESULT get_NetworkSourceId(out uint32 pNetworkSourceId) mut
-			{
-				return VT.get_NetworkSourceId(ref this, out pNetworkSourceId);
-			}
-			public HRESULT put_NetworkSourceId(uint32 networkSourceId) mut
-			{
-				return VT.put_NetworkSourceId(ref this, networkSourceId);
-			}
-			public HRESULT get_NetworkSourceIdString(out PWSTR ppNetworkSourceId) mut
-			{
-				return VT.get_NetworkSourceIdString(ref this, out ppNetworkSourceId);
-			}
-			public HRESULT put_NetworkSourceIdString(PWSTR pNetworkSourceId) mut
-			{
-				return VT.put_NetworkSourceIdString(ref this, pNetworkSourceId);
-			}
-			public HRESULT get_RemoteObjectId(out CONTACT_AGGREGATION_BLOB* ppRemoteObjectId) mut
-			{
-				return VT.get_RemoteObjectId(ref this, out ppRemoteObjectId);
-			}
-			public HRESULT put_RemoteObjectId(in CONTACT_AGGREGATION_BLOB pRemoteObjectId) mut
-			{
-				return VT.put_RemoteObjectId(ref this, pRemoteObjectId);
-			}
-			public HRESULT get_SyncIdentityHash(out CONTACT_AGGREGATION_BLOB* ppSyncIdentityHash) mut
-			{
-				return VT.get_SyncIdentityHash(ref this, out ppSyncIdentityHash);
-			}
-			public HRESULT put_SyncIdentityHash(in CONTACT_AGGREGATION_BLOB pSyncIdentityHash) mut
-			{
-				return VT.put_SyncIdentityHash(ref this, pSyncIdentityHash);
-			}
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT MoveToAggregate(PWSTR pAggregateId) mut => VT.MoveToAggregate(ref this, pAggregateId);
+			public HRESULT Unlink() mut => VT.Unlink(ref this);
+			public HRESULT get_AccountId(out PWSTR ppAccountId) mut => VT.get_AccountId(ref this, out ppAccountId);
+			public HRESULT put_AccountId(PWSTR pAccountId) mut => VT.put_AccountId(ref this, pAccountId);
+			public HRESULT get_AggregateId(out PWSTR ppAggregateId) mut => VT.get_AggregateId(ref this, out ppAggregateId);
+			public HRESULT get_Id(out PWSTR ppItemId) mut => VT.get_Id(ref this, out ppItemId);
+			public HRESULT get_IsMe(out BOOL pIsMe) mut => VT.get_IsMe(ref this, out pIsMe);
+			public HRESULT get_IsExternal(out BOOL pIsExternal) mut => VT.get_IsExternal(ref this, out pIsExternal);
+			public HRESULT get_NetworkSourceId(out uint32 pNetworkSourceId) mut => VT.get_NetworkSourceId(ref this, out pNetworkSourceId);
+			public HRESULT put_NetworkSourceId(uint32 networkSourceId) mut => VT.put_NetworkSourceId(ref this, networkSourceId);
+			public HRESULT get_NetworkSourceIdString(out PWSTR ppNetworkSourceId) mut => VT.get_NetworkSourceIdString(ref this, out ppNetworkSourceId);
+			public HRESULT put_NetworkSourceIdString(PWSTR pNetworkSourceId) mut => VT.put_NetworkSourceIdString(ref this, pNetworkSourceId);
+			public HRESULT get_RemoteObjectId(out CONTACT_AGGREGATION_BLOB* ppRemoteObjectId) mut => VT.get_RemoteObjectId(ref this, out ppRemoteObjectId);
+			public HRESULT put_RemoteObjectId(in CONTACT_AGGREGATION_BLOB pRemoteObjectId) mut => VT.put_RemoteObjectId(ref this, pRemoteObjectId);
+			public HRESULT get_SyncIdentityHash(out CONTACT_AGGREGATION_BLOB* ppSyncIdentityHash) mut => VT.get_SyncIdentityHash(ref this, out ppSyncIdentityHash);
+			public HRESULT put_SyncIdentityHash(in CONTACT_AGGREGATION_BLOB pSyncIdentityHash) mut => VT.put_SyncIdentityHash(ref this, pSyncIdentityHash);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -461,26 +273,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindFirst(out IContactAggregationContact* ppItem) mut
-			{
-				return VT.FindFirst(ref this, out ppItem);
-			}
-			public HRESULT FindNext(out IContactAggregationContact* ppItem) mut
-			{
-				return VT.FindNext(ref this, out ppItem);
-			}
-			public HRESULT FindFirstByIdentityHash(PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pIdentityHash, out IContactAggregationContact* ppItem) mut
-			{
-				return VT.FindFirstByIdentityHash(ref this, pSourceType, pAccountId, pIdentityHash, out ppItem);
-			}
-			public HRESULT get_Count(out int32 pCount) mut
-			{
-				return VT.get_Count(ref this, out pCount);
-			}
-			public HRESULT FindFirstByRemoteId(PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pRemoteObjectId, out IContactAggregationContact* ppItem) mut
-			{
-				return VT.FindFirstByRemoteId(ref this, pSourceType, pAccountId, pRemoteObjectId, out ppItem);
-			}
+			public HRESULT FindFirst(out IContactAggregationContact* ppItem) mut => VT.FindFirst(ref this, out ppItem);
+			public HRESULT FindNext(out IContactAggregationContact* ppItem) mut => VT.FindNext(ref this, out ppItem);
+			public HRESULT FindFirstByIdentityHash(PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pIdentityHash, out IContactAggregationContact* ppItem) mut => VT.FindFirstByIdentityHash(ref this, pSourceType, pAccountId, pIdentityHash, out ppItem);
+			public HRESULT get_Count(out int32 pCount) mut => VT.get_Count(ref this, out pCount);
+			public HRESULT FindFirstByRemoteId(PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pRemoteObjectId, out IContactAggregationContact* ppItem) mut => VT.FindFirstByRemoteId(ref this, pSourceType, pAccountId, pRemoteObjectId, out ppItem);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -498,42 +296,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT GetComponentItems(out IContactAggregationContactCollection* pComponentItems) mut
-			{
-				return VT.GetComponentItems(ref this, out pComponentItems);
-			}
-			public HRESULT Link(PWSTR pAggregateId) mut
-			{
-				return VT.Link(ref this, pAggregateId);
-			}
-			public HRESULT get_Groups(CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationGroupCollection* ppGroups) mut
-			{
-				return VT.get_Groups(ref this, options, out ppGroups);
-			}
-			public HRESULT get_AntiLink(out PWSTR ppAntiLink) mut
-			{
-				return VT.get_AntiLink(ref this, out ppAntiLink);
-			}
-			public HRESULT put_AntiLink(PWSTR pAntiLink) mut
-			{
-				return VT.put_AntiLink(ref this, pAntiLink);
-			}
-			public HRESULT get_FavoriteOrder(out uint32 pFavoriteOrder) mut
-			{
-				return VT.get_FavoriteOrder(ref this, out pFavoriteOrder);
-			}
-			public HRESULT put_FavoriteOrder(uint32 favoriteOrder) mut
-			{
-				return VT.put_FavoriteOrder(ref this, favoriteOrder);
-			}
-			public HRESULT get_Id(out PWSTR ppItemId) mut
-			{
-				return VT.get_Id(ref this, out ppItemId);
-			}
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT GetComponentItems(out IContactAggregationContactCollection* pComponentItems) mut => VT.GetComponentItems(ref this, out pComponentItems);
+			public HRESULT Link(PWSTR pAggregateId) mut => VT.Link(ref this, pAggregateId);
+			public HRESULT get_Groups(CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationGroupCollection* ppGroups) mut => VT.get_Groups(ref this, options, out ppGroups);
+			public HRESULT get_AntiLink(out PWSTR ppAntiLink) mut => VT.get_AntiLink(ref this, out ppAntiLink);
+			public HRESULT put_AntiLink(PWSTR pAntiLink) mut => VT.put_AntiLink(ref this, pAntiLink);
+			public HRESULT get_FavoriteOrder(out uint32 pFavoriteOrder) mut => VT.get_FavoriteOrder(ref this, out pFavoriteOrder);
+			public HRESULT put_FavoriteOrder(uint32 favoriteOrder) mut => VT.put_FavoriteOrder(ref this, favoriteOrder);
+			public HRESULT get_Id(out PWSTR ppItemId) mut => VT.get_Id(ref this, out ppItemId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -555,22 +327,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindFirst(out IContactAggregationAggregate* ppAggregate) mut
-			{
-				return VT.FindFirst(ref this, out ppAggregate);
-			}
-			public HRESULT FindFirstByAntiLinkId(PWSTR pAntiLinkId, out IContactAggregationAggregate* ppAggregate) mut
-			{
-				return VT.FindFirstByAntiLinkId(ref this, pAntiLinkId, out ppAggregate);
-			}
-			public HRESULT FindNext(out IContactAggregationAggregate* ppAggregate) mut
-			{
-				return VT.FindNext(ref this, out ppAggregate);
-			}
-			public HRESULT get_Count(out int32 pCount) mut
-			{
-				return VT.get_Count(ref this, out pCount);
-			}
+			public HRESULT FindFirst(out IContactAggregationAggregate* ppAggregate) mut => VT.FindFirst(ref this, out ppAggregate);
+			public HRESULT FindFirstByAntiLinkId(PWSTR pAntiLinkId, out IContactAggregationAggregate* ppAggregate) mut => VT.FindFirstByAntiLinkId(ref this, pAntiLinkId, out ppAggregate);
+			public HRESULT FindNext(out IContactAggregationAggregate* ppAggregate) mut => VT.FindNext(ref this, out ppAggregate);
+			public HRESULT get_Count(out int32 pCount) mut => VT.get_Count(ref this, out pCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -587,46 +348,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT Add(PWSTR pAggregateId) mut
-			{
-				return VT.Add(ref this, pAggregateId);
-			}
-			public HRESULT Remove(PWSTR pAggregateId) mut
-			{
-				return VT.Remove(ref this, pAggregateId);
-			}
-			public HRESULT get_Members(out IContactAggregationAggregateCollection* ppAggregateContactCollection) mut
-			{
-				return VT.get_Members(ref this, out ppAggregateContactCollection);
-			}
-			public HRESULT get_GlobalObjectId(out Guid pGlobalObjectId) mut
-			{
-				return VT.get_GlobalObjectId(ref this, out pGlobalObjectId);
-			}
-			public HRESULT put_GlobalObjectId(in Guid pGlobalObjectId) mut
-			{
-				return VT.put_GlobalObjectId(ref this, pGlobalObjectId);
-			}
-			public HRESULT get_Id(out PWSTR ppItemId) mut
-			{
-				return VT.get_Id(ref this, out ppItemId);
-			}
-			public HRESULT get_Name(out PWSTR ppName) mut
-			{
-				return VT.get_Name(ref this, out ppName);
-			}
-			public HRESULT put_Name(PWSTR pName) mut
-			{
-				return VT.put_Name(ref this, pName);
-			}
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT Add(PWSTR pAggregateId) mut => VT.Add(ref this, pAggregateId);
+			public HRESULT Remove(PWSTR pAggregateId) mut => VT.Remove(ref this, pAggregateId);
+			public HRESULT get_Members(out IContactAggregationAggregateCollection* ppAggregateContactCollection) mut => VT.get_Members(ref this, out ppAggregateContactCollection);
+			public HRESULT get_GlobalObjectId(out Guid pGlobalObjectId) mut => VT.get_GlobalObjectId(ref this, out pGlobalObjectId);
+			public HRESULT put_GlobalObjectId(in Guid pGlobalObjectId) mut => VT.put_GlobalObjectId(ref this, pGlobalObjectId);
+			public HRESULT get_Id(out PWSTR ppItemId) mut => VT.get_Id(ref this, out ppItemId);
+			public HRESULT get_Name(out PWSTR ppName) mut => VT.get_Name(ref this, out ppName);
+			public HRESULT put_Name(PWSTR pName) mut => VT.put_Name(ref this, pName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -649,22 +381,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindFirst(out IContactAggregationGroup* ppGroup) mut
-			{
-				return VT.FindFirst(ref this, out ppGroup);
-			}
-			public HRESULT FindFirstByGlobalObjectId(in Guid pGlobalObjectId, out IContactAggregationGroup* ppGroup) mut
-			{
-				return VT.FindFirstByGlobalObjectId(ref this, pGlobalObjectId, out ppGroup);
-			}
-			public HRESULT FindNext(out IContactAggregationGroup* ppGroup) mut
-			{
-				return VT.FindNext(ref this, out ppGroup);
-			}
-			public HRESULT get_Count(out uint32 pCount) mut
-			{
-				return VT.get_Count(ref this, out pCount);
-			}
+			public HRESULT FindFirst(out IContactAggregationGroup* ppGroup) mut => VT.FindFirst(ref this, out ppGroup);
+			public HRESULT FindFirstByGlobalObjectId(in Guid pGlobalObjectId, out IContactAggregationGroup* ppGroup) mut => VT.FindFirstByGlobalObjectId(ref this, pGlobalObjectId, out ppGroup);
+			public HRESULT FindNext(out IContactAggregationGroup* ppGroup) mut => VT.FindNext(ref this, out ppGroup);
+			public HRESULT get_Count(out uint32 pCount) mut => VT.get_Count(ref this, out pCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -681,74 +402,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT get_AccountId(out PWSTR ppAccountId) mut
-			{
-				return VT.get_AccountId(ref this, out ppAccountId);
-			}
-			public HRESULT put_AccountId(PWSTR pAccountId) mut
-			{
-				return VT.put_AccountId(ref this, pAccountId);
-			}
-			public HRESULT get_Id(out PWSTR ppItemId) mut
-			{
-				return VT.get_Id(ref this, out ppItemId);
-			}
-			public HRESULT get_IsLinkResolved(out BOOL pIsLinkResolved) mut
-			{
-				return VT.get_IsLinkResolved(ref this, out pIsLinkResolved);
-			}
-			public HRESULT put_IsLinkResolved(BOOL isLinkResolved) mut
-			{
-				return VT.put_IsLinkResolved(ref this, isLinkResolved);
-			}
-			public HRESULT get_NetworkSourceIdString(out PWSTR ppNetworkSourceId) mut
-			{
-				return VT.get_NetworkSourceIdString(ref this, out ppNetworkSourceId);
-			}
-			public HRESULT put_NetworkSourceIdString(PWSTR pNetworkSourceId) mut
-			{
-				return VT.put_NetworkSourceIdString(ref this, pNetworkSourceId);
-			}
-			public HRESULT get_RemoteObjectId(out CONTACT_AGGREGATION_BLOB* ppRemoteObjectId) mut
-			{
-				return VT.get_RemoteObjectId(ref this, out ppRemoteObjectId);
-			}
-			public HRESULT put_RemoteObjectId(in CONTACT_AGGREGATION_BLOB pRemoteObjectId) mut
-			{
-				return VT.put_RemoteObjectId(ref this, pRemoteObjectId);
-			}
-			public HRESULT get_ServerPerson(out PWSTR ppServerPersonId) mut
-			{
-				return VT.get_ServerPerson(ref this, out ppServerPersonId);
-			}
-			public HRESULT put_ServerPerson(PWSTR pServerPersonId) mut
-			{
-				return VT.put_ServerPerson(ref this, pServerPersonId);
-			}
-			public HRESULT get_ServerPersonBaseline(out PWSTR ppServerPersonId) mut
-			{
-				return VT.get_ServerPersonBaseline(ref this, out ppServerPersonId);
-			}
-			public HRESULT put_ServerPersonBaseline(PWSTR pServerPersonId) mut
-			{
-				return VT.put_ServerPersonBaseline(ref this, pServerPersonId);
-			}
-			public HRESULT get_SyncIdentityHash(out CONTACT_AGGREGATION_BLOB* ppSyncIdentityHash) mut
-			{
-				return VT.get_SyncIdentityHash(ref this, out ppSyncIdentityHash);
-			}
-			public HRESULT put_SyncIdentityHash(in CONTACT_AGGREGATION_BLOB pSyncIdentityHash) mut
-			{
-				return VT.put_SyncIdentityHash(ref this, pSyncIdentityHash);
-			}
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT get_AccountId(out PWSTR ppAccountId) mut => VT.get_AccountId(ref this, out ppAccountId);
+			public HRESULT put_AccountId(PWSTR pAccountId) mut => VT.put_AccountId(ref this, pAccountId);
+			public HRESULT get_Id(out PWSTR ppItemId) mut => VT.get_Id(ref this, out ppItemId);
+			public HRESULT get_IsLinkResolved(out BOOL pIsLinkResolved) mut => VT.get_IsLinkResolved(ref this, out pIsLinkResolved);
+			public HRESULT put_IsLinkResolved(BOOL isLinkResolved) mut => VT.put_IsLinkResolved(ref this, isLinkResolved);
+			public HRESULT get_NetworkSourceIdString(out PWSTR ppNetworkSourceId) mut => VT.get_NetworkSourceIdString(ref this, out ppNetworkSourceId);
+			public HRESULT put_NetworkSourceIdString(PWSTR pNetworkSourceId) mut => VT.put_NetworkSourceIdString(ref this, pNetworkSourceId);
+			public HRESULT get_RemoteObjectId(out CONTACT_AGGREGATION_BLOB* ppRemoteObjectId) mut => VT.get_RemoteObjectId(ref this, out ppRemoteObjectId);
+			public HRESULT put_RemoteObjectId(in CONTACT_AGGREGATION_BLOB pRemoteObjectId) mut => VT.put_RemoteObjectId(ref this, pRemoteObjectId);
+			public HRESULT get_ServerPerson(out PWSTR ppServerPersonId) mut => VT.get_ServerPerson(ref this, out ppServerPersonId);
+			public HRESULT put_ServerPerson(PWSTR pServerPersonId) mut => VT.put_ServerPerson(ref this, pServerPersonId);
+			public HRESULT get_ServerPersonBaseline(out PWSTR ppServerPersonId) mut => VT.get_ServerPersonBaseline(ref this, out ppServerPersonId);
+			public HRESULT put_ServerPersonBaseline(PWSTR pServerPersonId) mut => VT.put_ServerPersonBaseline(ref this, pServerPersonId);
+			public HRESULT get_SyncIdentityHash(out CONTACT_AGGREGATION_BLOB* ppSyncIdentityHash) mut => VT.get_SyncIdentityHash(ref this, out ppSyncIdentityHash);
+			public HRESULT put_SyncIdentityHash(in CONTACT_AGGREGATION_BLOB pSyncIdentityHash) mut => VT.put_SyncIdentityHash(ref this, pSyncIdentityHash);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -778,22 +449,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindFirst(out IContactAggregationLink* ppServerContactLink) mut
-			{
-				return VT.FindFirst(ref this, out ppServerContactLink);
-			}
-			public HRESULT FindFirstByRemoteId(PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pRemoteId, out IContactAggregationLink* ppServerContactLink) mut
-			{
-				return VT.FindFirstByRemoteId(ref this, pSourceType, pAccountId, pRemoteId, out ppServerContactLink);
-			}
-			public HRESULT FindNext(out IContactAggregationLink* ppServerContactLink) mut
-			{
-				return VT.FindNext(ref this, out ppServerContactLink);
-			}
-			public HRESULT get_Count(out uint32 pCount) mut
-			{
-				return VT.get_Count(ref this, out pCount);
-			}
+			public HRESULT FindFirst(out IContactAggregationLink* ppServerContactLink) mut => VT.FindFirst(ref this, out ppServerContactLink);
+			public HRESULT FindFirstByRemoteId(PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pRemoteId, out IContactAggregationLink* ppServerContactLink) mut => VT.FindFirstByRemoteId(ref this, pSourceType, pAccountId, pRemoteId, out ppServerContactLink);
+			public HRESULT FindNext(out IContactAggregationLink* ppServerContactLink) mut => VT.FindNext(ref this, out ppServerContactLink);
+			public HRESULT get_Count(out uint32 pCount) mut => VT.get_Count(ref this, out pCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -810,98 +470,30 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT get_AggregateId(out PWSTR ppAggregateId) mut
-			{
-				return VT.get_AggregateId(ref this, out ppAggregateId);
-			}
-			public HRESULT put_AggregateId(PWSTR pAggregateId) mut
-			{
-				return VT.put_AggregateId(ref this, pAggregateId);
-			}
-			public HRESULT get_AntiLink(out PWSTR ppAntiLink) mut
-			{
-				return VT.get_AntiLink(ref this, out ppAntiLink);
-			}
-			public HRESULT put_AntiLink(PWSTR pAntiLink) mut
-			{
-				return VT.put_AntiLink(ref this, pAntiLink);
-			}
-			public HRESULT get_AntiLinkBaseline(out PWSTR ppAntiLink) mut
-			{
-				return VT.get_AntiLinkBaseline(ref this, out ppAntiLink);
-			}
-			public HRESULT put_AntiLinkBaseline(PWSTR pAntiLink) mut
-			{
-				return VT.put_AntiLinkBaseline(ref this, pAntiLink);
-			}
-			public HRESULT get_FavoriteOrder(out uint32 pFavoriteOrder) mut
-			{
-				return VT.get_FavoriteOrder(ref this, out pFavoriteOrder);
-			}
-			public HRESULT put_FavoriteOrder(uint32 favoriteOrder) mut
-			{
-				return VT.put_FavoriteOrder(ref this, favoriteOrder);
-			}
-			public HRESULT get_FavoriteOrderBaseline(out uint32 pFavoriteOrder) mut
-			{
-				return VT.get_FavoriteOrderBaseline(ref this, out pFavoriteOrder);
-			}
-			public HRESULT put_FavoriteOrderBaseline(uint32 favoriteOrder) mut
-			{
-				return VT.put_FavoriteOrderBaseline(ref this, favoriteOrder);
-			}
-			public HRESULT get_Groups(out CONTACT_AGGREGATION_BLOB* pGroups) mut
-			{
-				return VT.get_Groups(ref this, out pGroups);
-			}
-			public HRESULT put_Groups(in CONTACT_AGGREGATION_BLOB pGroups) mut
-			{
-				return VT.put_Groups(ref this, pGroups);
-			}
-			public HRESULT get_GroupsBaseline(out CONTACT_AGGREGATION_BLOB* ppGroups) mut
-			{
-				return VT.get_GroupsBaseline(ref this, out ppGroups);
-			}
-			public HRESULT put_GroupsBaseline(in CONTACT_AGGREGATION_BLOB pGroups) mut
-			{
-				return VT.put_GroupsBaseline(ref this, pGroups);
-			}
-			public HRESULT get_Id(out PWSTR ppId) mut
-			{
-				return VT.get_Id(ref this, out ppId);
-			}
-			public HRESULT get_IsTombstone(out BOOL pIsTombstone) mut
-			{
-				return VT.get_IsTombstone(ref this, out pIsTombstone);
-			}
-			public HRESULT put_IsTombstone(BOOL isTombstone) mut
-			{
-				return VT.put_IsTombstone(ref this, isTombstone);
-			}
-			public HRESULT get_LinkedAggregateId(out PWSTR ppLinkedAggregateId) mut
-			{
-				return VT.get_LinkedAggregateId(ref this, out ppLinkedAggregateId);
-			}
-			public HRESULT put_LinkedAggregateId(PWSTR pLinkedAggregateId) mut
-			{
-				return VT.put_LinkedAggregateId(ref this, pLinkedAggregateId);
-			}
-			public HRESULT get_ObjectId(out PWSTR ppObjectId) mut
-			{
-				return VT.get_ObjectId(ref this, out ppObjectId);
-			}
-			public HRESULT put_ObjectId(PWSTR pObjectId) mut
-			{
-				return VT.put_ObjectId(ref this, pObjectId);
-			}
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT get_AggregateId(out PWSTR ppAggregateId) mut => VT.get_AggregateId(ref this, out ppAggregateId);
+			public HRESULT put_AggregateId(PWSTR pAggregateId) mut => VT.put_AggregateId(ref this, pAggregateId);
+			public HRESULT get_AntiLink(out PWSTR ppAntiLink) mut => VT.get_AntiLink(ref this, out ppAntiLink);
+			public HRESULT put_AntiLink(PWSTR pAntiLink) mut => VT.put_AntiLink(ref this, pAntiLink);
+			public HRESULT get_AntiLinkBaseline(out PWSTR ppAntiLink) mut => VT.get_AntiLinkBaseline(ref this, out ppAntiLink);
+			public HRESULT put_AntiLinkBaseline(PWSTR pAntiLink) mut => VT.put_AntiLinkBaseline(ref this, pAntiLink);
+			public HRESULT get_FavoriteOrder(out uint32 pFavoriteOrder) mut => VT.get_FavoriteOrder(ref this, out pFavoriteOrder);
+			public HRESULT put_FavoriteOrder(uint32 favoriteOrder) mut => VT.put_FavoriteOrder(ref this, favoriteOrder);
+			public HRESULT get_FavoriteOrderBaseline(out uint32 pFavoriteOrder) mut => VT.get_FavoriteOrderBaseline(ref this, out pFavoriteOrder);
+			public HRESULT put_FavoriteOrderBaseline(uint32 favoriteOrder) mut => VT.put_FavoriteOrderBaseline(ref this, favoriteOrder);
+			public HRESULT get_Groups(out CONTACT_AGGREGATION_BLOB* pGroups) mut => VT.get_Groups(ref this, out pGroups);
+			public HRESULT put_Groups(in CONTACT_AGGREGATION_BLOB pGroups) mut => VT.put_Groups(ref this, pGroups);
+			public HRESULT get_GroupsBaseline(out CONTACT_AGGREGATION_BLOB* ppGroups) mut => VT.get_GroupsBaseline(ref this, out ppGroups);
+			public HRESULT put_GroupsBaseline(in CONTACT_AGGREGATION_BLOB pGroups) mut => VT.put_GroupsBaseline(ref this, pGroups);
+			public HRESULT get_Id(out PWSTR ppId) mut => VT.get_Id(ref this, out ppId);
+			public HRESULT get_IsTombstone(out BOOL pIsTombstone) mut => VT.get_IsTombstone(ref this, out pIsTombstone);
+			public HRESULT put_IsTombstone(BOOL isTombstone) mut => VT.put_IsTombstone(ref this, isTombstone);
+			public HRESULT get_LinkedAggregateId(out PWSTR ppLinkedAggregateId) mut => VT.get_LinkedAggregateId(ref this, out ppLinkedAggregateId);
+			public HRESULT put_LinkedAggregateId(PWSTR pLinkedAggregateId) mut => VT.put_LinkedAggregateId(ref this, pLinkedAggregateId);
+			public HRESULT get_ObjectId(out PWSTR ppObjectId) mut => VT.get_ObjectId(ref this, out ppObjectId);
+			public HRESULT put_ObjectId(PWSTR pObjectId) mut => VT.put_ObjectId(ref this, pObjectId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -937,30 +529,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindFirst(out IContactAggregationServerPerson* ppServerPerson) mut
-			{
-				return VT.FindFirst(ref this, out ppServerPerson);
-			}
-			public HRESULT FindFirstByServerId(PWSTR pServerId, out IContactAggregationServerPerson* ppServerPerson) mut
-			{
-				return VT.FindFirstByServerId(ref this, pServerId, out ppServerPerson);
-			}
-			public HRESULT FindFirstByAggregateId(PWSTR pAggregateId, out IContactAggregationServerPerson* ppServerPerson) mut
-			{
-				return VT.FindFirstByAggregateId(ref this, pAggregateId, out ppServerPerson);
-			}
-			public HRESULT FindFirstByLinkedAggregateId(PWSTR pAggregateId, out IContactAggregationServerPerson* ppServerPerson) mut
-			{
-				return VT.FindFirstByLinkedAggregateId(ref this, pAggregateId, out ppServerPerson);
-			}
-			public HRESULT FindNext(out IContactAggregationServerPerson* ppServerPerson) mut
-			{
-				return VT.FindNext(ref this, out ppServerPerson);
-			}
-			public HRESULT get_Count(out uint32 pCount) mut
-			{
-				return VT.get_Count(ref this, out pCount);
-			}
+			public HRESULT FindFirst(out IContactAggregationServerPerson* ppServerPerson) mut => VT.FindFirst(ref this, out ppServerPerson);
+			public HRESULT FindFirstByServerId(PWSTR pServerId, out IContactAggregationServerPerson* ppServerPerson) mut => VT.FindFirstByServerId(ref this, pServerId, out ppServerPerson);
+			public HRESULT FindFirstByAggregateId(PWSTR pAggregateId, out IContactAggregationServerPerson* ppServerPerson) mut => VT.FindFirstByAggregateId(ref this, pAggregateId, out ppServerPerson);
+			public HRESULT FindFirstByLinkedAggregateId(PWSTR pAggregateId, out IContactAggregationServerPerson* ppServerPerson) mut => VT.FindFirstByLinkedAggregateId(ref this, pAggregateId, out ppServerPerson);
+			public HRESULT FindNext(out IContactAggregationServerPerson* ppServerPerson) mut => VT.FindNext(ref this, out ppServerPerson);
+			public HRESULT get_Count(out uint32 pCount) mut => VT.get_Count(ref this, out pCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

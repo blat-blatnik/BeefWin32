@@ -14,10 +14,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateForWindow(HWND hwnd, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateForWindow(ref this, hwnd, riid, ppv);
-			}
+			public HRESULT CreateForWindow(HWND hwnd, in Guid riid, void** ppv) mut => VT.CreateForWindow(ref this, hwnd, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -31,10 +29,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut
-			{
-				return VT.GetForWindow(ref this, hwnd, riid, ppv);
-			}
+			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut => VT.GetForWindow(ref this, hwnd, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -48,10 +44,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateForWindow(HWND hwnd, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateForWindow(ref this, hwnd, riid, ppv);
-			}
+			public HRESULT CreateForWindow(HWND hwnd, in Guid riid, void** ppv) mut => VT.CreateForWindow(ref this, hwnd, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{

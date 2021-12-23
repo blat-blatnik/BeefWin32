@@ -5149,10 +5149,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPasswordCredentials(PWSTR pluginInput, out PWSTR domainName, out PWSTR username, out PWSTR password) mut
-			{
-				return VT.GetPasswordCredentials(ref this, pluginInput, out domainName, out username, out password);
-			}
+			public HRESULT GetPasswordCredentials(PWSTR pluginInput, out PWSTR domainName, out PWSTR username, out PWSTR password) mut => VT.GetPasswordCredentials(ref this, pluginInput, out domainName, out username, out password);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

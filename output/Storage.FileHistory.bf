@@ -128,14 +128,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStringProperty(FH_TARGET_PROPERTY_TYPE PropertyType, out BSTR PropertyValue) mut
-			{
-				return VT.GetStringProperty(ref this, PropertyType, out PropertyValue);
-			}
-			public HRESULT GetNumericalProperty(FH_TARGET_PROPERTY_TYPE PropertyType, out uint64 PropertyValue) mut
-			{
-				return VT.GetNumericalProperty(ref this, PropertyType, out PropertyValue);
-			}
+			public HRESULT GetStringProperty(FH_TARGET_PROPERTY_TYPE PropertyType, out BSTR PropertyValue) mut => VT.GetStringProperty(ref this, PropertyType, out PropertyValue);
+			public HRESULT GetNumericalProperty(FH_TARGET_PROPERTY_TYPE PropertyType, out uint64 PropertyValue) mut => VT.GetNumericalProperty(ref this, PropertyType, out PropertyValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -150,14 +145,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveToNextItem() mut
-			{
-				return VT.MoveToNextItem(ref this);
-			}
-			public HRESULT GetItem(out BSTR Item) mut
-			{
-				return VT.GetItem(ref this, out Item);
-			}
+			public HRESULT MoveToNextItem() mut => VT.MoveToNextItem(ref this);
+			public HRESULT GetItem(out BSTR Item) mut => VT.GetItem(ref this, out Item);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -172,62 +162,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LoadConfiguration() mut
-			{
-				return VT.LoadConfiguration(ref this);
-			}
-			public HRESULT CreateDefaultConfiguration(BOOL OverwriteIfExists) mut
-			{
-				return VT.CreateDefaultConfiguration(ref this, OverwriteIfExists);
-			}
-			public HRESULT SaveConfiguration() mut
-			{
-				return VT.SaveConfiguration(ref this);
-			}
-			public HRESULT AddRemoveExcludeRule(BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) mut
-			{
-				return VT.AddRemoveExcludeRule(ref this, Add, Category, Item);
-			}
-			public HRESULT GetIncludeExcludeRules(BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, out IFhScopeIterator* Iterator) mut
-			{
-				return VT.GetIncludeExcludeRules(ref this, Include, Category, out Iterator);
-			}
-			public HRESULT GetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, out uint64 PolicyValue) mut
-			{
-				return VT.GetLocalPolicy(ref this, LocalPolicyType, out PolicyValue);
-			}
-			public HRESULT SetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) mut
-			{
-				return VT.SetLocalPolicy(ref this, LocalPolicyType, PolicyValue);
-			}
-			public HRESULT GetBackupStatus(out FH_BACKUP_STATUS BackupStatus) mut
-			{
-				return VT.GetBackupStatus(ref this, out BackupStatus);
-			}
-			public HRESULT SetBackupStatus(FH_BACKUP_STATUS BackupStatus) mut
-			{
-				return VT.SetBackupStatus(ref this, BackupStatus);
-			}
-			public HRESULT GetDefaultTarget(out IFhTarget* DefaultTarget) mut
-			{
-				return VT.GetDefaultTarget(ref this, out DefaultTarget);
-			}
-			public HRESULT ValidateTarget(BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) mut
-			{
-				return VT.ValidateTarget(ref this, TargetUrl, out ValidationResult);
-			}
-			public HRESULT ProvisionAndSetNewTarget(BSTR TargetUrl, BSTR TargetName) mut
-			{
-				return VT.ProvisionAndSetNewTarget(ref this, TargetUrl, TargetName);
-			}
-			public HRESULT ChangeDefaultTargetRecommendation(BOOL Recommend) mut
-			{
-				return VT.ChangeDefaultTargetRecommendation(ref this, Recommend);
-			}
-			public HRESULT QueryProtectionStatus(out uint32 ProtectionState, out BSTR ProtectedUntilTime) mut
-			{
-				return VT.QueryProtectionStatus(ref this, out ProtectionState, out ProtectedUntilTime);
-			}
+			public HRESULT LoadConfiguration() mut => VT.LoadConfiguration(ref this);
+			public HRESULT CreateDefaultConfiguration(BOOL OverwriteIfExists) mut => VT.CreateDefaultConfiguration(ref this, OverwriteIfExists);
+			public HRESULT SaveConfiguration() mut => VT.SaveConfiguration(ref this);
+			public HRESULT AddRemoveExcludeRule(BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) mut => VT.AddRemoveExcludeRule(ref this, Add, Category, Item);
+			public HRESULT GetIncludeExcludeRules(BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, out IFhScopeIterator* Iterator) mut => VT.GetIncludeExcludeRules(ref this, Include, Category, out Iterator);
+			public HRESULT GetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, out uint64 PolicyValue) mut => VT.GetLocalPolicy(ref this, LocalPolicyType, out PolicyValue);
+			public HRESULT SetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) mut => VT.SetLocalPolicy(ref this, LocalPolicyType, PolicyValue);
+			public HRESULT GetBackupStatus(out FH_BACKUP_STATUS BackupStatus) mut => VT.GetBackupStatus(ref this, out BackupStatus);
+			public HRESULT SetBackupStatus(FH_BACKUP_STATUS BackupStatus) mut => VT.SetBackupStatus(ref this, BackupStatus);
+			public HRESULT GetDefaultTarget(out IFhTarget* DefaultTarget) mut => VT.GetDefaultTarget(ref this, out DefaultTarget);
+			public HRESULT ValidateTarget(BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) mut => VT.ValidateTarget(ref this, TargetUrl, out ValidationResult);
+			public HRESULT ProvisionAndSetNewTarget(BSTR TargetUrl, BSTR TargetName) mut => VT.ProvisionAndSetNewTarget(ref this, TargetUrl, TargetName);
+			public HRESULT ChangeDefaultTargetRecommendation(BOOL Recommend) mut => VT.ChangeDefaultTargetRecommendation(ref this, Recommend);
+			public HRESULT QueryProtectionStatus(out uint32 ProtectionState, out BSTR ProtectedUntilTime) mut => VT.QueryProtectionStatus(ref this, out ProtectionState, out ProtectedUntilTime);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -254,26 +203,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ValidateTarget(BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) mut
-			{
-				return VT.ValidateTarget(ref this, TargetUrl, out ValidationResult);
-			}
-			public HRESULT ScanTargetForConfigurations(BSTR TargetUrl) mut
-			{
-				return VT.ScanTargetForConfigurations(ref this, TargetUrl);
-			}
-			public HRESULT GetConfigurationDetails(uint32 Index, out BSTR UserName, out BSTR PcName, out FILETIME BackupTime) mut
-			{
-				return VT.GetConfigurationDetails(ref this, Index, out UserName, out PcName, out BackupTime);
-			}
-			public HRESULT SelectConfiguration(uint32 Index) mut
-			{
-				return VT.SelectConfiguration(ref this, Index);
-			}
-			public HRESULT PerformReassociation(BOOL OverwriteIfExists) mut
-			{
-				return VT.PerformReassociation(ref this, OverwriteIfExists);
-			}
+			public HRESULT ValidateTarget(BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) mut => VT.ValidateTarget(ref this, TargetUrl, out ValidationResult);
+			public HRESULT ScanTargetForConfigurations(BSTR TargetUrl) mut => VT.ScanTargetForConfigurations(ref this, TargetUrl);
+			public HRESULT GetConfigurationDetails(uint32 Index, out BSTR UserName, out BSTR PcName, out FILETIME BackupTime) mut => VT.GetConfigurationDetails(ref this, Index, out UserName, out PcName, out BackupTime);
+			public HRESULT SelectConfiguration(uint32 Index) mut => VT.SelectConfiguration(ref this, Index);
+			public HRESULT PerformReassociation(BOOL OverwriteIfExists) mut => VT.PerformReassociation(ref this, OverwriteIfExists);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

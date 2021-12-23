@@ -982,10 +982,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetNotify(ref IAMWMBufferPassCallback pCallback) mut
-			{
-				return VT.SetNotify(ref this, ref pCallback);
-			}
+			public HRESULT SetNotify(ref IAMWMBufferPassCallback pCallback) mut => VT.SetNotify(ref this, ref pCallback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -999,10 +997,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Notify(ref INSSBuffer3 pNSSBuffer3, ref IPin pPin, ref int64 prtStart, ref int64 prtEnd) mut
-			{
-				return VT.Notify(ref this, ref pNSSBuffer3, ref pPin, ref prtStart, ref prtEnd);
-			}
+			public HRESULT Notify(ref INSSBuffer3 pNSSBuffer3, ref IPin pPin, ref int64 prtStart, ref int64 prtEnd) mut => VT.Notify(ref this, ref pNSSBuffer3, ref pPin, ref prtStart, ref prtEnd);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1016,26 +1012,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLength(out uint32 pdwLength) mut
-			{
-				return VT.GetLength(ref this, out pdwLength);
-			}
-			public HRESULT SetLength(uint32 dwLength) mut
-			{
-				return VT.SetLength(ref this, dwLength);
-			}
-			public HRESULT GetMaxLength(out uint32 pdwLength) mut
-			{
-				return VT.GetMaxLength(ref this, out pdwLength);
-			}
-			public HRESULT GetBuffer(out uint8* ppdwBuffer) mut
-			{
-				return VT.GetBuffer(ref this, out ppdwBuffer);
-			}
-			public HRESULT GetBufferAndLength(out uint8* ppdwBuffer, out uint32 pdwLength) mut
-			{
-				return VT.GetBufferAndLength(ref this, out ppdwBuffer, out pdwLength);
-			}
+			public HRESULT GetLength(out uint32 pdwLength) mut => VT.GetLength(ref this, out pdwLength);
+			public HRESULT SetLength(uint32 dwLength) mut => VT.SetLength(ref this, dwLength);
+			public HRESULT GetMaxLength(out uint32 pdwLength) mut => VT.GetMaxLength(ref this, out pdwLength);
+			public HRESULT GetBuffer(out uint8* ppdwBuffer) mut => VT.GetBuffer(ref this, out ppdwBuffer);
+			public HRESULT GetBufferAndLength(out uint8* ppdwBuffer, out uint32 pdwLength) mut => VT.GetBufferAndLength(ref this, out ppdwBuffer, out pdwLength);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1053,14 +1035,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSampleProperties(uint32 cbProperties, out uint8 pbProperties) mut
-			{
-				return VT.GetSampleProperties(ref this, cbProperties, out pbProperties);
-			}
-			public HRESULT SetSampleProperties(uint32 cbProperties, ref uint8 pbProperties) mut
-			{
-				return VT.SetSampleProperties(ref this, cbProperties, ref pbProperties);
-			}
+			public HRESULT GetSampleProperties(uint32 cbProperties, out uint8 pbProperties) mut => VT.GetSampleProperties(ref this, cbProperties, out pbProperties);
+			public HRESULT SetSampleProperties(uint32 cbProperties, ref uint8 pbProperties) mut => VT.SetSampleProperties(ref this, cbProperties, ref pbProperties);
+
 			[CRepr]
 			public struct VTable : INSSBuffer.VTable
 			{
@@ -1075,14 +1052,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProperty(Guid guidBufferProperty, void* pvBufferProperty, uint32 dwBufferPropertySize) mut
-			{
-				return VT.SetProperty(ref this, guidBufferProperty, pvBufferProperty, dwBufferPropertySize);
-			}
-			public HRESULT GetProperty(Guid guidBufferProperty, void* pvBufferProperty, out uint32 pdwBufferPropertySize) mut
-			{
-				return VT.GetProperty(ref this, guidBufferProperty, pvBufferProperty, out pdwBufferPropertySize);
-			}
+			public HRESULT SetProperty(Guid guidBufferProperty, void* pvBufferProperty, uint32 dwBufferPropertySize) mut => VT.SetProperty(ref this, guidBufferProperty, pvBufferProperty, dwBufferPropertySize);
+			public HRESULT GetProperty(Guid guidBufferProperty, void* pvBufferProperty, out uint32 pdwBufferPropertySize) mut => VT.GetProperty(ref this, guidBufferProperty, pvBufferProperty, out pdwBufferPropertySize);
+
 			[CRepr]
 			public struct VTable : INSSBuffer2.VTable
 			{
@@ -1097,14 +1069,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyCount(out uint32 pcBufferProperties) mut
-			{
-				return VT.GetPropertyCount(ref this, out pcBufferProperties);
-			}
-			public HRESULT GetPropertyByIndex(uint32 dwBufferPropertyIndex, out Guid pguidBufferProperty, void* pvBufferProperty, out uint32 pdwBufferPropertySize) mut
-			{
-				return VT.GetPropertyByIndex(ref this, dwBufferPropertyIndex, out pguidBufferProperty, pvBufferProperty, out pdwBufferPropertySize);
-			}
+			public HRESULT GetPropertyCount(out uint32 pcBufferProperties) mut => VT.GetPropertyCount(ref this, out pcBufferProperties);
+			public HRESULT GetPropertyByIndex(uint32 dwBufferPropertyIndex, out Guid pguidBufferProperty, void* pvBufferProperty, out uint32 pdwBufferPropertySize) mut => VT.GetPropertyByIndex(ref this, dwBufferPropertyIndex, out pguidBufferProperty, pvBufferProperty, out pdwBufferPropertySize);
+
 			[CRepr]
 			public struct VTable : INSSBuffer3.VTable
 			{
@@ -1119,14 +1086,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AllocateBuffer(uint32 dwMaxBufferSize, out INSSBuffer* ppBuffer) mut
-			{
-				return VT.AllocateBuffer(ref this, dwMaxBufferSize, out ppBuffer);
-			}
-			public HRESULT AllocatePageSizeBuffer(uint32 dwMaxBufferSize, out INSSBuffer* ppBuffer) mut
-			{
-				return VT.AllocatePageSizeBuffer(ref this, dwMaxBufferSize, out ppBuffer);
-			}
+			public HRESULT AllocateBuffer(uint32 dwMaxBufferSize, out INSSBuffer* ppBuffer) mut => VT.AllocateBuffer(ref this, dwMaxBufferSize, out ppBuffer);
+			public HRESULT AllocatePageSizeBuffer(uint32 dwMaxBufferSize, out INSSBuffer* ppBuffer) mut => VT.AllocatePageSizeBuffer(ref this, dwMaxBufferSize, out ppBuffer);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1141,18 +1103,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetType(out Guid pguidType) mut
-			{
-				return VT.ComGetType(ref this, out pguidType);
-			}
-			public HRESULT GetMediaType(out WM_MEDIA_TYPE pType, out uint32 pcbType) mut
-			{
-				return VT.GetMediaType(ref this, out pType, out pcbType);
-			}
-			public HRESULT SetMediaType(ref WM_MEDIA_TYPE pType) mut
-			{
-				return VT.SetMediaType(ref this, ref pType);
-			}
+			public HRESULT ComGetType(out Guid pguidType) mut => VT.ComGetType(ref this, out pguidType);
+			public HRESULT GetMediaType(out WM_MEDIA_TYPE pType, out uint32 pcbType) mut => VT.GetMediaType(ref this, out pType, out pcbType);
+			public HRESULT SetMediaType(ref WM_MEDIA_TYPE pType) mut => VT.SetMediaType(ref this, ref pType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1168,22 +1122,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMaxKeyFrameSpacing(out int64 pllTime) mut
-			{
-				return VT.GetMaxKeyFrameSpacing(ref this, out pllTime);
-			}
-			public HRESULT SetMaxKeyFrameSpacing(int64 llTime) mut
-			{
-				return VT.SetMaxKeyFrameSpacing(ref this, llTime);
-			}
-			public HRESULT GetQuality(out uint32 pdwQuality) mut
-			{
-				return VT.GetQuality(ref this, out pdwQuality);
-			}
-			public HRESULT SetQuality(uint32 dwQuality) mut
-			{
-				return VT.SetQuality(ref this, dwQuality);
-			}
+			public HRESULT GetMaxKeyFrameSpacing(out int64 pllTime) mut => VT.GetMaxKeyFrameSpacing(ref this, out pllTime);
+			public HRESULT SetMaxKeyFrameSpacing(int64 llTime) mut => VT.SetMaxKeyFrameSpacing(ref this, llTime);
+			public HRESULT GetQuality(out uint32 pdwQuality) mut => VT.GetQuality(ref this, out pdwQuality);
+			public HRESULT SetQuality(uint32 dwQuality) mut => VT.SetQuality(ref this, dwQuality);
+
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
@@ -1200,58 +1143,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProfileByID(in Guid guidProfile) mut
-			{
-				return VT.SetProfileByID(ref this, guidProfile);
-			}
-			public HRESULT SetProfile(ref IWMProfile pProfile) mut
-			{
-				return VT.SetProfile(ref this, ref pProfile);
-			}
-			public HRESULT SetOutputFilename(PWSTR pwszFilename) mut
-			{
-				return VT.SetOutputFilename(ref this, pwszFilename);
-			}
-			public HRESULT GetInputCount(out uint32 pcInputs) mut
-			{
-				return VT.GetInputCount(ref this, out pcInputs);
-			}
-			public HRESULT GetInputProps(uint32 dwInputNum, out IWMInputMediaProps* ppInput) mut
-			{
-				return VT.GetInputProps(ref this, dwInputNum, out ppInput);
-			}
-			public HRESULT SetInputProps(uint32 dwInputNum, ref IWMInputMediaProps pInput) mut
-			{
-				return VT.SetInputProps(ref this, dwInputNum, ref pInput);
-			}
-			public HRESULT GetInputFormatCount(uint32 dwInputNumber, out uint32 pcFormats) mut
-			{
-				return VT.GetInputFormatCount(ref this, dwInputNumber, out pcFormats);
-			}
-			public HRESULT GetInputFormat(uint32 dwInputNumber, uint32 dwFormatNumber, out IWMInputMediaProps* pProps) mut
-			{
-				return VT.GetInputFormat(ref this, dwInputNumber, dwFormatNumber, out pProps);
-			}
-			public HRESULT BeginWriting() mut
-			{
-				return VT.BeginWriting(ref this);
-			}
-			public HRESULT EndWriting() mut
-			{
-				return VT.EndWriting(ref this);
-			}
-			public HRESULT AllocateSample(uint32 dwSampleSize, out INSSBuffer* ppSample) mut
-			{
-				return VT.AllocateSample(ref this, dwSampleSize, out ppSample);
-			}
-			public HRESULT WriteSample(uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, ref INSSBuffer pSample) mut
-			{
-				return VT.WriteSample(ref this, dwInputNum, cnsSampleTime, dwFlags, ref pSample);
-			}
-			public HRESULT Flush() mut
-			{
-				return VT.Flush(ref this);
-			}
+			public HRESULT SetProfileByID(in Guid guidProfile) mut => VT.SetProfileByID(ref this, guidProfile);
+			public HRESULT SetProfile(ref IWMProfile pProfile) mut => VT.SetProfile(ref this, ref pProfile);
+			public HRESULT SetOutputFilename(PWSTR pwszFilename) mut => VT.SetOutputFilename(ref this, pwszFilename);
+			public HRESULT GetInputCount(out uint32 pcInputs) mut => VT.GetInputCount(ref this, out pcInputs);
+			public HRESULT GetInputProps(uint32 dwInputNum, out IWMInputMediaProps* ppInput) mut => VT.GetInputProps(ref this, dwInputNum, out ppInput);
+			public HRESULT SetInputProps(uint32 dwInputNum, ref IWMInputMediaProps pInput) mut => VT.SetInputProps(ref this, dwInputNum, ref pInput);
+			public HRESULT GetInputFormatCount(uint32 dwInputNumber, out uint32 pcFormats) mut => VT.GetInputFormatCount(ref this, dwInputNumber, out pcFormats);
+			public HRESULT GetInputFormat(uint32 dwInputNumber, uint32 dwFormatNumber, out IWMInputMediaProps* pProps) mut => VT.GetInputFormat(ref this, dwInputNumber, dwFormatNumber, out pProps);
+			public HRESULT BeginWriting() mut => VT.BeginWriting(ref this);
+			public HRESULT EndWriting() mut => VT.EndWriting(ref this);
+			public HRESULT AllocateSample(uint32 dwSampleSize, out INSSBuffer* ppSample) mut => VT.AllocateSample(ref this, dwSampleSize, out ppSample);
+			public HRESULT WriteSample(uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, ref INSSBuffer pSample) mut => VT.WriteSample(ref this, dwInputNum, cnsSampleTime, dwFlags, ref pSample);
+			public HRESULT Flush() mut => VT.Flush(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1277,22 +1182,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GenerateKeySeed(char16* pwszKeySeed, out uint32 pcwchLength) mut
-			{
-				return VT.GenerateKeySeed(ref this, pwszKeySeed, out pcwchLength);
-			}
-			public HRESULT GenerateKeyID(char16* pwszKeyID, out uint32 pcwchLength) mut
-			{
-				return VT.GenerateKeyID(ref this, pwszKeyID, out pcwchLength);
-			}
-			public HRESULT GenerateSigningKeyPair(char16* pwszPrivKey, out uint32 pcwchPrivKeyLength, char16* pwszPubKey, out uint32 pcwchPubKeyLength) mut
-			{
-				return VT.GenerateSigningKeyPair(ref this, pwszPrivKey, out pcwchPrivKeyLength, pwszPubKey, out pcwchPubKeyLength);
-			}
-			public HRESULT SetDRMAttribute(uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
-			{
-				return VT.SetDRMAttribute(ref this, wStreamNum, pszName, Type, pValue, cbLength);
-			}
+			public HRESULT GenerateKeySeed(char16* pwszKeySeed, out uint32 pcwchLength) mut => VT.GenerateKeySeed(ref this, pwszKeySeed, out pcwchLength);
+			public HRESULT GenerateKeyID(char16* pwszKeyID, out uint32 pcwchLength) mut => VT.GenerateKeyID(ref this, pwszKeyID, out pcwchLength);
+			public HRESULT GenerateSigningKeyPair(char16* pwszPrivKey, out uint32 pcwchPrivKeyLength, char16* pwszPubKey, out uint32 pcwchPubKeyLength) mut => VT.GenerateSigningKeyPair(ref this, pwszPrivKey, out pcwchPrivKeyLength, pwszPubKey, out pcwchPubKeyLength);
+			public HRESULT SetDRMAttribute(uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut => VT.SetDRMAttribute(ref this, wStreamNum, pszName, Type, pValue, cbLength);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1309,10 +1203,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetWMDRMNetEncryption(BOOL fSamplesEncrypted, ref uint8 pbKeyID, uint32 cbKeyID) mut
-			{
-				return VT.SetWMDRMNetEncryption(ref this, fSamplesEncrypted, ref pbKeyID, cbKeyID);
-			}
+			public HRESULT SetWMDRMNetEncryption(BOOL fSamplesEncrypted, ref uint8 pbKeyID, uint32 cbKeyID) mut => VT.SetWMDRMNetEncryption(ref this, fSamplesEncrypted, ref pbKeyID, cbKeyID);
+
 			[CRepr]
 			public struct VTable : IWMDRMWriter.VTable
 			{
@@ -1326,10 +1218,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProtectStreamSamples(ref WMDRM_IMPORT_INIT_STRUCT pImportInitStruct) mut
-			{
-				return VT.SetProtectStreamSamples(ref this, ref pImportInitStruct);
-			}
+			public HRESULT SetProtectStreamSamples(ref WMDRM_IMPORT_INIT_STRUCT pImportInitStruct) mut => VT.SetProtectStreamSamples(ref this, ref pImportInitStruct);
+
 			[CRepr]
 			public struct VTable : IWMDRMWriter2.VTable
 			{
@@ -1343,14 +1233,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConnectionName(char16* pwszName, out uint16 pcchName) mut
-			{
-				return VT.GetConnectionName(ref this, pwszName, out pcchName);
-			}
-			public HRESULT GetGroupName(char16* pwszName, out uint16 pcchName) mut
-			{
-				return VT.GetGroupName(ref this, pwszName, out pcchName);
-			}
+			public HRESULT GetConnectionName(char16* pwszName, out uint16 pcchName) mut => VT.GetConnectionName(ref this, pwszName, out pcchName);
+			public HRESULT GetGroupName(char16* pwszName, out uint16 pcchName) mut => VT.GetGroupName(ref this, pwszName, out pcchName);
+
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
@@ -1365,30 +1250,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyCount(ref uint32 pdwCount) mut
-			{
-				return VT.GetPropertyCount(ref this, ref pdwCount);
-			}
-			public HRESULT GetPropertyByName(PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut
-			{
-				return VT.GetPropertyByName(ref this, pszName, out pType, pValue, out pdwSize);
-			}
-			public HRESULT SetProperty(PWSTR pszName, WMT_ATTR_DATATYPE pType, ref uint8 pValue, uint32 dwSize) mut
-			{
-				return VT.SetProperty(ref this, pszName, pType, ref pValue, dwSize);
-			}
-			public HRESULT GetPropertyByIndex(uint32 dwIndex, char16* pszName, out uint32 pdwNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut
-			{
-				return VT.GetPropertyByIndex(ref this, dwIndex, pszName, out pdwNameLen, out pType, pValue, out pdwSize);
-			}
-			public HRESULT CopyPropertiesFrom(ref IWMPropertyVault pIWMPropertyVault) mut
-			{
-				return VT.CopyPropertiesFrom(ref this, ref pIWMPropertyVault);
-			}
-			public HRESULT Clear() mut
-			{
-				return VT.Clear(ref this);
-			}
+			public HRESULT GetPropertyCount(ref uint32 pdwCount) mut => VT.GetPropertyCount(ref this, ref pdwCount);
+			public HRESULT GetPropertyByName(PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut => VT.GetPropertyByName(ref this, pszName, out pType, pValue, out pdwSize);
+			public HRESULT SetProperty(PWSTR pszName, WMT_ATTR_DATATYPE pType, ref uint8 pValue, uint32 dwSize) mut => VT.SetProperty(ref this, pszName, pType, ref pValue, dwSize);
+			public HRESULT GetPropertyByIndex(uint32 dwIndex, char16* pszName, out uint32 pdwNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut => VT.GetPropertyByIndex(ref this, dwIndex, pszName, out pdwNameLen, out pType, pValue, out pdwSize);
+			public HRESULT CopyPropertiesFrom(ref IWMPropertyVault pIWMPropertyVault) mut => VT.CopyPropertiesFrom(ref this, ref pIWMPropertyVault);
+			public HRESULT Clear() mut => VT.Clear(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1407,10 +1275,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperty(PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut
-			{
-				return VT.GetProperty(ref this, pszName, out pType, pValue, out pdwSize);
-			}
+			public HRESULT GetProperty(PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut => VT.GetProperty(ref this, pszName, out pType, pValue, out pdwSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1424,50 +1290,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(PWSTR pwszURL, ref IWMReaderCallback pCallback, void* pvContext) mut
-			{
-				return VT.Open(ref this, pwszURL, ref pCallback, pvContext);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT GetOutputCount(out uint32 pcOutputs) mut
-			{
-				return VT.GetOutputCount(ref this, out pcOutputs);
-			}
-			public HRESULT GetOutputProps(uint32 dwOutputNum, out IWMOutputMediaProps* ppOutput) mut
-			{
-				return VT.GetOutputProps(ref this, dwOutputNum, out ppOutput);
-			}
-			public HRESULT SetOutputProps(uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) mut
-			{
-				return VT.SetOutputProps(ref this, dwOutputNum, ref pOutput);
-			}
-			public HRESULT GetOutputFormatCount(uint32 dwOutputNumber, out uint32 pcFormats) mut
-			{
-				return VT.GetOutputFormatCount(ref this, dwOutputNumber, out pcFormats);
-			}
-			public HRESULT GetOutputFormat(uint32 dwOutputNumber, uint32 dwFormatNumber, out IWMOutputMediaProps* ppProps) mut
-			{
-				return VT.GetOutputFormat(ref this, dwOutputNumber, dwFormatNumber, out ppProps);
-			}
-			public HRESULT Start(uint64 cnsStart, uint64 cnsDuration, float fRate, void* pvContext) mut
-			{
-				return VT.Start(ref this, cnsStart, cnsDuration, fRate, pvContext);
-			}
-			public HRESULT Stop() mut
-			{
-				return VT.Stop(ref this);
-			}
-			public HRESULT Pause() mut
-			{
-				return VT.Pause(ref this);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
+			public HRESULT Open(PWSTR pwszURL, ref IWMReaderCallback pCallback, void* pvContext) mut => VT.Open(ref this, pwszURL, ref pCallback, pvContext);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT GetOutputCount(out uint32 pcOutputs) mut => VT.GetOutputCount(ref this, out pcOutputs);
+			public HRESULT GetOutputProps(uint32 dwOutputNum, out IWMOutputMediaProps* ppOutput) mut => VT.GetOutputProps(ref this, dwOutputNum, out ppOutput);
+			public HRESULT SetOutputProps(uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) mut => VT.SetOutputProps(ref this, dwOutputNum, ref pOutput);
+			public HRESULT GetOutputFormatCount(uint32 dwOutputNumber, out uint32 pcFormats) mut => VT.GetOutputFormatCount(ref this, dwOutputNumber, out pcFormats);
+			public HRESULT GetOutputFormat(uint32 dwOutputNumber, uint32 dwFormatNumber, out IWMOutputMediaProps* ppProps) mut => VT.GetOutputFormat(ref this, dwOutputNumber, dwFormatNumber, out ppProps);
+			public HRESULT Start(uint64 cnsStart, uint64 cnsDuration, float fRate, void* pvContext) mut => VT.Start(ref this, cnsStart, cnsDuration, fRate, pvContext);
+			public HRESULT Stop() mut => VT.Stop(ref this);
+			public HRESULT Pause() mut => VT.Pause(ref this);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1491,90 +1325,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(PWSTR pwszFilename) mut
-			{
-				return VT.Open(ref this, pwszFilename);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT SetRange(uint64 cnsStartTime, int64 cnsDuration) mut
-			{
-				return VT.SetRange(ref this, cnsStartTime, cnsDuration);
-			}
-			public HRESULT SetRangeByFrame(uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead) mut
-			{
-				return VT.SetRangeByFrame(ref this, wStreamNum, qwFrameNumber, cFramesToRead);
-			}
-			public HRESULT GetNextSample(uint16 wStreamNum, out INSSBuffer* ppSample, out uint64 pcnsSampleTime, out uint64 pcnsDuration, out uint32 pdwFlags, out uint32 pdwOutputNum, out uint16 pwStreamNum) mut
-			{
-				return VT.GetNextSample(ref this, wStreamNum, out ppSample, out pcnsSampleTime, out pcnsDuration, out pdwFlags, out pdwOutputNum, out pwStreamNum);
-			}
-			public HRESULT SetStreamsSelected(uint16 cStreamCount, ref uint16 pwStreamNumbers, ref WMT_STREAM_SELECTION pSelections) mut
-			{
-				return VT.SetStreamsSelected(ref this, cStreamCount, ref pwStreamNumbers, ref pSelections);
-			}
-			public HRESULT GetStreamSelected(uint16 wStreamNum, out WMT_STREAM_SELECTION pSelection) mut
-			{
-				return VT.GetStreamSelected(ref this, wStreamNum, out pSelection);
-			}
-			public HRESULT SetReadStreamSamples(uint16 wStreamNum, BOOL fCompressed) mut
-			{
-				return VT.SetReadStreamSamples(ref this, wStreamNum, fCompressed);
-			}
-			public HRESULT GetReadStreamSamples(uint16 wStreamNum, out BOOL pfCompressed) mut
-			{
-				return VT.GetReadStreamSamples(ref this, wStreamNum, out pfCompressed);
-			}
-			public HRESULT GetOutputSetting(uint32 dwOutputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetOutputSetting(ref this, dwOutputNum, pszName, out pType, pValue, out pcbLength);
-			}
-			public HRESULT SetOutputSetting(uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
-			{
-				return VT.SetOutputSetting(ref this, dwOutputNum, pszName, Type, pValue, cbLength);
-			}
-			public HRESULT GetOutputCount(out uint32 pcOutputs) mut
-			{
-				return VT.GetOutputCount(ref this, out pcOutputs);
-			}
-			public HRESULT GetOutputProps(uint32 dwOutputNum, out IWMOutputMediaProps* ppOutput) mut
-			{
-				return VT.GetOutputProps(ref this, dwOutputNum, out ppOutput);
-			}
-			public HRESULT SetOutputProps(uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) mut
-			{
-				return VT.SetOutputProps(ref this, dwOutputNum, ref pOutput);
-			}
-			public HRESULT GetOutputFormatCount(uint32 dwOutputNum, out uint32 pcFormats) mut
-			{
-				return VT.GetOutputFormatCount(ref this, dwOutputNum, out pcFormats);
-			}
-			public HRESULT GetOutputFormat(uint32 dwOutputNum, uint32 dwFormatNum, out IWMOutputMediaProps* ppProps) mut
-			{
-				return VT.GetOutputFormat(ref this, dwOutputNum, dwFormatNum, out ppProps);
-			}
-			public HRESULT GetOutputNumberForStream(uint16 wStreamNum, out uint32 pdwOutputNum) mut
-			{
-				return VT.GetOutputNumberForStream(ref this, wStreamNum, out pdwOutputNum);
-			}
-			public HRESULT GetStreamNumberForOutput(uint32 dwOutputNum, out uint16 pwStreamNum) mut
-			{
-				return VT.GetStreamNumberForOutput(ref this, dwOutputNum, out pwStreamNum);
-			}
-			public HRESULT GetMaxOutputSampleSize(uint32 dwOutput, out uint32 pcbMax) mut
-			{
-				return VT.GetMaxOutputSampleSize(ref this, dwOutput, out pcbMax);
-			}
-			public HRESULT GetMaxStreamSampleSize(uint16 wStream, out uint32 pcbMax) mut
-			{
-				return VT.GetMaxStreamSampleSize(ref this, wStream, out pcbMax);
-			}
-			public HRESULT OpenStream(ref IStream pStream) mut
-			{
-				return VT.OpenStream(ref this, ref pStream);
-			}
+			public HRESULT Open(PWSTR pwszFilename) mut => VT.Open(ref this, pwszFilename);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT SetRange(uint64 cnsStartTime, int64 cnsDuration) mut => VT.SetRange(ref this, cnsStartTime, cnsDuration);
+			public HRESULT SetRangeByFrame(uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead) mut => VT.SetRangeByFrame(ref this, wStreamNum, qwFrameNumber, cFramesToRead);
+			public HRESULT GetNextSample(uint16 wStreamNum, out INSSBuffer* ppSample, out uint64 pcnsSampleTime, out uint64 pcnsDuration, out uint32 pdwFlags, out uint32 pdwOutputNum, out uint16 pwStreamNum) mut => VT.GetNextSample(ref this, wStreamNum, out ppSample, out pcnsSampleTime, out pcnsDuration, out pdwFlags, out pdwOutputNum, out pwStreamNum);
+			public HRESULT SetStreamsSelected(uint16 cStreamCount, ref uint16 pwStreamNumbers, ref WMT_STREAM_SELECTION pSelections) mut => VT.SetStreamsSelected(ref this, cStreamCount, ref pwStreamNumbers, ref pSelections);
+			public HRESULT GetStreamSelected(uint16 wStreamNum, out WMT_STREAM_SELECTION pSelection) mut => VT.GetStreamSelected(ref this, wStreamNum, out pSelection);
+			public HRESULT SetReadStreamSamples(uint16 wStreamNum, BOOL fCompressed) mut => VT.SetReadStreamSamples(ref this, wStreamNum, fCompressed);
+			public HRESULT GetReadStreamSamples(uint16 wStreamNum, out BOOL pfCompressed) mut => VT.GetReadStreamSamples(ref this, wStreamNum, out pfCompressed);
+			public HRESULT GetOutputSetting(uint32 dwOutputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut => VT.GetOutputSetting(ref this, dwOutputNum, pszName, out pType, pValue, out pcbLength);
+			public HRESULT SetOutputSetting(uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut => VT.SetOutputSetting(ref this, dwOutputNum, pszName, Type, pValue, cbLength);
+			public HRESULT GetOutputCount(out uint32 pcOutputs) mut => VT.GetOutputCount(ref this, out pcOutputs);
+			public HRESULT GetOutputProps(uint32 dwOutputNum, out IWMOutputMediaProps* ppOutput) mut => VT.GetOutputProps(ref this, dwOutputNum, out ppOutput);
+			public HRESULT SetOutputProps(uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) mut => VT.SetOutputProps(ref this, dwOutputNum, ref pOutput);
+			public HRESULT GetOutputFormatCount(uint32 dwOutputNum, out uint32 pcFormats) mut => VT.GetOutputFormatCount(ref this, dwOutputNum, out pcFormats);
+			public HRESULT GetOutputFormat(uint32 dwOutputNum, uint32 dwFormatNum, out IWMOutputMediaProps* ppProps) mut => VT.GetOutputFormat(ref this, dwOutputNum, dwFormatNum, out ppProps);
+			public HRESULT GetOutputNumberForStream(uint16 wStreamNum, out uint32 pdwOutputNum) mut => VT.GetOutputNumberForStream(ref this, wStreamNum, out pdwOutputNum);
+			public HRESULT GetStreamNumberForOutput(uint32 dwOutputNum, out uint16 pwStreamNum) mut => VT.GetStreamNumberForOutput(ref this, dwOutputNum, out pwStreamNum);
+			public HRESULT GetMaxOutputSampleSize(uint32 dwOutput, out uint32 pcbMax) mut => VT.GetMaxOutputSampleSize(ref this, dwOutput, out pcbMax);
+			public HRESULT GetMaxStreamSampleSize(uint16 wStream, out uint32 pcbMax) mut => VT.GetMaxStreamSampleSize(ref this, wStream, out pcbMax);
+			public HRESULT OpenStream(ref IStream pStream) mut => VT.OpenStream(ref this, ref pStream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1608,30 +1380,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRangeByTimecode(uint16 wStreamNum, ref WMT_TIMECODE_EXTENSION_DATA pStart, ref WMT_TIMECODE_EXTENSION_DATA pEnd) mut
-			{
-				return VT.SetRangeByTimecode(ref this, wStreamNum, ref pStart, ref pEnd);
-			}
-			public HRESULT SetRangeByFrameEx(uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead, out uint64 pcnsStartTime) mut
-			{
-				return VT.SetRangeByFrameEx(ref this, wStreamNum, qwFrameNumber, cFramesToRead, out pcnsStartTime);
-			}
-			public HRESULT SetAllocateForOutput(uint32 dwOutputNum, ref IWMReaderAllocatorEx pAllocator) mut
-			{
-				return VT.SetAllocateForOutput(ref this, dwOutputNum, ref pAllocator);
-			}
-			public HRESULT GetAllocateForOutput(uint32 dwOutputNum, out IWMReaderAllocatorEx* ppAllocator) mut
-			{
-				return VT.GetAllocateForOutput(ref this, dwOutputNum, out ppAllocator);
-			}
-			public HRESULT SetAllocateForStream(uint16 wStreamNum, ref IWMReaderAllocatorEx pAllocator) mut
-			{
-				return VT.SetAllocateForStream(ref this, wStreamNum, ref pAllocator);
-			}
-			public HRESULT GetAllocateForStream(uint16 dwSreamNum, out IWMReaderAllocatorEx* ppAllocator) mut
-			{
-				return VT.GetAllocateForStream(ref this, dwSreamNum, out ppAllocator);
-			}
+			public HRESULT SetRangeByTimecode(uint16 wStreamNum, ref WMT_TIMECODE_EXTENSION_DATA pStart, ref WMT_TIMECODE_EXTENSION_DATA pEnd) mut => VT.SetRangeByTimecode(ref this, wStreamNum, ref pStart, ref pEnd);
+			public HRESULT SetRangeByFrameEx(uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead, out uint64 pcnsStartTime) mut => VT.SetRangeByFrameEx(ref this, wStreamNum, qwFrameNumber, cFramesToRead, out pcnsStartTime);
+			public HRESULT SetAllocateForOutput(uint32 dwOutputNum, ref IWMReaderAllocatorEx pAllocator) mut => VT.SetAllocateForOutput(ref this, dwOutputNum, ref pAllocator);
+			public HRESULT GetAllocateForOutput(uint32 dwOutputNum, out IWMReaderAllocatorEx* ppAllocator) mut => VT.GetAllocateForOutput(ref this, dwOutputNum, out ppAllocator);
+			public HRESULT SetAllocateForStream(uint16 wStreamNum, ref IWMReaderAllocatorEx pAllocator) mut => VT.SetAllocateForStream(ref this, wStreamNum, ref pAllocator);
+			public HRESULT GetAllocateForStream(uint16 dwSreamNum, out IWMReaderAllocatorEx* ppAllocator) mut => VT.GetAllocateForStream(ref this, dwSreamNum, out ppAllocator);
+
 			[CRepr]
 			public struct VTable : IWMSyncReader.VTable
 			{
@@ -1650,14 +1405,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamGroupName(char16* pwszName, out uint16 pcchName) mut
-			{
-				return VT.GetStreamGroupName(ref this, pwszName, out pcchName);
-			}
-			public HRESULT GetConnectionName(char16* pwszName, out uint16 pcchName) mut
-			{
-				return VT.GetConnectionName(ref this, pwszName, out pcchName);
-			}
+			public HRESULT GetStreamGroupName(char16* pwszName, out uint16 pcchName) mut => VT.GetStreamGroupName(ref this, pwszName, out pcchName);
+			public HRESULT GetConnectionName(char16* pwszName, out uint16 pcchName) mut => VT.GetConnectionName(ref this, pwszName, out pcchName);
+
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
@@ -1672,10 +1422,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStatus(WMT_STATUS Status, HRESULT hr, WMT_ATTR_DATATYPE dwType, ref uint8 pValue, void* pvContext) mut
-			{
-				return VT.OnStatus(ref this, Status, hr, dwType, ref pValue, pvContext);
-			}
+			public HRESULT OnStatus(WMT_STATUS Status, HRESULT hr, WMT_ATTR_DATATYPE dwType, ref uint8 pValue, void* pvContext) mut => VT.OnStatus(ref this, Status, hr, dwType, ref pValue, pvContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1689,10 +1437,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSample(uint32 dwOutputNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) mut
-			{
-				return VT.OnSample(ref this, dwOutputNum, cnsSampleTime, cnsSampleDuration, dwFlags, ref pSample, pvContext);
-			}
+			public HRESULT OnSample(uint32 dwOutputNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) mut => VT.OnSample(ref this, dwOutputNum, cnsSampleTime, cnsSampleDuration, dwFlags, ref pSample, pvContext);
+
 			[CRepr]
 			public struct VTable : IWMStatusCallback.VTable
 			{
@@ -1706,10 +1452,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AcquireCredentials(PWSTR pwszRealm, PWSTR pwszSite, char16* pwszUser, uint32 cchUser, char16* pwszPassword, uint32 cchPassword, HRESULT hrStatus, out uint32 pdwFlags) mut
-			{
-				return VT.AcquireCredentials(ref this, pwszRealm, pwszSite, pwszUser, cchUser, pwszPassword, cchPassword, hrStatus, out pdwFlags);
-			}
+			public HRESULT AcquireCredentials(PWSTR pwszRealm, PWSTR pwszSite, char16* pwszUser, uint32 cchUser, char16* pwszPassword, uint32 cchPassword, HRESULT hrStatus, out uint32 pdwFlags) mut => VT.AcquireCredentials(ref this, pwszRealm, pwszSite, pwszUser, cchUser, pwszPassword, cchPassword, hrStatus, out pdwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1723,18 +1467,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(PWSTR pwszFilename) mut
-			{
-				return VT.Open(ref this, pwszFilename);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT Flush() mut
-			{
-				return VT.Flush(ref this);
-			}
+			public HRESULT Open(PWSTR pwszFilename) mut => VT.Open(ref this, pwszFilename);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT Flush() mut => VT.Flush(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1750,10 +1486,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenEx(PWSTR pwszFilename, uint32 dwDesiredAccess, uint32 dwShareMode) mut
-			{
-				return VT.OpenEx(ref this, pwszFilename, dwDesiredAccess, dwShareMode);
-			}
+			public HRESULT OpenEx(PWSTR pwszFilename, uint32 dwDesiredAccess, uint32 dwShareMode) mut => VT.OpenEx(ref this, pwszFilename, dwDesiredAccess, dwShareMode);
+
 			[CRepr]
 			public struct VTable : IWMMetadataEditor.VTable
 			{
@@ -1767,10 +1501,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDRMProperty(PWSTR pwstrName, out WMT_ATTR_DATATYPE pdwType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetDRMProperty(ref this, pwstrName, out pdwType, pValue, out pcbLength);
-			}
+			public HRESULT GetDRMProperty(PWSTR pwstrName, out WMT_ATTR_DATATYPE pdwType, uint8* pValue, out uint16 pcbLength) mut => VT.GetDRMProperty(ref this, pwstrName, out pdwType, pValue, out pcbLength);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1784,54 +1516,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAttributeCount(uint16 wStreamNum, out uint16 pcAttributes) mut
-			{
-				return VT.GetAttributeCount(ref this, wStreamNum, out pcAttributes);
-			}
-			public HRESULT GetAttributeByIndex(uint16 wIndex, out uint16 pwStreamNum, char16* pwszName, out uint16 pcchNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetAttributeByIndex(ref this, wIndex, out pwStreamNum, pwszName, out pcchNameLen, out pType, pValue, out pcbLength);
-			}
-			public HRESULT GetAttributeByName(out uint16 pwStreamNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetAttributeByName(ref this, out pwStreamNum, pszName, out pType, pValue, out pcbLength);
-			}
-			public HRESULT SetAttribute(uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
-			{
-				return VT.SetAttribute(ref this, wStreamNum, pszName, Type, pValue, cbLength);
-			}
-			public HRESULT GetMarkerCount(out uint16 pcMarkers) mut
-			{
-				return VT.GetMarkerCount(ref this, out pcMarkers);
-			}
-			public HRESULT GetMarker(uint16 wIndex, char16* pwszMarkerName, out uint16 pcchMarkerNameLen, out uint64 pcnsMarkerTime) mut
-			{
-				return VT.GetMarker(ref this, wIndex, pwszMarkerName, out pcchMarkerNameLen, out pcnsMarkerTime);
-			}
-			public HRESULT AddMarker(PWSTR pwszMarkerName, uint64 cnsMarkerTime) mut
-			{
-				return VT.AddMarker(ref this, pwszMarkerName, cnsMarkerTime);
-			}
-			public HRESULT RemoveMarker(uint16 wIndex) mut
-			{
-				return VT.RemoveMarker(ref this, wIndex);
-			}
-			public HRESULT GetScriptCount(out uint16 pcScripts) mut
-			{
-				return VT.GetScriptCount(ref this, out pcScripts);
-			}
-			public HRESULT GetScript(uint16 wIndex, char16* pwszType, out uint16 pcchTypeLen, char16* pwszCommand, out uint16 pcchCommandLen, out uint64 pcnsScriptTime) mut
-			{
-				return VT.GetScript(ref this, wIndex, pwszType, out pcchTypeLen, pwszCommand, out pcchCommandLen, out pcnsScriptTime);
-			}
-			public HRESULT AddScript(PWSTR pwszType, PWSTR pwszCommand, uint64 cnsScriptTime) mut
-			{
-				return VT.AddScript(ref this, pwszType, pwszCommand, cnsScriptTime);
-			}
-			public HRESULT RemoveScript(uint16 wIndex) mut
-			{
-				return VT.RemoveScript(ref this, wIndex);
-			}
+			public HRESULT GetAttributeCount(uint16 wStreamNum, out uint16 pcAttributes) mut => VT.GetAttributeCount(ref this, wStreamNum, out pcAttributes);
+			public HRESULT GetAttributeByIndex(uint16 wIndex, out uint16 pwStreamNum, char16* pwszName, out uint16 pcchNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut => VT.GetAttributeByIndex(ref this, wIndex, out pwStreamNum, pwszName, out pcchNameLen, out pType, pValue, out pcbLength);
+			public HRESULT GetAttributeByName(out uint16 pwStreamNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut => VT.GetAttributeByName(ref this, out pwStreamNum, pszName, out pType, pValue, out pcbLength);
+			public HRESULT SetAttribute(uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut => VT.SetAttribute(ref this, wStreamNum, pszName, Type, pValue, cbLength);
+			public HRESULT GetMarkerCount(out uint16 pcMarkers) mut => VT.GetMarkerCount(ref this, out pcMarkers);
+			public HRESULT GetMarker(uint16 wIndex, char16* pwszMarkerName, out uint16 pcchMarkerNameLen, out uint64 pcnsMarkerTime) mut => VT.GetMarker(ref this, wIndex, pwszMarkerName, out pcchMarkerNameLen, out pcnsMarkerTime);
+			public HRESULT AddMarker(PWSTR pwszMarkerName, uint64 cnsMarkerTime) mut => VT.AddMarker(ref this, pwszMarkerName, cnsMarkerTime);
+			public HRESULT RemoveMarker(uint16 wIndex) mut => VT.RemoveMarker(ref this, wIndex);
+			public HRESULT GetScriptCount(out uint16 pcScripts) mut => VT.GetScriptCount(ref this, out pcScripts);
+			public HRESULT GetScript(uint16 wIndex, char16* pwszType, out uint16 pcchTypeLen, char16* pwszCommand, out uint16 pcchCommandLen, out uint64 pcnsScriptTime) mut => VT.GetScript(ref this, wIndex, pwszType, out pcchTypeLen, pwszCommand, out pcchCommandLen, out pcnsScriptTime);
+			public HRESULT AddScript(PWSTR pwszType, PWSTR pwszCommand, uint64 cnsScriptTime) mut => VT.AddScript(ref this, pwszType, pwszCommand, cnsScriptTime);
+			public HRESULT RemoveScript(uint16 wIndex) mut => VT.RemoveScript(ref this, wIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1856,14 +1553,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCodecInfoCount(out uint32 pcCodecInfos) mut
-			{
-				return VT.GetCodecInfoCount(ref this, out pcCodecInfos);
-			}
-			public HRESULT GetCodecInfo(uint32 wIndex, out uint16 pcchName, char16* pwszName, out uint16 pcchDescription, char16* pwszDescription, out WMT_CODEC_INFO_TYPE pCodecType, out uint16 pcbCodecInfo, uint8* pbCodecInfo) mut
-			{
-				return VT.GetCodecInfo(ref this, wIndex, out pcchName, pwszName, out pcchDescription, pwszDescription, out pCodecType, out pcbCodecInfo, pbCodecInfo);
-			}
+			public HRESULT GetCodecInfoCount(out uint32 pcCodecInfos) mut => VT.GetCodecInfoCount(ref this, out pcCodecInfos);
+			public HRESULT GetCodecInfo(uint32 wIndex, out uint16 pcchName, char16* pwszName, out uint16 pcchDescription, char16* pwszDescription, out WMT_CODEC_INFO_TYPE pCodecType, out uint16 pcbCodecInfo, uint8* pbCodecInfo) mut => VT.GetCodecInfo(ref this, wIndex, out pcchName, pwszName, out pcchDescription, pwszDescription, out pCodecType, out pcbCodecInfo, pbCodecInfo);
+
 			[CRepr]
 			public struct VTable : IWMHeaderInfo.VTable
 			{
@@ -1878,34 +1570,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAttributeCountEx(uint16 wStreamNum, out uint16 pcAttributes) mut
-			{
-				return VT.GetAttributeCountEx(ref this, wStreamNum, out pcAttributes);
-			}
-			public HRESULT GetAttributeIndices(uint16 wStreamNum, PWSTR pwszName, ref uint16 pwLangIndex, uint16* pwIndices, out uint16 pwCount) mut
-			{
-				return VT.GetAttributeIndices(ref this, wStreamNum, pwszName, ref pwLangIndex, pwIndices, out pwCount);
-			}
-			public HRESULT GetAttributeByIndexEx(uint16 wStreamNum, uint16 wIndex, char16* pwszName, out uint16 pwNameLen, out WMT_ATTR_DATATYPE pType, out uint16 pwLangIndex, uint8* pValue, out uint32 pdwDataLength) mut
-			{
-				return VT.GetAttributeByIndexEx(ref this, wStreamNum, wIndex, pwszName, out pwNameLen, out pType, out pwLangIndex, pValue, out pdwDataLength);
-			}
-			public HRESULT ModifyAttribute(uint16 wStreamNum, uint16 wIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) mut
-			{
-				return VT.ModifyAttribute(ref this, wStreamNum, wIndex, Type, wLangIndex, pValue, dwLength);
-			}
-			public HRESULT AddAttribute(uint16 wStreamNum, PWSTR pszName, out uint16 pwIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) mut
-			{
-				return VT.AddAttribute(ref this, wStreamNum, pszName, out pwIndex, Type, wLangIndex, pValue, dwLength);
-			}
-			public HRESULT DeleteAttribute(uint16 wStreamNum, uint16 wIndex) mut
-			{
-				return VT.DeleteAttribute(ref this, wStreamNum, wIndex);
-			}
-			public HRESULT AddCodecInfo(PWSTR pwszName, PWSTR pwszDescription, WMT_CODEC_INFO_TYPE codecType, uint16 cbCodecInfo, uint8* pbCodecInfo) mut
-			{
-				return VT.AddCodecInfo(ref this, pwszName, pwszDescription, codecType, cbCodecInfo, pbCodecInfo);
-			}
+			public HRESULT GetAttributeCountEx(uint16 wStreamNum, out uint16 pcAttributes) mut => VT.GetAttributeCountEx(ref this, wStreamNum, out pcAttributes);
+			public HRESULT GetAttributeIndices(uint16 wStreamNum, PWSTR pwszName, ref uint16 pwLangIndex, uint16* pwIndices, out uint16 pwCount) mut => VT.GetAttributeIndices(ref this, wStreamNum, pwszName, ref pwLangIndex, pwIndices, out pwCount);
+			public HRESULT GetAttributeByIndexEx(uint16 wStreamNum, uint16 wIndex, char16* pwszName, out uint16 pwNameLen, out WMT_ATTR_DATATYPE pType, out uint16 pwLangIndex, uint8* pValue, out uint32 pdwDataLength) mut => VT.GetAttributeByIndexEx(ref this, wStreamNum, wIndex, pwszName, out pwNameLen, out pType, out pwLangIndex, pValue, out pdwDataLength);
+			public HRESULT ModifyAttribute(uint16 wStreamNum, uint16 wIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) mut => VT.ModifyAttribute(ref this, wStreamNum, wIndex, Type, wLangIndex, pValue, dwLength);
+			public HRESULT AddAttribute(uint16 wStreamNum, PWSTR pszName, out uint16 pwIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) mut => VT.AddAttribute(ref this, wStreamNum, pszName, out pwIndex, Type, wLangIndex, pValue, dwLength);
+			public HRESULT DeleteAttribute(uint16 wStreamNum, uint16 wIndex) mut => VT.DeleteAttribute(ref this, wStreamNum, wIndex);
+			public HRESULT AddCodecInfo(PWSTR pwszName, PWSTR pwszDescription, WMT_CODEC_INFO_TYPE codecType, uint16 cbCodecInfo, uint8* pbCodecInfo) mut => VT.AddCodecInfo(ref this, pwszName, pwszDescription, codecType, cbCodecInfo, pbCodecInfo);
+
 			[CRepr]
 			public struct VTable : IWMHeaderInfo2.VTable
 			{
@@ -1925,30 +1597,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEmptyProfile(WMT_VERSION dwVersion, out IWMProfile* ppProfile) mut
-			{
-				return VT.CreateEmptyProfile(ref this, dwVersion, out ppProfile);
-			}
-			public HRESULT LoadProfileByID(in Guid guidProfile, out IWMProfile* ppProfile) mut
-			{
-				return VT.LoadProfileByID(ref this, guidProfile, out ppProfile);
-			}
-			public HRESULT LoadProfileByData(PWSTR pwszProfile, out IWMProfile* ppProfile) mut
-			{
-				return VT.LoadProfileByData(ref this, pwszProfile, out ppProfile);
-			}
-			public HRESULT SaveProfile(ref IWMProfile pIWMProfile, PWSTR pwszProfile, out uint32 pdwLength) mut
-			{
-				return VT.SaveProfile(ref this, ref pIWMProfile, pwszProfile, out pdwLength);
-			}
-			public HRESULT GetSystemProfileCount(out uint32 pcProfiles) mut
-			{
-				return VT.GetSystemProfileCount(ref this, out pcProfiles);
-			}
-			public HRESULT LoadSystemProfile(uint32 dwProfileIndex, out IWMProfile* ppProfile) mut
-			{
-				return VT.LoadSystemProfile(ref this, dwProfileIndex, out ppProfile);
-			}
+			public HRESULT CreateEmptyProfile(WMT_VERSION dwVersion, out IWMProfile* ppProfile) mut => VT.CreateEmptyProfile(ref this, dwVersion, out ppProfile);
+			public HRESULT LoadProfileByID(in Guid guidProfile, out IWMProfile* ppProfile) mut => VT.LoadProfileByID(ref this, guidProfile, out ppProfile);
+			public HRESULT LoadProfileByData(PWSTR pwszProfile, out IWMProfile* ppProfile) mut => VT.LoadProfileByData(ref this, pwszProfile, out ppProfile);
+			public HRESULT SaveProfile(ref IWMProfile pIWMProfile, PWSTR pwszProfile, out uint32 pdwLength) mut => VT.SaveProfile(ref this, ref pIWMProfile, pwszProfile, out pdwLength);
+			public HRESULT GetSystemProfileCount(out uint32 pcProfiles) mut => VT.GetSystemProfileCount(ref this, out pcProfiles);
+			public HRESULT LoadSystemProfile(uint32 dwProfileIndex, out IWMProfile* ppProfile) mut => VT.LoadSystemProfile(ref this, dwProfileIndex, out ppProfile);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1967,14 +1622,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSystemProfileVersion(out WMT_VERSION pdwVersion) mut
-			{
-				return VT.GetSystemProfileVersion(ref this, out pdwVersion);
-			}
-			public HRESULT SetSystemProfileVersion(WMT_VERSION dwVersion) mut
-			{
-				return VT.SetSystemProfileVersion(ref this, dwVersion);
-			}
+			public HRESULT GetSystemProfileVersion(out WMT_VERSION pdwVersion) mut => VT.GetSystemProfileVersion(ref this, out pdwVersion);
+			public HRESULT SetSystemProfileVersion(WMT_VERSION dwVersion) mut => VT.SetSystemProfileVersion(ref this, dwVersion);
+
 			[CRepr]
 			public struct VTable : IWMProfileManager.VTable
 			{
@@ -1989,14 +1639,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUserLanguageID(out uint16 wLangID) mut
-			{
-				return VT.GetUserLanguageID(ref this, out wLangID);
-			}
-			public HRESULT SetUserLanguageID(uint16 wLangID) mut
-			{
-				return VT.SetUserLanguageID(ref this, wLangID);
-			}
+			public HRESULT GetUserLanguageID(out uint16 wLangID) mut => VT.GetUserLanguageID(ref this, out wLangID);
+			public HRESULT SetUserLanguageID(uint16 wLangID) mut => VT.SetUserLanguageID(ref this, wLangID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2011,78 +1656,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVersion(out WMT_VERSION pdwVersion) mut
-			{
-				return VT.GetVersion(ref this, out pdwVersion);
-			}
-			public HRESULT GetName(char16* pwszName, out uint32 pcchName) mut
-			{
-				return VT.GetName(ref this, pwszName, out pcchName);
-			}
-			public HRESULT SetName(PWSTR pwszName) mut
-			{
-				return VT.SetName(ref this, pwszName);
-			}
-			public HRESULT GetDescription(char16* pwszDescription, out uint32 pcchDescription) mut
-			{
-				return VT.GetDescription(ref this, pwszDescription, out pcchDescription);
-			}
-			public HRESULT SetDescription(PWSTR pwszDescription) mut
-			{
-				return VT.SetDescription(ref this, pwszDescription);
-			}
-			public HRESULT GetStreamCount(out uint32 pcStreams) mut
-			{
-				return VT.GetStreamCount(ref this, out pcStreams);
-			}
-			public HRESULT GetStream(uint32 dwStreamIndex, out IWMStreamConfig* ppConfig) mut
-			{
-				return VT.GetStream(ref this, dwStreamIndex, out ppConfig);
-			}
-			public HRESULT GetStreamByNumber(uint16 wStreamNum, out IWMStreamConfig* ppConfig) mut
-			{
-				return VT.GetStreamByNumber(ref this, wStreamNum, out ppConfig);
-			}
-			public HRESULT RemoveStream(ref IWMStreamConfig pConfig) mut
-			{
-				return VT.RemoveStream(ref this, ref pConfig);
-			}
-			public HRESULT RemoveStreamByNumber(uint16 wStreamNum) mut
-			{
-				return VT.RemoveStreamByNumber(ref this, wStreamNum);
-			}
-			public HRESULT AddStream(ref IWMStreamConfig pConfig) mut
-			{
-				return VT.AddStream(ref this, ref pConfig);
-			}
-			public HRESULT ReconfigStream(ref IWMStreamConfig pConfig) mut
-			{
-				return VT.ReconfigStream(ref this, ref pConfig);
-			}
-			public HRESULT CreateNewStream(in Guid guidStreamType, out IWMStreamConfig* ppConfig) mut
-			{
-				return VT.CreateNewStream(ref this, guidStreamType, out ppConfig);
-			}
-			public HRESULT GetMutualExclusionCount(out uint32 pcME) mut
-			{
-				return VT.GetMutualExclusionCount(ref this, out pcME);
-			}
-			public HRESULT GetMutualExclusion(uint32 dwMEIndex, out IWMMutualExclusion* ppME) mut
-			{
-				return VT.GetMutualExclusion(ref this, dwMEIndex, out ppME);
-			}
-			public HRESULT RemoveMutualExclusion(ref IWMMutualExclusion pME) mut
-			{
-				return VT.RemoveMutualExclusion(ref this, ref pME);
-			}
-			public HRESULT AddMutualExclusion(ref IWMMutualExclusion pME) mut
-			{
-				return VT.AddMutualExclusion(ref this, ref pME);
-			}
-			public HRESULT CreateNewMutualExclusion(out IWMMutualExclusion* ppME) mut
-			{
-				return VT.CreateNewMutualExclusion(ref this, out ppME);
-			}
+			public HRESULT GetVersion(out WMT_VERSION pdwVersion) mut => VT.GetVersion(ref this, out pdwVersion);
+			public HRESULT GetName(char16* pwszName, out uint32 pcchName) mut => VT.GetName(ref this, pwszName, out pcchName);
+			public HRESULT SetName(PWSTR pwszName) mut => VT.SetName(ref this, pwszName);
+			public HRESULT GetDescription(char16* pwszDescription, out uint32 pcchDescription) mut => VT.GetDescription(ref this, pwszDescription, out pcchDescription);
+			public HRESULT SetDescription(PWSTR pwszDescription) mut => VT.SetDescription(ref this, pwszDescription);
+			public HRESULT GetStreamCount(out uint32 pcStreams) mut => VT.GetStreamCount(ref this, out pcStreams);
+			public HRESULT GetStream(uint32 dwStreamIndex, out IWMStreamConfig* ppConfig) mut => VT.GetStream(ref this, dwStreamIndex, out ppConfig);
+			public HRESULT GetStreamByNumber(uint16 wStreamNum, out IWMStreamConfig* ppConfig) mut => VT.GetStreamByNumber(ref this, wStreamNum, out ppConfig);
+			public HRESULT RemoveStream(ref IWMStreamConfig pConfig) mut => VT.RemoveStream(ref this, ref pConfig);
+			public HRESULT RemoveStreamByNumber(uint16 wStreamNum) mut => VT.RemoveStreamByNumber(ref this, wStreamNum);
+			public HRESULT AddStream(ref IWMStreamConfig pConfig) mut => VT.AddStream(ref this, ref pConfig);
+			public HRESULT ReconfigStream(ref IWMStreamConfig pConfig) mut => VT.ReconfigStream(ref this, ref pConfig);
+			public HRESULT CreateNewStream(in Guid guidStreamType, out IWMStreamConfig* ppConfig) mut => VT.CreateNewStream(ref this, guidStreamType, out ppConfig);
+			public HRESULT GetMutualExclusionCount(out uint32 pcME) mut => VT.GetMutualExclusionCount(ref this, out pcME);
+			public HRESULT GetMutualExclusion(uint32 dwMEIndex, out IWMMutualExclusion* ppME) mut => VT.GetMutualExclusion(ref this, dwMEIndex, out ppME);
+			public HRESULT RemoveMutualExclusion(ref IWMMutualExclusion pME) mut => VT.RemoveMutualExclusion(ref this, ref pME);
+			public HRESULT AddMutualExclusion(ref IWMMutualExclusion pME) mut => VT.AddMutualExclusion(ref this, ref pME);
+			public HRESULT CreateNewMutualExclusion(out IWMMutualExclusion* ppME) mut => VT.CreateNewMutualExclusion(ref this, out ppME);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2113,10 +1705,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProfileID(out Guid pguidID) mut
-			{
-				return VT.GetProfileID(ref this, out pguidID);
-			}
+			public HRESULT GetProfileID(out Guid pguidID) mut => VT.GetProfileID(ref this, out pguidID);
+
 			[CRepr]
 			public struct VTable : IWMProfile.VTable
 			{
@@ -2130,54 +1720,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStorageFormat(out WMT_STORAGE_FORMAT pnStorageFormat) mut
-			{
-				return VT.GetStorageFormat(ref this, out pnStorageFormat);
-			}
-			public HRESULT SetStorageFormat(WMT_STORAGE_FORMAT nStorageFormat) mut
-			{
-				return VT.SetStorageFormat(ref this, nStorageFormat);
-			}
-			public HRESULT GetBandwidthSharingCount(out uint32 pcBS) mut
-			{
-				return VT.GetBandwidthSharingCount(ref this, out pcBS);
-			}
-			public HRESULT GetBandwidthSharing(uint32 dwBSIndex, out IWMBandwidthSharing* ppBS) mut
-			{
-				return VT.GetBandwidthSharing(ref this, dwBSIndex, out ppBS);
-			}
-			public HRESULT RemoveBandwidthSharing(ref IWMBandwidthSharing pBS) mut
-			{
-				return VT.RemoveBandwidthSharing(ref this, ref pBS);
-			}
-			public HRESULT AddBandwidthSharing(ref IWMBandwidthSharing pBS) mut
-			{
-				return VT.AddBandwidthSharing(ref this, ref pBS);
-			}
-			public HRESULT CreateNewBandwidthSharing(out IWMBandwidthSharing* ppBS) mut
-			{
-				return VT.CreateNewBandwidthSharing(ref this, out ppBS);
-			}
-			public HRESULT GetStreamPrioritization(out IWMStreamPrioritization* ppSP) mut
-			{
-				return VT.GetStreamPrioritization(ref this, out ppSP);
-			}
-			public HRESULT SetStreamPrioritization(ref IWMStreamPrioritization pSP) mut
-			{
-				return VT.SetStreamPrioritization(ref this, ref pSP);
-			}
-			public HRESULT RemoveStreamPrioritization() mut
-			{
-				return VT.RemoveStreamPrioritization(ref this);
-			}
-			public HRESULT CreateNewStreamPrioritization(out IWMStreamPrioritization* ppSP) mut
-			{
-				return VT.CreateNewStreamPrioritization(ref this, out ppSP);
-			}
-			public HRESULT GetExpectedPacketCount(uint64 msDuration, out uint64 pcPackets) mut
-			{
-				return VT.GetExpectedPacketCount(ref this, msDuration, out pcPackets);
-			}
+			public HRESULT GetStorageFormat(out WMT_STORAGE_FORMAT pnStorageFormat) mut => VT.GetStorageFormat(ref this, out pnStorageFormat);
+			public HRESULT SetStorageFormat(WMT_STORAGE_FORMAT nStorageFormat) mut => VT.SetStorageFormat(ref this, nStorageFormat);
+			public HRESULT GetBandwidthSharingCount(out uint32 pcBS) mut => VT.GetBandwidthSharingCount(ref this, out pcBS);
+			public HRESULT GetBandwidthSharing(uint32 dwBSIndex, out IWMBandwidthSharing* ppBS) mut => VT.GetBandwidthSharing(ref this, dwBSIndex, out ppBS);
+			public HRESULT RemoveBandwidthSharing(ref IWMBandwidthSharing pBS) mut => VT.RemoveBandwidthSharing(ref this, ref pBS);
+			public HRESULT AddBandwidthSharing(ref IWMBandwidthSharing pBS) mut => VT.AddBandwidthSharing(ref this, ref pBS);
+			public HRESULT CreateNewBandwidthSharing(out IWMBandwidthSharing* ppBS) mut => VT.CreateNewBandwidthSharing(ref this, out ppBS);
+			public HRESULT GetStreamPrioritization(out IWMStreamPrioritization* ppSP) mut => VT.GetStreamPrioritization(ref this, out ppSP);
+			public HRESULT SetStreamPrioritization(ref IWMStreamPrioritization pSP) mut => VT.SetStreamPrioritization(ref this, ref pSP);
+			public HRESULT RemoveStreamPrioritization() mut => VT.RemoveStreamPrioritization(ref this);
+			public HRESULT CreateNewStreamPrioritization(out IWMStreamPrioritization* ppSP) mut => VT.CreateNewStreamPrioritization(ref this, out ppSP);
+			public HRESULT GetExpectedPacketCount(uint64 msDuration, out uint64 pcPackets) mut => VT.GetExpectedPacketCount(ref this, msDuration, out pcPackets);
+
 			[CRepr]
 			public struct VTable : IWMProfile2.VTable
 			{
@@ -2202,50 +1757,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamType(out Guid pguidStreamType) mut
-			{
-				return VT.GetStreamType(ref this, out pguidStreamType);
-			}
-			public HRESULT GetStreamNumber(out uint16 pwStreamNum) mut
-			{
-				return VT.GetStreamNumber(ref this, out pwStreamNum);
-			}
-			public HRESULT SetStreamNumber(uint16 wStreamNum) mut
-			{
-				return VT.SetStreamNumber(ref this, wStreamNum);
-			}
-			public HRESULT GetStreamName(char16* pwszStreamName, out uint16 pcchStreamName) mut
-			{
-				return VT.GetStreamName(ref this, pwszStreamName, out pcchStreamName);
-			}
-			public HRESULT SetStreamName(PWSTR pwszStreamName) mut
-			{
-				return VT.SetStreamName(ref this, pwszStreamName);
-			}
-			public HRESULT GetConnectionName(char16* pwszInputName, out uint16 pcchInputName) mut
-			{
-				return VT.GetConnectionName(ref this, pwszInputName, out pcchInputName);
-			}
-			public HRESULT SetConnectionName(PWSTR pwszInputName) mut
-			{
-				return VT.SetConnectionName(ref this, pwszInputName);
-			}
-			public HRESULT GetBitrate(out uint32 pdwBitrate) mut
-			{
-				return VT.GetBitrate(ref this, out pdwBitrate);
-			}
-			public HRESULT SetBitrate(uint32 pdwBitrate) mut
-			{
-				return VT.SetBitrate(ref this, pdwBitrate);
-			}
-			public HRESULT GetBufferWindow(out uint32 pmsBufferWindow) mut
-			{
-				return VT.GetBufferWindow(ref this, out pmsBufferWindow);
-			}
-			public HRESULT SetBufferWindow(uint32 msBufferWindow) mut
-			{
-				return VT.SetBufferWindow(ref this, msBufferWindow);
-			}
+			public HRESULT GetStreamType(out Guid pguidStreamType) mut => VT.GetStreamType(ref this, out pguidStreamType);
+			public HRESULT GetStreamNumber(out uint16 pwStreamNum) mut => VT.GetStreamNumber(ref this, out pwStreamNum);
+			public HRESULT SetStreamNumber(uint16 wStreamNum) mut => VT.SetStreamNumber(ref this, wStreamNum);
+			public HRESULT GetStreamName(char16* pwszStreamName, out uint16 pcchStreamName) mut => VT.GetStreamName(ref this, pwszStreamName, out pcchStreamName);
+			public HRESULT SetStreamName(PWSTR pwszStreamName) mut => VT.SetStreamName(ref this, pwszStreamName);
+			public HRESULT GetConnectionName(char16* pwszInputName, out uint16 pcchInputName) mut => VT.GetConnectionName(ref this, pwszInputName, out pcchInputName);
+			public HRESULT SetConnectionName(PWSTR pwszInputName) mut => VT.SetConnectionName(ref this, pwszInputName);
+			public HRESULT GetBitrate(out uint32 pdwBitrate) mut => VT.GetBitrate(ref this, out pdwBitrate);
+			public HRESULT SetBitrate(uint32 pdwBitrate) mut => VT.SetBitrate(ref this, pdwBitrate);
+			public HRESULT GetBufferWindow(out uint32 pmsBufferWindow) mut => VT.GetBufferWindow(ref this, out pmsBufferWindow);
+			public HRESULT SetBufferWindow(uint32 msBufferWindow) mut => VT.SetBufferWindow(ref this, msBufferWindow);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2269,30 +1792,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTransportType(out WMT_TRANSPORT_TYPE pnTransportType) mut
-			{
-				return VT.GetTransportType(ref this, out pnTransportType);
-			}
-			public HRESULT SetTransportType(WMT_TRANSPORT_TYPE nTransportType) mut
-			{
-				return VT.SetTransportType(ref this, nTransportType);
-			}
-			public HRESULT AddDataUnitExtension(Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) mut
-			{
-				return VT.AddDataUnitExtension(ref this, guidExtensionSystemID, cbExtensionDataSize, pbExtensionSystemInfo, cbExtensionSystemInfo);
-			}
-			public HRESULT GetDataUnitExtensionCount(out uint16 pcDataUnitExtensions) mut
-			{
-				return VT.GetDataUnitExtensionCount(ref this, out pcDataUnitExtensions);
-			}
-			public HRESULT GetDataUnitExtension(uint16 wDataUnitExtensionNumber, out Guid pguidExtensionSystemID, out uint16 pcbExtensionDataSize, uint8* pbExtensionSystemInfo, out uint32 pcbExtensionSystemInfo) mut
-			{
-				return VT.GetDataUnitExtension(ref this, wDataUnitExtensionNumber, out pguidExtensionSystemID, out pcbExtensionDataSize, pbExtensionSystemInfo, out pcbExtensionSystemInfo);
-			}
-			public HRESULT RemoveAllDataUnitExtensions() mut
-			{
-				return VT.RemoveAllDataUnitExtensions(ref this);
-			}
+			public HRESULT GetTransportType(out WMT_TRANSPORT_TYPE pnTransportType) mut => VT.GetTransportType(ref this, out pnTransportType);
+			public HRESULT SetTransportType(WMT_TRANSPORT_TYPE nTransportType) mut => VT.SetTransportType(ref this, nTransportType);
+			public HRESULT AddDataUnitExtension(Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) mut => VT.AddDataUnitExtension(ref this, guidExtensionSystemID, cbExtensionDataSize, pbExtensionSystemInfo, cbExtensionSystemInfo);
+			public HRESULT GetDataUnitExtensionCount(out uint16 pcDataUnitExtensions) mut => VT.GetDataUnitExtensionCount(ref this, out pcDataUnitExtensions);
+			public HRESULT GetDataUnitExtension(uint16 wDataUnitExtensionNumber, out Guid pguidExtensionSystemID, out uint16 pcbExtensionDataSize, uint8* pbExtensionSystemInfo, out uint32 pcbExtensionSystemInfo) mut => VT.GetDataUnitExtension(ref this, wDataUnitExtensionNumber, out pguidExtensionSystemID, out pcbExtensionDataSize, pbExtensionSystemInfo, out pcbExtensionSystemInfo);
+			public HRESULT RemoveAllDataUnitExtensions() mut => VT.RemoveAllDataUnitExtensions(ref this);
+
 			[CRepr]
 			public struct VTable : IWMStreamConfig.VTable
 			{
@@ -2311,14 +1817,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLanguage(char16* pwszLanguageString, out uint16 pcchLanguageStringLength) mut
-			{
-				return VT.GetLanguage(ref this, pwszLanguageString, out pcchLanguageStringLength);
-			}
-			public HRESULT SetLanguage(PWSTR pwszLanguageString) mut
-			{
-				return VT.SetLanguage(ref this, pwszLanguageString);
-			}
+			public HRESULT GetLanguage(char16* pwszLanguageString, out uint16 pcchLanguageStringLength) mut => VT.GetLanguage(ref this, pwszLanguageString, out pcchLanguageStringLength);
+			public HRESULT SetLanguage(PWSTR pwszLanguageString) mut => VT.SetLanguage(ref this, pwszLanguageString);
+
 			[CRepr]
 			public struct VTable : IWMStreamConfig2.VTable
 			{
@@ -2333,14 +1834,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMaxPacketSize(out uint32 pdwMaxPacketSize) mut
-			{
-				return VT.GetMaxPacketSize(ref this, out pdwMaxPacketSize);
-			}
-			public HRESULT SetMaxPacketSize(uint32 dwMaxPacketSize) mut
-			{
-				return VT.SetMaxPacketSize(ref this, dwMaxPacketSize);
-			}
+			public HRESULT GetMaxPacketSize(out uint32 pdwMaxPacketSize) mut => VT.GetMaxPacketSize(ref this, out pdwMaxPacketSize);
+			public HRESULT SetMaxPacketSize(uint32 dwMaxPacketSize) mut => VT.SetMaxPacketSize(ref this, dwMaxPacketSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2355,14 +1851,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMinPacketSize(out uint32 pdwMinPacketSize) mut
-			{
-				return VT.GetMinPacketSize(ref this, out pdwMinPacketSize);
-			}
-			public HRESULT SetMinPacketSize(uint32 dwMinPacketSize) mut
-			{
-				return VT.SetMinPacketSize(ref this, dwMinPacketSize);
-			}
+			public HRESULT GetMinPacketSize(out uint32 pdwMinPacketSize) mut => VT.GetMinPacketSize(ref this, out pdwMinPacketSize);
+			public HRESULT SetMinPacketSize(uint32 dwMinPacketSize) mut => VT.SetMinPacketSize(ref this, dwMinPacketSize);
+
 			[CRepr]
 			public struct VTable : IWMPacketSize.VTable
 			{
@@ -2377,18 +1868,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreams(uint16* pwStreamNumArray, out uint16 pcStreams) mut
-			{
-				return VT.GetStreams(ref this, pwStreamNumArray, out pcStreams);
-			}
-			public HRESULT AddStream(uint16 wStreamNum) mut
-			{
-				return VT.AddStream(ref this, wStreamNum);
-			}
-			public HRESULT RemoveStream(uint16 wStreamNum) mut
-			{
-				return VT.RemoveStream(ref this, wStreamNum);
-			}
+			public HRESULT GetStreams(uint16* pwStreamNumArray, out uint16 pcStreams) mut => VT.GetStreams(ref this, pwStreamNumArray, out pcStreams);
+			public HRESULT AddStream(uint16 wStreamNum) mut => VT.AddStream(ref this, wStreamNum);
+			public HRESULT RemoveStream(uint16 wStreamNum) mut => VT.RemoveStream(ref this, wStreamNum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2404,14 +1887,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetType(out Guid pguidType) mut
-			{
-				return VT.ComGetType(ref this, out pguidType);
-			}
-			public HRESULT SetType(in Guid guidType) mut
-			{
-				return VT.SetType(ref this, guidType);
-			}
+			public HRESULT ComGetType(out Guid pguidType) mut => VT.ComGetType(ref this, out pguidType);
+			public HRESULT SetType(in Guid guidType) mut => VT.SetType(ref this, guidType);
+
 			[CRepr]
 			public struct VTable : IWMStreamList.VTable
 			{
@@ -2426,46 +1904,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(char16* pwszName, out uint16 pcchName) mut
-			{
-				return VT.GetName(ref this, pwszName, out pcchName);
-			}
-			public HRESULT SetName(PWSTR pwszName) mut
-			{
-				return VT.SetName(ref this, pwszName);
-			}
-			public HRESULT GetRecordCount(out uint16 pwRecordCount) mut
-			{
-				return VT.GetRecordCount(ref this, out pwRecordCount);
-			}
-			public HRESULT AddRecord() mut
-			{
-				return VT.AddRecord(ref this);
-			}
-			public HRESULT RemoveRecord(uint16 wRecordNumber) mut
-			{
-				return VT.RemoveRecord(ref this, wRecordNumber);
-			}
-			public HRESULT GetRecordName(uint16 wRecordNumber, char16* pwszRecordName, out uint16 pcchRecordName) mut
-			{
-				return VT.GetRecordName(ref this, wRecordNumber, pwszRecordName, out pcchRecordName);
-			}
-			public HRESULT SetRecordName(uint16 wRecordNumber, PWSTR pwszRecordName) mut
-			{
-				return VT.SetRecordName(ref this, wRecordNumber, pwszRecordName);
-			}
-			public HRESULT GetStreamsForRecord(uint16 wRecordNumber, uint16* pwStreamNumArray, out uint16 pcStreams) mut
-			{
-				return VT.GetStreamsForRecord(ref this, wRecordNumber, pwStreamNumArray, out pcStreams);
-			}
-			public HRESULT AddStreamForRecord(uint16 wRecordNumber, uint16 wStreamNumber) mut
-			{
-				return VT.AddStreamForRecord(ref this, wRecordNumber, wStreamNumber);
-			}
-			public HRESULT RemoveStreamForRecord(uint16 wRecordNumber, uint16 wStreamNumber) mut
-			{
-				return VT.RemoveStreamForRecord(ref this, wRecordNumber, wStreamNumber);
-			}
+			public HRESULT GetName(char16* pwszName, out uint16 pcchName) mut => VT.GetName(ref this, pwszName, out pcchName);
+			public HRESULT SetName(PWSTR pwszName) mut => VT.SetName(ref this, pwszName);
+			public HRESULT GetRecordCount(out uint16 pwRecordCount) mut => VT.GetRecordCount(ref this, out pwRecordCount);
+			public HRESULT AddRecord() mut => VT.AddRecord(ref this);
+			public HRESULT RemoveRecord(uint16 wRecordNumber) mut => VT.RemoveRecord(ref this, wRecordNumber);
+			public HRESULT GetRecordName(uint16 wRecordNumber, char16* pwszRecordName, out uint16 pcchRecordName) mut => VT.GetRecordName(ref this, wRecordNumber, pwszRecordName, out pcchRecordName);
+			public HRESULT SetRecordName(uint16 wRecordNumber, PWSTR pwszRecordName) mut => VT.SetRecordName(ref this, wRecordNumber, pwszRecordName);
+			public HRESULT GetStreamsForRecord(uint16 wRecordNumber, uint16* pwStreamNumArray, out uint16 pcStreams) mut => VT.GetStreamsForRecord(ref this, wRecordNumber, pwStreamNumArray, out pcStreams);
+			public HRESULT AddStreamForRecord(uint16 wRecordNumber, uint16 wStreamNumber) mut => VT.AddStreamForRecord(ref this, wRecordNumber, wStreamNumber);
+			public HRESULT RemoveStreamForRecord(uint16 wRecordNumber, uint16 wStreamNumber) mut => VT.RemoveStreamForRecord(ref this, wRecordNumber, wStreamNumber);
+
 			[CRepr]
 			public struct VTable : IWMMutualExclusion.VTable
 			{
@@ -2488,22 +1937,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetType(out Guid pguidType) mut
-			{
-				return VT.ComGetType(ref this, out pguidType);
-			}
-			public HRESULT SetType(in Guid guidType) mut
-			{
-				return VT.SetType(ref this, guidType);
-			}
-			public HRESULT GetBandwidth(out uint32 pdwBitrate, out uint32 pmsBufferWindow) mut
-			{
-				return VT.GetBandwidth(ref this, out pdwBitrate, out pmsBufferWindow);
-			}
-			public HRESULT SetBandwidth(uint32 dwBitrate, uint32 msBufferWindow) mut
-			{
-				return VT.SetBandwidth(ref this, dwBitrate, msBufferWindow);
-			}
+			public HRESULT ComGetType(out Guid pguidType) mut => VT.ComGetType(ref this, out pguidType);
+			public HRESULT SetType(in Guid guidType) mut => VT.SetType(ref this, guidType);
+			public HRESULT GetBandwidth(out uint32 pdwBitrate, out uint32 pmsBufferWindow) mut => VT.GetBandwidth(ref this, out pdwBitrate, out pmsBufferWindow);
+			public HRESULT SetBandwidth(uint32 dwBitrate, uint32 msBufferWindow) mut => VT.SetBandwidth(ref this, dwBitrate, msBufferWindow);
+
 			[CRepr]
 			public struct VTable : IWMStreamList.VTable
 			{
@@ -2520,14 +1958,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPriorityRecords(WM_STREAM_PRIORITY_RECORD* pRecordArray, out uint16 pcRecords) mut
-			{
-				return VT.GetPriorityRecords(ref this, pRecordArray, out pcRecords);
-			}
-			public HRESULT SetPriorityRecords(ref WM_STREAM_PRIORITY_RECORD pRecordArray, uint16 cRecords) mut
-			{
-				return VT.SetPriorityRecords(ref this, ref pRecordArray, cRecords);
-			}
+			public HRESULT GetPriorityRecords(WM_STREAM_PRIORITY_RECORD* pRecordArray, out uint16 pcRecords) mut => VT.GetPriorityRecords(ref this, pRecordArray, out pcRecords);
+			public HRESULT SetPriorityRecords(ref WM_STREAM_PRIORITY_RECORD pRecordArray, uint16 cRecords) mut => VT.SetPriorityRecords(ref this, ref pRecordArray, cRecords);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2542,50 +1975,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSinkCount(out uint32 pcSinks) mut
-			{
-				return VT.GetSinkCount(ref this, out pcSinks);
-			}
-			public HRESULT GetSink(uint32 dwSinkNum, out IWMWriterSink* ppSink) mut
-			{
-				return VT.GetSink(ref this, dwSinkNum, out ppSink);
-			}
-			public HRESULT AddSink(ref IWMWriterSink pSink) mut
-			{
-				return VT.AddSink(ref this, ref pSink);
-			}
-			public HRESULT RemoveSink(ref IWMWriterSink pSink) mut
-			{
-				return VT.RemoveSink(ref this, ref pSink);
-			}
-			public HRESULT WriteStreamSample(uint16 wStreamNum, uint64 cnsSampleTime, uint32 msSampleSendTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample) mut
-			{
-				return VT.WriteStreamSample(ref this, wStreamNum, cnsSampleTime, msSampleSendTime, cnsSampleDuration, dwFlags, ref pSample);
-			}
-			public HRESULT SetLiveSource(BOOL fIsLiveSource) mut
-			{
-				return VT.SetLiveSource(ref this, fIsLiveSource);
-			}
-			public HRESULT IsRealTime(out BOOL pfRealTime) mut
-			{
-				return VT.IsRealTime(ref this, out pfRealTime);
-			}
-			public HRESULT GetWriterTime(out uint64 pcnsCurrentTime) mut
-			{
-				return VT.GetWriterTime(ref this, out pcnsCurrentTime);
-			}
-			public HRESULT GetStatistics(uint16 wStreamNum, out WM_WRITER_STATISTICS pStats) mut
-			{
-				return VT.GetStatistics(ref this, wStreamNum, out pStats);
-			}
-			public HRESULT SetSyncTolerance(uint32 msWindow) mut
-			{
-				return VT.SetSyncTolerance(ref this, msWindow);
-			}
-			public HRESULT GetSyncTolerance(out uint32 pmsWindow) mut
-			{
-				return VT.GetSyncTolerance(ref this, out pmsWindow);
-			}
+			public HRESULT GetSinkCount(out uint32 pcSinks) mut => VT.GetSinkCount(ref this, out pcSinks);
+			public HRESULT GetSink(uint32 dwSinkNum, out IWMWriterSink* ppSink) mut => VT.GetSink(ref this, dwSinkNum, out ppSink);
+			public HRESULT AddSink(ref IWMWriterSink pSink) mut => VT.AddSink(ref this, ref pSink);
+			public HRESULT RemoveSink(ref IWMWriterSink pSink) mut => VT.RemoveSink(ref this, ref pSink);
+			public HRESULT WriteStreamSample(uint16 wStreamNum, uint64 cnsSampleTime, uint32 msSampleSendTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample) mut => VT.WriteStreamSample(ref this, wStreamNum, cnsSampleTime, msSampleSendTime, cnsSampleDuration, dwFlags, ref pSample);
+			public HRESULT SetLiveSource(BOOL fIsLiveSource) mut => VT.SetLiveSource(ref this, fIsLiveSource);
+			public HRESULT IsRealTime(out BOOL pfRealTime) mut => VT.IsRealTime(ref this, out pfRealTime);
+			public HRESULT GetWriterTime(out uint64 pcnsCurrentTime) mut => VT.GetWriterTime(ref this, out pcnsCurrentTime);
+			public HRESULT GetStatistics(uint16 wStreamNum, out WM_WRITER_STATISTICS pStats) mut => VT.GetStatistics(ref this, wStreamNum, out pStats);
+			public HRESULT SetSyncTolerance(uint32 msWindow) mut => VT.SetSyncTolerance(ref this, msWindow);
+			public HRESULT GetSyncTolerance(out uint32 pmsWindow) mut => VT.GetSyncTolerance(ref this, out pmsWindow);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2609,14 +2010,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInputSetting(uint32 dwInputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetInputSetting(ref this, dwInputNum, pszName, out pType, pValue, out pcbLength);
-			}
-			public HRESULT SetInputSetting(uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
-			{
-				return VT.SetInputSetting(ref this, dwInputNum, pszName, Type, pValue, cbLength);
-			}
+			public HRESULT GetInputSetting(uint32 dwInputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut => VT.GetInputSetting(ref this, dwInputNum, pszName, out pType, pValue, out pcbLength);
+			public HRESULT SetInputSetting(uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut => VT.SetInputSetting(ref this, dwInputNum, pszName, Type, pValue, cbLength);
+
 			[CRepr]
 			public struct VTable : IWMWriterAdvanced.VTable
 			{
@@ -2631,14 +2027,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStatisticsEx(uint16 wStreamNum, out WM_WRITER_STATISTICS_EX pStats) mut
-			{
-				return VT.GetStatisticsEx(ref this, wStreamNum, out pStats);
-			}
-			public HRESULT SetNonBlocking() mut
-			{
-				return VT.SetNonBlocking(ref this);
-			}
+			public HRESULT GetStatisticsEx(uint16 wStreamNum, out WM_WRITER_STATISTICS_EX pStats) mut => VT.GetStatisticsEx(ref this, wStreamNum, out pStats);
+			public HRESULT SetNonBlocking() mut => VT.SetNonBlocking(ref this);
+
 			[CRepr]
 			public struct VTable : IWMWriterAdvanced2.VTable
 			{
@@ -2653,26 +2044,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMaxPreprocessingPasses(uint32 dwInputNum, uint32 dwFlags, out uint32 pdwMaxNumPasses) mut
-			{
-				return VT.GetMaxPreprocessingPasses(ref this, dwInputNum, dwFlags, out pdwMaxNumPasses);
-			}
-			public HRESULT SetNumPreprocessingPasses(uint32 dwInputNum, uint32 dwFlags, uint32 dwNumPasses) mut
-			{
-				return VT.SetNumPreprocessingPasses(ref this, dwInputNum, dwFlags, dwNumPasses);
-			}
-			public HRESULT BeginPreprocessingPass(uint32 dwInputNum, uint32 dwFlags) mut
-			{
-				return VT.BeginPreprocessingPass(ref this, dwInputNum, dwFlags);
-			}
-			public HRESULT PreprocessSample(uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, ref INSSBuffer pSample) mut
-			{
-				return VT.PreprocessSample(ref this, dwInputNum, cnsSampleTime, dwFlags, ref pSample);
-			}
-			public HRESULT EndPreprocessingPass(uint32 dwInputNum, uint32 dwFlags) mut
-			{
-				return VT.EndPreprocessingPass(ref this, dwInputNum, dwFlags);
-			}
+			public HRESULT GetMaxPreprocessingPasses(uint32 dwInputNum, uint32 dwFlags, out uint32 pdwMaxNumPasses) mut => VT.GetMaxPreprocessingPasses(ref this, dwInputNum, dwFlags, out pdwMaxNumPasses);
+			public HRESULT SetNumPreprocessingPasses(uint32 dwInputNum, uint32 dwFlags, uint32 dwNumPasses) mut => VT.SetNumPreprocessingPasses(ref this, dwInputNum, dwFlags, dwNumPasses);
+			public HRESULT BeginPreprocessingPass(uint32 dwInputNum, uint32 dwFlags) mut => VT.BeginPreprocessingPass(ref this, dwInputNum, dwFlags);
+			public HRESULT PreprocessSample(uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, ref INSSBuffer pSample) mut => VT.PreprocessSample(ref this, dwInputNum, cnsSampleTime, dwFlags, ref pSample);
+			public HRESULT EndPreprocessingPass(uint32 dwInputNum, uint32 dwFlags) mut => VT.EndPreprocessingPass(ref this, dwInputNum, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2690,14 +2067,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnPostViewSample(uint16 wStreamNumber, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) mut
-			{
-				return VT.OnPostViewSample(ref this, wStreamNumber, cnsSampleTime, cnsSampleDuration, dwFlags, ref pSample, pvContext);
-			}
-			public HRESULT AllocateForPostView(uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) mut
-			{
-				return VT.AllocateForPostView(ref this, wStreamNum, cbBuffer, out ppBuffer, pvContext);
-			}
+			public HRESULT OnPostViewSample(uint16 wStreamNumber, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) mut => VT.OnPostViewSample(ref this, wStreamNumber, cnsSampleTime, cnsSampleDuration, dwFlags, ref pSample, pvContext);
+			public HRESULT AllocateForPostView(uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) mut => VT.AllocateForPostView(ref this, wStreamNum, cbBuffer, out ppBuffer, pvContext);
+
 			[CRepr]
 			public struct VTable : IWMStatusCallback.VTable
 			{
@@ -2712,42 +2084,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPostViewCallback(ref IWMWriterPostViewCallback pCallback, void* pvContext) mut
-			{
-				return VT.SetPostViewCallback(ref this, ref pCallback, pvContext);
-			}
-			public HRESULT SetReceivePostViewSamples(uint16 wStreamNum, BOOL fReceivePostViewSamples) mut
-			{
-				return VT.SetReceivePostViewSamples(ref this, wStreamNum, fReceivePostViewSamples);
-			}
-			public HRESULT GetReceivePostViewSamples(uint16 wStreamNum, out BOOL pfReceivePostViewSamples) mut
-			{
-				return VT.GetReceivePostViewSamples(ref this, wStreamNum, out pfReceivePostViewSamples);
-			}
-			public HRESULT GetPostViewProps(uint16 wStreamNumber, out IWMMediaProps* ppOutput) mut
-			{
-				return VT.GetPostViewProps(ref this, wStreamNumber, out ppOutput);
-			}
-			public HRESULT SetPostViewProps(uint16 wStreamNumber, ref IWMMediaProps pOutput) mut
-			{
-				return VT.SetPostViewProps(ref this, wStreamNumber, ref pOutput);
-			}
-			public HRESULT GetPostViewFormatCount(uint16 wStreamNumber, out uint32 pcFormats) mut
-			{
-				return VT.GetPostViewFormatCount(ref this, wStreamNumber, out pcFormats);
-			}
-			public HRESULT GetPostViewFormat(uint16 wStreamNumber, uint32 dwFormatNumber, out IWMMediaProps* ppProps) mut
-			{
-				return VT.GetPostViewFormat(ref this, wStreamNumber, dwFormatNumber, out ppProps);
-			}
-			public HRESULT SetAllocateForPostView(uint16 wStreamNumber, BOOL fAllocate) mut
-			{
-				return VT.SetAllocateForPostView(ref this, wStreamNumber, fAllocate);
-			}
-			public HRESULT GetAllocateForPostView(uint16 wStreamNumber, out BOOL pfAllocate) mut
-			{
-				return VT.GetAllocateForPostView(ref this, wStreamNumber, out pfAllocate);
-			}
+			public HRESULT SetPostViewCallback(ref IWMWriterPostViewCallback pCallback, void* pvContext) mut => VT.SetPostViewCallback(ref this, ref pCallback, pvContext);
+			public HRESULT SetReceivePostViewSamples(uint16 wStreamNum, BOOL fReceivePostViewSamples) mut => VT.SetReceivePostViewSamples(ref this, wStreamNum, fReceivePostViewSamples);
+			public HRESULT GetReceivePostViewSamples(uint16 wStreamNum, out BOOL pfReceivePostViewSamples) mut => VT.GetReceivePostViewSamples(ref this, wStreamNum, out pfReceivePostViewSamples);
+			public HRESULT GetPostViewProps(uint16 wStreamNumber, out IWMMediaProps* ppOutput) mut => VT.GetPostViewProps(ref this, wStreamNumber, out ppOutput);
+			public HRESULT SetPostViewProps(uint16 wStreamNumber, ref IWMMediaProps pOutput) mut => VT.SetPostViewProps(ref this, wStreamNumber, ref pOutput);
+			public HRESULT GetPostViewFormatCount(uint16 wStreamNumber, out uint32 pcFormats) mut => VT.GetPostViewFormatCount(ref this, wStreamNumber, out pcFormats);
+			public HRESULT GetPostViewFormat(uint16 wStreamNumber, uint32 dwFormatNumber, out IWMMediaProps* ppProps) mut => VT.GetPostViewFormat(ref this, wStreamNumber, dwFormatNumber, out ppProps);
+			public HRESULT SetAllocateForPostView(uint16 wStreamNumber, BOOL fAllocate) mut => VT.SetAllocateForPostView(ref this, wStreamNumber, fAllocate);
+			public HRESULT GetAllocateForPostView(uint16 wStreamNumber, out BOOL pfAllocate) mut => VT.GetAllocateForPostView(ref this, wStreamNumber, out pfAllocate);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2769,26 +2115,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnHeader(ref INSSBuffer pHeader) mut
-			{
-				return VT.OnHeader(ref this, ref pHeader);
-			}
-			public HRESULT IsRealTime(out BOOL pfRealTime) mut
-			{
-				return VT.IsRealTime(ref this, out pfRealTime);
-			}
-			public HRESULT AllocateDataUnit(uint32 cbDataUnit, out INSSBuffer* ppDataUnit) mut
-			{
-				return VT.AllocateDataUnit(ref this, cbDataUnit, out ppDataUnit);
-			}
-			public HRESULT OnDataUnit(ref INSSBuffer pDataUnit) mut
-			{
-				return VT.OnDataUnit(ref this, ref pDataUnit);
-			}
-			public HRESULT OnEndWriting() mut
-			{
-				return VT.OnEndWriting(ref this);
-			}
+			public HRESULT OnHeader(ref INSSBuffer pHeader) mut => VT.OnHeader(ref this, ref pHeader);
+			public HRESULT IsRealTime(out BOOL pfRealTime) mut => VT.IsRealTime(ref this, out pfRealTime);
+			public HRESULT AllocateDataUnit(uint32 cbDataUnit, out INSSBuffer* ppDataUnit) mut => VT.AllocateDataUnit(ref this, cbDataUnit, out ppDataUnit);
+			public HRESULT OnDataUnit(ref INSSBuffer pDataUnit) mut => VT.OnDataUnit(ref this, ref pDataUnit);
+			public HRESULT OnEndWriting() mut => VT.OnEndWriting(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2806,14 +2138,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Advise(ref IWMStatusCallback pCallback, void* pvContext) mut
-			{
-				return VT.Advise(ref this, ref pCallback, pvContext);
-			}
-			public HRESULT Unadvise(ref IWMStatusCallback pCallback, void* pvContext) mut
-			{
-				return VT.Unadvise(ref this, ref pCallback, pvContext);
-			}
+			public HRESULT Advise(ref IWMStatusCallback pCallback, void* pvContext) mut => VT.Advise(ref this, ref pCallback, pvContext);
+			public HRESULT Unadvise(ref IWMStatusCallback pCallback, void* pvContext) mut => VT.Unadvise(ref this, ref pCallback, pvContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2828,10 +2155,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(PWSTR pwszFilename) mut
-			{
-				return VT.Open(ref this, pwszFilename);
-			}
+			public HRESULT Open(PWSTR pwszFilename) mut => VT.Open(ref this, pwszFilename);
+
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
@@ -2845,34 +2170,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Start(uint64 cnsStartTime) mut
-			{
-				return VT.Start(ref this, cnsStartTime);
-			}
-			public HRESULT Stop(uint64 cnsStopTime) mut
-			{
-				return VT.Stop(ref this, cnsStopTime);
-			}
-			public HRESULT IsStopped(out BOOL pfStopped) mut
-			{
-				return VT.IsStopped(ref this, out pfStopped);
-			}
-			public HRESULT GetFileDuration(out uint64 pcnsDuration) mut
-			{
-				return VT.GetFileDuration(ref this, out pcnsDuration);
-			}
-			public HRESULT GetFileSize(out uint64 pcbFile) mut
-			{
-				return VT.GetFileSize(ref this, out pcbFile);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT IsClosed(out BOOL pfClosed) mut
-			{
-				return VT.IsClosed(ref this, out pfClosed);
-			}
+			public HRESULT Start(uint64 cnsStartTime) mut => VT.Start(ref this, cnsStartTime);
+			public HRESULT Stop(uint64 cnsStopTime) mut => VT.Stop(ref this, cnsStopTime);
+			public HRESULT IsStopped(out BOOL pfStopped) mut => VT.IsStopped(ref this, out pfStopped);
+			public HRESULT GetFileDuration(out uint64 pcnsDuration) mut => VT.GetFileDuration(ref this, out pcnsDuration);
+			public HRESULT GetFileSize(out uint64 pcbFile) mut => VT.GetFileSize(ref this, out pcbFile);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT IsClosed(out BOOL pfClosed) mut => VT.IsClosed(ref this, out pfClosed);
+
 			[CRepr]
 			public struct VTable : IWMWriterFileSink.VTable
 			{
@@ -2892,38 +2197,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAutoIndexing(BOOL fDoAutoIndexing) mut
-			{
-				return VT.SetAutoIndexing(ref this, fDoAutoIndexing);
-			}
-			public HRESULT GetAutoIndexing(out BOOL pfAutoIndexing) mut
-			{
-				return VT.GetAutoIndexing(ref this, out pfAutoIndexing);
-			}
-			public HRESULT SetControlStream(uint16 wStreamNumber, BOOL fShouldControlStartAndStop) mut
-			{
-				return VT.SetControlStream(ref this, wStreamNumber, fShouldControlStartAndStop);
-			}
-			public HRESULT GetMode(out uint32 pdwFileSinkMode) mut
-			{
-				return VT.GetMode(ref this, out pdwFileSinkMode);
-			}
-			public HRESULT OnDataUnitEx(ref WMT_FILESINK_DATA_UNIT pFileSinkDataUnit) mut
-			{
-				return VT.OnDataUnitEx(ref this, ref pFileSinkDataUnit);
-			}
-			public HRESULT SetUnbufferedIO(BOOL fUnbufferedIO, BOOL fRestrictMemUsage) mut
-			{
-				return VT.SetUnbufferedIO(ref this, fUnbufferedIO, fRestrictMemUsage);
-			}
-			public HRESULT GetUnbufferedIO(out BOOL pfUnbufferedIO) mut
-			{
-				return VT.GetUnbufferedIO(ref this, out pfUnbufferedIO);
-			}
-			public HRESULT CompleteOperations() mut
-			{
-				return VT.CompleteOperations(ref this);
-			}
+			public HRESULT SetAutoIndexing(BOOL fDoAutoIndexing) mut => VT.SetAutoIndexing(ref this, fDoAutoIndexing);
+			public HRESULT GetAutoIndexing(out BOOL pfAutoIndexing) mut => VT.GetAutoIndexing(ref this, out pfAutoIndexing);
+			public HRESULT SetControlStream(uint16 wStreamNumber, BOOL fShouldControlStartAndStop) mut => VT.SetControlStream(ref this, wStreamNumber, fShouldControlStartAndStop);
+			public HRESULT GetMode(out uint32 pdwFileSinkMode) mut => VT.GetMode(ref this, out pdwFileSinkMode);
+			public HRESULT OnDataUnitEx(ref WMT_FILESINK_DATA_UNIT pFileSinkDataUnit) mut => VT.OnDataUnitEx(ref this, ref pFileSinkDataUnit);
+			public HRESULT SetUnbufferedIO(BOOL fUnbufferedIO, BOOL fRestrictMemUsage) mut => VT.SetUnbufferedIO(ref this, fUnbufferedIO, fRestrictMemUsage);
+			public HRESULT GetUnbufferedIO(out BOOL pfUnbufferedIO) mut => VT.GetUnbufferedIO(ref this, out pfUnbufferedIO);
+			public HRESULT CompleteOperations() mut => VT.CompleteOperations(ref this);
+
 			[CRepr]
 			public struct VTable : IWMWriterFileSink2.VTable
 			{
@@ -2944,38 +2226,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMaximumClients(uint32 dwMaxClients) mut
-			{
-				return VT.SetMaximumClients(ref this, dwMaxClients);
-			}
-			public HRESULT GetMaximumClients(out uint32 pdwMaxClients) mut
-			{
-				return VT.GetMaximumClients(ref this, out pdwMaxClients);
-			}
-			public HRESULT SetNetworkProtocol(WMT_NET_PROTOCOL protocol) mut
-			{
-				return VT.SetNetworkProtocol(ref this, protocol);
-			}
-			public HRESULT GetNetworkProtocol(out WMT_NET_PROTOCOL pProtocol) mut
-			{
-				return VT.GetNetworkProtocol(ref this, out pProtocol);
-			}
-			public HRESULT GetHostURL(PWSTR pwszURL, out uint32 pcchURL) mut
-			{
-				return VT.GetHostURL(ref this, pwszURL, out pcchURL);
-			}
-			public HRESULT Open(out uint32 pdwPortNum) mut
-			{
-				return VT.Open(ref this, out pdwPortNum);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT SetMaximumClients(uint32 dwMaxClients) mut => VT.SetMaximumClients(ref this, dwMaxClients);
+			public HRESULT GetMaximumClients(out uint32 pdwMaxClients) mut => VT.GetMaximumClients(ref this, out pdwMaxClients);
+			public HRESULT SetNetworkProtocol(WMT_NET_PROTOCOL protocol) mut => VT.SetNetworkProtocol(ref this, protocol);
+			public HRESULT GetNetworkProtocol(out WMT_NET_PROTOCOL pProtocol) mut => VT.GetNetworkProtocol(ref this, out pProtocol);
+			public HRESULT GetHostURL(PWSTR pwszURL, out uint32 pcchURL) mut => VT.GetHostURL(ref this, pwszURL, out pcchURL);
+			public HRESULT Open(out uint32 pdwPortNum) mut => VT.Open(ref this, out pdwPortNum);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
@@ -2996,14 +2255,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClientCount(out uint32 pcClients) mut
-			{
-				return VT.GetClientCount(ref this, out pcClients);
-			}
-			public HRESULT GetClientProperties(uint32 dwClientNum, out WM_CLIENT_PROPERTIES pClientProperties) mut
-			{
-				return VT.GetClientProperties(ref this, dwClientNum, out pClientProperties);
-			}
+			public HRESULT GetClientCount(out uint32 pcClients) mut => VT.GetClientCount(ref this, out pcClients);
+			public HRESULT GetClientProperties(uint32 dwClientNum, out WM_CLIENT_PROPERTIES pClientProperties) mut => VT.GetClientProperties(ref this, dwClientNum, out pClientProperties);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3018,10 +2272,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClientInfo(uint32 dwClientNum, char16* pwszNetworkAddress, out uint32 pcchNetworkAddress, char16* pwszPort, out uint32 pcchPort, char16* pwszDNSName, out uint32 pcchDNSName) mut
-			{
-				return VT.GetClientInfo(ref this, dwClientNum, pwszNetworkAddress, out pcchNetworkAddress, pwszPort, out pcchPort, pwszDNSName, out pcchDNSName);
-			}
+			public HRESULT GetClientInfo(uint32 dwClientNum, char16* pwszNetworkAddress, out uint32 pcchNetworkAddress, char16* pwszPort, out uint32 pcchPort, char16* pwszDNSName, out uint32 pcchDNSName) mut => VT.GetClientInfo(ref this, dwClientNum, pwszNetworkAddress, out pcchNetworkAddress, pwszPort, out pcchPort, pwszDNSName, out pcchDNSName);
+
 			[CRepr]
 			public struct VTable : IWMClientConnections.VTable
 			{
@@ -3035,86 +2287,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetUserProvidedClock(BOOL fUserClock) mut
-			{
-				return VT.SetUserProvidedClock(ref this, fUserClock);
-			}
-			public HRESULT GetUserProvidedClock(out BOOL pfUserClock) mut
-			{
-				return VT.GetUserProvidedClock(ref this, out pfUserClock);
-			}
-			public HRESULT DeliverTime(uint64 cnsTime) mut
-			{
-				return VT.DeliverTime(ref this, cnsTime);
-			}
-			public HRESULT SetManualStreamSelection(BOOL fSelection) mut
-			{
-				return VT.SetManualStreamSelection(ref this, fSelection);
-			}
-			public HRESULT GetManualStreamSelection(out BOOL pfSelection) mut
-			{
-				return VT.GetManualStreamSelection(ref this, out pfSelection);
-			}
-			public HRESULT SetStreamsSelected(uint16 cStreamCount, ref uint16 pwStreamNumbers, ref WMT_STREAM_SELECTION pSelections) mut
-			{
-				return VT.SetStreamsSelected(ref this, cStreamCount, ref pwStreamNumbers, ref pSelections);
-			}
-			public HRESULT GetStreamSelected(uint16 wStreamNum, out WMT_STREAM_SELECTION pSelection) mut
-			{
-				return VT.GetStreamSelected(ref this, wStreamNum, out pSelection);
-			}
-			public HRESULT SetReceiveSelectionCallbacks(BOOL fGetCallbacks) mut
-			{
-				return VT.SetReceiveSelectionCallbacks(ref this, fGetCallbacks);
-			}
-			public HRESULT GetReceiveSelectionCallbacks(out BOOL pfGetCallbacks) mut
-			{
-				return VT.GetReceiveSelectionCallbacks(ref this, out pfGetCallbacks);
-			}
-			public HRESULT SetReceiveStreamSamples(uint16 wStreamNum, BOOL fReceiveStreamSamples) mut
-			{
-				return VT.SetReceiveStreamSamples(ref this, wStreamNum, fReceiveStreamSamples);
-			}
-			public HRESULT GetReceiveStreamSamples(uint16 wStreamNum, out BOOL pfReceiveStreamSamples) mut
-			{
-				return VT.GetReceiveStreamSamples(ref this, wStreamNum, out pfReceiveStreamSamples);
-			}
-			public HRESULT SetAllocateForOutput(uint32 dwOutputNum, BOOL fAllocate) mut
-			{
-				return VT.SetAllocateForOutput(ref this, dwOutputNum, fAllocate);
-			}
-			public HRESULT GetAllocateForOutput(uint32 dwOutputNum, out BOOL pfAllocate) mut
-			{
-				return VT.GetAllocateForOutput(ref this, dwOutputNum, out pfAllocate);
-			}
-			public HRESULT SetAllocateForStream(uint16 wStreamNum, BOOL fAllocate) mut
-			{
-				return VT.SetAllocateForStream(ref this, wStreamNum, fAllocate);
-			}
-			public HRESULT GetAllocateForStream(uint16 dwSreamNum, out BOOL pfAllocate) mut
-			{
-				return VT.GetAllocateForStream(ref this, dwSreamNum, out pfAllocate);
-			}
-			public HRESULT GetStatistics(out WM_READER_STATISTICS pStatistics) mut
-			{
-				return VT.GetStatistics(ref this, out pStatistics);
-			}
-			public HRESULT SetClientInfo(ref WM_READER_CLIENTINFO pClientInfo) mut
-			{
-				return VT.SetClientInfo(ref this, ref pClientInfo);
-			}
-			public HRESULT GetMaxOutputSampleSize(uint32 dwOutput, out uint32 pcbMax) mut
-			{
-				return VT.GetMaxOutputSampleSize(ref this, dwOutput, out pcbMax);
-			}
-			public HRESULT GetMaxStreamSampleSize(uint16 wStream, out uint32 pcbMax) mut
-			{
-				return VT.GetMaxStreamSampleSize(ref this, wStream, out pcbMax);
-			}
-			public HRESULT NotifyLateDelivery(uint64 cnsLateness) mut
-			{
-				return VT.NotifyLateDelivery(ref this, cnsLateness);
-			}
+			public HRESULT SetUserProvidedClock(BOOL fUserClock) mut => VT.SetUserProvidedClock(ref this, fUserClock);
+			public HRESULT GetUserProvidedClock(out BOOL pfUserClock) mut => VT.GetUserProvidedClock(ref this, out pfUserClock);
+			public HRESULT DeliverTime(uint64 cnsTime) mut => VT.DeliverTime(ref this, cnsTime);
+			public HRESULT SetManualStreamSelection(BOOL fSelection) mut => VT.SetManualStreamSelection(ref this, fSelection);
+			public HRESULT GetManualStreamSelection(out BOOL pfSelection) mut => VT.GetManualStreamSelection(ref this, out pfSelection);
+			public HRESULT SetStreamsSelected(uint16 cStreamCount, ref uint16 pwStreamNumbers, ref WMT_STREAM_SELECTION pSelections) mut => VT.SetStreamsSelected(ref this, cStreamCount, ref pwStreamNumbers, ref pSelections);
+			public HRESULT GetStreamSelected(uint16 wStreamNum, out WMT_STREAM_SELECTION pSelection) mut => VT.GetStreamSelected(ref this, wStreamNum, out pSelection);
+			public HRESULT SetReceiveSelectionCallbacks(BOOL fGetCallbacks) mut => VT.SetReceiveSelectionCallbacks(ref this, fGetCallbacks);
+			public HRESULT GetReceiveSelectionCallbacks(out BOOL pfGetCallbacks) mut => VT.GetReceiveSelectionCallbacks(ref this, out pfGetCallbacks);
+			public HRESULT SetReceiveStreamSamples(uint16 wStreamNum, BOOL fReceiveStreamSamples) mut => VT.SetReceiveStreamSamples(ref this, wStreamNum, fReceiveStreamSamples);
+			public HRESULT GetReceiveStreamSamples(uint16 wStreamNum, out BOOL pfReceiveStreamSamples) mut => VT.GetReceiveStreamSamples(ref this, wStreamNum, out pfReceiveStreamSamples);
+			public HRESULT SetAllocateForOutput(uint32 dwOutputNum, BOOL fAllocate) mut => VT.SetAllocateForOutput(ref this, dwOutputNum, fAllocate);
+			public HRESULT GetAllocateForOutput(uint32 dwOutputNum, out BOOL pfAllocate) mut => VT.GetAllocateForOutput(ref this, dwOutputNum, out pfAllocate);
+			public HRESULT SetAllocateForStream(uint16 wStreamNum, BOOL fAllocate) mut => VT.SetAllocateForStream(ref this, wStreamNum, fAllocate);
+			public HRESULT GetAllocateForStream(uint16 dwSreamNum, out BOOL pfAllocate) mut => VT.GetAllocateForStream(ref this, dwSreamNum, out pfAllocate);
+			public HRESULT GetStatistics(out WM_READER_STATISTICS pStatistics) mut => VT.GetStatistics(ref this, out pStatistics);
+			public HRESULT SetClientInfo(ref WM_READER_CLIENTINFO pClientInfo) mut => VT.SetClientInfo(ref this, ref pClientInfo);
+			public HRESULT GetMaxOutputSampleSize(uint32 dwOutput, out uint32 pcbMax) mut => VT.GetMaxOutputSampleSize(ref this, dwOutput, out pcbMax);
+			public HRESULT GetMaxStreamSampleSize(uint16 wStream, out uint32 pcbMax) mut => VT.GetMaxStreamSampleSize(ref this, wStream, out pcbMax);
+			public HRESULT NotifyLateDelivery(uint64 cnsLateness) mut => VT.NotifyLateDelivery(ref this, cnsLateness);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3147,66 +2340,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPlayMode(WMT_PLAY_MODE Mode) mut
-			{
-				return VT.SetPlayMode(ref this, Mode);
-			}
-			public HRESULT GetPlayMode(out WMT_PLAY_MODE pMode) mut
-			{
-				return VT.GetPlayMode(ref this, out pMode);
-			}
-			public HRESULT GetBufferProgress(out uint32 pdwPercent, out uint64 pcnsBuffering) mut
-			{
-				return VT.GetBufferProgress(ref this, out pdwPercent, out pcnsBuffering);
-			}
-			public HRESULT GetDownloadProgress(out uint32 pdwPercent, out uint64 pqwBytesDownloaded, out uint64 pcnsDownload) mut
-			{
-				return VT.GetDownloadProgress(ref this, out pdwPercent, out pqwBytesDownloaded, out pcnsDownload);
-			}
-			public HRESULT GetSaveAsProgress(out uint32 pdwPercent) mut
-			{
-				return VT.GetSaveAsProgress(ref this, out pdwPercent);
-			}
-			public HRESULT SaveFileAs(PWSTR pwszFilename) mut
-			{
-				return VT.SaveFileAs(ref this, pwszFilename);
-			}
-			public HRESULT GetProtocolName(char16* pwszProtocol, out uint32 pcchProtocol) mut
-			{
-				return VT.GetProtocolName(ref this, pwszProtocol, out pcchProtocol);
-			}
-			public HRESULT StartAtMarker(uint16 wMarkerIndex, uint64 cnsDuration, float fRate, void* pvContext) mut
-			{
-				return VT.StartAtMarker(ref this, wMarkerIndex, cnsDuration, fRate, pvContext);
-			}
-			public HRESULT GetOutputSetting(uint32 dwOutputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetOutputSetting(ref this, dwOutputNum, pszName, out pType, pValue, out pcbLength);
-			}
-			public HRESULT SetOutputSetting(uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
-			{
-				return VT.SetOutputSetting(ref this, dwOutputNum, pszName, Type, pValue, cbLength);
-			}
-			public HRESULT Preroll(uint64 cnsStart, uint64 cnsDuration, float fRate) mut
-			{
-				return VT.Preroll(ref this, cnsStart, cnsDuration, fRate);
-			}
-			public HRESULT SetLogClientID(BOOL fLogClientID) mut
-			{
-				return VT.SetLogClientID(ref this, fLogClientID);
-			}
-			public HRESULT GetLogClientID(out BOOL pfLogClientID) mut
-			{
-				return VT.GetLogClientID(ref this, out pfLogClientID);
-			}
-			public HRESULT StopBuffering() mut
-			{
-				return VT.StopBuffering(ref this);
-			}
-			public HRESULT OpenStream(ref IStream pStream, ref IWMReaderCallback pCallback, void* pvContext) mut
-			{
-				return VT.OpenStream(ref this, ref pStream, ref pCallback, pvContext);
-			}
+			public HRESULT SetPlayMode(WMT_PLAY_MODE Mode) mut => VT.SetPlayMode(ref this, Mode);
+			public HRESULT GetPlayMode(out WMT_PLAY_MODE pMode) mut => VT.GetPlayMode(ref this, out pMode);
+			public HRESULT GetBufferProgress(out uint32 pdwPercent, out uint64 pcnsBuffering) mut => VT.GetBufferProgress(ref this, out pdwPercent, out pcnsBuffering);
+			public HRESULT GetDownloadProgress(out uint32 pdwPercent, out uint64 pqwBytesDownloaded, out uint64 pcnsDownload) mut => VT.GetDownloadProgress(ref this, out pdwPercent, out pqwBytesDownloaded, out pcnsDownload);
+			public HRESULT GetSaveAsProgress(out uint32 pdwPercent) mut => VT.GetSaveAsProgress(ref this, out pdwPercent);
+			public HRESULT SaveFileAs(PWSTR pwszFilename) mut => VT.SaveFileAs(ref this, pwszFilename);
+			public HRESULT GetProtocolName(char16* pwszProtocol, out uint32 pcchProtocol) mut => VT.GetProtocolName(ref this, pwszProtocol, out pcchProtocol);
+			public HRESULT StartAtMarker(uint16 wMarkerIndex, uint64 cnsDuration, float fRate, void* pvContext) mut => VT.StartAtMarker(ref this, wMarkerIndex, cnsDuration, fRate, pvContext);
+			public HRESULT GetOutputSetting(uint32 dwOutputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut => VT.GetOutputSetting(ref this, dwOutputNum, pszName, out pType, pValue, out pcbLength);
+			public HRESULT SetOutputSetting(uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut => VT.SetOutputSetting(ref this, dwOutputNum, pszName, Type, pValue, cbLength);
+			public HRESULT Preroll(uint64 cnsStart, uint64 cnsDuration, float fRate) mut => VT.Preroll(ref this, cnsStart, cnsDuration, fRate);
+			public HRESULT SetLogClientID(BOOL fLogClientID) mut => VT.SetLogClientID(ref this, fLogClientID);
+			public HRESULT GetLogClientID(out BOOL pfLogClientID) mut => VT.GetLogClientID(ref this, out pfLogClientID);
+			public HRESULT StopBuffering() mut => VT.StopBuffering(ref this);
+			public HRESULT OpenStream(ref IStream pStream, ref IWMReaderCallback pCallback, void* pvContext) mut => VT.OpenStream(ref this, ref pStream, ref pCallback, pvContext);
+
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced.VTable
 			{
@@ -3234,14 +2383,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StopNetStreaming() mut
-			{
-				return VT.StopNetStreaming(ref this);
-			}
-			public HRESULT StartAtPosition(uint16 wStreamNum, void* pvOffsetStart, void* pvDuration, WMT_OFFSET_FORMAT dwOffsetFormat, float fRate, void* pvContext) mut
-			{
-				return VT.StartAtPosition(ref this, wStreamNum, pvOffsetStart, pvDuration, dwOffsetFormat, fRate, pvContext);
-			}
+			public HRESULT StopNetStreaming() mut => VT.StopNetStreaming(ref this);
+			public HRESULT StartAtPosition(uint16 wStreamNum, void* pvOffsetStart, void* pvDuration, WMT_OFFSET_FORMAT dwOffsetFormat, float fRate, void* pvContext) mut => VT.StartAtPosition(ref this, wStreamNum, pvOffsetStart, pvDuration, dwOffsetFormat, fRate, pvContext);
+
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced2.VTable
 			{
@@ -3256,42 +2400,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLanguageCount(uint32 dwOutputNum, out uint16 pwLanguageCount) mut
-			{
-				return VT.GetLanguageCount(ref this, dwOutputNum, out pwLanguageCount);
-			}
-			public HRESULT GetLanguage(uint32 dwOutputNum, uint16 wLanguage, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) mut
-			{
-				return VT.GetLanguage(ref this, dwOutputNum, wLanguage, pwszLanguageString, out pcchLanguageStringLength);
-			}
-			public HRESULT GetMaxSpeedFactor(out double pdblFactor) mut
-			{
-				return VT.GetMaxSpeedFactor(ref this, out pdblFactor);
-			}
-			public HRESULT IsUsingFastCache(out BOOL pfUsingFastCache) mut
-			{
-				return VT.IsUsingFastCache(ref this, out pfUsingFastCache);
-			}
-			public HRESULT AddLogParam(PWSTR wszNameSpace, PWSTR wszName, PWSTR wszValue) mut
-			{
-				return VT.AddLogParam(ref this, wszNameSpace, wszName, wszValue);
-			}
-			public HRESULT SendLogParams() mut
-			{
-				return VT.SendLogParams(ref this);
-			}
-			public HRESULT CanSaveFileAs(out BOOL pfCanSave) mut
-			{
-				return VT.CanSaveFileAs(ref this, out pfCanSave);
-			}
-			public HRESULT CancelSaveFileAs() mut
-			{
-				return VT.CancelSaveFileAs(ref this);
-			}
-			public HRESULT GetURL(char16* pwszURL, out uint32 pcchURL) mut
-			{
-				return VT.GetURL(ref this, pwszURL, out pcchURL);
-			}
+			public HRESULT GetLanguageCount(uint32 dwOutputNum, out uint16 pwLanguageCount) mut => VT.GetLanguageCount(ref this, dwOutputNum, out pwLanguageCount);
+			public HRESULT GetLanguage(uint32 dwOutputNum, uint16 wLanguage, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) mut => VT.GetLanguage(ref this, dwOutputNum, wLanguage, pwszLanguageString, out pcchLanguageStringLength);
+			public HRESULT GetMaxSpeedFactor(out double pdblFactor) mut => VT.GetMaxSpeedFactor(ref this, out pdblFactor);
+			public HRESULT IsUsingFastCache(out BOOL pfUsingFastCache) mut => VT.IsUsingFastCache(ref this, out pfUsingFastCache);
+			public HRESULT AddLogParam(PWSTR wszNameSpace, PWSTR wszName, PWSTR wszValue) mut => VT.AddLogParam(ref this, wszNameSpace, wszName, wszValue);
+			public HRESULT SendLogParams() mut => VT.SendLogParams(ref this);
+			public HRESULT CanSaveFileAs(out BOOL pfCanSave) mut => VT.CanSaveFileAs(ref this, out pfCanSave);
+			public HRESULT CancelSaveFileAs() mut => VT.CancelSaveFileAs(ref this);
+			public HRESULT GetURL(char16* pwszURL, out uint32 pcchURL) mut => VT.GetURL(ref this, pwszURL, out pcchURL);
+
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced3.VTable
 			{
@@ -3313,10 +2431,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPlayerHook(uint32 dwOutputNum, ref IWMPlayerHook pHook) mut
-			{
-				return VT.SetPlayerHook(ref this, dwOutputNum, ref pHook);
-			}
+			public HRESULT SetPlayerHook(uint32 dwOutputNum, ref IWMPlayerHook pHook) mut => VT.SetPlayerHook(ref this, dwOutputNum, ref pHook);
+
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced4.VTable
 			{
@@ -3330,10 +2446,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProtectStreamSamples(uint8* pbCertificate, uint32 cbCertificate, uint32 dwCertificateType, uint32 dwFlags, uint8* pbInitializationVector, out uint32 pcbInitializationVector) mut
-			{
-				return VT.SetProtectStreamSamples(ref this, pbCertificate, cbCertificate, dwCertificateType, dwFlags, pbInitializationVector, out pcbInitializationVector);
-			}
+			public HRESULT SetProtectStreamSamples(uint8* pbCertificate, uint32 cbCertificate, uint32 dwCertificateType, uint32 dwFlags, uint8* pbInitializationVector, out uint32 pcbInitializationVector) mut => VT.SetProtectStreamSamples(ref this, pbCertificate, cbCertificate, dwCertificateType, dwFlags, pbInitializationVector, out pcbInitializationVector);
+
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced5.VTable
 			{
@@ -3347,10 +2461,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PreDecode() mut
-			{
-				return VT.PreDecode(ref this);
-			}
+			public HRESULT PreDecode() mut => VT.PreDecode(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3364,14 +2476,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AllocateForStreamEx(uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) mut
-			{
-				return VT.AllocateForStreamEx(ref this, wStreamNum, cbBuffer, out ppBuffer, dwFlags, cnsSampleTime, cnsSampleDuration, pvContext);
-			}
-			public HRESULT AllocateForOutputEx(uint32 dwOutputNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) mut
-			{
-				return VT.AllocateForOutputEx(ref this, dwOutputNum, cbBuffer, out ppBuffer, dwFlags, cnsSampleTime, cnsSampleDuration, pvContext);
-			}
+			public HRESULT AllocateForStreamEx(uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) mut => VT.AllocateForStreamEx(ref this, wStreamNum, cbBuffer, out ppBuffer, dwFlags, cnsSampleTime, cnsSampleDuration, pvContext);
+			public HRESULT AllocateForOutputEx(uint32 dwOutputNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) mut => VT.AllocateForOutputEx(ref this, dwOutputNum, cbBuffer, out ppBuffer, dwFlags, cnsSampleTime, cnsSampleDuration, pvContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3386,10 +2493,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TryOutputProps(uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) mut
-			{
-				return VT.TryOutputProps(ref this, dwOutputNum, ref pOutput);
-			}
+			public HRESULT TryOutputProps(uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) mut => VT.TryOutputProps(ref this, dwOutputNum, ref pOutput);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3403,30 +2508,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStreamSample(uint16 wStreamNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) mut
-			{
-				return VT.OnStreamSample(ref this, wStreamNum, cnsSampleTime, cnsSampleDuration, dwFlags, ref pSample, pvContext);
-			}
-			public HRESULT OnTime(uint64 cnsCurrentTime, void* pvContext) mut
-			{
-				return VT.OnTime(ref this, cnsCurrentTime, pvContext);
-			}
-			public HRESULT OnStreamSelection(uint16 wStreamCount, ref uint16 pStreamNumbers, ref WMT_STREAM_SELECTION pSelections, void* pvContext) mut
-			{
-				return VT.OnStreamSelection(ref this, wStreamCount, ref pStreamNumbers, ref pSelections, pvContext);
-			}
-			public HRESULT OnOutputPropsChanged(uint32 dwOutputNum, ref WM_MEDIA_TYPE pMediaType, void* pvContext) mut
-			{
-				return VT.OnOutputPropsChanged(ref this, dwOutputNum, ref pMediaType, pvContext);
-			}
-			public HRESULT AllocateForStream(uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) mut
-			{
-				return VT.AllocateForStream(ref this, wStreamNum, cbBuffer, out ppBuffer, pvContext);
-			}
-			public HRESULT AllocateForOutput(uint32 dwOutputNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) mut
-			{
-				return VT.AllocateForOutput(ref this, dwOutputNum, cbBuffer, out ppBuffer, pvContext);
-			}
+			public HRESULT OnStreamSample(uint16 wStreamNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) mut => VT.OnStreamSample(ref this, wStreamNum, cnsSampleTime, cnsSampleDuration, dwFlags, ref pSample, pvContext);
+			public HRESULT OnTime(uint64 cnsCurrentTime, void* pvContext) mut => VT.OnTime(ref this, cnsCurrentTime, pvContext);
+			public HRESULT OnStreamSelection(uint16 wStreamCount, ref uint16 pStreamNumbers, ref WMT_STREAM_SELECTION pSelections, void* pvContext) mut => VT.OnStreamSelection(ref this, wStreamCount, ref pStreamNumbers, ref pSelections, pvContext);
+			public HRESULT OnOutputPropsChanged(uint32 dwOutputNum, ref WM_MEDIA_TYPE pMediaType, void* pvContext) mut => VT.OnOutputPropsChanged(ref this, dwOutputNum, ref pMediaType, pvContext);
+			public HRESULT AllocateForStream(uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) mut => VT.AllocateForStream(ref this, wStreamNum, cbBuffer, out ppBuffer, pvContext);
+			public HRESULT AllocateForOutput(uint32 dwOutputNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) mut => VT.AllocateForOutput(ref this, dwOutputNum, cbBuffer, out ppBuffer, pvContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3445,38 +2533,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AcquireLicense(uint32 dwFlags) mut
-			{
-				return VT.AcquireLicense(ref this, dwFlags);
-			}
-			public HRESULT CancelLicenseAcquisition() mut
-			{
-				return VT.CancelLicenseAcquisition(ref this);
-			}
-			public HRESULT Individualize(uint32 dwFlags) mut
-			{
-				return VT.Individualize(ref this, dwFlags);
-			}
-			public HRESULT CancelIndividualization() mut
-			{
-				return VT.CancelIndividualization(ref this);
-			}
-			public HRESULT MonitorLicenseAcquisition() mut
-			{
-				return VT.MonitorLicenseAcquisition(ref this);
-			}
-			public HRESULT CancelMonitorLicenseAcquisition() mut
-			{
-				return VT.CancelMonitorLicenseAcquisition(ref this);
-			}
-			public HRESULT SetDRMProperty(PWSTR pwstrName, WMT_ATTR_DATATYPE dwType, uint8* pValue, uint16 cbLength) mut
-			{
-				return VT.SetDRMProperty(ref this, pwstrName, dwType, pValue, cbLength);
-			}
-			public HRESULT GetDRMProperty(PWSTR pwstrName, out WMT_ATTR_DATATYPE pdwType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetDRMProperty(ref this, pwstrName, out pdwType, pValue, out pcbLength);
-			}
+			public HRESULT AcquireLicense(uint32 dwFlags) mut => VT.AcquireLicense(ref this, dwFlags);
+			public HRESULT CancelLicenseAcquisition() mut => VT.CancelLicenseAcquisition(ref this);
+			public HRESULT Individualize(uint32 dwFlags) mut => VT.Individualize(ref this, dwFlags);
+			public HRESULT CancelIndividualization() mut => VT.CancelIndividualization(ref this);
+			public HRESULT MonitorLicenseAcquisition() mut => VT.MonitorLicenseAcquisition(ref this);
+			public HRESULT CancelMonitorLicenseAcquisition() mut => VT.CancelMonitorLicenseAcquisition(ref this);
+			public HRESULT SetDRMProperty(PWSTR pwstrName, WMT_ATTR_DATATYPE dwType, uint8* pValue, uint16 cbLength) mut => VT.SetDRMProperty(ref this, pwstrName, dwType, pValue, cbLength);
+			public HRESULT GetDRMProperty(PWSTR pwstrName, out WMT_ATTR_DATATYPE pdwType, uint8* pValue, out uint16 pcbLength) mut => VT.GetDRMProperty(ref this, pwstrName, out pdwType, pValue, out pcbLength);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3497,22 +2562,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetEvaluateOutputLevelLicenses(BOOL fEvaluate) mut
-			{
-				return VT.SetEvaluateOutputLevelLicenses(ref this, fEvaluate);
-			}
-			public HRESULT GetPlayOutputLevels(DRM_PLAY_OPL* pPlayOPL, out uint32 pcbLength, out uint32 pdwMinAppComplianceLevel) mut
-			{
-				return VT.GetPlayOutputLevels(ref this, pPlayOPL, out pcbLength, out pdwMinAppComplianceLevel);
-			}
-			public HRESULT GetCopyOutputLevels(DRM_COPY_OPL* pCopyOPL, out uint32 pcbLength, out uint32 pdwMinAppComplianceLevel) mut
-			{
-				return VT.GetCopyOutputLevels(ref this, pCopyOPL, out pcbLength, out pdwMinAppComplianceLevel);
-			}
-			public HRESULT TryNextLicense() mut
-			{
-				return VT.TryNextLicense(ref this);
-			}
+			public HRESULT SetEvaluateOutputLevelLicenses(BOOL fEvaluate) mut => VT.SetEvaluateOutputLevelLicenses(ref this, fEvaluate);
+			public HRESULT GetPlayOutputLevels(DRM_PLAY_OPL* pPlayOPL, out uint32 pcbLength, out uint32 pdwMinAppComplianceLevel) mut => VT.GetPlayOutputLevels(ref this, pPlayOPL, out pcbLength, out pdwMinAppComplianceLevel);
+			public HRESULT GetCopyOutputLevels(DRM_COPY_OPL* pCopyOPL, out uint32 pcbLength, out uint32 pdwMinAppComplianceLevel) mut => VT.GetCopyOutputLevels(ref this, pCopyOPL, out pcbLength, out pdwMinAppComplianceLevel);
+			public HRESULT TryNextLicense() mut => VT.TryNextLicense(ref this);
+
 			[CRepr]
 			public struct VTable : IWMDRMReader.VTable
 			{
@@ -3529,10 +2583,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInclusionList(out Guid* ppGuids, out uint32 pcGuids) mut
-			{
-				return VT.GetInclusionList(ref this, out ppGuids, out pcGuids);
-			}
+			public HRESULT GetInclusionList(out Guid* ppGuids, out uint32 pcGuids) mut => VT.GetInclusionList(ref this, out ppGuids, out pcGuids);
+
 			[CRepr]
 			public struct VTable : IWMDRMReader2.VTable
 			{
@@ -3546,22 +2598,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitPlaylistBurn(uint32 cFiles, ref PWSTR ppwszFilenames, ref IWMStatusCallback pCallback, void* pvContext) mut
-			{
-				return VT.InitPlaylistBurn(ref this, cFiles, ref ppwszFilenames, ref pCallback, pvContext);
-			}
-			public HRESULT GetInitResults(uint32 cFiles, out HRESULT phrStati) mut
-			{
-				return VT.GetInitResults(ref this, cFiles, out phrStati);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
-			public HRESULT EndPlaylistBurn(HRESULT hrBurnResult) mut
-			{
-				return VT.EndPlaylistBurn(ref this, hrBurnResult);
-			}
+			public HRESULT InitPlaylistBurn(uint32 cFiles, ref PWSTR ppwszFilenames, ref IWMStatusCallback pCallback, void* pvContext) mut => VT.InitPlaylistBurn(ref this, cFiles, ref ppwszFilenames, ref pCallback, pvContext);
+			public HRESULT GetInitResults(uint32 cFiles, out HRESULT phrStati) mut => VT.GetInitResults(ref this, cFiles, out phrStati);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+			public HRESULT EndPlaylistBurn(HRESULT hrBurnResult) mut => VT.EndPlaylistBurn(ref this, hrBurnResult);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3578,138 +2619,40 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBufferingTime(out uint64 pcnsBufferingTime) mut
-			{
-				return VT.GetBufferingTime(ref this, out pcnsBufferingTime);
-			}
-			public HRESULT SetBufferingTime(uint64 cnsBufferingTime) mut
-			{
-				return VT.SetBufferingTime(ref this, cnsBufferingTime);
-			}
-			public HRESULT GetUDPPortRanges(WM_PORT_NUMBER_RANGE* pRangeArray, out uint32 pcRanges) mut
-			{
-				return VT.GetUDPPortRanges(ref this, pRangeArray, out pcRanges);
-			}
-			public HRESULT SetUDPPortRanges(WM_PORT_NUMBER_RANGE* pRangeArray, uint32 cRanges) mut
-			{
-				return VT.SetUDPPortRanges(ref this, pRangeArray, cRanges);
-			}
-			public HRESULT GetProxySettings(PWSTR pwszProtocol, out WMT_PROXY_SETTINGS pProxySetting) mut
-			{
-				return VT.GetProxySettings(ref this, pwszProtocol, out pProxySetting);
-			}
-			public HRESULT SetProxySettings(PWSTR pwszProtocol, WMT_PROXY_SETTINGS ProxySetting) mut
-			{
-				return VT.SetProxySettings(ref this, pwszProtocol, ProxySetting);
-			}
-			public HRESULT GetProxyHostName(PWSTR pwszProtocol, char16* pwszHostName, out uint32 pcchHostName) mut
-			{
-				return VT.GetProxyHostName(ref this, pwszProtocol, pwszHostName, out pcchHostName);
-			}
-			public HRESULT SetProxyHostName(PWSTR pwszProtocol, PWSTR pwszHostName) mut
-			{
-				return VT.SetProxyHostName(ref this, pwszProtocol, pwszHostName);
-			}
-			public HRESULT GetProxyPort(PWSTR pwszProtocol, out uint32 pdwPort) mut
-			{
-				return VT.GetProxyPort(ref this, pwszProtocol, out pdwPort);
-			}
-			public HRESULT SetProxyPort(PWSTR pwszProtocol, uint32 dwPort) mut
-			{
-				return VT.SetProxyPort(ref this, pwszProtocol, dwPort);
-			}
-			public HRESULT GetProxyExceptionList(PWSTR pwszProtocol, char16* pwszExceptionList, out uint32 pcchExceptionList) mut
-			{
-				return VT.GetProxyExceptionList(ref this, pwszProtocol, pwszExceptionList, out pcchExceptionList);
-			}
-			public HRESULT SetProxyExceptionList(PWSTR pwszProtocol, PWSTR pwszExceptionList) mut
-			{
-				return VT.SetProxyExceptionList(ref this, pwszProtocol, pwszExceptionList);
-			}
-			public HRESULT GetProxyBypassForLocal(PWSTR pwszProtocol, out BOOL pfBypassForLocal) mut
-			{
-				return VT.GetProxyBypassForLocal(ref this, pwszProtocol, out pfBypassForLocal);
-			}
-			public HRESULT SetProxyBypassForLocal(PWSTR pwszProtocol, BOOL fBypassForLocal) mut
-			{
-				return VT.SetProxyBypassForLocal(ref this, pwszProtocol, fBypassForLocal);
-			}
-			public HRESULT GetForceRerunAutoProxyDetection(out BOOL pfForceRerunDetection) mut
-			{
-				return VT.GetForceRerunAutoProxyDetection(ref this, out pfForceRerunDetection);
-			}
-			public HRESULT SetForceRerunAutoProxyDetection(BOOL fForceRerunDetection) mut
-			{
-				return VT.SetForceRerunAutoProxyDetection(ref this, fForceRerunDetection);
-			}
-			public HRESULT GetEnableMulticast(out BOOL pfEnableMulticast) mut
-			{
-				return VT.GetEnableMulticast(ref this, out pfEnableMulticast);
-			}
-			public HRESULT SetEnableMulticast(BOOL fEnableMulticast) mut
-			{
-				return VT.SetEnableMulticast(ref this, fEnableMulticast);
-			}
-			public HRESULT GetEnableHTTP(out BOOL pfEnableHTTP) mut
-			{
-				return VT.GetEnableHTTP(ref this, out pfEnableHTTP);
-			}
-			public HRESULT SetEnableHTTP(BOOL fEnableHTTP) mut
-			{
-				return VT.SetEnableHTTP(ref this, fEnableHTTP);
-			}
-			public HRESULT GetEnableUDP(out BOOL pfEnableUDP) mut
-			{
-				return VT.GetEnableUDP(ref this, out pfEnableUDP);
-			}
-			public HRESULT SetEnableUDP(BOOL fEnableUDP) mut
-			{
-				return VT.SetEnableUDP(ref this, fEnableUDP);
-			}
-			public HRESULT GetEnableTCP(out BOOL pfEnableTCP) mut
-			{
-				return VT.GetEnableTCP(ref this, out pfEnableTCP);
-			}
-			public HRESULT SetEnableTCP(BOOL fEnableTCP) mut
-			{
-				return VT.SetEnableTCP(ref this, fEnableTCP);
-			}
-			public HRESULT ResetProtocolRollover() mut
-			{
-				return VT.ResetProtocolRollover(ref this);
-			}
-			public HRESULT GetConnectionBandwidth(out uint32 pdwConnectionBandwidth) mut
-			{
-				return VT.GetConnectionBandwidth(ref this, out pdwConnectionBandwidth);
-			}
-			public HRESULT SetConnectionBandwidth(uint32 dwConnectionBandwidth) mut
-			{
-				return VT.SetConnectionBandwidth(ref this, dwConnectionBandwidth);
-			}
-			public HRESULT GetNumProtocolsSupported(out uint32 pcProtocols) mut
-			{
-				return VT.GetNumProtocolsSupported(ref this, out pcProtocols);
-			}
-			public HRESULT GetSupportedProtocolName(uint32 dwProtocolNum, char16* pwszProtocolName, out uint32 pcchProtocolName) mut
-			{
-				return VT.GetSupportedProtocolName(ref this, dwProtocolNum, pwszProtocolName, out pcchProtocolName);
-			}
-			public HRESULT AddLoggingUrl(PWSTR pwszUrl) mut
-			{
-				return VT.AddLoggingUrl(ref this, pwszUrl);
-			}
-			public HRESULT GetLoggingUrl(uint32 dwIndex, char16* pwszUrl, out uint32 pcchUrl) mut
-			{
-				return VT.GetLoggingUrl(ref this, dwIndex, pwszUrl, out pcchUrl);
-			}
-			public HRESULT GetLoggingUrlCount(out uint32 pdwUrlCount) mut
-			{
-				return VT.GetLoggingUrlCount(ref this, out pdwUrlCount);
-			}
-			public HRESULT ResetLoggingUrlList() mut
-			{
-				return VT.ResetLoggingUrlList(ref this);
-			}
+			public HRESULT GetBufferingTime(out uint64 pcnsBufferingTime) mut => VT.GetBufferingTime(ref this, out pcnsBufferingTime);
+			public HRESULT SetBufferingTime(uint64 cnsBufferingTime) mut => VT.SetBufferingTime(ref this, cnsBufferingTime);
+			public HRESULT GetUDPPortRanges(WM_PORT_NUMBER_RANGE* pRangeArray, out uint32 pcRanges) mut => VT.GetUDPPortRanges(ref this, pRangeArray, out pcRanges);
+			public HRESULT SetUDPPortRanges(WM_PORT_NUMBER_RANGE* pRangeArray, uint32 cRanges) mut => VT.SetUDPPortRanges(ref this, pRangeArray, cRanges);
+			public HRESULT GetProxySettings(PWSTR pwszProtocol, out WMT_PROXY_SETTINGS pProxySetting) mut => VT.GetProxySettings(ref this, pwszProtocol, out pProxySetting);
+			public HRESULT SetProxySettings(PWSTR pwszProtocol, WMT_PROXY_SETTINGS ProxySetting) mut => VT.SetProxySettings(ref this, pwszProtocol, ProxySetting);
+			public HRESULT GetProxyHostName(PWSTR pwszProtocol, char16* pwszHostName, out uint32 pcchHostName) mut => VT.GetProxyHostName(ref this, pwszProtocol, pwszHostName, out pcchHostName);
+			public HRESULT SetProxyHostName(PWSTR pwszProtocol, PWSTR pwszHostName) mut => VT.SetProxyHostName(ref this, pwszProtocol, pwszHostName);
+			public HRESULT GetProxyPort(PWSTR pwszProtocol, out uint32 pdwPort) mut => VT.GetProxyPort(ref this, pwszProtocol, out pdwPort);
+			public HRESULT SetProxyPort(PWSTR pwszProtocol, uint32 dwPort) mut => VT.SetProxyPort(ref this, pwszProtocol, dwPort);
+			public HRESULT GetProxyExceptionList(PWSTR pwszProtocol, char16* pwszExceptionList, out uint32 pcchExceptionList) mut => VT.GetProxyExceptionList(ref this, pwszProtocol, pwszExceptionList, out pcchExceptionList);
+			public HRESULT SetProxyExceptionList(PWSTR pwszProtocol, PWSTR pwszExceptionList) mut => VT.SetProxyExceptionList(ref this, pwszProtocol, pwszExceptionList);
+			public HRESULT GetProxyBypassForLocal(PWSTR pwszProtocol, out BOOL pfBypassForLocal) mut => VT.GetProxyBypassForLocal(ref this, pwszProtocol, out pfBypassForLocal);
+			public HRESULT SetProxyBypassForLocal(PWSTR pwszProtocol, BOOL fBypassForLocal) mut => VT.SetProxyBypassForLocal(ref this, pwszProtocol, fBypassForLocal);
+			public HRESULT GetForceRerunAutoProxyDetection(out BOOL pfForceRerunDetection) mut => VT.GetForceRerunAutoProxyDetection(ref this, out pfForceRerunDetection);
+			public HRESULT SetForceRerunAutoProxyDetection(BOOL fForceRerunDetection) mut => VT.SetForceRerunAutoProxyDetection(ref this, fForceRerunDetection);
+			public HRESULT GetEnableMulticast(out BOOL pfEnableMulticast) mut => VT.GetEnableMulticast(ref this, out pfEnableMulticast);
+			public HRESULT SetEnableMulticast(BOOL fEnableMulticast) mut => VT.SetEnableMulticast(ref this, fEnableMulticast);
+			public HRESULT GetEnableHTTP(out BOOL pfEnableHTTP) mut => VT.GetEnableHTTP(ref this, out pfEnableHTTP);
+			public HRESULT SetEnableHTTP(BOOL fEnableHTTP) mut => VT.SetEnableHTTP(ref this, fEnableHTTP);
+			public HRESULT GetEnableUDP(out BOOL pfEnableUDP) mut => VT.GetEnableUDP(ref this, out pfEnableUDP);
+			public HRESULT SetEnableUDP(BOOL fEnableUDP) mut => VT.SetEnableUDP(ref this, fEnableUDP);
+			public HRESULT GetEnableTCP(out BOOL pfEnableTCP) mut => VT.GetEnableTCP(ref this, out pfEnableTCP);
+			public HRESULT SetEnableTCP(BOOL fEnableTCP) mut => VT.SetEnableTCP(ref this, fEnableTCP);
+			public HRESULT ResetProtocolRollover() mut => VT.ResetProtocolRollover(ref this);
+			public HRESULT GetConnectionBandwidth(out uint32 pdwConnectionBandwidth) mut => VT.GetConnectionBandwidth(ref this, out pdwConnectionBandwidth);
+			public HRESULT SetConnectionBandwidth(uint32 dwConnectionBandwidth) mut => VT.SetConnectionBandwidth(ref this, dwConnectionBandwidth);
+			public HRESULT GetNumProtocolsSupported(out uint32 pcProtocols) mut => VT.GetNumProtocolsSupported(ref this, out pcProtocols);
+			public HRESULT GetSupportedProtocolName(uint32 dwProtocolNum, char16* pwszProtocolName, out uint32 pcchProtocolName) mut => VT.GetSupportedProtocolName(ref this, dwProtocolNum, pwszProtocolName, out pcchProtocolName);
+			public HRESULT AddLoggingUrl(PWSTR pwszUrl) mut => VT.AddLoggingUrl(ref this, pwszUrl);
+			public HRESULT GetLoggingUrl(uint32 dwIndex, char16* pwszUrl, out uint32 pcchUrl) mut => VT.GetLoggingUrl(ref this, dwIndex, pwszUrl, out pcchUrl);
+			public HRESULT GetLoggingUrlCount(out uint32 pdwUrlCount) mut => VT.GetLoggingUrlCount(ref this, out pdwUrlCount);
+			public HRESULT ResetLoggingUrlList() mut => VT.ResetLoggingUrlList(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3755,58 +2698,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEnableContentCaching(out BOOL pfEnableContentCaching) mut
-			{
-				return VT.GetEnableContentCaching(ref this, out pfEnableContentCaching);
-			}
-			public HRESULT SetEnableContentCaching(BOOL fEnableContentCaching) mut
-			{
-				return VT.SetEnableContentCaching(ref this, fEnableContentCaching);
-			}
-			public HRESULT GetEnableFastCache(out BOOL pfEnableFastCache) mut
-			{
-				return VT.GetEnableFastCache(ref this, out pfEnableFastCache);
-			}
-			public HRESULT SetEnableFastCache(BOOL fEnableFastCache) mut
-			{
-				return VT.SetEnableFastCache(ref this, fEnableFastCache);
-			}
-			public HRESULT GetAcceleratedStreamingDuration(out uint64 pcnsAccelDuration) mut
-			{
-				return VT.GetAcceleratedStreamingDuration(ref this, out pcnsAccelDuration);
-			}
-			public HRESULT SetAcceleratedStreamingDuration(uint64 cnsAccelDuration) mut
-			{
-				return VT.SetAcceleratedStreamingDuration(ref this, cnsAccelDuration);
-			}
-			public HRESULT GetAutoReconnectLimit(out uint32 pdwAutoReconnectLimit) mut
-			{
-				return VT.GetAutoReconnectLimit(ref this, out pdwAutoReconnectLimit);
-			}
-			public HRESULT SetAutoReconnectLimit(uint32 dwAutoReconnectLimit) mut
-			{
-				return VT.SetAutoReconnectLimit(ref this, dwAutoReconnectLimit);
-			}
-			public HRESULT GetEnableResends(out BOOL pfEnableResends) mut
-			{
-				return VT.GetEnableResends(ref this, out pfEnableResends);
-			}
-			public HRESULT SetEnableResends(BOOL fEnableResends) mut
-			{
-				return VT.SetEnableResends(ref this, fEnableResends);
-			}
-			public HRESULT GetEnableThinning(out BOOL pfEnableThinning) mut
-			{
-				return VT.GetEnableThinning(ref this, out pfEnableThinning);
-			}
-			public HRESULT SetEnableThinning(BOOL fEnableThinning) mut
-			{
-				return VT.SetEnableThinning(ref this, fEnableThinning);
-			}
-			public HRESULT GetMaxNetPacketSize(out uint32 pdwMaxNetPacketSize) mut
-			{
-				return VT.GetMaxNetPacketSize(ref this, out pdwMaxNetPacketSize);
-			}
+			public HRESULT GetEnableContentCaching(out BOOL pfEnableContentCaching) mut => VT.GetEnableContentCaching(ref this, out pfEnableContentCaching);
+			public HRESULT SetEnableContentCaching(BOOL fEnableContentCaching) mut => VT.SetEnableContentCaching(ref this, fEnableContentCaching);
+			public HRESULT GetEnableFastCache(out BOOL pfEnableFastCache) mut => VT.GetEnableFastCache(ref this, out pfEnableFastCache);
+			public HRESULT SetEnableFastCache(BOOL fEnableFastCache) mut => VT.SetEnableFastCache(ref this, fEnableFastCache);
+			public HRESULT GetAcceleratedStreamingDuration(out uint64 pcnsAccelDuration) mut => VT.GetAcceleratedStreamingDuration(ref this, out pcnsAccelDuration);
+			public HRESULT SetAcceleratedStreamingDuration(uint64 cnsAccelDuration) mut => VT.SetAcceleratedStreamingDuration(ref this, cnsAccelDuration);
+			public HRESULT GetAutoReconnectLimit(out uint32 pdwAutoReconnectLimit) mut => VT.GetAutoReconnectLimit(ref this, out pdwAutoReconnectLimit);
+			public HRESULT SetAutoReconnectLimit(uint32 dwAutoReconnectLimit) mut => VT.SetAutoReconnectLimit(ref this, dwAutoReconnectLimit);
+			public HRESULT GetEnableResends(out BOOL pfEnableResends) mut => VT.GetEnableResends(ref this, out pfEnableResends);
+			public HRESULT SetEnableResends(BOOL fEnableResends) mut => VT.SetEnableResends(ref this, fEnableResends);
+			public HRESULT GetEnableThinning(out BOOL pfEnableThinning) mut => VT.GetEnableThinning(ref this, out pfEnableThinning);
+			public HRESULT SetEnableThinning(BOOL fEnableThinning) mut => VT.SetEnableThinning(ref this, fEnableThinning);
+			public HRESULT GetMaxNetPacketSize(out uint32 pdwMaxNetPacketSize) mut => VT.GetMaxNetPacketSize(ref this, out pdwMaxNetPacketSize);
+
 			[CRepr]
 			public struct VTable : IWMReaderNetworkConfig.VTable
 			{
@@ -3832,18 +2737,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTime(ref uint64 pcnsNow) mut
-			{
-				return VT.GetTime(ref this, ref pcnsNow);
-			}
-			public HRESULT SetTimer(uint64 cnsWhen, void* pvParam, out uint32 pdwTimerId) mut
-			{
-				return VT.SetTimer(ref this, cnsWhen, pvParam, out pdwTimerId);
-			}
-			public HRESULT KillTimer(uint32 dwTimerId) mut
-			{
-				return VT.KillTimer(ref this, dwTimerId);
-			}
+			public HRESULT GetTime(ref uint64 pcnsNow) mut => VT.GetTime(ref this, ref pcnsNow);
+			public HRESULT SetTimer(uint64 cnsWhen, void* pvParam, out uint32 pdwTimerId) mut => VT.SetTimer(ref this, cnsWhen, pvParam, out pdwTimerId);
+			public HRESULT KillTimer(uint32 dwTimerId) mut => VT.KillTimer(ref this, dwTimerId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3859,14 +2756,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartIndexing(PWSTR pwszURL, ref IWMStatusCallback pCallback, void* pvContext) mut
-			{
-				return VT.StartIndexing(ref this, pwszURL, ref pCallback, pvContext);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
+			public HRESULT StartIndexing(PWSTR pwszURL, ref IWMStatusCallback pCallback, void* pvContext) mut => VT.StartIndexing(ref this, pwszURL, ref pCallback, pvContext);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3881,10 +2773,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Configure(uint16 wStreamNum, WMT_INDEXER_TYPE nIndexerType, void* pvInterval, void* pvIndexType) mut
-			{
-				return VT.Configure(ref this, wStreamNum, nIndexerType, pvInterval, pvIndexType);
-			}
+			public HRESULT Configure(uint16 wStreamNum, WMT_INDEXER_TYPE nIndexerType, void* pvInterval, void* pvIndexType) mut => VT.Configure(ref this, wStreamNum, nIndexerType, pvInterval, pvIndexType);
+
 			[CRepr]
 			public struct VTable : IWMIndexer.VTable
 			{
@@ -3898,14 +2788,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BackupLicenses(uint32 dwFlags, ref IWMStatusCallback pCallback) mut
-			{
-				return VT.BackupLicenses(ref this, dwFlags, ref pCallback);
-			}
-			public HRESULT CancelLicenseBackup() mut
-			{
-				return VT.CancelLicenseBackup(ref this);
-			}
+			public HRESULT BackupLicenses(uint32 dwFlags, ref IWMStatusCallback pCallback) mut => VT.BackupLicenses(ref this, dwFlags, ref pCallback);
+			public HRESULT CancelLicenseBackup() mut => VT.CancelLicenseBackup(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3920,14 +2805,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RestoreLicenses(uint32 dwFlags, ref IWMStatusCallback pCallback) mut
-			{
-				return VT.RestoreLicenses(ref this, dwFlags, ref pCallback);
-			}
-			public HRESULT CancelLicenseRestore() mut
-			{
-				return VT.CancelLicenseRestore(ref this);
-			}
+			public HRESULT RestoreLicenses(uint32 dwFlags, ref IWMStatusCallback pCallback) mut => VT.RestoreLicenses(ref this, dwFlags, ref pCallback);
+			public HRESULT CancelLicenseRestore() mut => VT.CancelLicenseRestore(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3942,30 +2822,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropCount(out uint16 pcProps) mut
-			{
-				return VT.GetPropCount(ref this, out pcProps);
-			}
-			public HRESULT GetPropByIndex(uint16 wIndex, char16* pwszName, out uint16 pcchNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetPropByIndex(ref this, wIndex, pwszName, out pcchNameLen, out pType, pValue, out pcbLength);
-			}
-			public HRESULT GetPropByName(PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut
-			{
-				return VT.GetPropByName(ref this, pszName, out pType, pValue, out pcbLength);
-			}
-			public HRESULT SetProp(PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
-			{
-				return VT.SetProp(ref this, pszName, Type, pValue, cbLength);
-			}
-			public HRESULT RemoveProp(PWSTR pcwszName) mut
-			{
-				return VT.RemoveProp(ref this, pcwszName);
-			}
-			public HRESULT RemoveAllProps() mut
-			{
-				return VT.RemoveAllProps(ref this);
-			}
+			public HRESULT GetPropCount(out uint16 pcProps) mut => VT.GetPropCount(ref this, out pcProps);
+			public HRESULT GetPropByIndex(uint16 wIndex, char16* pwszName, out uint16 pcchNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut => VT.GetPropByIndex(ref this, wIndex, pwszName, out pcchNameLen, out pType, pValue, out pcbLength);
+			public HRESULT GetPropByName(PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) mut => VT.GetPropByName(ref this, pszName, out pType, pValue, out pcbLength);
+			public HRESULT SetProp(PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut => VT.SetProp(ref this, pszName, Type, pValue, cbLength);
+			public HRESULT RemoveProp(PWSTR pcwszName) mut => VT.RemoveProp(ref this, pcwszName);
+			public HRESULT RemoveAllProps() mut => VT.RemoveAllProps(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3984,18 +2847,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCodecInfoCount(in Guid guidType, out uint32 pcCodecs) mut
-			{
-				return VT.GetCodecInfoCount(ref this, guidType, out pcCodecs);
-			}
-			public HRESULT GetCodecFormatCount(in Guid guidType, uint32 dwCodecIndex, out uint32 pcFormat) mut
-			{
-				return VT.GetCodecFormatCount(ref this, guidType, dwCodecIndex, out pcFormat);
-			}
-			public HRESULT GetCodecFormat(in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, out IWMStreamConfig* ppIStreamConfig) mut
-			{
-				return VT.GetCodecFormat(ref this, guidType, dwCodecIndex, dwFormatIndex, out ppIStreamConfig);
-			}
+			public HRESULT GetCodecInfoCount(in Guid guidType, out uint32 pcCodecs) mut => VT.GetCodecInfoCount(ref this, guidType, out pcCodecs);
+			public HRESULT GetCodecFormatCount(in Guid guidType, uint32 dwCodecIndex, out uint32 pcFormat) mut => VT.GetCodecFormatCount(ref this, guidType, dwCodecIndex, out pcFormat);
+			public HRESULT GetCodecFormat(in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, out IWMStreamConfig* ppIStreamConfig) mut => VT.GetCodecFormat(ref this, guidType, dwCodecIndex, dwFormatIndex, out ppIStreamConfig);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4011,14 +2866,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCodecName(in Guid guidType, uint32 dwCodecIndex, char16* wszName, out uint32 pcchName) mut
-			{
-				return VT.GetCodecName(ref this, guidType, dwCodecIndex, wszName, out pcchName);
-			}
-			public HRESULT GetCodecFormatDesc(in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, out IWMStreamConfig* ppIStreamConfig, char16* wszDesc, out uint32 pcchDesc) mut
-			{
-				return VT.GetCodecFormatDesc(ref this, guidType, dwCodecIndex, dwFormatIndex, out ppIStreamConfig, wszDesc, out pcchDesc);
-			}
+			public HRESULT GetCodecName(in Guid guidType, uint32 dwCodecIndex, char16* wszName, out uint32 pcchName) mut => VT.GetCodecName(ref this, guidType, dwCodecIndex, wszName, out pcchName);
+			public HRESULT GetCodecFormatDesc(in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, out IWMStreamConfig* ppIStreamConfig, char16* wszDesc, out uint32 pcchDesc) mut => VT.GetCodecFormatDesc(ref this, guidType, dwCodecIndex, dwFormatIndex, out ppIStreamConfig, wszDesc, out pcchDesc);
+
 			[CRepr]
 			public struct VTable : IWMCodecInfo.VTable
 			{
@@ -4033,22 +2883,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCodecFormatProp(in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut
-			{
-				return VT.GetCodecFormatProp(ref this, guidType, dwCodecIndex, dwFormatIndex, pszName, out pType, pValue, out pdwSize);
-			}
-			public HRESULT GetCodecProp(in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut
-			{
-				return VT.GetCodecProp(ref this, guidType, dwCodecIndex, pszName, out pType, pValue, out pdwSize);
-			}
-			public HRESULT SetCodecEnumerationSetting(in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint32 dwSize) mut
-			{
-				return VT.SetCodecEnumerationSetting(ref this, guidType, dwCodecIndex, pszName, Type, pValue, dwSize);
-			}
-			public HRESULT GetCodecEnumerationSetting(in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut
-			{
-				return VT.GetCodecEnumerationSetting(ref this, guidType, dwCodecIndex, pszName, out pType, pValue, out pdwSize);
-			}
+			public HRESULT GetCodecFormatProp(in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut => VT.GetCodecFormatProp(ref this, guidType, dwCodecIndex, dwFormatIndex, pszName, out pType, pValue, out pdwSize);
+			public HRESULT GetCodecProp(in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut => VT.GetCodecProp(ref this, guidType, dwCodecIndex, pszName, out pType, pValue, out pdwSize);
+			public HRESULT SetCodecEnumerationSetting(in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint32 dwSize) mut => VT.SetCodecEnumerationSetting(ref this, guidType, dwCodecIndex, pszName, Type, pValue, dwSize);
+			public HRESULT GetCodecEnumerationSetting(in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) mut => VT.GetCodecEnumerationSetting(ref this, guidType, dwCodecIndex, pszName, out pType, pValue, out pdwSize);
+
 			[CRepr]
 			public struct VTable : IWMCodecInfo2.VTable
 			{
@@ -4065,18 +2904,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLanguageCount(out uint16 pwCount) mut
-			{
-				return VT.GetLanguageCount(ref this, out pwCount);
-			}
-			public HRESULT GetLanguageDetails(uint16 wIndex, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) mut
-			{
-				return VT.GetLanguageDetails(ref this, wIndex, pwszLanguageString, out pcchLanguageStringLength);
-			}
-			public HRESULT AddLanguageByRFC1766String(PWSTR pwszLanguageString, out uint16 pwIndex) mut
-			{
-				return VT.AddLanguageByRFC1766String(ref this, pwszLanguageString, out pwIndex);
-			}
+			public HRESULT GetLanguageCount(out uint16 pwCount) mut => VT.GetLanguageCount(ref this, out pwCount);
+			public HRESULT GetLanguageDetails(uint16 wIndex, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) mut => VT.GetLanguageDetails(ref this, wIndex, pwszLanguageString, out pcchLanguageStringLength);
+			public HRESULT AddLanguageByRFC1766String(PWSTR pwszLanguageString, out uint16 pwIndex) mut => VT.AddLanguageByRFC1766String(ref this, pwszLanguageString, out pwIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4092,18 +2923,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Connect(PWSTR pwszURL, PWSTR pwszTemplateURL, BOOL fAutoDestroy) mut
-			{
-				return VT.Connect(ref this, pwszURL, pwszTemplateURL, fAutoDestroy);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
-			public HRESULT EndSession() mut
-			{
-				return VT.EndSession(ref this);
-			}
+			public HRESULT Connect(PWSTR pwszURL, PWSTR pwszTemplateURL, BOOL fAutoDestroy) mut => VT.Connect(ref this, pwszURL, pwszTemplateURL, fAutoDestroy);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+			public HRESULT EndSession() mut => VT.EndSession(ref this);
+
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
@@ -4119,30 +2942,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterDevice(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, out IWMRegisteredDevice* ppDevice) mut
-			{
-				return VT.RegisterDevice(ref this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber, out ppDevice);
-			}
-			public HRESULT UnregisterDevice(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber) mut
-			{
-				return VT.UnregisterDevice(ref this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber);
-			}
-			public HRESULT GetRegistrationStats(uint32 dwRegisterType, out uint32 pcRegisteredDevices) mut
-			{
-				return VT.GetRegistrationStats(ref this, dwRegisterType, out pcRegisteredDevices);
-			}
-			public HRESULT GetFirstRegisteredDevice(uint32 dwRegisterType, out IWMRegisteredDevice* ppDevice) mut
-			{
-				return VT.GetFirstRegisteredDevice(ref this, dwRegisterType, out ppDevice);
-			}
-			public HRESULT GetNextRegisteredDevice(out IWMRegisteredDevice* ppDevice) mut
-			{
-				return VT.GetNextRegisteredDevice(ref this, out ppDevice);
-			}
-			public HRESULT GetRegisteredDeviceByID(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, out IWMRegisteredDevice* ppDevice) mut
-			{
-				return VT.GetRegisteredDeviceByID(ref this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber, out ppDevice);
-			}
+			public HRESULT RegisterDevice(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, out IWMRegisteredDevice* ppDevice) mut => VT.RegisterDevice(ref this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber, out ppDevice);
+			public HRESULT UnregisterDevice(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber) mut => VT.UnregisterDevice(ref this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber);
+			public HRESULT GetRegistrationStats(uint32 dwRegisterType, out uint32 pcRegisteredDevices) mut => VT.GetRegistrationStats(ref this, dwRegisterType, out pcRegisteredDevices);
+			public HRESULT GetFirstRegisteredDevice(uint32 dwRegisterType, out IWMRegisteredDevice* ppDevice) mut => VT.GetFirstRegisteredDevice(ref this, dwRegisterType, out ppDevice);
+			public HRESULT GetNextRegisteredDevice(out IWMRegisteredDevice* ppDevice) mut => VT.GetNextRegisteredDevice(ref this, out ppDevice);
+			public HRESULT GetRegisteredDeviceByID(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, out IWMRegisteredDevice* ppDevice) mut => VT.GetRegisteredDeviceByID(ref this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber, out ppDevice);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4161,62 +2967,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceSerialNumber(out DRM_VAL16 pSerialNumber) mut
-			{
-				return VT.GetDeviceSerialNumber(ref this, out pSerialNumber);
-			}
-			public HRESULT GetDeviceCertificate(out INSSBuffer* ppCertificate) mut
-			{
-				return VT.GetDeviceCertificate(ref this, out ppCertificate);
-			}
-			public HRESULT GetDeviceType(out uint32 pdwType) mut
-			{
-				return VT.GetDeviceType(ref this, out pdwType);
-			}
-			public HRESULT GetAttributeCount(out uint32 pcAttributes) mut
-			{
-				return VT.GetAttributeCount(ref this, out pcAttributes);
-			}
-			public HRESULT GetAttributeByIndex(uint32 dwIndex, out BSTR pbstrName, out BSTR pbstrValue) mut
-			{
-				return VT.GetAttributeByIndex(ref this, dwIndex, out pbstrName, out pbstrValue);
-			}
-			public HRESULT GetAttributeByName(BSTR bstrName, out BSTR pbstrValue) mut
-			{
-				return VT.GetAttributeByName(ref this, bstrName, out pbstrValue);
-			}
-			public HRESULT SetAttributeByName(BSTR bstrName, BSTR bstrValue) mut
-			{
-				return VT.SetAttributeByName(ref this, bstrName, bstrValue);
-			}
-			public HRESULT Approve(BOOL fApprove) mut
-			{
-				return VT.Approve(ref this, fApprove);
-			}
-			public HRESULT IsValid(out BOOL pfValid) mut
-			{
-				return VT.IsValid(ref this, out pfValid);
-			}
-			public HRESULT IsApproved(out BOOL pfApproved) mut
-			{
-				return VT.IsApproved(ref this, out pfApproved);
-			}
-			public HRESULT IsWmdrmCompliant(out BOOL pfCompliant) mut
-			{
-				return VT.IsWmdrmCompliant(ref this, out pfCompliant);
-			}
-			public HRESULT IsOpened(out BOOL pfOpened) mut
-			{
-				return VT.IsOpened(ref this, out pfOpened);
-			}
-			public HRESULT Open() mut
-			{
-				return VT.Open(ref this);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT GetDeviceSerialNumber(out DRM_VAL16 pSerialNumber) mut => VT.GetDeviceSerialNumber(ref this, out pSerialNumber);
+			public HRESULT GetDeviceCertificate(out INSSBuffer* ppCertificate) mut => VT.GetDeviceCertificate(ref this, out ppCertificate);
+			public HRESULT GetDeviceType(out uint32 pdwType) mut => VT.GetDeviceType(ref this, out pdwType);
+			public HRESULT GetAttributeCount(out uint32 pcAttributes) mut => VT.GetAttributeCount(ref this, out pcAttributes);
+			public HRESULT GetAttributeByIndex(uint32 dwIndex, out BSTR pbstrName, out BSTR pbstrValue) mut => VT.GetAttributeByIndex(ref this, dwIndex, out pbstrName, out pbstrValue);
+			public HRESULT GetAttributeByName(BSTR bstrName, out BSTR pbstrValue) mut => VT.GetAttributeByName(ref this, bstrName, out pbstrValue);
+			public HRESULT SetAttributeByName(BSTR bstrName, BSTR bstrValue) mut => VT.SetAttributeByName(ref this, bstrName, bstrValue);
+			public HRESULT Approve(BOOL fApprove) mut => VT.Approve(ref this, fApprove);
+			public HRESULT IsValid(out BOOL pfValid) mut => VT.IsValid(ref this, out pfValid);
+			public HRESULT IsApproved(out BOOL pfApproved) mut => VT.IsApproved(ref this, out pfApproved);
+			public HRESULT IsWmdrmCompliant(out BOOL pfCompliant) mut => VT.IsWmdrmCompliant(ref this, out pfCompliant);
+			public HRESULT IsOpened(out BOOL pfOpened) mut => VT.IsOpened(ref this, out pfOpened);
+			public HRESULT Open() mut => VT.Open(ref this);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4243,10 +3008,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartDetection(uint8* pbRegistrationMsg, uint32 cbRegistrationMsg, uint8* pbLocalAddress, uint32 cbLocalAddress, uint32 dwExtraPortsAllowed, out INSSBuffer* ppRegistrationResponseMsg, ref IWMStatusCallback pCallback, void* pvContext) mut
-			{
-				return VT.StartDetection(ref this, pbRegistrationMsg, cbRegistrationMsg, pbLocalAddress, cbLocalAddress, dwExtraPortsAllowed, out ppRegistrationResponseMsg, ref pCallback, pvContext);
-			}
+			public HRESULT StartDetection(uint8* pbRegistrationMsg, uint32 cbRegistrationMsg, uint8* pbLocalAddress, uint32 cbLocalAddress, uint32 dwExtraPortsAllowed, out INSSBuffer* ppRegistrationResponseMsg, ref IWMStatusCallback pCallback, void* pvContext) mut => VT.StartDetection(ref this, pbRegistrationMsg, cbRegistrationMsg, pbLocalAddress, cbLocalAddress, dwExtraPortsAllowed, out ppRegistrationResponseMsg, ref pCallback, pvContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4260,14 +3023,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ParseRegistrationReqMsg(uint8* pbRegistrationReqMsg, uint32 cbRegistrationReqMsg, out INSSBuffer* ppDeviceCert, out DRM_VAL16 pDeviceSerialNumber) mut
-			{
-				return VT.ParseRegistrationReqMsg(ref this, pbRegistrationReqMsg, cbRegistrationReqMsg, out ppDeviceCert, out pDeviceSerialNumber);
-			}
-			public HRESULT ParseLicenseRequestMsg(uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, out INSSBuffer* ppDeviceCert, out DRM_VAL16 pDeviceSerialNumber, out BSTR pbstrAction) mut
-			{
-				return VT.ParseLicenseRequestMsg(ref this, pbLicenseRequestMsg, cbLicenseRequestMsg, out ppDeviceCert, out pDeviceSerialNumber, out pbstrAction);
-			}
+			public HRESULT ParseRegistrationReqMsg(uint8* pbRegistrationReqMsg, uint32 cbRegistrationReqMsg, out INSSBuffer* ppDeviceCert, out DRM_VAL16 pDeviceSerialNumber) mut => VT.ParseRegistrationReqMsg(ref this, pbRegistrationReqMsg, cbRegistrationReqMsg, out ppDeviceCert, out pDeviceSerialNumber);
+			public HRESULT ParseLicenseRequestMsg(uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, out INSSBuffer* ppDeviceCert, out DRM_VAL16 pDeviceSerialNumber, out BSTR pbstrAction) mut => VT.ParseLicenseRequestMsg(ref this, pbLicenseRequestMsg, cbLicenseRequestMsg, out ppDeviceCert, out pDeviceSerialNumber, out pbstrAction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4282,22 +3040,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(BSTR bstrFileName, out uint8 pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, out INSSBuffer* ppLicenseResponseMsg, ref IWMStatusCallback pCallback, void* pvContext) mut
-			{
-				return VT.Initialize(ref this, bstrFileName, out pbLicenseRequestMsg, cbLicenseRequestMsg, out ppLicenseResponseMsg, ref pCallback, pvContext);
-			}
-			public HRESULT Seek(uint64 hnsTime) mut
-			{
-				return VT.Seek(ref this, hnsTime);
-			}
-			public HRESULT Read(ref uint8 pbData, ref uint32 pcbData) mut
-			{
-				return VT.Read(ref this, ref pbData, ref pcbData);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT Initialize(BSTR bstrFileName, out uint8 pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, out INSSBuffer* ppLicenseResponseMsg, ref IWMStatusCallback pCallback, void* pvContext) mut => VT.Initialize(ref this, bstrFileName, out pbLicenseRequestMsg, cbLicenseRequestMsg, out ppLicenseResponseMsg, ref pCallback, pvContext);
+			public HRESULT Seek(uint64 hnsTime) mut => VT.Seek(ref this, hnsTime);
+			public HRESULT Read(ref uint8 pbData, ref uint32 pcbData) mut => VT.Read(ref this, ref pbData, ref pcbData);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4314,22 +3061,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SeekEx(uint64 cnsStartTime, uint64 cnsDuration, float flRate, BOOL fIncludeFileHeader) mut
-			{
-				return VT.SeekEx(ref this, cnsStartTime, cnsDuration, flRate, fIncludeFileHeader);
-			}
-			public HRESULT ZeroAdjustTimestamps(BOOL fEnable) mut
-			{
-				return VT.ZeroAdjustTimestamps(ref this, fEnable);
-			}
-			public HRESULT GetSeekStartTime(out uint64 pcnsTime) mut
-			{
-				return VT.GetSeekStartTime(ref this, out pcnsTime);
-			}
-			public HRESULT GetDuration(out uint64 pcnsDuration) mut
-			{
-				return VT.GetDuration(ref this, out pcnsDuration);
-			}
+			public HRESULT SeekEx(uint64 cnsStartTime, uint64 cnsDuration, float flRate, BOOL fIncludeFileHeader) mut => VT.SeekEx(ref this, cnsStartTime, cnsDuration, flRate, fIncludeFileHeader);
+			public HRESULT ZeroAdjustTimestamps(BOOL fEnable) mut => VT.ZeroAdjustTimestamps(ref this, fEnable);
+			public HRESULT GetSeekStartTime(out uint64 pcnsTime) mut => VT.GetSeekStartTime(ref this, out pcnsTime);
+			public HRESULT GetDuration(out uint64 pcnsDuration) mut => VT.GetDuration(ref this, out pcnsDuration);
+
 			[CRepr]
 			public struct VTable : IWMDRMTranscryptor.VTable
 			{
@@ -4346,10 +3082,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateTranscryptor(out IWMDRMTranscryptor* ppTranscryptor) mut
-			{
-				return VT.CreateTranscryptor(ref this, out ppTranscryptor);
-			}
+			public HRESULT CreateTranscryptor(out IWMDRMTranscryptor* ppTranscryptor) mut => VT.CreateTranscryptor(ref this, out ppTranscryptor);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4363,14 +3097,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWatermarkEntryCount(WMT_WATERMARK_ENTRY_TYPE wmetType, out uint32 pdwCount) mut
-			{
-				return VT.GetWatermarkEntryCount(ref this, wmetType, out pdwCount);
-			}
-			public HRESULT GetWatermarkEntry(WMT_WATERMARK_ENTRY_TYPE wmetType, uint32 dwEntryNum, out WMT_WATERMARK_ENTRY pEntry) mut
-			{
-				return VT.GetWatermarkEntry(ref this, wmetType, dwEntryNum, out pEntry);
-			}
+			public HRESULT GetWatermarkEntryCount(WMT_WATERMARK_ENTRY_TYPE wmetType, out uint32 pdwCount) mut => VT.GetWatermarkEntryCount(ref this, wmetType, out pdwCount);
+			public HRESULT GetWatermarkEntry(WMT_WATERMARK_ENTRY_TYPE wmetType, uint32 dwEntryNum, out WMT_WATERMARK_ENTRY pEntry) mut => VT.GetWatermarkEntry(ref this, wmetType, dwEntryNum, out pEntry);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4385,14 +3114,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCodecInterface(uint32 dwOutputNum, in Guid riid, void** ppvCodecInterface) mut
-			{
-				return VT.GetCodecInterface(ref this, dwOutputNum, riid, ppvCodecInterface);
-			}
-			public HRESULT Notify(uint32 dwOutputNum, ref WM_MEDIA_TYPE pSubtype) mut
-			{
-				return VT.Notify(ref this, dwOutputNum, ref pSubtype);
-			}
+			public HRESULT GetCodecInterface(uint32 dwOutputNum, in Guid riid, void** ppvCodecInterface) mut => VT.GetCodecInterface(ref this, dwOutputNum, riid, ppvCodecInterface);
+			public HRESULT Notify(uint32 dwOutputNum, ref WM_MEDIA_TYPE pSubtype) mut => VT.Notify(ref this, dwOutputNum, ref pSubtype);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4407,14 +3131,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTimecodeRangeCount(uint16 wStreamNum, out uint16 pwRangeCount) mut
-			{
-				return VT.GetTimecodeRangeCount(ref this, wStreamNum, out pwRangeCount);
-			}
-			public HRESULT GetTimecodeRangeBounds(uint16 wStreamNum, uint16 wRangeNum, out uint32 pStartTimecode, out uint32 pEndTimecode) mut
-			{
-				return VT.GetTimecodeRangeBounds(ref this, wStreamNum, wRangeNum, out pStartTimecode, out pEndTimecode);
-			}
+			public HRESULT GetTimecodeRangeCount(uint16 wStreamNum, out uint16 pwRangeCount) mut => VT.GetTimecodeRangeCount(ref this, wStreamNum, out pwRangeCount);
+			public HRESULT GetTimecodeRangeBounds(uint16 wStreamNum, uint16 wRangeNum, out uint32 pStartTimecode, out uint32 pEndTimecode) mut => VT.GetTimecodeRangeBounds(ref this, wStreamNum, wRangeNum, out pStartTimecode, out pEndTimecode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4429,22 +3148,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAccessEntryCount(WM_AETYPE aeType, out uint32 pcEntries) mut
-			{
-				return VT.GetAccessEntryCount(ref this, aeType, out pcEntries);
-			}
-			public HRESULT GetAccessEntry(WM_AETYPE aeType, uint32 dwEntryNum, out WM_ADDRESS_ACCESSENTRY pAddrAccessEntry) mut
-			{
-				return VT.GetAccessEntry(ref this, aeType, dwEntryNum, out pAddrAccessEntry);
-			}
-			public HRESULT AddAccessEntry(WM_AETYPE aeType, ref WM_ADDRESS_ACCESSENTRY pAddrAccessEntry) mut
-			{
-				return VT.AddAccessEntry(ref this, aeType, ref pAddrAccessEntry);
-			}
-			public HRESULT RemoveAccessEntry(WM_AETYPE aeType, uint32 dwEntryNum) mut
-			{
-				return VT.RemoveAccessEntry(ref this, aeType, dwEntryNum);
-			}
+			public HRESULT GetAccessEntryCount(WM_AETYPE aeType, out uint32 pcEntries) mut => VT.GetAccessEntryCount(ref this, aeType, out pcEntries);
+			public HRESULT GetAccessEntry(WM_AETYPE aeType, uint32 dwEntryNum, out WM_ADDRESS_ACCESSENTRY pAddrAccessEntry) mut => VT.GetAccessEntry(ref this, aeType, dwEntryNum, out pAddrAccessEntry);
+			public HRESULT AddAccessEntry(WM_AETYPE aeType, ref WM_ADDRESS_ACCESSENTRY pAddrAccessEntry) mut => VT.AddAccessEntry(ref this, aeType, ref pAddrAccessEntry);
+			public HRESULT RemoveAccessEntry(WM_AETYPE aeType, uint32 dwEntryNum) mut => VT.RemoveAccessEntry(ref this, aeType, dwEntryNum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4461,14 +3169,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAccessEntryEx(WM_AETYPE aeType, uint32 dwEntryNum, out BSTR pbstrAddress, out BSTR pbstrMask) mut
-			{
-				return VT.GetAccessEntryEx(ref this, aeType, dwEntryNum, out pbstrAddress, out pbstrMask);
-			}
-			public HRESULT AddAccessEntryEx(WM_AETYPE aeType, BSTR bstrAddress, BSTR bstrMask) mut
-			{
-				return VT.AddAccessEntryEx(ref this, aeType, bstrAddress, bstrMask);
-			}
+			public HRESULT GetAccessEntryEx(WM_AETYPE aeType, uint32 dwEntryNum, out BSTR pbstrAddress, out BSTR pbstrMask) mut => VT.GetAccessEntryEx(ref this, aeType, dwEntryNum, out pbstrAddress, out pbstrMask);
+			public HRESULT AddAccessEntryEx(WM_AETYPE aeType, BSTR bstrAddress, BSTR bstrMask) mut => VT.AddAccessEntryEx(ref this, aeType, bstrAddress, bstrMask);
+
 			[CRepr]
 			public struct VTable : IWMAddressAccess.VTable
 			{
@@ -4483,14 +3186,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetImageCount(out uint32 pcImages) mut
-			{
-				return VT.GetImageCount(ref this, out pcImages);
-			}
-			public HRESULT GetImage(uint32 wIndex, out uint16 pcchMIMEType, char16* pwszMIMEType, out uint16 pcchDescription, char16* pwszDescription, out uint16 pImageType, out uint32 pcbImageData, uint8* pbImageData) mut
-			{
-				return VT.GetImage(ref this, wIndex, out pcchMIMEType, pwszMIMEType, out pcchDescription, pwszDescription, out pImageType, out pcbImageData, pbImageData);
-			}
+			public HRESULT GetImageCount(out uint32 pcImages) mut => VT.GetImageCount(ref this, out pcImages);
+			public HRESULT GetImage(uint32 wIndex, out uint16 pcchMIMEType, char16* pwszMIMEType, out uint16 pcchDescription, char16* pwszDescription, out uint16 pImageType, out uint32 pcbImageData, uint8* pbImageData) mut => VT.GetImage(ref this, wIndex, out pcchMIMEType, pwszMIMEType, out pcchDescription, pwszDescription, out pImageType, out pcbImageData, pbImageData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4505,14 +3203,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLRBChallenge(ref uint8 pMachineID, uint32 dwMachineIDLength, ref uint8 pChallenge, uint32 dwChallengeLength, out uint8 pChallengeOutput, out uint32 pdwChallengeOutputLength) mut
-			{
-				return VT.GetLRBChallenge(ref this, ref pMachineID, dwMachineIDLength, ref pChallenge, dwChallengeLength, out pChallengeOutput, out pdwChallengeOutputLength);
-			}
-			public HRESULT ProcessLRB(ref uint8 pSignedLRB, uint32 dwSignedLRBLength, out uint8 pSignedACK, out uint32 pdwSignedACKLength) mut
-			{
-				return VT.ProcessLRB(ref this, ref pSignedLRB, dwSignedLRBLength, out pSignedACK, out pdwSignedACKLength);
-			}
+			public HRESULT GetLRBChallenge(ref uint8 pMachineID, uint32 dwMachineIDLength, ref uint8 pChallenge, uint32 dwChallengeLength, out uint8 pChallengeOutput, out uint32 pdwChallengeOutputLength) mut => VT.GetLRBChallenge(ref this, ref pMachineID, dwMachineIDLength, ref pChallenge, dwChallengeLength, out pChallengeOutput, out pdwChallengeOutputLength);
+			public HRESULT ProcessLRB(ref uint8 pSignedLRB, uint32 dwSignedLRBLength, out uint8 pSignedACK, out uint32 pdwSignedACKLength) mut => VT.ProcessLRB(ref this, ref pSignedLRB, dwSignedLRBLength, out pSignedACK, out pdwSignedACKLength);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4527,18 +3220,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCertCount(out uint32 pcCerts) mut
-			{
-				return VT.GetCertCount(ref this, out pcCerts);
-			}
-			public HRESULT GetCert(uint32 dwIndex, out uint8* ppbCertData) mut
-			{
-				return VT.GetCert(ref this, dwIndex, out ppbCertData);
-			}
-			public HRESULT GetSharedData(uint32 dwCertIndex, in uint8 pbSharedData, ref uint8 pbCert, out uint8* ppbSharedData) mut
-			{
-				return VT.GetSharedData(ref this, dwCertIndex, pbSharedData, ref pbCert, out ppbSharedData);
-			}
+			public HRESULT GetCertCount(out uint32 pcCerts) mut => VT.GetCertCount(ref this, out pcCerts);
+			public HRESULT GetCert(uint32 dwIndex, out uint8* ppbCertData) mut => VT.GetCert(ref this, dwIndex, out ppbCertData);
+			public HRESULT GetSharedData(uint32 dwCertIndex, in uint8 pbSharedData, ref uint8 pbCert, out uint8* ppbSharedData) mut => VT.GetSharedData(ref this, dwCertIndex, pbSharedData, ref pbCert, out ppbSharedData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4554,50 +3239,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WMSC_AddCertificate(ref IWMAuthorizer pCert) mut
-			{
-				return VT.WMSC_AddCertificate(ref this, ref pCert);
-			}
-			public HRESULT WMSC_AddSignature(ref uint8 pbCertSig, uint32 cbCertSig) mut
-			{
-				return VT.WMSC_AddSignature(ref this, ref pbCertSig, cbCertSig);
-			}
-			public HRESULT WMSC_Connect(ref IWMSecureChannel pOtherSide) mut
-			{
-				return VT.WMSC_Connect(ref this, ref pOtherSide);
-			}
-			public HRESULT WMSC_IsConnected(out BOOL pfIsConnected) mut
-			{
-				return VT.WMSC_IsConnected(ref this, out pfIsConnected);
-			}
-			public HRESULT WMSC_Disconnect() mut
-			{
-				return VT.WMSC_Disconnect(ref this);
-			}
-			public HRESULT WMSC_GetValidCertificate(out uint8* ppbCertificate, out uint32 pdwSignature) mut
-			{
-				return VT.WMSC_GetValidCertificate(ref this, out ppbCertificate, out pdwSignature);
-			}
-			public HRESULT WMSC_Encrypt(ref uint8 pbData, uint32 cbData) mut
-			{
-				return VT.WMSC_Encrypt(ref this, ref pbData, cbData);
-			}
-			public HRESULT WMSC_Decrypt(ref uint8 pbData, uint32 cbData) mut
-			{
-				return VT.WMSC_Decrypt(ref this, ref pbData, cbData);
-			}
-			public HRESULT WMSC_Lock() mut
-			{
-				return VT.WMSC_Lock(ref this);
-			}
-			public HRESULT WMSC_Unlock() mut
-			{
-				return VT.WMSC_Unlock(ref this);
-			}
-			public HRESULT WMSC_SetSharedData(uint32 dwCertIndex, in uint8 pbSharedData) mut
-			{
-				return VT.WMSC_SetSharedData(ref this, dwCertIndex, pbSharedData);
-			}
+			public HRESULT WMSC_AddCertificate(ref IWMAuthorizer pCert) mut => VT.WMSC_AddCertificate(ref this, ref pCert);
+			public HRESULT WMSC_AddSignature(ref uint8 pbCertSig, uint32 cbCertSig) mut => VT.WMSC_AddSignature(ref this, ref pbCertSig, cbCertSig);
+			public HRESULT WMSC_Connect(ref IWMSecureChannel pOtherSide) mut => VT.WMSC_Connect(ref this, ref pOtherSide);
+			public HRESULT WMSC_IsConnected(out BOOL pfIsConnected) mut => VT.WMSC_IsConnected(ref this, out pfIsConnected);
+			public HRESULT WMSC_Disconnect() mut => VT.WMSC_Disconnect(ref this);
+			public HRESULT WMSC_GetValidCertificate(out uint8* ppbCertificate, out uint32 pdwSignature) mut => VT.WMSC_GetValidCertificate(ref this, out ppbCertificate, out pdwSignature);
+			public HRESULT WMSC_Encrypt(ref uint8 pbData, uint32 cbData) mut => VT.WMSC_Encrypt(ref this, ref pbData, cbData);
+			public HRESULT WMSC_Decrypt(ref uint8 pbData, uint32 cbData) mut => VT.WMSC_Decrypt(ref this, ref pbData, cbData);
+			public HRESULT WMSC_Lock() mut => VT.WMSC_Lock(ref this);
+			public HRESULT WMSC_Unlock() mut => VT.WMSC_Unlock(ref this);
+			public HRESULT WMSC_SetSharedData(uint32 dwCertIndex, in uint8 pbSharedData) mut => VT.WMSC_SetSharedData(ref this, dwCertIndex, pbSharedData);
+
 			[CRepr]
 			public struct VTable : IWMAuthorizer.VTable
 			{
@@ -4621,10 +3274,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPeerSecureChannelInterface(out IWMSecureChannel* ppPeer) mut
-			{
-				return VT.GetPeerSecureChannelInterface(ref this, out ppPeer);
-			}
+			public HRESULT GetPeerSecureChannelInterface(out IWMSecureChannel* ppPeer) mut => VT.GetPeerSecureChannelInterface(ref this, out ppPeer);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4638,38 +3289,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize() mut
-			{
-				return VT.Initialize(ref this);
-			}
-			public HRESULT CreateNetSource(PWSTR pszStreamName, ref IUnknown pMonitor, ref uint8 pData, ref IUnknown pUserContext, ref IUnknown pCallback, uint64 qwContext) mut
-			{
-				return VT.CreateNetSource(ref this, pszStreamName, ref pMonitor, ref pData, ref pUserContext, ref pCallback, qwContext);
-			}
-			public HRESULT GetNetSourceProperties(PWSTR pszStreamName, out IUnknown* ppPropertiesNode) mut
-			{
-				return VT.GetNetSourceProperties(ref this, pszStreamName, out ppPropertiesNode);
-			}
-			public HRESULT GetNetSourceSharedNamespace(out IUnknown* ppSharedNamespace) mut
-			{
-				return VT.GetNetSourceSharedNamespace(ref this, out ppSharedNamespace);
-			}
-			public HRESULT GetNetSourceAdminInterface(PWSTR pszStreamName, out VARIANT pVal) mut
-			{
-				return VT.GetNetSourceAdminInterface(ref this, pszStreamName, out pVal);
-			}
-			public HRESULT GetNumProtocolsSupported(out uint32 pcProtocols) mut
-			{
-				return VT.GetNumProtocolsSupported(ref this, out pcProtocols);
-			}
-			public HRESULT GetProtocolName(uint32 dwProtocolNum, PWSTR pwszProtocolName, out uint16 pcchProtocolName) mut
-			{
-				return VT.GetProtocolName(ref this, dwProtocolNum, pwszProtocolName, out pcchProtocolName);
-			}
-			public HRESULT Shutdown() mut
-			{
-				return VT.Shutdown(ref this);
-			}
+			public HRESULT Initialize() mut => VT.Initialize(ref this);
+			public HRESULT CreateNetSource(PWSTR pszStreamName, ref IUnknown pMonitor, ref uint8 pData, ref IUnknown pUserContext, ref IUnknown pCallback, uint64 qwContext) mut => VT.CreateNetSource(ref this, pszStreamName, ref pMonitor, ref pData, ref pUserContext, ref pCallback, qwContext);
+			public HRESULT GetNetSourceProperties(PWSTR pszStreamName, out IUnknown* ppPropertiesNode) mut => VT.GetNetSourceProperties(ref this, pszStreamName, out ppPropertiesNode);
+			public HRESULT GetNetSourceSharedNamespace(out IUnknown* ppSharedNamespace) mut => VT.GetNetSourceSharedNamespace(ref this, out ppSharedNamespace);
+			public HRESULT GetNetSourceAdminInterface(PWSTR pszStreamName, out VARIANT pVal) mut => VT.GetNetSourceAdminInterface(ref this, pszStreamName, out pVal);
+			public HRESULT GetNumProtocolsSupported(out uint32 pcProtocols) mut => VT.GetNumProtocolsSupported(ref this, out pcProtocols);
+			public HRESULT GetProtocolName(uint32 dwProtocolNum, PWSTR pwszProtocolName, out uint16 pcchProtocolName) mut => VT.GetProtocolName(ref this, dwProtocolNum, pwszProtocolName, out pcchProtocolName);
+			public HRESULT Shutdown() mut => VT.Shutdown(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4690,10 +3318,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MapTimestamp(int64 rtIn, out int64 prtOut) mut
-			{
-				return VT.MapTimestamp(ref this, rtIn, out prtOut);
-			}
+			public HRESULT MapTimestamp(int64 rtIn, out int64 prtOut) mut => VT.MapTimestamp(ref this, rtIn, out prtOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4707,18 +3333,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAcceleratorInterface(ref IAMVideoAccelerator pIAMVA) mut
-			{
-				return VT.SetAcceleratorInterface(ref this, ref pIAMVA);
-			}
-			public HRESULT NegotiateConnection(ref AM_MEDIA_TYPE pMediaType) mut
-			{
-				return VT.NegotiateConnection(ref this, ref pMediaType);
-			}
-			public HRESULT SetPlayerNotify(ref IWMPlayerTimestampHook pHook) mut
-			{
-				return VT.SetPlayerNotify(ref this, ref pHook);
-			}
+			public HRESULT SetAcceleratorInterface(ref IAMVideoAccelerator pIAMVA) mut => VT.SetAcceleratorInterface(ref this, ref pIAMVA);
+			public HRESULT NegotiateConnection(ref AM_MEDIA_TYPE pMediaType) mut => VT.NegotiateConnection(ref this, ref pMediaType);
+			public HRESULT SetPlayerNotify(ref IWMPlayerTimestampHook pHook) mut => VT.SetPlayerNotify(ref this, ref pHook);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4734,14 +3352,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NegotiateConnection(ref IAMVideoAccelerator pIAMVA, ref AM_MEDIA_TYPE pMediaType) mut
-			{
-				return VT.NegotiateConnection(ref this, ref pIAMVA, ref pMediaType);
-			}
-			public HRESULT SetPlayerNotify(ref IWMPlayerTimestampHook pHook) mut
-			{
-				return VT.SetPlayerNotify(ref this, ref pHook);
-			}
+			public HRESULT NegotiateConnection(ref IAMVideoAccelerator pIAMVA, ref AM_MEDIA_TYPE pMediaType) mut => VT.NegotiateConnection(ref this, ref pIAMVA, ref pMediaType);
+			public HRESULT SetPlayerNotify(ref IWMPlayerTimestampHook pHook) mut => VT.SetPlayerNotify(ref this, ref pHook);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4756,50 +3369,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IUnknown pSharedNamespace, ref IUnknown pNamespaceNode, ref INSNetSourceCreator pNetSourceCreator, BOOL fEmbeddedInServer) mut
-			{
-				return VT.Initialize(ref this, ref pSharedNamespace, ref pNamespaceNode, ref pNetSourceCreator, fEmbeddedInServer);
-			}
-			public HRESULT GetNetSourceCreator(out INSNetSourceCreator* ppNetSourceCreator) mut
-			{
-				return VT.GetNetSourceCreator(ref this, out ppNetSourceCreator);
-			}
-			public HRESULT SetCredentials(BSTR bstrRealm, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) mut
-			{
-				return VT.SetCredentials(ref this, bstrRealm, bstrName, bstrPassword, fPersist, fConfirmedGood);
-			}
-			public HRESULT GetCredentials(BSTR bstrRealm, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) mut
-			{
-				return VT.GetCredentials(ref this, bstrRealm, out pbstrName, out pbstrPassword, out pfConfirmedGood);
-			}
-			public HRESULT DeleteCredentials(BSTR bstrRealm) mut
-			{
-				return VT.DeleteCredentials(ref this, bstrRealm);
-			}
-			public HRESULT GetCredentialFlags(out uint32 lpdwFlags) mut
-			{
-				return VT.GetCredentialFlags(ref this, out lpdwFlags);
-			}
-			public HRESULT SetCredentialFlags(uint32 dwFlags) mut
-			{
-				return VT.SetCredentialFlags(ref this, dwFlags);
-			}
-			public HRESULT FindProxyForURL(BSTR bstrProtocol, BSTR bstrHost, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint32 pdwProxyContext) mut
-			{
-				return VT.FindProxyForURL(ref this, bstrProtocol, bstrHost, out pfProxyEnabled, out pbstrProxyServer, out pdwProxyPort, out pdwProxyContext);
-			}
-			public HRESULT RegisterProxyFailure(HRESULT hrParam, uint32 dwProxyContext) mut
-			{
-				return VT.RegisterProxyFailure(ref this, hrParam, dwProxyContext);
-			}
-			public HRESULT ShutdownProxyContext(uint32 dwProxyContext) mut
-			{
-				return VT.ShutdownProxyContext(ref this, dwProxyContext);
-			}
-			public HRESULT IsUsingIE(uint32 dwProxyContext, out BOOL pfIsUsingIE) mut
-			{
-				return VT.IsUsingIE(ref this, dwProxyContext, out pfIsUsingIE);
-			}
+			public HRESULT Initialize(ref IUnknown pSharedNamespace, ref IUnknown pNamespaceNode, ref INSNetSourceCreator pNetSourceCreator, BOOL fEmbeddedInServer) mut => VT.Initialize(ref this, ref pSharedNamespace, ref pNamespaceNode, ref pNetSourceCreator, fEmbeddedInServer);
+			public HRESULT GetNetSourceCreator(out INSNetSourceCreator* ppNetSourceCreator) mut => VT.GetNetSourceCreator(ref this, out ppNetSourceCreator);
+			public HRESULT SetCredentials(BSTR bstrRealm, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) mut => VT.SetCredentials(ref this, bstrRealm, bstrName, bstrPassword, fPersist, fConfirmedGood);
+			public HRESULT GetCredentials(BSTR bstrRealm, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) mut => VT.GetCredentials(ref this, bstrRealm, out pbstrName, out pbstrPassword, out pfConfirmedGood);
+			public HRESULT DeleteCredentials(BSTR bstrRealm) mut => VT.DeleteCredentials(ref this, bstrRealm);
+			public HRESULT GetCredentialFlags(out uint32 lpdwFlags) mut => VT.GetCredentialFlags(ref this, out lpdwFlags);
+			public HRESULT SetCredentialFlags(uint32 dwFlags) mut => VT.SetCredentialFlags(ref this, dwFlags);
+			public HRESULT FindProxyForURL(BSTR bstrProtocol, BSTR bstrHost, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint32 pdwProxyContext) mut => VT.FindProxyForURL(ref this, bstrProtocol, bstrHost, out pfProxyEnabled, out pbstrProxyServer, out pdwProxyPort, out pdwProxyContext);
+			public HRESULT RegisterProxyFailure(HRESULT hrParam, uint32 dwProxyContext) mut => VT.RegisterProxyFailure(ref this, hrParam, dwProxyContext);
+			public HRESULT ShutdownProxyContext(uint32 dwProxyContext) mut => VT.ShutdownProxyContext(ref this, dwProxyContext);
+			public HRESULT IsUsingIE(uint32 dwProxyContext, out BOOL pfIsUsingIE) mut => VT.IsUsingIE(ref this, dwProxyContext, out pfIsUsingIE);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4823,22 +3404,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) mut
-			{
-				return VT.SetCredentialsEx(ref this, bstrRealm, bstrUrl, fProxy, bstrName, bstrPassword, fPersist, fConfirmedGood);
-			}
-			public HRESULT GetCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) mut
-			{
-				return VT.GetCredentialsEx(ref this, bstrRealm, bstrUrl, fProxy, out pdwUrlPolicy, out pbstrName, out pbstrPassword, out pfConfirmedGood);
-			}
-			public HRESULT DeleteCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy) mut
-			{
-				return VT.DeleteCredentialsEx(ref this, bstrRealm, bstrUrl, fProxy);
-			}
-			public HRESULT FindProxyForURLEx(BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint32 pdwProxyContext) mut
-			{
-				return VT.FindProxyForURLEx(ref this, bstrProtocol, bstrHost, bstrUrl, out pfProxyEnabled, out pbstrProxyServer, out pdwProxyPort, out pdwProxyContext);
-			}
+			public HRESULT SetCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) mut => VT.SetCredentialsEx(ref this, bstrRealm, bstrUrl, fProxy, bstrName, bstrPassword, fPersist, fConfirmedGood);
+			public HRESULT GetCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) mut => VT.GetCredentialsEx(ref this, bstrRealm, bstrUrl, fProxy, out pdwUrlPolicy, out pbstrName, out pbstrPassword, out pfConfirmedGood);
+			public HRESULT DeleteCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy) mut => VT.DeleteCredentialsEx(ref this, bstrRealm, bstrUrl, fProxy);
+			public HRESULT FindProxyForURLEx(BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint32 pdwProxyContext) mut => VT.FindProxyForURLEx(ref this, bstrProtocol, bstrHost, bstrUrl, out pfProxyEnabled, out pbstrProxyServer, out pdwProxyPort, out pdwProxyContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4855,34 +3425,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNetSourceCreator2(out IUnknown* ppNetSourceCreator) mut
-			{
-				return VT.GetNetSourceCreator2(ref this, out ppNetSourceCreator);
-			}
-			public HRESULT FindProxyForURLEx2(BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint64 pqwProxyContext) mut
-			{
-				return VT.FindProxyForURLEx2(ref this, bstrProtocol, bstrHost, bstrUrl, out pfProxyEnabled, out pbstrProxyServer, out pdwProxyPort, out pqwProxyContext);
-			}
-			public HRESULT RegisterProxyFailure2(HRESULT hrParam, uint64 qwProxyContext) mut
-			{
-				return VT.RegisterProxyFailure2(ref this, hrParam, qwProxyContext);
-			}
-			public HRESULT ShutdownProxyContext2(uint64 qwProxyContext) mut
-			{
-				return VT.ShutdownProxyContext2(ref this, qwProxyContext);
-			}
-			public HRESULT IsUsingIE2(uint64 qwProxyContext, out BOOL pfIsUsingIE) mut
-			{
-				return VT.IsUsingIE2(ref this, qwProxyContext, out pfIsUsingIE);
-			}
-			public HRESULT SetCredentialsEx2(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood, BOOL fClearTextAuthentication) mut
-			{
-				return VT.SetCredentialsEx2(ref this, bstrRealm, bstrUrl, fProxy, bstrName, bstrPassword, fPersist, fConfirmedGood, fClearTextAuthentication);
-			}
-			public HRESULT GetCredentialsEx2(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) mut
-			{
-				return VT.GetCredentialsEx2(ref this, bstrRealm, bstrUrl, fProxy, fClearTextAuthentication, out pdwUrlPolicy, out pbstrName, out pbstrPassword, out pfConfirmedGood);
-			}
+			public HRESULT GetNetSourceCreator2(out IUnknown* ppNetSourceCreator) mut => VT.GetNetSourceCreator2(ref this, out ppNetSourceCreator);
+			public HRESULT FindProxyForURLEx2(BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint64 pqwProxyContext) mut => VT.FindProxyForURLEx2(ref this, bstrProtocol, bstrHost, bstrUrl, out pfProxyEnabled, out pbstrProxyServer, out pdwProxyPort, out pqwProxyContext);
+			public HRESULT RegisterProxyFailure2(HRESULT hrParam, uint64 qwProxyContext) mut => VT.RegisterProxyFailure2(ref this, hrParam, qwProxyContext);
+			public HRESULT ShutdownProxyContext2(uint64 qwProxyContext) mut => VT.ShutdownProxyContext2(ref this, qwProxyContext);
+			public HRESULT IsUsingIE2(uint64 qwProxyContext, out BOOL pfIsUsingIE) mut => VT.IsUsingIE2(ref this, qwProxyContext, out pfIsUsingIE);
+			public HRESULT SetCredentialsEx2(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood, BOOL fClearTextAuthentication) mut => VT.SetCredentialsEx2(ref this, bstrRealm, bstrUrl, fProxy, bstrName, bstrPassword, fPersist, fConfirmedGood, fClearTextAuthentication);
+			public HRESULT GetCredentialsEx2(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) mut => VT.GetCredentialsEx2(ref this, bstrRealm, bstrUrl, fProxy, fClearTextAuthentication, out pdwUrlPolicy, out pbstrName, out pbstrPassword, out pfConfirmedGood);
+
 			[CRepr]
 			public struct VTable : IWMSInternalAdminNetSource2.VTable
 			{

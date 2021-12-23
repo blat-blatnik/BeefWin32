@@ -1381,10 +1381,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Construct(ref SAFEARRAY configurationEntries) mut
-			{
-				return VT.Construct(ref this, ref configurationEntries);
-			}
+			public HRESULT Construct(ref SAFEARRAY configurationEntries) mut => VT.Construct(ref this, ref configurationEntries);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1398,10 +1396,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AuthenticateUser(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) mut
-			{
-				return VT.AuthenticateUser(ref this, pszSessionId, pszSiteName, pszUserName, pszPassword, ppszCanonicalUserName, out pfAuthenticated);
-			}
+			public HRESULT AuthenticateUser(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) mut => VT.AuthenticateUser(ref this, pszSessionId, pszSiteName, pszUserName, pszPassword, ppszCanonicalUserName, out pfAuthenticated);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1415,14 +1411,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_AuthenticateUser(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword) mut
-			{
-				return VT.Begin_AuthenticateUser(ref this, pszSessionId, pszSiteName, pszUserName, pszPassword);
-			}
-			public HRESULT Finish_AuthenticateUser(PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) mut
-			{
-				return VT.Finish_AuthenticateUser(ref this, ppszCanonicalUserName, out pfAuthenticated);
-			}
+			public HRESULT Begin_AuthenticateUser(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword) mut => VT.Begin_AuthenticateUser(ref this, pszSessionId, pszSiteName, pszUserName, pszPassword);
+			public HRESULT Finish_AuthenticateUser(PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) mut => VT.Finish_AuthenticateUser(ref this, ppszCanonicalUserName, out pfAuthenticated);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1437,10 +1428,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsUserInRole(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole, out BOOL pfIsInRole) mut
-			{
-				return VT.IsUserInRole(ref this, pszSessionId, pszSiteName, pszUserName, pszRole, out pfIsInRole);
-			}
+			public HRESULT IsUserInRole(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole, out BOOL pfIsInRole) mut => VT.IsUserInRole(ref this, pszSessionId, pszSiteName, pszUserName, pszRole, out pfIsInRole);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1454,14 +1443,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_IsUserInRole(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole) mut
-			{
-				return VT.Begin_IsUserInRole(ref this, pszSessionId, pszSiteName, pszUserName, pszRole);
-			}
-			public HRESULT Finish_IsUserInRole(out BOOL pfIsInRole) mut
-			{
-				return VT.Finish_IsUserInRole(ref this, out pfIsInRole);
-			}
+			public HRESULT Begin_IsUserInRole(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole) mut => VT.Begin_IsUserInRole(ref this, pszSessionId, pszSiteName, pszUserName, pszRole);
+			public HRESULT Finish_IsUserInRole(out BOOL pfIsInRole) mut => VT.Finish_IsUserInRole(ref this, out pfIsInRole);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1476,10 +1460,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUserHomeDirectoryData(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR* ppszHomeDirectoryData) mut
-			{
-				return VT.GetUserHomeDirectoryData(ref this, pszSessionId, pszSiteName, pszUserName, ppszHomeDirectoryData);
-			}
+			public HRESULT GetUserHomeDirectoryData(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR* ppszHomeDirectoryData) mut => VT.GetUserHomeDirectoryData(ref this, pszSessionId, pszSiteName, pszUserName, ppszHomeDirectoryData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1493,14 +1475,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_GetUserHomeDirectoryData(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName) mut
-			{
-				return VT.Begin_GetUserHomeDirectoryData(ref this, pszSessionId, pszSiteName, pszUserName);
-			}
-			public HRESULT Finish_GetUserHomeDirectoryData(PWSTR* ppszHomeDirectoryData) mut
-			{
-				return VT.Finish_GetUserHomeDirectoryData(ref this, ppszHomeDirectoryData);
-			}
+			public HRESULT Begin_GetUserHomeDirectoryData(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName) mut => VT.Begin_GetUserHomeDirectoryData(ref this, pszSessionId, pszSiteName, pszUserName);
+			public HRESULT Finish_GetUserHomeDirectoryData(PWSTR* ppszHomeDirectoryData) mut => VT.Finish_GetUserHomeDirectoryData(ref this, ppszHomeDirectoryData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1515,10 +1492,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Log(in LOGGING_PARAMETERS pLoggingParameters) mut
-			{
-				return VT.Log(ref this, pLoggingParameters);
-			}
+			public HRESULT Log(in LOGGING_PARAMETERS pLoggingParameters) mut => VT.Log(ref this, pLoggingParameters);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1532,14 +1507,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_Log(in LOGGING_PARAMETERS pLoggingParameters) mut
-			{
-				return VT.Begin_Log(ref this, pLoggingParameters);
-			}
-			public HRESULT Finish_Log() mut
-			{
-				return VT.Finish_Log(ref this);
-			}
+			public HRESULT Begin_Log(in LOGGING_PARAMETERS pLoggingParameters) mut => VT.Begin_Log(ref this, pLoggingParameters);
+			public HRESULT Finish_Log() mut => VT.Finish_Log(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1554,10 +1524,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUserAccessPermission(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName, out FTP_ACCESS pFtpAccess) mut
-			{
-				return VT.GetUserAccessPermission(ref this, pszSessionId, pszSiteName, pszVirtualPath, pszUserName, out pFtpAccess);
-			}
+			public HRESULT GetUserAccessPermission(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName, out FTP_ACCESS pFtpAccess) mut => VT.GetUserAccessPermission(ref this, pszSessionId, pszSiteName, pszVirtualPath, pszUserName, out pFtpAccess);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1571,14 +1539,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_GetUserAccessPermission(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName) mut
-			{
-				return VT.Begin_GetUserAccessPermission(ref this, pszSessionId, pszSiteName, pszVirtualPath, pszUserName);
-			}
-			public HRESULT Finish_GetUserAccessPermission(out FTP_ACCESS pFtpAccess) mut
-			{
-				return VT.Finish_GetUserAccessPermission(ref this, out pFtpAccess);
-			}
+			public HRESULT Begin_GetUserAccessPermission(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName) mut => VT.Begin_GetUserAccessPermission(ref this, pszSessionId, pszSiteName, pszVirtualPath, pszUserName);
+			public HRESULT Finish_GetUserAccessPermission(out FTP_ACCESS pFtpAccess) mut => VT.Finish_GetUserAccessPermission(ref this, out pFtpAccess);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1593,10 +1556,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandlePreprocess(in PRE_PROCESS_PARAMETERS pPreProcessParameters, out FTP_PROCESS_STATUS pFtpProcessStatus) mut
-			{
-				return VT.HandlePreprocess(ref this, pPreProcessParameters, out pFtpProcessStatus);
-			}
+			public HRESULT HandlePreprocess(in PRE_PROCESS_PARAMETERS pPreProcessParameters, out FTP_PROCESS_STATUS pFtpProcessStatus) mut => VT.HandlePreprocess(ref this, pPreProcessParameters, out pFtpProcessStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1610,14 +1571,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_HandlePreprocess(in PRE_PROCESS_PARAMETERS pPreProcessParameters) mut
-			{
-				return VT.Begin_HandlePreprocess(ref this, pPreProcessParameters);
-			}
-			public HRESULT Finish_HandlePreprocess(out FTP_PROCESS_STATUS pFtpProcessStatus) mut
-			{
-				return VT.Finish_HandlePreprocess(ref this, out pFtpProcessStatus);
-			}
+			public HRESULT Begin_HandlePreprocess(in PRE_PROCESS_PARAMETERS pPreProcessParameters) mut => VT.Begin_HandlePreprocess(ref this, pPreProcessParameters);
+			public HRESULT Finish_HandlePreprocess(out FTP_PROCESS_STATUS pFtpProcessStatus) mut => VT.Finish_HandlePreprocess(ref this, out pFtpProcessStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1632,10 +1588,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandlePostprocess(in POST_PROCESS_PARAMETERS pPostProcessParameters, out FTP_PROCESS_STATUS pFtpProcessStatus) mut
-			{
-				return VT.HandlePostprocess(ref this, pPostProcessParameters, out pFtpProcessStatus);
-			}
+			public HRESULT HandlePostprocess(in POST_PROCESS_PARAMETERS pPostProcessParameters, out FTP_PROCESS_STATUS pFtpProcessStatus) mut => VT.HandlePostprocess(ref this, pPostProcessParameters, out pFtpProcessStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1649,14 +1603,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_HandlePostprocess(in POST_PROCESS_PARAMETERS pPostProcessParameters) mut
-			{
-				return VT.Begin_HandlePostprocess(ref this, pPostProcessParameters);
-			}
-			public HRESULT Finish_HandlePostprocess(out FTP_PROCESS_STATUS pFtpProcessStatus) mut
-			{
-				return VT.Finish_HandlePostprocess(ref this, out pFtpProcessStatus);
-			}
+			public HRESULT Begin_HandlePostprocess(in POST_PROCESS_PARAMETERS pPostProcessParameters) mut => VT.Begin_HandlePostprocess(ref this, pPostProcessParameters);
+			public HRESULT Finish_HandlePostprocess(out FTP_PROCESS_STATUS pFtpProcessStatus) mut => VT.Finish_HandlePostprocess(ref this, out pFtpProcessStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1671,18 +1620,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize() mut
-			{
-				return VT.Initialize(ref this);
-			}
-			public HRESULT EnumDcomCLSIDs(out Guid pclsidDcom, uint32 dwEnumIndex) mut
-			{
-				return VT.EnumDcomCLSIDs(ref this, out pclsidDcom, dwEnumIndex);
-			}
-			public HRESULT Terminate() mut
-			{
-				return VT.Terminate(ref this);
-			}
+			public HRESULT Initialize() mut => VT.Initialize(ref this);
+			public HRESULT EnumDcomCLSIDs(out Guid pclsidDcom, uint32 dwEnumIndex) mut => VT.EnumDcomCLSIDs(ref this, out pclsidDcom, dwEnumIndex);
+			public HRESULT Terminate() mut => VT.Terminate(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1698,130 +1639,38 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddKey(uint32 hMDHandle, PWSTR pszMDPath) mut
-			{
-				return VT.AddKey(ref this, hMDHandle, pszMDPath);
-			}
-			public HRESULT DeleteKey(uint32 hMDHandle, PWSTR pszMDPath) mut
-			{
-				return VT.DeleteKey(ref this, hMDHandle, pszMDPath);
-			}
-			public HRESULT DeleteChildKeys(uint32 hMDHandle, PWSTR pszMDPath) mut
-			{
-				return VT.DeleteChildKeys(ref this, hMDHandle, pszMDPath);
-			}
-			public HRESULT EnumKeys(uint32 hMDHandle, PWSTR pszMDPath, char16* pszMDName, uint32 dwMDEnumObjectIndex) mut
-			{
-				return VT.EnumKeys(ref this, hMDHandle, pszMDPath, pszMDName, dwMDEnumObjectIndex);
-			}
-			public HRESULT CopyKey(uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, BOOL bMDOverwriteFlag, BOOL bMDCopyFlag) mut
-			{
-				return VT.CopyKey(ref this, hMDSourceHandle, pszMDSourcePath, hMDDestHandle, pszMDDestPath, bMDOverwriteFlag, bMDCopyFlag);
-			}
-			public HRESULT RenameKey(uint32 hMDHandle, PWSTR pszMDPath, PWSTR pszMDNewName) mut
-			{
-				return VT.RenameKey(ref this, hMDHandle, pszMDPath, pszMDNewName);
-			}
-			public HRESULT SetData(uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData) mut
-			{
-				return VT.SetData(ref this, hMDHandle, pszMDPath, out pmdrMDData);
-			}
-			public HRESULT GetData(uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData, out uint32 pdwMDRequiredDataLen) mut
-			{
-				return VT.GetData(ref this, hMDHandle, pszMDPath, out pmdrMDData, out pdwMDRequiredDataLen);
-			}
-			public HRESULT DeleteData(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType) mut
-			{
-				return VT.DeleteData(ref this, hMDHandle, pszMDPath, dwMDIdentifier, dwMDDataType);
-			}
-			public HRESULT EnumData(uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData, uint32 dwMDEnumDataIndex, out uint32 pdwMDRequiredDataLen) mut
-			{
-				return VT.EnumData(ref this, hMDHandle, pszMDPath, out pmdrMDData, dwMDEnumDataIndex, out pdwMDRequiredDataLen);
-			}
-			public HRESULT GetAllData(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, out uint32 pdwMDNumDataEntries, out uint32 pdwMDDataSetNumber, uint32 dwMDBufferSize, out uint8 pbMDBuffer, out uint32 pdwMDRequiredBufferSize) mut
-			{
-				return VT.GetAllData(ref this, hMDHandle, pszMDPath, dwMDAttributes, dwMDUserType, dwMDDataType, out pdwMDNumDataEntries, out pdwMDDataSetNumber, dwMDBufferSize, out pbMDBuffer, out pdwMDRequiredBufferSize);
-			}
-			public HRESULT DeleteAllData(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDUserType, uint32 dwMDDataType) mut
-			{
-				return VT.DeleteAllData(ref this, hMDHandle, pszMDPath, dwMDUserType, dwMDDataType);
-			}
-			public HRESULT CopyData(uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, BOOL bMDCopyFlag) mut
-			{
-				return VT.CopyData(ref this, hMDSourceHandle, pszMDSourcePath, hMDDestHandle, pszMDDestPath, dwMDAttributes, dwMDUserType, dwMDDataType, bMDCopyFlag);
-			}
-			public HRESULT GetDataPaths(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType, uint32 dwMDBufferSize, char16* pszBuffer, out uint32 pdwMDRequiredBufferSize) mut
-			{
-				return VT.GetDataPaths(ref this, hMDHandle, pszMDPath, dwMDIdentifier, dwMDDataType, dwMDBufferSize, pszBuffer, out pdwMDRequiredBufferSize);
-			}
-			public HRESULT OpenKey(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAccessRequested, uint32 dwMDTimeOut, out uint32 phMDNewHandle) mut
-			{
-				return VT.OpenKey(ref this, hMDHandle, pszMDPath, dwMDAccessRequested, dwMDTimeOut, out phMDNewHandle);
-			}
-			public HRESULT CloseKey(uint32 hMDHandle) mut
-			{
-				return VT.CloseKey(ref this, hMDHandle);
-			}
-			public HRESULT ChangePermissions(uint32 hMDHandle, uint32 dwMDTimeOut, uint32 dwMDAccessRequested) mut
-			{
-				return VT.ChangePermissions(ref this, hMDHandle, dwMDTimeOut, dwMDAccessRequested);
-			}
-			public HRESULT SaveData() mut
-			{
-				return VT.SaveData(ref this);
-			}
-			public HRESULT GetHandleInfo(uint32 hMDHandle, out METADATA_HANDLE_INFO pmdhiInfo) mut
-			{
-				return VT.GetHandleInfo(ref this, hMDHandle, out pmdhiInfo);
-			}
-			public HRESULT GetSystemChangeNumber(out uint32 pdwSystemChangeNumber) mut
-			{
-				return VT.GetSystemChangeNumber(ref this, out pdwSystemChangeNumber);
-			}
-			public HRESULT GetDataSetNumber(uint32 hMDHandle, PWSTR pszMDPath, out uint32 pdwMDDataSetNumber) mut
-			{
-				return VT.GetDataSetNumber(ref this, hMDHandle, pszMDPath, out pdwMDDataSetNumber);
-			}
-			public HRESULT SetLastChangeTime(uint32 hMDHandle, PWSTR pszMDPath, ref FILETIME pftMDLastChangeTime, BOOL bLocalTime) mut
-			{
-				return VT.SetLastChangeTime(ref this, hMDHandle, pszMDPath, ref pftMDLastChangeTime, bLocalTime);
-			}
-			public HRESULT GetLastChangeTime(uint32 hMDHandle, PWSTR pszMDPath, out FILETIME pftMDLastChangeTime, BOOL bLocalTime) mut
-			{
-				return VT.GetLastChangeTime(ref this, hMDHandle, pszMDPath, out pftMDLastChangeTime, bLocalTime);
-			}
-			public HRESULT KeyExchangePhase1() mut
-			{
-				return VT.KeyExchangePhase1(ref this);
-			}
-			public HRESULT KeyExchangePhase2() mut
-			{
-				return VT.KeyExchangePhase2(ref this);
-			}
-			public HRESULT Backup(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) mut
-			{
-				return VT.Backup(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags);
-			}
-			public HRESULT Restore(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) mut
-			{
-				return VT.Restore(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags);
-			}
-			public HRESULT EnumBackups(char16* pszMDBackupLocation, out uint32 pdwMDVersion, out FILETIME pftMDBackupTime, uint32 dwMDEnumIndex) mut
-			{
-				return VT.EnumBackups(ref this, pszMDBackupLocation, out pdwMDVersion, out pftMDBackupTime, dwMDEnumIndex);
-			}
-			public HRESULT DeleteBackup(PWSTR pszMDBackupLocation, uint32 dwMDVersion) mut
-			{
-				return VT.DeleteBackup(ref this, pszMDBackupLocation, dwMDVersion);
-			}
-			public HRESULT UnmarshalInterface(IMSAdminBaseW** piadmbwInterface) mut
-			{
-				return VT.UnmarshalInterface(ref this, piadmbwInterface);
-			}
-			public HRESULT GetServerGuid() mut
-			{
-				return VT.GetServerGuid(ref this);
-			}
+			public HRESULT AddKey(uint32 hMDHandle, PWSTR pszMDPath) mut => VT.AddKey(ref this, hMDHandle, pszMDPath);
+			public HRESULT DeleteKey(uint32 hMDHandle, PWSTR pszMDPath) mut => VT.DeleteKey(ref this, hMDHandle, pszMDPath);
+			public HRESULT DeleteChildKeys(uint32 hMDHandle, PWSTR pszMDPath) mut => VT.DeleteChildKeys(ref this, hMDHandle, pszMDPath);
+			public HRESULT EnumKeys(uint32 hMDHandle, PWSTR pszMDPath, char16* pszMDName, uint32 dwMDEnumObjectIndex) mut => VT.EnumKeys(ref this, hMDHandle, pszMDPath, pszMDName, dwMDEnumObjectIndex);
+			public HRESULT CopyKey(uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, BOOL bMDOverwriteFlag, BOOL bMDCopyFlag) mut => VT.CopyKey(ref this, hMDSourceHandle, pszMDSourcePath, hMDDestHandle, pszMDDestPath, bMDOverwriteFlag, bMDCopyFlag);
+			public HRESULT RenameKey(uint32 hMDHandle, PWSTR pszMDPath, PWSTR pszMDNewName) mut => VT.RenameKey(ref this, hMDHandle, pszMDPath, pszMDNewName);
+			public HRESULT SetData(uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData) mut => VT.SetData(ref this, hMDHandle, pszMDPath, out pmdrMDData);
+			public HRESULT GetData(uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData, out uint32 pdwMDRequiredDataLen) mut => VT.GetData(ref this, hMDHandle, pszMDPath, out pmdrMDData, out pdwMDRequiredDataLen);
+			public HRESULT DeleteData(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType) mut => VT.DeleteData(ref this, hMDHandle, pszMDPath, dwMDIdentifier, dwMDDataType);
+			public HRESULT EnumData(uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData, uint32 dwMDEnumDataIndex, out uint32 pdwMDRequiredDataLen) mut => VT.EnumData(ref this, hMDHandle, pszMDPath, out pmdrMDData, dwMDEnumDataIndex, out pdwMDRequiredDataLen);
+			public HRESULT GetAllData(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, out uint32 pdwMDNumDataEntries, out uint32 pdwMDDataSetNumber, uint32 dwMDBufferSize, out uint8 pbMDBuffer, out uint32 pdwMDRequiredBufferSize) mut => VT.GetAllData(ref this, hMDHandle, pszMDPath, dwMDAttributes, dwMDUserType, dwMDDataType, out pdwMDNumDataEntries, out pdwMDDataSetNumber, dwMDBufferSize, out pbMDBuffer, out pdwMDRequiredBufferSize);
+			public HRESULT DeleteAllData(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDUserType, uint32 dwMDDataType) mut => VT.DeleteAllData(ref this, hMDHandle, pszMDPath, dwMDUserType, dwMDDataType);
+			public HRESULT CopyData(uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, BOOL bMDCopyFlag) mut => VT.CopyData(ref this, hMDSourceHandle, pszMDSourcePath, hMDDestHandle, pszMDDestPath, dwMDAttributes, dwMDUserType, dwMDDataType, bMDCopyFlag);
+			public HRESULT GetDataPaths(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType, uint32 dwMDBufferSize, char16* pszBuffer, out uint32 pdwMDRequiredBufferSize) mut => VT.GetDataPaths(ref this, hMDHandle, pszMDPath, dwMDIdentifier, dwMDDataType, dwMDBufferSize, pszBuffer, out pdwMDRequiredBufferSize);
+			public HRESULT OpenKey(uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAccessRequested, uint32 dwMDTimeOut, out uint32 phMDNewHandle) mut => VT.OpenKey(ref this, hMDHandle, pszMDPath, dwMDAccessRequested, dwMDTimeOut, out phMDNewHandle);
+			public HRESULT CloseKey(uint32 hMDHandle) mut => VT.CloseKey(ref this, hMDHandle);
+			public HRESULT ChangePermissions(uint32 hMDHandle, uint32 dwMDTimeOut, uint32 dwMDAccessRequested) mut => VT.ChangePermissions(ref this, hMDHandle, dwMDTimeOut, dwMDAccessRequested);
+			public HRESULT SaveData() mut => VT.SaveData(ref this);
+			public HRESULT GetHandleInfo(uint32 hMDHandle, out METADATA_HANDLE_INFO pmdhiInfo) mut => VT.GetHandleInfo(ref this, hMDHandle, out pmdhiInfo);
+			public HRESULT GetSystemChangeNumber(out uint32 pdwSystemChangeNumber) mut => VT.GetSystemChangeNumber(ref this, out pdwSystemChangeNumber);
+			public HRESULT GetDataSetNumber(uint32 hMDHandle, PWSTR pszMDPath, out uint32 pdwMDDataSetNumber) mut => VT.GetDataSetNumber(ref this, hMDHandle, pszMDPath, out pdwMDDataSetNumber);
+			public HRESULT SetLastChangeTime(uint32 hMDHandle, PWSTR pszMDPath, ref FILETIME pftMDLastChangeTime, BOOL bLocalTime) mut => VT.SetLastChangeTime(ref this, hMDHandle, pszMDPath, ref pftMDLastChangeTime, bLocalTime);
+			public HRESULT GetLastChangeTime(uint32 hMDHandle, PWSTR pszMDPath, out FILETIME pftMDLastChangeTime, BOOL bLocalTime) mut => VT.GetLastChangeTime(ref this, hMDHandle, pszMDPath, out pftMDLastChangeTime, bLocalTime);
+			public HRESULT KeyExchangePhase1() mut => VT.KeyExchangePhase1(ref this);
+			public HRESULT KeyExchangePhase2() mut => VT.KeyExchangePhase2(ref this);
+			public HRESULT Backup(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) mut => VT.Backup(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags);
+			public HRESULT Restore(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) mut => VT.Restore(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags);
+			public HRESULT EnumBackups(char16* pszMDBackupLocation, out uint32 pdwMDVersion, out FILETIME pftMDBackupTime, uint32 dwMDEnumIndex) mut => VT.EnumBackups(ref this, pszMDBackupLocation, out pdwMDVersion, out pftMDBackupTime, dwMDEnumIndex);
+			public HRESULT DeleteBackup(PWSTR pszMDBackupLocation, uint32 dwMDVersion) mut => VT.DeleteBackup(ref this, pszMDBackupLocation, dwMDVersion);
+			public HRESULT UnmarshalInterface(IMSAdminBaseW** piadmbwInterface) mut => VT.UnmarshalInterface(ref this, piadmbwInterface);
+			public HRESULT GetServerGuid() mut => VT.GetServerGuid(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1865,30 +1714,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BackupWithPasswd(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) mut
-			{
-				return VT.BackupWithPasswd(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags, pszPasswd);
-			}
-			public HRESULT RestoreWithPasswd(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) mut
-			{
-				return VT.RestoreWithPasswd(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags, pszPasswd);
-			}
-			public HRESULT Export(PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, uint32 dwMDFlags) mut
-			{
-				return VT.Export(ref this, pszPasswd, pszFileName, pszSourcePath, dwMDFlags);
-			}
-			public HRESULT Import(PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, PWSTR pszDestPath, uint32 dwMDFlags) mut
-			{
-				return VT.Import(ref this, pszPasswd, pszFileName, pszSourcePath, pszDestPath, dwMDFlags);
-			}
-			public HRESULT RestoreHistory(PWSTR pszMDHistoryLocation, uint32 dwMDMajorVersion, uint32 dwMDMinorVersion, uint32 dwMDFlags) mut
-			{
-				return VT.RestoreHistory(ref this, pszMDHistoryLocation, dwMDMajorVersion, dwMDMinorVersion, dwMDFlags);
-			}
-			public HRESULT EnumHistory(char16* pszMDHistoryLocation, out uint32 pdwMDMajorVersion, out uint32 pdwMDMinorVersion, out FILETIME pftMDHistoryTime, uint32 dwMDEnumIndex) mut
-			{
-				return VT.EnumHistory(ref this, pszMDHistoryLocation, out pdwMDMajorVersion, out pdwMDMinorVersion, out pftMDHistoryTime, dwMDEnumIndex);
-			}
+			public HRESULT BackupWithPasswd(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) mut => VT.BackupWithPasswd(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags, pszPasswd);
+			public HRESULT RestoreWithPasswd(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) mut => VT.RestoreWithPasswd(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags, pszPasswd);
+			public HRESULT Export(PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, uint32 dwMDFlags) mut => VT.Export(ref this, pszPasswd, pszFileName, pszSourcePath, dwMDFlags);
+			public HRESULT Import(PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, PWSTR pszDestPath, uint32 dwMDFlags) mut => VT.Import(ref this, pszPasswd, pszFileName, pszSourcePath, pszDestPath, dwMDFlags);
+			public HRESULT RestoreHistory(PWSTR pszMDHistoryLocation, uint32 dwMDMajorVersion, uint32 dwMDMinorVersion, uint32 dwMDFlags) mut => VT.RestoreHistory(ref this, pszMDHistoryLocation, dwMDMajorVersion, dwMDMinorVersion, dwMDFlags);
+			public HRESULT EnumHistory(char16* pszMDHistoryLocation, out uint32 pdwMDMajorVersion, out uint32 pdwMDMinorVersion, out FILETIME pftMDHistoryTime, uint32 dwMDEnumIndex) mut => VT.EnumHistory(ref this, pszMDHistoryLocation, out pdwMDMajorVersion, out pdwMDMinorVersion, out pftMDHistoryTime, dwMDEnumIndex);
+
 			[CRepr]
 			public struct VTable : IMSAdminBaseW.VTable
 			{
@@ -1907,10 +1739,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetChildPaths(uint32 hMDHandle, PWSTR pszMDPath, uint32 cchMDBufferSize, char16* pszBuffer, uint32* pcchMDRequiredBufferSize) mut
-			{
-				return VT.GetChildPaths(ref this, hMDHandle, pszMDPath, cchMDBufferSize, pszBuffer, pcchMDRequiredBufferSize);
-			}
+			public HRESULT GetChildPaths(uint32 hMDHandle, PWSTR pszMDPath, uint32 cchMDBufferSize, char16* pszBuffer, uint32* pcchMDRequiredBufferSize) mut => VT.GetChildPaths(ref this, hMDHandle, pszMDPath, cchMDBufferSize, pszBuffer, pcchMDRequiredBufferSize);
+
 			[CRepr]
 			public struct VTable : IMSAdminBase2W.VTable
 			{
@@ -1924,10 +1754,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumeratePathsInFile(PWSTR pszFileName, PWSTR pszKeyType, uint32 dwMDBufferSize, char16* pszBuffer, out uint32 pdwMDRequiredBufferSize) mut
-			{
-				return VT.EnumeratePathsInFile(ref this, pszFileName, pszKeyType, dwMDBufferSize, pszBuffer, out pdwMDRequiredBufferSize);
-			}
+			public HRESULT EnumeratePathsInFile(PWSTR pszFileName, PWSTR pszKeyType, uint32 dwMDBufferSize, char16* pszBuffer, out uint32 pdwMDRequiredBufferSize) mut => VT.EnumeratePathsInFile(ref this, pszFileName, pszKeyType, dwMDBufferSize, pszBuffer, out pdwMDRequiredBufferSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1941,14 +1769,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SinkNotify(uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) mut
-			{
-				return VT.SinkNotify(ref this, dwMDNumElements, pcoChangeList);
-			}
-			public HRESULT ShutdownNotify() mut
-			{
-				return VT.ShutdownNotify(ref this);
-			}
+			public HRESULT SinkNotify(uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) mut => VT.SinkNotify(ref this, dwMDNumElements, pcoChangeList);
+			public HRESULT ShutdownNotify() mut => VT.ShutdownNotify(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1963,22 +1786,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_SinkNotify(uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) mut
-			{
-				return VT.Begin_SinkNotify(ref this, dwMDNumElements, pcoChangeList);
-			}
-			public HRESULT Finish_SinkNotify() mut
-			{
-				return VT.Finish_SinkNotify(ref this);
-			}
-			public HRESULT Begin_ShutdownNotify() mut
-			{
-				return VT.Begin_ShutdownNotify(ref this);
-			}
-			public HRESULT Finish_ShutdownNotify() mut
-			{
-				return VT.Finish_ShutdownNotify(ref this);
-			}
+			public HRESULT Begin_SinkNotify(uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) mut => VT.Begin_SinkNotify(ref this, dwMDNumElements, pcoChangeList);
+			public HRESULT Finish_SinkNotify() mut => VT.Finish_SinkNotify(ref this);
+			public HRESULT Begin_ShutdownNotify() mut => VT.Begin_ShutdownNotify(ref this);
+			public HRESULT Finish_ShutdownNotify() mut => VT.Finish_ShutdownNotify(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

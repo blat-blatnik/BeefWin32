@@ -341,34 +341,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetFillMode(D2D1_FILL_MODE fillMode) mut
-			{
-				VT.SetFillMode(ref this, fillMode);
-			}
-			public void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags) mut
-			{
-				VT.SetSegmentFlags(ref this, vertexFlags);
-			}
-			public void BeginFigure(D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) mut
-			{
-				VT.BeginFigure(ref this, startPoint, figureBegin);
-			}
-			public void AddLines(D2D_POINT_2F* points, uint32 pointsCount) mut
-			{
-				VT.AddLines(ref this, points, pointsCount);
-			}
-			public void AddBeziers(D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) mut
-			{
-				VT.AddBeziers(ref this, beziers, beziersCount);
-			}
-			public void EndFigure(D2D1_FIGURE_END figureEnd) mut
-			{
-				VT.EndFigure(ref this, figureEnd);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public void SetFillMode(D2D1_FILL_MODE fillMode) mut => VT.SetFillMode(ref this, fillMode);
+			public void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags) mut => VT.SetSegmentFlags(ref this, vertexFlags);
+			public void BeginFigure(D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) mut => VT.BeginFigure(ref this, startPoint, figureBegin);
+			public void AddLines(D2D_POINT_2F* points, uint32 pointsCount) mut => VT.AddLines(ref this, points, pointsCount);
+			public void AddBeziers(D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) mut => VT.AddBeziers(ref this, beziers, beziersCount);
+			public void EndFigure(D2D1_FIGURE_END figureEnd) mut => VT.EndFigure(ref this, figureEnd);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

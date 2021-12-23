@@ -143,14 +143,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterContent(ref Guid in_applicationId, ref Guid in_endpointId, ISideShowContentManager** out_ppIContent) mut
-			{
-				return VT.RegisterContent(ref this, ref in_applicationId, ref in_endpointId, out_ppIContent);
-			}
-			public HRESULT RegisterNotifications(ref Guid in_applicationId, ISideShowNotificationManager** out_ppINotification) mut
-			{
-				return VT.RegisterNotifications(ref this, ref in_applicationId, out_ppINotification);
-			}
+			public HRESULT RegisterContent(ref Guid in_applicationId, ref Guid in_endpointId, ISideShowContentManager** out_ppIContent) mut => VT.RegisterContent(ref this, ref in_applicationId, ref in_endpointId, out_ppIContent);
+			public HRESULT RegisterNotifications(ref Guid in_applicationId, ISideShowNotificationManager** out_ppINotification) mut => VT.RegisterNotifications(ref this, ref in_applicationId, out_ppINotification);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -165,18 +160,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Show(ISideShowNotification* in_pINotification) mut
-			{
-				return VT.Show(ref this, in_pINotification);
-			}
-			public HRESULT Revoke(uint32 in_notificationId) mut
-			{
-				return VT.Revoke(ref this, in_notificationId);
-			}
-			public HRESULT RevokeAll() mut
-			{
-				return VT.RevokeAll(ref this);
-			}
+			public HRESULT Show(ISideShowNotification* in_pINotification) mut => VT.Show(ref this, in_pINotification);
+			public HRESULT Revoke(uint32 in_notificationId) mut => VT.Revoke(ref this, in_notificationId);
+			public HRESULT RevokeAll() mut => VT.RevokeAll(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -192,46 +179,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_NotificationId(out uint32 out_pNotificationId) mut
-			{
-				return VT.get_NotificationId(ref this, out out_pNotificationId);
-			}
-			public HRESULT put_NotificationId(uint32 in_notificationId) mut
-			{
-				return VT.put_NotificationId(ref this, in_notificationId);
-			}
-			public HRESULT get_Title(PWSTR* out_ppwszTitle) mut
-			{
-				return VT.get_Title(ref this, out_ppwszTitle);
-			}
-			public HRESULT put_Title(PWSTR in_pwszTitle) mut
-			{
-				return VT.put_Title(ref this, in_pwszTitle);
-			}
-			public HRESULT get_Message(PWSTR* out_ppwszMessage) mut
-			{
-				return VT.get_Message(ref this, out_ppwszMessage);
-			}
-			public HRESULT put_Message(PWSTR in_pwszMessage) mut
-			{
-				return VT.put_Message(ref this, in_pwszMessage);
-			}
-			public HRESULT get_Image(HICON* out_phIcon) mut
-			{
-				return VT.get_Image(ref this, out_phIcon);
-			}
-			public HRESULT put_Image(HICON in_hIcon) mut
-			{
-				return VT.put_Image(ref this, in_hIcon);
-			}
-			public HRESULT get_ExpirationTime(out SYSTEMTIME out_pTime) mut
-			{
-				return VT.get_ExpirationTime(ref this, out out_pTime);
-			}
-			public HRESULT put_ExpirationTime(SYSTEMTIME* in_pTime) mut
-			{
-				return VT.put_ExpirationTime(ref this, in_pTime);
-			}
+			public HRESULT get_NotificationId(out uint32 out_pNotificationId) mut => VT.get_NotificationId(ref this, out out_pNotificationId);
+			public HRESULT put_NotificationId(uint32 in_notificationId) mut => VT.put_NotificationId(ref this, in_notificationId);
+			public HRESULT get_Title(PWSTR* out_ppwszTitle) mut => VT.get_Title(ref this, out_ppwszTitle);
+			public HRESULT put_Title(PWSTR in_pwszTitle) mut => VT.put_Title(ref this, in_pwszTitle);
+			public HRESULT get_Message(PWSTR* out_ppwszMessage) mut => VT.get_Message(ref this, out_ppwszMessage);
+			public HRESULT put_Message(PWSTR in_pwszMessage) mut => VT.put_Message(ref this, in_pwszMessage);
+			public HRESULT get_Image(HICON* out_phIcon) mut => VT.get_Image(ref this, out_phIcon);
+			public HRESULT put_Image(HICON in_hIcon) mut => VT.put_Image(ref this, in_hIcon);
+			public HRESULT get_ExpirationTime(out SYSTEMTIME out_pTime) mut => VT.get_ExpirationTime(ref this, out out_pTime);
+			public HRESULT put_ExpirationTime(SYSTEMTIME* in_pTime) mut => VT.put_ExpirationTime(ref this, in_pTime);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -254,26 +212,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(ISideShowContent* in_pIContent) mut
-			{
-				return VT.Add(ref this, in_pIContent);
-			}
-			public HRESULT Remove(uint32 in_contentId) mut
-			{
-				return VT.Remove(ref this, in_contentId);
-			}
-			public HRESULT RemoveAll() mut
-			{
-				return VT.RemoveAll(ref this);
-			}
-			public HRESULT SetEventSink(ISideShowEvents* in_pIEvents) mut
-			{
-				return VT.SetEventSink(ref this, in_pIEvents);
-			}
-			public HRESULT GetDeviceCapabilities(ISideShowCapabilitiesCollection** out_ppCollection) mut
-			{
-				return VT.GetDeviceCapabilities(ref this, out_ppCollection);
-			}
+			public HRESULT Add(ISideShowContent* in_pIContent) mut => VT.Add(ref this, in_pIContent);
+			public HRESULT Remove(uint32 in_contentId) mut => VT.Remove(ref this, in_contentId);
+			public HRESULT RemoveAll() mut => VT.RemoveAll(ref this);
+			public HRESULT SetEventSink(ISideShowEvents* in_pIEvents) mut => VT.SetEventSink(ref this, in_pIEvents);
+			public HRESULT GetDeviceCapabilities(ISideShowCapabilitiesCollection** out_ppCollection) mut => VT.GetDeviceCapabilities(ref this, out_ppCollection);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -291,18 +235,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContent(ISideShowCapabilities* in_pICapabilities, out uint32 out_pdwSize, uint8** out_ppbData) mut
-			{
-				return VT.GetContent(ref this, in_pICapabilities, out out_pdwSize, out_ppbData);
-			}
-			public HRESULT get_ContentId(out uint32 out_pcontentId) mut
-			{
-				return VT.get_ContentId(ref this, out out_pcontentId);
-			}
-			public HRESULT get_DifferentiateContent(out BOOL out_pfDifferentiateContent) mut
-			{
-				return VT.get_DifferentiateContent(ref this, out out_pfDifferentiateContent);
-			}
+			public HRESULT GetContent(ISideShowCapabilities* in_pICapabilities, out uint32 out_pdwSize, uint8** out_ppbData) mut => VT.GetContent(ref this, in_pICapabilities, out out_pdwSize, out_ppbData);
+			public HRESULT get_ContentId(out uint32 out_pcontentId) mut => VT.get_ContentId(ref this, out out_pcontentId);
+			public HRESULT get_DifferentiateContent(out BOOL out_pfDifferentiateContent) mut => VT.get_DifferentiateContent(ref this, out out_pfDifferentiateContent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -318,22 +254,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ContentMissing(uint32 in_contentId, ISideShowContent** out_ppIContent) mut
-			{
-				return VT.ContentMissing(ref this, in_contentId, out_ppIContent);
-			}
-			public HRESULT ApplicationEvent(ISideShowCapabilities* in_pICapabilities, uint32 in_dwEventId, uint32 in_dwEventSize, uint8* in_pbEventData) mut
-			{
-				return VT.ApplicationEvent(ref this, in_pICapabilities, in_dwEventId, in_dwEventSize, in_pbEventData);
-			}
-			public HRESULT DeviceAdded(ISideShowCapabilities* in_pIDevice) mut
-			{
-				return VT.DeviceAdded(ref this, in_pIDevice);
-			}
-			public HRESULT DeviceRemoved(ISideShowCapabilities* in_pIDevice) mut
-			{
-				return VT.DeviceRemoved(ref this, in_pIDevice);
-			}
+			public HRESULT ContentMissing(uint32 in_contentId, ISideShowContent** out_ppIContent) mut => VT.ContentMissing(ref this, in_contentId, out_ppIContent);
+			public HRESULT ApplicationEvent(ISideShowCapabilities* in_pICapabilities, uint32 in_dwEventId, uint32 in_dwEventSize, uint8* in_pbEventData) mut => VT.ApplicationEvent(ref this, in_pICapabilities, in_dwEventId, in_dwEventSize, in_pbEventData);
+			public HRESULT DeviceAdded(ISideShowCapabilities* in_pIDevice) mut => VT.DeviceAdded(ref this, in_pIDevice);
+			public HRESULT DeviceRemoved(ISideShowCapabilities* in_pIDevice) mut => VT.DeviceRemoved(ref this, in_pIDevice);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -350,10 +275,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapability(in PROPERTYKEY in_keyCapability, out PROPVARIANT inout_pValue) mut
-			{
-				return VT.GetCapability(ref this, in_keyCapability, out inout_pValue);
-			}
+			public HRESULT GetCapability(in PROPERTYKEY in_keyCapability, out PROPVARIANT inout_pValue) mut => VT.GetCapability(ref this, in_keyCapability, out inout_pValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -367,14 +290,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 out_pdwCount) mut
-			{
-				return VT.GetCount(ref this, out out_pdwCount);
-			}
-			public HRESULT GetAt(uint32 in_dwIndex, ISideShowCapabilities** out_ppCapabilities) mut
-			{
-				return VT.GetAt(ref this, in_dwIndex, out_ppCapabilities);
-			}
+			public HRESULT GetCount(out uint32 out_pdwCount) mut => VT.GetCount(ref this, out out_pdwCount);
+			public HRESULT GetAt(uint32 in_dwIndex, ISideShowCapabilities** out_ppCapabilities) mut => VT.GetAt(ref this, in_dwIndex, out_ppCapabilities);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -389,10 +307,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapabilities(ISideShowKeyCollection* in_keyCollection, ISideShowPropVariantCollection** inout_pValues) mut
-			{
-				return VT.GetCapabilities(ref this, in_keyCollection, inout_pValues);
-			}
+			public HRESULT GetCapabilities(ISideShowKeyCollection* in_keyCollection, ISideShowPropVariantCollection** inout_pValues) mut => VT.GetCapabilities(ref this, in_keyCollection, inout_pValues);
+
 			[CRepr]
 			public struct VTable : ISideShowCapabilities.VTable
 			{
@@ -406,26 +322,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(in PROPERTYKEY Key) mut
-			{
-				return VT.Add(ref this, Key);
-			}
-			public HRESULT Clear() mut
-			{
-				return VT.Clear(ref this);
-			}
-			public HRESULT GetAt(uint32 dwIndex, out PROPERTYKEY pKey) mut
-			{
-				return VT.GetAt(ref this, dwIndex, out pKey);
-			}
-			public HRESULT GetCount(ref uint32 pcElems) mut
-			{
-				return VT.GetCount(ref this, ref pcElems);
-			}
-			public HRESULT RemoveAt(uint32 dwIndex) mut
-			{
-				return VT.RemoveAt(ref this, dwIndex);
-			}
+			public HRESULT Add(in PROPERTYKEY Key) mut => VT.Add(ref this, Key);
+			public HRESULT Clear() mut => VT.Clear(ref this);
+			public HRESULT GetAt(uint32 dwIndex, out PROPERTYKEY pKey) mut => VT.GetAt(ref this, dwIndex, out pKey);
+			public HRESULT GetCount(ref uint32 pcElems) mut => VT.GetCount(ref this, ref pcElems);
+			public HRESULT RemoveAt(uint32 dwIndex) mut => VT.RemoveAt(ref this, dwIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -443,26 +345,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(in PROPVARIANT pValue) mut
-			{
-				return VT.Add(ref this, pValue);
-			}
-			public HRESULT Clear() mut
-			{
-				return VT.Clear(ref this);
-			}
-			public HRESULT GetAt(uint32 dwIndex, out PROPVARIANT pValue) mut
-			{
-				return VT.GetAt(ref this, dwIndex, out pValue);
-			}
-			public HRESULT GetCount(ref uint32 pcElems) mut
-			{
-				return VT.GetCount(ref this, ref pcElems);
-			}
-			public HRESULT RemoveAt(uint32 dwIndex) mut
-			{
-				return VT.RemoveAt(ref this, dwIndex);
-			}
+			public HRESULT Add(in PROPVARIANT pValue) mut => VT.Add(ref this, pValue);
+			public HRESULT Clear() mut => VT.Clear(ref this);
+			public HRESULT GetAt(uint32 dwIndex, out PROPVARIANT pValue) mut => VT.GetAt(ref this, dwIndex, out pValue);
+			public HRESULT GetCount(ref uint32 pcElems) mut => VT.GetCount(ref this, ref pcElems);
+			public HRESULT RemoveAt(uint32 dwIndex) mut => VT.RemoveAt(ref this, dwIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

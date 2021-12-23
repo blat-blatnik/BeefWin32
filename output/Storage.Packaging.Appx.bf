@@ -346,26 +346,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreatePackageWriter(ref IStream outputStream, ref APPX_PACKAGE_SETTINGS settings, out IAppxPackageWriter* packageWriter) mut
-			{
-				return VT.CreatePackageWriter(ref this, ref outputStream, ref settings, out packageWriter);
-			}
-			public HRESULT CreatePackageReader(ref IStream inputStream, out IAppxPackageReader* packageReader) mut
-			{
-				return VT.CreatePackageReader(ref this, ref inputStream, out packageReader);
-			}
-			public HRESULT CreateManifestReader(ref IStream inputStream, out IAppxManifestReader* manifestReader) mut
-			{
-				return VT.CreateManifestReader(ref this, ref inputStream, out manifestReader);
-			}
-			public HRESULT CreateBlockMapReader(ref IStream inputStream, out IAppxBlockMapReader* blockMapReader) mut
-			{
-				return VT.CreateBlockMapReader(ref this, ref inputStream, out blockMapReader);
-			}
-			public HRESULT CreateValidatedBlockMapReader(ref IStream blockMapStream, PWSTR signatureFileName, out IAppxBlockMapReader* blockMapReader) mut
-			{
-				return VT.CreateValidatedBlockMapReader(ref this, ref blockMapStream, signatureFileName, out blockMapReader);
-			}
+			public HRESULT CreatePackageWriter(ref IStream outputStream, ref APPX_PACKAGE_SETTINGS settings, out IAppxPackageWriter* packageWriter) mut => VT.CreatePackageWriter(ref this, ref outputStream, ref settings, out packageWriter);
+			public HRESULT CreatePackageReader(ref IStream inputStream, out IAppxPackageReader* packageReader) mut => VT.CreatePackageReader(ref this, ref inputStream, out packageReader);
+			public HRESULT CreateManifestReader(ref IStream inputStream, out IAppxManifestReader* manifestReader) mut => VT.CreateManifestReader(ref this, ref inputStream, out manifestReader);
+			public HRESULT CreateBlockMapReader(ref IStream inputStream, out IAppxBlockMapReader* blockMapReader) mut => VT.CreateBlockMapReader(ref this, ref inputStream, out blockMapReader);
+			public HRESULT CreateValidatedBlockMapReader(ref IStream blockMapStream, PWSTR signatureFileName, out IAppxBlockMapReader* blockMapReader) mut => VT.CreateValidatedBlockMapReader(ref this, ref blockMapStream, signatureFileName, out blockMapReader);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -383,18 +369,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateContentGroupMapReader(ref IStream inputStream, out IAppxContentGroupMapReader* contentGroupMapReader) mut
-			{
-				return VT.CreateContentGroupMapReader(ref this, ref inputStream, out contentGroupMapReader);
-			}
-			public HRESULT CreateSourceContentGroupMapReader(ref IStream inputStream, out IAppxSourceContentGroupMapReader* reader) mut
-			{
-				return VT.CreateSourceContentGroupMapReader(ref this, ref inputStream, out reader);
-			}
-			public HRESULT CreateContentGroupMapWriter(ref IStream stream, out IAppxContentGroupMapWriter* contentGroupMapWriter) mut
-			{
-				return VT.CreateContentGroupMapWriter(ref this, ref stream, out contentGroupMapWriter);
-			}
+			public HRESULT CreateContentGroupMapReader(ref IStream inputStream, out IAppxContentGroupMapReader* contentGroupMapReader) mut => VT.CreateContentGroupMapReader(ref this, ref inputStream, out contentGroupMapReader);
+			public HRESULT CreateSourceContentGroupMapReader(ref IStream inputStream, out IAppxSourceContentGroupMapReader* reader) mut => VT.CreateSourceContentGroupMapReader(ref this, ref inputStream, out reader);
+			public HRESULT CreateContentGroupMapWriter(ref IStream stream, out IAppxContentGroupMapWriter* contentGroupMapWriter) mut => VT.CreateContentGroupMapWriter(ref this, ref stream, out contentGroupMapWriter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -410,26 +388,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBlockMap(out IAppxBlockMapReader* blockMapReader) mut
-			{
-				return VT.GetBlockMap(ref this, out blockMapReader);
-			}
-			public HRESULT GetFootprintFile(APPX_FOOTPRINT_FILE_TYPE type, out IAppxFile* file) mut
-			{
-				return VT.GetFootprintFile(ref this, type, out file);
-			}
-			public HRESULT GetPayloadFile(PWSTR fileName, out IAppxFile* file) mut
-			{
-				return VT.GetPayloadFile(ref this, fileName, out file);
-			}
-			public HRESULT GetPayloadFiles(out IAppxFilesEnumerator* filesEnumerator) mut
-			{
-				return VT.GetPayloadFiles(ref this, out filesEnumerator);
-			}
-			public HRESULT GetManifest(out IAppxManifestReader* manifestReader) mut
-			{
-				return VT.GetManifest(ref this, out manifestReader);
-			}
+			public HRESULT GetBlockMap(out IAppxBlockMapReader* blockMapReader) mut => VT.GetBlockMap(ref this, out blockMapReader);
+			public HRESULT GetFootprintFile(APPX_FOOTPRINT_FILE_TYPE type, out IAppxFile* file) mut => VT.GetFootprintFile(ref this, type, out file);
+			public HRESULT GetPayloadFile(PWSTR fileName, out IAppxFile* file) mut => VT.GetPayloadFile(ref this, fileName, out file);
+			public HRESULT GetPayloadFiles(out IAppxFilesEnumerator* filesEnumerator) mut => VT.GetPayloadFiles(ref this, out filesEnumerator);
+			public HRESULT GetManifest(out IAppxManifestReader* manifestReader) mut => VT.GetManifest(ref this, out manifestReader);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -447,14 +411,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPayloadFile(PWSTR fileName, PWSTR contentType, APPX_COMPRESSION_OPTION compressionOption, ref IStream inputStream) mut
-			{
-				return VT.AddPayloadFile(ref this, fileName, contentType, compressionOption, ref inputStream);
-			}
-			public HRESULT Close(ref IStream manifest) mut
-			{
-				return VT.Close(ref this, ref manifest);
-			}
+			public HRESULT AddPayloadFile(PWSTR fileName, PWSTR contentType, APPX_COMPRESSION_OPTION compressionOption, ref IStream inputStream) mut => VT.AddPayloadFile(ref this, fileName, contentType, compressionOption, ref inputStream);
+			public HRESULT Close(ref IStream manifest) mut => VT.Close(ref this, ref manifest);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -469,10 +428,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Close(ref IStream manifest, ref IStream contentGroupMap) mut
-			{
-				return VT.Close(ref this, ref manifest, ref contentGroupMap);
-			}
+			public HRESULT Close(ref IStream manifest, ref IStream contentGroupMap) mut => VT.Close(ref this, ref manifest, ref contentGroupMap);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -486,10 +443,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPayloadFiles(uint32 fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, uint64 memoryLimit) mut
-			{
-				return VT.AddPayloadFiles(ref this, fileCount, payloadFiles, memoryLimit);
-			}
+			public HRESULT AddPayloadFiles(uint32 fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, uint64 memoryLimit) mut => VT.AddPayloadFiles(ref this, fileCount, payloadFiles, memoryLimit);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -503,26 +458,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCompressionOption(out APPX_COMPRESSION_OPTION compressionOption) mut
-			{
-				return VT.GetCompressionOption(ref this, out compressionOption);
-			}
-			public HRESULT GetContentType(out PWSTR contentType) mut
-			{
-				return VT.GetContentType(ref this, out contentType);
-			}
-			public HRESULT GetName(out PWSTR fileName) mut
-			{
-				return VT.GetName(ref this, out fileName);
-			}
-			public HRESULT GetSize(out uint64 size) mut
-			{
-				return VT.GetSize(ref this, out size);
-			}
-			public HRESULT GetStream(out IStream* stream) mut
-			{
-				return VT.GetStream(ref this, out stream);
-			}
+			public HRESULT GetCompressionOption(out APPX_COMPRESSION_OPTION compressionOption) mut => VT.GetCompressionOption(ref this, out compressionOption);
+			public HRESULT GetContentType(out PWSTR contentType) mut => VT.GetContentType(ref this, out contentType);
+			public HRESULT GetName(out PWSTR fileName) mut => VT.GetName(ref this, out fileName);
+			public HRESULT GetSize(out uint64 size) mut => VT.GetSize(ref this, out size);
+			public HRESULT GetStream(out IStream* stream) mut => VT.GetStream(ref this, out stream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -540,18 +481,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxFile* file) mut
-			{
-				return VT.GetCurrent(ref this, out file);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxFile* file) mut => VT.GetCurrent(ref this, out file);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -567,22 +500,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFile(PWSTR filename, out IAppxBlockMapFile* file) mut
-			{
-				return VT.GetFile(ref this, filename, out file);
-			}
-			public HRESULT GetFiles(out IAppxBlockMapFilesEnumerator* enumerator) mut
-			{
-				return VT.GetFiles(ref this, out enumerator);
-			}
-			public HRESULT GetHashMethod(out IUri* hashMethod) mut
-			{
-				return VT.GetHashMethod(ref this, out hashMethod);
-			}
-			public HRESULT GetStream(out IStream* blockMapStream) mut
-			{
-				return VT.GetStream(ref this, out blockMapStream);
-			}
+			public HRESULT GetFile(PWSTR filename, out IAppxBlockMapFile* file) mut => VT.GetFile(ref this, filename, out file);
+			public HRESULT GetFiles(out IAppxBlockMapFilesEnumerator* enumerator) mut => VT.GetFiles(ref this, out enumerator);
+			public HRESULT GetHashMethod(out IUri* hashMethod) mut => VT.GetHashMethod(ref this, out hashMethod);
+			public HRESULT GetStream(out IStream* blockMapStream) mut => VT.GetStream(ref this, out blockMapStream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -599,26 +521,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBlocks(out IAppxBlockMapBlocksEnumerator* blocks) mut
-			{
-				return VT.GetBlocks(ref this, out blocks);
-			}
-			public HRESULT GetLocalFileHeaderSize(out uint32 lfhSize) mut
-			{
-				return VT.GetLocalFileHeaderSize(ref this, out lfhSize);
-			}
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT GetUncompressedSize(out uint64 size) mut
-			{
-				return VT.GetUncompressedSize(ref this, out size);
-			}
-			public HRESULT ValidateFileHash(ref IStream fileStream, out BOOL isValid) mut
-			{
-				return VT.ValidateFileHash(ref this, ref fileStream, out isValid);
-			}
+			public HRESULT GetBlocks(out IAppxBlockMapBlocksEnumerator* blocks) mut => VT.GetBlocks(ref this, out blocks);
+			public HRESULT GetLocalFileHeaderSize(out uint32 lfhSize) mut => VT.GetLocalFileHeaderSize(ref this, out lfhSize);
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT GetUncompressedSize(out uint64 size) mut => VT.GetUncompressedSize(ref this, out size);
+			public HRESULT ValidateFileHash(ref IStream fileStream, out BOOL isValid) mut => VT.ValidateFileHash(ref this, ref fileStream, out isValid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -636,18 +544,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxBlockMapFile* file) mut
-			{
-				return VT.GetCurrent(ref this, out file);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasCurrent) mut
-			{
-				return VT.MoveNext(ref this, out hasCurrent);
-			}
+			public HRESULT GetCurrent(out IAppxBlockMapFile* file) mut => VT.GetCurrent(ref this, out file);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasCurrent) mut => VT.MoveNext(ref this, out hasCurrent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -663,14 +563,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetHash(out uint32 bufferSize, out uint8* buffer) mut
-			{
-				return VT.GetHash(ref this, out bufferSize, out buffer);
-			}
-			public HRESULT GetCompressedSize(out uint32 size) mut
-			{
-				return VT.GetCompressedSize(ref this, out size);
-			}
+			public HRESULT GetHash(out uint32 bufferSize, out uint8* buffer) mut => VT.GetHash(ref this, out bufferSize, out buffer);
+			public HRESULT GetCompressedSize(out uint32 size) mut => VT.GetCompressedSize(ref this, out size);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -685,18 +580,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxBlockMapBlock* block) mut
-			{
-				return VT.GetCurrent(ref this, out block);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxBlockMapBlock* block) mut => VT.GetCurrent(ref this, out block);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -712,42 +599,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPackageId(out IAppxManifestPackageId* packageId) mut
-			{
-				return VT.GetPackageId(ref this, out packageId);
-			}
-			public HRESULT GetProperties(out IAppxManifestProperties* packageProperties) mut
-			{
-				return VT.GetProperties(ref this, out packageProperties);
-			}
-			public HRESULT GetPackageDependencies(out IAppxManifestPackageDependenciesEnumerator* dependencies) mut
-			{
-				return VT.GetPackageDependencies(ref this, out dependencies);
-			}
-			public HRESULT GetCapabilities(out APPX_CAPABILITIES capabilities) mut
-			{
-				return VT.GetCapabilities(ref this, out capabilities);
-			}
-			public HRESULT GetResources(out IAppxManifestResourcesEnumerator* resources) mut
-			{
-				return VT.GetResources(ref this, out resources);
-			}
-			public HRESULT GetDeviceCapabilities(out IAppxManifestDeviceCapabilitiesEnumerator* deviceCapabilities) mut
-			{
-				return VT.GetDeviceCapabilities(ref this, out deviceCapabilities);
-			}
-			public HRESULT GetPrerequisite(PWSTR name, out uint64 value) mut
-			{
-				return VT.GetPrerequisite(ref this, name, out value);
-			}
-			public HRESULT GetApplications(out IAppxManifestApplicationsEnumerator* applications) mut
-			{
-				return VT.GetApplications(ref this, out applications);
-			}
-			public HRESULT GetStream(out IStream* manifestStream) mut
-			{
-				return VT.GetStream(ref this, out manifestStream);
-			}
+			public HRESULT GetPackageId(out IAppxManifestPackageId* packageId) mut => VT.GetPackageId(ref this, out packageId);
+			public HRESULT GetProperties(out IAppxManifestProperties* packageProperties) mut => VT.GetProperties(ref this, out packageProperties);
+			public HRESULT GetPackageDependencies(out IAppxManifestPackageDependenciesEnumerator* dependencies) mut => VT.GetPackageDependencies(ref this, out dependencies);
+			public HRESULT GetCapabilities(out APPX_CAPABILITIES capabilities) mut => VT.GetCapabilities(ref this, out capabilities);
+			public HRESULT GetResources(out IAppxManifestResourcesEnumerator* resources) mut => VT.GetResources(ref this, out resources);
+			public HRESULT GetDeviceCapabilities(out IAppxManifestDeviceCapabilitiesEnumerator* deviceCapabilities) mut => VT.GetDeviceCapabilities(ref this, out deviceCapabilities);
+			public HRESULT GetPrerequisite(PWSTR name, out uint64 value) mut => VT.GetPrerequisite(ref this, name, out value);
+			public HRESULT GetApplications(out IAppxManifestApplicationsEnumerator* applications) mut => VT.GetApplications(ref this, out applications);
+			public HRESULT GetStream(out IStream* manifestStream) mut => VT.GetStream(ref this, out manifestStream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -769,10 +630,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetQualifiedResources(out IAppxManifestQualifiedResourcesEnumerator* resources) mut
-			{
-				return VT.GetQualifiedResources(ref this, out resources);
-			}
+			public HRESULT GetQualifiedResources(out IAppxManifestQualifiedResourcesEnumerator* resources) mut => VT.GetQualifiedResources(ref this, out resources);
+
 			[CRepr]
 			public struct VTable : IAppxManifestReader.VTable
 			{
@@ -786,14 +645,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapabilitiesByCapabilityClass(APPX_CAPABILITY_CLASS_TYPE capabilityClass, out IAppxManifestCapabilitiesEnumerator* capabilities) mut
-			{
-				return VT.GetCapabilitiesByCapabilityClass(ref this, capabilityClass, out capabilities);
-			}
-			public HRESULT GetTargetDeviceFamilies(out IAppxManifestTargetDeviceFamiliesEnumerator* targetDeviceFamilies) mut
-			{
-				return VT.GetTargetDeviceFamilies(ref this, out targetDeviceFamilies);
-			}
+			public HRESULT GetCapabilitiesByCapabilityClass(APPX_CAPABILITY_CLASS_TYPE capabilityClass, out IAppxManifestCapabilitiesEnumerator* capabilities) mut => VT.GetCapabilitiesByCapabilityClass(ref this, capabilityClass, out capabilities);
+			public HRESULT GetTargetDeviceFamilies(out IAppxManifestTargetDeviceFamiliesEnumerator* targetDeviceFamilies) mut => VT.GetTargetDeviceFamilies(ref this, out targetDeviceFamilies);
+
 			[CRepr]
 			public struct VTable : IAppxManifestReader2.VTable
 			{
@@ -808,10 +662,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOptionalPackageInfo(out IAppxManifestOptionalPackageInfo* optionalPackageInfo) mut
-			{
-				return VT.GetOptionalPackageInfo(ref this, out optionalPackageInfo);
-			}
+			public HRESULT GetOptionalPackageInfo(out IAppxManifestOptionalPackageInfo* optionalPackageInfo) mut => VT.GetOptionalPackageInfo(ref this, out optionalPackageInfo);
+
 			[CRepr]
 			public struct VTable : IAppxManifestReader3.VTable
 			{
@@ -825,10 +677,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMainPackageDependencies(out IAppxManifestMainPackageDependenciesEnumerator* mainPackageDependencies) mut
-			{
-				return VT.GetMainPackageDependencies(ref this, out mainPackageDependencies);
-			}
+			public HRESULT GetMainPackageDependencies(out IAppxManifestMainPackageDependenciesEnumerator* mainPackageDependencies) mut => VT.GetMainPackageDependencies(ref this, out mainPackageDependencies);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -842,10 +692,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIsNonQualifiedResourcePackage(out BOOL isNonQualifiedResourcePackage) mut
-			{
-				return VT.GetIsNonQualifiedResourcePackage(ref this, out isNonQualifiedResourcePackage);
-			}
+			public HRESULT GetIsNonQualifiedResourcePackage(out BOOL isNonQualifiedResourcePackage) mut => VT.GetIsNonQualifiedResourcePackage(ref this, out isNonQualifiedResourcePackage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -859,18 +707,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDriverDependencies(out IAppxManifestDriverDependenciesEnumerator* driverDependencies) mut
-			{
-				return VT.GetDriverDependencies(ref this, out driverDependencies);
-			}
-			public HRESULT GetOSPackageDependencies(out IAppxManifestOSPackageDependenciesEnumerator* osPackageDependencies) mut
-			{
-				return VT.GetOSPackageDependencies(ref this, out osPackageDependencies);
-			}
-			public HRESULT GetHostRuntimeDependencies(out IAppxManifestHostRuntimeDependenciesEnumerator* hostRuntimeDependencies) mut
-			{
-				return VT.GetHostRuntimeDependencies(ref this, out hostRuntimeDependencies);
-			}
+			public HRESULT GetDriverDependencies(out IAppxManifestDriverDependenciesEnumerator* driverDependencies) mut => VT.GetDriverDependencies(ref this, out driverDependencies);
+			public HRESULT GetOSPackageDependencies(out IAppxManifestOSPackageDependenciesEnumerator* osPackageDependencies) mut => VT.GetOSPackageDependencies(ref this, out osPackageDependencies);
+			public HRESULT GetHostRuntimeDependencies(out IAppxManifestHostRuntimeDependenciesEnumerator* hostRuntimeDependencies) mut => VT.GetHostRuntimeDependencies(ref this, out hostRuntimeDependencies);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -886,18 +726,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestDriverDependency* driverDependency) mut
-			{
-				return VT.GetCurrent(ref this, out driverDependency);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestDriverDependency* driverDependency) mut => VT.GetCurrent(ref this, out driverDependency);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -913,10 +745,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDriverConstraints(out IAppxManifestDriverConstraintsEnumerator* driverConstraints) mut
-			{
-				return VT.GetDriverConstraints(ref this, out driverConstraints);
-			}
+			public HRESULT GetDriverConstraints(out IAppxManifestDriverConstraintsEnumerator* driverConstraints) mut => VT.GetDriverConstraints(ref this, out driverConstraints);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -930,18 +760,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestDriverConstraint* driverConstraint) mut
-			{
-				return VT.GetCurrent(ref this, out driverConstraint);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestDriverConstraint* driverConstraint) mut => VT.GetCurrent(ref this, out driverConstraint);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -957,18 +779,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT GetMinVersion(out uint64 minVersion) mut
-			{
-				return VT.GetMinVersion(ref this, out minVersion);
-			}
-			public HRESULT GetMinDate(out PWSTR minDate) mut
-			{
-				return VT.GetMinDate(ref this, out minDate);
-			}
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT GetMinVersion(out uint64 minVersion) mut => VT.GetMinVersion(ref this, out minVersion);
+			public HRESULT GetMinDate(out PWSTR minDate) mut => VT.GetMinDate(ref this, out minDate);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -984,18 +798,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestOSPackageDependency* osPackageDependency) mut
-			{
-				return VT.GetCurrent(ref this, out osPackageDependency);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestOSPackageDependency* osPackageDependency) mut => VT.GetCurrent(ref this, out osPackageDependency);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1011,14 +817,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT GetVersion(out uint64 version) mut
-			{
-				return VT.GetVersion(ref this, out version);
-			}
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT GetVersion(out uint64 version) mut => VT.GetVersion(ref this, out version);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1033,18 +834,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestHostRuntimeDependency* hostRuntimeDependency) mut
-			{
-				return VT.GetCurrent(ref this, out hostRuntimeDependency);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestHostRuntimeDependency* hostRuntimeDependency) mut => VT.GetCurrent(ref this, out hostRuntimeDependency);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1060,18 +853,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT GetPublisher(out PWSTR publisher) mut
-			{
-				return VT.GetPublisher(ref this, out publisher);
-			}
-			public HRESULT GetMinVersion(out uint64 minVersion) mut
-			{
-				return VT.GetMinVersion(ref this, out minVersion);
-			}
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT GetPublisher(out PWSTR publisher) mut => VT.GetPublisher(ref this, out publisher);
+			public HRESULT GetMinVersion(out uint64 minVersion) mut => VT.GetMinVersion(ref this, out minVersion);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1087,10 +872,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPackageFamilyName(out PWSTR packageFamilyName) mut
-			{
-				return VT.GetPackageFamilyName(ref this, out packageFamilyName);
-			}
+			public HRESULT GetPackageFamilyName(out PWSTR packageFamilyName) mut => VT.GetPackageFamilyName(ref this, out packageFamilyName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1104,14 +887,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIsOptionalPackage(out BOOL isOptionalPackage) mut
-			{
-				return VT.GetIsOptionalPackage(ref this, out isOptionalPackage);
-			}
-			public HRESULT GetMainPackageName(out PWSTR mainPackageName) mut
-			{
-				return VT.GetMainPackageName(ref this, out mainPackageName);
-			}
+			public HRESULT GetIsOptionalPackage(out BOOL isOptionalPackage) mut => VT.GetIsOptionalPackage(ref this, out isOptionalPackage);
+			public HRESULT GetMainPackageName(out PWSTR mainPackageName) mut => VT.GetMainPackageName(ref this, out mainPackageName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1126,18 +904,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestMainPackageDependency* mainPackageDependency) mut
-			{
-				return VT.GetCurrent(ref this, out mainPackageDependency);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestMainPackageDependency* mainPackageDependency) mut => VT.GetCurrent(ref this, out mainPackageDependency);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1153,18 +923,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT GetPublisher(out PWSTR publisher) mut
-			{
-				return VT.GetPublisher(ref this, out publisher);
-			}
-			public HRESULT GetPackageFamilyName(out PWSTR packageFamilyName) mut
-			{
-				return VT.GetPackageFamilyName(ref this, out packageFamilyName);
-			}
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT GetPublisher(out PWSTR publisher) mut => VT.GetPublisher(ref this, out publisher);
+			public HRESULT GetPackageFamilyName(out PWSTR packageFamilyName) mut => VT.GetPackageFamilyName(ref this, out packageFamilyName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1180,38 +942,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT GetArchitecture(out APPX_PACKAGE_ARCHITECTURE architecture) mut
-			{
-				return VT.GetArchitecture(ref this, out architecture);
-			}
-			public HRESULT GetPublisher(out PWSTR publisher) mut
-			{
-				return VT.GetPublisher(ref this, out publisher);
-			}
-			public HRESULT GetVersion(out uint64 packageVersion) mut
-			{
-				return VT.GetVersion(ref this, out packageVersion);
-			}
-			public HRESULT GetResourceId(out PWSTR resourceId) mut
-			{
-				return VT.GetResourceId(ref this, out resourceId);
-			}
-			public HRESULT ComparePublisher(PWSTR other, out BOOL isSame) mut
-			{
-				return VT.ComparePublisher(ref this, other, out isSame);
-			}
-			public HRESULT GetPackageFullName(out PWSTR packageFullName) mut
-			{
-				return VT.GetPackageFullName(ref this, out packageFullName);
-			}
-			public HRESULT GetPackageFamilyName(out PWSTR packageFamilyName) mut
-			{
-				return VT.GetPackageFamilyName(ref this, out packageFamilyName);
-			}
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT GetArchitecture(out APPX_PACKAGE_ARCHITECTURE architecture) mut => VT.GetArchitecture(ref this, out architecture);
+			public HRESULT GetPublisher(out PWSTR publisher) mut => VT.GetPublisher(ref this, out publisher);
+			public HRESULT GetVersion(out uint64 packageVersion) mut => VT.GetVersion(ref this, out packageVersion);
+			public HRESULT GetResourceId(out PWSTR resourceId) mut => VT.GetResourceId(ref this, out resourceId);
+			public HRESULT ComparePublisher(PWSTR other, out BOOL isSame) mut => VT.ComparePublisher(ref this, other, out isSame);
+			public HRESULT GetPackageFullName(out PWSTR packageFullName) mut => VT.GetPackageFullName(ref this, out packageFullName);
+			public HRESULT GetPackageFamilyName(out PWSTR packageFamilyName) mut => VT.GetPackageFamilyName(ref this, out packageFamilyName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1232,10 +971,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetArchitecture2(out APPX_PACKAGE_ARCHITECTURE2 architecture) mut
-			{
-				return VT.GetArchitecture2(ref this, out architecture);
-			}
+			public HRESULT GetArchitecture2(out APPX_PACKAGE_ARCHITECTURE2 architecture) mut => VT.GetArchitecture2(ref this, out architecture);
+
 			[CRepr]
 			public struct VTable : IAppxManifestPackageId.VTable
 			{
@@ -1249,14 +986,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBoolValue(PWSTR name, out BOOL value) mut
-			{
-				return VT.GetBoolValue(ref this, name, out value);
-			}
-			public HRESULT GetStringValue(PWSTR name, out PWSTR value) mut
-			{
-				return VT.GetStringValue(ref this, name, out value);
-			}
+			public HRESULT GetBoolValue(PWSTR name, out BOOL value) mut => VT.GetBoolValue(ref this, name, out value);
+			public HRESULT GetStringValue(PWSTR name, out PWSTR value) mut => VT.GetStringValue(ref this, name, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1271,18 +1003,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestTargetDeviceFamily* targetDeviceFamily) mut
-			{
-				return VT.GetCurrent(ref this, out targetDeviceFamily);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestTargetDeviceFamily* targetDeviceFamily) mut => VT.GetCurrent(ref this, out targetDeviceFamily);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1298,18 +1022,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT GetMinVersion(out uint64 minVersion) mut
-			{
-				return VT.GetMinVersion(ref this, out minVersion);
-			}
-			public HRESULT GetMaxVersionTested(out uint64 maxVersionTested) mut
-			{
-				return VT.GetMaxVersionTested(ref this, out maxVersionTested);
-			}
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT GetMinVersion(out uint64 minVersion) mut => VT.GetMinVersion(ref this, out minVersion);
+			public HRESULT GetMaxVersionTested(out uint64 maxVersionTested) mut => VT.GetMaxVersionTested(ref this, out maxVersionTested);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1325,18 +1041,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestPackageDependency* dependency) mut
-			{
-				return VT.GetCurrent(ref this, out dependency);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestPackageDependency* dependency) mut => VT.GetCurrent(ref this, out dependency);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1352,18 +1060,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT GetPublisher(out PWSTR publisher) mut
-			{
-				return VT.GetPublisher(ref this, out publisher);
-			}
-			public HRESULT GetMinVersion(out uint64 minVersion) mut
-			{
-				return VT.GetMinVersion(ref this, out minVersion);
-			}
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT GetPublisher(out PWSTR publisher) mut => VT.GetPublisher(ref this, out publisher);
+			public HRESULT GetMinVersion(out uint64 minVersion) mut => VT.GetMinVersion(ref this, out minVersion);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1379,10 +1079,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMaxMajorVersionTested(out uint16 maxMajorVersionTested) mut
-			{
-				return VT.GetMaxMajorVersionTested(ref this, out maxMajorVersionTested);
-			}
+			public HRESULT GetMaxMajorVersionTested(out uint16 maxMajorVersionTested) mut => VT.GetMaxMajorVersionTested(ref this, out maxMajorVersionTested);
+
 			[CRepr]
 			public struct VTable : IAppxManifestPackageDependency.VTable
 			{
@@ -1396,10 +1094,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIsOptional(out BOOL isOptional) mut
-			{
-				return VT.GetIsOptional(ref this, out isOptional);
-			}
+			public HRESULT GetIsOptional(out BOOL isOptional) mut => VT.GetIsOptional(ref this, out isOptional);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1413,18 +1109,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out PWSTR resource) mut
-			{
-				return VT.GetCurrent(ref this, out resource);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out PWSTR resource) mut => VT.GetCurrent(ref this, out resource);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1440,18 +1128,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out PWSTR deviceCapability) mut
-			{
-				return VT.GetCurrent(ref this, out deviceCapability);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out PWSTR deviceCapability) mut => VT.GetCurrent(ref this, out deviceCapability);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1467,18 +1147,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out PWSTR capability) mut
-			{
-				return VT.GetCurrent(ref this, out capability);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out PWSTR capability) mut => VT.GetCurrent(ref this, out capability);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1494,18 +1166,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestApplication* application) mut
-			{
-				return VT.GetCurrent(ref this, out application);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestApplication* application) mut => VT.GetCurrent(ref this, out application);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1521,14 +1185,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStringValue(PWSTR name, out PWSTR value) mut
-			{
-				return VT.GetStringValue(ref this, name, out value);
-			}
-			public HRESULT GetAppUserModelId(out PWSTR appUserModelId) mut
-			{
-				return VT.GetAppUserModelId(ref this, out appUserModelId);
-			}
+			public HRESULT GetStringValue(PWSTR name, out PWSTR value) mut => VT.GetStringValue(ref this, name, out value);
+			public HRESULT GetAppUserModelId(out PWSTR appUserModelId) mut => VT.GetAppUserModelId(ref this, out appUserModelId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1543,18 +1202,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxManifestQualifiedResource* resource) mut
-			{
-				return VT.GetCurrent(ref this, out resource);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxManifestQualifiedResource* resource) mut => VT.GetCurrent(ref this, out resource);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1570,18 +1221,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLanguage(out PWSTR language) mut
-			{
-				return VT.GetLanguage(ref this, out language);
-			}
-			public HRESULT GetScale(out uint32 scale) mut
-			{
-				return VT.GetScale(ref this, out scale);
-			}
-			public HRESULT GetDXFeatureLevel(out DX_FEATURE_LEVEL dxFeatureLevel) mut
-			{
-				return VT.GetDXFeatureLevel(ref this, out dxFeatureLevel);
-			}
+			public HRESULT GetLanguage(out PWSTR language) mut => VT.GetLanguage(ref this, out language);
+			public HRESULT GetScale(out uint32 scale) mut => VT.GetScale(ref this, out scale);
+			public HRESULT GetDXFeatureLevel(out DX_FEATURE_LEVEL dxFeatureLevel) mut => VT.GetDXFeatureLevel(ref this, out dxFeatureLevel);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1597,18 +1240,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateBundleWriter(ref IStream outputStream, uint64 bundleVersion, out IAppxBundleWriter* bundleWriter) mut
-			{
-				return VT.CreateBundleWriter(ref this, ref outputStream, bundleVersion, out bundleWriter);
-			}
-			public HRESULT CreateBundleReader(ref IStream inputStream, out IAppxBundleReader* bundleReader) mut
-			{
-				return VT.CreateBundleReader(ref this, ref inputStream, out bundleReader);
-			}
-			public HRESULT CreateBundleManifestReader(ref IStream inputStream, out IAppxBundleManifestReader* manifestReader) mut
-			{
-				return VT.CreateBundleManifestReader(ref this, ref inputStream, out manifestReader);
-			}
+			public HRESULT CreateBundleWriter(ref IStream outputStream, uint64 bundleVersion, out IAppxBundleWriter* bundleWriter) mut => VT.CreateBundleWriter(ref this, ref outputStream, bundleVersion, out bundleWriter);
+			public HRESULT CreateBundleReader(ref IStream inputStream, out IAppxBundleReader* bundleReader) mut => VT.CreateBundleReader(ref this, ref inputStream, out bundleReader);
+			public HRESULT CreateBundleManifestReader(ref IStream inputStream, out IAppxBundleManifestReader* manifestReader) mut => VT.CreateBundleManifestReader(ref this, ref inputStream, out manifestReader);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1624,14 +1259,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPayloadPackage(PWSTR fileName, ref IStream packageStream) mut
-			{
-				return VT.AddPayloadPackage(ref this, fileName, ref packageStream);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT AddPayloadPackage(PWSTR fileName, ref IStream packageStream) mut => VT.AddPayloadPackage(ref this, fileName, ref packageStream);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1646,10 +1276,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddExternalPackageReference(PWSTR fileName, ref IStream inputStream) mut
-			{
-				return VT.AddExternalPackageReference(ref this, fileName, ref inputStream);
-			}
+			public HRESULT AddExternalPackageReference(PWSTR fileName, ref IStream inputStream) mut => VT.AddExternalPackageReference(ref this, fileName, ref inputStream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1663,14 +1291,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPackageReference(PWSTR fileName, ref IStream inputStream) mut
-			{
-				return VT.AddPackageReference(ref this, fileName, ref inputStream);
-			}
-			public HRESULT Close(PWSTR hashMethodString) mut
-			{
-				return VT.Close(ref this, hashMethodString);
-			}
+			public HRESULT AddPackageReference(PWSTR fileName, ref IStream inputStream) mut => VT.AddPackageReference(ref this, fileName, ref inputStream);
+			public HRESULT Close(PWSTR hashMethodString) mut => VT.Close(ref this, hashMethodString);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1685,18 +1308,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPayloadPackage(PWSTR fileName, ref IStream packageStream, BOOL isDefaultApplicablePackage) mut
-			{
-				return VT.AddPayloadPackage(ref this, fileName, ref packageStream, isDefaultApplicablePackage);
-			}
-			public HRESULT AddPackageReference(PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) mut
-			{
-				return VT.AddPackageReference(ref this, fileName, ref inputStream, isDefaultApplicablePackage);
-			}
-			public HRESULT AddExternalPackageReference(PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) mut
-			{
-				return VT.AddExternalPackageReference(ref this, fileName, ref inputStream, isDefaultApplicablePackage);
-			}
+			public HRESULT AddPayloadPackage(PWSTR fileName, ref IStream packageStream, BOOL isDefaultApplicablePackage) mut => VT.AddPayloadPackage(ref this, fileName, ref packageStream, isDefaultApplicablePackage);
+			public HRESULT AddPackageReference(PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) mut => VT.AddPackageReference(ref this, fileName, ref inputStream, isDefaultApplicablePackage);
+			public HRESULT AddExternalPackageReference(PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) mut => VT.AddExternalPackageReference(ref this, fileName, ref inputStream, isDefaultApplicablePackage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1712,26 +1327,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFootprintFile(APPX_BUNDLE_FOOTPRINT_FILE_TYPE fileType, out IAppxFile* footprintFile) mut
-			{
-				return VT.GetFootprintFile(ref this, fileType, out footprintFile);
-			}
-			public HRESULT GetBlockMap(out IAppxBlockMapReader* blockMapReader) mut
-			{
-				return VT.GetBlockMap(ref this, out blockMapReader);
-			}
-			public HRESULT GetManifest(out IAppxBundleManifestReader* manifestReader) mut
-			{
-				return VT.GetManifest(ref this, out manifestReader);
-			}
-			public HRESULT GetPayloadPackages(out IAppxFilesEnumerator* payloadPackages) mut
-			{
-				return VT.GetPayloadPackages(ref this, out payloadPackages);
-			}
-			public HRESULT GetPayloadPackage(PWSTR fileName, out IAppxFile* payloadPackage) mut
-			{
-				return VT.GetPayloadPackage(ref this, fileName, out payloadPackage);
-			}
+			public HRESULT GetFootprintFile(APPX_BUNDLE_FOOTPRINT_FILE_TYPE fileType, out IAppxFile* footprintFile) mut => VT.GetFootprintFile(ref this, fileType, out footprintFile);
+			public HRESULT GetBlockMap(out IAppxBlockMapReader* blockMapReader) mut => VT.GetBlockMap(ref this, out blockMapReader);
+			public HRESULT GetManifest(out IAppxBundleManifestReader* manifestReader) mut => VT.GetManifest(ref this, out manifestReader);
+			public HRESULT GetPayloadPackages(out IAppxFilesEnumerator* payloadPackages) mut => VT.GetPayloadPackages(ref this, out payloadPackages);
+			public HRESULT GetPayloadPackage(PWSTR fileName, out IAppxFile* payloadPackage) mut => VT.GetPayloadPackage(ref this, fileName, out payloadPackage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1749,18 +1350,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPackageId(out IAppxManifestPackageId* packageId) mut
-			{
-				return VT.GetPackageId(ref this, out packageId);
-			}
-			public HRESULT GetPackageInfoItems(out IAppxBundleManifestPackageInfoEnumerator* packageInfoItems) mut
-			{
-				return VT.GetPackageInfoItems(ref this, out packageInfoItems);
-			}
-			public HRESULT GetStream(out IStream* manifestStream) mut
-			{
-				return VT.GetStream(ref this, out manifestStream);
-			}
+			public HRESULT GetPackageId(out IAppxManifestPackageId* packageId) mut => VT.GetPackageId(ref this, out packageId);
+			public HRESULT GetPackageInfoItems(out IAppxBundleManifestPackageInfoEnumerator* packageInfoItems) mut => VT.GetPackageInfoItems(ref this, out packageInfoItems);
+			public HRESULT GetStream(out IStream* manifestStream) mut => VT.GetStream(ref this, out manifestStream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1776,10 +1369,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOptionalBundles(out IAppxBundleManifestOptionalBundleInfoEnumerator* optionalBundles) mut
-			{
-				return VT.GetOptionalBundles(ref this, out optionalBundles);
-			}
+			public HRESULT GetOptionalBundles(out IAppxBundleManifestOptionalBundleInfoEnumerator* optionalBundles) mut => VT.GetOptionalBundles(ref this, out optionalBundles);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1793,18 +1384,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxBundleManifestPackageInfo* packageInfo) mut
-			{
-				return VT.GetCurrent(ref this, out packageInfo);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxBundleManifestPackageInfo* packageInfo) mut => VT.GetCurrent(ref this, out packageInfo);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1820,30 +1403,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPackageType(out APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE packageType) mut
-			{
-				return VT.GetPackageType(ref this, out packageType);
-			}
-			public HRESULT GetPackageId(out IAppxManifestPackageId* packageId) mut
-			{
-				return VT.GetPackageId(ref this, out packageId);
-			}
-			public HRESULT GetFileName(out PWSTR fileName) mut
-			{
-				return VT.GetFileName(ref this, out fileName);
-			}
-			public HRESULT GetOffset(out uint64 offset) mut
-			{
-				return VT.GetOffset(ref this, out offset);
-			}
-			public HRESULT GetSize(out uint64 size) mut
-			{
-				return VT.GetSize(ref this, out size);
-			}
-			public HRESULT GetResources(out IAppxManifestQualifiedResourcesEnumerator* resources) mut
-			{
-				return VT.GetResources(ref this, out resources);
-			}
+			public HRESULT GetPackageType(out APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE packageType) mut => VT.GetPackageType(ref this, out packageType);
+			public HRESULT GetPackageId(out IAppxManifestPackageId* packageId) mut => VT.GetPackageId(ref this, out packageId);
+			public HRESULT GetFileName(out PWSTR fileName) mut => VT.GetFileName(ref this, out fileName);
+			public HRESULT GetOffset(out uint64 offset) mut => VT.GetOffset(ref this, out offset);
+			public HRESULT GetSize(out uint64 size) mut => VT.GetSize(ref this, out size);
+			public HRESULT GetResources(out IAppxManifestQualifiedResourcesEnumerator* resources) mut => VT.GetResources(ref this, out resources);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1862,18 +1428,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIsPackageReference(out BOOL isPackageReference) mut
-			{
-				return VT.GetIsPackageReference(ref this, out isPackageReference);
-			}
-			public HRESULT GetIsNonQualifiedResourcePackage(out BOOL isNonQualifiedResourcePackage) mut
-			{
-				return VT.GetIsNonQualifiedResourcePackage(ref this, out isNonQualifiedResourcePackage);
-			}
-			public HRESULT GetIsDefaultApplicablePackage(out BOOL isDefaultApplicablePackage) mut
-			{
-				return VT.GetIsDefaultApplicablePackage(ref this, out isDefaultApplicablePackage);
-			}
+			public HRESULT GetIsPackageReference(out BOOL isPackageReference) mut => VT.GetIsPackageReference(ref this, out isPackageReference);
+			public HRESULT GetIsNonQualifiedResourcePackage(out BOOL isNonQualifiedResourcePackage) mut => VT.GetIsNonQualifiedResourcePackage(ref this, out isNonQualifiedResourcePackage);
+			public HRESULT GetIsDefaultApplicablePackage(out BOOL isDefaultApplicablePackage) mut => VT.GetIsDefaultApplicablePackage(ref this, out isDefaultApplicablePackage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1889,10 +1447,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTargetDeviceFamilies(out IAppxManifestTargetDeviceFamiliesEnumerator* targetDeviceFamilies) mut
-			{
-				return VT.GetTargetDeviceFamilies(ref this, out targetDeviceFamilies);
-			}
+			public HRESULT GetTargetDeviceFamilies(out IAppxManifestTargetDeviceFamiliesEnumerator* targetDeviceFamilies) mut => VT.GetTargetDeviceFamilies(ref this, out targetDeviceFamilies);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1906,10 +1462,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIsStub(out BOOL isStub) mut
-			{
-				return VT.GetIsStub(ref this, out isStub);
-			}
+			public HRESULT GetIsStub(out BOOL isStub) mut => VT.GetIsStub(ref this, out isStub);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1923,18 +1477,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxBundleManifestOptionalBundleInfo* optionalBundle) mut
-			{
-				return VT.GetCurrent(ref this, out optionalBundle);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxBundleManifestOptionalBundleInfo* optionalBundle) mut => VT.GetCurrent(ref this, out optionalBundle);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1950,18 +1496,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPackageId(out IAppxManifestPackageId* packageId) mut
-			{
-				return VT.GetPackageId(ref this, out packageId);
-			}
-			public HRESULT GetFileName(out PWSTR fileName) mut
-			{
-				return VT.GetFileName(ref this, out fileName);
-			}
-			public HRESULT GetPackageInfoItems(out IAppxBundleManifestPackageInfoEnumerator* packageInfoItems) mut
-			{
-				return VT.GetPackageInfoItems(ref this, out packageInfoItems);
-			}
+			public HRESULT GetPackageId(out IAppxManifestPackageId* packageId) mut => VT.GetPackageId(ref this, out packageId);
+			public HRESULT GetFileName(out PWSTR fileName) mut => VT.GetFileName(ref this, out fileName);
+			public HRESULT GetPackageInfoItems(out IAppxBundleManifestPackageInfoEnumerator* packageInfoItems) mut => VT.GetPackageInfoItems(ref this, out packageInfoItems);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1977,18 +1515,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out PWSTR file) mut
-			{
-				return VT.GetCurrent(ref this, out file);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out PWSTR file) mut => VT.GetCurrent(ref this, out file);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2004,14 +1534,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR groupName) mut
-			{
-				return VT.GetName(ref this, out groupName);
-			}
-			public HRESULT GetFiles(out IAppxContentGroupFilesEnumerator* enumerator) mut
-			{
-				return VT.GetFiles(ref this, out enumerator);
-			}
+			public HRESULT GetName(out PWSTR groupName) mut => VT.GetName(ref this, out groupName);
+			public HRESULT GetFiles(out IAppxContentGroupFilesEnumerator* enumerator) mut => VT.GetFiles(ref this, out enumerator);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2026,18 +1551,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out IAppxContentGroup* stream) mut
-			{
-				return VT.GetCurrent(ref this, out stream);
-			}
-			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut
-			{
-				return VT.GetHasCurrent(ref this, out hasCurrent);
-			}
-			public HRESULT MoveNext(out BOOL hasNext) mut
-			{
-				return VT.MoveNext(ref this, out hasNext);
-			}
+			public HRESULT GetCurrent(out IAppxContentGroup* stream) mut => VT.GetCurrent(ref this, out stream);
+			public HRESULT GetHasCurrent(out BOOL hasCurrent) mut => VT.GetHasCurrent(ref this, out hasCurrent);
+			public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2053,14 +1570,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRequiredGroup(out IAppxContentGroup* requiredGroup) mut
-			{
-				return VT.GetRequiredGroup(ref this, out requiredGroup);
-			}
-			public HRESULT GetAutomaticGroups(out IAppxContentGroupsEnumerator* automaticGroupsEnumerator) mut
-			{
-				return VT.GetAutomaticGroups(ref this, out automaticGroupsEnumerator);
-			}
+			public HRESULT GetRequiredGroup(out IAppxContentGroup* requiredGroup) mut => VT.GetRequiredGroup(ref this, out requiredGroup);
+			public HRESULT GetAutomaticGroups(out IAppxContentGroupsEnumerator* automaticGroupsEnumerator) mut => VT.GetAutomaticGroups(ref this, out automaticGroupsEnumerator);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2075,14 +1587,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRequiredGroup(out IAppxContentGroup* requiredGroup) mut
-			{
-				return VT.GetRequiredGroup(ref this, out requiredGroup);
-			}
-			public HRESULT GetAutomaticGroups(out IAppxContentGroupsEnumerator* automaticGroupsEnumerator) mut
-			{
-				return VT.GetAutomaticGroups(ref this, out automaticGroupsEnumerator);
-			}
+			public HRESULT GetRequiredGroup(out IAppxContentGroup* requiredGroup) mut => VT.GetRequiredGroup(ref this, out requiredGroup);
+			public HRESULT GetAutomaticGroups(out IAppxContentGroupsEnumerator* automaticGroupsEnumerator) mut => VT.GetAutomaticGroups(ref this, out automaticGroupsEnumerator);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2097,18 +1604,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddAutomaticGroup(PWSTR groupName) mut
-			{
-				return VT.AddAutomaticGroup(ref this, groupName);
-			}
-			public HRESULT AddAutomaticFile(PWSTR fileName) mut
-			{
-				return VT.AddAutomaticFile(ref this, fileName);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT AddAutomaticGroup(PWSTR groupName) mut => VT.AddAutomaticGroup(ref this, groupName);
+			public HRESULT AddAutomaticFile(PWSTR fileName) mut => VT.AddAutomaticFile(ref this, fileName);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2124,14 +1623,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReportContextChange(APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, int32 contextId, PSTR contextName, PWSTR contextMessage, PWSTR detailsMessage) mut
-			{
-				return VT.ReportContextChange(ref this, changeType, contextId, contextName, contextMessage, detailsMessage);
-			}
-			public HRESULT ReportError(PWSTR errorMessage) mut
-			{
-				return VT.ReportError(ref this, errorMessage);
-			}
+			public HRESULT ReportContextChange(APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, int32 contextId, PSTR contextName, PWSTR contextMessage, PWSTR detailsMessage) mut => VT.ReportContextChange(ref this, changeType, contextId, contextName, contextMessage, detailsMessage);
+			public HRESULT ReportError(PWSTR errorMessage) mut => VT.ReportError(ref this, errorMessage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2146,10 +1640,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSinkForProcess(ref IAppxPackagingDiagnosticEventSink sink) mut
-			{
-				return VT.SetSinkForProcess(ref this, ref sink);
-			}
+			public HRESULT SetSinkForProcess(ref IAppxPackagingDiagnosticEventSink sink) mut => VT.SetSinkForProcess(ref this, ref sink);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2163,38 +1655,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EncryptPackage(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) mut
-			{
-				return VT.EncryptPackage(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles);
-			}
-			public HRESULT DecryptPackage(ref IStream inputStream, ref IStream outputStream, in APPX_KEY_INFO keyInfo) mut
-			{
-				return VT.DecryptPackage(ref this, ref inputStream, ref outputStream, keyInfo);
-			}
-			public HRESULT CreateEncryptedPackageWriter(ref IStream outputStream, ref IStream manifestStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) mut
-			{
-				return VT.CreateEncryptedPackageWriter(ref this, ref outputStream, ref manifestStream, settings, keyInfo, exemptedFiles, out packageWriter);
-			}
-			public HRESULT CreateEncryptedPackageReader(ref IStream inputStream, in APPX_KEY_INFO keyInfo, out IAppxPackageReader* packageReader) mut
-			{
-				return VT.CreateEncryptedPackageReader(ref this, ref inputStream, keyInfo, out packageReader);
-			}
-			public HRESULT EncryptBundle(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) mut
-			{
-				return VT.EncryptBundle(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles);
-			}
-			public HRESULT DecryptBundle(ref IStream inputStream, ref IStream outputStream, in APPX_KEY_INFO keyInfo) mut
-			{
-				return VT.DecryptBundle(ref this, ref inputStream, ref outputStream, keyInfo);
-			}
-			public HRESULT CreateEncryptedBundleWriter(ref IStream outputStream, uint64 bundleVersion, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedBundleWriter* bundleWriter) mut
-			{
-				return VT.CreateEncryptedBundleWriter(ref this, ref outputStream, bundleVersion, settings, keyInfo, exemptedFiles, out bundleWriter);
-			}
-			public HRESULT CreateEncryptedBundleReader(ref IStream inputStream, in APPX_KEY_INFO keyInfo, out IAppxBundleReader* bundleReader) mut
-			{
-				return VT.CreateEncryptedBundleReader(ref this, ref inputStream, keyInfo, out bundleReader);
-			}
+			public HRESULT EncryptPackage(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) mut => VT.EncryptPackage(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles);
+			public HRESULT DecryptPackage(ref IStream inputStream, ref IStream outputStream, in APPX_KEY_INFO keyInfo) mut => VT.DecryptPackage(ref this, ref inputStream, ref outputStream, keyInfo);
+			public HRESULT CreateEncryptedPackageWriter(ref IStream outputStream, ref IStream manifestStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) mut => VT.CreateEncryptedPackageWriter(ref this, ref outputStream, ref manifestStream, settings, keyInfo, exemptedFiles, out packageWriter);
+			public HRESULT CreateEncryptedPackageReader(ref IStream inputStream, in APPX_KEY_INFO keyInfo, out IAppxPackageReader* packageReader) mut => VT.CreateEncryptedPackageReader(ref this, ref inputStream, keyInfo, out packageReader);
+			public HRESULT EncryptBundle(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) mut => VT.EncryptBundle(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles);
+			public HRESULT DecryptBundle(ref IStream inputStream, ref IStream outputStream, in APPX_KEY_INFO keyInfo) mut => VT.DecryptBundle(ref this, ref inputStream, ref outputStream, keyInfo);
+			public HRESULT CreateEncryptedBundleWriter(ref IStream outputStream, uint64 bundleVersion, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedBundleWriter* bundleWriter) mut => VT.CreateEncryptedBundleWriter(ref this, ref outputStream, bundleVersion, settings, keyInfo, exemptedFiles, out bundleWriter);
+			public HRESULT CreateEncryptedBundleReader(ref IStream inputStream, in APPX_KEY_INFO keyInfo, out IAppxBundleReader* bundleReader) mut => VT.CreateEncryptedBundleReader(ref this, ref inputStream, keyInfo, out bundleReader);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2215,10 +1684,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEncryptedPackageWriter(ref IStream outputStream, ref IStream manifestStream, ref IStream contentGroupMapStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) mut
-			{
-				return VT.CreateEncryptedPackageWriter(ref this, ref outputStream, ref manifestStream, ref contentGroupMapStream, settings, keyInfo, exemptedFiles, out packageWriter);
-			}
+			public HRESULT CreateEncryptedPackageWriter(ref IStream outputStream, ref IStream manifestStream, ref IStream contentGroupMapStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) mut => VT.CreateEncryptedPackageWriter(ref this, ref outputStream, ref manifestStream, ref contentGroupMapStream, settings, keyInfo, exemptedFiles, out packageWriter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2232,22 +1699,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EncryptPackage(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) mut
-			{
-				return VT.EncryptPackage(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles);
-			}
-			public HRESULT CreateEncryptedPackageWriter(ref IStream outputStream, ref IStream manifestStream, ref IStream contentGroupMapStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) mut
-			{
-				return VT.CreateEncryptedPackageWriter(ref this, ref outputStream, ref manifestStream, ref contentGroupMapStream, settings, keyInfo, exemptedFiles, out packageWriter);
-			}
-			public HRESULT EncryptBundle(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) mut
-			{
-				return VT.EncryptBundle(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles);
-			}
-			public HRESULT CreateEncryptedBundleWriter(ref IStream outputStream, uint64 bundleVersion, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedBundleWriter* bundleWriter) mut
-			{
-				return VT.CreateEncryptedBundleWriter(ref this, ref outputStream, bundleVersion, settings, keyInfo, exemptedFiles, out bundleWriter);
-			}
+			public HRESULT EncryptPackage(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) mut => VT.EncryptPackage(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles);
+			public HRESULT CreateEncryptedPackageWriter(ref IStream outputStream, ref IStream manifestStream, ref IStream contentGroupMapStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) mut => VT.CreateEncryptedPackageWriter(ref this, ref outputStream, ref manifestStream, ref contentGroupMapStream, settings, keyInfo, exemptedFiles, out packageWriter);
+			public HRESULT EncryptBundle(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) mut => VT.EncryptBundle(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles);
+			public HRESULT CreateEncryptedBundleWriter(ref IStream outputStream, uint64 bundleVersion, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedBundleWriter* bundleWriter) mut => VT.CreateEncryptedBundleWriter(ref this, ref outputStream, bundleVersion, settings, keyInfo, exemptedFiles, out bundleWriter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2264,10 +1720,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EncryptPackage(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, uint64 memoryLimit) mut
-			{
-				return VT.EncryptPackage(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles, memoryLimit);
-			}
+			public HRESULT EncryptPackage(ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, uint64 memoryLimit) mut => VT.EncryptPackage(ref this, ref inputStream, ref outputStream, settings, keyInfo, exemptedFiles, memoryLimit);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2281,14 +1735,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPayloadFileEncrypted(PWSTR fileName, APPX_COMPRESSION_OPTION compressionOption, ref IStream inputStream) mut
-			{
-				return VT.AddPayloadFileEncrypted(ref this, fileName, compressionOption, ref inputStream);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT AddPayloadFileEncrypted(PWSTR fileName, APPX_COMPRESSION_OPTION compressionOption, ref IStream inputStream) mut => VT.AddPayloadFileEncrypted(ref this, fileName, compressionOption, ref inputStream);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2303,10 +1752,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPayloadFilesEncrypted(uint32 fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, uint64 memoryLimit) mut
-			{
-				return VT.AddPayloadFilesEncrypted(ref this, fileCount, payloadFiles, memoryLimit);
-			}
+			public HRESULT AddPayloadFilesEncrypted(uint32 fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, uint64 memoryLimit) mut => VT.AddPayloadFilesEncrypted(ref this, fileCount, payloadFiles, memoryLimit);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2320,14 +1767,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPayloadPackageEncrypted(PWSTR fileName, ref IStream packageStream) mut
-			{
-				return VT.AddPayloadPackageEncrypted(ref this, fileName, ref packageStream);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT AddPayloadPackageEncrypted(PWSTR fileName, ref IStream packageStream) mut => VT.AddPayloadPackageEncrypted(ref this, fileName, ref packageStream);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2342,10 +1784,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddExternalPackageReference(PWSTR fileName, ref IStream inputStream) mut
-			{
-				return VT.AddExternalPackageReference(ref this, fileName, ref inputStream);
-			}
+			public HRESULT AddExternalPackageReference(PWSTR fileName, ref IStream inputStream) mut => VT.AddExternalPackageReference(ref this, fileName, ref inputStream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2359,14 +1799,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPayloadPackageEncrypted(PWSTR fileName, ref IStream packageStream, BOOL isDefaultApplicablePackage) mut
-			{
-				return VT.AddPayloadPackageEncrypted(ref this, fileName, ref packageStream, isDefaultApplicablePackage);
-			}
-			public HRESULT AddExternalPackageReference(PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) mut
-			{
-				return VT.AddExternalPackageReference(ref this, fileName, ref inputStream, isDefaultApplicablePackage);
-			}
+			public HRESULT AddPayloadPackageEncrypted(PWSTR fileName, ref IStream packageStream, BOOL isDefaultApplicablePackage) mut => VT.AddPayloadPackageEncrypted(ref this, fileName, ref packageStream, isDefaultApplicablePackage);
+			public HRESULT AddExternalPackageReference(PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) mut => VT.AddExternalPackageReference(ref this, fileName, ref inputStream, isDefaultApplicablePackage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2381,30 +1816,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetWorkingDirectory(PWSTR workingDirectory) mut
-			{
-				return VT.SetWorkingDirectory(ref this, workingDirectory);
-			}
-			public HRESULT CreateDeltaPackage(ref IStream updatedPackageStream, ref IStream baselinePackageStream, ref IStream deltaPackageStream) mut
-			{
-				return VT.CreateDeltaPackage(ref this, ref updatedPackageStream, ref baselinePackageStream, ref deltaPackageStream);
-			}
-			public HRESULT CreateDeltaPackageUsingBaselineBlockMap(ref IStream updatedPackageStream, ref IStream baselineBlockMapStream, PWSTR baselinePackageFullName, ref IStream deltaPackageStream) mut
-			{
-				return VT.CreateDeltaPackageUsingBaselineBlockMap(ref this, ref updatedPackageStream, ref baselineBlockMapStream, baselinePackageFullName, ref deltaPackageStream);
-			}
-			public HRESULT UpdatePackage(ref IStream baselinePackageStream, ref IStream deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption) mut
-			{
-				return VT.UpdatePackage(ref this, ref baselinePackageStream, ref deltaPackageStream, updateOption);
-			}
-			public HRESULT UpdateEncryptedPackage(ref IStream baselineEncryptedPackageStream, ref IStream deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo) mut
-			{
-				return VT.UpdateEncryptedPackage(ref this, ref baselineEncryptedPackageStream, ref deltaPackageStream, updateOption, settings, keyInfo);
-			}
-			public HRESULT UpdatePackageManifest(ref IStream packageStream, ref IStream updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options) mut
-			{
-				return VT.UpdatePackageManifest(ref this, ref packageStream, ref updatedManifestStream, isPackageEncrypted, options);
-			}
+			public HRESULT SetWorkingDirectory(PWSTR workingDirectory) mut => VT.SetWorkingDirectory(ref this, workingDirectory);
+			public HRESULT CreateDeltaPackage(ref IStream updatedPackageStream, ref IStream baselinePackageStream, ref IStream deltaPackageStream) mut => VT.CreateDeltaPackage(ref this, ref updatedPackageStream, ref baselinePackageStream, ref deltaPackageStream);
+			public HRESULT CreateDeltaPackageUsingBaselineBlockMap(ref IStream updatedPackageStream, ref IStream baselineBlockMapStream, PWSTR baselinePackageFullName, ref IStream deltaPackageStream) mut => VT.CreateDeltaPackageUsingBaselineBlockMap(ref this, ref updatedPackageStream, ref baselineBlockMapStream, baselinePackageFullName, ref deltaPackageStream);
+			public HRESULT UpdatePackage(ref IStream baselinePackageStream, ref IStream deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption) mut => VT.UpdatePackage(ref this, ref baselinePackageStream, ref deltaPackageStream, updateOption);
+			public HRESULT UpdateEncryptedPackage(ref IStream baselineEncryptedPackageStream, ref IStream deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo) mut => VT.UpdateEncryptedPackage(ref this, ref baselineEncryptedPackageStream, ref deltaPackageStream, updateOption, settings, keyInfo);
+			public HRESULT UpdatePackageManifest(ref IStream packageStream, ref IStream updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options) mut => VT.UpdatePackageManifest(ref this, ref packageStream, ref updatedManifestStream, isPackageEncrypted, options);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

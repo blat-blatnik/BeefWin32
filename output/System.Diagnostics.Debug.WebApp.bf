@@ -19,14 +19,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeforeScriptExecute(ref IHTMLWindow2 htmlWindow) mut
-			{
-				return VT.BeforeScriptExecute(ref this, ref htmlWindow);
-			}
-			public HRESULT ScriptError(IHTMLWindow2* htmlWindow, ref IActiveScriptError scriptError, PWSTR url, BOOL errorHandled) mut
-			{
-				return VT.ScriptError(ref this, htmlWindow, ref scriptError, url, errorHandled);
-			}
+			public HRESULT BeforeScriptExecute(ref IHTMLWindow2 htmlWindow) mut => VT.BeforeScriptExecute(ref this, ref htmlWindow);
+			public HRESULT ScriptError(IHTMLWindow2* htmlWindow, ref IActiveScriptError scriptError, PWSTR url, BOOL errorHandled) mut => VT.ScriptError(ref this, htmlWindow, ref scriptError, url, errorHandled);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -41,30 +36,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeforeNavigate(ref IHTMLWindow2 htmlWindow, PWSTR url, uint32 navigationFlags, PWSTR targetFrameName) mut
-			{
-				return VT.BeforeNavigate(ref this, ref htmlWindow, url, navigationFlags, targetFrameName);
-			}
-			public HRESULT NavigateComplete(ref IHTMLWindow2 htmlWindow, PWSTR url) mut
-			{
-				return VT.NavigateComplete(ref this, ref htmlWindow, url);
-			}
-			public HRESULT NavigateError(ref IHTMLWindow2 htmlWindow, PWSTR url, PWSTR targetFrameName, uint32 statusCode) mut
-			{
-				return VT.NavigateError(ref this, ref htmlWindow, url, targetFrameName, statusCode);
-			}
-			public HRESULT DocumentComplete(ref IHTMLWindow2 htmlWindow, PWSTR url) mut
-			{
-				return VT.DocumentComplete(ref this, ref htmlWindow, url);
-			}
-			public HRESULT DownloadBegin() mut
-			{
-				return VT.DownloadBegin(ref this);
-			}
-			public HRESULT DownloadComplete() mut
-			{
-				return VT.DownloadComplete(ref this);
-			}
+			public HRESULT BeforeNavigate(ref IHTMLWindow2 htmlWindow, PWSTR url, uint32 navigationFlags, PWSTR targetFrameName) mut => VT.BeforeNavigate(ref this, ref htmlWindow, url, navigationFlags, targetFrameName);
+			public HRESULT NavigateComplete(ref IHTMLWindow2 htmlWindow, PWSTR url) mut => VT.NavigateComplete(ref this, ref htmlWindow, url);
+			public HRESULT NavigateError(ref IHTMLWindow2 htmlWindow, PWSTR url, PWSTR targetFrameName, uint32 statusCode) mut => VT.NavigateError(ref this, ref htmlWindow, url, targetFrameName, statusCode);
+			public HRESULT DocumentComplete(ref IHTMLWindow2 htmlWindow, PWSTR url) mut => VT.DocumentComplete(ref this, ref htmlWindow, url);
+			public HRESULT DownloadBegin() mut => VT.DownloadBegin(ref this);
+			public HRESULT DownloadComplete() mut => VT.DownloadComplete(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -83,10 +61,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SecurityProblem(uint32 securityProblem, out HRESULT result) mut
-			{
-				return VT.SecurityProblem(ref this, securityProblem, out result);
-			}
+			public HRESULT SecurityProblem(uint32 securityProblem, out HRESULT result) mut => VT.SecurityProblem(ref this, securityProblem, out result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -100,14 +76,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnPaint() mut
-			{
-				return VT.OnPaint(ref this);
-			}
-			public HRESULT OnCssChanged() mut
-			{
-				return VT.OnCssChanged(ref this);
-			}
+			public HRESULT OnPaint() mut => VT.OnPaint(ref this);
+			public HRESULT OnCssChanged() mut => VT.OnCssChanged(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -122,26 +93,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_HWND(out HWND hwnd) mut
-			{
-				return VT.get_HWND(ref this, out hwnd);
-			}
-			public HRESULT get_Document(out IHTMLDocument2* htmlDocument) mut
-			{
-				return VT.get_Document(ref this, out htmlDocument);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Advise(in Guid interfaceId, ref IUnknown callback, out uint32 cookie) mut
-			{
-				return VT.Advise(ref this, interfaceId, ref callback, out cookie);
-			}
-			public HRESULT Unadvise(uint32 cookie) mut
-			{
-				return VT.Unadvise(ref this, cookie);
-			}
+			public HRESULT get_HWND(out HWND hwnd) mut => VT.get_HWND(ref this, out hwnd);
+			public HRESULT get_Document(out IHTMLDocument2* htmlDocument) mut => VT.get_Document(ref this, out htmlDocument);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Advise(in Guid interfaceId, ref IUnknown callback, out uint32 cookie) mut => VT.Advise(ref this, interfaceId, ref callback, out cookie);
+			public HRESULT Unadvise(uint32 cookie) mut => VT.Unadvise(ref this, cookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -159,10 +116,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CancelPendingActivation() mut
-			{
-				return VT.CancelPendingActivation(ref this);
-			}
+			public HRESULT CancelPendingActivation() mut => VT.CancelPendingActivation(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -176,10 +131,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AuthoringClientBinary(BSTR* designModeDllPath) mut
-			{
-				return VT.get_AuthoringClientBinary(ref this, designModeDllPath);
-			}
+			public HRESULT get_AuthoringClientBinary(BSTR* designModeDllPath) mut => VT.get_AuthoringClientBinary(ref this, designModeDllPath);
+
 			[CRepr]
 			public struct VTable : IServiceProvider.VTable
 			{

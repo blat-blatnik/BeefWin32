@@ -1454,26 +1454,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void OnStartupComplete() mut
-			{
-				VT.OnStartupComplete(ref this);
-			}
-			public void OnSuspendComplete() mut
-			{
-				VT.OnSuspendComplete(ref this);
-			}
-			public void OnItemCaptured(PWSTR pszPath) mut
-			{
-				VT.OnItemCaptured(ref this, pszPath);
-			}
-			public void OnItemDeleted(PWSTR pszPath) mut
-			{
-				VT.OnItemDeleted(ref this, pszPath);
-			}
-			public void OnClosed() mut
-			{
-				VT.OnClosed(ref this);
-			}
+			public void OnStartupComplete() mut => VT.OnStartupComplete(ref this);
+			public void OnSuspendComplete() mut => VT.OnSuspendComplete(ref this);
+			public void OnItemCaptured(PWSTR pszPath) mut => VT.OnItemCaptured(ref this, pszPath);
+			public void OnItemDeleted(PWSTR pszPath) mut => VT.OnItemDeleted(ref this, pszPath);
+			public void OnClosed() mut => VT.OnClosed(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1491,38 +1477,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Show(ref IUnknown pWindow, CameraUIControlMode mode, CameraUIControlLinearSelectionMode selectionMode, CameraUIControlCaptureMode captureMode, CameraUIControlPhotoFormat photoFormat, CameraUIControlVideoFormat videoFormat, BOOL bHasCloseButton, ICameraUIControlEventCallback* pEventCallback) mut
-			{
-				return VT.Show(ref this, ref pWindow, mode, selectionMode, captureMode, photoFormat, videoFormat, bHasCloseButton, pEventCallback);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT Suspend(out BOOL pbDeferralRequired) mut
-			{
-				return VT.Suspend(ref this, out pbDeferralRequired);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
-			public HRESULT GetCurrentViewType(out CameraUIControlViewType pViewType) mut
-			{
-				return VT.GetCurrentViewType(ref this, out pViewType);
-			}
-			public HRESULT GetActiveItem(BSTR* pbstrActiveItemPath) mut
-			{
-				return VT.GetActiveItem(ref this, pbstrActiveItemPath);
-			}
-			public HRESULT GetSelectedItems(out SAFEARRAY* ppSelectedItemPaths) mut
-			{
-				return VT.GetSelectedItems(ref this, out ppSelectedItemPaths);
-			}
-			public HRESULT RemoveCapturedItem(PWSTR pszPath) mut
-			{
-				return VT.RemoveCapturedItem(ref this, pszPath);
-			}
+			public HRESULT Show(ref IUnknown pWindow, CameraUIControlMode mode, CameraUIControlLinearSelectionMode selectionMode, CameraUIControlCaptureMode captureMode, CameraUIControlPhotoFormat photoFormat, CameraUIControlVideoFormat videoFormat, BOOL bHasCloseButton, ICameraUIControlEventCallback* pEventCallback) mut => VT.Show(ref this, ref pWindow, mode, selectionMode, captureMode, photoFormat, videoFormat, bHasCloseButton, pEventCallback);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT Suspend(out BOOL pbDeferralRequired) mut => VT.Suspend(ref this, out pbDeferralRequired);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+			public HRESULT GetCurrentViewType(out CameraUIControlViewType pViewType) mut => VT.GetCurrentViewType(ref this, out pViewType);
+			public HRESULT GetActiveItem(BSTR* pbstrActiveItemPath) mut => VT.GetActiveItem(ref this, pbstrActiveItemPath);
+			public HRESULT GetSelectedItems(out SAFEARRAY* ppSelectedItemPaths) mut => VT.GetSelectedItems(ref this, out ppSelectedItemPaths);
+			public HRESULT RemoveCapturedItem(PWSTR pszPath) mut => VT.RemoveCapturedItem(ref this, pszPath);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1543,26 +1506,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CanUpgrade(out BOOL isAllowed) mut
-			{
-				return VT.CanUpgrade(ref this, out isAllowed);
-			}
-			public HRESULT UpdateOperatingSystem(PWSTR contentId) mut
-			{
-				return VT.UpdateOperatingSystem(ref this, contentId);
-			}
-			public HRESULT ShowProductKeyUI() mut
-			{
-				return VT.ShowProductKeyUI(ref this);
-			}
-			public HRESULT GetOsProductContentId(out PWSTR contentId) mut
-			{
-				return VT.GetOsProductContentId(ref this, out contentId);
-			}
-			public HRESULT GetGenuineLocalStatus(out BOOL isGenuine) mut
-			{
-				return VT.GetGenuineLocalStatus(ref this, out isGenuine);
-			}
+			public HRESULT CanUpgrade(out BOOL isAllowed) mut => VT.CanUpgrade(ref this, out isAllowed);
+			public HRESULT UpdateOperatingSystem(PWSTR contentId) mut => VT.UpdateOperatingSystem(ref this, contentId);
+			public HRESULT ShowProductKeyUI() mut => VT.ShowProductKeyUI(ref this);
+			public HRESULT GetOsProductContentId(out PWSTR contentId) mut => VT.GetOsProductContentId(ref this, out contentId);
+			public HRESULT GetGenuineLocalStatus(out BOOL isGenuine) mut => VT.GetGenuineLocalStatus(ref this, out isGenuine);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1580,10 +1529,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSMode(out BOOL isSmode) mut
-			{
-				return VT.GetSMode(ref this, out isSmode);
-			}
+			public HRESULT GetSMode(out BOOL isSmode) mut => VT.GetSMode(ref this, out isSmode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1597,22 +1544,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeParentWindow(uint32 parentHandle) mut
-			{
-				return VT.InitializeParentWindow(ref this, parentHandle);
-			}
-			public HRESULT UpdateOperatingSystem(BSTR parameter) mut
-			{
-				return VT.UpdateOperatingSystem(ref this, parameter);
-			}
-			public HRESULT ShowProductKeyUI() mut
-			{
-				return VT.ShowProductKeyUI(ref this);
-			}
-			public HRESULT CanUpgrade() mut
-			{
-				return VT.CanUpgrade(ref this);
-			}
+			public HRESULT InitializeParentWindow(uint32 parentHandle) mut => VT.InitializeParentWindow(ref this, parentHandle);
+			public HRESULT UpdateOperatingSystem(BSTR parameter) mut => VT.UpdateOperatingSystem(ref this, parameter);
+			public HRESULT ShowProductKeyUI() mut => VT.ShowProductKeyUI(ref this);
+			public HRESULT CanUpgrade() mut => VT.CanUpgrade(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1629,10 +1565,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CanActivateClientVM(out int16 isAllowed) mut
-			{
-				return VT.CanActivateClientVM(ref this, out isAllowed);
-			}
+			public HRESULT CanActivateClientVM(out int16 isAllowed) mut => VT.CanActivateClientVM(ref this, out isAllowed);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1646,10 +1580,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShowToast(BSTR titleText, BSTR bodyText, BSTR packageName, BSTR appId, BSTR launchCommand) mut
-			{
-				return VT.ShowToast(ref this, titleText, bodyText, packageName, appId, launchCommand);
-			}
+			public HRESULT ShowToast(BSTR titleText, BSTR bodyText, BSTR packageName, BSTR appId, BSTR launchCommand) mut => VT.ShowToast(ref this, titleText, bodyText, packageName, appId, launchCommand);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1663,10 +1595,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL IsEnabled() mut
-			{
-				return VT.IsEnabled(ref this);
-			}
+			public BOOL IsEnabled() mut => VT.IsEnabled(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1680,10 +1610,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DeleteBrowsingHistory(uint32 dwFlags) mut
-			{
-				return VT.DeleteBrowsingHistory(ref this, dwFlags);
-			}
+			public HRESULT DeleteBrowsingHistory(uint32 dwFlags) mut => VT.DeleteBrowsingHistory(ref this, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

@@ -4604,22 +4604,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, INetCfgBindingInterface** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetCfgBindingInterface* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, INetCfgBindingInterface** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetCfgBindingInterface* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4636,22 +4625,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, INetCfgBindingPath** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetCfgBindingPath* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, INetCfgBindingPath** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetCfgBindingPath* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4668,22 +4646,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, INetCfgComponent** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetCfgComponent* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, INetCfgComponent** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetCfgComponent* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4700,34 +4667,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(void* pvReserved) mut
-			{
-				return VT.Initialize(ref this, pvReserved);
-			}
-			public HRESULT Uninitialize() mut
-			{
-				return VT.Uninitialize(ref this);
-			}
-			public HRESULT Apply() mut
-			{
-				return VT.Apply(ref this);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
-			public HRESULT EnumComponents(in Guid pguidClass, IEnumNetCfgComponent** ppenumComponent) mut
-			{
-				return VT.EnumComponents(ref this, pguidClass, ppenumComponent);
-			}
-			public HRESULT FindComponent(PWSTR pszwInfId, INetCfgComponent** pComponent) mut
-			{
-				return VT.FindComponent(ref this, pszwInfId, pComponent);
-			}
-			public HRESULT QueryNetCfgClass(in Guid pguidClass, in Guid riid, void** ppvObject) mut
-			{
-				return VT.QueryNetCfgClass(ref this, pguidClass, riid, ppvObject);
-			}
+			public HRESULT Initialize(void* pvReserved) mut => VT.Initialize(ref this, pvReserved);
+			public HRESULT Uninitialize() mut => VT.Uninitialize(ref this);
+			public HRESULT Apply() mut => VT.Apply(ref this);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+			public HRESULT EnumComponents(in Guid pguidClass, IEnumNetCfgComponent** ppenumComponent) mut => VT.EnumComponents(ref this, pguidClass, ppenumComponent);
+			public HRESULT FindComponent(PWSTR pszwInfId, INetCfgComponent** pComponent) mut => VT.FindComponent(ref this, pszwInfId, pComponent);
+			public HRESULT QueryNetCfgClass(in Guid pguidClass, in Guid riid, void** ppvObject) mut => VT.QueryNetCfgClass(ref this, pguidClass, riid, ppvObject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4747,18 +4694,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AcquireWriteLock(uint32 cmsTimeout, PWSTR pszwClientDescription, PWSTR* ppszwClientDescription) mut
-			{
-				return VT.AcquireWriteLock(ref this, cmsTimeout, pszwClientDescription, ppszwClientDescription);
-			}
-			public HRESULT ReleaseWriteLock() mut
-			{
-				return VT.ReleaseWriteLock(ref this);
-			}
-			public HRESULT IsWriteLocked(PWSTR* ppszwClientDescription) mut
-			{
-				return VT.IsWriteLocked(ref this, ppszwClientDescription);
-			}
+			public HRESULT AcquireWriteLock(uint32 cmsTimeout, PWSTR pszwClientDescription, PWSTR* ppszwClientDescription) mut => VT.AcquireWriteLock(ref this, cmsTimeout, pszwClientDescription, ppszwClientDescription);
+			public HRESULT ReleaseWriteLock() mut => VT.ReleaseWriteLock(ref this);
+			public HRESULT IsWriteLocked(PWSTR* ppszwClientDescription) mut => VT.IsWriteLocked(ref this, ppszwClientDescription);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4774,18 +4713,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(PWSTR* ppszwInterfaceName) mut
-			{
-				return VT.GetName(ref this, ppszwInterfaceName);
-			}
-			public HRESULT GetUpperComponent(INetCfgComponent** ppnccItem) mut
-			{
-				return VT.GetUpperComponent(ref this, ppnccItem);
-			}
-			public HRESULT GetLowerComponent(INetCfgComponent** ppnccItem) mut
-			{
-				return VT.GetLowerComponent(ref this, ppnccItem);
-			}
+			public HRESULT GetName(PWSTR* ppszwInterfaceName) mut => VT.GetName(ref this, ppszwInterfaceName);
+			public HRESULT GetUpperComponent(INetCfgComponent** ppnccItem) mut => VT.GetUpperComponent(ref this, ppnccItem);
+			public HRESULT GetLowerComponent(INetCfgComponent** ppnccItem) mut => VT.GetLowerComponent(ref this, ppnccItem);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4801,38 +4732,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsSamePathAs(ref INetCfgBindingPath pPath) mut
-			{
-				return VT.IsSamePathAs(ref this, ref pPath);
-			}
-			public HRESULT IsSubPathOf(ref INetCfgBindingPath pPath) mut
-			{
-				return VT.IsSubPathOf(ref this, ref pPath);
-			}
-			public HRESULT IsEnabled() mut
-			{
-				return VT.IsEnabled(ref this);
-			}
-			public HRESULT Enable(BOOL fEnable) mut
-			{
-				return VT.Enable(ref this, fEnable);
-			}
-			public HRESULT GetPathToken(PWSTR* ppszwPathToken) mut
-			{
-				return VT.GetPathToken(ref this, ppszwPathToken);
-			}
-			public HRESULT GetOwner(INetCfgComponent** ppComponent) mut
-			{
-				return VT.GetOwner(ref this, ppComponent);
-			}
-			public HRESULT GetDepth(out uint32 pcInterfaces) mut
-			{
-				return VT.GetDepth(ref this, out pcInterfaces);
-			}
-			public HRESULT EnumBindingInterfaces(IEnumNetCfgBindingInterface** ppenumInterface) mut
-			{
-				return VT.EnumBindingInterfaces(ref this, ppenumInterface);
-			}
+			public HRESULT IsSamePathAs(ref INetCfgBindingPath pPath) mut => VT.IsSamePathAs(ref this, ref pPath);
+			public HRESULT IsSubPathOf(ref INetCfgBindingPath pPath) mut => VT.IsSubPathOf(ref this, ref pPath);
+			public HRESULT IsEnabled() mut => VT.IsEnabled(ref this);
+			public HRESULT Enable(BOOL fEnable) mut => VT.Enable(ref this, fEnable);
+			public HRESULT GetPathToken(PWSTR* ppszwPathToken) mut => VT.GetPathToken(ref this, ppszwPathToken);
+			public HRESULT GetOwner(INetCfgComponent** ppComponent) mut => VT.GetOwner(ref this, ppComponent);
+			public HRESULT GetDepth(out uint32 pcInterfaces) mut => VT.GetDepth(ref this, out pcInterfaces);
+			public HRESULT EnumBindingInterfaces(IEnumNetCfgBindingInterface** ppenumInterface) mut => VT.EnumBindingInterfaces(ref this, ppenumInterface);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4853,14 +4761,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindComponent(PWSTR pszwInfId, INetCfgComponent** ppnccItem) mut
-			{
-				return VT.FindComponent(ref this, pszwInfId, ppnccItem);
-			}
-			public HRESULT EnumComponents(IEnumNetCfgComponent** ppenumComponent) mut
-			{
-				return VT.EnumComponents(ref this, ppenumComponent);
-			}
+			public HRESULT FindComponent(PWSTR pszwInfId, INetCfgComponent** ppnccItem) mut => VT.FindComponent(ref this, pszwInfId, ppnccItem);
+			public HRESULT EnumComponents(IEnumNetCfgComponent** ppenumComponent) mut => VT.EnumComponents(ref this, ppenumComponent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4875,18 +4778,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SelectAndInstall(HWND hwndParent, OBO_TOKEN* pOboToken, INetCfgComponent** ppnccItem) mut
-			{
-				return VT.SelectAndInstall(ref this, hwndParent, pOboToken, ppnccItem);
-			}
-			public HRESULT Install(PWSTR pszwInfId, OBO_TOKEN* pOboToken, uint32 dwSetupFlags, uint32 dwUpgradeFromBuildNo, PWSTR pszwAnswerFile, PWSTR pszwAnswerSections, INetCfgComponent** ppnccItem) mut
-			{
-				return VT.Install(ref this, pszwInfId, pOboToken, dwSetupFlags, dwUpgradeFromBuildNo, pszwAnswerFile, pszwAnswerSections, ppnccItem);
-			}
-			public HRESULT DeInstall(ref INetCfgComponent pComponent, OBO_TOKEN* pOboToken, PWSTR* pmszwRefs) mut
-			{
-				return VT.DeInstall(ref this, ref pComponent, pOboToken, pmszwRefs);
-			}
+			public HRESULT SelectAndInstall(HWND hwndParent, OBO_TOKEN* pOboToken, INetCfgComponent** ppnccItem) mut => VT.SelectAndInstall(ref this, hwndParent, pOboToken, ppnccItem);
+			public HRESULT Install(PWSTR pszwInfId, OBO_TOKEN* pOboToken, uint32 dwSetupFlags, uint32 dwUpgradeFromBuildNo, PWSTR pszwAnswerFile, PWSTR pszwAnswerSections, INetCfgComponent** ppnccItem) mut => VT.Install(ref this, pszwInfId, pOboToken, dwSetupFlags, dwUpgradeFromBuildNo, pszwAnswerFile, pszwAnswerSections, ppnccItem);
+			public HRESULT DeInstall(ref INetCfgComponent pComponent, OBO_TOKEN* pOboToken, PWSTR* pmszwRefs) mut => VT.DeInstall(ref this, ref pComponent, pOboToken, pmszwRefs);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4902,10 +4797,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateNonEnumeratedComponent(ref INetCfgComponent pIComp, uint32 dwSetupFlags, uint32 dwUpgradeFromBuildNo) mut
-			{
-				return VT.UpdateNonEnumeratedComponent(ref this, ref pIComp, dwSetupFlags, dwUpgradeFromBuildNo);
-			}
+			public HRESULT UpdateNonEnumeratedComponent(ref INetCfgComponent pIComp, uint32 dwSetupFlags, uint32 dwUpgradeFromBuildNo) mut => VT.UpdateNonEnumeratedComponent(ref this, ref pIComp, dwSetupFlags, dwUpgradeFromBuildNo);
+
 			[CRepr]
 			public struct VTable : INetCfgClassSetup.VTable
 			{
@@ -4919,54 +4812,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDisplayName(PWSTR* ppszwDisplayName) mut
-			{
-				return VT.GetDisplayName(ref this, ppszwDisplayName);
-			}
-			public HRESULT SetDisplayName(PWSTR pszwDisplayName) mut
-			{
-				return VT.SetDisplayName(ref this, pszwDisplayName);
-			}
-			public HRESULT GetHelpText(PWSTR* pszwHelpText) mut
-			{
-				return VT.GetHelpText(ref this, pszwHelpText);
-			}
-			public HRESULT GetId(PWSTR* ppszwId) mut
-			{
-				return VT.GetId(ref this, ppszwId);
-			}
-			public HRESULT GetCharacteristics(out uint32 pdwCharacteristics) mut
-			{
-				return VT.GetCharacteristics(ref this, out pdwCharacteristics);
-			}
-			public HRESULT GetInstanceGuid(Guid* pGuid) mut
-			{
-				return VT.GetInstanceGuid(ref this, pGuid);
-			}
-			public HRESULT GetPnpDevNodeId(PWSTR* ppszwDevNodeId) mut
-			{
-				return VT.GetPnpDevNodeId(ref this, ppszwDevNodeId);
-			}
-			public HRESULT GetClassGuid(Guid* pGuid) mut
-			{
-				return VT.GetClassGuid(ref this, pGuid);
-			}
-			public HRESULT GetBindName(PWSTR* ppszwBindName) mut
-			{
-				return VT.GetBindName(ref this, ppszwBindName);
-			}
-			public HRESULT GetDeviceStatus(out uint32 pulStatus) mut
-			{
-				return VT.GetDeviceStatus(ref this, out pulStatus);
-			}
-			public HRESULT OpenParamKey(HKEY* phkey) mut
-			{
-				return VT.OpenParamKey(ref this, phkey);
-			}
-			public HRESULT RaisePropertyUi(HWND hwndParent, uint32 dwFlags, IUnknown* punkContext) mut
-			{
-				return VT.RaisePropertyUi(ref this, hwndParent, dwFlags, punkContext);
-			}
+			public HRESULT GetDisplayName(PWSTR* ppszwDisplayName) mut => VT.GetDisplayName(ref this, ppszwDisplayName);
+			public HRESULT SetDisplayName(PWSTR pszwDisplayName) mut => VT.SetDisplayName(ref this, pszwDisplayName);
+			public HRESULT GetHelpText(PWSTR* pszwHelpText) mut => VT.GetHelpText(ref this, pszwHelpText);
+			public HRESULT GetId(PWSTR* ppszwId) mut => VT.GetId(ref this, ppszwId);
+			public HRESULT GetCharacteristics(out uint32 pdwCharacteristics) mut => VT.GetCharacteristics(ref this, out pdwCharacteristics);
+			public HRESULT GetInstanceGuid(Guid* pGuid) mut => VT.GetInstanceGuid(ref this, pGuid);
+			public HRESULT GetPnpDevNodeId(PWSTR* ppszwDevNodeId) mut => VT.GetPnpDevNodeId(ref this, ppszwDevNodeId);
+			public HRESULT GetClassGuid(Guid* pGuid) mut => VT.GetClassGuid(ref this, pGuid);
+			public HRESULT GetBindName(PWSTR* ppszwBindName) mut => VT.GetBindName(ref this, ppszwBindName);
+			public HRESULT GetDeviceStatus(out uint32 pulStatus) mut => VT.GetDeviceStatus(ref this, out pulStatus);
+			public HRESULT OpenParamKey(HKEY* phkey) mut => VT.OpenParamKey(ref this, phkey);
+			public HRESULT RaisePropertyUi(HWND hwndParent, uint32 dwFlags, IUnknown* punkContext) mut => VT.RaisePropertyUi(ref this, hwndParent, dwFlags, punkContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4991,38 +4849,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BindTo(ref INetCfgComponent pnccItem) mut
-			{
-				return VT.BindTo(ref this, ref pnccItem);
-			}
-			public HRESULT UnbindFrom(ref INetCfgComponent pnccItem) mut
-			{
-				return VT.UnbindFrom(ref this, ref pnccItem);
-			}
-			public HRESULT SupportsBindingInterface(uint32 dwFlags, PWSTR pszwInterfaceName) mut
-			{
-				return VT.SupportsBindingInterface(ref this, dwFlags, pszwInterfaceName);
-			}
-			public HRESULT IsBoundTo(ref INetCfgComponent pnccItem) mut
-			{
-				return VT.IsBoundTo(ref this, ref pnccItem);
-			}
-			public HRESULT IsBindableTo(ref INetCfgComponent pnccItem) mut
-			{
-				return VT.IsBindableTo(ref this, ref pnccItem);
-			}
-			public HRESULT EnumBindingPaths(uint32 dwFlags, IEnumNetCfgBindingPath** ppIEnum) mut
-			{
-				return VT.EnumBindingPaths(ref this, dwFlags, ppIEnum);
-			}
-			public HRESULT MoveBefore(ref INetCfgBindingPath pncbItemSrc, INetCfgBindingPath* pncbItemDest) mut
-			{
-				return VT.MoveBefore(ref this, ref pncbItemSrc, pncbItemDest);
-			}
-			public HRESULT MoveAfter(ref INetCfgBindingPath pncbItemSrc, INetCfgBindingPath* pncbItemDest) mut
-			{
-				return VT.MoveAfter(ref this, ref pncbItemSrc, pncbItemDest);
-			}
+			public HRESULT BindTo(ref INetCfgComponent pnccItem) mut => VT.BindTo(ref this, ref pnccItem);
+			public HRESULT UnbindFrom(ref INetCfgComponent pnccItem) mut => VT.UnbindFrom(ref this, ref pnccItem);
+			public HRESULT SupportsBindingInterface(uint32 dwFlags, PWSTR pszwInterfaceName) mut => VT.SupportsBindingInterface(ref this, dwFlags, pszwInterfaceName);
+			public HRESULT IsBoundTo(ref INetCfgComponent pnccItem) mut => VT.IsBoundTo(ref this, ref pnccItem);
+			public HRESULT IsBindableTo(ref INetCfgComponent pnccItem) mut => VT.IsBindableTo(ref this, ref pnccItem);
+			public HRESULT EnumBindingPaths(uint32 dwFlags, IEnumNetCfgBindingPath** ppIEnum) mut => VT.EnumBindingPaths(ref this, dwFlags, ppIEnum);
+			public HRESULT MoveBefore(ref INetCfgBindingPath pncbItemSrc, INetCfgBindingPath* pncbItemDest) mut => VT.MoveBefore(ref this, ref pncbItemSrc, pncbItemDest);
+			public HRESULT MoveAfter(ref INetCfgBindingPath pncbItemSrc, INetCfgBindingPath* pncbItemDest) mut => VT.MoveAfter(ref this, ref pncbItemSrc, pncbItemDest);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5043,22 +4878,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HrSetupSetFirstDword(PWSTR pwszSection, PWSTR pwszKey, uint32 dwValue) mut
-			{
-				return VT.HrSetupSetFirstDword(ref this, pwszSection, pwszKey, dwValue);
-			}
-			public HRESULT HrSetupSetFirstString(PWSTR pwszSection, PWSTR pwszKey, PWSTR pwszValue) mut
-			{
-				return VT.HrSetupSetFirstString(ref this, pwszSection, pwszKey, pwszValue);
-			}
-			public HRESULT HrSetupSetFirstStringAsBool(PWSTR pwszSection, PWSTR pwszKey, BOOL fValue) mut
-			{
-				return VT.HrSetupSetFirstStringAsBool(ref this, pwszSection, pwszKey, fValue);
-			}
-			public HRESULT HrSetupSetFirstMultiSzField(PWSTR pwszSection, PWSTR pwszKey, PWSTR pmszValue) mut
-			{
-				return VT.HrSetupSetFirstMultiSzField(ref this, pwszSection, pwszKey, pmszValue);
-			}
+			public HRESULT HrSetupSetFirstDword(PWSTR pwszSection, PWSTR pwszKey, uint32 dwValue) mut => VT.HrSetupSetFirstDword(ref this, pwszSection, pwszKey, dwValue);
+			public HRESULT HrSetupSetFirstString(PWSTR pwszSection, PWSTR pwszKey, PWSTR pwszValue) mut => VT.HrSetupSetFirstString(ref this, pwszSection, pwszKey, pwszValue);
+			public HRESULT HrSetupSetFirstStringAsBool(PWSTR pwszSection, PWSTR pwszKey, BOOL fValue) mut => VT.HrSetupSetFirstStringAsBool(ref this, pwszSection, pwszKey, fValue);
+			public HRESULT HrSetupSetFirstMultiSzField(PWSTR pwszSection, PWSTR pwszKey, PWSTR pmszValue) mut => VT.HrSetupSetFirstMultiSzField(ref this, pwszSection, pwszKey, pmszValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5075,10 +4899,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SendPnpReconfig(NCPNP_RECONFIG_LAYER Layer, PWSTR pszwUpper, PWSTR pszwLower, void* pvData, uint32 dwSizeOfData) mut
-			{
-				return VT.SendPnpReconfig(ref this, Layer, pszwUpper, pszwLower, pvData, dwSizeOfData);
-			}
+			public HRESULT SendPnpReconfig(NCPNP_RECONFIG_LAYER Layer, PWSTR pszwUpper, PWSTR pszwLower, void* pvData, uint32 dwSizeOfData) mut => VT.SendPnpReconfig(ref this, Layer, pszwUpper, pszwLower, pvData, dwSizeOfData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5092,22 +4914,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref INetCfgComponent pIComp, ref INetCfg pINetCfg, BOOL fInstalling) mut
-			{
-				return VT.Initialize(ref this, ref pIComp, ref pINetCfg, fInstalling);
-			}
-			public HRESULT ApplyRegistryChanges() mut
-			{
-				return VT.ApplyRegistryChanges(ref this);
-			}
-			public HRESULT ApplyPnpChanges(ref INetCfgPnpReconfigCallback pICallback) mut
-			{
-				return VT.ApplyPnpChanges(ref this, ref pICallback);
-			}
-			public HRESULT CancelChanges() mut
-			{
-				return VT.CancelChanges(ref this);
-			}
+			public HRESULT Initialize(ref INetCfgComponent pIComp, ref INetCfg pINetCfg, BOOL fInstalling) mut => VT.Initialize(ref this, ref pIComp, ref pINetCfg, fInstalling);
+			public HRESULT ApplyRegistryChanges() mut => VT.ApplyRegistryChanges(ref this);
+			public HRESULT ApplyPnpChanges(ref INetCfgPnpReconfigCallback pICallback) mut => VT.ApplyPnpChanges(ref this, ref pICallback);
+			public HRESULT CancelChanges() mut => VT.CancelChanges(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5124,22 +4935,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Install(uint32 dwSetupFlags) mut
-			{
-				return VT.Install(ref this, dwSetupFlags);
-			}
-			public HRESULT Upgrade(uint32 dwSetupFlags, uint32 dwUpgradeFomBuildNo) mut
-			{
-				return VT.Upgrade(ref this, dwSetupFlags, dwUpgradeFomBuildNo);
-			}
-			public HRESULT ReadAnswerFile(PWSTR pszwAnswerFile, PWSTR pszwAnswerSections) mut
-			{
-				return VT.ReadAnswerFile(ref this, pszwAnswerFile, pszwAnswerSections);
-			}
-			public HRESULT Removing() mut
-			{
-				return VT.Removing(ref this);
-			}
+			public HRESULT Install(uint32 dwSetupFlags) mut => VT.Install(ref this, dwSetupFlags);
+			public HRESULT Upgrade(uint32 dwSetupFlags, uint32 dwUpgradeFomBuildNo) mut => VT.Upgrade(ref this, dwSetupFlags, dwUpgradeFomBuildNo);
+			public HRESULT ReadAnswerFile(PWSTR pszwAnswerFile, PWSTR pszwAnswerSections) mut => VT.ReadAnswerFile(ref this, pszwAnswerFile, pszwAnswerSections);
+			public HRESULT Removing() mut => VT.Removing(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5156,30 +4956,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryPropertyUi(ref IUnknown pUnkReserved) mut
-			{
-				return VT.QueryPropertyUi(ref this, ref pUnkReserved);
-			}
-			public HRESULT SetContext(ref IUnknown pUnkReserved) mut
-			{
-				return VT.SetContext(ref this, ref pUnkReserved);
-			}
-			public HRESULT MergePropPages(out uint32 pdwDefPages, out uint8* pahpspPrivate, out uint32 pcPages, HWND hwndParent, PWSTR* pszStartPage) mut
-			{
-				return VT.MergePropPages(ref this, out pdwDefPages, out pahpspPrivate, out pcPages, hwndParent, pszStartPage);
-			}
-			public HRESULT ValidateProperties(HWND hwndSheet) mut
-			{
-				return VT.ValidateProperties(ref this, hwndSheet);
-			}
-			public HRESULT ApplyProperties() mut
-			{
-				return VT.ApplyProperties(ref this);
-			}
-			public HRESULT CancelProperties() mut
-			{
-				return VT.CancelProperties(ref this);
-			}
+			public HRESULT QueryPropertyUi(ref IUnknown pUnkReserved) mut => VT.QueryPropertyUi(ref this, ref pUnkReserved);
+			public HRESULT SetContext(ref IUnknown pUnkReserved) mut => VT.SetContext(ref this, ref pUnkReserved);
+			public HRESULT MergePropPages(out uint32 pdwDefPages, out uint8* pahpspPrivate, out uint32 pcPages, HWND hwndParent, PWSTR* pszStartPage) mut => VT.MergePropPages(ref this, out pdwDefPages, out pahpspPrivate, out pcPages, hwndParent, pszStartPage);
+			public HRESULT ValidateProperties(HWND hwndSheet) mut => VT.ValidateProperties(ref this, hwndSheet);
+			public HRESULT ApplyProperties() mut => VT.ApplyProperties(ref this);
+			public HRESULT CancelProperties() mut => VT.CancelProperties(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5198,14 +4981,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryBindingPath(uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) mut
-			{
-				return VT.QueryBindingPath(ref this, dwChangeFlag, ref pIPath);
-			}
-			public HRESULT NotifyBindingPath(uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) mut
-			{
-				return VT.NotifyBindingPath(ref this, dwChangeFlag, ref pIPath);
-			}
+			public HRESULT QueryBindingPath(uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) mut => VT.QueryBindingPath(ref this, dwChangeFlag, ref pIPath);
+			public HRESULT NotifyBindingPath(uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) mut => VT.NotifyBindingPath(ref this, dwChangeFlag, ref pIPath);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5220,22 +4998,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedNotifications(out uint32 dwNotifications) mut
-			{
-				return VT.GetSupportedNotifications(ref this, out dwNotifications);
-			}
-			public HRESULT SysQueryBindingPath(uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) mut
-			{
-				return VT.SysQueryBindingPath(ref this, dwChangeFlag, ref pIPath);
-			}
-			public HRESULT SysNotifyBindingPath(uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) mut
-			{
-				return VT.SysNotifyBindingPath(ref this, dwChangeFlag, ref pIPath);
-			}
-			public HRESULT SysNotifyComponent(uint32 dwChangeFlag, ref INetCfgComponent pIComp) mut
-			{
-				return VT.SysNotifyComponent(ref this, dwChangeFlag, ref pIComp);
-			}
+			public HRESULT GetSupportedNotifications(out uint32 dwNotifications) mut => VT.GetSupportedNotifications(ref this, out dwNotifications);
+			public HRESULT SysQueryBindingPath(uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) mut => VT.SysQueryBindingPath(ref this, dwChangeFlag, ref pIPath);
+			public HRESULT SysNotifyBindingPath(uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) mut => VT.SysNotifyBindingPath(ref this, dwChangeFlag, ref pIPath);
+			public HRESULT SysNotifyComponent(uint32 dwChangeFlag, ref INetCfgComponent pIComp) mut => VT.SysNotifyComponent(ref this, dwChangeFlag, ref pIComp);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5252,18 +5019,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInterfaceIdsForAdapter(ref INetCfgComponent pAdapter, out uint32 pdwNumInterfaces, Guid** ppguidInterfaceIds) mut
-			{
-				return VT.GetInterfaceIdsForAdapter(ref this, ref pAdapter, out pdwNumInterfaces, ppguidInterfaceIds);
-			}
-			public HRESULT AddInterfacesToAdapter() mut
-			{
-				return VT.AddInterfacesToAdapter(ref this);
-			}
-			public HRESULT RemoveInterfacesFromAdapter(ref INetCfgComponent pAdapter, uint32 dwNumInterfaces, Guid* pguidInterfaceIds) mut
-			{
-				return VT.RemoveInterfacesFromAdapter(ref this, ref pAdapter, dwNumInterfaces, pguidInterfaceIds);
-			}
+			public HRESULT GetInterfaceIdsForAdapter(ref INetCfgComponent pAdapter, out uint32 pdwNumInterfaces, Guid** ppguidInterfaceIds) mut => VT.GetInterfaceIdsForAdapter(ref this, ref pAdapter, out pdwNumInterfaces, ppguidInterfaceIds);
+			public HRESULT AddInterfacesToAdapter() mut => VT.AddInterfacesToAdapter(ref this);
+			public HRESULT RemoveInterfacesFromAdapter(ref INetCfgComponent pAdapter, uint32 dwNumInterfaces, Guid* pguidInterfaceIds) mut => VT.RemoveInterfacesFromAdapter(ref this, ref pAdapter, dwNumInterfaces, pguidInterfaceIds);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5279,10 +5038,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceGuid(out Guid pguid) mut
-			{
-				return VT.GetDeviceGuid(ref this, out pguid);
-			}
+			public HRESULT GetDeviceGuid(out Guid pguid) mut => VT.GetDeviceGuid(ref this, out pguid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5296,10 +5053,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUiInfo(out RASCON_IPUI pInfo) mut
-			{
-				return VT.GetUiInfo(ref this, out pInfo);
-			}
+			public HRESULT GetUiInfo(out RASCON_IPUI pInfo) mut => VT.GetUiInfo(ref this, out pInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5313,14 +5068,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SaveAdapterParameters(ref INetCfgSysPrep pncsp, PWSTR pszwAnswerSections, ref Guid pAdapterInstanceGuid) mut
-			{
-				return VT.SaveAdapterParameters(ref this, ref pncsp, pszwAnswerSections, ref pAdapterInstanceGuid);
-			}
-			public HRESULT RestoreAdapterParameters(PWSTR pszwAnswerFile, PWSTR pszwAnswerSection, ref Guid pAdapterInstanceGuid) mut
-			{
-				return VT.RestoreAdapterParameters(ref this, pszwAnswerFile, pszwAnswerSection, ref pAdapterInstanceGuid);
-			}
+			public HRESULT SaveAdapterParameters(ref INetCfgSysPrep pncsp, PWSTR pszwAnswerSections, ref Guid pAdapterInstanceGuid) mut => VT.SaveAdapterParameters(ref this, ref pncsp, pszwAnswerSections, ref pAdapterInstanceGuid);
+			public HRESULT RestoreAdapterParameters(PWSTR pszwAnswerFile, PWSTR pszwAnswerSection, ref Guid pAdapterInstanceGuid) mut => VT.RestoreAdapterParameters(ref this, pszwAnswerFile, pszwAnswerSection, ref pAdapterInstanceGuid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5335,14 +5085,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(PWSTR pszwPathToFolder) mut
-			{
-				return VT.Add(ref this, pszwPathToFolder);
-			}
-			public HRESULT Query(PWSTR pszwDomain, PWSTR pszwLanguage, PWSTR pszwXPathQuery, out IXMLDOMNodeList* Nodes) mut
-			{
-				return VT.Query(ref this, pszwDomain, pszwLanguage, pszwXPathQuery, out Nodes);
-			}
+			public HRESULT Add(PWSTR pszwPathToFolder) mut => VT.Add(ref this, pszwPathToFolder);
+			public HRESULT Query(PWSTR pszwDomain, PWSTR pszwLanguage, PWSTR pszwXPathQuery, out IXMLDOMNodeList* Nodes) mut => VT.Query(ref this, pszwDomain, pszwLanguage, pszwXPathQuery, out Nodes);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5357,10 +5102,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateProfile(BSTR bstrXMLWirelessConfigProfile, BSTR bstrXMLConnectionConfigProfile, ref Guid pAdapterInstanceGuid, out uint32 pulStatus) mut
-			{
-				return VT.CreateProfile(ref this, bstrXMLWirelessConfigProfile, bstrXMLConnectionConfigProfile, ref pAdapterInstanceGuid, out pulStatus);
-			}
+			public HRESULT CreateProfile(BSTR bstrXMLWirelessConfigProfile, BSTR bstrXMLConnectionConfigProfile, ref Guid pAdapterInstanceGuid, out uint32 pulStatus) mut => VT.CreateProfile(ref this, bstrXMLWirelessConfigProfile, bstrXMLConnectionConfigProfile, ref pAdapterInstanceGuid, out pulStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

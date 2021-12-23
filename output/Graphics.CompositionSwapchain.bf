@@ -65,14 +65,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAvailableEvent(out HANDLE availableEventHandle) mut
-			{
-				return VT.GetAvailableEvent(ref this, out availableEventHandle);
-			}
-			public HRESULT IsAvailable(out uint8 isAvailable) mut
-			{
-				return VT.IsAvailable(ref this, out isAvailable);
-			}
+			public HRESULT GetAvailableEvent(out HANDLE availableEventHandle) mut => VT.GetAvailableEvent(ref this, out availableEventHandle);
+			public HRESULT IsAvailable(out uint8 isAvailable) mut => VT.IsAvailable(ref this, out isAvailable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -87,10 +82,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetTag(uint tag) mut
-			{
-				VT.SetTag(ref this, tag);
-			}
+			public void SetTag(uint tag) mut => VT.SetTag(ref this, tag);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -104,38 +97,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBuffer(ref IPresentationBuffer presentationBuffer) mut
-			{
-				return VT.SetBuffer(ref this, ref presentationBuffer);
-			}
-			public HRESULT SetColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace) mut
-			{
-				return VT.SetColorSpace(ref this, colorSpace);
-			}
-			public HRESULT SetAlphaMode(DXGI_ALPHA_MODE alphaMode) mut
-			{
-				return VT.SetAlphaMode(ref this, alphaMode);
-			}
-			public HRESULT SetSourceRect(in RECT sourceRect) mut
-			{
-				return VT.SetSourceRect(ref this, sourceRect);
-			}
-			public HRESULT SetTransform(ref PresentationTransform transform) mut
-			{
-				return VT.SetTransform(ref this, ref transform);
-			}
-			public HRESULT RestrictToOutput(ref IUnknown output) mut
-			{
-				return VT.RestrictToOutput(ref this, ref output);
-			}
-			public HRESULT SetDisableReadback(uint8 value) mut
-			{
-				return VT.SetDisableReadback(ref this, value);
-			}
-			public HRESULT SetLetterboxingMargins(float leftLetterboxSize, float topLetterboxSize, float rightLetterboxSize, float bottomLetterboxSize) mut
-			{
-				return VT.SetLetterboxingMargins(ref this, leftLetterboxSize, topLetterboxSize, rightLetterboxSize, bottomLetterboxSize);
-			}
+			public HRESULT SetBuffer(ref IPresentationBuffer presentationBuffer) mut => VT.SetBuffer(ref this, ref presentationBuffer);
+			public HRESULT SetColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace) mut => VT.SetColorSpace(ref this, colorSpace);
+			public HRESULT SetAlphaMode(DXGI_ALPHA_MODE alphaMode) mut => VT.SetAlphaMode(ref this, alphaMode);
+			public HRESULT SetSourceRect(in RECT sourceRect) mut => VT.SetSourceRect(ref this, sourceRect);
+			public HRESULT SetTransform(ref PresentationTransform transform) mut => VT.SetTransform(ref this, ref transform);
+			public HRESULT RestrictToOutput(ref IUnknown output) mut => VT.RestrictToOutput(ref this, ref output);
+			public HRESULT SetDisableReadback(uint8 value) mut => VT.SetDisableReadback(ref this, value);
+			public HRESULT SetLetterboxingMargins(float leftLetterboxSize, float topLetterboxSize, float rightLetterboxSize, float bottomLetterboxSize) mut => VT.SetLetterboxingMargins(ref this, leftLetterboxSize, topLetterboxSize, rightLetterboxSize, bottomLetterboxSize);
+
 			[CRepr]
 			public struct VTable : IPresentationContent.VTable
 			{
@@ -156,14 +126,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint64 GetPresentId() mut
-			{
-				return VT.GetPresentId(ref this);
-			}
-			public PresentStatisticsKind GetKind() mut
-			{
-				return VT.GetKind(ref this);
-			}
+			public uint64 GetPresentId() mut => VT.GetPresentId(ref this);
+			public PresentStatisticsKind GetKind() mut => VT.GetKind(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -178,58 +143,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddBufferFromResource(ref IUnknown resource, out IPresentationBuffer* presentationBuffer) mut
-			{
-				return VT.AddBufferFromResource(ref this, ref resource, out presentationBuffer);
-			}
-			public HRESULT CreatePresentationSurface(HANDLE compositionSurfaceHandle, out IPresentationSurface* presentationSurface) mut
-			{
-				return VT.CreatePresentationSurface(ref this, compositionSurfaceHandle, out presentationSurface);
-			}
-			public uint64 GetNextPresentId() mut
-			{
-				return VT.GetNextPresentId(ref this);
-			}
-			public HRESULT SetTargetTime(SystemInterruptTime targetTime) mut
-			{
-				return VT.SetTargetTime(ref this, targetTime);
-			}
-			public HRESULT SetPreferredPresentDuration(SystemInterruptTime preferredDuration, SystemInterruptTime deviationTolerance) mut
-			{
-				return VT.SetPreferredPresentDuration(ref this, preferredDuration, deviationTolerance);
-			}
-			public HRESULT ForceVSyncInterrupt(uint8 forceVsyncInterrupt) mut
-			{
-				return VT.ForceVSyncInterrupt(ref this, forceVsyncInterrupt);
-			}
-			public HRESULT Present() mut
-			{
-				return VT.Present(ref this);
-			}
-			public HRESULT GetPresentRetiringFence(in Guid riid, void** fence) mut
-			{
-				return VT.GetPresentRetiringFence(ref this, riid, fence);
-			}
-			public HRESULT CancelPresentsFrom(uint64 presentIdToCancelFrom) mut
-			{
-				return VT.CancelPresentsFrom(ref this, presentIdToCancelFrom);
-			}
-			public HRESULT GetLostEvent(out HANDLE lostEventHandle) mut
-			{
-				return VT.GetLostEvent(ref this, out lostEventHandle);
-			}
-			public HRESULT GetPresentStatisticsAvailableEvent(out HANDLE presentStatisticsAvailableEventHandle) mut
-			{
-				return VT.GetPresentStatisticsAvailableEvent(ref this, out presentStatisticsAvailableEventHandle);
-			}
-			public HRESULT EnablePresentStatisticsKind(PresentStatisticsKind presentStatisticsKind, uint8 enabled) mut
-			{
-				return VT.EnablePresentStatisticsKind(ref this, presentStatisticsKind, enabled);
-			}
-			public HRESULT GetNextPresentStatistics(out IPresentStatistics* nextPresentStatistics) mut
-			{
-				return VT.GetNextPresentStatistics(ref this, out nextPresentStatistics);
-			}
+			public HRESULT AddBufferFromResource(ref IUnknown resource, out IPresentationBuffer* presentationBuffer) mut => VT.AddBufferFromResource(ref this, ref resource, out presentationBuffer);
+			public HRESULT CreatePresentationSurface(HANDLE compositionSurfaceHandle, out IPresentationSurface* presentationSurface) mut => VT.CreatePresentationSurface(ref this, compositionSurfaceHandle, out presentationSurface);
+			public uint64 GetNextPresentId() mut => VT.GetNextPresentId(ref this);
+			public HRESULT SetTargetTime(SystemInterruptTime targetTime) mut => VT.SetTargetTime(ref this, targetTime);
+			public HRESULT SetPreferredPresentDuration(SystemInterruptTime preferredDuration, SystemInterruptTime deviationTolerance) mut => VT.SetPreferredPresentDuration(ref this, preferredDuration, deviationTolerance);
+			public HRESULT ForceVSyncInterrupt(uint8 forceVsyncInterrupt) mut => VT.ForceVSyncInterrupt(ref this, forceVsyncInterrupt);
+			public HRESULT Present() mut => VT.Present(ref this);
+			public HRESULT GetPresentRetiringFence(in Guid riid, void** fence) mut => VT.GetPresentRetiringFence(ref this, riid, fence);
+			public HRESULT CancelPresentsFrom(uint64 presentIdToCancelFrom) mut => VT.CancelPresentsFrom(ref this, presentIdToCancelFrom);
+			public HRESULT GetLostEvent(out HANDLE lostEventHandle) mut => VT.GetLostEvent(ref this, out lostEventHandle);
+			public HRESULT GetPresentStatisticsAvailableEvent(out HANDLE presentStatisticsAvailableEventHandle) mut => VT.GetPresentStatisticsAvailableEvent(ref this, out presentStatisticsAvailableEventHandle);
+			public HRESULT EnablePresentStatisticsKind(PresentStatisticsKind presentStatisticsKind, uint8 enabled) mut => VT.EnablePresentStatisticsKind(ref this, presentStatisticsKind, enabled);
+			public HRESULT GetNextPresentStatistics(out IPresentStatistics* nextPresentStatistics) mut => VT.GetNextPresentStatistics(ref this, out nextPresentStatistics);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -255,18 +182,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint8 IsPresentationSupported() mut
-			{
-				return VT.IsPresentationSupported(ref this);
-			}
-			public uint8 IsPresentationSupportedWithIndependentFlip() mut
-			{
-				return VT.IsPresentationSupportedWithIndependentFlip(ref this);
-			}
-			public HRESULT CreatePresentationManager(out IPresentationManager* ppPresentationManager) mut
-			{
-				return VT.CreatePresentationManager(ref this, out ppPresentationManager);
-			}
+			public uint8 IsPresentationSupported() mut => VT.IsPresentationSupported(ref this);
+			public uint8 IsPresentationSupportedWithIndependentFlip() mut => VT.IsPresentationSupportedWithIndependentFlip(ref this);
+			public HRESULT CreatePresentationManager(out IPresentationManager* ppPresentationManager) mut => VT.CreatePresentationManager(ref this, out ppPresentationManager);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -282,14 +201,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint64 GetCompositionFrameId() mut
-			{
-				return VT.GetCompositionFrameId(ref this);
-			}
-			public PresentStatus GetPresentStatus() mut
-			{
-				return VT.GetPresentStatus(ref this);
-			}
+			public uint64 GetCompositionFrameId() mut => VT.GetCompositionFrameId(ref this);
+			public PresentStatus GetPresentStatus() mut => VT.GetPresentStatus(ref this);
+
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
@@ -304,18 +218,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint GetContentTag() mut
-			{
-				return VT.GetContentTag(ref this);
-			}
-			public uint64 GetCompositionFrameId() mut
-			{
-				return VT.GetCompositionFrameId(ref this);
-			}
-			public void GetDisplayInstanceArray(out uint32 displayInstanceArrayCount, out CompositionFrameDisplayInstance* displayInstanceArray) mut
-			{
-				VT.GetDisplayInstanceArray(ref this, out displayInstanceArrayCount, out displayInstanceArray);
-			}
+			public uint GetContentTag() mut => VT.GetContentTag(ref this);
+			public uint64 GetCompositionFrameId() mut => VT.GetCompositionFrameId(ref this);
+			public void GetDisplayInstanceArray(out uint32 displayInstanceArrayCount, out CompositionFrameDisplayInstance* displayInstanceArray) mut => VT.GetDisplayInstanceArray(ref this, out displayInstanceArrayCount, out displayInstanceArray);
+
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
@@ -331,26 +237,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public LUID GetOutputAdapterLUID() mut
-			{
-				return VT.GetOutputAdapterLUID(ref this);
-			}
-			public uint32 GetOutputVidPnSourceId() mut
-			{
-				return VT.GetOutputVidPnSourceId(ref this);
-			}
-			public uint GetContentTag() mut
-			{
-				return VT.GetContentTag(ref this);
-			}
-			public SystemInterruptTime GetDisplayedTime() mut
-			{
-				return VT.GetDisplayedTime(ref this);
-			}
-			public SystemInterruptTime GetPresentDuration() mut
-			{
-				return VT.GetPresentDuration(ref this);
-			}
+			public LUID GetOutputAdapterLUID() mut => VT.GetOutputAdapterLUID(ref this);
+			public uint32 GetOutputVidPnSourceId() mut => VT.GetOutputVidPnSourceId(ref this);
+			public uint GetContentTag() mut => VT.GetContentTag(ref this);
+			public SystemInterruptTime GetDisplayedTime() mut => VT.GetDisplayedTime(ref this);
+			public SystemInterruptTime GetPresentDuration() mut => VT.GetPresentDuration(ref this);
+
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{

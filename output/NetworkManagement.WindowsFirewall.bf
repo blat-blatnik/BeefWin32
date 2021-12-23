@@ -345,18 +345,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StaticPortMappingCollection(out IStaticPortMappingCollection* ppSPMs) mut
-			{
-				return VT.get_StaticPortMappingCollection(ref this, out ppSPMs);
-			}
-			public HRESULT get_DynamicPortMappingCollection(out IDynamicPortMappingCollection* ppDPMs) mut
-			{
-				return VT.get_DynamicPortMappingCollection(ref this, out ppDPMs);
-			}
-			public HRESULT get_NATEventManager(out INATEventManager* ppNEM) mut
-			{
-				return VT.get_NATEventManager(ref this, out ppNEM);
-			}
+			public HRESULT get_StaticPortMappingCollection(out IStaticPortMappingCollection* ppSPMs) mut => VT.get_StaticPortMappingCollection(ref this, out ppSPMs);
+			public HRESULT get_DynamicPortMappingCollection(out IDynamicPortMappingCollection* ppDPMs) mut => VT.get_DynamicPortMappingCollection(ref this, out ppDPMs);
+			public HRESULT get_NATEventManager(out INATEventManager* ppNEM) mut => VT.get_NATEventManager(ref this, out ppNEM);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -372,14 +364,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT put_ExternalIPAddressCallback(ref IUnknown pUnk) mut
-			{
-				return VT.put_ExternalIPAddressCallback(ref this, ref pUnk);
-			}
-			public HRESULT put_NumberOfEntriesCallback(ref IUnknown pUnk) mut
-			{
-				return VT.put_NumberOfEntriesCallback(ref this, ref pUnk);
-			}
+			public HRESULT put_ExternalIPAddressCallback(ref IUnknown pUnk) mut => VT.put_ExternalIPAddressCallback(ref this, ref pUnk);
+			public HRESULT put_NumberOfEntriesCallback(ref IUnknown pUnk) mut => VT.put_NumberOfEntriesCallback(ref this, ref pUnk);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -394,10 +381,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NewExternalIPAddress(BSTR bstrNewExternalIPAddress) mut
-			{
-				return VT.NewExternalIPAddress(ref this, bstrNewExternalIPAddress);
-			}
+			public HRESULT NewExternalIPAddress(BSTR bstrNewExternalIPAddress) mut => VT.NewExternalIPAddress(ref this, bstrNewExternalIPAddress);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -411,10 +396,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NewNumberOfEntries(int32 lNewNumberOfEntries) mut
-			{
-				return VT.NewNumberOfEntries(ref this, lNewNumberOfEntries);
-			}
+			public HRESULT NewNumberOfEntries(int32 lNewNumberOfEntries) mut => VT.NewNumberOfEntries(ref this, lNewNumberOfEntries);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -428,26 +411,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IUnknown* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
-			public HRESULT get_Item(BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol, out IDynamicPortMapping* ppDPM) mut
-			{
-				return VT.get_Item(ref this, bstrRemoteHost, lExternalPort, bstrProtocol, out ppDPM);
-			}
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT Remove(BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol) mut
-			{
-				return VT.Remove(ref this, bstrRemoteHost, lExternalPort, bstrProtocol);
-			}
-			public HRESULT Add(BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol, int32 lInternalPort, BSTR bstrInternalClient, int16 bEnabled, BSTR bstrDescription, int32 lLeaseDuration, out IDynamicPortMapping* ppDPM) mut
-			{
-				return VT.Add(ref this, bstrRemoteHost, lExternalPort, bstrProtocol, lInternalPort, bstrInternalClient, bEnabled, bstrDescription, lLeaseDuration, out ppDPM);
-			}
+			public HRESULT get__NewEnum(out IUnknown* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+			public HRESULT get_Item(BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol, out IDynamicPortMapping* ppDPM) mut => VT.get_Item(ref this, bstrRemoteHost, lExternalPort, bstrProtocol, out ppDPM);
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT Remove(BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol) mut => VT.Remove(ref this, bstrRemoteHost, lExternalPort, bstrProtocol);
+			public HRESULT Add(BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol, int32 lInternalPort, BSTR bstrInternalClient, int16 bEnabled, BSTR bstrDescription, int32 lLeaseDuration, out IDynamicPortMapping* ppDPM) mut => VT.Add(ref this, bstrRemoteHost, lExternalPort, bstrProtocol, lInternalPort, bstrInternalClient, bEnabled, bstrDescription, lLeaseDuration, out ppDPM);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -465,62 +434,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ExternalIPAddress(out BSTR pVal) mut
-			{
-				return VT.get_ExternalIPAddress(ref this, out pVal);
-			}
-			public HRESULT get_RemoteHost(out BSTR pVal) mut
-			{
-				return VT.get_RemoteHost(ref this, out pVal);
-			}
-			public HRESULT get_ExternalPort(out int32 pVal) mut
-			{
-				return VT.get_ExternalPort(ref this, out pVal);
-			}
-			public HRESULT get_Protocol(out BSTR pVal) mut
-			{
-				return VT.get_Protocol(ref this, out pVal);
-			}
-			public HRESULT get_InternalPort(out int32 pVal) mut
-			{
-				return VT.get_InternalPort(ref this, out pVal);
-			}
-			public HRESULT get_InternalClient(out BSTR pVal) mut
-			{
-				return VT.get_InternalClient(ref this, out pVal);
-			}
-			public HRESULT get_Enabled(out int16 pVal) mut
-			{
-				return VT.get_Enabled(ref this, out pVal);
-			}
-			public HRESULT get_Description(out BSTR pVal) mut
-			{
-				return VT.get_Description(ref this, out pVal);
-			}
-			public HRESULT get_LeaseDuration(out int32 pVal) mut
-			{
-				return VT.get_LeaseDuration(ref this, out pVal);
-			}
-			public HRESULT RenewLease(int32 lLeaseDurationDesired, out int32 pLeaseDurationReturned) mut
-			{
-				return VT.RenewLease(ref this, lLeaseDurationDesired, out pLeaseDurationReturned);
-			}
-			public HRESULT EditInternalClient(BSTR bstrInternalClient) mut
-			{
-				return VT.EditInternalClient(ref this, bstrInternalClient);
-			}
-			public HRESULT Enable(int16 vb) mut
-			{
-				return VT.Enable(ref this, vb);
-			}
-			public HRESULT EditDescription(BSTR bstrDescription) mut
-			{
-				return VT.EditDescription(ref this, bstrDescription);
-			}
-			public HRESULT EditInternalPort(int32 lInternalPort) mut
-			{
-				return VT.EditInternalPort(ref this, lInternalPort);
-			}
+			public HRESULT get_ExternalIPAddress(out BSTR pVal) mut => VT.get_ExternalIPAddress(ref this, out pVal);
+			public HRESULT get_RemoteHost(out BSTR pVal) mut => VT.get_RemoteHost(ref this, out pVal);
+			public HRESULT get_ExternalPort(out int32 pVal) mut => VT.get_ExternalPort(ref this, out pVal);
+			public HRESULT get_Protocol(out BSTR pVal) mut => VT.get_Protocol(ref this, out pVal);
+			public HRESULT get_InternalPort(out int32 pVal) mut => VT.get_InternalPort(ref this, out pVal);
+			public HRESULT get_InternalClient(out BSTR pVal) mut => VT.get_InternalClient(ref this, out pVal);
+			public HRESULT get_Enabled(out int16 pVal) mut => VT.get_Enabled(ref this, out pVal);
+			public HRESULT get_Description(out BSTR pVal) mut => VT.get_Description(ref this, out pVal);
+			public HRESULT get_LeaseDuration(out int32 pVal) mut => VT.get_LeaseDuration(ref this, out pVal);
+			public HRESULT RenewLease(int32 lLeaseDurationDesired, out int32 pLeaseDurationReturned) mut => VT.RenewLease(ref this, lLeaseDurationDesired, out pLeaseDurationReturned);
+			public HRESULT EditInternalClient(BSTR bstrInternalClient) mut => VT.EditInternalClient(ref this, bstrInternalClient);
+			public HRESULT Enable(int16 vb) mut => VT.Enable(ref this, vb);
+			public HRESULT EditDescription(BSTR bstrDescription) mut => VT.EditDescription(ref this, bstrDescription);
+			public HRESULT EditInternalPort(int32 lInternalPort) mut => VT.EditInternalPort(ref this, lInternalPort);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -547,26 +475,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IUnknown* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lExternalPort, BSTR bstrProtocol, out IStaticPortMapping* ppSPM) mut
-			{
-				return VT.get_Item(ref this, lExternalPort, bstrProtocol, out ppSPM);
-			}
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT Remove(int32 lExternalPort, BSTR bstrProtocol) mut
-			{
-				return VT.Remove(ref this, lExternalPort, bstrProtocol);
-			}
-			public HRESULT Add(int32 lExternalPort, BSTR bstrProtocol, int32 lInternalPort, BSTR bstrInternalClient, int16 bEnabled, BSTR bstrDescription, out IStaticPortMapping* ppSPM) mut
-			{
-				return VT.Add(ref this, lExternalPort, bstrProtocol, lInternalPort, bstrInternalClient, bEnabled, bstrDescription, out ppSPM);
-			}
+			public HRESULT get__NewEnum(out IUnknown* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+			public HRESULT get_Item(int32 lExternalPort, BSTR bstrProtocol, out IStaticPortMapping* ppSPM) mut => VT.get_Item(ref this, lExternalPort, bstrProtocol, out ppSPM);
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT Remove(int32 lExternalPort, BSTR bstrProtocol) mut => VT.Remove(ref this, lExternalPort, bstrProtocol);
+			public HRESULT Add(int32 lExternalPort, BSTR bstrProtocol, int32 lInternalPort, BSTR bstrInternalClient, int16 bEnabled, BSTR bstrDescription, out IStaticPortMapping* ppSPM) mut => VT.Add(ref this, lExternalPort, bstrProtocol, lInternalPort, bstrInternalClient, bEnabled, bstrDescription, out ppSPM);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -584,50 +498,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ExternalIPAddress(out BSTR pVal) mut
-			{
-				return VT.get_ExternalIPAddress(ref this, out pVal);
-			}
-			public HRESULT get_ExternalPort(out int32 pVal) mut
-			{
-				return VT.get_ExternalPort(ref this, out pVal);
-			}
-			public HRESULT get_InternalPort(out int32 pVal) mut
-			{
-				return VT.get_InternalPort(ref this, out pVal);
-			}
-			public HRESULT get_Protocol(out BSTR pVal) mut
-			{
-				return VT.get_Protocol(ref this, out pVal);
-			}
-			public HRESULT get_InternalClient(out BSTR pVal) mut
-			{
-				return VT.get_InternalClient(ref this, out pVal);
-			}
-			public HRESULT get_Enabled(out int16 pVal) mut
-			{
-				return VT.get_Enabled(ref this, out pVal);
-			}
-			public HRESULT get_Description(out BSTR pVal) mut
-			{
-				return VT.get_Description(ref this, out pVal);
-			}
-			public HRESULT EditInternalClient(BSTR bstrInternalClient) mut
-			{
-				return VT.EditInternalClient(ref this, bstrInternalClient);
-			}
-			public HRESULT Enable(int16 vb) mut
-			{
-				return VT.Enable(ref this, vb);
-			}
-			public HRESULT EditDescription(BSTR bstrDescription) mut
-			{
-				return VT.EditDescription(ref this, bstrDescription);
-			}
-			public HRESULT EditInternalPort(int32 lInternalPort) mut
-			{
-				return VT.EditInternalPort(ref this, lInternalPort);
-			}
+			public HRESULT get_ExternalIPAddress(out BSTR pVal) mut => VT.get_ExternalIPAddress(ref this, out pVal);
+			public HRESULT get_ExternalPort(out int32 pVal) mut => VT.get_ExternalPort(ref this, out pVal);
+			public HRESULT get_InternalPort(out int32 pVal) mut => VT.get_InternalPort(ref this, out pVal);
+			public HRESULT get_Protocol(out BSTR pVal) mut => VT.get_Protocol(ref this, out pVal);
+			public HRESULT get_InternalClient(out BSTR pVal) mut => VT.get_InternalClient(ref this, out pVal);
+			public HRESULT get_Enabled(out int16 pVal) mut => VT.get_Enabled(ref this, out pVal);
+			public HRESULT get_Description(out BSTR pVal) mut => VT.get_Description(ref this, out pVal);
+			public HRESULT EditInternalClient(BSTR bstrInternalClient) mut => VT.EditInternalClient(ref this, bstrInternalClient);
+			public HRESULT Enable(int16 vb) mut => VT.Enable(ref this, vb);
+			public HRESULT EditDescription(BSTR bstrDescription) mut => VT.EditDescription(ref this, bstrDescription);
+			public HRESULT EditInternalPort(int32 lInternalPort) mut => VT.EditInternalPort(ref this, lInternalPort);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -651,22 +533,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, INetConnection** rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetConnection* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, INetConnection** rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetConnection* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -683,34 +554,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Connect() mut
-			{
-				return VT.Connect(ref this);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Duplicate(PWSTR pszwDuplicateName, out INetConnection* ppCon) mut
-			{
-				return VT.Duplicate(ref this, pszwDuplicateName, out ppCon);
-			}
-			public HRESULT GetProperties(out NETCON_PROPERTIES* ppProps) mut
-			{
-				return VT.GetProperties(ref this, out ppProps);
-			}
-			public HRESULT GetUiObjectClassId(out Guid pclsid) mut
-			{
-				return VT.GetUiObjectClassId(ref this, out pclsid);
-			}
-			public HRESULT Rename(PWSTR pszwNewName) mut
-			{
-				return VT.Rename(ref this, pszwNewName);
-			}
+			public HRESULT Connect() mut => VT.Connect(ref this);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Duplicate(PWSTR pszwDuplicateName, out INetConnection* ppCon) mut => VT.Duplicate(ref this, pszwDuplicateName, out ppCon);
+			public HRESULT GetProperties(out NETCON_PROPERTIES* ppProps) mut => VT.GetProperties(ref this, out ppProps);
+			public HRESULT GetUiObjectClassId(out Guid pclsid) mut => VT.GetUiObjectClassId(ref this, out pclsid);
+			public HRESULT Rename(PWSTR pszwNewName) mut => VT.Rename(ref this, pszwNewName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -730,10 +581,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumConnections(NETCONMGR_ENUM_FLAGS Flags, out IEnumNetConnection* ppEnum) mut
-			{
-				return VT.EnumConnections(ref this, Flags, out ppEnum);
-			}
+			public HRESULT EnumConnections(NETCONMGR_ENUM_FLAGS Flags, out IEnumNetConnection* ppEnum) mut => VT.EnumConnections(ref this, Flags, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -747,18 +596,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetConnection(ref INetConnection pCon) mut
-			{
-				return VT.SetConnection(ref this, ref pCon);
-			}
-			public HRESULT Connect(HWND hwndParent, uint32 dwFlags) mut
-			{
-				return VT.Connect(ref this, hwndParent, dwFlags);
-			}
-			public HRESULT Disconnect(HWND hwndParent, uint32 dwFlags) mut
-			{
-				return VT.Disconnect(ref this, hwndParent, dwFlags);
-			}
+			public HRESULT SetConnection(ref INetConnection pCon) mut => VT.SetConnection(ref this, ref pCon);
+			public HRESULT Connect(HWND hwndParent, uint32 dwFlags) mut => VT.Connect(ref this, hwndParent, dwFlags);
+			public HRESULT Disconnect(HWND hwndParent, uint32 dwFlags) mut => VT.Disconnect(ref this, hwndParent, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -774,22 +615,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgVar, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetSharingPortMapping* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgVar, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetSharingPortMapping* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -806,38 +636,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT get_IPProtocol(out uint8 pucIPProt) mut
-			{
-				return VT.get_IPProtocol(ref this, out pucIPProt);
-			}
-			public HRESULT get_ExternalPort(out int32 pusPort) mut
-			{
-				return VT.get_ExternalPort(ref this, out pusPort);
-			}
-			public HRESULT get_InternalPort(out int32 pusPort) mut
-			{
-				return VT.get_InternalPort(ref this, out pusPort);
-			}
-			public HRESULT get_Options(out int32 pdwOptions) mut
-			{
-				return VT.get_Options(ref this, out pdwOptions);
-			}
-			public HRESULT get_TargetName(out BSTR pbstrTargetName) mut
-			{
-				return VT.get_TargetName(ref this, out pbstrTargetName);
-			}
-			public HRESULT get_TargetIPAddress(out BSTR pbstrTargetIPAddress) mut
-			{
-				return VT.get_TargetIPAddress(ref this, out pbstrTargetIPAddress);
-			}
-			public HRESULT get_Enabled(out int16 pbool) mut
-			{
-				return VT.get_Enabled(ref this, out pbool);
-			}
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT get_IPProtocol(out uint8 pucIPProt) mut => VT.get_IPProtocol(ref this, out pucIPProt);
+			public HRESULT get_ExternalPort(out int32 pusPort) mut => VT.get_ExternalPort(ref this, out pusPort);
+			public HRESULT get_InternalPort(out int32 pusPort) mut => VT.get_InternalPort(ref this, out pusPort);
+			public HRESULT get_Options(out int32 pdwOptions) mut => VT.get_Options(ref this, out pdwOptions);
+			public HRESULT get_TargetName(out BSTR pbstrTargetName) mut => VT.get_TargetName(ref this, out pbstrTargetName);
+			public HRESULT get_TargetIPAddress(out BSTR pbstrTargetIPAddress) mut => VT.get_TargetIPAddress(ref this, out pbstrTargetIPAddress);
+			public HRESULT get_Enabled(out int16 pbool) mut => VT.get_Enabled(ref this, out pbool);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -858,22 +665,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Disable() mut
-			{
-				return VT.Disable(ref this);
-			}
-			public HRESULT Enable() mut
-			{
-				return VT.Enable(ref this);
-			}
-			public HRESULT get_Properties(out INetSharingPortMappingProps* ppNSPMP) mut
-			{
-				return VT.get_Properties(ref this, out ppNSPMP);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
+			public HRESULT Disable() mut => VT.Disable(ref this);
+			public HRESULT Enable() mut => VT.Enable(ref this);
+			public HRESULT get_Properties(out INetSharingPortMappingProps* ppNSPMP) mut => VT.get_Properties(ref this, out ppNSPMP);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -890,22 +686,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgVar, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetSharingEveryConnection* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgVar, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetSharingEveryConnection* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -922,22 +707,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgVar, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetSharingPublicConnection* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgVar, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetSharingPublicConnection* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -954,22 +728,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, VARIANT* rgVar, out uint32 pCeltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgVar, out pCeltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetSharingPrivateConnection* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, VARIANT* rgVar, out uint32 pCeltFetched) mut => VT.Next(ref this, celt, rgVar, out pCeltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetSharingPrivateConnection* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -986,14 +749,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IUnknown* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
+			public HRESULT get__NewEnum(out IUnknown* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1008,30 +766,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Guid(out BSTR pbstrGuid) mut
-			{
-				return VT.get_Guid(ref this, out pbstrGuid);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT get_DeviceName(out BSTR pbstrDeviceName) mut
-			{
-				return VT.get_DeviceName(ref this, out pbstrDeviceName);
-			}
-			public HRESULT get_Status(out NETCON_STATUS pStatus) mut
-			{
-				return VT.get_Status(ref this, out pStatus);
-			}
-			public HRESULT get_MediaType(out NETCON_MEDIATYPE pMediaType) mut
-			{
-				return VT.get_MediaType(ref this, out pMediaType);
-			}
-			public HRESULT get_Characteristics(out uint32 pdwFlags) mut
-			{
-				return VT.get_Characteristics(ref this, out pdwFlags);
-			}
+			public HRESULT get_Guid(out BSTR pbstrGuid) mut => VT.get_Guid(ref this, out pbstrGuid);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT get_DeviceName(out BSTR pbstrDeviceName) mut => VT.get_DeviceName(ref this, out pbstrDeviceName);
+			public HRESULT get_Status(out NETCON_STATUS pStatus) mut => VT.get_Status(ref this, out pStatus);
+			public HRESULT get_MediaType(out NETCON_MEDIATYPE pMediaType) mut => VT.get_MediaType(ref this, out pMediaType);
+			public HRESULT get_Characteristics(out uint32 pdwFlags) mut => VT.get_Characteristics(ref this, out pdwFlags);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1050,46 +791,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SharingEnabled(out int16 pbEnabled) mut
-			{
-				return VT.get_SharingEnabled(ref this, out pbEnabled);
-			}
-			public HRESULT get_SharingConnectionType(out SHARINGCONNECTIONTYPE pType) mut
-			{
-				return VT.get_SharingConnectionType(ref this, out pType);
-			}
-			public HRESULT DisableSharing() mut
-			{
-				return VT.DisableSharing(ref this);
-			}
-			public HRESULT EnableSharing(SHARINGCONNECTIONTYPE Type) mut
-			{
-				return VT.EnableSharing(ref this, Type);
-			}
-			public HRESULT get_InternetFirewallEnabled(out int16 pbEnabled) mut
-			{
-				return VT.get_InternetFirewallEnabled(ref this, out pbEnabled);
-			}
-			public HRESULT DisableInternetFirewall() mut
-			{
-				return VT.DisableInternetFirewall(ref this);
-			}
-			public HRESULT EnableInternetFirewall() mut
-			{
-				return VT.EnableInternetFirewall(ref this);
-			}
-			public HRESULT get_EnumPortMappings(SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPortMappingCollection* ppColl) mut
-			{
-				return VT.get_EnumPortMappings(ref this, Flags, out ppColl);
-			}
-			public HRESULT AddPortMapping(BSTR bstrName, uint8 ucIPProtocol, uint16 usExternalPort, uint16 usInternalPort, uint32 dwOptions, BSTR bstrTargetNameOrIPAddress, ICS_TARGETTYPE eTargetType, out INetSharingPortMapping* ppMapping) mut
-			{
-				return VT.AddPortMapping(ref this, bstrName, ucIPProtocol, usExternalPort, usInternalPort, dwOptions, bstrTargetNameOrIPAddress, eTargetType, out ppMapping);
-			}
-			public HRESULT RemovePortMapping(ref INetSharingPortMapping pMapping) mut
-			{
-				return VT.RemovePortMapping(ref this, ref pMapping);
-			}
+			public HRESULT get_SharingEnabled(out int16 pbEnabled) mut => VT.get_SharingEnabled(ref this, out pbEnabled);
+			public HRESULT get_SharingConnectionType(out SHARINGCONNECTIONTYPE pType) mut => VT.get_SharingConnectionType(ref this, out pType);
+			public HRESULT DisableSharing() mut => VT.DisableSharing(ref this);
+			public HRESULT EnableSharing(SHARINGCONNECTIONTYPE Type) mut => VT.EnableSharing(ref this, Type);
+			public HRESULT get_InternetFirewallEnabled(out int16 pbEnabled) mut => VT.get_InternetFirewallEnabled(ref this, out pbEnabled);
+			public HRESULT DisableInternetFirewall() mut => VT.DisableInternetFirewall(ref this);
+			public HRESULT EnableInternetFirewall() mut => VT.EnableInternetFirewall(ref this);
+			public HRESULT get_EnumPortMappings(SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPortMappingCollection* ppColl) mut => VT.get_EnumPortMappings(ref this, Flags, out ppColl);
+			public HRESULT AddPortMapping(BSTR bstrName, uint8 ucIPProtocol, uint16 usExternalPort, uint16 usInternalPort, uint32 dwOptions, BSTR bstrTargetNameOrIPAddress, ICS_TARGETTYPE eTargetType, out INetSharingPortMapping* ppMapping) mut => VT.AddPortMapping(ref this, bstrName, ucIPProtocol, usExternalPort, usInternalPort, dwOptions, bstrTargetNameOrIPAddress, eTargetType, out ppMapping);
+			public HRESULT RemovePortMapping(ref INetSharingPortMapping pMapping) mut => VT.RemovePortMapping(ref this, ref pMapping);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1112,14 +824,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IUnknown* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
+			public HRESULT get__NewEnum(out IUnknown* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1134,14 +841,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IUnknown* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
+			public HRESULT get__NewEnum(out IUnknown* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1156,14 +858,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IUnknown* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
+			public HRESULT get__NewEnum(out IUnknown* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1178,30 +875,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SharingInstalled(out int16 pbInstalled) mut
-			{
-				return VT.get_SharingInstalled(ref this, out pbInstalled);
-			}
-			public HRESULT get_EnumPublicConnections(SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPublicConnectionCollection* ppColl) mut
-			{
-				return VT.get_EnumPublicConnections(ref this, Flags, out ppColl);
-			}
-			public HRESULT get_EnumPrivateConnections(SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPrivateConnectionCollection* ppColl) mut
-			{
-				return VT.get_EnumPrivateConnections(ref this, Flags, out ppColl);
-			}
-			public HRESULT get_INetSharingConfigurationForINetConnection(ref INetConnection pNetConnection, out INetSharingConfiguration* ppNetSharingConfiguration) mut
-			{
-				return VT.get_INetSharingConfigurationForINetConnection(ref this, ref pNetConnection, out ppNetSharingConfiguration);
-			}
-			public HRESULT get_EnumEveryConnection(out INetSharingEveryConnectionCollection* ppColl) mut
-			{
-				return VT.get_EnumEveryConnection(ref this, out ppColl);
-			}
-			public HRESULT get_NetConnectionProps(ref INetConnection pNetConnection, out INetConnectionProps* ppProps) mut
-			{
-				return VT.get_NetConnectionProps(ref this, ref pNetConnection, out ppProps);
-			}
+			public HRESULT get_SharingInstalled(out int16 pbInstalled) mut => VT.get_SharingInstalled(ref this, out pbInstalled);
+			public HRESULT get_EnumPublicConnections(SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPublicConnectionCollection* ppColl) mut => VT.get_EnumPublicConnections(ref this, Flags, out ppColl);
+			public HRESULT get_EnumPrivateConnections(SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPrivateConnectionCollection* ppColl) mut => VT.get_EnumPrivateConnections(ref this, Flags, out ppColl);
+			public HRESULT get_INetSharingConfigurationForINetConnection(ref INetConnection pNetConnection, out INetSharingConfiguration* ppNetSharingConfiguration) mut => VT.get_INetSharingConfigurationForINetConnection(ref this, ref pNetConnection, out ppNetSharingConfiguration);
+			public HRESULT get_EnumEveryConnection(out INetSharingEveryConnectionCollection* ppColl) mut => VT.get_EnumEveryConnection(ref this, out ppColl);
+			public HRESULT get_NetConnectionProps(ref INetConnection pNetConnection, out INetConnectionProps* ppProps) mut => VT.get_NetConnectionProps(ref this, ref pNetConnection, out ppProps);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1220,38 +900,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IpVersion(out NET_FW_IP_VERSION ipVersion) mut
-			{
-				return VT.get_IpVersion(ref this, out ipVersion);
-			}
-			public HRESULT put_IpVersion(NET_FW_IP_VERSION ipVersion) mut
-			{
-				return VT.put_IpVersion(ref this, ipVersion);
-			}
-			public HRESULT get_Scope(out NET_FW_SCOPE @scope) mut
-			{
-				return VT.get_Scope(ref this, out @scope);
-			}
-			public HRESULT put_Scope(NET_FW_SCOPE @scope) mut
-			{
-				return VT.put_Scope(ref this, @scope);
-			}
-			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut
-			{
-				return VT.get_RemoteAddresses(ref this, out remoteAddrs);
-			}
-			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut
-			{
-				return VT.put_RemoteAddresses(ref this, remoteAddrs);
-			}
-			public HRESULT get_Enabled(out int16 enabled) mut
-			{
-				return VT.get_Enabled(ref this, out enabled);
-			}
-			public HRESULT put_Enabled(int16 enabled) mut
-			{
-				return VT.put_Enabled(ref this, enabled);
-			}
+			public HRESULT get_IpVersion(out NET_FW_IP_VERSION ipVersion) mut => VT.get_IpVersion(ref this, out ipVersion);
+			public HRESULT put_IpVersion(NET_FW_IP_VERSION ipVersion) mut => VT.put_IpVersion(ref this, ipVersion);
+			public HRESULT get_Scope(out NET_FW_SCOPE @scope) mut => VT.get_Scope(ref this, out @scope);
+			public HRESULT put_Scope(NET_FW_SCOPE @scope) mut => VT.put_Scope(ref this, @scope);
+			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut => VT.get_RemoteAddresses(ref this, out remoteAddrs);
+			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut => VT.put_RemoteAddresses(ref this, remoteAddrs);
+			public HRESULT get_Enabled(out int16 enabled) mut => VT.get_Enabled(ref this, out enabled);
+			public HRESULT put_Enabled(int16 enabled) mut => VT.put_Enabled(ref this, enabled);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1272,86 +929,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AllowOutboundDestinationUnreachable(out int16 allow) mut
-			{
-				return VT.get_AllowOutboundDestinationUnreachable(ref this, out allow);
-			}
-			public HRESULT put_AllowOutboundDestinationUnreachable(int16 allow) mut
-			{
-				return VT.put_AllowOutboundDestinationUnreachable(ref this, allow);
-			}
-			public HRESULT get_AllowRedirect(out int16 allow) mut
-			{
-				return VT.get_AllowRedirect(ref this, out allow);
-			}
-			public HRESULT put_AllowRedirect(int16 allow) mut
-			{
-				return VT.put_AllowRedirect(ref this, allow);
-			}
-			public HRESULT get_AllowInboundEchoRequest(out int16 allow) mut
-			{
-				return VT.get_AllowInboundEchoRequest(ref this, out allow);
-			}
-			public HRESULT put_AllowInboundEchoRequest(int16 allow) mut
-			{
-				return VT.put_AllowInboundEchoRequest(ref this, allow);
-			}
-			public HRESULT get_AllowOutboundTimeExceeded(out int16 allow) mut
-			{
-				return VT.get_AllowOutboundTimeExceeded(ref this, out allow);
-			}
-			public HRESULT put_AllowOutboundTimeExceeded(int16 allow) mut
-			{
-				return VT.put_AllowOutboundTimeExceeded(ref this, allow);
-			}
-			public HRESULT get_AllowOutboundParameterProblem(out int16 allow) mut
-			{
-				return VT.get_AllowOutboundParameterProblem(ref this, out allow);
-			}
-			public HRESULT put_AllowOutboundParameterProblem(int16 allow) mut
-			{
-				return VT.put_AllowOutboundParameterProblem(ref this, allow);
-			}
-			public HRESULT get_AllowOutboundSourceQuench(out int16 allow) mut
-			{
-				return VT.get_AllowOutboundSourceQuench(ref this, out allow);
-			}
-			public HRESULT put_AllowOutboundSourceQuench(int16 allow) mut
-			{
-				return VT.put_AllowOutboundSourceQuench(ref this, allow);
-			}
-			public HRESULT get_AllowInboundRouterRequest(out int16 allow) mut
-			{
-				return VT.get_AllowInboundRouterRequest(ref this, out allow);
-			}
-			public HRESULT put_AllowInboundRouterRequest(int16 allow) mut
-			{
-				return VT.put_AllowInboundRouterRequest(ref this, allow);
-			}
-			public HRESULT get_AllowInboundTimestampRequest(out int16 allow) mut
-			{
-				return VT.get_AllowInboundTimestampRequest(ref this, out allow);
-			}
-			public HRESULT put_AllowInboundTimestampRequest(int16 allow) mut
-			{
-				return VT.put_AllowInboundTimestampRequest(ref this, allow);
-			}
-			public HRESULT get_AllowInboundMaskRequest(out int16 allow) mut
-			{
-				return VT.get_AllowInboundMaskRequest(ref this, out allow);
-			}
-			public HRESULT put_AllowInboundMaskRequest(int16 allow) mut
-			{
-				return VT.put_AllowInboundMaskRequest(ref this, allow);
-			}
-			public HRESULT get_AllowOutboundPacketTooBig(out int16 allow) mut
-			{
-				return VT.get_AllowOutboundPacketTooBig(ref this, out allow);
-			}
-			public HRESULT put_AllowOutboundPacketTooBig(int16 allow) mut
-			{
-				return VT.put_AllowOutboundPacketTooBig(ref this, allow);
-			}
+			public HRESULT get_AllowOutboundDestinationUnreachable(out int16 allow) mut => VT.get_AllowOutboundDestinationUnreachable(ref this, out allow);
+			public HRESULT put_AllowOutboundDestinationUnreachable(int16 allow) mut => VT.put_AllowOutboundDestinationUnreachable(ref this, allow);
+			public HRESULT get_AllowRedirect(out int16 allow) mut => VT.get_AllowRedirect(ref this, out allow);
+			public HRESULT put_AllowRedirect(int16 allow) mut => VT.put_AllowRedirect(ref this, allow);
+			public HRESULT get_AllowInboundEchoRequest(out int16 allow) mut => VT.get_AllowInboundEchoRequest(ref this, out allow);
+			public HRESULT put_AllowInboundEchoRequest(int16 allow) mut => VT.put_AllowInboundEchoRequest(ref this, allow);
+			public HRESULT get_AllowOutboundTimeExceeded(out int16 allow) mut => VT.get_AllowOutboundTimeExceeded(ref this, out allow);
+			public HRESULT put_AllowOutboundTimeExceeded(int16 allow) mut => VT.put_AllowOutboundTimeExceeded(ref this, allow);
+			public HRESULT get_AllowOutboundParameterProblem(out int16 allow) mut => VT.get_AllowOutboundParameterProblem(ref this, out allow);
+			public HRESULT put_AllowOutboundParameterProblem(int16 allow) mut => VT.put_AllowOutboundParameterProblem(ref this, allow);
+			public HRESULT get_AllowOutboundSourceQuench(out int16 allow) mut => VT.get_AllowOutboundSourceQuench(ref this, out allow);
+			public HRESULT put_AllowOutboundSourceQuench(int16 allow) mut => VT.put_AllowOutboundSourceQuench(ref this, allow);
+			public HRESULT get_AllowInboundRouterRequest(out int16 allow) mut => VT.get_AllowInboundRouterRequest(ref this, out allow);
+			public HRESULT put_AllowInboundRouterRequest(int16 allow) mut => VT.put_AllowInboundRouterRequest(ref this, allow);
+			public HRESULT get_AllowInboundTimestampRequest(out int16 allow) mut => VT.get_AllowInboundTimestampRequest(ref this, out allow);
+			public HRESULT put_AllowInboundTimestampRequest(int16 allow) mut => VT.put_AllowInboundTimestampRequest(ref this, allow);
+			public HRESULT get_AllowInboundMaskRequest(out int16 allow) mut => VT.get_AllowInboundMaskRequest(ref this, out allow);
+			public HRESULT put_AllowInboundMaskRequest(int16 allow) mut => VT.put_AllowInboundMaskRequest(ref this, allow);
+			public HRESULT get_AllowOutboundPacketTooBig(out int16 allow) mut => VT.get_AllowOutboundPacketTooBig(ref this, out allow);
+			public HRESULT put_AllowOutboundPacketTooBig(int16 allow) mut => VT.put_AllowOutboundPacketTooBig(ref this, allow);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1384,66 +982,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR name) mut
-			{
-				return VT.get_Name(ref this, out name);
-			}
-			public HRESULT put_Name(BSTR name) mut
-			{
-				return VT.put_Name(ref this, name);
-			}
-			public HRESULT get_IpVersion(out NET_FW_IP_VERSION ipVersion) mut
-			{
-				return VT.get_IpVersion(ref this, out ipVersion);
-			}
-			public HRESULT put_IpVersion(NET_FW_IP_VERSION ipVersion) mut
-			{
-				return VT.put_IpVersion(ref this, ipVersion);
-			}
-			public HRESULT get_Protocol(out NET_FW_IP_PROTOCOL ipProtocol) mut
-			{
-				return VT.get_Protocol(ref this, out ipProtocol);
-			}
-			public HRESULT put_Protocol(NET_FW_IP_PROTOCOL ipProtocol) mut
-			{
-				return VT.put_Protocol(ref this, ipProtocol);
-			}
-			public HRESULT get_Port(out int32 portNumber) mut
-			{
-				return VT.get_Port(ref this, out portNumber);
-			}
-			public HRESULT put_Port(int32 portNumber) mut
-			{
-				return VT.put_Port(ref this, portNumber);
-			}
-			public HRESULT get_Scope(out NET_FW_SCOPE @scope) mut
-			{
-				return VT.get_Scope(ref this, out @scope);
-			}
-			public HRESULT put_Scope(NET_FW_SCOPE @scope) mut
-			{
-				return VT.put_Scope(ref this, @scope);
-			}
-			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut
-			{
-				return VT.get_RemoteAddresses(ref this, out remoteAddrs);
-			}
-			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut
-			{
-				return VT.put_RemoteAddresses(ref this, remoteAddrs);
-			}
-			public HRESULT get_Enabled(out int16 enabled) mut
-			{
-				return VT.get_Enabled(ref this, out enabled);
-			}
-			public HRESULT put_Enabled(int16 enabled) mut
-			{
-				return VT.put_Enabled(ref this, enabled);
-			}
-			public HRESULT get_BuiltIn(out int16 builtIn) mut
-			{
-				return VT.get_BuiltIn(ref this, out builtIn);
-			}
+			public HRESULT get_Name(out BSTR name) mut => VT.get_Name(ref this, out name);
+			public HRESULT put_Name(BSTR name) mut => VT.put_Name(ref this, name);
+			public HRESULT get_IpVersion(out NET_FW_IP_VERSION ipVersion) mut => VT.get_IpVersion(ref this, out ipVersion);
+			public HRESULT put_IpVersion(NET_FW_IP_VERSION ipVersion) mut => VT.put_IpVersion(ref this, ipVersion);
+			public HRESULT get_Protocol(out NET_FW_IP_PROTOCOL ipProtocol) mut => VT.get_Protocol(ref this, out ipProtocol);
+			public HRESULT put_Protocol(NET_FW_IP_PROTOCOL ipProtocol) mut => VT.put_Protocol(ref this, ipProtocol);
+			public HRESULT get_Port(out int32 portNumber) mut => VT.get_Port(ref this, out portNumber);
+			public HRESULT put_Port(int32 portNumber) mut => VT.put_Port(ref this, portNumber);
+			public HRESULT get_Scope(out NET_FW_SCOPE @scope) mut => VT.get_Scope(ref this, out @scope);
+			public HRESULT put_Scope(NET_FW_SCOPE @scope) mut => VT.put_Scope(ref this, @scope);
+			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut => VT.get_RemoteAddresses(ref this, out remoteAddrs);
+			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut => VT.put_RemoteAddresses(ref this, remoteAddrs);
+			public HRESULT get_Enabled(out int16 enabled) mut => VT.get_Enabled(ref this, out enabled);
+			public HRESULT put_Enabled(int16 enabled) mut => VT.put_Enabled(ref this, enabled);
+			public HRESULT get_BuiltIn(out int16 builtIn) mut => VT.get_BuiltIn(ref this, out builtIn);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1471,26 +1025,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT Add(ref INetFwOpenPort port) mut
-			{
-				return VT.Add(ref this, ref port);
-			}
-			public HRESULT Remove(int32 portNumber, NET_FW_IP_PROTOCOL ipProtocol) mut
-			{
-				return VT.Remove(ref this, portNumber, ipProtocol);
-			}
-			public HRESULT Item(int32 portNumber, NET_FW_IP_PROTOCOL ipProtocol, out INetFwOpenPort* openPort) mut
-			{
-				return VT.Item(ref this, portNumber, ipProtocol, out openPort);
-			}
-			public HRESULT get__NewEnum(out IUnknown* newEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out newEnum);
-			}
+			public HRESULT get_Count(out int32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT Add(ref INetFwOpenPort port) mut => VT.Add(ref this, ref port);
+			public HRESULT Remove(int32 portNumber, NET_FW_IP_PROTOCOL ipProtocol) mut => VT.Remove(ref this, portNumber, ipProtocol);
+			public HRESULT Item(int32 portNumber, NET_FW_IP_PROTOCOL ipProtocol, out INetFwOpenPort* openPort) mut => VT.Item(ref this, portNumber, ipProtocol, out openPort);
+			public HRESULT get__NewEnum(out IUnknown* newEnum) mut => VT.get__NewEnum(ref this, out newEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1508,54 +1048,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR name) mut
-			{
-				return VT.get_Name(ref this, out name);
-			}
-			public HRESULT get_Type(out NET_FW_SERVICE_TYPE type) mut
-			{
-				return VT.get_Type(ref this, out type);
-			}
-			public HRESULT get_Customized(out int16 customized) mut
-			{
-				return VT.get_Customized(ref this, out customized);
-			}
-			public HRESULT get_IpVersion(out NET_FW_IP_VERSION ipVersion) mut
-			{
-				return VT.get_IpVersion(ref this, out ipVersion);
-			}
-			public HRESULT put_IpVersion(NET_FW_IP_VERSION ipVersion) mut
-			{
-				return VT.put_IpVersion(ref this, ipVersion);
-			}
-			public HRESULT get_Scope(out NET_FW_SCOPE @scope) mut
-			{
-				return VT.get_Scope(ref this, out @scope);
-			}
-			public HRESULT put_Scope(NET_FW_SCOPE @scope) mut
-			{
-				return VT.put_Scope(ref this, @scope);
-			}
-			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut
-			{
-				return VT.get_RemoteAddresses(ref this, out remoteAddrs);
-			}
-			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut
-			{
-				return VT.put_RemoteAddresses(ref this, remoteAddrs);
-			}
-			public HRESULT get_Enabled(out int16 enabled) mut
-			{
-				return VT.get_Enabled(ref this, out enabled);
-			}
-			public HRESULT put_Enabled(int16 enabled) mut
-			{
-				return VT.put_Enabled(ref this, enabled);
-			}
-			public HRESULT get_GloballyOpenPorts(out INetFwOpenPorts* openPorts) mut
-			{
-				return VT.get_GloballyOpenPorts(ref this, out openPorts);
-			}
+			public HRESULT get_Name(out BSTR name) mut => VT.get_Name(ref this, out name);
+			public HRESULT get_Type(out NET_FW_SERVICE_TYPE type) mut => VT.get_Type(ref this, out type);
+			public HRESULT get_Customized(out int16 customized) mut => VT.get_Customized(ref this, out customized);
+			public HRESULT get_IpVersion(out NET_FW_IP_VERSION ipVersion) mut => VT.get_IpVersion(ref this, out ipVersion);
+			public HRESULT put_IpVersion(NET_FW_IP_VERSION ipVersion) mut => VT.put_IpVersion(ref this, ipVersion);
+			public HRESULT get_Scope(out NET_FW_SCOPE @scope) mut => VT.get_Scope(ref this, out @scope);
+			public HRESULT put_Scope(NET_FW_SCOPE @scope) mut => VT.put_Scope(ref this, @scope);
+			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut => VT.get_RemoteAddresses(ref this, out remoteAddrs);
+			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut => VT.put_RemoteAddresses(ref this, remoteAddrs);
+			public HRESULT get_Enabled(out int16 enabled) mut => VT.get_Enabled(ref this, out enabled);
+			public HRESULT put_Enabled(int16 enabled) mut => VT.put_Enabled(ref this, enabled);
+			public HRESULT get_GloballyOpenPorts(out INetFwOpenPorts* openPorts) mut => VT.get_GloballyOpenPorts(ref this, out openPorts);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1580,18 +1085,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT Item(NET_FW_SERVICE_TYPE svcType, out INetFwService* service) mut
-			{
-				return VT.Item(ref this, svcType, out service);
-			}
-			public HRESULT get__NewEnum(out IUnknown* newEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out newEnum);
-			}
+			public HRESULT get_Count(out int32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT Item(NET_FW_SERVICE_TYPE svcType, out INetFwService* service) mut => VT.Item(ref this, svcType, out service);
+			public HRESULT get__NewEnum(out IUnknown* newEnum) mut => VT.get__NewEnum(ref this, out newEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1607,54 +1104,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR name) mut
-			{
-				return VT.get_Name(ref this, out name);
-			}
-			public HRESULT put_Name(BSTR name) mut
-			{
-				return VT.put_Name(ref this, name);
-			}
-			public HRESULT get_ProcessImageFileName(out BSTR imageFileName) mut
-			{
-				return VT.get_ProcessImageFileName(ref this, out imageFileName);
-			}
-			public HRESULT put_ProcessImageFileName(BSTR imageFileName) mut
-			{
-				return VT.put_ProcessImageFileName(ref this, imageFileName);
-			}
-			public HRESULT get_IpVersion(out NET_FW_IP_VERSION ipVersion) mut
-			{
-				return VT.get_IpVersion(ref this, out ipVersion);
-			}
-			public HRESULT put_IpVersion(NET_FW_IP_VERSION ipVersion) mut
-			{
-				return VT.put_IpVersion(ref this, ipVersion);
-			}
-			public HRESULT get_Scope(out NET_FW_SCOPE @scope) mut
-			{
-				return VT.get_Scope(ref this, out @scope);
-			}
-			public HRESULT put_Scope(NET_FW_SCOPE @scope) mut
-			{
-				return VT.put_Scope(ref this, @scope);
-			}
-			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut
-			{
-				return VT.get_RemoteAddresses(ref this, out remoteAddrs);
-			}
-			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut
-			{
-				return VT.put_RemoteAddresses(ref this, remoteAddrs);
-			}
-			public HRESULT get_Enabled(out int16 enabled) mut
-			{
-				return VT.get_Enabled(ref this, out enabled);
-			}
-			public HRESULT put_Enabled(int16 enabled) mut
-			{
-				return VT.put_Enabled(ref this, enabled);
-			}
+			public HRESULT get_Name(out BSTR name) mut => VT.get_Name(ref this, out name);
+			public HRESULT put_Name(BSTR name) mut => VT.put_Name(ref this, name);
+			public HRESULT get_ProcessImageFileName(out BSTR imageFileName) mut => VT.get_ProcessImageFileName(ref this, out imageFileName);
+			public HRESULT put_ProcessImageFileName(BSTR imageFileName) mut => VT.put_ProcessImageFileName(ref this, imageFileName);
+			public HRESULT get_IpVersion(out NET_FW_IP_VERSION ipVersion) mut => VT.get_IpVersion(ref this, out ipVersion);
+			public HRESULT put_IpVersion(NET_FW_IP_VERSION ipVersion) mut => VT.put_IpVersion(ref this, ipVersion);
+			public HRESULT get_Scope(out NET_FW_SCOPE @scope) mut => VT.get_Scope(ref this, out @scope);
+			public HRESULT put_Scope(NET_FW_SCOPE @scope) mut => VT.put_Scope(ref this, @scope);
+			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut => VT.get_RemoteAddresses(ref this, out remoteAddrs);
+			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut => VT.put_RemoteAddresses(ref this, remoteAddrs);
+			public HRESULT get_Enabled(out int16 enabled) mut => VT.get_Enabled(ref this, out enabled);
+			public HRESULT put_Enabled(int16 enabled) mut => VT.put_Enabled(ref this, enabled);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1679,26 +1141,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT Add(ref INetFwAuthorizedApplication app) mut
-			{
-				return VT.Add(ref this, ref app);
-			}
-			public HRESULT Remove(BSTR imageFileName) mut
-			{
-				return VT.Remove(ref this, imageFileName);
-			}
-			public HRESULT Item(BSTR imageFileName, out INetFwAuthorizedApplication* app) mut
-			{
-				return VT.Item(ref this, imageFileName, out app);
-			}
-			public HRESULT get__NewEnum(out IUnknown* newEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out newEnum);
-			}
+			public HRESULT get_Count(out int32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT Add(ref INetFwAuthorizedApplication app) mut => VT.Add(ref this, ref app);
+			public HRESULT Remove(BSTR imageFileName) mut => VT.Remove(ref this, imageFileName);
+			public HRESULT Item(BSTR imageFileName, out INetFwAuthorizedApplication* app) mut => VT.Item(ref this, imageFileName, out app);
+			public HRESULT get__NewEnum(out IUnknown* newEnum) mut => VT.get__NewEnum(ref this, out newEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1716,150 +1164,43 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR name) mut
-			{
-				return VT.get_Name(ref this, out name);
-			}
-			public HRESULT put_Name(BSTR name) mut
-			{
-				return VT.put_Name(ref this, name);
-			}
-			public HRESULT get_Description(out BSTR desc) mut
-			{
-				return VT.get_Description(ref this, out desc);
-			}
-			public HRESULT put_Description(BSTR desc) mut
-			{
-				return VT.put_Description(ref this, desc);
-			}
-			public HRESULT get_ApplicationName(out BSTR imageFileName) mut
-			{
-				return VT.get_ApplicationName(ref this, out imageFileName);
-			}
-			public HRESULT put_ApplicationName(BSTR imageFileName) mut
-			{
-				return VT.put_ApplicationName(ref this, imageFileName);
-			}
-			public HRESULT get_ServiceName(out BSTR serviceName) mut
-			{
-				return VT.get_ServiceName(ref this, out serviceName);
-			}
-			public HRESULT put_ServiceName(BSTR serviceName) mut
-			{
-				return VT.put_ServiceName(ref this, serviceName);
-			}
-			public HRESULT get_Protocol(out int32 protocol) mut
-			{
-				return VT.get_Protocol(ref this, out protocol);
-			}
-			public HRESULT put_Protocol(int32 protocol) mut
-			{
-				return VT.put_Protocol(ref this, protocol);
-			}
-			public HRESULT get_LocalPorts(out BSTR portNumbers) mut
-			{
-				return VT.get_LocalPorts(ref this, out portNumbers);
-			}
-			public HRESULT put_LocalPorts(BSTR portNumbers) mut
-			{
-				return VT.put_LocalPorts(ref this, portNumbers);
-			}
-			public HRESULT get_RemotePorts(out BSTR portNumbers) mut
-			{
-				return VT.get_RemotePorts(ref this, out portNumbers);
-			}
-			public HRESULT put_RemotePorts(BSTR portNumbers) mut
-			{
-				return VT.put_RemotePorts(ref this, portNumbers);
-			}
-			public HRESULT get_LocalAddresses(out BSTR localAddrs) mut
-			{
-				return VT.get_LocalAddresses(ref this, out localAddrs);
-			}
-			public HRESULT put_LocalAddresses(BSTR localAddrs) mut
-			{
-				return VT.put_LocalAddresses(ref this, localAddrs);
-			}
-			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut
-			{
-				return VT.get_RemoteAddresses(ref this, out remoteAddrs);
-			}
-			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut
-			{
-				return VT.put_RemoteAddresses(ref this, remoteAddrs);
-			}
-			public HRESULT get_IcmpTypesAndCodes(out BSTR icmpTypesAndCodes) mut
-			{
-				return VT.get_IcmpTypesAndCodes(ref this, out icmpTypesAndCodes);
-			}
-			public HRESULT put_IcmpTypesAndCodes(BSTR icmpTypesAndCodes) mut
-			{
-				return VT.put_IcmpTypesAndCodes(ref this, icmpTypesAndCodes);
-			}
-			public HRESULT get_Direction(out NET_FW_RULE_DIRECTION dir) mut
-			{
-				return VT.get_Direction(ref this, out dir);
-			}
-			public HRESULT put_Direction(NET_FW_RULE_DIRECTION dir) mut
-			{
-				return VT.put_Direction(ref this, dir);
-			}
-			public HRESULT get_Interfaces(out VARIANT interfaces) mut
-			{
-				return VT.get_Interfaces(ref this, out interfaces);
-			}
-			public HRESULT put_Interfaces(VARIANT interfaces) mut
-			{
-				return VT.put_Interfaces(ref this, interfaces);
-			}
-			public HRESULT get_InterfaceTypes(out BSTR interfaceTypes) mut
-			{
-				return VT.get_InterfaceTypes(ref this, out interfaceTypes);
-			}
-			public HRESULT put_InterfaceTypes(BSTR interfaceTypes) mut
-			{
-				return VT.put_InterfaceTypes(ref this, interfaceTypes);
-			}
-			public HRESULT get_Enabled(out int16 enabled) mut
-			{
-				return VT.get_Enabled(ref this, out enabled);
-			}
-			public HRESULT put_Enabled(int16 enabled) mut
-			{
-				return VT.put_Enabled(ref this, enabled);
-			}
-			public HRESULT get_Grouping(out BSTR context) mut
-			{
-				return VT.get_Grouping(ref this, out context);
-			}
-			public HRESULT put_Grouping(BSTR context) mut
-			{
-				return VT.put_Grouping(ref this, context);
-			}
-			public HRESULT get_Profiles(out int32 profileTypesBitmask) mut
-			{
-				return VT.get_Profiles(ref this, out profileTypesBitmask);
-			}
-			public HRESULT put_Profiles(int32 profileTypesBitmask) mut
-			{
-				return VT.put_Profiles(ref this, profileTypesBitmask);
-			}
-			public HRESULT get_EdgeTraversal(out int16 enabled) mut
-			{
-				return VT.get_EdgeTraversal(ref this, out enabled);
-			}
-			public HRESULT put_EdgeTraversal(int16 enabled) mut
-			{
-				return VT.put_EdgeTraversal(ref this, enabled);
-			}
-			public HRESULT get_Action(out NET_FW_ACTION action) mut
-			{
-				return VT.get_Action(ref this, out action);
-			}
-			public HRESULT put_Action(NET_FW_ACTION action) mut
-			{
-				return VT.put_Action(ref this, action);
-			}
+			public HRESULT get_Name(out BSTR name) mut => VT.get_Name(ref this, out name);
+			public HRESULT put_Name(BSTR name) mut => VT.put_Name(ref this, name);
+			public HRESULT get_Description(out BSTR desc) mut => VT.get_Description(ref this, out desc);
+			public HRESULT put_Description(BSTR desc) mut => VT.put_Description(ref this, desc);
+			public HRESULT get_ApplicationName(out BSTR imageFileName) mut => VT.get_ApplicationName(ref this, out imageFileName);
+			public HRESULT put_ApplicationName(BSTR imageFileName) mut => VT.put_ApplicationName(ref this, imageFileName);
+			public HRESULT get_ServiceName(out BSTR serviceName) mut => VT.get_ServiceName(ref this, out serviceName);
+			public HRESULT put_ServiceName(BSTR serviceName) mut => VT.put_ServiceName(ref this, serviceName);
+			public HRESULT get_Protocol(out int32 protocol) mut => VT.get_Protocol(ref this, out protocol);
+			public HRESULT put_Protocol(int32 protocol) mut => VT.put_Protocol(ref this, protocol);
+			public HRESULT get_LocalPorts(out BSTR portNumbers) mut => VT.get_LocalPorts(ref this, out portNumbers);
+			public HRESULT put_LocalPorts(BSTR portNumbers) mut => VT.put_LocalPorts(ref this, portNumbers);
+			public HRESULT get_RemotePorts(out BSTR portNumbers) mut => VT.get_RemotePorts(ref this, out portNumbers);
+			public HRESULT put_RemotePorts(BSTR portNumbers) mut => VT.put_RemotePorts(ref this, portNumbers);
+			public HRESULT get_LocalAddresses(out BSTR localAddrs) mut => VT.get_LocalAddresses(ref this, out localAddrs);
+			public HRESULT put_LocalAddresses(BSTR localAddrs) mut => VT.put_LocalAddresses(ref this, localAddrs);
+			public HRESULT get_RemoteAddresses(out BSTR remoteAddrs) mut => VT.get_RemoteAddresses(ref this, out remoteAddrs);
+			public HRESULT put_RemoteAddresses(BSTR remoteAddrs) mut => VT.put_RemoteAddresses(ref this, remoteAddrs);
+			public HRESULT get_IcmpTypesAndCodes(out BSTR icmpTypesAndCodes) mut => VT.get_IcmpTypesAndCodes(ref this, out icmpTypesAndCodes);
+			public HRESULT put_IcmpTypesAndCodes(BSTR icmpTypesAndCodes) mut => VT.put_IcmpTypesAndCodes(ref this, icmpTypesAndCodes);
+			public HRESULT get_Direction(out NET_FW_RULE_DIRECTION dir) mut => VT.get_Direction(ref this, out dir);
+			public HRESULT put_Direction(NET_FW_RULE_DIRECTION dir) mut => VT.put_Direction(ref this, dir);
+			public HRESULT get_Interfaces(out VARIANT interfaces) mut => VT.get_Interfaces(ref this, out interfaces);
+			public HRESULT put_Interfaces(VARIANT interfaces) mut => VT.put_Interfaces(ref this, interfaces);
+			public HRESULT get_InterfaceTypes(out BSTR interfaceTypes) mut => VT.get_InterfaceTypes(ref this, out interfaceTypes);
+			public HRESULT put_InterfaceTypes(BSTR interfaceTypes) mut => VT.put_InterfaceTypes(ref this, interfaceTypes);
+			public HRESULT get_Enabled(out int16 enabled) mut => VT.get_Enabled(ref this, out enabled);
+			public HRESULT put_Enabled(int16 enabled) mut => VT.put_Enabled(ref this, enabled);
+			public HRESULT get_Grouping(out BSTR context) mut => VT.get_Grouping(ref this, out context);
+			public HRESULT put_Grouping(BSTR context) mut => VT.put_Grouping(ref this, context);
+			public HRESULT get_Profiles(out int32 profileTypesBitmask) mut => VT.get_Profiles(ref this, out profileTypesBitmask);
+			public HRESULT put_Profiles(int32 profileTypesBitmask) mut => VT.put_Profiles(ref this, profileTypesBitmask);
+			public HRESULT get_EdgeTraversal(out int16 enabled) mut => VT.get_EdgeTraversal(ref this, out enabled);
+			public HRESULT put_EdgeTraversal(int16 enabled) mut => VT.put_EdgeTraversal(ref this, enabled);
+			public HRESULT get_Action(out NET_FW_ACTION action) mut => VT.get_Action(ref this, out action);
+			public HRESULT put_Action(NET_FW_ACTION action) mut => VT.put_Action(ref this, action);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1908,14 +1249,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EdgeTraversalOptions(out int32 lOptions) mut
-			{
-				return VT.get_EdgeTraversalOptions(ref this, out lOptions);
-			}
-			public HRESULT put_EdgeTraversalOptions(int32 lOptions) mut
-			{
-				return VT.put_EdgeTraversalOptions(ref this, lOptions);
-			}
+			public HRESULT get_EdgeTraversalOptions(out int32 lOptions) mut => VT.get_EdgeTraversalOptions(ref this, out lOptions);
+			public HRESULT put_EdgeTraversalOptions(int32 lOptions) mut => VT.put_EdgeTraversalOptions(ref this, lOptions);
+
 			[CRepr]
 			public struct VTable : INetFwRule.VTable
 			{
@@ -1930,54 +1266,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LocalAppPackageId(out BSTR wszPackageId) mut
-			{
-				return VT.get_LocalAppPackageId(ref this, out wszPackageId);
-			}
-			public HRESULT put_LocalAppPackageId(BSTR wszPackageId) mut
-			{
-				return VT.put_LocalAppPackageId(ref this, wszPackageId);
-			}
-			public HRESULT get_LocalUserOwner(out BSTR wszUserOwner) mut
-			{
-				return VT.get_LocalUserOwner(ref this, out wszUserOwner);
-			}
-			public HRESULT put_LocalUserOwner(BSTR wszUserOwner) mut
-			{
-				return VT.put_LocalUserOwner(ref this, wszUserOwner);
-			}
-			public HRESULT get_LocalUserAuthorizedList(out BSTR wszUserAuthList) mut
-			{
-				return VT.get_LocalUserAuthorizedList(ref this, out wszUserAuthList);
-			}
-			public HRESULT put_LocalUserAuthorizedList(BSTR wszUserAuthList) mut
-			{
-				return VT.put_LocalUserAuthorizedList(ref this, wszUserAuthList);
-			}
-			public HRESULT get_RemoteUserAuthorizedList(out BSTR wszUserAuthList) mut
-			{
-				return VT.get_RemoteUserAuthorizedList(ref this, out wszUserAuthList);
-			}
-			public HRESULT put_RemoteUserAuthorizedList(BSTR wszUserAuthList) mut
-			{
-				return VT.put_RemoteUserAuthorizedList(ref this, wszUserAuthList);
-			}
-			public HRESULT get_RemoteMachineAuthorizedList(out BSTR wszUserAuthList) mut
-			{
-				return VT.get_RemoteMachineAuthorizedList(ref this, out wszUserAuthList);
-			}
-			public HRESULT put_RemoteMachineAuthorizedList(BSTR wszUserAuthList) mut
-			{
-				return VT.put_RemoteMachineAuthorizedList(ref this, wszUserAuthList);
-			}
-			public HRESULT get_SecureFlags(out int32 lOptions) mut
-			{
-				return VT.get_SecureFlags(ref this, out lOptions);
-			}
-			public HRESULT put_SecureFlags(int32 lOptions) mut
-			{
-				return VT.put_SecureFlags(ref this, lOptions);
-			}
+			public HRESULT get_LocalAppPackageId(out BSTR wszPackageId) mut => VT.get_LocalAppPackageId(ref this, out wszPackageId);
+			public HRESULT put_LocalAppPackageId(BSTR wszPackageId) mut => VT.put_LocalAppPackageId(ref this, wszPackageId);
+			public HRESULT get_LocalUserOwner(out BSTR wszUserOwner) mut => VT.get_LocalUserOwner(ref this, out wszUserOwner);
+			public HRESULT put_LocalUserOwner(BSTR wszUserOwner) mut => VT.put_LocalUserOwner(ref this, wszUserOwner);
+			public HRESULT get_LocalUserAuthorizedList(out BSTR wszUserAuthList) mut => VT.get_LocalUserAuthorizedList(ref this, out wszUserAuthList);
+			public HRESULT put_LocalUserAuthorizedList(BSTR wszUserAuthList) mut => VT.put_LocalUserAuthorizedList(ref this, wszUserAuthList);
+			public HRESULT get_RemoteUserAuthorizedList(out BSTR wszUserAuthList) mut => VT.get_RemoteUserAuthorizedList(ref this, out wszUserAuthList);
+			public HRESULT put_RemoteUserAuthorizedList(BSTR wszUserAuthList) mut => VT.put_RemoteUserAuthorizedList(ref this, wszUserAuthList);
+			public HRESULT get_RemoteMachineAuthorizedList(out BSTR wszUserAuthList) mut => VT.get_RemoteMachineAuthorizedList(ref this, out wszUserAuthList);
+			public HRESULT put_RemoteMachineAuthorizedList(BSTR wszUserAuthList) mut => VT.put_RemoteMachineAuthorizedList(ref this, wszUserAuthList);
+			public HRESULT get_SecureFlags(out int32 lOptions) mut => VT.get_SecureFlags(ref this, out lOptions);
+			public HRESULT put_SecureFlags(int32 lOptions) mut => VT.put_SecureFlags(ref this, lOptions);
+
 			[CRepr]
 			public struct VTable : INetFwRule2.VTable
 			{
@@ -2002,26 +1303,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT Add(ref INetFwRule rule) mut
-			{
-				return VT.Add(ref this, ref rule);
-			}
-			public HRESULT Remove(BSTR name) mut
-			{
-				return VT.Remove(ref this, name);
-			}
-			public HRESULT Item(BSTR name, out INetFwRule* rule) mut
-			{
-				return VT.Item(ref this, name, out rule);
-			}
-			public HRESULT get__NewEnum(out IUnknown* newEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out newEnum);
-			}
+			public HRESULT get_Count(out int32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT Add(ref INetFwRule rule) mut => VT.Add(ref this, ref rule);
+			public HRESULT Remove(BSTR name) mut => VT.Remove(ref this, name);
+			public HRESULT Item(BSTR name, out INetFwRule* rule) mut => VT.Item(ref this, name, out rule);
+			public HRESULT get__NewEnum(out IUnknown* newEnum) mut => VT.get__NewEnum(ref this, out newEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2039,18 +1326,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RestrictService(BSTR serviceName, BSTR appName, int16 restrictService, int16 serviceSidRestricted) mut
-			{
-				return VT.RestrictService(ref this, serviceName, appName, restrictService, serviceSidRestricted);
-			}
-			public HRESULT ServiceRestricted(BSTR serviceName, BSTR appName, out int16 serviceRestricted) mut
-			{
-				return VT.ServiceRestricted(ref this, serviceName, appName, out serviceRestricted);
-			}
-			public HRESULT get_Rules(out INetFwRules* rules) mut
-			{
-				return VT.get_Rules(ref this, out rules);
-			}
+			public HRESULT RestrictService(BSTR serviceName, BSTR appName, int16 restrictService, int16 serviceSidRestricted) mut => VT.RestrictService(ref this, serviceName, appName, restrictService, serviceSidRestricted);
+			public HRESULT ServiceRestricted(BSTR serviceName, BSTR appName, out int16 serviceRestricted) mut => VT.ServiceRestricted(ref this, serviceName, appName, out serviceRestricted);
+			public HRESULT get_Rules(out INetFwRules* rules) mut => VT.get_Rules(ref this, out rules);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2066,62 +1345,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(out NET_FW_PROFILE_TYPE type) mut
-			{
-				return VT.get_Type(ref this, out type);
-			}
-			public HRESULT get_FirewallEnabled(out int16 enabled) mut
-			{
-				return VT.get_FirewallEnabled(ref this, out enabled);
-			}
-			public HRESULT put_FirewallEnabled(int16 enabled) mut
-			{
-				return VT.put_FirewallEnabled(ref this, enabled);
-			}
-			public HRESULT get_ExceptionsNotAllowed(out int16 notAllowed) mut
-			{
-				return VT.get_ExceptionsNotAllowed(ref this, out notAllowed);
-			}
-			public HRESULT put_ExceptionsNotAllowed(int16 notAllowed) mut
-			{
-				return VT.put_ExceptionsNotAllowed(ref this, notAllowed);
-			}
-			public HRESULT get_NotificationsDisabled(out int16 disabled) mut
-			{
-				return VT.get_NotificationsDisabled(ref this, out disabled);
-			}
-			public HRESULT put_NotificationsDisabled(int16 disabled) mut
-			{
-				return VT.put_NotificationsDisabled(ref this, disabled);
-			}
-			public HRESULT get_UnicastResponsesToMulticastBroadcastDisabled(out int16 disabled) mut
-			{
-				return VT.get_UnicastResponsesToMulticastBroadcastDisabled(ref this, out disabled);
-			}
-			public HRESULT put_UnicastResponsesToMulticastBroadcastDisabled(int16 disabled) mut
-			{
-				return VT.put_UnicastResponsesToMulticastBroadcastDisabled(ref this, disabled);
-			}
-			public HRESULT get_RemoteAdminSettings(out INetFwRemoteAdminSettings* remoteAdminSettings) mut
-			{
-				return VT.get_RemoteAdminSettings(ref this, out remoteAdminSettings);
-			}
-			public HRESULT get_IcmpSettings(out INetFwIcmpSettings* icmpSettings) mut
-			{
-				return VT.get_IcmpSettings(ref this, out icmpSettings);
-			}
-			public HRESULT get_GloballyOpenPorts(out INetFwOpenPorts* openPorts) mut
-			{
-				return VT.get_GloballyOpenPorts(ref this, out openPorts);
-			}
-			public HRESULT get_Services(out INetFwServices* services) mut
-			{
-				return VT.get_Services(ref this, out services);
-			}
-			public HRESULT get_AuthorizedApplications(out INetFwAuthorizedApplications* apps) mut
-			{
-				return VT.get_AuthorizedApplications(ref this, out apps);
-			}
+			public HRESULT get_Type(out NET_FW_PROFILE_TYPE type) mut => VT.get_Type(ref this, out type);
+			public HRESULT get_FirewallEnabled(out int16 enabled) mut => VT.get_FirewallEnabled(ref this, out enabled);
+			public HRESULT put_FirewallEnabled(int16 enabled) mut => VT.put_FirewallEnabled(ref this, enabled);
+			public HRESULT get_ExceptionsNotAllowed(out int16 notAllowed) mut => VT.get_ExceptionsNotAllowed(ref this, out notAllowed);
+			public HRESULT put_ExceptionsNotAllowed(int16 notAllowed) mut => VT.put_ExceptionsNotAllowed(ref this, notAllowed);
+			public HRESULT get_NotificationsDisabled(out int16 disabled) mut => VT.get_NotificationsDisabled(ref this, out disabled);
+			public HRESULT put_NotificationsDisabled(int16 disabled) mut => VT.put_NotificationsDisabled(ref this, disabled);
+			public HRESULT get_UnicastResponsesToMulticastBroadcastDisabled(out int16 disabled) mut => VT.get_UnicastResponsesToMulticastBroadcastDisabled(ref this, out disabled);
+			public HRESULT put_UnicastResponsesToMulticastBroadcastDisabled(int16 disabled) mut => VT.put_UnicastResponsesToMulticastBroadcastDisabled(ref this, disabled);
+			public HRESULT get_RemoteAdminSettings(out INetFwRemoteAdminSettings* remoteAdminSettings) mut => VT.get_RemoteAdminSettings(ref this, out remoteAdminSettings);
+			public HRESULT get_IcmpSettings(out INetFwIcmpSettings* icmpSettings) mut => VT.get_IcmpSettings(ref this, out icmpSettings);
+			public HRESULT get_GloballyOpenPorts(out INetFwOpenPorts* openPorts) mut => VT.get_GloballyOpenPorts(ref this, out openPorts);
+			public HRESULT get_Services(out INetFwServices* services) mut => VT.get_Services(ref this, out services);
+			public HRESULT get_AuthorizedApplications(out INetFwAuthorizedApplications* apps) mut => VT.get_AuthorizedApplications(ref this, out apps);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2148,14 +1386,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentProfile(out INetFwProfile* profile) mut
-			{
-				return VT.get_CurrentProfile(ref this, out profile);
-			}
-			public HRESULT GetProfileByType(NET_FW_PROFILE_TYPE profileType, out INetFwProfile* profile) mut
-			{
-				return VT.GetProfileByType(ref this, profileType, out profile);
-			}
+			public HRESULT get_CurrentProfile(out INetFwProfile* profile) mut => VT.get_CurrentProfile(ref this, out profile);
+			public HRESULT GetProfileByType(NET_FW_PROFILE_TYPE profileType, out INetFwProfile* profile) mut => VT.GetProfileByType(ref this, profileType, out profile);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2170,94 +1403,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentProfileTypes(out int32 profileTypesBitmask) mut
-			{
-				return VT.get_CurrentProfileTypes(ref this, out profileTypesBitmask);
-			}
-			public HRESULT get_FirewallEnabled(NET_FW_PROFILE_TYPE2 profileType, out int16 enabled) mut
-			{
-				return VT.get_FirewallEnabled(ref this, profileType, out enabled);
-			}
-			public HRESULT put_FirewallEnabled(NET_FW_PROFILE_TYPE2 profileType, int16 enabled) mut
-			{
-				return VT.put_FirewallEnabled(ref this, profileType, enabled);
-			}
-			public HRESULT get_ExcludedInterfaces(NET_FW_PROFILE_TYPE2 profileType, out VARIANT interfaces) mut
-			{
-				return VT.get_ExcludedInterfaces(ref this, profileType, out interfaces);
-			}
-			public HRESULT put_ExcludedInterfaces(NET_FW_PROFILE_TYPE2 profileType, VARIANT interfaces) mut
-			{
-				return VT.put_ExcludedInterfaces(ref this, profileType, interfaces);
-			}
-			public HRESULT get_BlockAllInboundTraffic(NET_FW_PROFILE_TYPE2 profileType, out int16 Block) mut
-			{
-				return VT.get_BlockAllInboundTraffic(ref this, profileType, out Block);
-			}
-			public HRESULT put_BlockAllInboundTraffic(NET_FW_PROFILE_TYPE2 profileType, int16 Block) mut
-			{
-				return VT.put_BlockAllInboundTraffic(ref this, profileType, Block);
-			}
-			public HRESULT get_NotificationsDisabled(NET_FW_PROFILE_TYPE2 profileType, out int16 disabled) mut
-			{
-				return VT.get_NotificationsDisabled(ref this, profileType, out disabled);
-			}
-			public HRESULT put_NotificationsDisabled(NET_FW_PROFILE_TYPE2 profileType, int16 disabled) mut
-			{
-				return VT.put_NotificationsDisabled(ref this, profileType, disabled);
-			}
-			public HRESULT get_UnicastResponsesToMulticastBroadcastDisabled(NET_FW_PROFILE_TYPE2 profileType, out int16 disabled) mut
-			{
-				return VT.get_UnicastResponsesToMulticastBroadcastDisabled(ref this, profileType, out disabled);
-			}
-			public HRESULT put_UnicastResponsesToMulticastBroadcastDisabled(NET_FW_PROFILE_TYPE2 profileType, int16 disabled) mut
-			{
-				return VT.put_UnicastResponsesToMulticastBroadcastDisabled(ref this, profileType, disabled);
-			}
-			public HRESULT get_Rules(out INetFwRules* rules) mut
-			{
-				return VT.get_Rules(ref this, out rules);
-			}
-			public HRESULT get_ServiceRestriction(out INetFwServiceRestriction* ServiceRestriction) mut
-			{
-				return VT.get_ServiceRestriction(ref this, out ServiceRestriction);
-			}
-			public HRESULT EnableRuleGroup(int32 profileTypesBitmask, BSTR group, int16 enable) mut
-			{
-				return VT.EnableRuleGroup(ref this, profileTypesBitmask, group, enable);
-			}
-			public HRESULT IsRuleGroupEnabled(int32 profileTypesBitmask, BSTR group, out int16 enabled) mut
-			{
-				return VT.IsRuleGroupEnabled(ref this, profileTypesBitmask, group, out enabled);
-			}
-			public HRESULT RestoreLocalFirewallDefaults() mut
-			{
-				return VT.RestoreLocalFirewallDefaults(ref this);
-			}
-			public HRESULT get_DefaultInboundAction(NET_FW_PROFILE_TYPE2 profileType, out NET_FW_ACTION action) mut
-			{
-				return VT.get_DefaultInboundAction(ref this, profileType, out action);
-			}
-			public HRESULT put_DefaultInboundAction(NET_FW_PROFILE_TYPE2 profileType, NET_FW_ACTION action) mut
-			{
-				return VT.put_DefaultInboundAction(ref this, profileType, action);
-			}
-			public HRESULT get_DefaultOutboundAction(NET_FW_PROFILE_TYPE2 profileType, out NET_FW_ACTION action) mut
-			{
-				return VT.get_DefaultOutboundAction(ref this, profileType, out action);
-			}
-			public HRESULT put_DefaultOutboundAction(NET_FW_PROFILE_TYPE2 profileType, NET_FW_ACTION action) mut
-			{
-				return VT.put_DefaultOutboundAction(ref this, profileType, action);
-			}
-			public HRESULT get_IsRuleGroupCurrentlyEnabled(BSTR group, out int16 enabled) mut
-			{
-				return VT.get_IsRuleGroupCurrentlyEnabled(ref this, group, out enabled);
-			}
-			public HRESULT get_LocalPolicyModifyState(out NET_FW_MODIFY_STATE modifyState) mut
-			{
-				return VT.get_LocalPolicyModifyState(ref this, out modifyState);
-			}
+			public HRESULT get_CurrentProfileTypes(out int32 profileTypesBitmask) mut => VT.get_CurrentProfileTypes(ref this, out profileTypesBitmask);
+			public HRESULT get_FirewallEnabled(NET_FW_PROFILE_TYPE2 profileType, out int16 enabled) mut => VT.get_FirewallEnabled(ref this, profileType, out enabled);
+			public HRESULT put_FirewallEnabled(NET_FW_PROFILE_TYPE2 profileType, int16 enabled) mut => VT.put_FirewallEnabled(ref this, profileType, enabled);
+			public HRESULT get_ExcludedInterfaces(NET_FW_PROFILE_TYPE2 profileType, out VARIANT interfaces) mut => VT.get_ExcludedInterfaces(ref this, profileType, out interfaces);
+			public HRESULT put_ExcludedInterfaces(NET_FW_PROFILE_TYPE2 profileType, VARIANT interfaces) mut => VT.put_ExcludedInterfaces(ref this, profileType, interfaces);
+			public HRESULT get_BlockAllInboundTraffic(NET_FW_PROFILE_TYPE2 profileType, out int16 Block) mut => VT.get_BlockAllInboundTraffic(ref this, profileType, out Block);
+			public HRESULT put_BlockAllInboundTraffic(NET_FW_PROFILE_TYPE2 profileType, int16 Block) mut => VT.put_BlockAllInboundTraffic(ref this, profileType, Block);
+			public HRESULT get_NotificationsDisabled(NET_FW_PROFILE_TYPE2 profileType, out int16 disabled) mut => VT.get_NotificationsDisabled(ref this, profileType, out disabled);
+			public HRESULT put_NotificationsDisabled(NET_FW_PROFILE_TYPE2 profileType, int16 disabled) mut => VT.put_NotificationsDisabled(ref this, profileType, disabled);
+			public HRESULT get_UnicastResponsesToMulticastBroadcastDisabled(NET_FW_PROFILE_TYPE2 profileType, out int16 disabled) mut => VT.get_UnicastResponsesToMulticastBroadcastDisabled(ref this, profileType, out disabled);
+			public HRESULT put_UnicastResponsesToMulticastBroadcastDisabled(NET_FW_PROFILE_TYPE2 profileType, int16 disabled) mut => VT.put_UnicastResponsesToMulticastBroadcastDisabled(ref this, profileType, disabled);
+			public HRESULT get_Rules(out INetFwRules* rules) mut => VT.get_Rules(ref this, out rules);
+			public HRESULT get_ServiceRestriction(out INetFwServiceRestriction* ServiceRestriction) mut => VT.get_ServiceRestriction(ref this, out ServiceRestriction);
+			public HRESULT EnableRuleGroup(int32 profileTypesBitmask, BSTR group, int16 enable) mut => VT.EnableRuleGroup(ref this, profileTypesBitmask, group, enable);
+			public HRESULT IsRuleGroupEnabled(int32 profileTypesBitmask, BSTR group, out int16 enabled) mut => VT.IsRuleGroupEnabled(ref this, profileTypesBitmask, group, out enabled);
+			public HRESULT RestoreLocalFirewallDefaults() mut => VT.RestoreLocalFirewallDefaults(ref this);
+			public HRESULT get_DefaultInboundAction(NET_FW_PROFILE_TYPE2 profileType, out NET_FW_ACTION action) mut => VT.get_DefaultInboundAction(ref this, profileType, out action);
+			public HRESULT put_DefaultInboundAction(NET_FW_PROFILE_TYPE2 profileType, NET_FW_ACTION action) mut => VT.put_DefaultInboundAction(ref this, profileType, action);
+			public HRESULT get_DefaultOutboundAction(NET_FW_PROFILE_TYPE2 profileType, out NET_FW_ACTION action) mut => VT.get_DefaultOutboundAction(ref this, profileType, out action);
+			public HRESULT put_DefaultOutboundAction(NET_FW_PROFILE_TYPE2 profileType, NET_FW_ACTION action) mut => VT.put_DefaultOutboundAction(ref this, profileType, action);
+			public HRESULT get_IsRuleGroupCurrentlyEnabled(BSTR group, out int16 enabled) mut => VT.get_IsRuleGroupCurrentlyEnabled(ref this, group, out enabled);
+			public HRESULT get_LocalPolicyModifyState(out NET_FW_MODIFY_STATE modifyState) mut => VT.get_LocalPolicyModifyState(ref this, out modifyState);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2292,26 +1460,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LocalPolicy(out INetFwPolicy* localPolicy) mut
-			{
-				return VT.get_LocalPolicy(ref this, out localPolicy);
-			}
-			public HRESULT get_CurrentProfileType(out NET_FW_PROFILE_TYPE profileType) mut
-			{
-				return VT.get_CurrentProfileType(ref this, out profileType);
-			}
-			public HRESULT RestoreDefaults() mut
-			{
-				return VT.RestoreDefaults(ref this);
-			}
-			public HRESULT IsPortAllowed(BSTR imageFileName, NET_FW_IP_VERSION ipVersion, int32 portNumber, BSTR localAddress, NET_FW_IP_PROTOCOL ipProtocol, out VARIANT allowed, out VARIANT restricted) mut
-			{
-				return VT.IsPortAllowed(ref this, imageFileName, ipVersion, portNumber, localAddress, ipProtocol, out allowed, out restricted);
-			}
-			public HRESULT IsIcmpTypeAllowed(NET_FW_IP_VERSION ipVersion, BSTR localAddress, uint8 type, out VARIANT allowed, out VARIANT restricted) mut
-			{
-				return VT.IsIcmpTypeAllowed(ref this, ipVersion, localAddress, type, out allowed, out restricted);
-			}
+			public HRESULT get_LocalPolicy(out INetFwPolicy* localPolicy) mut => VT.get_LocalPolicy(ref this, out localPolicy);
+			public HRESULT get_CurrentProfileType(out NET_FW_PROFILE_TYPE profileType) mut => VT.get_CurrentProfileType(ref this, out profileType);
+			public HRESULT RestoreDefaults() mut => VT.RestoreDefaults(ref this);
+			public HRESULT IsPortAllowed(BSTR imageFileName, NET_FW_IP_VERSION ipVersion, int32 portNumber, BSTR localAddress, NET_FW_IP_PROTOCOL ipProtocol, out VARIANT allowed, out VARIANT restricted) mut => VT.IsPortAllowed(ref this, imageFileName, ipVersion, portNumber, localAddress, ipProtocol, out allowed, out restricted);
+			public HRESULT IsIcmpTypeAllowed(NET_FW_IP_VERSION ipVersion, BSTR localAddress, uint8 type, out VARIANT allowed, out VARIANT restricted) mut => VT.IsIcmpTypeAllowed(ref this, ipVersion, localAddress, type, out allowed, out restricted);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2329,26 +1483,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_RuleCategories(out VARIANT ruleCategories) mut
-			{
-				return VT.get_RuleCategories(ref this, out ruleCategories);
-			}
-			public HRESULT put_RuleCategories(VARIANT ruleCategories) mut
-			{
-				return VT.put_RuleCategories(ref this, ruleCategories);
-			}
-			public HRESULT get_DisplayName(out BSTR displayName) mut
-			{
-				return VT.get_DisplayName(ref this, out displayName);
-			}
-			public HRESULT put_DisplayName(BSTR displayName) mut
-			{
-				return VT.put_DisplayName(ref this, displayName);
-			}
-			public HRESULT get_PathToSignedProductExe(out BSTR path) mut
-			{
-				return VT.get_PathToSignedProductExe(ref this, out path);
-			}
+			public HRESULT get_RuleCategories(out VARIANT ruleCategories) mut => VT.get_RuleCategories(ref this, out ruleCategories);
+			public HRESULT put_RuleCategories(VARIANT ruleCategories) mut => VT.put_RuleCategories(ref this, ruleCategories);
+			public HRESULT get_DisplayName(out BSTR displayName) mut => VT.get_DisplayName(ref this, out displayName);
+			public HRESULT put_DisplayName(BSTR displayName) mut => VT.put_DisplayName(ref this, displayName);
+			public HRESULT get_PathToSignedProductExe(out BSTR path) mut => VT.get_PathToSignedProductExe(ref this, out path);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2366,22 +1506,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT Register(ref INetFwProduct product, out IUnknown* registration) mut
-			{
-				return VT.Register(ref this, ref product, out registration);
-			}
-			public HRESULT Item(int32 index, out INetFwProduct* product) mut
-			{
-				return VT.Item(ref this, index, out product);
-			}
-			public HRESULT get__NewEnum(out IUnknown* newEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out newEnum);
-			}
+			public HRESULT get_Count(out int32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT Register(ref INetFwProduct product, out IUnknown* registration) mut => VT.Register(ref this, ref product, out registration);
+			public HRESULT Item(int32 index, out INetFwProduct* product) mut => VT.Item(ref this, index, out product);
+			public HRESULT get__NewEnum(out IUnknown* newEnum) mut => VT.get__NewEnum(ref this, out newEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

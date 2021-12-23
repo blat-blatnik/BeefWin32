@@ -142,10 +142,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Resolve(in Guid riid, void** ppvObjectReference) mut
-			{
-				return VT.Resolve(ref this, riid, ppvObjectReference);
-			}
+			public HRESULT Resolve(in Guid riid, void** ppvObjectReference) mut => VT.Resolve(ref this, riid, ppvObjectReference);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -159,10 +157,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void OnUninitialize(uint64 ui64ApartmentIdentifier) mut
-			{
-				VT.OnUninitialize(ref this, ui64ApartmentIdentifier);
-			}
+			public void OnUninitialize(uint64 ui64ApartmentIdentifier) mut => VT.OnUninitialize(ref this, ui64ApartmentIdentifier);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -176,10 +172,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND window, in Guid riid, void** spatialInteractionManager) mut
-			{
-				return VT.GetForWindow(ref this, window, riid, spatialInteractionManager);
-			}
+			public HRESULT GetForWindow(HWND window, in Guid riid, void** spatialInteractionManager) mut => VT.GetForWindow(ref this, window, riid, spatialInteractionManager);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -193,10 +187,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateForWindow(HWND window, in Guid riid, void** holographicSpace) mut
-			{
-				return VT.CreateForWindow(ref this, window, riid, holographicSpace);
-			}
+			public HRESULT CreateForWindow(HWND window, in Guid riid, void** holographicSpace) mut => VT.CreateForWindow(ref this, window, riid, holographicSpace);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -210,18 +202,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIids(out uint32 iidCount, Guid** iids) mut
-			{
-				return VT.GetIids(ref this, out iidCount, iids);
-			}
-			public HRESULT GetRuntimeClassName(HSTRING* className) mut
-			{
-				return VT.GetRuntimeClassName(ref this, className);
-			}
-			public HRESULT GetTrustLevel(out TrustLevel trustLevel) mut
-			{
-				return VT.GetTrustLevel(ref this, out trustLevel);
-			}
+			public HRESULT GetIids(out uint32 iidCount, Guid** iids) mut => VT.GetIids(ref this, out iidCount, iids);
+			public HRESULT GetRuntimeClassName(HSTRING* className) mut => VT.GetRuntimeClassName(ref this, className);
+			public HRESULT GetTrustLevel(out TrustLevel trustLevel) mut => VT.GetTrustLevel(ref this, out trustLevel);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -237,18 +221,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** accountsSettingsPane) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, accountsSettingsPane);
-			}
-			public HRESULT ShowManageAccountsForWindowAsync(HWND appWindow, in Guid riid, void** asyncAction) mut
-			{
-				return VT.ShowManageAccountsForWindowAsync(ref this, appWindow, riid, asyncAction);
-			}
-			public HRESULT ShowAddAccountForWindowAsync(HWND appWindow, in Guid riid, void** asyncAction) mut
-			{
-				return VT.ShowAddAccountForWindowAsync(ref this, appWindow, riid, asyncAction);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** accountsSettingsPane) mut => VT.GetForWindow(ref this, appWindow, riid, accountsSettingsPane);
+			public HRESULT ShowManageAccountsForWindowAsync(HWND appWindow, in Guid riid, void** asyncAction) mut => VT.ShowManageAccountsForWindowAsync(ref this, appWindow, riid, asyncAction);
+			public HRESULT ShowAddAccountForWindowAsync(HWND appWindow, in Guid riid, void** asyncAction) mut => VT.ShowAddAccountForWindowAsync(ref this, appWindow, riid, asyncAction);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -264,10 +240,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenForExtendedExecutionAsync(in Guid riid, void** operation) mut
-			{
-				return VT.OpenForExtendedExecutionAsync(ref this, riid, operation);
-			}
+			public HRESULT OpenForExtendedExecutionAsync(in Guid riid, void** operation) mut => VT.OpenForExtendedExecutionAsync(ref this, riid, operation);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -281,10 +255,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CorrelationVector(out HSTRING cv) mut
-			{
-				return VT.get_CorrelationVector(ref this, out cv);
-			}
+			public HRESULT get_CorrelationVector(out HSTRING cv) mut => VT.get_CorrelationVector(ref this, out cv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -298,14 +270,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStateChanged(CASTING_CONNECTION_STATE newState) mut
-			{
-				return VT.OnStateChanged(ref this, newState);
-			}
-			public HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) mut
-			{
-				return VT.OnError(ref this, errorStatus, errorMessage);
-			}
+			public HRESULT OnStateChanged(CASTING_CONNECTION_STATE newState) mut => VT.OnStateChanged(ref this, newState);
+			public HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) mut => VT.OnError(ref this, errorStatus, errorMessage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -320,26 +287,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IUnknown castingEngine, ref IUnknown castingSource) mut
-			{
-				return VT.Initialize(ref this, ref castingEngine, ref castingSource);
-			}
-			public HRESULT Connect() mut
-			{
-				return VT.Connect(ref this);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
-			public HRESULT Advise(ref ICastingEventHandler eventHandler, out uint32 cookie) mut
-			{
-				return VT.Advise(ref this, ref eventHandler, out cookie);
-			}
-			public HRESULT UnAdvise(uint32 cookie) mut
-			{
-				return VT.UnAdvise(ref this, cookie);
-			}
+			public HRESULT Initialize(ref IUnknown castingEngine, ref IUnknown castingSource) mut => VT.Initialize(ref this, ref castingEngine, ref castingSource);
+			public HRESULT Connect() mut => VT.Connect(ref this);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+			public HRESULT Advise(ref ICastingEventHandler eventHandler, out uint32 cookie) mut => VT.Advise(ref this, ref eventHandler, out cookie);
+			public HRESULT UnAdvise(uint32 cookie) mut => VT.UnAdvise(ref this, cookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -357,14 +310,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetController(out ICastingController* controller) mut
-			{
-				return VT.GetController(ref this, out controller);
-			}
-			public HRESULT GetProperties(out INamedPropertyStore* props) mut
-			{
-				return VT.GetProperties(ref this, out props);
-			}
+			public HRESULT GetController(out ICastingController* controller) mut => VT.GetController(ref this, out controller);
+			public HRESULT GetProperties(out INamedPropertyStore* props) mut => VT.GetProperties(ref this, out props);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -379,10 +327,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut
-			{
-				return VT.GetForWindow(ref this, hwnd, riid, ppv);
-			}
+			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut => VT.GetForWindow(ref this, hwnd, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -396,10 +342,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** inputPane) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, inputPane);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** inputPane) mut => VT.GetForWindow(ref this, appWindow, riid, inputPane);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -413,14 +357,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** playToManager) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, playToManager);
-			}
-			public HRESULT ShowPlayToUIForWindow(HWND appWindow) mut
-			{
-				return VT.ShowPlayToUIForWindow(ref this, appWindow);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** playToManager) mut => VT.GetForWindow(ref this, appWindow, riid, playToManager);
+			public HRESULT ShowPlayToUIForWindow(HWND appWindow) mut => VT.ShowPlayToUIForWindow(ref this, appWindow);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -435,18 +374,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LastCorrelationVectorForThread(out HSTRING cv) mut
-			{
-				return VT.get_LastCorrelationVectorForThread(ref this, out cv);
-			}
-			public HRESULT get_NextCorrelationVectorForThread(out HSTRING cv) mut
-			{
-				return VT.get_NextCorrelationVectorForThread(ref this, out cv);
-			}
-			public HRESULT put_NextCorrelationVectorForThread(HSTRING cv) mut
-			{
-				return VT.put_NextCorrelationVectorForThread(ref this, cv);
-			}
+			public HRESULT get_LastCorrelationVectorForThread(out HSTRING cv) mut => VT.get_LastCorrelationVectorForThread(ref this, out cv);
+			public HRESULT get_NextCorrelationVectorForThread(out HSTRING cv) mut => VT.get_NextCorrelationVectorForThread(ref this, out cv);
+			public HRESULT put_NextCorrelationVectorForThread(HSTRING cv) mut => VT.put_NextCorrelationVectorForThread(ref this, cv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -462,10 +393,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut
-			{
-				return VT.GetForWindow(ref this, hwnd, riid, ppv);
-			}
+			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut => VT.GetForWindow(ref this, hwnd, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -479,10 +408,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSessionForWindow(HWND window, in Guid iid, void** value) mut
-			{
-				return VT.CreateSessionForWindow(ref this, window, iid, value);
-			}
+			public HRESULT CreateSessionForWindow(HWND window, in Guid iid, void** value) mut => VT.CreateSessionForWindow(ref this, window, iid, value);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -496,10 +423,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetActivitySourceHost(HSTRING activitySourceHost) mut
-			{
-				return VT.SetActivitySourceHost(ref this, activitySourceHost);
-			}
+			public HRESULT SetActivitySourceHost(HSTRING activitySourceHost) mut => VT.SetActivitySourceHost(ref this, activitySourceHost);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -513,10 +438,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND window, in Guid iid, void** value) mut
-			{
-				return VT.GetForWindow(ref this, window, iid, value);
-			}
+			public HRESULT GetForWindow(HWND window, in Guid iid, void** value) mut => VT.GetForWindow(ref this, window, iid, value);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -530,10 +453,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestVerificationForWindowAsync(ref this, appWindow, message, riid, asyncOperation);
-			}
+			public HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, in Guid riid, void** asyncOperation) mut => VT.RequestVerificationForWindowAsync(ref this, appWindow, message, riid, asyncOperation);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -547,14 +468,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestTokenForWindowAsync(HWND appWindow, ref IInspectable request, in Guid riid, void** asyncInfo) mut
-			{
-				return VT.RequestTokenForWindowAsync(ref this, appWindow, ref request, riid, asyncInfo);
-			}
-			public HRESULT RequestTokenWithWebAccountForWindowAsync(HWND appWindow, ref IInspectable request, ref IInspectable webAccount, in Guid riid, void** asyncInfo) mut
-			{
-				return VT.RequestTokenWithWebAccountForWindowAsync(ref this, appWindow, ref request, ref webAccount, riid, asyncInfo);
-			}
+			public HRESULT RequestTokenForWindowAsync(HWND appWindow, ref IInspectable request, in Guid riid, void** asyncInfo) mut => VT.RequestTokenForWindowAsync(ref this, appWindow, ref request, riid, asyncInfo);
+			public HRESULT RequestTokenWithWebAccountForWindowAsync(HWND appWindow, ref IInspectable request, ref IInspectable webAccount, in Guid riid, void** asyncInfo) mut => VT.RequestTokenWithWebAccountForWindowAsync(ref this, appWindow, ref request, ref webAccount, riid, asyncInfo);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -569,14 +485,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetErrorDetails(out BSTR description, out HRESULT error, out BSTR restrictedDescription, out BSTR capabilitySid) mut
-			{
-				return VT.GetErrorDetails(ref this, out description, out error, out restrictedDescription, out capabilitySid);
-			}
-			public HRESULT GetReference(out BSTR reference) mut
-			{
-				return VT.GetReference(ref this, out reference);
-			}
+			public HRESULT GetErrorDetails(out BSTR description, out HRESULT error, out BSTR restrictedDescription, out BSTR capabilitySid) mut => VT.GetErrorDetails(ref this, out description, out error, out restrictedDescription, out capabilitySid);
+			public HRESULT GetReference(out BSTR reference) mut => VT.GetReference(ref this, out reference);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -591,10 +502,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLanguageException(out IUnknown* languageException) mut
-			{
-				return VT.GetLanguageException(ref this, out languageException);
-			}
+			public HRESULT GetLanguageException(out IUnknown* languageException) mut => VT.GetLanguageException(ref this, out languageException);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -608,10 +517,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTransformedRestrictedErrorInfo(out IRestrictedErrorInfo* restrictedErrorInfo) mut
-			{
-				return VT.GetTransformedRestrictedErrorInfo(ref this, out restrictedErrorInfo);
-			}
+			public HRESULT GetTransformedRestrictedErrorInfo(out IRestrictedErrorInfo* restrictedErrorInfo) mut => VT.GetTransformedRestrictedErrorInfo(ref this, out restrictedErrorInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -625,10 +532,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStackBackTrace(uint32 maxFramesToCapture, out uint stackBackTrace, out uint32 framesCaptured) mut
-			{
-				return VT.GetStackBackTrace(ref this, maxFramesToCapture, out stackBackTrace, out framesCaptured);
-			}
+			public HRESULT GetStackBackTrace(uint32 maxFramesToCapture, out uint stackBackTrace, out uint32 framesCaptured) mut => VT.GetStackBackTrace(ref this, maxFramesToCapture, out stackBackTrace, out framesCaptured);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -642,18 +547,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPreviousLanguageExceptionErrorInfo(out ILanguageExceptionErrorInfo2* previousLanguageExceptionErrorInfo) mut
-			{
-				return VT.GetPreviousLanguageExceptionErrorInfo(ref this, out previousLanguageExceptionErrorInfo);
-			}
-			public HRESULT CapturePropagationContext(ref IUnknown languageException) mut
-			{
-				return VT.CapturePropagationContext(ref this, ref languageException);
-			}
-			public HRESULT GetPropagationContextHead(out ILanguageExceptionErrorInfo2* propagatedLanguageExceptionErrorInfoHead) mut
-			{
-				return VT.GetPropagationContextHead(ref this, out propagatedLanguageExceptionErrorInfoHead);
-			}
+			public HRESULT GetPreviousLanguageExceptionErrorInfo(out ILanguageExceptionErrorInfo2* previousLanguageExceptionErrorInfo) mut => VT.GetPreviousLanguageExceptionErrorInfo(ref this, out previousLanguageExceptionErrorInfo);
+			public HRESULT CapturePropagationContext(ref IUnknown languageException) mut => VT.CapturePropagationContext(ref this, ref languageException);
+			public HRESULT GetPropagationContextHead(out ILanguageExceptionErrorInfo2* propagatedLanguageExceptionErrorInfoHead) mut => VT.GetPropagationContextHead(ref this, out propagatedLanguageExceptionErrorInfoHead);
+
 			[CRepr]
 			public struct VTable : ILanguageExceptionErrorInfo.VTable
 			{
@@ -669,10 +566,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateInstance(IInspectable** instance) mut
-			{
-				return VT.ActivateInstance(ref this, instance);
-			}
+			public HRESULT ActivateInstance(IInspectable** instance) mut => VT.ActivateInstance(ref this, instance);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -686,10 +581,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Buffer(out uint8* value) mut
-			{
-				return VT.Buffer(ref this, out value);
-			}
+			public HRESULT Buffer(out uint8* value) mut => VT.Buffer(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -702,46 +595,17 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetWinRtInterface(Guid iid) mut
-			{
-				return VT.SetWinRtInterface(ref this, iid);
-			}
-			public HRESULT SetDelegate(Guid iid) mut
-			{
-				return VT.SetDelegate(ref this, iid);
-			}
-			public HRESULT SetInterfaceGroupSimpleDefault(PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) mut
-			{
-				return VT.SetInterfaceGroupSimpleDefault(ref this, name, defaultInterfaceName, defaultInterfaceIID);
-			}
-			public HRESULT SetInterfaceGroupParameterizedDefault(PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) mut
-			{
-				return VT.SetInterfaceGroupParameterizedDefault(ref this, name, elementCount, defaultInterfaceNameElements);
-			}
-			public HRESULT SetRuntimeClassSimpleDefault(PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) mut
-			{
-				return VT.SetRuntimeClassSimpleDefault(ref this, name, defaultInterfaceName, defaultInterfaceIID);
-			}
-			public HRESULT SetRuntimeClassParameterizedDefault(PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) mut
-			{
-				return VT.SetRuntimeClassParameterizedDefault(ref this, name, elementCount, defaultInterfaceNameElements);
-			}
-			public HRESULT SetStruct(PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) mut
-			{
-				return VT.SetStruct(ref this, name, numFields, fieldTypeNames);
-			}
-			public HRESULT SetEnum(PWSTR name, PWSTR baseType) mut
-			{
-				return VT.SetEnum(ref this, name, baseType);
-			}
-			public HRESULT SetParameterizedInterface(Guid piid, uint32 numArgs) mut
-			{
-				return VT.SetParameterizedInterface(ref this, piid, numArgs);
-			}
-			public HRESULT SetParameterizedDelegate(Guid piid, uint32 numArgs) mut
-			{
-				return VT.SetParameterizedDelegate(ref this, piid, numArgs);
-			}
+			public HRESULT SetWinRtInterface(Guid iid) mut => VT.SetWinRtInterface(ref this, iid);
+			public HRESULT SetDelegate(Guid iid) mut => VT.SetDelegate(ref this, iid);
+			public HRESULT SetInterfaceGroupSimpleDefault(PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) mut => VT.SetInterfaceGroupSimpleDefault(ref this, name, defaultInterfaceName, defaultInterfaceIID);
+			public HRESULT SetInterfaceGroupParameterizedDefault(PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) mut => VT.SetInterfaceGroupParameterizedDefault(ref this, name, elementCount, defaultInterfaceNameElements);
+			public HRESULT SetRuntimeClassSimpleDefault(PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) mut => VT.SetRuntimeClassSimpleDefault(ref this, name, defaultInterfaceName, defaultInterfaceIID);
+			public HRESULT SetRuntimeClassParameterizedDefault(PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) mut => VT.SetRuntimeClassParameterizedDefault(ref this, name, elementCount, defaultInterfaceNameElements);
+			public HRESULT SetStruct(PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) mut => VT.SetStruct(ref this, name, numFields, fieldTypeNames);
+			public HRESULT SetEnum(PWSTR name, PWSTR baseType) mut => VT.SetEnum(ref this, name, baseType);
+			public HRESULT SetParameterizedInterface(Guid piid, uint32 numArgs) mut => VT.SetParameterizedInterface(ref this, piid, numArgs);
+			public HRESULT SetParameterizedDelegate(Guid piid, uint32 numArgs) mut => VT.SetParameterizedDelegate(ref this, piid, numArgs);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -763,10 +627,8 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Locate(PWSTR nameElement, ref IRoSimpleMetaDataBuilder metaDataDestination) mut
-			{
-				return VT.Locate(ref this, nameElement, ref metaDataDestination);
-			}
+			public HRESULT Locate(PWSTR nameElement, ref IRoSimpleMetaDataBuilder metaDataDestination) mut => VT.Locate(ref this, nameElement, ref metaDataDestination);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -780,10 +642,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBuffer(out uint8* value, out uint32 capacity) mut
-			{
-				return VT.GetBuffer(ref this, out value, out capacity);
-			}
+			public HRESULT GetBuffer(out uint8* value, out uint32 capacity) mut => VT.GetBuffer(ref this, out value, out capacity);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -797,10 +657,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Resolve(in Guid riid, void** objectReference) mut
-			{
-				return VT.Resolve(ref this, riid, objectReference);
-			}
+			public HRESULT Resolve(in Guid riid, void** objectReference) mut => VT.Resolve(ref this, riid, objectReference);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -814,10 +672,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWeakReference(IWeakReference** weakReference) mut
-			{
-				return VT.GetWeakReference(ref this, weakReference);
-			}
+			public HRESULT GetWeakReference(IWeakReference** weakReference) mut => VT.GetWeakReference(ref this, weakReference);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -831,10 +687,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** mediaTransportControl) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, mediaTransportControl);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** mediaTransportControl) mut => VT.GetForWindow(ref this, appWindow, riid, mediaTransportControl);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -848,10 +702,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWindow(out HWND value) mut
-			{
-				return VT.GetWindow(ref this, out value);
-			}
+			public HRESULT GetWindow(out HWND value) mut => VT.GetWindow(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -865,10 +717,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** shareWindowCommandSource) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, shareWindowCommandSource);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** shareWindowCommandSource) mut => VT.GetForWindow(ref this, appWindow, riid, shareWindowCommandSource);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -882,10 +732,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PumpMessages() mut
-			{
-				return VT.PumpMessages(ref this);
-			}
+			public HRESULT PumpMessages() mut => VT.PumpMessages(ref this);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{

@@ -1845,10 +1845,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetFactory(out ID2D1Factory* factory) mut
-			{
-				VT.GetFactory(ref this, out factory);
-			}
+			public void GetFactory(out ID2D1Factory* factory) mut => VT.GetFactory(ref this, out factory);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1862,6 +1860,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -1874,34 +1873,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D_SIZE_F GetSize() mut
-			{
-				return VT.GetSize(ref this);
-			}
-			public D2D_SIZE_U GetPixelSize() mut
-			{
-				return VT.GetPixelSize(ref this);
-			}
-			public D2D1_PIXEL_FORMAT GetPixelFormat() mut
-			{
-				return VT.GetPixelFormat(ref this);
-			}
-			public void GetDpi(out float dpiX, out float dpiY) mut
-			{
-				VT.GetDpi(ref this, out dpiX, out dpiY);
-			}
-			public HRESULT CopyFromBitmap(D2D_POINT_2U* destPoint, ref ID2D1Bitmap bitmap, D2D_RECT_U* srcRect) mut
-			{
-				return VT.CopyFromBitmap(ref this, destPoint, ref bitmap, srcRect);
-			}
-			public HRESULT CopyFromRenderTarget(D2D_POINT_2U* destPoint, ref ID2D1RenderTarget renderTarget, D2D_RECT_U* srcRect) mut
-			{
-				return VT.CopyFromRenderTarget(ref this, destPoint, ref renderTarget, srcRect);
-			}
-			public HRESULT CopyFromMemory(D2D_RECT_U* dstRect, void* srcData, uint32 pitch) mut
-			{
-				return VT.CopyFromMemory(ref this, dstRect, srcData, pitch);
-			}
+			public D2D_SIZE_F GetSize() mut => VT.GetSize(ref this);
+			public D2D_SIZE_U GetPixelSize() mut => VT.GetPixelSize(ref this);
+			public D2D1_PIXEL_FORMAT GetPixelFormat() mut => VT.GetPixelFormat(ref this);
+			public void GetDpi(out float dpiX, out float dpiY) mut => VT.GetDpi(ref this, out dpiX, out dpiY);
+			public HRESULT CopyFromBitmap(D2D_POINT_2U* destPoint, ref ID2D1Bitmap bitmap, D2D_RECT_U* srcRect) mut => VT.CopyFromBitmap(ref this, destPoint, ref bitmap, srcRect);
+			public HRESULT CopyFromRenderTarget(D2D_POINT_2U* destPoint, ref ID2D1RenderTarget renderTarget, D2D_RECT_U* srcRect) mut => VT.CopyFromRenderTarget(ref this, destPoint, ref renderTarget, srcRect);
+			public HRESULT CopyFromMemory(D2D_RECT_U* dstRect, void* srcData, uint32 pitch) mut => VT.CopyFromMemory(ref this, dstRect, srcData, pitch);
+
 			[CRepr]
 			public struct VTable : ID2D1Image.VTable
 			{
@@ -1921,22 +1900,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetGradientStopCount() mut
-			{
-				return VT.GetGradientStopCount(ref this);
-			}
-			public void GetGradientStops(D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) mut
-			{
-				VT.GetGradientStops(ref this, gradientStops, gradientStopsCount);
-			}
-			public D2D1_GAMMA GetColorInterpolationGamma() mut
-			{
-				return VT.GetColorInterpolationGamma(ref this);
-			}
-			public D2D1_EXTEND_MODE GetExtendMode() mut
-			{
-				return VT.GetExtendMode(ref this);
-			}
+			public uint32 GetGradientStopCount() mut => VT.GetGradientStopCount(ref this);
+			public void GetGradientStops(D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) mut => VT.GetGradientStops(ref this, gradientStops, gradientStopsCount);
+			public D2D1_GAMMA GetColorInterpolationGamma() mut => VT.GetColorInterpolationGamma(ref this);
+			public D2D1_EXTEND_MODE GetExtendMode() mut => VT.GetExtendMode(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -1953,22 +1921,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetOpacity(float opacity) mut
-			{
-				VT.SetOpacity(ref this, opacity);
-			}
-			public void SetTransform(in D2D_MATRIX_3X2_F transform) mut
-			{
-				VT.SetTransform(ref this, transform);
-			}
-			public float GetOpacity() mut
-			{
-				return VT.GetOpacity(ref this);
-			}
-			public void GetTransform(out D2D_MATRIX_3X2_F transform) mut
-			{
-				VT.GetTransform(ref this, out transform);
-			}
+			public void SetOpacity(float opacity) mut => VT.SetOpacity(ref this, opacity);
+			public void SetTransform(in D2D_MATRIX_3X2_F transform) mut => VT.SetTransform(ref this, transform);
+			public float GetOpacity() mut => VT.GetOpacity(ref this);
+			public void GetTransform(out D2D_MATRIX_3X2_F transform) mut => VT.GetTransform(ref this, out transform);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -1985,38 +1942,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetExtendModeX(D2D1_EXTEND_MODE extendModeX) mut
-			{
-				VT.SetExtendModeX(ref this, extendModeX);
-			}
-			public void SetExtendModeY(D2D1_EXTEND_MODE extendModeY) mut
-			{
-				VT.SetExtendModeY(ref this, extendModeY);
-			}
-			public void SetInterpolationMode(D2D1_BITMAP_INTERPOLATION_MODE interpolationMode) mut
-			{
-				VT.SetInterpolationMode(ref this, interpolationMode);
-			}
-			public void SetBitmap(ID2D1Bitmap* bitmap) mut
-			{
-				VT.SetBitmap(ref this, bitmap);
-			}
-			public D2D1_EXTEND_MODE GetExtendModeX() mut
-			{
-				return VT.GetExtendModeX(ref this);
-			}
-			public D2D1_EXTEND_MODE GetExtendModeY() mut
-			{
-				return VT.GetExtendModeY(ref this);
-			}
-			public D2D1_BITMAP_INTERPOLATION_MODE GetInterpolationMode() mut
-			{
-				return VT.GetInterpolationMode(ref this);
-			}
-			public void GetBitmap(ID2D1Bitmap** bitmap) mut
-			{
-				VT.GetBitmap(ref this, bitmap);
-			}
+			public void SetExtendModeX(D2D1_EXTEND_MODE extendModeX) mut => VT.SetExtendModeX(ref this, extendModeX);
+			public void SetExtendModeY(D2D1_EXTEND_MODE extendModeY) mut => VT.SetExtendModeY(ref this, extendModeY);
+			public void SetInterpolationMode(D2D1_BITMAP_INTERPOLATION_MODE interpolationMode) mut => VT.SetInterpolationMode(ref this, interpolationMode);
+			public void SetBitmap(ID2D1Bitmap* bitmap) mut => VT.SetBitmap(ref this, bitmap);
+			public D2D1_EXTEND_MODE GetExtendModeX() mut => VT.GetExtendModeX(ref this);
+			public D2D1_EXTEND_MODE GetExtendModeY() mut => VT.GetExtendModeY(ref this);
+			public D2D1_BITMAP_INTERPOLATION_MODE GetInterpolationMode() mut => VT.GetInterpolationMode(ref this);
+			public void GetBitmap(ID2D1Bitmap** bitmap) mut => VT.GetBitmap(ref this, bitmap);
+
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
@@ -2037,14 +1971,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetColor(in D2D1_COLOR_F color) mut
-			{
-				VT.SetColor(ref this, color);
-			}
-			public D2D1_COLOR_F GetColor() mut
-			{
-				return VT.GetColor(ref this);
-			}
+			public void SetColor(in D2D1_COLOR_F color) mut => VT.SetColor(ref this, color);
+			public D2D1_COLOR_F GetColor() mut => VT.GetColor(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
@@ -2059,26 +1988,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetStartPoint(D2D_POINT_2F startPoint) mut
-			{
-				VT.SetStartPoint(ref this, startPoint);
-			}
-			public void SetEndPoint(D2D_POINT_2F endPoint) mut
-			{
-				VT.SetEndPoint(ref this, endPoint);
-			}
-			public D2D_POINT_2F GetStartPoint() mut
-			{
-				return VT.GetStartPoint(ref this);
-			}
-			public D2D_POINT_2F GetEndPoint() mut
-			{
-				return VT.GetEndPoint(ref this);
-			}
-			public void GetGradientStopCollection(out ID2D1GradientStopCollection* gradientStopCollection) mut
-			{
-				VT.GetGradientStopCollection(ref this, out gradientStopCollection);
-			}
+			public void SetStartPoint(D2D_POINT_2F startPoint) mut => VT.SetStartPoint(ref this, startPoint);
+			public void SetEndPoint(D2D_POINT_2F endPoint) mut => VT.SetEndPoint(ref this, endPoint);
+			public D2D_POINT_2F GetStartPoint() mut => VT.GetStartPoint(ref this);
+			public D2D_POINT_2F GetEndPoint() mut => VT.GetEndPoint(ref this);
+			public void GetGradientStopCollection(out ID2D1GradientStopCollection* gradientStopCollection) mut => VT.GetGradientStopCollection(ref this, out gradientStopCollection);
+
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
@@ -2096,42 +2011,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetCenter(D2D_POINT_2F center) mut
-			{
-				VT.SetCenter(ref this, center);
-			}
-			public void SetGradientOriginOffset(D2D_POINT_2F gradientOriginOffset) mut
-			{
-				VT.SetGradientOriginOffset(ref this, gradientOriginOffset);
-			}
-			public void SetRadiusX(float radiusX) mut
-			{
-				VT.SetRadiusX(ref this, radiusX);
-			}
-			public void SetRadiusY(float radiusY) mut
-			{
-				VT.SetRadiusY(ref this, radiusY);
-			}
-			public D2D_POINT_2F GetCenter() mut
-			{
-				return VT.GetCenter(ref this);
-			}
-			public D2D_POINT_2F GetGradientOriginOffset() mut
-			{
-				return VT.GetGradientOriginOffset(ref this);
-			}
-			public float GetRadiusX() mut
-			{
-				return VT.GetRadiusX(ref this);
-			}
-			public float GetRadiusY() mut
-			{
-				return VT.GetRadiusY(ref this);
-			}
-			public void GetGradientStopCollection(out ID2D1GradientStopCollection* gradientStopCollection) mut
-			{
-				VT.GetGradientStopCollection(ref this, out gradientStopCollection);
-			}
+			public void SetCenter(D2D_POINT_2F center) mut => VT.SetCenter(ref this, center);
+			public void SetGradientOriginOffset(D2D_POINT_2F gradientOriginOffset) mut => VT.SetGradientOriginOffset(ref this, gradientOriginOffset);
+			public void SetRadiusX(float radiusX) mut => VT.SetRadiusX(ref this, radiusX);
+			public void SetRadiusY(float radiusY) mut => VT.SetRadiusY(ref this, radiusY);
+			public D2D_POINT_2F GetCenter() mut => VT.GetCenter(ref this);
+			public D2D_POINT_2F GetGradientOriginOffset() mut => VT.GetGradientOriginOffset(ref this);
+			public float GetRadiusX() mut => VT.GetRadiusX(ref this);
+			public float GetRadiusY() mut => VT.GetRadiusY(ref this);
+			public void GetGradientStopCollection(out ID2D1GradientStopCollection* gradientStopCollection) mut => VT.GetGradientStopCollection(ref this, out gradientStopCollection);
+
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
@@ -2153,42 +2042,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D1_CAP_STYLE GetStartCap() mut
-			{
-				return VT.GetStartCap(ref this);
-			}
-			public D2D1_CAP_STYLE GetEndCap() mut
-			{
-				return VT.GetEndCap(ref this);
-			}
-			public D2D1_CAP_STYLE GetDashCap() mut
-			{
-				return VT.GetDashCap(ref this);
-			}
-			public float GetMiterLimit() mut
-			{
-				return VT.GetMiterLimit(ref this);
-			}
-			public D2D1_LINE_JOIN GetLineJoin() mut
-			{
-				return VT.GetLineJoin(ref this);
-			}
-			public float GetDashOffset() mut
-			{
-				return VT.GetDashOffset(ref this);
-			}
-			public D2D1_DASH_STYLE GetDashStyle() mut
-			{
-				return VT.GetDashStyle(ref this);
-			}
-			public uint32 GetDashesCount() mut
-			{
-				return VT.GetDashesCount(ref this);
-			}
-			public void GetDashes(float* dashes, uint32 dashesCount) mut
-			{
-				VT.GetDashes(ref this, dashes, dashesCount);
-			}
+			public D2D1_CAP_STYLE GetStartCap() mut => VT.GetStartCap(ref this);
+			public D2D1_CAP_STYLE GetEndCap() mut => VT.GetEndCap(ref this);
+			public D2D1_CAP_STYLE GetDashCap() mut => VT.GetDashCap(ref this);
+			public float GetMiterLimit() mut => VT.GetMiterLimit(ref this);
+			public D2D1_LINE_JOIN GetLineJoin() mut => VT.GetLineJoin(ref this);
+			public float GetDashOffset() mut => VT.GetDashOffset(ref this);
+			public D2D1_DASH_STYLE GetDashStyle() mut => VT.GetDashStyle(ref this);
+			public uint32 GetDashesCount() mut => VT.GetDashesCount(ref this);
+			public void GetDashes(float* dashes, uint32 dashesCount) mut => VT.GetDashes(ref this, dashes, dashesCount);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -2210,58 +2073,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBounds(D2D_MATRIX_3X2_F* worldTransform, out D2D_RECT_F bounds) mut
-			{
-				return VT.GetBounds(ref this, worldTransform, out bounds);
-			}
-			public HRESULT GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out D2D_RECT_F bounds) mut
-			{
-				return VT.GetWidenedBounds(ref this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, out bounds);
-			}
-			public HRESULT StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out BOOL contains) mut
-			{
-				return VT.StrokeContainsPoint(ref this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, out contains);
-			}
-			public HRESULT FillContainsPoint(D2D_POINT_2F point, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out BOOL contains) mut
-			{
-				return VT.FillContainsPoint(ref this, point, worldTransform, flatteningTolerance, out contains);
-			}
-			public HRESULT CompareWithGeometry(ref ID2D1Geometry inputGeometry, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, out D2D1_GEOMETRY_RELATION relation) mut
-			{
-				return VT.CompareWithGeometry(ref this, ref inputGeometry, inputGeometryTransform, flatteningTolerance, out relation);
-			}
-			public HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut
-			{
-				return VT.Simplify(ref this, simplificationOption, worldTransform, flatteningTolerance, ref geometrySink);
-			}
-			public HRESULT Tessellate(D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1TessellationSink tessellationSink) mut
-			{
-				return VT.Tessellate(ref this, worldTransform, flatteningTolerance, ref tessellationSink);
-			}
-			public HRESULT CombineWithGeometry(ref ID2D1Geometry inputGeometry, D2D1_COMBINE_MODE combineMode, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut
-			{
-				return VT.CombineWithGeometry(ref this, ref inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, ref geometrySink);
-			}
-			public HRESULT Outline(D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut
-			{
-				return VT.Outline(ref this, worldTransform, flatteningTolerance, ref geometrySink);
-			}
-			public HRESULT ComputeArea(D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out float area) mut
-			{
-				return VT.ComputeArea(ref this, worldTransform, flatteningTolerance, out area);
-			}
-			public HRESULT ComputeLength(D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out float length) mut
-			{
-				return VT.ComputeLength(ref this, worldTransform, flatteningTolerance, out length);
-			}
-			public HRESULT ComputePointAtLength(float length, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D_POINT_2F* point, D2D_POINT_2F* unitTangentVector) mut
-			{
-				return VT.ComputePointAtLength(ref this, length, worldTransform, flatteningTolerance, point, unitTangentVector);
-			}
-			public HRESULT Widen(float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut
-			{
-				return VT.Widen(ref this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, ref geometrySink);
-			}
+			public HRESULT GetBounds(D2D_MATRIX_3X2_F* worldTransform, out D2D_RECT_F bounds) mut => VT.GetBounds(ref this, worldTransform, out bounds);
+			public HRESULT GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out D2D_RECT_F bounds) mut => VT.GetWidenedBounds(ref this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, out bounds);
+			public HRESULT StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out BOOL contains) mut => VT.StrokeContainsPoint(ref this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, out contains);
+			public HRESULT FillContainsPoint(D2D_POINT_2F point, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out BOOL contains) mut => VT.FillContainsPoint(ref this, point, worldTransform, flatteningTolerance, out contains);
+			public HRESULT CompareWithGeometry(ref ID2D1Geometry inputGeometry, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, out D2D1_GEOMETRY_RELATION relation) mut => VT.CompareWithGeometry(ref this, ref inputGeometry, inputGeometryTransform, flatteningTolerance, out relation);
+			public HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut => VT.Simplify(ref this, simplificationOption, worldTransform, flatteningTolerance, ref geometrySink);
+			public HRESULT Tessellate(D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1TessellationSink tessellationSink) mut => VT.Tessellate(ref this, worldTransform, flatteningTolerance, ref tessellationSink);
+			public HRESULT CombineWithGeometry(ref ID2D1Geometry inputGeometry, D2D1_COMBINE_MODE combineMode, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut => VT.CombineWithGeometry(ref this, ref inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, ref geometrySink);
+			public HRESULT Outline(D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut => VT.Outline(ref this, worldTransform, flatteningTolerance, ref geometrySink);
+			public HRESULT ComputeArea(D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out float area) mut => VT.ComputeArea(ref this, worldTransform, flatteningTolerance, out area);
+			public HRESULT ComputeLength(D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out float length) mut => VT.ComputeLength(ref this, worldTransform, flatteningTolerance, out length);
+			public HRESULT ComputePointAtLength(float length, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D_POINT_2F* point, D2D_POINT_2F* unitTangentVector) mut => VT.ComputePointAtLength(ref this, length, worldTransform, flatteningTolerance, point, unitTangentVector);
+			public HRESULT Widen(float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut => VT.Widen(ref this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, ref geometrySink);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -2287,10 +2112,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetRect(out D2D_RECT_F rect) mut
-			{
-				VT.GetRect(ref this, out rect);
-			}
+			public void GetRect(out D2D_RECT_F rect) mut => VT.GetRect(ref this, out rect);
+
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
@@ -2304,10 +2127,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetRoundedRect(out D2D1_ROUNDED_RECT roundedRect) mut
-			{
-				VT.GetRoundedRect(ref this, out roundedRect);
-			}
+			public void GetRoundedRect(out D2D1_ROUNDED_RECT roundedRect) mut => VT.GetRoundedRect(ref this, out roundedRect);
+
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
@@ -2321,10 +2142,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetEllipse(out D2D1_ELLIPSE ellipse) mut
-			{
-				VT.GetEllipse(ref this, out ellipse);
-			}
+			public void GetEllipse(out D2D1_ELLIPSE ellipse) mut => VT.GetEllipse(ref this, out ellipse);
+
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
@@ -2338,18 +2157,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D1_FILL_MODE GetFillMode() mut
-			{
-				return VT.GetFillMode(ref this);
-			}
-			public uint32 GetSourceGeometryCount() mut
-			{
-				return VT.GetSourceGeometryCount(ref this);
-			}
-			public void GetSourceGeometries(ID2D1Geometry** geometries, uint32 geometriesCount) mut
-			{
-				VT.GetSourceGeometries(ref this, geometries, geometriesCount);
-			}
+			public D2D1_FILL_MODE GetFillMode() mut => VT.GetFillMode(ref this);
+			public uint32 GetSourceGeometryCount() mut => VT.GetSourceGeometryCount(ref this);
+			public void GetSourceGeometries(ID2D1Geometry** geometries, uint32 geometriesCount) mut => VT.GetSourceGeometries(ref this, geometries, geometriesCount);
+
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
@@ -2365,14 +2176,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetSourceGeometry(out ID2D1Geometry* sourceGeometry) mut
-			{
-				VT.GetSourceGeometry(ref this, out sourceGeometry);
-			}
-			public void GetTransform(out D2D_MATRIX_3X2_F transform) mut
-			{
-				VT.GetTransform(ref this, out transform);
-			}
+			public void GetSourceGeometry(out ID2D1Geometry* sourceGeometry) mut => VT.GetSourceGeometry(ref this, out sourceGeometry);
+			public void GetTransform(out D2D_MATRIX_3X2_F transform) mut => VT.GetTransform(ref this, out transform);
+
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
@@ -2387,26 +2193,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void AddLine(D2D_POINT_2F point) mut
-			{
-				VT.AddLine(ref this, point);
-			}
-			public void AddBezier(in D2D1_BEZIER_SEGMENT bezier) mut
-			{
-				VT.AddBezier(ref this, bezier);
-			}
-			public void AddQuadraticBezier(in D2D1_QUADRATIC_BEZIER_SEGMENT bezier) mut
-			{
-				VT.AddQuadraticBezier(ref this, bezier);
-			}
-			public void AddQuadraticBeziers(D2D1_QUADRATIC_BEZIER_SEGMENT* beziers, uint32 beziersCount) mut
-			{
-				VT.AddQuadraticBeziers(ref this, beziers, beziersCount);
-			}
-			public void AddArc(in D2D1_ARC_SEGMENT arc) mut
-			{
-				VT.AddArc(ref this, arc);
-			}
+			public void AddLine(D2D_POINT_2F point) mut => VT.AddLine(ref this, point);
+			public void AddBezier(in D2D1_BEZIER_SEGMENT bezier) mut => VT.AddBezier(ref this, bezier);
+			public void AddQuadraticBezier(in D2D1_QUADRATIC_BEZIER_SEGMENT bezier) mut => VT.AddQuadraticBezier(ref this, bezier);
+			public void AddQuadraticBeziers(D2D1_QUADRATIC_BEZIER_SEGMENT* beziers, uint32 beziersCount) mut => VT.AddQuadraticBeziers(ref this, beziers, beziersCount);
+			public void AddArc(in D2D1_ARC_SEGMENT arc) mut => VT.AddArc(ref this, arc);
+
 			[CRepr]
 			public struct VTable : ID2D1SimplifiedGeometrySink.VTable
 			{
@@ -2424,14 +2216,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void AddTriangles(D2D1_TRIANGLE* triangles, uint32 trianglesCount) mut
-			{
-				VT.AddTriangles(ref this, triangles, trianglesCount);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public void AddTriangles(D2D1_TRIANGLE* triangles, uint32 trianglesCount) mut => VT.AddTriangles(ref this, triangles, trianglesCount);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2446,22 +2233,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(out ID2D1GeometrySink* geometrySink) mut
-			{
-				return VT.Open(ref this, out geometrySink);
-			}
-			public HRESULT Stream(ref ID2D1GeometrySink geometrySink) mut
-			{
-				return VT.Stream(ref this, ref geometrySink);
-			}
-			public HRESULT GetSegmentCount(out uint32 count) mut
-			{
-				return VT.GetSegmentCount(ref this, out count);
-			}
-			public HRESULT GetFigureCount(out uint32 count) mut
-			{
-				return VT.GetFigureCount(ref this, out count);
-			}
+			public HRESULT Open(out ID2D1GeometrySink* geometrySink) mut => VT.Open(ref this, out geometrySink);
+			public HRESULT Stream(ref ID2D1GeometrySink geometrySink) mut => VT.Stream(ref this, ref geometrySink);
+			public HRESULT GetSegmentCount(out uint32 count) mut => VT.GetSegmentCount(ref this, out count);
+			public HRESULT GetFigureCount(out uint32 count) mut => VT.GetFigureCount(ref this, out count);
+
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
@@ -2478,10 +2254,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(out ID2D1TessellationSink* tessellationSink) mut
-			{
-				return VT.Open(ref this, out tessellationSink);
-			}
+			public HRESULT Open(out ID2D1TessellationSink* tessellationSink) mut => VT.Open(ref this, out tessellationSink);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -2495,10 +2269,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D_SIZE_F GetSize() mut
-			{
-				return VT.GetSize(ref this);
-			}
+			public D2D_SIZE_F GetSize() mut => VT.GetSize(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -2512,22 +2284,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDescription(out D2D1_DRAWING_STATE_DESCRIPTION stateDescription) mut
-			{
-				VT.GetDescription(ref this, out stateDescription);
-			}
-			public void SetDescription(in D2D1_DRAWING_STATE_DESCRIPTION stateDescription) mut
-			{
-				VT.SetDescription(ref this, stateDescription);
-			}
-			public void SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams) mut
-			{
-				VT.SetTextRenderingParams(ref this, textRenderingParams);
-			}
-			public void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams) mut
-			{
-				VT.GetTextRenderingParams(ref this, textRenderingParams);
-			}
+			public void GetDescription(out D2D1_DRAWING_STATE_DESCRIPTION stateDescription) mut => VT.GetDescription(ref this, out stateDescription);
+			public void SetDescription(in D2D1_DRAWING_STATE_DESCRIPTION stateDescription) mut => VT.SetDescription(ref this, stateDescription);
+			public void SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams) mut => VT.SetTextRenderingParams(ref this, textRenderingParams);
+			public void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams) mut => VT.GetTextRenderingParams(ref this, textRenderingParams);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -2544,218 +2305,60 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateBitmap(D2D_SIZE_U size, void* srcData, uint32 pitch, in D2D1_BITMAP_PROPERTIES bitmapProperties, out ID2D1Bitmap* bitmap) mut
-			{
-				return VT.CreateBitmap(ref this, size, srcData, pitch, bitmapProperties, out bitmap);
-			}
-			public HRESULT CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, D2D1_BITMAP_PROPERTIES* bitmapProperties, out ID2D1Bitmap* bitmap) mut
-			{
-				return VT.CreateBitmapFromWicBitmap(ref this, ref wicBitmapSource, bitmapProperties, out bitmap);
-			}
-			public HRESULT CreateSharedBitmap(in Guid riid, void* data, D2D1_BITMAP_PROPERTIES* bitmapProperties, out ID2D1Bitmap* bitmap) mut
-			{
-				return VT.CreateSharedBitmap(ref this, riid, data, bitmapProperties, out bitmap);
-			}
-			public HRESULT CreateBitmapBrush(ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1BitmapBrush* bitmapBrush) mut
-			{
-				return VT.CreateBitmapBrush(ref this, bitmap, bitmapBrushProperties, brushProperties, out bitmapBrush);
-			}
-			public HRESULT CreateSolidColorBrush(in D2D1_COLOR_F color, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1SolidColorBrush* solidColorBrush) mut
-			{
-				return VT.CreateSolidColorBrush(ref this, color, brushProperties, out solidColorBrush);
-			}
-			public HRESULT CreateGradientStopCollection(D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, out ID2D1GradientStopCollection* gradientStopCollection) mut
-			{
-				return VT.CreateGradientStopCollection(ref this, gradientStops, gradientStopsCount, colorInterpolationGamma, extendMode, out gradientStopCollection);
-			}
-			public HRESULT CreateLinearGradientBrush(in D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES linearGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, out ID2D1LinearGradientBrush* linearGradientBrush) mut
-			{
-				return VT.CreateLinearGradientBrush(ref this, linearGradientBrushProperties, brushProperties, ref gradientStopCollection, out linearGradientBrush);
-			}
-			public HRESULT CreateRadialGradientBrush(in D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES radialGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, out ID2D1RadialGradientBrush* radialGradientBrush) mut
-			{
-				return VT.CreateRadialGradientBrush(ref this, radialGradientBrushProperties, brushProperties, ref gradientStopCollection, out radialGradientBrush);
-			}
-			public HRESULT CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, out ID2D1BitmapRenderTarget* bitmapRenderTarget) mut
-			{
-				return VT.CreateCompatibleRenderTarget(ref this, desiredSize, desiredPixelSize, desiredFormat, options, out bitmapRenderTarget);
-			}
-			public HRESULT CreateLayer(D2D_SIZE_F* size, out ID2D1Layer* layer) mut
-			{
-				return VT.CreateLayer(ref this, size, out layer);
-			}
-			public HRESULT CreateMesh(out ID2D1Mesh* mesh) mut
-			{
-				return VT.CreateMesh(ref this, out mesh);
-			}
-			public void DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut
-			{
-				VT.DrawLine(ref this, point0, point1, ref brush, strokeWidth, strokeStyle);
-			}
-			public void DrawRectangle(in D2D_RECT_F rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut
-			{
-				VT.DrawRectangle(ref this, rect, ref brush, strokeWidth, strokeStyle);
-			}
-			public void FillRectangle(in D2D_RECT_F rect, ref ID2D1Brush brush) mut
-			{
-				VT.FillRectangle(ref this, rect, ref brush);
-			}
-			public void DrawRoundedRectangle(in D2D1_ROUNDED_RECT roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut
-			{
-				VT.DrawRoundedRectangle(ref this, roundedRect, ref brush, strokeWidth, strokeStyle);
-			}
-			public void FillRoundedRectangle(in D2D1_ROUNDED_RECT roundedRect, ref ID2D1Brush brush) mut
-			{
-				VT.FillRoundedRectangle(ref this, roundedRect, ref brush);
-			}
-			public void DrawEllipse(in D2D1_ELLIPSE ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut
-			{
-				VT.DrawEllipse(ref this, ellipse, ref brush, strokeWidth, strokeStyle);
-			}
-			public void FillEllipse(in D2D1_ELLIPSE ellipse, ref ID2D1Brush brush) mut
-			{
-				VT.FillEllipse(ref this, ellipse, ref brush);
-			}
-			public void DrawGeometry(ref ID2D1Geometry geometry, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut
-			{
-				VT.DrawGeometry(ref this, ref geometry, ref brush, strokeWidth, strokeStyle);
-			}
-			public void FillGeometry(ref ID2D1Geometry geometry, ref ID2D1Brush brush, ID2D1Brush* opacityBrush) mut
-			{
-				VT.FillGeometry(ref this, ref geometry, ref brush, opacityBrush);
-			}
-			public void FillMesh(ref ID2D1Mesh mesh, ref ID2D1Brush brush) mut
-			{
-				VT.FillMesh(ref this, ref mesh, ref brush);
-			}
-			public void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D1_OPACITY_MASK_CONTENT content, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut
-			{
-				VT.FillOpacityMask(ref this, ref opacityMask, ref brush, content, destinationRectangle, sourceRectangle);
-			}
-			public void DrawBitmap(ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle) mut
-			{
-				VT.DrawBitmap(ref this, ref bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle);
-			}
-			public void DrawText(char16* string, uint32 stringLength, ref IDWriteTextFormat textFormat, in D2D_RECT_F layoutRect, ref ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) mut
-			{
-				VT.DrawText(ref this, string, stringLength, ref textFormat, layoutRect, ref defaultFillBrush, options, measuringMode);
-			}
-			public void DrawTextLayout(D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ref ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options) mut
-			{
-				VT.DrawTextLayout(ref this, origin, ref textLayout, ref defaultFillBrush, options);
-			}
-			public void DrawGlyphRun(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) mut
-			{
-				VT.DrawGlyphRun(ref this, baselineOrigin, glyphRun, ref foregroundBrush, measuringMode);
-			}
-			public void SetTransform(in D2D_MATRIX_3X2_F transform) mut
-			{
-				VT.SetTransform(ref this, transform);
-			}
-			public void GetTransform(out D2D_MATRIX_3X2_F transform) mut
-			{
-				VT.GetTransform(ref this, out transform);
-			}
-			public void SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode) mut
-			{
-				VT.SetAntialiasMode(ref this, antialiasMode);
-			}
-			public D2D1_ANTIALIAS_MODE GetAntialiasMode() mut
-			{
-				return VT.GetAntialiasMode(ref this);
-			}
-			public void SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) mut
-			{
-				VT.SetTextAntialiasMode(ref this, textAntialiasMode);
-			}
-			public D2D1_TEXT_ANTIALIAS_MODE GetTextAntialiasMode() mut
-			{
-				return VT.GetTextAntialiasMode(ref this);
-			}
-			public void SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams) mut
-			{
-				VT.SetTextRenderingParams(ref this, textRenderingParams);
-			}
-			public void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams) mut
-			{
-				VT.GetTextRenderingParams(ref this, textRenderingParams);
-			}
-			public void SetTags(uint64 tag1, uint64 tag2) mut
-			{
-				VT.SetTags(ref this, tag1, tag2);
-			}
-			public void GetTags(uint64* tag1, uint64* tag2) mut
-			{
-				VT.GetTags(ref this, tag1, tag2);
-			}
-			public void PushLayer(in D2D1_LAYER_PARAMETERS layerParameters, ID2D1Layer* layer) mut
-			{
-				VT.PushLayer(ref this, layerParameters, layer);
-			}
-			public void PopLayer() mut
-			{
-				VT.PopLayer(ref this);
-			}
-			public HRESULT Flush(uint64* tag1, uint64* tag2) mut
-			{
-				return VT.Flush(ref this, tag1, tag2);
-			}
-			public void SaveDrawingState(out ID2D1DrawingStateBlock drawingStateBlock) mut
-			{
-				VT.SaveDrawingState(ref this, out drawingStateBlock);
-			}
-			public void RestoreDrawingState(ref ID2D1DrawingStateBlock drawingStateBlock) mut
-			{
-				VT.RestoreDrawingState(ref this, ref drawingStateBlock);
-			}
-			public void PushAxisAlignedClip(in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) mut
-			{
-				VT.PushAxisAlignedClip(ref this, clipRect, antialiasMode);
-			}
-			public void PopAxisAlignedClip() mut
-			{
-				VT.PopAxisAlignedClip(ref this);
-			}
-			public void Clear(D2D1_COLOR_F* clearColor) mut
-			{
-				VT.Clear(ref this, clearColor);
-			}
-			public void BeginDraw() mut
-			{
-				VT.BeginDraw(ref this);
-			}
-			public HRESULT EndDraw(uint64* tag1, uint64* tag2) mut
-			{
-				return VT.EndDraw(ref this, tag1, tag2);
-			}
-			public D2D1_PIXEL_FORMAT GetPixelFormat() mut
-			{
-				return VT.GetPixelFormat(ref this);
-			}
-			public void SetDpi(float dpiX, float dpiY) mut
-			{
-				VT.SetDpi(ref this, dpiX, dpiY);
-			}
-			public void GetDpi(out float dpiX, out float dpiY) mut
-			{
-				VT.GetDpi(ref this, out dpiX, out dpiY);
-			}
-			public D2D_SIZE_F GetSize() mut
-			{
-				return VT.GetSize(ref this);
-			}
-			public D2D_SIZE_U GetPixelSize() mut
-			{
-				return VT.GetPixelSize(ref this);
-			}
-			public uint32 GetMaximumBitmapSize() mut
-			{
-				return VT.GetMaximumBitmapSize(ref this);
-			}
-			public BOOL IsSupported(in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties) mut
-			{
-				return VT.IsSupported(ref this, renderTargetProperties);
-			}
+			public HRESULT CreateBitmap(D2D_SIZE_U size, void* srcData, uint32 pitch, in D2D1_BITMAP_PROPERTIES bitmapProperties, out ID2D1Bitmap* bitmap) mut => VT.CreateBitmap(ref this, size, srcData, pitch, bitmapProperties, out bitmap);
+			public HRESULT CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, D2D1_BITMAP_PROPERTIES* bitmapProperties, out ID2D1Bitmap* bitmap) mut => VT.CreateBitmapFromWicBitmap(ref this, ref wicBitmapSource, bitmapProperties, out bitmap);
+			public HRESULT CreateSharedBitmap(in Guid riid, void* data, D2D1_BITMAP_PROPERTIES* bitmapProperties, out ID2D1Bitmap* bitmap) mut => VT.CreateSharedBitmap(ref this, riid, data, bitmapProperties, out bitmap);
+			public HRESULT CreateBitmapBrush(ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1BitmapBrush* bitmapBrush) mut => VT.CreateBitmapBrush(ref this, bitmap, bitmapBrushProperties, brushProperties, out bitmapBrush);
+			public HRESULT CreateSolidColorBrush(in D2D1_COLOR_F color, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1SolidColorBrush* solidColorBrush) mut => VT.CreateSolidColorBrush(ref this, color, brushProperties, out solidColorBrush);
+			public HRESULT CreateGradientStopCollection(D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, out ID2D1GradientStopCollection* gradientStopCollection) mut => VT.CreateGradientStopCollection(ref this, gradientStops, gradientStopsCount, colorInterpolationGamma, extendMode, out gradientStopCollection);
+			public HRESULT CreateLinearGradientBrush(in D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES linearGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, out ID2D1LinearGradientBrush* linearGradientBrush) mut => VT.CreateLinearGradientBrush(ref this, linearGradientBrushProperties, brushProperties, ref gradientStopCollection, out linearGradientBrush);
+			public HRESULT CreateRadialGradientBrush(in D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES radialGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, out ID2D1RadialGradientBrush* radialGradientBrush) mut => VT.CreateRadialGradientBrush(ref this, radialGradientBrushProperties, brushProperties, ref gradientStopCollection, out radialGradientBrush);
+			public HRESULT CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, out ID2D1BitmapRenderTarget* bitmapRenderTarget) mut => VT.CreateCompatibleRenderTarget(ref this, desiredSize, desiredPixelSize, desiredFormat, options, out bitmapRenderTarget);
+			public HRESULT CreateLayer(D2D_SIZE_F* size, out ID2D1Layer* layer) mut => VT.CreateLayer(ref this, size, out layer);
+			public HRESULT CreateMesh(out ID2D1Mesh* mesh) mut => VT.CreateMesh(ref this, out mesh);
+			public void DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut => VT.DrawLine(ref this, point0, point1, ref brush, strokeWidth, strokeStyle);
+			public void DrawRectangle(in D2D_RECT_F rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut => VT.DrawRectangle(ref this, rect, ref brush, strokeWidth, strokeStyle);
+			public void FillRectangle(in D2D_RECT_F rect, ref ID2D1Brush brush) mut => VT.FillRectangle(ref this, rect, ref brush);
+			public void DrawRoundedRectangle(in D2D1_ROUNDED_RECT roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut => VT.DrawRoundedRectangle(ref this, roundedRect, ref brush, strokeWidth, strokeStyle);
+			public void FillRoundedRectangle(in D2D1_ROUNDED_RECT roundedRect, ref ID2D1Brush brush) mut => VT.FillRoundedRectangle(ref this, roundedRect, ref brush);
+			public void DrawEllipse(in D2D1_ELLIPSE ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut => VT.DrawEllipse(ref this, ellipse, ref brush, strokeWidth, strokeStyle);
+			public void FillEllipse(in D2D1_ELLIPSE ellipse, ref ID2D1Brush brush) mut => VT.FillEllipse(ref this, ellipse, ref brush);
+			public void DrawGeometry(ref ID2D1Geometry geometry, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut => VT.DrawGeometry(ref this, ref geometry, ref brush, strokeWidth, strokeStyle);
+			public void FillGeometry(ref ID2D1Geometry geometry, ref ID2D1Brush brush, ID2D1Brush* opacityBrush) mut => VT.FillGeometry(ref this, ref geometry, ref brush, opacityBrush);
+			public void FillMesh(ref ID2D1Mesh mesh, ref ID2D1Brush brush) mut => VT.FillMesh(ref this, ref mesh, ref brush);
+			public void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D1_OPACITY_MASK_CONTENT content, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut => VT.FillOpacityMask(ref this, ref opacityMask, ref brush, content, destinationRectangle, sourceRectangle);
+			public void DrawBitmap(ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle) mut => VT.DrawBitmap(ref this, ref bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle);
+			public void DrawText(char16* string, uint32 stringLength, ref IDWriteTextFormat textFormat, in D2D_RECT_F layoutRect, ref ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) mut => VT.DrawText(ref this, string, stringLength, ref textFormat, layoutRect, ref defaultFillBrush, options, measuringMode);
+			public void DrawTextLayout(D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ref ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options) mut => VT.DrawTextLayout(ref this, origin, ref textLayout, ref defaultFillBrush, options);
+			public void DrawGlyphRun(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) mut => VT.DrawGlyphRun(ref this, baselineOrigin, glyphRun, ref foregroundBrush, measuringMode);
+			public void SetTransform(in D2D_MATRIX_3X2_F transform) mut => VT.SetTransform(ref this, transform);
+			public void GetTransform(out D2D_MATRIX_3X2_F transform) mut => VT.GetTransform(ref this, out transform);
+			public void SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode) mut => VT.SetAntialiasMode(ref this, antialiasMode);
+			public D2D1_ANTIALIAS_MODE GetAntialiasMode() mut => VT.GetAntialiasMode(ref this);
+			public void SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) mut => VT.SetTextAntialiasMode(ref this, textAntialiasMode);
+			public D2D1_TEXT_ANTIALIAS_MODE GetTextAntialiasMode() mut => VT.GetTextAntialiasMode(ref this);
+			public void SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams) mut => VT.SetTextRenderingParams(ref this, textRenderingParams);
+			public void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams) mut => VT.GetTextRenderingParams(ref this, textRenderingParams);
+			public void SetTags(uint64 tag1, uint64 tag2) mut => VT.SetTags(ref this, tag1, tag2);
+			public void GetTags(uint64* tag1, uint64* tag2) mut => VT.GetTags(ref this, tag1, tag2);
+			public void PushLayer(in D2D1_LAYER_PARAMETERS layerParameters, ID2D1Layer* layer) mut => VT.PushLayer(ref this, layerParameters, layer);
+			public void PopLayer() mut => VT.PopLayer(ref this);
+			public HRESULT Flush(uint64* tag1, uint64* tag2) mut => VT.Flush(ref this, tag1, tag2);
+			public void SaveDrawingState(out ID2D1DrawingStateBlock drawingStateBlock) mut => VT.SaveDrawingState(ref this, out drawingStateBlock);
+			public void RestoreDrawingState(ref ID2D1DrawingStateBlock drawingStateBlock) mut => VT.RestoreDrawingState(ref this, ref drawingStateBlock);
+			public void PushAxisAlignedClip(in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) mut => VT.PushAxisAlignedClip(ref this, clipRect, antialiasMode);
+			public void PopAxisAlignedClip() mut => VT.PopAxisAlignedClip(ref this);
+			public void Clear(D2D1_COLOR_F* clearColor) mut => VT.Clear(ref this, clearColor);
+			public void BeginDraw() mut => VT.BeginDraw(ref this);
+			public HRESULT EndDraw(uint64* tag1, uint64* tag2) mut => VT.EndDraw(ref this, tag1, tag2);
+			public D2D1_PIXEL_FORMAT GetPixelFormat() mut => VT.GetPixelFormat(ref this);
+			public void SetDpi(float dpiX, float dpiY) mut => VT.SetDpi(ref this, dpiX, dpiY);
+			public void GetDpi(out float dpiX, out float dpiY) mut => VT.GetDpi(ref this, out dpiX, out dpiY);
+			public D2D_SIZE_F GetSize() mut => VT.GetSize(ref this);
+			public D2D_SIZE_U GetPixelSize() mut => VT.GetPixelSize(ref this);
+			public uint32 GetMaximumBitmapSize() mut => VT.GetMaximumBitmapSize(ref this);
+			public BOOL IsSupported(in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties) mut => VT.IsSupported(ref this, renderTargetProperties);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -2821,10 +2424,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBitmap(out ID2D1Bitmap* bitmap) mut
-			{
-				return VT.GetBitmap(ref this, out bitmap);
-			}
+			public HRESULT GetBitmap(out ID2D1Bitmap* bitmap) mut => VT.GetBitmap(ref this, out bitmap);
+
 			[CRepr]
 			public struct VTable : ID2D1RenderTarget.VTable
 			{
@@ -2838,18 +2439,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D1_WINDOW_STATE CheckWindowState() mut
-			{
-				return VT.CheckWindowState(ref this);
-			}
-			public HRESULT Resize(in D2D_SIZE_U pixelSize) mut
-			{
-				return VT.Resize(ref this, pixelSize);
-			}
-			public HWND GetHwnd() mut
-			{
-				return VT.GetHwnd(ref this);
-			}
+			public D2D1_WINDOW_STATE CheckWindowState() mut => VT.CheckWindowState(ref this);
+			public HRESULT Resize(in D2D_SIZE_U pixelSize) mut => VT.Resize(ref this, pixelSize);
+			public HWND GetHwnd() mut => VT.GetHwnd(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1RenderTarget.VTable
 			{
@@ -2865,14 +2458,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDC(D2D1_DC_INITIALIZE_MODE mode, out HDC hdc) mut
-			{
-				return VT.GetDC(ref this, mode, out hdc);
-			}
-			public HRESULT ReleaseDC(RECT* update) mut
-			{
-				return VT.ReleaseDC(ref this, update);
-			}
+			public HRESULT GetDC(D2D1_DC_INITIALIZE_MODE mode, out HDC hdc) mut => VT.GetDC(ref this, mode, out hdc);
+			public HRESULT ReleaseDC(RECT* update) mut => VT.ReleaseDC(ref this, update);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2887,10 +2475,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BindDC(HDC hDC, in RECT pSubRect) mut
-			{
-				return VT.BindDC(ref this, hDC, pSubRect);
-			}
+			public HRESULT BindDC(HDC hDC, in RECT pSubRect) mut => VT.BindDC(ref this, hDC, pSubRect);
+
 			[CRepr]
 			public struct VTable : ID2D1RenderTarget.VTable
 			{
@@ -2904,62 +2490,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReloadSystemMetrics() mut
-			{
-				return VT.ReloadSystemMetrics(ref this);
-			}
-			public void GetDesktopDpi(out float dpiX, out float dpiY) mut
-			{
-				VT.GetDesktopDpi(ref this, out dpiX, out dpiY);
-			}
-			public HRESULT CreateRectangleGeometry(in D2D_RECT_F rectangle, out ID2D1RectangleGeometry* rectangleGeometry) mut
-			{
-				return VT.CreateRectangleGeometry(ref this, rectangle, out rectangleGeometry);
-			}
-			public HRESULT CreateRoundedRectangleGeometry(in D2D1_ROUNDED_RECT roundedRectangle, out ID2D1RoundedRectangleGeometry* roundedRectangleGeometry) mut
-			{
-				return VT.CreateRoundedRectangleGeometry(ref this, roundedRectangle, out roundedRectangleGeometry);
-			}
-			public HRESULT CreateEllipseGeometry(in D2D1_ELLIPSE ellipse, out ID2D1EllipseGeometry* ellipseGeometry) mut
-			{
-				return VT.CreateEllipseGeometry(ref this, ellipse, out ellipseGeometry);
-			}
-			public HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, ID2D1Geometry** geometries, uint32 geometriesCount, out ID2D1GeometryGroup* geometryGroup) mut
-			{
-				return VT.CreateGeometryGroup(ref this, fillMode, geometries, geometriesCount, out geometryGroup);
-			}
-			public HRESULT CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, in D2D_MATRIX_3X2_F transform, out ID2D1TransformedGeometry* transformedGeometry) mut
-			{
-				return VT.CreateTransformedGeometry(ref this, ref sourceGeometry, transform, out transformedGeometry);
-			}
-			public HRESULT CreatePathGeometry(out ID2D1PathGeometry* pathGeometry) mut
-			{
-				return VT.CreatePathGeometry(ref this, out pathGeometry);
-			}
-			public HRESULT CreateStrokeStyle(in D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, float* dashes, uint32 dashesCount, out ID2D1StrokeStyle* strokeStyle) mut
-			{
-				return VT.CreateStrokeStyle(ref this, strokeStyleProperties, dashes, dashesCount, out strokeStyle);
-			}
-			public HRESULT CreateDrawingStateBlock(D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, out ID2D1DrawingStateBlock* drawingStateBlock) mut
-			{
-				return VT.CreateDrawingStateBlock(ref this, drawingStateDescription, textRenderingParams, out drawingStateBlock);
-			}
-			public HRESULT CreateWicBitmapRenderTarget(ref IWICBitmap target, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget* renderTarget) mut
-			{
-				return VT.CreateWicBitmapRenderTarget(ref this, ref target, renderTargetProperties, out renderTarget);
-			}
-			public HRESULT CreateHwndRenderTarget(in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, in D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, out ID2D1HwndRenderTarget* hwndRenderTarget) mut
-			{
-				return VT.CreateHwndRenderTarget(ref this, renderTargetProperties, hwndRenderTargetProperties, out hwndRenderTarget);
-			}
-			public HRESULT CreateDxgiSurfaceRenderTarget(ref IDXGISurface dxgiSurface, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget* renderTarget) mut
-			{
-				return VT.CreateDxgiSurfaceRenderTarget(ref this, ref dxgiSurface, renderTargetProperties, out renderTarget);
-			}
-			public HRESULT CreateDCRenderTarget(in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1DCRenderTarget* dcRenderTarget) mut
-			{
-				return VT.CreateDCRenderTarget(ref this, renderTargetProperties, out dcRenderTarget);
-			}
+			public HRESULT ReloadSystemMetrics() mut => VT.ReloadSystemMetrics(ref this);
+			public void GetDesktopDpi(out float dpiX, out float dpiY) mut => VT.GetDesktopDpi(ref this, out dpiX, out dpiY);
+			public HRESULT CreateRectangleGeometry(in D2D_RECT_F rectangle, out ID2D1RectangleGeometry* rectangleGeometry) mut => VT.CreateRectangleGeometry(ref this, rectangle, out rectangleGeometry);
+			public HRESULT CreateRoundedRectangleGeometry(in D2D1_ROUNDED_RECT roundedRectangle, out ID2D1RoundedRectangleGeometry* roundedRectangleGeometry) mut => VT.CreateRoundedRectangleGeometry(ref this, roundedRectangle, out roundedRectangleGeometry);
+			public HRESULT CreateEllipseGeometry(in D2D1_ELLIPSE ellipse, out ID2D1EllipseGeometry* ellipseGeometry) mut => VT.CreateEllipseGeometry(ref this, ellipse, out ellipseGeometry);
+			public HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, ID2D1Geometry** geometries, uint32 geometriesCount, out ID2D1GeometryGroup* geometryGroup) mut => VT.CreateGeometryGroup(ref this, fillMode, geometries, geometriesCount, out geometryGroup);
+			public HRESULT CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, in D2D_MATRIX_3X2_F transform, out ID2D1TransformedGeometry* transformedGeometry) mut => VT.CreateTransformedGeometry(ref this, ref sourceGeometry, transform, out transformedGeometry);
+			public HRESULT CreatePathGeometry(out ID2D1PathGeometry* pathGeometry) mut => VT.CreatePathGeometry(ref this, out pathGeometry);
+			public HRESULT CreateStrokeStyle(in D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, float* dashes, uint32 dashesCount, out ID2D1StrokeStyle* strokeStyle) mut => VT.CreateStrokeStyle(ref this, strokeStyleProperties, dashes, dashesCount, out strokeStyle);
+			public HRESULT CreateDrawingStateBlock(D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, out ID2D1DrawingStateBlock* drawingStateBlock) mut => VT.CreateDrawingStateBlock(ref this, drawingStateDescription, textRenderingParams, out drawingStateBlock);
+			public HRESULT CreateWicBitmapRenderTarget(ref IWICBitmap target, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget* renderTarget) mut => VT.CreateWicBitmapRenderTarget(ref this, ref target, renderTargetProperties, out renderTarget);
+			public HRESULT CreateHwndRenderTarget(in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, in D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, out ID2D1HwndRenderTarget* hwndRenderTarget) mut => VT.CreateHwndRenderTarget(ref this, renderTargetProperties, hwndRenderTargetProperties, out hwndRenderTarget);
+			public HRESULT CreateDxgiSurfaceRenderTarget(ref IDXGISurface dxgiSurface, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget* renderTarget) mut => VT.CreateDxgiSurfaceRenderTarget(ref this, ref dxgiSurface, renderTargetProperties, out renderTarget);
+			public HRESULT CreateDCRenderTarget(in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1DCRenderTarget* dcRenderTarget) mut => VT.CreateDCRenderTarget(ref this, renderTargetProperties, out dcRenderTarget);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2986,10 +2531,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ProcessRecord(uint32 recordType, void* recordData, uint32 recordDataSize) mut
-			{
-				return VT.ProcessRecord(ref this, recordType, recordData, recordDataSize);
-			}
+			public HRESULT ProcessRecord(uint32 recordType, void* recordData, uint32 recordDataSize) mut => VT.ProcessRecord(ref this, recordType, recordData, recordDataSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3003,14 +2546,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Stream(ref ID2D1GdiMetafileSink sink) mut
-			{
-				return VT.Stream(ref this, ref sink);
-			}
-			public HRESULT GetBounds(out D2D_RECT_F bounds) mut
-			{
-				return VT.GetBounds(ref this, out bounds);
-			}
+			public HRESULT Stream(ref ID2D1GdiMetafileSink sink) mut => VT.Stream(ref this, ref sink);
+			public HRESULT GetBounds(out D2D_RECT_F bounds) mut => VT.GetBounds(ref this, out bounds);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -3025,106 +2563,32 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginDraw() mut
-			{
-				return VT.BeginDraw(ref this);
-			}
-			public HRESULT EndDraw() mut
-			{
-				return VT.EndDraw(ref this);
-			}
-			public HRESULT SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode) mut
-			{
-				return VT.SetAntialiasMode(ref this, antialiasMode);
-			}
-			public HRESULT SetTags(uint64 tag1, uint64 tag2) mut
-			{
-				return VT.SetTags(ref this, tag1, tag2);
-			}
-			public HRESULT SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) mut
-			{
-				return VT.SetTextAntialiasMode(ref this, textAntialiasMode);
-			}
-			public HRESULT SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams) mut
-			{
-				return VT.SetTextRenderingParams(ref this, textRenderingParams);
-			}
-			public HRESULT SetTransform(in D2D_MATRIX_3X2_F transform) mut
-			{
-				return VT.SetTransform(ref this, transform);
-			}
-			public HRESULT SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend) mut
-			{
-				return VT.SetPrimitiveBlend(ref this, primitiveBlend);
-			}
-			public HRESULT SetUnitMode(D2D1_UNIT_MODE unitMode) mut
-			{
-				return VT.SetUnitMode(ref this, unitMode);
-			}
-			public HRESULT Clear(D2D1_COLOR_F* color) mut
-			{
-				return VT.Clear(ref this, color);
-			}
-			public HRESULT DrawGlyphRun(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) mut
-			{
-				return VT.DrawGlyphRun(ref this, baselineOrigin, glyphRun, glyphRunDescription, ref foregroundBrush, measuringMode);
-			}
-			public HRESULT DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut
-			{
-				return VT.DrawLine(ref this, point0, point1, ref brush, strokeWidth, strokeStyle);
-			}
-			public HRESULT DrawGeometry(ref ID2D1Geometry geometry, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut
-			{
-				return VT.DrawGeometry(ref this, ref geometry, ref brush, strokeWidth, strokeStyle);
-			}
-			public HRESULT DrawRectangle(in D2D_RECT_F rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut
-			{
-				return VT.DrawRectangle(ref this, rect, ref brush, strokeWidth, strokeStyle);
-			}
-			public HRESULT DrawBitmap(ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) mut
-			{
-				return VT.DrawBitmap(ref this, ref bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
-			}
-			public HRESULT DrawImage(ref ID2D1Image image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) mut
-			{
-				return VT.DrawImage(ref this, ref image, targetOffset, imageRectangle, interpolationMode, compositeMode);
-			}
-			public HRESULT DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset) mut
-			{
-				return VT.DrawGdiMetafile(ref this, ref gdiMetafile, targetOffset);
-			}
-			public HRESULT FillMesh(ref ID2D1Mesh mesh, ref ID2D1Brush brush) mut
-			{
-				return VT.FillMesh(ref this, ref mesh, ref brush);
-			}
-			public HRESULT FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut
-			{
-				return VT.FillOpacityMask(ref this, ref opacityMask, ref brush, destinationRectangle, sourceRectangle);
-			}
-			public HRESULT FillGeometry(ref ID2D1Geometry geometry, ref ID2D1Brush brush, ID2D1Brush* opacityBrush) mut
-			{
-				return VT.FillGeometry(ref this, ref geometry, ref brush, opacityBrush);
-			}
-			public HRESULT FillRectangle(in D2D_RECT_F rect, ref ID2D1Brush brush) mut
-			{
-				return VT.FillRectangle(ref this, rect, ref brush);
-			}
-			public HRESULT PushAxisAlignedClip(in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) mut
-			{
-				return VT.PushAxisAlignedClip(ref this, clipRect, antialiasMode);
-			}
-			public HRESULT PushLayer(in D2D1_LAYER_PARAMETERS1 layerParameters1, ID2D1Layer* layer) mut
-			{
-				return VT.PushLayer(ref this, layerParameters1, layer);
-			}
-			public HRESULT PopAxisAlignedClip() mut
-			{
-				return VT.PopAxisAlignedClip(ref this);
-			}
-			public HRESULT PopLayer() mut
-			{
-				return VT.PopLayer(ref this);
-			}
+			public HRESULT BeginDraw() mut => VT.BeginDraw(ref this);
+			public HRESULT EndDraw() mut => VT.EndDraw(ref this);
+			public HRESULT SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode) mut => VT.SetAntialiasMode(ref this, antialiasMode);
+			public HRESULT SetTags(uint64 tag1, uint64 tag2) mut => VT.SetTags(ref this, tag1, tag2);
+			public HRESULT SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) mut => VT.SetTextAntialiasMode(ref this, textAntialiasMode);
+			public HRESULT SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams) mut => VT.SetTextRenderingParams(ref this, textRenderingParams);
+			public HRESULT SetTransform(in D2D_MATRIX_3X2_F transform) mut => VT.SetTransform(ref this, transform);
+			public HRESULT SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend) mut => VT.SetPrimitiveBlend(ref this, primitiveBlend);
+			public HRESULT SetUnitMode(D2D1_UNIT_MODE unitMode) mut => VT.SetUnitMode(ref this, unitMode);
+			public HRESULT Clear(D2D1_COLOR_F* color) mut => VT.Clear(ref this, color);
+			public HRESULT DrawGlyphRun(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) mut => VT.DrawGlyphRun(ref this, baselineOrigin, glyphRun, glyphRunDescription, ref foregroundBrush, measuringMode);
+			public HRESULT DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut => VT.DrawLine(ref this, point0, point1, ref brush, strokeWidth, strokeStyle);
+			public HRESULT DrawGeometry(ref ID2D1Geometry geometry, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut => VT.DrawGeometry(ref this, ref geometry, ref brush, strokeWidth, strokeStyle);
+			public HRESULT DrawRectangle(in D2D_RECT_F rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) mut => VT.DrawRectangle(ref this, rect, ref brush, strokeWidth, strokeStyle);
+			public HRESULT DrawBitmap(ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) mut => VT.DrawBitmap(ref this, ref bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
+			public HRESULT DrawImage(ref ID2D1Image image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) mut => VT.DrawImage(ref this, ref image, targetOffset, imageRectangle, interpolationMode, compositeMode);
+			public HRESULT DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset) mut => VT.DrawGdiMetafile(ref this, ref gdiMetafile, targetOffset);
+			public HRESULT FillMesh(ref ID2D1Mesh mesh, ref ID2D1Brush brush) mut => VT.FillMesh(ref this, ref mesh, ref brush);
+			public HRESULT FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut => VT.FillOpacityMask(ref this, ref opacityMask, ref brush, destinationRectangle, sourceRectangle);
+			public HRESULT FillGeometry(ref ID2D1Geometry geometry, ref ID2D1Brush brush, ID2D1Brush* opacityBrush) mut => VT.FillGeometry(ref this, ref geometry, ref brush, opacityBrush);
+			public HRESULT FillRectangle(in D2D_RECT_F rect, ref ID2D1Brush brush) mut => VT.FillRectangle(ref this, rect, ref brush);
+			public HRESULT PushAxisAlignedClip(in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) mut => VT.PushAxisAlignedClip(ref this, clipRect, antialiasMode);
+			public HRESULT PushLayer(in D2D1_LAYER_PARAMETERS1 layerParameters1, ID2D1Layer* layer) mut => VT.PushLayer(ref this, layerParameters1, layer);
+			public HRESULT PopAxisAlignedClip() mut => VT.PopAxisAlignedClip(ref this);
+			public HRESULT PopLayer() mut => VT.PopLayer(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3162,14 +2626,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Stream(ref ID2D1CommandSink sink) mut
-			{
-				return VT.Stream(ref this, ref sink);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT Stream(ref ID2D1CommandSink sink) mut => VT.Stream(ref this, ref sink);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1Image.VTable
 			{
@@ -3184,14 +2643,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPage(ref ID2D1CommandList commandList, D2D_SIZE_F pageSize, IStream* pagePrintTicketStream, uint64* tag1, uint64* tag2) mut
-			{
-				return VT.AddPage(ref this, ref commandList, pageSize, pagePrintTicketStream, tag1, tag2);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT AddPage(ref ID2D1CommandList commandList, D2D_SIZE_F pageSize, IStream* pagePrintTicketStream, uint64* tag1, uint64* tag2) mut => VT.AddPage(ref this, ref commandList, pageSize, pagePrintTicketStream, tag1, tag2);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3206,46 +2660,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetImage(ID2D1Image* image) mut
-			{
-				VT.SetImage(ref this, image);
-			}
-			public void SetExtendModeX(D2D1_EXTEND_MODE extendModeX) mut
-			{
-				VT.SetExtendModeX(ref this, extendModeX);
-			}
-			public void SetExtendModeY(D2D1_EXTEND_MODE extendModeY) mut
-			{
-				VT.SetExtendModeY(ref this, extendModeY);
-			}
-			public void SetInterpolationMode(D2D1_INTERPOLATION_MODE interpolationMode) mut
-			{
-				VT.SetInterpolationMode(ref this, interpolationMode);
-			}
-			public void SetSourceRectangle(in D2D_RECT_F sourceRectangle) mut
-			{
-				VT.SetSourceRectangle(ref this, sourceRectangle);
-			}
-			public void GetImage(ID2D1Image** image) mut
-			{
-				VT.GetImage(ref this, image);
-			}
-			public D2D1_EXTEND_MODE GetExtendModeX() mut
-			{
-				return VT.GetExtendModeX(ref this);
-			}
-			public D2D1_EXTEND_MODE GetExtendModeY() mut
-			{
-				return VT.GetExtendModeY(ref this);
-			}
-			public D2D1_INTERPOLATION_MODE GetInterpolationMode() mut
-			{
-				return VT.GetInterpolationMode(ref this);
-			}
-			public void GetSourceRectangle(out D2D_RECT_F sourceRectangle) mut
-			{
-				VT.GetSourceRectangle(ref this, out sourceRectangle);
-			}
+			public void SetImage(ID2D1Image* image) mut => VT.SetImage(ref this, image);
+			public void SetExtendModeX(D2D1_EXTEND_MODE extendModeX) mut => VT.SetExtendModeX(ref this, extendModeX);
+			public void SetExtendModeY(D2D1_EXTEND_MODE extendModeY) mut => VT.SetExtendModeY(ref this, extendModeY);
+			public void SetInterpolationMode(D2D1_INTERPOLATION_MODE interpolationMode) mut => VT.SetInterpolationMode(ref this, interpolationMode);
+			public void SetSourceRectangle(in D2D_RECT_F sourceRectangle) mut => VT.SetSourceRectangle(ref this, sourceRectangle);
+			public void GetImage(ID2D1Image** image) mut => VT.GetImage(ref this, image);
+			public D2D1_EXTEND_MODE GetExtendModeX() mut => VT.GetExtendModeX(ref this);
+			public D2D1_EXTEND_MODE GetExtendModeY() mut => VT.GetExtendModeY(ref this);
+			public D2D1_INTERPOLATION_MODE GetInterpolationMode() mut => VT.GetInterpolationMode(ref this);
+			public void GetSourceRectangle(out D2D_RECT_F sourceRectangle) mut => VT.GetSourceRectangle(ref this, out sourceRectangle);
+
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
@@ -3268,14 +2693,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetInterpolationMode1(D2D1_INTERPOLATION_MODE interpolationMode) mut
-			{
-				VT.SetInterpolationMode1(ref this, interpolationMode);
-			}
-			public D2D1_INTERPOLATION_MODE GetInterpolationMode1() mut
-			{
-				return VT.GetInterpolationMode1(ref this);
-			}
+			public void SetInterpolationMode1(D2D1_INTERPOLATION_MODE interpolationMode) mut => VT.SetInterpolationMode1(ref this, interpolationMode);
+			public D2D1_INTERPOLATION_MODE GetInterpolationMode1() mut => VT.GetInterpolationMode1(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1BitmapBrush.VTable
 			{
@@ -3290,10 +2710,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D1_STROKE_TRANSFORM_TYPE GetStrokeTransformType() mut
-			{
-				return VT.GetStrokeTransformType(ref this);
-			}
+			public D2D1_STROKE_TRANSFORM_TYPE GetStrokeTransformType() mut => VT.GetStrokeTransformType(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1StrokeStyle.VTable
 			{
@@ -3307,10 +2725,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComputePointAndSegmentAtLength(float length, uint32 startSegment, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out D2D1_POINT_DESCRIPTION pointDescription) mut
-			{
-				return VT.ComputePointAndSegmentAtLength(ref this, length, startSegment, worldTransform, flatteningTolerance, out pointDescription);
-			}
+			public HRESULT ComputePointAndSegmentAtLength(float length, uint32 startSegment, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out D2D1_POINT_DESCRIPTION pointDescription) mut => VT.ComputePointAndSegmentAtLength(ref this, length, startSegment, worldTransform, flatteningTolerance, out pointDescription);
+
 			[CRepr]
 			public struct VTable : ID2D1PathGeometry.VTable
 			{
@@ -3324,50 +2740,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetPropertyCount() mut
-			{
-				return VT.GetPropertyCount(ref this);
-			}
-			public HRESULT GetPropertyName(uint32 index, char16* name, uint32 nameCount) mut
-			{
-				return VT.GetPropertyName(ref this, index, name, nameCount);
-			}
-			public uint32 GetPropertyNameLength(uint32 index) mut
-			{
-				return VT.GetPropertyNameLength(ref this, index);
-			}
-			public D2D1_PROPERTY_TYPE ComGetType(uint32 index) mut
-			{
-				return VT.ComGetType(ref this, index);
-			}
-			public uint32 GetPropertyIndex(PWSTR name) mut
-			{
-				return VT.GetPropertyIndex(ref this, name);
-			}
-			public HRESULT SetValueByName(PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) mut
-			{
-				return VT.SetValueByName(ref this, name, type, data, dataSize);
-			}
-			public HRESULT SetValue(uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) mut
-			{
-				return VT.SetValue(ref this, index, type, data, dataSize);
-			}
-			public HRESULT GetValueByName(PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) mut
-			{
-				return VT.GetValueByName(ref this, name, type, data, dataSize);
-			}
-			public HRESULT GetValue(uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) mut
-			{
-				return VT.GetValue(ref this, index, type, data, dataSize);
-			}
-			public uint32 GetValueSize(uint32 index) mut
-			{
-				return VT.GetValueSize(ref this, index);
-			}
-			public HRESULT GetSubProperties(uint32 index, ID2D1Properties** subProperties) mut
-			{
-				return VT.GetSubProperties(ref this, index, subProperties);
-			}
+			public uint32 GetPropertyCount() mut => VT.GetPropertyCount(ref this);
+			public HRESULT GetPropertyName(uint32 index, char16* name, uint32 nameCount) mut => VT.GetPropertyName(ref this, index, name, nameCount);
+			public uint32 GetPropertyNameLength(uint32 index) mut => VT.GetPropertyNameLength(ref this, index);
+			public D2D1_PROPERTY_TYPE ComGetType(uint32 index) mut => VT.ComGetType(ref this, index);
+			public uint32 GetPropertyIndex(PWSTR name) mut => VT.GetPropertyIndex(ref this, name);
+			public HRESULT SetValueByName(PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) mut => VT.SetValueByName(ref this, name, type, data, dataSize);
+			public HRESULT SetValue(uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) mut => VT.SetValue(ref this, index, type, data, dataSize);
+			public HRESULT GetValueByName(PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) mut => VT.GetValueByName(ref this, name, type, data, dataSize);
+			public HRESULT GetValue(uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) mut => VT.GetValue(ref this, index, type, data, dataSize);
+			public uint32 GetValueSize(uint32 index) mut => VT.GetValueSize(ref this, index);
+			public HRESULT GetSubProperties(uint32 index, ID2D1Properties** subProperties) mut => VT.GetSubProperties(ref this, index, subProperties);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3391,26 +2775,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetInput(uint32 index, ID2D1Image* input, BOOL invalidate) mut
-			{
-				VT.SetInput(ref this, index, input, invalidate);
-			}
-			public HRESULT SetInputCount(uint32 inputCount) mut
-			{
-				return VT.SetInputCount(ref this, inputCount);
-			}
-			public void GetInput(uint32 index, ID2D1Image** input) mut
-			{
-				VT.GetInput(ref this, index, input);
-			}
-			public uint32 GetInputCount() mut
-			{
-				return VT.GetInputCount(ref this);
-			}
-			public void GetOutput(out ID2D1Image* outputImage) mut
-			{
-				VT.GetOutput(ref this, out outputImage);
-			}
+			public void SetInput(uint32 index, ID2D1Image* input, BOOL invalidate) mut => VT.SetInput(ref this, index, input, invalidate);
+			public HRESULT SetInputCount(uint32 inputCount) mut => VT.SetInputCount(ref this, inputCount);
+			public void GetInput(uint32 index, ID2D1Image** input) mut => VT.GetInput(ref this, index, input);
+			public uint32 GetInputCount() mut => VT.GetInputCount(ref this);
+			public void GetOutput(out ID2D1Image* outputImage) mut => VT.GetOutput(ref this, out outputImage);
+
 			[CRepr]
 			public struct VTable : ID2D1Properties.VTable
 			{
@@ -3428,26 +2798,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetColorContext(ID2D1ColorContext** colorContext) mut
-			{
-				VT.GetColorContext(ref this, colorContext);
-			}
-			public D2D1_BITMAP_OPTIONS GetOptions() mut
-			{
-				return VT.GetOptions(ref this);
-			}
-			public HRESULT GetSurface(IDXGISurface** dxgiSurface) mut
-			{
-				return VT.GetSurface(ref this, dxgiSurface);
-			}
-			public HRESULT Map(D2D1_MAP_OPTIONS options, out D2D1_MAPPED_RECT mappedRect) mut
-			{
-				return VT.Map(ref this, options, out mappedRect);
-			}
-			public HRESULT Unmap() mut
-			{
-				return VT.Unmap(ref this);
-			}
+			public void GetColorContext(ID2D1ColorContext** colorContext) mut => VT.GetColorContext(ref this, colorContext);
+			public D2D1_BITMAP_OPTIONS GetOptions() mut => VT.GetOptions(ref this);
+			public HRESULT GetSurface(IDXGISurface** dxgiSurface) mut => VT.GetSurface(ref this, dxgiSurface);
+			public HRESULT Map(D2D1_MAP_OPTIONS options, out D2D1_MAPPED_RECT mappedRect) mut => VT.Map(ref this, options, out mappedRect);
+			public HRESULT Unmap() mut => VT.Unmap(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1Bitmap.VTable
 			{
@@ -3465,18 +2821,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D1_COLOR_SPACE GetColorSpace() mut
-			{
-				return VT.GetColorSpace(ref this);
-			}
-			public uint32 GetProfileSize() mut
-			{
-				return VT.GetProfileSize(ref this);
-			}
-			public HRESULT GetProfile(uint8* profile, uint32 profileSize) mut
-			{
-				return VT.GetProfile(ref this, profile, profileSize);
-			}
+			public D2D1_COLOR_SPACE GetColorSpace() mut => VT.GetColorSpace(ref this);
+			public uint32 GetProfileSize() mut => VT.GetProfileSize(ref this);
+			public HRESULT GetProfile(uint8* profile, uint32 profileSize) mut => VT.GetProfile(ref this, profile, profileSize);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -3492,26 +2840,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetGradientStops1(D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) mut
-			{
-				VT.GetGradientStops1(ref this, gradientStops, gradientStopsCount);
-			}
-			public D2D1_COLOR_SPACE GetPreInterpolationSpace() mut
-			{
-				return VT.GetPreInterpolationSpace(ref this);
-			}
-			public D2D1_COLOR_SPACE GetPostInterpolationSpace() mut
-			{
-				return VT.GetPostInterpolationSpace(ref this);
-			}
-			public D2D1_BUFFER_PRECISION GetBufferPrecision() mut
-			{
-				return VT.GetBufferPrecision(ref this);
-			}
-			public D2D1_COLOR_INTERPOLATION_MODE GetColorInterpolationMode() mut
-			{
-				return VT.GetColorInterpolationMode(ref this);
-			}
+			public void GetGradientStops1(D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) mut => VT.GetGradientStops1(ref this, gradientStops, gradientStopsCount);
+			public D2D1_COLOR_SPACE GetPreInterpolationSpace() mut => VT.GetPreInterpolationSpace(ref this);
+			public D2D1_COLOR_SPACE GetPostInterpolationSpace() mut => VT.GetPostInterpolationSpace(ref this);
+			public D2D1_BUFFER_PRECISION GetBufferPrecision() mut => VT.GetBufferPrecision(ref this);
+			public D2D1_COLOR_INTERPOLATION_MODE GetColorInterpolationMode() mut => VT.GetColorInterpolationMode(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1GradientStopCollection.VTable
 			{
@@ -3529,14 +2863,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDescription(out D2D1_DRAWING_STATE_DESCRIPTION1 stateDescription) mut
-			{
-				VT.GetDescription(ref this, out stateDescription);
-			}
-			public void SetDescription(in D2D1_DRAWING_STATE_DESCRIPTION1 stateDescription) mut
-			{
-				VT.SetDescription(ref this, stateDescription);
-			}
+			public void GetDescription(out D2D1_DRAWING_STATE_DESCRIPTION1 stateDescription) mut => VT.GetDescription(ref this, out stateDescription);
+			public void SetDescription(in D2D1_DRAWING_STATE_DESCRIPTION1 stateDescription) mut => VT.SetDescription(ref this, stateDescription);
+
 			[CRepr]
 			public struct VTable : ID2D1DrawingStateBlock.VTable
 			{
@@ -3551,146 +2880,42 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateBitmap(D2D_SIZE_U size, void* sourceData, uint32 pitch, in D2D1_BITMAP_PROPERTIES1 bitmapProperties, out ID2D1Bitmap1* bitmap) mut
-			{
-				return VT.CreateBitmap(ref this, size, sourceData, pitch, bitmapProperties, out bitmap);
-			}
-			public HRESULT CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, D2D1_BITMAP_PROPERTIES1* bitmapProperties, out ID2D1Bitmap1* bitmap) mut
-			{
-				return VT.CreateBitmapFromWicBitmap(ref this, ref wicBitmapSource, bitmapProperties, out bitmap);
-			}
-			public HRESULT CreateColorContext(D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, out ID2D1ColorContext* colorContext) mut
-			{
-				return VT.CreateColorContext(ref this, space, profile, profileSize, out colorContext);
-			}
-			public HRESULT CreateColorContextFromFilename(PWSTR filename, out ID2D1ColorContext* colorContext) mut
-			{
-				return VT.CreateColorContextFromFilename(ref this, filename, out colorContext);
-			}
-			public HRESULT CreateColorContextFromWicColorContext(ref IWICColorContext wicColorContext, out ID2D1ColorContext* colorContext) mut
-			{
-				return VT.CreateColorContextFromWicColorContext(ref this, ref wicColorContext, out colorContext);
-			}
-			public HRESULT CreateBitmapFromDxgiSurface(ref IDXGISurface surface, D2D1_BITMAP_PROPERTIES1* bitmapProperties, out ID2D1Bitmap1* bitmap) mut
-			{
-				return VT.CreateBitmapFromDxgiSurface(ref this, ref surface, bitmapProperties, out bitmap);
-			}
-			public HRESULT CreateEffect(in Guid effectId, out ID2D1Effect* effect) mut
-			{
-				return VT.CreateEffect(ref this, effectId, out effect);
-			}
-			public HRESULT CreateGradientStopCollection(D2D1_GRADIENT_STOP* straightAlphaGradientStops, uint32 straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, out ID2D1GradientStopCollection1* gradientStopCollection1) mut
-			{
-				return VT.CreateGradientStopCollection(ref this, straightAlphaGradientStops, straightAlphaGradientStopsCount, preInterpolationSpace, postInterpolationSpace, bufferPrecision, extendMode, colorInterpolationMode, out gradientStopCollection1);
-			}
-			public HRESULT CreateImageBrush(ID2D1Image* image, in D2D1_IMAGE_BRUSH_PROPERTIES imageBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1ImageBrush* imageBrush) mut
-			{
-				return VT.CreateImageBrush(ref this, image, imageBrushProperties, brushProperties, out imageBrush);
-			}
-			public HRESULT CreateBitmapBrush(ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES1* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1BitmapBrush1* bitmapBrush) mut
-			{
-				return VT.CreateBitmapBrush(ref this, bitmap, bitmapBrushProperties, brushProperties, out bitmapBrush);
-			}
-			public HRESULT CreateCommandList(out ID2D1CommandList* commandList) mut
-			{
-				return VT.CreateCommandList(ref this, out commandList);
-			}
-			public BOOL IsDxgiFormatSupported(DXGI_FORMAT format) mut
-			{
-				return VT.IsDxgiFormatSupported(ref this, format);
-			}
-			public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision) mut
-			{
-				return VT.IsBufferPrecisionSupported(ref this, bufferPrecision);
-			}
-			public HRESULT GetImageLocalBounds(ref ID2D1Image image, out D2D_RECT_F localBounds) mut
-			{
-				return VT.GetImageLocalBounds(ref this, ref image, out localBounds);
-			}
-			public HRESULT GetImageWorldBounds(ref ID2D1Image image, out D2D_RECT_F worldBounds) mut
-			{
-				return VT.GetImageWorldBounds(ref this, ref image, out worldBounds);
-			}
-			public HRESULT GetGlyphRunWorldBounds(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_MEASURING_MODE measuringMode, out D2D_RECT_F bounds) mut
-			{
-				return VT.GetGlyphRunWorldBounds(ref this, baselineOrigin, glyphRun, measuringMode, out bounds);
-			}
-			public void GetDevice(out ID2D1Device* device) mut
-			{
-				VT.GetDevice(ref this, out device);
-			}
-			public void SetTarget(ID2D1Image* image) mut
-			{
-				VT.SetTarget(ref this, image);
-			}
-			public void GetTarget(ID2D1Image** image) mut
-			{
-				VT.GetTarget(ref this, image);
-			}
-			public void SetRenderingControls(in D2D1_RENDERING_CONTROLS renderingControls) mut
-			{
-				VT.SetRenderingControls(ref this, renderingControls);
-			}
-			public void GetRenderingControls(out D2D1_RENDERING_CONTROLS renderingControls) mut
-			{
-				VT.GetRenderingControls(ref this, out renderingControls);
-			}
-			public void SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend) mut
-			{
-				VT.SetPrimitiveBlend(ref this, primitiveBlend);
-			}
-			public D2D1_PRIMITIVE_BLEND GetPrimitiveBlend() mut
-			{
-				return VT.GetPrimitiveBlend(ref this);
-			}
-			public void SetUnitMode(D2D1_UNIT_MODE unitMode) mut
-			{
-				VT.SetUnitMode(ref this, unitMode);
-			}
-			public D2D1_UNIT_MODE GetUnitMode() mut
-			{
-				return VT.GetUnitMode(ref this);
-			}
-			public void DrawGlyphRun(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) mut
-			{
-				VT.DrawGlyphRun(ref this, baselineOrigin, glyphRun, glyphRunDescription, ref foregroundBrush, measuringMode);
-			}
-			public void DrawImage(ref ID2D1Image image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) mut
-			{
-				VT.DrawImage(ref this, ref image, targetOffset, imageRectangle, interpolationMode, compositeMode);
-			}
-			public void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset) mut
-			{
-				VT.DrawGdiMetafile(ref this, ref gdiMetafile, targetOffset);
-			}
-			public void DrawBitmap(ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) mut
-			{
-				VT.DrawBitmap(ref this, ref bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
-			}
-			public void PushLayer(in D2D1_LAYER_PARAMETERS1 layerParameters, ID2D1Layer* layer) mut
-			{
-				VT.PushLayer(ref this, layerParameters, layer);
-			}
-			public HRESULT InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint32 input, in D2D_RECT_F inputRectangle) mut
-			{
-				return VT.InvalidateEffectInputRectangle(ref this, ref effect, input, inputRectangle);
-			}
-			public HRESULT GetEffectInvalidRectangleCount(ref ID2D1Effect effect, out uint32 rectangleCount) mut
-			{
-				return VT.GetEffectInvalidRectangleCount(ref this, ref effect, out rectangleCount);
-			}
-			public HRESULT GetEffectInvalidRectangles(ref ID2D1Effect effect, D2D_RECT_F* rectangles, uint32 rectanglesCount) mut
-			{
-				return VT.GetEffectInvalidRectangles(ref this, ref effect, rectangles, rectanglesCount);
-			}
-			public HRESULT GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, D2D_RECT_F* renderImageRectangle, D2D1_EFFECT_INPUT_DESCRIPTION* inputDescriptions, D2D_RECT_F* requiredInputRects, uint32 inputCount) mut
-			{
-				return VT.GetEffectRequiredInputRectangles(ref this, ref renderEffect, renderImageRectangle, inputDescriptions, requiredInputRects, inputCount);
-			}
-			public void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut
-			{
-				VT.FillOpacityMask(ref this, ref opacityMask, ref brush, destinationRectangle, sourceRectangle);
-			}
+			public HRESULT CreateBitmap(D2D_SIZE_U size, void* sourceData, uint32 pitch, in D2D1_BITMAP_PROPERTIES1 bitmapProperties, out ID2D1Bitmap1* bitmap) mut => VT.CreateBitmap(ref this, size, sourceData, pitch, bitmapProperties, out bitmap);
+			public HRESULT CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, D2D1_BITMAP_PROPERTIES1* bitmapProperties, out ID2D1Bitmap1* bitmap) mut => VT.CreateBitmapFromWicBitmap(ref this, ref wicBitmapSource, bitmapProperties, out bitmap);
+			public HRESULT CreateColorContext(D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, out ID2D1ColorContext* colorContext) mut => VT.CreateColorContext(ref this, space, profile, profileSize, out colorContext);
+			public HRESULT CreateColorContextFromFilename(PWSTR filename, out ID2D1ColorContext* colorContext) mut => VT.CreateColorContextFromFilename(ref this, filename, out colorContext);
+			public HRESULT CreateColorContextFromWicColorContext(ref IWICColorContext wicColorContext, out ID2D1ColorContext* colorContext) mut => VT.CreateColorContextFromWicColorContext(ref this, ref wicColorContext, out colorContext);
+			public HRESULT CreateBitmapFromDxgiSurface(ref IDXGISurface surface, D2D1_BITMAP_PROPERTIES1* bitmapProperties, out ID2D1Bitmap1* bitmap) mut => VT.CreateBitmapFromDxgiSurface(ref this, ref surface, bitmapProperties, out bitmap);
+			public HRESULT CreateEffect(in Guid effectId, out ID2D1Effect* effect) mut => VT.CreateEffect(ref this, effectId, out effect);
+			public HRESULT CreateGradientStopCollection(D2D1_GRADIENT_STOP* straightAlphaGradientStops, uint32 straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, out ID2D1GradientStopCollection1* gradientStopCollection1) mut => VT.CreateGradientStopCollection(ref this, straightAlphaGradientStops, straightAlphaGradientStopsCount, preInterpolationSpace, postInterpolationSpace, bufferPrecision, extendMode, colorInterpolationMode, out gradientStopCollection1);
+			public HRESULT CreateImageBrush(ID2D1Image* image, in D2D1_IMAGE_BRUSH_PROPERTIES imageBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1ImageBrush* imageBrush) mut => VT.CreateImageBrush(ref this, image, imageBrushProperties, brushProperties, out imageBrush);
+			public HRESULT CreateBitmapBrush(ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES1* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1BitmapBrush1* bitmapBrush) mut => VT.CreateBitmapBrush(ref this, bitmap, bitmapBrushProperties, brushProperties, out bitmapBrush);
+			public HRESULT CreateCommandList(out ID2D1CommandList* commandList) mut => VT.CreateCommandList(ref this, out commandList);
+			public BOOL IsDxgiFormatSupported(DXGI_FORMAT format) mut => VT.IsDxgiFormatSupported(ref this, format);
+			public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision) mut => VT.IsBufferPrecisionSupported(ref this, bufferPrecision);
+			public HRESULT GetImageLocalBounds(ref ID2D1Image image, out D2D_RECT_F localBounds) mut => VT.GetImageLocalBounds(ref this, ref image, out localBounds);
+			public HRESULT GetImageWorldBounds(ref ID2D1Image image, out D2D_RECT_F worldBounds) mut => VT.GetImageWorldBounds(ref this, ref image, out worldBounds);
+			public HRESULT GetGlyphRunWorldBounds(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_MEASURING_MODE measuringMode, out D2D_RECT_F bounds) mut => VT.GetGlyphRunWorldBounds(ref this, baselineOrigin, glyphRun, measuringMode, out bounds);
+			public void GetDevice(out ID2D1Device* device) mut => VT.GetDevice(ref this, out device);
+			public void SetTarget(ID2D1Image* image) mut => VT.SetTarget(ref this, image);
+			public void GetTarget(ID2D1Image** image) mut => VT.GetTarget(ref this, image);
+			public void SetRenderingControls(in D2D1_RENDERING_CONTROLS renderingControls) mut => VT.SetRenderingControls(ref this, renderingControls);
+			public void GetRenderingControls(out D2D1_RENDERING_CONTROLS renderingControls) mut => VT.GetRenderingControls(ref this, out renderingControls);
+			public void SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend) mut => VT.SetPrimitiveBlend(ref this, primitiveBlend);
+			public D2D1_PRIMITIVE_BLEND GetPrimitiveBlend() mut => VT.GetPrimitiveBlend(ref this);
+			public void SetUnitMode(D2D1_UNIT_MODE unitMode) mut => VT.SetUnitMode(ref this, unitMode);
+			public D2D1_UNIT_MODE GetUnitMode() mut => VT.GetUnitMode(ref this);
+			public void DrawGlyphRun(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) mut => VT.DrawGlyphRun(ref this, baselineOrigin, glyphRun, glyphRunDescription, ref foregroundBrush, measuringMode);
+			public void DrawImage(ref ID2D1Image image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) mut => VT.DrawImage(ref this, ref image, targetOffset, imageRectangle, interpolationMode, compositeMode);
+			public void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset) mut => VT.DrawGdiMetafile(ref this, ref gdiMetafile, targetOffset);
+			public void DrawBitmap(ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) mut => VT.DrawBitmap(ref this, ref bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
+			public void PushLayer(in D2D1_LAYER_PARAMETERS1 layerParameters, ID2D1Layer* layer) mut => VT.PushLayer(ref this, layerParameters, layer);
+			public HRESULT InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint32 input, in D2D_RECT_F inputRectangle) mut => VT.InvalidateEffectInputRectangle(ref this, ref effect, input, inputRectangle);
+			public HRESULT GetEffectInvalidRectangleCount(ref ID2D1Effect effect, out uint32 rectangleCount) mut => VT.GetEffectInvalidRectangleCount(ref this, ref effect, out rectangleCount);
+			public HRESULT GetEffectInvalidRectangles(ref ID2D1Effect effect, D2D_RECT_F* rectangles, uint32 rectanglesCount) mut => VT.GetEffectInvalidRectangles(ref this, ref effect, rectangles, rectanglesCount);
+			public HRESULT GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, D2D_RECT_F* renderImageRectangle, D2D1_EFFECT_INPUT_DESCRIPTION* inputDescriptions, D2D_RECT_F* requiredInputRects, uint32 inputCount) mut => VT.GetEffectRequiredInputRectangles(ref this, ref renderEffect, renderImageRectangle, inputDescriptions, requiredInputRects, inputCount);
+			public void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut => VT.FillOpacityMask(ref this, ref opacityMask, ref brush, destinationRectangle, sourceRectangle);
+
 			[CRepr]
 			public struct VTable : ID2D1RenderTarget.VTable
 			{
@@ -3738,26 +2963,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext* deviceContext) mut
-			{
-				return VT.CreateDeviceContext(ref this, options, out deviceContext);
-			}
-			public HRESULT CreatePrintControl(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, out ID2D1PrintControl* printControl) mut
-			{
-				return VT.CreatePrintControl(ref this, ref wicFactory, ref documentTarget, printControlProperties, out printControl);
-			}
-			public void SetMaximumTextureMemory(uint64 maximumInBytes) mut
-			{
-				VT.SetMaximumTextureMemory(ref this, maximumInBytes);
-			}
-			public uint64 GetMaximumTextureMemory() mut
-			{
-				return VT.GetMaximumTextureMemory(ref this);
-			}
-			public void ClearResources(uint32 millisecondsSinceUse) mut
-			{
-				VT.ClearResources(ref this, millisecondsSinceUse);
-			}
+			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext* deviceContext) mut => VT.CreateDeviceContext(ref this, options, out deviceContext);
+			public HRESULT CreatePrintControl(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, out ID2D1PrintControl* printControl) mut => VT.CreatePrintControl(ref this, ref wicFactory, ref documentTarget, printControlProperties, out printControl);
+			public void SetMaximumTextureMemory(uint64 maximumInBytes) mut => VT.SetMaximumTextureMemory(ref this, maximumInBytes);
+			public uint64 GetMaximumTextureMemory() mut => VT.GetMaximumTextureMemory(ref this);
+			public void ClearResources(uint32 millisecondsSinceUse) mut => VT.ClearResources(ref this, millisecondsSinceUse);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -3775,46 +2986,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device* d2dDevice) mut
-			{
-				return VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice);
-			}
-			public HRESULT CreateStrokeStyle(in D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, float* dashes, uint32 dashesCount, out ID2D1StrokeStyle1* strokeStyle) mut
-			{
-				return VT.CreateStrokeStyle(ref this, strokeStyleProperties, dashes, dashesCount, out strokeStyle);
-			}
-			public HRESULT CreatePathGeometry(out ID2D1PathGeometry1* pathGeometry) mut
-			{
-				return VT.CreatePathGeometry(ref this, out pathGeometry);
-			}
-			public HRESULT CreateDrawingStateBlock(D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, out ID2D1DrawingStateBlock1* drawingStateBlock) mut
-			{
-				return VT.CreateDrawingStateBlock(ref this, drawingStateDescription, textRenderingParams, out drawingStateBlock);
-			}
-			public HRESULT CreateGdiMetafile(ref IStream metafileStream, out ID2D1GdiMetafile* metafile) mut
-			{
-				return VT.CreateGdiMetafile(ref this, ref metafileStream, out metafile);
-			}
-			public HRESULT RegisterEffectFromStream(in Guid classId, ref IStream propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) mut
-			{
-				return VT.RegisterEffectFromStream(ref this, classId, ref propertyXml, bindings, bindingsCount, effectFactory);
-			}
-			public HRESULT RegisterEffectFromString(in Guid classId, PWSTR propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) mut
-			{
-				return VT.RegisterEffectFromString(ref this, classId, propertyXml, bindings, bindingsCount, effectFactory);
-			}
-			public HRESULT UnregisterEffect(in Guid classId) mut
-			{
-				return VT.UnregisterEffect(ref this, classId);
-			}
-			public HRESULT GetRegisteredEffects(Guid* effects, uint32 effectsCount, uint32* effectsReturned, uint32* effectsRegistered) mut
-			{
-				return VT.GetRegisteredEffects(ref this, effects, effectsCount, effectsReturned, effectsRegistered);
-			}
-			public HRESULT GetEffectProperties(in Guid effectId, out ID2D1Properties* properties) mut
-			{
-				return VT.GetEffectProperties(ref this, effectId, out properties);
-			}
+			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device* d2dDevice) mut => VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice);
+			public HRESULT CreateStrokeStyle(in D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, float* dashes, uint32 dashesCount, out ID2D1StrokeStyle1* strokeStyle) mut => VT.CreateStrokeStyle(ref this, strokeStyleProperties, dashes, dashesCount, out strokeStyle);
+			public HRESULT CreatePathGeometry(out ID2D1PathGeometry1* pathGeometry) mut => VT.CreatePathGeometry(ref this, out pathGeometry);
+			public HRESULT CreateDrawingStateBlock(D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, out ID2D1DrawingStateBlock1* drawingStateBlock) mut => VT.CreateDrawingStateBlock(ref this, drawingStateDescription, textRenderingParams, out drawingStateBlock);
+			public HRESULT CreateGdiMetafile(ref IStream metafileStream, out ID2D1GdiMetafile* metafile) mut => VT.CreateGdiMetafile(ref this, ref metafileStream, out metafile);
+			public HRESULT RegisterEffectFromStream(in Guid classId, ref IStream propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) mut => VT.RegisterEffectFromStream(ref this, classId, ref propertyXml, bindings, bindingsCount, effectFactory);
+			public HRESULT RegisterEffectFromString(in Guid classId, PWSTR propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) mut => VT.RegisterEffectFromString(ref this, classId, propertyXml, bindings, bindingsCount, effectFactory);
+			public HRESULT UnregisterEffect(in Guid classId) mut => VT.UnregisterEffect(ref this, classId);
+			public HRESULT GetRegisteredEffects(Guid* effects, uint32 effectsCount, uint32* effectsReturned, uint32* effectsRegistered) mut => VT.GetRegisteredEffects(ref this, effects, effectsCount, effectsReturned, effectsRegistered);
+			public HRESULT GetEffectProperties(in Guid effectId, out ID2D1Properties* properties) mut => VT.GetEffectProperties(ref this, effectId, out properties);
+
 			[CRepr]
 			public struct VTable : ID2D1Factory.VTable
 			{
@@ -3837,18 +3019,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL GetMultithreadProtected() mut
-			{
-				return VT.GetMultithreadProtected(ref this);
-			}
-			public void Enter() mut
-			{
-				VT.Enter(ref this);
-			}
-			public void Leave() mut
-			{
-				VT.Leave(ref this);
-			}
+			public BOOL GetMultithreadProtected() mut => VT.GetMultithreadProtected(ref this);
+			public void Enter() mut => VT.Enter(ref this);
+			public void Leave() mut => VT.Leave(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3864,14 +3038,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Map(out uint8* data, uint32 bufferSize) mut
-			{
-				return VT.Map(ref this, out data, bufferSize);
-			}
-			public HRESULT Unmap() mut
-			{
-				return VT.Unmap(ref this);
-			}
+			public HRESULT Map(out uint8* data, uint32 bufferSize) mut => VT.Map(ref this, out data, bufferSize);
+			public HRESULT Unmap() mut => VT.Unmap(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3886,10 +3055,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Update(uint32* minimumExtents, uint32* maximimumExtents, uint32* strides, uint32 dimensions, uint8* data, uint32 dataCount) mut
-			{
-				return VT.Update(ref this, minimumExtents, maximimumExtents, strides, dimensions, data, dataCount);
-			}
+			public HRESULT Update(uint32* minimumExtents, uint32* maximimumExtents, uint32* strides, uint32 dimensions, uint8* data, uint32 dataCount) mut => VT.Update(ref this, minimumExtents, maximimumExtents, strides, dimensions, data, dataCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3903,22 +3070,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetInputDescription(uint32 inputIndex, D2D1_INPUT_DESCRIPTION inputDescription) mut
-			{
-				return VT.SetInputDescription(ref this, inputIndex, inputDescription);
-			}
-			public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) mut
-			{
-				return VT.SetOutputBuffer(ref this, bufferPrecision, channelDepth);
-			}
-			public void SetCached(BOOL isCached) mut
-			{
-				VT.SetCached(ref this, isCached);
-			}
-			public void SetInstructionCountHint(uint32 instructionCount) mut
-			{
-				VT.SetInstructionCountHint(ref this, instructionCount);
-			}
+			public HRESULT SetInputDescription(uint32 inputIndex, D2D1_INPUT_DESCRIPTION inputDescription) mut => VT.SetInputDescription(ref this, inputIndex, inputDescription);
+			public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) mut => VT.SetOutputBuffer(ref this, bufferPrecision, channelDepth);
+			public void SetCached(BOOL isCached) mut => VT.SetCached(ref this, isCached);
+			public void SetInstructionCountHint(uint32 instructionCount) mut => VT.SetInstructionCountHint(ref this, instructionCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3935,26 +3091,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPixelShaderConstantBuffer(uint8* buffer, uint32 bufferCount) mut
-			{
-				return VT.SetPixelShaderConstantBuffer(ref this, buffer, bufferCount);
-			}
-			public HRESULT SetResourceTexture(uint32 textureIndex, ref ID2D1ResourceTexture resourceTexture) mut
-			{
-				return VT.SetResourceTexture(ref this, textureIndex, ref resourceTexture);
-			}
-			public HRESULT SetVertexShaderConstantBuffer(uint8* buffer, uint32 bufferCount) mut
-			{
-				return VT.SetVertexShaderConstantBuffer(ref this, buffer, bufferCount);
-			}
-			public HRESULT SetPixelShader(in Guid shaderId, D2D1_PIXEL_OPTIONS pixelOptions) mut
-			{
-				return VT.SetPixelShader(ref this, shaderId, pixelOptions);
-			}
-			public HRESULT SetVertexProcessing(ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, D2D1_BLEND_DESCRIPTION* blendDescription, D2D1_VERTEX_RANGE* vertexRange, Guid* vertexShader) mut
-			{
-				return VT.SetVertexProcessing(ref this, vertexBuffer, vertexOptions, blendDescription, vertexRange, vertexShader);
-			}
+			public HRESULT SetPixelShaderConstantBuffer(uint8* buffer, uint32 bufferCount) mut => VT.SetPixelShaderConstantBuffer(ref this, buffer, bufferCount);
+			public HRESULT SetResourceTexture(uint32 textureIndex, ref ID2D1ResourceTexture resourceTexture) mut => VT.SetResourceTexture(ref this, textureIndex, ref resourceTexture);
+			public HRESULT SetVertexShaderConstantBuffer(uint8* buffer, uint32 bufferCount) mut => VT.SetVertexShaderConstantBuffer(ref this, buffer, bufferCount);
+			public HRESULT SetPixelShader(in Guid shaderId, D2D1_PIXEL_OPTIONS pixelOptions) mut => VT.SetPixelShader(ref this, shaderId, pixelOptions);
+			public HRESULT SetVertexProcessing(ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, D2D1_BLEND_DESCRIPTION* blendDescription, D2D1_VERTEX_RANGE* vertexRange, Guid* vertexShader) mut => VT.SetVertexProcessing(ref this, vertexBuffer, vertexOptions, blendDescription, vertexRange, vertexShader);
+
 			[CRepr]
 			public struct VTable : ID2D1RenderInfo.VTable
 			{
@@ -3972,18 +3114,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetComputeShaderConstantBuffer(uint8* buffer, uint32 bufferCount) mut
-			{
-				return VT.SetComputeShaderConstantBuffer(ref this, buffer, bufferCount);
-			}
-			public HRESULT SetComputeShader(in Guid shaderId) mut
-			{
-				return VT.SetComputeShader(ref this, shaderId);
-			}
-			public HRESULT SetResourceTexture(uint32 textureIndex, ref ID2D1ResourceTexture resourceTexture) mut
-			{
-				return VT.SetResourceTexture(ref this, textureIndex, ref resourceTexture);
-			}
+			public HRESULT SetComputeShaderConstantBuffer(uint8* buffer, uint32 bufferCount) mut => VT.SetComputeShaderConstantBuffer(ref this, buffer, bufferCount);
+			public HRESULT SetComputeShader(in Guid shaderId) mut => VT.SetComputeShader(ref this, shaderId);
+			public HRESULT SetResourceTexture(uint32 textureIndex, ref ID2D1ResourceTexture resourceTexture) mut => VT.SetResourceTexture(ref this, textureIndex, ref resourceTexture);
+
 			[CRepr]
 			public struct VTable : ID2D1RenderInfo.VTable
 			{
@@ -3999,10 +3133,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetInputCount() mut
-			{
-				return VT.GetInputCount(ref this);
-			}
+			public uint32 GetInputCount() mut => VT.GetInputCount(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4016,42 +3148,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetInputCount() mut
-			{
-				return VT.GetInputCount(ref this);
-			}
-			public HRESULT SetSingleTransformNode(ref ID2D1TransformNode node) mut
-			{
-				return VT.SetSingleTransformNode(ref this, ref node);
-			}
-			public HRESULT AddNode(ref ID2D1TransformNode node) mut
-			{
-				return VT.AddNode(ref this, ref node);
-			}
-			public HRESULT RemoveNode(ref ID2D1TransformNode node) mut
-			{
-				return VT.RemoveNode(ref this, ref node);
-			}
-			public HRESULT SetOutputNode(ref ID2D1TransformNode node) mut
-			{
-				return VT.SetOutputNode(ref this, ref node);
-			}
-			public HRESULT ConnectNode(ref ID2D1TransformNode fromNode, ref ID2D1TransformNode toNode, uint32 toNodeInputIndex) mut
-			{
-				return VT.ConnectNode(ref this, ref fromNode, ref toNode, toNodeInputIndex);
-			}
-			public HRESULT ConnectToEffectInput(uint32 toEffectInputIndex, ref ID2D1TransformNode node, uint32 toNodeInputIndex) mut
-			{
-				return VT.ConnectToEffectInput(ref this, toEffectInputIndex, ref node, toNodeInputIndex);
-			}
-			public void Clear() mut
-			{
-				VT.Clear(ref this);
-			}
-			public HRESULT SetPassthroughGraph(uint32 effectInputIndex) mut
-			{
-				return VT.SetPassthroughGraph(ref this, effectInputIndex);
-			}
+			public uint32 GetInputCount() mut => VT.GetInputCount(ref this);
+			public HRESULT SetSingleTransformNode(ref ID2D1TransformNode node) mut => VT.SetSingleTransformNode(ref this, ref node);
+			public HRESULT AddNode(ref ID2D1TransformNode node) mut => VT.AddNode(ref this, ref node);
+			public HRESULT RemoveNode(ref ID2D1TransformNode node) mut => VT.RemoveNode(ref this, ref node);
+			public HRESULT SetOutputNode(ref ID2D1TransformNode node) mut => VT.SetOutputNode(ref this, ref node);
+			public HRESULT ConnectNode(ref ID2D1TransformNode fromNode, ref ID2D1TransformNode toNode, uint32 toNodeInputIndex) mut => VT.ConnectNode(ref this, ref fromNode, ref toNode, toNodeInputIndex);
+			public HRESULT ConnectToEffectInput(uint32 toEffectInputIndex, ref ID2D1TransformNode node, uint32 toNodeInputIndex) mut => VT.ConnectToEffectInput(ref this, toEffectInputIndex, ref node, toNodeInputIndex);
+			public void Clear() mut => VT.Clear(ref this);
+			public HRESULT SetPassthroughGraph(uint32 effectInputIndex) mut => VT.SetPassthroughGraph(ref this, effectInputIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4073,18 +3179,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MapOutputRectToInputRects(in RECT outputRect, RECT* inputRects, uint32 inputRectsCount) mut
-			{
-				return VT.MapOutputRectToInputRects(ref this, outputRect, inputRects, inputRectsCount);
-			}
-			public HRESULT MapInputRectsToOutputRect(RECT* inputRects, RECT* inputOpaqueSubRects, uint32 inputRectCount, out RECT outputRect, out RECT outputOpaqueSubRect) mut
-			{
-				return VT.MapInputRectsToOutputRect(ref this, inputRects, inputOpaqueSubRects, inputRectCount, out outputRect, out outputOpaqueSubRect);
-			}
-			public HRESULT MapInvalidRect(uint32 inputIndex, RECT invalidInputRect, out RECT invalidOutputRect) mut
-			{
-				return VT.MapInvalidRect(ref this, inputIndex, invalidInputRect, out invalidOutputRect);
-			}
+			public HRESULT MapOutputRectToInputRects(in RECT outputRect, RECT* inputRects, uint32 inputRectsCount) mut => VT.MapOutputRectToInputRects(ref this, outputRect, inputRects, inputRectsCount);
+			public HRESULT MapInputRectsToOutputRect(RECT* inputRects, RECT* inputOpaqueSubRects, uint32 inputRectCount, out RECT outputRect, out RECT outputOpaqueSubRect) mut => VT.MapInputRectsToOutputRect(ref this, inputRects, inputOpaqueSubRects, inputRectCount, out outputRect, out outputOpaqueSubRect);
+			public HRESULT MapInvalidRect(uint32 inputIndex, RECT invalidInputRect, out RECT invalidOutputRect) mut => VT.MapInvalidRect(ref this, inputIndex, invalidInputRect, out invalidOutputRect);
+
 			[CRepr]
 			public struct VTable : ID2D1TransformNode.VTable
 			{
@@ -4100,10 +3198,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDrawInfo(ref ID2D1DrawInfo drawInfo) mut
-			{
-				return VT.SetDrawInfo(ref this, ref drawInfo);
-			}
+			public HRESULT SetDrawInfo(ref ID2D1DrawInfo drawInfo) mut => VT.SetDrawInfo(ref this, ref drawInfo);
+
 			[CRepr]
 			public struct VTable : ID2D1Transform.VTable
 			{
@@ -4117,14 +3213,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetComputeInfo(ref ID2D1ComputeInfo computeInfo) mut
-			{
-				return VT.SetComputeInfo(ref this, ref computeInfo);
-			}
-			public HRESULT CalculateThreadgroups(in RECT outputRect, out uint32 dimensionX, out uint32 dimensionY, out uint32 dimensionZ) mut
-			{
-				return VT.CalculateThreadgroups(ref this, outputRect, out dimensionX, out dimensionY, out dimensionZ);
-			}
+			public HRESULT SetComputeInfo(ref ID2D1ComputeInfo computeInfo) mut => VT.SetComputeInfo(ref this, ref computeInfo);
+			public HRESULT CalculateThreadgroups(in RECT outputRect, out uint32 dimensionX, out uint32 dimensionY, out uint32 dimensionZ) mut => VT.CalculateThreadgroups(ref this, outputRect, out dimensionX, out dimensionY, out dimensionZ);
+
 			[CRepr]
 			public struct VTable : ID2D1Transform.VTable
 			{
@@ -4139,10 +3230,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ProcessAnalysisResults(uint8* analysisData, uint32 analysisDataCount) mut
-			{
-				return VT.ProcessAnalysisResults(ref this, analysisData, analysisDataCount);
-			}
+			public HRESULT ProcessAnalysisResults(uint8* analysisData, uint32 analysisDataCount) mut => VT.ProcessAnalysisResults(ref this, analysisData, analysisDataCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4156,14 +3245,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRenderInfo(ref ID2D1RenderInfo renderInfo) mut
-			{
-				return VT.SetRenderInfo(ref this, ref renderInfo);
-			}
-			public HRESULT Draw(ref ID2D1Bitmap1 target, in RECT drawRect, D2D_POINT_2U targetOrigin) mut
-			{
-				return VT.Draw(ref this, ref target, drawRect, targetOrigin);
-			}
+			public HRESULT SetRenderInfo(ref ID2D1RenderInfo renderInfo) mut => VT.SetRenderInfo(ref this, ref renderInfo);
+			public HRESULT Draw(ref ID2D1Bitmap1 target, in RECT drawRect, D2D_POINT_2U targetOrigin) mut => VT.Draw(ref this, ref target, drawRect, targetOrigin);
+
 			[CRepr]
 			public struct VTable : ID2D1Transform.VTable
 			{
@@ -4178,14 +3262,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) mut
-			{
-				return VT.SetOutputBuffer(ref this, bufferPrecision, channelDepth);
-			}
-			public void SetCached(BOOL isCached) mut
-			{
-				VT.SetCached(ref this, isCached);
-			}
+			public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) mut => VT.SetOutputBuffer(ref this, bufferPrecision, channelDepth);
+			public void SetCached(BOOL isCached) mut => VT.SetCached(ref this, isCached);
+
 			[CRepr]
 			public struct VTable : ID2D1TransformNode.VTable
 			{
@@ -4200,14 +3279,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetDescription(in D2D1_BLEND_DESCRIPTION description) mut
-			{
-				VT.SetDescription(ref this, description);
-			}
-			public void GetDescription(out D2D1_BLEND_DESCRIPTION description) mut
-			{
-				VT.GetDescription(ref this, out description);
-			}
+			public void SetDescription(in D2D1_BLEND_DESCRIPTION description) mut => VT.SetDescription(ref this, description);
+			public void GetDescription(out D2D1_BLEND_DESCRIPTION description) mut => VT.GetDescription(ref this, out description);
+
 			[CRepr]
 			public struct VTable : ID2D1ConcreteTransform.VTable
 			{
@@ -4222,22 +3296,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetExtendModeX(D2D1_EXTEND_MODE extendMode) mut
-			{
-				VT.SetExtendModeX(ref this, extendMode);
-			}
-			public void SetExtendModeY(D2D1_EXTEND_MODE extendMode) mut
-			{
-				VT.SetExtendModeY(ref this, extendMode);
-			}
-			public D2D1_EXTEND_MODE GetExtendModeX() mut
-			{
-				return VT.GetExtendModeX(ref this);
-			}
-			public D2D1_EXTEND_MODE GetExtendModeY() mut
-			{
-				return VT.GetExtendModeY(ref this);
-			}
+			public void SetExtendModeX(D2D1_EXTEND_MODE extendMode) mut => VT.SetExtendModeX(ref this, extendMode);
+			public void SetExtendModeY(D2D1_EXTEND_MODE extendMode) mut => VT.SetExtendModeY(ref this, extendMode);
+			public D2D1_EXTEND_MODE GetExtendModeX() mut => VT.GetExtendModeX(ref this);
+			public D2D1_EXTEND_MODE GetExtendModeY() mut => VT.GetExtendModeY(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1ConcreteTransform.VTable
 			{
@@ -4254,14 +3317,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetOffset(POINT offset) mut
-			{
-				VT.SetOffset(ref this, offset);
-			}
-			public POINT GetOffset() mut
-			{
-				return VT.GetOffset(ref this);
-			}
+			public void SetOffset(POINT offset) mut => VT.SetOffset(ref this, offset);
+			public POINT GetOffset() mut => VT.GetOffset(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1TransformNode.VTable
 			{
@@ -4276,14 +3334,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetOutputBounds(in RECT outputBounds) mut
-			{
-				VT.SetOutputBounds(ref this, outputBounds);
-			}
-			public void GetOutputBounds(out RECT outputBounds) mut
-			{
-				VT.GetOutputBounds(ref this, out outputBounds);
-			}
+			public void SetOutputBounds(in RECT outputBounds) mut => VT.SetOutputBounds(ref this, outputBounds);
+			public void GetOutputBounds(out RECT outputBounds) mut => VT.GetOutputBounds(ref this, out outputBounds);
+
 			[CRepr]
 			public struct VTable : ID2D1TransformNode.VTable
 			{
@@ -4298,18 +3351,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref ID2D1EffectContext effectContext, ref ID2D1TransformGraph transformGraph) mut
-			{
-				return VT.Initialize(ref this, ref effectContext, ref transformGraph);
-			}
-			public HRESULT PrepareForRender(D2D1_CHANGE_TYPE changeType) mut
-			{
-				return VT.PrepareForRender(ref this, changeType);
-			}
-			public HRESULT SetGraph(ref ID2D1TransformGraph transformGraph) mut
-			{
-				return VT.SetGraph(ref this, ref transformGraph);
-			}
+			public HRESULT Initialize(ref ID2D1EffectContext effectContext, ref ID2D1TransformGraph transformGraph) mut => VT.Initialize(ref this, ref effectContext, ref transformGraph);
+			public HRESULT PrepareForRender(D2D1_CHANGE_TYPE changeType) mut => VT.PrepareForRender(ref this, changeType);
+			public HRESULT SetGraph(ref ID2D1TransformGraph transformGraph) mut => VT.SetGraph(ref this, ref transformGraph);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4325,90 +3370,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDpi(out float dpiX, out float dpiY) mut
-			{
-				VT.GetDpi(ref this, out dpiX, out dpiY);
-			}
-			public HRESULT CreateEffect(in Guid effectId, out ID2D1Effect* effect) mut
-			{
-				return VT.CreateEffect(ref this, effectId, out effect);
-			}
-			public HRESULT GetMaximumSupportedFeatureLevel(D3D_FEATURE_LEVEL* featureLevels, uint32 featureLevelsCount, out D3D_FEATURE_LEVEL maximumSupportedFeatureLevel) mut
-			{
-				return VT.GetMaximumSupportedFeatureLevel(ref this, featureLevels, featureLevelsCount, out maximumSupportedFeatureLevel);
-			}
-			public HRESULT CreateTransformNodeFromEffect(ref ID2D1Effect effect, out ID2D1TransformNode* transformNode) mut
-			{
-				return VT.CreateTransformNodeFromEffect(ref this, ref effect, out transformNode);
-			}
-			public HRESULT CreateBlendTransform(uint32 numInputs, in D2D1_BLEND_DESCRIPTION blendDescription, out ID2D1BlendTransform* transform) mut
-			{
-				return VT.CreateBlendTransform(ref this, numInputs, blendDescription, out transform);
-			}
-			public HRESULT CreateBorderTransform(D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, out ID2D1BorderTransform* transform) mut
-			{
-				return VT.CreateBorderTransform(ref this, extendModeX, extendModeY, out transform);
-			}
-			public HRESULT CreateOffsetTransform(POINT offset, out ID2D1OffsetTransform* transform) mut
-			{
-				return VT.CreateOffsetTransform(ref this, offset, out transform);
-			}
-			public HRESULT CreateBoundsAdjustmentTransform(in RECT outputRectangle, out ID2D1BoundsAdjustmentTransform* transform) mut
-			{
-				return VT.CreateBoundsAdjustmentTransform(ref this, outputRectangle, out transform);
-			}
-			public HRESULT LoadPixelShader(in Guid shaderId, uint8* shaderBuffer, uint32 shaderBufferCount) mut
-			{
-				return VT.LoadPixelShader(ref this, shaderId, shaderBuffer, shaderBufferCount);
-			}
-			public HRESULT LoadVertexShader(in Guid resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) mut
-			{
-				return VT.LoadVertexShader(ref this, resourceId, shaderBuffer, shaderBufferCount);
-			}
-			public HRESULT LoadComputeShader(in Guid resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) mut
-			{
-				return VT.LoadComputeShader(ref this, resourceId, shaderBuffer, shaderBufferCount);
-			}
-			public BOOL IsShaderLoaded(in Guid shaderId) mut
-			{
-				return VT.IsShaderLoaded(ref this, shaderId);
-			}
-			public HRESULT CreateResourceTexture(Guid* resourceId, in D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, uint8* data, uint32* strides, uint32 dataSize, out ID2D1ResourceTexture* resourceTexture) mut
-			{
-				return VT.CreateResourceTexture(ref this, resourceId, resourceTextureProperties, data, strides, dataSize, out resourceTexture);
-			}
-			public HRESULT FindResourceTexture(in Guid resourceId, out ID2D1ResourceTexture* resourceTexture) mut
-			{
-				return VT.FindResourceTexture(ref this, resourceId, out resourceTexture);
-			}
-			public HRESULT CreateVertexBuffer(in D2D1_VERTEX_BUFFER_PROPERTIES vertexBufferProperties, Guid* resourceId, D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, out ID2D1VertexBuffer* buffer) mut
-			{
-				return VT.CreateVertexBuffer(ref this, vertexBufferProperties, resourceId, customVertexBufferProperties, out buffer);
-			}
-			public HRESULT FindVertexBuffer(in Guid resourceId, out ID2D1VertexBuffer* buffer) mut
-			{
-				return VT.FindVertexBuffer(ref this, resourceId, out buffer);
-			}
-			public HRESULT CreateColorContext(D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, out ID2D1ColorContext* colorContext) mut
-			{
-				return VT.CreateColorContext(ref this, space, profile, profileSize, out colorContext);
-			}
-			public HRESULT CreateColorContextFromFilename(PWSTR filename, out ID2D1ColorContext* colorContext) mut
-			{
-				return VT.CreateColorContextFromFilename(ref this, filename, out colorContext);
-			}
-			public HRESULT CreateColorContextFromWicColorContext(ref IWICColorContext wicColorContext, out ID2D1ColorContext* colorContext) mut
-			{
-				return VT.CreateColorContextFromWicColorContext(ref this, ref wicColorContext, out colorContext);
-			}
-			public HRESULT CheckFeatureSupport(D2D1_FEATURE feature, void* featureSupportData, uint32 featureSupportDataSize) mut
-			{
-				return VT.CheckFeatureSupport(ref this, feature, featureSupportData, featureSupportDataSize);
-			}
-			public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision) mut
-			{
-				return VT.IsBufferPrecisionSupported(ref this, bufferPrecision);
-			}
+			public void GetDpi(out float dpiX, out float dpiY) mut => VT.GetDpi(ref this, out dpiX, out dpiY);
+			public HRESULT CreateEffect(in Guid effectId, out ID2D1Effect* effect) mut => VT.CreateEffect(ref this, effectId, out effect);
+			public HRESULT GetMaximumSupportedFeatureLevel(D3D_FEATURE_LEVEL* featureLevels, uint32 featureLevelsCount, out D3D_FEATURE_LEVEL maximumSupportedFeatureLevel) mut => VT.GetMaximumSupportedFeatureLevel(ref this, featureLevels, featureLevelsCount, out maximumSupportedFeatureLevel);
+			public HRESULT CreateTransformNodeFromEffect(ref ID2D1Effect effect, out ID2D1TransformNode* transformNode) mut => VT.CreateTransformNodeFromEffect(ref this, ref effect, out transformNode);
+			public HRESULT CreateBlendTransform(uint32 numInputs, in D2D1_BLEND_DESCRIPTION blendDescription, out ID2D1BlendTransform* transform) mut => VT.CreateBlendTransform(ref this, numInputs, blendDescription, out transform);
+			public HRESULT CreateBorderTransform(D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, out ID2D1BorderTransform* transform) mut => VT.CreateBorderTransform(ref this, extendModeX, extendModeY, out transform);
+			public HRESULT CreateOffsetTransform(POINT offset, out ID2D1OffsetTransform* transform) mut => VT.CreateOffsetTransform(ref this, offset, out transform);
+			public HRESULT CreateBoundsAdjustmentTransform(in RECT outputRectangle, out ID2D1BoundsAdjustmentTransform* transform) mut => VT.CreateBoundsAdjustmentTransform(ref this, outputRectangle, out transform);
+			public HRESULT LoadPixelShader(in Guid shaderId, uint8* shaderBuffer, uint32 shaderBufferCount) mut => VT.LoadPixelShader(ref this, shaderId, shaderBuffer, shaderBufferCount);
+			public HRESULT LoadVertexShader(in Guid resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) mut => VT.LoadVertexShader(ref this, resourceId, shaderBuffer, shaderBufferCount);
+			public HRESULT LoadComputeShader(in Guid resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) mut => VT.LoadComputeShader(ref this, resourceId, shaderBuffer, shaderBufferCount);
+			public BOOL IsShaderLoaded(in Guid shaderId) mut => VT.IsShaderLoaded(ref this, shaderId);
+			public HRESULT CreateResourceTexture(Guid* resourceId, in D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, uint8* data, uint32* strides, uint32 dataSize, out ID2D1ResourceTexture* resourceTexture) mut => VT.CreateResourceTexture(ref this, resourceId, resourceTextureProperties, data, strides, dataSize, out resourceTexture);
+			public HRESULT FindResourceTexture(in Guid resourceId, out ID2D1ResourceTexture* resourceTexture) mut => VT.FindResourceTexture(ref this, resourceId, out resourceTexture);
+			public HRESULT CreateVertexBuffer(in D2D1_VERTEX_BUFFER_PROPERTIES vertexBufferProperties, Guid* resourceId, D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, out ID2D1VertexBuffer* buffer) mut => VT.CreateVertexBuffer(ref this, vertexBufferProperties, resourceId, customVertexBufferProperties, out buffer);
+			public HRESULT FindVertexBuffer(in Guid resourceId, out ID2D1VertexBuffer* buffer) mut => VT.FindVertexBuffer(ref this, resourceId, out buffer);
+			public HRESULT CreateColorContext(D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, out ID2D1ColorContext* colorContext) mut => VT.CreateColorContext(ref this, space, profile, profileSize, out colorContext);
+			public HRESULT CreateColorContextFromFilename(PWSTR filename, out ID2D1ColorContext* colorContext) mut => VT.CreateColorContextFromFilename(ref this, filename, out colorContext);
+			public HRESULT CreateColorContextFromWicColorContext(ref IWICColorContext wicColorContext, out ID2D1ColorContext* colorContext) mut => VT.CreateColorContextFromWicColorContext(ref this, ref wicColorContext, out colorContext);
+			public HRESULT CheckFeatureSupport(D2D1_FEATURE feature, void* featureSupportData, uint32 featureSupportDataSize) mut => VT.CheckFeatureSupport(ref this, feature, featureSupportData, featureSupportDataSize);
+			public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision) mut => VT.IsBufferPrecisionSupported(ref this, bufferPrecision);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4442,6 +3425,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -4454,18 +3438,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFilledGeometryRealization(ref ID2D1Geometry geometry, float flatteningTolerance, out ID2D1GeometryRealization* geometryRealization) mut
-			{
-				return VT.CreateFilledGeometryRealization(ref this, ref geometry, flatteningTolerance, out geometryRealization);
-			}
-			public HRESULT CreateStrokedGeometryRealization(ref ID2D1Geometry geometry, float flatteningTolerance, float strokeWidth, ID2D1StrokeStyle* strokeStyle, out ID2D1GeometryRealization* geometryRealization) mut
-			{
-				return VT.CreateStrokedGeometryRealization(ref this, ref geometry, flatteningTolerance, strokeWidth, strokeStyle, out geometryRealization);
-			}
-			public void DrawGeometryRealization(ref ID2D1GeometryRealization geometryRealization, ref ID2D1Brush brush) mut
-			{
-				VT.DrawGeometryRealization(ref this, ref geometryRealization, ref brush);
-			}
+			public HRESULT CreateFilledGeometryRealization(ref ID2D1Geometry geometry, float flatteningTolerance, out ID2D1GeometryRealization* geometryRealization) mut => VT.CreateFilledGeometryRealization(ref this, ref geometry, flatteningTolerance, out geometryRealization);
+			public HRESULT CreateStrokedGeometryRealization(ref ID2D1Geometry geometry, float flatteningTolerance, float strokeWidth, ID2D1StrokeStyle* strokeStyle, out ID2D1GeometryRealization* geometryRealization) mut => VT.CreateStrokedGeometryRealization(ref this, ref geometry, flatteningTolerance, strokeWidth, strokeStyle, out geometryRealization);
+			public void DrawGeometryRealization(ref ID2D1GeometryRealization geometryRealization, ref ID2D1Brush brush) mut => VT.DrawGeometryRealization(ref this, ref geometryRealization, ref brush);
+
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext.VTable
 			{
@@ -4481,18 +3457,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D1_RENDERING_PRIORITY GetRenderingPriority() mut
-			{
-				return VT.GetRenderingPriority(ref this);
-			}
-			public void SetRenderingPriority(D2D1_RENDERING_PRIORITY renderingPriority) mut
-			{
-				VT.SetRenderingPriority(ref this, renderingPriority);
-			}
-			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext1* deviceContext1) mut
-			{
-				return VT.CreateDeviceContext(ref this, options, out deviceContext1);
-			}
+			public D2D1_RENDERING_PRIORITY GetRenderingPriority() mut => VT.GetRenderingPriority(ref this);
+			public void SetRenderingPriority(D2D1_RENDERING_PRIORITY renderingPriority) mut => VT.SetRenderingPriority(ref this, renderingPriority);
+			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext1* deviceContext1) mut => VT.CreateDeviceContext(ref this, options, out deviceContext1);
+
 			[CRepr]
 			public struct VTable : ID2D1Device.VTable
 			{
@@ -4508,10 +3476,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device1* d2dDevice1) mut
-			{
-				return VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice1);
-			}
+			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device1* d2dDevice1) mut => VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice1);
+
 			[CRepr]
 			public struct VTable : ID2D1Factory1.VTable
 			{
@@ -4525,10 +3491,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPrimitiveBlend1(D2D1_PRIMITIVE_BLEND primitiveBlend) mut
-			{
-				return VT.SetPrimitiveBlend1(ref this, primitiveBlend);
-			}
+			public HRESULT SetPrimitiveBlend1(D2D1_PRIMITIVE_BLEND primitiveBlend) mut => VT.SetPrimitiveBlend1(ref this, primitiveBlend);
+
 			[CRepr]
 			public struct VTable : ID2D1CommandSink.VTable
 			{
@@ -4542,14 +3506,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetElement(ID2D1SvgElement** element) mut
-			{
-				VT.GetElement(ref this, element);
-			}
-			public HRESULT Clone(out ID2D1SvgAttribute* attribute) mut
-			{
-				return VT.Clone(ref this, out attribute);
-			}
+			public void GetElement(ID2D1SvgElement** element) mut => VT.GetElement(ref this, element);
+			public HRESULT Clone(out ID2D1SvgAttribute* attribute) mut => VT.Clone(ref this, out attribute);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -4564,34 +3523,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPaintType(D2D1_SVG_PAINT_TYPE paintType) mut
-			{
-				return VT.SetPaintType(ref this, paintType);
-			}
-			public D2D1_SVG_PAINT_TYPE GetPaintType() mut
-			{
-				return VT.GetPaintType(ref this);
-			}
-			public HRESULT SetColor(in D2D1_COLOR_F color) mut
-			{
-				return VT.SetColor(ref this, color);
-			}
-			public void GetColor(out D2D1_COLOR_F color) mut
-			{
-				VT.GetColor(ref this, out color);
-			}
-			public HRESULT SetId(PWSTR id) mut
-			{
-				return VT.SetId(ref this, id);
-			}
-			public HRESULT GetId(char16* id, uint32 idCount) mut
-			{
-				return VT.GetId(ref this, id, idCount);
-			}
-			public uint32 GetIdLength() mut
-			{
-				return VT.GetIdLength(ref this);
-			}
+			public HRESULT SetPaintType(D2D1_SVG_PAINT_TYPE paintType) mut => VT.SetPaintType(ref this, paintType);
+			public D2D1_SVG_PAINT_TYPE GetPaintType() mut => VT.GetPaintType(ref this);
+			public HRESULT SetColor(in D2D1_COLOR_F color) mut => VT.SetColor(ref this, color);
+			public void GetColor(out D2D1_COLOR_F color) mut => VT.GetColor(ref this, out color);
+			public HRESULT SetId(PWSTR id) mut => VT.SetId(ref this, id);
+			public HRESULT GetId(char16* id, uint32 idCount) mut => VT.GetId(ref this, id, idCount);
+			public uint32 GetIdLength() mut => VT.GetIdLength(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1SvgAttribute.VTable
 			{
@@ -4611,30 +3550,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RemoveDashesAtEnd(uint32 dashesCount) mut
-			{
-				return VT.RemoveDashesAtEnd(ref this, dashesCount);
-			}
-			public HRESULT UpdateDashes(D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) mut
-			{
-				return VT.UpdateDashes(ref this, dashes, dashesCount, startIndex);
-			}
-			public HRESULT UpdateDashes(float* dashes, uint32 dashesCount, uint32 startIndex) mut
-			{
-				return VT.UpdateDashes2(ref this, dashes, dashesCount, startIndex);
-			}
-			public HRESULT GetDashes(D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) mut
-			{
-				return VT.GetDashes(ref this, dashes, dashesCount, startIndex);
-			}
-			public HRESULT GetDashes(float* dashes, uint32 dashesCount, uint32 startIndex) mut
-			{
-				return VT.GetDashes2(ref this, dashes, dashesCount, startIndex);
-			}
-			public uint32 GetDashesCount() mut
-			{
-				return VT.GetDashesCount(ref this);
-			}
+			public HRESULT RemoveDashesAtEnd(uint32 dashesCount) mut => VT.RemoveDashesAtEnd(ref this, dashesCount);
+			public HRESULT UpdateDashes(D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) mut => VT.UpdateDashes(ref this, dashes, dashesCount, startIndex);
+			public HRESULT UpdateDashes(float* dashes, uint32 dashesCount, uint32 startIndex) mut => VT.UpdateDashes2(ref this, dashes, dashesCount, startIndex);
+			public HRESULT GetDashes(D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) mut => VT.GetDashes(ref this, dashes, dashesCount, startIndex);
+			public HRESULT GetDashes(float* dashes, uint32 dashesCount, uint32 startIndex) mut => VT.GetDashes2(ref this, dashes, dashesCount, startIndex);
+			public uint32 GetDashesCount() mut => VT.GetDashesCount(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1SvgAttribute.VTable
 			{
@@ -4653,22 +3575,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RemovePointsAtEnd(uint32 pointsCount) mut
-			{
-				return VT.RemovePointsAtEnd(ref this, pointsCount);
-			}
-			public HRESULT UpdatePoints(D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) mut
-			{
-				return VT.UpdatePoints(ref this, points, pointsCount, startIndex);
-			}
-			public HRESULT GetPoints(D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) mut
-			{
-				return VT.GetPoints(ref this, points, pointsCount, startIndex);
-			}
-			public uint32 GetPointsCount() mut
-			{
-				return VT.GetPointsCount(ref this);
-			}
+			public HRESULT RemovePointsAtEnd(uint32 pointsCount) mut => VT.RemovePointsAtEnd(ref this, pointsCount);
+			public HRESULT UpdatePoints(D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) mut => VT.UpdatePoints(ref this, points, pointsCount, startIndex);
+			public HRESULT GetPoints(D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) mut => VT.GetPoints(ref this, points, pointsCount, startIndex);
+			public uint32 GetPointsCount() mut => VT.GetPointsCount(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1SvgAttribute.VTable
 			{
@@ -4685,42 +3596,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RemoveSegmentDataAtEnd(uint32 dataCount) mut
-			{
-				return VT.RemoveSegmentDataAtEnd(ref this, dataCount);
-			}
-			public HRESULT UpdateSegmentData(float* data, uint32 dataCount, uint32 startIndex) mut
-			{
-				return VT.UpdateSegmentData(ref this, data, dataCount, startIndex);
-			}
-			public HRESULT GetSegmentData(float* data, uint32 dataCount, uint32 startIndex) mut
-			{
-				return VT.GetSegmentData(ref this, data, dataCount, startIndex);
-			}
-			public uint32 GetSegmentDataCount() mut
-			{
-				return VT.GetSegmentDataCount(ref this);
-			}
-			public HRESULT RemoveCommandsAtEnd(uint32 commandsCount) mut
-			{
-				return VT.RemoveCommandsAtEnd(ref this, commandsCount);
-			}
-			public HRESULT UpdateCommands(D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) mut
-			{
-				return VT.UpdateCommands(ref this, commands, commandsCount, startIndex);
-			}
-			public HRESULT GetCommands(D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) mut
-			{
-				return VT.GetCommands(ref this, commands, commandsCount, startIndex);
-			}
-			public uint32 GetCommandsCount() mut
-			{
-				return VT.GetCommandsCount(ref this);
-			}
-			public HRESULT CreatePathGeometry(D2D1_FILL_MODE fillMode, out ID2D1PathGeometry1* pathGeometry) mut
-			{
-				return VT.CreatePathGeometry(ref this, fillMode, out pathGeometry);
-			}
+			public HRESULT RemoveSegmentDataAtEnd(uint32 dataCount) mut => VT.RemoveSegmentDataAtEnd(ref this, dataCount);
+			public HRESULT UpdateSegmentData(float* data, uint32 dataCount, uint32 startIndex) mut => VT.UpdateSegmentData(ref this, data, dataCount, startIndex);
+			public HRESULT GetSegmentData(float* data, uint32 dataCount, uint32 startIndex) mut => VT.GetSegmentData(ref this, data, dataCount, startIndex);
+			public uint32 GetSegmentDataCount() mut => VT.GetSegmentDataCount(ref this);
+			public HRESULT RemoveCommandsAtEnd(uint32 commandsCount) mut => VT.RemoveCommandsAtEnd(ref this, commandsCount);
+			public HRESULT UpdateCommands(D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) mut => VT.UpdateCommands(ref this, commands, commandsCount, startIndex);
+			public HRESULT GetCommands(D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) mut => VT.GetCommands(ref this, commands, commandsCount, startIndex);
+			public uint32 GetCommandsCount() mut => VT.GetCommandsCount(ref this);
+			public HRESULT CreatePathGeometry(D2D1_FILL_MODE fillMode, out ID2D1PathGeometry1* pathGeometry) mut => VT.CreatePathGeometry(ref this, fillMode, out pathGeometry);
+
 			[CRepr]
 			public struct VTable : ID2D1SvgAttribute.VTable
 			{
@@ -4742,126 +3627,37 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDocument(ID2D1SvgDocument** document) mut
-			{
-				VT.GetDocument(ref this, document);
-			}
-			public HRESULT GetTagName(char16* name, uint32 nameCount) mut
-			{
-				return VT.GetTagName(ref this, name, nameCount);
-			}
-			public uint32 GetTagNameLength() mut
-			{
-				return VT.GetTagNameLength(ref this);
-			}
-			public BOOL IsTextContent() mut
-			{
-				return VT.IsTextContent(ref this);
-			}
-			public void GetParent(ID2D1SvgElement** parent) mut
-			{
-				VT.GetParent(ref this, parent);
-			}
-			public BOOL HasChildren() mut
-			{
-				return VT.HasChildren(ref this);
-			}
-			public void GetFirstChild(ID2D1SvgElement** child) mut
-			{
-				VT.GetFirstChild(ref this, child);
-			}
-			public void GetLastChild(ID2D1SvgElement** child) mut
-			{
-				VT.GetLastChild(ref this, child);
-			}
-			public HRESULT GetPreviousChild(ref ID2D1SvgElement referenceChild, ID2D1SvgElement** previousChild) mut
-			{
-				return VT.GetPreviousChild(ref this, ref referenceChild, previousChild);
-			}
-			public HRESULT GetNextChild(ref ID2D1SvgElement referenceChild, ID2D1SvgElement** nextChild) mut
-			{
-				return VT.GetNextChild(ref this, ref referenceChild, nextChild);
-			}
-			public HRESULT InsertChildBefore(ref ID2D1SvgElement newChild, ID2D1SvgElement* referenceChild) mut
-			{
-				return VT.InsertChildBefore(ref this, ref newChild, referenceChild);
-			}
-			public HRESULT AppendChild(ref ID2D1SvgElement newChild) mut
-			{
-				return VT.AppendChild(ref this, ref newChild);
-			}
-			public HRESULT ReplaceChild(ref ID2D1SvgElement newChild, ref ID2D1SvgElement oldChild) mut
-			{
-				return VT.ReplaceChild(ref this, ref newChild, ref oldChild);
-			}
-			public HRESULT RemoveChild(ref ID2D1SvgElement oldChild) mut
-			{
-				return VT.RemoveChild(ref this, ref oldChild);
-			}
-			public HRESULT CreateChild(PWSTR tagName, out ID2D1SvgElement* newChild) mut
-			{
-				return VT.CreateChild(ref this, tagName, out newChild);
-			}
-			public BOOL IsAttributeSpecified(PWSTR name, BOOL* inherited) mut
-			{
-				return VT.IsAttributeSpecified(ref this, name, inherited);
-			}
-			public uint32 GetSpecifiedAttributeCount() mut
-			{
-				return VT.GetSpecifiedAttributeCount(ref this);
-			}
-			public HRESULT GetSpecifiedAttributeName(uint32 index, char16* name, uint32 nameCount, BOOL* inherited) mut
-			{
-				return VT.GetSpecifiedAttributeName(ref this, index, name, nameCount, inherited);
-			}
-			public HRESULT GetSpecifiedAttributeNameLength(uint32 index, out uint32 nameLength, BOOL* inherited) mut
-			{
-				return VT.GetSpecifiedAttributeNameLength(ref this, index, out nameLength, inherited);
-			}
-			public HRESULT RemoveAttribute(PWSTR name) mut
-			{
-				return VT.RemoveAttribute(ref this, name);
-			}
-			public HRESULT SetTextValue(char16* name, uint32 nameCount) mut
-			{
-				return VT.SetTextValue(ref this, name, nameCount);
-			}
-			public HRESULT GetTextValue(char16* name, uint32 nameCount) mut
-			{
-				return VT.GetTextValue(ref this, name, nameCount);
-			}
-			public uint32 GetTextValueLength() mut
-			{
-				return VT.GetTextValueLength(ref this);
-			}
-			public HRESULT SetAttributeValue(PWSTR name, ref ID2D1SvgAttribute value) mut
-			{
-				return VT.SetAttributeValue(ref this, name, ref value);
-			}
-			public HRESULT SetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) mut
-			{
-				return VT.SetAttributeValue2(ref this, name, type, value, valueSizeInBytes);
-			}
-			public HRESULT SetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, PWSTR value) mut
-			{
-				return VT.SetAttributeValue3(ref this, name, type, value);
-			}
-			public HRESULT GetAttributeValue(PWSTR name, in Guid riid, void** value) mut
-			{
-				return VT.GetAttributeValue(ref this, name, riid, value);
-			}
-			public HRESULT GetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) mut
-			{
-				return VT.GetAttributeValue2(ref this, name, type, value, valueSizeInBytes);
-			}
-			public HRESULT GetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, char16* value, uint32 valueCount) mut
-			{
-				return VT.GetAttributeValue3(ref this, name, type, value, valueCount);
-			}
-			public HRESULT GetAttributeValueLength(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, out uint32 valueLength) mut
-			{
-				return VT.GetAttributeValueLength(ref this, name, type, out valueLength);
-			}
+			public void GetDocument(ID2D1SvgDocument** document) mut => VT.GetDocument(ref this, document);
+			public HRESULT GetTagName(char16* name, uint32 nameCount) mut => VT.GetTagName(ref this, name, nameCount);
+			public uint32 GetTagNameLength() mut => VT.GetTagNameLength(ref this);
+			public BOOL IsTextContent() mut => VT.IsTextContent(ref this);
+			public void GetParent(ID2D1SvgElement** parent) mut => VT.GetParent(ref this, parent);
+			public BOOL HasChildren() mut => VT.HasChildren(ref this);
+			public void GetFirstChild(ID2D1SvgElement** child) mut => VT.GetFirstChild(ref this, child);
+			public void GetLastChild(ID2D1SvgElement** child) mut => VT.GetLastChild(ref this, child);
+			public HRESULT GetPreviousChild(ref ID2D1SvgElement referenceChild, ID2D1SvgElement** previousChild) mut => VT.GetPreviousChild(ref this, ref referenceChild, previousChild);
+			public HRESULT GetNextChild(ref ID2D1SvgElement referenceChild, ID2D1SvgElement** nextChild) mut => VT.GetNextChild(ref this, ref referenceChild, nextChild);
+			public HRESULT InsertChildBefore(ref ID2D1SvgElement newChild, ID2D1SvgElement* referenceChild) mut => VT.InsertChildBefore(ref this, ref newChild, referenceChild);
+			public HRESULT AppendChild(ref ID2D1SvgElement newChild) mut => VT.AppendChild(ref this, ref newChild);
+			public HRESULT ReplaceChild(ref ID2D1SvgElement newChild, ref ID2D1SvgElement oldChild) mut => VT.ReplaceChild(ref this, ref newChild, ref oldChild);
+			public HRESULT RemoveChild(ref ID2D1SvgElement oldChild) mut => VT.RemoveChild(ref this, ref oldChild);
+			public HRESULT CreateChild(PWSTR tagName, out ID2D1SvgElement* newChild) mut => VT.CreateChild(ref this, tagName, out newChild);
+			public BOOL IsAttributeSpecified(PWSTR name, BOOL* inherited) mut => VT.IsAttributeSpecified(ref this, name, inherited);
+			public uint32 GetSpecifiedAttributeCount() mut => VT.GetSpecifiedAttributeCount(ref this);
+			public HRESULT GetSpecifiedAttributeName(uint32 index, char16* name, uint32 nameCount, BOOL* inherited) mut => VT.GetSpecifiedAttributeName(ref this, index, name, nameCount, inherited);
+			public HRESULT GetSpecifiedAttributeNameLength(uint32 index, out uint32 nameLength, BOOL* inherited) mut => VT.GetSpecifiedAttributeNameLength(ref this, index, out nameLength, inherited);
+			public HRESULT RemoveAttribute(PWSTR name) mut => VT.RemoveAttribute(ref this, name);
+			public HRESULT SetTextValue(char16* name, uint32 nameCount) mut => VT.SetTextValue(ref this, name, nameCount);
+			public HRESULT GetTextValue(char16* name, uint32 nameCount) mut => VT.GetTextValue(ref this, name, nameCount);
+			public uint32 GetTextValueLength() mut => VT.GetTextValueLength(ref this);
+			public HRESULT SetAttributeValue(PWSTR name, ref ID2D1SvgAttribute value) mut => VT.SetAttributeValue(ref this, name, ref value);
+			public HRESULT SetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) mut => VT.SetAttributeValue2(ref this, name, type, value, valueSizeInBytes);
+			public HRESULT SetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, PWSTR value) mut => VT.SetAttributeValue3(ref this, name, type, value);
+			public HRESULT GetAttributeValue(PWSTR name, in Guid riid, void** value) mut => VT.GetAttributeValue(ref this, name, riid, value);
+			public HRESULT GetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) mut => VT.GetAttributeValue2(ref this, name, type, value, valueSizeInBytes);
+			public HRESULT GetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, char16* value, uint32 valueCount) mut => VT.GetAttributeValue3(ref this, name, type, value, valueCount);
+			public HRESULT GetAttributeValueLength(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, out uint32 valueLength) mut => VT.GetAttributeValueLength(ref this, name, type, out valueLength);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -4904,50 +3700,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetViewportSize(D2D_SIZE_F viewportSize) mut
-			{
-				return VT.SetViewportSize(ref this, viewportSize);
-			}
-			public D2D_SIZE_F GetViewportSize() mut
-			{
-				return VT.GetViewportSize(ref this);
-			}
-			public HRESULT SetRoot(ID2D1SvgElement* root) mut
-			{
-				return VT.SetRoot(ref this, root);
-			}
-			public void GetRoot(ID2D1SvgElement** root) mut
-			{
-				VT.GetRoot(ref this, root);
-			}
-			public HRESULT FindElementById(PWSTR id, ID2D1SvgElement** svgElement) mut
-			{
-				return VT.FindElementById(ref this, id, svgElement);
-			}
-			public HRESULT Serialize(ref IStream outputXmlStream, ID2D1SvgElement* subtree) mut
-			{
-				return VT.Serialize(ref this, ref outputXmlStream, subtree);
-			}
-			public HRESULT Deserialize(ref IStream inputXmlStream, out ID2D1SvgElement* subtree) mut
-			{
-				return VT.Deserialize(ref this, ref inputXmlStream, out subtree);
-			}
-			public HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, D2D1_COLOR_F* color, PWSTR id, out ID2D1SvgPaint* paint) mut
-			{
-				return VT.CreatePaint(ref this, paintType, color, id, out paint);
-			}
-			public HRESULT CreateStrokeDashArray(D2D1_SVG_LENGTH* dashes, uint32 dashesCount, out ID2D1SvgStrokeDashArray* strokeDashArray) mut
-			{
-				return VT.CreateStrokeDashArray(ref this, dashes, dashesCount, out strokeDashArray);
-			}
-			public HRESULT CreatePointCollection(D2D_POINT_2F* points, uint32 pointsCount, out ID2D1SvgPointCollection* pointCollection) mut
-			{
-				return VT.CreatePointCollection(ref this, points, pointsCount, out pointCollection);
-			}
-			public HRESULT CreatePathData(float* segmentData, uint32 segmentDataCount, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, out ID2D1SvgPathData* pathData) mut
-			{
-				return VT.CreatePathData(ref this, segmentData, segmentDataCount, commands, commandsCount, out pathData);
-			}
+			public HRESULT SetViewportSize(D2D_SIZE_F viewportSize) mut => VT.SetViewportSize(ref this, viewportSize);
+			public D2D_SIZE_F GetViewportSize() mut => VT.GetViewportSize(ref this);
+			public HRESULT SetRoot(ID2D1SvgElement* root) mut => VT.SetRoot(ref this, root);
+			public void GetRoot(ID2D1SvgElement** root) mut => VT.GetRoot(ref this, root);
+			public HRESULT FindElementById(PWSTR id, ID2D1SvgElement** svgElement) mut => VT.FindElementById(ref this, id, svgElement);
+			public HRESULT Serialize(ref IStream outputXmlStream, ID2D1SvgElement* subtree) mut => VT.Serialize(ref this, ref outputXmlStream, subtree);
+			public HRESULT Deserialize(ref IStream inputXmlStream, out ID2D1SvgElement* subtree) mut => VT.Deserialize(ref this, ref inputXmlStream, out subtree);
+			public HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, D2D1_COLOR_F* color, PWSTR id, out ID2D1SvgPaint* paint) mut => VT.CreatePaint(ref this, paintType, color, id, out paint);
+			public HRESULT CreateStrokeDashArray(D2D1_SVG_LENGTH* dashes, uint32 dashesCount, out ID2D1SvgStrokeDashArray* strokeDashArray) mut => VT.CreateStrokeDashArray(ref this, dashes, dashesCount, out strokeDashArray);
+			public HRESULT CreatePointCollection(D2D_POINT_2F* points, uint32 pointsCount, out ID2D1SvgPointCollection* pointCollection) mut => VT.CreatePointCollection(ref this, points, pointsCount, out pointCollection);
+			public HRESULT CreatePathData(float* segmentData, uint32 segmentDataCount, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, out ID2D1SvgPathData* pathData) mut => VT.CreatePathData(ref this, segmentData, segmentDataCount, commands, commandsCount, out pathData);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -4971,22 +3735,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetNibTransform(in D2D_MATRIX_3X2_F transform) mut
-			{
-				VT.SetNibTransform(ref this, transform);
-			}
-			public void GetNibTransform(out D2D_MATRIX_3X2_F transform) mut
-			{
-				VT.GetNibTransform(ref this, out transform);
-			}
-			public void SetNibShape(D2D1_INK_NIB_SHAPE nibShape) mut
-			{
-				VT.SetNibShape(ref this, nibShape);
-			}
-			public D2D1_INK_NIB_SHAPE GetNibShape() mut
-			{
-				return VT.GetNibShape(ref this);
-			}
+			public void SetNibTransform(in D2D_MATRIX_3X2_F transform) mut => VT.SetNibTransform(ref this, transform);
+			public void GetNibTransform(out D2D_MATRIX_3X2_F transform) mut => VT.GetNibTransform(ref this, out transform);
+			public void SetNibShape(D2D1_INK_NIB_SHAPE nibShape) mut => VT.SetNibShape(ref this, nibShape);
+			public D2D1_INK_NIB_SHAPE GetNibShape() mut => VT.GetNibShape(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -5003,46 +3756,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void SetStartPoint(in D2D1_INK_POINT startPoint) mut
-			{
-				VT.SetStartPoint(ref this, startPoint);
-			}
-			public D2D1_INK_POINT GetStartPoint() mut
-			{
-				return VT.GetStartPoint(ref this);
-			}
-			public HRESULT AddSegments(D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) mut
-			{
-				return VT.AddSegments(ref this, segments, segmentsCount);
-			}
-			public HRESULT RemoveSegmentsAtEnd(uint32 segmentsCount) mut
-			{
-				return VT.RemoveSegmentsAtEnd(ref this, segmentsCount);
-			}
-			public HRESULT SetSegments(uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) mut
-			{
-				return VT.SetSegments(ref this, startSegment, segments, segmentsCount);
-			}
-			public HRESULT SetSegmentAtEnd(in D2D1_INK_BEZIER_SEGMENT segment) mut
-			{
-				return VT.SetSegmentAtEnd(ref this, segment);
-			}
-			public uint32 GetSegmentCount() mut
-			{
-				return VT.GetSegmentCount(ref this);
-			}
-			public HRESULT GetSegments(uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) mut
-			{
-				return VT.GetSegments(ref this, startSegment, segments, segmentsCount);
-			}
-			public HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut
-			{
-				return VT.StreamAsGeometry(ref this, inkStyle, worldTransform, flatteningTolerance, ref geometrySink);
-			}
-			public HRESULT GetBounds(ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, out D2D_RECT_F bounds) mut
-			{
-				return VT.GetBounds(ref this, inkStyle, worldTransform, out bounds);
-			}
+			public void SetStartPoint(in D2D1_INK_POINT startPoint) mut => VT.SetStartPoint(ref this, startPoint);
+			public D2D1_INK_POINT GetStartPoint() mut => VT.GetStartPoint(ref this);
+			public HRESULT AddSegments(D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) mut => VT.AddSegments(ref this, segments, segmentsCount);
+			public HRESULT RemoveSegmentsAtEnd(uint32 segmentsCount) mut => VT.RemoveSegmentsAtEnd(ref this, segmentsCount);
+			public HRESULT SetSegments(uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) mut => VT.SetSegments(ref this, startSegment, segments, segmentsCount);
+			public HRESULT SetSegmentAtEnd(in D2D1_INK_BEZIER_SEGMENT segment) mut => VT.SetSegmentAtEnd(ref this, segment);
+			public uint32 GetSegmentCount() mut => VT.GetSegmentCount(ref this);
+			public HRESULT GetSegments(uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) mut => VT.GetSegments(ref this, startSegment, segments, segmentsCount);
+			public HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) mut => VT.StreamAsGeometry(ref this, inkStyle, worldTransform, flatteningTolerance, ref geometrySink);
+			public HRESULT GetBounds(ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, out D2D_RECT_F bounds) mut => VT.GetBounds(ref this, inkStyle, worldTransform, out bounds);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -5065,14 +3789,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetPatchCount() mut
-			{
-				return VT.GetPatchCount(ref this);
-			}
-			public HRESULT GetPatches(uint32 startIndex, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount) mut
-			{
-				return VT.GetPatches(ref this, startIndex, patches, patchesCount);
-			}
+			public uint32 GetPatchCount() mut => VT.GetPatchCount(ref this);
+			public HRESULT GetPatches(uint32 startIndex, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount) mut => VT.GetPatches(ref this, startIndex, patches, patchesCount);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -5087,14 +3806,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OfferResources() mut
-			{
-				return VT.OfferResources(ref this);
-			}
-			public HRESULT TryReclaimResources(out BOOL resourcesDiscarded) mut
-			{
-				return VT.TryReclaimResources(ref this, out resourcesDiscarded);
-			}
+			public HRESULT OfferResources() mut => VT.OfferResources(ref this);
+			public HRESULT TryReclaimResources(out BOOL resourcesDiscarded) mut => VT.TryReclaimResources(ref this, out resourcesDiscarded);
+
 			[CRepr]
 			public struct VTable : ID2D1Image.VTable
 			{
@@ -5109,18 +3823,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnsureCached(D2D_RECT_U* rectangleToFill) mut
-			{
-				return VT.EnsureCached(ref this, rectangleToFill);
-			}
-			public HRESULT TrimCache(D2D_RECT_U* rectangleToPreserve) mut
-			{
-				return VT.TrimCache(ref this, rectangleToPreserve);
-			}
-			public void GetSource(IWICBitmapSource** wicBitmapSource) mut
-			{
-				VT.GetSource(ref this, wicBitmapSource);
-			}
+			public HRESULT EnsureCached(D2D_RECT_U* rectangleToFill) mut => VT.EnsureCached(ref this, rectangleToFill);
+			public HRESULT TrimCache(D2D_RECT_U* rectangleToPreserve) mut => VT.TrimCache(ref this, rectangleToPreserve);
+			public void GetSource(IWICBitmapSource** wicBitmapSource) mut => VT.GetSource(ref this, wicBitmapSource);
+
 			[CRepr]
 			public struct VTable : ID2D1ImageSource.VTable
 			{
@@ -5136,14 +3842,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetSource(ID2D1ImageSource** imageSource) mut
-			{
-				VT.GetSource(ref this, imageSource);
-			}
-			public void GetProperties(out D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES properties) mut
-			{
-				VT.GetProperties(ref this, out properties);
-			}
+			public void GetSource(ID2D1ImageSource** imageSource) mut => VT.GetSource(ref this, imageSource);
+			public void GetProperties(out D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES properties) mut => VT.GetProperties(ref this, out properties);
+
 			[CRepr]
 			public struct VTable : ID2D1Image.VTable
 			{
@@ -5158,6 +3859,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -5170,50 +3872,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInk(in D2D1_INK_POINT startPoint, out ID2D1Ink* ink) mut
-			{
-				return VT.CreateInk(ref this, startPoint, out ink);
-			}
-			public HRESULT CreateInkStyle(D2D1_INK_STYLE_PROPERTIES* inkStyleProperties, out ID2D1InkStyle* inkStyle) mut
-			{
-				return VT.CreateInkStyle(ref this, inkStyleProperties, out inkStyle);
-			}
-			public HRESULT CreateGradientMesh(D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount, out ID2D1GradientMesh* gradientMesh) mut
-			{
-				return VT.CreateGradientMesh(ref this, patches, patchesCount, out gradientMesh);
-			}
-			public HRESULT CreateImageSourceFromWic(ref IWICBitmapSource wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, out ID2D1ImageSourceFromWic* imageSource) mut
-			{
-				return VT.CreateImageSourceFromWic(ref this, ref wicBitmapSource, loadingOptions, alphaMode, out imageSource);
-			}
-			public HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, out ID2D1LookupTable3D* lookupTable) mut
-			{
-				return VT.CreateLookupTable3D(ref this, precision, extents, data, dataCount, strides, out lookupTable);
-			}
-			public HRESULT CreateImageSourceFromDxgi(IDXGISurface** surfaces, uint32 surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, out ID2D1ImageSource* imageSource) mut
-			{
-				return VT.CreateImageSourceFromDxgi(ref this, surfaces, surfaceCount, colorSpace, options, out imageSource);
-			}
-			public HRESULT GetGradientMeshWorldBounds(ref ID2D1GradientMesh gradientMesh, out D2D_RECT_F pBounds) mut
-			{
-				return VT.GetGradientMeshWorldBounds(ref this, ref gradientMesh, out pBounds);
-			}
-			public void DrawInk(ref ID2D1Ink ink, ref ID2D1Brush brush, ID2D1InkStyle* inkStyle) mut
-			{
-				VT.DrawInk(ref this, ref ink, ref brush, inkStyle);
-			}
-			public void DrawGradientMesh(ref ID2D1GradientMesh gradientMesh) mut
-			{
-				VT.DrawGradientMesh(ref this, ref gradientMesh);
-			}
-			public void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut
-			{
-				VT.DrawGdiMetafile(ref this, ref gdiMetafile, destinationRectangle, sourceRectangle);
-			}
-			public HRESULT CreateTransformedImageSource(ref ID2D1ImageSource imageSource, in D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES properties, out ID2D1TransformedImageSource* transformedImageSource) mut
-			{
-				return VT.CreateTransformedImageSource(ref this, ref imageSource, properties, out transformedImageSource);
-			}
+			public HRESULT CreateInk(in D2D1_INK_POINT startPoint, out ID2D1Ink* ink) mut => VT.CreateInk(ref this, startPoint, out ink);
+			public HRESULT CreateInkStyle(D2D1_INK_STYLE_PROPERTIES* inkStyleProperties, out ID2D1InkStyle* inkStyle) mut => VT.CreateInkStyle(ref this, inkStyleProperties, out inkStyle);
+			public HRESULT CreateGradientMesh(D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount, out ID2D1GradientMesh* gradientMesh) mut => VT.CreateGradientMesh(ref this, patches, patchesCount, out gradientMesh);
+			public HRESULT CreateImageSourceFromWic(ref IWICBitmapSource wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, out ID2D1ImageSourceFromWic* imageSource) mut => VT.CreateImageSourceFromWic(ref this, ref wicBitmapSource, loadingOptions, alphaMode, out imageSource);
+			public HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, out ID2D1LookupTable3D* lookupTable) mut => VT.CreateLookupTable3D(ref this, precision, extents, data, dataCount, strides, out lookupTable);
+			public HRESULT CreateImageSourceFromDxgi(IDXGISurface** surfaces, uint32 surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, out ID2D1ImageSource* imageSource) mut => VT.CreateImageSourceFromDxgi(ref this, surfaces, surfaceCount, colorSpace, options, out imageSource);
+			public HRESULT GetGradientMeshWorldBounds(ref ID2D1GradientMesh gradientMesh, out D2D_RECT_F pBounds) mut => VT.GetGradientMeshWorldBounds(ref this, ref gradientMesh, out pBounds);
+			public void DrawInk(ref ID2D1Ink ink, ref ID2D1Brush brush, ID2D1InkStyle* inkStyle) mut => VT.DrawInk(ref this, ref ink, ref brush, inkStyle);
+			public void DrawGradientMesh(ref ID2D1GradientMesh gradientMesh) mut => VT.DrawGradientMesh(ref this, ref gradientMesh);
+			public void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut => VT.DrawGdiMetafile(ref this, ref gdiMetafile, destinationRectangle, sourceRectangle);
+			public HRESULT CreateTransformedImageSource(ref ID2D1ImageSource imageSource, in D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES properties, out ID2D1TransformedImageSource* transformedImageSource) mut => VT.CreateTransformedImageSource(ref this, ref imageSource, properties, out transformedImageSource);
+
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext1.VTable
 			{
@@ -5237,18 +3907,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext2* deviceContext2) mut
-			{
-				return VT.CreateDeviceContext(ref this, options, out deviceContext2);
-			}
-			public void FlushDeviceContexts(ref ID2D1Bitmap bitmap) mut
-			{
-				VT.FlushDeviceContexts(ref this, ref bitmap);
-			}
-			public HRESULT GetDxgiDevice(out IDXGIDevice* dxgiDevice) mut
-			{
-				return VT.GetDxgiDevice(ref this, out dxgiDevice);
-			}
+			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext2* deviceContext2) mut => VT.CreateDeviceContext(ref this, options, out deviceContext2);
+			public void FlushDeviceContexts(ref ID2D1Bitmap bitmap) mut => VT.FlushDeviceContexts(ref this, ref bitmap);
+			public HRESULT GetDxgiDevice(out IDXGIDevice* dxgiDevice) mut => VT.GetDxgiDevice(ref this, out dxgiDevice);
+
 			[CRepr]
 			public struct VTable : ID2D1Device1.VTable
 			{
@@ -5264,10 +3926,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device2* d2dDevice2) mut
-			{
-				return VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice2);
-			}
+			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device2* d2dDevice2) mut => VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice2);
+
 			[CRepr]
 			public struct VTable : ID2D1Factory2.VTable
 			{
@@ -5281,18 +3941,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DrawInk(ref ID2D1Ink ink, ref ID2D1Brush brush, ID2D1InkStyle* inkStyle) mut
-			{
-				return VT.DrawInk(ref this, ref ink, ref brush, inkStyle);
-			}
-			public HRESULT DrawGradientMesh(ref ID2D1GradientMesh gradientMesh) mut
-			{
-				return VT.DrawGradientMesh(ref this, ref gradientMesh);
-			}
-			public HRESULT DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut
-			{
-				return VT.DrawGdiMetafile(ref this, ref gdiMetafile, destinationRectangle, sourceRectangle);
-			}
+			public HRESULT DrawInk(ref ID2D1Ink ink, ref ID2D1Brush brush, ID2D1InkStyle* inkStyle) mut => VT.DrawInk(ref this, ref ink, ref brush, inkStyle);
+			public HRESULT DrawGradientMesh(ref ID2D1GradientMesh gradientMesh) mut => VT.DrawGradientMesh(ref this, ref gradientMesh);
+			public HRESULT DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) mut => VT.DrawGdiMetafile(ref this, ref gdiMetafile, destinationRectangle, sourceRectangle);
+
 			[CRepr]
 			public struct VTable : ID2D1CommandSink1.VTable
 			{
@@ -5308,14 +3960,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDpi(out float dpiX, out float dpiY) mut
-			{
-				return VT.GetDpi(ref this, out dpiX, out dpiY);
-			}
-			public HRESULT GetSourceBounds(out D2D_RECT_F bounds) mut
-			{
-				return VT.GetSourceBounds(ref this, out bounds);
-			}
+			public HRESULT GetDpi(out float dpiX, out float dpiY) mut => VT.GetDpi(ref this, out dpiX, out dpiY);
+			public HRESULT GetSourceBounds(out D2D_RECT_F bounds) mut => VT.GetSourceBounds(ref this, out bounds);
+
 			[CRepr]
 			public struct VTable : ID2D1GdiMetafile.VTable
 			{
@@ -5330,10 +3977,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ProcessRecord(uint32 recordType, void* recordData, uint32 recordDataSize, uint32 flags) mut
-			{
-				return VT.ProcessRecord(ref this, recordType, recordData, recordDataSize, flags);
-			}
+			public HRESULT ProcessRecord(uint32 recordType, void* recordData, uint32 recordDataSize, uint32 flags) mut => VT.ProcessRecord(ref this, recordType, recordData, recordDataSize, flags);
+
 			[CRepr]
 			public struct VTable : ID2D1GdiMetafileSink.VTable
 			{
@@ -5347,26 +3992,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddSprites(uint32 spriteCount, in D2D_RECT_F destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) mut
-			{
-				return VT.AddSprites(ref this, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
-			}
-			public HRESULT SetSprites(uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) mut
-			{
-				return VT.SetSprites(ref this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
-			}
-			public HRESULT GetSprites(uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms) mut
-			{
-				return VT.GetSprites(ref this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
-			}
-			public uint32 GetSpriteCount() mut
-			{
-				return VT.GetSpriteCount(ref this);
-			}
-			public void Clear() mut
-			{
-				VT.Clear(ref this);
-			}
+			public HRESULT AddSprites(uint32 spriteCount, in D2D_RECT_F destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) mut => VT.AddSprites(ref this, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+			public HRESULT SetSprites(uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) mut => VT.SetSprites(ref this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+			public HRESULT GetSprites(uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms) mut => VT.GetSprites(ref this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
+			public uint32 GetSpriteCount() mut => VT.GetSpriteCount(ref this);
+			public void Clear() mut => VT.Clear(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -5384,14 +4015,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSpriteBatch(out ID2D1SpriteBatch* spriteBatch) mut
-			{
-				return VT.CreateSpriteBatch(ref this, out spriteBatch);
-			}
-			public void DrawSpriteBatch(ref ID2D1SpriteBatch spriteBatch, uint32 startIndex, uint32 spriteCount, ref ID2D1Bitmap bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) mut
-			{
-				VT.DrawSpriteBatch(ref this, ref spriteBatch, startIndex, spriteCount, ref bitmap, interpolationMode, spriteOptions);
-			}
+			public HRESULT CreateSpriteBatch(out ID2D1SpriteBatch* spriteBatch) mut => VT.CreateSpriteBatch(ref this, out spriteBatch);
+			public void DrawSpriteBatch(ref ID2D1SpriteBatch spriteBatch, uint32 startIndex, uint32 spriteCount, ref ID2D1Bitmap bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) mut => VT.DrawSpriteBatch(ref this, ref spriteBatch, startIndex, spriteCount, ref bitmap, interpolationMode, spriteOptions);
+
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext2.VTable
 			{
@@ -5406,10 +4032,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext3* deviceContext3) mut
-			{
-				return VT.CreateDeviceContext(ref this, options, out deviceContext3);
-			}
+			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext3* deviceContext3) mut => VT.CreateDeviceContext(ref this, options, out deviceContext3);
+
 			[CRepr]
 			public struct VTable : ID2D1Device2.VTable
 			{
@@ -5423,10 +4047,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device3* d2dDevice3) mut
-			{
-				return VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice3);
-			}
+			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device3* d2dDevice3) mut => VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice3);
+
 			[CRepr]
 			public struct VTable : ID2D1Factory3.VTable
 			{
@@ -5440,10 +4062,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DrawSpriteBatch(ref ID2D1SpriteBatch spriteBatch, uint32 startIndex, uint32 spriteCount, ref ID2D1Bitmap bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) mut
-			{
-				return VT.DrawSpriteBatch(ref this, ref spriteBatch, startIndex, spriteCount, ref bitmap, interpolationMode, spriteOptions);
-			}
+			public HRESULT DrawSpriteBatch(ref ID2D1SpriteBatch spriteBatch, uint32 startIndex, uint32 spriteCount, ref ID2D1Bitmap bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) mut => VT.DrawSpriteBatch(ref this, ref spriteBatch, startIndex, spriteCount, ref bitmap, interpolationMode, spriteOptions);
+
 			[CRepr]
 			public struct VTable : ID2D1CommandSink2.VTable
 			{
@@ -5457,26 +4077,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFill(ID2D1Brush* brush) mut
-			{
-				return VT.SetFill(ref this, brush);
-			}
-			public void GetFill(ID2D1Brush** brush) mut
-			{
-				VT.GetFill(ref this, brush);
-			}
-			public HRESULT SetStroke(ID2D1Brush* brush, float strokeWidth, float* dashes, uint32 dashesCount, float dashOffset) mut
-			{
-				return VT.SetStroke(ref this, brush, strokeWidth, dashes, dashesCount, dashOffset);
-			}
-			public uint32 GetStrokeDashesCount() mut
-			{
-				return VT.GetStrokeDashesCount(ref this);
-			}
-			public void GetStroke(ID2D1Brush** brush, float* strokeWidth, float* dashes, uint32 dashesCount, float* dashOffset) mut
-			{
-				VT.GetStroke(ref this, brush, strokeWidth, dashes, dashesCount, dashOffset);
-			}
+			public HRESULT SetFill(ID2D1Brush* brush) mut => VT.SetFill(ref this, brush);
+			public void GetFill(ID2D1Brush** brush) mut => VT.GetFill(ref this, brush);
+			public HRESULT SetStroke(ID2D1Brush* brush, float strokeWidth, float* dashes, uint32 dashesCount, float dashOffset) mut => VT.SetStroke(ref this, brush, strokeWidth, dashes, dashesCount, dashOffset);
+			public uint32 GetStrokeDashesCount() mut => VT.GetStrokeDashesCount(ref this);
+			public void GetStroke(ID2D1Brush** brush, float* strokeWidth, float* dashes, uint32 dashesCount, float* dashOffset) mut => VT.GetStroke(ref this, brush, strokeWidth, dashes, dashesCount, dashOffset);
+
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
@@ -5494,34 +4100,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSvgGlyphStyle(out ID2D1SvgGlyphStyle* svgGlyphStyle) mut
-			{
-				return VT.CreateSvgGlyphStyle(ref this, out svgGlyphStyle);
-			}
-			public void DrawText(char16* string, uint32 stringLength, ref IDWriteTextFormat textFormat, in D2D_RECT_F layoutRect, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) mut
-			{
-				VT.DrawText(ref this, string, stringLength, ref textFormat, layoutRect, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, options, measuringMode);
-			}
-			public void DrawTextLayout(D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options) mut
-			{
-				VT.DrawTextLayout(ref this, origin, ref textLayout, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, options);
-			}
-			public void DrawColorBitmapGlyphRun(DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION bitmapSnapOption) mut
-			{
-				VT.DrawColorBitmapGlyphRun(ref this, glyphImageFormat, baselineOrigin, glyphRun, measuringMode, bitmapSnapOption);
-			}
-			public void DrawSvgGlyphRun(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, DWRITE_MEASURING_MODE measuringMode) mut
-			{
-				VT.DrawSvgGlyphRun(ref this, baselineOrigin, glyphRun, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, measuringMode);
-			}
-			public HRESULT GetColorBitmapGlyphImage(DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, float dpiX, float dpiY, out D2D_MATRIX_3X2_F glyphTransform, out ID2D1Image* glyphImage) mut
-			{
-				return VT.GetColorBitmapGlyphImage(ref this, glyphImageFormat, glyphOrigin, ref fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, dpiX, dpiY, out glyphTransform, out glyphImage);
-			}
-			public HRESULT GetSvgGlyphImage(D2D_POINT_2F glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, out D2D_MATRIX_3X2_F glyphTransform, out ID2D1CommandList* glyphImage) mut
-			{
-				return VT.GetSvgGlyphImage(ref this, glyphOrigin, ref fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, out glyphTransform, out glyphImage);
-			}
+			public HRESULT CreateSvgGlyphStyle(out ID2D1SvgGlyphStyle* svgGlyphStyle) mut => VT.CreateSvgGlyphStyle(ref this, out svgGlyphStyle);
+			public void DrawText(char16* string, uint32 stringLength, ref IDWriteTextFormat textFormat, in D2D_RECT_F layoutRect, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) mut => VT.DrawText(ref this, string, stringLength, ref textFormat, layoutRect, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, options, measuringMode);
+			public void DrawTextLayout(D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options) mut => VT.DrawTextLayout(ref this, origin, ref textLayout, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, options);
+			public void DrawColorBitmapGlyphRun(DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION bitmapSnapOption) mut => VT.DrawColorBitmapGlyphRun(ref this, glyphImageFormat, baselineOrigin, glyphRun, measuringMode, bitmapSnapOption);
+			public void DrawSvgGlyphRun(D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, DWRITE_MEASURING_MODE measuringMode) mut => VT.DrawSvgGlyphRun(ref this, baselineOrigin, glyphRun, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, measuringMode);
+			public HRESULT GetColorBitmapGlyphImage(DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, float dpiX, float dpiY, out D2D_MATRIX_3X2_F glyphTransform, out ID2D1Image* glyphImage) mut => VT.GetColorBitmapGlyphImage(ref this, glyphImageFormat, glyphOrigin, ref fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, dpiX, dpiY, out glyphTransform, out glyphImage);
+			public HRESULT GetSvgGlyphImage(D2D_POINT_2F glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, out D2D_MATRIX_3X2_F glyphTransform, out ID2D1CommandList* glyphImage) mut => VT.GetSvgGlyphImage(ref this, glyphOrigin, ref fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, out glyphTransform, out glyphImage);
+
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext3.VTable
 			{
@@ -5541,18 +4127,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext4* deviceContext4) mut
-			{
-				return VT.CreateDeviceContext(ref this, options, out deviceContext4);
-			}
-			public void SetMaximumColorGlyphCacheMemory(uint64 maximumInBytes) mut
-			{
-				VT.SetMaximumColorGlyphCacheMemory(ref this, maximumInBytes);
-			}
-			public uint64 GetMaximumColorGlyphCacheMemory() mut
-			{
-				return VT.GetMaximumColorGlyphCacheMemory(ref this);
-			}
+			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext4* deviceContext4) mut => VT.CreateDeviceContext(ref this, options, out deviceContext4);
+			public void SetMaximumColorGlyphCacheMemory(uint64 maximumInBytes) mut => VT.SetMaximumColorGlyphCacheMemory(ref this, maximumInBytes);
+			public uint64 GetMaximumColorGlyphCacheMemory() mut => VT.GetMaximumColorGlyphCacheMemory(ref this);
+
 			[CRepr]
 			public struct VTable : ID2D1Device3.VTable
 			{
@@ -5568,10 +4146,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device4* d2dDevice4) mut
-			{
-				return VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice4);
-			}
+			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device4* d2dDevice4) mut => VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice4);
+
 			[CRepr]
 			public struct VTable : ID2D1Factory4.VTable
 			{
@@ -5585,10 +4161,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPrimitiveBlend2(D2D1_PRIMITIVE_BLEND primitiveBlend) mut
-			{
-				return VT.SetPrimitiveBlend2(ref this, primitiveBlend);
-			}
+			public HRESULT SetPrimitiveBlend2(D2D1_PRIMITIVE_BLEND primitiveBlend) mut => VT.SetPrimitiveBlend2(ref this, primitiveBlend);
+
 			[CRepr]
 			public struct VTable : ID2D1CommandSink3.VTable
 			{
@@ -5602,18 +4176,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public D2D1_COLOR_CONTEXT_TYPE GetColorContextType() mut
-			{
-				return VT.GetColorContextType(ref this);
-			}
-			public DXGI_COLOR_SPACE_TYPE GetDXGIColorSpace() mut
-			{
-				return VT.GetDXGIColorSpace(ref this);
-			}
-			public HRESULT GetSimpleColorProfile(out D2D1_SIMPLE_COLOR_PROFILE simpleProfile) mut
-			{
-				return VT.GetSimpleColorProfile(ref this, out simpleProfile);
-			}
+			public D2D1_COLOR_CONTEXT_TYPE GetColorContextType() mut => VT.GetColorContextType(ref this);
+			public DXGI_COLOR_SPACE_TYPE GetDXGIColorSpace() mut => VT.GetDXGIColorSpace(ref this);
+			public HRESULT GetSimpleColorProfile(out D2D1_SIMPLE_COLOR_PROFILE simpleProfile) mut => VT.GetSimpleColorProfile(ref this, out simpleProfile);
+
 			[CRepr]
 			public struct VTable : ID2D1ColorContext.VTable
 			{
@@ -5629,22 +4195,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSvgDocument(IStream* inputXmlStream, D2D_SIZE_F viewportSize, out ID2D1SvgDocument* svgDocument) mut
-			{
-				return VT.CreateSvgDocument(ref this, inputXmlStream, viewportSize, out svgDocument);
-			}
-			public void DrawSvgDocument(ref ID2D1SvgDocument svgDocument) mut
-			{
-				VT.DrawSvgDocument(ref this, ref svgDocument);
-			}
-			public HRESULT CreateColorContextFromDxgiColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace, out ID2D1ColorContext1* colorContext) mut
-			{
-				return VT.CreateColorContextFromDxgiColorSpace(ref this, colorSpace, out colorContext);
-			}
-			public HRESULT CreateColorContextFromSimpleColorProfile(in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) mut
-			{
-				return VT.CreateColorContextFromSimpleColorProfile(ref this, simpleProfile, out colorContext);
-			}
+			public HRESULT CreateSvgDocument(IStream* inputXmlStream, D2D_SIZE_F viewportSize, out ID2D1SvgDocument* svgDocument) mut => VT.CreateSvgDocument(ref this, inputXmlStream, viewportSize, out svgDocument);
+			public void DrawSvgDocument(ref ID2D1SvgDocument svgDocument) mut => VT.DrawSvgDocument(ref this, ref svgDocument);
+			public HRESULT CreateColorContextFromDxgiColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace, out ID2D1ColorContext1* colorContext) mut => VT.CreateColorContextFromDxgiColorSpace(ref this, colorSpace, out colorContext);
+			public HRESULT CreateColorContextFromSimpleColorProfile(in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) mut => VT.CreateColorContextFromSimpleColorProfile(ref this, simpleProfile, out colorContext);
+
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext4.VTable
 			{
@@ -5661,10 +4216,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext5* deviceContext5) mut
-			{
-				return VT.CreateDeviceContext(ref this, options, out deviceContext5);
-			}
+			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext5* deviceContext5) mut => VT.CreateDeviceContext(ref this, options, out deviceContext5);
+
 			[CRepr]
 			public struct VTable : ID2D1Device4.VTable
 			{
@@ -5678,10 +4231,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device5* d2dDevice5) mut
-			{
-				return VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice5);
-			}
+			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device5* d2dDevice5) mut => VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice5);
+
 			[CRepr]
 			public struct VTable : ID2D1Factory5.VTable
 			{
@@ -5695,10 +4246,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BlendImage(ref ID2D1Image image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) mut
-			{
-				return VT.BlendImage(ref this, ref image, blendMode, targetOffset, imageRectangle, interpolationMode);
-			}
+			public HRESULT BlendImage(ref ID2D1Image image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) mut => VT.BlendImage(ref this, ref image, blendMode, targetOffset, imageRectangle, interpolationMode);
+
 			[CRepr]
 			public struct VTable : ID2D1CommandSink4.VTable
 			{
@@ -5712,10 +4261,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void BlendImage(ref ID2D1Image image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) mut
-			{
-				VT.BlendImage(ref this, ref image, blendMode, targetOffset, imageRectangle, interpolationMode);
-			}
+			public void BlendImage(ref ID2D1Image image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) mut => VT.BlendImage(ref this, ref image, blendMode, targetOffset, imageRectangle, interpolationMode);
+
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext5.VTable
 			{
@@ -5729,10 +4276,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext6* deviceContext6) mut
-			{
-				return VT.CreateDeviceContext(ref this, options, out deviceContext6);
-			}
+			public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext6* deviceContext6) mut => VT.CreateDeviceContext(ref this, options, out deviceContext6);
+
 			[CRepr]
 			public struct VTable : ID2D1Device5.VTable
 			{
@@ -5746,10 +4291,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device6* d2dDevice6) mut
-			{
-				return VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice6);
-			}
+			public HRESULT CreateDevice(ref IDXGIDevice dxgiDevice, out ID2D1Device6* d2dDevice6) mut => VT.CreateDevice(ref this, ref dxgiDevice, out d2dDevice6);
+
 			[CRepr]
 			public struct VTable : ID2D1Factory6.VTable
 			{
@@ -5763,10 +4306,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, out ID2D1LookupTable3D* lookupTable) mut
-			{
-				return VT.CreateLookupTable3D(ref this, precision, extents, data, dataCount, strides, out lookupTable);
-			}
+			public HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, out ID2D1LookupTable3D* lookupTable) mut => VT.CreateLookupTable3D(ref this, precision, extents, data, dataCount, strides, out lookupTable);
+
 			[CRepr]
 			public struct VTable : ID2D1EffectContext.VTable
 			{
@@ -5780,14 +4321,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateColorContextFromDxgiColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace, out ID2D1ColorContext1* colorContext) mut
-			{
-				return VT.CreateColorContextFromDxgiColorSpace(ref this, colorSpace, out colorContext);
-			}
-			public HRESULT CreateColorContextFromSimpleColorProfile(in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) mut
-			{
-				return VT.CreateColorContextFromSimpleColorProfile(ref this, simpleProfile, out colorContext);
-			}
+			public HRESULT CreateColorContextFromDxgiColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace, out ID2D1ColorContext1* colorContext) mut => VT.CreateColorContextFromDxgiColorSpace(ref this, colorSpace, out colorContext);
+			public HRESULT CreateColorContextFromSimpleColorProfile(in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) mut => VT.CreateColorContextFromSimpleColorProfile(ref this, simpleProfile, out colorContext);
+
 			[CRepr]
 			public struct VTable : ID2D1EffectContext1.VTable
 			{

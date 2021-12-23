@@ -5594,18 +5594,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT KsProperty(ref KSIDENTIFIER Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) mut
-			{
-				return VT.KsProperty(ref this, ref Property, PropertyLength, PropertyData, DataLength, out BytesReturned);
-			}
-			public HRESULT KsMethod(ref KSIDENTIFIER Method, uint32 MethodLength, void* MethodData, uint32 DataLength, out uint32 BytesReturned) mut
-			{
-				return VT.KsMethod(ref this, ref Method, MethodLength, MethodData, DataLength, out BytesReturned);
-			}
-			public HRESULT KsEvent(ref KSIDENTIFIER Event, uint32 EventLength, void* EventData, uint32 DataLength, out uint32 BytesReturned) mut
-			{
-				return VT.KsEvent(ref this, ref Event, EventLength, EventData, DataLength, out BytesReturned);
-			}
+			public HRESULT KsProperty(ref KSIDENTIFIER Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) mut => VT.KsProperty(ref this, ref Property, PropertyLength, PropertyData, DataLength, out BytesReturned);
+			public HRESULT KsMethod(ref KSIDENTIFIER Method, uint32 MethodLength, void* MethodData, uint32 DataLength, out uint32 BytesReturned) mut => VT.KsMethod(ref this, ref Method, MethodLength, MethodData, DataLength, out BytesReturned);
+			public HRESULT KsEvent(ref KSIDENTIFIER Event, uint32 EventLength, void* EventData, uint32 DataLength, out uint32 BytesReturned) mut => VT.KsEvent(ref this, ref Event, EventLength, EventData, DataLength, out BytesReturned);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5621,14 +5613,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsFormatSupported(out KSDATAFORMAT pKsFormat, uint32 cbFormat, out BOOL pbSupported) mut
-			{
-				return VT.IsFormatSupported(ref this, out pKsFormat, cbFormat, out pbSupported);
-			}
-			public HRESULT GetDevicePreferredFormat(out KSDATAFORMAT* ppKsFormat) mut
-			{
-				return VT.GetDevicePreferredFormat(ref this, out ppKsFormat);
-			}
+			public HRESULT IsFormatSupported(out KSDATAFORMAT pKsFormat, uint32 cbFormat, out BOOL pbSupported) mut => VT.IsFormatSupported(ref this, out pKsFormat, cbFormat, out pbSupported);
+			public HRESULT GetDevicePreferredFormat(out KSDATAFORMAT* ppKsFormat) mut => VT.GetDevicePreferredFormat(ref this, out ppKsFormat);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5643,14 +5630,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJackCount(out uint32 pcJacks) mut
-			{
-				return VT.GetJackCount(ref this, out pcJacks);
-			}
-			public HRESULT GetJackDescription(uint32 nJack, out KSJACK_DESCRIPTION pDescription) mut
-			{
-				return VT.GetJackDescription(ref this, nJack, out pDescription);
-			}
+			public HRESULT GetJackCount(out uint32 pcJacks) mut => VT.GetJackCount(ref this, out pcJacks);
+			public HRESULT GetJackDescription(uint32 nJack, out KSJACK_DESCRIPTION pDescription) mut => VT.GetJackDescription(ref this, nJack, out pDescription);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5665,14 +5647,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJackCount(out uint32 pcJacks) mut
-			{
-				return VT.GetJackCount(ref this, out pcJacks);
-			}
-			public HRESULT GetJackDescription2(uint32 nJack, out KSJACK_DESCRIPTION2 pDescription2) mut
-			{
-				return VT.GetJackDescription2(ref this, nJack, out pDescription2);
-			}
+			public HRESULT GetJackCount(out uint32 pcJacks) mut => VT.GetJackCount(ref this, out pcJacks);
+			public HRESULT GetJackDescription2(uint32 nJack, out KSJACK_DESCRIPTION2 pDescription2) mut => VT.GetJackDescription2(ref this, nJack, out pDescription2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5687,10 +5664,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJackSinkInformation(out KSJACK_SINK_INFORMATION pJackSinkInformation) mut
-			{
-				return VT.GetJackSinkInformation(ref this, out pJackSinkInformation);
-			}
+			public HRESULT GetJackSinkInformation(out KSJACK_SINK_INFORMATION pJackSinkInformation) mut => VT.GetJackSinkInformation(ref this, out pJackSinkInformation);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5704,10 +5679,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJackContainerId(out Guid pJackContainerId) mut
-			{
-				return VT.GetJackContainerId(ref this, out pJackContainerId);
-			}
+			public HRESULT GetJackContainerId(out Guid pJackContainerId) mut => VT.GetJackContainerId(ref this, out pJackContainerId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5721,18 +5694,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Set(in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) mut
-			{
-				return VT.Set(ref this, PropSet, Id, InstanceData, InstanceLength, PropertyData, DataLength);
-			}
-			public HRESULT Get(in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) mut
-			{
-				return VT.Get(ref this, PropSet, Id, InstanceData, InstanceLength, PropertyData, DataLength, out BytesReturned);
-			}
-			public HRESULT QuerySupported(in Guid PropSet, uint32 Id, out uint32 TypeSupport) mut
-			{
-				return VT.QuerySupported(ref this, PropSet, Id, out TypeSupport);
-			}
+			public HRESULT Set(in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) mut => VT.Set(ref this, PropSet, Id, InstanceData, InstanceLength, PropertyData, DataLength);
+			public HRESULT Get(in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) mut => VT.Get(ref this, PropSet, Id, InstanceData, InstanceLength, PropertyData, DataLength, out BytesReturned);
+			public HRESULT QuerySupported(in Guid PropSet, uint32 Id, out uint32 TypeSupport) mut => VT.QuerySupported(ref this, PropSet, Id, out TypeSupport);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5748,14 +5713,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT KsAddAggregate(in Guid AggregateClass) mut
-			{
-				return VT.KsAddAggregate(ref this, AggregateClass);
-			}
-			public HRESULT KsRemoveAggregate(in Guid AggregateClass) mut
-			{
-				return VT.KsRemoveAggregate(ref this, AggregateClass);
-			}
+			public HRESULT KsAddAggregate(in Guid AggregateClass) mut => VT.KsAddAggregate(ref this, AggregateClass);
+			public HRESULT KsRemoveAggregate(in Guid AggregateClass) mut => VT.KsRemoveAggregate(ref this, AggregateClass);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5770,10 +5730,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateNodeInstance(uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, in Guid InterfaceId, void** Interface) mut
-			{
-				return VT.CreateNodeInstance(ref this, NodeId, Flags, DesiredAccess, UnkOuter, InterfaceId, Interface);
-			}
+			public HRESULT CreateNodeInstance(uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, in Guid InterfaceId, void** Interface) mut => VT.CreateNodeInstance(ref this, NodeId, Flags, DesiredAccess, UnkOuter, InterfaceId, Interface);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

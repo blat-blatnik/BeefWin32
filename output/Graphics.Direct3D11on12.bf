@@ -29,18 +29,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateWrappedResource(ref IUnknown pResource12, in D3D11_RESOURCE_FLAGS pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, in Guid riid, void** ppResource11) mut
-			{
-				return VT.CreateWrappedResource(ref this, ref pResource12, pFlags11, InState, OutState, riid, ppResource11);
-			}
-			public void ReleaseWrappedResources(ID3D11Resource** ppResources, uint32 NumResources) mut
-			{
-				VT.ReleaseWrappedResources(ref this, ppResources, NumResources);
-			}
-			public void AcquireWrappedResources(ID3D11Resource** ppResources, uint32 NumResources) mut
-			{
-				VT.AcquireWrappedResources(ref this, ppResources, NumResources);
-			}
+			public HRESULT CreateWrappedResource(ref IUnknown pResource12, in D3D11_RESOURCE_FLAGS pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, in Guid riid, void** ppResource11) mut => VT.CreateWrappedResource(ref this, ref pResource12, pFlags11, InState, OutState, riid, ppResource11);
+			public void ReleaseWrappedResources(ID3D11Resource** ppResources, uint32 NumResources) mut => VT.ReleaseWrappedResources(ref this, ppResources, NumResources);
+			public void AcquireWrappedResources(ID3D11Resource** ppResources, uint32 NumResources) mut => VT.AcquireWrappedResources(ref this, ppResources, NumResources);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -56,10 +48,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetD3D12Device(in Guid riid, void** ppvDevice) mut
-			{
-				return VT.GetD3D12Device(ref this, riid, ppvDevice);
-			}
+			public HRESULT GetD3D12Device(in Guid riid, void** ppvDevice) mut => VT.GetD3D12Device(ref this, riid, ppvDevice);
+
 			[CRepr]
 			public struct VTable : ID3D11On12Device.VTable
 			{
@@ -73,14 +63,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, in Guid riid, void** ppvResource12) mut
-			{
-				return VT.UnwrapUnderlyingResource(ref this, ref pResource11, ref pCommandQueue, riid, ppvResource12);
-			}
-			public HRESULT ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint32 NumSync, uint64* pSignalValues, ID3D12Fence** ppFences) mut
-			{
-				return VT.ReturnUnderlyingResource(ref this, ref pResource11, NumSync, pSignalValues, ppFences);
-			}
+			public HRESULT UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, in Guid riid, void** ppvResource12) mut => VT.UnwrapUnderlyingResource(ref this, ref pResource11, ref pCommandQueue, riid, ppvResource12);
+			public HRESULT ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint32 NumSync, uint64* pSignalValues, ID3D12Fence** ppFences) mut => VT.ReturnUnderlyingResource(ref this, ref pResource11, NumSync, pSignalValues, ppFences);
+
 			[CRepr]
 			public struct VTable : ID3D11On12Device1.VTable
 			{

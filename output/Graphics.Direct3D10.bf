@@ -2037,22 +2037,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDevice(out ID3D10Device* ppDevice) mut
-			{
-				VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut
-			{
-				return VT.GetPrivateData(ref this, guid, out pDataSize, pData);
-			}
-			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut
-			{
-				return VT.SetPrivateData(ref this, guid, DataSize, pData);
-			}
-			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut
-			{
-				return VT.SetPrivateDataInterface(ref this, guid, pData);
-			}
+			public void GetDevice(out ID3D10Device* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut => VT.GetPrivateData(ref this, guid, out pDataSize, pData);
+			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut => VT.SetPrivateData(ref this, guid, DataSize, pData);
+			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut => VT.SetPrivateDataInterface(ref this, guid, pData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2069,10 +2058,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_DEPTH_STENCIL_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_DEPTH_STENCIL_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2086,10 +2073,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_BLEND_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_BLEND_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2103,10 +2088,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_RASTERIZER_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_RASTERIZER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2120,18 +2103,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void ComGetType(out D3D10_RESOURCE_DIMENSION rType) mut
-			{
-				VT.ComGetType(ref this, out rType);
-			}
-			public void SetEvictionPriority(uint32 EvictionPriority) mut
-			{
-				VT.SetEvictionPriority(ref this, EvictionPriority);
-			}
-			public uint32 GetEvictionPriority() mut
-			{
-				return VT.GetEvictionPriority(ref this);
-			}
+			public void ComGetType(out D3D10_RESOURCE_DIMENSION rType) mut => VT.ComGetType(ref this, out rType);
+			public void SetEvictionPriority(uint32 EvictionPriority) mut => VT.SetEvictionPriority(ref this, EvictionPriority);
+			public uint32 GetEvictionPriority() mut => VT.GetEvictionPriority(ref this);
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2147,18 +2122,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Map(D3D10_MAP MapType, uint32 MapFlags, void** ppData) mut
-			{
-				return VT.Map(ref this, MapType, MapFlags, ppData);
-			}
-			public void Unmap() mut
-			{
-				VT.Unmap(ref this);
-			}
-			public void GetDesc(out D3D10_BUFFER_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public HRESULT Map(D3D10_MAP MapType, uint32 MapFlags, void** ppData) mut => VT.Map(ref this, MapType, MapFlags, ppData);
+			public void Unmap() mut => VT.Unmap(ref this);
+			public void GetDesc(out D3D10_BUFFER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10Resource.VTable
 			{
@@ -2174,18 +2141,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Map(uint32 Subresource, D3D10_MAP MapType, uint32 MapFlags, void** ppData) mut
-			{
-				return VT.Map(ref this, Subresource, MapType, MapFlags, ppData);
-			}
-			public void Unmap(uint32 Subresource) mut
-			{
-				VT.Unmap(ref this, Subresource);
-			}
-			public void GetDesc(out D3D10_TEXTURE1D_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public HRESULT Map(uint32 Subresource, D3D10_MAP MapType, uint32 MapFlags, void** ppData) mut => VT.Map(ref this, Subresource, MapType, MapFlags, ppData);
+			public void Unmap(uint32 Subresource) mut => VT.Unmap(ref this, Subresource);
+			public void GetDesc(out D3D10_TEXTURE1D_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10Resource.VTable
 			{
@@ -2201,18 +2160,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Map(uint32 Subresource, D3D10_MAP MapType, uint32 MapFlags, out D3D10_MAPPED_TEXTURE2D pMappedTex2D) mut
-			{
-				return VT.Map(ref this, Subresource, MapType, MapFlags, out pMappedTex2D);
-			}
-			public void Unmap(uint32 Subresource) mut
-			{
-				VT.Unmap(ref this, Subresource);
-			}
-			public void GetDesc(out D3D10_TEXTURE2D_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public HRESULT Map(uint32 Subresource, D3D10_MAP MapType, uint32 MapFlags, out D3D10_MAPPED_TEXTURE2D pMappedTex2D) mut => VT.Map(ref this, Subresource, MapType, MapFlags, out pMappedTex2D);
+			public void Unmap(uint32 Subresource) mut => VT.Unmap(ref this, Subresource);
+			public void GetDesc(out D3D10_TEXTURE2D_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10Resource.VTable
 			{
@@ -2228,18 +2179,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Map(uint32 Subresource, D3D10_MAP MapType, uint32 MapFlags, out D3D10_MAPPED_TEXTURE3D pMappedTex3D) mut
-			{
-				return VT.Map(ref this, Subresource, MapType, MapFlags, out pMappedTex3D);
-			}
-			public void Unmap(uint32 Subresource) mut
-			{
-				VT.Unmap(ref this, Subresource);
-			}
-			public void GetDesc(out D3D10_TEXTURE3D_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public HRESULT Map(uint32 Subresource, D3D10_MAP MapType, uint32 MapFlags, out D3D10_MAPPED_TEXTURE3D pMappedTex3D) mut => VT.Map(ref this, Subresource, MapType, MapFlags, out pMappedTex3D);
+			public void Unmap(uint32 Subresource) mut => VT.Unmap(ref this, Subresource);
+			public void GetDesc(out D3D10_TEXTURE3D_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10Resource.VTable
 			{
@@ -2255,10 +2198,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetResource(out ID3D10Resource* ppResource) mut
-			{
-				VT.GetResource(ref this, out ppResource);
-			}
+			public void GetResource(out ID3D10Resource* ppResource) mut => VT.GetResource(ref this, out ppResource);
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2272,10 +2213,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_SHADER_RESOURCE_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_SHADER_RESOURCE_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10View.VTable
 			{
@@ -2289,10 +2228,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_RENDER_TARGET_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_RENDER_TARGET_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10View.VTable
 			{
@@ -2306,10 +2243,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_DEPTH_STENCIL_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_DEPTH_STENCIL_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10View.VTable
 			{
@@ -2323,6 +2258,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2335,6 +2271,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2347,6 +2284,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2359,6 +2297,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2371,10 +2310,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_SAMPLER_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_SAMPLER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2388,22 +2325,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void Begin() mut
-			{
-				VT.Begin(ref this);
-			}
-			public void End() mut
-			{
-				VT.End(ref this);
-			}
-			public HRESULT GetData(void* pData, uint32 DataSize, uint32 GetDataFlags) mut
-			{
-				return VT.GetData(ref this, pData, DataSize, GetDataFlags);
-			}
-			public uint32 GetDataSize() mut
-			{
-				return VT.GetDataSize(ref this);
-			}
+			public void Begin() mut => VT.Begin(ref this);
+			public void End() mut => VT.End(ref this);
+			public HRESULT GetData(void* pData, uint32 DataSize, uint32 GetDataFlags) mut => VT.GetData(ref this, pData, DataSize, GetDataFlags);
+			public uint32 GetDataSize() mut => VT.GetDataSize(ref this);
+
 			[CRepr]
 			public struct VTable : ID3D10DeviceChild.VTable
 			{
@@ -2420,10 +2346,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_QUERY_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_QUERY_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10Asynchronous.VTable
 			{
@@ -2437,6 +2361,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D10Query.VTable
 			{
@@ -2449,10 +2374,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D10_COUNTER_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D10_COUNTER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10Asynchronous.VTable
 			{
@@ -2466,386 +2389,102 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void VSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut
-			{
-				VT.VSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void PSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.PSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void PSSetShader(ID3D10PixelShader* pPixelShader) mut
-			{
-				VT.PSSetShader(ref this, pPixelShader);
-			}
-			public void PSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut
-			{
-				VT.PSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void VSSetShader(ID3D10VertexShader* pVertexShader) mut
-			{
-				VT.VSSetShader(ref this, pVertexShader);
-			}
-			public void DrawIndexed(uint32 IndexCount, uint32 StartIndexLocation, int32 BaseVertexLocation) mut
-			{
-				VT.DrawIndexed(ref this, IndexCount, StartIndexLocation, BaseVertexLocation);
-			}
-			public void Draw(uint32 VertexCount, uint32 StartVertexLocation) mut
-			{
-				VT.Draw(ref this, VertexCount, StartVertexLocation);
-			}
-			public void PSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut
-			{
-				VT.PSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void IASetInputLayout(ID3D10InputLayout* pInputLayout) mut
-			{
-				VT.IASetInputLayout(ref this, pInputLayout);
-			}
-			public void IASetVertexBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) mut
-			{
-				VT.IASetVertexBuffers(ref this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
-			}
-			public void IASetIndexBuffer(ID3D10Buffer* pIndexBuffer, DXGI_FORMAT Format, uint32 Offset) mut
-			{
-				VT.IASetIndexBuffer(ref this, pIndexBuffer, Format, Offset);
-			}
-			public void DrawIndexedInstanced(uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) mut
-			{
-				VT.DrawIndexedInstanced(ref this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
-			}
-			public void DrawInstanced(uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) mut
-			{
-				VT.DrawInstanced(ref this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
-			}
-			public void GSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut
-			{
-				VT.GSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void GSSetShader(ID3D10GeometryShader* pShader) mut
-			{
-				VT.GSSetShader(ref this, pShader);
-			}
-			public void IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY Topology) mut
-			{
-				VT.IASetPrimitiveTopology(ref this, Topology);
-			}
-			public void VSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.VSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void VSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut
-			{
-				VT.VSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void SetPredication(ID3D10Predicate* pPredicate, BOOL PredicateValue) mut
-			{
-				VT.SetPredication(ref this, pPredicate, PredicateValue);
-			}
-			public void GSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.GSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void GSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut
-			{
-				VT.GSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void OMSetRenderTargets(uint32 NumViews, ID3D10RenderTargetView** ppRenderTargetViews, ID3D10DepthStencilView* pDepthStencilView) mut
-			{
-				VT.OMSetRenderTargets(ref this, NumViews, ppRenderTargetViews, pDepthStencilView);
-			}
-			public void OMSetBlendState(ID3D10BlendState* pBlendState, in float BlendFactor, uint32 SampleMask) mut
-			{
-				VT.OMSetBlendState(ref this, pBlendState, BlendFactor, SampleMask);
-			}
-			public void OMSetDepthStencilState(ID3D10DepthStencilState* pDepthStencilState, uint32 StencilRef) mut
-			{
-				VT.OMSetDepthStencilState(ref this, pDepthStencilState, StencilRef);
-			}
-			public void SOSetTargets(uint32 NumBuffers, ID3D10Buffer** ppSOTargets, uint32* pOffsets) mut
-			{
-				VT.SOSetTargets(ref this, NumBuffers, ppSOTargets, pOffsets);
-			}
-			public void DrawAuto() mut
-			{
-				VT.DrawAuto(ref this);
-			}
-			public void RSSetState(ID3D10RasterizerState* pRasterizerState) mut
-			{
-				VT.RSSetState(ref this, pRasterizerState);
-			}
-			public void RSSetViewports(uint32 NumViewports, D3D10_VIEWPORT* pViewports) mut
-			{
-				VT.RSSetViewports(ref this, NumViewports, pViewports);
-			}
-			public void RSSetScissorRects(uint32 NumRects, RECT* pRects) mut
-			{
-				VT.RSSetScissorRects(ref this, NumRects, pRects);
-			}
-			public void CopySubresourceRegion(ref ID3D10Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D10Resource pSrcResource, uint32 SrcSubresource, D3D10_BOX* pSrcBox) mut
-			{
-				VT.CopySubresourceRegion(ref this, ref pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, pSrcBox);
-			}
-			public void CopyResource(ref ID3D10Resource pDstResource, ref ID3D10Resource pSrcResource) mut
-			{
-				VT.CopyResource(ref this, ref pDstResource, ref pSrcResource);
-			}
-			public void UpdateSubresource(ref ID3D10Resource pDstResource, uint32 DstSubresource, D3D10_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) mut
-			{
-				VT.UpdateSubresource(ref this, ref pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
-			}
-			public void ClearRenderTargetView(ref ID3D10RenderTargetView pRenderTargetView, in float ColorRGBA) mut
-			{
-				VT.ClearRenderTargetView(ref this, ref pRenderTargetView, ColorRGBA);
-			}
-			public void ClearDepthStencilView(ref ID3D10DepthStencilView pDepthStencilView, uint32 ClearFlags, float Depth, uint8 Stencil) mut
-			{
-				VT.ClearDepthStencilView(ref this, ref pDepthStencilView, ClearFlags, Depth, Stencil);
-			}
-			public void GenerateMips(ref ID3D10ShaderResourceView pShaderResourceView) mut
-			{
-				VT.GenerateMips(ref this, ref pShaderResourceView);
-			}
-			public void ResolveSubresource(ref ID3D10Resource pDstResource, uint32 DstSubresource, ref ID3D10Resource pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) mut
-			{
-				VT.ResolveSubresource(ref this, ref pDstResource, DstSubresource, ref pSrcResource, SrcSubresource, Format);
-			}
-			public void VSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut
-			{
-				VT.VSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void PSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.PSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void PSGetShader(out ID3D10PixelShader* ppPixelShader) mut
-			{
-				VT.PSGetShader(ref this, out ppPixelShader);
-			}
-			public void PSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut
-			{
-				VT.PSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void VSGetShader(out ID3D10VertexShader* ppVertexShader) mut
-			{
-				VT.VSGetShader(ref this, out ppVertexShader);
-			}
-			public void PSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut
-			{
-				VT.PSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void IAGetInputLayout(out ID3D10InputLayout* ppInputLayout) mut
-			{
-				VT.IAGetInputLayout(ref this, out ppInputLayout);
-			}
-			public void IAGetVertexBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) mut
-			{
-				VT.IAGetVertexBuffers(ref this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
-			}
-			public void IAGetIndexBuffer(ID3D10Buffer** pIndexBuffer, DXGI_FORMAT* Format, uint32* Offset) mut
-			{
-				VT.IAGetIndexBuffer(ref this, pIndexBuffer, Format, Offset);
-			}
-			public void GSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut
-			{
-				VT.GSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void GSGetShader(out ID3D10GeometryShader* ppGeometryShader) mut
-			{
-				VT.GSGetShader(ref this, out ppGeometryShader);
-			}
-			public void IAGetPrimitiveTopology(out D3D_PRIMITIVE_TOPOLOGY pTopology) mut
-			{
-				VT.IAGetPrimitiveTopology(ref this, out pTopology);
-			}
-			public void VSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.VSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void VSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut
-			{
-				VT.VSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void GetPredication(ID3D10Predicate** ppPredicate, BOOL* pPredicateValue) mut
-			{
-				VT.GetPredication(ref this, ppPredicate, pPredicateValue);
-			}
-			public void GSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.GSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void GSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut
-			{
-				VT.GSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void OMGetRenderTargets(uint32 NumViews, ID3D10RenderTargetView** ppRenderTargetViews, ID3D10DepthStencilView** ppDepthStencilView) mut
-			{
-				VT.OMGetRenderTargets(ref this, NumViews, ppRenderTargetViews, ppDepthStencilView);
-			}
-			public void OMGetBlendState(ID3D10BlendState** ppBlendState, float* BlendFactor, uint32* pSampleMask) mut
-			{
-				VT.OMGetBlendState(ref this, ppBlendState, BlendFactor, pSampleMask);
-			}
-			public void OMGetDepthStencilState(ID3D10DepthStencilState** ppDepthStencilState, uint32* pStencilRef) mut
-			{
-				VT.OMGetDepthStencilState(ref this, ppDepthStencilState, pStencilRef);
-			}
-			public void SOGetTargets(uint32 NumBuffers, ID3D10Buffer** ppSOTargets, uint32* pOffsets) mut
-			{
-				VT.SOGetTargets(ref this, NumBuffers, ppSOTargets, pOffsets);
-			}
-			public void RSGetState(out ID3D10RasterizerState* ppRasterizerState) mut
-			{
-				VT.RSGetState(ref this, out ppRasterizerState);
-			}
-			public void RSGetViewports(out uint32 NumViewports, D3D10_VIEWPORT* pViewports) mut
-			{
-				VT.RSGetViewports(ref this, out NumViewports, pViewports);
-			}
-			public void RSGetScissorRects(out uint32 NumRects, RECT* pRects) mut
-			{
-				VT.RSGetScissorRects(ref this, out NumRects, pRects);
-			}
-			public HRESULT GetDeviceRemovedReason() mut
-			{
-				return VT.GetDeviceRemovedReason(ref this);
-			}
-			public HRESULT SetExceptionMode(uint32 RaiseFlags) mut
-			{
-				return VT.SetExceptionMode(ref this, RaiseFlags);
-			}
-			public uint32 GetExceptionMode() mut
-			{
-				return VT.GetExceptionMode(ref this);
-			}
-			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut
-			{
-				return VT.GetPrivateData(ref this, guid, out pDataSize, pData);
-			}
-			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut
-			{
-				return VT.SetPrivateData(ref this, guid, DataSize, pData);
-			}
-			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut
-			{
-				return VT.SetPrivateDataInterface(ref this, guid, pData);
-			}
-			public void ClearState() mut
-			{
-				VT.ClearState(ref this);
-			}
-			public void Flush() mut
-			{
-				VT.Flush(ref this);
-			}
-			public HRESULT CreateBuffer(in D3D10_BUFFER_DESC pDesc, D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Buffer** ppBuffer) mut
-			{
-				return VT.CreateBuffer(ref this, pDesc, pInitialData, ppBuffer);
-			}
-			public HRESULT CreateTexture1D(in D3D10_TEXTURE1D_DESC pDesc, D3D10_SUBRESOURCE_DATA* pInitialData, out ID3D10Texture1D* ppTexture1D) mut
-			{
-				return VT.CreateTexture1D(ref this, pDesc, pInitialData, out ppTexture1D);
-			}
-			public HRESULT CreateTexture2D(in D3D10_TEXTURE2D_DESC pDesc, D3D10_SUBRESOURCE_DATA* pInitialData, out ID3D10Texture2D* ppTexture2D) mut
-			{
-				return VT.CreateTexture2D(ref this, pDesc, pInitialData, out ppTexture2D);
-			}
-			public HRESULT CreateTexture3D(in D3D10_TEXTURE3D_DESC pDesc, D3D10_SUBRESOURCE_DATA* pInitialData, out ID3D10Texture3D* ppTexture3D) mut
-			{
-				return VT.CreateTexture3D(ref this, pDesc, pInitialData, out ppTexture3D);
-			}
-			public HRESULT CreateShaderResourceView(ref ID3D10Resource pResource, D3D10_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D10ShaderResourceView** ppSRView) mut
-			{
-				return VT.CreateShaderResourceView(ref this, ref pResource, pDesc, ppSRView);
-			}
-			public HRESULT CreateRenderTargetView(ref ID3D10Resource pResource, D3D10_RENDER_TARGET_VIEW_DESC* pDesc, ID3D10RenderTargetView** ppRTView) mut
-			{
-				return VT.CreateRenderTargetView(ref this, ref pResource, pDesc, ppRTView);
-			}
-			public HRESULT CreateDepthStencilView(ref ID3D10Resource pResource, D3D10_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D10DepthStencilView** ppDepthStencilView) mut
-			{
-				return VT.CreateDepthStencilView(ref this, ref pResource, pDesc, ppDepthStencilView);
-			}
-			public HRESULT CreateInputLayout(D3D10_INPUT_ELEMENT_DESC* pInputElementDescs, uint32 NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D10InputLayout** ppInputLayout) mut
-			{
-				return VT.CreateInputLayout(ref this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
-			}
-			public HRESULT CreateVertexShader(void* pShaderBytecode, uint BytecodeLength, ID3D10VertexShader** ppVertexShader) mut
-			{
-				return VT.CreateVertexShader(ref this, pShaderBytecode, BytecodeLength, ppVertexShader);
-			}
-			public HRESULT CreateGeometryShader(void* pShaderBytecode, uint BytecodeLength, ID3D10GeometryShader** ppGeometryShader) mut
-			{
-				return VT.CreateGeometryShader(ref this, pShaderBytecode, BytecodeLength, ppGeometryShader);
-			}
-			public HRESULT CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, D3D10_SO_DECLARATION_ENTRY* pSODeclaration, uint32 NumEntries, uint32 OutputStreamStride, ID3D10GeometryShader** ppGeometryShader) mut
-			{
-				return VT.CreateGeometryShaderWithStreamOutput(ref this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, OutputStreamStride, ppGeometryShader);
-			}
-			public HRESULT CreatePixelShader(void* pShaderBytecode, uint BytecodeLength, ID3D10PixelShader** ppPixelShader) mut
-			{
-				return VT.CreatePixelShader(ref this, pShaderBytecode, BytecodeLength, ppPixelShader);
-			}
-			public HRESULT CreateBlendState(in D3D10_BLEND_DESC pBlendStateDesc, ID3D10BlendState** ppBlendState) mut
-			{
-				return VT.CreateBlendState(ref this, pBlendStateDesc, ppBlendState);
-			}
-			public HRESULT CreateDepthStencilState(in D3D10_DEPTH_STENCIL_DESC pDepthStencilDesc, ID3D10DepthStencilState** ppDepthStencilState) mut
-			{
-				return VT.CreateDepthStencilState(ref this, pDepthStencilDesc, ppDepthStencilState);
-			}
-			public HRESULT CreateRasterizerState(in D3D10_RASTERIZER_DESC pRasterizerDesc, ID3D10RasterizerState** ppRasterizerState) mut
-			{
-				return VT.CreateRasterizerState(ref this, pRasterizerDesc, ppRasterizerState);
-			}
-			public HRESULT CreateSamplerState(in D3D10_SAMPLER_DESC pSamplerDesc, ID3D10SamplerState** ppSamplerState) mut
-			{
-				return VT.CreateSamplerState(ref this, pSamplerDesc, ppSamplerState);
-			}
-			public HRESULT CreateQuery(in D3D10_QUERY_DESC pQueryDesc, ID3D10Query** ppQuery) mut
-			{
-				return VT.CreateQuery(ref this, pQueryDesc, ppQuery);
-			}
-			public HRESULT CreatePredicate(in D3D10_QUERY_DESC pPredicateDesc, ID3D10Predicate** ppPredicate) mut
-			{
-				return VT.CreatePredicate(ref this, pPredicateDesc, ppPredicate);
-			}
-			public HRESULT CreateCounter(in D3D10_COUNTER_DESC pCounterDesc, ID3D10Counter** ppCounter) mut
-			{
-				return VT.CreateCounter(ref this, pCounterDesc, ppCounter);
-			}
-			public HRESULT CheckFormatSupport(DXGI_FORMAT Format, out uint32 pFormatSupport) mut
-			{
-				return VT.CheckFormatSupport(ref this, Format, out pFormatSupport);
-			}
-			public HRESULT CheckMultisampleQualityLevels(DXGI_FORMAT Format, uint32 SampleCount, out uint32 pNumQualityLevels) mut
-			{
-				return VT.CheckMultisampleQualityLevels(ref this, Format, SampleCount, out pNumQualityLevels);
-			}
-			public void CheckCounterInfo(out D3D10_COUNTER_INFO pCounterInfo) mut
-			{
-				VT.CheckCounterInfo(ref this, out pCounterInfo);
-			}
-			public HRESULT CheckCounter(in D3D10_COUNTER_DESC pDesc, out D3D10_COUNTER_TYPE pType, out uint32 pActiveCounters, uint8* szName, uint32* pNameLength, uint8* szUnits, uint32* pUnitsLength, uint8* szDescription, uint32* pDescriptionLength) mut
-			{
-				return VT.CheckCounter(ref this, pDesc, out pType, out pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-			}
-			public uint32 GetCreationFlags() mut
-			{
-				return VT.GetCreationFlags(ref this);
-			}
-			public HRESULT OpenSharedResource(HANDLE hResource, in Guid ReturnedInterface, void** ppResource) mut
-			{
-				return VT.OpenSharedResource(ref this, hResource, ReturnedInterface, ppResource);
-			}
-			public void SetTextFilterSize(uint32 Width, uint32 Height) mut
-			{
-				VT.SetTextFilterSize(ref this, Width, Height);
-			}
-			public void GetTextFilterSize(uint32* pWidth, uint32* pHeight) mut
-			{
-				VT.GetTextFilterSize(ref this, pWidth, pHeight);
-			}
+			public void VSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut => VT.VSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void PSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut => VT.PSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void PSSetShader(ID3D10PixelShader* pPixelShader) mut => VT.PSSetShader(ref this, pPixelShader);
+			public void PSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut => VT.PSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void VSSetShader(ID3D10VertexShader* pVertexShader) mut => VT.VSSetShader(ref this, pVertexShader);
+			public void DrawIndexed(uint32 IndexCount, uint32 StartIndexLocation, int32 BaseVertexLocation) mut => VT.DrawIndexed(ref this, IndexCount, StartIndexLocation, BaseVertexLocation);
+			public void Draw(uint32 VertexCount, uint32 StartVertexLocation) mut => VT.Draw(ref this, VertexCount, StartVertexLocation);
+			public void PSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut => VT.PSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void IASetInputLayout(ID3D10InputLayout* pInputLayout) mut => VT.IASetInputLayout(ref this, pInputLayout);
+			public void IASetVertexBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) mut => VT.IASetVertexBuffers(ref this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
+			public void IASetIndexBuffer(ID3D10Buffer* pIndexBuffer, DXGI_FORMAT Format, uint32 Offset) mut => VT.IASetIndexBuffer(ref this, pIndexBuffer, Format, Offset);
+			public void DrawIndexedInstanced(uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) mut => VT.DrawIndexedInstanced(ref this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
+			public void DrawInstanced(uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) mut => VT.DrawInstanced(ref this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
+			public void GSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut => VT.GSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void GSSetShader(ID3D10GeometryShader* pShader) mut => VT.GSSetShader(ref this, pShader);
+			public void IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY Topology) mut => VT.IASetPrimitiveTopology(ref this, Topology);
+			public void VSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut => VT.VSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void VSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut => VT.VSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void SetPredication(ID3D10Predicate* pPredicate, BOOL PredicateValue) mut => VT.SetPredication(ref this, pPredicate, PredicateValue);
+			public void GSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut => VT.GSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void GSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut => VT.GSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void OMSetRenderTargets(uint32 NumViews, ID3D10RenderTargetView** ppRenderTargetViews, ID3D10DepthStencilView* pDepthStencilView) mut => VT.OMSetRenderTargets(ref this, NumViews, ppRenderTargetViews, pDepthStencilView);
+			public void OMSetBlendState(ID3D10BlendState* pBlendState, in float BlendFactor, uint32 SampleMask) mut => VT.OMSetBlendState(ref this, pBlendState, BlendFactor, SampleMask);
+			public void OMSetDepthStencilState(ID3D10DepthStencilState* pDepthStencilState, uint32 StencilRef) mut => VT.OMSetDepthStencilState(ref this, pDepthStencilState, StencilRef);
+			public void SOSetTargets(uint32 NumBuffers, ID3D10Buffer** ppSOTargets, uint32* pOffsets) mut => VT.SOSetTargets(ref this, NumBuffers, ppSOTargets, pOffsets);
+			public void DrawAuto() mut => VT.DrawAuto(ref this);
+			public void RSSetState(ID3D10RasterizerState* pRasterizerState) mut => VT.RSSetState(ref this, pRasterizerState);
+			public void RSSetViewports(uint32 NumViewports, D3D10_VIEWPORT* pViewports) mut => VT.RSSetViewports(ref this, NumViewports, pViewports);
+			public void RSSetScissorRects(uint32 NumRects, RECT* pRects) mut => VT.RSSetScissorRects(ref this, NumRects, pRects);
+			public void CopySubresourceRegion(ref ID3D10Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D10Resource pSrcResource, uint32 SrcSubresource, D3D10_BOX* pSrcBox) mut => VT.CopySubresourceRegion(ref this, ref pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, pSrcBox);
+			public void CopyResource(ref ID3D10Resource pDstResource, ref ID3D10Resource pSrcResource) mut => VT.CopyResource(ref this, ref pDstResource, ref pSrcResource);
+			public void UpdateSubresource(ref ID3D10Resource pDstResource, uint32 DstSubresource, D3D10_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) mut => VT.UpdateSubresource(ref this, ref pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+			public void ClearRenderTargetView(ref ID3D10RenderTargetView pRenderTargetView, in float ColorRGBA) mut => VT.ClearRenderTargetView(ref this, ref pRenderTargetView, ColorRGBA);
+			public void ClearDepthStencilView(ref ID3D10DepthStencilView pDepthStencilView, uint32 ClearFlags, float Depth, uint8 Stencil) mut => VT.ClearDepthStencilView(ref this, ref pDepthStencilView, ClearFlags, Depth, Stencil);
+			public void GenerateMips(ref ID3D10ShaderResourceView pShaderResourceView) mut => VT.GenerateMips(ref this, ref pShaderResourceView);
+			public void ResolveSubresource(ref ID3D10Resource pDstResource, uint32 DstSubresource, ref ID3D10Resource pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) mut => VT.ResolveSubresource(ref this, ref pDstResource, DstSubresource, ref pSrcResource, SrcSubresource, Format);
+			public void VSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut => VT.VSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void PSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut => VT.PSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void PSGetShader(out ID3D10PixelShader* ppPixelShader) mut => VT.PSGetShader(ref this, out ppPixelShader);
+			public void PSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut => VT.PSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void VSGetShader(out ID3D10VertexShader* ppVertexShader) mut => VT.VSGetShader(ref this, out ppVertexShader);
+			public void PSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut => VT.PSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void IAGetInputLayout(out ID3D10InputLayout* ppInputLayout) mut => VT.IAGetInputLayout(ref this, out ppInputLayout);
+			public void IAGetVertexBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) mut => VT.IAGetVertexBuffers(ref this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
+			public void IAGetIndexBuffer(ID3D10Buffer** pIndexBuffer, DXGI_FORMAT* Format, uint32* Offset) mut => VT.IAGetIndexBuffer(ref this, pIndexBuffer, Format, Offset);
+			public void GSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D10Buffer** ppConstantBuffers) mut => VT.GSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void GSGetShader(out ID3D10GeometryShader* ppGeometryShader) mut => VT.GSGetShader(ref this, out ppGeometryShader);
+			public void IAGetPrimitiveTopology(out D3D_PRIMITIVE_TOPOLOGY pTopology) mut => VT.IAGetPrimitiveTopology(ref this, out pTopology);
+			public void VSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut => VT.VSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void VSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut => VT.VSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void GetPredication(ID3D10Predicate** ppPredicate, BOOL* pPredicateValue) mut => VT.GetPredication(ref this, ppPredicate, pPredicateValue);
+			public void GSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D10ShaderResourceView** ppShaderResourceViews) mut => VT.GSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void GSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D10SamplerState** ppSamplers) mut => VT.GSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void OMGetRenderTargets(uint32 NumViews, ID3D10RenderTargetView** ppRenderTargetViews, ID3D10DepthStencilView** ppDepthStencilView) mut => VT.OMGetRenderTargets(ref this, NumViews, ppRenderTargetViews, ppDepthStencilView);
+			public void OMGetBlendState(ID3D10BlendState** ppBlendState, float* BlendFactor, uint32* pSampleMask) mut => VT.OMGetBlendState(ref this, ppBlendState, BlendFactor, pSampleMask);
+			public void OMGetDepthStencilState(ID3D10DepthStencilState** ppDepthStencilState, uint32* pStencilRef) mut => VT.OMGetDepthStencilState(ref this, ppDepthStencilState, pStencilRef);
+			public void SOGetTargets(uint32 NumBuffers, ID3D10Buffer** ppSOTargets, uint32* pOffsets) mut => VT.SOGetTargets(ref this, NumBuffers, ppSOTargets, pOffsets);
+			public void RSGetState(out ID3D10RasterizerState* ppRasterizerState) mut => VT.RSGetState(ref this, out ppRasterizerState);
+			public void RSGetViewports(out uint32 NumViewports, D3D10_VIEWPORT* pViewports) mut => VT.RSGetViewports(ref this, out NumViewports, pViewports);
+			public void RSGetScissorRects(out uint32 NumRects, RECT* pRects) mut => VT.RSGetScissorRects(ref this, out NumRects, pRects);
+			public HRESULT GetDeviceRemovedReason() mut => VT.GetDeviceRemovedReason(ref this);
+			public HRESULT SetExceptionMode(uint32 RaiseFlags) mut => VT.SetExceptionMode(ref this, RaiseFlags);
+			public uint32 GetExceptionMode() mut => VT.GetExceptionMode(ref this);
+			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut => VT.GetPrivateData(ref this, guid, out pDataSize, pData);
+			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut => VT.SetPrivateData(ref this, guid, DataSize, pData);
+			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut => VT.SetPrivateDataInterface(ref this, guid, pData);
+			public void ClearState() mut => VT.ClearState(ref this);
+			public void Flush() mut => VT.Flush(ref this);
+			public HRESULT CreateBuffer(in D3D10_BUFFER_DESC pDesc, D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Buffer** ppBuffer) mut => VT.CreateBuffer(ref this, pDesc, pInitialData, ppBuffer);
+			public HRESULT CreateTexture1D(in D3D10_TEXTURE1D_DESC pDesc, D3D10_SUBRESOURCE_DATA* pInitialData, out ID3D10Texture1D* ppTexture1D) mut => VT.CreateTexture1D(ref this, pDesc, pInitialData, out ppTexture1D);
+			public HRESULT CreateTexture2D(in D3D10_TEXTURE2D_DESC pDesc, D3D10_SUBRESOURCE_DATA* pInitialData, out ID3D10Texture2D* ppTexture2D) mut => VT.CreateTexture2D(ref this, pDesc, pInitialData, out ppTexture2D);
+			public HRESULT CreateTexture3D(in D3D10_TEXTURE3D_DESC pDesc, D3D10_SUBRESOURCE_DATA* pInitialData, out ID3D10Texture3D* ppTexture3D) mut => VT.CreateTexture3D(ref this, pDesc, pInitialData, out ppTexture3D);
+			public HRESULT CreateShaderResourceView(ref ID3D10Resource pResource, D3D10_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D10ShaderResourceView** ppSRView) mut => VT.CreateShaderResourceView(ref this, ref pResource, pDesc, ppSRView);
+			public HRESULT CreateRenderTargetView(ref ID3D10Resource pResource, D3D10_RENDER_TARGET_VIEW_DESC* pDesc, ID3D10RenderTargetView** ppRTView) mut => VT.CreateRenderTargetView(ref this, ref pResource, pDesc, ppRTView);
+			public HRESULT CreateDepthStencilView(ref ID3D10Resource pResource, D3D10_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D10DepthStencilView** ppDepthStencilView) mut => VT.CreateDepthStencilView(ref this, ref pResource, pDesc, ppDepthStencilView);
+			public HRESULT CreateInputLayout(D3D10_INPUT_ELEMENT_DESC* pInputElementDescs, uint32 NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D10InputLayout** ppInputLayout) mut => VT.CreateInputLayout(ref this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
+			public HRESULT CreateVertexShader(void* pShaderBytecode, uint BytecodeLength, ID3D10VertexShader** ppVertexShader) mut => VT.CreateVertexShader(ref this, pShaderBytecode, BytecodeLength, ppVertexShader);
+			public HRESULT CreateGeometryShader(void* pShaderBytecode, uint BytecodeLength, ID3D10GeometryShader** ppGeometryShader) mut => VT.CreateGeometryShader(ref this, pShaderBytecode, BytecodeLength, ppGeometryShader);
+			public HRESULT CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, D3D10_SO_DECLARATION_ENTRY* pSODeclaration, uint32 NumEntries, uint32 OutputStreamStride, ID3D10GeometryShader** ppGeometryShader) mut => VT.CreateGeometryShaderWithStreamOutput(ref this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, OutputStreamStride, ppGeometryShader);
+			public HRESULT CreatePixelShader(void* pShaderBytecode, uint BytecodeLength, ID3D10PixelShader** ppPixelShader) mut => VT.CreatePixelShader(ref this, pShaderBytecode, BytecodeLength, ppPixelShader);
+			public HRESULT CreateBlendState(in D3D10_BLEND_DESC pBlendStateDesc, ID3D10BlendState** ppBlendState) mut => VT.CreateBlendState(ref this, pBlendStateDesc, ppBlendState);
+			public HRESULT CreateDepthStencilState(in D3D10_DEPTH_STENCIL_DESC pDepthStencilDesc, ID3D10DepthStencilState** ppDepthStencilState) mut => VT.CreateDepthStencilState(ref this, pDepthStencilDesc, ppDepthStencilState);
+			public HRESULT CreateRasterizerState(in D3D10_RASTERIZER_DESC pRasterizerDesc, ID3D10RasterizerState** ppRasterizerState) mut => VT.CreateRasterizerState(ref this, pRasterizerDesc, ppRasterizerState);
+			public HRESULT CreateSamplerState(in D3D10_SAMPLER_DESC pSamplerDesc, ID3D10SamplerState** ppSamplerState) mut => VT.CreateSamplerState(ref this, pSamplerDesc, ppSamplerState);
+			public HRESULT CreateQuery(in D3D10_QUERY_DESC pQueryDesc, ID3D10Query** ppQuery) mut => VT.CreateQuery(ref this, pQueryDesc, ppQuery);
+			public HRESULT CreatePredicate(in D3D10_QUERY_DESC pPredicateDesc, ID3D10Predicate** ppPredicate) mut => VT.CreatePredicate(ref this, pPredicateDesc, ppPredicate);
+			public HRESULT CreateCounter(in D3D10_COUNTER_DESC pCounterDesc, ID3D10Counter** ppCounter) mut => VT.CreateCounter(ref this, pCounterDesc, ppCounter);
+			public HRESULT CheckFormatSupport(DXGI_FORMAT Format, out uint32 pFormatSupport) mut => VT.CheckFormatSupport(ref this, Format, out pFormatSupport);
+			public HRESULT CheckMultisampleQualityLevels(DXGI_FORMAT Format, uint32 SampleCount, out uint32 pNumQualityLevels) mut => VT.CheckMultisampleQualityLevels(ref this, Format, SampleCount, out pNumQualityLevels);
+			public void CheckCounterInfo(out D3D10_COUNTER_INFO pCounterInfo) mut => VT.CheckCounterInfo(ref this, out pCounterInfo);
+			public HRESULT CheckCounter(in D3D10_COUNTER_DESC pDesc, out D3D10_COUNTER_TYPE pType, out uint32 pActiveCounters, uint8* szName, uint32* pNameLength, uint8* szUnits, uint32* pUnitsLength, uint8* szDescription, uint32* pDescriptionLength) mut => VT.CheckCounter(ref this, pDesc, out pType, out pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
+			public uint32 GetCreationFlags() mut => VT.GetCreationFlags(ref this);
+			public HRESULT OpenSharedResource(HANDLE hResource, in Guid ReturnedInterface, void** ppResource) mut => VT.OpenSharedResource(ref this, hResource, ReturnedInterface, ppResource);
+			public void SetTextFilterSize(uint32 Width, uint32 Height) mut => VT.SetTextFilterSize(ref this, Width, Height);
+			public void GetTextFilterSize(uint32* pWidth, uint32* pHeight) mut => VT.GetTextFilterSize(ref this, pWidth, pHeight);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2953,22 +2592,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void Enter() mut
-			{
-				VT.Enter(ref this);
-			}
-			public void Leave() mut
-			{
-				VT.Leave(ref this);
-			}
-			public BOOL SetMultithreadProtected(BOOL bMTProtect) mut
-			{
-				return VT.SetMultithreadProtected(ref this, bMTProtect);
-			}
-			public BOOL GetMultithreadProtected() mut
-			{
-				return VT.GetMultithreadProtected(ref this);
-			}
+			public void Enter() mut => VT.Enter(ref this);
+			public void Leave() mut => VT.Leave(ref this);
+			public BOOL SetMultithreadProtected(BOOL bMTProtect) mut => VT.SetMultithreadProtected(ref this, bMTProtect);
+			public BOOL GetMultithreadProtected() mut => VT.GetMultithreadProtected(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2985,34 +2613,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFeatureMask(uint32 Mask) mut
-			{
-				return VT.SetFeatureMask(ref this, Mask);
-			}
-			public uint32 GetFeatureMask() mut
-			{
-				return VT.GetFeatureMask(ref this);
-			}
-			public HRESULT SetPresentPerRenderOpDelay(uint32 Milliseconds) mut
-			{
-				return VT.SetPresentPerRenderOpDelay(ref this, Milliseconds);
-			}
-			public uint32 GetPresentPerRenderOpDelay() mut
-			{
-				return VT.GetPresentPerRenderOpDelay(ref this);
-			}
-			public HRESULT SetSwapChain(IDXGISwapChain* pSwapChain) mut
-			{
-				return VT.SetSwapChain(ref this, pSwapChain);
-			}
-			public HRESULT GetSwapChain(out IDXGISwapChain* ppSwapChain) mut
-			{
-				return VT.GetSwapChain(ref this, out ppSwapChain);
-			}
-			public HRESULT Validate() mut
-			{
-				return VT.Validate(ref this);
-			}
+			public HRESULT SetFeatureMask(uint32 Mask) mut => VT.SetFeatureMask(ref this, Mask);
+			public uint32 GetFeatureMask() mut => VT.GetFeatureMask(ref this);
+			public HRESULT SetPresentPerRenderOpDelay(uint32 Milliseconds) mut => VT.SetPresentPerRenderOpDelay(ref this, Milliseconds);
+			public uint32 GetPresentPerRenderOpDelay() mut => VT.GetPresentPerRenderOpDelay(ref this);
+			public HRESULT SetSwapChain(IDXGISwapChain* pSwapChain) mut => VT.SetSwapChain(ref this, pSwapChain);
+			public HRESULT GetSwapChain(out IDXGISwapChain* ppSwapChain) mut => VT.GetSwapChain(ref this, out ppSwapChain);
+			public HRESULT Validate() mut => VT.Validate(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3032,14 +2640,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL SetUseRef(BOOL UseRef) mut
-			{
-				return VT.SetUseRef(ref this, UseRef);
-			}
-			public BOOL GetUseRef() mut
-			{
-				return VT.GetUseRef(ref this);
-			}
+			public BOOL SetUseRef(BOOL UseRef) mut => VT.SetUseRef(ref this, UseRef);
+			public BOOL GetUseRef() mut => VT.GetUseRef(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3054,146 +2657,42 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMessageCountLimit(uint64 MessageCountLimit) mut
-			{
-				return VT.SetMessageCountLimit(ref this, MessageCountLimit);
-			}
-			public void ClearStoredMessages() mut
-			{
-				VT.ClearStoredMessages(ref this);
-			}
-			public HRESULT GetMessage(uint64 MessageIndex, D3D10_MESSAGE* pMessage, out uint pMessageByteLength) mut
-			{
-				return VT.GetMessage(ref this, MessageIndex, pMessage, out pMessageByteLength);
-			}
-			public uint64 GetNumMessagesAllowedByStorageFilter() mut
-			{
-				return VT.GetNumMessagesAllowedByStorageFilter(ref this);
-			}
-			public uint64 GetNumMessagesDeniedByStorageFilter() mut
-			{
-				return VT.GetNumMessagesDeniedByStorageFilter(ref this);
-			}
-			public uint64 GetNumStoredMessages() mut
-			{
-				return VT.GetNumStoredMessages(ref this);
-			}
-			public uint64 GetNumStoredMessagesAllowedByRetrievalFilter() mut
-			{
-				return VT.GetNumStoredMessagesAllowedByRetrievalFilter(ref this);
-			}
-			public uint64 GetNumMessagesDiscardedByMessageCountLimit() mut
-			{
-				return VT.GetNumMessagesDiscardedByMessageCountLimit(ref this);
-			}
-			public uint64 GetMessageCountLimit() mut
-			{
-				return VT.GetMessageCountLimit(ref this);
-			}
-			public HRESULT AddStorageFilterEntries(ref D3D10_INFO_QUEUE_FILTER pFilter) mut
-			{
-				return VT.AddStorageFilterEntries(ref this, ref pFilter);
-			}
-			public HRESULT GetStorageFilter(D3D10_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) mut
-			{
-				return VT.GetStorageFilter(ref this, pFilter, out pFilterByteLength);
-			}
-			public void ClearStorageFilter() mut
-			{
-				VT.ClearStorageFilter(ref this);
-			}
-			public HRESULT PushEmptyStorageFilter() mut
-			{
-				return VT.PushEmptyStorageFilter(ref this);
-			}
-			public HRESULT PushCopyOfStorageFilter() mut
-			{
-				return VT.PushCopyOfStorageFilter(ref this);
-			}
-			public HRESULT PushStorageFilter(ref D3D10_INFO_QUEUE_FILTER pFilter) mut
-			{
-				return VT.PushStorageFilter(ref this, ref pFilter);
-			}
-			public void PopStorageFilter() mut
-			{
-				VT.PopStorageFilter(ref this);
-			}
-			public uint32 GetStorageFilterStackSize() mut
-			{
-				return VT.GetStorageFilterStackSize(ref this);
-			}
-			public HRESULT AddRetrievalFilterEntries(ref D3D10_INFO_QUEUE_FILTER pFilter) mut
-			{
-				return VT.AddRetrievalFilterEntries(ref this, ref pFilter);
-			}
-			public HRESULT GetRetrievalFilter(D3D10_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) mut
-			{
-				return VT.GetRetrievalFilter(ref this, pFilter, out pFilterByteLength);
-			}
-			public void ClearRetrievalFilter() mut
-			{
-				VT.ClearRetrievalFilter(ref this);
-			}
-			public HRESULT PushEmptyRetrievalFilter() mut
-			{
-				return VT.PushEmptyRetrievalFilter(ref this);
-			}
-			public HRESULT PushCopyOfRetrievalFilter() mut
-			{
-				return VT.PushCopyOfRetrievalFilter(ref this);
-			}
-			public HRESULT PushRetrievalFilter(ref D3D10_INFO_QUEUE_FILTER pFilter) mut
-			{
-				return VT.PushRetrievalFilter(ref this, ref pFilter);
-			}
-			public void PopRetrievalFilter() mut
-			{
-				VT.PopRetrievalFilter(ref this);
-			}
-			public uint32 GetRetrievalFilterStackSize() mut
-			{
-				return VT.GetRetrievalFilterStackSize(ref this);
-			}
-			public HRESULT AddMessage(D3D10_MESSAGE_CATEGORY Category, D3D10_MESSAGE_SEVERITY Severity, D3D10_MESSAGE_ID ID, PSTR pDescription) mut
-			{
-				return VT.AddMessage(ref this, Category, Severity, ID, pDescription);
-			}
-			public HRESULT AddApplicationMessage(D3D10_MESSAGE_SEVERITY Severity, PSTR pDescription) mut
-			{
-				return VT.AddApplicationMessage(ref this, Severity, pDescription);
-			}
-			public HRESULT SetBreakOnCategory(D3D10_MESSAGE_CATEGORY Category, BOOL bEnable) mut
-			{
-				return VT.SetBreakOnCategory(ref this, Category, bEnable);
-			}
-			public HRESULT SetBreakOnSeverity(D3D10_MESSAGE_SEVERITY Severity, BOOL bEnable) mut
-			{
-				return VT.SetBreakOnSeverity(ref this, Severity, bEnable);
-			}
-			public HRESULT SetBreakOnID(D3D10_MESSAGE_ID ID, BOOL bEnable) mut
-			{
-				return VT.SetBreakOnID(ref this, ID, bEnable);
-			}
-			public BOOL GetBreakOnCategory(D3D10_MESSAGE_CATEGORY Category) mut
-			{
-				return VT.GetBreakOnCategory(ref this, Category);
-			}
-			public BOOL GetBreakOnSeverity(D3D10_MESSAGE_SEVERITY Severity) mut
-			{
-				return VT.GetBreakOnSeverity(ref this, Severity);
-			}
-			public BOOL GetBreakOnID(D3D10_MESSAGE_ID ID) mut
-			{
-				return VT.GetBreakOnID(ref this, ID);
-			}
-			public void SetMuteDebugOutput(BOOL bMute) mut
-			{
-				VT.SetMuteDebugOutput(ref this, bMute);
-			}
-			public BOOL GetMuteDebugOutput() mut
-			{
-				return VT.GetMuteDebugOutput(ref this);
-			}
+			public HRESULT SetMessageCountLimit(uint64 MessageCountLimit) mut => VT.SetMessageCountLimit(ref this, MessageCountLimit);
+			public void ClearStoredMessages() mut => VT.ClearStoredMessages(ref this);
+			public HRESULT GetMessage(uint64 MessageIndex, D3D10_MESSAGE* pMessage, out uint pMessageByteLength) mut => VT.GetMessage(ref this, MessageIndex, pMessage, out pMessageByteLength);
+			public uint64 GetNumMessagesAllowedByStorageFilter() mut => VT.GetNumMessagesAllowedByStorageFilter(ref this);
+			public uint64 GetNumMessagesDeniedByStorageFilter() mut => VT.GetNumMessagesDeniedByStorageFilter(ref this);
+			public uint64 GetNumStoredMessages() mut => VT.GetNumStoredMessages(ref this);
+			public uint64 GetNumStoredMessagesAllowedByRetrievalFilter() mut => VT.GetNumStoredMessagesAllowedByRetrievalFilter(ref this);
+			public uint64 GetNumMessagesDiscardedByMessageCountLimit() mut => VT.GetNumMessagesDiscardedByMessageCountLimit(ref this);
+			public uint64 GetMessageCountLimit() mut => VT.GetMessageCountLimit(ref this);
+			public HRESULT AddStorageFilterEntries(ref D3D10_INFO_QUEUE_FILTER pFilter) mut => VT.AddStorageFilterEntries(ref this, ref pFilter);
+			public HRESULT GetStorageFilter(D3D10_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) mut => VT.GetStorageFilter(ref this, pFilter, out pFilterByteLength);
+			public void ClearStorageFilter() mut => VT.ClearStorageFilter(ref this);
+			public HRESULT PushEmptyStorageFilter() mut => VT.PushEmptyStorageFilter(ref this);
+			public HRESULT PushCopyOfStorageFilter() mut => VT.PushCopyOfStorageFilter(ref this);
+			public HRESULT PushStorageFilter(ref D3D10_INFO_QUEUE_FILTER pFilter) mut => VT.PushStorageFilter(ref this, ref pFilter);
+			public void PopStorageFilter() mut => VT.PopStorageFilter(ref this);
+			public uint32 GetStorageFilterStackSize() mut => VT.GetStorageFilterStackSize(ref this);
+			public HRESULT AddRetrievalFilterEntries(ref D3D10_INFO_QUEUE_FILTER pFilter) mut => VT.AddRetrievalFilterEntries(ref this, ref pFilter);
+			public HRESULT GetRetrievalFilter(D3D10_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) mut => VT.GetRetrievalFilter(ref this, pFilter, out pFilterByteLength);
+			public void ClearRetrievalFilter() mut => VT.ClearRetrievalFilter(ref this);
+			public HRESULT PushEmptyRetrievalFilter() mut => VT.PushEmptyRetrievalFilter(ref this);
+			public HRESULT PushCopyOfRetrievalFilter() mut => VT.PushCopyOfRetrievalFilter(ref this);
+			public HRESULT PushRetrievalFilter(ref D3D10_INFO_QUEUE_FILTER pFilter) mut => VT.PushRetrievalFilter(ref this, ref pFilter);
+			public void PopRetrievalFilter() mut => VT.PopRetrievalFilter(ref this);
+			public uint32 GetRetrievalFilterStackSize() mut => VT.GetRetrievalFilterStackSize(ref this);
+			public HRESULT AddMessage(D3D10_MESSAGE_CATEGORY Category, D3D10_MESSAGE_SEVERITY Severity, D3D10_MESSAGE_ID ID, PSTR pDescription) mut => VT.AddMessage(ref this, Category, Severity, ID, pDescription);
+			public HRESULT AddApplicationMessage(D3D10_MESSAGE_SEVERITY Severity, PSTR pDescription) mut => VT.AddApplicationMessage(ref this, Severity, pDescription);
+			public HRESULT SetBreakOnCategory(D3D10_MESSAGE_CATEGORY Category, BOOL bEnable) mut => VT.SetBreakOnCategory(ref this, Category, bEnable);
+			public HRESULT SetBreakOnSeverity(D3D10_MESSAGE_SEVERITY Severity, BOOL bEnable) mut => VT.SetBreakOnSeverity(ref this, Severity, bEnable);
+			public HRESULT SetBreakOnID(D3D10_MESSAGE_ID ID, BOOL bEnable) mut => VT.SetBreakOnID(ref this, ID, bEnable);
+			public BOOL GetBreakOnCategory(D3D10_MESSAGE_CATEGORY Category) mut => VT.GetBreakOnCategory(ref this, Category);
+			public BOOL GetBreakOnSeverity(D3D10_MESSAGE_SEVERITY Severity) mut => VT.GetBreakOnSeverity(ref this, Severity);
+			public BOOL GetBreakOnID(D3D10_MESSAGE_ID ID) mut => VT.GetBreakOnID(ref this, ID);
+			public void SetMuteDebugOutput(BOOL bMute) mut => VT.SetMuteDebugOutput(ref this, bMute);
+			public BOOL GetMuteDebugOutput() mut => VT.GetMuteDebugOutput(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3242,22 +2741,11 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D10_SHADER_TYPE_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint32 Index) mut
-			{
-				return VT.GetMemberTypeByIndex(ref this, Index);
-			}
-			public ID3D10ShaderReflectionType* GetMemberTypeByName(PSTR Name) mut
-			{
-				return VT.GetMemberTypeByName(ref this, Name);
-			}
-			public PSTR GetMemberTypeName(uint32 Index) mut
-			{
-				return VT.GetMemberTypeName(ref this, Index);
-			}
+			public HRESULT GetDesc(out D3D10_SHADER_TYPE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint32 Index) mut => VT.GetMemberTypeByIndex(ref this, Index);
+			public ID3D10ShaderReflectionType* GetMemberTypeByName(PSTR Name) mut => VT.GetMemberTypeByName(ref this, Name);
+			public PSTR GetMemberTypeName(uint32 Index) mut => VT.GetMemberTypeName(ref this, Index);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -3275,14 +2763,9 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D10_SHADER_VARIABLE_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10ShaderReflectionType* ComGetType() mut
-			{
-				return VT.ComGetType(ref this);
-			}
+			public HRESULT GetDesc(out D3D10_SHADER_VARIABLE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10ShaderReflectionType* ComGetType() mut => VT.ComGetType(ref this);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -3298,18 +2781,10 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D10_SHADER_BUFFER_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10ShaderReflectionVariable* GetVariableByIndex(uint32 Index) mut
-			{
-				return VT.GetVariableByIndex(ref this, Index);
-			}
-			public ID3D10ShaderReflectionVariable* GetVariableByName(PSTR Name) mut
-			{
-				return VT.GetVariableByName(ref this, Name);
-			}
+			public HRESULT GetDesc(out D3D10_SHADER_BUFFER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10ShaderReflectionVariable* GetVariableByIndex(uint32 Index) mut => VT.GetVariableByIndex(ref this, Index);
+			public ID3D10ShaderReflectionVariable* GetVariableByName(PSTR Name) mut => VT.GetVariableByName(ref this, Name);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -3325,30 +2800,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D10_SHADER_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut
-			{
-				return VT.GetConstantBufferByIndex(ref this, Index);
-			}
-			public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut
-			{
-				return VT.GetConstantBufferByName(ref this, Name);
-			}
-			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, out D3D10_SHADER_INPUT_BIND_DESC pDesc) mut
-			{
-				return VT.GetResourceBindingDesc(ref this, ResourceIndex, out pDesc);
-			}
-			public HRESULT GetInputParameterDesc(uint32 ParameterIndex, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetInputParameterDesc(ref this, ParameterIndex, out pDesc);
-			}
-			public HRESULT GetOutputParameterDesc(uint32 ParameterIndex, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetOutputParameterDesc(ref this, ParameterIndex, out pDesc);
-			}
+			public HRESULT GetDesc(out D3D10_SHADER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut => VT.GetConstantBufferByIndex(ref this, Index);
+			public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut => VT.GetConstantBufferByName(ref this, Name);
+			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, out D3D10_SHADER_INPUT_BIND_DESC pDesc) mut => VT.GetResourceBindingDesc(ref this, ResourceIndex, out pDesc);
+			public HRESULT GetInputParameterDesc(uint32 ParameterIndex, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetInputParameterDesc(ref this, ParameterIndex, out pDesc);
+			public HRESULT GetOutputParameterDesc(uint32 ParameterIndex, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetOutputParameterDesc(ref this, ParameterIndex, out pDesc);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3367,22 +2825,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Capture() mut
-			{
-				return VT.Capture(ref this);
-			}
-			public HRESULT Apply() mut
-			{
-				return VT.Apply(ref this);
-			}
-			public HRESULT ReleaseAllDeviceObjects() mut
-			{
-				return VT.ReleaseAllDeviceObjects(ref this);
-			}
-			public HRESULT GetDevice(out ID3D10Device* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
+			public HRESULT Capture() mut => VT.Capture(ref this);
+			public HRESULT Apply() mut => VT.Apply(ref this);
+			public HRESULT ReleaseAllDeviceObjects() mut => VT.ReleaseAllDeviceObjects(ref this);
+			public HRESULT GetDevice(out ID3D10Device* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3400,34 +2847,14 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL IsValid() mut
-			{
-				return VT.IsValid(ref this);
-			}
-			public HRESULT GetDesc(out D3D10_EFFECT_TYPE_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10EffectType* GetMemberTypeByIndex(uint32 Index) mut
-			{
-				return VT.GetMemberTypeByIndex(ref this, Index);
-			}
-			public ID3D10EffectType* GetMemberTypeByName(PSTR Name) mut
-			{
-				return VT.GetMemberTypeByName(ref this, Name);
-			}
-			public ID3D10EffectType* GetMemberTypeBySemantic(PSTR Semantic) mut
-			{
-				return VT.GetMemberTypeBySemantic(ref this, Semantic);
-			}
-			public PSTR GetMemberName(uint32 Index) mut
-			{
-				return VT.GetMemberName(ref this, Index);
-			}
-			public PSTR GetMemberSemantic(uint32 Index) mut
-			{
-				return VT.GetMemberSemantic(ref this, Index);
-			}
+			public BOOL IsValid() mut => VT.IsValid(ref this);
+			public HRESULT GetDesc(out D3D10_EFFECT_TYPE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10EffectType* GetMemberTypeByIndex(uint32 Index) mut => VT.GetMemberTypeByIndex(ref this, Index);
+			public ID3D10EffectType* GetMemberTypeByName(PSTR Name) mut => VT.GetMemberTypeByName(ref this, Name);
+			public ID3D10EffectType* GetMemberTypeBySemantic(PSTR Semantic) mut => VT.GetMemberTypeBySemantic(ref this, Semantic);
+			public PSTR GetMemberName(uint32 Index) mut => VT.GetMemberName(ref this, Index);
+			public PSTR GetMemberSemantic(uint32 Index) mut => VT.GetMemberSemantic(ref this, Index);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -3448,106 +2875,32 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL IsValid() mut
-			{
-				return VT.IsValid(ref this);
-			}
-			public ID3D10EffectType* ComGetType() mut
-			{
-				return VT.ComGetType(ref this);
-			}
-			public HRESULT GetDesc(out D3D10_EFFECT_VARIABLE_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10EffectVariable* GetAnnotationByIndex(uint32 Index) mut
-			{
-				return VT.GetAnnotationByIndex(ref this, Index);
-			}
-			public ID3D10EffectVariable* GetAnnotationByName(PSTR Name) mut
-			{
-				return VT.GetAnnotationByName(ref this, Name);
-			}
-			public ID3D10EffectVariable* GetMemberByIndex(uint32 Index) mut
-			{
-				return VT.GetMemberByIndex(ref this, Index);
-			}
-			public ID3D10EffectVariable* GetMemberByName(PSTR Name) mut
-			{
-				return VT.GetMemberByName(ref this, Name);
-			}
-			public ID3D10EffectVariable* GetMemberBySemantic(PSTR Semantic) mut
-			{
-				return VT.GetMemberBySemantic(ref this, Semantic);
-			}
-			public ID3D10EffectVariable* GetElement(uint32 Index) mut
-			{
-				return VT.GetElement(ref this, Index);
-			}
-			public ID3D10EffectConstantBuffer* GetParentConstantBuffer() mut
-			{
-				return VT.GetParentConstantBuffer(ref this);
-			}
-			public ID3D10EffectScalarVariable* AsScalar() mut
-			{
-				return VT.AsScalar(ref this);
-			}
-			public ID3D10EffectVectorVariable* AsVector() mut
-			{
-				return VT.AsVector(ref this);
-			}
-			public ID3D10EffectMatrixVariable* AsMatrix() mut
-			{
-				return VT.AsMatrix(ref this);
-			}
-			public ID3D10EffectStringVariable* AsString() mut
-			{
-				return VT.AsString(ref this);
-			}
-			public ID3D10EffectShaderResourceVariable* AsShaderResource() mut
-			{
-				return VT.AsShaderResource(ref this);
-			}
-			public ID3D10EffectRenderTargetViewVariable* AsRenderTargetView() mut
-			{
-				return VT.AsRenderTargetView(ref this);
-			}
-			public ID3D10EffectDepthStencilViewVariable* AsDepthStencilView() mut
-			{
-				return VT.AsDepthStencilView(ref this);
-			}
-			public ID3D10EffectConstantBuffer* AsConstantBuffer() mut
-			{
-				return VT.AsConstantBuffer(ref this);
-			}
-			public ID3D10EffectShaderVariable* AsShader() mut
-			{
-				return VT.AsShader(ref this);
-			}
-			public ID3D10EffectBlendVariable* AsBlend() mut
-			{
-				return VT.AsBlend(ref this);
-			}
-			public ID3D10EffectDepthStencilVariable* AsDepthStencil() mut
-			{
-				return VT.AsDepthStencil(ref this);
-			}
-			public ID3D10EffectRasterizerVariable* AsRasterizer() mut
-			{
-				return VT.AsRasterizer(ref this);
-			}
-			public ID3D10EffectSamplerVariable* AsSampler() mut
-			{
-				return VT.AsSampler(ref this);
-			}
-			public HRESULT SetRawValue(void* pData, uint32 Offset, uint32 ByteCount) mut
-			{
-				return VT.SetRawValue(ref this, pData, Offset, ByteCount);
-			}
-			public HRESULT GetRawValue(void* pData, uint32 Offset, uint32 ByteCount) mut
-			{
-				return VT.GetRawValue(ref this, pData, Offset, ByteCount);
-			}
+			public BOOL IsValid() mut => VT.IsValid(ref this);
+			public ID3D10EffectType* ComGetType() mut => VT.ComGetType(ref this);
+			public HRESULT GetDesc(out D3D10_EFFECT_VARIABLE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10EffectVariable* GetAnnotationByIndex(uint32 Index) mut => VT.GetAnnotationByIndex(ref this, Index);
+			public ID3D10EffectVariable* GetAnnotationByName(PSTR Name) mut => VT.GetAnnotationByName(ref this, Name);
+			public ID3D10EffectVariable* GetMemberByIndex(uint32 Index) mut => VT.GetMemberByIndex(ref this, Index);
+			public ID3D10EffectVariable* GetMemberByName(PSTR Name) mut => VT.GetMemberByName(ref this, Name);
+			public ID3D10EffectVariable* GetMemberBySemantic(PSTR Semantic) mut => VT.GetMemberBySemantic(ref this, Semantic);
+			public ID3D10EffectVariable* GetElement(uint32 Index) mut => VT.GetElement(ref this, Index);
+			public ID3D10EffectConstantBuffer* GetParentConstantBuffer() mut => VT.GetParentConstantBuffer(ref this);
+			public ID3D10EffectScalarVariable* AsScalar() mut => VT.AsScalar(ref this);
+			public ID3D10EffectVectorVariable* AsVector() mut => VT.AsVector(ref this);
+			public ID3D10EffectMatrixVariable* AsMatrix() mut => VT.AsMatrix(ref this);
+			public ID3D10EffectStringVariable* AsString() mut => VT.AsString(ref this);
+			public ID3D10EffectShaderResourceVariable* AsShaderResource() mut => VT.AsShaderResource(ref this);
+			public ID3D10EffectRenderTargetViewVariable* AsRenderTargetView() mut => VT.AsRenderTargetView(ref this);
+			public ID3D10EffectDepthStencilViewVariable* AsDepthStencilView() mut => VT.AsDepthStencilView(ref this);
+			public ID3D10EffectConstantBuffer* AsConstantBuffer() mut => VT.AsConstantBuffer(ref this);
+			public ID3D10EffectShaderVariable* AsShader() mut => VT.AsShader(ref this);
+			public ID3D10EffectBlendVariable* AsBlend() mut => VT.AsBlend(ref this);
+			public ID3D10EffectDepthStencilVariable* AsDepthStencil() mut => VT.AsDepthStencil(ref this);
+			public ID3D10EffectRasterizerVariable* AsRasterizer() mut => VT.AsRasterizer(ref this);
+			public ID3D10EffectSamplerVariable* AsSampler() mut => VT.AsSampler(ref this);
+			public HRESULT SetRawValue(void* pData, uint32 Offset, uint32 ByteCount) mut => VT.SetRawValue(ref this, pData, Offset, ByteCount);
+			public HRESULT GetRawValue(void* pData, uint32 Offset, uint32 ByteCount) mut => VT.GetRawValue(ref this, pData, Offset, ByteCount);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -3585,54 +2938,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFloat(float Value) mut
-			{
-				return VT.SetFloat(ref this, Value);
-			}
-			public HRESULT GetFloat(out float pValue) mut
-			{
-				return VT.GetFloat(ref this, out pValue);
-			}
-			public HRESULT SetFloatArray(float* pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetFloatArray(ref this, pData, Offset, Count);
-			}
-			public HRESULT GetFloatArray(float* pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetFloatArray(ref this, pData, Offset, Count);
-			}
-			public HRESULT SetInt(int32 Value) mut
-			{
-				return VT.SetInt(ref this, Value);
-			}
-			public HRESULT GetInt(out int32 pValue) mut
-			{
-				return VT.GetInt(ref this, out pValue);
-			}
-			public HRESULT SetIntArray(int32* pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetIntArray(ref this, pData, Offset, Count);
-			}
-			public HRESULT GetIntArray(int32* pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetIntArray(ref this, pData, Offset, Count);
-			}
-			public HRESULT SetBool(BOOL Value) mut
-			{
-				return VT.SetBool(ref this, Value);
-			}
-			public HRESULT GetBool(out BOOL pValue) mut
-			{
-				return VT.GetBool(ref this, out pValue);
-			}
-			public HRESULT SetBoolArray(BOOL* pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetBoolArray(ref this, pData, Offset, Count);
-			}
-			public HRESULT GetBoolArray(BOOL* pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetBoolArray(ref this, pData, Offset, Count);
-			}
+			public HRESULT SetFloat(float Value) mut => VT.SetFloat(ref this, Value);
+			public HRESULT GetFloat(out float pValue) mut => VT.GetFloat(ref this, out pValue);
+			public HRESULT SetFloatArray(float* pData, uint32 Offset, uint32 Count) mut => VT.SetFloatArray(ref this, pData, Offset, Count);
+			public HRESULT GetFloatArray(float* pData, uint32 Offset, uint32 Count) mut => VT.GetFloatArray(ref this, pData, Offset, Count);
+			public HRESULT SetInt(int32 Value) mut => VT.SetInt(ref this, Value);
+			public HRESULT GetInt(out int32 pValue) mut => VT.GetInt(ref this, out pValue);
+			public HRESULT SetIntArray(int32* pData, uint32 Offset, uint32 Count) mut => VT.SetIntArray(ref this, pData, Offset, Count);
+			public HRESULT GetIntArray(int32* pData, uint32 Offset, uint32 Count) mut => VT.GetIntArray(ref this, pData, Offset, Count);
+			public HRESULT SetBool(BOOL Value) mut => VT.SetBool(ref this, Value);
+			public HRESULT GetBool(out BOOL pValue) mut => VT.GetBool(ref this, out pValue);
+			public HRESULT SetBoolArray(BOOL* pData, uint32 Offset, uint32 Count) mut => VT.SetBoolArray(ref this, pData, Offset, Count);
+			public HRESULT GetBoolArray(BOOL* pData, uint32 Offset, uint32 Count) mut => VT.GetBoolArray(ref this, pData, Offset, Count);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3657,54 +2975,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBoolVector(out BOOL pData) mut
-			{
-				return VT.SetBoolVector(ref this, out pData);
-			}
-			public HRESULT SetIntVector(out int32 pData) mut
-			{
-				return VT.SetIntVector(ref this, out pData);
-			}
-			public HRESULT SetFloatVector(out float pData) mut
-			{
-				return VT.SetFloatVector(ref this, out pData);
-			}
-			public HRESULT GetBoolVector(out BOOL pData) mut
-			{
-				return VT.GetBoolVector(ref this, out pData);
-			}
-			public HRESULT GetIntVector(out int32 pData) mut
-			{
-				return VT.GetIntVector(ref this, out pData);
-			}
-			public HRESULT GetFloatVector(out float pData) mut
-			{
-				return VT.GetFloatVector(ref this, out pData);
-			}
-			public HRESULT SetBoolVectorArray(out BOOL pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetBoolVectorArray(ref this, out pData, Offset, Count);
-			}
-			public HRESULT SetIntVectorArray(out int32 pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetIntVectorArray(ref this, out pData, Offset, Count);
-			}
-			public HRESULT SetFloatVectorArray(out float pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetFloatVectorArray(ref this, out pData, Offset, Count);
-			}
-			public HRESULT GetBoolVectorArray(out BOOL pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetBoolVectorArray(ref this, out pData, Offset, Count);
-			}
-			public HRESULT GetIntVectorArray(out int32 pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetIntVectorArray(ref this, out pData, Offset, Count);
-			}
-			public HRESULT GetFloatVectorArray(out float pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetFloatVectorArray(ref this, out pData, Offset, Count);
-			}
+			public HRESULT SetBoolVector(out BOOL pData) mut => VT.SetBoolVector(ref this, out pData);
+			public HRESULT SetIntVector(out int32 pData) mut => VT.SetIntVector(ref this, out pData);
+			public HRESULT SetFloatVector(out float pData) mut => VT.SetFloatVector(ref this, out pData);
+			public HRESULT GetBoolVector(out BOOL pData) mut => VT.GetBoolVector(ref this, out pData);
+			public HRESULT GetIntVector(out int32 pData) mut => VT.GetIntVector(ref this, out pData);
+			public HRESULT GetFloatVector(out float pData) mut => VT.GetFloatVector(ref this, out pData);
+			public HRESULT SetBoolVectorArray(out BOOL pData, uint32 Offset, uint32 Count) mut => VT.SetBoolVectorArray(ref this, out pData, Offset, Count);
+			public HRESULT SetIntVectorArray(out int32 pData, uint32 Offset, uint32 Count) mut => VT.SetIntVectorArray(ref this, out pData, Offset, Count);
+			public HRESULT SetFloatVectorArray(out float pData, uint32 Offset, uint32 Count) mut => VT.SetFloatVectorArray(ref this, out pData, Offset, Count);
+			public HRESULT GetBoolVectorArray(out BOOL pData, uint32 Offset, uint32 Count) mut => VT.GetBoolVectorArray(ref this, out pData, Offset, Count);
+			public HRESULT GetIntVectorArray(out int32 pData, uint32 Offset, uint32 Count) mut => VT.GetIntVectorArray(ref this, out pData, Offset, Count);
+			public HRESULT GetFloatVectorArray(out float pData, uint32 Offset, uint32 Count) mut => VT.GetFloatVectorArray(ref this, out pData, Offset, Count);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3729,38 +3012,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMatrix(out float pData) mut
-			{
-				return VT.SetMatrix(ref this, out pData);
-			}
-			public HRESULT GetMatrix(out float pData) mut
-			{
-				return VT.GetMatrix(ref this, out pData);
-			}
-			public HRESULT SetMatrixArray(out float pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetMatrixArray(ref this, out pData, Offset, Count);
-			}
-			public HRESULT GetMatrixArray(out float pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetMatrixArray(ref this, out pData, Offset, Count);
-			}
-			public HRESULT SetMatrixTranspose(out float pData) mut
-			{
-				return VT.SetMatrixTranspose(ref this, out pData);
-			}
-			public HRESULT GetMatrixTranspose(out float pData) mut
-			{
-				return VT.GetMatrixTranspose(ref this, out pData);
-			}
-			public HRESULT SetMatrixTransposeArray(out float pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetMatrixTransposeArray(ref this, out pData, Offset, Count);
-			}
-			public HRESULT GetMatrixTransposeArray(out float pData, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetMatrixTransposeArray(ref this, out pData, Offset, Count);
-			}
+			public HRESULT SetMatrix(out float pData) mut => VT.SetMatrix(ref this, out pData);
+			public HRESULT GetMatrix(out float pData) mut => VT.GetMatrix(ref this, out pData);
+			public HRESULT SetMatrixArray(out float pData, uint32 Offset, uint32 Count) mut => VT.SetMatrixArray(ref this, out pData, Offset, Count);
+			public HRESULT GetMatrixArray(out float pData, uint32 Offset, uint32 Count) mut => VT.GetMatrixArray(ref this, out pData, Offset, Count);
+			public HRESULT SetMatrixTranspose(out float pData) mut => VT.SetMatrixTranspose(ref this, out pData);
+			public HRESULT GetMatrixTranspose(out float pData) mut => VT.GetMatrixTranspose(ref this, out pData);
+			public HRESULT SetMatrixTransposeArray(out float pData, uint32 Offset, uint32 Count) mut => VT.SetMatrixTransposeArray(ref this, out pData, Offset, Count);
+			public HRESULT GetMatrixTransposeArray(out float pData, uint32 Offset, uint32 Count) mut => VT.GetMatrixTransposeArray(ref this, out pData, Offset, Count);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3781,14 +3041,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetString(out PSTR ppString) mut
-			{
-				return VT.GetString(ref this, out ppString);
-			}
-			public HRESULT GetStringArray(PSTR* ppStrings, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetStringArray(ref this, ppStrings, Offset, Count);
-			}
+			public HRESULT GetString(out PSTR ppString) mut => VT.GetString(ref this, out ppString);
+			public HRESULT GetStringArray(PSTR* ppStrings, uint32 Offset, uint32 Count) mut => VT.GetStringArray(ref this, ppStrings, Offset, Count);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3803,22 +3058,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetResource(ID3D10ShaderResourceView* pResource) mut
-			{
-				return VT.SetResource(ref this, pResource);
-			}
-			public HRESULT GetResource(out ID3D10ShaderResourceView* ppResource) mut
-			{
-				return VT.GetResource(ref this, out ppResource);
-			}
-			public HRESULT SetResourceArray(ID3D10ShaderResourceView** ppResources, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetResourceArray(ref this, ppResources, Offset, Count);
-			}
-			public HRESULT GetResourceArray(ID3D10ShaderResourceView** ppResources, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetResourceArray(ref this, ppResources, Offset, Count);
-			}
+			public HRESULT SetResource(ID3D10ShaderResourceView* pResource) mut => VT.SetResource(ref this, pResource);
+			public HRESULT GetResource(out ID3D10ShaderResourceView* ppResource) mut => VT.GetResource(ref this, out ppResource);
+			public HRESULT SetResourceArray(ID3D10ShaderResourceView** ppResources, uint32 Offset, uint32 Count) mut => VT.SetResourceArray(ref this, ppResources, Offset, Count);
+			public HRESULT GetResourceArray(ID3D10ShaderResourceView** ppResources, uint32 Offset, uint32 Count) mut => VT.GetResourceArray(ref this, ppResources, Offset, Count);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3835,22 +3079,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRenderTarget(ID3D10RenderTargetView* pResource) mut
-			{
-				return VT.SetRenderTarget(ref this, pResource);
-			}
-			public HRESULT GetRenderTarget(out ID3D10RenderTargetView* ppResource) mut
-			{
-				return VT.GetRenderTarget(ref this, out ppResource);
-			}
-			public HRESULT SetRenderTargetArray(ID3D10RenderTargetView** ppResources, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetRenderTargetArray(ref this, ppResources, Offset, Count);
-			}
-			public HRESULT GetRenderTargetArray(ID3D10RenderTargetView** ppResources, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetRenderTargetArray(ref this, ppResources, Offset, Count);
-			}
+			public HRESULT SetRenderTarget(ID3D10RenderTargetView* pResource) mut => VT.SetRenderTarget(ref this, pResource);
+			public HRESULT GetRenderTarget(out ID3D10RenderTargetView* ppResource) mut => VT.GetRenderTarget(ref this, out ppResource);
+			public HRESULT SetRenderTargetArray(ID3D10RenderTargetView** ppResources, uint32 Offset, uint32 Count) mut => VT.SetRenderTargetArray(ref this, ppResources, Offset, Count);
+			public HRESULT GetRenderTargetArray(ID3D10RenderTargetView** ppResources, uint32 Offset, uint32 Count) mut => VT.GetRenderTargetArray(ref this, ppResources, Offset, Count);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3867,22 +3100,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDepthStencil(ID3D10DepthStencilView* pResource) mut
-			{
-				return VT.SetDepthStencil(ref this, pResource);
-			}
-			public HRESULT GetDepthStencil(out ID3D10DepthStencilView* ppResource) mut
-			{
-				return VT.GetDepthStencil(ref this, out ppResource);
-			}
-			public HRESULT SetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint32 Offset, uint32 Count) mut
-			{
-				return VT.SetDepthStencilArray(ref this, ppResources, Offset, Count);
-			}
-			public HRESULT GetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint32 Offset, uint32 Count) mut
-			{
-				return VT.GetDepthStencilArray(ref this, ppResources, Offset, Count);
-			}
+			public HRESULT SetDepthStencil(ID3D10DepthStencilView* pResource) mut => VT.SetDepthStencil(ref this, pResource);
+			public HRESULT GetDepthStencil(out ID3D10DepthStencilView* ppResource) mut => VT.GetDepthStencil(ref this, out ppResource);
+			public HRESULT SetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint32 Offset, uint32 Count) mut => VT.SetDepthStencilArray(ref this, ppResources, Offset, Count);
+			public HRESULT GetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint32 Offset, uint32 Count) mut => VT.GetDepthStencilArray(ref this, ppResources, Offset, Count);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3899,22 +3121,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetConstantBuffer(ID3D10Buffer* pConstantBuffer) mut
-			{
-				return VT.SetConstantBuffer(ref this, pConstantBuffer);
-			}
-			public HRESULT GetConstantBuffer(out ID3D10Buffer* ppConstantBuffer) mut
-			{
-				return VT.GetConstantBuffer(ref this, out ppConstantBuffer);
-			}
-			public HRESULT SetTextureBuffer(ID3D10ShaderResourceView* pTextureBuffer) mut
-			{
-				return VT.SetTextureBuffer(ref this, pTextureBuffer);
-			}
-			public HRESULT GetTextureBuffer(out ID3D10ShaderResourceView* ppTextureBuffer) mut
-			{
-				return VT.GetTextureBuffer(ref this, out ppTextureBuffer);
-			}
+			public HRESULT SetConstantBuffer(ID3D10Buffer* pConstantBuffer) mut => VT.SetConstantBuffer(ref this, pConstantBuffer);
+			public HRESULT GetConstantBuffer(out ID3D10Buffer* ppConstantBuffer) mut => VT.GetConstantBuffer(ref this, out ppConstantBuffer);
+			public HRESULT SetTextureBuffer(ID3D10ShaderResourceView* pTextureBuffer) mut => VT.SetTextureBuffer(ref this, pTextureBuffer);
+			public HRESULT GetTextureBuffer(out ID3D10ShaderResourceView* ppTextureBuffer) mut => VT.GetTextureBuffer(ref this, out ppTextureBuffer);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3931,30 +3142,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetShaderDesc(uint32 ShaderIndex, out D3D10_EFFECT_SHADER_DESC pDesc) mut
-			{
-				return VT.GetShaderDesc(ref this, ShaderIndex, out pDesc);
-			}
-			public HRESULT GetVertexShader(uint32 ShaderIndex, out ID3D10VertexShader* ppVS) mut
-			{
-				return VT.GetVertexShader(ref this, ShaderIndex, out ppVS);
-			}
-			public HRESULT GetGeometryShader(uint32 ShaderIndex, out ID3D10GeometryShader* ppGS) mut
-			{
-				return VT.GetGeometryShader(ref this, ShaderIndex, out ppGS);
-			}
-			public HRESULT GetPixelShader(uint32 ShaderIndex, out ID3D10PixelShader* ppPS) mut
-			{
-				return VT.GetPixelShader(ref this, ShaderIndex, out ppPS);
-			}
-			public HRESULT GetInputSignatureElementDesc(uint32 ShaderIndex, uint32 Element, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetInputSignatureElementDesc(ref this, ShaderIndex, Element, out pDesc);
-			}
-			public HRESULT GetOutputSignatureElementDesc(uint32 ShaderIndex, uint32 Element, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetOutputSignatureElementDesc(ref this, ShaderIndex, Element, out pDesc);
-			}
+			public HRESULT GetShaderDesc(uint32 ShaderIndex, out D3D10_EFFECT_SHADER_DESC pDesc) mut => VT.GetShaderDesc(ref this, ShaderIndex, out pDesc);
+			public HRESULT GetVertexShader(uint32 ShaderIndex, out ID3D10VertexShader* ppVS) mut => VT.GetVertexShader(ref this, ShaderIndex, out ppVS);
+			public HRESULT GetGeometryShader(uint32 ShaderIndex, out ID3D10GeometryShader* ppGS) mut => VT.GetGeometryShader(ref this, ShaderIndex, out ppGS);
+			public HRESULT GetPixelShader(uint32 ShaderIndex, out ID3D10PixelShader* ppPS) mut => VT.GetPixelShader(ref this, ShaderIndex, out ppPS);
+			public HRESULT GetInputSignatureElementDesc(uint32 ShaderIndex, uint32 Element, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetInputSignatureElementDesc(ref this, ShaderIndex, Element, out pDesc);
+			public HRESULT GetOutputSignatureElementDesc(uint32 ShaderIndex, uint32 Element, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetOutputSignatureElementDesc(ref this, ShaderIndex, Element, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3973,14 +3167,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBlendState(uint32 Index, out ID3D10BlendState* ppBlendState) mut
-			{
-				return VT.GetBlendState(ref this, Index, out ppBlendState);
-			}
-			public HRESULT GetBackingStore(uint32 Index, out D3D10_BLEND_DESC pBlendDesc) mut
-			{
-				return VT.GetBackingStore(ref this, Index, out pBlendDesc);
-			}
+			public HRESULT GetBlendState(uint32 Index, out ID3D10BlendState* ppBlendState) mut => VT.GetBlendState(ref this, Index, out ppBlendState);
+			public HRESULT GetBackingStore(uint32 Index, out D3D10_BLEND_DESC pBlendDesc) mut => VT.GetBackingStore(ref this, Index, out pBlendDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -3995,14 +3184,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDepthStencilState(uint32 Index, out ID3D10DepthStencilState* ppDepthStencilState) mut
-			{
-				return VT.GetDepthStencilState(ref this, Index, out ppDepthStencilState);
-			}
-			public HRESULT GetBackingStore(uint32 Index, out D3D10_DEPTH_STENCIL_DESC pDepthStencilDesc) mut
-			{
-				return VT.GetBackingStore(ref this, Index, out pDepthStencilDesc);
-			}
+			public HRESULT GetDepthStencilState(uint32 Index, out ID3D10DepthStencilState* ppDepthStencilState) mut => VT.GetDepthStencilState(ref this, Index, out ppDepthStencilState);
+			public HRESULT GetBackingStore(uint32 Index, out D3D10_DEPTH_STENCIL_DESC pDepthStencilDesc) mut => VT.GetBackingStore(ref this, Index, out pDepthStencilDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -4017,14 +3201,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRasterizerState(uint32 Index, out ID3D10RasterizerState* ppRasterizerState) mut
-			{
-				return VT.GetRasterizerState(ref this, Index, out ppRasterizerState);
-			}
-			public HRESULT GetBackingStore(uint32 Index, out D3D10_RASTERIZER_DESC pRasterizerDesc) mut
-			{
-				return VT.GetBackingStore(ref this, Index, out pRasterizerDesc);
-			}
+			public HRESULT GetRasterizerState(uint32 Index, out ID3D10RasterizerState* ppRasterizerState) mut => VT.GetRasterizerState(ref this, Index, out ppRasterizerState);
+			public HRESULT GetBackingStore(uint32 Index, out D3D10_RASTERIZER_DESC pRasterizerDesc) mut => VT.GetBackingStore(ref this, Index, out pRasterizerDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -4039,14 +3218,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSampler(uint32 Index, out ID3D10SamplerState* ppSampler) mut
-			{
-				return VT.GetSampler(ref this, Index, out ppSampler);
-			}
-			public HRESULT GetBackingStore(uint32 Index, out D3D10_SAMPLER_DESC pSamplerDesc) mut
-			{
-				return VT.GetBackingStore(ref this, Index, out pSamplerDesc);
-			}
+			public HRESULT GetSampler(uint32 Index, out ID3D10SamplerState* ppSampler) mut => VT.GetSampler(ref this, Index, out ppSampler);
+			public HRESULT GetBackingStore(uint32 Index, out D3D10_SAMPLER_DESC pSamplerDesc) mut => VT.GetBackingStore(ref this, Index, out pSamplerDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10EffectVariable.VTable
 			{
@@ -4062,42 +3236,16 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL IsValid() mut
-			{
-				return VT.IsValid(ref this);
-			}
-			public HRESULT GetDesc(out D3D10_PASS_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public HRESULT GetVertexShaderDesc(out D3D10_PASS_SHADER_DESC pDesc) mut
-			{
-				return VT.GetVertexShaderDesc(ref this, out pDesc);
-			}
-			public HRESULT GetGeometryShaderDesc(out D3D10_PASS_SHADER_DESC pDesc) mut
-			{
-				return VT.GetGeometryShaderDesc(ref this, out pDesc);
-			}
-			public HRESULT GetPixelShaderDesc(out D3D10_PASS_SHADER_DESC pDesc) mut
-			{
-				return VT.GetPixelShaderDesc(ref this, out pDesc);
-			}
-			public ID3D10EffectVariable* GetAnnotationByIndex(uint32 Index) mut
-			{
-				return VT.GetAnnotationByIndex(ref this, Index);
-			}
-			public ID3D10EffectVariable* GetAnnotationByName(PSTR Name) mut
-			{
-				return VT.GetAnnotationByName(ref this, Name);
-			}
-			public HRESULT Apply(uint32 Flags) mut
-			{
-				return VT.Apply(ref this, Flags);
-			}
-			public HRESULT ComputeStateBlockMask(out D3D10_STATE_BLOCK_MASK pStateBlockMask) mut
-			{
-				return VT.ComputeStateBlockMask(ref this, out pStateBlockMask);
-			}
+			public BOOL IsValid() mut => VT.IsValid(ref this);
+			public HRESULT GetDesc(out D3D10_PASS_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public HRESULT GetVertexShaderDesc(out D3D10_PASS_SHADER_DESC pDesc) mut => VT.GetVertexShaderDesc(ref this, out pDesc);
+			public HRESULT GetGeometryShaderDesc(out D3D10_PASS_SHADER_DESC pDesc) mut => VT.GetGeometryShaderDesc(ref this, out pDesc);
+			public HRESULT GetPixelShaderDesc(out D3D10_PASS_SHADER_DESC pDesc) mut => VT.GetPixelShaderDesc(ref this, out pDesc);
+			public ID3D10EffectVariable* GetAnnotationByIndex(uint32 Index) mut => VT.GetAnnotationByIndex(ref this, Index);
+			public ID3D10EffectVariable* GetAnnotationByName(PSTR Name) mut => VT.GetAnnotationByName(ref this, Name);
+			public HRESULT Apply(uint32 Flags) mut => VT.Apply(ref this, Flags);
+			public HRESULT ComputeStateBlockMask(out D3D10_STATE_BLOCK_MASK pStateBlockMask) mut => VT.ComputeStateBlockMask(ref this, out pStateBlockMask);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -4120,34 +3268,14 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL IsValid() mut
-			{
-				return VT.IsValid(ref this);
-			}
-			public HRESULT GetDesc(out D3D10_TECHNIQUE_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10EffectVariable* GetAnnotationByIndex(uint32 Index) mut
-			{
-				return VT.GetAnnotationByIndex(ref this, Index);
-			}
-			public ID3D10EffectVariable* GetAnnotationByName(PSTR Name) mut
-			{
-				return VT.GetAnnotationByName(ref this, Name);
-			}
-			public ID3D10EffectPass* GetPassByIndex(uint32 Index) mut
-			{
-				return VT.GetPassByIndex(ref this, Index);
-			}
-			public ID3D10EffectPass* GetPassByName(PSTR Name) mut
-			{
-				return VT.GetPassByName(ref this, Name);
-			}
-			public HRESULT ComputeStateBlockMask(out D3D10_STATE_BLOCK_MASK pStateBlockMask) mut
-			{
-				return VT.ComputeStateBlockMask(ref this, out pStateBlockMask);
-			}
+			public BOOL IsValid() mut => VT.IsValid(ref this);
+			public HRESULT GetDesc(out D3D10_TECHNIQUE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10EffectVariable* GetAnnotationByIndex(uint32 Index) mut => VT.GetAnnotationByIndex(ref this, Index);
+			public ID3D10EffectVariable* GetAnnotationByName(PSTR Name) mut => VT.GetAnnotationByName(ref this, Name);
+			public ID3D10EffectPass* GetPassByIndex(uint32 Index) mut => VT.GetPassByIndex(ref this, Index);
+			public ID3D10EffectPass* GetPassByName(PSTR Name) mut => VT.GetPassByName(ref this, Name);
+			public HRESULT ComputeStateBlockMask(out D3D10_STATE_BLOCK_MASK pStateBlockMask) mut => VT.ComputeStateBlockMask(ref this, out pStateBlockMask);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -4167,58 +3295,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL IsValid() mut
-			{
-				return VT.IsValid(ref this);
-			}
-			public BOOL IsPool() mut
-			{
-				return VT.IsPool(ref this);
-			}
-			public HRESULT GetDevice(out ID3D10Device* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT GetDesc(out D3D10_EFFECT_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10EffectConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut
-			{
-				return VT.GetConstantBufferByIndex(ref this, Index);
-			}
-			public ID3D10EffectConstantBuffer* GetConstantBufferByName(PSTR Name) mut
-			{
-				return VT.GetConstantBufferByName(ref this, Name);
-			}
-			public ID3D10EffectVariable* GetVariableByIndex(uint32 Index) mut
-			{
-				return VT.GetVariableByIndex(ref this, Index);
-			}
-			public ID3D10EffectVariable* GetVariableByName(PSTR Name) mut
-			{
-				return VT.GetVariableByName(ref this, Name);
-			}
-			public ID3D10EffectVariable* GetVariableBySemantic(PSTR Semantic) mut
-			{
-				return VT.GetVariableBySemantic(ref this, Semantic);
-			}
-			public ID3D10EffectTechnique* GetTechniqueByIndex(uint32 Index) mut
-			{
-				return VT.GetTechniqueByIndex(ref this, Index);
-			}
-			public ID3D10EffectTechnique* GetTechniqueByName(PSTR Name) mut
-			{
-				return VT.GetTechniqueByName(ref this, Name);
-			}
-			public HRESULT Optimize() mut
-			{
-				return VT.Optimize(ref this);
-			}
-			public BOOL IsOptimized() mut
-			{
-				return VT.IsOptimized(ref this);
-			}
+			public BOOL IsValid() mut => VT.IsValid(ref this);
+			public BOOL IsPool() mut => VT.IsPool(ref this);
+			public HRESULT GetDevice(out ID3D10Device* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT GetDesc(out D3D10_EFFECT_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10EffectConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut => VT.GetConstantBufferByIndex(ref this, Index);
+			public ID3D10EffectConstantBuffer* GetConstantBufferByName(PSTR Name) mut => VT.GetConstantBufferByName(ref this, Name);
+			public ID3D10EffectVariable* GetVariableByIndex(uint32 Index) mut => VT.GetVariableByIndex(ref this, Index);
+			public ID3D10EffectVariable* GetVariableByName(PSTR Name) mut => VT.GetVariableByName(ref this, Name);
+			public ID3D10EffectVariable* GetVariableBySemantic(PSTR Semantic) mut => VT.GetVariableBySemantic(ref this, Semantic);
+			public ID3D10EffectTechnique* GetTechniqueByIndex(uint32 Index) mut => VT.GetTechniqueByIndex(ref this, Index);
+			public ID3D10EffectTechnique* GetTechniqueByName(PSTR Name) mut => VT.GetTechniqueByName(ref this, Name);
+			public HRESULT Optimize() mut => VT.Optimize(ref this);
+			public BOOL IsOptimized() mut => VT.IsOptimized(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4244,10 +3334,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public ID3D10Effect* AsEffect() mut
-			{
-				return VT.AsEffect(ref this);
-			}
+			public ID3D10Effect* AsEffect() mut => VT.AsEffect(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4261,10 +3349,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D10_BLEND_DESC1 pDesc) mut
-			{
-				VT.GetDesc1(ref this, out pDesc);
-			}
+			public void GetDesc1(out D3D10_BLEND_DESC1 pDesc) mut => VT.GetDesc1(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10BlendState.VTable
 			{
@@ -4278,10 +3364,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D10_SHADER_RESOURCE_VIEW_DESC1 pDesc) mut
-			{
-				VT.GetDesc1(ref this, out pDesc);
-			}
+			public void GetDesc1(out D3D10_SHADER_RESOURCE_VIEW_DESC1 pDesc) mut => VT.GetDesc1(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D10ShaderResourceView.VTable
 			{
@@ -4295,18 +3379,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateShaderResourceView1(ref ID3D10Resource pResource, D3D10_SHADER_RESOURCE_VIEW_DESC1* pDesc, ID3D10ShaderResourceView1** ppSRView) mut
-			{
-				return VT.CreateShaderResourceView1(ref this, ref pResource, pDesc, ppSRView);
-			}
-			public HRESULT CreateBlendState1(in D3D10_BLEND_DESC1 pBlendStateDesc, ID3D10BlendState1** ppBlendState) mut
-			{
-				return VT.CreateBlendState1(ref this, pBlendStateDesc, ppBlendState);
-			}
-			public D3D10_FEATURE_LEVEL1 GetFeatureLevel() mut
-			{
-				return VT.GetFeatureLevel(ref this);
-			}
+			public HRESULT CreateShaderResourceView1(ref ID3D10Resource pResource, D3D10_SHADER_RESOURCE_VIEW_DESC1* pDesc, ID3D10ShaderResourceView1** ppSRView) mut => VT.CreateShaderResourceView1(ref this, ref pResource, pDesc, ppSRView);
+			public HRESULT CreateBlendState1(in D3D10_BLEND_DESC1 pBlendStateDesc, ID3D10BlendState1** ppBlendState) mut => VT.CreateBlendState1(ref this, pBlendStateDesc, ppBlendState);
+			public D3D10_FEATURE_LEVEL1 GetFeatureLevel() mut => VT.GetFeatureLevel(ref this);
+
 			[CRepr]
 			public struct VTable : ID3D10Device.VTable
 			{
@@ -4322,66 +3398,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D10_SHADER_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut
-			{
-				return VT.GetConstantBufferByIndex(ref this, Index);
-			}
-			public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut
-			{
-				return VT.GetConstantBufferByName(ref this, Name);
-			}
-			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, out D3D10_SHADER_INPUT_BIND_DESC pDesc) mut
-			{
-				return VT.GetResourceBindingDesc(ref this, ResourceIndex, out pDesc);
-			}
-			public HRESULT GetInputParameterDesc(uint32 ParameterIndex, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetInputParameterDesc(ref this, ParameterIndex, out pDesc);
-			}
-			public HRESULT GetOutputParameterDesc(uint32 ParameterIndex, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetOutputParameterDesc(ref this, ParameterIndex, out pDesc);
-			}
-			public ID3D10ShaderReflectionVariable* GetVariableByName(PSTR Name) mut
-			{
-				return VT.GetVariableByName(ref this, Name);
-			}
-			public HRESULT GetResourceBindingDescByName(PSTR Name, out D3D10_SHADER_INPUT_BIND_DESC pDesc) mut
-			{
-				return VT.GetResourceBindingDescByName(ref this, Name, out pDesc);
-			}
-			public HRESULT GetMovInstructionCount(out uint32 pCount) mut
-			{
-				return VT.GetMovInstructionCount(ref this, out pCount);
-			}
-			public HRESULT GetMovcInstructionCount(out uint32 pCount) mut
-			{
-				return VT.GetMovcInstructionCount(ref this, out pCount);
-			}
-			public HRESULT GetConversionInstructionCount(out uint32 pCount) mut
-			{
-				return VT.GetConversionInstructionCount(ref this, out pCount);
-			}
-			public HRESULT GetBitwiseInstructionCount(out uint32 pCount) mut
-			{
-				return VT.GetBitwiseInstructionCount(ref this, out pCount);
-			}
-			public HRESULT GetGSInputPrimitive(out D3D_PRIMITIVE pPrim) mut
-			{
-				return VT.GetGSInputPrimitive(ref this, out pPrim);
-			}
-			public HRESULT IsLevel9Shader(out BOOL pbLevel9Shader) mut
-			{
-				return VT.IsLevel9Shader(ref this, out pbLevel9Shader);
-			}
-			public HRESULT IsSampleFrequencyShader(out BOOL pbSampleFrequency) mut
-			{
-				return VT.IsSampleFrequencyShader(ref this, out pbSampleFrequency);
-			}
+			public HRESULT GetDesc(out D3D10_SHADER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut => VT.GetConstantBufferByIndex(ref this, Index);
+			public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut => VT.GetConstantBufferByName(ref this, Name);
+			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, out D3D10_SHADER_INPUT_BIND_DESC pDesc) mut => VT.GetResourceBindingDesc(ref this, ResourceIndex, out pDesc);
+			public HRESULT GetInputParameterDesc(uint32 ParameterIndex, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetInputParameterDesc(ref this, ParameterIndex, out pDesc);
+			public HRESULT GetOutputParameterDesc(uint32 ParameterIndex, out D3D10_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetOutputParameterDesc(ref this, ParameterIndex, out pDesc);
+			public ID3D10ShaderReflectionVariable* GetVariableByName(PSTR Name) mut => VT.GetVariableByName(ref this, Name);
+			public HRESULT GetResourceBindingDescByName(PSTR Name, out D3D10_SHADER_INPUT_BIND_DESC pDesc) mut => VT.GetResourceBindingDescByName(ref this, Name, out pDesc);
+			public HRESULT GetMovInstructionCount(out uint32 pCount) mut => VT.GetMovInstructionCount(ref this, out pCount);
+			public HRESULT GetMovcInstructionCount(out uint32 pCount) mut => VT.GetMovcInstructionCount(ref this, out pCount);
+			public HRESULT GetConversionInstructionCount(out uint32 pCount) mut => VT.GetConversionInstructionCount(ref this, out pCount);
+			public HRESULT GetBitwiseInstructionCount(out uint32 pCount) mut => VT.GetBitwiseInstructionCount(ref this, out pCount);
+			public HRESULT GetGSInputPrimitive(out D3D_PRIMITIVE pPrim) mut => VT.GetGSInputPrimitive(ref this, out pPrim);
+			public HRESULT IsLevel9Shader(out BOOL pbLevel9Shader) mut => VT.IsLevel9Shader(ref this, out pbLevel9Shader);
+			public HRESULT IsSampleFrequencyShader(out BOOL pbSampleFrequency) mut => VT.IsSampleFrequencyShader(ref this, out pbSampleFrequency);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

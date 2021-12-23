@@ -48,26 +48,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_State(out RENDEZVOUS_SESSION_STATE pSessionState) mut
-			{
-				return VT.get_State(ref this, out pSessionState);
-			}
-			public HRESULT get_RemoteUser(BSTR* bstrUserName) mut
-			{
-				return VT.get_RemoteUser(ref this, bstrUserName);
-			}
-			public HRESULT get_Flags(out int32 pFlags) mut
-			{
-				return VT.get_Flags(ref this, out pFlags);
-			}
-			public HRESULT SendContextData(BSTR bstrData) mut
-			{
-				return VT.SendContextData(ref this, bstrData);
-			}
-			public HRESULT Terminate(HRESULT hr, BSTR bstrAppData) mut
-			{
-				return VT.Terminate(ref this, hr, bstrAppData);
-			}
+			public HRESULT get_State(out RENDEZVOUS_SESSION_STATE pSessionState) mut => VT.get_State(ref this, out pSessionState);
+			public HRESULT get_RemoteUser(BSTR* bstrUserName) mut => VT.get_RemoteUser(ref this, bstrUserName);
+			public HRESULT get_Flags(out int32 pFlags) mut => VT.get_Flags(ref this, out pFlags);
+			public HRESULT SendContextData(BSTR bstrData) mut => VT.SendContextData(ref this, bstrData);
+			public HRESULT Terminate(HRESULT hr, BSTR bstrAppData) mut => VT.Terminate(ref this, hr, bstrAppData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -85,6 +71,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -97,10 +84,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRendezvousSession(IUnknown* pRendezvousSession) mut
-			{
-				return VT.SetRendezvousSession(ref this, pRendezvousSession);
-			}
+			public HRESULT SetRendezvousSession(IUnknown* pRendezvousSession) mut => VT.SetRendezvousSession(ref this, pRendezvousSession);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

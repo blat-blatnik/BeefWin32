@@ -374,18 +374,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Commit(BOOL fRetaining, uint32 grfTC, uint32 grfRM) mut
-			{
-				return VT.Commit(ref this, fRetaining, grfTC, grfRM);
-			}
-			public HRESULT Abort(ref BOID pboidReason, BOOL fRetaining, BOOL fAsync) mut
-			{
-				return VT.Abort(ref this, ref pboidReason, fRetaining, fAsync);
-			}
-			public HRESULT GetTransactionInfo(out XACTTRANSINFO pinfo) mut
-			{
-				return VT.GetTransactionInfo(ref this, out pinfo);
-			}
+			public HRESULT Commit(BOOL fRetaining, uint32 grfTC, uint32 grfRM) mut => VT.Commit(ref this, fRetaining, grfTC, grfRM);
+			public HRESULT Abort(ref BOID pboidReason, BOOL fRetaining, BOOL fAsync) mut => VT.Abort(ref this, ref pboidReason, fRetaining, fAsync);
+			public HRESULT GetTransactionInfo(out XACTTRANSINFO pinfo) mut => VT.GetTransactionInfo(ref this, out pinfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -401,10 +393,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CloneWithCommitDisabled(out ITransaction* ppITransaction) mut
-			{
-				return VT.CloneWithCommitDisabled(ref this, out ppITransaction);
-			}
+			public HRESULT CloneWithCommitDisabled(out ITransaction* ppITransaction) mut => VT.CloneWithCommitDisabled(ref this, out ppITransaction);
+
 			[CRepr]
 			public struct VTable : ITransaction.VTable
 			{
@@ -418,10 +408,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTransactionInfo2(out XACTTRANSINFO pinfo) mut
-			{
-				return VT.GetTransactionInfo2(ref this, out pinfo);
-			}
+			public HRESULT GetTransactionInfo2(out XACTTRANSINFO pinfo) mut => VT.GetTransactionInfo2(ref this, out pinfo);
+
 			[CRepr]
 			public struct VTable : ITransactionCloner.VTable
 			{
@@ -435,14 +423,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOptionsObject(out ITransactionOptions* ppOptions) mut
-			{
-				return VT.GetOptionsObject(ref this, out ppOptions);
-			}
-			public HRESULT BeginTransaction(ref IUnknown punkOuter, int32 isoLevel, uint32 isoFlags, ref ITransactionOptions pOptions, out ITransaction* ppTransaction) mut
-			{
-				return VT.BeginTransaction(ref this, ref punkOuter, isoLevel, isoFlags, ref pOptions, out ppTransaction);
-			}
+			public HRESULT GetOptionsObject(out ITransactionOptions* ppOptions) mut => VT.GetOptionsObject(ref this, out ppOptions);
+			public HRESULT BeginTransaction(ref IUnknown punkOuter, int32 isoLevel, uint32 isoFlags, ref ITransactionOptions pOptions, out ITransaction* ppTransaction) mut => VT.BeginTransaction(ref this, ref punkOuter, isoLevel, isoFlags, ref pOptions, out ppTransaction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -457,14 +440,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOptions(ref XACTOPT pOptions) mut
-			{
-				return VT.SetOptions(ref this, ref pOptions);
-			}
-			public HRESULT GetOptions(out XACTOPT pOptions) mut
-			{
-				return VT.GetOptions(ref this, out pOptions);
-			}
+			public HRESULT SetOptions(ref XACTOPT pOptions) mut => VT.SetOptions(ref this, ref pOptions);
+			public HRESULT GetOptions(out XACTOPT pOptions) mut => VT.GetOptions(ref this, out pOptions);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -479,22 +457,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Committed(BOOL fRetaining, ref BOID pNewUOW, HRESULT hr) mut
-			{
-				return VT.Committed(ref this, fRetaining, ref pNewUOW, hr);
-			}
-			public HRESULT Aborted(ref BOID pboidReason, BOOL fRetaining, ref BOID pNewUOW, HRESULT hr) mut
-			{
-				return VT.Aborted(ref this, ref pboidReason, fRetaining, ref pNewUOW, hr);
-			}
-			public HRESULT HeuristicDecision(uint32 dwDecision, ref BOID pboidReason, HRESULT hr) mut
-			{
-				return VT.HeuristicDecision(ref this, dwDecision, ref pboidReason, hr);
-			}
-			public HRESULT Indoubt() mut
-			{
-				return VT.Indoubt(ref this);
-			}
+			public HRESULT Committed(BOOL fRetaining, ref BOID pNewUOW, HRESULT hr) mut => VT.Committed(ref this, fRetaining, ref pNewUOW, hr);
+			public HRESULT Aborted(ref BOID pboidReason, BOOL fRetaining, ref BOID pNewUOW, HRESULT hr) mut => VT.Aborted(ref this, ref pboidReason, fRetaining, ref pNewUOW, hr);
+			public HRESULT HeuristicDecision(uint32 dwDecision, ref BOID pboidReason, HRESULT hr) mut => VT.HeuristicDecision(ref this, dwDecision, ref pboidReason, hr);
+			public HRESULT Indoubt() mut => VT.Indoubt(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -511,14 +478,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNodeNameSize(out uint32 pcbNodeNameSize) mut
-			{
-				return VT.GetNodeNameSize(ref this, out pcbNodeNameSize);
-			}
-			public HRESULT GetNodeName(uint32 cbNodeNameBufferSize, PWSTR pNodeNameBuffer) mut
-			{
-				return VT.GetNodeName(ref this, cbNodeNameBufferSize, pNodeNameBuffer);
-			}
+			public HRESULT GetNodeNameSize(out uint32 pcbNodeNameSize) mut => VT.GetNodeNameSize(ref this, out pcbNodeNameSize);
+			public HRESULT GetNodeName(uint32 cbNodeNameBufferSize, PWSTR pNodeNameBuffer) mut => VT.GetNodeName(ref this, cbNodeNameBufferSize, pNodeNameBuffer);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -533,10 +495,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetHandle(out HANDLE pHandle) mut
-			{
-				return VT.GetHandle(ref this, out pHandle);
-			}
+			public HRESULT GetHandle(out HANDLE pHandle) mut => VT.GetHandle(ref this, out pHandle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -550,22 +510,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PrepareRequest(BOOL fRetaining, uint32 grfRM, BOOL fWantMoniker, BOOL fSinglePhase) mut
-			{
-				return VT.PrepareRequest(ref this, fRetaining, grfRM, fWantMoniker, fSinglePhase);
-			}
-			public HRESULT CommitRequest(uint32 grfRM, ref BOID pNewUOW) mut
-			{
-				return VT.CommitRequest(ref this, grfRM, ref pNewUOW);
-			}
-			public HRESULT AbortRequest(ref BOID pboidReason, BOOL fRetaining, ref BOID pNewUOW) mut
-			{
-				return VT.AbortRequest(ref this, ref pboidReason, fRetaining, ref pNewUOW);
-			}
-			public HRESULT TMDown() mut
-			{
-				return VT.TMDown(ref this);
-			}
+			public HRESULT PrepareRequest(BOOL fRetaining, uint32 grfRM, BOOL fWantMoniker, BOOL fSinglePhase) mut => VT.PrepareRequest(ref this, fRetaining, grfRM, fWantMoniker, fSinglePhase);
+			public HRESULT CommitRequest(uint32 grfRM, ref BOID pNewUOW) mut => VT.CommitRequest(ref this, grfRM, ref pNewUOW);
+			public HRESULT AbortRequest(ref BOID pboidReason, BOOL fRetaining, ref BOID pNewUOW) mut => VT.AbortRequest(ref this, ref pboidReason, fRetaining, ref pNewUOW);
+			public HRESULT TMDown() mut => VT.TMDown(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -582,14 +531,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DelegateCommit(uint32 grfRM) mut
-			{
-				return VT.DelegateCommit(ref this, grfRM);
-			}
-			public HRESULT ForgetRequest(ref BOID pNewUOW) mut
-			{
-				return VT.ForgetRequest(ref this, ref pNewUOW);
-			}
+			public HRESULT DelegateCommit(uint32 grfRM) mut => VT.DelegateCommit(ref this, grfRM);
+			public HRESULT ForgetRequest(ref BOID pNewUOW) mut => VT.ForgetRequest(ref this, ref pNewUOW);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -604,22 +548,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PrepareRequest(BOOL fRetaining, uint32 grfRM, BOOL fWantMoniker, BOOL fSinglePhase) mut
-			{
-				return VT.PrepareRequest(ref this, fRetaining, grfRM, fWantMoniker, fSinglePhase);
-			}
-			public HRESULT CommitRequest(uint32 grfRM, ref BOID pNewUOW) mut
-			{
-				return VT.CommitRequest(ref this, grfRM, ref pNewUOW);
-			}
-			public HRESULT AbortRequest(ref BOID pboidReason, BOOL fRetaining, ref BOID pNewUOW) mut
-			{
-				return VT.AbortRequest(ref this, ref pboidReason, fRetaining, ref pNewUOW);
-			}
-			public HRESULT TMDown() mut
-			{
-				return VT.TMDown(ref this);
-			}
+			public HRESULT PrepareRequest(BOOL fRetaining, uint32 grfRM, BOOL fWantMoniker, BOOL fSinglePhase) mut => VT.PrepareRequest(ref this, fRetaining, grfRM, fWantMoniker, fSinglePhase);
+			public HRESULT CommitRequest(uint32 grfRM, ref BOID pNewUOW) mut => VT.CommitRequest(ref this, grfRM, ref pNewUOW);
+			public HRESULT AbortRequest(ref BOID pboidReason, BOOL fRetaining, ref BOID pNewUOW) mut => VT.AbortRequest(ref this, ref pboidReason, fRetaining, ref pNewUOW);
+			public HRESULT TMDown() mut => VT.TMDown(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -636,18 +569,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PrepareRequestDone(HRESULT hr, ref IMoniker pmk, ref BOID pboidReason) mut
-			{
-				return VT.PrepareRequestDone(ref this, hr, ref pmk, ref pboidReason);
-			}
-			public HRESULT CommitRequestDone(HRESULT hr) mut
-			{
-				return VT.CommitRequestDone(ref this, hr);
-			}
-			public HRESULT AbortRequestDone(HRESULT hr) mut
-			{
-				return VT.AbortRequestDone(ref this, hr);
-			}
+			public HRESULT PrepareRequestDone(HRESULT hr, ref IMoniker pmk, ref BOID pboidReason) mut => VT.PrepareRequestDone(ref this, hr, ref pmk, ref pboidReason);
+			public HRESULT CommitRequestDone(HRESULT hr) mut => VT.CommitRequestDone(ref this, hr);
+			public HRESULT AbortRequestDone(HRESULT hr) mut => VT.AbortRequestDone(ref this, hr);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -663,10 +588,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TransactionOutcome(XACTSTAT XactStat, ref BOID pboidReason) mut
-			{
-				return VT.TransactionOutcome(ref this, XactStat, ref pboidReason);
-			}
+			public HRESULT TransactionOutcome(XACTSTAT XactStat, ref BOID pboidReason) mut => VT.TransactionOutcome(ref this, XactStat, ref pboidReason);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -680,14 +603,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRemoteClassId(out Guid pclsid) mut
-			{
-				return VT.GetRemoteClassId(ref this, out pclsid);
-			}
-			public HRESULT Create(uint32 cbWhereabouts, uint8* rgbWhereabouts, out ITransactionExport* ppExport) mut
-			{
-				return VT.Create(ref this, cbWhereabouts, rgbWhereabouts, out ppExport);
-			}
+			public HRESULT GetRemoteClassId(out Guid pclsid) mut => VT.GetRemoteClassId(ref this, out pclsid);
+			public HRESULT Create(uint32 cbWhereabouts, uint8* rgbWhereabouts, out ITransactionExport* ppExport) mut => VT.Create(ref this, cbWhereabouts, rgbWhereabouts, out ppExport);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -702,14 +620,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWhereaboutsSize(out uint32 pcbWhereabouts) mut
-			{
-				return VT.GetWhereaboutsSize(ref this, out pcbWhereabouts);
-			}
-			public HRESULT GetWhereabouts(uint32 cbWhereabouts, uint8* rgbWhereabouts, out uint32 pcbUsed) mut
-			{
-				return VT.GetWhereabouts(ref this, cbWhereabouts, rgbWhereabouts, out pcbUsed);
-			}
+			public HRESULT GetWhereaboutsSize(out uint32 pcbWhereabouts) mut => VT.GetWhereaboutsSize(ref this, out pcbWhereabouts);
+			public HRESULT GetWhereabouts(uint32 cbWhereabouts, uint8* rgbWhereabouts, out uint32 pcbUsed) mut => VT.GetWhereabouts(ref this, cbWhereabouts, rgbWhereabouts, out pcbUsed);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -724,14 +637,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Export(ref IUnknown punkTransaction, out uint32 pcbTransactionCookie) mut
-			{
-				return VT.Export(ref this, ref punkTransaction, out pcbTransactionCookie);
-			}
-			public HRESULT GetTransactionCookie(ref IUnknown punkTransaction, uint32 cbTransactionCookie, uint8* rgbTransactionCookie, out uint32 pcbUsed) mut
-			{
-				return VT.GetTransactionCookie(ref this, ref punkTransaction, cbTransactionCookie, rgbTransactionCookie, out pcbUsed);
-			}
+			public HRESULT Export(ref IUnknown punkTransaction, out uint32 pcbTransactionCookie) mut => VT.Export(ref this, ref punkTransaction, out pcbTransactionCookie);
+			public HRESULT GetTransactionCookie(ref IUnknown punkTransaction, uint32 cbTransactionCookie, uint8* rgbTransactionCookie, out uint32 pcbUsed) mut => VT.GetTransactionCookie(ref this, ref punkTransaction, cbTransactionCookie, rgbTransactionCookie, out pcbUsed);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -746,10 +654,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Import(uint32 cbTransactionCookie, uint8* rgbTransactionCookie, in Guid piid, void** ppvTransaction) mut
-			{
-				return VT.Import(ref this, cbTransactionCookie, rgbTransactionCookie, piid, ppvTransaction);
-			}
+			public HRESULT Import(uint32 cbTransactionCookie, uint8* rgbTransactionCookie, in Guid piid, void** ppvTransaction) mut => VT.Import(ref this, cbTransactionCookie, rgbTransactionCookie, piid, ppvTransaction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -763,14 +669,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Push(ref uint8 i_pszRemoteTmUrl, out PSTR o_ppszRemoteTxUrl) mut
-			{
-				return VT.Push(ref this, ref i_pszRemoteTmUrl, out o_ppszRemoteTxUrl);
-			}
-			public HRESULT GetTransactionUrl(out PSTR o_ppszLocalTxUrl) mut
-			{
-				return VT.GetTransactionUrl(ref this, out o_ppszLocalTxUrl);
-			}
+			public HRESULT Push(ref uint8 i_pszRemoteTmUrl, out PSTR o_ppszRemoteTxUrl) mut => VT.Push(ref this, ref i_pszRemoteTmUrl, out o_ppszRemoteTxUrl);
+			public HRESULT GetTransactionUrl(out PSTR o_ppszLocalTxUrl) mut => VT.GetTransactionUrl(ref this, out o_ppszLocalTxUrl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -785,18 +686,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Pull(ref uint8 i_pszTxUrl, out ITransaction* o_ppITransaction) mut
-			{
-				return VT.Pull(ref this, ref i_pszTxUrl, out o_ppITransaction);
-			}
-			public HRESULT PullAsync(ref uint8 i_pszTxUrl, ref ITipPullSink i_pTipPullSink, out ITransaction* o_ppITransaction) mut
-			{
-				return VT.PullAsync(ref this, ref i_pszTxUrl, ref i_pTipPullSink, out o_ppITransaction);
-			}
-			public HRESULT GetLocalTmUrl(out uint8* o_ppszLocalTmUrl) mut
-			{
-				return VT.GetLocalTmUrl(ref this, out o_ppszLocalTmUrl);
-			}
+			public HRESULT Pull(ref uint8 i_pszTxUrl, out ITransaction* o_ppITransaction) mut => VT.Pull(ref this, ref i_pszTxUrl, out o_ppITransaction);
+			public HRESULT PullAsync(ref uint8 i_pszTxUrl, ref ITipPullSink i_pTipPullSink, out ITransaction* o_ppITransaction) mut => VT.PullAsync(ref this, ref i_pszTxUrl, ref i_pTipPullSink, out o_ppITransaction);
+			public HRESULT GetLocalTmUrl(out uint8* o_ppszLocalTmUrl) mut => VT.GetLocalTmUrl(ref this, out o_ppszLocalTmUrl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -812,10 +705,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PullComplete(HRESULT i_hrPull) mut
-			{
-				return VT.PullComplete(ref this, i_hrPull);
-			}
+			public HRESULT PullComplete(HRESULT i_hrPull) mut => VT.PullComplete(ref this, i_hrPull);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -829,58 +720,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAnyNetworkAccess(out BOOL pbAnyNetworkAccess) mut
-			{
-				return VT.GetAnyNetworkAccess(ref this, out pbAnyNetworkAccess);
-			}
-			public HRESULT SetAnyNetworkAccess(BOOL bAnyNetworkAccess) mut
-			{
-				return VT.SetAnyNetworkAccess(ref this, bAnyNetworkAccess);
-			}
-			public HRESULT GetNetworkAdministrationAccess(out BOOL pbNetworkAdministrationAccess) mut
-			{
-				return VT.GetNetworkAdministrationAccess(ref this, out pbNetworkAdministrationAccess);
-			}
-			public HRESULT SetNetworkAdministrationAccess(BOOL bNetworkAdministrationAccess) mut
-			{
-				return VT.SetNetworkAdministrationAccess(ref this, bNetworkAdministrationAccess);
-			}
-			public HRESULT GetNetworkTransactionAccess(out BOOL pbNetworkTransactionAccess) mut
-			{
-				return VT.GetNetworkTransactionAccess(ref this, out pbNetworkTransactionAccess);
-			}
-			public HRESULT SetNetworkTransactionAccess(BOOL bNetworkTransactionAccess) mut
-			{
-				return VT.SetNetworkTransactionAccess(ref this, bNetworkTransactionAccess);
-			}
-			public HRESULT GetNetworkClientAccess(out BOOL pbNetworkClientAccess) mut
-			{
-				return VT.GetNetworkClientAccess(ref this, out pbNetworkClientAccess);
-			}
-			public HRESULT SetNetworkClientAccess(BOOL bNetworkClientAccess) mut
-			{
-				return VT.SetNetworkClientAccess(ref this, bNetworkClientAccess);
-			}
-			public HRESULT GetNetworkTIPAccess(out BOOL pbNetworkTIPAccess) mut
-			{
-				return VT.GetNetworkTIPAccess(ref this, out pbNetworkTIPAccess);
-			}
-			public HRESULT SetNetworkTIPAccess(BOOL bNetworkTIPAccess) mut
-			{
-				return VT.SetNetworkTIPAccess(ref this, bNetworkTIPAccess);
-			}
-			public HRESULT GetXAAccess(out BOOL pbXAAccess) mut
-			{
-				return VT.GetXAAccess(ref this, out pbXAAccess);
-			}
-			public HRESULT SetXAAccess(BOOL bXAAccess) mut
-			{
-				return VT.SetXAAccess(ref this, bXAAccess);
-			}
-			public HRESULT RestartDtcService() mut
-			{
-				return VT.RestartDtcService(ref this);
-			}
+			public HRESULT GetAnyNetworkAccess(out BOOL pbAnyNetworkAccess) mut => VT.GetAnyNetworkAccess(ref this, out pbAnyNetworkAccess);
+			public HRESULT SetAnyNetworkAccess(BOOL bAnyNetworkAccess) mut => VT.SetAnyNetworkAccess(ref this, bAnyNetworkAccess);
+			public HRESULT GetNetworkAdministrationAccess(out BOOL pbNetworkAdministrationAccess) mut => VT.GetNetworkAdministrationAccess(ref this, out pbNetworkAdministrationAccess);
+			public HRESULT SetNetworkAdministrationAccess(BOOL bNetworkAdministrationAccess) mut => VT.SetNetworkAdministrationAccess(ref this, bNetworkAdministrationAccess);
+			public HRESULT GetNetworkTransactionAccess(out BOOL pbNetworkTransactionAccess) mut => VT.GetNetworkTransactionAccess(ref this, out pbNetworkTransactionAccess);
+			public HRESULT SetNetworkTransactionAccess(BOOL bNetworkTransactionAccess) mut => VT.SetNetworkTransactionAccess(ref this, bNetworkTransactionAccess);
+			public HRESULT GetNetworkClientAccess(out BOOL pbNetworkClientAccess) mut => VT.GetNetworkClientAccess(ref this, out pbNetworkClientAccess);
+			public HRESULT SetNetworkClientAccess(BOOL bNetworkClientAccess) mut => VT.SetNetworkClientAccess(ref this, bNetworkClientAccess);
+			public HRESULT GetNetworkTIPAccess(out BOOL pbNetworkTIPAccess) mut => VT.GetNetworkTIPAccess(ref this, out pbNetworkTIPAccess);
+			public HRESULT SetNetworkTIPAccess(BOOL bNetworkTIPAccess) mut => VT.SetNetworkTIPAccess(ref this, bNetworkTIPAccess);
+			public HRESULT GetXAAccess(out BOOL pbXAAccess) mut => VT.GetXAAccess(ref this, out pbXAAccess);
+			public HRESULT SetXAAccess(BOOL bXAAccess) mut => VT.SetXAAccess(ref this, bXAAccess);
+			public HRESULT RestartDtcService() mut => VT.RestartDtcService(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -906,30 +759,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNetworkInboundAccess(out BOOL pbInbound) mut
-			{
-				return VT.GetNetworkInboundAccess(ref this, out pbInbound);
-			}
-			public HRESULT GetNetworkOutboundAccess(out BOOL pbOutbound) mut
-			{
-				return VT.GetNetworkOutboundAccess(ref this, out pbOutbound);
-			}
-			public HRESULT SetNetworkInboundAccess(BOOL bInbound) mut
-			{
-				return VT.SetNetworkInboundAccess(ref this, bInbound);
-			}
-			public HRESULT SetNetworkOutboundAccess(BOOL bOutbound) mut
-			{
-				return VT.SetNetworkOutboundAccess(ref this, bOutbound);
-			}
-			public HRESULT GetAuthenticationLevel(out AUTHENTICATION_LEVEL pAuthLevel) mut
-			{
-				return VT.GetAuthenticationLevel(ref this, out pAuthLevel);
-			}
-			public HRESULT SetAuthenticationLevel(AUTHENTICATION_LEVEL AuthLevel) mut
-			{
-				return VT.SetAuthenticationLevel(ref this, AuthLevel);
-			}
+			public HRESULT GetNetworkInboundAccess(out BOOL pbInbound) mut => VT.GetNetworkInboundAccess(ref this, out pbInbound);
+			public HRESULT GetNetworkOutboundAccess(out BOOL pbOutbound) mut => VT.GetNetworkOutboundAccess(ref this, out pbOutbound);
+			public HRESULT SetNetworkInboundAccess(BOOL bInbound) mut => VT.SetNetworkInboundAccess(ref this, bInbound);
+			public HRESULT SetNetworkOutboundAccess(BOOL bOutbound) mut => VT.SetNetworkOutboundAccess(ref this, bOutbound);
+			public HRESULT GetAuthenticationLevel(out AUTHENTICATION_LEVEL pAuthLevel) mut => VT.GetAuthenticationLevel(ref this, out pAuthLevel);
+			public HRESULT SetAuthenticationLevel(AUTHENTICATION_LEVEL AuthLevel) mut => VT.SetAuthenticationLevel(ref this, AuthLevel);
+
 			[CRepr]
 			public struct VTable : IDtcNetworkAccessConfig.VTable
 			{
@@ -948,14 +784,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLUAccess(out BOOL pbLUAccess) mut
-			{
-				return VT.GetLUAccess(ref this, out pbLUAccess);
-			}
-			public HRESULT SetLUAccess(BOOL bLUAccess) mut
-			{
-				return VT.SetLUAccess(ref this, bLUAccess);
-			}
+			public HRESULT GetLUAccess(out BOOL pbLUAccess) mut => VT.GetLUAccess(ref this, out pbLUAccess);
+			public HRESULT SetLUAccess(BOOL bLUAccess) mut => VT.SetLUAccess(ref this, bLUAccess);
+
 			[CRepr]
 			public struct VTable : IDtcNetworkAccessConfig2.VTable
 			{
@@ -970,22 +801,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestNewResourceManager(PSTR pszDSN, PSTR pszClientDllName, out uint32 pdwRMCookie) mut
-			{
-				return VT.RequestNewResourceManager(ref this, pszDSN, pszClientDllName, out pdwRMCookie);
-			}
-			public HRESULT TranslateTridToXid(ref uint32 pdwITransaction, uint32 dwRMCookie, out xid_t pXid) mut
-			{
-				return VT.TranslateTridToXid(ref this, ref pdwITransaction, dwRMCookie, out pXid);
-			}
-			public HRESULT EnlistResourceManager(uint32 dwRMCookie, ref uint32 pdwITransaction) mut
-			{
-				return VT.EnlistResourceManager(ref this, dwRMCookie, ref pdwITransaction);
-			}
-			public HRESULT ReleaseResourceManager(uint32 dwRMCookie) mut
-			{
-				return VT.ReleaseResourceManager(ref this, dwRMCookie);
-			}
+			public HRESULT RequestNewResourceManager(PSTR pszDSN, PSTR pszClientDllName, out uint32 pdwRMCookie) mut => VT.RequestNewResourceManager(ref this, pszDSN, pszClientDllName, out pdwRMCookie);
+			public HRESULT TranslateTridToXid(ref uint32 pdwITransaction, uint32 dwRMCookie, out xid_t pXid) mut => VT.TranslateTridToXid(ref this, ref pdwITransaction, dwRMCookie, out pXid);
+			public HRESULT EnlistResourceManager(uint32 dwRMCookie, ref uint32 pdwITransaction) mut => VT.EnlistResourceManager(ref this, dwRMCookie, ref pdwITransaction);
+			public HRESULT ReleaseResourceManager(uint32 dwRMCookie) mut => VT.ReleaseResourceManager(ref this, dwRMCookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1002,10 +822,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(PSTR pszDSN, PSTR pszClientDllName, out Guid pguidRm, IDtcToXaHelper** ppXaHelper) mut
-			{
-				return VT.Create(ref this, pszDSN, pszClientDllName, out pguidRm, ppXaHelper);
-			}
+			public HRESULT Create(PSTR pszDSN, PSTR pszClientDllName, out Guid pguidRm, IDtcToXaHelper** ppXaHelper) mut => VT.Create(ref this, pszDSN, pszClientDllName, out pguidRm, ppXaHelper);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1019,14 +837,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Close(BOOL i_fDoRecovery) mut
-			{
-				return VT.Close(ref this, i_fDoRecovery);
-			}
-			public HRESULT TranslateTridToXid(ITransaction* pITransaction, ref Guid pguidBqual, out xid_t pXid) mut
-			{
-				return VT.TranslateTridToXid(ref this, pITransaction, ref pguidBqual, out pXid);
-			}
+			public HRESULT Close(BOOL i_fDoRecovery) mut => VT.Close(ref this, i_fDoRecovery);
+			public HRESULT TranslateTridToXid(ITransaction* pITransaction, ref Guid pguidBqual, out xid_t pXid) mut => VT.TranslateTridToXid(ref this, pITransaction, ref pguidBqual, out pXid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1041,22 +854,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT XARMCreate(PSTR pszDSN, PSTR pszClientDll, out uint32 pdwRMCookie) mut
-			{
-				return VT.XARMCreate(ref this, pszDSN, pszClientDll, out pdwRMCookie);
-			}
-			public HRESULT ConvertTridToXID(out uint32 pdwITrans, uint32 dwRMCookie, out xid_t pxid) mut
-			{
-				return VT.ConvertTridToXID(ref this, out pdwITrans, dwRMCookie, out pxid);
-			}
-			public HRESULT EnlistWithRM(uint32 dwRMCookie, ref ITransaction i_pITransaction, ref ITransactionResourceAsync i_pITransRes, out ITransactionEnlistmentAsync* o_ppITransEnslitment) mut
-			{
-				return VT.EnlistWithRM(ref this, dwRMCookie, ref i_pITransaction, ref i_pITransRes, out o_ppITransEnslitment);
-			}
-			public void ReleaseRMCookie(uint32 i_dwRMCookie, BOOL i_fNormal) mut
-			{
-				VT.ReleaseRMCookie(ref this, i_dwRMCookie, i_fNormal);
-			}
+			public HRESULT XARMCreate(PSTR pszDSN, PSTR pszClientDll, out uint32 pdwRMCookie) mut => VT.XARMCreate(ref this, pszDSN, pszClientDll, out pdwRMCookie);
+			public HRESULT ConvertTridToXID(out uint32 pdwITrans, uint32 dwRMCookie, out xid_t pxid) mut => VT.ConvertTridToXID(ref this, out pdwITrans, dwRMCookie, out pxid);
+			public HRESULT EnlistWithRM(uint32 dwRMCookie, ref ITransaction i_pITransaction, ref ITransactionResourceAsync i_pITransRes, out ITransactionEnlistmentAsync* o_ppITransEnslitment) mut => VT.EnlistWithRM(ref this, dwRMCookie, ref i_pITransaction, ref i_pITransRes, out o_ppITransEnslitment);
+			public void ReleaseRMCookie(uint32 i_dwRMCookie, BOOL i_fNormal) mut => VT.ReleaseRMCookie(ref this, i_dwRMCookie, i_fNormal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1073,10 +875,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Lookup(ITransaction** ppTransaction) mut
-			{
-				return VT.Lookup(ref this, ppTransaction);
-			}
+			public HRESULT Lookup(ITransaction** ppTransaction) mut => VT.Lookup(ref this, ppTransaction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1090,10 +890,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Lookup(ref xid_t pXID, ITransaction** ppTransaction) mut
-			{
-				return VT.Lookup(ref this, ref pXID, ppTransaction);
-			}
+			public HRESULT Lookup(ref xid_t pXID, ITransaction** ppTransaction) mut => VT.Lookup(ref this, ref pXID, ppTransaction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1107,10 +905,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TMDown() mut
-			{
-				return VT.TMDown(ref this);
-			}
+			public HRESULT TMDown() mut => VT.TMDown(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1124,22 +920,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Enlist(ITransaction* pTransaction, ITransactionResourceAsync* pRes, out BOID pUOW, out int32 pisoLevel, ITransactionEnlistmentAsync** ppEnlist) mut
-			{
-				return VT.Enlist(ref this, pTransaction, pRes, out pUOW, out pisoLevel, ppEnlist);
-			}
-			public HRESULT Reenlist(uint8* pPrepInfo, uint32 cbPrepInfo, uint32 lTimeout, out XACTSTAT pXactStat) mut
-			{
-				return VT.Reenlist(ref this, pPrepInfo, cbPrepInfo, lTimeout, out pXactStat);
-			}
-			public HRESULT ReenlistmentComplete() mut
-			{
-				return VT.ReenlistmentComplete(ref this);
-			}
-			public HRESULT GetDistributedTransactionManager(in Guid iid, void** ppvObject) mut
-			{
-				return VT.GetDistributedTransactionManager(ref this, iid, ppvObject);
-			}
+			public HRESULT Enlist(ITransaction* pTransaction, ITransactionResourceAsync* pRes, out BOID pUOW, out int32 pisoLevel, ITransactionEnlistmentAsync** ppEnlist) mut => VT.Enlist(ref this, pTransaction, pRes, out pUOW, out pisoLevel, ppEnlist);
+			public HRESULT Reenlist(uint8* pPrepInfo, uint32 cbPrepInfo, uint32 lTimeout, out XACTSTAT pXactStat) mut => VT.Reenlist(ref this, pPrepInfo, cbPrepInfo, lTimeout, out pXactStat);
+			public HRESULT ReenlistmentComplete() mut => VT.ReenlistmentComplete(ref this);
+			public HRESULT GetDistributedTransactionManager(in Guid iid, void** ppvObject) mut => VT.GetDistributedTransactionManager(ref this, iid, ppvObject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1156,14 +941,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TransactionCommitted(uint8* pPrepInfo, uint32 cbPrepInfo) mut
-			{
-				return VT.TransactionCommitted(ref this, pPrepInfo, cbPrepInfo);
-			}
-			public HRESULT RecoveryDone() mut
-			{
-				return VT.RecoveryDone(ref this);
-			}
+			public HRESULT TransactionCommitted(uint8* pPrepInfo, uint32 cbPrepInfo) mut => VT.TransactionCommitted(ref this, pPrepInfo, cbPrepInfo);
+			public HRESULT RecoveryDone() mut => VT.RecoveryDone(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1178,14 +958,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Enlist2(ITransaction* pTransaction, ITransactionResourceAsync* pResAsync, out BOID pUOW, out int32 pisoLevel, out xid_t pXid, ITransactionEnlistmentAsync** ppEnlist) mut
-			{
-				return VT.Enlist2(ref this, pTransaction, pResAsync, out pUOW, out pisoLevel, out pXid, ppEnlist);
-			}
-			public HRESULT Reenlist2(ref xid_t pXid, uint32 dwTimeout, out XACTSTAT pXactStat) mut
-			{
-				return VT.Reenlist2(ref this, ref pXid, dwTimeout, out pXactStat);
-			}
+			public HRESULT Enlist2(ITransaction* pTransaction, ITransactionResourceAsync* pResAsync, out BOID pUOW, out int32 pisoLevel, out xid_t pXid, ITransactionEnlistmentAsync** ppEnlist) mut => VT.Enlist2(ref this, pTransaction, pResAsync, out pUOW, out pisoLevel, out pXid, ppEnlist);
+			public HRESULT Reenlist2(ref xid_t pXid, uint32 dwTimeout, out XACTSTAT pXactStat) mut => VT.Reenlist2(ref this, ref pXid, dwTimeout, out pXactStat);
+
 			[CRepr]
 			public struct VTable : IResourceManagerAlt.VTable
 			{
@@ -1200,10 +975,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Rejoin(uint8* pPrepInfo, uint32 cbPrepInfo, uint32 lTimeout, out XACTSTAT pXactStat) mut
-			{
-				return VT.Rejoin(ref this, pPrepInfo, cbPrepInfo, lTimeout, out pXactStat);
-			}
+			public HRESULT Rejoin(uint8* pPrepInfo, uint32 cbPrepInfo, uint32 lTimeout, out XACTSTAT pXactStat) mut => VT.Rejoin(ref this, pPrepInfo, cbPrepInfo, lTimeout, out pXactStat);
+
 			[CRepr]
 			public struct VTable : IResourceManager2.VTable
 			{
@@ -1217,14 +990,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(Guid clsidHelperDll) mut
-			{
-				return VT.Initialize(ref this, clsidHelperDll);
-			}
-			public HRESULT Terminate() mut
-			{
-				return VT.Terminate(ref this);
-			}
+			public HRESULT Initialize(Guid clsidHelperDll) mut => VT.Initialize(ref this, clsidHelperDll);
+			public HRESULT Terminate() mut => VT.Terminate(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1239,14 +1007,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RMCount(uint32 dwcTotalNumberOfRMs) mut
-			{
-				return VT.RMCount(ref this, dwcTotalNumberOfRMs);
-			}
-			public HRESULT RMInfo(out xa_switch_t pXa_Switch, BOOL fCDeclCallingConv, PSTR pszOpenString, PSTR pszCloseString, Guid guidRMRecovery) mut
-			{
-				return VT.RMInfo(ref this, out pXa_Switch, fCDeclCallingConv, pszOpenString, pszCloseString, guidRMRecovery);
-			}
+			public HRESULT RMCount(uint32 dwcTotalNumberOfRMs) mut => VT.RMCount(ref this, dwcTotalNumberOfRMs);
+			public HRESULT RMInfo(out xa_switch_t pXa_Switch, BOOL fCDeclCallingConv, PSTR pszOpenString, PSTR pszCloseString, Guid guidRMRecovery) mut => VT.RMInfo(ref this, out pXa_Switch, fCDeclCallingConv, pszOpenString, pszCloseString, guidRMRecovery);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1261,10 +1024,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ObtainRMInfo(IRMHelper* pIRMHelper) mut
-			{
-				return VT.ObtainRMInfo(ref this, pIRMHelper);
-			}
+			public HRESULT ObtainRMInfo(IRMHelper* pIRMHelper) mut => VT.ObtainRMInfo(ref this, pIRMHelper);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1278,10 +1039,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(ref Guid pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, IResourceManagerAlt** ppResMgr) mut
-			{
-				return VT.Create(ref this, ref pguidRM, pszRMName, pIResMgrSink, ppResMgr);
-			}
+			public HRESULT Create(ref Guid pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, IResourceManagerAlt** ppResMgr) mut => VT.Create(ref this, ref pguidRM, pszRMName, pIResMgrSink, ppResMgr);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1295,10 +1054,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEx(ref Guid pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, in Guid riidRequested, void** ppvResMgr) mut
-			{
-				return VT.CreateEx(ref this, ref pguidRM, pszRMName, pIResMgrSink, riidRequested, ppvResMgr);
-			}
+			public HRESULT CreateEx(ref Guid pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, in Guid riidRequested, void** ppvResMgr) mut => VT.CreateEx(ref this, ref pguidRM, pszRMName, pIResMgrSink, riidRequested, ppvResMgr);
+
 			[CRepr]
 			public struct VTable : IResourceManagerFactory.VTable
 			{
@@ -1312,14 +1069,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPrepareInfoSize(out uint32 pcbPrepInfo) mut
-			{
-				return VT.GetPrepareInfoSize(ref this, out pcbPrepInfo);
-			}
-			public HRESULT GetPrepareInfo(out uint8 pPrepInfo) mut
-			{
-				return VT.GetPrepareInfo(ref this, out pPrepInfo);
-			}
+			public HRESULT GetPrepareInfoSize(out uint32 pcbPrepInfo) mut => VT.GetPrepareInfoSize(ref this, out pcbPrepInfo);
+			public HRESULT GetPrepareInfo(out uint8 pPrepInfo) mut => VT.GetPrepareInfo(ref this, out pPrepInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1334,14 +1086,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPrepareInfoSize(out uint32 pcbPrepInfo) mut
-			{
-				return VT.GetPrepareInfoSize(ref this, out pcbPrepInfo);
-			}
-			public HRESULT GetPrepareInfo(uint32 cbPrepareInfo, uint8* pPrepInfo) mut
-			{
-				return VT.GetPrepareInfo(ref this, cbPrepareInfo, pPrepInfo);
-			}
+			public HRESULT GetPrepareInfoSize(out uint32 pcbPrepInfo) mut => VT.GetPrepareInfoSize(ref this, out pcbPrepInfo);
+			public HRESULT GetPrepareInfo(uint32 cbPrepareInfo, uint8* pPrepInfo) mut => VT.GetPrepareInfo(ref this, cbPrepareInfo, pPrepInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1356,10 +1103,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDispenser(in Guid iid, void** ppvObject) mut
-			{
-				return VT.GetDispenser(ref this, iid, ppvObject);
-			}
+			public HRESULT GetDispenser(in Guid iid, void** ppvObject) mut => VT.GetDispenser(ref this, iid, ppvObject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1373,10 +1118,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT VoteRequestDone(HRESULT hr, BOID* pboidReason) mut
-			{
-				return VT.VoteRequestDone(ref this, hr, pboidReason);
-			}
+			public HRESULT VoteRequestDone(HRESULT hr, BOID* pboidReason) mut => VT.VoteRequestDone(ref this, hr, pboidReason);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1390,10 +1133,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT VoteRequest() mut
-			{
-				return VT.VoteRequest(ref this);
-			}
+			public HRESULT VoteRequest() mut => VT.VoteRequest(ref this);
+
 			[CRepr]
 			public struct VTable : ITransactionOutcomeEvents.VTable
 			{
@@ -1407,10 +1148,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(ITransaction* pTransaction, ITransactionVoterNotifyAsync2* pVoterNotify, ITransactionVoterBallotAsync2** ppVoterBallot) mut
-			{
-				return VT.Create(ref this, pTransaction, pVoterNotify, ppVoterBallot);
-			}
+			public HRESULT Create(ITransaction* pTransaction, ITransactionVoterNotifyAsync2* pVoterNotify, ITransactionVoterBallotAsync2** ppVoterBallot) mut => VT.Create(ref this, pTransaction, pVoterNotify, ppVoterBallot);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1424,26 +1163,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Enable() mut
-			{
-				return VT.Enable(ref this);
-			}
-			public HRESULT WaitForEnlistment() mut
-			{
-				return VT.WaitForEnlistment(ref this);
-			}
-			public HRESULT Phase0Done() mut
-			{
-				return VT.Phase0Done(ref this);
-			}
-			public HRESULT Unenlist() mut
-			{
-				return VT.Unenlist(ref this);
-			}
-			public HRESULT GetTransaction(ITransaction** ppITransaction) mut
-			{
-				return VT.GetTransaction(ref this, ppITransaction);
-			}
+			public HRESULT Enable() mut => VT.Enable(ref this);
+			public HRESULT WaitForEnlistment() mut => VT.WaitForEnlistment(ref this);
+			public HRESULT Phase0Done() mut => VT.Phase0Done(ref this);
+			public HRESULT Unenlist() mut => VT.Unenlist(ref this);
+			public HRESULT GetTransaction(ITransaction** ppITransaction) mut => VT.GetTransaction(ref this, ppITransaction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1461,14 +1186,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Phase0Request(BOOL fAbortingHint) mut
-			{
-				return VT.Phase0Request(ref this, fAbortingHint);
-			}
-			public HRESULT EnlistCompleted(HRESULT status) mut
-			{
-				return VT.EnlistCompleted(ref this, status);
-			}
+			public HRESULT Phase0Request(BOOL fAbortingHint) mut => VT.Phase0Request(ref this, fAbortingHint);
+			public HRESULT EnlistCompleted(HRESULT status) mut => VT.EnlistCompleted(ref this, status);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1483,10 +1203,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(ITransactionPhase0NotifyAsync* pPhase0Notify, ITransactionPhase0EnlistmentAsync** ppPhase0Enlistment) mut
-			{
-				return VT.Create(ref this, pPhase0Notify, ppPhase0Enlistment);
-			}
+			public HRESULT Create(ITransactionPhase0NotifyAsync* pPhase0Notify, ITransactionPhase0EnlistmentAsync** ppPhase0Enlistment) mut => VT.Create(ref this, pPhase0Notify, ppPhase0Enlistment);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1500,26 +1218,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Set(ITransaction* pTransaction) mut
-			{
-				return VT.Set(ref this, pTransaction);
-			}
-			public HRESULT GetPropagationTokenSize(out uint32 pcbToken) mut
-			{
-				return VT.GetPropagationTokenSize(ref this, out pcbToken);
-			}
-			public HRESULT MarshalPropagationToken(uint32 cbToken, uint8* rgbToken, out uint32 pcbUsed) mut
-			{
-				return VT.MarshalPropagationToken(ref this, cbToken, rgbToken, out pcbUsed);
-			}
-			public HRESULT UnmarshalReturnToken(uint32 cbReturnToken, uint8* rgbReturnToken) mut
-			{
-				return VT.UnmarshalReturnToken(ref this, cbReturnToken, rgbReturnToken);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT Set(ITransaction* pTransaction) mut => VT.Set(ref this, pTransaction);
+			public HRESULT GetPropagationTokenSize(out uint32 pcbToken) mut => VT.GetPropagationTokenSize(ref this, out pcbToken);
+			public HRESULT MarshalPropagationToken(uint32 cbToken, uint8* rgbToken, out uint32 pcbUsed) mut => VT.MarshalPropagationToken(ref this, cbToken, rgbToken, out pcbUsed);
+			public HRESULT UnmarshalReturnToken(uint32 cbReturnToken, uint8* rgbReturnToken) mut => VT.UnmarshalReturnToken(ref this, cbReturnToken, rgbReturnToken);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1537,10 +1241,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(ITransactionTransmitter** ppTransmitter) mut
-			{
-				return VT.Create(ref this, ppTransmitter);
-			}
+			public HRESULT Create(ITransactionTransmitter** ppTransmitter) mut => VT.Create(ref this, ppTransmitter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1554,22 +1256,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UnmarshalPropagationToken(uint32 cbToken, uint8* rgbToken, ITransaction** ppTransaction) mut
-			{
-				return VT.UnmarshalPropagationToken(ref this, cbToken, rgbToken, ppTransaction);
-			}
-			public HRESULT GetReturnTokenSize(out uint32 pcbReturnToken) mut
-			{
-				return VT.GetReturnTokenSize(ref this, out pcbReturnToken);
-			}
-			public HRESULT MarshalReturnToken(uint32 cbReturnToken, uint8* rgbReturnToken, out uint32 pcbUsed) mut
-			{
-				return VT.MarshalReturnToken(ref this, cbReturnToken, rgbReturnToken, out pcbUsed);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT UnmarshalPropagationToken(uint32 cbToken, uint8* rgbToken, ITransaction** ppTransaction) mut => VT.UnmarshalPropagationToken(ref this, cbToken, rgbToken, ppTransaction);
+			public HRESULT GetReturnTokenSize(out uint32 pcbReturnToken) mut => VT.GetReturnTokenSize(ref this, out pcbReturnToken);
+			public HRESULT MarshalReturnToken(uint32 cbReturnToken, uint8* rgbReturnToken, out uint32 pcbUsed) mut => VT.MarshalReturnToken(ref this, cbReturnToken, rgbReturnToken, out pcbUsed);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1586,10 +1277,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(ITransactionReceiver** ppReceiver) mut
-			{
-				return VT.Create(ref this, ppReceiver);
-			}
+			public HRESULT Create(ITransactionReceiver** ppReceiver) mut => VT.Create(ref this, ppReceiver);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1603,14 +1292,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(uint8* pucLuPair, uint32 cbLuPair) mut
-			{
-				return VT.Add(ref this, pucLuPair, cbLuPair);
-			}
-			public HRESULT Delete(uint8* pucLuPair, uint32 cbLuPair) mut
-			{
-				return VT.Delete(ref this, pucLuPair, cbLuPair);
-			}
+			public HRESULT Add(uint8* pucLuPair, uint32 cbLuPair) mut => VT.Add(ref this, pucLuPair, cbLuPair);
+			public HRESULT Delete(uint8* pucLuPair, uint32 cbLuPair) mut => VT.Delete(ref this, pucLuPair, cbLuPair);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1625,6 +1309,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1637,10 +1322,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(uint8* pucLuPair, uint32 cbLuPair, IDtcLuRecovery** ppRecovery) mut
-			{
-				return VT.Create(ref this, pucLuPair, cbLuPair, ppRecovery);
-			}
+			public HRESULT Create(uint8* pucLuPair, uint32 cbLuPair, IDtcLuRecovery** ppRecovery) mut => VT.Create(ref this, pucLuPair, cbLuPair, ppRecovery);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1654,58 +1337,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLogNameSizes(out uint32 pcbOurLogName, out uint32 pcbRemoteLogName) mut
-			{
-				return VT.GetLogNameSizes(ref this, out pcbOurLogName, out pcbRemoteLogName);
-			}
-			public HRESULT GetOurXln(out _DtcLu_Xln pXln, out uint8 pOurLogName, out uint8 pRemoteLogName, out uint32 pdwProtocol) mut
-			{
-				return VT.GetOurXln(ref this, out pXln, out pOurLogName, out pRemoteLogName, out pdwProtocol);
-			}
-			public HRESULT HandleConfirmationFromOurXln(_DtcLu_Xln_Confirmation Confirmation) mut
-			{
-				return VT.HandleConfirmationFromOurXln(ref this, Confirmation);
-			}
-			public HRESULT HandleTheirXlnResponse(_DtcLu_Xln Xln, out uint8 pRemoteLogName, uint32 cbRemoteLogName, uint32 dwProtocol, out _DtcLu_Xln_Confirmation pConfirmation) mut
-			{
-				return VT.HandleTheirXlnResponse(ref this, Xln, out pRemoteLogName, cbRemoteLogName, dwProtocol, out pConfirmation);
-			}
-			public HRESULT HandleErrorFromOurXln(_DtcLu_Xln_Error Error) mut
-			{
-				return VT.HandleErrorFromOurXln(ref this, Error);
-			}
-			public HRESULT CheckForCompareStates(out BOOL fCompareStates) mut
-			{
-				return VT.CheckForCompareStates(ref this, out fCompareStates);
-			}
-			public HRESULT GetOurTransIdSize(out uint32 pcbOurTransId) mut
-			{
-				return VT.GetOurTransIdSize(ref this, out pcbOurTransId);
-			}
-			public HRESULT GetOurCompareStates(out uint8 pOurTransId, out _DtcLu_CompareState pCompareState) mut
-			{
-				return VT.GetOurCompareStates(ref this, out pOurTransId, out pCompareState);
-			}
-			public HRESULT HandleTheirCompareStatesResponse(_DtcLu_CompareState CompareState, out _DtcLu_CompareStates_Confirmation pConfirmation) mut
-			{
-				return VT.HandleTheirCompareStatesResponse(ref this, CompareState, out pConfirmation);
-			}
-			public HRESULT HandleErrorFromOurCompareStates(_DtcLu_CompareStates_Error Error) mut
-			{
-				return VT.HandleErrorFromOurCompareStates(ref this, Error);
-			}
-			public HRESULT ConversationLost() mut
-			{
-				return VT.ConversationLost(ref this);
-			}
-			public HRESULT GetRecoverySeqNum(out int32 plRecoverySeqNum) mut
-			{
-				return VT.GetRecoverySeqNum(ref this, out plRecoverySeqNum);
-			}
-			public HRESULT ObsoleteRecoverySeqNum(int32 lNewRecoverySeqNum) mut
-			{
-				return VT.ObsoleteRecoverySeqNum(ref this, lNewRecoverySeqNum);
-			}
+			public HRESULT GetLogNameSizes(out uint32 pcbOurLogName, out uint32 pcbRemoteLogName) mut => VT.GetLogNameSizes(ref this, out pcbOurLogName, out pcbRemoteLogName);
+			public HRESULT GetOurXln(out _DtcLu_Xln pXln, out uint8 pOurLogName, out uint8 pRemoteLogName, out uint32 pdwProtocol) mut => VT.GetOurXln(ref this, out pXln, out pOurLogName, out pRemoteLogName, out pdwProtocol);
+			public HRESULT HandleConfirmationFromOurXln(_DtcLu_Xln_Confirmation Confirmation) mut => VT.HandleConfirmationFromOurXln(ref this, Confirmation);
+			public HRESULT HandleTheirXlnResponse(_DtcLu_Xln Xln, out uint8 pRemoteLogName, uint32 cbRemoteLogName, uint32 dwProtocol, out _DtcLu_Xln_Confirmation pConfirmation) mut => VT.HandleTheirXlnResponse(ref this, Xln, out pRemoteLogName, cbRemoteLogName, dwProtocol, out pConfirmation);
+			public HRESULT HandleErrorFromOurXln(_DtcLu_Xln_Error Error) mut => VT.HandleErrorFromOurXln(ref this, Error);
+			public HRESULT CheckForCompareStates(out BOOL fCompareStates) mut => VT.CheckForCompareStates(ref this, out fCompareStates);
+			public HRESULT GetOurTransIdSize(out uint32 pcbOurTransId) mut => VT.GetOurTransIdSize(ref this, out pcbOurTransId);
+			public HRESULT GetOurCompareStates(out uint8 pOurTransId, out _DtcLu_CompareState pCompareState) mut => VT.GetOurCompareStates(ref this, out pOurTransId, out pCompareState);
+			public HRESULT HandleTheirCompareStatesResponse(_DtcLu_CompareState CompareState, out _DtcLu_CompareStates_Confirmation pConfirmation) mut => VT.HandleTheirCompareStatesResponse(ref this, CompareState, out pConfirmation);
+			public HRESULT HandleErrorFromOurCompareStates(_DtcLu_CompareStates_Error Error) mut => VT.HandleErrorFromOurCompareStates(ref this, Error);
+			public HRESULT ConversationLost() mut => VT.ConversationLost(ref this);
+			public HRESULT GetRecoverySeqNum(out int32 plRecoverySeqNum) mut => VT.GetRecoverySeqNum(ref this, out plRecoverySeqNum);
+			public HRESULT ObsoleteRecoverySeqNum(int32 lNewRecoverySeqNum) mut => VT.ObsoleteRecoverySeqNum(ref this, lNewRecoverySeqNum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1731,10 +1376,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleCheckLuStatus(int32 lRecoverySeqNum) mut
-			{
-				return VT.HandleCheckLuStatus(ref this, lRecoverySeqNum);
-			}
+			public HRESULT HandleCheckLuStatus(int32 lRecoverySeqNum) mut => VT.HandleCheckLuStatus(ref this, lRecoverySeqNum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1748,10 +1391,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWork(out _DtcLu_LocalRecovery_Work pWork, void** ppv) mut
-			{
-				return VT.GetWork(ref this, out pWork, ppv);
-			}
+			public HRESULT GetWork(out _DtcLu_LocalRecovery_Work pWork, void** ppv) mut => VT.GetWork(ref this, out pWork, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1765,38 +1406,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HandleTheirXln(int32 lRecoverySeqNum, _DtcLu_Xln Xln, out uint8 pRemoteLogName, uint32 cbRemoteLogName, out uint8 pOurLogName, uint32 cbOurLogName, uint32 dwProtocol, out _DtcLu_Xln_Response pResponse) mut
-			{
-				return VT.HandleTheirXln(ref this, lRecoverySeqNum, Xln, out pRemoteLogName, cbRemoteLogName, out pOurLogName, cbOurLogName, dwProtocol, out pResponse);
-			}
-			public HRESULT GetOurLogNameSize(out uint32 pcbOurLogName) mut
-			{
-				return VT.GetOurLogNameSize(ref this, out pcbOurLogName);
-			}
-			public HRESULT GetOurXln(out _DtcLu_Xln pXln, out uint8 pOurLogName, out uint32 pdwProtocol) mut
-			{
-				return VT.GetOurXln(ref this, out pXln, out pOurLogName, out pdwProtocol);
-			}
-			public HRESULT HandleConfirmationOfOurXln(_DtcLu_Xln_Confirmation Confirmation) mut
-			{
-				return VT.HandleConfirmationOfOurXln(ref this, Confirmation);
-			}
-			public HRESULT HandleTheirCompareStates(out uint8 pRemoteTransId, uint32 cbRemoteTransId, _DtcLu_CompareState CompareState, out _DtcLu_CompareStates_Response pResponse, out _DtcLu_CompareState pCompareState) mut
-			{
-				return VT.HandleTheirCompareStates(ref this, out pRemoteTransId, cbRemoteTransId, CompareState, out pResponse, out pCompareState);
-			}
-			public HRESULT HandleConfirmationOfOurCompareStates(_DtcLu_CompareStates_Confirmation Confirmation) mut
-			{
-				return VT.HandleConfirmationOfOurCompareStates(ref this, Confirmation);
-			}
-			public HRESULT HandleErrorFromOurCompareStates(_DtcLu_CompareStates_Error Error) mut
-			{
-				return VT.HandleErrorFromOurCompareStates(ref this, Error);
-			}
-			public HRESULT ConversationLost() mut
-			{
-				return VT.ConversationLost(ref this);
-			}
+			public HRESULT HandleTheirXln(int32 lRecoverySeqNum, _DtcLu_Xln Xln, out uint8 pRemoteLogName, uint32 cbRemoteLogName, out uint8 pOurLogName, uint32 cbOurLogName, uint32 dwProtocol, out _DtcLu_Xln_Response pResponse) mut => VT.HandleTheirXln(ref this, lRecoverySeqNum, Xln, out pRemoteLogName, cbRemoteLogName, out pOurLogName, cbOurLogName, dwProtocol, out pResponse);
+			public HRESULT GetOurLogNameSize(out uint32 pcbOurLogName) mut => VT.GetOurLogNameSize(ref this, out pcbOurLogName);
+			public HRESULT GetOurXln(out _DtcLu_Xln pXln, out uint8 pOurLogName, out uint32 pdwProtocol) mut => VT.GetOurXln(ref this, out pXln, out pOurLogName, out pdwProtocol);
+			public HRESULT HandleConfirmationOfOurXln(_DtcLu_Xln_Confirmation Confirmation) mut => VT.HandleConfirmationOfOurXln(ref this, Confirmation);
+			public HRESULT HandleTheirCompareStates(out uint8 pRemoteTransId, uint32 cbRemoteTransId, _DtcLu_CompareState CompareState, out _DtcLu_CompareStates_Response pResponse, out _DtcLu_CompareState pCompareState) mut => VT.HandleTheirCompareStates(ref this, out pRemoteTransId, cbRemoteTransId, CompareState, out pResponse, out pCompareState);
+			public HRESULT HandleConfirmationOfOurCompareStates(_DtcLu_CompareStates_Confirmation Confirmation) mut => VT.HandleConfirmationOfOurCompareStates(ref this, Confirmation);
+			public HRESULT HandleErrorFromOurCompareStates(_DtcLu_CompareStates_Error Error) mut => VT.HandleErrorFromOurCompareStates(ref this, Error);
+			public HRESULT ConversationLost() mut => VT.ConversationLost(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1817,10 +1435,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectToHandleWorkFromLu(IDtcLuRecoveryInitiatedByLuWork** ppWork) mut
-			{
-				return VT.GetObjectToHandleWorkFromLu(ref this, ppWork);
-			}
+			public HRESULT GetObjectToHandleWorkFromLu(IDtcLuRecoveryInitiatedByLuWork** ppWork) mut => VT.GetObjectToHandleWorkFromLu(ref this, ppWork);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1834,30 +1450,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Unplug(BOOL fConversationLost) mut
-			{
-				return VT.Unplug(ref this, fConversationLost);
-			}
-			public HRESULT BackedOut() mut
-			{
-				return VT.BackedOut(ref this);
-			}
-			public HRESULT BackOut() mut
-			{
-				return VT.BackOut(ref this);
-			}
-			public HRESULT Committed() mut
-			{
-				return VT.Committed(ref this);
-			}
-			public HRESULT Forget() mut
-			{
-				return VT.Forget(ref this);
-			}
-			public HRESULT RequestCommit() mut
-			{
-				return VT.RequestCommit(ref this);
-			}
+			public HRESULT Unplug(BOOL fConversationLost) mut => VT.Unplug(ref this, fConversationLost);
+			public HRESULT BackedOut() mut => VT.BackedOut(ref this);
+			public HRESULT BackOut() mut => VT.BackOut(ref this);
+			public HRESULT Committed() mut => VT.Committed(ref this);
+			public HRESULT Forget() mut => VT.Forget(ref this);
+			public HRESULT RequestCommit() mut => VT.RequestCommit(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1876,42 +1475,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AckUnplug() mut
-			{
-				return VT.AckUnplug(ref this);
-			}
-			public HRESULT TmDown() mut
-			{
-				return VT.TmDown(ref this);
-			}
-			public HRESULT SessionLost() mut
-			{
-				return VT.SessionLost(ref this);
-			}
-			public HRESULT BackedOut() mut
-			{
-				return VT.BackedOut(ref this);
-			}
-			public HRESULT BackOut() mut
-			{
-				return VT.BackOut(ref this);
-			}
-			public HRESULT Committed() mut
-			{
-				return VT.Committed(ref this);
-			}
-			public HRESULT Forget() mut
-			{
-				return VT.Forget(ref this);
-			}
-			public HRESULT Prepare() mut
-			{
-				return VT.Prepare(ref this);
-			}
-			public HRESULT RequestCommit() mut
-			{
-				return VT.RequestCommit(ref this);
-			}
+			public HRESULT AckUnplug() mut => VT.AckUnplug(ref this);
+			public HRESULT TmDown() mut => VT.TmDown(ref this);
+			public HRESULT SessionLost() mut => VT.SessionLost(ref this);
+			public HRESULT BackedOut() mut => VT.BackedOut(ref this);
+			public HRESULT BackOut() mut => VT.BackOut(ref this);
+			public HRESULT Committed() mut => VT.Committed(ref this);
+			public HRESULT Forget() mut => VT.Forget(ref this);
+			public HRESULT Prepare() mut => VT.Prepare(ref this);
+			public HRESULT RequestCommit() mut => VT.RequestCommit(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1933,10 +1506,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(out uint8 pucLuPair, uint32 cbLuPair, ref ITransaction pITransaction, out uint8 pTransId, uint32 cbTransId, ref IDtcLuRmEnlistmentSink pRmEnlistmentSink, out IDtcLuRmEnlistment* ppRmEnlistment) mut
-			{
-				return VT.Create(ref this, out pucLuPair, cbLuPair, ref pITransaction, out pTransId, cbTransId, ref pRmEnlistmentSink, out ppRmEnlistment);
-			}
+			public HRESULT Create(out uint8 pucLuPair, uint32 cbLuPair, ref ITransaction pITransaction, out uint8 pTransId, uint32 cbTransId, ref IDtcLuRmEnlistmentSink pRmEnlistmentSink, out IDtcLuRmEnlistment* ppRmEnlistment) mut => VT.Create(ref this, out pucLuPair, cbLuPair, ref pITransaction, out pTransId, cbTransId, ref pRmEnlistmentSink, out ppRmEnlistment);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1950,34 +1521,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Unplug(BOOL fConversationLost) mut
-			{
-				return VT.Unplug(ref this, fConversationLost);
-			}
-			public HRESULT BackedOut() mut
-			{
-				return VT.BackedOut(ref this);
-			}
-			public HRESULT BackOut() mut
-			{
-				return VT.BackOut(ref this);
-			}
-			public HRESULT Committed() mut
-			{
-				return VT.Committed(ref this);
-			}
-			public HRESULT Forget() mut
-			{
-				return VT.Forget(ref this);
-			}
-			public HRESULT Prepare() mut
-			{
-				return VT.Prepare(ref this);
-			}
-			public HRESULT RequestCommit() mut
-			{
-				return VT.RequestCommit(ref this);
-			}
+			public HRESULT Unplug(BOOL fConversationLost) mut => VT.Unplug(ref this, fConversationLost);
+			public HRESULT BackedOut() mut => VT.BackedOut(ref this);
+			public HRESULT BackOut() mut => VT.BackOut(ref this);
+			public HRESULT Committed() mut => VT.Committed(ref this);
+			public HRESULT Forget() mut => VT.Forget(ref this);
+			public HRESULT Prepare() mut => VT.Prepare(ref this);
+			public HRESULT RequestCommit() mut => VT.RequestCommit(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1997,38 +1548,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AckUnplug() mut
-			{
-				return VT.AckUnplug(ref this);
-			}
-			public HRESULT TmDown() mut
-			{
-				return VT.TmDown(ref this);
-			}
-			public HRESULT SessionLost() mut
-			{
-				return VT.SessionLost(ref this);
-			}
-			public HRESULT BackedOut() mut
-			{
-				return VT.BackedOut(ref this);
-			}
-			public HRESULT BackOut() mut
-			{
-				return VT.BackOut(ref this);
-			}
-			public HRESULT Committed() mut
-			{
-				return VT.Committed(ref this);
-			}
-			public HRESULT Forget() mut
-			{
-				return VT.Forget(ref this);
-			}
-			public HRESULT RequestCommit() mut
-			{
-				return VT.RequestCommit(ref this);
-			}
+			public HRESULT AckUnplug() mut => VT.AckUnplug(ref this);
+			public HRESULT TmDown() mut => VT.TmDown(ref this);
+			public HRESULT SessionLost() mut => VT.SessionLost(ref this);
+			public HRESULT BackedOut() mut => VT.BackedOut(ref this);
+			public HRESULT BackOut() mut => VT.BackOut(ref this);
+			public HRESULT Committed() mut => VT.Committed(ref this);
+			public HRESULT Forget() mut => VT.Forget(ref this);
+			public HRESULT RequestCommit() mut => VT.RequestCommit(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2049,10 +1577,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(out uint8 pucLuPair, uint32 cbLuPair, ref IUnknown punkTransactionOuter, int32 isoLevel, uint32 isoFlags, ref ITransactionOptions pOptions, out ITransaction* ppTransaction, out uint8 pTransId, uint32 cbTransId, ref IDtcLuSubordinateDtcSink pSubordinateDtcSink, out IDtcLuSubordinateDtc* ppSubordinateDtc) mut
-			{
-				return VT.Create(ref this, out pucLuPair, cbLuPair, ref punkTransactionOuter, isoLevel, isoFlags, ref pOptions, out ppTransaction, out pTransId, cbTransId, ref pSubordinateDtcSink, out ppSubordinateDtc);
-			}
+			public HRESULT Create(out uint8 pucLuPair, uint32 cbLuPair, ref IUnknown punkTransactionOuter, int32 isoLevel, uint32 isoFlags, ref ITransactionOptions pOptions, out ITransaction* ppTransaction, out uint8 pTransId, uint32 cbTransId, ref IDtcLuSubordinateDtcSink pSubordinateDtcSink, out IDtcLuSubordinateDtc* ppSubordinateDtc) mut => VT.Create(ref this, out pucLuPair, cbLuPair, ref punkTransactionOuter, isoLevel, isoFlags, ref pOptions, out ppTransaction, out pTransId, cbTransId, ref pSubordinateDtcSink, out ppSubordinateDtc);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

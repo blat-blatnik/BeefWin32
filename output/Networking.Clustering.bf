@@ -3213,22 +3213,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClusterName(BSTR lpszName, out int32 pcchName) mut
-			{
-				return VT.GetClusterName(ref this, lpszName, out pcchName);
-			}
-			public uint32 GetLocale() mut
-			{
-				return VT.GetLocale(ref this);
-			}
-			public HFONT GetFont() mut
-			{
-				return VT.GetFont(ref this);
-			}
-			public HICON GetIcon() mut
-			{
-				return VT.GetIcon(ref this);
-			}
+			public HRESULT GetClusterName(BSTR lpszName, out int32 pcchName) mut => VT.GetClusterName(ref this, lpszName, out pcchName);
+			public uint32 GetLocale() mut => VT.GetLocale(ref this);
+			public HFONT GetFont() mut => VT.GetFont(ref this);
+			public HICON GetIcon() mut => VT.GetIcon(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3245,18 +3234,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClusterName(BSTR lpszName, out int32 pcchName) mut
-			{
-				return VT.GetClusterName(ref this, lpszName, out pcchName);
-			}
-			public _HCLUSTER* GetClusterHandle() mut
-			{
-				return VT.GetClusterHandle(ref this);
-			}
-			public int32 GetObjectCount() mut
-			{
-				return VT.GetObjectCount(ref this);
-			}
+			public HRESULT GetClusterName(BSTR lpszName, out int32 pcchName) mut => VT.GetClusterName(ref this, lpszName, out pcchName);
+			public _HCLUSTER* GetClusterHandle() mut => VT.GetClusterHandle(ref this);
+			public int32 GetObjectCount() mut => VT.GetObjectCount(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3272,14 +3253,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectName(int32 lObjIndex, BSTR lpszName, out int32 pcchName) mut
-			{
-				return VT.GetObjectName(ref this, lObjIndex, lpszName, out pcchName);
-			}
-			public CLUADMEX_OBJECT_TYPE GetObjectType(int32 lObjIndex) mut
-			{
-				return VT.GetObjectType(ref this, lObjIndex);
-			}
+			public HRESULT GetObjectName(int32 lObjIndex, BSTR lpszName, out int32 pcchName) mut => VT.GetObjectName(ref this, lObjIndex, lpszName, out pcchName);
+			public CLUADMEX_OBJECT_TYPE GetObjectType(int32 lObjIndex) mut => VT.GetObjectType(ref this, lObjIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3294,10 +3270,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public _HNODE* GetNodeHandle(int32 lObjIndex) mut
-			{
-				return VT.GetNodeHandle(ref this, lObjIndex);
-			}
+			public _HNODE* GetNodeHandle(int32 lObjIndex) mut => VT.GetNodeHandle(ref this, lObjIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3311,10 +3285,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public _HGROUP* GetGroupHandle(int32 lObjIndex) mut
-			{
-				return VT.GetGroupHandle(ref this, lObjIndex);
-			}
+			public _HGROUP* GetGroupHandle(int32 lObjIndex) mut => VT.GetGroupHandle(ref this, lObjIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3328,18 +3300,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public _HRESOURCE* GetResourceHandle(int32 lObjIndex) mut
-			{
-				return VT.GetResourceHandle(ref this, lObjIndex);
-			}
-			public HRESULT GetResourceTypeName(int32 lObjIndex, BSTR lpszResTypeName, out int32 pcchResTypeName) mut
-			{
-				return VT.GetResourceTypeName(ref this, lObjIndex, lpszResTypeName, out pcchResTypeName);
-			}
-			public BOOL GetResourceNetworkName(int32 lObjIndex, BSTR lpszNetName, out uint32 pcchNetName) mut
-			{
-				return VT.GetResourceNetworkName(ref this, lObjIndex, lpszNetName, out pcchNetName);
-			}
+			public _HRESOURCE* GetResourceHandle(int32 lObjIndex) mut => VT.GetResourceHandle(ref this, lObjIndex);
+			public HRESULT GetResourceTypeName(int32 lObjIndex, BSTR lpszResTypeName, out int32 pcchResTypeName) mut => VT.GetResourceTypeName(ref this, lObjIndex, lpszResTypeName, out pcchResTypeName);
+			public BOOL GetResourceNetworkName(int32 lObjIndex, BSTR lpszNetName, out uint32 pcchNetName) mut => VT.GetResourceNetworkName(ref this, lObjIndex, lpszNetName, out pcchNetName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3355,10 +3319,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public _HNETWORK* GetNetworkHandle(int32 lObjIndex) mut
-			{
-				return VT.GetNetworkHandle(ref this, lObjIndex);
-			}
+			public _HNETWORK* GetNetworkHandle(int32 lObjIndex) mut => VT.GetNetworkHandle(ref this, lObjIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3372,10 +3334,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public _HNETINTERFACE* GetNetInterfaceHandle(int32 lObjIndex) mut
-			{
-				return VT.GetNetInterfaceHandle(ref this, lObjIndex);
-			}
+			public _HNETINTERFACE* GetNetInterfaceHandle(int32 lObjIndex) mut => VT.GetNetInterfaceHandle(ref this, lObjIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3389,10 +3349,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPropertySheetPage(ref int32 hpage) mut
-			{
-				return VT.AddPropertySheetPage(ref this, ref hpage);
-			}
+			public HRESULT AddPropertySheetPage(ref int32 hpage) mut => VT.AddPropertySheetPage(ref this, ref hpage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3406,10 +3364,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreatePropertySheetPages(ref IUnknown piData, ref IWCPropertySheetCallback piCallback) mut
-			{
-				return VT.CreatePropertySheetPages(ref this, ref piData, ref piCallback);
-			}
+			public HRESULT CreatePropertySheetPages(ref IUnknown piData, ref IWCPropertySheetCallback piCallback) mut => VT.CreatePropertySheetPages(ref this, ref piData, ref piCallback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3423,14 +3379,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddWizardPage(ref int32 hpage) mut
-			{
-				return VT.AddWizardPage(ref this, ref hpage);
-			}
-			public HRESULT EnableNext(ref int32 hpage, BOOL bEnable) mut
-			{
-				return VT.EnableNext(ref this, ref hpage, bEnable);
-			}
+			public HRESULT AddWizardPage(ref int32 hpage) mut => VT.AddWizardPage(ref this, ref hpage);
+			public HRESULT EnableNext(ref int32 hpage, BOOL bEnable) mut => VT.EnableNext(ref this, ref hpage, bEnable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3445,10 +3396,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateWizardPages(ref IUnknown piData, ref IWCWizardCallback piCallback) mut
-			{
-				return VT.CreateWizardPages(ref this, ref piData, ref piCallback);
-			}
+			public HRESULT CreateWizardPages(ref IUnknown piData, ref IWCWizardCallback piCallback) mut => VT.CreateWizardPages(ref this, ref piData, ref piCallback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3462,10 +3411,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddExtensionMenuItem(BSTR lpszName, BSTR lpszStatusBarText, uint32 nCommandID, uint32 nSubmenuCommandID, uint32 uFlags) mut
-			{
-				return VT.AddExtensionMenuItem(ref this, lpszName, lpszStatusBarText, nCommandID, nSubmenuCommandID, uFlags);
-			}
+			public HRESULT AddExtensionMenuItem(BSTR lpszName, BSTR lpszStatusBarText, uint32 nCommandID, uint32 nSubmenuCommandID, uint32 uFlags) mut => VT.AddExtensionMenuItem(ref this, lpszName, lpszStatusBarText, nCommandID, nSubmenuCommandID, uFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3479,10 +3426,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddContextMenuItems(ref IUnknown piData, ref IWCContextMenuCallback piCallback) mut
-			{
-				return VT.AddContextMenuItems(ref this, ref piData, ref piCallback);
-			}
+			public HRESULT AddContextMenuItems(ref IUnknown piData, ref IWCContextMenuCallback piCallback) mut => VT.AddContextMenuItems(ref this, ref piData, ref piCallback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3496,10 +3441,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InvokeCommand(uint32 nCommandID, ref IUnknown piData) mut
-			{
-				return VT.InvokeCommand(ref this, nCommandID, ref piData);
-			}
+			public HRESULT InvokeCommand(uint32 nCommandID, ref IUnknown piData) mut => VT.InvokeCommand(ref this, nCommandID, ref piData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3513,14 +3456,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddWizard97Page(ref int32 hpage) mut
-			{
-				return VT.AddWizard97Page(ref this, ref hpage);
-			}
-			public HRESULT EnableNext(ref int32 hpage, BOOL bEnable) mut
-			{
-				return VT.EnableNext(ref this, ref hpage, bEnable);
-			}
+			public HRESULT AddWizard97Page(ref int32 hpage) mut => VT.AddWizard97Page(ref this, ref hpage);
+			public HRESULT EnableNext(ref int32 hpage, BOOL bEnable) mut => VT.EnableNext(ref this, ref hpage, bEnable);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3535,10 +3473,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateWizard97Pages(ref IUnknown piData, ref IWCWizard97Callback piCallback) mut
-			{
-				return VT.CreateWizard97Pages(ref this, ref piData, ref piCallback);
-			}
+			public HRESULT CreateWizard97Pages(ref IUnknown piData, ref IWCWizard97Callback piCallback) mut => VT.CreateWizard97Pages(ref this, ref piData, ref piCallback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3552,18 +3488,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DomainNames(out ISDomainNames* ppDomains) mut
-			{
-				return VT.get_DomainNames(ref this, out ppDomains);
-			}
-			public HRESULT get_ClusterNames(BSTR bstrDomainName, out ISClusterNames* ppClusters) mut
-			{
-				return VT.get_ClusterNames(ref this, bstrDomainName, out ppClusters);
-			}
-			public HRESULT OpenCluster(BSTR bstrClusterName, out ISCluster* pCluster) mut
-			{
-				return VT.OpenCluster(ref this, bstrClusterName, out pCluster);
-			}
+			public HRESULT get_DomainNames(out ISDomainNames* ppDomains) mut => VT.get_DomainNames(ref this, out ppDomains);
+			public HRESULT get_ClusterNames(BSTR bstrDomainName, out ISClusterNames* ppClusters) mut => VT.get_ClusterNames(ref this, bstrDomainName, out ppClusters);
+			public HRESULT OpenCluster(BSTR bstrClusterName, out ISCluster* pCluster) mut => VT.OpenCluster(ref this, bstrClusterName, out pCluster);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3579,22 +3507,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out BSTR pbstrDomainName) mut
-			{
-				return VT.get_Item(ref this, varIndex, out pbstrDomainName);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out BSTR pbstrDomainName) mut => VT.get_Item(ref this, varIndex, out pbstrDomainName);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3611,26 +3528,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out BSTR pbstrClusterName) mut
-			{
-				return VT.get_Item(ref this, varIndex, out pbstrClusterName);
-			}
-			public HRESULT get_DomainName(out BSTR pbstrDomainName) mut
-			{
-				return VT.get_DomainName(ref this, out pbstrDomainName);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out BSTR pbstrClusterName) mut => VT.get_Item(ref this, varIndex, out pbstrClusterName);
+			public HRESULT get_DomainName(out BSTR pbstrDomainName) mut => VT.get_DomainName(ref this, out pbstrDomainName);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3648,10 +3551,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Handle(out uint phandle) mut
-			{
-				return VT.get_Handle(ref this, out phandle);
-			}
+			public HRESULT get_Handle(out uint phandle) mut => VT.get_Handle(ref this, out phandle);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3665,46 +3566,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR pbstrClusterName) mut
-			{
-				return VT.get_Name(ref this, out pbstrClusterName);
-			}
-			public HRESULT get_MajorVersion(out int32 pnMajorVersion) mut
-			{
-				return VT.get_MajorVersion(ref this, out pnMajorVersion);
-			}
-			public HRESULT get_MinorVersion(out int32 pnMinorVersion) mut
-			{
-				return VT.get_MinorVersion(ref this, out pnMinorVersion);
-			}
-			public HRESULT get_BuildNumber(out int16 pnBuildNumber) mut
-			{
-				return VT.get_BuildNumber(ref this, out pnBuildNumber);
-			}
-			public HRESULT get_VendorId(out BSTR pbstrVendorId) mut
-			{
-				return VT.get_VendorId(ref this, out pbstrVendorId);
-			}
-			public HRESULT get_CSDVersion(out BSTR pbstrCSDVersion) mut
-			{
-				return VT.get_CSDVersion(ref this, out pbstrCSDVersion);
-			}
-			public HRESULT get_ClusterHighestVersion(out int32 pnClusterHighestVersion) mut
-			{
-				return VT.get_ClusterHighestVersion(ref this, out pnClusterHighestVersion);
-			}
-			public HRESULT get_ClusterLowestVersion(out int32 pnClusterLowestVersion) mut
-			{
-				return VT.get_ClusterLowestVersion(ref this, out pnClusterLowestVersion);
-			}
-			public HRESULT get_Flags(out int32 pnFlags) mut
-			{
-				return VT.get_Flags(ref this, out pnFlags);
-			}
-			public HRESULT get_MixedVersion(out VARIANT pvarMixedVersion) mut
-			{
-				return VT.get_MixedVersion(ref this, out pvarMixedVersion);
-			}
+			public HRESULT get_Name(out BSTR pbstrClusterName) mut => VT.get_Name(ref this, out pbstrClusterName);
+			public HRESULT get_MajorVersion(out int32 pnMajorVersion) mut => VT.get_MajorVersion(ref this, out pnMajorVersion);
+			public HRESULT get_MinorVersion(out int32 pnMinorVersion) mut => VT.get_MinorVersion(ref this, out pnMinorVersion);
+			public HRESULT get_BuildNumber(out int16 pnBuildNumber) mut => VT.get_BuildNumber(ref this, out pnBuildNumber);
+			public HRESULT get_VendorId(out BSTR pbstrVendorId) mut => VT.get_VendorId(ref this, out pbstrVendorId);
+			public HRESULT get_CSDVersion(out BSTR pbstrCSDVersion) mut => VT.get_CSDVersion(ref this, out pbstrCSDVersion);
+			public HRESULT get_ClusterHighestVersion(out int32 pnClusterHighestVersion) mut => VT.get_ClusterHighestVersion(ref this, out pnClusterHighestVersion);
+			public HRESULT get_ClusterLowestVersion(out int32 pnClusterLowestVersion) mut => VT.get_ClusterLowestVersion(ref this, out pnClusterLowestVersion);
+			public HRESULT get_Flags(out int32 pnFlags) mut => VT.get_Flags(ref this, out pnFlags);
+			public HRESULT get_MixedVersion(out VARIANT pvarMixedVersion) mut => VT.get_MixedVersion(ref this, out pvarMixedVersion);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3727,90 +3599,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_Handle(out uint phandle) mut
-			{
-				return VT.get_Handle(ref this, out phandle);
-			}
-			public HRESULT Open(BSTR bstrClusterName) mut
-			{
-				return VT.Open(ref this, bstrClusterName);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT put_Name(BSTR bstrClusterName) mut
-			{
-				return VT.put_Name(ref this, bstrClusterName);
-			}
-			public HRESULT get_Version(out ISClusVersion* ppClusVersion) mut
-			{
-				return VT.get_Version(ref this, out ppClusVersion);
-			}
-			public HRESULT put_QuorumResource(ref ISClusResource pClusterResource) mut
-			{
-				return VT.put_QuorumResource(ref this, ref pClusterResource);
-			}
-			public HRESULT get_QuorumResource(out ISClusResource* pClusterResource) mut
-			{
-				return VT.get_QuorumResource(ref this, out pClusterResource);
-			}
-			public HRESULT get_QuorumLogSize(out int32 pnLogSize) mut
-			{
-				return VT.get_QuorumLogSize(ref this, out pnLogSize);
-			}
-			public HRESULT put_QuorumLogSize(int32 nLogSize) mut
-			{
-				return VT.put_QuorumLogSize(ref this, nLogSize);
-			}
-			public HRESULT get_QuorumPath(out BSTR ppPath) mut
-			{
-				return VT.get_QuorumPath(ref this, out ppPath);
-			}
-			public HRESULT put_QuorumPath(BSTR pPath) mut
-			{
-				return VT.put_QuorumPath(ref this, pPath);
-			}
-			public HRESULT get_Nodes(out ISClusNodes* ppNodes) mut
-			{
-				return VT.get_Nodes(ref this, out ppNodes);
-			}
-			public HRESULT get_ResourceGroups(out ISClusResGroups* ppClusterResourceGroups) mut
-			{
-				return VT.get_ResourceGroups(ref this, out ppClusterResourceGroups);
-			}
-			public HRESULT get_Resources(out ISClusResources* ppClusterResources) mut
-			{
-				return VT.get_Resources(ref this, out ppClusterResources);
-			}
-			public HRESULT get_ResourceTypes(out ISClusResTypes* ppResourceTypes) mut
-			{
-				return VT.get_ResourceTypes(ref this, out ppResourceTypes);
-			}
-			public HRESULT get_Networks(out ISClusNetworks* ppNetworks) mut
-			{
-				return VT.get_Networks(ref this, out ppNetworks);
-			}
-			public HRESULT get_NetInterfaces(out ISClusNetInterfaces* ppNetInterfaces) mut
-			{
-				return VT.get_NetInterfaces(ref this, out ppNetInterfaces);
-			}
+			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateProperties(ref this, out ppProperties);
+			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonROProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateROProperties(ref this, out ppProperties);
+			public HRESULT get_Handle(out uint phandle) mut => VT.get_Handle(ref this, out phandle);
+			public HRESULT Open(BSTR bstrClusterName) mut => VT.Open(ref this, bstrClusterName);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT put_Name(BSTR bstrClusterName) mut => VT.put_Name(ref this, bstrClusterName);
+			public HRESULT get_Version(out ISClusVersion* ppClusVersion) mut => VT.get_Version(ref this, out ppClusVersion);
+			public HRESULT put_QuorumResource(ref ISClusResource pClusterResource) mut => VT.put_QuorumResource(ref this, ref pClusterResource);
+			public HRESULT get_QuorumResource(out ISClusResource* pClusterResource) mut => VT.get_QuorumResource(ref this, out pClusterResource);
+			public HRESULT get_QuorumLogSize(out int32 pnLogSize) mut => VT.get_QuorumLogSize(ref this, out pnLogSize);
+			public HRESULT put_QuorumLogSize(int32 nLogSize) mut => VT.put_QuorumLogSize(ref this, nLogSize);
+			public HRESULT get_QuorumPath(out BSTR ppPath) mut => VT.get_QuorumPath(ref this, out ppPath);
+			public HRESULT put_QuorumPath(BSTR pPath) mut => VT.put_QuorumPath(ref this, pPath);
+			public HRESULT get_Nodes(out ISClusNodes* ppNodes) mut => VT.get_Nodes(ref this, out ppNodes);
+			public HRESULT get_ResourceGroups(out ISClusResGroups* ppClusterResourceGroups) mut => VT.get_ResourceGroups(ref this, out ppClusterResourceGroups);
+			public HRESULT get_Resources(out ISClusResources* ppClusterResources) mut => VT.get_Resources(ref this, out ppClusterResources);
+			public HRESULT get_ResourceTypes(out ISClusResTypes* ppResourceTypes) mut => VT.get_ResourceTypes(ref this, out ppResourceTypes);
+			public HRESULT get_Networks(out ISClusNetworks* ppNetworks) mut => VT.get_Networks(ref this, out ppNetworks);
+			public HRESULT get_NetInterfaces(out ISClusNetInterfaces* ppNetInterfaces) mut => VT.get_NetInterfaces(ref this, out ppNetInterfaces);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3844,62 +3654,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT get_Handle(out uint phandle) mut
-			{
-				return VT.get_Handle(ref this, out phandle);
-			}
-			public HRESULT get_NodeID(out BSTR pbstrNodeID) mut
-			{
-				return VT.get_NodeID(ref this, out pbstrNodeID);
-			}
-			public HRESULT get_State(out CLUSTER_NODE_STATE dwState) mut
-			{
-				return VT.get_State(ref this, out dwState);
-			}
-			public HRESULT Pause() mut
-			{
-				return VT.Pause(ref this);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
-			public HRESULT Evict() mut
-			{
-				return VT.Evict(ref this);
-			}
-			public HRESULT get_ResourceGroups(out ISClusResGroups* ppResourceGroups) mut
-			{
-				return VT.get_ResourceGroups(ref this, out ppResourceGroups);
-			}
-			public HRESULT get_Cluster(out ISCluster* ppCluster) mut
-			{
-				return VT.get_Cluster(ref this, out ppCluster);
-			}
-			public HRESULT get_NetInterfaces(out ISClusNodeNetInterfaces* ppClusNetInterfaces) mut
-			{
-				return VT.get_NetInterfaces(ref this, out ppClusNetInterfaces);
-			}
+			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateProperties(ref this, out ppProperties);
+			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonROProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateROProperties(ref this, out ppProperties);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT get_Handle(out uint phandle) mut => VT.get_Handle(ref this, out phandle);
+			public HRESULT get_NodeID(out BSTR pbstrNodeID) mut => VT.get_NodeID(ref this, out pbstrNodeID);
+			public HRESULT get_State(out CLUSTER_NODE_STATE dwState) mut => VT.get_State(ref this, out dwState);
+			public HRESULT Pause() mut => VT.Pause(ref this);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+			public HRESULT Evict() mut => VT.Evict(ref this);
+			public HRESULT get_ResourceGroups(out ISClusResGroups* ppResourceGroups) mut => VT.get_ResourceGroups(ref this, out ppResourceGroups);
+			public HRESULT get_Cluster(out ISCluster* ppCluster) mut => VT.get_Cluster(ref this, out ppCluster);
+			public HRESULT get_NetInterfaces(out ISClusNodeNetInterfaces* ppClusNetInterfaces) mut => VT.get_NetInterfaces(ref this, out ppClusNetInterfaces);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3926,22 +3695,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusNode* ppNode) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppNode);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusNode* ppNode) mut => VT.get_Item(ref this, varIndex, out ppNode);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3958,50 +3716,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_Handle(out uint phandle) mut
-			{
-				return VT.get_Handle(ref this, out phandle);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT put_Name(BSTR bstrNetworkName) mut
-			{
-				return VT.put_Name(ref this, bstrNetworkName);
-			}
-			public HRESULT get_NetworkID(out BSTR pbstrNetworkID) mut
-			{
-				return VT.get_NetworkID(ref this, out pbstrNetworkID);
-			}
-			public HRESULT get_State(out CLUSTER_NETWORK_STATE dwState) mut
-			{
-				return VT.get_State(ref this, out dwState);
-			}
-			public HRESULT get_NetInterfaces(out ISClusNetworkNetInterfaces* ppClusNetInterfaces) mut
-			{
-				return VT.get_NetInterfaces(ref this, out ppClusNetInterfaces);
-			}
-			public HRESULT get_Cluster(out ISCluster* ppCluster) mut
-			{
-				return VT.get_Cluster(ref this, out ppCluster);
-			}
+			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateProperties(ref this, out ppProperties);
+			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonROProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateROProperties(ref this, out ppProperties);
+			public HRESULT get_Handle(out uint phandle) mut => VT.get_Handle(ref this, out phandle);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT put_Name(BSTR bstrNetworkName) mut => VT.put_Name(ref this, bstrNetworkName);
+			public HRESULT get_NetworkID(out BSTR pbstrNetworkID) mut => VT.get_NetworkID(ref this, out pbstrNetworkID);
+			public HRESULT get_State(out CLUSTER_NETWORK_STATE dwState) mut => VT.get_State(ref this, out dwState);
+			public HRESULT get_NetInterfaces(out ISClusNetworkNetInterfaces* ppClusNetInterfaces) mut => VT.get_NetInterfaces(ref this, out ppClusNetInterfaces);
+			public HRESULT get_Cluster(out ISCluster* ppCluster) mut => VT.get_Cluster(ref this, out ppCluster);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4025,22 +3751,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusNetwork* ppClusNetwork) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusNetwork);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusNetwork* ppClusNetwork) mut => VT.get_Item(ref this, varIndex, out ppClusNetwork);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4057,38 +3772,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT get_Handle(out uint phandle) mut
-			{
-				return VT.get_Handle(ref this, out phandle);
-			}
-			public HRESULT get_State(out CLUSTER_NETINTERFACE_STATE dwState) mut
-			{
-				return VT.get_State(ref this, out dwState);
-			}
-			public HRESULT get_Cluster(out ISCluster* ppCluster) mut
-			{
-				return VT.get_Cluster(ref this, out ppCluster);
-			}
+			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateProperties(ref this, out ppProperties);
+			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonROProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateROProperties(ref this, out ppProperties);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT get_Handle(out uint phandle) mut => VT.get_Handle(ref this, out phandle);
+			public HRESULT get_State(out CLUSTER_NETINTERFACE_STATE dwState) mut => VT.get_State(ref this, out dwState);
+			public HRESULT get_Cluster(out ISCluster* ppCluster) mut => VT.get_Cluster(ref this, out ppCluster);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4109,22 +3801,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusNetInterface);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) mut => VT.get_Item(ref this, varIndex, out ppClusNetInterface);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4141,22 +3822,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusNetInterface);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) mut => VT.get_Item(ref this, varIndex, out ppClusNetInterface);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4173,22 +3843,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusNetInterface);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) mut => VT.get_Item(ref this, varIndex, out ppClusNetInterface);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4205,70 +3864,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_Handle(out uint phandle) mut
-			{
-				return VT.get_Handle(ref this, out phandle);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT put_Name(BSTR bstrGroupName) mut
-			{
-				return VT.put_Name(ref this, bstrGroupName);
-			}
-			public HRESULT get_State(out CLUSTER_GROUP_STATE dwState) mut
-			{
-				return VT.get_State(ref this, out dwState);
-			}
-			public HRESULT get_OwnerNode(out ISClusNode* ppOwnerNode) mut
-			{
-				return VT.get_OwnerNode(ref this, out ppOwnerNode);
-			}
-			public HRESULT get_Resources(out ISClusResGroupResources* ppClusterGroupResources) mut
-			{
-				return VT.get_Resources(ref this, out ppClusterGroupResources);
-			}
-			public HRESULT get_PreferredOwnerNodes(out ISClusResGroupPreferredOwnerNodes* ppOwnerNodes) mut
-			{
-				return VT.get_PreferredOwnerNodes(ref this, out ppOwnerNodes);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Online(VARIANT varTimeout, VARIANT varNode, out VARIANT pvarPending) mut
-			{
-				return VT.Online(ref this, varTimeout, varNode, out pvarPending);
-			}
-			public HRESULT Move(VARIANT varTimeout, VARIANT varNode, out VARIANT pvarPending) mut
-			{
-				return VT.Move(ref this, varTimeout, varNode, out pvarPending);
-			}
-			public HRESULT Offline(VARIANT varTimeout, out VARIANT pvarPending) mut
-			{
-				return VT.Offline(ref this, varTimeout, out pvarPending);
-			}
-			public HRESULT get_Cluster(out ISCluster* ppCluster) mut
-			{
-				return VT.get_Cluster(ref this, out ppCluster);
-			}
+			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateProperties(ref this, out ppProperties);
+			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonROProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateROProperties(ref this, out ppProperties);
+			public HRESULT get_Handle(out uint phandle) mut => VT.get_Handle(ref this, out phandle);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT put_Name(BSTR bstrGroupName) mut => VT.put_Name(ref this, bstrGroupName);
+			public HRESULT get_State(out CLUSTER_GROUP_STATE dwState) mut => VT.get_State(ref this, out dwState);
+			public HRESULT get_OwnerNode(out ISClusNode* ppOwnerNode) mut => VT.get_OwnerNode(ref this, out ppOwnerNode);
+			public HRESULT get_Resources(out ISClusResGroupResources* ppClusterGroupResources) mut => VT.get_Resources(ref this, out ppClusterGroupResources);
+			public HRESULT get_PreferredOwnerNodes(out ISClusResGroupPreferredOwnerNodes* ppOwnerNodes) mut => VT.get_PreferredOwnerNodes(ref this, out ppOwnerNodes);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Online(VARIANT varTimeout, VARIANT varNode, out VARIANT pvarPending) mut => VT.Online(ref this, varTimeout, varNode, out pvarPending);
+			public HRESULT Move(VARIANT varTimeout, VARIANT varNode, out VARIANT pvarPending) mut => VT.Move(ref this, varTimeout, varNode, out pvarPending);
+			public HRESULT Offline(VARIANT varTimeout, out VARIANT pvarPending) mut => VT.Offline(ref this, varTimeout, out pvarPending);
+			public HRESULT get_Cluster(out ISCluster* ppCluster) mut => VT.get_Cluster(ref this, out ppCluster);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4297,30 +3909,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusResGroup* ppClusResGroup) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusResGroup);
-			}
-			public HRESULT CreateItem(BSTR bstrResourceGroupName, out ISClusResGroup* ppResourceGroup) mut
-			{
-				return VT.CreateItem(ref this, bstrResourceGroupName, out ppResourceGroup);
-			}
-			public HRESULT DeleteItem(VARIANT varIndex) mut
-			{
-				return VT.DeleteItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusResGroup* ppClusResGroup) mut => VT.get_Item(ref this, varIndex, out ppClusResGroup);
+			public HRESULT CreateItem(BSTR bstrResourceGroupName, out ISClusResGroup* ppResourceGroup) mut => VT.CreateItem(ref this, bstrResourceGroupName, out ppResourceGroup);
+			public HRESULT DeleteItem(VARIANT varIndex) mut => VT.DeleteItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4339,134 +3934,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_Handle(out uint phandle) mut
-			{
-				return VT.get_Handle(ref this, out phandle);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT put_Name(BSTR bstrResourceName) mut
-			{
-				return VT.put_Name(ref this, bstrResourceName);
-			}
-			public HRESULT get_State(out CLUSTER_RESOURCE_STATE dwState) mut
-			{
-				return VT.get_State(ref this, out dwState);
-			}
-			public HRESULT get_CoreFlag(out CLUS_FLAGS dwCoreFlag) mut
-			{
-				return VT.get_CoreFlag(ref this, out dwCoreFlag);
-			}
-			public HRESULT BecomeQuorumResource(BSTR bstrDevicePath, int32 lMaxLogSize) mut
-			{
-				return VT.BecomeQuorumResource(ref this, bstrDevicePath, lMaxLogSize);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Fail() mut
-			{
-				return VT.Fail(ref this);
-			}
-			public HRESULT Online(int32 nTimeout, out VARIANT pvarPending) mut
-			{
-				return VT.Online(ref this, nTimeout, out pvarPending);
-			}
-			public HRESULT Offline(int32 nTimeout, out VARIANT pvarPending) mut
-			{
-				return VT.Offline(ref this, nTimeout, out pvarPending);
-			}
-			public HRESULT ChangeResourceGroup(ref ISClusResGroup pResourceGroup) mut
-			{
-				return VT.ChangeResourceGroup(ref this, ref pResourceGroup);
-			}
-			public HRESULT AddResourceNode(ref ISClusNode pNode) mut
-			{
-				return VT.AddResourceNode(ref this, ref pNode);
-			}
-			public HRESULT RemoveResourceNode(ref ISClusNode pNode) mut
-			{
-				return VT.RemoveResourceNode(ref this, ref pNode);
-			}
-			public HRESULT CanResourceBeDependent(ref ISClusResource pResource, out VARIANT pvarDependent) mut
-			{
-				return VT.CanResourceBeDependent(ref this, ref pResource, out pvarDependent);
-			}
-			public HRESULT get_PossibleOwnerNodes(out ISClusResPossibleOwnerNodes* ppOwnerNodes) mut
-			{
-				return VT.get_PossibleOwnerNodes(ref this, out ppOwnerNodes);
-			}
-			public HRESULT get_Dependencies(out ISClusResDependencies* ppResDependencies) mut
-			{
-				return VT.get_Dependencies(ref this, out ppResDependencies);
-			}
-			public HRESULT get_Dependents(out ISClusResDependents* ppResDependents) mut
-			{
-				return VT.get_Dependents(ref this, out ppResDependents);
-			}
-			public HRESULT get_Group(out ISClusResGroup* ppResGroup) mut
-			{
-				return VT.get_Group(ref this, out ppResGroup);
-			}
-			public HRESULT get_OwnerNode(out ISClusNode* ppOwnerNode) mut
-			{
-				return VT.get_OwnerNode(ref this, out ppOwnerNode);
-			}
-			public HRESULT get_Cluster(out ISCluster* ppCluster) mut
-			{
-				return VT.get_Cluster(ref this, out ppCluster);
-			}
-			public HRESULT get_ClassInfo(out CLUSTER_RESOURCE_CLASS prcClassInfo) mut
-			{
-				return VT.get_ClassInfo(ref this, out prcClassInfo);
-			}
-			public HRESULT get_Disk(out ISClusDisk* ppDisk) mut
-			{
-				return VT.get_Disk(ref this, out ppDisk);
-			}
-			public HRESULT get_RegistryKeys(out ISClusRegistryKeys* ppRegistryKeys) mut
-			{
-				return VT.get_RegistryKeys(ref this, out ppRegistryKeys);
-			}
-			public HRESULT get_CryptoKeys(out ISClusCryptoKeys* ppCryptoKeys) mut
-			{
-				return VT.get_CryptoKeys(ref this, out ppCryptoKeys);
-			}
-			public HRESULT get_TypeName(out BSTR pbstrTypeName) mut
-			{
-				return VT.get_TypeName(ref this, out pbstrTypeName);
-			}
-			public HRESULT get_Type(out ISClusResType* ppResourceType) mut
-			{
-				return VT.get_Type(ref this, out ppResourceType);
-			}
-			public HRESULT get_MaintenanceMode(out BOOL pbMaintenanceMode) mut
-			{
-				return VT.get_MaintenanceMode(ref this, out pbMaintenanceMode);
-			}
-			public HRESULT put_MaintenanceMode(BOOL bMaintenanceMode) mut
-			{
-				return VT.put_MaintenanceMode(ref this, bMaintenanceMode);
-			}
+			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateProperties(ref this, out ppProperties);
+			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonROProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateROProperties(ref this, out ppProperties);
+			public HRESULT get_Handle(out uint phandle) mut => VT.get_Handle(ref this, out phandle);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT put_Name(BSTR bstrResourceName) mut => VT.put_Name(ref this, bstrResourceName);
+			public HRESULT get_State(out CLUSTER_RESOURCE_STATE dwState) mut => VT.get_State(ref this, out dwState);
+			public HRESULT get_CoreFlag(out CLUS_FLAGS dwCoreFlag) mut => VT.get_CoreFlag(ref this, out dwCoreFlag);
+			public HRESULT BecomeQuorumResource(BSTR bstrDevicePath, int32 lMaxLogSize) mut => VT.BecomeQuorumResource(ref this, bstrDevicePath, lMaxLogSize);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Fail() mut => VT.Fail(ref this);
+			public HRESULT Online(int32 nTimeout, out VARIANT pvarPending) mut => VT.Online(ref this, nTimeout, out pvarPending);
+			public HRESULT Offline(int32 nTimeout, out VARIANT pvarPending) mut => VT.Offline(ref this, nTimeout, out pvarPending);
+			public HRESULT ChangeResourceGroup(ref ISClusResGroup pResourceGroup) mut => VT.ChangeResourceGroup(ref this, ref pResourceGroup);
+			public HRESULT AddResourceNode(ref ISClusNode pNode) mut => VT.AddResourceNode(ref this, ref pNode);
+			public HRESULT RemoveResourceNode(ref ISClusNode pNode) mut => VT.RemoveResourceNode(ref this, ref pNode);
+			public HRESULT CanResourceBeDependent(ref ISClusResource pResource, out VARIANT pvarDependent) mut => VT.CanResourceBeDependent(ref this, ref pResource, out pvarDependent);
+			public HRESULT get_PossibleOwnerNodes(out ISClusResPossibleOwnerNodes* ppOwnerNodes) mut => VT.get_PossibleOwnerNodes(ref this, out ppOwnerNodes);
+			public HRESULT get_Dependencies(out ISClusResDependencies* ppResDependencies) mut => VT.get_Dependencies(ref this, out ppResDependencies);
+			public HRESULT get_Dependents(out ISClusResDependents* ppResDependents) mut => VT.get_Dependents(ref this, out ppResDependents);
+			public HRESULT get_Group(out ISClusResGroup* ppResGroup) mut => VT.get_Group(ref this, out ppResGroup);
+			public HRESULT get_OwnerNode(out ISClusNode* ppOwnerNode) mut => VT.get_OwnerNode(ref this, out ppOwnerNode);
+			public HRESULT get_Cluster(out ISCluster* ppCluster) mut => VT.get_Cluster(ref this, out ppCluster);
+			public HRESULT get_ClassInfo(out CLUSTER_RESOURCE_CLASS prcClassInfo) mut => VT.get_ClassInfo(ref this, out prcClassInfo);
+			public HRESULT get_Disk(out ISClusDisk* ppDisk) mut => VT.get_Disk(ref this, out ppDisk);
+			public HRESULT get_RegistryKeys(out ISClusRegistryKeys* ppRegistryKeys) mut => VT.get_RegistryKeys(ref this, out ppRegistryKeys);
+			public HRESULT get_CryptoKeys(out ISClusCryptoKeys* ppCryptoKeys) mut => VT.get_CryptoKeys(ref this, out ppCryptoKeys);
+			public HRESULT get_TypeName(out BSTR pbstrTypeName) mut => VT.get_TypeName(ref this, out pbstrTypeName);
+			public HRESULT get_Type(out ISClusResType* ppResourceType) mut => VT.get_Type(ref this, out ppResourceType);
+			public HRESULT get_MaintenanceMode(out BOOL pbMaintenanceMode) mut => VT.get_MaintenanceMode(ref this, out pbMaintenanceMode);
+			public HRESULT put_MaintenanceMode(BOOL bMaintenanceMode) mut => VT.put_MaintenanceMode(ref this, bMaintenanceMode);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4511,38 +4011,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusResource);
-			}
-			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut
-			{
-				return VT.CreateItem(ref this, bstrResourceName, bstrResourceType, dwFlags, out ppClusterResource);
-			}
-			public HRESULT DeleteItem(VARIANT varIndex) mut
-			{
-				return VT.DeleteItem(ref this, varIndex);
-			}
-			public HRESULT AddItem(ref ISClusResource pResource) mut
-			{
-				return VT.AddItem(ref this, ref pResource);
-			}
-			public HRESULT RemoveItem(VARIANT varIndex) mut
-			{
-				return VT.RemoveItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut => VT.get_Item(ref this, varIndex, out ppClusResource);
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut => VT.CreateItem(ref this, bstrResourceName, bstrResourceType, dwFlags, out ppClusterResource);
+			public HRESULT DeleteItem(VARIANT varIndex) mut => VT.DeleteItem(ref this, varIndex);
+			public HRESULT AddItem(ref ISClusResource pResource) mut => VT.AddItem(ref this, ref pResource);
+			public HRESULT RemoveItem(VARIANT varIndex) mut => VT.RemoveItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4563,30 +4040,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusResource);
-			}
-			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut
-			{
-				return VT.CreateItem(ref this, bstrResourceName, bstrResourceType, dwFlags, out ppClusterResource);
-			}
-			public HRESULT DeleteItem(VARIANT varIndex) mut
-			{
-				return VT.DeleteItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut => VT.get_Item(ref this, varIndex, out ppClusResource);
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut => VT.CreateItem(ref this, bstrResourceName, bstrResourceType, dwFlags, out ppClusterResource);
+			public HRESULT DeleteItem(VARIANT varIndex) mut => VT.DeleteItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4605,30 +4065,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusResource);
-			}
-			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut
-			{
-				return VT.CreateItem(ref this, bstrResourceName, bstrGroupName, dwFlags, out ppClusterResource);
-			}
-			public HRESULT DeleteItem(VARIANT varIndex) mut
-			{
-				return VT.DeleteItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut => VT.get_Item(ref this, varIndex, out ppClusResource);
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut => VT.CreateItem(ref this, bstrResourceName, bstrGroupName, dwFlags, out ppClusterResource);
+			public HRESULT DeleteItem(VARIANT varIndex) mut => VT.DeleteItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4647,30 +4090,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusResource);
-			}
-			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut
-			{
-				return VT.CreateItem(ref this, bstrResourceName, bstrResourceType, bstrGroupName, dwFlags, out ppClusterResource);
-			}
-			public HRESULT DeleteItem(VARIANT varIndex) mut
-			{
-				return VT.DeleteItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut => VT.get_Item(ref this, varIndex, out ppClusResource);
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut => VT.CreateItem(ref this, bstrResourceName, bstrResourceType, bstrGroupName, dwFlags, out ppClusterResource);
+			public HRESULT DeleteItem(VARIANT varIndex) mut => VT.DeleteItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4689,42 +4115,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusNode* ppNode) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppNode);
-			}
-			public HRESULT InsertItem(ref ISClusNode pNode, int32 nPosition) mut
-			{
-				return VT.InsertItem(ref this, ref pNode, nPosition);
-			}
-			public HRESULT RemoveItem(VARIANT varIndex) mut
-			{
-				return VT.RemoveItem(ref this, varIndex);
-			}
-			public HRESULT get_Modified(out VARIANT pvarModified) mut
-			{
-				return VT.get_Modified(ref this, out pvarModified);
-			}
-			public HRESULT SaveChanges() mut
-			{
-				return VT.SaveChanges(ref this);
-			}
-			public HRESULT AddItem(ref ISClusNode pNode) mut
-			{
-				return VT.AddItem(ref this, ref pNode);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusNode* ppNode) mut => VT.get_Item(ref this, varIndex, out ppNode);
+			public HRESULT InsertItem(ref ISClusNode pNode, int32 nPosition) mut => VT.InsertItem(ref this, ref pNode, nPosition);
+			public HRESULT RemoveItem(VARIANT varIndex) mut => VT.RemoveItem(ref this, varIndex);
+			public HRESULT get_Modified(out VARIANT pvarModified) mut => VT.get_Modified(ref this, out pvarModified);
+			public HRESULT SaveChanges() mut => VT.SaveChanges(ref this);
+			public HRESULT AddItem(ref ISClusNode pNode) mut => VT.AddItem(ref this, ref pNode);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4746,34 +4146,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusNode* ppNode) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppNode);
-			}
-			public HRESULT AddItem(ref ISClusNode pNode) mut
-			{
-				return VT.AddItem(ref this, ref pNode);
-			}
-			public HRESULT RemoveItem(VARIANT varIndex) mut
-			{
-				return VT.RemoveItem(ref this, varIndex);
-			}
-			public HRESULT get_Modified(out VARIANT pvarModified) mut
-			{
-				return VT.get_Modified(ref this, out pvarModified);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusNode* ppNode) mut => VT.get_Item(ref this, varIndex, out ppNode);
+			public HRESULT AddItem(ref ISClusNode pNode) mut => VT.AddItem(ref this, ref pNode);
+			public HRESULT RemoveItem(VARIANT varIndex) mut => VT.RemoveItem(ref this, varIndex);
+			public HRESULT get_Modified(out VARIANT pvarModified) mut => VT.get_Modified(ref this, out pvarModified);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4793,22 +4173,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusNode* ppNode) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppNode);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusNode* ppNode) mut => VT.get_Item(ref this, varIndex, out ppNode);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4825,46 +4194,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_CommonROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut
-			{
-				return VT.get_PrivateROProperties(ref this, out ppProperties);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT get_Cluster(out ISCluster* ppCluster) mut
-			{
-				return VT.get_Cluster(ref this, out ppCluster);
-			}
-			public HRESULT get_Resources(out ISClusResTypeResources* ppClusterResTypeResources) mut
-			{
-				return VT.get_Resources(ref this, out ppClusterResTypeResources);
-			}
-			public HRESULT get_PossibleOwnerNodes(out ISClusResTypePossibleOwnerNodes* ppOwnerNodes) mut
-			{
-				return VT.get_PossibleOwnerNodes(ref this, out ppOwnerNodes);
-			}
-			public HRESULT get_AvailableDisks(out ISClusDisks* ppAvailableDisks) mut
-			{
-				return VT.get_AvailableDisks(ref this, out ppAvailableDisks);
-			}
+			public HRESULT get_CommonProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateProperties(ref this, out ppProperties);
+			public HRESULT get_CommonROProperties(out ISClusProperties* ppProperties) mut => VT.get_CommonROProperties(ref this, out ppProperties);
+			public HRESULT get_PrivateROProperties(out ISClusProperties* ppProperties) mut => VT.get_PrivateROProperties(ref this, out ppProperties);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT get_Cluster(out ISCluster* ppCluster) mut => VT.get_Cluster(ref this, out ppCluster);
+			public HRESULT get_Resources(out ISClusResTypeResources* ppClusterResTypeResources) mut => VT.get_Resources(ref this, out ppClusterResTypeResources);
+			public HRESULT get_PossibleOwnerNodes(out ISClusResTypePossibleOwnerNodes* ppOwnerNodes) mut => VT.get_PossibleOwnerNodes(ref this, out ppOwnerNodes);
+			public HRESULT get_AvailableDisks(out ISClusDisks* ppAvailableDisks) mut => VT.get_AvailableDisks(ref this, out ppAvailableDisks);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4887,30 +4227,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusResType* ppClusResType) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusResType);
-			}
-			public HRESULT CreateItem(BSTR bstrResourceTypeName, BSTR bstrDisplayName, BSTR bstrResourceTypeDll, int32 dwLooksAlivePollInterval, int32 dwIsAlivePollInterval, out ISClusResType* ppResourceType) mut
-			{
-				return VT.CreateItem(ref this, bstrResourceTypeName, bstrDisplayName, bstrResourceTypeDll, dwLooksAlivePollInterval, dwIsAlivePollInterval, out ppResourceType);
-			}
-			public HRESULT DeleteItem(VARIANT varIndex) mut
-			{
-				return VT.DeleteItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusResType* ppClusResType) mut => VT.get_Item(ref this, varIndex, out ppClusResType);
+			public HRESULT CreateItem(BSTR bstrResourceTypeName, BSTR bstrDisplayName, BSTR bstrResourceTypeDll, int32 dwLooksAlivePollInterval, int32 dwIsAlivePollInterval, out ISClusResType* ppResourceType) mut => VT.CreateItem(ref this, bstrResourceTypeName, bstrDisplayName, bstrResourceTypeDll, dwLooksAlivePollInterval, dwIsAlivePollInterval, out ppResourceType);
+			public HRESULT DeleteItem(VARIANT varIndex) mut => VT.DeleteItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4929,66 +4252,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT get_Length(out int32 pLength) mut
-			{
-				return VT.get_Length(ref this, out pLength);
-			}
-			public HRESULT get_ValueCount(out int32 pCount) mut
-			{
-				return VT.get_ValueCount(ref this, out pCount);
-			}
-			public HRESULT get_Values(out ISClusPropertyValues* ppClusterPropertyValues) mut
-			{
-				return VT.get_Values(ref this, out ppClusterPropertyValues);
-			}
-			public HRESULT get_Value(out VARIANT pvarValue) mut
-			{
-				return VT.get_Value(ref this, out pvarValue);
-			}
-			public HRESULT put_Value(VARIANT varValue) mut
-			{
-				return VT.put_Value(ref this, varValue);
-			}
-			public HRESULT get_Type(out CLUSTER_PROPERTY_TYPE pType) mut
-			{
-				return VT.get_Type(ref this, out pType);
-			}
-			public HRESULT put_Type(CLUSTER_PROPERTY_TYPE Type) mut
-			{
-				return VT.put_Type(ref this, Type);
-			}
-			public HRESULT get_Format(out CLUSTER_PROPERTY_FORMAT pFormat) mut
-			{
-				return VT.get_Format(ref this, out pFormat);
-			}
-			public HRESULT put_Format(CLUSTER_PROPERTY_FORMAT Format) mut
-			{
-				return VT.put_Format(ref this, Format);
-			}
-			public HRESULT get_ReadOnly(out VARIANT pvarReadOnly) mut
-			{
-				return VT.get_ReadOnly(ref this, out pvarReadOnly);
-			}
-			public HRESULT get_Private(out VARIANT pvarPrivate) mut
-			{
-				return VT.get_Private(ref this, out pvarPrivate);
-			}
-			public HRESULT get_Common(out VARIANT pvarCommon) mut
-			{
-				return VT.get_Common(ref this, out pvarCommon);
-			}
-			public HRESULT get_Modified(out VARIANT pvarModified) mut
-			{
-				return VT.get_Modified(ref this, out pvarModified);
-			}
-			public HRESULT UseDefaultValue() mut
-			{
-				return VT.UseDefaultValue(ref this);
-			}
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT get_Length(out int32 pLength) mut => VT.get_Length(ref this, out pLength);
+			public HRESULT get_ValueCount(out int32 pCount) mut => VT.get_ValueCount(ref this, out pCount);
+			public HRESULT get_Values(out ISClusPropertyValues* ppClusterPropertyValues) mut => VT.get_Values(ref this, out ppClusterPropertyValues);
+			public HRESULT get_Value(out VARIANT pvarValue) mut => VT.get_Value(ref this, out pvarValue);
+			public HRESULT put_Value(VARIANT varValue) mut => VT.put_Value(ref this, varValue);
+			public HRESULT get_Type(out CLUSTER_PROPERTY_TYPE pType) mut => VT.get_Type(ref this, out pType);
+			public HRESULT put_Type(CLUSTER_PROPERTY_TYPE Type) mut => VT.put_Type(ref this, Type);
+			public HRESULT get_Format(out CLUSTER_PROPERTY_FORMAT pFormat) mut => VT.get_Format(ref this, out pFormat);
+			public HRESULT put_Format(CLUSTER_PROPERTY_FORMAT Format) mut => VT.put_Format(ref this, Format);
+			public HRESULT get_ReadOnly(out VARIANT pvarReadOnly) mut => VT.get_ReadOnly(ref this, out pvarReadOnly);
+			public HRESULT get_Private(out VARIANT pvarPrivate) mut => VT.get_Private(ref this, out pvarPrivate);
+			public HRESULT get_Common(out VARIANT pvarCommon) mut => VT.get_Common(ref this, out pvarCommon);
+			public HRESULT get_Modified(out VARIANT pvarModified) mut => VT.get_Modified(ref this, out pvarModified);
+			public HRESULT UseDefaultValue() mut => VT.UseDefaultValue(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5016,42 +4295,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(out VARIANT pvarValue) mut
-			{
-				return VT.get_Value(ref this, out pvarValue);
-			}
-			public HRESULT put_Value(VARIANT varValue) mut
-			{
-				return VT.put_Value(ref this, varValue);
-			}
-			public HRESULT get_Type(out CLUSTER_PROPERTY_TYPE pType) mut
-			{
-				return VT.get_Type(ref this, out pType);
-			}
-			public HRESULT put_Type(CLUSTER_PROPERTY_TYPE Type) mut
-			{
-				return VT.put_Type(ref this, Type);
-			}
-			public HRESULT get_Format(out CLUSTER_PROPERTY_FORMAT pFormat) mut
-			{
-				return VT.get_Format(ref this, out pFormat);
-			}
-			public HRESULT put_Format(CLUSTER_PROPERTY_FORMAT Format) mut
-			{
-				return VT.put_Format(ref this, Format);
-			}
-			public HRESULT get_Length(out int32 pLength) mut
-			{
-				return VT.get_Length(ref this, out pLength);
-			}
-			public HRESULT get_DataCount(out int32 pCount) mut
-			{
-				return VT.get_DataCount(ref this, out pCount);
-			}
-			public HRESULT get_Data(out ISClusPropertyValueData* ppClusterPropertyValueData) mut
-			{
-				return VT.get_Data(ref this, out ppClusterPropertyValueData);
-			}
+			public HRESULT get_Value(out VARIANT pvarValue) mut => VT.get_Value(ref this, out pvarValue);
+			public HRESULT put_Value(VARIANT varValue) mut => VT.put_Value(ref this, varValue);
+			public HRESULT get_Type(out CLUSTER_PROPERTY_TYPE pType) mut => VT.get_Type(ref this, out pType);
+			public HRESULT put_Type(CLUSTER_PROPERTY_TYPE Type) mut => VT.put_Type(ref this, Type);
+			public HRESULT get_Format(out CLUSTER_PROPERTY_FORMAT pFormat) mut => VT.get_Format(ref this, out pFormat);
+			public HRESULT put_Format(CLUSTER_PROPERTY_FORMAT Format) mut => VT.put_Format(ref this, Format);
+			public HRESULT get_Length(out int32 pLength) mut => VT.get_Length(ref this, out pLength);
+			public HRESULT get_DataCount(out int32 pCount) mut => VT.get_DataCount(ref this, out pCount);
+			public HRESULT get_Data(out ISClusPropertyValueData* ppClusterPropertyValueData) mut => VT.get_Data(ref this, out ppClusterPropertyValueData);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5073,26 +4326,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusPropertyValue* ppPropertyValue) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppPropertyValue);
-			}
-			public HRESULT CreateItem(BSTR bstrName, VARIANT varValue, out ISClusPropertyValue* ppPropertyValue) mut
-			{
-				return VT.CreateItem(ref this, bstrName, varValue, out ppPropertyValue);
-			}
-			public HRESULT RemoveItem(VARIANT varIndex) mut
-			{
-				return VT.RemoveItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusPropertyValue* ppPropertyValue) mut => VT.get_Item(ref this, varIndex, out ppPropertyValue);
+			public HRESULT CreateItem(BSTR bstrName, VARIANT varValue, out ISClusPropertyValue* ppPropertyValue) mut => VT.CreateItem(ref this, bstrName, varValue, out ppPropertyValue);
+			public HRESULT RemoveItem(VARIANT varIndex) mut => VT.RemoveItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5110,50 +4349,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusProperty* ppClusProperty) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusProperty);
-			}
-			public HRESULT CreateItem(BSTR bstrName, VARIANT varValue, out ISClusProperty* pProperty) mut
-			{
-				return VT.CreateItem(ref this, bstrName, varValue, out pProperty);
-			}
-			public HRESULT UseDefaultValue(VARIANT varIndex) mut
-			{
-				return VT.UseDefaultValue(ref this, varIndex);
-			}
-			public HRESULT SaveChanges(out VARIANT pvarStatusCode) mut
-			{
-				return VT.SaveChanges(ref this, out pvarStatusCode);
-			}
-			public HRESULT get_ReadOnly(out VARIANT pvarReadOnly) mut
-			{
-				return VT.get_ReadOnly(ref this, out pvarReadOnly);
-			}
-			public HRESULT get_Private(out VARIANT pvarPrivate) mut
-			{
-				return VT.get_Private(ref this, out pvarPrivate);
-			}
-			public HRESULT get_Common(out VARIANT pvarCommon) mut
-			{
-				return VT.get_Common(ref this, out pvarCommon);
-			}
-			public HRESULT get_Modified(out VARIANT pvarModified) mut
-			{
-				return VT.get_Modified(ref this, out pvarModified);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusProperty* ppClusProperty) mut => VT.get_Item(ref this, varIndex, out ppClusProperty);
+			public HRESULT CreateItem(BSTR bstrName, VARIANT varValue, out ISClusProperty* pProperty) mut => VT.CreateItem(ref this, bstrName, varValue, out pProperty);
+			public HRESULT UseDefaultValue(VARIANT varIndex) mut => VT.UseDefaultValue(ref this, varIndex);
+			public HRESULT SaveChanges(out VARIANT pvarStatusCode) mut => VT.SaveChanges(ref this, out pvarStatusCode);
+			public HRESULT get_ReadOnly(out VARIANT pvarReadOnly) mut => VT.get_ReadOnly(ref this, out pvarReadOnly);
+			public HRESULT get_Private(out VARIANT pvarPrivate) mut => VT.get_Private(ref this, out pvarPrivate);
+			public HRESULT get_Common(out VARIANT pvarCommon) mut => VT.get_Common(ref this, out pvarCommon);
+			public HRESULT get_Modified(out VARIANT pvarModified) mut => VT.get_Modified(ref this, out pvarModified);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5177,26 +4384,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out VARIANT pvarValue) mut
-			{
-				return VT.get_Item(ref this, varIndex, out pvarValue);
-			}
-			public HRESULT CreateItem(VARIANT varValue, out VARIANT pvarData) mut
-			{
-				return VT.CreateItem(ref this, varValue, out pvarData);
-			}
-			public HRESULT RemoveItem(VARIANT varIndex) mut
-			{
-				return VT.RemoveItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT get_Item(VARIANT varIndex, out VARIANT pvarValue) mut => VT.get_Item(ref this, varIndex, out pvarValue);
+			public HRESULT CreateItem(VARIANT varValue, out VARIANT pvarData) mut => VT.CreateItem(ref this, varValue, out pvarData);
+			public HRESULT RemoveItem(VARIANT varIndex) mut => VT.RemoveItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5214,34 +4407,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Flags(out int32 plFlags) mut
-			{
-				return VT.get_Flags(ref this, out plFlags);
-			}
-			public HRESULT get_DeviceName(out BSTR pbstrDeviceName) mut
-			{
-				return VT.get_DeviceName(ref this, out pbstrDeviceName);
-			}
-			public HRESULT get_VolumeLabel(out BSTR pbstrVolumeLabel) mut
-			{
-				return VT.get_VolumeLabel(ref this, out pbstrVolumeLabel);
-			}
-			public HRESULT get_SerialNumber(out int32 plSerialNumber) mut
-			{
-				return VT.get_SerialNumber(ref this, out plSerialNumber);
-			}
-			public HRESULT get_MaximumComponentLength(out int32 plMaximumComponentLength) mut
-			{
-				return VT.get_MaximumComponentLength(ref this, out plMaximumComponentLength);
-			}
-			public HRESULT get_FileSystemFlags(out int32 plFileSystemFlags) mut
-			{
-				return VT.get_FileSystemFlags(ref this, out plFileSystemFlags);
-			}
-			public HRESULT get_FileSystem(out BSTR pbstrFileSystem) mut
-			{
-				return VT.get_FileSystem(ref this, out pbstrFileSystem);
-			}
+			public HRESULT get_Flags(out int32 plFlags) mut => VT.get_Flags(ref this, out plFlags);
+			public HRESULT get_DeviceName(out BSTR pbstrDeviceName) mut => VT.get_DeviceName(ref this, out pbstrDeviceName);
+			public HRESULT get_VolumeLabel(out BSTR pbstrVolumeLabel) mut => VT.get_VolumeLabel(ref this, out pbstrVolumeLabel);
+			public HRESULT get_SerialNumber(out int32 plSerialNumber) mut => VT.get_SerialNumber(ref this, out plSerialNumber);
+			public HRESULT get_MaximumComponentLength(out int32 plMaximumComponentLength) mut => VT.get_MaximumComponentLength(ref this, out plMaximumComponentLength);
+			public HRESULT get_FileSystemFlags(out int32 plFileSystemFlags) mut => VT.get_FileSystemFlags(ref this, out plFileSystemFlags);
+			public HRESULT get_FileSystem(out BSTR pbstrFileSystem) mut => VT.get_FileSystem(ref this, out pbstrFileSystem);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5261,26 +4434,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TotalSize(out int32 plTotalSize) mut
-			{
-				return VT.get_TotalSize(ref this, out plTotalSize);
-			}
-			public HRESULT get_FreeSpace(out int32 plFreeSpace) mut
-			{
-				return VT.get_FreeSpace(ref this, out plFreeSpace);
-			}
-			public HRESULT get_DeviceNumber(out int32 plDeviceNumber) mut
-			{
-				return VT.get_DeviceNumber(ref this, out plDeviceNumber);
-			}
-			public HRESULT get_PartitionNumber(out int32 plPartitionNumber) mut
-			{
-				return VT.get_PartitionNumber(ref this, out plPartitionNumber);
-			}
-			public HRESULT get_VolumeGuid(out BSTR pbstrVolumeGuid) mut
-			{
-				return VT.get_VolumeGuid(ref this, out pbstrVolumeGuid);
-			}
+			public HRESULT get_TotalSize(out int32 plTotalSize) mut => VT.get_TotalSize(ref this, out plTotalSize);
+			public HRESULT get_FreeSpace(out int32 plFreeSpace) mut => VT.get_FreeSpace(ref this, out plFreeSpace);
+			public HRESULT get_DeviceNumber(out int32 plDeviceNumber) mut => VT.get_DeviceNumber(ref this, out plDeviceNumber);
+			public HRESULT get_PartitionNumber(out int32 plPartitionNumber) mut => VT.get_PartitionNumber(ref this, out plPartitionNumber);
+			public HRESULT get_VolumeGuid(out BSTR pbstrVolumeGuid) mut => VT.get_VolumeGuid(ref this, out pbstrVolumeGuid);
+
 			[CRepr]
 			public struct VTable : ISClusPartition.VTable
 			{
@@ -5298,18 +4457,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusPartition* ppPartition) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppPartition);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusPartition* ppPartition) mut => VT.get_Item(ref this, varIndex, out ppPartition);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5325,22 +4476,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Signature(out int32 plSignature) mut
-			{
-				return VT.get_Signature(ref this, out plSignature);
-			}
-			public HRESULT get_ScsiAddress(out ISClusScsiAddress* ppScsiAddress) mut
-			{
-				return VT.get_ScsiAddress(ref this, out ppScsiAddress);
-			}
-			public HRESULT get_DiskNumber(out int32 plDiskNumber) mut
-			{
-				return VT.get_DiskNumber(ref this, out plDiskNumber);
-			}
-			public HRESULT get_Partitions(out ISClusPartitions* ppPartitions) mut
-			{
-				return VT.get_Partitions(ref this, out ppPartitions);
-			}
+			public HRESULT get_Signature(out int32 plSignature) mut => VT.get_Signature(ref this, out plSignature);
+			public HRESULT get_ScsiAddress(out ISClusScsiAddress* ppScsiAddress) mut => VT.get_ScsiAddress(ref this, out ppScsiAddress);
+			public HRESULT get_DiskNumber(out int32 plDiskNumber) mut => VT.get_DiskNumber(ref this, out plDiskNumber);
+			public HRESULT get_Partitions(out ISClusPartitions* ppPartitions) mut => VT.get_Partitions(ref this, out ppPartitions);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5357,18 +4497,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusDisk* ppDisk) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppDisk);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusDisk* ppDisk) mut => VT.get_Item(ref this, varIndex, out ppDisk);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5384,22 +4516,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PortNumber(out VARIANT pvarPortNumber) mut
-			{
-				return VT.get_PortNumber(ref this, out pvarPortNumber);
-			}
-			public HRESULT get_PathId(out VARIANT pvarPathId) mut
-			{
-				return VT.get_PathId(ref this, out pvarPathId);
-			}
-			public HRESULT get_TargetId(out VARIANT pvarTargetId) mut
-			{
-				return VT.get_TargetId(ref this, out pvarTargetId);
-			}
-			public HRESULT get_Lun(out VARIANT pvarLun) mut
-			{
-				return VT.get_Lun(ref this, out pvarLun);
-			}
+			public HRESULT get_PortNumber(out VARIANT pvarPortNumber) mut => VT.get_PortNumber(ref this, out pvarPortNumber);
+			public HRESULT get_PathId(out VARIANT pvarPathId) mut => VT.get_PathId(ref this, out pvarPathId);
+			public HRESULT get_TargetId(out VARIANT pvarTargetId) mut => VT.get_TargetId(ref this, out pvarTargetId);
+			public HRESULT get_Lun(out VARIANT pvarLun) mut => VT.get_Lun(ref this, out pvarLun);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5416,30 +4537,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out BSTR pbstrRegistryKey) mut
-			{
-				return VT.get_Item(ref this, varIndex, out pbstrRegistryKey);
-			}
-			public HRESULT AddItem(BSTR bstrRegistryKey) mut
-			{
-				return VT.AddItem(ref this, bstrRegistryKey);
-			}
-			public HRESULT RemoveItem(VARIANT varIndex) mut
-			{
-				return VT.RemoveItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out BSTR pbstrRegistryKey) mut => VT.get_Item(ref this, varIndex, out pbstrRegistryKey);
+			public HRESULT AddItem(BSTR bstrRegistryKey) mut => VT.AddItem(ref this, bstrRegistryKey);
+			public HRESULT RemoveItem(VARIANT varIndex) mut => VT.RemoveItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5458,30 +4562,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out BSTR pbstrCyrptoKey) mut
-			{
-				return VT.get_Item(ref this, varIndex, out pbstrCyrptoKey);
-			}
-			public HRESULT AddItem(BSTR bstrCryptoKey) mut
-			{
-				return VT.AddItem(ref this, bstrCryptoKey);
-			}
-			public HRESULT RemoveItem(VARIANT varIndex) mut
-			{
-				return VT.RemoveItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out BSTR pbstrCyrptoKey) mut => VT.get_Item(ref this, varIndex, out pbstrCyrptoKey);
+			public HRESULT AddItem(BSTR bstrCryptoKey) mut => VT.AddItem(ref this, bstrCryptoKey);
+			public HRESULT RemoveItem(VARIANT varIndex) mut => VT.RemoveItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -5500,38 +4587,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get__NewEnum(out IUnknown* retval) mut
-			{
-				return VT.get__NewEnum(ref this, out retval);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut
-			{
-				return VT.get_Item(ref this, varIndex, out ppClusResource);
-			}
-			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut
-			{
-				return VT.CreateItem(ref this, bstrResourceName, bstrResourceType, dwFlags, out ppClusterResource);
-			}
-			public HRESULT DeleteItem(VARIANT varIndex) mut
-			{
-				return VT.DeleteItem(ref this, varIndex);
-			}
-			public HRESULT AddItem(ref ISClusResource pResource) mut
-			{
-				return VT.AddItem(ref this, ref pResource);
-			}
-			public HRESULT RemoveItem(VARIANT varIndex) mut
-			{
-				return VT.RemoveItem(ref this, varIndex);
-			}
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT get_Item(VARIANT varIndex, out ISClusResource* ppClusResource) mut => VT.get_Item(ref this, varIndex, out ppClusResource);
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) mut => VT.CreateItem(ref this, bstrResourceName, bstrResourceType, dwFlags, out ppClusterResource);
+			public HRESULT DeleteItem(VARIANT varIndex) mut => VT.DeleteItem(ref this, varIndex);
+			public HRESULT AddItem(ref ISClusResource pResource) mut => VT.AddItem(ref this, ref pResource);
+			public HRESULT RemoveItem(VARIANT varIndex) mut => VT.RemoveItem(ref this, varIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

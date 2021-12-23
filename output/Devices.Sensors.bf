@@ -358,26 +358,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSensorsByCategory(ref Guid sensorCategory, ISensorCollection** ppSensorsFound) mut
-			{
-				return VT.GetSensorsByCategory(ref this, ref sensorCategory, ppSensorsFound);
-			}
-			public HRESULT GetSensorsByType(ref Guid sensorType, ISensorCollection** ppSensorsFound) mut
-			{
-				return VT.GetSensorsByType(ref this, ref sensorType, ppSensorsFound);
-			}
-			public HRESULT GetSensorByID(ref Guid sensorID, ISensor** ppSensor) mut
-			{
-				return VT.GetSensorByID(ref this, ref sensorID, ppSensor);
-			}
-			public HRESULT SetEventSink(ISensorManagerEvents* pEvents) mut
-			{
-				return VT.SetEventSink(ref this, pEvents);
-			}
-			public HRESULT RequestPermissions(HWND hParent, ISensorCollection* pSensors, BOOL fModal) mut
-			{
-				return VT.RequestPermissions(ref this, hParent, pSensors, fModal);
-			}
+			public HRESULT GetSensorsByCategory(ref Guid sensorCategory, ISensorCollection** ppSensorsFound) mut => VT.GetSensorsByCategory(ref this, ref sensorCategory, ppSensorsFound);
+			public HRESULT GetSensorsByType(ref Guid sensorType, ISensorCollection** ppSensorsFound) mut => VT.GetSensorsByType(ref this, ref sensorType, ppSensorsFound);
+			public HRESULT GetSensorByID(ref Guid sensorID, ISensor** ppSensor) mut => VT.GetSensorByID(ref this, ref sensorID, ppSensor);
+			public HRESULT SetEventSink(ISensorManagerEvents* pEvents) mut => VT.SetEventSink(ref this, pEvents);
+			public HRESULT RequestPermissions(HWND hParent, ISensorCollection* pSensors, BOOL fModal) mut => VT.RequestPermissions(ref this, hParent, pSensors, fModal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -395,14 +381,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGlobalLocationPermission(out BOOL pfEnabled) mut
-			{
-				return VT.GetGlobalLocationPermission(ref this, out pfEnabled);
-			}
-			public HRESULT CheckLocationCapability(uint32 dwClientThreadId) mut
-			{
-				return VT.CheckLocationCapability(ref this, dwClientThreadId);
-			}
+			public HRESULT GetGlobalLocationPermission(out BOOL pfEnabled) mut => VT.GetGlobalLocationPermission(ref this, out pfEnabled);
+			public HRESULT CheckLocationCapability(uint32 dwClientThreadId) mut => VT.CheckLocationCapability(ref this, dwClientThreadId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -417,30 +398,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAt(uint32 ulIndex, ISensor** ppSensor) mut
-			{
-				return VT.GetAt(ref this, ulIndex, ppSensor);
-			}
-			public HRESULT GetCount(out uint32 pCount) mut
-			{
-				return VT.GetCount(ref this, out pCount);
-			}
-			public HRESULT Add(ISensor* pSensor) mut
-			{
-				return VT.Add(ref this, pSensor);
-			}
-			public HRESULT Remove(ISensor* pSensor) mut
-			{
-				return VT.Remove(ref this, pSensor);
-			}
-			public HRESULT RemoveByID(ref Guid sensorID) mut
-			{
-				return VT.RemoveByID(ref this, ref sensorID);
-			}
-			public HRESULT Clear() mut
-			{
-				return VT.Clear(ref this);
-			}
+			public HRESULT GetAt(uint32 ulIndex, ISensor** ppSensor) mut => VT.GetAt(ref this, ulIndex, ppSensor);
+			public HRESULT GetCount(out uint32 pCount) mut => VT.GetCount(ref this, out pCount);
+			public HRESULT Add(ISensor* pSensor) mut => VT.Add(ref this, pSensor);
+			public HRESULT Remove(ISensor* pSensor) mut => VT.Remove(ref this, pSensor);
+			public HRESULT RemoveByID(ref Guid sensorID) mut => VT.RemoveByID(ref this, ref sensorID);
+			public HRESULT Clear() mut => VT.Clear(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -459,66 +423,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetID(out Guid pID) mut
-			{
-				return VT.GetID(ref this, out pID);
-			}
-			public HRESULT GetCategory(out Guid pSensorCategory) mut
-			{
-				return VT.GetCategory(ref this, out pSensorCategory);
-			}
-			public HRESULT ComGetType(out Guid pSensorType) mut
-			{
-				return VT.ComGetType(ref this, out pSensorType);
-			}
-			public HRESULT GetFriendlyName(BSTR* pFriendlyName) mut
-			{
-				return VT.GetFriendlyName(ref this, pFriendlyName);
-			}
-			public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT pProperty) mut
-			{
-				return VT.GetProperty(ref this, key, out pProperty);
-			}
-			public HRESULT GetProperties(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) mut
-			{
-				return VT.GetProperties(ref this, pKeys, ppProperties);
-			}
-			public HRESULT GetSupportedDataFields(IPortableDeviceKeyCollection** ppDataFields) mut
-			{
-				return VT.GetSupportedDataFields(ref this, ppDataFields);
-			}
-			public HRESULT SetProperties(IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) mut
-			{
-				return VT.SetProperties(ref this, pProperties, ppResults);
-			}
-			public HRESULT SupportsDataField(in PROPERTYKEY key, out int16 pIsSupported) mut
-			{
-				return VT.SupportsDataField(ref this, key, out pIsSupported);
-			}
-			public HRESULT GetState(out SensorState pState) mut
-			{
-				return VT.GetState(ref this, out pState);
-			}
-			public HRESULT GetData(ISensorDataReport** ppDataReport) mut
-			{
-				return VT.GetData(ref this, ppDataReport);
-			}
-			public HRESULT SupportsEvent(in Guid eventGuid, out int16 pIsSupported) mut
-			{
-				return VT.SupportsEvent(ref this, eventGuid, out pIsSupported);
-			}
-			public HRESULT GetEventInterest(Guid** ppValues, out uint32 pCount) mut
-			{
-				return VT.GetEventInterest(ref this, ppValues, out pCount);
-			}
-			public HRESULT SetEventInterest(Guid* pValues, uint32 count) mut
-			{
-				return VT.SetEventInterest(ref this, pValues, count);
-			}
-			public HRESULT SetEventSink(ISensorEvents* pEvents) mut
-			{
-				return VT.SetEventSink(ref this, pEvents);
-			}
+			public HRESULT GetID(out Guid pID) mut => VT.GetID(ref this, out pID);
+			public HRESULT GetCategory(out Guid pSensorCategory) mut => VT.GetCategory(ref this, out pSensorCategory);
+			public HRESULT ComGetType(out Guid pSensorType) mut => VT.ComGetType(ref this, out pSensorType);
+			public HRESULT GetFriendlyName(BSTR* pFriendlyName) mut => VT.GetFriendlyName(ref this, pFriendlyName);
+			public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT pProperty) mut => VT.GetProperty(ref this, key, out pProperty);
+			public HRESULT GetProperties(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) mut => VT.GetProperties(ref this, pKeys, ppProperties);
+			public HRESULT GetSupportedDataFields(IPortableDeviceKeyCollection** ppDataFields) mut => VT.GetSupportedDataFields(ref this, ppDataFields);
+			public HRESULT SetProperties(IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) mut => VT.SetProperties(ref this, pProperties, ppResults);
+			public HRESULT SupportsDataField(in PROPERTYKEY key, out int16 pIsSupported) mut => VT.SupportsDataField(ref this, key, out pIsSupported);
+			public HRESULT GetState(out SensorState pState) mut => VT.GetState(ref this, out pState);
+			public HRESULT GetData(ISensorDataReport** ppDataReport) mut => VT.GetData(ref this, ppDataReport);
+			public HRESULT SupportsEvent(in Guid eventGuid, out int16 pIsSupported) mut => VT.SupportsEvent(ref this, eventGuid, out pIsSupported);
+			public HRESULT GetEventInterest(Guid** ppValues, out uint32 pCount) mut => VT.GetEventInterest(ref this, ppValues, out pCount);
+			public HRESULT SetEventInterest(Guid* pValues, uint32 count) mut => VT.SetEventInterest(ref this, pValues, count);
+			public HRESULT SetEventSink(ISensorEvents* pEvents) mut => VT.SetEventSink(ref this, pEvents);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -546,18 +466,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTimestamp(out SYSTEMTIME pTimeStamp) mut
-			{
-				return VT.GetTimestamp(ref this, out pTimeStamp);
-			}
-			public HRESULT GetSensorValue(in PROPERTYKEY pKey, out PROPVARIANT pValue) mut
-			{
-				return VT.GetSensorValue(ref this, pKey, out pValue);
-			}
-			public HRESULT GetSensorValues(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) mut
-			{
-				return VT.GetSensorValues(ref this, pKeys, ppValues);
-			}
+			public HRESULT GetTimestamp(out SYSTEMTIME pTimeStamp) mut => VT.GetTimestamp(ref this, out pTimeStamp);
+			public HRESULT GetSensorValue(in PROPERTYKEY pKey, out PROPVARIANT pValue) mut => VT.GetSensorValue(ref this, pKey, out pValue);
+			public HRESULT GetSensorValues(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) mut => VT.GetSensorValues(ref this, pKeys, ppValues);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -573,10 +485,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSensorEnter(ISensor* pSensor, SensorState state) mut
-			{
-				return VT.OnSensorEnter(ref this, pSensor, state);
-			}
+			public HRESULT OnSensorEnter(ISensor* pSensor, SensorState state) mut => VT.OnSensorEnter(ref this, pSensor, state);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -590,22 +500,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStateChanged(ISensor* pSensor, SensorState state) mut
-			{
-				return VT.OnStateChanged(ref this, pSensor, state);
-			}
-			public HRESULT OnDataUpdated(ISensor* pSensor, ISensorDataReport* pNewData) mut
-			{
-				return VT.OnDataUpdated(ref this, pSensor, pNewData);
-			}
-			public HRESULT OnEvent(ISensor* pSensor, in Guid eventID, IPortableDeviceValues* pEventData) mut
-			{
-				return VT.OnEvent(ref this, pSensor, eventID, pEventData);
-			}
-			public HRESULT OnLeave(ref Guid ID) mut
-			{
-				return VT.OnLeave(ref this, ref ID);
-			}
+			public HRESULT OnStateChanged(ISensor* pSensor, SensorState state) mut => VT.OnStateChanged(ref this, pSensor, state);
+			public HRESULT OnDataUpdated(ISensor* pSensor, ISensorDataReport* pNewData) mut => VT.OnDataUpdated(ref this, pSensor, pNewData);
+			public HRESULT OnEvent(ISensor* pSensor, in Guid eventID, IPortableDeviceValues* pEventData) mut => VT.OnEvent(ref this, pSensor, eventID, pEventData);
+			public HRESULT OnLeave(ref Guid ID) mut => VT.OnLeave(ref this, ref ID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

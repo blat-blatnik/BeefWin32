@@ -350,22 +350,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDescription(out WINML_MODEL_DESC* ppDescription) mut
-			{
-				return VT.GetDescription(ref this, out ppDescription);
-			}
-			public HRESULT EnumerateMetadata(uint32 Index, out PWSTR pKey, out PWSTR pValue) mut
-			{
-				return VT.EnumerateMetadata(ref this, Index, out pKey, out pValue);
-			}
-			public HRESULT EnumerateModelInputs(uint32 Index, out WINML_VARIABLE_DESC* ppInputDescriptor) mut
-			{
-				return VT.EnumerateModelInputs(ref this, Index, out ppInputDescriptor);
-			}
-			public HRESULT EnumerateModelOutputs(uint32 Index, out WINML_VARIABLE_DESC* ppOutputDescriptor) mut
-			{
-				return VT.EnumerateModelOutputs(ref this, Index, out ppOutputDescriptor);
-			}
+			public HRESULT GetDescription(out WINML_MODEL_DESC* ppDescription) mut => VT.GetDescription(ref this, out ppDescription);
+			public HRESULT EnumerateMetadata(uint32 Index, out PWSTR pKey, out PWSTR pValue) mut => VT.EnumerateMetadata(ref this, Index, out pKey, out pValue);
+			public HRESULT EnumerateModelInputs(uint32 Index, out WINML_VARIABLE_DESC* ppInputDescriptor) mut => VT.EnumerateModelInputs(ref this, Index, out ppInputDescriptor);
+			public HRESULT EnumerateModelOutputs(uint32 Index, out WINML_VARIABLE_DESC* ppOutputDescriptor) mut => VT.EnumerateModelOutputs(ref this, Index, out ppOutputDescriptor);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -382,18 +371,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BindValue(ref WINML_BINDING_DESC pDescriptor) mut
-			{
-				return VT.BindValue(ref this, ref pDescriptor);
-			}
-			public HRESULT GetValueByName(PWSTR Name, out WINML_BINDING_DESC* pDescriptor) mut
-			{
-				return VT.GetValueByName(ref this, Name, out pDescriptor);
-			}
-			public HRESULT Clear() mut
-			{
-				return VT.Clear(ref this);
-			}
+			public HRESULT BindValue(ref WINML_BINDING_DESC pDescriptor) mut => VT.BindValue(ref this, ref pDescriptor);
+			public HRESULT GetValueByName(PWSTR Name, out WINML_BINDING_DESC* pDescriptor) mut => VT.GetValueByName(ref this, Name, out pDescriptor);
+			public HRESULT Clear() mut => VT.Clear(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -409,18 +390,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LoadModel(PWSTR Path, out IWinMLModel* ppModel) mut
-			{
-				return VT.LoadModel(ref this, Path, out ppModel);
-			}
-			public HRESULT CreateEvaluationContext(ID3D12Device* device, out IWinMLEvaluationContext* ppContext) mut
-			{
-				return VT.CreateEvaluationContext(ref this, device, out ppContext);
-			}
-			public HRESULT EvaluateModel(ref IWinMLEvaluationContext pContext) mut
-			{
-				return VT.EvaluateModel(ref this, ref pContext);
-			}
+			public HRESULT LoadModel(PWSTR Path, out IWinMLModel* ppModel) mut => VT.LoadModel(ref this, Path, out ppModel);
+			public HRESULT CreateEvaluationContext(ID3D12Device* device, out IWinMLEvaluationContext* ppContext) mut => VT.CreateEvaluationContext(ref this, device, out ppContext);
+			public HRESULT EvaluateModel(ref IWinMLEvaluationContext pContext) mut => VT.EvaluateModel(ref this, ref pContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -436,10 +409,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateRuntime(WINML_RUNTIME_TYPE RuntimeType, out IWinMLRuntime* ppRuntime) mut
-			{
-				return VT.CreateRuntime(ref this, RuntimeType, out ppRuntime);
-			}
+			public HRESULT CreateRuntime(WINML_RUNTIME_TYPE RuntimeType, out IWinMLRuntime* ppRuntime) mut => VT.CreateRuntime(ref this, RuntimeType, out ppRuntime);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -453,22 +424,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAttributeElementCount(PSTR name, MLOperatorAttributeType type, out uint32 elementCount) mut
-			{
-				return VT.GetAttributeElementCount(ref this, name, type, out elementCount);
-			}
-			public HRESULT GetAttribute(PSTR name, MLOperatorAttributeType type, uint32 elementCount, uint elementByteSize, void* value) mut
-			{
-				return VT.GetAttribute(ref this, name, type, elementCount, elementByteSize, value);
-			}
-			public HRESULT GetStringAttributeElementLength(PSTR name, uint32 elementIndex, out uint32 attributeElementByteSize) mut
-			{
-				return VT.GetStringAttributeElementLength(ref this, name, elementIndex, out attributeElementByteSize);
-			}
-			public HRESULT GetStringAttributeElement(PSTR name, uint32 elementIndex, uint32 attributeElementByteSize, uint8* attributeElement) mut
-			{
-				return VT.GetStringAttributeElement(ref this, name, elementIndex, attributeElementByteSize, attributeElement);
-			}
+			public HRESULT GetAttributeElementCount(PSTR name, MLOperatorAttributeType type, out uint32 elementCount) mut => VT.GetAttributeElementCount(ref this, name, type, out elementCount);
+			public HRESULT GetAttribute(PSTR name, MLOperatorAttributeType type, uint32 elementCount, uint elementByteSize, void* value) mut => VT.GetAttribute(ref this, name, type, elementCount, elementByteSize, value);
+			public HRESULT GetStringAttributeElementLength(PSTR name, uint32 elementIndex, out uint32 attributeElementByteSize) mut => VT.GetStringAttributeElementLength(ref this, name, elementIndex, out attributeElementByteSize);
+			public HRESULT GetStringAttributeElement(PSTR name, uint32 elementIndex, uint32 attributeElementByteSize, uint8* attributeElement) mut => VT.GetStringAttributeElement(ref this, name, elementIndex, attributeElementByteSize, attributeElement);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -485,26 +445,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInputTensorDimensionCount(uint32 inputIndex, out uint32 dimensionCount) mut
-			{
-				return VT.GetInputTensorDimensionCount(ref this, inputIndex, out dimensionCount);
-			}
-			public HRESULT GetInputTensorShape(uint32 inputIndex, uint32 dimensionCount, uint32* dimensions) mut
-			{
-				return VT.GetInputTensorShape(ref this, inputIndex, dimensionCount, dimensions);
-			}
-			public Boolean HasOutputShapeDescription() mut
-			{
-				return VT.HasOutputShapeDescription(ref this);
-			}
-			public HRESULT GetOutputTensorDimensionCount(uint32 outputIndex, out uint32 dimensionCount) mut
-			{
-				return VT.GetOutputTensorDimensionCount(ref this, outputIndex, out dimensionCount);
-			}
-			public HRESULT GetOutputTensorShape(uint32 outputIndex, uint32 dimensionCount, uint32* dimensions) mut
-			{
-				return VT.GetOutputTensorShape(ref this, outputIndex, dimensionCount, dimensions);
-			}
+			public HRESULT GetInputTensorDimensionCount(uint32 inputIndex, out uint32 dimensionCount) mut => VT.GetInputTensorDimensionCount(ref this, inputIndex, out dimensionCount);
+			public HRESULT GetInputTensorShape(uint32 inputIndex, uint32 dimensionCount, uint32* dimensions) mut => VT.GetInputTensorShape(ref this, inputIndex, dimensionCount, dimensions);
+			public Boolean HasOutputShapeDescription() mut => VT.HasOutputShapeDescription(ref this);
+			public HRESULT GetOutputTensorDimensionCount(uint32 outputIndex, out uint32 dimensionCount) mut => VT.GetOutputTensorDimensionCount(ref this, outputIndex, out dimensionCount);
+			public HRESULT GetOutputTensorShape(uint32 outputIndex, uint32 dimensionCount, uint32* dimensions) mut => VT.GetOutputTensorShape(ref this, outputIndex, dimensionCount, dimensions);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -522,42 +468,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetInputCount() mut
-			{
-				return VT.GetInputCount(ref this);
-			}
-			public uint32 GetOutputCount() mut
-			{
-				return VT.GetOutputCount(ref this);
-			}
-			public Boolean IsInputValid(uint32 inputIndex) mut
-			{
-				return VT.IsInputValid(ref this, inputIndex);
-			}
-			public Boolean IsOutputValid(uint32 outputIndex) mut
-			{
-				return VT.IsOutputValid(ref this, outputIndex);
-			}
-			public HRESULT GetInputEdgeDescription(uint32 inputIndex, out MLOperatorEdgeDescription edgeDescription) mut
-			{
-				return VT.GetInputEdgeDescription(ref this, inputIndex, out edgeDescription);
-			}
-			public HRESULT GetOutputEdgeDescription(uint32 outputIndex, out MLOperatorEdgeDescription edgeDescription) mut
-			{
-				return VT.GetOutputEdgeDescription(ref this, outputIndex, out edgeDescription);
-			}
-			public Boolean HasTensorShapeDescription() mut
-			{
-				return VT.HasTensorShapeDescription(ref this);
-			}
-			public HRESULT GetTensorShapeDescription(out IMLOperatorTensorShapeDescription* shapeDescription) mut
-			{
-				return VT.GetTensorShapeDescription(ref this, out shapeDescription);
-			}
-			public void GetExecutionInterface(IUnknown** executionObject) mut
-			{
-				VT.GetExecutionInterface(ref this, executionObject);
-			}
+			public uint32 GetInputCount() mut => VT.GetInputCount(ref this);
+			public uint32 GetOutputCount() mut => VT.GetOutputCount(ref this);
+			public Boolean IsInputValid(uint32 inputIndex) mut => VT.IsInputValid(ref this, inputIndex);
+			public Boolean IsOutputValid(uint32 outputIndex) mut => VT.IsOutputValid(ref this, outputIndex);
+			public HRESULT GetInputEdgeDescription(uint32 inputIndex, out MLOperatorEdgeDescription edgeDescription) mut => VT.GetInputEdgeDescription(ref this, inputIndex, out edgeDescription);
+			public HRESULT GetOutputEdgeDescription(uint32 outputIndex, out MLOperatorEdgeDescription edgeDescription) mut => VT.GetOutputEdgeDescription(ref this, outputIndex, out edgeDescription);
+			public Boolean HasTensorShapeDescription() mut => VT.HasTensorShapeDescription(ref this);
+			public HRESULT GetTensorShapeDescription(out IMLOperatorTensorShapeDescription* shapeDescription) mut => VT.GetTensorShapeDescription(ref this, out shapeDescription);
+			public void GetExecutionInterface(IUnknown** executionObject) mut => VT.GetExecutionInterface(ref this, executionObject);
+
 			[CRepr]
 			public struct VTable : IMLOperatorAttributes.VTable
 			{
@@ -579,34 +499,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetDimensionCount() mut
-			{
-				return VT.GetDimensionCount(ref this);
-			}
-			public HRESULT GetShape(uint32 dimensionCount, uint32* dimensions) mut
-			{
-				return VT.GetShape(ref this, dimensionCount, dimensions);
-			}
-			public MLOperatorTensorDataType GetTensorDataType() mut
-			{
-				return VT.GetTensorDataType(ref this);
-			}
-			public Boolean IsCpuData() mut
-			{
-				return VT.IsCpuData(ref this);
-			}
-			public Boolean IsDataInterface() mut
-			{
-				return VT.IsDataInterface(ref this);
-			}
-			public void* GetData() mut
-			{
-				return VT.GetData(ref this);
-			}
-			public void GetDataInterface(IUnknown** dataInterface) mut
-			{
-				VT.GetDataInterface(ref this, dataInterface);
-			}
+			public uint32 GetDimensionCount() mut => VT.GetDimensionCount(ref this);
+			public HRESULT GetShape(uint32 dimensionCount, uint32* dimensions) mut => VT.GetShape(ref this, dimensionCount, dimensions);
+			public MLOperatorTensorDataType GetTensorDataType() mut => VT.GetTensorDataType(ref this);
+			public Boolean IsCpuData() mut => VT.IsCpuData(ref this);
+			public Boolean IsDataInterface() mut => VT.IsDataInterface(ref this);
+			public void* GetData() mut => VT.GetData(ref this);
+			public void GetDataInterface(IUnknown** dataInterface) mut => VT.GetDataInterface(ref this, dataInterface);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -626,26 +526,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInputTensor(uint32 inputIndex, IMLOperatorTensor** tensor) mut
-			{
-				return VT.GetInputTensor(ref this, inputIndex, tensor);
-			}
-			public HRESULT GetOutputTensor(uint32 outputIndex, uint32 dimensionCount, uint32* dimensionSizes, IMLOperatorTensor** tensor) mut
-			{
-				return VT.GetOutputTensor(ref this, outputIndex, dimensionCount, dimensionSizes, tensor);
-			}
-			public HRESULT GetOutputTensor(uint32 outputIndex, IMLOperatorTensor** tensor) mut
-			{
-				return VT.GetOutputTensor2(ref this, outputIndex, tensor);
-			}
-			public HRESULT AllocateTemporaryData(uint size, out IUnknown* data) mut
-			{
-				return VT.AllocateTemporaryData(ref this, size, out data);
-			}
-			public void GetExecutionInterface(IUnknown** executionObject) mut
-			{
-				VT.GetExecutionInterface(ref this, executionObject);
-			}
+			public HRESULT GetInputTensor(uint32 inputIndex, IMLOperatorTensor** tensor) mut => VT.GetInputTensor(ref this, inputIndex, tensor);
+			public HRESULT GetOutputTensor(uint32 outputIndex, uint32 dimensionCount, uint32* dimensionSizes, IMLOperatorTensor** tensor) mut => VT.GetOutputTensor(ref this, outputIndex, dimensionCount, dimensionSizes, tensor);
+			public HRESULT GetOutputTensor(uint32 outputIndex, IMLOperatorTensor** tensor) mut => VT.GetOutputTensor2(ref this, outputIndex, tensor);
+			public HRESULT AllocateTemporaryData(uint size, out IUnknown* data) mut => VT.AllocateTemporaryData(ref this, size, out data);
+			public void GetExecutionInterface(IUnknown** executionObject) mut => VT.GetExecutionInterface(ref this, executionObject);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -663,10 +549,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Compute(ref IMLOperatorKernelContext context) mut
-			{
-				return VT.Compute(ref this, ref context);
-			}
+			public HRESULT Compute(ref IMLOperatorKernelContext context) mut => VT.Compute(ref this, ref context);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -680,38 +564,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetInputCount() mut
-			{
-				return VT.GetInputCount(ref this);
-			}
-			public uint32 GetOutputCount() mut
-			{
-				return VT.GetOutputCount(ref this);
-			}
-			public Boolean IsInputValid(uint32 inputIndex) mut
-			{
-				return VT.IsInputValid(ref this, inputIndex);
-			}
-			public Boolean IsOutputValid(uint32 outputIndex) mut
-			{
-				return VT.IsOutputValid(ref this, outputIndex);
-			}
-			public HRESULT GetInputEdgeDescription(uint32 inputIndex, out MLOperatorEdgeDescription edgeDescription) mut
-			{
-				return VT.GetInputEdgeDescription(ref this, inputIndex, out edgeDescription);
-			}
-			public HRESULT GetInputTensorDimensionCount(uint32 inputIndex, out uint32 dimensionCount) mut
-			{
-				return VT.GetInputTensorDimensionCount(ref this, inputIndex, out dimensionCount);
-			}
-			public HRESULT GetInputTensorShape(uint32 inputIndex, uint32 dimensionCount, uint32* dimensions) mut
-			{
-				return VT.GetInputTensorShape(ref this, inputIndex, dimensionCount, dimensions);
-			}
-			public HRESULT SetOutputTensorShape(uint32 outputIndex, uint32 dimensionCount, in uint32 dimensions) mut
-			{
-				return VT.SetOutputTensorShape(ref this, outputIndex, dimensionCount, dimensions);
-			}
+			public uint32 GetInputCount() mut => VT.GetInputCount(ref this);
+			public uint32 GetOutputCount() mut => VT.GetOutputCount(ref this);
+			public Boolean IsInputValid(uint32 inputIndex) mut => VT.IsInputValid(ref this, inputIndex);
+			public Boolean IsOutputValid(uint32 outputIndex) mut => VT.IsOutputValid(ref this, outputIndex);
+			public HRESULT GetInputEdgeDescription(uint32 inputIndex, out MLOperatorEdgeDescription edgeDescription) mut => VT.GetInputEdgeDescription(ref this, inputIndex, out edgeDescription);
+			public HRESULT GetInputTensorDimensionCount(uint32 inputIndex, out uint32 dimensionCount) mut => VT.GetInputTensorDimensionCount(ref this, inputIndex, out dimensionCount);
+			public HRESULT GetInputTensorShape(uint32 inputIndex, uint32 dimensionCount, uint32* dimensions) mut => VT.GetInputTensorShape(ref this, inputIndex, dimensionCount, dimensions);
+			public HRESULT SetOutputTensorShape(uint32 outputIndex, uint32 dimensionCount, in uint32 dimensions) mut => VT.SetOutputTensorShape(ref this, outputIndex, dimensionCount, dimensions);
+
 			[CRepr]
 			public struct VTable : IMLOperatorAttributes.VTable
 			{
@@ -732,30 +593,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetInputCount() mut
-			{
-				return VT.GetInputCount(ref this);
-			}
-			public uint32 GetOutputCount() mut
-			{
-				return VT.GetOutputCount(ref this);
-			}
-			public Boolean IsInputValid(uint32 inputIndex) mut
-			{
-				return VT.IsInputValid(ref this, inputIndex);
-			}
-			public Boolean IsOutputValid(uint32 outputIndex) mut
-			{
-				return VT.IsOutputValid(ref this, outputIndex);
-			}
-			public HRESULT GetInputEdgeDescription(uint32 inputIndex, out MLOperatorEdgeDescription edgeDescription) mut
-			{
-				return VT.GetInputEdgeDescription(ref this, inputIndex, out edgeDescription);
-			}
-			public HRESULT SetOutputEdgeDescription(uint32 outputIndex, in MLOperatorEdgeDescription edgeDescription) mut
-			{
-				return VT.SetOutputEdgeDescription(ref this, outputIndex, edgeDescription);
-			}
+			public uint32 GetInputCount() mut => VT.GetInputCount(ref this);
+			public uint32 GetOutputCount() mut => VT.GetOutputCount(ref this);
+			public Boolean IsInputValid(uint32 inputIndex) mut => VT.IsInputValid(ref this, inputIndex);
+			public Boolean IsOutputValid(uint32 outputIndex) mut => VT.IsOutputValid(ref this, outputIndex);
+			public HRESULT GetInputEdgeDescription(uint32 inputIndex, out MLOperatorEdgeDescription edgeDescription) mut => VT.GetInputEdgeDescription(ref this, inputIndex, out edgeDescription);
+			public HRESULT SetOutputEdgeDescription(uint32 outputIndex, in MLOperatorEdgeDescription edgeDescription) mut => VT.SetOutputEdgeDescription(ref this, outputIndex, edgeDescription);
+
 			[CRepr]
 			public struct VTable : IMLOperatorAttributes.VTable
 			{
@@ -774,10 +618,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InferOutputTypes(ref IMLOperatorTypeInferenceContext context) mut
-			{
-				return VT.InferOutputTypes(ref this, ref context);
-			}
+			public HRESULT InferOutputTypes(ref IMLOperatorTypeInferenceContext context) mut => VT.InferOutputTypes(ref this, ref context);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -791,10 +633,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InferOutputShapes(ref IMLOperatorShapeInferenceContext context) mut
-			{
-				return VT.InferOutputShapes(ref this, ref context);
-			}
+			public HRESULT InferOutputShapes(ref IMLOperatorShapeInferenceContext context) mut => VT.InferOutputShapes(ref this, ref context);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -808,10 +648,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateKernel(ref IMLOperatorKernelCreationContext context, out IMLOperatorKernel* kernel) mut
-			{
-				return VT.CreateKernel(ref this, ref context, out kernel);
-			}
+			public HRESULT CreateKernel(ref IMLOperatorKernelCreationContext context, out IMLOperatorKernel* kernel) mut => VT.CreateKernel(ref this, ref context, out kernel);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -825,14 +663,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterOperatorSetSchema(in MLOperatorSetId operatorSetId, int32 baselineVersion, MLOperatorSchemaDescription** schema, uint32 schemaCount, IMLOperatorTypeInferrer* typeInferrer, IMLOperatorShapeInferrer* shapeInferrer) mut
-			{
-				return VT.RegisterOperatorSetSchema(ref this, operatorSetId, baselineVersion, schema, schemaCount, typeInferrer, shapeInferrer);
-			}
-			public HRESULT RegisterOperatorKernel(in MLOperatorKernelDescription operatorKernel, ref IMLOperatorKernelFactory operatorKernelFactory, IMLOperatorShapeInferrer* shapeInferrer) mut
-			{
-				return VT.RegisterOperatorKernel(ref this, operatorKernel, ref operatorKernelFactory, shapeInferrer);
-			}
+			public HRESULT RegisterOperatorSetSchema(in MLOperatorSetId operatorSetId, int32 baselineVersion, MLOperatorSchemaDescription** schema, uint32 schemaCount, IMLOperatorTypeInferrer* typeInferrer, IMLOperatorShapeInferrer* shapeInferrer) mut => VT.RegisterOperatorSetSchema(ref this, operatorSetId, baselineVersion, schema, schemaCount, typeInferrer, shapeInferrer);
+			public HRESULT RegisterOperatorKernel(in MLOperatorKernelDescription operatorKernel, ref IMLOperatorKernelFactory operatorKernelFactory, IMLOperatorShapeInferrer* shapeInferrer) mut => VT.RegisterOperatorKernel(ref this, operatorKernel, ref operatorKernelFactory, shapeInferrer);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

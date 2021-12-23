@@ -438,18 +438,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRemoteName(out PWSTR pVal) mut
-			{
-				return VT.GetRemoteName(ref this, out pVal);
-			}
-			public HRESULT GetLocalName(out PWSTR pVal) mut
-			{
-				return VT.GetLocalName(ref this, out pVal);
-			}
-			public HRESULT GetProgress(out BG_FILE_PROGRESS pVal) mut
-			{
-				return VT.GetProgress(ref this, out pVal);
-			}
+			public HRESULT GetRemoteName(out PWSTR pVal) mut => VT.GetRemoteName(ref this, out pVal);
+			public HRESULT GetLocalName(out PWSTR pVal) mut => VT.GetLocalName(ref this, out pVal);
+			public HRESULT GetProgress(out BG_FILE_PROGRESS pVal) mut => VT.GetProgress(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -465,26 +457,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, out IBackgroundCopyFile* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, out rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumBackgroundCopyFiles* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
-			public HRESULT GetCount(out uint32 puCount) mut
-			{
-				return VT.GetCount(ref this, out puCount);
-			}
+			public HRESULT Next(uint32 celt, out IBackgroundCopyFile* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumBackgroundCopyFiles* ppenum) mut => VT.Clone(ref this, out ppenum);
+			public HRESULT GetCount(out uint32 puCount) mut => VT.GetCount(ref this, out puCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -502,26 +480,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetError(out BG_ERROR_CONTEXT pContext, out HRESULT pCode) mut
-			{
-				return VT.GetError(ref this, out pContext, out pCode);
-			}
-			public HRESULT GetFile(out IBackgroundCopyFile* pVal) mut
-			{
-				return VT.GetFile(ref this, out pVal);
-			}
-			public HRESULT GetErrorDescription(uint32 LanguageId, PWSTR* pErrorDescription) mut
-			{
-				return VT.GetErrorDescription(ref this, LanguageId, pErrorDescription);
-			}
-			public HRESULT GetErrorContextDescription(uint32 LanguageId, PWSTR* pContextDescription) mut
-			{
-				return VT.GetErrorContextDescription(ref this, LanguageId, pContextDescription);
-			}
-			public HRESULT GetProtocol(PWSTR* pProtocol) mut
-			{
-				return VT.GetProtocol(ref this, pProtocol);
-			}
+			public HRESULT GetError(out BG_ERROR_CONTEXT pContext, out HRESULT pCode) mut => VT.GetError(ref this, out pContext, out pCode);
+			public HRESULT GetFile(out IBackgroundCopyFile* pVal) mut => VT.GetFile(ref this, out pVal);
+			public HRESULT GetErrorDescription(uint32 LanguageId, PWSTR* pErrorDescription) mut => VT.GetErrorDescription(ref this, LanguageId, pErrorDescription);
+			public HRESULT GetErrorContextDescription(uint32 LanguageId, PWSTR* pContextDescription) mut => VT.GetErrorContextDescription(ref this, LanguageId, pContextDescription);
+			public HRESULT GetProtocol(PWSTR* pProtocol) mut => VT.GetProtocol(ref this, pProtocol);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -539,134 +503,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddFileSet(uint32 cFileCount, BG_FILE_INFO* pFileSet) mut
-			{
-				return VT.AddFileSet(ref this, cFileCount, pFileSet);
-			}
-			public HRESULT AddFile(PWSTR RemoteUrl, PWSTR LocalName) mut
-			{
-				return VT.AddFile(ref this, RemoteUrl, LocalName);
-			}
-			public HRESULT EnumFiles(out IEnumBackgroundCopyFiles* pEnum) mut
-			{
-				return VT.EnumFiles(ref this, out pEnum);
-			}
-			public HRESULT Suspend() mut
-			{
-				return VT.Suspend(ref this);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
-			public HRESULT Complete() mut
-			{
-				return VT.Complete(ref this);
-			}
-			public HRESULT GetId(out Guid pVal) mut
-			{
-				return VT.GetId(ref this, out pVal);
-			}
-			public HRESULT ComGetType(out BG_JOB_TYPE pVal) mut
-			{
-				return VT.ComGetType(ref this, out pVal);
-			}
-			public HRESULT GetProgress(out BG_JOB_PROGRESS pVal) mut
-			{
-				return VT.GetProgress(ref this, out pVal);
-			}
-			public HRESULT GetTimes(out BG_JOB_TIMES pVal) mut
-			{
-				return VT.GetTimes(ref this, out pVal);
-			}
-			public HRESULT GetState(out BG_JOB_STATE pVal) mut
-			{
-				return VT.GetState(ref this, out pVal);
-			}
-			public HRESULT GetError(out IBackgroundCopyError* ppError) mut
-			{
-				return VT.GetError(ref this, out ppError);
-			}
-			public HRESULT GetOwner(out PWSTR pVal) mut
-			{
-				return VT.GetOwner(ref this, out pVal);
-			}
-			public HRESULT SetDisplayName(PWSTR Val) mut
-			{
-				return VT.SetDisplayName(ref this, Val);
-			}
-			public HRESULT GetDisplayName(out PWSTR pVal) mut
-			{
-				return VT.GetDisplayName(ref this, out pVal);
-			}
-			public HRESULT SetDescription(PWSTR Val) mut
-			{
-				return VT.SetDescription(ref this, Val);
-			}
-			public HRESULT GetDescription(out PWSTR pVal) mut
-			{
-				return VT.GetDescription(ref this, out pVal);
-			}
-			public HRESULT SetPriority(BG_JOB_PRIORITY Val) mut
-			{
-				return VT.SetPriority(ref this, Val);
-			}
-			public HRESULT GetPriority(out BG_JOB_PRIORITY pVal) mut
-			{
-				return VT.GetPriority(ref this, out pVal);
-			}
-			public HRESULT SetNotifyFlags(uint32 Val) mut
-			{
-				return VT.SetNotifyFlags(ref this, Val);
-			}
-			public HRESULT GetNotifyFlags(out uint32 pVal) mut
-			{
-				return VT.GetNotifyFlags(ref this, out pVal);
-			}
-			public HRESULT SetNotifyInterface(ref IUnknown Val) mut
-			{
-				return VT.SetNotifyInterface(ref this, ref Val);
-			}
-			public HRESULT GetNotifyInterface(out IUnknown* pVal) mut
-			{
-				return VT.GetNotifyInterface(ref this, out pVal);
-			}
-			public HRESULT SetMinimumRetryDelay(uint32 Seconds) mut
-			{
-				return VT.SetMinimumRetryDelay(ref this, Seconds);
-			}
-			public HRESULT GetMinimumRetryDelay(out uint32 Seconds) mut
-			{
-				return VT.GetMinimumRetryDelay(ref this, out Seconds);
-			}
-			public HRESULT SetNoProgressTimeout(uint32 Seconds) mut
-			{
-				return VT.SetNoProgressTimeout(ref this, Seconds);
-			}
-			public HRESULT GetNoProgressTimeout(out uint32 Seconds) mut
-			{
-				return VT.GetNoProgressTimeout(ref this, out Seconds);
-			}
-			public HRESULT GetErrorCount(out uint32 Errors) mut
-			{
-				return VT.GetErrorCount(ref this, out Errors);
-			}
-			public HRESULT SetProxySettings(BG_JOB_PROXY_USAGE ProxyUsage, PWSTR ProxyList, PWSTR ProxyBypassList) mut
-			{
-				return VT.SetProxySettings(ref this, ProxyUsage, ProxyList, ProxyBypassList);
-			}
-			public HRESULT GetProxySettings(out BG_JOB_PROXY_USAGE pProxyUsage, out PWSTR pProxyList, out PWSTR pProxyBypassList) mut
-			{
-				return VT.GetProxySettings(ref this, out pProxyUsage, out pProxyList, out pProxyBypassList);
-			}
-			public HRESULT TakeOwnership() mut
-			{
-				return VT.TakeOwnership(ref this);
-			}
+			public HRESULT AddFileSet(uint32 cFileCount, BG_FILE_INFO* pFileSet) mut => VT.AddFileSet(ref this, cFileCount, pFileSet);
+			public HRESULT AddFile(PWSTR RemoteUrl, PWSTR LocalName) mut => VT.AddFile(ref this, RemoteUrl, LocalName);
+			public HRESULT EnumFiles(out IEnumBackgroundCopyFiles* pEnum) mut => VT.EnumFiles(ref this, out pEnum);
+			public HRESULT Suspend() mut => VT.Suspend(ref this);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+			public HRESULT Complete() mut => VT.Complete(ref this);
+			public HRESULT GetId(out Guid pVal) mut => VT.GetId(ref this, out pVal);
+			public HRESULT ComGetType(out BG_JOB_TYPE pVal) mut => VT.ComGetType(ref this, out pVal);
+			public HRESULT GetProgress(out BG_JOB_PROGRESS pVal) mut => VT.GetProgress(ref this, out pVal);
+			public HRESULT GetTimes(out BG_JOB_TIMES pVal) mut => VT.GetTimes(ref this, out pVal);
+			public HRESULT GetState(out BG_JOB_STATE pVal) mut => VT.GetState(ref this, out pVal);
+			public HRESULT GetError(out IBackgroundCopyError* ppError) mut => VT.GetError(ref this, out ppError);
+			public HRESULT GetOwner(out PWSTR pVal) mut => VT.GetOwner(ref this, out pVal);
+			public HRESULT SetDisplayName(PWSTR Val) mut => VT.SetDisplayName(ref this, Val);
+			public HRESULT GetDisplayName(out PWSTR pVal) mut => VT.GetDisplayName(ref this, out pVal);
+			public HRESULT SetDescription(PWSTR Val) mut => VT.SetDescription(ref this, Val);
+			public HRESULT GetDescription(out PWSTR pVal) mut => VT.GetDescription(ref this, out pVal);
+			public HRESULT SetPriority(BG_JOB_PRIORITY Val) mut => VT.SetPriority(ref this, Val);
+			public HRESULT GetPriority(out BG_JOB_PRIORITY pVal) mut => VT.GetPriority(ref this, out pVal);
+			public HRESULT SetNotifyFlags(uint32 Val) mut => VT.SetNotifyFlags(ref this, Val);
+			public HRESULT GetNotifyFlags(out uint32 pVal) mut => VT.GetNotifyFlags(ref this, out pVal);
+			public HRESULT SetNotifyInterface(ref IUnknown Val) mut => VT.SetNotifyInterface(ref this, ref Val);
+			public HRESULT GetNotifyInterface(out IUnknown* pVal) mut => VT.GetNotifyInterface(ref this, out pVal);
+			public HRESULT SetMinimumRetryDelay(uint32 Seconds) mut => VT.SetMinimumRetryDelay(ref this, Seconds);
+			public HRESULT GetMinimumRetryDelay(out uint32 Seconds) mut => VT.GetMinimumRetryDelay(ref this, out Seconds);
+			public HRESULT SetNoProgressTimeout(uint32 Seconds) mut => VT.SetNoProgressTimeout(ref this, Seconds);
+			public HRESULT GetNoProgressTimeout(out uint32 Seconds) mut => VT.GetNoProgressTimeout(ref this, out Seconds);
+			public HRESULT GetErrorCount(out uint32 Errors) mut => VT.GetErrorCount(ref this, out Errors);
+			public HRESULT SetProxySettings(BG_JOB_PROXY_USAGE ProxyUsage, PWSTR ProxyList, PWSTR ProxyBypassList) mut => VT.SetProxySettings(ref this, ProxyUsage, ProxyList, ProxyBypassList);
+			public HRESULT GetProxySettings(out BG_JOB_PROXY_USAGE pProxyUsage, out PWSTR pProxyList, out PWSTR pProxyBypassList) mut => VT.GetProxySettings(ref this, out pProxyUsage, out pProxyList, out pProxyBypassList);
+			public HRESULT TakeOwnership() mut => VT.TakeOwnership(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -711,26 +580,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, out IBackgroundCopyJob* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, out rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumBackgroundCopyJobs* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
-			public HRESULT GetCount(out uint32 puCount) mut
-			{
-				return VT.GetCount(ref this, out puCount);
-			}
+			public HRESULT Next(uint32 celt, out IBackgroundCopyJob* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumBackgroundCopyJobs* ppenum) mut => VT.Clone(ref this, out ppenum);
+			public HRESULT GetCount(out uint32 puCount) mut => VT.GetCount(ref this, out puCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -748,18 +603,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT JobTransferred(ref IBackgroundCopyJob pJob) mut
-			{
-				return VT.JobTransferred(ref this, ref pJob);
-			}
-			public HRESULT JobError(ref IBackgroundCopyJob pJob, ref IBackgroundCopyError pError) mut
-			{
-				return VT.JobError(ref this, ref pJob, ref pError);
-			}
-			public HRESULT JobModification(ref IBackgroundCopyJob pJob, uint32 dwReserved) mut
-			{
-				return VT.JobModification(ref this, ref pJob, dwReserved);
-			}
+			public HRESULT JobTransferred(ref IBackgroundCopyJob pJob) mut => VT.JobTransferred(ref this, ref pJob);
+			public HRESULT JobError(ref IBackgroundCopyJob pJob, ref IBackgroundCopyError pError) mut => VT.JobError(ref this, ref pJob, ref pError);
+			public HRESULT JobModification(ref IBackgroundCopyJob pJob, uint32 dwReserved) mut => VT.JobModification(ref this, ref pJob, dwReserved);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -775,30 +622,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_JobTransferred(ref IBackgroundCopyJob pJob) mut
-			{
-				return VT.Begin_JobTransferred(ref this, ref pJob);
-			}
-			public HRESULT Finish_JobTransferred() mut
-			{
-				return VT.Finish_JobTransferred(ref this);
-			}
-			public HRESULT Begin_JobError(ref IBackgroundCopyJob pJob, ref IBackgroundCopyError pError) mut
-			{
-				return VT.Begin_JobError(ref this, ref pJob, ref pError);
-			}
-			public HRESULT Finish_JobError() mut
-			{
-				return VT.Finish_JobError(ref this);
-			}
-			public HRESULT Begin_JobModification(ref IBackgroundCopyJob pJob, uint32 dwReserved) mut
-			{
-				return VT.Begin_JobModification(ref this, ref pJob, dwReserved);
-			}
-			public HRESULT Finish_JobModification() mut
-			{
-				return VT.Finish_JobModification(ref this);
-			}
+			public HRESULT Begin_JobTransferred(ref IBackgroundCopyJob pJob) mut => VT.Begin_JobTransferred(ref this, ref pJob);
+			public HRESULT Finish_JobTransferred() mut => VT.Finish_JobTransferred(ref this);
+			public HRESULT Begin_JobError(ref IBackgroundCopyJob pJob, ref IBackgroundCopyError pError) mut => VT.Begin_JobError(ref this, ref pJob, ref pError);
+			public HRESULT Finish_JobError() mut => VT.Finish_JobError(ref this);
+			public HRESULT Begin_JobModification(ref IBackgroundCopyJob pJob, uint32 dwReserved) mut => VT.Begin_JobModification(ref this, ref pJob, dwReserved);
+			public HRESULT Finish_JobModification() mut => VT.Finish_JobModification(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -817,22 +647,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateJob(PWSTR DisplayName, BG_JOB_TYPE Type, out Guid pJobId, out IBackgroundCopyJob* ppJob) mut
-			{
-				return VT.CreateJob(ref this, DisplayName, Type, out pJobId, out ppJob);
-			}
-			public HRESULT GetJob(in Guid jobID, out IBackgroundCopyJob* ppJob) mut
-			{
-				return VT.GetJob(ref this, jobID, out ppJob);
-			}
-			public HRESULT EnumJobs(uint32 dwFlags, out IEnumBackgroundCopyJobs* ppEnum) mut
-			{
-				return VT.EnumJobs(ref this, dwFlags, out ppEnum);
-			}
-			public HRESULT GetErrorDescription(HRESULT hResult, uint32 LanguageId, out PWSTR pErrorDescription) mut
-			{
-				return VT.GetErrorDescription(ref this, hResult, LanguageId, out pErrorDescription);
-			}
+			public HRESULT CreateJob(PWSTR DisplayName, BG_JOB_TYPE Type, out Guid pJobId, out IBackgroundCopyJob* ppJob) mut => VT.CreateJob(ref this, DisplayName, Type, out pJobId, out ppJob);
+			public HRESULT GetJob(in Guid jobID, out IBackgroundCopyJob* ppJob) mut => VT.GetJob(ref this, jobID, out ppJob);
+			public HRESULT EnumJobs(uint32 dwFlags, out IEnumBackgroundCopyJobs* ppEnum) mut => VT.EnumJobs(ref this, dwFlags, out ppEnum);
+			public HRESULT GetErrorDescription(HRESULT hResult, uint32 LanguageId, out PWSTR pErrorDescription) mut => VT.GetErrorDescription(ref this, hResult, LanguageId, out pErrorDescription);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -849,38 +668,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetNotifyCmdLine(PWSTR Program, PWSTR Parameters) mut
-			{
-				return VT.SetNotifyCmdLine(ref this, Program, Parameters);
-			}
-			public HRESULT GetNotifyCmdLine(out PWSTR pProgram, out PWSTR pParameters) mut
-			{
-				return VT.GetNotifyCmdLine(ref this, out pProgram, out pParameters);
-			}
-			public HRESULT GetReplyProgress(out BG_JOB_REPLY_PROGRESS pProgress) mut
-			{
-				return VT.GetReplyProgress(ref this, out pProgress);
-			}
-			public HRESULT GetReplyData(uint8** ppBuffer, out uint64 pLength) mut
-			{
-				return VT.GetReplyData(ref this, ppBuffer, out pLength);
-			}
-			public HRESULT SetReplyFileName(PWSTR ReplyFileName) mut
-			{
-				return VT.SetReplyFileName(ref this, ReplyFileName);
-			}
-			public HRESULT GetReplyFileName(out PWSTR pReplyFileName) mut
-			{
-				return VT.GetReplyFileName(ref this, out pReplyFileName);
-			}
-			public HRESULT SetCredentials(ref BG_AUTH_CREDENTIALS credentials) mut
-			{
-				return VT.SetCredentials(ref this, ref credentials);
-			}
-			public HRESULT RemoveCredentials(BG_AUTH_TARGET Target, BG_AUTH_SCHEME Scheme) mut
-			{
-				return VT.RemoveCredentials(ref this, Target, Scheme);
-			}
+			public HRESULT SetNotifyCmdLine(PWSTR Program, PWSTR Parameters) mut => VT.SetNotifyCmdLine(ref this, Program, Parameters);
+			public HRESULT GetNotifyCmdLine(out PWSTR pProgram, out PWSTR pParameters) mut => VT.GetNotifyCmdLine(ref this, out pProgram, out pParameters);
+			public HRESULT GetReplyProgress(out BG_JOB_REPLY_PROGRESS pProgress) mut => VT.GetReplyProgress(ref this, out pProgress);
+			public HRESULT GetReplyData(uint8** ppBuffer, out uint64 pLength) mut => VT.GetReplyData(ref this, ppBuffer, out pLength);
+			public HRESULT SetReplyFileName(PWSTR ReplyFileName) mut => VT.SetReplyFileName(ref this, ReplyFileName);
+			public HRESULT GetReplyFileName(out PWSTR pReplyFileName) mut => VT.GetReplyFileName(ref this, out pReplyFileName);
+			public HRESULT SetCredentials(ref BG_AUTH_CREDENTIALS credentials) mut => VT.SetCredentials(ref this, ref credentials);
+			public HRESULT RemoveCredentials(BG_AUTH_TARGET Target, BG_AUTH_SCHEME Scheme) mut => VT.RemoveCredentials(ref this, Target, Scheme);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob.VTable
 			{
@@ -901,22 +697,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReplaceRemotePrefix(PWSTR OldPrefix, PWSTR NewPrefix) mut
-			{
-				return VT.ReplaceRemotePrefix(ref this, OldPrefix, NewPrefix);
-			}
-			public HRESULT AddFileWithRanges(PWSTR RemoteUrl, PWSTR LocalName, uint32 RangeCount, BG_FILE_RANGE* Ranges) mut
-			{
-				return VT.AddFileWithRanges(ref this, RemoteUrl, LocalName, RangeCount, Ranges);
-			}
-			public HRESULT SetFileACLFlags(uint32 Flags) mut
-			{
-				return VT.SetFileACLFlags(ref this, Flags);
-			}
-			public HRESULT GetFileACLFlags(out uint32 Flags) mut
-			{
-				return VT.GetFileACLFlags(ref this, out Flags);
-			}
+			public HRESULT ReplaceRemotePrefix(PWSTR OldPrefix, PWSTR NewPrefix) mut => VT.ReplaceRemotePrefix(ref this, OldPrefix, NewPrefix);
+			public HRESULT AddFileWithRanges(PWSTR RemoteUrl, PWSTR LocalName, uint32 RangeCount, BG_FILE_RANGE* Ranges) mut => VT.AddFileWithRanges(ref this, RemoteUrl, LocalName, RangeCount, Ranges);
+			public HRESULT SetFileACLFlags(uint32 Flags) mut => VT.SetFileACLFlags(ref this, Flags);
+			public HRESULT GetFileACLFlags(out uint32 Flags) mut => VT.GetFileACLFlags(ref this, out Flags);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob2.VTable
 			{
@@ -933,14 +718,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFileRanges(out uint32 RangeCount, BG_FILE_RANGE** Ranges) mut
-			{
-				return VT.GetFileRanges(ref this, out RangeCount, Ranges);
-			}
-			public HRESULT SetRemoteName(PWSTR Val) mut
-			{
-				return VT.SetRemoteName(ref this, Val);
-			}
+			public HRESULT GetFileRanges(out uint32 RangeCount, BG_FILE_RANGE** Ranges) mut => VT.GetFileRanges(ref this, out RangeCount, Ranges);
+			public HRESULT SetRemoteName(PWSTR Val) mut => VT.SetRemoteName(ref this, Val);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile.VTable
 			{
@@ -955,38 +735,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetClientCertificateByID(BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) mut
-			{
-				return VT.SetClientCertificateByID(ref this, StoreLocation, StoreName, pCertHashBlob);
-			}
-			public HRESULT SetClientCertificateByName(BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) mut
-			{
-				return VT.SetClientCertificateByName(ref this, StoreLocation, StoreName, SubjectName);
-			}
-			public HRESULT RemoveClientCertificate() mut
-			{
-				return VT.RemoveClientCertificate(ref this);
-			}
-			public HRESULT GetClientCertificate(out BG_CERT_STORE_LOCATION pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) mut
-			{
-				return VT.GetClientCertificate(ref this, out pStoreLocation, pStoreName, ppCertHashBlob, pSubjectName);
-			}
-			public HRESULT SetCustomHeaders(PWSTR RequestHeaders) mut
-			{
-				return VT.SetCustomHeaders(ref this, RequestHeaders);
-			}
-			public HRESULT GetCustomHeaders(PWSTR* pRequestHeaders) mut
-			{
-				return VT.GetCustomHeaders(ref this, pRequestHeaders);
-			}
-			public HRESULT SetSecurityFlags(uint32 Flags) mut
-			{
-				return VT.SetSecurityFlags(ref this, Flags);
-			}
-			public HRESULT GetSecurityFlags(out uint32 pFlags) mut
-			{
-				return VT.GetSecurityFlags(ref this, out pFlags);
-			}
+			public HRESULT SetClientCertificateByID(BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) mut => VT.SetClientCertificateByID(ref this, StoreLocation, StoreName, pCertHashBlob);
+			public HRESULT SetClientCertificateByName(BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) mut => VT.SetClientCertificateByName(ref this, StoreLocation, StoreName, SubjectName);
+			public HRESULT RemoveClientCertificate() mut => VT.RemoveClientCertificate(ref this);
+			public HRESULT GetClientCertificate(out BG_CERT_STORE_LOCATION pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) mut => VT.GetClientCertificate(ref this, out pStoreLocation, pStoreName, ppCertHashBlob, pSubjectName);
+			public HRESULT SetCustomHeaders(PWSTR RequestHeaders) mut => VT.SetCustomHeaders(ref this, RequestHeaders);
+			public HRESULT GetCustomHeaders(PWSTR* pRequestHeaders) mut => VT.GetCustomHeaders(ref this, pRequestHeaders);
+			public HRESULT SetSecurityFlags(uint32 Flags) mut => VT.SetSecurityFlags(ref this, Flags);
+			public HRESULT GetSecurityFlags(out uint32 pFlags) mut => VT.GetSecurityFlags(ref this, out pFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1007,34 +764,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetId(out Guid pVal) mut
-			{
-				return VT.GetId(ref this, out pVal);
-			}
-			public HRESULT GetOriginUrl(out PWSTR pVal) mut
-			{
-				return VT.GetOriginUrl(ref this, out pVal);
-			}
-			public HRESULT GetFileSize(out uint64 pVal) mut
-			{
-				return VT.GetFileSize(ref this, out pVal);
-			}
-			public HRESULT GetFileModificationTime(out FILETIME pVal) mut
-			{
-				return VT.GetFileModificationTime(ref this, out pVal);
-			}
-			public HRESULT GetLastAccessTime(out FILETIME pVal) mut
-			{
-				return VT.GetLastAccessTime(ref this, out pVal);
-			}
-			public HRESULT IsFileValidated() mut
-			{
-				return VT.IsFileValidated(ref this);
-			}
-			public HRESULT GetFileRanges(out uint32 pRangeCount, BG_FILE_RANGE** ppRanges) mut
-			{
-				return VT.GetFileRanges(ref this, out pRangeCount, ppRanges);
-			}
+			public HRESULT GetId(out Guid pVal) mut => VT.GetId(ref this, out pVal);
+			public HRESULT GetOriginUrl(out PWSTR pVal) mut => VT.GetOriginUrl(ref this, out pVal);
+			public HRESULT GetFileSize(out uint64 pVal) mut => VT.GetFileSize(ref this, out pVal);
+			public HRESULT GetFileModificationTime(out FILETIME pVal) mut => VT.GetFileModificationTime(ref this, out pVal);
+			public HRESULT GetLastAccessTime(out FILETIME pVal) mut => VT.GetLastAccessTime(ref this, out pVal);
+			public HRESULT IsFileValidated() mut => VT.IsFileValidated(ref this);
+			public HRESULT GetFileRanges(out uint32 pRangeCount, BG_FILE_RANGE** ppRanges) mut => VT.GetFileRanges(ref this, out pRangeCount, ppRanges);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1054,26 +791,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, out IBitsPeerCacheRecord* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, out rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumBitsPeerCacheRecords* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
-			public HRESULT GetCount(out uint32 puCount) mut
-			{
-				return VT.GetCount(ref this, out puCount);
-			}
+			public HRESULT Next(uint32 celt, out IBitsPeerCacheRecord* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumBitsPeerCacheRecords* ppenum) mut => VT.Clone(ref this, out ppenum);
+			public HRESULT GetCount(out uint32 puCount) mut => VT.GetCount(ref this, out puCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1091,18 +814,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPeerName(PWSTR* pName) mut
-			{
-				return VT.GetPeerName(ref this, pName);
-			}
-			public HRESULT IsAuthenticated(out BOOL pAuth) mut
-			{
-				return VT.IsAuthenticated(ref this, out pAuth);
-			}
-			public HRESULT IsAvailable(out BOOL pOnline) mut
-			{
-				return VT.IsAvailable(ref this, out pOnline);
-			}
+			public HRESULT GetPeerName(PWSTR* pName) mut => VT.GetPeerName(ref this, pName);
+			public HRESULT IsAuthenticated(out BOOL pAuth) mut => VT.IsAuthenticated(ref this, out pAuth);
+			public HRESULT IsAvailable(out BOOL pOnline) mut => VT.IsAvailable(ref this, out pOnline);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1118,26 +833,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, out IBitsPeer* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, out rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumBitsPeers* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
-			public HRESULT GetCount(out uint32 puCount) mut
-			{
-				return VT.GetCount(ref this, out puCount);
-			}
+			public HRESULT Next(uint32 celt, out IBitsPeer* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumBitsPeers* ppenum) mut => VT.Clone(ref this, out ppenum);
+			public HRESULT GetCount(out uint32 puCount) mut => VT.GetCount(ref this, out puCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1155,62 +856,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMaximumCacheSize(out uint32 pBytes) mut
-			{
-				return VT.GetMaximumCacheSize(ref this, out pBytes);
-			}
-			public HRESULT SetMaximumCacheSize(uint32 Bytes) mut
-			{
-				return VT.SetMaximumCacheSize(ref this, Bytes);
-			}
-			public HRESULT GetMaximumContentAge(out uint32 pSeconds) mut
-			{
-				return VT.GetMaximumContentAge(ref this, out pSeconds);
-			}
-			public HRESULT SetMaximumContentAge(uint32 Seconds) mut
-			{
-				return VT.SetMaximumContentAge(ref this, Seconds);
-			}
-			public HRESULT GetConfigurationFlags(out uint32 pFlags) mut
-			{
-				return VT.GetConfigurationFlags(ref this, out pFlags);
-			}
-			public HRESULT SetConfigurationFlags(uint32 Flags) mut
-			{
-				return VT.SetConfigurationFlags(ref this, Flags);
-			}
-			public HRESULT EnumRecords(out IEnumBitsPeerCacheRecords* ppEnum) mut
-			{
-				return VT.EnumRecords(ref this, out ppEnum);
-			}
-			public HRESULT GetRecord(in Guid id, out IBitsPeerCacheRecord* ppRecord) mut
-			{
-				return VT.GetRecord(ref this, id, out ppRecord);
-			}
-			public HRESULT ClearRecords() mut
-			{
-				return VT.ClearRecords(ref this);
-			}
-			public HRESULT DeleteRecord(in Guid id) mut
-			{
-				return VT.DeleteRecord(ref this, id);
-			}
-			public HRESULT DeleteUrl(PWSTR url) mut
-			{
-				return VT.DeleteUrl(ref this, url);
-			}
-			public HRESULT EnumPeers(IEnumBitsPeers** ppEnum) mut
-			{
-				return VT.EnumPeers(ref this, ppEnum);
-			}
-			public HRESULT ClearPeers() mut
-			{
-				return VT.ClearPeers(ref this);
-			}
-			public HRESULT DiscoverPeers() mut
-			{
-				return VT.DiscoverPeers(ref this);
-			}
+			public HRESULT GetMaximumCacheSize(out uint32 pBytes) mut => VT.GetMaximumCacheSize(ref this, out pBytes);
+			public HRESULT SetMaximumCacheSize(uint32 Bytes) mut => VT.SetMaximumCacheSize(ref this, Bytes);
+			public HRESULT GetMaximumContentAge(out uint32 pSeconds) mut => VT.GetMaximumContentAge(ref this, out pSeconds);
+			public HRESULT SetMaximumContentAge(uint32 Seconds) mut => VT.SetMaximumContentAge(ref this, Seconds);
+			public HRESULT GetConfigurationFlags(out uint32 pFlags) mut => VT.GetConfigurationFlags(ref this, out pFlags);
+			public HRESULT SetConfigurationFlags(uint32 Flags) mut => VT.SetConfigurationFlags(ref this, Flags);
+			public HRESULT EnumRecords(out IEnumBitsPeerCacheRecords* ppEnum) mut => VT.EnumRecords(ref this, out ppEnum);
+			public HRESULT GetRecord(in Guid id, out IBitsPeerCacheRecord* ppRecord) mut => VT.GetRecord(ref this, id, out ppRecord);
+			public HRESULT ClearRecords() mut => VT.ClearRecords(ref this);
+			public HRESULT DeleteRecord(in Guid id) mut => VT.DeleteRecord(ref this, id);
+			public HRESULT DeleteUrl(PWSTR url) mut => VT.DeleteUrl(ref this, url);
+			public HRESULT EnumPeers(IEnumBitsPeers** ppEnum) mut => VT.EnumPeers(ref this, ppEnum);
+			public HRESULT ClearPeers() mut => VT.ClearPeers(ref this);
+			public HRESULT DiscoverPeers() mut => VT.DiscoverPeers(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1237,30 +897,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPeerCachingFlags(uint32 Flags) mut
-			{
-				return VT.SetPeerCachingFlags(ref this, Flags);
-			}
-			public HRESULT GetPeerCachingFlags(out uint32 pFlags) mut
-			{
-				return VT.GetPeerCachingFlags(ref this, out pFlags);
-			}
-			public HRESULT GetOwnerIntegrityLevel(out uint32 pLevel) mut
-			{
-				return VT.GetOwnerIntegrityLevel(ref this, out pLevel);
-			}
-			public HRESULT GetOwnerElevationState(out BOOL pElevated) mut
-			{
-				return VT.GetOwnerElevationState(ref this, out pElevated);
-			}
-			public HRESULT SetMaximumDownloadTime(uint32 Timeout) mut
-			{
-				return VT.SetMaximumDownloadTime(ref this, Timeout);
-			}
-			public HRESULT GetMaximumDownloadTime(out uint32 pTimeout) mut
-			{
-				return VT.GetMaximumDownloadTime(ref this, out pTimeout);
-			}
+			public HRESULT SetPeerCachingFlags(uint32 Flags) mut => VT.SetPeerCachingFlags(ref this, Flags);
+			public HRESULT GetPeerCachingFlags(out uint32 pFlags) mut => VT.GetPeerCachingFlags(ref this, out pFlags);
+			public HRESULT GetOwnerIntegrityLevel(out uint32 pLevel) mut => VT.GetOwnerIntegrityLevel(ref this, out pLevel);
+			public HRESULT GetOwnerElevationState(out BOOL pElevated) mut => VT.GetOwnerElevationState(ref this, out pElevated);
+			public HRESULT SetMaximumDownloadTime(uint32 Timeout) mut => VT.SetMaximumDownloadTime(ref this, Timeout);
+			public HRESULT GetMaximumDownloadTime(out uint32 pTimeout) mut => VT.GetMaximumDownloadTime(ref this, out pTimeout);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob3.VTable
 			{
@@ -1279,22 +922,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTemporaryName(out PWSTR pFilename) mut
-			{
-				return VT.GetTemporaryName(ref this, out pFilename);
-			}
-			public HRESULT SetValidationState(BOOL state) mut
-			{
-				return VT.SetValidationState(ref this, state);
-			}
-			public HRESULT GetValidationState(out BOOL pState) mut
-			{
-				return VT.GetValidationState(ref this, out pState);
-			}
-			public HRESULT IsDownloadedFromPeer(out BOOL pVal) mut
-			{
-				return VT.IsDownloadedFromPeer(ref this, out pVal);
-			}
+			public HRESULT GetTemporaryName(out PWSTR pFilename) mut => VT.GetTemporaryName(ref this, out pFilename);
+			public HRESULT SetValidationState(BOOL state) mut => VT.SetValidationState(ref this, state);
+			public HRESULT GetValidationState(out BOOL pState) mut => VT.GetValidationState(ref this, out pState);
+			public HRESULT IsDownloadedFromPeer(out BOOL pVal) mut => VT.IsDownloadedFromPeer(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile2.VTable
 			{
@@ -1311,10 +943,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FileTransferred(ref IBackgroundCopyJob pJob, ref IBackgroundCopyFile pFile) mut
-			{
-				return VT.FileTransferred(ref this, ref pJob, ref pFile);
-			}
+			public HRESULT FileTransferred(ref IBackgroundCopyJob pJob, ref IBackgroundCopyFile pFile) mut => VT.FileTransferred(ref this, ref pJob, ref pFile);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyCallback.VTable
 			{
@@ -1328,26 +958,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetHelperTokenFlags(BG_TOKEN UsageFlags) mut
-			{
-				return VT.SetHelperTokenFlags(ref this, UsageFlags);
-			}
-			public HRESULT GetHelperTokenFlags(out BG_TOKEN pFlags) mut
-			{
-				return VT.GetHelperTokenFlags(ref this, out pFlags);
-			}
-			public HRESULT SetHelperToken() mut
-			{
-				return VT.SetHelperToken(ref this);
-			}
-			public HRESULT ClearHelperToken() mut
-			{
-				return VT.ClearHelperToken(ref this);
-			}
-			public HRESULT GetHelperTokenSid(out PWSTR pSid) mut
-			{
-				return VT.GetHelperTokenSid(ref this, out pSid);
-			}
+			public HRESULT SetHelperTokenFlags(BG_TOKEN UsageFlags) mut => VT.SetHelperTokenFlags(ref this, UsageFlags);
+			public HRESULT GetHelperTokenFlags(out BG_TOKEN pFlags) mut => VT.GetHelperTokenFlags(ref this, out pFlags);
+			public HRESULT SetHelperToken() mut => VT.SetHelperToken(ref this);
+			public HRESULT ClearHelperToken() mut => VT.ClearHelperToken(ref this);
+			public HRESULT GetHelperTokenSid(out PWSTR pSid) mut => VT.GetHelperTokenSid(ref this, out pSid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1365,10 +981,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPeerDownloadStats(out uint64 pFromOrigin, out uint64 pFromPeers) mut
-			{
-				return VT.GetPeerDownloadStats(ref this, out pFromOrigin, out pFromPeers);
-			}
+			public HRESULT GetPeerDownloadStats(out uint64 pFromOrigin, out uint64 pFromPeers) mut => VT.GetPeerDownloadStats(ref this, out pFromOrigin, out pFromPeers);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile3.VTable
 			{
@@ -1382,14 +996,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProperty(BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE PropertyValue) mut
-			{
-				return VT.SetProperty(ref this, PropertyId, PropertyValue);
-			}
-			public HRESULT GetProperty(BITS_JOB_PROPERTY_ID PropertyId, out BITS_JOB_PROPERTY_VALUE PropertyValue) mut
-			{
-				return VT.GetProperty(ref this, PropertyId, out PropertyValue);
-			}
+			public HRESULT SetProperty(BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE PropertyValue) mut => VT.SetProperty(ref this, PropertyId, PropertyValue);
+			public HRESULT GetProperty(BITS_JOB_PROPERTY_ID PropertyId, out BITS_JOB_PROPERTY_VALUE PropertyValue) mut => VT.GetProperty(ref this, PropertyId, out PropertyValue);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob4.VTable
 			{
@@ -1404,14 +1013,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProperty(BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE PropertyValue) mut
-			{
-				return VT.SetProperty(ref this, PropertyId, PropertyValue);
-			}
-			public HRESULT GetProperty(BITS_FILE_PROPERTY_ID PropertyId, out BITS_FILE_PROPERTY_VALUE PropertyValue) mut
-			{
-				return VT.GetProperty(ref this, PropertyId, out PropertyValue);
-			}
+			public HRESULT SetProperty(BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE PropertyValue) mut => VT.SetProperty(ref this, PropertyId, PropertyValue);
+			public HRESULT GetProperty(BITS_FILE_PROPERTY_ID PropertyId, out BITS_FILE_PROPERTY_VALUE PropertyValue) mut => VT.GetProperty(ref this, PropertyId, out PropertyValue);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile4.VTable
 			{
@@ -1426,10 +1030,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FileRangesTransferred(ref IBackgroundCopyJob job, ref IBackgroundCopyFile file, uint32 rangeCount, BG_FILE_RANGE* ranges) mut
-			{
-				return VT.FileRangesTransferred(ref this, ref job, ref file, rangeCount, ranges);
-			}
+			public HRESULT FileRangesTransferred(ref IBackgroundCopyJob job, ref IBackgroundCopyFile file, uint32 rangeCount, BG_FILE_RANGE* ranges) mut => VT.FileRangesTransferred(ref this, ref job, ref file, rangeCount, ranges);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyCallback2.VTable
 			{
@@ -1443,18 +1045,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateDownloadPosition(uint64 offset) mut
-			{
-				return VT.UpdateDownloadPosition(ref this, offset);
-			}
-			public HRESULT RequestFileRanges(uint32 rangeCount, BG_FILE_RANGE* ranges) mut
-			{
-				return VT.RequestFileRanges(ref this, rangeCount, ranges);
-			}
-			public HRESULT GetFilledFileRanges(out uint32 rangeCount, BG_FILE_RANGE** ranges) mut
-			{
-				return VT.GetFilledFileRanges(ref this, out rangeCount, ranges);
-			}
+			public HRESULT UpdateDownloadPosition(uint64 offset) mut => VT.UpdateDownloadPosition(ref this, offset);
+			public HRESULT RequestFileRanges(uint32 rangeCount, BG_FILE_RANGE* ranges) mut => VT.RequestFileRanges(ref this, rangeCount, ranges);
+			public HRESULT GetFilledFileRanges(out uint32 rangeCount, BG_FILE_RANGE** ranges) mut => VT.GetFilledFileRanges(ref this, out rangeCount, ranges);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile5.VTable
 			{
@@ -1470,14 +1064,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetHttpMethod(PWSTR method) mut
-			{
-				return VT.SetHttpMethod(ref this, method);
-			}
-			public HRESULT GetHttpMethod(out PWSTR method) mut
-			{
-				return VT.GetHttpMethod(ref this, out method);
-			}
+			public HRESULT SetHttpMethod(PWSTR method) mut => VT.SetHttpMethod(ref this, method);
+			public HRESULT GetHttpMethod(out PWSTR method) mut => VT.GetHttpMethod(ref this, out method);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyJobHttpOptions.VTable
 			{
@@ -1492,10 +1081,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ValidateServerCertificate(ref IBackgroundCopyJob job, ref IBackgroundCopyFile file, uint32 certLength, uint8* certData, uint32 certEncodingType, uint32 certStoreLength, uint8* certStoreData) mut
-			{
-				return VT.ValidateServerCertificate(ref this, ref job, ref file, certLength, certData, certEncodingType, certStoreLength, certStoreData);
-			}
+			public HRESULT ValidateServerCertificate(ref IBackgroundCopyJob job, ref IBackgroundCopyFile file, uint32 certLength, uint8* certData, uint32 certEncodingType, uint32 certStoreLength, uint8* certStoreData) mut => VT.ValidateServerCertificate(ref this, ref job, ref file, certLength, certData, certEncodingType, certStoreLength, certStoreData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1509,14 +1096,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetServerCertificateValidationInterface(ref IUnknown certValidationCallback) mut
-			{
-				return VT.SetServerCertificateValidationInterface(ref this, ref certValidationCallback);
-			}
-			public HRESULT MakeCustomHeadersWriteOnly() mut
-			{
-				return VT.MakeCustomHeadersWriteOnly(ref this);
-			}
+			public HRESULT SetServerCertificateValidationInterface(ref IUnknown certValidationCallback) mut => VT.SetServerCertificateValidationInterface(ref this, ref certValidationCallback);
+			public HRESULT MakeCustomHeadersWriteOnly() mut => VT.MakeCustomHeadersWriteOnly(ref this);
+
 			[CRepr]
 			public struct VTable : IBackgroundCopyJobHttpOptions2.VTable
 			{
@@ -1531,22 +1113,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnableBITSUploads() mut
-			{
-				return VT.EnableBITSUploads(ref this);
-			}
-			public HRESULT DisableBITSUploads() mut
-			{
-				return VT.DisableBITSUploads(ref this);
-			}
-			public HRESULT GetCleanupTaskName(out BSTR pTaskName) mut
-			{
-				return VT.GetCleanupTaskName(ref this, out pTaskName);
-			}
-			public HRESULT GetCleanupTask(in Guid riid, out IUnknown* ppUnk) mut
-			{
-				return VT.GetCleanupTask(ref this, riid, out ppUnk);
-			}
+			public HRESULT EnableBITSUploads() mut => VT.EnableBITSUploads(ref this);
+			public HRESULT DisableBITSUploads() mut => VT.DisableBITSUploads(ref this);
+			public HRESULT GetCleanupTaskName(out BSTR pTaskName) mut => VT.GetCleanupTaskName(ref this, out pTaskName);
+			public HRESULT GetCleanupTask(in Guid riid, out IUnknown* ppUnk) mut => VT.GetCleanupTask(ref this, riid, out ppUnk);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1563,10 +1134,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObject(BSTR Path, out IBITSExtensionSetup* ppExtensionSetup) mut
-			{
-				return VT.GetObject(ref this, Path, out ppExtensionSetup);
-			}
+			public HRESULT GetObject(BSTR Path, out IBITSExtensionSetup* ppExtensionSetup) mut => VT.GetObject(ref this, Path, out ppExtensionSetup);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1580,38 +1149,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CancelJob() mut
-			{
-				return VT.CancelJob(ref this);
-			}
-			public HRESULT GetProgress(uint32 dwFlags, out uint32 pdwProgress) mut
-			{
-				return VT.GetProgress(ref this, dwFlags, out pdwProgress);
-			}
-			public HRESULT GetStatus(out uint32 pdwStatus, out uint32 pdwWin32Result, out uint32 pdwTransportResult, out uint32 pdwNumOfRetries) mut
-			{
-				return VT.GetStatus(ref this, out pdwStatus, out pdwWin32Result, out pdwTransportResult, out pdwNumOfRetries);
-			}
-			public HRESULT AddFiles(uint32 cFileCount, FILESETINFO** ppFileSet) mut
-			{
-				return VT.AddFiles(ref this, cFileCount, ppFileSet);
-			}
-			public HRESULT GetFile(uint32 cFileIndex, out FILESETINFO pFileInfo) mut
-			{
-				return VT.GetFile(ref this, cFileIndex, out pFileInfo);
-			}
-			public HRESULT GetFileCount(out uint32 pdwFileCount) mut
-			{
-				return VT.GetFileCount(ref this, out pdwFileCount);
-			}
-			public HRESULT SwitchToForeground() mut
-			{
-				return VT.SwitchToForeground(ref this);
-			}
-			public HRESULT get_JobID(out Guid pguidJobID) mut
-			{
-				return VT.get_JobID(ref this, out pguidJobID);
-			}
+			public HRESULT CancelJob() mut => VT.CancelJob(ref this);
+			public HRESULT GetProgress(uint32 dwFlags, out uint32 pdwProgress) mut => VT.GetProgress(ref this, dwFlags, out pdwProgress);
+			public HRESULT GetStatus(out uint32 pdwStatus, out uint32 pdwWin32Result, out uint32 pdwTransportResult, out uint32 pdwNumOfRetries) mut => VT.GetStatus(ref this, out pdwStatus, out pdwWin32Result, out pdwTransportResult, out pdwNumOfRetries);
+			public HRESULT AddFiles(uint32 cFileCount, FILESETINFO** ppFileSet) mut => VT.AddFiles(ref this, cFileCount, ppFileSet);
+			public HRESULT GetFile(uint32 cFileIndex, out FILESETINFO pFileInfo) mut => VT.GetFile(ref this, cFileIndex, out pFileInfo);
+			public HRESULT GetFileCount(out uint32 pdwFileCount) mut => VT.GetFileCount(ref this, out pdwFileCount);
+			public HRESULT SwitchToForeground() mut => VT.SwitchToForeground(ref this);
+			public HRESULT get_JobID(out Guid pguidJobID) mut => VT.get_JobID(ref this, out pguidJobID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1632,26 +1178,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, Guid* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumBackgroundCopyJobs1* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
-			public HRESULT GetCount(out uint32 puCount) mut
-			{
-				return VT.GetCount(ref this, out puCount);
-			}
+			public HRESULT Next(uint32 celt, Guid* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumBackgroundCopyJobs1* ppenum) mut => VT.Clone(ref this, out ppenum);
+			public HRESULT GetCount(out uint32 puCount) mut => VT.GetCount(ref this, out puCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1669,66 +1201,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProp(GROUPPROP propID, out VARIANT pvarVal) mut
-			{
-				return VT.GetProp(ref this, propID, out pvarVal);
-			}
-			public HRESULT SetProp(GROUPPROP propID, ref VARIANT pvarVal) mut
-			{
-				return VT.SetProp(ref this, propID, ref pvarVal);
-			}
-			public HRESULT GetProgress(uint32 dwFlags, out uint32 pdwProgress) mut
-			{
-				return VT.GetProgress(ref this, dwFlags, out pdwProgress);
-			}
-			public HRESULT GetStatus(out uint32 pdwStatus, out uint32 pdwJobIndex) mut
-			{
-				return VT.GetStatus(ref this, out pdwStatus, out pdwJobIndex);
-			}
-			public HRESULT GetJob(Guid jobID, out IBackgroundCopyJob1* ppJob) mut
-			{
-				return VT.GetJob(ref this, jobID, out ppJob);
-			}
-			public HRESULT SuspendGroup() mut
-			{
-				return VT.SuspendGroup(ref this);
-			}
-			public HRESULT ResumeGroup() mut
-			{
-				return VT.ResumeGroup(ref this);
-			}
-			public HRESULT CancelGroup() mut
-			{
-				return VT.CancelGroup(ref this);
-			}
-			public HRESULT get_Size(out uint32 pdwSize) mut
-			{
-				return VT.get_Size(ref this, out pdwSize);
-			}
-			public HRESULT get_GroupID(out Guid pguidGroupID) mut
-			{
-				return VT.get_GroupID(ref this, out pguidGroupID);
-			}
-			public HRESULT CreateJob(Guid guidJobID, out IBackgroundCopyJob1* ppJob) mut
-			{
-				return VT.CreateJob(ref this, guidJobID, out ppJob);
-			}
-			public HRESULT EnumJobs(uint32 dwFlags, out IEnumBackgroundCopyJobs1* ppEnumJobs) mut
-			{
-				return VT.EnumJobs(ref this, dwFlags, out ppEnumJobs);
-			}
-			public HRESULT SwitchToForeground() mut
-			{
-				return VT.SwitchToForeground(ref this);
-			}
-			public HRESULT QueryNewJobInterface(in Guid iid, out IUnknown* pUnk) mut
-			{
-				return VT.QueryNewJobInterface(ref this, iid, out pUnk);
-			}
-			public HRESULT SetNotificationPointer(in Guid iid, ref IUnknown pUnk) mut
-			{
-				return VT.SetNotificationPointer(ref this, iid, ref pUnk);
-			}
+			public HRESULT GetProp(GROUPPROP propID, out VARIANT pvarVal) mut => VT.GetProp(ref this, propID, out pvarVal);
+			public HRESULT SetProp(GROUPPROP propID, ref VARIANT pvarVal) mut => VT.SetProp(ref this, propID, ref pvarVal);
+			public HRESULT GetProgress(uint32 dwFlags, out uint32 pdwProgress) mut => VT.GetProgress(ref this, dwFlags, out pdwProgress);
+			public HRESULT GetStatus(out uint32 pdwStatus, out uint32 pdwJobIndex) mut => VT.GetStatus(ref this, out pdwStatus, out pdwJobIndex);
+			public HRESULT GetJob(Guid jobID, out IBackgroundCopyJob1* ppJob) mut => VT.GetJob(ref this, jobID, out ppJob);
+			public HRESULT SuspendGroup() mut => VT.SuspendGroup(ref this);
+			public HRESULT ResumeGroup() mut => VT.ResumeGroup(ref this);
+			public HRESULT CancelGroup() mut => VT.CancelGroup(ref this);
+			public HRESULT get_Size(out uint32 pdwSize) mut => VT.get_Size(ref this, out pdwSize);
+			public HRESULT get_GroupID(out Guid pguidGroupID) mut => VT.get_GroupID(ref this, out pguidGroupID);
+			public HRESULT CreateJob(Guid guidJobID, out IBackgroundCopyJob1* ppJob) mut => VT.CreateJob(ref this, guidJobID, out ppJob);
+			public HRESULT EnumJobs(uint32 dwFlags, out IEnumBackgroundCopyJobs1* ppEnumJobs) mut => VT.EnumJobs(ref this, dwFlags, out ppEnumJobs);
+			public HRESULT SwitchToForeground() mut => VT.SwitchToForeground(ref this);
+			public HRESULT QueryNewJobInterface(in Guid iid, out IUnknown* pUnk) mut => VT.QueryNewJobInterface(ref this, iid, out pUnk);
+			public HRESULT SetNotificationPointer(in Guid iid, ref IUnknown pUnk) mut => VT.SetNotificationPointer(ref this, iid, ref pUnk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1756,26 +1244,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, Guid* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumBackgroundCopyGroups* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
-			public HRESULT GetCount(out uint32 puCount) mut
-			{
-				return VT.GetCount(ref this, out puCount);
-			}
+			public HRESULT Next(uint32 celt, Guid* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumBackgroundCopyGroups* ppenum) mut => VT.Clone(ref this, out ppenum);
+			public HRESULT GetCount(out uint32 puCount) mut => VT.GetCount(ref this, out puCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1793,18 +1267,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStatus(ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwStatus, uint32 dwNumOfRetries, uint32 dwWin32Result, uint32 dwTransportResult) mut
-			{
-				return VT.OnStatus(ref this, ref pGroup, ref pJob, dwFileIndex, dwStatus, dwNumOfRetries, dwWin32Result, dwTransportResult);
-			}
-			public HRESULT OnProgress(uint32 ProgressType, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwProgressValue) mut
-			{
-				return VT.OnProgress(ref this, ProgressType, ref pGroup, ref pJob, dwFileIndex, dwProgressValue);
-			}
-			public HRESULT OnProgressEx(uint32 ProgressType, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwProgressValue, uint32 dwByteArraySize, uint8* pByte) mut
-			{
-				return VT.OnProgressEx(ref this, ProgressType, ref pGroup, ref pJob, dwFileIndex, dwProgressValue, dwByteArraySize, pByte);
-			}
+			public HRESULT OnStatus(ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwStatus, uint32 dwNumOfRetries, uint32 dwWin32Result, uint32 dwTransportResult) mut => VT.OnStatus(ref this, ref pGroup, ref pJob, dwFileIndex, dwStatus, dwNumOfRetries, dwWin32Result, dwTransportResult);
+			public HRESULT OnProgress(uint32 ProgressType, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwProgressValue) mut => VT.OnProgress(ref this, ProgressType, ref pGroup, ref pJob, dwFileIndex, dwProgressValue);
+			public HRESULT OnProgressEx(uint32 ProgressType, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwProgressValue, uint32 dwByteArraySize, uint8* pByte) mut => VT.OnProgressEx(ref this, ProgressType, ref pGroup, ref pJob, dwFileIndex, dwProgressValue, dwByteArraySize, pByte);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1820,18 +1286,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateGroup(Guid guidGroupID, out IBackgroundCopyGroup* ppGroup) mut
-			{
-				return VT.CreateGroup(ref this, guidGroupID, out ppGroup);
-			}
-			public HRESULT GetGroup(Guid groupID, out IBackgroundCopyGroup* ppGroup) mut
-			{
-				return VT.GetGroup(ref this, groupID, out ppGroup);
-			}
-			public HRESULT EnumGroups(uint32 dwFlags, out IEnumBackgroundCopyGroups* ppEnumGroups) mut
-			{
-				return VT.EnumGroups(ref this, dwFlags, out ppEnumGroups);
-			}
+			public HRESULT CreateGroup(Guid guidGroupID, out IBackgroundCopyGroup* ppGroup) mut => VT.CreateGroup(ref this, guidGroupID, out ppGroup);
+			public HRESULT GetGroup(Guid groupID, out IBackgroundCopyGroup* ppGroup) mut => VT.GetGroup(ref this, groupID, out ppGroup);
+			public HRESULT EnumGroups(uint32 dwFlags, out IEnumBackgroundCopyGroups* ppEnumGroups) mut => VT.EnumGroups(ref this, dwFlags, out ppEnumGroups);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

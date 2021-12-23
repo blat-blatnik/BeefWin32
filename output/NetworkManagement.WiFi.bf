@@ -3855,26 +3855,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateNetwork(PWSTR Name, PWSTR Password, int32 GeographicalId, ref IDot11AdHocInterface pInterface, ref IDot11AdHocSecuritySettings pSecurity, ref Guid pContextGuid, out IDot11AdHocNetwork* pIAdHoc) mut
-			{
-				return VT.CreateNetwork(ref this, Name, Password, GeographicalId, ref pInterface, ref pSecurity, ref pContextGuid, out pIAdHoc);
-			}
-			public HRESULT CommitCreatedNetwork(ref IDot11AdHocNetwork pIAdHoc, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) mut
-			{
-				return VT.CommitCreatedNetwork(ref this, ref pIAdHoc, fSaveProfile, fMakeSavedProfileUserSpecific);
-			}
-			public HRESULT GetIEnumDot11AdHocNetworks(ref Guid pContextGuid, out IEnumDot11AdHocNetworks* ppEnum) mut
-			{
-				return VT.GetIEnumDot11AdHocNetworks(ref this, ref pContextGuid, out ppEnum);
-			}
-			public HRESULT GetIEnumDot11AdHocInterfaces(out IEnumDot11AdHocInterfaces* ppEnum) mut
-			{
-				return VT.GetIEnumDot11AdHocInterfaces(ref this, out ppEnum);
-			}
-			public HRESULT GetNetwork(ref Guid NetworkSignature, out IDot11AdHocNetwork* pNetwork) mut
-			{
-				return VT.GetNetwork(ref this, ref NetworkSignature, out pNetwork);
-			}
+			public HRESULT CreateNetwork(PWSTR Name, PWSTR Password, int32 GeographicalId, ref IDot11AdHocInterface pInterface, ref IDot11AdHocSecuritySettings pSecurity, ref Guid pContextGuid, out IDot11AdHocNetwork* pIAdHoc) mut => VT.CreateNetwork(ref this, Name, Password, GeographicalId, ref pInterface, ref pSecurity, ref pContextGuid, out pIAdHoc);
+			public HRESULT CommitCreatedNetwork(ref IDot11AdHocNetwork pIAdHoc, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) mut => VT.CommitCreatedNetwork(ref this, ref pIAdHoc, fSaveProfile, fMakeSavedProfileUserSpecific);
+			public HRESULT GetIEnumDot11AdHocNetworks(ref Guid pContextGuid, out IEnumDot11AdHocNetworks* ppEnum) mut => VT.GetIEnumDot11AdHocNetworks(ref this, ref pContextGuid, out ppEnum);
+			public HRESULT GetIEnumDot11AdHocInterfaces(out IEnumDot11AdHocInterfaces* ppEnum) mut => VT.GetIEnumDot11AdHocInterfaces(ref this, out ppEnum);
+			public HRESULT GetNetwork(ref Guid NetworkSignature, out IDot11AdHocNetwork* pNetwork) mut => VT.GetNetwork(ref this, ref NetworkSignature, out pNetwork);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3892,22 +3878,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnNetworkAdd(ref IDot11AdHocNetwork pIAdHocNetwork) mut
-			{
-				return VT.OnNetworkAdd(ref this, ref pIAdHocNetwork);
-			}
-			public HRESULT OnNetworkRemove(ref Guid Signature) mut
-			{
-				return VT.OnNetworkRemove(ref this, ref Signature);
-			}
-			public HRESULT OnInterfaceAdd(ref IDot11AdHocInterface pIAdHocInterface) mut
-			{
-				return VT.OnInterfaceAdd(ref this, ref pIAdHocInterface);
-			}
-			public HRESULT OnInterfaceRemove(ref Guid Signature) mut
-			{
-				return VT.OnInterfaceRemove(ref this, ref Signature);
-			}
+			public HRESULT OnNetworkAdd(ref IDot11AdHocNetwork pIAdHocNetwork) mut => VT.OnNetworkAdd(ref this, ref pIAdHocNetwork);
+			public HRESULT OnNetworkRemove(ref Guid Signature) mut => VT.OnNetworkRemove(ref this, ref Signature);
+			public HRESULT OnInterfaceAdd(ref IDot11AdHocInterface pIAdHocInterface) mut => VT.OnInterfaceAdd(ref this, ref pIAdHocInterface);
+			public HRESULT OnInterfaceRemove(ref Guid Signature) mut => VT.OnInterfaceRemove(ref this, ref Signature);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3924,22 +3899,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cElt, IDot11AdHocNetwork** rgElt, out uint32 pcEltFetched) mut
-			{
-				return VT.Next(ref this, cElt, rgElt, out pcEltFetched);
-			}
-			public HRESULT Skip(uint32 cElt) mut
-			{
-				return VT.Skip(ref this, cElt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumDot11AdHocNetworks* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cElt, IDot11AdHocNetwork** rgElt, out uint32 pcEltFetched) mut => VT.Next(ref this, cElt, rgElt, out pcEltFetched);
+			public HRESULT Skip(uint32 cElt) mut => VT.Skip(ref this, cElt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumDot11AdHocNetworks* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3956,54 +3920,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStatus(out DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) mut
-			{
-				return VT.GetStatus(ref this, out eStatus);
-			}
-			public HRESULT GetSSID(out PWSTR ppszwSSID) mut
-			{
-				return VT.GetSSID(ref this, out ppszwSSID);
-			}
-			public HRESULT HasProfile(out uint8 pf11d) mut
-			{
-				return VT.HasProfile(ref this, out pf11d);
-			}
-			public HRESULT GetProfileName(out PWSTR ppszwProfileName) mut
-			{
-				return VT.GetProfileName(ref this, out ppszwProfileName);
-			}
-			public HRESULT DeleteProfile() mut
-			{
-				return VT.DeleteProfile(ref this);
-			}
-			public HRESULT GetSignalQuality(out uint32 puStrengthValue, out uint32 puStrengthMax) mut
-			{
-				return VT.GetSignalQuality(ref this, out puStrengthValue, out puStrengthMax);
-			}
-			public HRESULT GetSecuritySetting(out IDot11AdHocSecuritySettings* pAdHocSecuritySetting) mut
-			{
-				return VT.GetSecuritySetting(ref this, out pAdHocSecuritySetting);
-			}
-			public HRESULT GetContextGuid(out Guid pContextGuid) mut
-			{
-				return VT.GetContextGuid(ref this, out pContextGuid);
-			}
-			public HRESULT GetSignature(out Guid pSignature) mut
-			{
-				return VT.GetSignature(ref this, out pSignature);
-			}
-			public HRESULT GetInterface(out IDot11AdHocInterface* pAdHocInterface) mut
-			{
-				return VT.GetInterface(ref this, out pAdHocInterface);
-			}
-			public HRESULT Connect(PWSTR Passphrase, int32 GeographicalId, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) mut
-			{
-				return VT.Connect(ref this, Passphrase, GeographicalId, fSaveProfile, fMakeSavedProfileUserSpecific);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
+			public HRESULT GetStatus(out DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) mut => VT.GetStatus(ref this, out eStatus);
+			public HRESULT GetSSID(out PWSTR ppszwSSID) mut => VT.GetSSID(ref this, out ppszwSSID);
+			public HRESULT HasProfile(out uint8 pf11d) mut => VT.HasProfile(ref this, out pf11d);
+			public HRESULT GetProfileName(out PWSTR ppszwProfileName) mut => VT.GetProfileName(ref this, out ppszwProfileName);
+			public HRESULT DeleteProfile() mut => VT.DeleteProfile(ref this);
+			public HRESULT GetSignalQuality(out uint32 puStrengthValue, out uint32 puStrengthMax) mut => VT.GetSignalQuality(ref this, out puStrengthValue, out puStrengthMax);
+			public HRESULT GetSecuritySetting(out IDot11AdHocSecuritySettings* pAdHocSecuritySetting) mut => VT.GetSecuritySetting(ref this, out pAdHocSecuritySetting);
+			public HRESULT GetContextGuid(out Guid pContextGuid) mut => VT.GetContextGuid(ref this, out pContextGuid);
+			public HRESULT GetSignature(out Guid pSignature) mut => VT.GetSignature(ref this, out pSignature);
+			public HRESULT GetInterface(out IDot11AdHocInterface* pAdHocInterface) mut => VT.GetInterface(ref this, out pAdHocInterface);
+			public HRESULT Connect(PWSTR Passphrase, int32 GeographicalId, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) mut => VT.Connect(ref this, Passphrase, GeographicalId, fSaveProfile, fMakeSavedProfileUserSpecific);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4028,14 +3957,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStatusChange(DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) mut
-			{
-				return VT.OnStatusChange(ref this, eStatus);
-			}
-			public HRESULT OnConnectFail(DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) mut
-			{
-				return VT.OnConnectFail(ref this, eFailReason);
-			}
+			public HRESULT OnStatusChange(DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) mut => VT.OnStatusChange(ref this, eStatus);
+			public HRESULT OnConnectFail(DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) mut => VT.OnConnectFail(ref this, eFailReason);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4050,42 +3974,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceSignature(out Guid pSignature) mut
-			{
-				return VT.GetDeviceSignature(ref this, out pSignature);
-			}
-			public HRESULT GetFriendlyName(out PWSTR ppszName) mut
-			{
-				return VT.GetFriendlyName(ref this, out ppszName);
-			}
-			public HRESULT IsDot11d(out uint8 pf11d) mut
-			{
-				return VT.IsDot11d(ref this, out pf11d);
-			}
-			public HRESULT IsAdHocCapable(out uint8 pfAdHocCapable) mut
-			{
-				return VT.IsAdHocCapable(ref this, out pfAdHocCapable);
-			}
-			public HRESULT IsRadioOn(out uint8 pfIsRadioOn) mut
-			{
-				return VT.IsRadioOn(ref this, out pfIsRadioOn);
-			}
-			public HRESULT GetActiveNetwork(out IDot11AdHocNetwork* ppNetwork) mut
-			{
-				return VT.GetActiveNetwork(ref this, out ppNetwork);
-			}
-			public HRESULT GetIEnumSecuritySettings(out IEnumDot11AdHocSecuritySettings* ppEnum) mut
-			{
-				return VT.GetIEnumSecuritySettings(ref this, out ppEnum);
-			}
-			public HRESULT GetIEnumDot11AdHocNetworks(ref Guid pFilterGuid, out IEnumDot11AdHocNetworks* ppEnum) mut
-			{
-				return VT.GetIEnumDot11AdHocNetworks(ref this, ref pFilterGuid, out ppEnum);
-			}
-			public HRESULT GetStatus(out DOT11_ADHOC_NETWORK_CONNECTION_STATUS pState) mut
-			{
-				return VT.GetStatus(ref this, out pState);
-			}
+			public HRESULT GetDeviceSignature(out Guid pSignature) mut => VT.GetDeviceSignature(ref this, out pSignature);
+			public HRESULT GetFriendlyName(out PWSTR ppszName) mut => VT.GetFriendlyName(ref this, out ppszName);
+			public HRESULT IsDot11d(out uint8 pf11d) mut => VT.IsDot11d(ref this, out pf11d);
+			public HRESULT IsAdHocCapable(out uint8 pfAdHocCapable) mut => VT.IsAdHocCapable(ref this, out pfAdHocCapable);
+			public HRESULT IsRadioOn(out uint8 pfIsRadioOn) mut => VT.IsRadioOn(ref this, out pfIsRadioOn);
+			public HRESULT GetActiveNetwork(out IDot11AdHocNetwork* ppNetwork) mut => VT.GetActiveNetwork(ref this, out ppNetwork);
+			public HRESULT GetIEnumSecuritySettings(out IEnumDot11AdHocSecuritySettings* ppEnum) mut => VT.GetIEnumSecuritySettings(ref this, out ppEnum);
+			public HRESULT GetIEnumDot11AdHocNetworks(ref Guid pFilterGuid, out IEnumDot11AdHocNetworks* ppEnum) mut => VT.GetIEnumDot11AdHocNetworks(ref this, ref pFilterGuid, out ppEnum);
+			public HRESULT GetStatus(out DOT11_ADHOC_NETWORK_CONNECTION_STATUS pState) mut => VT.GetStatus(ref this, out pState);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4107,22 +4005,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cElt, IDot11AdHocInterface** rgElt, out uint32 pcEltFetched) mut
-			{
-				return VT.Next(ref this, cElt, rgElt, out pcEltFetched);
-			}
-			public HRESULT Skip(uint32 cElt) mut
-			{
-				return VT.Skip(ref this, cElt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumDot11AdHocInterfaces* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cElt, IDot11AdHocInterface** rgElt, out uint32 pcEltFetched) mut => VT.Next(ref this, cElt, rgElt, out pcEltFetched);
+			public HRESULT Skip(uint32 cElt) mut => VT.Skip(ref this, cElt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumDot11AdHocInterfaces* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4139,22 +4026,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cElt, IDot11AdHocSecuritySettings** rgElt, out uint32 pcEltFetched) mut
-			{
-				return VT.Next(ref this, cElt, rgElt, out pcEltFetched);
-			}
-			public HRESULT Skip(uint32 cElt) mut
-			{
-				return VT.Skip(ref this, cElt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumDot11AdHocSecuritySettings* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cElt, IDot11AdHocSecuritySettings** rgElt, out uint32 pcEltFetched) mut => VT.Next(ref this, cElt, rgElt, out pcEltFetched);
+			public HRESULT Skip(uint32 cElt) mut => VT.Skip(ref this, cElt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumDot11AdHocSecuritySettings* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4171,14 +4047,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDot11AuthAlgorithm(out DOT11_ADHOC_AUTH_ALGORITHM pAuth) mut
-			{
-				return VT.GetDot11AuthAlgorithm(ref this, out pAuth);
-			}
-			public HRESULT GetDot11CipherAlgorithm(out DOT11_ADHOC_CIPHER_ALGORITHM pCipher) mut
-			{
-				return VT.GetDot11CipherAlgorithm(ref this, out pCipher);
-			}
+			public HRESULT GetDot11AuthAlgorithm(out DOT11_ADHOC_AUTH_ALGORITHM pAuth) mut => VT.GetDot11AuthAlgorithm(ref this, out pAuth);
+			public HRESULT GetDot11CipherAlgorithm(out DOT11_ADHOC_CIPHER_ALGORITHM pCipher) mut => VT.GetDot11CipherAlgorithm(ref this, out pCipher);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4193,10 +4064,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnConnectionStatusChange(DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) mut
-			{
-				return VT.OnConnectionStatusChange(ref this, eStatus);
-			}
+			public HRESULT OnConnectionStatusChange(DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) mut => VT.OnConnectionStatusChange(ref this, eStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

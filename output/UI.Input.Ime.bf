@@ -1291,6 +1291,7 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IClassFactory.VTable
 			{
@@ -1303,22 +1304,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsDefaultIME(uint8* szName, int32 cszName) mut
-			{
-				return VT.IsDefaultIME(ref this, szName, cszName);
-			}
-			public HRESULT SetDefaultIME() mut
-			{
-				return VT.SetDefaultIME(ref this);
-			}
-			public HRESULT InvokeWordRegDialog(out IMEDLG pimedlg) mut
-			{
-				return VT.InvokeWordRegDialog(ref this, out pimedlg);
-			}
-			public HRESULT InvokeDictToolDialog(out IMEDLG pimedlg) mut
-			{
-				return VT.InvokeDictToolDialog(ref this, out pimedlg);
-			}
+			public HRESULT IsDefaultIME(uint8* szName, int32 cszName) mut => VT.IsDefaultIME(ref this, szName, cszName);
+			public HRESULT SetDefaultIME() mut => VT.SetDefaultIME(ref this);
+			public HRESULT InvokeWordRegDialog(out IMEDLG pimedlg) mut => VT.InvokeWordRegDialog(ref this, out pimedlg);
+			public HRESULT InvokeDictToolDialog(out IMEDLG pimedlg) mut => VT.InvokeDictToolDialog(ref this, out pimedlg);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1335,30 +1325,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open() mut
-			{
-				return VT.Open(ref this);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT GetJMorphResult(uint32 dwRequest, uint32 dwCMode, int32 cwchInput, PWSTR pwchInput, out uint32 pfCInfo, out MORRSLT* ppResult) mut
-			{
-				return VT.GetJMorphResult(ref this, dwRequest, dwCMode, cwchInput, pwchInput, out pfCInfo, out ppResult);
-			}
-			public HRESULT GetConversionModeCaps(out uint32 pdwCaps) mut
-			{
-				return VT.GetConversionModeCaps(ref this, out pdwCaps);
-			}
-			public HRESULT GetPhonetic(BSTR string, int32 start, int32 length, out BSTR phonetic) mut
-			{
-				return VT.GetPhonetic(ref this, string, start, length, out phonetic);
-			}
-			public HRESULT GetConversion(BSTR string, int32 start, int32 length, out BSTR result) mut
-			{
-				return VT.GetConversion(ref this, string, start, length, out result);
-			}
+			public HRESULT Open() mut => VT.Open(ref this);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT GetJMorphResult(uint32 dwRequest, uint32 dwCMode, int32 cwchInput, PWSTR pwchInput, out uint32 pfCInfo, out MORRSLT* ppResult) mut => VT.GetJMorphResult(ref this, dwRequest, dwCMode, cwchInput, pwchInput, out pfCInfo, out ppResult);
+			public HRESULT GetConversionModeCaps(out uint32 pdwCaps) mut => VT.GetConversionModeCaps(ref this, out pdwCaps);
+			public HRESULT GetPhonetic(BSTR string, int32 start, int32 length, out BSTR phonetic) mut => VT.GetPhonetic(ref this, string, start, length, out phonetic);
+			public HRESULT GetConversion(BSTR string, int32 start, int32 length, out BSTR result) mut => VT.GetConversion(ref this, string, start, length, out result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1377,74 +1350,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(uint8* pchDictPath, out IMESHF pshf) mut
-			{
-				return VT.Open(ref this, pchDictPath, out pshf);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT GetHeader(uint8* pchDictPath, out IMESHF pshf, out IMEFMT pjfmt, out uint32 pulType) mut
-			{
-				return VT.GetHeader(ref this, pchDictPath, out pshf, out pjfmt, out pulType);
-			}
-			public HRESULT DisplayProperty(HWND hwnd) mut
-			{
-				return VT.DisplayProperty(ref this, hwnd);
-			}
-			public HRESULT GetPosTable(out POSTBL* prgPosTbl, out int32 pcPosTbl) mut
-			{
-				return VT.GetPosTable(ref this, out prgPosTbl, out pcPosTbl);
-			}
-			public HRESULT GetWords(PWSTR pwchFirst, PWSTR pwchLast, PWSTR pwchDisplay, uint32 ulPos, uint32 ulSelect, uint32 ulWordSrc, out uint8 pchBuffer, uint32 cbBuffer, out uint32 pcWrd) mut
-			{
-				return VT.GetWords(ref this, pwchFirst, pwchLast, pwchDisplay, ulPos, ulSelect, ulWordSrc, out pchBuffer, cbBuffer, out pcWrd);
-			}
-			public HRESULT NextWords(out uint8 pchBuffer, uint32 cbBuffer, out uint32 pcWrd) mut
-			{
-				return VT.NextWords(ref this, out pchBuffer, cbBuffer, out pcWrd);
-			}
-			public HRESULT Create(PSTR pchDictPath, out IMESHF pshf) mut
-			{
-				return VT.Create(ref this, pchDictPath, out pshf);
-			}
-			public HRESULT SetHeader(out IMESHF pshf) mut
-			{
-				return VT.SetHeader(ref this, out pshf);
-			}
-			public HRESULT ExistWord(out IMEWRD pwrd) mut
-			{
-				return VT.ExistWord(ref this, out pwrd);
-			}
-			public HRESULT ExistDependency(out IMEDP pdp) mut
-			{
-				return VT.ExistDependency(ref this, out pdp);
-			}
-			public HRESULT RegisterWord(IMEREG reg, out IMEWRD pwrd) mut
-			{
-				return VT.RegisterWord(ref this, reg, out pwrd);
-			}
-			public HRESULT RegisterDependency(IMEREG reg, out IMEDP pdp) mut
-			{
-				return VT.RegisterDependency(ref this, reg, out pdp);
-			}
-			public HRESULT GetDependencies(PWSTR pwchKakariReading, PWSTR pwchKakariDisplay, uint32 ulKakariPos, PWSTR pwchUkeReading, PWSTR pwchUkeDisplay, uint32 ulUkePos, IMEREL jrel, uint32 ulWordSrc, out uint8 pchBuffer, uint32 cbBuffer, out uint32 pcdp) mut
-			{
-				return VT.GetDependencies(ref this, pwchKakariReading, pwchKakariDisplay, ulKakariPos, pwchUkeReading, pwchUkeDisplay, ulUkePos, jrel, ulWordSrc, out pchBuffer, cbBuffer, out pcdp);
-			}
-			public HRESULT NextDependencies(out uint8 pchBuffer, uint32 cbBuffer, out uint32 pcDp) mut
-			{
-				return VT.NextDependencies(ref this, out pchBuffer, cbBuffer, out pcDp);
-			}
-			public HRESULT ConvertFromOldMSIME(PSTR pchDic, PFNLOG pfnLog, IMEREG reg) mut
-			{
-				return VT.ConvertFromOldMSIME(ref this, pchDic, pfnLog, reg);
-			}
-			public HRESULT ConvertFromUserToSys() mut
-			{
-				return VT.ConvertFromUserToSys(ref this);
-			}
+			public HRESULT Open(uint8* pchDictPath, out IMESHF pshf) mut => VT.Open(ref this, pchDictPath, out pshf);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT GetHeader(uint8* pchDictPath, out IMESHF pshf, out IMEFMT pjfmt, out uint32 pulType) mut => VT.GetHeader(ref this, pchDictPath, out pshf, out pjfmt, out pulType);
+			public HRESULT DisplayProperty(HWND hwnd) mut => VT.DisplayProperty(ref this, hwnd);
+			public HRESULT GetPosTable(out POSTBL* prgPosTbl, out int32 pcPosTbl) mut => VT.GetPosTable(ref this, out prgPosTbl, out pcPosTbl);
+			public HRESULT GetWords(PWSTR pwchFirst, PWSTR pwchLast, PWSTR pwchDisplay, uint32 ulPos, uint32 ulSelect, uint32 ulWordSrc, out uint8 pchBuffer, uint32 cbBuffer, out uint32 pcWrd) mut => VT.GetWords(ref this, pwchFirst, pwchLast, pwchDisplay, ulPos, ulSelect, ulWordSrc, out pchBuffer, cbBuffer, out pcWrd);
+			public HRESULT NextWords(out uint8 pchBuffer, uint32 cbBuffer, out uint32 pcWrd) mut => VT.NextWords(ref this, out pchBuffer, cbBuffer, out pcWrd);
+			public HRESULT Create(PSTR pchDictPath, out IMESHF pshf) mut => VT.Create(ref this, pchDictPath, out pshf);
+			public HRESULT SetHeader(out IMESHF pshf) mut => VT.SetHeader(ref this, out pshf);
+			public HRESULT ExistWord(out IMEWRD pwrd) mut => VT.ExistWord(ref this, out pwrd);
+			public HRESULT ExistDependency(out IMEDP pdp) mut => VT.ExistDependency(ref this, out pdp);
+			public HRESULT RegisterWord(IMEREG reg, out IMEWRD pwrd) mut => VT.RegisterWord(ref this, reg, out pwrd);
+			public HRESULT RegisterDependency(IMEREG reg, out IMEDP pdp) mut => VT.RegisterDependency(ref this, reg, out pdp);
+			public HRESULT GetDependencies(PWSTR pwchKakariReading, PWSTR pwchKakariDisplay, uint32 ulKakariPos, PWSTR pwchUkeReading, PWSTR pwchUkeDisplay, uint32 ulUkePos, IMEREL jrel, uint32 ulWordSrc, out uint8 pchBuffer, uint32 cbBuffer, out uint32 pcdp) mut => VT.GetDependencies(ref this, pwchKakariReading, pwchKakariDisplay, ulKakariPos, pwchUkeReading, pwchUkeDisplay, ulUkePos, jrel, ulWordSrc, out pchBuffer, cbBuffer, out pcdp);
+			public HRESULT NextDependencies(out uint8 pchBuffer, uint32 cbBuffer, out uint32 pcDp) mut => VT.NextDependencies(ref this, out pchBuffer, cbBuffer, out pcDp);
+			public HRESULT ConvertFromOldMSIME(PSTR pchDic, PFNLOG pfnLog, IMEREG reg) mut => VT.ConvertFromOldMSIME(ref this, pchDic, pfnLog, reg);
+			public HRESULT ConvertFromUserToSys() mut => VT.ConvertFromUserToSys(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1474,10 +1397,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAppletIIDList(in Guid refiid, out APPLETIDLIST lpIIDList) mut
-			{
-				return VT.GetAppletIIDList(ref this, refiid, out lpIIDList);
-			}
+			public HRESULT GetAppletIIDList(in Guid refiid, out APPLETIDLIST lpIIDList) mut => VT.GetAppletIIDList(ref this, refiid, out lpIIDList);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1491,26 +1412,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IUnknown lpIImePad) mut
-			{
-				return VT.Initialize(ref this, ref lpIImePad);
-			}
-			public HRESULT Terminate() mut
-			{
-				return VT.Terminate(ref this);
-			}
-			public HRESULT GetAppletConfig(out IMEAPPLETCFG lpAppletCfg) mut
-			{
-				return VT.GetAppletConfig(ref this, out lpAppletCfg);
-			}
-			public HRESULT CreateUI(HWND hwndParent, out IMEAPPLETUI lpImeAppletUI) mut
-			{
-				return VT.CreateUI(ref this, hwndParent, out lpImeAppletUI);
-			}
-			public HRESULT Notify(ref IUnknown lpImePad, int32 notify, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.Notify(ref this, ref lpImePad, notify, wParam, lParam);
-			}
+			public HRESULT Initialize(ref IUnknown lpIImePad) mut => VT.Initialize(ref this, ref lpIImePad);
+			public HRESULT Terminate() mut => VT.Terminate(ref this);
+			public HRESULT GetAppletConfig(out IMEAPPLETCFG lpAppletCfg) mut => VT.GetAppletConfig(ref this, out lpAppletCfg);
+			public HRESULT CreateUI(HWND hwndParent, out IMEAPPLETUI lpImeAppletUI) mut => VT.CreateUI(ref this, hwndParent, out lpImeAppletUI);
+			public HRESULT Notify(ref IUnknown lpImePad, int32 notify, WPARAM wParam, LPARAM lParam) mut => VT.Notify(ref this, ref lpImePad, notify, wParam, lParam);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1528,10 +1435,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Request(ref IImePadApplet pIImePadApplet, IME_PAD_REQUEST_FLAGS reqId, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.Request(ref this, ref pIImePadApplet, reqId, wParam, lParam);
-			}
+			public HRESULT Request(ref IImePadApplet pIImePadApplet, IME_PAD_REQUEST_FLAGS reqId, WPARAM wParam, LPARAM lParam) mut => VT.Request(ref this, ref pIImePadApplet, reqId, wParam, lParam);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1545,14 +1450,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDictionariesInUse(out SAFEARRAY* prgDictionaryGUID, out SAFEARRAY* prgDateCreated, out SAFEARRAY* prgfEncrypted) mut
-			{
-				return VT.GetDictionariesInUse(ref this, out prgDictionaryGUID, out prgDateCreated, out prgfEncrypted);
-			}
-			public HRESULT DeleteDictionary(BSTR bstrDictionaryGUID) mut
-			{
-				return VT.DeleteDictionary(ref this, bstrDictionaryGUID);
-			}
+			public HRESULT GetDictionariesInUse(out SAFEARRAY* prgDictionaryGUID, out SAFEARRAY* prgDateCreated, out SAFEARRAY* prgfEncrypted) mut => VT.GetDictionariesInUse(ref this, out prgDictionaryGUID, out prgDateCreated, out prgfEncrypted);
+			public HRESULT DeleteDictionary(BSTR bstrDictionaryGUID) mut => VT.DeleteDictionary(ref this, bstrDictionaryGUID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1567,22 +1467,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out IEnumRegisterWordA* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
-			public HRESULT Next(uint32 ulCount, out REGISTERWORDA rgRegisterWord, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, ulCount, out rgRegisterWord, out pcFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 ulCount) mut
-			{
-				return VT.Skip(ref this, ulCount);
-			}
+			public HRESULT Clone(out IEnumRegisterWordA* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+			public HRESULT Next(uint32 ulCount, out REGISTERWORDA rgRegisterWord, out uint32 pcFetched) mut => VT.Next(ref this, ulCount, out rgRegisterWord, out pcFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 ulCount) mut => VT.Skip(ref this, ulCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1599,22 +1488,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out IEnumRegisterWordW* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
-			public HRESULT Next(uint32 ulCount, out REGISTERWORDW rgRegisterWord, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, ulCount, out rgRegisterWord, out pcFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 ulCount) mut
-			{
-				return VT.Skip(ref this, ulCount);
-			}
+			public HRESULT Clone(out IEnumRegisterWordW* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+			public HRESULT Next(uint32 ulCount, out REGISTERWORDW rgRegisterWord, out uint32 pcFetched) mut => VT.Next(ref this, ulCount, out rgRegisterWord, out pcFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 ulCount) mut => VT.Skip(ref this, ulCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1631,22 +1509,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out IEnumInputContext* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
-			public HRESULT Next(uint32 ulCount, out HIMC rgInputContext, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, ulCount, out rgInputContext, out pcFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 ulCount) mut
-			{
-				return VT.Skip(ref this, ulCount);
-			}
+			public HRESULT Clone(out IEnumInputContext* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+			public HRESULT Next(uint32 ulCount, out HIMC rgInputContext, out uint32 pcFetched) mut => VT.Next(ref this, ulCount, out rgInputContext, out pcFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 ulCount) mut => VT.Skip(ref this, ulCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1663,14 +1530,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterIME(in Guid rclsid, uint16 lgid, PWSTR pszIconFile, PWSTR pszDesc) mut
-			{
-				return VT.RegisterIME(ref this, rclsid, lgid, pszIconFile, pszDesc);
-			}
-			public HRESULT UnregisterIME(in Guid rclsid) mut
-			{
-				return VT.UnregisterIME(ref this, rclsid);
-			}
+			public HRESULT RegisterIME(in Guid rclsid, uint16 lgid, PWSTR pszIconFile, PWSTR pszDesc) mut => VT.RegisterIME(ref this, rclsid, lgid, pszIconFile, pszDesc);
+			public HRESULT UnregisterIME(in Guid rclsid) mut => VT.UnregisterIME(ref this, rclsid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1685,26 +1547,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Start() mut
-			{
-				return VT.Start(ref this);
-			}
-			public HRESULT End() mut
-			{
-				return VT.End(ref this);
-			}
-			public HRESULT OnTranslateMessage(in MSG pMsg) mut
-			{
-				return VT.OnTranslateMessage(ref this, pMsg);
-			}
-			public HRESULT Pause(out uint32 pdwCookie) mut
-			{
-				return VT.Pause(ref this, out pdwCookie);
-			}
-			public HRESULT Resume(uint32 dwCookie) mut
-			{
-				return VT.Resume(ref this, dwCookie);
-			}
+			public HRESULT Start() mut => VT.Start(ref this);
+			public HRESULT End() mut => VT.End(ref this);
+			public HRESULT OnTranslateMessage(in MSG pMsg) mut => VT.OnTranslateMessage(ref this, pMsg);
+			public HRESULT Pause(out uint32 pdwCookie) mut => VT.Pause(ref this, out pdwCookie);
+			public HRESULT Resume(uint32 dwCookie) mut => VT.Resume(ref this, dwCookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1722,278 +1570,75 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AssociateContext(HWND hWnd, HIMC hIME, out HIMC phPrev) mut
-			{
-				return VT.AssociateContext(ref this, hWnd, hIME, out phPrev);
-			}
-			public HRESULT ConfigureIMEA(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDA pData) mut
-			{
-				return VT.ConfigureIMEA(ref this, hKL, hWnd, dwMode, ref pData);
-			}
-			public HRESULT ConfigureIMEW(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDW pData) mut
-			{
-				return VT.ConfigureIMEW(ref this, hKL, hWnd, dwMode, ref pData);
-			}
-			public HRESULT CreateContext(out HIMC phIMC) mut
-			{
-				return VT.CreateContext(ref this, out phIMC);
-			}
-			public HRESULT DestroyContext(HIMC hIME) mut
-			{
-				return VT.DestroyContext(ref this, hIME);
-			}
-			public HRESULT EnumRegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, out IEnumRegisterWordA* pEnum) mut
-			{
-				return VT.EnumRegisterWordA(ref this, hKL, szReading, dwStyle, szRegister, pData, out pEnum);
-			}
-			public HRESULT EnumRegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, out IEnumRegisterWordW* pEnum) mut
-			{
-				return VT.EnumRegisterWordW(ref this, hKL, szReading, dwStyle, szRegister, pData, out pEnum);
-			}
-			public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut
-			{
-				return VT.EscapeA(ref this, hKL, hIMC, uEscape, pData, out plResult);
-			}
-			public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut
-			{
-				return VT.EscapeW(ref this, hKL, hIMC, uEscape, pData, out plResult);
-			}
-			public HRESULT GetCandidateListA(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, out CANDIDATELIST pCandList, out uint32 puCopied) mut
-			{
-				return VT.GetCandidateListA(ref this, hIMC, dwIndex, uBufLen, out pCandList, out puCopied);
-			}
-			public HRESULT GetCandidateListW(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, out CANDIDATELIST pCandList, out uint32 puCopied) mut
-			{
-				return VT.GetCandidateListW(ref this, hIMC, dwIndex, uBufLen, out pCandList, out puCopied);
-			}
-			public HRESULT GetCandidateListCountA(HIMC hIMC, out uint32 pdwListSize, out uint32 pdwBufLen) mut
-			{
-				return VT.GetCandidateListCountA(ref this, hIMC, out pdwListSize, out pdwBufLen);
-			}
-			public HRESULT GetCandidateListCountW(HIMC hIMC, out uint32 pdwListSize, out uint32 pdwBufLen) mut
-			{
-				return VT.GetCandidateListCountW(ref this, hIMC, out pdwListSize, out pdwBufLen);
-			}
-			public HRESULT GetCandidateWindow(HIMC hIMC, uint32 dwIndex, out CANDIDATEFORM pCandidate) mut
-			{
-				return VT.GetCandidateWindow(ref this, hIMC, dwIndex, out pCandidate);
-			}
-			public HRESULT GetCompositionFontA(HIMC hIMC, out LOGFONTA plf) mut
-			{
-				return VT.GetCompositionFontA(ref this, hIMC, out plf);
-			}
-			public HRESULT GetCompositionFontW(HIMC hIMC, out LOGFONTW plf) mut
-			{
-				return VT.GetCompositionFontW(ref this, hIMC, out plf);
-			}
-			public HRESULT GetCompositionStringA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, out int32 plCopied, void* pBuf) mut
-			{
-				return VT.GetCompositionStringA(ref this, hIMC, dwIndex, dwBufLen, out plCopied, pBuf);
-			}
-			public HRESULT GetCompositionStringW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, out int32 plCopied, void* pBuf) mut
-			{
-				return VT.GetCompositionStringW(ref this, hIMC, dwIndex, dwBufLen, out plCopied, pBuf);
-			}
-			public HRESULT GetCompositionWindow(HIMC hIMC, out COMPOSITIONFORM pCompForm) mut
-			{
-				return VT.GetCompositionWindow(ref this, hIMC, out pCompForm);
-			}
-			public HRESULT GetContext(HWND hWnd, out HIMC phIMC) mut
-			{
-				return VT.GetContext(ref this, hWnd, out phIMC);
-			}
-			public HRESULT GetConversionListA(HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, out CANDIDATELIST pDst, out uint32 puCopied) mut
-			{
-				return VT.GetConversionListA(ref this, hKL, hIMC, pSrc, uBufLen, uFlag, out pDst, out puCopied);
-			}
-			public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, out CANDIDATELIST pDst, out uint32 puCopied) mut
-			{
-				return VT.GetConversionListW(ref this, hKL, hIMC, pSrc, uBufLen, uFlag, out pDst, out puCopied);
-			}
-			public HRESULT GetConversionStatus(HIMC hIMC, out uint32 pfdwConversion, out uint32 pfdwSentence) mut
-			{
-				return VT.GetConversionStatus(ref this, hIMC, out pfdwConversion, out pfdwSentence);
-			}
-			public HRESULT GetDefaultIMEWnd(HWND hWnd, out HWND phDefWnd) mut
-			{
-				return VT.GetDefaultIMEWnd(ref this, hWnd, out phDefWnd);
-			}
-			public HRESULT GetDescriptionA(HKL hKL, uint32 uBufLen, PSTR szDescription, out uint32 puCopied) mut
-			{
-				return VT.GetDescriptionA(ref this, hKL, uBufLen, szDescription, out puCopied);
-			}
-			public HRESULT GetDescriptionW(HKL hKL, uint32 uBufLen, PWSTR szDescription, out uint32 puCopied) mut
-			{
-				return VT.GetDescriptionW(ref this, hKL, uBufLen, szDescription, out puCopied);
-			}
-			public HRESULT GetGuideLineA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, out uint32 pdwResult) mut
-			{
-				return VT.GetGuideLineA(ref this, hIMC, dwIndex, dwBufLen, pBuf, out pdwResult);
-			}
-			public HRESULT GetGuideLineW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, out uint32 pdwResult) mut
-			{
-				return VT.GetGuideLineW(ref this, hIMC, dwIndex, dwBufLen, pBuf, out pdwResult);
-			}
-			public HRESULT GetIMEFileNameA(HKL hKL, uint32 uBufLen, PSTR szFileName, out uint32 puCopied) mut
-			{
-				return VT.GetIMEFileNameA(ref this, hKL, uBufLen, szFileName, out puCopied);
-			}
-			public HRESULT GetIMEFileNameW(HKL hKL, uint32 uBufLen, PWSTR szFileName, out uint32 puCopied) mut
-			{
-				return VT.GetIMEFileNameW(ref this, hKL, uBufLen, szFileName, out puCopied);
-			}
-			public HRESULT GetOpenStatus(HIMC hIMC) mut
-			{
-				return VT.GetOpenStatus(ref this, hIMC);
-			}
-			public HRESULT GetProperty(HKL hKL, uint32 fdwIndex, out uint32 pdwProperty) mut
-			{
-				return VT.GetProperty(ref this, hKL, fdwIndex, out pdwProperty);
-			}
-			public HRESULT GetRegisterWordStyleA(HKL hKL, uint32 nItem, out STYLEBUFA pStyleBuf, out uint32 puCopied) mut
-			{
-				return VT.GetRegisterWordStyleA(ref this, hKL, nItem, out pStyleBuf, out puCopied);
-			}
-			public HRESULT GetRegisterWordStyleW(HKL hKL, uint32 nItem, out STYLEBUFW pStyleBuf, out uint32 puCopied) mut
-			{
-				return VT.GetRegisterWordStyleW(ref this, hKL, nItem, out pStyleBuf, out puCopied);
-			}
-			public HRESULT GetStatusWindowPos(HIMC hIMC, out POINT pptPos) mut
-			{
-				return VT.GetStatusWindowPos(ref this, hIMC, out pptPos);
-			}
-			public HRESULT GetVirtualKey(HWND hWnd, out uint32 puVirtualKey) mut
-			{
-				return VT.GetVirtualKey(ref this, hWnd, out puVirtualKey);
-			}
-			public HRESULT InstallIMEA(PSTR szIMEFileName, PSTR szLayoutText, out HKL phKL) mut
-			{
-				return VT.InstallIMEA(ref this, szIMEFileName, szLayoutText, out phKL);
-			}
-			public HRESULT InstallIMEW(PWSTR szIMEFileName, PWSTR szLayoutText, out HKL phKL) mut
-			{
-				return VT.InstallIMEW(ref this, szIMEFileName, szLayoutText, out phKL);
-			}
-			public HRESULT IsIME(HKL hKL) mut
-			{
-				return VT.IsIME(ref this, hKL);
-			}
-			public HRESULT IsUIMessageA(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.IsUIMessageA(ref this, hWndIME, msg, wParam, lParam);
-			}
-			public HRESULT IsUIMessageW(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.IsUIMessageW(ref this, hWndIME, msg, wParam, lParam);
-			}
-			public HRESULT NotifyIME(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut
-			{
-				return VT.NotifyIME(ref this, hIMC, dwAction, dwIndex, dwValue);
-			}
-			public HRESULT RegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) mut
-			{
-				return VT.RegisterWordA(ref this, hKL, szReading, dwStyle, szRegister);
-			}
-			public HRESULT RegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) mut
-			{
-				return VT.RegisterWordW(ref this, hKL, szReading, dwStyle, szRegister);
-			}
-			public HRESULT ReleaseContext(HWND hWnd, HIMC hIMC) mut
-			{
-				return VT.ReleaseContext(ref this, hWnd, hIMC);
-			}
-			public HRESULT SetCandidateWindow(HIMC hIMC, ref CANDIDATEFORM pCandidate) mut
-			{
-				return VT.SetCandidateWindow(ref this, hIMC, ref pCandidate);
-			}
-			public HRESULT SetCompositionFontA(HIMC hIMC, ref LOGFONTA plf) mut
-			{
-				return VT.SetCompositionFontA(ref this, hIMC, ref plf);
-			}
-			public HRESULT SetCompositionFontW(HIMC hIMC, ref LOGFONTW plf) mut
-			{
-				return VT.SetCompositionFontW(ref this, hIMC, ref plf);
-			}
-			public HRESULT SetCompositionStringA(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
-			{
-				return VT.SetCompositionStringA(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
-			}
-			public HRESULT SetCompositionStringW(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
-			{
-				return VT.SetCompositionStringW(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
-			}
-			public HRESULT SetCompositionWindow(HIMC hIMC, ref COMPOSITIONFORM pCompForm) mut
-			{
-				return VT.SetCompositionWindow(ref this, hIMC, ref pCompForm);
-			}
-			public HRESULT SetConversionStatus(HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) mut
-			{
-				return VT.SetConversionStatus(ref this, hIMC, fdwConversion, fdwSentence);
-			}
-			public HRESULT SetOpenStatus(HIMC hIMC, BOOL fOpen) mut
-			{
-				return VT.SetOpenStatus(ref this, hIMC, fOpen);
-			}
-			public HRESULT SetStatusWindowPos(HIMC hIMC, ref POINT pptPos) mut
-			{
-				return VT.SetStatusWindowPos(ref this, hIMC, ref pptPos);
-			}
-			public HRESULT SimulateHotKey(HWND hWnd, uint32 dwHotKeyID) mut
-			{
-				return VT.SimulateHotKey(ref this, hWnd, dwHotKeyID);
-			}
-			public HRESULT UnregisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) mut
-			{
-				return VT.UnregisterWordA(ref this, hKL, szReading, dwStyle, szUnregister);
-			}
-			public HRESULT UnregisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) mut
-			{
-				return VT.UnregisterWordW(ref this, hKL, szReading, dwStyle, szUnregister);
-			}
-			public HRESULT Activate(BOOL fRestoreLayout) mut
-			{
-				return VT.Activate(ref this, fRestoreLayout);
-			}
-			public HRESULT Deactivate() mut
-			{
-				return VT.Deactivate(ref this);
-			}
-			public HRESULT OnDefWindowProc(HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut
-			{
-				return VT.OnDefWindowProc(ref this, hWnd, Msg, wParam, lParam, out plResult);
-			}
-			public HRESULT FilterClientWindows(ref uint16 aaClassList, uint32 uSize) mut
-			{
-				return VT.FilterClientWindows(ref this, ref aaClassList, uSize);
-			}
-			public HRESULT GetCodePageA(HKL hKL, out uint32 uCodePage) mut
-			{
-				return VT.GetCodePageA(ref this, hKL, out uCodePage);
-			}
-			public HRESULT GetLangId(HKL hKL, out uint16 plid) mut
-			{
-				return VT.GetLangId(ref this, hKL, out plid);
-			}
-			public HRESULT AssociateContextEx(HWND hWnd, HIMC hIMC, uint32 dwFlags) mut
-			{
-				return VT.AssociateContextEx(ref this, hWnd, hIMC, dwFlags);
-			}
-			public HRESULT DisableIME(uint32 idThread) mut
-			{
-				return VT.DisableIME(ref this, idThread);
-			}
-			public HRESULT GetImeMenuItemsA(HIMC hIMC, uint32 dwFlags, uint32 dwType, ref IMEMENUITEMINFOA pImeParentMenu, out IMEMENUITEMINFOA pImeMenu, uint32 dwSize, out uint32 pdwResult) mut
-			{
-				return VT.GetImeMenuItemsA(ref this, hIMC, dwFlags, dwType, ref pImeParentMenu, out pImeMenu, dwSize, out pdwResult);
-			}
-			public HRESULT GetImeMenuItemsW(HIMC hIMC, uint32 dwFlags, uint32 dwType, ref IMEMENUITEMINFOW pImeParentMenu, out IMEMENUITEMINFOW pImeMenu, uint32 dwSize, out uint32 pdwResult) mut
-			{
-				return VT.GetImeMenuItemsW(ref this, hIMC, dwFlags, dwType, ref pImeParentMenu, out pImeMenu, dwSize, out pdwResult);
-			}
-			public HRESULT EnumInputContext(uint32 idThread, out IEnumInputContext* ppEnum) mut
-			{
-				return VT.EnumInputContext(ref this, idThread, out ppEnum);
-			}
+			public HRESULT AssociateContext(HWND hWnd, HIMC hIME, out HIMC phPrev) mut => VT.AssociateContext(ref this, hWnd, hIME, out phPrev);
+			public HRESULT ConfigureIMEA(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDA pData) mut => VT.ConfigureIMEA(ref this, hKL, hWnd, dwMode, ref pData);
+			public HRESULT ConfigureIMEW(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDW pData) mut => VT.ConfigureIMEW(ref this, hKL, hWnd, dwMode, ref pData);
+			public HRESULT CreateContext(out HIMC phIMC) mut => VT.CreateContext(ref this, out phIMC);
+			public HRESULT DestroyContext(HIMC hIME) mut => VT.DestroyContext(ref this, hIME);
+			public HRESULT EnumRegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, out IEnumRegisterWordA* pEnum) mut => VT.EnumRegisterWordA(ref this, hKL, szReading, dwStyle, szRegister, pData, out pEnum);
+			public HRESULT EnumRegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, out IEnumRegisterWordW* pEnum) mut => VT.EnumRegisterWordW(ref this, hKL, szReading, dwStyle, szRegister, pData, out pEnum);
+			public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut => VT.EscapeA(ref this, hKL, hIMC, uEscape, pData, out plResult);
+			public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut => VT.EscapeW(ref this, hKL, hIMC, uEscape, pData, out plResult);
+			public HRESULT GetCandidateListA(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, out CANDIDATELIST pCandList, out uint32 puCopied) mut => VT.GetCandidateListA(ref this, hIMC, dwIndex, uBufLen, out pCandList, out puCopied);
+			public HRESULT GetCandidateListW(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, out CANDIDATELIST pCandList, out uint32 puCopied) mut => VT.GetCandidateListW(ref this, hIMC, dwIndex, uBufLen, out pCandList, out puCopied);
+			public HRESULT GetCandidateListCountA(HIMC hIMC, out uint32 pdwListSize, out uint32 pdwBufLen) mut => VT.GetCandidateListCountA(ref this, hIMC, out pdwListSize, out pdwBufLen);
+			public HRESULT GetCandidateListCountW(HIMC hIMC, out uint32 pdwListSize, out uint32 pdwBufLen) mut => VT.GetCandidateListCountW(ref this, hIMC, out pdwListSize, out pdwBufLen);
+			public HRESULT GetCandidateWindow(HIMC hIMC, uint32 dwIndex, out CANDIDATEFORM pCandidate) mut => VT.GetCandidateWindow(ref this, hIMC, dwIndex, out pCandidate);
+			public HRESULT GetCompositionFontA(HIMC hIMC, out LOGFONTA plf) mut => VT.GetCompositionFontA(ref this, hIMC, out plf);
+			public HRESULT GetCompositionFontW(HIMC hIMC, out LOGFONTW plf) mut => VT.GetCompositionFontW(ref this, hIMC, out plf);
+			public HRESULT GetCompositionStringA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, out int32 plCopied, void* pBuf) mut => VT.GetCompositionStringA(ref this, hIMC, dwIndex, dwBufLen, out plCopied, pBuf);
+			public HRESULT GetCompositionStringW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, out int32 plCopied, void* pBuf) mut => VT.GetCompositionStringW(ref this, hIMC, dwIndex, dwBufLen, out plCopied, pBuf);
+			public HRESULT GetCompositionWindow(HIMC hIMC, out COMPOSITIONFORM pCompForm) mut => VT.GetCompositionWindow(ref this, hIMC, out pCompForm);
+			public HRESULT GetContext(HWND hWnd, out HIMC phIMC) mut => VT.GetContext(ref this, hWnd, out phIMC);
+			public HRESULT GetConversionListA(HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, out CANDIDATELIST pDst, out uint32 puCopied) mut => VT.GetConversionListA(ref this, hKL, hIMC, pSrc, uBufLen, uFlag, out pDst, out puCopied);
+			public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, out CANDIDATELIST pDst, out uint32 puCopied) mut => VT.GetConversionListW(ref this, hKL, hIMC, pSrc, uBufLen, uFlag, out pDst, out puCopied);
+			public HRESULT GetConversionStatus(HIMC hIMC, out uint32 pfdwConversion, out uint32 pfdwSentence) mut => VT.GetConversionStatus(ref this, hIMC, out pfdwConversion, out pfdwSentence);
+			public HRESULT GetDefaultIMEWnd(HWND hWnd, out HWND phDefWnd) mut => VT.GetDefaultIMEWnd(ref this, hWnd, out phDefWnd);
+			public HRESULT GetDescriptionA(HKL hKL, uint32 uBufLen, PSTR szDescription, out uint32 puCopied) mut => VT.GetDescriptionA(ref this, hKL, uBufLen, szDescription, out puCopied);
+			public HRESULT GetDescriptionW(HKL hKL, uint32 uBufLen, PWSTR szDescription, out uint32 puCopied) mut => VT.GetDescriptionW(ref this, hKL, uBufLen, szDescription, out puCopied);
+			public HRESULT GetGuideLineA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, out uint32 pdwResult) mut => VT.GetGuideLineA(ref this, hIMC, dwIndex, dwBufLen, pBuf, out pdwResult);
+			public HRESULT GetGuideLineW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, out uint32 pdwResult) mut => VT.GetGuideLineW(ref this, hIMC, dwIndex, dwBufLen, pBuf, out pdwResult);
+			public HRESULT GetIMEFileNameA(HKL hKL, uint32 uBufLen, PSTR szFileName, out uint32 puCopied) mut => VT.GetIMEFileNameA(ref this, hKL, uBufLen, szFileName, out puCopied);
+			public HRESULT GetIMEFileNameW(HKL hKL, uint32 uBufLen, PWSTR szFileName, out uint32 puCopied) mut => VT.GetIMEFileNameW(ref this, hKL, uBufLen, szFileName, out puCopied);
+			public HRESULT GetOpenStatus(HIMC hIMC) mut => VT.GetOpenStatus(ref this, hIMC);
+			public HRESULT GetProperty(HKL hKL, uint32 fdwIndex, out uint32 pdwProperty) mut => VT.GetProperty(ref this, hKL, fdwIndex, out pdwProperty);
+			public HRESULT GetRegisterWordStyleA(HKL hKL, uint32 nItem, out STYLEBUFA pStyleBuf, out uint32 puCopied) mut => VT.GetRegisterWordStyleA(ref this, hKL, nItem, out pStyleBuf, out puCopied);
+			public HRESULT GetRegisterWordStyleW(HKL hKL, uint32 nItem, out STYLEBUFW pStyleBuf, out uint32 puCopied) mut => VT.GetRegisterWordStyleW(ref this, hKL, nItem, out pStyleBuf, out puCopied);
+			public HRESULT GetStatusWindowPos(HIMC hIMC, out POINT pptPos) mut => VT.GetStatusWindowPos(ref this, hIMC, out pptPos);
+			public HRESULT GetVirtualKey(HWND hWnd, out uint32 puVirtualKey) mut => VT.GetVirtualKey(ref this, hWnd, out puVirtualKey);
+			public HRESULT InstallIMEA(PSTR szIMEFileName, PSTR szLayoutText, out HKL phKL) mut => VT.InstallIMEA(ref this, szIMEFileName, szLayoutText, out phKL);
+			public HRESULT InstallIMEW(PWSTR szIMEFileName, PWSTR szLayoutText, out HKL phKL) mut => VT.InstallIMEW(ref this, szIMEFileName, szLayoutText, out phKL);
+			public HRESULT IsIME(HKL hKL) mut => VT.IsIME(ref this, hKL);
+			public HRESULT IsUIMessageA(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut => VT.IsUIMessageA(ref this, hWndIME, msg, wParam, lParam);
+			public HRESULT IsUIMessageW(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut => VT.IsUIMessageW(ref this, hWndIME, msg, wParam, lParam);
+			public HRESULT NotifyIME(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut => VT.NotifyIME(ref this, hIMC, dwAction, dwIndex, dwValue);
+			public HRESULT RegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) mut => VT.RegisterWordA(ref this, hKL, szReading, dwStyle, szRegister);
+			public HRESULT RegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) mut => VT.RegisterWordW(ref this, hKL, szReading, dwStyle, szRegister);
+			public HRESULT ReleaseContext(HWND hWnd, HIMC hIMC) mut => VT.ReleaseContext(ref this, hWnd, hIMC);
+			public HRESULT SetCandidateWindow(HIMC hIMC, ref CANDIDATEFORM pCandidate) mut => VT.SetCandidateWindow(ref this, hIMC, ref pCandidate);
+			public HRESULT SetCompositionFontA(HIMC hIMC, ref LOGFONTA plf) mut => VT.SetCompositionFontA(ref this, hIMC, ref plf);
+			public HRESULT SetCompositionFontW(HIMC hIMC, ref LOGFONTW plf) mut => VT.SetCompositionFontW(ref this, hIMC, ref plf);
+			public HRESULT SetCompositionStringA(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut => VT.SetCompositionStringA(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			public HRESULT SetCompositionStringW(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut => VT.SetCompositionStringW(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			public HRESULT SetCompositionWindow(HIMC hIMC, ref COMPOSITIONFORM pCompForm) mut => VT.SetCompositionWindow(ref this, hIMC, ref pCompForm);
+			public HRESULT SetConversionStatus(HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) mut => VT.SetConversionStatus(ref this, hIMC, fdwConversion, fdwSentence);
+			public HRESULT SetOpenStatus(HIMC hIMC, BOOL fOpen) mut => VT.SetOpenStatus(ref this, hIMC, fOpen);
+			public HRESULT SetStatusWindowPos(HIMC hIMC, ref POINT pptPos) mut => VT.SetStatusWindowPos(ref this, hIMC, ref pptPos);
+			public HRESULT SimulateHotKey(HWND hWnd, uint32 dwHotKeyID) mut => VT.SimulateHotKey(ref this, hWnd, dwHotKeyID);
+			public HRESULT UnregisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) mut => VT.UnregisterWordA(ref this, hKL, szReading, dwStyle, szUnregister);
+			public HRESULT UnregisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) mut => VT.UnregisterWordW(ref this, hKL, szReading, dwStyle, szUnregister);
+			public HRESULT Activate(BOOL fRestoreLayout) mut => VT.Activate(ref this, fRestoreLayout);
+			public HRESULT Deactivate() mut => VT.Deactivate(ref this);
+			public HRESULT OnDefWindowProc(HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut => VT.OnDefWindowProc(ref this, hWnd, Msg, wParam, lParam, out plResult);
+			public HRESULT FilterClientWindows(ref uint16 aaClassList, uint32 uSize) mut => VT.FilterClientWindows(ref this, ref aaClassList, uSize);
+			public HRESULT GetCodePageA(HKL hKL, out uint32 uCodePage) mut => VT.GetCodePageA(ref this, hKL, out uCodePage);
+			public HRESULT GetLangId(HKL hKL, out uint16 plid) mut => VT.GetLangId(ref this, hKL, out plid);
+			public HRESULT AssociateContextEx(HWND hWnd, HIMC hIMC, uint32 dwFlags) mut => VT.AssociateContextEx(ref this, hWnd, hIMC, dwFlags);
+			public HRESULT DisableIME(uint32 idThread) mut => VT.DisableIME(ref this, idThread);
+			public HRESULT GetImeMenuItemsA(HIMC hIMC, uint32 dwFlags, uint32 dwType, ref IMEMENUITEMINFOA pImeParentMenu, out IMEMENUITEMINFOA pImeMenu, uint32 dwSize, out uint32 pdwResult) mut => VT.GetImeMenuItemsA(ref this, hIMC, dwFlags, dwType, ref pImeParentMenu, out pImeMenu, dwSize, out pdwResult);
+			public HRESULT GetImeMenuItemsW(HIMC hIMC, uint32 dwFlags, uint32 dwType, ref IMEMENUITEMINFOW pImeParentMenu, out IMEMENUITEMINFOW pImeMenu, uint32 dwSize, out uint32 pdwResult) mut => VT.GetImeMenuItemsW(ref this, hIMC, dwFlags, dwType, ref pImeParentMenu, out pImeMenu, dwSize, out pdwResult);
+			public HRESULT EnumInputContext(uint32 idThread, out IEnumInputContext* ppEnum) mut => VT.EnumInputContext(ref this, idThread, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2074,358 +1719,95 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AssociateContext(HWND hWnd, HIMC hIME, out HIMC phPrev) mut
-			{
-				return VT.AssociateContext(ref this, hWnd, hIME, out phPrev);
-			}
-			public HRESULT ConfigureIMEA(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDA pData) mut
-			{
-				return VT.ConfigureIMEA(ref this, hKL, hWnd, dwMode, ref pData);
-			}
-			public HRESULT ConfigureIMEW(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDW pData) mut
-			{
-				return VT.ConfigureIMEW(ref this, hKL, hWnd, dwMode, ref pData);
-			}
-			public HRESULT CreateContext(out HIMC phIMC) mut
-			{
-				return VT.CreateContext(ref this, out phIMC);
-			}
-			public HRESULT DestroyContext(HIMC hIME) mut
-			{
-				return VT.DestroyContext(ref this, hIME);
-			}
-			public HRESULT EnumRegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, out IEnumRegisterWordA* pEnum) mut
-			{
-				return VT.EnumRegisterWordA(ref this, hKL, szReading, dwStyle, szRegister, pData, out pEnum);
-			}
-			public HRESULT EnumRegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, out IEnumRegisterWordW* pEnum) mut
-			{
-				return VT.EnumRegisterWordW(ref this, hKL, szReading, dwStyle, szRegister, pData, out pEnum);
-			}
-			public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut
-			{
-				return VT.EscapeA(ref this, hKL, hIMC, uEscape, pData, out plResult);
-			}
-			public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut
-			{
-				return VT.EscapeW(ref this, hKL, hIMC, uEscape, pData, out plResult);
-			}
-			public HRESULT GetCandidateListA(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, out CANDIDATELIST pCandList, out uint32 puCopied) mut
-			{
-				return VT.GetCandidateListA(ref this, hIMC, dwIndex, uBufLen, out pCandList, out puCopied);
-			}
-			public HRESULT GetCandidateListW(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, out CANDIDATELIST pCandList, out uint32 puCopied) mut
-			{
-				return VT.GetCandidateListW(ref this, hIMC, dwIndex, uBufLen, out pCandList, out puCopied);
-			}
-			public HRESULT GetCandidateListCountA(HIMC hIMC, out uint32 pdwListSize, out uint32 pdwBufLen) mut
-			{
-				return VT.GetCandidateListCountA(ref this, hIMC, out pdwListSize, out pdwBufLen);
-			}
-			public HRESULT GetCandidateListCountW(HIMC hIMC, out uint32 pdwListSize, out uint32 pdwBufLen) mut
-			{
-				return VT.GetCandidateListCountW(ref this, hIMC, out pdwListSize, out pdwBufLen);
-			}
-			public HRESULT GetCandidateWindow(HIMC hIMC, uint32 dwIndex, out CANDIDATEFORM pCandidate) mut
-			{
-				return VT.GetCandidateWindow(ref this, hIMC, dwIndex, out pCandidate);
-			}
-			public HRESULT GetCompositionFontA(HIMC hIMC, out LOGFONTA plf) mut
-			{
-				return VT.GetCompositionFontA(ref this, hIMC, out plf);
-			}
-			public HRESULT GetCompositionFontW(HIMC hIMC, out LOGFONTW plf) mut
-			{
-				return VT.GetCompositionFontW(ref this, hIMC, out plf);
-			}
-			public HRESULT GetCompositionStringA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, out int32 plCopied, void* pBuf) mut
-			{
-				return VT.GetCompositionStringA(ref this, hIMC, dwIndex, dwBufLen, out plCopied, pBuf);
-			}
-			public HRESULT GetCompositionStringW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, out int32 plCopied, void* pBuf) mut
-			{
-				return VT.GetCompositionStringW(ref this, hIMC, dwIndex, dwBufLen, out plCopied, pBuf);
-			}
-			public HRESULT GetCompositionWindow(HIMC hIMC, out COMPOSITIONFORM pCompForm) mut
-			{
-				return VT.GetCompositionWindow(ref this, hIMC, out pCompForm);
-			}
-			public HRESULT GetContext(HWND hWnd, out HIMC phIMC) mut
-			{
-				return VT.GetContext(ref this, hWnd, out phIMC);
-			}
-			public HRESULT GetConversionListA(HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, out CANDIDATELIST pDst, out uint32 puCopied) mut
-			{
-				return VT.GetConversionListA(ref this, hKL, hIMC, pSrc, uBufLen, uFlag, out pDst, out puCopied);
-			}
-			public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, out CANDIDATELIST pDst, out uint32 puCopied) mut
-			{
-				return VT.GetConversionListW(ref this, hKL, hIMC, pSrc, uBufLen, uFlag, out pDst, out puCopied);
-			}
-			public HRESULT GetConversionStatus(HIMC hIMC, out uint32 pfdwConversion, out uint32 pfdwSentence) mut
-			{
-				return VT.GetConversionStatus(ref this, hIMC, out pfdwConversion, out pfdwSentence);
-			}
-			public HRESULT GetDefaultIMEWnd(HWND hWnd, out HWND phDefWnd) mut
-			{
-				return VT.GetDefaultIMEWnd(ref this, hWnd, out phDefWnd);
-			}
-			public HRESULT GetDescriptionA(HKL hKL, uint32 uBufLen, PSTR szDescription, out uint32 puCopied) mut
-			{
-				return VT.GetDescriptionA(ref this, hKL, uBufLen, szDescription, out puCopied);
-			}
-			public HRESULT GetDescriptionW(HKL hKL, uint32 uBufLen, PWSTR szDescription, out uint32 puCopied) mut
-			{
-				return VT.GetDescriptionW(ref this, hKL, uBufLen, szDescription, out puCopied);
-			}
-			public HRESULT GetGuideLineA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, out uint32 pdwResult) mut
-			{
-				return VT.GetGuideLineA(ref this, hIMC, dwIndex, dwBufLen, pBuf, out pdwResult);
-			}
-			public HRESULT GetGuideLineW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, out uint32 pdwResult) mut
-			{
-				return VT.GetGuideLineW(ref this, hIMC, dwIndex, dwBufLen, pBuf, out pdwResult);
-			}
-			public HRESULT GetIMEFileNameA(HKL hKL, uint32 uBufLen, PSTR szFileName, out uint32 puCopied) mut
-			{
-				return VT.GetIMEFileNameA(ref this, hKL, uBufLen, szFileName, out puCopied);
-			}
-			public HRESULT GetIMEFileNameW(HKL hKL, uint32 uBufLen, PWSTR szFileName, out uint32 puCopied) mut
-			{
-				return VT.GetIMEFileNameW(ref this, hKL, uBufLen, szFileName, out puCopied);
-			}
-			public HRESULT GetOpenStatus(HIMC hIMC) mut
-			{
-				return VT.GetOpenStatus(ref this, hIMC);
-			}
-			public HRESULT GetProperty(HKL hKL, uint32 fdwIndex, out uint32 pdwProperty) mut
-			{
-				return VT.GetProperty(ref this, hKL, fdwIndex, out pdwProperty);
-			}
-			public HRESULT GetRegisterWordStyleA(HKL hKL, uint32 nItem, out STYLEBUFA pStyleBuf, out uint32 puCopied) mut
-			{
-				return VT.GetRegisterWordStyleA(ref this, hKL, nItem, out pStyleBuf, out puCopied);
-			}
-			public HRESULT GetRegisterWordStyleW(HKL hKL, uint32 nItem, out STYLEBUFW pStyleBuf, out uint32 puCopied) mut
-			{
-				return VT.GetRegisterWordStyleW(ref this, hKL, nItem, out pStyleBuf, out puCopied);
-			}
-			public HRESULT GetStatusWindowPos(HIMC hIMC, out POINT pptPos) mut
-			{
-				return VT.GetStatusWindowPos(ref this, hIMC, out pptPos);
-			}
-			public HRESULT GetVirtualKey(HWND hWnd, out uint32 puVirtualKey) mut
-			{
-				return VT.GetVirtualKey(ref this, hWnd, out puVirtualKey);
-			}
-			public HRESULT InstallIMEA(PSTR szIMEFileName, PSTR szLayoutText, out HKL phKL) mut
-			{
-				return VT.InstallIMEA(ref this, szIMEFileName, szLayoutText, out phKL);
-			}
-			public HRESULT InstallIMEW(PWSTR szIMEFileName, PWSTR szLayoutText, out HKL phKL) mut
-			{
-				return VT.InstallIMEW(ref this, szIMEFileName, szLayoutText, out phKL);
-			}
-			public HRESULT IsIME(HKL hKL) mut
-			{
-				return VT.IsIME(ref this, hKL);
-			}
-			public HRESULT IsUIMessageA(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.IsUIMessageA(ref this, hWndIME, msg, wParam, lParam);
-			}
-			public HRESULT IsUIMessageW(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut
-			{
-				return VT.IsUIMessageW(ref this, hWndIME, msg, wParam, lParam);
-			}
-			public HRESULT NotifyIME(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut
-			{
-				return VT.NotifyIME(ref this, hIMC, dwAction, dwIndex, dwValue);
-			}
-			public HRESULT RegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) mut
-			{
-				return VT.RegisterWordA(ref this, hKL, szReading, dwStyle, szRegister);
-			}
-			public HRESULT RegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) mut
-			{
-				return VT.RegisterWordW(ref this, hKL, szReading, dwStyle, szRegister);
-			}
-			public HRESULT ReleaseContext(HWND hWnd, HIMC hIMC) mut
-			{
-				return VT.ReleaseContext(ref this, hWnd, hIMC);
-			}
-			public HRESULT SetCandidateWindow(HIMC hIMC, ref CANDIDATEFORM pCandidate) mut
-			{
-				return VT.SetCandidateWindow(ref this, hIMC, ref pCandidate);
-			}
-			public HRESULT SetCompositionFontA(HIMC hIMC, ref LOGFONTA plf) mut
-			{
-				return VT.SetCompositionFontA(ref this, hIMC, ref plf);
-			}
-			public HRESULT SetCompositionFontW(HIMC hIMC, ref LOGFONTW plf) mut
-			{
-				return VT.SetCompositionFontW(ref this, hIMC, ref plf);
-			}
-			public HRESULT SetCompositionStringA(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
-			{
-				return VT.SetCompositionStringA(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
-			}
-			public HRESULT SetCompositionStringW(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
-			{
-				return VT.SetCompositionStringW(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
-			}
-			public HRESULT SetCompositionWindow(HIMC hIMC, ref COMPOSITIONFORM pCompForm) mut
-			{
-				return VT.SetCompositionWindow(ref this, hIMC, ref pCompForm);
-			}
-			public HRESULT SetConversionStatus(HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) mut
-			{
-				return VT.SetConversionStatus(ref this, hIMC, fdwConversion, fdwSentence);
-			}
-			public HRESULT SetOpenStatus(HIMC hIMC, BOOL fOpen) mut
-			{
-				return VT.SetOpenStatus(ref this, hIMC, fOpen);
-			}
-			public HRESULT SetStatusWindowPos(HIMC hIMC, ref POINT pptPos) mut
-			{
-				return VT.SetStatusWindowPos(ref this, hIMC, ref pptPos);
-			}
-			public HRESULT SimulateHotKey(HWND hWnd, uint32 dwHotKeyID) mut
-			{
-				return VT.SimulateHotKey(ref this, hWnd, dwHotKeyID);
-			}
-			public HRESULT UnregisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) mut
-			{
-				return VT.UnregisterWordA(ref this, hKL, szReading, dwStyle, szUnregister);
-			}
-			public HRESULT UnregisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) mut
-			{
-				return VT.UnregisterWordW(ref this, hKL, szReading, dwStyle, szUnregister);
-			}
-			public HRESULT GenerateMessage(HIMC hIMC) mut
-			{
-				return VT.GenerateMessage(ref this, hIMC);
-			}
-			public HRESULT LockIMC(HIMC hIMC, out INPUTCONTEXT* ppIMC) mut
-			{
-				return VT.LockIMC(ref this, hIMC, out ppIMC);
-			}
-			public HRESULT UnlockIMC(HIMC hIMC) mut
-			{
-				return VT.UnlockIMC(ref this, hIMC);
-			}
-			public HRESULT GetIMCLockCount(HIMC hIMC, out uint32 pdwLockCount) mut
-			{
-				return VT.GetIMCLockCount(ref this, hIMC, out pdwLockCount);
-			}
-			public HRESULT CreateIMCC(uint32 dwSize, out HIMCC phIMCC) mut
-			{
-				return VT.CreateIMCC(ref this, dwSize, out phIMCC);
-			}
-			public HRESULT DestroyIMCC(HIMCC hIMCC) mut
-			{
-				return VT.DestroyIMCC(ref this, hIMCC);
-			}
-			public HRESULT LockIMCC(HIMCC hIMCC, void** ppv) mut
-			{
-				return VT.LockIMCC(ref this, hIMCC, ppv);
-			}
-			public HRESULT UnlockIMCC(HIMCC hIMCC) mut
-			{
-				return VT.UnlockIMCC(ref this, hIMCC);
-			}
-			public HRESULT ReSizeIMCC(HIMCC hIMCC, uint32 dwSize, out HIMCC phIMCC) mut
-			{
-				return VT.ReSizeIMCC(ref this, hIMCC, dwSize, out phIMCC);
-			}
-			public HRESULT GetIMCCSize(HIMCC hIMCC, out uint32 pdwSize) mut
-			{
-				return VT.GetIMCCSize(ref this, hIMCC, out pdwSize);
-			}
-			public HRESULT GetIMCCLockCount(HIMCC hIMCC, out uint32 pdwLockCount) mut
-			{
-				return VT.GetIMCCLockCount(ref this, hIMCC, out pdwLockCount);
-			}
-			public HRESULT GetHotKey(uint32 dwHotKeyID, out uint32 puModifiers, out uint32 puVKey, out HKL phKL) mut
-			{
-				return VT.GetHotKey(ref this, dwHotKeyID, out puModifiers, out puVKey, out phKL);
-			}
-			public HRESULT SetHotKey(uint32 dwHotKeyID, uint32 uModifiers, uint32 uVKey, HKL hKL) mut
-			{
-				return VT.SetHotKey(ref this, dwHotKeyID, uModifiers, uVKey, hKL);
-			}
-			public HRESULT CreateSoftKeyboard(uint32 uType, HWND hOwner, int32 x, int32 y, out HWND phSoftKbdWnd) mut
-			{
-				return VT.CreateSoftKeyboard(ref this, uType, hOwner, x, y, out phSoftKbdWnd);
-			}
-			public HRESULT DestroySoftKeyboard(HWND hSoftKbdWnd) mut
-			{
-				return VT.DestroySoftKeyboard(ref this, hSoftKbdWnd);
-			}
-			public HRESULT ShowSoftKeyboard(HWND hSoftKbdWnd, int32 nCmdShow) mut
-			{
-				return VT.ShowSoftKeyboard(ref this, hSoftKbdWnd, nCmdShow);
-			}
-			public HRESULT GetCodePageA(HKL hKL, out uint32 uCodePage) mut
-			{
-				return VT.GetCodePageA(ref this, hKL, out uCodePage);
-			}
-			public HRESULT GetLangId(HKL hKL, out uint16 plid) mut
-			{
-				return VT.GetLangId(ref this, hKL, out plid);
-			}
-			public HRESULT KeybdEvent(uint16 lgidIME, uint8 bVk, uint8 bScan, uint32 dwFlags, uint32 dwExtraInfo) mut
-			{
-				return VT.KeybdEvent(ref this, lgidIME, bVk, bScan, dwFlags, dwExtraInfo);
-			}
-			public HRESULT LockModal() mut
-			{
-				return VT.LockModal(ref this);
-			}
-			public HRESULT UnlockModal() mut
-			{
-				return VT.UnlockModal(ref this);
-			}
-			public HRESULT AssociateContextEx(HWND hWnd, HIMC hIMC, uint32 dwFlags) mut
-			{
-				return VT.AssociateContextEx(ref this, hWnd, hIMC, dwFlags);
-			}
-			public HRESULT DisableIME(uint32 idThread) mut
-			{
-				return VT.DisableIME(ref this, idThread);
-			}
-			public HRESULT GetImeMenuItemsA(HIMC hIMC, uint32 dwFlags, uint32 dwType, ref IMEMENUITEMINFOA pImeParentMenu, out IMEMENUITEMINFOA pImeMenu, uint32 dwSize, out uint32 pdwResult) mut
-			{
-				return VT.GetImeMenuItemsA(ref this, hIMC, dwFlags, dwType, ref pImeParentMenu, out pImeMenu, dwSize, out pdwResult);
-			}
-			public HRESULT GetImeMenuItemsW(HIMC hIMC, uint32 dwFlags, uint32 dwType, ref IMEMENUITEMINFOW pImeParentMenu, out IMEMENUITEMINFOW pImeMenu, uint32 dwSize, out uint32 pdwResult) mut
-			{
-				return VT.GetImeMenuItemsW(ref this, hIMC, dwFlags, dwType, ref pImeParentMenu, out pImeMenu, dwSize, out pdwResult);
-			}
-			public HRESULT EnumInputContext(uint32 idThread, out IEnumInputContext* ppEnum) mut
-			{
-				return VT.EnumInputContext(ref this, idThread, out ppEnum);
-			}
-			public HRESULT RequestMessageA(HIMC hIMC, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut
-			{
-				return VT.RequestMessageA(ref this, hIMC, wParam, lParam, out plResult);
-			}
-			public HRESULT RequestMessageW(HIMC hIMC, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut
-			{
-				return VT.RequestMessageW(ref this, hIMC, wParam, lParam, out plResult);
-			}
-			public HRESULT SendIMCA(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut
-			{
-				return VT.SendIMCA(ref this, hWnd, uMsg, wParam, lParam, out plResult);
-			}
-			public HRESULT SendIMCW(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut
-			{
-				return VT.SendIMCW(ref this, hWnd, uMsg, wParam, lParam, out plResult);
-			}
-			public HRESULT IsSleeping() mut
-			{
-				return VT.IsSleeping(ref this);
-			}
+			public HRESULT AssociateContext(HWND hWnd, HIMC hIME, out HIMC phPrev) mut => VT.AssociateContext(ref this, hWnd, hIME, out phPrev);
+			public HRESULT ConfigureIMEA(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDA pData) mut => VT.ConfigureIMEA(ref this, hKL, hWnd, dwMode, ref pData);
+			public HRESULT ConfigureIMEW(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDW pData) mut => VT.ConfigureIMEW(ref this, hKL, hWnd, dwMode, ref pData);
+			public HRESULT CreateContext(out HIMC phIMC) mut => VT.CreateContext(ref this, out phIMC);
+			public HRESULT DestroyContext(HIMC hIME) mut => VT.DestroyContext(ref this, hIME);
+			public HRESULT EnumRegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, out IEnumRegisterWordA* pEnum) mut => VT.EnumRegisterWordA(ref this, hKL, szReading, dwStyle, szRegister, pData, out pEnum);
+			public HRESULT EnumRegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, out IEnumRegisterWordW* pEnum) mut => VT.EnumRegisterWordW(ref this, hKL, szReading, dwStyle, szRegister, pData, out pEnum);
+			public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut => VT.EscapeA(ref this, hKL, hIMC, uEscape, pData, out plResult);
+			public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut => VT.EscapeW(ref this, hKL, hIMC, uEscape, pData, out plResult);
+			public HRESULT GetCandidateListA(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, out CANDIDATELIST pCandList, out uint32 puCopied) mut => VT.GetCandidateListA(ref this, hIMC, dwIndex, uBufLen, out pCandList, out puCopied);
+			public HRESULT GetCandidateListW(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, out CANDIDATELIST pCandList, out uint32 puCopied) mut => VT.GetCandidateListW(ref this, hIMC, dwIndex, uBufLen, out pCandList, out puCopied);
+			public HRESULT GetCandidateListCountA(HIMC hIMC, out uint32 pdwListSize, out uint32 pdwBufLen) mut => VT.GetCandidateListCountA(ref this, hIMC, out pdwListSize, out pdwBufLen);
+			public HRESULT GetCandidateListCountW(HIMC hIMC, out uint32 pdwListSize, out uint32 pdwBufLen) mut => VT.GetCandidateListCountW(ref this, hIMC, out pdwListSize, out pdwBufLen);
+			public HRESULT GetCandidateWindow(HIMC hIMC, uint32 dwIndex, out CANDIDATEFORM pCandidate) mut => VT.GetCandidateWindow(ref this, hIMC, dwIndex, out pCandidate);
+			public HRESULT GetCompositionFontA(HIMC hIMC, out LOGFONTA plf) mut => VT.GetCompositionFontA(ref this, hIMC, out plf);
+			public HRESULT GetCompositionFontW(HIMC hIMC, out LOGFONTW plf) mut => VT.GetCompositionFontW(ref this, hIMC, out plf);
+			public HRESULT GetCompositionStringA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, out int32 plCopied, void* pBuf) mut => VT.GetCompositionStringA(ref this, hIMC, dwIndex, dwBufLen, out plCopied, pBuf);
+			public HRESULT GetCompositionStringW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, out int32 plCopied, void* pBuf) mut => VT.GetCompositionStringW(ref this, hIMC, dwIndex, dwBufLen, out plCopied, pBuf);
+			public HRESULT GetCompositionWindow(HIMC hIMC, out COMPOSITIONFORM pCompForm) mut => VT.GetCompositionWindow(ref this, hIMC, out pCompForm);
+			public HRESULT GetContext(HWND hWnd, out HIMC phIMC) mut => VT.GetContext(ref this, hWnd, out phIMC);
+			public HRESULT GetConversionListA(HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, out CANDIDATELIST pDst, out uint32 puCopied) mut => VT.GetConversionListA(ref this, hKL, hIMC, pSrc, uBufLen, uFlag, out pDst, out puCopied);
+			public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, out CANDIDATELIST pDst, out uint32 puCopied) mut => VT.GetConversionListW(ref this, hKL, hIMC, pSrc, uBufLen, uFlag, out pDst, out puCopied);
+			public HRESULT GetConversionStatus(HIMC hIMC, out uint32 pfdwConversion, out uint32 pfdwSentence) mut => VT.GetConversionStatus(ref this, hIMC, out pfdwConversion, out pfdwSentence);
+			public HRESULT GetDefaultIMEWnd(HWND hWnd, out HWND phDefWnd) mut => VT.GetDefaultIMEWnd(ref this, hWnd, out phDefWnd);
+			public HRESULT GetDescriptionA(HKL hKL, uint32 uBufLen, PSTR szDescription, out uint32 puCopied) mut => VT.GetDescriptionA(ref this, hKL, uBufLen, szDescription, out puCopied);
+			public HRESULT GetDescriptionW(HKL hKL, uint32 uBufLen, PWSTR szDescription, out uint32 puCopied) mut => VT.GetDescriptionW(ref this, hKL, uBufLen, szDescription, out puCopied);
+			public HRESULT GetGuideLineA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, out uint32 pdwResult) mut => VT.GetGuideLineA(ref this, hIMC, dwIndex, dwBufLen, pBuf, out pdwResult);
+			public HRESULT GetGuideLineW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, out uint32 pdwResult) mut => VT.GetGuideLineW(ref this, hIMC, dwIndex, dwBufLen, pBuf, out pdwResult);
+			public HRESULT GetIMEFileNameA(HKL hKL, uint32 uBufLen, PSTR szFileName, out uint32 puCopied) mut => VT.GetIMEFileNameA(ref this, hKL, uBufLen, szFileName, out puCopied);
+			public HRESULT GetIMEFileNameW(HKL hKL, uint32 uBufLen, PWSTR szFileName, out uint32 puCopied) mut => VT.GetIMEFileNameW(ref this, hKL, uBufLen, szFileName, out puCopied);
+			public HRESULT GetOpenStatus(HIMC hIMC) mut => VT.GetOpenStatus(ref this, hIMC);
+			public HRESULT GetProperty(HKL hKL, uint32 fdwIndex, out uint32 pdwProperty) mut => VT.GetProperty(ref this, hKL, fdwIndex, out pdwProperty);
+			public HRESULT GetRegisterWordStyleA(HKL hKL, uint32 nItem, out STYLEBUFA pStyleBuf, out uint32 puCopied) mut => VT.GetRegisterWordStyleA(ref this, hKL, nItem, out pStyleBuf, out puCopied);
+			public HRESULT GetRegisterWordStyleW(HKL hKL, uint32 nItem, out STYLEBUFW pStyleBuf, out uint32 puCopied) mut => VT.GetRegisterWordStyleW(ref this, hKL, nItem, out pStyleBuf, out puCopied);
+			public HRESULT GetStatusWindowPos(HIMC hIMC, out POINT pptPos) mut => VT.GetStatusWindowPos(ref this, hIMC, out pptPos);
+			public HRESULT GetVirtualKey(HWND hWnd, out uint32 puVirtualKey) mut => VT.GetVirtualKey(ref this, hWnd, out puVirtualKey);
+			public HRESULT InstallIMEA(PSTR szIMEFileName, PSTR szLayoutText, out HKL phKL) mut => VT.InstallIMEA(ref this, szIMEFileName, szLayoutText, out phKL);
+			public HRESULT InstallIMEW(PWSTR szIMEFileName, PWSTR szLayoutText, out HKL phKL) mut => VT.InstallIMEW(ref this, szIMEFileName, szLayoutText, out phKL);
+			public HRESULT IsIME(HKL hKL) mut => VT.IsIME(ref this, hKL);
+			public HRESULT IsUIMessageA(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut => VT.IsUIMessageA(ref this, hWndIME, msg, wParam, lParam);
+			public HRESULT IsUIMessageW(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut => VT.IsUIMessageW(ref this, hWndIME, msg, wParam, lParam);
+			public HRESULT NotifyIME(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut => VT.NotifyIME(ref this, hIMC, dwAction, dwIndex, dwValue);
+			public HRESULT RegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) mut => VT.RegisterWordA(ref this, hKL, szReading, dwStyle, szRegister);
+			public HRESULT RegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) mut => VT.RegisterWordW(ref this, hKL, szReading, dwStyle, szRegister);
+			public HRESULT ReleaseContext(HWND hWnd, HIMC hIMC) mut => VT.ReleaseContext(ref this, hWnd, hIMC);
+			public HRESULT SetCandidateWindow(HIMC hIMC, ref CANDIDATEFORM pCandidate) mut => VT.SetCandidateWindow(ref this, hIMC, ref pCandidate);
+			public HRESULT SetCompositionFontA(HIMC hIMC, ref LOGFONTA plf) mut => VT.SetCompositionFontA(ref this, hIMC, ref plf);
+			public HRESULT SetCompositionFontW(HIMC hIMC, ref LOGFONTW plf) mut => VT.SetCompositionFontW(ref this, hIMC, ref plf);
+			public HRESULT SetCompositionStringA(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut => VT.SetCompositionStringA(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			public HRESULT SetCompositionStringW(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut => VT.SetCompositionStringW(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			public HRESULT SetCompositionWindow(HIMC hIMC, ref COMPOSITIONFORM pCompForm) mut => VT.SetCompositionWindow(ref this, hIMC, ref pCompForm);
+			public HRESULT SetConversionStatus(HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) mut => VT.SetConversionStatus(ref this, hIMC, fdwConversion, fdwSentence);
+			public HRESULT SetOpenStatus(HIMC hIMC, BOOL fOpen) mut => VT.SetOpenStatus(ref this, hIMC, fOpen);
+			public HRESULT SetStatusWindowPos(HIMC hIMC, ref POINT pptPos) mut => VT.SetStatusWindowPos(ref this, hIMC, ref pptPos);
+			public HRESULT SimulateHotKey(HWND hWnd, uint32 dwHotKeyID) mut => VT.SimulateHotKey(ref this, hWnd, dwHotKeyID);
+			public HRESULT UnregisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) mut => VT.UnregisterWordA(ref this, hKL, szReading, dwStyle, szUnregister);
+			public HRESULT UnregisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) mut => VT.UnregisterWordW(ref this, hKL, szReading, dwStyle, szUnregister);
+			public HRESULT GenerateMessage(HIMC hIMC) mut => VT.GenerateMessage(ref this, hIMC);
+			public HRESULT LockIMC(HIMC hIMC, out INPUTCONTEXT* ppIMC) mut => VT.LockIMC(ref this, hIMC, out ppIMC);
+			public HRESULT UnlockIMC(HIMC hIMC) mut => VT.UnlockIMC(ref this, hIMC);
+			public HRESULT GetIMCLockCount(HIMC hIMC, out uint32 pdwLockCount) mut => VT.GetIMCLockCount(ref this, hIMC, out pdwLockCount);
+			public HRESULT CreateIMCC(uint32 dwSize, out HIMCC phIMCC) mut => VT.CreateIMCC(ref this, dwSize, out phIMCC);
+			public HRESULT DestroyIMCC(HIMCC hIMCC) mut => VT.DestroyIMCC(ref this, hIMCC);
+			public HRESULT LockIMCC(HIMCC hIMCC, void** ppv) mut => VT.LockIMCC(ref this, hIMCC, ppv);
+			public HRESULT UnlockIMCC(HIMCC hIMCC) mut => VT.UnlockIMCC(ref this, hIMCC);
+			public HRESULT ReSizeIMCC(HIMCC hIMCC, uint32 dwSize, out HIMCC phIMCC) mut => VT.ReSizeIMCC(ref this, hIMCC, dwSize, out phIMCC);
+			public HRESULT GetIMCCSize(HIMCC hIMCC, out uint32 pdwSize) mut => VT.GetIMCCSize(ref this, hIMCC, out pdwSize);
+			public HRESULT GetIMCCLockCount(HIMCC hIMCC, out uint32 pdwLockCount) mut => VT.GetIMCCLockCount(ref this, hIMCC, out pdwLockCount);
+			public HRESULT GetHotKey(uint32 dwHotKeyID, out uint32 puModifiers, out uint32 puVKey, out HKL phKL) mut => VT.GetHotKey(ref this, dwHotKeyID, out puModifiers, out puVKey, out phKL);
+			public HRESULT SetHotKey(uint32 dwHotKeyID, uint32 uModifiers, uint32 uVKey, HKL hKL) mut => VT.SetHotKey(ref this, dwHotKeyID, uModifiers, uVKey, hKL);
+			public HRESULT CreateSoftKeyboard(uint32 uType, HWND hOwner, int32 x, int32 y, out HWND phSoftKbdWnd) mut => VT.CreateSoftKeyboard(ref this, uType, hOwner, x, y, out phSoftKbdWnd);
+			public HRESULT DestroySoftKeyboard(HWND hSoftKbdWnd) mut => VT.DestroySoftKeyboard(ref this, hSoftKbdWnd);
+			public HRESULT ShowSoftKeyboard(HWND hSoftKbdWnd, int32 nCmdShow) mut => VT.ShowSoftKeyboard(ref this, hSoftKbdWnd, nCmdShow);
+			public HRESULT GetCodePageA(HKL hKL, out uint32 uCodePage) mut => VT.GetCodePageA(ref this, hKL, out uCodePage);
+			public HRESULT GetLangId(HKL hKL, out uint16 plid) mut => VT.GetLangId(ref this, hKL, out plid);
+			public HRESULT KeybdEvent(uint16 lgidIME, uint8 bVk, uint8 bScan, uint32 dwFlags, uint32 dwExtraInfo) mut => VT.KeybdEvent(ref this, lgidIME, bVk, bScan, dwFlags, dwExtraInfo);
+			public HRESULT LockModal() mut => VT.LockModal(ref this);
+			public HRESULT UnlockModal() mut => VT.UnlockModal(ref this);
+			public HRESULT AssociateContextEx(HWND hWnd, HIMC hIMC, uint32 dwFlags) mut => VT.AssociateContextEx(ref this, hWnd, hIMC, dwFlags);
+			public HRESULT DisableIME(uint32 idThread) mut => VT.DisableIME(ref this, idThread);
+			public HRESULT GetImeMenuItemsA(HIMC hIMC, uint32 dwFlags, uint32 dwType, ref IMEMENUITEMINFOA pImeParentMenu, out IMEMENUITEMINFOA pImeMenu, uint32 dwSize, out uint32 pdwResult) mut => VT.GetImeMenuItemsA(ref this, hIMC, dwFlags, dwType, ref pImeParentMenu, out pImeMenu, dwSize, out pdwResult);
+			public HRESULT GetImeMenuItemsW(HIMC hIMC, uint32 dwFlags, uint32 dwType, ref IMEMENUITEMINFOW pImeParentMenu, out IMEMENUITEMINFOW pImeMenu, uint32 dwSize, out uint32 pdwResult) mut => VT.GetImeMenuItemsW(ref this, hIMC, dwFlags, dwType, ref pImeParentMenu, out pImeMenu, dwSize, out pdwResult);
+			public HRESULT EnumInputContext(uint32 idThread, out IEnumInputContext* ppEnum) mut => VT.EnumInputContext(ref this, idThread, out ppEnum);
+			public HRESULT RequestMessageA(HIMC hIMC, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut => VT.RequestMessageA(ref this, hIMC, wParam, lParam, out plResult);
+			public HRESULT RequestMessageW(HIMC hIMC, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut => VT.RequestMessageW(ref this, hIMC, wParam, lParam, out plResult);
+			public HRESULT SendIMCA(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut => VT.SendIMCA(ref this, hWnd, uMsg, wParam, lParam, out plResult);
+			public HRESULT SendIMCW(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT plResult) mut => VT.SendIMCW(ref this, hWnd, uMsg, wParam, lParam, out plResult);
+			public HRESULT IsSleeping() mut => VT.IsSleeping(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2526,74 +1908,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Inquire(uint32 dwSystemInfoFlags, out IMEINFO pIMEInfo, PWSTR szWndClass, out uint32 pdwPrivate) mut
-			{
-				return VT.Inquire(ref this, dwSystemInfoFlags, out pIMEInfo, szWndClass, out pdwPrivate);
-			}
-			public HRESULT ConversionList(HIMC hIMC, PWSTR szSource, uint32 uFlag, uint32 uBufLen, out CANDIDATELIST pDest, out uint32 puCopied) mut
-			{
-				return VT.ConversionList(ref this, hIMC, szSource, uFlag, uBufLen, out pDest, out puCopied);
-			}
-			public HRESULT Configure(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDW pRegisterWord) mut
-			{
-				return VT.Configure(ref this, hKL, hWnd, dwMode, ref pRegisterWord);
-			}
-			public HRESULT Destroy(uint32 uReserved) mut
-			{
-				return VT.Destroy(ref this, uReserved);
-			}
-			public HRESULT Escape(HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut
-			{
-				return VT.Escape(ref this, hIMC, uEscape, pData, out plResult);
-			}
-			public HRESULT SetActiveContext(HIMC hIMC, BOOL fFlag) mut
-			{
-				return VT.SetActiveContext(ref this, hIMC, fFlag);
-			}
-			public HRESULT ProcessKey(HIMC hIMC, uint32 uVirKey, uint32 lParam, ref uint8 pbKeyState) mut
-			{
-				return VT.ProcessKey(ref this, hIMC, uVirKey, lParam, ref pbKeyState);
-			}
-			public HRESULT Notify(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut
-			{
-				return VT.Notify(ref this, hIMC, dwAction, dwIndex, dwValue);
-			}
-			public HRESULT Select(HIMC hIMC, BOOL fSelect) mut
-			{
-				return VT.Select(ref this, hIMC, fSelect);
-			}
-			public HRESULT SetCompositionString(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
-			{
-				return VT.SetCompositionString(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
-			}
-			public HRESULT ToAsciiEx(uint32 uVirKey, uint32 uScanCode, ref uint8 pbKeyState, uint32 fuState, HIMC hIMC, out uint32 pdwTransBuf, out uint32 puSize) mut
-			{
-				return VT.ToAsciiEx(ref this, uVirKey, uScanCode, ref pbKeyState, fuState, hIMC, out pdwTransBuf, out puSize);
-			}
-			public HRESULT RegisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szString) mut
-			{
-				return VT.RegisterWord(ref this, szReading, dwStyle, szString);
-			}
-			public HRESULT UnregisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szString) mut
-			{
-				return VT.UnregisterWord(ref this, szReading, dwStyle, szString);
-			}
-			public HRESULT GetRegisterWordStyle(uint32 nItem, out STYLEBUFW pStyleBuf, out uint32 puBufSize) mut
-			{
-				return VT.GetRegisterWordStyle(ref this, nItem, out pStyleBuf, out puBufSize);
-			}
-			public HRESULT EnumRegisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, out IEnumRegisterWordW* ppEnum) mut
-			{
-				return VT.EnumRegisterWord(ref this, szReading, dwStyle, szRegister, pData, out ppEnum);
-			}
-			public HRESULT GetCodePageA(out uint32 uCodePage) mut
-			{
-				return VT.GetCodePageA(ref this, out uCodePage);
-			}
-			public HRESULT GetLangId(out uint16 plid) mut
-			{
-				return VT.GetLangId(ref this, out plid);
-			}
+			public HRESULT Inquire(uint32 dwSystemInfoFlags, out IMEINFO pIMEInfo, PWSTR szWndClass, out uint32 pdwPrivate) mut => VT.Inquire(ref this, dwSystemInfoFlags, out pIMEInfo, szWndClass, out pdwPrivate);
+			public HRESULT ConversionList(HIMC hIMC, PWSTR szSource, uint32 uFlag, uint32 uBufLen, out CANDIDATELIST pDest, out uint32 puCopied) mut => VT.ConversionList(ref this, hIMC, szSource, uFlag, uBufLen, out pDest, out puCopied);
+			public HRESULT Configure(HKL hKL, HWND hWnd, uint32 dwMode, ref REGISTERWORDW pRegisterWord) mut => VT.Configure(ref this, hKL, hWnd, dwMode, ref pRegisterWord);
+			public HRESULT Destroy(uint32 uReserved) mut => VT.Destroy(ref this, uReserved);
+			public HRESULT Escape(HIMC hIMC, uint32 uEscape, void* pData, out LRESULT plResult) mut => VT.Escape(ref this, hIMC, uEscape, pData, out plResult);
+			public HRESULT SetActiveContext(HIMC hIMC, BOOL fFlag) mut => VT.SetActiveContext(ref this, hIMC, fFlag);
+			public HRESULT ProcessKey(HIMC hIMC, uint32 uVirKey, uint32 lParam, ref uint8 pbKeyState) mut => VT.ProcessKey(ref this, hIMC, uVirKey, lParam, ref pbKeyState);
+			public HRESULT Notify(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut => VT.Notify(ref this, hIMC, dwAction, dwIndex, dwValue);
+			public HRESULT Select(HIMC hIMC, BOOL fSelect) mut => VT.Select(ref this, hIMC, fSelect);
+			public HRESULT SetCompositionString(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut => VT.SetCompositionString(ref this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			public HRESULT ToAsciiEx(uint32 uVirKey, uint32 uScanCode, ref uint8 pbKeyState, uint32 fuState, HIMC hIMC, out uint32 pdwTransBuf, out uint32 puSize) mut => VT.ToAsciiEx(ref this, uVirKey, uScanCode, ref pbKeyState, fuState, hIMC, out pdwTransBuf, out puSize);
+			public HRESULT RegisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szString) mut => VT.RegisterWord(ref this, szReading, dwStyle, szString);
+			public HRESULT UnregisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szString) mut => VT.UnregisterWord(ref this, szReading, dwStyle, szString);
+			public HRESULT GetRegisterWordStyle(uint32 nItem, out STYLEBUFW pStyleBuf, out uint32 puBufSize) mut => VT.GetRegisterWordStyle(ref this, nItem, out pStyleBuf, out puBufSize);
+			public HRESULT EnumRegisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, out IEnumRegisterWordW* ppEnum) mut => VT.EnumRegisterWord(ref this, szReading, dwStyle, szRegister, pData, out ppEnum);
+			public HRESULT GetCodePageA(out uint32 uCodePage) mut => VT.GetCodePageA(ref this, out uCodePage);
+			public HRESULT GetLangId(out uint16 plid) mut => VT.GetLangId(ref this, out plid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2623,14 +1955,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Sleep() mut
-			{
-				return VT.Sleep(ref this);
-			}
-			public HRESULT Unsleep(BOOL fDead) mut
-			{
-				return VT.Unsleep(ref this, fDead);
-			}
+			public HRESULT Sleep() mut => VT.Sleep(ref this);
+			public HRESULT Unsleep(BOOL fDead) mut => VT.Unsleep(ref this, fDead);
+
 			[CRepr]
 			public struct VTable : IActiveIME.VTable
 			{

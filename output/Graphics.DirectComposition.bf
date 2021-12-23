@@ -120,30 +120,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT SetAbsoluteBeginTime(LARGE_INTEGER beginTime) mut
-			{
-				return VT.SetAbsoluteBeginTime(ref this, beginTime);
-			}
-			public HRESULT AddCubic(double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient) mut
-			{
-				return VT.AddCubic(ref this, beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
-			}
-			public HRESULT AddSinusoidal(double beginOffset, float bias, float amplitude, float frequency, float phase) mut
-			{
-				return VT.AddSinusoidal(ref this, beginOffset, bias, amplitude, frequency, phase);
-			}
-			public HRESULT AddRepeat(double beginOffset, double durationToRepeat) mut
-			{
-				return VT.AddRepeat(ref this, beginOffset, durationToRepeat);
-			}
-			public HRESULT End(double endOffset, float endValue) mut
-			{
-				return VT.End(ref this, endOffset, endValue);
-			}
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT SetAbsoluteBeginTime(LARGE_INTEGER beginTime) mut => VT.SetAbsoluteBeginTime(ref this, beginTime);
+			public HRESULT AddCubic(double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient) mut => VT.AddCubic(ref this, beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
+			public HRESULT AddSinusoidal(double beginOffset, float bias, float amplitude, float frequency, float phase) mut => VT.AddSinusoidal(ref this, beginOffset, bias, amplitude, frequency, phase);
+			public HRESULT AddRepeat(double beginOffset, double durationToRepeat) mut => VT.AddRepeat(ref this, beginOffset, durationToRepeat);
+			public HRESULT End(double endOffset, float endValue) mut => VT.End(ref this, endOffset, endValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -162,102 +145,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Commit() mut
-			{
-				return VT.Commit(ref this);
-			}
-			public HRESULT WaitForCommitCompletion() mut
-			{
-				return VT.WaitForCommitCompletion(ref this);
-			}
-			public HRESULT GetFrameStatistics(out DCOMPOSITION_FRAME_STATISTICS statistics) mut
-			{
-				return VT.GetFrameStatistics(ref this, out statistics);
-			}
-			public HRESULT CreateTargetForHwnd(HWND hwnd, BOOL topmost, out IDCompositionTarget* target) mut
-			{
-				return VT.CreateTargetForHwnd(ref this, hwnd, topmost, out target);
-			}
-			public HRESULT CreateVisual(out IDCompositionVisual* visual) mut
-			{
-				return VT.CreateVisual(ref this, out visual);
-			}
-			public HRESULT CreateSurface(uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) mut
-			{
-				return VT.CreateSurface(ref this, width, height, pixelFormat, alphaMode, out surface);
-			}
-			public HRESULT CreateVirtualSurface(uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) mut
-			{
-				return VT.CreateVirtualSurface(ref this, initialWidth, initialHeight, pixelFormat, alphaMode, out virtualSurface);
-			}
-			public HRESULT CreateSurfaceFromHandle(HANDLE handle, out IUnknown* surface) mut
-			{
-				return VT.CreateSurfaceFromHandle(ref this, handle, out surface);
-			}
-			public HRESULT CreateSurfaceFromHwnd(HWND hwnd, out IUnknown* surface) mut
-			{
-				return VT.CreateSurfaceFromHwnd(ref this, hwnd, out surface);
-			}
-			public HRESULT CreateTranslateTransform(out IDCompositionTranslateTransform* translateTransform) mut
-			{
-				return VT.CreateTranslateTransform(ref this, out translateTransform);
-			}
-			public HRESULT CreateScaleTransform(out IDCompositionScaleTransform* scaleTransform) mut
-			{
-				return VT.CreateScaleTransform(ref this, out scaleTransform);
-			}
-			public HRESULT CreateRotateTransform(out IDCompositionRotateTransform* rotateTransform) mut
-			{
-				return VT.CreateRotateTransform(ref this, out rotateTransform);
-			}
-			public HRESULT CreateSkewTransform(out IDCompositionSkewTransform* skewTransform) mut
-			{
-				return VT.CreateSkewTransform(ref this, out skewTransform);
-			}
-			public HRESULT CreateMatrixTransform(out IDCompositionMatrixTransform* matrixTransform) mut
-			{
-				return VT.CreateMatrixTransform(ref this, out matrixTransform);
-			}
-			public HRESULT CreateTransformGroup(IDCompositionTransform** transforms, uint32 elements, out IDCompositionTransform* transformGroup) mut
-			{
-				return VT.CreateTransformGroup(ref this, transforms, elements, out transformGroup);
-			}
-			public HRESULT CreateTranslateTransform3D(out IDCompositionTranslateTransform3D* translateTransform3D) mut
-			{
-				return VT.CreateTranslateTransform3D(ref this, out translateTransform3D);
-			}
-			public HRESULT CreateScaleTransform3D(out IDCompositionScaleTransform3D* scaleTransform3D) mut
-			{
-				return VT.CreateScaleTransform3D(ref this, out scaleTransform3D);
-			}
-			public HRESULT CreateRotateTransform3D(out IDCompositionRotateTransform3D* rotateTransform3D) mut
-			{
-				return VT.CreateRotateTransform3D(ref this, out rotateTransform3D);
-			}
-			public HRESULT CreateMatrixTransform3D(out IDCompositionMatrixTransform3D* matrixTransform3D) mut
-			{
-				return VT.CreateMatrixTransform3D(ref this, out matrixTransform3D);
-			}
-			public HRESULT CreateTransform3DGroup(IDCompositionTransform3D** transforms3D, uint32 elements, out IDCompositionTransform3D* transform3DGroup) mut
-			{
-				return VT.CreateTransform3DGroup(ref this, transforms3D, elements, out transform3DGroup);
-			}
-			public HRESULT CreateEffectGroup(out IDCompositionEffectGroup* effectGroup) mut
-			{
-				return VT.CreateEffectGroup(ref this, out effectGroup);
-			}
-			public HRESULT CreateRectangleClip(out IDCompositionRectangleClip* clip) mut
-			{
-				return VT.CreateRectangleClip(ref this, out clip);
-			}
-			public HRESULT CreateAnimation(out IDCompositionAnimation* animation) mut
-			{
-				return VT.CreateAnimation(ref this, out animation);
-			}
-			public HRESULT CheckDeviceState(out BOOL pfValid) mut
-			{
-				return VT.CheckDeviceState(ref this, out pfValid);
-			}
+			public HRESULT Commit() mut => VT.Commit(ref this);
+			public HRESULT WaitForCommitCompletion() mut => VT.WaitForCommitCompletion(ref this);
+			public HRESULT GetFrameStatistics(out DCOMPOSITION_FRAME_STATISTICS statistics) mut => VT.GetFrameStatistics(ref this, out statistics);
+			public HRESULT CreateTargetForHwnd(HWND hwnd, BOOL topmost, out IDCompositionTarget* target) mut => VT.CreateTargetForHwnd(ref this, hwnd, topmost, out target);
+			public HRESULT CreateVisual(out IDCompositionVisual* visual) mut => VT.CreateVisual(ref this, out visual);
+			public HRESULT CreateSurface(uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) mut => VT.CreateSurface(ref this, width, height, pixelFormat, alphaMode, out surface);
+			public HRESULT CreateVirtualSurface(uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) mut => VT.CreateVirtualSurface(ref this, initialWidth, initialHeight, pixelFormat, alphaMode, out virtualSurface);
+			public HRESULT CreateSurfaceFromHandle(HANDLE handle, out IUnknown* surface) mut => VT.CreateSurfaceFromHandle(ref this, handle, out surface);
+			public HRESULT CreateSurfaceFromHwnd(HWND hwnd, out IUnknown* surface) mut => VT.CreateSurfaceFromHwnd(ref this, hwnd, out surface);
+			public HRESULT CreateTranslateTransform(out IDCompositionTranslateTransform* translateTransform) mut => VT.CreateTranslateTransform(ref this, out translateTransform);
+			public HRESULT CreateScaleTransform(out IDCompositionScaleTransform* scaleTransform) mut => VT.CreateScaleTransform(ref this, out scaleTransform);
+			public HRESULT CreateRotateTransform(out IDCompositionRotateTransform* rotateTransform) mut => VT.CreateRotateTransform(ref this, out rotateTransform);
+			public HRESULT CreateSkewTransform(out IDCompositionSkewTransform* skewTransform) mut => VT.CreateSkewTransform(ref this, out skewTransform);
+			public HRESULT CreateMatrixTransform(out IDCompositionMatrixTransform* matrixTransform) mut => VT.CreateMatrixTransform(ref this, out matrixTransform);
+			public HRESULT CreateTransformGroup(IDCompositionTransform** transforms, uint32 elements, out IDCompositionTransform* transformGroup) mut => VT.CreateTransformGroup(ref this, transforms, elements, out transformGroup);
+			public HRESULT CreateTranslateTransform3D(out IDCompositionTranslateTransform3D* translateTransform3D) mut => VT.CreateTranslateTransform3D(ref this, out translateTransform3D);
+			public HRESULT CreateScaleTransform3D(out IDCompositionScaleTransform3D* scaleTransform3D) mut => VT.CreateScaleTransform3D(ref this, out scaleTransform3D);
+			public HRESULT CreateRotateTransform3D(out IDCompositionRotateTransform3D* rotateTransform3D) mut => VT.CreateRotateTransform3D(ref this, out rotateTransform3D);
+			public HRESULT CreateMatrixTransform3D(out IDCompositionMatrixTransform3D* matrixTransform3D) mut => VT.CreateMatrixTransform3D(ref this, out matrixTransform3D);
+			public HRESULT CreateTransform3DGroup(IDCompositionTransform3D** transforms3D, uint32 elements, out IDCompositionTransform3D* transform3DGroup) mut => VT.CreateTransform3DGroup(ref this, transforms3D, elements, out transform3DGroup);
+			public HRESULT CreateEffectGroup(out IDCompositionEffectGroup* effectGroup) mut => VT.CreateEffectGroup(ref this, out effectGroup);
+			public HRESULT CreateRectangleClip(out IDCompositionRectangleClip* clip) mut => VT.CreateRectangleClip(ref this, out clip);
+			public HRESULT CreateAnimation(out IDCompositionAnimation* animation) mut => VT.CreateAnimation(ref this, out animation);
+			public HRESULT CheckDeviceState(out BOOL pfValid) mut => VT.CheckDeviceState(ref this, out pfValid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -294,10 +206,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRoot(IDCompositionVisual* visual) mut
-			{
-				return VT.SetRoot(ref this, visual);
-			}
+			public HRESULT SetRoot(IDCompositionVisual* visual) mut => VT.SetRoot(ref this, visual);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -311,74 +221,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOffsetX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOffsetX(ref this, ref animation);
-			}
-			public HRESULT SetOffsetX(float offsetX) mut
-			{
-				return VT.SetOffsetX2(ref this, offsetX);
-			}
-			public HRESULT SetOffsetY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOffsetY(ref this, ref animation);
-			}
-			public HRESULT SetOffsetY(float offsetY) mut
-			{
-				return VT.SetOffsetY2(ref this, offsetY);
-			}
-			public HRESULT SetTransform(IDCompositionTransform* transform) mut
-			{
-				return VT.SetTransform(ref this, transform);
-			}
-			public HRESULT SetTransform(in D2D_MATRIX_3X2_F matrix) mut
-			{
-				return VT.SetTransform2(ref this, matrix);
-			}
-			public HRESULT SetTransformParent(IDCompositionVisual* visual) mut
-			{
-				return VT.SetTransformParent(ref this, visual);
-			}
-			public HRESULT SetEffect(IDCompositionEffect* effect) mut
-			{
-				return VT.SetEffect(ref this, effect);
-			}
-			public HRESULT SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE interpolationMode) mut
-			{
-				return VT.SetBitmapInterpolationMode(ref this, interpolationMode);
-			}
-			public HRESULT SetBorderMode(DCOMPOSITION_BORDER_MODE borderMode) mut
-			{
-				return VT.SetBorderMode(ref this, borderMode);
-			}
-			public HRESULT SetClip(IDCompositionClip* clip) mut
-			{
-				return VT.SetClip(ref this, clip);
-			}
-			public HRESULT SetClip(in D2D_RECT_F rect) mut
-			{
-				return VT.SetClip2(ref this, rect);
-			}
-			public HRESULT SetContent(IUnknown* content) mut
-			{
-				return VT.SetContent(ref this, content);
-			}
-			public HRESULT AddVisual(ref IDCompositionVisual visual, BOOL insertAbove, IDCompositionVisual* referenceVisual) mut
-			{
-				return VT.AddVisual(ref this, ref visual, insertAbove, referenceVisual);
-			}
-			public HRESULT RemoveVisual(ref IDCompositionVisual visual) mut
-			{
-				return VT.RemoveVisual(ref this, ref visual);
-			}
-			public HRESULT RemoveAllVisuals() mut
-			{
-				return VT.RemoveAllVisuals(ref this);
-			}
-			public HRESULT SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE compositeMode) mut
-			{
-				return VT.SetCompositeMode(ref this, compositeMode);
-			}
+			public HRESULT SetOffsetX(ref IDCompositionAnimation animation) mut => VT.SetOffsetX(ref this, ref animation);
+			public HRESULT SetOffsetX(float offsetX) mut => VT.SetOffsetX2(ref this, offsetX);
+			public HRESULT SetOffsetY(ref IDCompositionAnimation animation) mut => VT.SetOffsetY(ref this, ref animation);
+			public HRESULT SetOffsetY(float offsetY) mut => VT.SetOffsetY2(ref this, offsetY);
+			public HRESULT SetTransform(IDCompositionTransform* transform) mut => VT.SetTransform(ref this, transform);
+			public HRESULT SetTransform(in D2D_MATRIX_3X2_F matrix) mut => VT.SetTransform2(ref this, matrix);
+			public HRESULT SetTransformParent(IDCompositionVisual* visual) mut => VT.SetTransformParent(ref this, visual);
+			public HRESULT SetEffect(IDCompositionEffect* effect) mut => VT.SetEffect(ref this, effect);
+			public HRESULT SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE interpolationMode) mut => VT.SetBitmapInterpolationMode(ref this, interpolationMode);
+			public HRESULT SetBorderMode(DCOMPOSITION_BORDER_MODE borderMode) mut => VT.SetBorderMode(ref this, borderMode);
+			public HRESULT SetClip(IDCompositionClip* clip) mut => VT.SetClip(ref this, clip);
+			public HRESULT SetClip(in D2D_RECT_F rect) mut => VT.SetClip2(ref this, rect);
+			public HRESULT SetContent(IUnknown* content) mut => VT.SetContent(ref this, content);
+			public HRESULT AddVisual(ref IDCompositionVisual visual, BOOL insertAbove, IDCompositionVisual* referenceVisual) mut => VT.AddVisual(ref this, ref visual, insertAbove, referenceVisual);
+			public HRESULT RemoveVisual(ref IDCompositionVisual visual) mut => VT.RemoveVisual(ref this, ref visual);
+			public HRESULT RemoveAllVisuals() mut => VT.RemoveAllVisuals(ref this);
+			public HRESULT SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE compositeMode) mut => VT.SetCompositeMode(ref this, compositeMode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -408,6 +268,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -420,6 +281,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDCompositionEffect.VTable
 			{
@@ -432,6 +294,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
@@ -444,22 +307,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOffsetX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOffsetX(ref this, ref animation);
-			}
-			public HRESULT SetOffsetX(float offsetX) mut
-			{
-				return VT.SetOffsetX2(ref this, offsetX);
-			}
-			public HRESULT SetOffsetY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOffsetY(ref this, ref animation);
-			}
-			public HRESULT SetOffsetY(float offsetY) mut
-			{
-				return VT.SetOffsetY2(ref this, offsetY);
-			}
+			public HRESULT SetOffsetX(ref IDCompositionAnimation animation) mut => VT.SetOffsetX(ref this, ref animation);
+			public HRESULT SetOffsetX(float offsetX) mut => VT.SetOffsetX2(ref this, offsetX);
+			public HRESULT SetOffsetY(ref IDCompositionAnimation animation) mut => VT.SetOffsetY(ref this, ref animation);
+			public HRESULT SetOffsetY(float offsetY) mut => VT.SetOffsetY2(ref this, offsetY);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
@@ -476,38 +328,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetScaleX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetScaleX(ref this, ref animation);
-			}
-			public HRESULT SetScaleX(float scaleX) mut
-			{
-				return VT.SetScaleX2(ref this, scaleX);
-			}
-			public HRESULT SetScaleY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetScaleY(ref this, ref animation);
-			}
-			public HRESULT SetScaleY(float scaleY) mut
-			{
-				return VT.SetScaleY2(ref this, scaleY);
-			}
-			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterX(ref this, ref animation);
-			}
-			public HRESULT SetCenterX(float centerX) mut
-			{
-				return VT.SetCenterX2(ref this, centerX);
-			}
-			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterY(ref this, ref animation);
-			}
-			public HRESULT SetCenterY(float centerY) mut
-			{
-				return VT.SetCenterY2(ref this, centerY);
-			}
+			public HRESULT SetScaleX(ref IDCompositionAnimation animation) mut => VT.SetScaleX(ref this, ref animation);
+			public HRESULT SetScaleX(float scaleX) mut => VT.SetScaleX2(ref this, scaleX);
+			public HRESULT SetScaleY(ref IDCompositionAnimation animation) mut => VT.SetScaleY(ref this, ref animation);
+			public HRESULT SetScaleY(float scaleY) mut => VT.SetScaleY2(ref this, scaleY);
+			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut => VT.SetCenterX(ref this, ref animation);
+			public HRESULT SetCenterX(float centerX) mut => VT.SetCenterX2(ref this, centerX);
+			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut => VT.SetCenterY(ref this, ref animation);
+			public HRESULT SetCenterY(float centerY) mut => VT.SetCenterY2(ref this, centerY);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
@@ -528,30 +357,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAngle(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAngle(ref this, ref animation);
-			}
-			public HRESULT SetAngle(float angle) mut
-			{
-				return VT.SetAngle2(ref this, angle);
-			}
-			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterX(ref this, ref animation);
-			}
-			public HRESULT SetCenterX(float centerX) mut
-			{
-				return VT.SetCenterX2(ref this, centerX);
-			}
-			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterY(ref this, ref animation);
-			}
-			public HRESULT SetCenterY(float centerY) mut
-			{
-				return VT.SetCenterY2(ref this, centerY);
-			}
+			public HRESULT SetAngle(ref IDCompositionAnimation animation) mut => VT.SetAngle(ref this, ref animation);
+			public HRESULT SetAngle(float angle) mut => VT.SetAngle2(ref this, angle);
+			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut => VT.SetCenterX(ref this, ref animation);
+			public HRESULT SetCenterX(float centerX) mut => VT.SetCenterX2(ref this, centerX);
+			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut => VT.SetCenterY(ref this, ref animation);
+			public HRESULT SetCenterY(float centerY) mut => VT.SetCenterY2(ref this, centerY);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
@@ -570,38 +382,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAngleX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAngleX(ref this, ref animation);
-			}
-			public HRESULT SetAngleX(float angleX) mut
-			{
-				return VT.SetAngleX2(ref this, angleX);
-			}
-			public HRESULT SetAngleY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAngleY(ref this, ref animation);
-			}
-			public HRESULT SetAngleY(float angleY) mut
-			{
-				return VT.SetAngleY2(ref this, angleY);
-			}
-			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterX(ref this, ref animation);
-			}
-			public HRESULT SetCenterX(float centerX) mut
-			{
-				return VT.SetCenterX2(ref this, centerX);
-			}
-			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterY(ref this, ref animation);
-			}
-			public HRESULT SetCenterY(float centerY) mut
-			{
-				return VT.SetCenterY2(ref this, centerY);
-			}
+			public HRESULT SetAngleX(ref IDCompositionAnimation animation) mut => VT.SetAngleX(ref this, ref animation);
+			public HRESULT SetAngleX(float angleX) mut => VT.SetAngleX2(ref this, angleX);
+			public HRESULT SetAngleY(ref IDCompositionAnimation animation) mut => VT.SetAngleY(ref this, ref animation);
+			public HRESULT SetAngleY(float angleY) mut => VT.SetAngleY2(ref this, angleY);
+			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut => VT.SetCenterX(ref this, ref animation);
+			public HRESULT SetCenterX(float centerX) mut => VT.SetCenterX2(ref this, centerX);
+			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut => VT.SetCenterY(ref this, ref animation);
+			public HRESULT SetCenterY(float centerY) mut => VT.SetCenterY2(ref this, centerY);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
@@ -622,18 +411,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMatrix(in D2D_MATRIX_3X2_F matrix) mut
-			{
-				return VT.SetMatrix(ref this, matrix);
-			}
-			public HRESULT SetMatrixElement(int32 row, int32 column, ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetMatrixElement(ref this, row, column, ref animation);
-			}
-			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut
-			{
-				return VT.SetMatrixElement2(ref this, row, column, value);
-			}
+			public HRESULT SetMatrix(in D2D_MATRIX_3X2_F matrix) mut => VT.SetMatrix(ref this, matrix);
+			public HRESULT SetMatrixElement(int32 row, int32 column, ref IDCompositionAnimation animation) mut => VT.SetMatrixElement(ref this, row, column, ref animation);
+			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut => VT.SetMatrixElement2(ref this, row, column, value);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
@@ -649,18 +430,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOpacity(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOpacity(ref this, ref animation);
-			}
-			public HRESULT SetOpacity(float opacity) mut
-			{
-				return VT.SetOpacity2(ref this, opacity);
-			}
-			public HRESULT SetTransform3D(IDCompositionTransform3D* transform3D) mut
-			{
-				return VT.SetTransform3D(ref this, transform3D);
-			}
+			public HRESULT SetOpacity(ref IDCompositionAnimation animation) mut => VT.SetOpacity(ref this, ref animation);
+			public HRESULT SetOpacity(float opacity) mut => VT.SetOpacity2(ref this, opacity);
+			public HRESULT SetTransform3D(IDCompositionTransform3D* transform3D) mut => VT.SetTransform3D(ref this, transform3D);
+
 			[CRepr]
 			public struct VTable : IDCompositionEffect.VTable
 			{
@@ -676,30 +449,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOffsetX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOffsetX(ref this, ref animation);
-			}
-			public HRESULT SetOffsetX(float offsetX) mut
-			{
-				return VT.SetOffsetX2(ref this, offsetX);
-			}
-			public HRESULT SetOffsetY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOffsetY(ref this, ref animation);
-			}
-			public HRESULT SetOffsetY(float offsetY) mut
-			{
-				return VT.SetOffsetY2(ref this, offsetY);
-			}
-			public HRESULT SetOffsetZ(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOffsetZ(ref this, ref animation);
-			}
-			public HRESULT SetOffsetZ(float offsetZ) mut
-			{
-				return VT.SetOffsetZ2(ref this, offsetZ);
-			}
+			public HRESULT SetOffsetX(ref IDCompositionAnimation animation) mut => VT.SetOffsetX(ref this, ref animation);
+			public HRESULT SetOffsetX(float offsetX) mut => VT.SetOffsetX2(ref this, offsetX);
+			public HRESULT SetOffsetY(ref IDCompositionAnimation animation) mut => VT.SetOffsetY(ref this, ref animation);
+			public HRESULT SetOffsetY(float offsetY) mut => VT.SetOffsetY2(ref this, offsetY);
+			public HRESULT SetOffsetZ(ref IDCompositionAnimation animation) mut => VT.SetOffsetZ(ref this, ref animation);
+			public HRESULT SetOffsetZ(float offsetZ) mut => VT.SetOffsetZ2(ref this, offsetZ);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
@@ -718,54 +474,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetScaleX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetScaleX(ref this, ref animation);
-			}
-			public HRESULT SetScaleX(float scaleX) mut
-			{
-				return VT.SetScaleX2(ref this, scaleX);
-			}
-			public HRESULT SetScaleY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetScaleY(ref this, ref animation);
-			}
-			public HRESULT SetScaleY(float scaleY) mut
-			{
-				return VT.SetScaleY2(ref this, scaleY);
-			}
-			public HRESULT SetScaleZ(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetScaleZ(ref this, ref animation);
-			}
-			public HRESULT SetScaleZ(float scaleZ) mut
-			{
-				return VT.SetScaleZ2(ref this, scaleZ);
-			}
-			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterX(ref this, ref animation);
-			}
-			public HRESULT SetCenterX(float centerX) mut
-			{
-				return VT.SetCenterX2(ref this, centerX);
-			}
-			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterY(ref this, ref animation);
-			}
-			public HRESULT SetCenterY(float centerY) mut
-			{
-				return VT.SetCenterY2(ref this, centerY);
-			}
-			public HRESULT SetCenterZ(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterZ(ref this, ref animation);
-			}
-			public HRESULT SetCenterZ(float centerZ) mut
-			{
-				return VT.SetCenterZ2(ref this, centerZ);
-			}
+			public HRESULT SetScaleX(ref IDCompositionAnimation animation) mut => VT.SetScaleX(ref this, ref animation);
+			public HRESULT SetScaleX(float scaleX) mut => VT.SetScaleX2(ref this, scaleX);
+			public HRESULT SetScaleY(ref IDCompositionAnimation animation) mut => VT.SetScaleY(ref this, ref animation);
+			public HRESULT SetScaleY(float scaleY) mut => VT.SetScaleY2(ref this, scaleY);
+			public HRESULT SetScaleZ(ref IDCompositionAnimation animation) mut => VT.SetScaleZ(ref this, ref animation);
+			public HRESULT SetScaleZ(float scaleZ) mut => VT.SetScaleZ2(ref this, scaleZ);
+			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut => VT.SetCenterX(ref this, ref animation);
+			public HRESULT SetCenterX(float centerX) mut => VT.SetCenterX2(ref this, centerX);
+			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut => VT.SetCenterY(ref this, ref animation);
+			public HRESULT SetCenterY(float centerY) mut => VT.SetCenterY2(ref this, centerY);
+			public HRESULT SetCenterZ(ref IDCompositionAnimation animation) mut => VT.SetCenterZ(ref this, ref animation);
+			public HRESULT SetCenterZ(float centerZ) mut => VT.SetCenterZ2(ref this, centerZ);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
@@ -790,62 +511,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAngle(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAngle(ref this, ref animation);
-			}
-			public HRESULT SetAngle(float angle) mut
-			{
-				return VT.SetAngle2(ref this, angle);
-			}
-			public HRESULT SetAxisX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAxisX(ref this, ref animation);
-			}
-			public HRESULT SetAxisX(float axisX) mut
-			{
-				return VT.SetAxisX2(ref this, axisX);
-			}
-			public HRESULT SetAxisY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAxisY(ref this, ref animation);
-			}
-			public HRESULT SetAxisY(float axisY) mut
-			{
-				return VT.SetAxisY2(ref this, axisY);
-			}
-			public HRESULT SetAxisZ(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAxisZ(ref this, ref animation);
-			}
-			public HRESULT SetAxisZ(float axisZ) mut
-			{
-				return VT.SetAxisZ2(ref this, axisZ);
-			}
-			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterX(ref this, ref animation);
-			}
-			public HRESULT SetCenterX(float centerX) mut
-			{
-				return VT.SetCenterX2(ref this, centerX);
-			}
-			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterY(ref this, ref animation);
-			}
-			public HRESULT SetCenterY(float centerY) mut
-			{
-				return VT.SetCenterY2(ref this, centerY);
-			}
-			public HRESULT SetCenterZ(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCenterZ(ref this, ref animation);
-			}
-			public HRESULT SetCenterZ(float centerZ) mut
-			{
-				return VT.SetCenterZ2(ref this, centerZ);
-			}
+			public HRESULT SetAngle(ref IDCompositionAnimation animation) mut => VT.SetAngle(ref this, ref animation);
+			public HRESULT SetAngle(float angle) mut => VT.SetAngle2(ref this, angle);
+			public HRESULT SetAxisX(ref IDCompositionAnimation animation) mut => VT.SetAxisX(ref this, ref animation);
+			public HRESULT SetAxisX(float axisX) mut => VT.SetAxisX2(ref this, axisX);
+			public HRESULT SetAxisY(ref IDCompositionAnimation animation) mut => VT.SetAxisY(ref this, ref animation);
+			public HRESULT SetAxisY(float axisY) mut => VT.SetAxisY2(ref this, axisY);
+			public HRESULT SetAxisZ(ref IDCompositionAnimation animation) mut => VT.SetAxisZ(ref this, ref animation);
+			public HRESULT SetAxisZ(float axisZ) mut => VT.SetAxisZ2(ref this, axisZ);
+			public HRESULT SetCenterX(ref IDCompositionAnimation animation) mut => VT.SetCenterX(ref this, ref animation);
+			public HRESULT SetCenterX(float centerX) mut => VT.SetCenterX2(ref this, centerX);
+			public HRESULT SetCenterY(ref IDCompositionAnimation animation) mut => VT.SetCenterY(ref this, ref animation);
+			public HRESULT SetCenterY(float centerY) mut => VT.SetCenterY2(ref this, centerY);
+			public HRESULT SetCenterZ(ref IDCompositionAnimation animation) mut => VT.SetCenterZ(ref this, ref animation);
+			public HRESULT SetCenterZ(float centerZ) mut => VT.SetCenterZ2(ref this, centerZ);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
@@ -872,18 +552,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMatrix(in D3DMATRIX matrix) mut
-			{
-				return VT.SetMatrix(ref this, matrix);
-			}
-			public HRESULT SetMatrixElement(int32 row, int32 column, ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetMatrixElement(ref this, row, column, ref animation);
-			}
-			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut
-			{
-				return VT.SetMatrixElement2(ref this, row, column, value);
-			}
+			public HRESULT SetMatrix(in D3DMATRIX matrix) mut => VT.SetMatrix(ref this, matrix);
+			public HRESULT SetMatrixElement(int32 row, int32 column, ref IDCompositionAnimation animation) mut => VT.SetMatrixElement(ref this, row, column, ref animation);
+			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut => VT.SetMatrixElement2(ref this, row, column, value);
+
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
@@ -899,6 +571,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -911,102 +584,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetLeft(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetLeft(ref this, ref animation);
-			}
-			public HRESULT SetLeft(float left) mut
-			{
-				return VT.SetLeft2(ref this, left);
-			}
-			public HRESULT SetTop(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetTop(ref this, ref animation);
-			}
-			public HRESULT SetTop(float top) mut
-			{
-				return VT.SetTop2(ref this, top);
-			}
-			public HRESULT SetRight(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetRight(ref this, ref animation);
-			}
-			public HRESULT SetRight(float right) mut
-			{
-				return VT.SetRight2(ref this, right);
-			}
-			public HRESULT SetBottom(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBottom(ref this, ref animation);
-			}
-			public HRESULT SetBottom(float bottom) mut
-			{
-				return VT.SetBottom2(ref this, bottom);
-			}
-			public HRESULT SetTopLeftRadiusX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetTopLeftRadiusX(ref this, ref animation);
-			}
-			public HRESULT SetTopLeftRadiusX(float radius) mut
-			{
-				return VT.SetTopLeftRadiusX2(ref this, radius);
-			}
-			public HRESULT SetTopLeftRadiusY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetTopLeftRadiusY(ref this, ref animation);
-			}
-			public HRESULT SetTopLeftRadiusY(float radius) mut
-			{
-				return VT.SetTopLeftRadiusY2(ref this, radius);
-			}
-			public HRESULT SetTopRightRadiusX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetTopRightRadiusX(ref this, ref animation);
-			}
-			public HRESULT SetTopRightRadiusX(float radius) mut
-			{
-				return VT.SetTopRightRadiusX2(ref this, radius);
-			}
-			public HRESULT SetTopRightRadiusY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetTopRightRadiusY(ref this, ref animation);
-			}
-			public HRESULT SetTopRightRadiusY(float radius) mut
-			{
-				return VT.SetTopRightRadiusY2(ref this, radius);
-			}
-			public HRESULT SetBottomLeftRadiusX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBottomLeftRadiusX(ref this, ref animation);
-			}
-			public HRESULT SetBottomLeftRadiusX(float radius) mut
-			{
-				return VT.SetBottomLeftRadiusX2(ref this, radius);
-			}
-			public HRESULT SetBottomLeftRadiusY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBottomLeftRadiusY(ref this, ref animation);
-			}
-			public HRESULT SetBottomLeftRadiusY(float radius) mut
-			{
-				return VT.SetBottomLeftRadiusY2(ref this, radius);
-			}
-			public HRESULT SetBottomRightRadiusX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBottomRightRadiusX(ref this, ref animation);
-			}
-			public HRESULT SetBottomRightRadiusX(float radius) mut
-			{
-				return VT.SetBottomRightRadiusX2(ref this, radius);
-			}
-			public HRESULT SetBottomRightRadiusY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBottomRightRadiusY(ref this, ref animation);
-			}
-			public HRESULT SetBottomRightRadiusY(float radius) mut
-			{
-				return VT.SetBottomRightRadiusY2(ref this, radius);
-			}
+			public HRESULT SetLeft(ref IDCompositionAnimation animation) mut => VT.SetLeft(ref this, ref animation);
+			public HRESULT SetLeft(float left) mut => VT.SetLeft2(ref this, left);
+			public HRESULT SetTop(ref IDCompositionAnimation animation) mut => VT.SetTop(ref this, ref animation);
+			public HRESULT SetTop(float top) mut => VT.SetTop2(ref this, top);
+			public HRESULT SetRight(ref IDCompositionAnimation animation) mut => VT.SetRight(ref this, ref animation);
+			public HRESULT SetRight(float right) mut => VT.SetRight2(ref this, right);
+			public HRESULT SetBottom(ref IDCompositionAnimation animation) mut => VT.SetBottom(ref this, ref animation);
+			public HRESULT SetBottom(float bottom) mut => VT.SetBottom2(ref this, bottom);
+			public HRESULT SetTopLeftRadiusX(ref IDCompositionAnimation animation) mut => VT.SetTopLeftRadiusX(ref this, ref animation);
+			public HRESULT SetTopLeftRadiusX(float radius) mut => VT.SetTopLeftRadiusX2(ref this, radius);
+			public HRESULT SetTopLeftRadiusY(ref IDCompositionAnimation animation) mut => VT.SetTopLeftRadiusY(ref this, ref animation);
+			public HRESULT SetTopLeftRadiusY(float radius) mut => VT.SetTopLeftRadiusY2(ref this, radius);
+			public HRESULT SetTopRightRadiusX(ref IDCompositionAnimation animation) mut => VT.SetTopRightRadiusX(ref this, ref animation);
+			public HRESULT SetTopRightRadiusX(float radius) mut => VT.SetTopRightRadiusX2(ref this, radius);
+			public HRESULT SetTopRightRadiusY(ref IDCompositionAnimation animation) mut => VT.SetTopRightRadiusY(ref this, ref animation);
+			public HRESULT SetTopRightRadiusY(float radius) mut => VT.SetTopRightRadiusY2(ref this, radius);
+			public HRESULT SetBottomLeftRadiusX(ref IDCompositionAnimation animation) mut => VT.SetBottomLeftRadiusX(ref this, ref animation);
+			public HRESULT SetBottomLeftRadiusX(float radius) mut => VT.SetBottomLeftRadiusX2(ref this, radius);
+			public HRESULT SetBottomLeftRadiusY(ref IDCompositionAnimation animation) mut => VT.SetBottomLeftRadiusY(ref this, ref animation);
+			public HRESULT SetBottomLeftRadiusY(float radius) mut => VT.SetBottomLeftRadiusY2(ref this, radius);
+			public HRESULT SetBottomRightRadiusX(ref IDCompositionAnimation animation) mut => VT.SetBottomRightRadiusX(ref this, ref animation);
+			public HRESULT SetBottomRightRadiusX(float radius) mut => VT.SetBottomRightRadiusX2(ref this, radius);
+			public HRESULT SetBottomRightRadiusY(ref IDCompositionAnimation animation) mut => VT.SetBottomRightRadiusY(ref this, ref animation);
+			public HRESULT SetBottomRightRadiusY(float radius) mut => VT.SetBottomRightRadiusY2(ref this, radius);
+
 			[CRepr]
 			public struct VTable : IDCompositionClip.VTable
 			{
@@ -1043,26 +645,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginDraw(RECT* updateRect, in Guid iid, void** updateObject, out POINT updateOffset) mut
-			{
-				return VT.BeginDraw(ref this, updateRect, iid, updateObject, out updateOffset);
-			}
-			public HRESULT EndDraw() mut
-			{
-				return VT.EndDraw(ref this);
-			}
-			public HRESULT SuspendDraw() mut
-			{
-				return VT.SuspendDraw(ref this);
-			}
-			public HRESULT ResumeDraw() mut
-			{
-				return VT.ResumeDraw(ref this);
-			}
-			public HRESULT Scroll(RECT* scrollRect, RECT* clipRect, int32 offsetX, int32 offsetY) mut
-			{
-				return VT.Scroll(ref this, scrollRect, clipRect, offsetX, offsetY);
-			}
+			public HRESULT BeginDraw(RECT* updateRect, in Guid iid, void** updateObject, out POINT updateOffset) mut => VT.BeginDraw(ref this, updateRect, iid, updateObject, out updateOffset);
+			public HRESULT EndDraw() mut => VT.EndDraw(ref this);
+			public HRESULT SuspendDraw() mut => VT.SuspendDraw(ref this);
+			public HRESULT ResumeDraw() mut => VT.ResumeDraw(ref this);
+			public HRESULT Scroll(RECT* scrollRect, RECT* clipRect, int32 offsetX, int32 offsetY) mut => VT.Scroll(ref this, scrollRect, clipRect, offsetX, offsetY);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1080,14 +668,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Resize(uint32 width, uint32 height) mut
-			{
-				return VT.Resize(ref this, width, height);
-			}
-			public HRESULT Trim(RECT* rectangles, uint32 count) mut
-			{
-				return VT.Trim(ref this, rectangles, count);
-			}
+			public HRESULT Resize(uint32 width, uint32 height) mut => VT.Resize(ref this, width, height);
+			public HRESULT Trim(RECT* rectangles, uint32 count) mut => VT.Trim(ref this, rectangles, count);
+
 			[CRepr]
 			public struct VTable : IDCompositionSurface.VTable
 			{
@@ -1102,90 +685,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Commit() mut
-			{
-				return VT.Commit(ref this);
-			}
-			public HRESULT WaitForCommitCompletion() mut
-			{
-				return VT.WaitForCommitCompletion(ref this);
-			}
-			public HRESULT GetFrameStatistics(out DCOMPOSITION_FRAME_STATISTICS statistics) mut
-			{
-				return VT.GetFrameStatistics(ref this, out statistics);
-			}
-			public HRESULT CreateVisual(out IDCompositionVisual2* visual) mut
-			{
-				return VT.CreateVisual(ref this, out visual);
-			}
-			public HRESULT CreateSurfaceFactory(ref IUnknown renderingDevice, out IDCompositionSurfaceFactory* surfaceFactory) mut
-			{
-				return VT.CreateSurfaceFactory(ref this, ref renderingDevice, out surfaceFactory);
-			}
-			public HRESULT CreateSurface(uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) mut
-			{
-				return VT.CreateSurface(ref this, width, height, pixelFormat, alphaMode, out surface);
-			}
-			public HRESULT CreateVirtualSurface(uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) mut
-			{
-				return VT.CreateVirtualSurface(ref this, initialWidth, initialHeight, pixelFormat, alphaMode, out virtualSurface);
-			}
-			public HRESULT CreateTranslateTransform(out IDCompositionTranslateTransform* translateTransform) mut
-			{
-				return VT.CreateTranslateTransform(ref this, out translateTransform);
-			}
-			public HRESULT CreateScaleTransform(out IDCompositionScaleTransform* scaleTransform) mut
-			{
-				return VT.CreateScaleTransform(ref this, out scaleTransform);
-			}
-			public HRESULT CreateRotateTransform(out IDCompositionRotateTransform* rotateTransform) mut
-			{
-				return VT.CreateRotateTransform(ref this, out rotateTransform);
-			}
-			public HRESULT CreateSkewTransform(out IDCompositionSkewTransform* skewTransform) mut
-			{
-				return VT.CreateSkewTransform(ref this, out skewTransform);
-			}
-			public HRESULT CreateMatrixTransform(out IDCompositionMatrixTransform* matrixTransform) mut
-			{
-				return VT.CreateMatrixTransform(ref this, out matrixTransform);
-			}
-			public HRESULT CreateTransformGroup(IDCompositionTransform** transforms, uint32 elements, out IDCompositionTransform* transformGroup) mut
-			{
-				return VT.CreateTransformGroup(ref this, transforms, elements, out transformGroup);
-			}
-			public HRESULT CreateTranslateTransform3D(out IDCompositionTranslateTransform3D* translateTransform3D) mut
-			{
-				return VT.CreateTranslateTransform3D(ref this, out translateTransform3D);
-			}
-			public HRESULT CreateScaleTransform3D(out IDCompositionScaleTransform3D* scaleTransform3D) mut
-			{
-				return VT.CreateScaleTransform3D(ref this, out scaleTransform3D);
-			}
-			public HRESULT CreateRotateTransform3D(out IDCompositionRotateTransform3D* rotateTransform3D) mut
-			{
-				return VT.CreateRotateTransform3D(ref this, out rotateTransform3D);
-			}
-			public HRESULT CreateMatrixTransform3D(out IDCompositionMatrixTransform3D* matrixTransform3D) mut
-			{
-				return VT.CreateMatrixTransform3D(ref this, out matrixTransform3D);
-			}
-			public HRESULT CreateTransform3DGroup(IDCompositionTransform3D** transforms3D, uint32 elements, out IDCompositionTransform3D* transform3DGroup) mut
-			{
-				return VT.CreateTransform3DGroup(ref this, transforms3D, elements, out transform3DGroup);
-			}
-			public HRESULT CreateEffectGroup(out IDCompositionEffectGroup* effectGroup) mut
-			{
-				return VT.CreateEffectGroup(ref this, out effectGroup);
-			}
-			public HRESULT CreateRectangleClip(out IDCompositionRectangleClip* clip) mut
-			{
-				return VT.CreateRectangleClip(ref this, out clip);
-			}
-			public HRESULT CreateAnimation(out IDCompositionAnimation* animation) mut
-			{
-				return VT.CreateAnimation(ref this, out animation);
-			}
+			public HRESULT Commit() mut => VT.Commit(ref this);
+			public HRESULT WaitForCommitCompletion() mut => VT.WaitForCommitCompletion(ref this);
+			public HRESULT GetFrameStatistics(out DCOMPOSITION_FRAME_STATISTICS statistics) mut => VT.GetFrameStatistics(ref this, out statistics);
+			public HRESULT CreateVisual(out IDCompositionVisual2* visual) mut => VT.CreateVisual(ref this, out visual);
+			public HRESULT CreateSurfaceFactory(ref IUnknown renderingDevice, out IDCompositionSurfaceFactory* surfaceFactory) mut => VT.CreateSurfaceFactory(ref this, ref renderingDevice, out surfaceFactory);
+			public HRESULT CreateSurface(uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) mut => VT.CreateSurface(ref this, width, height, pixelFormat, alphaMode, out surface);
+			public HRESULT CreateVirtualSurface(uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) mut => VT.CreateVirtualSurface(ref this, initialWidth, initialHeight, pixelFormat, alphaMode, out virtualSurface);
+			public HRESULT CreateTranslateTransform(out IDCompositionTranslateTransform* translateTransform) mut => VT.CreateTranslateTransform(ref this, out translateTransform);
+			public HRESULT CreateScaleTransform(out IDCompositionScaleTransform* scaleTransform) mut => VT.CreateScaleTransform(ref this, out scaleTransform);
+			public HRESULT CreateRotateTransform(out IDCompositionRotateTransform* rotateTransform) mut => VT.CreateRotateTransform(ref this, out rotateTransform);
+			public HRESULT CreateSkewTransform(out IDCompositionSkewTransform* skewTransform) mut => VT.CreateSkewTransform(ref this, out skewTransform);
+			public HRESULT CreateMatrixTransform(out IDCompositionMatrixTransform* matrixTransform) mut => VT.CreateMatrixTransform(ref this, out matrixTransform);
+			public HRESULT CreateTransformGroup(IDCompositionTransform** transforms, uint32 elements, out IDCompositionTransform* transformGroup) mut => VT.CreateTransformGroup(ref this, transforms, elements, out transformGroup);
+			public HRESULT CreateTranslateTransform3D(out IDCompositionTranslateTransform3D* translateTransform3D) mut => VT.CreateTranslateTransform3D(ref this, out translateTransform3D);
+			public HRESULT CreateScaleTransform3D(out IDCompositionScaleTransform3D* scaleTransform3D) mut => VT.CreateScaleTransform3D(ref this, out scaleTransform3D);
+			public HRESULT CreateRotateTransform3D(out IDCompositionRotateTransform3D* rotateTransform3D) mut => VT.CreateRotateTransform3D(ref this, out rotateTransform3D);
+			public HRESULT CreateMatrixTransform3D(out IDCompositionMatrixTransform3D* matrixTransform3D) mut => VT.CreateMatrixTransform3D(ref this, out matrixTransform3D);
+			public HRESULT CreateTransform3DGroup(IDCompositionTransform3D** transforms3D, uint32 elements, out IDCompositionTransform3D* transform3DGroup) mut => VT.CreateTransform3DGroup(ref this, transforms3D, elements, out transform3DGroup);
+			public HRESULT CreateEffectGroup(out IDCompositionEffectGroup* effectGroup) mut => VT.CreateEffectGroup(ref this, out effectGroup);
+			public HRESULT CreateRectangleClip(out IDCompositionRectangleClip* clip) mut => VT.CreateRectangleClip(ref this, out clip);
+			public HRESULT CreateAnimation(out IDCompositionAnimation* animation) mut => VT.CreateAnimation(ref this, out animation);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1219,18 +740,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateTargetForHwnd(HWND hwnd, BOOL topmost, out IDCompositionTarget* target) mut
-			{
-				return VT.CreateTargetForHwnd(ref this, hwnd, topmost, out target);
-			}
-			public HRESULT CreateSurfaceFromHandle(HANDLE handle, out IUnknown* surface) mut
-			{
-				return VT.CreateSurfaceFromHandle(ref this, handle, out surface);
-			}
-			public HRESULT CreateSurfaceFromHwnd(HWND hwnd, out IUnknown* surface) mut
-			{
-				return VT.CreateSurfaceFromHwnd(ref this, hwnd, out surface);
-			}
+			public HRESULT CreateTargetForHwnd(HWND hwnd, BOOL topmost, out IDCompositionTarget* target) mut => VT.CreateTargetForHwnd(ref this, hwnd, topmost, out target);
+			public HRESULT CreateSurfaceFromHandle(HANDLE handle, out IUnknown* surface) mut => VT.CreateSurfaceFromHandle(ref this, handle, out surface);
+			public HRESULT CreateSurfaceFromHwnd(HWND hwnd, out IUnknown* surface) mut => VT.CreateSurfaceFromHwnd(ref this, hwnd, out surface);
+
 			[CRepr]
 			public struct VTable : IDCompositionDevice2.VTable
 			{
@@ -1246,14 +759,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnableDebugCounters() mut
-			{
-				return VT.EnableDebugCounters(ref this);
-			}
-			public HRESULT DisableDebugCounters() mut
-			{
-				return VT.DisableDebugCounters(ref this);
-			}
+			public HRESULT EnableDebugCounters() mut => VT.EnableDebugCounters(ref this);
+			public HRESULT DisableDebugCounters() mut => VT.DisableDebugCounters(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1268,14 +776,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSurface(uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) mut
-			{
-				return VT.CreateSurface(ref this, width, height, pixelFormat, alphaMode, out surface);
-			}
-			public HRESULT CreateVirtualSurface(uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) mut
-			{
-				return VT.CreateVirtualSurface(ref this, initialWidth, initialHeight, pixelFormat, alphaMode, out virtualSurface);
-			}
+			public HRESULT CreateSurface(uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) mut => VT.CreateSurface(ref this, width, height, pixelFormat, alphaMode, out surface);
+			public HRESULT CreateVirtualSurface(uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) mut => VT.CreateVirtualSurface(ref this, initialWidth, initialHeight, pixelFormat, alphaMode, out virtualSurface);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1290,14 +793,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOpacityMode(DCOMPOSITION_OPACITY_MODE mode) mut
-			{
-				return VT.SetOpacityMode(ref this, mode);
-			}
-			public HRESULT SetBackFaceVisibility(DCOMPOSITION_BACKFACE_VISIBILITY visibility) mut
-			{
-				return VT.SetBackFaceVisibility(ref this, visibility);
-			}
+			public HRESULT SetOpacityMode(DCOMPOSITION_OPACITY_MODE mode) mut => VT.SetOpacityMode(ref this, mode);
+			public HRESULT SetBackFaceVisibility(DCOMPOSITION_BACKFACE_VISIBILITY visibility) mut => VT.SetBackFaceVisibility(ref this, visibility);
+
 			[CRepr]
 			public struct VTable : IDCompositionVisual.VTable
 			{
@@ -1312,22 +810,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnableHeatMap(in D2D1_COLOR_F color) mut
-			{
-				return VT.EnableHeatMap(ref this, color);
-			}
-			public HRESULT DisableHeatMap() mut
-			{
-				return VT.DisableHeatMap(ref this);
-			}
-			public HRESULT EnableRedrawRegions() mut
-			{
-				return VT.EnableRedrawRegions(ref this);
-			}
-			public HRESULT DisableRedrawRegions() mut
-			{
-				return VT.DisableRedrawRegions(ref this);
-			}
+			public HRESULT EnableHeatMap(in D2D1_COLOR_F color) mut => VT.EnableHeatMap(ref this, color);
+			public HRESULT DisableHeatMap() mut => VT.DisableHeatMap(ref this);
+			public HRESULT EnableRedrawRegions() mut => VT.EnableRedrawRegions(ref this);
+			public HRESULT DisableRedrawRegions() mut => VT.DisableRedrawRegions(ref this);
+
 			[CRepr]
 			public struct VTable : IDCompositionVisual2.VTable
 			{
@@ -1344,38 +831,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDepthMode(DCOMPOSITION_DEPTH_MODE mode) mut
-			{
-				return VT.SetDepthMode(ref this, mode);
-			}
-			public HRESULT SetOffsetZ(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOffsetZ(ref this, ref animation);
-			}
-			public HRESULT SetOffsetZ(float offsetZ) mut
-			{
-				return VT.SetOffsetZ2(ref this, offsetZ);
-			}
-			public HRESULT SetOpacity(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetOpacity(ref this, ref animation);
-			}
-			public HRESULT SetOpacity(float opacity) mut
-			{
-				return VT.SetOpacity2(ref this, opacity);
-			}
-			public HRESULT SetTransform(IDCompositionTransform3D* transform) mut
-			{
-				return VT.SetTransform(ref this, transform);
-			}
-			public HRESULT SetTransform(in D2D_MATRIX_4X4_F matrix) mut
-			{
-				return VT.SetTransform2(ref this, matrix);
-			}
-			public HRESULT SetVisible(BOOL visible) mut
-			{
-				return VT.SetVisible(ref this, visible);
-			}
+			public HRESULT SetDepthMode(DCOMPOSITION_DEPTH_MODE mode) mut => VT.SetDepthMode(ref this, mode);
+			public HRESULT SetOffsetZ(ref IDCompositionAnimation animation) mut => VT.SetOffsetZ(ref this, ref animation);
+			public HRESULT SetOffsetZ(float offsetZ) mut => VT.SetOffsetZ2(ref this, offsetZ);
+			public HRESULT SetOpacity(ref IDCompositionAnimation animation) mut => VT.SetOpacity(ref this, ref animation);
+			public HRESULT SetOpacity(float opacity) mut => VT.SetOpacity2(ref this, opacity);
+			public HRESULT SetTransform(IDCompositionTransform3D* transform) mut => VT.SetTransform(ref this, transform);
+			public HRESULT SetTransform(in D2D_MATRIX_4X4_F matrix) mut => VT.SetTransform2(ref this, matrix);
+			public HRESULT SetVisible(BOOL visible) mut => VT.SetVisible(ref this, visible);
+
 			[CRepr]
 			public struct VTable : IDCompositionVisualDebug.VTable
 			{
@@ -1396,58 +860,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateGaussianBlurEffect(out IDCompositionGaussianBlurEffect* gaussianBlurEffect) mut
-			{
-				return VT.CreateGaussianBlurEffect(ref this, out gaussianBlurEffect);
-			}
-			public HRESULT CreateBrightnessEffect(out IDCompositionBrightnessEffect* brightnessEffect) mut
-			{
-				return VT.CreateBrightnessEffect(ref this, out brightnessEffect);
-			}
-			public HRESULT CreateColorMatrixEffect(out IDCompositionColorMatrixEffect* colorMatrixEffect) mut
-			{
-				return VT.CreateColorMatrixEffect(ref this, out colorMatrixEffect);
-			}
-			public HRESULT CreateShadowEffect(out IDCompositionShadowEffect* shadowEffect) mut
-			{
-				return VT.CreateShadowEffect(ref this, out shadowEffect);
-			}
-			public HRESULT CreateHueRotationEffect(out IDCompositionHueRotationEffect* hueRotationEffect) mut
-			{
-				return VT.CreateHueRotationEffect(ref this, out hueRotationEffect);
-			}
-			public HRESULT CreateSaturationEffect(out IDCompositionSaturationEffect* saturationEffect) mut
-			{
-				return VT.CreateSaturationEffect(ref this, out saturationEffect);
-			}
-			public HRESULT CreateTurbulenceEffect(out IDCompositionTurbulenceEffect* turbulenceEffect) mut
-			{
-				return VT.CreateTurbulenceEffect(ref this, out turbulenceEffect);
-			}
-			public HRESULT CreateLinearTransferEffect(out IDCompositionLinearTransferEffect* linearTransferEffect) mut
-			{
-				return VT.CreateLinearTransferEffect(ref this, out linearTransferEffect);
-			}
-			public HRESULT CreateTableTransferEffect(out IDCompositionTableTransferEffect* tableTransferEffect) mut
-			{
-				return VT.CreateTableTransferEffect(ref this, out tableTransferEffect);
-			}
-			public HRESULT CreateCompositeEffect(out IDCompositionCompositeEffect* compositeEffect) mut
-			{
-				return VT.CreateCompositeEffect(ref this, out compositeEffect);
-			}
-			public HRESULT CreateBlendEffect(out IDCompositionBlendEffect* blendEffect) mut
-			{
-				return VT.CreateBlendEffect(ref this, out blendEffect);
-			}
-			public HRESULT CreateArithmeticCompositeEffect(out IDCompositionArithmeticCompositeEffect* arithmeticCompositeEffect) mut
-			{
-				return VT.CreateArithmeticCompositeEffect(ref this, out arithmeticCompositeEffect);
-			}
-			public HRESULT CreateAffineTransform2DEffect(out IDCompositionAffineTransform2DEffect* affineTransform2dEffect) mut
-			{
-				return VT.CreateAffineTransform2DEffect(ref this, out affineTransform2dEffect);
-			}
+			public HRESULT CreateGaussianBlurEffect(out IDCompositionGaussianBlurEffect* gaussianBlurEffect) mut => VT.CreateGaussianBlurEffect(ref this, out gaussianBlurEffect);
+			public HRESULT CreateBrightnessEffect(out IDCompositionBrightnessEffect* brightnessEffect) mut => VT.CreateBrightnessEffect(ref this, out brightnessEffect);
+			public HRESULT CreateColorMatrixEffect(out IDCompositionColorMatrixEffect* colorMatrixEffect) mut => VT.CreateColorMatrixEffect(ref this, out colorMatrixEffect);
+			public HRESULT CreateShadowEffect(out IDCompositionShadowEffect* shadowEffect) mut => VT.CreateShadowEffect(ref this, out shadowEffect);
+			public HRESULT CreateHueRotationEffect(out IDCompositionHueRotationEffect* hueRotationEffect) mut => VT.CreateHueRotationEffect(ref this, out hueRotationEffect);
+			public HRESULT CreateSaturationEffect(out IDCompositionSaturationEffect* saturationEffect) mut => VT.CreateSaturationEffect(ref this, out saturationEffect);
+			public HRESULT CreateTurbulenceEffect(out IDCompositionTurbulenceEffect* turbulenceEffect) mut => VT.CreateTurbulenceEffect(ref this, out turbulenceEffect);
+			public HRESULT CreateLinearTransferEffect(out IDCompositionLinearTransferEffect* linearTransferEffect) mut => VT.CreateLinearTransferEffect(ref this, out linearTransferEffect);
+			public HRESULT CreateTableTransferEffect(out IDCompositionTableTransferEffect* tableTransferEffect) mut => VT.CreateTableTransferEffect(ref this, out tableTransferEffect);
+			public HRESULT CreateCompositeEffect(out IDCompositionCompositeEffect* compositeEffect) mut => VT.CreateCompositeEffect(ref this, out compositeEffect);
+			public HRESULT CreateBlendEffect(out IDCompositionBlendEffect* blendEffect) mut => VT.CreateBlendEffect(ref this, out blendEffect);
+			public HRESULT CreateArithmeticCompositeEffect(out IDCompositionArithmeticCompositeEffect* arithmeticCompositeEffect) mut => VT.CreateArithmeticCompositeEffect(ref this, out arithmeticCompositeEffect);
+			public HRESULT CreateAffineTransform2DEffect(out IDCompositionAffineTransform2DEffect* affineTransform2dEffect) mut => VT.CreateAffineTransform2DEffect(ref this, out affineTransform2dEffect);
+
 			[CRepr]
 			public struct VTable : IDCompositionDevice2.VTable
 			{
@@ -1473,10 +899,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetInput(uint32 index, IUnknown* input, uint32 flags) mut
-			{
-				return VT.SetInput(ref this, index, input, flags);
-			}
+			public HRESULT SetInput(uint32 index, IUnknown* input, uint32 flags) mut => VT.SetInput(ref this, index, input, flags);
+
 			[CRepr]
 			public struct VTable : IDCompositionEffect.VTable
 			{
@@ -1490,18 +914,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetStandardDeviation(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetStandardDeviation(ref this, ref animation);
-			}
-			public HRESULT SetStandardDeviation(float amount) mut
-			{
-				return VT.SetStandardDeviation2(ref this, amount);
-			}
-			public HRESULT SetBorderMode(D2D1_BORDER_MODE mode) mut
-			{
-				return VT.SetBorderMode(ref this, mode);
-			}
+			public HRESULT SetStandardDeviation(ref IDCompositionAnimation animation) mut => VT.SetStandardDeviation(ref this, ref animation);
+			public HRESULT SetStandardDeviation(float amount) mut => VT.SetStandardDeviation2(ref this, amount);
+			public HRESULT SetBorderMode(D2D1_BORDER_MODE mode) mut => VT.SetBorderMode(ref this, mode);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1517,46 +933,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetWhitePoint(in D2D_VECTOR_2F whitePoint) mut
-			{
-				return VT.SetWhitePoint(ref this, whitePoint);
-			}
-			public HRESULT SetBlackPoint(in D2D_VECTOR_2F blackPoint) mut
-			{
-				return VT.SetBlackPoint(ref this, blackPoint);
-			}
-			public HRESULT SetWhitePointX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetWhitePointX(ref this, ref animation);
-			}
-			public HRESULT SetWhitePointX(float whitePointX) mut
-			{
-				return VT.SetWhitePointX2(ref this, whitePointX);
-			}
-			public HRESULT SetWhitePointY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetWhitePointY(ref this, ref animation);
-			}
-			public HRESULT SetWhitePointY(float whitePointY) mut
-			{
-				return VT.SetWhitePointY2(ref this, whitePointY);
-			}
-			public HRESULT SetBlackPointX(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBlackPointX(ref this, ref animation);
-			}
-			public HRESULT SetBlackPointX(float blackPointX) mut
-			{
-				return VT.SetBlackPointX2(ref this, blackPointX);
-			}
-			public HRESULT SetBlackPointY(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBlackPointY(ref this, ref animation);
-			}
-			public HRESULT SetBlackPointY(float blackPointY) mut
-			{
-				return VT.SetBlackPointY2(ref this, blackPointY);
-			}
+			public HRESULT SetWhitePoint(in D2D_VECTOR_2F whitePoint) mut => VT.SetWhitePoint(ref this, whitePoint);
+			public HRESULT SetBlackPoint(in D2D_VECTOR_2F blackPoint) mut => VT.SetBlackPoint(ref this, blackPoint);
+			public HRESULT SetWhitePointX(ref IDCompositionAnimation animation) mut => VT.SetWhitePointX(ref this, ref animation);
+			public HRESULT SetWhitePointX(float whitePointX) mut => VT.SetWhitePointX2(ref this, whitePointX);
+			public HRESULT SetWhitePointY(ref IDCompositionAnimation animation) mut => VT.SetWhitePointY(ref this, ref animation);
+			public HRESULT SetWhitePointY(float whitePointY) mut => VT.SetWhitePointY2(ref this, whitePointY);
+			public HRESULT SetBlackPointX(ref IDCompositionAnimation animation) mut => VT.SetBlackPointX(ref this, ref animation);
+			public HRESULT SetBlackPointX(float blackPointX) mut => VT.SetBlackPointX2(ref this, blackPointX);
+			public HRESULT SetBlackPointY(ref IDCompositionAnimation animation) mut => VT.SetBlackPointY(ref this, ref animation);
+			public HRESULT SetBlackPointY(float blackPointY) mut => VT.SetBlackPointY2(ref this, blackPointY);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1579,26 +966,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMatrix(in D2D_MATRIX_5X4_F matrix) mut
-			{
-				return VT.SetMatrix(ref this, matrix);
-			}
-			public HRESULT SetMatrixElement(int32 row, int32 column, ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetMatrixElement(ref this, row, column, ref animation);
-			}
-			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut
-			{
-				return VT.SetMatrixElement2(ref this, row, column, value);
-			}
-			public HRESULT SetAlphaMode(D2D1_COLORMATRIX_ALPHA_MODE mode) mut
-			{
-				return VT.SetAlphaMode(ref this, mode);
-			}
-			public HRESULT SetClampOutput(BOOL clamp) mut
-			{
-				return VT.SetClampOutput(ref this, clamp);
-			}
+			public HRESULT SetMatrix(in D2D_MATRIX_5X4_F matrix) mut => VT.SetMatrix(ref this, matrix);
+			public HRESULT SetMatrixElement(int32 row, int32 column, ref IDCompositionAnimation animation) mut => VT.SetMatrixElement(ref this, row, column, ref animation);
+			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut => VT.SetMatrixElement2(ref this, row, column, value);
+			public HRESULT SetAlphaMode(D2D1_COLORMATRIX_ALPHA_MODE mode) mut => VT.SetAlphaMode(ref this, mode);
+			public HRESULT SetClampOutput(BOOL clamp) mut => VT.SetClampOutput(ref this, clamp);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1616,50 +989,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetStandardDeviation(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetStandardDeviation(ref this, ref animation);
-			}
-			public HRESULT SetStandardDeviation(float amount) mut
-			{
-				return VT.SetStandardDeviation2(ref this, amount);
-			}
-			public HRESULT SetColor(in D2D_VECTOR_4F color) mut
-			{
-				return VT.SetColor(ref this, color);
-			}
-			public HRESULT SetRed(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetRed(ref this, ref animation);
-			}
-			public HRESULT SetRed(float amount) mut
-			{
-				return VT.SetRed2(ref this, amount);
-			}
-			public HRESULT SetGreen(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetGreen(ref this, ref animation);
-			}
-			public HRESULT SetGreen(float amount) mut
-			{
-				return VT.SetGreen2(ref this, amount);
-			}
-			public HRESULT SetBlue(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBlue(ref this, ref animation);
-			}
-			public HRESULT SetBlue(float amount) mut
-			{
-				return VT.SetBlue2(ref this, amount);
-			}
-			public HRESULT SetAlpha(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAlpha(ref this, ref animation);
-			}
-			public HRESULT SetAlpha(float amount) mut
-			{
-				return VT.SetAlpha2(ref this, amount);
-			}
+			public HRESULT SetStandardDeviation(ref IDCompositionAnimation animation) mut => VT.SetStandardDeviation(ref this, ref animation);
+			public HRESULT SetStandardDeviation(float amount) mut => VT.SetStandardDeviation2(ref this, amount);
+			public HRESULT SetColor(in D2D_VECTOR_4F color) mut => VT.SetColor(ref this, color);
+			public HRESULT SetRed(ref IDCompositionAnimation animation) mut => VT.SetRed(ref this, ref animation);
+			public HRESULT SetRed(float amount) mut => VT.SetRed2(ref this, amount);
+			public HRESULT SetGreen(ref IDCompositionAnimation animation) mut => VT.SetGreen(ref this, ref animation);
+			public HRESULT SetGreen(float amount) mut => VT.SetGreen2(ref this, amount);
+			public HRESULT SetBlue(ref IDCompositionAnimation animation) mut => VT.SetBlue(ref this, ref animation);
+			public HRESULT SetBlue(float amount) mut => VT.SetBlue2(ref this, amount);
+			public HRESULT SetAlpha(ref IDCompositionAnimation animation) mut => VT.SetAlpha(ref this, ref animation);
+			public HRESULT SetAlpha(float amount) mut => VT.SetAlpha2(ref this, amount);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1683,14 +1024,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAngle(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAngle(ref this, ref animation);
-			}
-			public HRESULT SetAngle(float amountDegrees) mut
-			{
-				return VT.SetAngle2(ref this, amountDegrees);
-			}
+			public HRESULT SetAngle(ref IDCompositionAnimation animation) mut => VT.SetAngle(ref this, ref animation);
+			public HRESULT SetAngle(float amountDegrees) mut => VT.SetAngle2(ref this, amountDegrees);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1705,14 +1041,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSaturation(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetSaturation(ref this, ref animation);
-			}
-			public HRESULT SetSaturation(float ratio) mut
-			{
-				return VT.SetSaturation2(ref this, ratio);
-			}
+			public HRESULT SetSaturation(ref IDCompositionAnimation animation) mut => VT.SetSaturation(ref this, ref animation);
+			public HRESULT SetSaturation(float ratio) mut => VT.SetSaturation2(ref this, ratio);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1727,34 +1058,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOffset(in D2D_VECTOR_2F offset) mut
-			{
-				return VT.SetOffset(ref this, offset);
-			}
-			public HRESULT SetBaseFrequency(in D2D_VECTOR_2F frequency) mut
-			{
-				return VT.SetBaseFrequency(ref this, frequency);
-			}
-			public HRESULT SetSize(in D2D_VECTOR_2F size) mut
-			{
-				return VT.SetSize(ref this, size);
-			}
-			public HRESULT SetNumOctaves(uint32 numOctaves) mut
-			{
-				return VT.SetNumOctaves(ref this, numOctaves);
-			}
-			public HRESULT SetSeed(uint32 seed) mut
-			{
-				return VT.SetSeed(ref this, seed);
-			}
-			public HRESULT SetNoise(D2D1_TURBULENCE_NOISE noise) mut
-			{
-				return VT.SetNoise(ref this, noise);
-			}
-			public HRESULT SetStitchable(BOOL stitchable) mut
-			{
-				return VT.SetStitchable(ref this, stitchable);
-			}
+			public HRESULT SetOffset(in D2D_VECTOR_2F offset) mut => VT.SetOffset(ref this, offset);
+			public HRESULT SetBaseFrequency(in D2D_VECTOR_2F frequency) mut => VT.SetBaseFrequency(ref this, frequency);
+			public HRESULT SetSize(in D2D_VECTOR_2F size) mut => VT.SetSize(ref this, size);
+			public HRESULT SetNumOctaves(uint32 numOctaves) mut => VT.SetNumOctaves(ref this, numOctaves);
+			public HRESULT SetSeed(uint32 seed) mut => VT.SetSeed(ref this, seed);
+			public HRESULT SetNoise(D2D1_TURBULENCE_NOISE noise) mut => VT.SetNoise(ref this, noise);
+			public HRESULT SetStitchable(BOOL stitchable) mut => VT.SetStitchable(ref this, stitchable);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1774,90 +1085,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRedYIntercept(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetRedYIntercept(ref this, ref animation);
-			}
-			public HRESULT SetRedYIntercept(float redYIntercept) mut
-			{
-				return VT.SetRedYIntercept2(ref this, redYIntercept);
-			}
-			public HRESULT SetRedSlope(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetRedSlope(ref this, ref animation);
-			}
-			public HRESULT SetRedSlope(float redSlope) mut
-			{
-				return VT.SetRedSlope2(ref this, redSlope);
-			}
-			public HRESULT SetRedDisable(BOOL redDisable) mut
-			{
-				return VT.SetRedDisable(ref this, redDisable);
-			}
-			public HRESULT SetGreenYIntercept(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetGreenYIntercept(ref this, ref animation);
-			}
-			public HRESULT SetGreenYIntercept(float greenYIntercept) mut
-			{
-				return VT.SetGreenYIntercept2(ref this, greenYIntercept);
-			}
-			public HRESULT SetGreenSlope(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetGreenSlope(ref this, ref animation);
-			}
-			public HRESULT SetGreenSlope(float greenSlope) mut
-			{
-				return VT.SetGreenSlope2(ref this, greenSlope);
-			}
-			public HRESULT SetGreenDisable(BOOL greenDisable) mut
-			{
-				return VT.SetGreenDisable(ref this, greenDisable);
-			}
-			public HRESULT SetBlueYIntercept(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBlueYIntercept(ref this, ref animation);
-			}
-			public HRESULT SetBlueYIntercept(float blueYIntercept) mut
-			{
-				return VT.SetBlueYIntercept2(ref this, blueYIntercept);
-			}
-			public HRESULT SetBlueSlope(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBlueSlope(ref this, ref animation);
-			}
-			public HRESULT SetBlueSlope(float blueSlope) mut
-			{
-				return VT.SetBlueSlope2(ref this, blueSlope);
-			}
-			public HRESULT SetBlueDisable(BOOL blueDisable) mut
-			{
-				return VT.SetBlueDisable(ref this, blueDisable);
-			}
-			public HRESULT SetAlphaYIntercept(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAlphaYIntercept(ref this, ref animation);
-			}
-			public HRESULT SetAlphaYIntercept(float alphaYIntercept) mut
-			{
-				return VT.SetAlphaYIntercept2(ref this, alphaYIntercept);
-			}
-			public HRESULT SetAlphaSlope(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAlphaSlope(ref this, ref animation);
-			}
-			public HRESULT SetAlphaSlope(float alphaSlope) mut
-			{
-				return VT.SetAlphaSlope2(ref this, alphaSlope);
-			}
-			public HRESULT SetAlphaDisable(BOOL alphaDisable) mut
-			{
-				return VT.SetAlphaDisable(ref this, alphaDisable);
-			}
-			public HRESULT SetClampOutput(BOOL clampOutput) mut
-			{
-				return VT.SetClampOutput(ref this, clampOutput);
-			}
+			public HRESULT SetRedYIntercept(ref IDCompositionAnimation animation) mut => VT.SetRedYIntercept(ref this, ref animation);
+			public HRESULT SetRedYIntercept(float redYIntercept) mut => VT.SetRedYIntercept2(ref this, redYIntercept);
+			public HRESULT SetRedSlope(ref IDCompositionAnimation animation) mut => VT.SetRedSlope(ref this, ref animation);
+			public HRESULT SetRedSlope(float redSlope) mut => VT.SetRedSlope2(ref this, redSlope);
+			public HRESULT SetRedDisable(BOOL redDisable) mut => VT.SetRedDisable(ref this, redDisable);
+			public HRESULT SetGreenYIntercept(ref IDCompositionAnimation animation) mut => VT.SetGreenYIntercept(ref this, ref animation);
+			public HRESULT SetGreenYIntercept(float greenYIntercept) mut => VT.SetGreenYIntercept2(ref this, greenYIntercept);
+			public HRESULT SetGreenSlope(ref IDCompositionAnimation animation) mut => VT.SetGreenSlope(ref this, ref animation);
+			public HRESULT SetGreenSlope(float greenSlope) mut => VT.SetGreenSlope2(ref this, greenSlope);
+			public HRESULT SetGreenDisable(BOOL greenDisable) mut => VT.SetGreenDisable(ref this, greenDisable);
+			public HRESULT SetBlueYIntercept(ref IDCompositionAnimation animation) mut => VT.SetBlueYIntercept(ref this, ref animation);
+			public HRESULT SetBlueYIntercept(float blueYIntercept) mut => VT.SetBlueYIntercept2(ref this, blueYIntercept);
+			public HRESULT SetBlueSlope(ref IDCompositionAnimation animation) mut => VT.SetBlueSlope(ref this, ref animation);
+			public HRESULT SetBlueSlope(float blueSlope) mut => VT.SetBlueSlope2(ref this, blueSlope);
+			public HRESULT SetBlueDisable(BOOL blueDisable) mut => VT.SetBlueDisable(ref this, blueDisable);
+			public HRESULT SetAlphaYIntercept(ref IDCompositionAnimation animation) mut => VT.SetAlphaYIntercept(ref this, ref animation);
+			public HRESULT SetAlphaYIntercept(float alphaYIntercept) mut => VT.SetAlphaYIntercept2(ref this, alphaYIntercept);
+			public HRESULT SetAlphaSlope(ref IDCompositionAnimation animation) mut => VT.SetAlphaSlope(ref this, ref animation);
+			public HRESULT SetAlphaSlope(float alphaSlope) mut => VT.SetAlphaSlope2(ref this, alphaSlope);
+			public HRESULT SetAlphaDisable(BOOL alphaDisable) mut => VT.SetAlphaDisable(ref this, alphaDisable);
+			public HRESULT SetClampOutput(BOOL clampOutput) mut => VT.SetClampOutput(ref this, clampOutput);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1891,74 +1140,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRedTable(float* tableValues, uint32 count) mut
-			{
-				return VT.SetRedTable(ref this, tableValues, count);
-			}
-			public HRESULT SetGreenTable(float* tableValues, uint32 count) mut
-			{
-				return VT.SetGreenTable(ref this, tableValues, count);
-			}
-			public HRESULT SetBlueTable(float* tableValues, uint32 count) mut
-			{
-				return VT.SetBlueTable(ref this, tableValues, count);
-			}
-			public HRESULT SetAlphaTable(float* tableValues, uint32 count) mut
-			{
-				return VT.SetAlphaTable(ref this, tableValues, count);
-			}
-			public HRESULT SetRedDisable(BOOL redDisable) mut
-			{
-				return VT.SetRedDisable(ref this, redDisable);
-			}
-			public HRESULT SetGreenDisable(BOOL greenDisable) mut
-			{
-				return VT.SetGreenDisable(ref this, greenDisable);
-			}
-			public HRESULT SetBlueDisable(BOOL blueDisable) mut
-			{
-				return VT.SetBlueDisable(ref this, blueDisable);
-			}
-			public HRESULT SetAlphaDisable(BOOL alphaDisable) mut
-			{
-				return VT.SetAlphaDisable(ref this, alphaDisable);
-			}
-			public HRESULT SetClampOutput(BOOL clampOutput) mut
-			{
-				return VT.SetClampOutput(ref this, clampOutput);
-			}
-			public HRESULT SetRedTableValue(uint32 index, ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetRedTableValue(ref this, index, ref animation);
-			}
-			public HRESULT SetRedTableValue(uint32 index, float value) mut
-			{
-				return VT.SetRedTableValue2(ref this, index, value);
-			}
-			public HRESULT SetGreenTableValue(uint32 index, ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetGreenTableValue(ref this, index, ref animation);
-			}
-			public HRESULT SetGreenTableValue(uint32 index, float value) mut
-			{
-				return VT.SetGreenTableValue2(ref this, index, value);
-			}
-			public HRESULT SetBlueTableValue(uint32 index, ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetBlueTableValue(ref this, index, ref animation);
-			}
-			public HRESULT SetBlueTableValue(uint32 index, float value) mut
-			{
-				return VT.SetBlueTableValue2(ref this, index, value);
-			}
-			public HRESULT SetAlphaTableValue(uint32 index, ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetAlphaTableValue(ref this, index, ref animation);
-			}
-			public HRESULT SetAlphaTableValue(uint32 index, float value) mut
-			{
-				return VT.SetAlphaTableValue2(ref this, index, value);
-			}
+			public HRESULT SetRedTable(float* tableValues, uint32 count) mut => VT.SetRedTable(ref this, tableValues, count);
+			public HRESULT SetGreenTable(float* tableValues, uint32 count) mut => VT.SetGreenTable(ref this, tableValues, count);
+			public HRESULT SetBlueTable(float* tableValues, uint32 count) mut => VT.SetBlueTable(ref this, tableValues, count);
+			public HRESULT SetAlphaTable(float* tableValues, uint32 count) mut => VT.SetAlphaTable(ref this, tableValues, count);
+			public HRESULT SetRedDisable(BOOL redDisable) mut => VT.SetRedDisable(ref this, redDisable);
+			public HRESULT SetGreenDisable(BOOL greenDisable) mut => VT.SetGreenDisable(ref this, greenDisable);
+			public HRESULT SetBlueDisable(BOOL blueDisable) mut => VT.SetBlueDisable(ref this, blueDisable);
+			public HRESULT SetAlphaDisable(BOOL alphaDisable) mut => VT.SetAlphaDisable(ref this, alphaDisable);
+			public HRESULT SetClampOutput(BOOL clampOutput) mut => VT.SetClampOutput(ref this, clampOutput);
+			public HRESULT SetRedTableValue(uint32 index, ref IDCompositionAnimation animation) mut => VT.SetRedTableValue(ref this, index, ref animation);
+			public HRESULT SetRedTableValue(uint32 index, float value) mut => VT.SetRedTableValue2(ref this, index, value);
+			public HRESULT SetGreenTableValue(uint32 index, ref IDCompositionAnimation animation) mut => VT.SetGreenTableValue(ref this, index, ref animation);
+			public HRESULT SetGreenTableValue(uint32 index, float value) mut => VT.SetGreenTableValue2(ref this, index, value);
+			public HRESULT SetBlueTableValue(uint32 index, ref IDCompositionAnimation animation) mut => VT.SetBlueTableValue(ref this, index, ref animation);
+			public HRESULT SetBlueTableValue(uint32 index, float value) mut => VT.SetBlueTableValue2(ref this, index, value);
+			public HRESULT SetAlphaTableValue(uint32 index, ref IDCompositionAnimation animation) mut => VT.SetAlphaTableValue(ref this, index, ref animation);
+			public HRESULT SetAlphaTableValue(uint32 index, float value) mut => VT.SetAlphaTableValue2(ref this, index, value);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -1988,10 +1187,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMode(D2D1_COMPOSITE_MODE mode) mut
-			{
-				return VT.SetMode(ref this, mode);
-			}
+			public HRESULT SetMode(D2D1_COMPOSITE_MODE mode) mut => VT.SetMode(ref this, mode);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -2005,10 +1202,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMode(D2D1_BLEND_MODE mode) mut
-			{
-				return VT.SetMode(ref this, mode);
-			}
+			public HRESULT SetMode(D2D1_BLEND_MODE mode) mut => VT.SetMode(ref this, mode);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -2022,46 +1217,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetCoefficients(in D2D_VECTOR_4F coefficients) mut
-			{
-				return VT.SetCoefficients(ref this, coefficients);
-			}
-			public HRESULT SetClampOutput(BOOL clampoutput) mut
-			{
-				return VT.SetClampOutput(ref this, clampoutput);
-			}
-			public HRESULT SetCoefficient1(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCoefficient1(ref this, ref animation);
-			}
-			public HRESULT SetCoefficient1(float Coeffcient1) mut
-			{
-				return VT.SetCoefficient12(ref this, Coeffcient1);
-			}
-			public HRESULT SetCoefficient2(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCoefficient2(ref this, ref animation);
-			}
-			public HRESULT SetCoefficient2(float Coefficient2) mut
-			{
-				return VT.SetCoefficient22(ref this, Coefficient2);
-			}
-			public HRESULT SetCoefficient3(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCoefficient3(ref this, ref animation);
-			}
-			public HRESULT SetCoefficient3(float Coefficient3) mut
-			{
-				return VT.SetCoefficient32(ref this, Coefficient3);
-			}
-			public HRESULT SetCoefficient4(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetCoefficient4(ref this, ref animation);
-			}
-			public HRESULT SetCoefficient4(float Coefficient4) mut
-			{
-				return VT.SetCoefficient42(ref this, Coefficient4);
-			}
+			public HRESULT SetCoefficients(in D2D_VECTOR_4F coefficients) mut => VT.SetCoefficients(ref this, coefficients);
+			public HRESULT SetClampOutput(BOOL clampoutput) mut => VT.SetClampOutput(ref this, clampoutput);
+			public HRESULT SetCoefficient1(ref IDCompositionAnimation animation) mut => VT.SetCoefficient1(ref this, ref animation);
+			public HRESULT SetCoefficient1(float Coeffcient1) mut => VT.SetCoefficient12(ref this, Coeffcient1);
+			public HRESULT SetCoefficient2(ref IDCompositionAnimation animation) mut => VT.SetCoefficient2(ref this, ref animation);
+			public HRESULT SetCoefficient2(float Coefficient2) mut => VT.SetCoefficient22(ref this, Coefficient2);
+			public HRESULT SetCoefficient3(ref IDCompositionAnimation animation) mut => VT.SetCoefficient3(ref this, ref animation);
+			public HRESULT SetCoefficient3(float Coefficient3) mut => VT.SetCoefficient32(ref this, Coefficient3);
+			public HRESULT SetCoefficient4(ref IDCompositionAnimation animation) mut => VT.SetCoefficient4(ref this, ref animation);
+			public HRESULT SetCoefficient4(float Coefficient4) mut => VT.SetCoefficient42(ref this, Coefficient4);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -2084,34 +1250,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetInterpolationMode(D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode) mut
-			{
-				return VT.SetInterpolationMode(ref this, interpolationMode);
-			}
-			public HRESULT SetBorderMode(D2D1_BORDER_MODE borderMode) mut
-			{
-				return VT.SetBorderMode(ref this, borderMode);
-			}
-			public HRESULT SetTransformMatrix(in D2D_MATRIX_3X2_F transformMatrix) mut
-			{
-				return VT.SetTransformMatrix(ref this, transformMatrix);
-			}
-			public HRESULT SetTransformMatrixElement(int32 row, int32 column, ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetTransformMatrixElement(ref this, row, column, ref animation);
-			}
-			public HRESULT SetTransformMatrixElement(int32 row, int32 column, float value) mut
-			{
-				return VT.SetTransformMatrixElement2(ref this, row, column, value);
-			}
-			public HRESULT SetSharpness(ref IDCompositionAnimation animation) mut
-			{
-				return VT.SetSharpness(ref this, ref animation);
-			}
-			public HRESULT SetSharpness(float sharpness) mut
-			{
-				return VT.SetSharpness2(ref this, sharpness);
-			}
+			public HRESULT SetInterpolationMode(D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode) mut => VT.SetInterpolationMode(ref this, interpolationMode);
+			public HRESULT SetBorderMode(D2D1_BORDER_MODE borderMode) mut => VT.SetBorderMode(ref this, borderMode);
+			public HRESULT SetTransformMatrix(in D2D_MATRIX_3X2_F transformMatrix) mut => VT.SetTransformMatrix(ref this, transformMatrix);
+			public HRESULT SetTransformMatrixElement(int32 row, int32 column, ref IDCompositionAnimation animation) mut => VT.SetTransformMatrixElement(ref this, row, column, ref animation);
+			public HRESULT SetTransformMatrixElement(int32 row, int32 column, float value) mut => VT.SetTransformMatrixElement2(ref this, row, column, value);
+			public HRESULT SetSharpness(ref IDCompositionAnimation animation) mut => VT.SetSharpness(ref this, ref animation);
+			public HRESULT SetSharpness(float sharpness) mut => VT.SetSharpness2(ref this, sharpness);
+
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
@@ -2131,22 +1277,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddTrailPoints(DCompositionInkTrailPoint* inkPoints, uint32 inkPointsCount, out uint32 generationId) mut
-			{
-				return VT.AddTrailPoints(ref this, inkPoints, inkPointsCount, out generationId);
-			}
-			public HRESULT AddTrailPointsWithPrediction(DCompositionInkTrailPoint* inkPoints, uint32 inkPointsCount, DCompositionInkTrailPoint* predictedInkPoints, uint32 predictedInkPointsCount, out uint32 generationId) mut
-			{
-				return VT.AddTrailPointsWithPrediction(ref this, inkPoints, inkPointsCount, predictedInkPoints, predictedInkPointsCount, out generationId);
-			}
-			public HRESULT RemoveTrailPoints(uint32 generationId) mut
-			{
-				return VT.RemoveTrailPoints(ref this, generationId);
-			}
-			public HRESULT StartNewTrail(in D2D1_COLOR_F color) mut
-			{
-				return VT.StartNewTrail(ref this, color);
-			}
+			public HRESULT AddTrailPoints(DCompositionInkTrailPoint* inkPoints, uint32 inkPointsCount, out uint32 generationId) mut => VT.AddTrailPoints(ref this, inkPoints, inkPointsCount, out generationId);
+			public HRESULT AddTrailPointsWithPrediction(DCompositionInkTrailPoint* inkPoints, uint32 inkPointsCount, DCompositionInkTrailPoint* predictedInkPoints, uint32 predictedInkPointsCount, out uint32 generationId) mut => VT.AddTrailPointsWithPrediction(ref this, inkPoints, inkPointsCount, predictedInkPoints, predictedInkPointsCount, out generationId);
+			public HRESULT RemoveTrailPoints(uint32 generationId) mut => VT.RemoveTrailPoints(ref this, generationId);
+			public HRESULT StartNewTrail(in D2D1_COLOR_F color) mut => VT.StartNewTrail(ref this, color);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2163,14 +1298,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDelegatedInkTrail(out IDCompositionDelegatedInkTrail* inkTrail) mut
-			{
-				return VT.CreateDelegatedInkTrail(ref this, out inkTrail);
-			}
-			public HRESULT CreateDelegatedInkTrailForSwapChain(ref IUnknown swapChain, out IDCompositionDelegatedInkTrail* inkTrail) mut
-			{
-				return VT.CreateDelegatedInkTrailForSwapChain(ref this, ref swapChain, out inkTrail);
-			}
+			public HRESULT CreateDelegatedInkTrail(out IDCompositionDelegatedInkTrail* inkTrail) mut => VT.CreateDelegatedInkTrail(ref this, out inkTrail);
+			public HRESULT CreateDelegatedInkTrailForSwapChain(ref IUnknown swapChain, out IDCompositionDelegatedInkTrail* inkTrail) mut => VT.CreateDelegatedInkTrailForSwapChain(ref this, ref swapChain, out inkTrail);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

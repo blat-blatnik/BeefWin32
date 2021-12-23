@@ -3601,46 +3601,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut
-			{
-				return VT.Initialize(ref this, param0, param1, param2);
-			}
-			public HRESULT GetEffectGuid(out Guid param0) mut
-			{
-				return VT.GetEffectGuid(ref this, out param0);
-			}
-			public HRESULT GetParameters(out DIEFFECT param0, uint32 param1) mut
-			{
-				return VT.GetParameters(ref this, out param0, param1);
-			}
-			public HRESULT SetParameters(out DIEFFECT param0, uint32 param1) mut
-			{
-				return VT.SetParameters(ref this, out param0, param1);
-			}
-			public HRESULT Start(uint32 param0, uint32 param1) mut
-			{
-				return VT.Start(ref this, param0, param1);
-			}
-			public HRESULT Stop() mut
-			{
-				return VT.Stop(ref this);
-			}
-			public HRESULT GetEffectStatus(out uint32 param0) mut
-			{
-				return VT.GetEffectStatus(ref this, out param0);
-			}
-			public HRESULT Download() mut
-			{
-				return VT.Download(ref this);
-			}
-			public HRESULT Unload() mut
-			{
-				return VT.Unload(ref this);
-			}
-			public HRESULT Escape(out DIEFFESCAPE param0) mut
-			{
-				return VT.Escape(ref this, out param0);
-			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut => VT.Initialize(ref this, param0, param1, param2);
+			public HRESULT GetEffectGuid(out Guid param0) mut => VT.GetEffectGuid(ref this, out param0);
+			public HRESULT GetParameters(out DIEFFECT param0, uint32 param1) mut => VT.GetParameters(ref this, out param0, param1);
+			public HRESULT SetParameters(out DIEFFECT param0, uint32 param1) mut => VT.SetParameters(ref this, out param0, param1);
+			public HRESULT Start(uint32 param0, uint32 param1) mut => VT.Start(ref this, param0, param1);
+			public HRESULT Stop() mut => VT.Stop(ref this);
+			public HRESULT GetEffectStatus(out uint32 param0) mut => VT.GetEffectStatus(ref this, out param0);
+			public HRESULT Download() mut => VT.Download(ref this);
+			public HRESULT Unload() mut => VT.Unload(ref this);
+			public HRESULT Escape(out DIEFFESCAPE param0) mut => VT.Escape(ref this, out param0);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3663,66 +3634,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapabilities(out DIDEVCAPS param0) mut
-			{
-				return VT.GetCapabilities(ref this, out param0);
-			}
-			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumObjects(ref this, param0, param1, param2);
-			}
-			public HRESULT GetProperty(in Guid param0, out DIPROPHEADER param1) mut
-			{
-				return VT.GetProperty(ref this, param0, out param1);
-			}
-			public HRESULT SetProperty(in Guid param0, out DIPROPHEADER param1) mut
-			{
-				return VT.SetProperty(ref this, param0, out param1);
-			}
-			public HRESULT Acquire() mut
-			{
-				return VT.Acquire(ref this);
-			}
-			public HRESULT Unacquire() mut
-			{
-				return VT.Unacquire(ref this);
-			}
-			public HRESULT GetDeviceState(uint32 param0, void* param1) mut
-			{
-				return VT.GetDeviceState(ref this, param0, param1);
-			}
-			public HRESULT GetDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut
-			{
-				return VT.GetDeviceData(ref this, param0, out param1, out param2, param3);
-			}
-			public HRESULT SetDataFormat(out DIDATAFORMAT param0) mut
-			{
-				return VT.SetDataFormat(ref this, out param0);
-			}
-			public HRESULT SetEventNotification(HANDLE param0) mut
-			{
-				return VT.SetEventNotification(ref this, param0);
-			}
-			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
-			{
-				return VT.SetCooperativeLevel(ref this, param0, param1);
-			}
-			public HRESULT GetObjectInfo(out DIDEVICEOBJECTINSTANCEW param0, uint32 param1, uint32 param2) mut
-			{
-				return VT.GetObjectInfo(ref this, out param0, param1, param2);
-			}
-			public HRESULT GetDeviceInfo(out DIDEVICEINSTANCEW param0) mut
-			{
-				return VT.GetDeviceInfo(ref this, out param0);
-			}
-			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
-			{
-				return VT.RunControlPanel(ref this, param0, param1);
-			}
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut
-			{
-				return VT.Initialize(ref this, param0, param1, param2);
-			}
+			public HRESULT GetCapabilities(out DIDEVCAPS param0) mut => VT.GetCapabilities(ref this, out param0);
+			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) mut => VT.EnumObjects(ref this, param0, param1, param2);
+			public HRESULT GetProperty(in Guid param0, out DIPROPHEADER param1) mut => VT.GetProperty(ref this, param0, out param1);
+			public HRESULT SetProperty(in Guid param0, out DIPROPHEADER param1) mut => VT.SetProperty(ref this, param0, out param1);
+			public HRESULT Acquire() mut => VT.Acquire(ref this);
+			public HRESULT Unacquire() mut => VT.Unacquire(ref this);
+			public HRESULT GetDeviceState(uint32 param0, void* param1) mut => VT.GetDeviceState(ref this, param0, param1);
+			public HRESULT GetDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut => VT.GetDeviceData(ref this, param0, out param1, out param2, param3);
+			public HRESULT SetDataFormat(out DIDATAFORMAT param0) mut => VT.SetDataFormat(ref this, out param0);
+			public HRESULT SetEventNotification(HANDLE param0) mut => VT.SetEventNotification(ref this, param0);
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut => VT.SetCooperativeLevel(ref this, param0, param1);
+			public HRESULT GetObjectInfo(out DIDEVICEOBJECTINSTANCEW param0, uint32 param1, uint32 param2) mut => VT.GetObjectInfo(ref this, out param0, param1, param2);
+			public HRESULT GetDeviceInfo(out DIDEVICEINSTANCEW param0) mut => VT.GetDeviceInfo(ref this, out param0);
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut => VT.RunControlPanel(ref this, param0, param1);
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut => VT.Initialize(ref this, param0, param1, param2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3750,66 +3677,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapabilities(out DIDEVCAPS param0) mut
-			{
-				return VT.GetCapabilities(ref this, out param0);
-			}
-			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumObjects(ref this, param0, param1, param2);
-			}
-			public HRESULT GetProperty(in Guid param0, out DIPROPHEADER param1) mut
-			{
-				return VT.GetProperty(ref this, param0, out param1);
-			}
-			public HRESULT SetProperty(in Guid param0, out DIPROPHEADER param1) mut
-			{
-				return VT.SetProperty(ref this, param0, out param1);
-			}
-			public HRESULT Acquire() mut
-			{
-				return VT.Acquire(ref this);
-			}
-			public HRESULT Unacquire() mut
-			{
-				return VT.Unacquire(ref this);
-			}
-			public HRESULT GetDeviceState(uint32 param0, void* param1) mut
-			{
-				return VT.GetDeviceState(ref this, param0, param1);
-			}
-			public HRESULT GetDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut
-			{
-				return VT.GetDeviceData(ref this, param0, out param1, out param2, param3);
-			}
-			public HRESULT SetDataFormat(out DIDATAFORMAT param0) mut
-			{
-				return VT.SetDataFormat(ref this, out param0);
-			}
-			public HRESULT SetEventNotification(HANDLE param0) mut
-			{
-				return VT.SetEventNotification(ref this, param0);
-			}
-			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
-			{
-				return VT.SetCooperativeLevel(ref this, param0, param1);
-			}
-			public HRESULT GetObjectInfo(out DIDEVICEOBJECTINSTANCEA param0, uint32 param1, uint32 param2) mut
-			{
-				return VT.GetObjectInfo(ref this, out param0, param1, param2);
-			}
-			public HRESULT GetDeviceInfo(out DIDEVICEINSTANCEA param0) mut
-			{
-				return VT.GetDeviceInfo(ref this, out param0);
-			}
-			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
-			{
-				return VT.RunControlPanel(ref this, param0, param1);
-			}
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut
-			{
-				return VT.Initialize(ref this, param0, param1, param2);
-			}
+			public HRESULT GetCapabilities(out DIDEVCAPS param0) mut => VT.GetCapabilities(ref this, out param0);
+			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) mut => VT.EnumObjects(ref this, param0, param1, param2);
+			public HRESULT GetProperty(in Guid param0, out DIPROPHEADER param1) mut => VT.GetProperty(ref this, param0, out param1);
+			public HRESULT SetProperty(in Guid param0, out DIPROPHEADER param1) mut => VT.SetProperty(ref this, param0, out param1);
+			public HRESULT Acquire() mut => VT.Acquire(ref this);
+			public HRESULT Unacquire() mut => VT.Unacquire(ref this);
+			public HRESULT GetDeviceState(uint32 param0, void* param1) mut => VT.GetDeviceState(ref this, param0, param1);
+			public HRESULT GetDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut => VT.GetDeviceData(ref this, param0, out param1, out param2, param3);
+			public HRESULT SetDataFormat(out DIDATAFORMAT param0) mut => VT.SetDataFormat(ref this, out param0);
+			public HRESULT SetEventNotification(HANDLE param0) mut => VT.SetEventNotification(ref this, param0);
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut => VT.SetCooperativeLevel(ref this, param0, param1);
+			public HRESULT GetObjectInfo(out DIDEVICEOBJECTINSTANCEA param0, uint32 param1, uint32 param2) mut => VT.GetObjectInfo(ref this, out param0, param1, param2);
+			public HRESULT GetDeviceInfo(out DIDEVICEINSTANCEA param0) mut => VT.GetDeviceInfo(ref this, out param0);
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut => VT.RunControlPanel(ref this, param0, param1);
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut => VT.Initialize(ref this, param0, param1, param2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3837,42 +3720,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEffect(in Guid param0, out DIEFFECT param1, out IDirectInputEffect* param2, ref IUnknown param3) mut
-			{
-				return VT.CreateEffect(ref this, param0, out param1, out param2, ref param3);
-			}
-			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumEffects(ref this, param0, param1, param2);
-			}
-			public HRESULT GetEffectInfo(out DIEFFECTINFOW param0, in Guid param1) mut
-			{
-				return VT.GetEffectInfo(ref this, out param0, param1);
-			}
-			public HRESULT GetForceFeedbackState(out uint32 param0) mut
-			{
-				return VT.GetForceFeedbackState(ref this, out param0);
-			}
-			public HRESULT SendForceFeedbackCommand(uint32 param0) mut
-			{
-				return VT.SendForceFeedbackCommand(ref this, param0);
-			}
-			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumCreatedEffectObjects(ref this, param0, param1, param2);
-			}
-			public HRESULT Escape(out DIEFFESCAPE param0) mut
-			{
-				return VT.Escape(ref this, out param0);
-			}
-			public HRESULT Poll() mut
-			{
-				return VT.Poll(ref this);
-			}
-			public HRESULT SendDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut
-			{
-				return VT.SendDeviceData(ref this, param0, out param1, out param2, param3);
-			}
+			public HRESULT CreateEffect(in Guid param0, out DIEFFECT param1, out IDirectInputEffect* param2, ref IUnknown param3) mut => VT.CreateEffect(ref this, param0, out param1, out param2, ref param3);
+			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) mut => VT.EnumEffects(ref this, param0, param1, param2);
+			public HRESULT GetEffectInfo(out DIEFFECTINFOW param0, in Guid param1) mut => VT.GetEffectInfo(ref this, out param0, param1);
+			public HRESULT GetForceFeedbackState(out uint32 param0) mut => VT.GetForceFeedbackState(ref this, out param0);
+			public HRESULT SendForceFeedbackCommand(uint32 param0) mut => VT.SendForceFeedbackCommand(ref this, param0);
+			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut => VT.EnumCreatedEffectObjects(ref this, param0, param1, param2);
+			public HRESULT Escape(out DIEFFESCAPE param0) mut => VT.Escape(ref this, out param0);
+			public HRESULT Poll() mut => VT.Poll(ref this);
+			public HRESULT SendDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut => VT.SendDeviceData(ref this, param0, out param1, out param2, param3);
+
 			[CRepr]
 			public struct VTable : IDirectInputDeviceW.VTable
 			{
@@ -3894,42 +3751,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEffect(in Guid param0, out DIEFFECT param1, out IDirectInputEffect* param2, ref IUnknown param3) mut
-			{
-				return VT.CreateEffect(ref this, param0, out param1, out param2, ref param3);
-			}
-			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumEffects(ref this, param0, param1, param2);
-			}
-			public HRESULT GetEffectInfo(out DIEFFECTINFOA param0, in Guid param1) mut
-			{
-				return VT.GetEffectInfo(ref this, out param0, param1);
-			}
-			public HRESULT GetForceFeedbackState(out uint32 param0) mut
-			{
-				return VT.GetForceFeedbackState(ref this, out param0);
-			}
-			public HRESULT SendForceFeedbackCommand(uint32 param0) mut
-			{
-				return VT.SendForceFeedbackCommand(ref this, param0);
-			}
-			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumCreatedEffectObjects(ref this, param0, param1, param2);
-			}
-			public HRESULT Escape(out DIEFFESCAPE param0) mut
-			{
-				return VT.Escape(ref this, out param0);
-			}
-			public HRESULT Poll() mut
-			{
-				return VT.Poll(ref this);
-			}
-			public HRESULT SendDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut
-			{
-				return VT.SendDeviceData(ref this, param0, out param1, out param2, param3);
-			}
+			public HRESULT CreateEffect(in Guid param0, out DIEFFECT param1, out IDirectInputEffect* param2, ref IUnknown param3) mut => VT.CreateEffect(ref this, param0, out param1, out param2, ref param3);
+			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) mut => VT.EnumEffects(ref this, param0, param1, param2);
+			public HRESULT GetEffectInfo(out DIEFFECTINFOA param0, in Guid param1) mut => VT.GetEffectInfo(ref this, out param0, param1);
+			public HRESULT GetForceFeedbackState(out uint32 param0) mut => VT.GetForceFeedbackState(ref this, out param0);
+			public HRESULT SendForceFeedbackCommand(uint32 param0) mut => VT.SendForceFeedbackCommand(ref this, param0);
+			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut => VT.EnumCreatedEffectObjects(ref this, param0, param1, param2);
+			public HRESULT Escape(out DIEFFESCAPE param0) mut => VT.Escape(ref this, out param0);
+			public HRESULT Poll() mut => VT.Poll(ref this);
+			public HRESULT SendDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut => VT.SendDeviceData(ref this, param0, out param1, out param2, param3);
+
 			[CRepr]
 			public struct VTable : IDirectInputDeviceA.VTable
 			{
@@ -3951,14 +3782,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumEffectsInFile(PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut
-			{
-				return VT.EnumEffectsInFile(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT WriteEffectToFile(PWSTR param0, uint32 param1, out DIFILEEFFECT param2, uint32 param3) mut
-			{
-				return VT.WriteEffectToFile(ref this, param0, param1, out param2, param3);
-			}
+			public HRESULT EnumEffectsInFile(PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut => VT.EnumEffectsInFile(ref this, param0, param1, param2, param3);
+			public HRESULT WriteEffectToFile(PWSTR param0, uint32 param1, out DIFILEEFFECT param2, uint32 param3) mut => VT.WriteEffectToFile(ref this, param0, param1, out param2, param3);
+
 			[CRepr]
 			public struct VTable : IDirectInputDevice2W.VTable
 			{
@@ -3973,14 +3799,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumEffectsInFile(PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut
-			{
-				return VT.EnumEffectsInFile(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT WriteEffectToFile(PSTR param0, uint32 param1, out DIFILEEFFECT param2, uint32 param3) mut
-			{
-				return VT.WriteEffectToFile(ref this, param0, param1, out param2, param3);
-			}
+			public HRESULT EnumEffectsInFile(PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut => VT.EnumEffectsInFile(ref this, param0, param1, param2, param3);
+			public HRESULT WriteEffectToFile(PSTR param0, uint32 param1, out DIFILEEFFECT param2, uint32 param3) mut => VT.WriteEffectToFile(ref this, param0, param1, out param2, param3);
+
 			[CRepr]
 			public struct VTable : IDirectInputDevice2A.VTable
 			{
@@ -3995,122 +3816,36 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapabilities(out DIDEVCAPS param0) mut
-			{
-				return VT.GetCapabilities(ref this, out param0);
-			}
-			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumObjects(ref this, param0, param1, param2);
-			}
-			public HRESULT GetProperty(in Guid param0, out DIPROPHEADER param1) mut
-			{
-				return VT.GetProperty(ref this, param0, out param1);
-			}
-			public HRESULT SetProperty(in Guid param0, out DIPROPHEADER param1) mut
-			{
-				return VT.SetProperty(ref this, param0, out param1);
-			}
-			public HRESULT Acquire() mut
-			{
-				return VT.Acquire(ref this);
-			}
-			public HRESULT Unacquire() mut
-			{
-				return VT.Unacquire(ref this);
-			}
-			public HRESULT GetDeviceState(uint32 param0, void* param1) mut
-			{
-				return VT.GetDeviceState(ref this, param0, param1);
-			}
-			public HRESULT GetDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut
-			{
-				return VT.GetDeviceData(ref this, param0, out param1, out param2, param3);
-			}
-			public HRESULT SetDataFormat(out DIDATAFORMAT param0) mut
-			{
-				return VT.SetDataFormat(ref this, out param0);
-			}
-			public HRESULT SetEventNotification(HANDLE param0) mut
-			{
-				return VT.SetEventNotification(ref this, param0);
-			}
-			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
-			{
-				return VT.SetCooperativeLevel(ref this, param0, param1);
-			}
-			public HRESULT GetObjectInfo(out DIDEVICEOBJECTINSTANCEW param0, uint32 param1, uint32 param2) mut
-			{
-				return VT.GetObjectInfo(ref this, out param0, param1, param2);
-			}
-			public HRESULT GetDeviceInfo(out DIDEVICEINSTANCEW param0) mut
-			{
-				return VT.GetDeviceInfo(ref this, out param0);
-			}
-			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
-			{
-				return VT.RunControlPanel(ref this, param0, param1);
-			}
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut
-			{
-				return VT.Initialize(ref this, param0, param1, param2);
-			}
-			public HRESULT CreateEffect(in Guid param0, out DIEFFECT param1, out IDirectInputEffect* param2, ref IUnknown param3) mut
-			{
-				return VT.CreateEffect(ref this, param0, out param1, out param2, ref param3);
-			}
-			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumEffects(ref this, param0, param1, param2);
-			}
-			public HRESULT GetEffectInfo(out DIEFFECTINFOW param0, in Guid param1) mut
-			{
-				return VT.GetEffectInfo(ref this, out param0, param1);
-			}
-			public HRESULT GetForceFeedbackState(out uint32 param0) mut
-			{
-				return VT.GetForceFeedbackState(ref this, out param0);
-			}
-			public HRESULT SendForceFeedbackCommand(uint32 param0) mut
-			{
-				return VT.SendForceFeedbackCommand(ref this, param0);
-			}
-			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumCreatedEffectObjects(ref this, param0, param1, param2);
-			}
-			public HRESULT Escape(out DIEFFESCAPE param0) mut
-			{
-				return VT.Escape(ref this, out param0);
-			}
-			public HRESULT Poll() mut
-			{
-				return VT.Poll(ref this);
-			}
-			public HRESULT SendDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut
-			{
-				return VT.SendDeviceData(ref this, param0, out param1, out param2, param3);
-			}
-			public HRESULT EnumEffectsInFile(PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut
-			{
-				return VT.EnumEffectsInFile(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT WriteEffectToFile(PWSTR param0, uint32 param1, out DIFILEEFFECT param2, uint32 param3) mut
-			{
-				return VT.WriteEffectToFile(ref this, param0, param1, out param2, param3);
-			}
-			public HRESULT BuildActionMap(out DIACTIONFORMATW param0, PWSTR param1, uint32 param2) mut
-			{
-				return VT.BuildActionMap(ref this, out param0, param1, param2);
-			}
-			public HRESULT SetActionMap(out DIACTIONFORMATW param0, PWSTR param1, uint32 param2) mut
-			{
-				return VT.SetActionMap(ref this, out param0, param1, param2);
-			}
-			public HRESULT GetImageInfo(out DIDEVICEIMAGEINFOHEADERW param0) mut
-			{
-				return VT.GetImageInfo(ref this, out param0);
-			}
+			public HRESULT GetCapabilities(out DIDEVCAPS param0) mut => VT.GetCapabilities(ref this, out param0);
+			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) mut => VT.EnumObjects(ref this, param0, param1, param2);
+			public HRESULT GetProperty(in Guid param0, out DIPROPHEADER param1) mut => VT.GetProperty(ref this, param0, out param1);
+			public HRESULT SetProperty(in Guid param0, out DIPROPHEADER param1) mut => VT.SetProperty(ref this, param0, out param1);
+			public HRESULT Acquire() mut => VT.Acquire(ref this);
+			public HRESULT Unacquire() mut => VT.Unacquire(ref this);
+			public HRESULT GetDeviceState(uint32 param0, void* param1) mut => VT.GetDeviceState(ref this, param0, param1);
+			public HRESULT GetDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut => VT.GetDeviceData(ref this, param0, out param1, out param2, param3);
+			public HRESULT SetDataFormat(out DIDATAFORMAT param0) mut => VT.SetDataFormat(ref this, out param0);
+			public HRESULT SetEventNotification(HANDLE param0) mut => VT.SetEventNotification(ref this, param0);
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut => VT.SetCooperativeLevel(ref this, param0, param1);
+			public HRESULT GetObjectInfo(out DIDEVICEOBJECTINSTANCEW param0, uint32 param1, uint32 param2) mut => VT.GetObjectInfo(ref this, out param0, param1, param2);
+			public HRESULT GetDeviceInfo(out DIDEVICEINSTANCEW param0) mut => VT.GetDeviceInfo(ref this, out param0);
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut => VT.RunControlPanel(ref this, param0, param1);
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut => VT.Initialize(ref this, param0, param1, param2);
+			public HRESULT CreateEffect(in Guid param0, out DIEFFECT param1, out IDirectInputEffect* param2, ref IUnknown param3) mut => VT.CreateEffect(ref this, param0, out param1, out param2, ref param3);
+			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) mut => VT.EnumEffects(ref this, param0, param1, param2);
+			public HRESULT GetEffectInfo(out DIEFFECTINFOW param0, in Guid param1) mut => VT.GetEffectInfo(ref this, out param0, param1);
+			public HRESULT GetForceFeedbackState(out uint32 param0) mut => VT.GetForceFeedbackState(ref this, out param0);
+			public HRESULT SendForceFeedbackCommand(uint32 param0) mut => VT.SendForceFeedbackCommand(ref this, param0);
+			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut => VT.EnumCreatedEffectObjects(ref this, param0, param1, param2);
+			public HRESULT Escape(out DIEFFESCAPE param0) mut => VT.Escape(ref this, out param0);
+			public HRESULT Poll() mut => VT.Poll(ref this);
+			public HRESULT SendDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut => VT.SendDeviceData(ref this, param0, out param1, out param2, param3);
+			public HRESULT EnumEffectsInFile(PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut => VT.EnumEffectsInFile(ref this, param0, param1, param2, param3);
+			public HRESULT WriteEffectToFile(PWSTR param0, uint32 param1, out DIFILEEFFECT param2, uint32 param3) mut => VT.WriteEffectToFile(ref this, param0, param1, out param2, param3);
+			public HRESULT BuildActionMap(out DIACTIONFORMATW param0, PWSTR param1, uint32 param2) mut => VT.BuildActionMap(ref this, out param0, param1, param2);
+			public HRESULT SetActionMap(out DIACTIONFORMATW param0, PWSTR param1, uint32 param2) mut => VT.SetActionMap(ref this, out param0, param1, param2);
+			public HRESULT GetImageInfo(out DIDEVICEIMAGEINFOHEADERW param0) mut => VT.GetImageInfo(ref this, out param0);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4152,122 +3887,36 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapabilities(out DIDEVCAPS param0) mut
-			{
-				return VT.GetCapabilities(ref this, out param0);
-			}
-			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumObjects(ref this, param0, param1, param2);
-			}
-			public HRESULT GetProperty(in Guid param0, out DIPROPHEADER param1) mut
-			{
-				return VT.GetProperty(ref this, param0, out param1);
-			}
-			public HRESULT SetProperty(in Guid param0, out DIPROPHEADER param1) mut
-			{
-				return VT.SetProperty(ref this, param0, out param1);
-			}
-			public HRESULT Acquire() mut
-			{
-				return VT.Acquire(ref this);
-			}
-			public HRESULT Unacquire() mut
-			{
-				return VT.Unacquire(ref this);
-			}
-			public HRESULT GetDeviceState(uint32 param0, void* param1) mut
-			{
-				return VT.GetDeviceState(ref this, param0, param1);
-			}
-			public HRESULT GetDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut
-			{
-				return VT.GetDeviceData(ref this, param0, out param1, out param2, param3);
-			}
-			public HRESULT SetDataFormat(out DIDATAFORMAT param0) mut
-			{
-				return VT.SetDataFormat(ref this, out param0);
-			}
-			public HRESULT SetEventNotification(HANDLE param0) mut
-			{
-				return VT.SetEventNotification(ref this, param0);
-			}
-			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
-			{
-				return VT.SetCooperativeLevel(ref this, param0, param1);
-			}
-			public HRESULT GetObjectInfo(out DIDEVICEOBJECTINSTANCEA param0, uint32 param1, uint32 param2) mut
-			{
-				return VT.GetObjectInfo(ref this, out param0, param1, param2);
-			}
-			public HRESULT GetDeviceInfo(out DIDEVICEINSTANCEA param0) mut
-			{
-				return VT.GetDeviceInfo(ref this, out param0);
-			}
-			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
-			{
-				return VT.RunControlPanel(ref this, param0, param1);
-			}
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut
-			{
-				return VT.Initialize(ref this, param0, param1, param2);
-			}
-			public HRESULT CreateEffect(in Guid param0, out DIEFFECT param1, out IDirectInputEffect* param2, ref IUnknown param3) mut
-			{
-				return VT.CreateEffect(ref this, param0, out param1, out param2, ref param3);
-			}
-			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumEffects(ref this, param0, param1, param2);
-			}
-			public HRESULT GetEffectInfo(out DIEFFECTINFOA param0, in Guid param1) mut
-			{
-				return VT.GetEffectInfo(ref this, out param0, param1);
-			}
-			public HRESULT GetForceFeedbackState(out uint32 param0) mut
-			{
-				return VT.GetForceFeedbackState(ref this, out param0);
-			}
-			public HRESULT SendForceFeedbackCommand(uint32 param0) mut
-			{
-				return VT.SendForceFeedbackCommand(ref this, param0);
-			}
-			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut
-			{
-				return VT.EnumCreatedEffectObjects(ref this, param0, param1, param2);
-			}
-			public HRESULT Escape(out DIEFFESCAPE param0) mut
-			{
-				return VT.Escape(ref this, out param0);
-			}
-			public HRESULT Poll() mut
-			{
-				return VT.Poll(ref this);
-			}
-			public HRESULT SendDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut
-			{
-				return VT.SendDeviceData(ref this, param0, out param1, out param2, param3);
-			}
-			public HRESULT EnumEffectsInFile(PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut
-			{
-				return VT.EnumEffectsInFile(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT WriteEffectToFile(PSTR param0, uint32 param1, out DIFILEEFFECT param2, uint32 param3) mut
-			{
-				return VT.WriteEffectToFile(ref this, param0, param1, out param2, param3);
-			}
-			public HRESULT BuildActionMap(out DIACTIONFORMATA param0, PSTR param1, uint32 param2) mut
-			{
-				return VT.BuildActionMap(ref this, out param0, param1, param2);
-			}
-			public HRESULT SetActionMap(out DIACTIONFORMATA param0, PSTR param1, uint32 param2) mut
-			{
-				return VT.SetActionMap(ref this, out param0, param1, param2);
-			}
-			public HRESULT GetImageInfo(out DIDEVICEIMAGEINFOHEADERA param0) mut
-			{
-				return VT.GetImageInfo(ref this, out param0);
-			}
+			public HRESULT GetCapabilities(out DIDEVCAPS param0) mut => VT.GetCapabilities(ref this, out param0);
+			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) mut => VT.EnumObjects(ref this, param0, param1, param2);
+			public HRESULT GetProperty(in Guid param0, out DIPROPHEADER param1) mut => VT.GetProperty(ref this, param0, out param1);
+			public HRESULT SetProperty(in Guid param0, out DIPROPHEADER param1) mut => VT.SetProperty(ref this, param0, out param1);
+			public HRESULT Acquire() mut => VT.Acquire(ref this);
+			public HRESULT Unacquire() mut => VT.Unacquire(ref this);
+			public HRESULT GetDeviceState(uint32 param0, void* param1) mut => VT.GetDeviceState(ref this, param0, param1);
+			public HRESULT GetDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut => VT.GetDeviceData(ref this, param0, out param1, out param2, param3);
+			public HRESULT SetDataFormat(out DIDATAFORMAT param0) mut => VT.SetDataFormat(ref this, out param0);
+			public HRESULT SetEventNotification(HANDLE param0) mut => VT.SetEventNotification(ref this, param0);
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut => VT.SetCooperativeLevel(ref this, param0, param1);
+			public HRESULT GetObjectInfo(out DIDEVICEOBJECTINSTANCEA param0, uint32 param1, uint32 param2) mut => VT.GetObjectInfo(ref this, out param0, param1, param2);
+			public HRESULT GetDeviceInfo(out DIDEVICEINSTANCEA param0) mut => VT.GetDeviceInfo(ref this, out param0);
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut => VT.RunControlPanel(ref this, param0, param1);
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, in Guid param2) mut => VT.Initialize(ref this, param0, param1, param2);
+			public HRESULT CreateEffect(in Guid param0, out DIEFFECT param1, out IDirectInputEffect* param2, ref IUnknown param3) mut => VT.CreateEffect(ref this, param0, out param1, out param2, ref param3);
+			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) mut => VT.EnumEffects(ref this, param0, param1, param2);
+			public HRESULT GetEffectInfo(out DIEFFECTINFOA param0, in Guid param1) mut => VT.GetEffectInfo(ref this, out param0, param1);
+			public HRESULT GetForceFeedbackState(out uint32 param0) mut => VT.GetForceFeedbackState(ref this, out param0);
+			public HRESULT SendForceFeedbackCommand(uint32 param0) mut => VT.SendForceFeedbackCommand(ref this, param0);
+			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut => VT.EnumCreatedEffectObjects(ref this, param0, param1, param2);
+			public HRESULT Escape(out DIEFFESCAPE param0) mut => VT.Escape(ref this, out param0);
+			public HRESULT Poll() mut => VT.Poll(ref this);
+			public HRESULT SendDeviceData(uint32 param0, out DIDEVICEOBJECTDATA param1, out uint32 param2, uint32 param3) mut => VT.SendDeviceData(ref this, param0, out param1, out param2, param3);
+			public HRESULT EnumEffectsInFile(PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut => VT.EnumEffectsInFile(ref this, param0, param1, param2, param3);
+			public HRESULT WriteEffectToFile(PSTR param0, uint32 param1, out DIFILEEFFECT param2, uint32 param3) mut => VT.WriteEffectToFile(ref this, param0, param1, out param2, param3);
+			public HRESULT BuildActionMap(out DIACTIONFORMATA param0, PSTR param1, uint32 param2) mut => VT.BuildActionMap(ref this, out param0, param1, param2);
+			public HRESULT SetActionMap(out DIACTIONFORMATA param0, PSTR param1, uint32 param2) mut => VT.SetActionMap(ref this, out param0, param1, param2);
+			public HRESULT GetImageInfo(out DIDEVICEIMAGEINFOHEADERA param0) mut => VT.GetImageInfo(ref this, out param0);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4309,26 +3958,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(in Guid param0, out IDirectInputDeviceW* param1, ref IUnknown param2) mut
-			{
-				return VT.CreateDevice(ref this, param0, out param1, ref param2);
-			}
-			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) mut
-			{
-				return VT.EnumDevices(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT GetDeviceStatus(in Guid param0) mut
-			{
-				return VT.GetDeviceStatus(ref this, param0);
-			}
-			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
-			{
-				return VT.RunControlPanel(ref this, param0, param1);
-			}
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut
-			{
-				return VT.Initialize(ref this, param0, param1);
-			}
+			public HRESULT CreateDevice(in Guid param0, out IDirectInputDeviceW* param1, ref IUnknown param2) mut => VT.CreateDevice(ref this, param0, out param1, ref param2);
+			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) mut => VT.EnumDevices(ref this, param0, param1, param2, param3);
+			public HRESULT GetDeviceStatus(in Guid param0) mut => VT.GetDeviceStatus(ref this, param0);
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut => VT.RunControlPanel(ref this, param0, param1);
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut => VT.Initialize(ref this, param0, param1);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4346,26 +3981,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(in Guid param0, out IDirectInputDeviceA* param1, ref IUnknown param2) mut
-			{
-				return VT.CreateDevice(ref this, param0, out param1, ref param2);
-			}
-			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) mut
-			{
-				return VT.EnumDevices(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT GetDeviceStatus(in Guid param0) mut
-			{
-				return VT.GetDeviceStatus(ref this, param0);
-			}
-			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
-			{
-				return VT.RunControlPanel(ref this, param0, param1);
-			}
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut
-			{
-				return VT.Initialize(ref this, param0, param1);
-			}
+			public HRESULT CreateDevice(in Guid param0, out IDirectInputDeviceA* param1, ref IUnknown param2) mut => VT.CreateDevice(ref this, param0, out param1, ref param2);
+			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) mut => VT.EnumDevices(ref this, param0, param1, param2, param3);
+			public HRESULT GetDeviceStatus(in Guid param0) mut => VT.GetDeviceStatus(ref this, param0);
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut => VT.RunControlPanel(ref this, param0, param1);
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut => VT.Initialize(ref this, param0, param1);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4383,10 +4004,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindDevice(in Guid param0, PWSTR param1, out Guid param2) mut
-			{
-				return VT.FindDevice(ref this, param0, param1, out param2);
-			}
+			public HRESULT FindDevice(in Guid param0, PWSTR param1, out Guid param2) mut => VT.FindDevice(ref this, param0, param1, out param2);
+
 			[CRepr]
 			public struct VTable : IDirectInputW.VTable
 			{
@@ -4400,10 +4019,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindDevice(in Guid param0, PSTR param1, out Guid param2) mut
-			{
-				return VT.FindDevice(ref this, param0, param1, out param2);
-			}
+			public HRESULT FindDevice(in Guid param0, PSTR param1, out Guid param2) mut => VT.FindDevice(ref this, param0, param1, out param2);
+
 			[CRepr]
 			public struct VTable : IDirectInputA.VTable
 			{
@@ -4417,10 +4034,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDeviceEx(in Guid param0, in Guid param1, void** param2, ref IUnknown param3) mut
-			{
-				return VT.CreateDeviceEx(ref this, param0, param1, param2, ref param3);
-			}
+			public HRESULT CreateDeviceEx(in Guid param0, in Guid param1, void** param2, ref IUnknown param3) mut => VT.CreateDeviceEx(ref this, param0, param1, param2, ref param3);
+
 			[CRepr]
 			public struct VTable : IDirectInput2W.VTable
 			{
@@ -4434,10 +4049,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDeviceEx(in Guid param0, in Guid param1, void** param2, ref IUnknown param3) mut
-			{
-				return VT.CreateDeviceEx(ref this, param0, param1, param2, ref param3);
-			}
+			public HRESULT CreateDeviceEx(in Guid param0, in Guid param1, void** param2, ref IUnknown param3) mut => VT.CreateDeviceEx(ref this, param0, param1, param2, ref param3);
+
 			[CRepr]
 			public struct VTable : IDirectInput2A.VTable
 			{
@@ -4451,38 +4064,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(in Guid param0, out IDirectInputDevice8W* param1, ref IUnknown param2) mut
-			{
-				return VT.CreateDevice(ref this, param0, out param1, ref param2);
-			}
-			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) mut
-			{
-				return VT.EnumDevices(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT GetDeviceStatus(in Guid param0) mut
-			{
-				return VT.GetDeviceStatus(ref this, param0);
-			}
-			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
-			{
-				return VT.RunControlPanel(ref this, param0, param1);
-			}
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut
-			{
-				return VT.Initialize(ref this, param0, param1);
-			}
-			public HRESULT FindDevice(in Guid param0, PWSTR param1, out Guid param2) mut
-			{
-				return VT.FindDevice(ref this, param0, param1, out param2);
-			}
-			public HRESULT EnumDevicesBySemantics(PWSTR param0, out DIACTIONFORMATW param1, LPDIENUMDEVICESBYSEMANTICSCBW param2, void* param3, uint32 param4) mut
-			{
-				return VT.EnumDevicesBySemantics(ref this, param0, out param1, param2, param3, param4);
-			}
-			public HRESULT ConfigureDevices(LPDICONFIGUREDEVICESCALLBACK param0, out DICONFIGUREDEVICESPARAMSW param1, uint32 param2, void* param3) mut
-			{
-				return VT.ConfigureDevices(ref this, param0, out param1, param2, param3);
-			}
+			public HRESULT CreateDevice(in Guid param0, out IDirectInputDevice8W* param1, ref IUnknown param2) mut => VT.CreateDevice(ref this, param0, out param1, ref param2);
+			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) mut => VT.EnumDevices(ref this, param0, param1, param2, param3);
+			public HRESULT GetDeviceStatus(in Guid param0) mut => VT.GetDeviceStatus(ref this, param0);
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut => VT.RunControlPanel(ref this, param0, param1);
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut => VT.Initialize(ref this, param0, param1);
+			public HRESULT FindDevice(in Guid param0, PWSTR param1, out Guid param2) mut => VT.FindDevice(ref this, param0, param1, out param2);
+			public HRESULT EnumDevicesBySemantics(PWSTR param0, out DIACTIONFORMATW param1, LPDIENUMDEVICESBYSEMANTICSCBW param2, void* param3, uint32 param4) mut => VT.EnumDevicesBySemantics(ref this, param0, out param1, param2, param3, param4);
+			public HRESULT ConfigureDevices(LPDICONFIGUREDEVICESCALLBACK param0, out DICONFIGUREDEVICESPARAMSW param1, uint32 param2, void* param3) mut => VT.ConfigureDevices(ref this, param0, out param1, param2, param3);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4503,38 +4093,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDevice(in Guid param0, out IDirectInputDevice8A* param1, ref IUnknown param2) mut
-			{
-				return VT.CreateDevice(ref this, param0, out param1, ref param2);
-			}
-			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) mut
-			{
-				return VT.EnumDevices(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT GetDeviceStatus(in Guid param0) mut
-			{
-				return VT.GetDeviceStatus(ref this, param0);
-			}
-			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
-			{
-				return VT.RunControlPanel(ref this, param0, param1);
-			}
-			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut
-			{
-				return VT.Initialize(ref this, param0, param1);
-			}
-			public HRESULT FindDevice(in Guid param0, PSTR param1, out Guid param2) mut
-			{
-				return VT.FindDevice(ref this, param0, param1, out param2);
-			}
-			public HRESULT EnumDevicesBySemantics(PSTR param0, out DIACTIONFORMATA param1, LPDIENUMDEVICESBYSEMANTICSCBA param2, void* param3, uint32 param4) mut
-			{
-				return VT.EnumDevicesBySemantics(ref this, param0, out param1, param2, param3, param4);
-			}
-			public HRESULT ConfigureDevices(LPDICONFIGUREDEVICESCALLBACK param0, out DICONFIGUREDEVICESPARAMSA param1, uint32 param2, void* param3) mut
-			{
-				return VT.ConfigureDevices(ref this, param0, out param1, param2, param3);
-			}
+			public HRESULT CreateDevice(in Guid param0, out IDirectInputDevice8A* param1, ref IUnknown param2) mut => VT.CreateDevice(ref this, param0, out param1, ref param2);
+			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) mut => VT.EnumDevices(ref this, param0, param1, param2, param3);
+			public HRESULT GetDeviceStatus(in Guid param0) mut => VT.GetDeviceStatus(ref this, param0);
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut => VT.RunControlPanel(ref this, param0, param1);
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut => VT.Initialize(ref this, param0, param1);
+			public HRESULT FindDevice(in Guid param0, PSTR param1, out Guid param2) mut => VT.FindDevice(ref this, param0, param1, out param2);
+			public HRESULT EnumDevicesBySemantics(PSTR param0, out DIACTIONFORMATA param1, LPDIENUMDEVICESBYSEMANTICSCBA param2, void* param3, uint32 param4) mut => VT.EnumDevicesBySemantics(ref this, param0, out param1, param2, param3, param4);
+			public HRESULT ConfigureDevices(LPDICONFIGUREDEVICESCALLBACK param0, out DICONFIGUREDEVICESPARAMSA param1, uint32 param2, void* param3) mut => VT.ConfigureDevices(ref this, param0, out param1, param2, param3);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4555,50 +4122,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DeviceID(uint32 param0, uint32 param1, uint32 param2, uint32 param3, void* param4) mut
-			{
-				return VT.DeviceID(ref this, param0, param1, param2, param3, param4);
-			}
-			public HRESULT GetVersions(out DIDRIVERVERSIONS param0) mut
-			{
-				return VT.GetVersions(ref this, out param0);
-			}
-			public HRESULT Escape(uint32 param0, uint32 param1, out DIEFFESCAPE param2) mut
-			{
-				return VT.Escape(ref this, param0, param1, out param2);
-			}
-			public HRESULT SetGain(uint32 param0, uint32 param1) mut
-			{
-				return VT.SetGain(ref this, param0, param1);
-			}
-			public HRESULT SendForceFeedbackCommand(uint32 param0, uint32 param1) mut
-			{
-				return VT.SendForceFeedbackCommand(ref this, param0, param1);
-			}
-			public HRESULT GetForceFeedbackState(uint32 param0, out DIDEVICESTATE param1) mut
-			{
-				return VT.GetForceFeedbackState(ref this, param0, out param1);
-			}
-			public HRESULT DownloadEffect(uint32 param0, uint32 param1, out uint32 param2, out DIEFFECT param3, uint32 param4) mut
-			{
-				return VT.DownloadEffect(ref this, param0, param1, out param2, out param3, param4);
-			}
-			public HRESULT DestroyEffect(uint32 param0, uint32 param1) mut
-			{
-				return VT.DestroyEffect(ref this, param0, param1);
-			}
-			public HRESULT StartEffect(uint32 param0, uint32 param1, uint32 param2, uint32 param3) mut
-			{
-				return VT.StartEffect(ref this, param0, param1, param2, param3);
-			}
-			public HRESULT StopEffect(uint32 param0, uint32 param1) mut
-			{
-				return VT.StopEffect(ref this, param0, param1);
-			}
-			public HRESULT GetEffectStatus(uint32 param0, uint32 param1, out uint32 param2) mut
-			{
-				return VT.GetEffectStatus(ref this, param0, param1, out param2);
-			}
+			public HRESULT DeviceID(uint32 param0, uint32 param1, uint32 param2, uint32 param3, void* param4) mut => VT.DeviceID(ref this, param0, param1, param2, param3, param4);
+			public HRESULT GetVersions(out DIDRIVERVERSIONS param0) mut => VT.GetVersions(ref this, out param0);
+			public HRESULT Escape(uint32 param0, uint32 param1, out DIEFFESCAPE param2) mut => VT.Escape(ref this, param0, param1, out param2);
+			public HRESULT SetGain(uint32 param0, uint32 param1) mut => VT.SetGain(ref this, param0, param1);
+			public HRESULT SendForceFeedbackCommand(uint32 param0, uint32 param1) mut => VT.SendForceFeedbackCommand(ref this, param0, param1);
+			public HRESULT GetForceFeedbackState(uint32 param0, out DIDEVICESTATE param1) mut => VT.GetForceFeedbackState(ref this, param0, out param1);
+			public HRESULT DownloadEffect(uint32 param0, uint32 param1, out uint32 param2, out DIEFFECT param3, uint32 param4) mut => VT.DownloadEffect(ref this, param0, param1, out param2, out param3, param4);
+			public HRESULT DestroyEffect(uint32 param0, uint32 param1) mut => VT.DestroyEffect(ref this, param0, param1);
+			public HRESULT StartEffect(uint32 param0, uint32 param1, uint32 param2, uint32 param3) mut => VT.StartEffect(ref this, param0, param1, param2, param3);
+			public HRESULT StopEffect(uint32 param0, uint32 param1) mut => VT.StopEffect(ref this, param0, param1);
+			public HRESULT GetEffectStatus(uint32 param0, uint32 param1, out uint32 param2) mut => VT.GetEffectStatus(ref this, param0, param1, out param2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4622,70 +4157,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Acquire() mut
-			{
-				return VT.Acquire(ref this);
-			}
-			public HRESULT Unacquire() mut
-			{
-				return VT.Unacquire(ref this);
-			}
-			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
-			{
-				return VT.SetCooperativeLevel(ref this, param0, param1);
-			}
-			public HRESULT SendNotify() mut
-			{
-				return VT.SendNotify(ref this);
-			}
-			public HRESULT EnumTypes(LPDIJOYTYPECALLBACK param0, void* param1) mut
-			{
-				return VT.EnumTypes(ref this, param0, param1);
-			}
-			public HRESULT GetTypeInfo(PWSTR param0, out DIJOYTYPEINFO param1, uint32 param2) mut
-			{
-				return VT.GetTypeInfo(ref this, param0, out param1, param2);
-			}
-			public HRESULT SetTypeInfo(PWSTR param0, out DIJOYTYPEINFO param1, uint32 param2) mut
-			{
-				return VT.SetTypeInfo(ref this, param0, out param1, param2);
-			}
-			public HRESULT DeleteType(PWSTR param0) mut
-			{
-				return VT.DeleteType(ref this, param0);
-			}
-			public HRESULT GetConfig(uint32 param0, out DIJOYCONFIG param1, uint32 param2) mut
-			{
-				return VT.GetConfig(ref this, param0, out param1, param2);
-			}
-			public HRESULT SetConfig(uint32 param0, out DIJOYCONFIG param1, uint32 param2) mut
-			{
-				return VT.SetConfig(ref this, param0, out param1, param2);
-			}
-			public HRESULT DeleteConfig(uint32 param0) mut
-			{
-				return VT.DeleteConfig(ref this, param0);
-			}
-			public HRESULT GetUserValues(out DIJOYUSERVALUES param0, uint32 param1) mut
-			{
-				return VT.GetUserValues(ref this, out param0, param1);
-			}
-			public HRESULT SetUserValues(out DIJOYUSERVALUES param0, uint32 param1) mut
-			{
-				return VT.SetUserValues(ref this, out param0, param1);
-			}
-			public HRESULT AddNewHardware(HWND param0, in Guid param1) mut
-			{
-				return VT.AddNewHardware(ref this, param0, param1);
-			}
-			public HRESULT OpenTypeKey(PWSTR param0, uint32 param1, out HKEY param2) mut
-			{
-				return VT.OpenTypeKey(ref this, param0, param1, out param2);
-			}
-			public HRESULT OpenConfigKey(uint32 param0, uint32 param1, out HKEY param2) mut
-			{
-				return VT.OpenConfigKey(ref this, param0, param1, out param2);
-			}
+			public HRESULT Acquire() mut => VT.Acquire(ref this);
+			public HRESULT Unacquire() mut => VT.Unacquire(ref this);
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut => VT.SetCooperativeLevel(ref this, param0, param1);
+			public HRESULT SendNotify() mut => VT.SendNotify(ref this);
+			public HRESULT EnumTypes(LPDIJOYTYPECALLBACK param0, void* param1) mut => VT.EnumTypes(ref this, param0, param1);
+			public HRESULT GetTypeInfo(PWSTR param0, out DIJOYTYPEINFO param1, uint32 param2) mut => VT.GetTypeInfo(ref this, param0, out param1, param2);
+			public HRESULT SetTypeInfo(PWSTR param0, out DIJOYTYPEINFO param1, uint32 param2) mut => VT.SetTypeInfo(ref this, param0, out param1, param2);
+			public HRESULT DeleteType(PWSTR param0) mut => VT.DeleteType(ref this, param0);
+			public HRESULT GetConfig(uint32 param0, out DIJOYCONFIG param1, uint32 param2) mut => VT.GetConfig(ref this, param0, out param1, param2);
+			public HRESULT SetConfig(uint32 param0, out DIJOYCONFIG param1, uint32 param2) mut => VT.SetConfig(ref this, param0, out param1, param2);
+			public HRESULT DeleteConfig(uint32 param0) mut => VT.DeleteConfig(ref this, param0);
+			public HRESULT GetUserValues(out DIJOYUSERVALUES param0, uint32 param1) mut => VT.GetUserValues(ref this, out param0, param1);
+			public HRESULT SetUserValues(out DIJOYUSERVALUES param0, uint32 param1) mut => VT.SetUserValues(ref this, out param0, param1);
+			public HRESULT AddNewHardware(HWND param0, in Guid param1) mut => VT.AddNewHardware(ref this, param0, param1);
+			public HRESULT OpenTypeKey(PWSTR param0, uint32 param1, out HKEY param2) mut => VT.OpenTypeKey(ref this, param0, param1, out param2);
+			public HRESULT OpenConfigKey(uint32 param0, uint32 param1, out HKEY param2) mut => VT.OpenConfigKey(ref this, param0, param1, out param2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4714,70 +4202,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Acquire() mut
-			{
-				return VT.Acquire(ref this);
-			}
-			public HRESULT Unacquire() mut
-			{
-				return VT.Unacquire(ref this);
-			}
-			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
-			{
-				return VT.SetCooperativeLevel(ref this, param0, param1);
-			}
-			public HRESULT SendNotify() mut
-			{
-				return VT.SendNotify(ref this);
-			}
-			public HRESULT EnumTypes(LPDIJOYTYPECALLBACK param0, void* param1) mut
-			{
-				return VT.EnumTypes(ref this, param0, param1);
-			}
-			public HRESULT GetTypeInfo(PWSTR param0, out DIJOYTYPEINFO param1, uint32 param2) mut
-			{
-				return VT.GetTypeInfo(ref this, param0, out param1, param2);
-			}
-			public HRESULT SetTypeInfo(PWSTR param0, out DIJOYTYPEINFO param1, uint32 param2, PWSTR param3) mut
-			{
-				return VT.SetTypeInfo(ref this, param0, out param1, param2, param3);
-			}
-			public HRESULT DeleteType(PWSTR param0) mut
-			{
-				return VT.DeleteType(ref this, param0);
-			}
-			public HRESULT GetConfig(uint32 param0, out DIJOYCONFIG param1, uint32 param2) mut
-			{
-				return VT.GetConfig(ref this, param0, out param1, param2);
-			}
-			public HRESULT SetConfig(uint32 param0, out DIJOYCONFIG param1, uint32 param2) mut
-			{
-				return VT.SetConfig(ref this, param0, out param1, param2);
-			}
-			public HRESULT DeleteConfig(uint32 param0) mut
-			{
-				return VT.DeleteConfig(ref this, param0);
-			}
-			public HRESULT GetUserValues(out DIJOYUSERVALUES param0, uint32 param1) mut
-			{
-				return VT.GetUserValues(ref this, out param0, param1);
-			}
-			public HRESULT SetUserValues(out DIJOYUSERVALUES param0, uint32 param1) mut
-			{
-				return VT.SetUserValues(ref this, out param0, param1);
-			}
-			public HRESULT AddNewHardware(HWND param0, in Guid param1) mut
-			{
-				return VT.AddNewHardware(ref this, param0, param1);
-			}
-			public HRESULT OpenTypeKey(PWSTR param0, uint32 param1, out HKEY param2) mut
-			{
-				return VT.OpenTypeKey(ref this, param0, param1, out param2);
-			}
-			public HRESULT OpenAppStatusKey(out HKEY param0) mut
-			{
-				return VT.OpenAppStatusKey(ref this, out param0);
-			}
+			public HRESULT Acquire() mut => VT.Acquire(ref this);
+			public HRESULT Unacquire() mut => VT.Unacquire(ref this);
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut => VT.SetCooperativeLevel(ref this, param0, param1);
+			public HRESULT SendNotify() mut => VT.SendNotify(ref this);
+			public HRESULT EnumTypes(LPDIJOYTYPECALLBACK param0, void* param1) mut => VT.EnumTypes(ref this, param0, param1);
+			public HRESULT GetTypeInfo(PWSTR param0, out DIJOYTYPEINFO param1, uint32 param2) mut => VT.GetTypeInfo(ref this, param0, out param1, param2);
+			public HRESULT SetTypeInfo(PWSTR param0, out DIJOYTYPEINFO param1, uint32 param2, PWSTR param3) mut => VT.SetTypeInfo(ref this, param0, out param1, param2, param3);
+			public HRESULT DeleteType(PWSTR param0) mut => VT.DeleteType(ref this, param0);
+			public HRESULT GetConfig(uint32 param0, out DIJOYCONFIG param1, uint32 param2) mut => VT.GetConfig(ref this, param0, out param1, param2);
+			public HRESULT SetConfig(uint32 param0, out DIJOYCONFIG param1, uint32 param2) mut => VT.SetConfig(ref this, param0, out param1, param2);
+			public HRESULT DeleteConfig(uint32 param0) mut => VT.DeleteConfig(ref this, param0);
+			public HRESULT GetUserValues(out DIJOYUSERVALUES param0, uint32 param1) mut => VT.GetUserValues(ref this, out param0, param1);
+			public HRESULT SetUserValues(out DIJOYUSERVALUES param0, uint32 param1) mut => VT.SetUserValues(ref this, out param0, param1);
+			public HRESULT AddNewHardware(HWND param0, in Guid param1) mut => VT.AddNewHardware(ref this, param0, param1);
+			public HRESULT OpenTypeKey(PWSTR param0, uint32 param1, out HKEY param2) mut => VT.OpenTypeKey(ref this, param0, param1, out param2);
+			public HRESULT OpenAppStatusKey(out HKEY param0) mut => VT.OpenAppStatusKey(ref this, out param0);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

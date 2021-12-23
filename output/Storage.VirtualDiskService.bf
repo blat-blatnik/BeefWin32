@@ -1666,22 +1666,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IUnknown** ppObjectArray, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, celt, ppObjectArray, out pcFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.Clone(ref this, ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IUnknown** ppObjectArray, out uint32 pcFetched) mut => VT.Next(ref this, celt, ppObjectArray, out pcFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(IEnumVdsObject** ppEnum) mut => VT.Clone(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1698,18 +1687,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
-			public HRESULT Wait(out HRESULT pHrResult, out VDS_ASYNC_OUTPUT pAsyncOut) mut
-			{
-				return VT.Wait(ref this, out pHrResult, out pAsyncOut);
-			}
-			public HRESULT QueryStatus(out HRESULT pHrResult, out uint32 pulPercentCompleted) mut
-			{
-				return VT.QueryStatus(ref this, out pHrResult, out pulPercentCompleted);
-			}
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+			public HRESULT Wait(out HRESULT pHrResult, out VDS_ASYNC_OUTPUT pAsyncOut) mut => VT.Wait(ref this, out pHrResult, out pAsyncOut);
+			public HRESULT QueryStatus(out HRESULT pHrResult, out uint32 pulPercentCompleted) mut => VT.QueryStatus(ref this, out pHrResult, out pulPercentCompleted);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1725,10 +1706,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnNotify(int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) mut
-			{
-				return VT.OnNotify(ref this, lNumberOfNotifications, pNotificationArray);
-			}
+			public HRESULT OnNotify(int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) mut => VT.OnNotify(ref this, lNumberOfNotifications, pNotificationArray);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1742,10 +1721,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_PROVIDER_PROP pProviderProp) mut
-			{
-				return VT.GetProperties(ref this, out pProviderProp);
-			}
+			public HRESULT GetProperties(out VDS_PROVIDER_PROP pProviderProp) mut => VT.GetProperties(ref this, out pProviderProp);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1759,10 +1736,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVersionSupport(out uint32 ulVersionSupport) mut
-			{
-				return VT.GetVersionSupport(ref this, out ulVersionSupport);
-			}
+			public HRESULT GetVersionSupport(out uint32 ulVersionSupport) mut => VT.GetVersionSupport(ref this, out ulVersionSupport);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1776,18 +1751,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObject(Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) mut
-			{
-				return VT.GetObject(ref this, ObjectId, type, ppObjectUnk);
-			}
-			public HRESULT OnLoad(PWSTR pwszMachineName, IUnknown* pCallbackObject) mut
-			{
-				return VT.OnLoad(ref this, pwszMachineName, pCallbackObject);
-			}
-			public HRESULT OnUnload(BOOL bForceUnload) mut
-			{
-				return VT.OnUnload(ref this, bForceUnload);
-			}
+			public HRESULT GetObject(Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) mut => VT.GetObject(ref this, ObjectId, type, ppObjectUnk);
+			public HRESULT OnLoad(PWSTR pwszMachineName, IUnknown* pCallbackObject) mut => VT.OnLoad(ref this, pwszMachineName, pCallbackObject);
+			public HRESULT OnUnload(BOOL bForceUnload) mut => VT.OnUnload(ref this, bForceUnload);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1803,18 +1770,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QuerySubSystems(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QuerySubSystems(ref this, ppEnum);
-			}
-			public HRESULT Reenumerate() mut
-			{
-				return VT.Reenumerate(ref this);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
+			public HRESULT QuerySubSystems(IEnumVdsObject** ppEnum) mut => VT.QuerySubSystems(ref this, ppEnum);
+			public HRESULT Reenumerate() mut => VT.Reenumerate(ref this);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1830,10 +1789,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProviderType(out VDS_HWPROVIDER_TYPE pType) mut
-			{
-				return VT.GetProviderType(ref this, out pType);
-			}
+			public HRESULT GetProviderType(out VDS_HWPROVIDER_TYPE pType) mut => VT.GetProviderType(ref this, out pType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1847,10 +1804,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProviderType2(out VDS_HWPROVIDER_TYPE pType) mut
-			{
-				return VT.GetProviderType2(ref this, out pType);
-			}
+			public HRESULT GetProviderType2(out VDS_HWPROVIDER_TYPE pType) mut => VT.GetProviderType2(ref this, out pType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1864,18 +1819,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryStoragePools(uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryStoragePools(ref this, ulFlags, ullRemainingFreeSpace, pPoolAttributes, ppEnum);
-			}
-			public HRESULT CreateLunInStoragePool(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) mut
-			{
-				return VT.CreateLunInStoragePool(ref this, type, ullSizeInBytes, StoragePoolId, pwszUnmaskingList, pHints2, ppAsync);
-			}
-			public HRESULT QueryMaxLunCreateSizeInStoragePool(VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) mut
-			{
-				return VT.QueryMaxLunCreateSizeInStoragePool(ref this, type, StoragePoolId, pHints2, out pullMaxLunSize);
-			}
+			public HRESULT QueryStoragePools(uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) mut => VT.QueryStoragePools(ref this, ulFlags, ullRemainingFreeSpace, pPoolAttributes, ppEnum);
+			public HRESULT CreateLunInStoragePool(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) mut => VT.CreateLunInStoragePool(ref this, type, ullSizeInBytes, StoragePoolId, pwszUnmaskingList, pHints2, ppAsync);
+			public HRESULT QueryMaxLunCreateSizeInStoragePool(VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) mut => VT.QueryMaxLunCreateSizeInStoragePool(ref this, type, StoragePoolId, pHints2, out pullMaxLunSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1891,54 +1838,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_SUB_SYSTEM_PROP pSubSystemProp) mut
-			{
-				return VT.GetProperties(ref this, out pSubSystemProp);
-			}
-			public HRESULT GetProvider(IVdsProvider** ppProvider) mut
-			{
-				return VT.GetProvider(ref this, ppProvider);
-			}
-			public HRESULT QueryControllers(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryControllers(ref this, ppEnum);
-			}
-			public HRESULT QueryLuns(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryLuns(ref this, ppEnum);
-			}
-			public HRESULT QueryDrives(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryDrives(ref this, ppEnum);
-			}
-			public HRESULT GetDrive(int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) mut
-			{
-				return VT.GetDrive(ref this, sBusNumber, sSlotNumber, ppDrive);
-			}
-			public HRESULT Reenumerate() mut
-			{
-				return VT.Reenumerate(ref this);
-			}
-			public HRESULT SetControllerStatus(Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) mut
-			{
-				return VT.SetControllerStatus(ref this, pOnlineControllerIdArray, lNumberOfOnlineControllers, pOfflineControllerIdArray, lNumberOfOfflineControllers);
-			}
-			public HRESULT CreateLun(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) mut
-			{
-				return VT.CreateLun(ref this, type, ullSizeInBytes, pDriveIdArray, lNumberOfDrives, pwszUnmaskingList, pHints, ppAsync);
-			}
-			public HRESULT ReplaceDrive(Guid DriveToBeReplaced, Guid ReplacementDrive) mut
-			{
-				return VT.ReplaceDrive(ref this, DriveToBeReplaced, ReplacementDrive);
-			}
-			public HRESULT SetStatus(VDS_SUB_SYSTEM_STATUS status) mut
-			{
-				return VT.SetStatus(ref this, status);
-			}
-			public HRESULT QueryMaxLunCreateSize(VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, out uint64 pullMaxLunSize) mut
-			{
-				return VT.QueryMaxLunCreateSize(ref this, type, pDriveIdArray, lNumberOfDrives, pHints, out pullMaxLunSize);
-			}
+			public HRESULT GetProperties(out VDS_SUB_SYSTEM_PROP pSubSystemProp) mut => VT.GetProperties(ref this, out pSubSystemProp);
+			public HRESULT GetProvider(IVdsProvider** ppProvider) mut => VT.GetProvider(ref this, ppProvider);
+			public HRESULT QueryControllers(IEnumVdsObject** ppEnum) mut => VT.QueryControllers(ref this, ppEnum);
+			public HRESULT QueryLuns(IEnumVdsObject** ppEnum) mut => VT.QueryLuns(ref this, ppEnum);
+			public HRESULT QueryDrives(IEnumVdsObject** ppEnum) mut => VT.QueryDrives(ref this, ppEnum);
+			public HRESULT GetDrive(int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) mut => VT.GetDrive(ref this, sBusNumber, sSlotNumber, ppDrive);
+			public HRESULT Reenumerate() mut => VT.Reenumerate(ref this);
+			public HRESULT SetControllerStatus(Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) mut => VT.SetControllerStatus(ref this, pOnlineControllerIdArray, lNumberOfOnlineControllers, pOfflineControllerIdArray, lNumberOfOfflineControllers);
+			public HRESULT CreateLun(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) mut => VT.CreateLun(ref this, type, ullSizeInBytes, pDriveIdArray, lNumberOfDrives, pwszUnmaskingList, pHints, ppAsync);
+			public HRESULT ReplaceDrive(Guid DriveToBeReplaced, Guid ReplacementDrive) mut => VT.ReplaceDrive(ref this, DriveToBeReplaced, ReplacementDrive);
+			public HRESULT SetStatus(VDS_SUB_SYSTEM_STATUS status) mut => VT.SetStatus(ref this, status);
+			public HRESULT QueryMaxLunCreateSize(VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, out uint64 pullMaxLunSize) mut => VT.QueryMaxLunCreateSize(ref this, type, pDriveIdArray, lNumberOfDrives, pHints, out pullMaxLunSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1963,22 +1875,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties2(out VDS_SUB_SYSTEM_PROP2 pSubSystemProp2) mut
-			{
-				return VT.GetProperties2(ref this, out pSubSystemProp2);
-			}
-			public HRESULT GetDrive2(int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) mut
-			{
-				return VT.GetDrive2(ref this, sBusNumber, sSlotNumber, ulEnclosureNumber, ppDrive);
-			}
-			public HRESULT CreateLun2(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) mut
-			{
-				return VT.CreateLun2(ref this, type, ullSizeInBytes, pDriveIdArray, lNumberOfDrives, pwszUnmaskingList, pHints2, ppAsync);
-			}
-			public HRESULT QueryMaxLunCreateSize2(VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) mut
-			{
-				return VT.QueryMaxLunCreateSize2(ref this, type, pDriveIdArray, lNumberOfDrives, pHints2, out pullMaxLunSize);
-			}
+			public HRESULT GetProperties2(out VDS_SUB_SYSTEM_PROP2 pSubSystemProp2) mut => VT.GetProperties2(ref this, out pSubSystemProp2);
+			public HRESULT GetDrive2(int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) mut => VT.GetDrive2(ref this, sBusNumber, sSlotNumber, ulEnclosureNumber, ppDrive);
+			public HRESULT CreateLun2(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) mut => VT.CreateLun2(ref this, type, ullSizeInBytes, pDriveIdArray, lNumberOfDrives, pwszUnmaskingList, pHints2, ppAsync);
+			public HRESULT QueryMaxLunCreateSize2(VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) mut => VT.QueryMaxLunCreateSize2(ref this, type, pDriveIdArray, lNumberOfDrives, pHints2, out pullMaxLunSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1995,10 +1896,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut
-			{
-				return VT.SetFriendlyName(ref this, pwszFriendlyName);
-			}
+			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut => VT.SetFriendlyName(ref this, pwszFriendlyName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2012,22 +1911,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryTargets(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryTargets(ref this, ppEnum);
-			}
-			public HRESULT QueryPortals(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryPortals(ref this, ppEnum);
-			}
-			public HRESULT CreateTarget(PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) mut
-			{
-				return VT.CreateTarget(ref this, pwszIscsiName, pwszFriendlyName, ppAsync);
-			}
-			public HRESULT SetIpsecGroupPresharedKey(VDS_ISCSI_IPSEC_KEY* pIpsecKey) mut
-			{
-				return VT.SetIpsecGroupPresharedKey(ref this, pIpsecKey);
-			}
+			public HRESULT QueryTargets(IEnumVdsObject** ppEnum) mut => VT.QueryTargets(ref this, ppEnum);
+			public HRESULT QueryPortals(IEnumVdsObject** ppEnum) mut => VT.QueryPortals(ref this, ppEnum);
+			public HRESULT CreateTarget(PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) mut => VT.CreateTarget(ref this, pwszIscsiName, pwszFriendlyName, ppAsync);
+			public HRESULT SetIpsecGroupPresharedKey(VDS_ISCSI_IPSEC_KEY* pIpsecKey) mut => VT.SetIpsecGroupPresharedKey(ref this, pIpsecKey);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2044,10 +1932,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedInterconnects(out uint32 pulSupportedInterconnectsFlag) mut
-			{
-				return VT.GetSupportedInterconnects(ref this, out pulSupportedInterconnectsFlag);
-			}
+			public HRESULT GetSupportedInterconnects(out uint32 pulSupportedInterconnectsFlag) mut => VT.GetSupportedInterconnects(ref this, out pulSupportedInterconnectsFlag);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2061,26 +1947,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_PORT_PROP pPortProp) mut
-			{
-				return VT.GetProperties(ref this, out pPortProp);
-			}
-			public HRESULT GetController(IVdsController** ppController) mut
-			{
-				return VT.GetController(ref this, ppController);
-			}
-			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryAssociatedLuns(ref this, ppEnum);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT SetStatus(VDS_PORT_STATUS status) mut
-			{
-				return VT.SetStatus(ref this, status);
-			}
+			public HRESULT GetProperties(out VDS_PORT_PROP pPortProp) mut => VT.GetProperties(ref this, out pPortProp);
+			public HRESULT GetController(IVdsController** ppController) mut => VT.GetController(ref this, ppController);
+			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut => VT.QueryAssociatedLuns(ref this, ppEnum);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT SetStatus(VDS_PORT_STATUS status) mut => VT.SetStatus(ref this, status);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2098,38 +1970,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_CONTROLLER_PROP pControllerProp) mut
-			{
-				return VT.GetProperties(ref this, out pControllerProp);
-			}
-			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
-			{
-				return VT.GetSubSystem(ref this, ppSubSystem);
-			}
-			public HRESULT GetPortProperties(int16 sPortNumber, out VDS_PORT_PROP pPortProp) mut
-			{
-				return VT.GetPortProperties(ref this, sPortNumber, out pPortProp);
-			}
-			public HRESULT FlushCache() mut
-			{
-				return VT.FlushCache(ref this);
-			}
-			public HRESULT InvalidateCache() mut
-			{
-				return VT.InvalidateCache(ref this);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryAssociatedLuns(ref this, ppEnum);
-			}
-			public HRESULT SetStatus(VDS_CONTROLLER_STATUS status) mut
-			{
-				return VT.SetStatus(ref this, status);
-			}
+			public HRESULT GetProperties(out VDS_CONTROLLER_PROP pControllerProp) mut => VT.GetProperties(ref this, out pControllerProp);
+			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut => VT.GetSubSystem(ref this, ppSubSystem);
+			public HRESULT GetPortProperties(int16 sPortNumber, out VDS_PORT_PROP pPortProp) mut => VT.GetPortProperties(ref this, sPortNumber, out pPortProp);
+			public HRESULT FlushCache() mut => VT.FlushCache(ref this);
+			public HRESULT InvalidateCache() mut => VT.InvalidateCache(ref this);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut => VT.QueryAssociatedLuns(ref this, ppEnum);
+			public HRESULT SetStatus(VDS_CONTROLLER_STATUS status) mut => VT.SetStatus(ref this, status);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2150,10 +1999,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryControllerPorts(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryControllerPorts(ref this, ppEnum);
-			}
+			public HRESULT QueryControllerPorts(IEnumVdsObject** ppEnum) mut => VT.QueryControllerPorts(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2167,30 +2014,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_DRIVE_PROP pDriveProp) mut
-			{
-				return VT.GetProperties(ref this, out pDriveProp);
-			}
-			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
-			{
-				return VT.GetSubSystem(ref this, ppSubSystem);
-			}
-			public HRESULT QueryExtents(VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut
-			{
-				return VT.QueryExtents(ref this, ppExtentArray, out plNumberOfExtents);
-			}
-			public HRESULT SetFlags(uint32 ulFlags) mut
-			{
-				return VT.SetFlags(ref this, ulFlags);
-			}
-			public HRESULT ClearFlags(uint32 ulFlags) mut
-			{
-				return VT.ClearFlags(ref this, ulFlags);
-			}
-			public HRESULT SetStatus(VDS_DRIVE_STATUS status) mut
-			{
-				return VT.SetStatus(ref this, status);
-			}
+			public HRESULT GetProperties(out VDS_DRIVE_PROP pDriveProp) mut => VT.GetProperties(ref this, out pDriveProp);
+			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut => VT.GetSubSystem(ref this, ppSubSystem);
+			public HRESULT QueryExtents(VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut => VT.QueryExtents(ref this, ppExtentArray, out plNumberOfExtents);
+			public HRESULT SetFlags(uint32 ulFlags) mut => VT.SetFlags(ref this, ulFlags);
+			public HRESULT ClearFlags(uint32 ulFlags) mut => VT.ClearFlags(ref this, ulFlags);
+			public HRESULT SetStatus(VDS_DRIVE_STATUS status) mut => VT.SetStatus(ref this, status);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2209,10 +2039,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties2(out VDS_DRIVE_PROP2 pDriveProp2) mut
-			{
-				return VT.GetProperties2(ref this, out pDriveProp2);
-			}
+			public HRESULT GetProperties2(out VDS_DRIVE_PROP2 pDriveProp2) mut => VT.GetProperties2(ref this, out pDriveProp2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2226,74 +2054,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_LUN_PROP pLunProp) mut
-			{
-				return VT.GetProperties(ref this, out pLunProp);
-			}
-			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
-			{
-				return VT.GetSubSystem(ref this, ppSubSystem);
-			}
-			public HRESULT GetIdentificationData(out VDS_LUN_INFORMATION pLunInfo) mut
-			{
-				return VT.GetIdentificationData(ref this, out pLunInfo);
-			}
-			public HRESULT QueryActiveControllers(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryActiveControllers(ref this, ppEnum);
-			}
-			public HRESULT Extend(uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) mut
-			{
-				return VT.Extend(ref this, ullNumberOfBytesToAdd, pDriveIdArray, lNumberOfDrives, ppAsync);
-			}
-			public HRESULT Shrink(uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) mut
-			{
-				return VT.Shrink(ref this, ullNumberOfBytesToRemove, ppAsync);
-			}
-			public HRESULT QueryPlexes(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryPlexes(ref this, ppEnum);
-			}
-			public HRESULT AddPlex(Guid lunId, IVdsAsync** ppAsync) mut
-			{
-				return VT.AddPlex(ref this, lunId, ppAsync);
-			}
-			public HRESULT RemovePlex(Guid plexId, IVdsAsync** ppAsync) mut
-			{
-				return VT.RemovePlex(ref this, plexId, ppAsync);
-			}
-			public HRESULT Recover(IVdsAsync** ppAsync) mut
-			{
-				return VT.Recover(ref this, ppAsync);
-			}
-			public HRESULT SetMask(PWSTR pwszUnmaskingList) mut
-			{
-				return VT.SetMask(ref this, pwszUnmaskingList);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT AssociateControllers(Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) mut
-			{
-				return VT.AssociateControllers(ref this, pActiveControllerIdArray, lNumberOfActiveControllers, pInactiveControllerIdArray, lNumberOfInactiveControllers);
-			}
-			public HRESULT QueryHints(out VDS_HINTS pHints) mut
-			{
-				return VT.QueryHints(ref this, out pHints);
-			}
-			public HRESULT ApplyHints(ref VDS_HINTS pHints) mut
-			{
-				return VT.ApplyHints(ref this, ref pHints);
-			}
-			public HRESULT SetStatus(VDS_LUN_STATUS status) mut
-			{
-				return VT.SetStatus(ref this, status);
-			}
-			public HRESULT QueryMaxLunExtendSize(Guid* pDriveIdArray, int32 lNumberOfDrives, out uint64 pullMaxBytesToBeAdded) mut
-			{
-				return VT.QueryMaxLunExtendSize(ref this, pDriveIdArray, lNumberOfDrives, out pullMaxBytesToBeAdded);
-			}
+			public HRESULT GetProperties(out VDS_LUN_PROP pLunProp) mut => VT.GetProperties(ref this, out pLunProp);
+			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut => VT.GetSubSystem(ref this, ppSubSystem);
+			public HRESULT GetIdentificationData(out VDS_LUN_INFORMATION pLunInfo) mut => VT.GetIdentificationData(ref this, out pLunInfo);
+			public HRESULT QueryActiveControllers(IEnumVdsObject** ppEnum) mut => VT.QueryActiveControllers(ref this, ppEnum);
+			public HRESULT Extend(uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) mut => VT.Extend(ref this, ullNumberOfBytesToAdd, pDriveIdArray, lNumberOfDrives, ppAsync);
+			public HRESULT Shrink(uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) mut => VT.Shrink(ref this, ullNumberOfBytesToRemove, ppAsync);
+			public HRESULT QueryPlexes(IEnumVdsObject** ppEnum) mut => VT.QueryPlexes(ref this, ppEnum);
+			public HRESULT AddPlex(Guid lunId, IVdsAsync** ppAsync) mut => VT.AddPlex(ref this, lunId, ppAsync);
+			public HRESULT RemovePlex(Guid plexId, IVdsAsync** ppAsync) mut => VT.RemovePlex(ref this, plexId, ppAsync);
+			public HRESULT Recover(IVdsAsync** ppAsync) mut => VT.Recover(ref this, ppAsync);
+			public HRESULT SetMask(PWSTR pwszUnmaskingList) mut => VT.SetMask(ref this, pwszUnmaskingList);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT AssociateControllers(Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) mut => VT.AssociateControllers(ref this, pActiveControllerIdArray, lNumberOfActiveControllers, pInactiveControllerIdArray, lNumberOfInactiveControllers);
+			public HRESULT QueryHints(out VDS_HINTS pHints) mut => VT.QueryHints(ref this, out pHints);
+			public HRESULT ApplyHints(ref VDS_HINTS pHints) mut => VT.ApplyHints(ref this, ref pHints);
+			public HRESULT SetStatus(VDS_LUN_STATUS status) mut => VT.SetStatus(ref this, status);
+			public HRESULT QueryMaxLunExtendSize(Guid* pDriveIdArray, int32 lNumberOfDrives, out uint64 pullMaxBytesToBeAdded) mut => VT.QueryMaxLunExtendSize(ref this, pDriveIdArray, lNumberOfDrives, out pullMaxBytesToBeAdded);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2323,14 +2101,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryHints2(out VDS_HINTS2 pHints2) mut
-			{
-				return VT.QueryHints2(ref this, out pHints2);
-			}
-			public HRESULT ApplyHints2(ref VDS_HINTS2 pHints2) mut
-			{
-				return VT.ApplyHints2(ref this, ref pHints2);
-			}
+			public HRESULT QueryHints2(out VDS_HINTS2 pHints2) mut => VT.QueryHints2(ref this, out pHints2);
+			public HRESULT ApplyHints2(ref VDS_HINTS2 pHints2) mut => VT.ApplyHints2(ref this, ref pHints2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2345,10 +2118,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut
-			{
-				return VT.SetFriendlyName(ref this, pwszFriendlyName);
-			}
+			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut => VT.SetFriendlyName(ref this, pwszFriendlyName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2362,10 +2133,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLunNumber(out uint32 pulLunNumber) mut
-			{
-				return VT.GetLunNumber(ref this, out pulLunNumber);
-			}
+			public HRESULT GetLunNumber(out uint32 pulLunNumber) mut => VT.GetLunNumber(ref this, out pulLunNumber);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2379,14 +2148,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AssociateControllerPorts(Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) mut
-			{
-				return VT.AssociateControllerPorts(ref this, pActiveControllerPortIdArray, lNumberOfActiveControllerPorts, pInactiveControllerPortIdArray, lNumberOfInactiveControllerPorts);
-			}
-			public HRESULT QueryActiveControllerPorts(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryActiveControllerPorts(ref this, ppEnum);
-			}
+			public HRESULT AssociateControllerPorts(Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) mut => VT.AssociateControllerPorts(ref this, pActiveControllerPortIdArray, lNumberOfActiveControllerPorts, pInactiveControllerPortIdArray, lNumberOfInactiveControllerPorts);
+			public HRESULT QueryActiveControllerPorts(IEnumVdsObject** ppEnum) mut => VT.QueryActiveControllerPorts(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2401,22 +2165,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPathInfo(VDS_PATH_INFO** ppPaths, out int32 plNumberOfPaths) mut
-			{
-				return VT.GetPathInfo(ref this, ppPaths, out plNumberOfPaths);
-			}
-			public HRESULT GetLoadBalancePolicy(out VDS_LOADBALANCE_POLICY_ENUM pPolicy, VDS_PATH_POLICY** ppPaths, out int32 plNumberOfPaths) mut
-			{
-				return VT.GetLoadBalancePolicy(ref this, out pPolicy, ppPaths, out plNumberOfPaths);
-			}
-			public HRESULT SetLoadBalancePolicy(VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) mut
-			{
-				return VT.SetLoadBalancePolicy(ref this, policy, pPaths, lNumberOfPaths);
-			}
-			public HRESULT GetSupportedLbPolicies(out uint32 pulLbFlags) mut
-			{
-				return VT.GetSupportedLbPolicies(ref this, out pulLbFlags);
-			}
+			public HRESULT GetPathInfo(VDS_PATH_INFO** ppPaths, out int32 plNumberOfPaths) mut => VT.GetPathInfo(ref this, ppPaths, out plNumberOfPaths);
+			public HRESULT GetLoadBalancePolicy(out VDS_LOADBALANCE_POLICY_ENUM pPolicy, VDS_PATH_POLICY** ppPaths, out int32 plNumberOfPaths) mut => VT.GetLoadBalancePolicy(ref this, out pPolicy, ppPaths, out plNumberOfPaths);
+			public HRESULT SetLoadBalancePolicy(VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) mut => VT.SetLoadBalancePolicy(ref this, policy, pPaths, lNumberOfPaths);
+			public HRESULT GetSupportedLbPolicies(out uint32 pulLbFlags) mut => VT.GetSupportedLbPolicies(ref this, out pulLbFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2433,14 +2186,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AssociateTargets(Guid* pTargetIdArray, int32 lNumberOfTargets) mut
-			{
-				return VT.AssociateTargets(ref this, pTargetIdArray, lNumberOfTargets);
-			}
-			public HRESULT QueryAssociatedTargets(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryAssociatedTargets(ref this, ppEnum);
-			}
+			public HRESULT AssociateTargets(Guid* pTargetIdArray, int32 lNumberOfTargets) mut => VT.AssociateTargets(ref this, pTargetIdArray, lNumberOfTargets);
+			public HRESULT QueryAssociatedTargets(IEnumVdsObject** ppEnum) mut => VT.QueryAssociatedTargets(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2455,26 +2203,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_LUN_PLEX_PROP pPlexProp) mut
-			{
-				return VT.GetProperties(ref this, out pPlexProp);
-			}
-			public HRESULT GetLun(IVdsLun** ppLun) mut
-			{
-				return VT.GetLun(ref this, ppLun);
-			}
-			public HRESULT QueryExtents(VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut
-			{
-				return VT.QueryExtents(ref this, ppExtentArray, out plNumberOfExtents);
-			}
-			public HRESULT QueryHints(out VDS_HINTS pHints) mut
-			{
-				return VT.QueryHints(ref this, out pHints);
-			}
-			public HRESULT ApplyHints(ref VDS_HINTS pHints) mut
-			{
-				return VT.ApplyHints(ref this, ref pHints);
-			}
+			public HRESULT GetProperties(out VDS_LUN_PLEX_PROP pPlexProp) mut => VT.GetProperties(ref this, out pPlexProp);
+			public HRESULT GetLun(IVdsLun** ppLun) mut => VT.GetLun(ref this, ppLun);
+			public HRESULT QueryExtents(VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut => VT.QueryExtents(ref this, ppExtentArray, out plNumberOfExtents);
+			public HRESULT QueryHints(out VDS_HINTS pHints) mut => VT.QueryHints(ref this, out pHints);
+			public HRESULT ApplyHints(ref VDS_HINTS pHints) mut => VT.ApplyHints(ref this, ref pHints);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2492,34 +2226,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_ISCSI_PORTAL_PROP pPortalProp) mut
-			{
-				return VT.GetProperties(ref this, out pPortalProp);
-			}
-			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
-			{
-				return VT.GetSubSystem(ref this, ppSubSystem);
-			}
-			public HRESULT QueryAssociatedPortalGroups(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryAssociatedPortalGroups(ref this, ppEnum);
-			}
-			public HRESULT SetStatus(VDS_ISCSI_PORTAL_STATUS status) mut
-			{
-				return VT.SetStatus(ref this, status);
-			}
-			public HRESULT SetIpsecTunnelAddress(ref VDS_IPADDRESS pTunnelAddress, ref VDS_IPADDRESS pDestinationAddress) mut
-			{
-				return VT.SetIpsecTunnelAddress(ref this, ref pTunnelAddress, ref pDestinationAddress);
-			}
-			public HRESULT GetIpsecSecurity(ref VDS_IPADDRESS pInitiatorPortalAddress, out uint64 pullSecurityFlags) mut
-			{
-				return VT.GetIpsecSecurity(ref this, ref pInitiatorPortalAddress, out pullSecurityFlags);
-			}
-			public HRESULT SetIpsecSecurity(ref VDS_IPADDRESS pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) mut
-			{
-				return VT.SetIpsecSecurity(ref this, ref pInitiatorPortalAddress, ullSecurityFlags, pIpsecKey);
-			}
+			public HRESULT GetProperties(out VDS_ISCSI_PORTAL_PROP pPortalProp) mut => VT.GetProperties(ref this, out pPortalProp);
+			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut => VT.GetSubSystem(ref this, ppSubSystem);
+			public HRESULT QueryAssociatedPortalGroups(IEnumVdsObject** ppEnum) mut => VT.QueryAssociatedPortalGroups(ref this, ppEnum);
+			public HRESULT SetStatus(VDS_ISCSI_PORTAL_STATUS status) mut => VT.SetStatus(ref this, status);
+			public HRESULT SetIpsecTunnelAddress(ref VDS_IPADDRESS pTunnelAddress, ref VDS_IPADDRESS pDestinationAddress) mut => VT.SetIpsecTunnelAddress(ref this, ref pTunnelAddress, ref pDestinationAddress);
+			public HRESULT GetIpsecSecurity(ref VDS_IPADDRESS pInitiatorPortalAddress, out uint64 pullSecurityFlags) mut => VT.GetIpsecSecurity(ref this, ref pInitiatorPortalAddress, out pullSecurityFlags);
+			public HRESULT SetIpsecSecurity(ref VDS_IPADDRESS pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) mut => VT.SetIpsecSecurity(ref this, ref pInitiatorPortalAddress, ullSecurityFlags, pIpsecKey);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2539,46 +2253,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_ISCSI_TARGET_PROP pTargetProp) mut
-			{
-				return VT.GetProperties(ref this, out pTargetProp);
-			}
-			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
-			{
-				return VT.GetSubSystem(ref this, ppSubSystem);
-			}
-			public HRESULT QueryPortalGroups(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryPortalGroups(ref this, ppEnum);
-			}
-			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryAssociatedLuns(ref this, ppEnum);
-			}
-			public HRESULT CreatePortalGroup(IVdsAsync** ppAsync) mut
-			{
-				return VT.CreatePortalGroup(ref this, ppAsync);
-			}
-			public HRESULT Delete(IVdsAsync** ppAsync) mut
-			{
-				return VT.Delete(ref this, ppAsync);
-			}
-			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut
-			{
-				return VT.SetFriendlyName(ref this, pwszFriendlyName);
-			}
-			public HRESULT SetSharedSecret(VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) mut
-			{
-				return VT.SetSharedSecret(ref this, pTargetSharedSecret, pwszInitiatorName);
-			}
-			public HRESULT RememberInitiatorSharedSecret(PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) mut
-			{
-				return VT.RememberInitiatorSharedSecret(ref this, pwszInitiatorName, pInitiatorSharedSecret);
-			}
-			public HRESULT GetConnectedInitiators(PWSTR** pppwszInitiatorList, out int32 plNumberOfInitiators) mut
-			{
-				return VT.GetConnectedInitiators(ref this, pppwszInitiatorList, out plNumberOfInitiators);
-			}
+			public HRESULT GetProperties(out VDS_ISCSI_TARGET_PROP pTargetProp) mut => VT.GetProperties(ref this, out pTargetProp);
+			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut => VT.GetSubSystem(ref this, ppSubSystem);
+			public HRESULT QueryPortalGroups(IEnumVdsObject** ppEnum) mut => VT.QueryPortalGroups(ref this, ppEnum);
+			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut => VT.QueryAssociatedLuns(ref this, ppEnum);
+			public HRESULT CreatePortalGroup(IVdsAsync** ppAsync) mut => VT.CreatePortalGroup(ref this, ppAsync);
+			public HRESULT Delete(IVdsAsync** ppAsync) mut => VT.Delete(ref this, ppAsync);
+			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut => VT.SetFriendlyName(ref this, pwszFriendlyName);
+			public HRESULT SetSharedSecret(VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) mut => VT.SetSharedSecret(ref this, pTargetSharedSecret, pwszInitiatorName);
+			public HRESULT RememberInitiatorSharedSecret(PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) mut => VT.RememberInitiatorSharedSecret(ref this, pwszInitiatorName, pInitiatorSharedSecret);
+			public HRESULT GetConnectedInitiators(PWSTR** pppwszInitiatorList, out int32 plNumberOfInitiators) mut => VT.GetConnectedInitiators(ref this, pppwszInitiatorList, out plNumberOfInitiators);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2601,30 +2286,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(out VDS_ISCSI_PORTALGROUP_PROP pPortalGroupProp) mut
-			{
-				return VT.GetProperties(ref this, out pPortalGroupProp);
-			}
-			public HRESULT GetTarget(IVdsIscsiTarget** ppTarget) mut
-			{
-				return VT.GetTarget(ref this, ppTarget);
-			}
-			public HRESULT QueryAssociatedPortals(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryAssociatedPortals(ref this, ppEnum);
-			}
-			public HRESULT AddPortal(Guid portalId, IVdsAsync** ppAsync) mut
-			{
-				return VT.AddPortal(ref this, portalId, ppAsync);
-			}
-			public HRESULT RemovePortal(Guid portalId, IVdsAsync** ppAsync) mut
-			{
-				return VT.RemovePortal(ref this, portalId, ppAsync);
-			}
-			public HRESULT Delete(IVdsAsync** ppAsync) mut
-			{
-				return VT.Delete(ref this, ppAsync);
-			}
+			public HRESULT GetProperties(out VDS_ISCSI_PORTALGROUP_PROP pPortalGroupProp) mut => VT.GetProperties(ref this, out pPortalGroupProp);
+			public HRESULT GetTarget(IVdsIscsiTarget** ppTarget) mut => VT.GetTarget(ref this, ppTarget);
+			public HRESULT QueryAssociatedPortals(IEnumVdsObject** ppEnum) mut => VT.QueryAssociatedPortals(ref this, ppEnum);
+			public HRESULT AddPortal(Guid portalId, IVdsAsync** ppAsync) mut => VT.AddPortal(ref this, portalId, ppAsync);
+			public HRESULT RemovePortal(Guid portalId, IVdsAsync** ppAsync) mut => VT.RemovePortal(ref this, portalId, ppAsync);
+			public HRESULT Delete(IVdsAsync** ppAsync) mut => VT.Delete(ref this, ppAsync);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2643,30 +2311,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProvider(IVdsProvider** ppProvider) mut
-			{
-				return VT.GetProvider(ref this, ppProvider);
-			}
-			public HRESULT GetProperties(out VDS_STORAGE_POOL_PROP pStoragePoolProp) mut
-			{
-				return VT.GetProperties(ref this, out pStoragePoolProp);
-			}
-			public HRESULT GetAttributes(out VDS_POOL_ATTRIBUTES pStoragePoolAttributes) mut
-			{
-				return VT.GetAttributes(ref this, out pStoragePoolAttributes);
-			}
-			public HRESULT QueryDriveExtents(VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut
-			{
-				return VT.QueryDriveExtents(ref this, ppExtentArray, out plNumberOfExtents);
-			}
-			public HRESULT QueryAllocatedLuns(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryAllocatedLuns(ref this, ppEnum);
-			}
-			public HRESULT QueryAllocatedStoragePools(IEnumVdsObject** ppEnum) mut
-			{
-				return VT.QueryAllocatedStoragePools(ref this, ppEnum);
-			}
+			public HRESULT GetProvider(IVdsProvider** ppProvider) mut => VT.GetProvider(ref this, ppProvider);
+			public HRESULT GetProperties(out VDS_STORAGE_POOL_PROP pStoragePoolProp) mut => VT.GetProperties(ref this, out pStoragePoolProp);
+			public HRESULT GetAttributes(out VDS_POOL_ATTRIBUTES pStoragePoolAttributes) mut => VT.GetAttributes(ref this, out pStoragePoolAttributes);
+			public HRESULT QueryDriveExtents(VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut => VT.QueryDriveExtents(ref this, ppExtentArray, out plNumberOfExtents);
+			public HRESULT QueryAllocatedLuns(IEnumVdsObject** ppEnum) mut => VT.QueryAllocatedLuns(ref this, ppEnum);
+			public HRESULT QueryAllocatedStoragePools(IEnumVdsObject** ppEnum) mut => VT.QueryAllocatedStoragePools(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2685,18 +2336,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartMaintenance(VDS_MAINTENANCE_OPERATION operation) mut
-			{
-				return VT.StartMaintenance(ref this, operation);
-			}
-			public HRESULT StopMaintenance(VDS_MAINTENANCE_OPERATION operation) mut
-			{
-				return VT.StopMaintenance(ref this, operation);
-			}
-			public HRESULT PulseMaintenance(VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) mut
-			{
-				return VT.PulseMaintenance(ref this, operation, ulCount);
-			}
+			public HRESULT StartMaintenance(VDS_MAINTENANCE_OPERATION operation) mut => VT.StartMaintenance(ref this, operation);
+			public HRESULT StopMaintenance(VDS_MAINTENANCE_OPERATION operation) mut => VT.StopMaintenance(ref this, operation);
+			public HRESULT PulseMaintenance(VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) mut => VT.PulseMaintenance(ref this, operation, ulCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2712,10 +2355,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryIfCreatedLun(PWSTR pwszDevicePath, ref VDS_LUN_INFORMATION pVdsLunInformation, out Guid pLunId) mut
-			{
-				return VT.QueryIfCreatedLun(ref this, pwszDevicePath, ref pVdsLunInformation, out pLunId);
-			}
+			public HRESULT QueryIfCreatedLun(PWSTR pwszDevicePath, ref VDS_LUN_INFORMATION pVdsLunInformation, out Guid pLunId) mut => VT.QueryIfCreatedLun(ref this, pwszDevicePath, ref pVdsLunInformation, out pLunId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2729,10 +2370,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllPathStatusesFromHbaPort(VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) mut
-			{
-				return VT.SetAllPathStatusesFromHbaPort(ref this, hbaPortProp, status);
-			}
+			public HRESULT SetAllPathStatusesFromHbaPort(VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) mut => VT.SetAllPathStatusesFromHbaPort(ref this, hbaPortProp, status);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2746,14 +2385,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterProvider(Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) mut
-			{
-				return VT.RegisterProvider(ref this, providerId, providerClsid, pwszName, type, pwszMachineName, pwszVersion, guidVersionId);
-			}
-			public HRESULT UnregisterProvider(Guid providerId) mut
-			{
-				return VT.UnregisterProvider(ref this, providerId);
-			}
+			public HRESULT RegisterProvider(Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) mut => VT.RegisterProvider(ref this, providerId, providerClsid, pwszName, type, pwszMachineName, pwszVersion, guidVersionId);
+			public HRESULT UnregisterProvider(Guid providerId) mut => VT.UnregisterProvider(ref this, providerId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

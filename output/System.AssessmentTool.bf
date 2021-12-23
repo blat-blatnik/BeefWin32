@@ -57,18 +57,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Score(out float score) mut
-			{
-				return VT.get_Score(ref this, out score);
-			}
-			public HRESULT get_Title(BSTR* title) mut
-			{
-				return VT.get_Title(ref this, title);
-			}
-			public HRESULT get_Description(BSTR* description) mut
-			{
-				return VT.get_Description(ref this, description);
-			}
+			public HRESULT get_Score(out float score) mut => VT.get_Score(ref this, out score);
+			public HRESULT get_Title(BSTR* title) mut => VT.get_Title(ref this, title);
+			public HRESULT get_Description(BSTR* description) mut => VT.get_Description(ref this, description);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -84,26 +76,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAssessmentInfo(WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) mut
-			{
-				return VT.GetAssessmentInfo(ref this, assessment, ppinfo);
-			}
-			public HRESULT get_AssessmentState(out WINSAT_ASSESSMENT_STATE state) mut
-			{
-				return VT.get_AssessmentState(ref this, out state);
-			}
-			public HRESULT get_AssessmentDateTime(out VARIANT fileTime) mut
-			{
-				return VT.get_AssessmentDateTime(ref this, out fileTime);
-			}
-			public HRESULT get_SystemRating(out float level) mut
-			{
-				return VT.get_SystemRating(ref this, out level);
-			}
-			public HRESULT get_RatingStateDesc(BSTR* description) mut
-			{
-				return VT.get_RatingStateDesc(ref this, description);
-			}
+			public HRESULT GetAssessmentInfo(WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) mut => VT.GetAssessmentInfo(ref this, assessment, ppinfo);
+			public HRESULT get_AssessmentState(out WINSAT_ASSESSMENT_STATE state) mut => VT.get_AssessmentState(ref this, out state);
+			public HRESULT get_AssessmentDateTime(out VARIANT fileTime) mut => VT.get_AssessmentDateTime(ref this, out fileTime);
+			public HRESULT get_SystemRating(out float level) mut => VT.get_SystemRating(ref this, out level);
+			public HRESULT get_RatingStateDesc(BSTR* description) mut => VT.get_RatingStateDesc(ref this, description);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -121,14 +99,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_XML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut
-			{
-				return VT.get_XML(ref this, xPath, namespaces, ppDomNodeList);
-			}
-			public HRESULT get_Info(IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) mut
-			{
-				return VT.get_Info(ref this, ppWinSATAssessmentInfo);
-			}
+			public HRESULT get_XML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut => VT.get_XML(ref this, xPath, namespaces, ppDomNodeList);
+			public HRESULT get_Info(IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) mut => VT.get_Info(ref this, ppWinSATAssessmentInfo);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -143,10 +116,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Bitmap(WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) mut
-			{
-				return VT.get_Bitmap(ref this, bitmapSize, state, rating, pBitmap);
-			}
+			public HRESULT get_Bitmap(WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) mut => VT.get_Bitmap(ref this, bitmapSize, state, rating, pBitmap);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -160,10 +131,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AllXML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut
-			{
-				return VT.get_AllXML(ref this, xPath, namespaces, ppDomNodeList);
-			}
+			public HRESULT get_AllXML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut => VT.get_AllXML(ref this, xPath, namespaces, ppDomNodeList);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -177,14 +146,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WinSATComplete(HRESULT hresult, PWSTR strDescription) mut
-			{
-				return VT.WinSATComplete(ref this, hresult, strDescription);
-			}
-			public HRESULT WinSATUpdate(uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) mut
-			{
-				return VT.WinSATUpdate(ref this, uCurrentTick, uTickTotal, strCurrentState);
-			}
+			public HRESULT WinSATComplete(HRESULT hresult, PWSTR strDescription) mut => VT.WinSATComplete(ref this, hresult, strDescription);
+			public HRESULT WinSATUpdate(uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) mut => VT.WinSATUpdate(ref this, uCurrentTick, uTickTotal, strCurrentState);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -199,18 +163,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitiateAssessment(PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) mut
-			{
-				return VT.InitiateAssessment(ref this, cmdLine, pCallbacks, callerHwnd);
-			}
-			public HRESULT InitiateFormalAssessment(IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) mut
-			{
-				return VT.InitiateFormalAssessment(ref this, pCallbacks, callerHwnd);
-			}
-			public HRESULT CancelAssessment() mut
-			{
-				return VT.CancelAssessment(ref this);
-			}
+			public HRESULT InitiateAssessment(PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) mut => VT.InitiateAssessment(ref this, cmdLine, pCallbacks, callerHwnd);
+			public HRESULT InitiateFormalAssessment(IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) mut => VT.InitiateFormalAssessment(ref this, pCallbacks, callerHwnd);
+			public HRESULT CancelAssessment() mut => VT.CancelAssessment(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -226,10 +182,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAccessiblityData(PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) mut
-			{
-				return VT.SetAccessiblityData(ref this, wsName, wsValue, wsDesc);
-			}
+			public HRESULT SetAccessiblityData(PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) mut => VT.SetAccessiblityData(ref this, wsName, wsValue, wsDesc);
+
 			[CRepr]
 			public struct VTable : IAccessible.VTable
 			{
@@ -243,10 +197,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOEMPrePopulationInfo(out WINSAT_OEM_DATA_TYPE state) mut
-			{
-				return VT.GetOEMPrePopulationInfo(ref this, out state);
-			}
+			public HRESULT GetOEMPrePopulationInfo(out WINSAT_OEM_DATA_TYPE state) mut => VT.GetOEMPrePopulationInfo(ref this, out state);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

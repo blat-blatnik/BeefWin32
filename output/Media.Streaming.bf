@@ -112,86 +112,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeTransform(ref IMFAttributes pAttributes) mut
-			{
-				return VT.InitializeTransform(ref this, ref pAttributes);
-			}
-			public HRESULT GetInputAvailableType(uint32 dwInputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) mut
-			{
-				return VT.GetInputAvailableType(ref this, dwInputStreamID, dwTypeIndex, out pMediaType);
-			}
-			public HRESULT GetInputCurrentType(uint32 dwInputStreamID, out IMFMediaType* pMediaType) mut
-			{
-				return VT.GetInputCurrentType(ref this, dwInputStreamID, out pMediaType);
-			}
-			public HRESULT GetInputStreamAttributes(uint32 dwInputStreamID, out IMFAttributes* ppAttributes) mut
-			{
-				return VT.GetInputStreamAttributes(ref this, dwInputStreamID, out ppAttributes);
-			}
-			public HRESULT GetOutputAvailableType(uint32 dwOutputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) mut
-			{
-				return VT.GetOutputAvailableType(ref this, dwOutputStreamID, dwTypeIndex, out pMediaType);
-			}
-			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamID, out IMFMediaType* pMediaType) mut
-			{
-				return VT.GetOutputCurrentType(ref this, dwOutputStreamID, out pMediaType);
-			}
-			public HRESULT GetOutputStreamAttributes(uint32 dwOutputStreamID, out IMFAttributes* ppAttributes) mut
-			{
-				return VT.GetOutputStreamAttributes(ref this, dwOutputStreamID, out ppAttributes);
-			}
-			public HRESULT GetStreamCount(out uint32 pcInputStreams, out uint32 pcOutputStreams) mut
-			{
-				return VT.GetStreamCount(ref this, out pcInputStreams, out pcOutputStreams);
-			}
-			public HRESULT GetStreamIDs(uint32 dwInputIDArraySize, out uint32 pdwInputStreamIds, uint32 dwOutputIDArraySize, out uint32 pdwOutputStreamIds) mut
-			{
-				return VT.GetStreamIDs(ref this, dwInputIDArraySize, out pdwInputStreamIds, dwOutputIDArraySize, out pdwOutputStreamIds);
-			}
-			public HRESULT ProcessEvent(uint32 dwInputStreamID, ref IMFMediaEvent pEvent) mut
-			{
-				return VT.ProcessEvent(ref this, dwInputStreamID, ref pEvent);
-			}
-			public HRESULT ProcessInput(uint32 dwInputStreamID, ref IMFSample pSample, uint32 dwFlags) mut
-			{
-				return VT.ProcessInput(ref this, dwInputStreamID, ref pSample, dwFlags);
-			}
-			public HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, uint ulParam) mut
-			{
-				return VT.ProcessMessage(ref this, eMessage, ulParam);
-			}
-			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, out MFT_OUTPUT_DATA_BUFFER pOutputSample, out uint32 pdwStatus) mut
-			{
-				return VT.ProcessOutput(ref this, dwFlags, cOutputBufferCount, out pOutputSample, out pdwStatus);
-			}
-			public HRESULT SetInputStreamState(uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) mut
-			{
-				return VT.SetInputStreamState(ref this, dwStreamID, ref pMediaType, value, dwFlags);
-			}
-			public HRESULT GetInputStreamState(uint32 dwStreamID, out DeviceStreamState value) mut
-			{
-				return VT.GetInputStreamState(ref this, dwStreamID, out value);
-			}
-			public HRESULT SetOutputStreamState(uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) mut
-			{
-				return VT.SetOutputStreamState(ref this, dwStreamID, ref pMediaType, value, dwFlags);
-			}
-			public HRESULT GetOutputStreamState(uint32 dwStreamID, out DeviceStreamState value) mut
-			{
-				return VT.GetOutputStreamState(ref this, dwStreamID, out value);
-			}
-			public HRESULT GetInputStreamPreferredState(uint32 dwStreamID, out DeviceStreamState value, out IMFMediaType* ppMediaType) mut
-			{
-				return VT.GetInputStreamPreferredState(ref this, dwStreamID, out value, out ppMediaType);
-			}
-			public HRESULT FlushInputStream(uint32 dwStreamIndex, uint32 dwFlags) mut
-			{
-				return VT.FlushInputStream(ref this, dwStreamIndex, dwFlags);
-			}
-			public HRESULT FlushOutputStream(uint32 dwStreamIndex, uint32 dwFlags) mut
-			{
-				return VT.FlushOutputStream(ref this, dwStreamIndex, dwFlags);
-			}
+			public HRESULT InitializeTransform(ref IMFAttributes pAttributes) mut => VT.InitializeTransform(ref this, ref pAttributes);
+			public HRESULT GetInputAvailableType(uint32 dwInputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) mut => VT.GetInputAvailableType(ref this, dwInputStreamID, dwTypeIndex, out pMediaType);
+			public HRESULT GetInputCurrentType(uint32 dwInputStreamID, out IMFMediaType* pMediaType) mut => VT.GetInputCurrentType(ref this, dwInputStreamID, out pMediaType);
+			public HRESULT GetInputStreamAttributes(uint32 dwInputStreamID, out IMFAttributes* ppAttributes) mut => VT.GetInputStreamAttributes(ref this, dwInputStreamID, out ppAttributes);
+			public HRESULT GetOutputAvailableType(uint32 dwOutputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) mut => VT.GetOutputAvailableType(ref this, dwOutputStreamID, dwTypeIndex, out pMediaType);
+			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamID, out IMFMediaType* pMediaType) mut => VT.GetOutputCurrentType(ref this, dwOutputStreamID, out pMediaType);
+			public HRESULT GetOutputStreamAttributes(uint32 dwOutputStreamID, out IMFAttributes* ppAttributes) mut => VT.GetOutputStreamAttributes(ref this, dwOutputStreamID, out ppAttributes);
+			public HRESULT GetStreamCount(out uint32 pcInputStreams, out uint32 pcOutputStreams) mut => VT.GetStreamCount(ref this, out pcInputStreams, out pcOutputStreams);
+			public HRESULT GetStreamIDs(uint32 dwInputIDArraySize, out uint32 pdwInputStreamIds, uint32 dwOutputIDArraySize, out uint32 pdwOutputStreamIds) mut => VT.GetStreamIDs(ref this, dwInputIDArraySize, out pdwInputStreamIds, dwOutputIDArraySize, out pdwOutputStreamIds);
+			public HRESULT ProcessEvent(uint32 dwInputStreamID, ref IMFMediaEvent pEvent) mut => VT.ProcessEvent(ref this, dwInputStreamID, ref pEvent);
+			public HRESULT ProcessInput(uint32 dwInputStreamID, ref IMFSample pSample, uint32 dwFlags) mut => VT.ProcessInput(ref this, dwInputStreamID, ref pSample, dwFlags);
+			public HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, uint ulParam) mut => VT.ProcessMessage(ref this, eMessage, ulParam);
+			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, out MFT_OUTPUT_DATA_BUFFER pOutputSample, out uint32 pdwStatus) mut => VT.ProcessOutput(ref this, dwFlags, cOutputBufferCount, out pOutputSample, out pdwStatus);
+			public HRESULT SetInputStreamState(uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) mut => VT.SetInputStreamState(ref this, dwStreamID, ref pMediaType, value, dwFlags);
+			public HRESULT GetInputStreamState(uint32 dwStreamID, out DeviceStreamState value) mut => VT.GetInputStreamState(ref this, dwStreamID, out value);
+			public HRESULT SetOutputStreamState(uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) mut => VT.SetOutputStreamState(ref this, dwStreamID, ref pMediaType, value, dwFlags);
+			public HRESULT GetOutputStreamState(uint32 dwStreamID, out DeviceStreamState value) mut => VT.GetOutputStreamState(ref this, dwStreamID, out value);
+			public HRESULT GetInputStreamPreferredState(uint32 dwStreamID, out DeviceStreamState value, out IMFMediaType* ppMediaType) mut => VT.GetInputStreamPreferredState(ref this, dwStreamID, out value, out ppMediaType);
+			public HRESULT FlushInputStream(uint32 dwStreamIndex, uint32 dwFlags) mut => VT.FlushInputStream(ref this, dwStreamIndex, dwFlags);
+			public HRESULT FlushOutputStream(uint32 dwStreamIndex, uint32 dwFlags) mut => VT.FlushOutputStream(ref this, dwStreamIndex, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -224,10 +165,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnBufferSent(ref IMFAttributes pCallbackAttributes, uint32 pinId) mut
-			{
-				return VT.OnBufferSent(ref this, ref pCallbackAttributes, pinId);
-			}
+			public HRESULT OnBufferSent(ref IMFAttributes pCallbackAttributes, uint32 pinId) mut => VT.OnBufferSent(ref this, ref pCallbackAttributes, pinId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

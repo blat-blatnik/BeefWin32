@@ -14,18 +14,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WriteFrame(ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) mut
-			{
-				return VT.WriteFrame(ref this, ref pImage, ref pFrameEncode, pImageParameters);
-			}
-			public HRESULT WriteFrameThumbnail(ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) mut
-			{
-				return VT.WriteFrameThumbnail(ref this, ref pImage, ref pFrameEncode, pImageParameters);
-			}
-			public HRESULT WriteThumbnail(ref ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, in WICImageParameters pImageParameters) mut
-			{
-				return VT.WriteThumbnail(ref this, ref pImage, ref pEncoder, pImageParameters);
-			}
+			public HRESULT WriteFrame(ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) mut => VT.WriteFrame(ref this, ref pImage, ref pFrameEncode, pImageParameters);
+			public HRESULT WriteFrameThumbnail(ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) mut => VT.WriteFrameThumbnail(ref this, ref pImage, ref pFrameEncode, pImageParameters);
+			public HRESULT WriteThumbnail(ref ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, in WICImageParameters pImageParameters) mut => VT.WriteThumbnail(ref this, ref pImage, ref pEncoder, pImageParameters);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -41,10 +33,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateImageEncoder(ref ID2D1Device pD2DDevice, out IWICImageEncoder* ppWICImageEncoder) mut
-			{
-				return VT.CreateImageEncoder(ref this, ref pD2DDevice, out ppWICImageEncoder);
-			}
+			public HRESULT CreateImageEncoder(ref ID2D1Device pD2DDevice, out IWICImageEncoder* ppWICImageEncoder) mut => VT.CreateImageEncoder(ref this, ref pD2DDevice, out ppWICImageEncoder);
+
 			[CRepr]
 			public struct VTable : IWICImagingFactory.VTable
 			{

@@ -14,26 +14,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDirect3D12BackBufferResource(ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, out ID3D12Resource* ppCreatedTexture2DResource) mut
-			{
-				return VT.CreateDirect3D12BackBufferResource(ref this, ref pDevice, ref pTexture2DDesc, out ppCreatedTexture2DResource);
-			}
-			public HRESULT CreateDirect3D12HardwareProtectedBackBufferResource(ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ID3D12Resource* ppCreatedTexture2DResource) mut
-			{
-				return VT.CreateDirect3D12HardwareProtectedBackBufferResource(ref this, ref pDevice, ref pTexture2DDesc, ref pProtectedResourceSession, out ppCreatedTexture2DResource);
-			}
-			public HRESULT AcquireDirect3D12BufferResource(ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue) mut
-			{
-				return VT.AcquireDirect3D12BufferResource(ref this, ref pResourceToAcquire, ref pCommandQueue);
-			}
-			public HRESULT AcquireDirect3D12BufferResourceWithTimeout(ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue, uint64 duration) mut
-			{
-				return VT.AcquireDirect3D12BufferResourceWithTimeout(ref this, ref pResourceToAcquire, ref pCommandQueue, duration);
-			}
-			public HRESULT UnacquireDirect3D12BufferResource(ref ID3D12Resource pResourceToUnacquire) mut
-			{
-				return VT.UnacquireDirect3D12BufferResource(ref this, ref pResourceToUnacquire);
-			}
+			public HRESULT CreateDirect3D12BackBufferResource(ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, out ID3D12Resource* ppCreatedTexture2DResource) mut => VT.CreateDirect3D12BackBufferResource(ref this, ref pDevice, ref pTexture2DDesc, out ppCreatedTexture2DResource);
+			public HRESULT CreateDirect3D12HardwareProtectedBackBufferResource(ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ID3D12Resource* ppCreatedTexture2DResource) mut => VT.CreateDirect3D12HardwareProtectedBackBufferResource(ref this, ref pDevice, ref pTexture2DDesc, ref pProtectedResourceSession, out ppCreatedTexture2DResource);
+			public HRESULT AcquireDirect3D12BufferResource(ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue) mut => VT.AcquireDirect3D12BufferResource(ref this, ref pResourceToAcquire, ref pCommandQueue);
+			public HRESULT AcquireDirect3D12BufferResourceWithTimeout(ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue, uint64 duration) mut => VT.AcquireDirect3D12BufferResourceWithTimeout(ref this, ref pResourceToAcquire, ref pCommandQueue, duration);
+			public HRESULT UnacquireDirect3D12BufferResource(ref ID3D12Resource pResourceToUnacquire) mut => VT.UnacquireDirect3D12BufferResource(ref this, ref pResourceToUnacquire);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -51,14 +37,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CommitDirect3D12Resource(ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) mut
-			{
-				return VT.CommitDirect3D12Resource(ref this, ref pColorResourceToCommit, ref pColorResourceFence, colorResourceFenceSignalValue);
-			}
-			public HRESULT CommitDirect3D12ResourceWithDepthData(ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue, ref ID3D12Resource pDepthResourceToCommit, ref ID3D12Fence pDepthResourceFence, uint64 depthResourceFenceSignalValue) mut
-			{
-				return VT.CommitDirect3D12ResourceWithDepthData(ref this, ref pColorResourceToCommit, ref pColorResourceFence, colorResourceFenceSignalValue, ref pDepthResourceToCommit, ref pDepthResourceFence, depthResourceFenceSignalValue);
-			}
+			public HRESULT CommitDirect3D12Resource(ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) mut => VT.CommitDirect3D12Resource(ref this, ref pColorResourceToCommit, ref pColorResourceFence, colorResourceFenceSignalValue);
+			public HRESULT CommitDirect3D12ResourceWithDepthData(ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue, ref ID3D12Resource pDepthResourceToCommit, ref ID3D12Fence pDepthResourceFence, uint64 depthResourceFenceSignalValue) mut => VT.CommitDirect3D12ResourceWithDepthData(ref this, ref pColorResourceToCommit, ref pColorResourceFence, colorResourceFenceSignalValue, ref pDepthResourceToCommit, ref pDepthResourceFence, depthResourceFenceSignalValue);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -73,26 +54,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDirect3D12ContentBufferResource(ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, out ID3D12Resource* ppTexture2DResource) mut
-			{
-				return VT.CreateDirect3D12ContentBufferResource(ref this, ref pDevice, ref pTexture2DDesc, out ppTexture2DResource);
-			}
-			public HRESULT CreateDirect3D12HardwareProtectedContentBufferResource(ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ID3D12Resource* ppCreatedTexture2DResource) mut
-			{
-				return VT.CreateDirect3D12HardwareProtectedContentBufferResource(ref this, ref pDevice, ref pTexture2DDesc, ref pProtectedResourceSession, out ppCreatedTexture2DResource);
-			}
-			public HRESULT AcquireDirect3D12BufferResource(ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue) mut
-			{
-				return VT.AcquireDirect3D12BufferResource(ref this, ref pResourceToAcquire, ref pCommandQueue);
-			}
-			public HRESULT AcquireDirect3D12BufferResourceWithTimeout(ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue, uint64 duration) mut
-			{
-				return VT.AcquireDirect3D12BufferResourceWithTimeout(ref this, ref pResourceToAcquire, ref pCommandQueue, duration);
-			}
-			public HRESULT UnacquireDirect3D12BufferResource(ref ID3D12Resource pResourceToUnacquire) mut
-			{
-				return VT.UnacquireDirect3D12BufferResource(ref this, ref pResourceToUnacquire);
-			}
+			public HRESULT CreateDirect3D12ContentBufferResource(ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, out ID3D12Resource* ppTexture2DResource) mut => VT.CreateDirect3D12ContentBufferResource(ref this, ref pDevice, ref pTexture2DDesc, out ppTexture2DResource);
+			public HRESULT CreateDirect3D12HardwareProtectedContentBufferResource(ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ID3D12Resource* ppCreatedTexture2DResource) mut => VT.CreateDirect3D12HardwareProtectedContentBufferResource(ref this, ref pDevice, ref pTexture2DDesc, ref pProtectedResourceSession, out ppCreatedTexture2DResource);
+			public HRESULT AcquireDirect3D12BufferResource(ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue) mut => VT.AcquireDirect3D12BufferResource(ref this, ref pResourceToAcquire, ref pCommandQueue);
+			public HRESULT AcquireDirect3D12BufferResourceWithTimeout(ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue, uint64 duration) mut => VT.AcquireDirect3D12BufferResourceWithTimeout(ref this, ref pResourceToAcquire, ref pCommandQueue, duration);
+			public HRESULT UnacquireDirect3D12BufferResource(ref ID3D12Resource pResourceToUnacquire) mut => VT.UnacquireDirect3D12BufferResource(ref this, ref pResourceToUnacquire);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -110,10 +77,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CommitDirect3D12Resource(ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) mut
-			{
-				return VT.CommitDirect3D12Resource(ref this, ref pColorResourceToCommit, ref pColorResourceFence, colorResourceFenceSignalValue);
-			}
+			public HRESULT CommitDirect3D12Resource(ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) mut => VT.CommitDirect3D12Resource(ref this, ref pColorResourceToCommit, ref pColorResourceFence, colorResourceFenceSignalValue);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{

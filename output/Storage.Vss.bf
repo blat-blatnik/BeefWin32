@@ -514,22 +514,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, VSS_OBJECT_PROP* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IVssEnumObject* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, VSS_OBJECT_PROP* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IVssEnumObject* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -546,18 +535,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
-			public HRESULT Wait(uint32 dwMilliseconds) mut
-			{
-				return VT.Wait(ref this, dwMilliseconds);
-			}
-			public HRESULT QueryStatus(out HRESULT pHrResult, out int32 pReserved) mut
-			{
-				return VT.QueryStatus(ref this, out pHrResult, out pReserved);
-			}
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+			public HRESULT Wait(uint32 dwMilliseconds) mut => VT.Wait(ref this, dwMilliseconds);
+			public HRESULT QueryStatus(out HRESULT pHrResult, out int32 pReserved) mut => VT.QueryStatus(ref this, out pHrResult, out pReserved);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -571,26 +552,12 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPath(out BSTR pbstrPath) mut
-			{
-				return VT.GetPath(ref this, out pbstrPath);
-			}
-			public HRESULT GetFilespec(out BSTR pbstrFilespec) mut
-			{
-				return VT.GetFilespec(ref this, out pbstrFilespec);
-			}
-			public HRESULT GetRecursive(out Boolean pbRecursive) mut
-			{
-				return VT.GetRecursive(ref this, out pbRecursive);
-			}
-			public HRESULT GetAlternateLocation(out BSTR pbstrAlternateLocation) mut
-			{
-				return VT.GetAlternateLocation(ref this, out pbstrAlternateLocation);
-			}
-			public HRESULT GetBackupTypeMask(out uint32 pdwTypeMask) mut
-			{
-				return VT.GetBackupTypeMask(ref this, out pdwTypeMask);
-			}
+			public HRESULT GetPath(out BSTR pbstrPath) mut => VT.GetPath(ref this, out pbstrPath);
+			public HRESULT GetFilespec(out BSTR pbstrFilespec) mut => VT.GetFilespec(ref this, out pbstrFilespec);
+			public HRESULT GetRecursive(out Boolean pbRecursive) mut => VT.GetRecursive(ref this, out pbRecursive);
+			public HRESULT GetAlternateLocation(out BSTR pbstrAlternateLocation) mut => VT.GetAlternateLocation(ref this, out pbstrAlternateLocation);
+			public HRESULT GetBackupTypeMask(out uint32 pdwTypeMask) mut => VT.GetBackupTypeMask(ref this, out pdwTypeMask);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -606,18 +573,10 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWriterId(out Guid pWriterId) mut
-			{
-				return VT.GetWriterId(ref this, out pWriterId);
-			}
-			public HRESULT GetLogicalPath(out BSTR pbstrLogicalPath) mut
-			{
-				return VT.GetLogicalPath(ref this, out pbstrLogicalPath);
-			}
-			public HRESULT GetComponentName(out BSTR pbstrComponentName) mut
-			{
-				return VT.GetComponentName(ref this, out pbstrComponentName);
-			}
+			public HRESULT GetWriterId(out Guid pWriterId) mut => VT.GetWriterId(ref this, out pWriterId);
+			public HRESULT GetLogicalPath(out BSTR pbstrLogicalPath) mut => VT.GetLogicalPath(ref this, out pbstrLogicalPath);
+			public HRESULT GetComponentName(out BSTR pbstrComponentName) mut => VT.GetComponentName(ref this, out pbstrComponentName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -633,158 +592,45 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLogicalPath(out BSTR pbstrPath) mut
-			{
-				return VT.GetLogicalPath(ref this, out pbstrPath);
-			}
-			public HRESULT GetComponentType(out VSS_COMPONENT_TYPE pct) mut
-			{
-				return VT.GetComponentType(ref this, out pct);
-			}
-			public HRESULT GetComponentName(out BSTR pbstrName) mut
-			{
-				return VT.GetComponentName(ref this, out pbstrName);
-			}
-			public HRESULT GetBackupSucceeded(out Boolean pbSucceeded) mut
-			{
-				return VT.GetBackupSucceeded(ref this, out pbSucceeded);
-			}
-			public HRESULT GetAlternateLocationMappingCount(out uint32 pcMappings) mut
-			{
-				return VT.GetAlternateLocationMappingCount(ref this, out pcMappings);
-			}
-			public HRESULT GetAlternateLocationMapping(uint32 iMapping, out IVssWMFiledesc* ppFiledesc) mut
-			{
-				return VT.GetAlternateLocationMapping(ref this, iMapping, out ppFiledesc);
-			}
-			public HRESULT SetBackupMetadata(PWSTR wszData) mut
-			{
-				return VT.SetBackupMetadata(ref this, wszData);
-			}
-			public HRESULT GetBackupMetadata(out BSTR pbstrData) mut
-			{
-				return VT.GetBackupMetadata(ref this, out pbstrData);
-			}
-			public HRESULT AddPartialFile(PWSTR wszPath, PWSTR wszFilename, PWSTR wszRanges, PWSTR wszMetadata) mut
-			{
-				return VT.AddPartialFile(ref this, wszPath, wszFilename, wszRanges, wszMetadata);
-			}
-			public HRESULT GetPartialFileCount(out uint32 pcPartialFiles) mut
-			{
-				return VT.GetPartialFileCount(ref this, out pcPartialFiles);
-			}
-			public HRESULT GetPartialFile(uint32 iPartialFile, out BSTR pbstrPath, out BSTR pbstrFilename, out BSTR pbstrRange, out BSTR pbstrMetadata) mut
-			{
-				return VT.GetPartialFile(ref this, iPartialFile, out pbstrPath, out pbstrFilename, out pbstrRange, out pbstrMetadata);
-			}
-			public HRESULT IsSelectedForRestore(out Boolean pbSelectedForRestore) mut
-			{
-				return VT.IsSelectedForRestore(ref this, out pbSelectedForRestore);
-			}
-			public HRESULT GetAdditionalRestores(out Boolean pbAdditionalRestores) mut
-			{
-				return VT.GetAdditionalRestores(ref this, out pbAdditionalRestores);
-			}
-			public HRESULT GetNewTargetCount(out uint32 pcNewTarget) mut
-			{
-				return VT.GetNewTargetCount(ref this, out pcNewTarget);
-			}
-			public HRESULT GetNewTarget(uint32 iNewTarget, out IVssWMFiledesc* ppFiledesc) mut
-			{
-				return VT.GetNewTarget(ref this, iNewTarget, out ppFiledesc);
-			}
-			public HRESULT AddDirectedTarget(PWSTR wszSourcePath, PWSTR wszSourceFilename, PWSTR wszSourceRangeList, PWSTR wszDestinationPath, PWSTR wszDestinationFilename, PWSTR wszDestinationRangeList) mut
-			{
-				return VT.AddDirectedTarget(ref this, wszSourcePath, wszSourceFilename, wszSourceRangeList, wszDestinationPath, wszDestinationFilename, wszDestinationRangeList);
-			}
-			public HRESULT GetDirectedTargetCount(out uint32 pcDirectedTarget) mut
-			{
-				return VT.GetDirectedTargetCount(ref this, out pcDirectedTarget);
-			}
-			public HRESULT GetDirectedTarget(uint32 iDirectedTarget, out BSTR pbstrSourcePath, out BSTR pbstrSourceFileName, out BSTR pbstrSourceRangeList, out BSTR pbstrDestinationPath, out BSTR pbstrDestinationFilename, out BSTR pbstrDestinationRangeList) mut
-			{
-				return VT.GetDirectedTarget(ref this, iDirectedTarget, out pbstrSourcePath, out pbstrSourceFileName, out pbstrSourceRangeList, out pbstrDestinationPath, out pbstrDestinationFilename, out pbstrDestinationRangeList);
-			}
-			public HRESULT SetRestoreMetadata(PWSTR wszRestoreMetadata) mut
-			{
-				return VT.SetRestoreMetadata(ref this, wszRestoreMetadata);
-			}
-			public HRESULT GetRestoreMetadata(out BSTR pbstrRestoreMetadata) mut
-			{
-				return VT.GetRestoreMetadata(ref this, out pbstrRestoreMetadata);
-			}
-			public HRESULT SetRestoreTarget(VSS_RESTORE_TARGET target) mut
-			{
-				return VT.SetRestoreTarget(ref this, target);
-			}
-			public HRESULT GetRestoreTarget(out VSS_RESTORE_TARGET pTarget) mut
-			{
-				return VT.GetRestoreTarget(ref this, out pTarget);
-			}
-			public HRESULT SetPreRestoreFailureMsg(PWSTR wszPreRestoreFailureMsg) mut
-			{
-				return VT.SetPreRestoreFailureMsg(ref this, wszPreRestoreFailureMsg);
-			}
-			public HRESULT GetPreRestoreFailureMsg(out BSTR pbstrPreRestoreFailureMsg) mut
-			{
-				return VT.GetPreRestoreFailureMsg(ref this, out pbstrPreRestoreFailureMsg);
-			}
-			public HRESULT SetPostRestoreFailureMsg(PWSTR wszPostRestoreFailureMsg) mut
-			{
-				return VT.SetPostRestoreFailureMsg(ref this, wszPostRestoreFailureMsg);
-			}
-			public HRESULT GetPostRestoreFailureMsg(out BSTR pbstrPostRestoreFailureMsg) mut
-			{
-				return VT.GetPostRestoreFailureMsg(ref this, out pbstrPostRestoreFailureMsg);
-			}
-			public HRESULT SetBackupStamp(PWSTR wszBackupStamp) mut
-			{
-				return VT.SetBackupStamp(ref this, wszBackupStamp);
-			}
-			public HRESULT GetBackupStamp(out BSTR pbstrBackupStamp) mut
-			{
-				return VT.GetBackupStamp(ref this, out pbstrBackupStamp);
-			}
-			public HRESULT GetPreviousBackupStamp(out BSTR pbstrBackupStamp) mut
-			{
-				return VT.GetPreviousBackupStamp(ref this, out pbstrBackupStamp);
-			}
-			public HRESULT GetBackupOptions(out BSTR pbstrBackupOptions) mut
-			{
-				return VT.GetBackupOptions(ref this, out pbstrBackupOptions);
-			}
-			public HRESULT GetRestoreOptions(out BSTR pbstrRestoreOptions) mut
-			{
-				return VT.GetRestoreOptions(ref this, out pbstrRestoreOptions);
-			}
-			public HRESULT GetRestoreSubcomponentCount(out uint32 pcRestoreSubcomponent) mut
-			{
-				return VT.GetRestoreSubcomponentCount(ref this, out pcRestoreSubcomponent);
-			}
-			public HRESULT GetRestoreSubcomponent(uint32 iComponent, out BSTR pbstrLogicalPath, out BSTR pbstrComponentName, out Boolean pbRepair) mut
-			{
-				return VT.GetRestoreSubcomponent(ref this, iComponent, out pbstrLogicalPath, out pbstrComponentName, out pbRepair);
-			}
-			public HRESULT GetFileRestoreStatus(out VSS_FILE_RESTORE_STATUS pStatus) mut
-			{
-				return VT.GetFileRestoreStatus(ref this, out pStatus);
-			}
-			public HRESULT AddDifferencedFilesByLastModifyTime(PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, FILETIME ftLastModifyTime) mut
-			{
-				return VT.AddDifferencedFilesByLastModifyTime(ref this, wszPath, wszFilespec, bRecursive, ftLastModifyTime);
-			}
-			public HRESULT AddDifferencedFilesByLastModifyLSN(PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, BSTR bstrLsnString) mut
-			{
-				return VT.AddDifferencedFilesByLastModifyLSN(ref this, wszPath, wszFilespec, bRecursive, bstrLsnString);
-			}
-			public HRESULT GetDifferencedFilesCount(out uint32 pcDifferencedFiles) mut
-			{
-				return VT.GetDifferencedFilesCount(ref this, out pcDifferencedFiles);
-			}
-			public HRESULT GetDifferencedFile(uint32 iDifferencedFile, out BSTR pbstrPath, out BSTR pbstrFilespec, out BOOL pbRecursive, out BSTR pbstrLsnString, out FILETIME pftLastModifyTime) mut
-			{
-				return VT.GetDifferencedFile(ref this, iDifferencedFile, out pbstrPath, out pbstrFilespec, out pbRecursive, out pbstrLsnString, out pftLastModifyTime);
-			}
+			public HRESULT GetLogicalPath(out BSTR pbstrPath) mut => VT.GetLogicalPath(ref this, out pbstrPath);
+			public HRESULT GetComponentType(out VSS_COMPONENT_TYPE pct) mut => VT.GetComponentType(ref this, out pct);
+			public HRESULT GetComponentName(out BSTR pbstrName) mut => VT.GetComponentName(ref this, out pbstrName);
+			public HRESULT GetBackupSucceeded(out Boolean pbSucceeded) mut => VT.GetBackupSucceeded(ref this, out pbSucceeded);
+			public HRESULT GetAlternateLocationMappingCount(out uint32 pcMappings) mut => VT.GetAlternateLocationMappingCount(ref this, out pcMappings);
+			public HRESULT GetAlternateLocationMapping(uint32 iMapping, out IVssWMFiledesc* ppFiledesc) mut => VT.GetAlternateLocationMapping(ref this, iMapping, out ppFiledesc);
+			public HRESULT SetBackupMetadata(PWSTR wszData) mut => VT.SetBackupMetadata(ref this, wszData);
+			public HRESULT GetBackupMetadata(out BSTR pbstrData) mut => VT.GetBackupMetadata(ref this, out pbstrData);
+			public HRESULT AddPartialFile(PWSTR wszPath, PWSTR wszFilename, PWSTR wszRanges, PWSTR wszMetadata) mut => VT.AddPartialFile(ref this, wszPath, wszFilename, wszRanges, wszMetadata);
+			public HRESULT GetPartialFileCount(out uint32 pcPartialFiles) mut => VT.GetPartialFileCount(ref this, out pcPartialFiles);
+			public HRESULT GetPartialFile(uint32 iPartialFile, out BSTR pbstrPath, out BSTR pbstrFilename, out BSTR pbstrRange, out BSTR pbstrMetadata) mut => VT.GetPartialFile(ref this, iPartialFile, out pbstrPath, out pbstrFilename, out pbstrRange, out pbstrMetadata);
+			public HRESULT IsSelectedForRestore(out Boolean pbSelectedForRestore) mut => VT.IsSelectedForRestore(ref this, out pbSelectedForRestore);
+			public HRESULT GetAdditionalRestores(out Boolean pbAdditionalRestores) mut => VT.GetAdditionalRestores(ref this, out pbAdditionalRestores);
+			public HRESULT GetNewTargetCount(out uint32 pcNewTarget) mut => VT.GetNewTargetCount(ref this, out pcNewTarget);
+			public HRESULT GetNewTarget(uint32 iNewTarget, out IVssWMFiledesc* ppFiledesc) mut => VT.GetNewTarget(ref this, iNewTarget, out ppFiledesc);
+			public HRESULT AddDirectedTarget(PWSTR wszSourcePath, PWSTR wszSourceFilename, PWSTR wszSourceRangeList, PWSTR wszDestinationPath, PWSTR wszDestinationFilename, PWSTR wszDestinationRangeList) mut => VT.AddDirectedTarget(ref this, wszSourcePath, wszSourceFilename, wszSourceRangeList, wszDestinationPath, wszDestinationFilename, wszDestinationRangeList);
+			public HRESULT GetDirectedTargetCount(out uint32 pcDirectedTarget) mut => VT.GetDirectedTargetCount(ref this, out pcDirectedTarget);
+			public HRESULT GetDirectedTarget(uint32 iDirectedTarget, out BSTR pbstrSourcePath, out BSTR pbstrSourceFileName, out BSTR pbstrSourceRangeList, out BSTR pbstrDestinationPath, out BSTR pbstrDestinationFilename, out BSTR pbstrDestinationRangeList) mut => VT.GetDirectedTarget(ref this, iDirectedTarget, out pbstrSourcePath, out pbstrSourceFileName, out pbstrSourceRangeList, out pbstrDestinationPath, out pbstrDestinationFilename, out pbstrDestinationRangeList);
+			public HRESULT SetRestoreMetadata(PWSTR wszRestoreMetadata) mut => VT.SetRestoreMetadata(ref this, wszRestoreMetadata);
+			public HRESULT GetRestoreMetadata(out BSTR pbstrRestoreMetadata) mut => VT.GetRestoreMetadata(ref this, out pbstrRestoreMetadata);
+			public HRESULT SetRestoreTarget(VSS_RESTORE_TARGET target) mut => VT.SetRestoreTarget(ref this, target);
+			public HRESULT GetRestoreTarget(out VSS_RESTORE_TARGET pTarget) mut => VT.GetRestoreTarget(ref this, out pTarget);
+			public HRESULT SetPreRestoreFailureMsg(PWSTR wszPreRestoreFailureMsg) mut => VT.SetPreRestoreFailureMsg(ref this, wszPreRestoreFailureMsg);
+			public HRESULT GetPreRestoreFailureMsg(out BSTR pbstrPreRestoreFailureMsg) mut => VT.GetPreRestoreFailureMsg(ref this, out pbstrPreRestoreFailureMsg);
+			public HRESULT SetPostRestoreFailureMsg(PWSTR wszPostRestoreFailureMsg) mut => VT.SetPostRestoreFailureMsg(ref this, wszPostRestoreFailureMsg);
+			public HRESULT GetPostRestoreFailureMsg(out BSTR pbstrPostRestoreFailureMsg) mut => VT.GetPostRestoreFailureMsg(ref this, out pbstrPostRestoreFailureMsg);
+			public HRESULT SetBackupStamp(PWSTR wszBackupStamp) mut => VT.SetBackupStamp(ref this, wszBackupStamp);
+			public HRESULT GetBackupStamp(out BSTR pbstrBackupStamp) mut => VT.GetBackupStamp(ref this, out pbstrBackupStamp);
+			public HRESULT GetPreviousBackupStamp(out BSTR pbstrBackupStamp) mut => VT.GetPreviousBackupStamp(ref this, out pbstrBackupStamp);
+			public HRESULT GetBackupOptions(out BSTR pbstrBackupOptions) mut => VT.GetBackupOptions(ref this, out pbstrBackupOptions);
+			public HRESULT GetRestoreOptions(out BSTR pbstrRestoreOptions) mut => VT.GetRestoreOptions(ref this, out pbstrRestoreOptions);
+			public HRESULT GetRestoreSubcomponentCount(out uint32 pcRestoreSubcomponent) mut => VT.GetRestoreSubcomponentCount(ref this, out pcRestoreSubcomponent);
+			public HRESULT GetRestoreSubcomponent(uint32 iComponent, out BSTR pbstrLogicalPath, out BSTR pbstrComponentName, out Boolean pbRepair) mut => VT.GetRestoreSubcomponent(ref this, iComponent, out pbstrLogicalPath, out pbstrComponentName, out pbRepair);
+			public HRESULT GetFileRestoreStatus(out VSS_FILE_RESTORE_STATUS pStatus) mut => VT.GetFileRestoreStatus(ref this, out pStatus);
+			public HRESULT AddDifferencedFilesByLastModifyTime(PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, FILETIME ftLastModifyTime) mut => VT.AddDifferencedFilesByLastModifyTime(ref this, wszPath, wszFilespec, bRecursive, ftLastModifyTime);
+			public HRESULT AddDifferencedFilesByLastModifyLSN(PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, BSTR bstrLsnString) mut => VT.AddDifferencedFilesByLastModifyLSN(ref this, wszPath, wszFilespec, bRecursive, bstrLsnString);
+			public HRESULT GetDifferencedFilesCount(out uint32 pcDifferencedFiles) mut => VT.GetDifferencedFilesCount(ref this, out pcDifferencedFiles);
+			public HRESULT GetDifferencedFile(uint32 iDifferencedFile, out BSTR pbstrPath, out BSTR pbstrFilespec, out BOOL pbRecursive, out BSTR pbstrLsnString, out FILETIME pftLastModifyTime) mut => VT.GetDifferencedFile(ref this, iDifferencedFile, out pbstrPath, out pbstrFilespec, out pbRecursive, out pbstrLsnString, out pftLastModifyTime);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -834,18 +680,10 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetComponentCount(out uint32 pcComponents) mut
-			{
-				return VT.GetComponentCount(ref this, out pcComponents);
-			}
-			public HRESULT GetWriterInfo(out Guid pidInstance, out Guid pidWriter) mut
-			{
-				return VT.GetWriterInfo(ref this, out pidInstance, out pidWriter);
-			}
-			public HRESULT GetComponent(uint32 iComponent, out IVssComponent* ppComponent) mut
-			{
-				return VT.GetComponent(ref this, iComponent, out ppComponent);
-			}
+			public HRESULT GetComponentCount(out uint32 pcComponents) mut => VT.GetComponentCount(ref this, out pcComponents);
+			public HRESULT GetWriterInfo(out Guid pidInstance, out Guid pidWriter) mut => VT.GetWriterInfo(ref this, out pidInstance, out pidWriter);
+			public HRESULT GetComponent(uint32 iComponent, out IVssComponent* ppComponent) mut => VT.GetComponent(ref this, iComponent, out ppComponent);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -861,34 +699,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPrepareForBackupFailureMsg(PWSTR wszFailureMsg) mut
-			{
-				return VT.SetPrepareForBackupFailureMsg(ref this, wszFailureMsg);
-			}
-			public HRESULT SetPostSnapshotFailureMsg(PWSTR wszFailureMsg) mut
-			{
-				return VT.SetPostSnapshotFailureMsg(ref this, wszFailureMsg);
-			}
-			public HRESULT GetPrepareForBackupFailureMsg(BSTR* pbstrFailureMsg) mut
-			{
-				return VT.GetPrepareForBackupFailureMsg(ref this, pbstrFailureMsg);
-			}
-			public HRESULT GetPostSnapshotFailureMsg(BSTR* pbstrFailureMsg) mut
-			{
-				return VT.GetPostSnapshotFailureMsg(ref this, pbstrFailureMsg);
-			}
-			public HRESULT GetAuthoritativeRestore(out Boolean pbAuth) mut
-			{
-				return VT.GetAuthoritativeRestore(ref this, out pbAuth);
-			}
-			public HRESULT GetRollForward(out VSS_ROLLFORWARD_TYPE pRollType, BSTR* pbstrPoint) mut
-			{
-				return VT.GetRollForward(ref this, out pRollType, pbstrPoint);
-			}
-			public HRESULT GetRestoreName(BSTR* pbstrName) mut
-			{
-				return VT.GetRestoreName(ref this, pbstrName);
-			}
+			public HRESULT SetPrepareForBackupFailureMsg(PWSTR wszFailureMsg) mut => VT.SetPrepareForBackupFailureMsg(ref this, wszFailureMsg);
+			public HRESULT SetPostSnapshotFailureMsg(PWSTR wszFailureMsg) mut => VT.SetPostSnapshotFailureMsg(ref this, wszFailureMsg);
+			public HRESULT GetPrepareForBackupFailureMsg(BSTR* pbstrFailureMsg) mut => VT.GetPrepareForBackupFailureMsg(ref this, pbstrFailureMsg);
+			public HRESULT GetPostSnapshotFailureMsg(BSTR* pbstrFailureMsg) mut => VT.GetPostSnapshotFailureMsg(ref this, pbstrFailureMsg);
+			public HRESULT GetAuthoritativeRestore(out Boolean pbAuth) mut => VT.GetAuthoritativeRestore(ref this, out pbAuth);
+			public HRESULT GetRollForward(out VSS_ROLLFORWARD_TYPE pRollType, BSTR* pbstrPoint) mut => VT.GetRollForward(ref this, out pRollType, pbstrPoint);
+			public HRESULT GetRestoreName(BSTR* pbstrName) mut => VT.GetRestoreName(ref this, pbstrName);
+
 			[CRepr]
 			public struct VTable : IVssComponent.VTable
 			{
@@ -908,14 +726,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFailure(HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage, uint32 dwReserved) mut
-			{
-				return VT.SetFailure(ref this, hr, hrApplication, wszApplicationMessage, dwReserved);
-			}
-			public HRESULT GetFailure(out HRESULT phr, out HRESULT phrApplication, out BSTR pbstrApplicationMessage, out uint32 pdwReserved) mut
-			{
-				return VT.GetFailure(ref this, out phr, out phrApplication, out pbstrApplicationMessage, out pdwReserved);
-			}
+			public HRESULT SetFailure(HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage, uint32 dwReserved) mut => VT.SetFailure(ref this, hr, hrApplication, wszApplicationMessage, dwReserved);
+			public HRESULT GetFailure(out HRESULT phr, out HRESULT phrApplication, out BSTR pbstrApplicationMessage, out uint32 pdwReserved) mut => VT.GetFailure(ref this, out phr, out phrApplication, out pbstrApplicationMessage, out pdwReserved);
+
 			[CRepr]
 			public struct VTable : IVssComponentEx.VTable
 			{
@@ -929,54 +742,19 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddIncludeFiles(PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation) mut
-			{
-				return VT.AddIncludeFiles(ref this, wszPath, wszFilespec, bRecursive, wszAlternateLocation);
-			}
-			public HRESULT AddExcludeFiles(PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) mut
-			{
-				return VT.AddExcludeFiles(ref this, wszPath, wszFilespec, bRecursive);
-			}
-			public HRESULT AddComponent(VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, in uint8 pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) mut
-			{
-				return VT.AddComponent(ref this, ct, wszLogicalPath, wszComponentName, wszCaption, pbIcon, cbIcon, bRestoreMetadata, bNotifyOnBackupComplete, bSelectable, bSelectableForRestore, dwComponentFlags);
-			}
-			public HRESULT AddDatabaseFiles(PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) mut
-			{
-				return VT.AddDatabaseFiles(ref this, wszLogicalPath, wszDatabaseName, wszPath, wszFilespec, dwBackupTypeMask);
-			}
-			public HRESULT AddDatabaseLogFiles(PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) mut
-			{
-				return VT.AddDatabaseLogFiles(ref this, wszLogicalPath, wszDatabaseName, wszPath, wszFilespec, dwBackupTypeMask);
-			}
-			public HRESULT AddFilesToFileGroup(PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) mut
-			{
-				return VT.AddFilesToFileGroup(ref this, wszLogicalPath, wszGroupName, wszPath, wszFilespec, bRecursive, wszAlternateLocation, dwBackupTypeMask);
-			}
-			public HRESULT SetRestoreMethod(VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) mut
-			{
-				return VT.SetRestoreMethod(ref this, method, wszService, wszUserProcedure, writerRestore, bRebootRequired);
-			}
-			public HRESULT AddAlternateLocationMapping(PWSTR wszSourcePath, PWSTR wszSourceFilespec, uint8 bRecursive, PWSTR wszDestination) mut
-			{
-				return VT.AddAlternateLocationMapping(ref this, wszSourcePath, wszSourceFilespec, bRecursive, wszDestination);
-			}
-			public HRESULT AddComponentDependency(PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) mut
-			{
-				return VT.AddComponentDependency(ref this, wszForLogicalPath, wszForComponentName, onWriterId, wszOnLogicalPath, wszOnComponentName);
-			}
-			public HRESULT SetBackupSchema(uint32 dwSchemaMask) mut
-			{
-				return VT.SetBackupSchema(ref this, dwSchemaMask);
-			}
-			public HRESULT GetDocument(out IXMLDOMDocument* pDoc) mut
-			{
-				return VT.GetDocument(ref this, out pDoc);
-			}
-			public HRESULT SaveAsXML(out BSTR pbstrXML) mut
-			{
-				return VT.SaveAsXML(ref this, out pbstrXML);
-			}
+			public HRESULT AddIncludeFiles(PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation) mut => VT.AddIncludeFiles(ref this, wszPath, wszFilespec, bRecursive, wszAlternateLocation);
+			public HRESULT AddExcludeFiles(PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) mut => VT.AddExcludeFiles(ref this, wszPath, wszFilespec, bRecursive);
+			public HRESULT AddComponent(VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, in uint8 pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) mut => VT.AddComponent(ref this, ct, wszLogicalPath, wszComponentName, wszCaption, pbIcon, cbIcon, bRestoreMetadata, bNotifyOnBackupComplete, bSelectable, bSelectableForRestore, dwComponentFlags);
+			public HRESULT AddDatabaseFiles(PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) mut => VT.AddDatabaseFiles(ref this, wszLogicalPath, wszDatabaseName, wszPath, wszFilespec, dwBackupTypeMask);
+			public HRESULT AddDatabaseLogFiles(PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) mut => VT.AddDatabaseLogFiles(ref this, wszLogicalPath, wszDatabaseName, wszPath, wszFilespec, dwBackupTypeMask);
+			public HRESULT AddFilesToFileGroup(PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) mut => VT.AddFilesToFileGroup(ref this, wszLogicalPath, wszGroupName, wszPath, wszFilespec, bRecursive, wszAlternateLocation, dwBackupTypeMask);
+			public HRESULT SetRestoreMethod(VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) mut => VT.SetRestoreMethod(ref this, method, wszService, wszUserProcedure, writerRestore, bRebootRequired);
+			public HRESULT AddAlternateLocationMapping(PWSTR wszSourcePath, PWSTR wszSourceFilespec, uint8 bRecursive, PWSTR wszDestination) mut => VT.AddAlternateLocationMapping(ref this, wszSourcePath, wszSourceFilespec, bRecursive, wszDestination);
+			public HRESULT AddComponentDependency(PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) mut => VT.AddComponentDependency(ref this, wszForLogicalPath, wszForComponentName, onWriterId, wszOnLogicalPath, wszOnComponentName);
+			public HRESULT SetBackupSchema(uint32 dwSchemaMask) mut => VT.SetBackupSchema(ref this, dwSchemaMask);
+			public HRESULT GetDocument(out IXMLDOMDocument* pDoc) mut => VT.GetDocument(ref this, out pDoc);
+			public HRESULT SaveAsXML(out BSTR pbstrXML) mut => VT.SaveAsXML(ref this, out pbstrXML);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -999,94 +777,29 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(Guid writerId, PWSTR wszWriterName, PWSTR wszWriterInstanceName, uint32 dwMajorVersion, uint32 dwMinorVersion, VSS_USAGE_TYPE ut, VSS_SOURCE_TYPE st, VSS_APPLICATION_LEVEL nLevel, uint32 dwTimeout, VSS_ALTERNATE_WRITER_STATE aws, uint8 bIOThrottlingOnly) mut
-			{
-				return VT.Initialize(ref this, writerId, wszWriterName, wszWriterInstanceName, dwMajorVersion, dwMinorVersion, ut, st, nLevel, dwTimeout, aws, bIOThrottlingOnly);
-			}
-			public HRESULT Subscribe(uint32 dwSubscribeTimeout, uint32 dwEventFlags) mut
-			{
-				return VT.Subscribe(ref this, dwSubscribeTimeout, dwEventFlags);
-			}
-			public HRESULT Unsubscribe() mut
-			{
-				return VT.Unsubscribe(ref this);
-			}
-			public void Uninitialize() mut
-			{
-				VT.Uninitialize(ref this);
-			}
-			public PWSTR* GetCurrentVolumeArray() mut
-			{
-				return VT.GetCurrentVolumeArray(ref this);
-			}
-			public uint32 GetCurrentVolumeCount() mut
-			{
-				return VT.GetCurrentVolumeCount(ref this);
-			}
-			public HRESULT GetSnapshotDeviceName(PWSTR wszOriginalVolume, PWSTR* ppwszSnapshotDevice) mut
-			{
-				return VT.GetSnapshotDeviceName(ref this, wszOriginalVolume, ppwszSnapshotDevice);
-			}
-			public Guid GetCurrentSnapshotSetId() mut
-			{
-				return VT.GetCurrentSnapshotSetId(ref this);
-			}
-			public int32 GetContext() mut
-			{
-				return VT.GetContext(ref this);
-			}
-			public VSS_APPLICATION_LEVEL GetCurrentLevel() mut
-			{
-				return VT.GetCurrentLevel(ref this);
-			}
-			public Boolean IsPathAffected(PWSTR wszPath) mut
-			{
-				return VT.IsPathAffected(ref this, wszPath);
-			}
-			public Boolean IsBootableSystemStateBackedUp() mut
-			{
-				return VT.IsBootableSystemStateBackedUp(ref this);
-			}
-			public Boolean AreComponentsSelected() mut
-			{
-				return VT.AreComponentsSelected(ref this);
-			}
-			public VSS_BACKUP_TYPE GetBackupType() mut
-			{
-				return VT.GetBackupType(ref this);
-			}
-			public VSS_RESTORE_TYPE GetRestoreType() mut
-			{
-				return VT.GetRestoreType(ref this);
-			}
-			public HRESULT SetWriterFailure(HRESULT hr) mut
-			{
-				return VT.SetWriterFailure(ref this, hr);
-			}
-			public Boolean IsPartialFileSupportEnabled() mut
-			{
-				return VT.IsPartialFileSupportEnabled(ref this);
-			}
-			public HRESULT InstallAlternateWriter(Guid idWriter, Guid clsid) mut
-			{
-				return VT.InstallAlternateWriter(ref this, idWriter, clsid);
-			}
-			public IVssExamineWriterMetadata* GetIdentityInformation() mut
-			{
-				return VT.GetIdentityInformation(ref this);
-			}
-			public HRESULT SetWriterFailureEx(HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage) mut
-			{
-				return VT.SetWriterFailureEx(ref this, hr, hrApplication, wszApplicationMessage);
-			}
-			public HRESULT GetSessionId(out Guid idSession) mut
-			{
-				return VT.GetSessionId(ref this, out idSession);
-			}
-			public Boolean IsWriterShuttingDown() mut
-			{
-				return VT.IsWriterShuttingDown(ref this);
-			}
+			public HRESULT Initialize(Guid writerId, PWSTR wszWriterName, PWSTR wszWriterInstanceName, uint32 dwMajorVersion, uint32 dwMinorVersion, VSS_USAGE_TYPE ut, VSS_SOURCE_TYPE st, VSS_APPLICATION_LEVEL nLevel, uint32 dwTimeout, VSS_ALTERNATE_WRITER_STATE aws, uint8 bIOThrottlingOnly) mut => VT.Initialize(ref this, writerId, wszWriterName, wszWriterInstanceName, dwMajorVersion, dwMinorVersion, ut, st, nLevel, dwTimeout, aws, bIOThrottlingOnly);
+			public HRESULT Subscribe(uint32 dwSubscribeTimeout, uint32 dwEventFlags) mut => VT.Subscribe(ref this, dwSubscribeTimeout, dwEventFlags);
+			public HRESULT Unsubscribe() mut => VT.Unsubscribe(ref this);
+			public void Uninitialize() mut => VT.Uninitialize(ref this);
+			public PWSTR* GetCurrentVolumeArray() mut => VT.GetCurrentVolumeArray(ref this);
+			public uint32 GetCurrentVolumeCount() mut => VT.GetCurrentVolumeCount(ref this);
+			public HRESULT GetSnapshotDeviceName(PWSTR wszOriginalVolume, PWSTR* ppwszSnapshotDevice) mut => VT.GetSnapshotDeviceName(ref this, wszOriginalVolume, ppwszSnapshotDevice);
+			public Guid GetCurrentSnapshotSetId() mut => VT.GetCurrentSnapshotSetId(ref this);
+			public int32 GetContext() mut => VT.GetContext(ref this);
+			public VSS_APPLICATION_LEVEL GetCurrentLevel() mut => VT.GetCurrentLevel(ref this);
+			public Boolean IsPathAffected(PWSTR wszPath) mut => VT.IsPathAffected(ref this, wszPath);
+			public Boolean IsBootableSystemStateBackedUp() mut => VT.IsBootableSystemStateBackedUp(ref this);
+			public Boolean AreComponentsSelected() mut => VT.AreComponentsSelected(ref this);
+			public VSS_BACKUP_TYPE GetBackupType() mut => VT.GetBackupType(ref this);
+			public VSS_RESTORE_TYPE GetRestoreType() mut => VT.GetRestoreType(ref this);
+			public HRESULT SetWriterFailure(HRESULT hr) mut => VT.SetWriterFailure(ref this, hr);
+			public Boolean IsPartialFileSupportEnabled() mut => VT.IsPartialFileSupportEnabled(ref this);
+			public HRESULT InstallAlternateWriter(Guid idWriter, Guid clsid) mut => VT.InstallAlternateWriter(ref this, idWriter, clsid);
+			public IVssExamineWriterMetadata* GetIdentityInformation() mut => VT.GetIdentityInformation(ref this);
+			public HRESULT SetWriterFailureEx(HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage) mut => VT.SetWriterFailureEx(ref this, hr, hrApplication, wszApplicationMessage);
+			public HRESULT GetSessionId(out Guid idSession) mut => VT.GetSessionId(ref this, out idSession);
+			public Boolean IsWriterShuttingDown() mut => VT.IsWriterShuttingDown(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1121,34 +834,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddExcludeFiles(PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) mut
-			{
-				return VT.AddExcludeFiles(ref this, wszPath, wszFilespec, bRecursive);
-			}
-			public HRESULT AddComponent(VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, in uint8 pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) mut
-			{
-				return VT.AddComponent(ref this, ct, wszLogicalPath, wszComponentName, wszCaption, pbIcon, cbIcon, bRestoreMetadata, bNotifyOnBackupComplete, bSelectable, bSelectableForRestore, dwComponentFlags);
-			}
-			public HRESULT AddFilesToFileGroup(PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) mut
-			{
-				return VT.AddFilesToFileGroup(ref this, wszLogicalPath, wszGroupName, wszPath, wszFilespec, bRecursive, wszAlternateLocation, dwBackupTypeMask);
-			}
-			public HRESULT SetRestoreMethod(VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) mut
-			{
-				return VT.SetRestoreMethod(ref this, method, wszService, wszUserProcedure, writerRestore, bRebootRequired);
-			}
-			public HRESULT AddComponentDependency(PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) mut
-			{
-				return VT.AddComponentDependency(ref this, wszForLogicalPath, wszForComponentName, onWriterId, wszOnLogicalPath, wszOnComponentName);
-			}
-			public HRESULT SetBackupSchema(uint32 dwSchemaMask) mut
-			{
-				return VT.SetBackupSchema(ref this, dwSchemaMask);
-			}
-			public HRESULT SaveAsXML(out BSTR pbstrXML) mut
-			{
-				return VT.SaveAsXML(ref this, out pbstrXML);
-			}
+			public HRESULT AddExcludeFiles(PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) mut => VT.AddExcludeFiles(ref this, wszPath, wszFilespec, bRecursive);
+			public HRESULT AddComponent(VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, in uint8 pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) mut => VT.AddComponent(ref this, ct, wszLogicalPath, wszComponentName, wszCaption, pbIcon, cbIcon, bRestoreMetadata, bNotifyOnBackupComplete, bSelectable, bSelectableForRestore, dwComponentFlags);
+			public HRESULT AddFilesToFileGroup(PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) mut => VT.AddFilesToFileGroup(ref this, wszLogicalPath, wszGroupName, wszPath, wszFilespec, bRecursive, wszAlternateLocation, dwBackupTypeMask);
+			public HRESULT SetRestoreMethod(VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) mut => VT.SetRestoreMethod(ref this, method, wszService, wszUserProcedure, writerRestore, bRebootRequired);
+			public HRESULT AddComponentDependency(PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) mut => VT.AddComponentDependency(ref this, wszForLogicalPath, wszForComponentName, onWriterId, wszOnLogicalPath, wszOnComponentName);
+			public HRESULT SetBackupSchema(uint32 dwSchemaMask) mut => VT.SetBackupSchema(ref this, dwSchemaMask);
+			public HRESULT SaveAsXML(out BSTR pbstrXML) mut => VT.SaveAsXML(ref this, out pbstrXML);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1168,22 +861,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateMetadata(Guid writerId, PWSTR writerName, VSS_USAGE_TYPE usageType, uint32 versionMajor, uint32 versionMinor, uint32 reserved, out IVssCreateExpressWriterMetadata* ppMetadata) mut
-			{
-				return VT.CreateMetadata(ref this, writerId, writerName, usageType, versionMajor, versionMinor, reserved, out ppMetadata);
-			}
-			public HRESULT LoadMetadata(PWSTR metadata, uint32 reserved) mut
-			{
-				return VT.LoadMetadata(ref this, metadata, reserved);
-			}
-			public HRESULT Register() mut
-			{
-				return VT.Register(ref this);
-			}
-			public HRESULT Unregister(Guid writerId) mut
-			{
-				return VT.Unregister(ref this, writerId);
-			}
+			public HRESULT CreateMetadata(Guid writerId, PWSTR writerName, VSS_USAGE_TYPE usageType, uint32 versionMajor, uint32 versionMinor, uint32 reserved, out IVssCreateExpressWriterMetadata* ppMetadata) mut => VT.CreateMetadata(ref this, writerId, writerName, usageType, versionMajor, versionMinor, reserved, out ppMetadata);
+			public HRESULT LoadMetadata(PWSTR metadata, uint32 reserved) mut => VT.LoadMetadata(ref this, metadata, reserved);
+			public HRESULT Register() mut => VT.Register(ref this);
+			public HRESULT Unregister(Guid writerId) mut => VT.Unregister(ref this, writerId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1200,18 +882,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProviderMgmtInterface(Guid ProviderId, in Guid InterfaceId, out IUnknown* ppItf) mut
-			{
-				return VT.GetProviderMgmtInterface(ref this, ProviderId, InterfaceId, out ppItf);
-			}
-			public HRESULT QueryVolumesSupportedForSnapshots(Guid ProviderId, int32 lContext, out IVssEnumMgmtObject* ppEnum) mut
-			{
-				return VT.QueryVolumesSupportedForSnapshots(ref this, ProviderId, lContext, out ppEnum);
-			}
-			public HRESULT QuerySnapshotsByVolume(ref uint16 pwszVolumeName, Guid ProviderId, out IVssEnumObject* ppEnum) mut
-			{
-				return VT.QuerySnapshotsByVolume(ref this, ref pwszVolumeName, ProviderId, out ppEnum);
-			}
+			public HRESULT GetProviderMgmtInterface(Guid ProviderId, in Guid InterfaceId, out IUnknown* ppItf) mut => VT.GetProviderMgmtInterface(ref this, ProviderId, InterfaceId, out ppItf);
+			public HRESULT QueryVolumesSupportedForSnapshots(Guid ProviderId, int32 lContext, out IVssEnumMgmtObject* ppEnum) mut => VT.QueryVolumesSupportedForSnapshots(ref this, ProviderId, lContext, out ppEnum);
+			public HRESULT QuerySnapshotsByVolume(ref uint16 pwszVolumeName, Guid ProviderId, out IVssEnumObject* ppEnum) mut => VT.QuerySnapshotsByVolume(ref this, ref pwszVolumeName, ProviderId, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1227,10 +901,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMinDiffAreaSize(out int64 pllMinDiffAreaSize) mut
-			{
-				return VT.GetMinDiffAreaSize(ref this, out pllMinDiffAreaSize);
-			}
+			public HRESULT GetMinDiffAreaSize(out int64 pllMinDiffAreaSize) mut => VT.GetMinDiffAreaSize(ref this, out pllMinDiffAreaSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1244,30 +916,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddDiffArea(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) mut
-			{
-				return VT.AddDiffArea(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, llMaximumDiffSpace);
-			}
-			public HRESULT ChangeDiffAreaMaximumSize(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) mut
-			{
-				return VT.ChangeDiffAreaMaximumSize(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, llMaximumDiffSpace);
-			}
-			public HRESULT QueryVolumesSupportedForDiffAreas(ref uint16 pwszOriginalVolumeName, out IVssEnumMgmtObject* ppEnum) mut
-			{
-				return VT.QueryVolumesSupportedForDiffAreas(ref this, ref pwszOriginalVolumeName, out ppEnum);
-			}
-			public HRESULT QueryDiffAreasForVolume(ref uint16 pwszVolumeName, out IVssEnumMgmtObject* ppEnum) mut
-			{
-				return VT.QueryDiffAreasForVolume(ref this, ref pwszVolumeName, out ppEnum);
-			}
-			public HRESULT QueryDiffAreasOnVolume(ref uint16 pwszVolumeName, out IVssEnumMgmtObject* ppEnum) mut
-			{
-				return VT.QueryDiffAreasOnVolume(ref this, ref pwszVolumeName, out ppEnum);
-			}
-			public HRESULT QueryDiffAreasForSnapshot(Guid SnapshotId, out IVssEnumMgmtObject* ppEnum) mut
-			{
-				return VT.QueryDiffAreasForSnapshot(ref this, SnapshotId, out ppEnum);
-			}
+			public HRESULT AddDiffArea(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) mut => VT.AddDiffArea(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, llMaximumDiffSpace);
+			public HRESULT ChangeDiffAreaMaximumSize(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) mut => VT.ChangeDiffAreaMaximumSize(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, llMaximumDiffSpace);
+			public HRESULT QueryVolumesSupportedForDiffAreas(ref uint16 pwszOriginalVolumeName, out IVssEnumMgmtObject* ppEnum) mut => VT.QueryVolumesSupportedForDiffAreas(ref this, ref pwszOriginalVolumeName, out ppEnum);
+			public HRESULT QueryDiffAreasForVolume(ref uint16 pwszVolumeName, out IVssEnumMgmtObject* ppEnum) mut => VT.QueryDiffAreasForVolume(ref this, ref pwszVolumeName, out ppEnum);
+			public HRESULT QueryDiffAreasOnVolume(ref uint16 pwszVolumeName, out IVssEnumMgmtObject* ppEnum) mut => VT.QueryDiffAreasOnVolume(ref this, ref pwszVolumeName, out ppEnum);
+			public HRESULT QueryDiffAreasForSnapshot(Guid SnapshotId, out IVssEnumMgmtObject* ppEnum) mut => VT.QueryDiffAreasForSnapshot(ref this, SnapshotId, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1286,22 +941,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ChangeDiffAreaMaximumSizeEx(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace, BOOL bVolatile) mut
-			{
-				return VT.ChangeDiffAreaMaximumSizeEx(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, llMaximumDiffSpace, bVolatile);
-			}
-			public HRESULT MigrateDiffAreas(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, ref uint16 pwszNewDiffAreaVolumeName) mut
-			{
-				return VT.MigrateDiffAreas(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, ref pwszNewDiffAreaVolumeName);
-			}
-			public HRESULT QueryMigrationStatus(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, out IVssAsync* ppAsync) mut
-			{
-				return VT.QueryMigrationStatus(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, out ppAsync);
-			}
-			public HRESULT SetSnapshotPriority(Guid idSnapshot, uint8 priority) mut
-			{
-				return VT.SetSnapshotPriority(ref this, idSnapshot, priority);
-			}
+			public HRESULT ChangeDiffAreaMaximumSizeEx(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace, BOOL bVolatile) mut => VT.ChangeDiffAreaMaximumSizeEx(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, llMaximumDiffSpace, bVolatile);
+			public HRESULT MigrateDiffAreas(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, ref uint16 pwszNewDiffAreaVolumeName) mut => VT.MigrateDiffAreas(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, ref pwszNewDiffAreaVolumeName);
+			public HRESULT QueryMigrationStatus(ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, out IVssAsync* ppAsync) mut => VT.QueryMigrationStatus(ref this, ref pwszVolumeName, ref pwszDiffAreaVolumeName, out ppAsync);
+			public HRESULT SetSnapshotPriority(Guid idSnapshot, uint8 priority) mut => VT.SetSnapshotPriority(ref this, idSnapshot, priority);
+
 			[CRepr]
 			public struct VTable : IVssDifferentialSoftwareSnapshotMgmt.VTable
 			{
@@ -1318,26 +962,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetVolumeProtectLevel(ref uint16 pwszVolumeName, VSS_PROTECTION_LEVEL protectionLevel) mut
-			{
-				return VT.SetVolumeProtectLevel(ref this, ref pwszVolumeName, protectionLevel);
-			}
-			public HRESULT GetVolumeProtectLevel(ref uint16 pwszVolumeName, out VSS_VOLUME_PROTECTION_INFO protectionLevel) mut
-			{
-				return VT.GetVolumeProtectLevel(ref this, ref pwszVolumeName, out protectionLevel);
-			}
-			public HRESULT ClearVolumeProtectFault(ref uint16 pwszVolumeName) mut
-			{
-				return VT.ClearVolumeProtectFault(ref this, ref pwszVolumeName);
-			}
-			public HRESULT DeleteUnusedDiffAreas(ref uint16 pwszDiffAreaVolumeName) mut
-			{
-				return VT.DeleteUnusedDiffAreas(ref this, ref pwszDiffAreaVolumeName);
-			}
-			public HRESULT QuerySnapshotDeltaBitmap(Guid idSnapshotOlder, Guid idSnapshotYounger, out uint32 pcBlockSizePerBit, out uint32 pcBitmapLength, uint8** ppbBitmap) mut
-			{
-				return VT.QuerySnapshotDeltaBitmap(ref this, idSnapshotOlder, idSnapshotYounger, out pcBlockSizePerBit, out pcBitmapLength, ppbBitmap);
-			}
+			public HRESULT SetVolumeProtectLevel(ref uint16 pwszVolumeName, VSS_PROTECTION_LEVEL protectionLevel) mut => VT.SetVolumeProtectLevel(ref this, ref pwszVolumeName, protectionLevel);
+			public HRESULT GetVolumeProtectLevel(ref uint16 pwszVolumeName, out VSS_VOLUME_PROTECTION_INFO protectionLevel) mut => VT.GetVolumeProtectLevel(ref this, ref pwszVolumeName, out protectionLevel);
+			public HRESULT ClearVolumeProtectFault(ref uint16 pwszVolumeName) mut => VT.ClearVolumeProtectFault(ref this, ref pwszVolumeName);
+			public HRESULT DeleteUnusedDiffAreas(ref uint16 pwszDiffAreaVolumeName) mut => VT.DeleteUnusedDiffAreas(ref this, ref pwszDiffAreaVolumeName);
+			public HRESULT QuerySnapshotDeltaBitmap(Guid idSnapshotOlder, Guid idSnapshotYounger, out uint32 pcBlockSizePerBit, out uint32 pcBitmapLength, uint8** ppbBitmap) mut => VT.QuerySnapshotDeltaBitmap(ref this, idSnapshotOlder, idSnapshotYounger, out pcBlockSizePerBit, out pcBitmapLength, ppbBitmap);
+
 			[CRepr]
 			public struct VTable : IVssDifferentialSoftwareSnapshotMgmt2.VTable
 			{
@@ -1355,22 +985,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, VSS_MGMT_OBJECT_PROP* rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IVssEnumMgmtObject* ppenum) mut
-			{
-				return VT.Clone(ref this, out ppenum);
-			}
+			public HRESULT Next(uint32 celt, VSS_MGMT_OBJECT_PROP* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IVssEnumMgmtObject* ppenum) mut => VT.Clone(ref this, out ppenum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1387,22 +1006,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterProvider(Guid pProviderId, Guid ClassId, ref uint16 pwszProviderName, VSS_PROVIDER_TYPE eProviderType, ref uint16 pwszProviderVersion, Guid ProviderVersionId) mut
-			{
-				return VT.RegisterProvider(ref this, pProviderId, ClassId, ref pwszProviderName, eProviderType, ref pwszProviderVersion, ProviderVersionId);
-			}
-			public HRESULT UnregisterProvider(Guid ProviderId) mut
-			{
-				return VT.UnregisterProvider(ref this, ProviderId);
-			}
-			public HRESULT QueryProviders(out IVssEnumObject* ppEnum) mut
-			{
-				return VT.QueryProviders(ref this, out ppEnum);
-			}
-			public HRESULT AbortAllSnapshotsInProgress() mut
-			{
-				return VT.AbortAllSnapshotsInProgress(ref this);
-			}
+			public HRESULT RegisterProvider(Guid pProviderId, Guid ClassId, ref uint16 pwszProviderName, VSS_PROVIDER_TYPE eProviderType, ref uint16 pwszProviderVersion, Guid ProviderVersionId) mut => VT.RegisterProvider(ref this, pProviderId, ClassId, ref pwszProviderName, eProviderType, ref pwszProviderVersion, ProviderVersionId);
+			public HRESULT UnregisterProvider(Guid ProviderId) mut => VT.UnregisterProvider(ref this, ProviderId);
+			public HRESULT QueryProviders(out IVssEnumObject* ppEnum) mut => VT.QueryProviders(ref this, out ppEnum);
+			public HRESULT AbortAllSnapshotsInProgress() mut => VT.AbortAllSnapshotsInProgress(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1419,18 +1027,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProviderCapability(Guid pProviderId, out uint64 pllOriginalCapabilityMask) mut
-			{
-				return VT.GetProviderCapability(ref this, pProviderId, out pllOriginalCapabilityMask);
-			}
-			public HRESULT GetProviderContext(Guid ProviderId, out int32 plContext) mut
-			{
-				return VT.GetProviderContext(ref this, ProviderId, out plContext);
-			}
-			public HRESULT SetProviderContext(Guid ProviderId, int32 lContext) mut
-			{
-				return VT.SetProviderContext(ref this, ProviderId, lContext);
-			}
+			public HRESULT GetProviderCapability(Guid pProviderId, out uint64 pllOriginalCapabilityMask) mut => VT.GetProviderCapability(ref this, pProviderId, out pllOriginalCapabilityMask);
+			public HRESULT GetProviderContext(Guid ProviderId, out int32 plContext) mut => VT.GetProviderContext(ref this, ProviderId, out plContext);
+			public HRESULT SetProviderContext(Guid ProviderId, int32 lContext) mut => VT.SetProviderContext(ref this, ProviderId, lContext);
+
 			[CRepr]
 			public struct VTable : IVssAdmin.VTable
 			{
@@ -1446,46 +1046,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetContext(int32 lContext) mut
-			{
-				return VT.SetContext(ref this, lContext);
-			}
-			public HRESULT GetSnapshotProperties(Guid SnapshotId, out VSS_SNAPSHOT_PROP pProp) mut
-			{
-				return VT.GetSnapshotProperties(ref this, SnapshotId, out pProp);
-			}
-			public HRESULT Query(Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, out IVssEnumObject* ppEnum) mut
-			{
-				return VT.Query(ref this, QueriedObjectId, eQueriedObjectType, eReturnedObjectsType, out ppEnum);
-			}
-			public HRESULT DeleteSnapshots(Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, out int32 plDeletedSnapshots, out Guid pNondeletedSnapshotID) mut
-			{
-				return VT.DeleteSnapshots(ref this, SourceObjectId, eSourceObjectType, bForceDelete, out plDeletedSnapshots, out pNondeletedSnapshotID);
-			}
-			public HRESULT BeginPrepareSnapshot(Guid SnapshotSetId, Guid SnapshotId, ref uint16 pwszVolumeName, int32 lNewContext) mut
-			{
-				return VT.BeginPrepareSnapshot(ref this, SnapshotSetId, SnapshotId, ref pwszVolumeName, lNewContext);
-			}
-			public HRESULT IsVolumeSupported(ref uint16 pwszVolumeName, out BOOL pbSupportedByThisProvider) mut
-			{
-				return VT.IsVolumeSupported(ref this, ref pwszVolumeName, out pbSupportedByThisProvider);
-			}
-			public HRESULT IsVolumeSnapshotted(ref uint16 pwszVolumeName, out BOOL pbSnapshotsPresent, out int32 plSnapshotCompatibility) mut
-			{
-				return VT.IsVolumeSnapshotted(ref this, ref pwszVolumeName, out pbSnapshotsPresent, out plSnapshotCompatibility);
-			}
-			public HRESULT SetSnapshotProperty(Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) mut
-			{
-				return VT.SetSnapshotProperty(ref this, SnapshotId, eSnapshotPropertyId, vProperty);
-			}
-			public HRESULT RevertToSnapshot(Guid SnapshotId) mut
-			{
-				return VT.RevertToSnapshot(ref this, SnapshotId);
-			}
-			public HRESULT QueryRevertStatus(ref uint16 pwszVolume, out IVssAsync* ppAsync) mut
-			{
-				return VT.QueryRevertStatus(ref this, ref pwszVolume, out ppAsync);
-			}
+			public HRESULT SetContext(int32 lContext) mut => VT.SetContext(ref this, lContext);
+			public HRESULT GetSnapshotProperties(Guid SnapshotId, out VSS_SNAPSHOT_PROP pProp) mut => VT.GetSnapshotProperties(ref this, SnapshotId, out pProp);
+			public HRESULT Query(Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, out IVssEnumObject* ppEnum) mut => VT.Query(ref this, QueriedObjectId, eQueriedObjectType, eReturnedObjectsType, out ppEnum);
+			public HRESULT DeleteSnapshots(Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, out int32 plDeletedSnapshots, out Guid pNondeletedSnapshotID) mut => VT.DeleteSnapshots(ref this, SourceObjectId, eSourceObjectType, bForceDelete, out plDeletedSnapshots, out pNondeletedSnapshotID);
+			public HRESULT BeginPrepareSnapshot(Guid SnapshotSetId, Guid SnapshotId, ref uint16 pwszVolumeName, int32 lNewContext) mut => VT.BeginPrepareSnapshot(ref this, SnapshotSetId, SnapshotId, ref pwszVolumeName, lNewContext);
+			public HRESULT IsVolumeSupported(ref uint16 pwszVolumeName, out BOOL pbSupportedByThisProvider) mut => VT.IsVolumeSupported(ref this, ref pwszVolumeName, out pbSupportedByThisProvider);
+			public HRESULT IsVolumeSnapshotted(ref uint16 pwszVolumeName, out BOOL pbSnapshotsPresent, out int32 plSnapshotCompatibility) mut => VT.IsVolumeSnapshotted(ref this, ref pwszVolumeName, out pbSnapshotsPresent, out plSnapshotCompatibility);
+			public HRESULT SetSnapshotProperty(Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) mut => VT.SetSnapshotProperty(ref this, SnapshotId, eSnapshotPropertyId, vProperty);
+			public HRESULT RevertToSnapshot(Guid SnapshotId) mut => VT.RevertToSnapshot(ref this, SnapshotId);
+			public HRESULT QueryRevertStatus(ref uint16 pwszVolume, out IVssAsync* ppAsync) mut => VT.QueryRevertStatus(ref this, ref pwszVolume, out ppAsync);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1508,34 +1079,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EndPrepareSnapshots(Guid SnapshotSetId) mut
-			{
-				return VT.EndPrepareSnapshots(ref this, SnapshotSetId);
-			}
-			public HRESULT PreCommitSnapshots(Guid SnapshotSetId) mut
-			{
-				return VT.PreCommitSnapshots(ref this, SnapshotSetId);
-			}
-			public HRESULT CommitSnapshots(Guid SnapshotSetId) mut
-			{
-				return VT.CommitSnapshots(ref this, SnapshotSetId);
-			}
-			public HRESULT PostCommitSnapshots(Guid SnapshotSetId, int32 lSnapshotsCount) mut
-			{
-				return VT.PostCommitSnapshots(ref this, SnapshotSetId, lSnapshotsCount);
-			}
-			public HRESULT PreFinalCommitSnapshots(Guid SnapshotSetId) mut
-			{
-				return VT.PreFinalCommitSnapshots(ref this, SnapshotSetId);
-			}
-			public HRESULT PostFinalCommitSnapshots(Guid SnapshotSetId) mut
-			{
-				return VT.PostFinalCommitSnapshots(ref this, SnapshotSetId);
-			}
-			public HRESULT AbortSnapshots(Guid SnapshotSetId) mut
-			{
-				return VT.AbortSnapshots(ref this, SnapshotSetId);
-			}
+			public HRESULT EndPrepareSnapshots(Guid SnapshotSetId) mut => VT.EndPrepareSnapshots(ref this, SnapshotSetId);
+			public HRESULT PreCommitSnapshots(Guid SnapshotSetId) mut => VT.PreCommitSnapshots(ref this, SnapshotSetId);
+			public HRESULT CommitSnapshots(Guid SnapshotSetId) mut => VT.CommitSnapshots(ref this, SnapshotSetId);
+			public HRESULT PostCommitSnapshots(Guid SnapshotSetId, int32 lSnapshotsCount) mut => VT.PostCommitSnapshots(ref this, SnapshotSetId, lSnapshotsCount);
+			public HRESULT PreFinalCommitSnapshots(Guid SnapshotSetId) mut => VT.PreFinalCommitSnapshots(ref this, SnapshotSetId);
+			public HRESULT PostFinalCommitSnapshots(Guid SnapshotSetId) mut => VT.PostFinalCommitSnapshots(ref this, SnapshotSetId);
+			public HRESULT AbortSnapshots(Guid SnapshotSetId) mut => VT.AbortSnapshots(ref this, SnapshotSetId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1555,14 +1106,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnLoad(ref IUnknown pCallback) mut
-			{
-				return VT.OnLoad(ref this, ref pCallback);
-			}
-			public HRESULT OnUnload(BOOL bForceUnload) mut
-			{
-				return VT.OnUnload(ref this, bForceUnload);
-			}
+			public HRESULT OnLoad(ref IUnknown pCallback) mut => VT.OnLoad(ref this, ref pCallback);
+			public HRESULT OnUnload(BOOL bForceUnload) mut => VT.OnUnload(ref this, bForceUnload);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1577,30 +1123,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AreLunsSupported(int32 lLunCount, int32 lContext, uint16** rgwszDevices, VDS_LUN_INFORMATION* pLunInformation, out BOOL pbIsSupported) mut
-			{
-				return VT.AreLunsSupported(ref this, lLunCount, lContext, rgwszDevices, pLunInformation, out pbIsSupported);
-			}
-			public HRESULT FillInLunInfo(ref uint16 wszDeviceName, out VDS_LUN_INFORMATION pLunInfo, out BOOL pbIsSupported) mut
-			{
-				return VT.FillInLunInfo(ref this, ref wszDeviceName, out pLunInfo, out pbIsSupported);
-			}
-			public HRESULT BeginPrepareSnapshot(Guid SnapshotSetId, Guid SnapshotId, int32 lContext, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgLunInformation) mut
-			{
-				return VT.BeginPrepareSnapshot(ref this, SnapshotSetId, SnapshotId, lContext, lLunCount, rgDeviceNames, rgLunInformation);
-			}
-			public HRESULT GetTargetLuns(int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgSourceLuns, VDS_LUN_INFORMATION* rgDestinationLuns) mut
-			{
-				return VT.GetTargetLuns(ref this, lLunCount, rgDeviceNames, rgSourceLuns, rgDestinationLuns);
-			}
-			public HRESULT LocateLuns(int32 lLunCount, VDS_LUN_INFORMATION* rgSourceLuns) mut
-			{
-				return VT.LocateLuns(ref this, lLunCount, rgSourceLuns);
-			}
-			public HRESULT OnLunEmpty(ref uint16 wszDeviceName, ref VDS_LUN_INFORMATION pInformation) mut
-			{
-				return VT.OnLunEmpty(ref this, ref wszDeviceName, ref pInformation);
-			}
+			public HRESULT AreLunsSupported(int32 lLunCount, int32 lContext, uint16** rgwszDevices, VDS_LUN_INFORMATION* pLunInformation, out BOOL pbIsSupported) mut => VT.AreLunsSupported(ref this, lLunCount, lContext, rgwszDevices, pLunInformation, out pbIsSupported);
+			public HRESULT FillInLunInfo(ref uint16 wszDeviceName, out VDS_LUN_INFORMATION pLunInfo, out BOOL pbIsSupported) mut => VT.FillInLunInfo(ref this, ref wszDeviceName, out pLunInfo, out pbIsSupported);
+			public HRESULT BeginPrepareSnapshot(Guid SnapshotSetId, Guid SnapshotId, int32 lContext, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgLunInformation) mut => VT.BeginPrepareSnapshot(ref this, SnapshotSetId, SnapshotId, lContext, lLunCount, rgDeviceNames, rgLunInformation);
+			public HRESULT GetTargetLuns(int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgSourceLuns, VDS_LUN_INFORMATION* rgDestinationLuns) mut => VT.GetTargetLuns(ref this, lLunCount, rgDeviceNames, rgSourceLuns, rgDestinationLuns);
+			public HRESULT LocateLuns(int32 lLunCount, VDS_LUN_INFORMATION* rgSourceLuns) mut => VT.LocateLuns(ref this, lLunCount, rgSourceLuns);
+			public HRESULT OnLunEmpty(ref uint16 wszDeviceName, ref VDS_LUN_INFORMATION pInformation) mut => VT.OnLunEmpty(ref this, ref wszDeviceName, ref pInformation);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1619,22 +1148,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProviderCapabilities(out uint64 pllOriginalCapabilityMask) mut
-			{
-				return VT.GetProviderCapabilities(ref this, out pllOriginalCapabilityMask);
-			}
-			public HRESULT OnLunStateChange(VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount, uint32 dwFlags) mut
-			{
-				return VT.OnLunStateChange(ref this, pSnapshotLuns, pOriginalLuns, dwCount, dwFlags);
-			}
-			public HRESULT ResyncLuns(VDS_LUN_INFORMATION* pSourceLuns, VDS_LUN_INFORMATION* pTargetLuns, uint32 dwCount, out IVssAsync* ppAsync) mut
-			{
-				return VT.ResyncLuns(ref this, pSourceLuns, pTargetLuns, dwCount, out ppAsync);
-			}
-			public HRESULT OnReuseLuns(VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount) mut
-			{
-				return VT.OnReuseLuns(ref this, pSnapshotLuns, pOriginalLuns, dwCount);
-			}
+			public HRESULT GetProviderCapabilities(out uint64 pllOriginalCapabilityMask) mut => VT.GetProviderCapabilities(ref this, out pllOriginalCapabilityMask);
+			public HRESULT OnLunStateChange(VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount, uint32 dwFlags) mut => VT.OnLunStateChange(ref this, pSnapshotLuns, pOriginalLuns, dwCount, dwFlags);
+			public HRESULT ResyncLuns(VDS_LUN_INFORMATION* pSourceLuns, VDS_LUN_INFORMATION* pTargetLuns, uint32 dwCount, out IVssAsync* ppAsync) mut => VT.ResyncLuns(ref this, pSourceLuns, pTargetLuns, dwCount, out ppAsync);
+			public HRESULT OnReuseLuns(VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount) mut => VT.OnReuseLuns(ref this, pSnapshotLuns, pOriginalLuns, dwCount);
+
 			[CRepr]
 			public struct VTable : IVssHardwareSnapshotProvider.VTable
 			{
@@ -1651,38 +1169,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetContext(int32 lContext) mut
-			{
-				return VT.SetContext(ref this, lContext);
-			}
-			public HRESULT GetSnapshotProperties(Guid SnapshotId, out VSS_SNAPSHOT_PROP pProp) mut
-			{
-				return VT.GetSnapshotProperties(ref this, SnapshotId, out pProp);
-			}
-			public HRESULT Query(Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, out IVssEnumObject* ppEnum) mut
-			{
-				return VT.Query(ref this, QueriedObjectId, eQueriedObjectType, eReturnedObjectsType, out ppEnum);
-			}
-			public HRESULT DeleteSnapshots(Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, out int32 plDeletedSnapshots, out Guid pNondeletedSnapshotID) mut
-			{
-				return VT.DeleteSnapshots(ref this, SourceObjectId, eSourceObjectType, bForceDelete, out plDeletedSnapshots, out pNondeletedSnapshotID);
-			}
-			public HRESULT BeginPrepareSnapshot(Guid SnapshotSetId, Guid SnapshotId, ref uint16 pwszSharePath, int32 lNewContext, Guid ProviderId) mut
-			{
-				return VT.BeginPrepareSnapshot(ref this, SnapshotSetId, SnapshotId, ref pwszSharePath, lNewContext, ProviderId);
-			}
-			public HRESULT IsPathSupported(ref uint16 pwszSharePath, out BOOL pbSupportedByThisProvider) mut
-			{
-				return VT.IsPathSupported(ref this, ref pwszSharePath, out pbSupportedByThisProvider);
-			}
-			public HRESULT IsPathSnapshotted(ref uint16 pwszSharePath, out BOOL pbSnapshotsPresent, out int32 plSnapshotCompatibility) mut
-			{
-				return VT.IsPathSnapshotted(ref this, ref pwszSharePath, out pbSnapshotsPresent, out plSnapshotCompatibility);
-			}
-			public HRESULT SetSnapshotProperty(Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) mut
-			{
-				return VT.SetSnapshotProperty(ref this, SnapshotId, eSnapshotPropertyId, vProperty);
-			}
+			public HRESULT SetContext(int32 lContext) mut => VT.SetContext(ref this, lContext);
+			public HRESULT GetSnapshotProperties(Guid SnapshotId, out VSS_SNAPSHOT_PROP pProp) mut => VT.GetSnapshotProperties(ref this, SnapshotId, out pProp);
+			public HRESULT Query(Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, out IVssEnumObject* ppEnum) mut => VT.Query(ref this, QueriedObjectId, eQueriedObjectType, eReturnedObjectsType, out ppEnum);
+			public HRESULT DeleteSnapshots(Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, out int32 plDeletedSnapshots, out Guid pNondeletedSnapshotID) mut => VT.DeleteSnapshots(ref this, SourceObjectId, eSourceObjectType, bForceDelete, out plDeletedSnapshots, out pNondeletedSnapshotID);
+			public HRESULT BeginPrepareSnapshot(Guid SnapshotSetId, Guid SnapshotId, ref uint16 pwszSharePath, int32 lNewContext, Guid ProviderId) mut => VT.BeginPrepareSnapshot(ref this, SnapshotSetId, SnapshotId, ref pwszSharePath, lNewContext, ProviderId);
+			public HRESULT IsPathSupported(ref uint16 pwszSharePath, out BOOL pbSupportedByThisProvider) mut => VT.IsPathSupported(ref this, ref pwszSharePath, out pbSupportedByThisProvider);
+			public HRESULT IsPathSnapshotted(ref uint16 pwszSharePath, out BOOL pbSnapshotsPresent, out int32 plSnapshotCompatibility) mut => VT.IsPathSnapshotted(ref this, ref pwszSharePath, out pbSnapshotsPresent, out plSnapshotCompatibility);
+			public HRESULT SetSnapshotProperty(Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) mut => VT.SetSnapshotProperty(ref this, SnapshotId, eSnapshotPropertyId, vProperty);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

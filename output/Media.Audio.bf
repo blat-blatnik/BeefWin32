@@ -1917,18 +1917,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 HandleInComingCall(uint32 dwCallType, HTASK htaskCaller, uint32 dwTickCount, INTERFACEINFO* lpInterfaceInfo) mut
-			{
-				return VT.HandleInComingCall(ref this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
-			}
-			public uint32 RetryRejectedCall(HTASK htaskCallee, uint32 dwTickCount, uint32 dwRejectType) mut
-			{
-				return VT.RetryRejectedCall(ref this, htaskCallee, dwTickCount, dwRejectType);
-			}
-			public uint32 MessagePending(HTASK htaskCallee, uint32 dwTickCount, uint32 dwPendingType) mut
-			{
-				return VT.MessagePending(ref this, htaskCallee, dwTickCount, dwPendingType);
-			}
+			public uint32 HandleInComingCall(uint32 dwCallType, HTASK htaskCaller, uint32 dwTickCount, INTERFACEINFO* lpInterfaceInfo) mut => VT.HandleInComingCall(ref this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
+			public uint32 RetryRejectedCall(HTASK htaskCallee, uint32 dwTickCount, uint32 dwRejectType) mut => VT.RetryRejectedCall(ref this, htaskCallee, dwTickCount, dwRejectType);
+			public uint32 MessagePending(HTASK htaskCallee, uint32 dwTickCount, uint32 dwPendingType) mut => VT.MessagePending(ref this, htaskCallee, dwTickCount, dwPendingType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1944,54 +1936,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(AUDCLNT_SHAREMODE ShareMode, uint32 StreamFlags, int64 hnsBufferDuration, int64 hnsPeriodicity, in WAVEFORMATEX pFormat, Guid* AudioSessionGuid) mut
-			{
-				return VT.Initialize(ref this, ShareMode, StreamFlags, hnsBufferDuration, hnsPeriodicity, pFormat, AudioSessionGuid);
-			}
-			public HRESULT GetBufferSize(out uint32 pNumBufferFrames) mut
-			{
-				return VT.GetBufferSize(ref this, out pNumBufferFrames);
-			}
-			public HRESULT GetStreamLatency(out int64 phnsLatency) mut
-			{
-				return VT.GetStreamLatency(ref this, out phnsLatency);
-			}
-			public HRESULT GetCurrentPadding(out uint32 pNumPaddingFrames) mut
-			{
-				return VT.GetCurrentPadding(ref this, out pNumPaddingFrames);
-			}
-			public HRESULT IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, in WAVEFORMATEX pFormat, WAVEFORMATEX** ppClosestMatch) mut
-			{
-				return VT.IsFormatSupported(ref this, ShareMode, pFormat, ppClosestMatch);
-			}
-			public HRESULT GetMixFormat(out WAVEFORMATEX* ppDeviceFormat) mut
-			{
-				return VT.GetMixFormat(ref this, out ppDeviceFormat);
-			}
-			public HRESULT GetDevicePeriod(int64* phnsDefaultDevicePeriod, int64* phnsMinimumDevicePeriod) mut
-			{
-				return VT.GetDevicePeriod(ref this, phnsDefaultDevicePeriod, phnsMinimumDevicePeriod);
-			}
-			public HRESULT Start() mut
-			{
-				return VT.Start(ref this);
-			}
-			public HRESULT Stop() mut
-			{
-				return VT.Stop(ref this);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT SetEventHandle(HANDLE eventHandle) mut
-			{
-				return VT.SetEventHandle(ref this, eventHandle);
-			}
-			public HRESULT GetService(in Guid riid, void** ppv) mut
-			{
-				return VT.GetService(ref this, riid, ppv);
-			}
+			public HRESULT Initialize(AUDCLNT_SHAREMODE ShareMode, uint32 StreamFlags, int64 hnsBufferDuration, int64 hnsPeriodicity, in WAVEFORMATEX pFormat, Guid* AudioSessionGuid) mut => VT.Initialize(ref this, ShareMode, StreamFlags, hnsBufferDuration, hnsPeriodicity, pFormat, AudioSessionGuid);
+			public HRESULT GetBufferSize(out uint32 pNumBufferFrames) mut => VT.GetBufferSize(ref this, out pNumBufferFrames);
+			public HRESULT GetStreamLatency(out int64 phnsLatency) mut => VT.GetStreamLatency(ref this, out phnsLatency);
+			public HRESULT GetCurrentPadding(out uint32 pNumPaddingFrames) mut => VT.GetCurrentPadding(ref this, out pNumPaddingFrames);
+			public HRESULT IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, in WAVEFORMATEX pFormat, WAVEFORMATEX** ppClosestMatch) mut => VT.IsFormatSupported(ref this, ShareMode, pFormat, ppClosestMatch);
+			public HRESULT GetMixFormat(out WAVEFORMATEX* ppDeviceFormat) mut => VT.GetMixFormat(ref this, out ppDeviceFormat);
+			public HRESULT GetDevicePeriod(int64* phnsDefaultDevicePeriod, int64* phnsMinimumDevicePeriod) mut => VT.GetDevicePeriod(ref this, phnsDefaultDevicePeriod, phnsMinimumDevicePeriod);
+			public HRESULT Start() mut => VT.Start(ref this);
+			public HRESULT Stop() mut => VT.Stop(ref this);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT SetEventHandle(HANDLE eventHandle) mut => VT.SetEventHandle(ref this, eventHandle);
+			public HRESULT GetService(in Guid riid, void** ppv) mut => VT.GetService(ref this, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2016,18 +1973,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY Category, out BOOL pbOffloadCapable) mut
-			{
-				return VT.IsOffloadCapable(ref this, Category, out pbOffloadCapable);
-			}
-			public HRESULT SetClientProperties(in AudioClientProperties pProperties) mut
-			{
-				return VT.SetClientProperties(ref this, pProperties);
-			}
-			public HRESULT GetBufferSizeLimits(in WAVEFORMATEX pFormat, BOOL bEventDriven, out int64 phnsMinBufferDuration, out int64 phnsMaxBufferDuration) mut
-			{
-				return VT.GetBufferSizeLimits(ref this, pFormat, bEventDriven, out phnsMinBufferDuration, out phnsMaxBufferDuration);
-			}
+			public HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY Category, out BOOL pbOffloadCapable) mut => VT.IsOffloadCapable(ref this, Category, out pbOffloadCapable);
+			public HRESULT SetClientProperties(in AudioClientProperties pProperties) mut => VT.SetClientProperties(ref this, pProperties);
+			public HRESULT GetBufferSizeLimits(in WAVEFORMATEX pFormat, BOOL bEventDriven, out int64 phnsMinBufferDuration, out int64 phnsMaxBufferDuration) mut => VT.GetBufferSizeLimits(ref this, pFormat, bEventDriven, out phnsMinBufferDuration, out phnsMaxBufferDuration);
+
 			[CRepr]
 			public struct VTable : IAudioClient.VTable
 			{
@@ -2043,18 +1992,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSharedModeEnginePeriod(in WAVEFORMATEX pFormat, out uint32 pDefaultPeriodInFrames, out uint32 pFundamentalPeriodInFrames, out uint32 pMinPeriodInFrames, out uint32 pMaxPeriodInFrames) mut
-			{
-				return VT.GetSharedModeEnginePeriod(ref this, pFormat, out pDefaultPeriodInFrames, out pFundamentalPeriodInFrames, out pMinPeriodInFrames, out pMaxPeriodInFrames);
-			}
-			public HRESULT GetCurrentSharedModeEnginePeriod(out WAVEFORMATEX* ppFormat, out uint32 pCurrentPeriodInFrames) mut
-			{
-				return VT.GetCurrentSharedModeEnginePeriod(ref this, out ppFormat, out pCurrentPeriodInFrames);
-			}
-			public HRESULT InitializeSharedAudioStream(uint32 StreamFlags, uint32 PeriodInFrames, in WAVEFORMATEX pFormat, Guid* AudioSessionGuid) mut
-			{
-				return VT.InitializeSharedAudioStream(ref this, StreamFlags, PeriodInFrames, pFormat, AudioSessionGuid);
-			}
+			public HRESULT GetSharedModeEnginePeriod(in WAVEFORMATEX pFormat, out uint32 pDefaultPeriodInFrames, out uint32 pFundamentalPeriodInFrames, out uint32 pMinPeriodInFrames, out uint32 pMaxPeriodInFrames) mut => VT.GetSharedModeEnginePeriod(ref this, pFormat, out pDefaultPeriodInFrames, out pFundamentalPeriodInFrames, out pMinPeriodInFrames, out pMaxPeriodInFrames);
+			public HRESULT GetCurrentSharedModeEnginePeriod(out WAVEFORMATEX* ppFormat, out uint32 pCurrentPeriodInFrames) mut => VT.GetCurrentSharedModeEnginePeriod(ref this, out ppFormat, out pCurrentPeriodInFrames);
+			public HRESULT InitializeSharedAudioStream(uint32 StreamFlags, uint32 PeriodInFrames, in WAVEFORMATEX pFormat, Guid* AudioSessionGuid) mut => VT.InitializeSharedAudioStream(ref this, StreamFlags, PeriodInFrames, pFormat, AudioSessionGuid);
+
 			[CRepr]
 			public struct VTable : IAudioClient2.VTable
 			{
@@ -2070,14 +2011,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBuffer(uint32 NumFramesRequested, out uint8* ppData) mut
-			{
-				return VT.GetBuffer(ref this, NumFramesRequested, out ppData);
-			}
-			public HRESULT ReleaseBuffer(uint32 NumFramesWritten, uint32 dwFlags) mut
-			{
-				return VT.ReleaseBuffer(ref this, NumFramesWritten, dwFlags);
-			}
+			public HRESULT GetBuffer(uint32 NumFramesRequested, out uint8* ppData) mut => VT.GetBuffer(ref this, NumFramesRequested, out ppData);
+			public HRESULT ReleaseBuffer(uint32 NumFramesWritten, uint32 dwFlags) mut => VT.ReleaseBuffer(ref this, NumFramesWritten, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2092,18 +2028,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBuffer(out uint8* ppData, out uint32 pNumFramesToRead, out uint32 pdwFlags, uint64* pu64DevicePosition, uint64* pu64QPCPosition) mut
-			{
-				return VT.GetBuffer(ref this, out ppData, out pNumFramesToRead, out pdwFlags, pu64DevicePosition, pu64QPCPosition);
-			}
-			public HRESULT ReleaseBuffer(uint32 NumFramesRead) mut
-			{
-				return VT.ReleaseBuffer(ref this, NumFramesRead);
-			}
-			public HRESULT GetNextPacketSize(out uint32 pNumFramesInNextPacket) mut
-			{
-				return VT.GetNextPacketSize(ref this, out pNumFramesInNextPacket);
-			}
+			public HRESULT GetBuffer(out uint8* ppData, out uint32 pNumFramesToRead, out uint32 pdwFlags, uint64* pu64DevicePosition, uint64* pu64QPCPosition) mut => VT.GetBuffer(ref this, out ppData, out pNumFramesToRead, out pdwFlags, pu64DevicePosition, pu64QPCPosition);
+			public HRESULT ReleaseBuffer(uint32 NumFramesRead) mut => VT.ReleaseBuffer(ref this, NumFramesRead);
+			public HRESULT GetNextPacketSize(out uint32 pNumFramesInNextPacket) mut => VT.GetNextPacketSize(ref this, out pNumFramesInNextPacket);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2119,18 +2047,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFrequency(out uint64 pu64Frequency) mut
-			{
-				return VT.GetFrequency(ref this, out pu64Frequency);
-			}
-			public HRESULT GetPosition(out uint64 pu64Position, uint64* pu64QPCPosition) mut
-			{
-				return VT.GetPosition(ref this, out pu64Position, pu64QPCPosition);
-			}
-			public HRESULT GetCharacteristics(out uint32 pdwCharacteristics) mut
-			{
-				return VT.GetCharacteristics(ref this, out pdwCharacteristics);
-			}
+			public HRESULT GetFrequency(out uint64 pu64Frequency) mut => VT.GetFrequency(ref this, out pu64Frequency);
+			public HRESULT GetPosition(out uint64 pu64Position, uint64* pu64QPCPosition) mut => VT.GetPosition(ref this, out pu64Position, pu64QPCPosition);
+			public HRESULT GetCharacteristics(out uint32 pdwCharacteristics) mut => VT.GetCharacteristics(ref this, out pdwCharacteristics);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2146,10 +2066,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevicePosition(out uint64 DevicePosition, uint64* QPCPosition) mut
-			{
-				return VT.GetDevicePosition(ref this, out DevicePosition, QPCPosition);
-			}
+			public HRESULT GetDevicePosition(out uint64 DevicePosition, uint64* QPCPosition) mut => VT.GetDevicePosition(ref this, out DevicePosition, QPCPosition);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2163,10 +2081,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSampleRate(float flSampleRate) mut
-			{
-				return VT.SetSampleRate(ref this, flSampleRate);
-			}
+			public HRESULT SetSampleRate(float flSampleRate) mut => VT.SetSampleRate(ref this, flSampleRate);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2180,22 +2096,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMasterVolume(float fLevel, in Guid EventContext) mut
-			{
-				return VT.SetMasterVolume(ref this, fLevel, EventContext);
-			}
-			public HRESULT GetMasterVolume(out float pfLevel) mut
-			{
-				return VT.GetMasterVolume(ref this, out pfLevel);
-			}
-			public HRESULT SetMute(BOOL bMute, in Guid EventContext) mut
-			{
-				return VT.SetMute(ref this, bMute, EventContext);
-			}
-			public HRESULT GetMute(out BOOL pbMute) mut
-			{
-				return VT.GetMute(ref this, out pbMute);
-			}
+			public HRESULT SetMasterVolume(float fLevel, in Guid EventContext) mut => VT.SetMasterVolume(ref this, fLevel, EventContext);
+			public HRESULT GetMasterVolume(out float pfLevel) mut => VT.GetMasterVolume(ref this, out pfLevel);
+			public HRESULT SetMute(BOOL bMute, in Guid EventContext) mut => VT.SetMute(ref this, bMute, EventContext);
+			public HRESULT GetMute(out BOOL pbMute) mut => VT.GetMute(ref this, out pbMute);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2212,10 +2117,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDuckingOptionsForCurrentStream(AUDIO_DUCKING_OPTIONS options) mut
-			{
-				return VT.SetDuckingOptionsForCurrentStream(ref this, options);
-			}
+			public HRESULT SetDuckingOptionsForCurrentStream(AUDIO_DUCKING_OPTIONS options) mut => VT.SetDuckingOptionsForCurrentStream(ref this, options);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2229,10 +2132,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnAudioEffectsChanged() mut
-			{
-				return VT.OnAudioEffectsChanged(ref this);
-			}
+			public HRESULT OnAudioEffectsChanged() mut => VT.OnAudioEffectsChanged(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2246,22 +2147,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterAudioEffectsChangedNotificationCallback(ref IAudioEffectsChangedNotificationClient client) mut
-			{
-				return VT.RegisterAudioEffectsChangedNotificationCallback(ref this, ref client);
-			}
-			public HRESULT UnregisterAudioEffectsChangedNotificationCallback(ref IAudioEffectsChangedNotificationClient client) mut
-			{
-				return VT.UnregisterAudioEffectsChangedNotificationCallback(ref this, ref client);
-			}
-			public HRESULT GetAudioEffects(AUDIO_EFFECT** effects, out uint32 numEffects) mut
-			{
-				return VT.GetAudioEffects(ref this, effects, out numEffects);
-			}
-			public HRESULT SetAudioEffectState(Guid effectId, AUDIO_EFFECT_STATE state) mut
-			{
-				return VT.SetAudioEffectState(ref this, effectId, state);
-			}
+			public HRESULT RegisterAudioEffectsChangedNotificationCallback(ref IAudioEffectsChangedNotificationClient client) mut => VT.RegisterAudioEffectsChangedNotificationCallback(ref this, ref client);
+			public HRESULT UnregisterAudioEffectsChangedNotificationCallback(ref IAudioEffectsChangedNotificationClient client) mut => VT.UnregisterAudioEffectsChangedNotificationCallback(ref this, ref client);
+			public HRESULT GetAudioEffects(AUDIO_EFFECT** effects, out uint32 numEffects) mut => VT.GetAudioEffects(ref this, effects, out numEffects);
+			public HRESULT SetAudioEffectState(Guid effectId, AUDIO_EFFECT_STATE state) mut => VT.SetAudioEffectState(ref this, effectId, state);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2278,26 +2168,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetChannelCount(out uint32 pdwCount) mut
-			{
-				return VT.GetChannelCount(ref this, out pdwCount);
-			}
-			public HRESULT SetChannelVolume(uint32 dwIndex, float fLevel) mut
-			{
-				return VT.SetChannelVolume(ref this, dwIndex, fLevel);
-			}
-			public HRESULT GetChannelVolume(uint32 dwIndex, out float pfLevel) mut
-			{
-				return VT.GetChannelVolume(ref this, dwIndex, out pfLevel);
-			}
-			public HRESULT SetAllVolumes(uint32 dwCount, float* pfVolumes) mut
-			{
-				return VT.SetAllVolumes(ref this, dwCount, pfVolumes);
-			}
-			public HRESULT GetAllVolumes(uint32 dwCount, float* pfVolumes) mut
-			{
-				return VT.GetAllVolumes(ref this, dwCount, pfVolumes);
-			}
+			public HRESULT GetChannelCount(out uint32 pdwCount) mut => VT.GetChannelCount(ref this, out pdwCount);
+			public HRESULT SetChannelVolume(uint32 dwIndex, float fLevel) mut => VT.SetChannelVolume(ref this, dwIndex, fLevel);
+			public HRESULT GetChannelVolume(uint32 dwIndex, out float pfLevel) mut => VT.GetChannelVolume(ref this, dwIndex, out pfLevel);
+			public HRESULT SetAllVolumes(uint32 dwCount, float* pfVolumes) mut => VT.SetAllVolumes(ref this, dwCount, pfVolumes);
+			public HRESULT GetAllVolumes(uint32 dwCount, float* pfVolumes) mut => VT.GetAllVolumes(ref this, dwCount, pfVolumes);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2315,22 +2191,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetData(AMBISONICS_PARAMS* pAmbisonicsParams, uint32 cbAmbisonicsParams) mut
-			{
-				return VT.SetData(ref this, pAmbisonicsParams, cbAmbisonicsParams);
-			}
-			public HRESULT SetHeadTracking(BOOL bEnableHeadTracking) mut
-			{
-				return VT.SetHeadTracking(ref this, bEnableHeadTracking);
-			}
-			public HRESULT GetHeadTracking(out BOOL pbEnableHeadTracking) mut
-			{
-				return VT.GetHeadTracking(ref this, out pbEnableHeadTracking);
-			}
-			public HRESULT SetRotation(float X, float Y, float Z, float W) mut
-			{
-				return VT.SetRotation(ref this, X, Y, Z, W);
-			}
+			public HRESULT SetData(AMBISONICS_PARAMS* pAmbisonicsParams, uint32 cbAmbisonicsParams) mut => VT.SetData(ref this, pAmbisonicsParams, cbAmbisonicsParams);
+			public HRESULT SetHeadTracking(BOOL bEnableHeadTracking) mut => VT.SetHeadTracking(ref this, bEnableHeadTracking);
+			public HRESULT GetHeadTracking(out BOOL pbEnableHeadTracking) mut => VT.GetHeadTracking(ref this, out pbEnableHeadTracking);
+			public HRESULT SetRotation(float X, float Y, float Z, float W) mut => VT.SetRotation(ref this, X, Y, Z, W);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2347,26 +2212,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetChannelCount(out uint32 pdwCount) mut
-			{
-				return VT.GetChannelCount(ref this, out pdwCount);
-			}
-			public HRESULT SetChannelVolume(uint32 dwIndex, float fLevel, in Guid EventContext) mut
-			{
-				return VT.SetChannelVolume(ref this, dwIndex, fLevel, EventContext);
-			}
-			public HRESULT GetChannelVolume(uint32 dwIndex, out float pfLevel) mut
-			{
-				return VT.GetChannelVolume(ref this, dwIndex, out pfLevel);
-			}
-			public HRESULT SetAllVolumes(uint32 dwCount, float* pfVolumes, in Guid EventContext) mut
-			{
-				return VT.SetAllVolumes(ref this, dwCount, pfVolumes, EventContext);
-			}
-			public HRESULT GetAllVolumes(uint32 dwCount, float* pfVolumes) mut
-			{
-				return VT.GetAllVolumes(ref this, dwCount, pfVolumes);
-			}
+			public HRESULT GetChannelCount(out uint32 pdwCount) mut => VT.GetChannelCount(ref this, out pdwCount);
+			public HRESULT SetChannelVolume(uint32 dwIndex, float fLevel, in Guid EventContext) mut => VT.SetChannelVolume(ref this, dwIndex, fLevel, EventContext);
+			public HRESULT GetChannelVolume(uint32 dwIndex, out float pfLevel) mut => VT.GetChannelVolume(ref this, dwIndex, out pfLevel);
+			public HRESULT SetAllVolumes(uint32 dwCount, float* pfVolumes, in Guid EventContext) mut => VT.SetAllVolumes(ref this, dwCount, pfVolumes, EventContext);
+			public HRESULT GetAllVolumes(uint32 dwCount, float* pfVolumes) mut => VT.GetAllVolumes(ref this, dwCount, pfVolumes);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2384,14 +2235,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetFormat(uint32 index, out WAVEFORMATEX* format) mut
-			{
-				return VT.GetFormat(ref this, index, out format);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetFormat(uint32 index, out WAVEFORMATEX* format) mut => VT.GetFormat(ref this, index, out format);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2406,22 +2252,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBuffer(out uint8* buffer, out uint32 bufferLength) mut
-			{
-				return VT.GetBuffer(ref this, out buffer, out bufferLength);
-			}
-			public HRESULT SetEndOfStream(uint32 frameCount) mut
-			{
-				return VT.SetEndOfStream(ref this, frameCount);
-			}
-			public HRESULT IsActive(out BOOL isActive) mut
-			{
-				return VT.IsActive(ref this, out isActive);
-			}
-			public HRESULT GetAudioObjectType(out AudioObjectType audioObjectType) mut
-			{
-				return VT.GetAudioObjectType(ref this, out audioObjectType);
-			}
+			public HRESULT GetBuffer(out uint8* buffer, out uint32 bufferLength) mut => VT.GetBuffer(ref this, out buffer, out bufferLength);
+			public HRESULT SetEndOfStream(uint32 frameCount) mut => VT.SetEndOfStream(ref this, frameCount);
+			public HRESULT IsActive(out BOOL isActive) mut => VT.IsActive(ref this, out isActive);
+			public HRESULT GetAudioObjectType(out AudioObjectType audioObjectType) mut => VT.GetAudioObjectType(ref this, out audioObjectType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2438,14 +2273,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPosition(float x, float y, float z) mut
-			{
-				return VT.SetPosition(ref this, x, y, z);
-			}
-			public HRESULT SetVolume(float volume) mut
-			{
-				return VT.SetVolume(ref this, volume);
-			}
+			public HRESULT SetPosition(float x, float y, float z) mut => VT.SetPosition(ref this, x, y, z);
+			public HRESULT SetVolume(float volume) mut => VT.SetVolume(ref this, volume);
+
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectBase.VTable
 			{
@@ -2460,34 +2290,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAvailableDynamicObjectCount(out uint32 value) mut
-			{
-				return VT.GetAvailableDynamicObjectCount(ref this, out value);
-			}
-			public HRESULT GetService(in Guid riid, void** service) mut
-			{
-				return VT.GetService(ref this, riid, service);
-			}
-			public HRESULT Start() mut
-			{
-				return VT.Start(ref this);
-			}
-			public HRESULT Stop() mut
-			{
-				return VT.Stop(ref this);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT BeginUpdatingAudioObjects(out uint32 availableDynamicObjectCount, out uint32 frameCountPerBuffer) mut
-			{
-				return VT.BeginUpdatingAudioObjects(ref this, out availableDynamicObjectCount, out frameCountPerBuffer);
-			}
-			public HRESULT EndUpdatingAudioObjects() mut
-			{
-				return VT.EndUpdatingAudioObjects(ref this);
-			}
+			public HRESULT GetAvailableDynamicObjectCount(out uint32 value) mut => VT.GetAvailableDynamicObjectCount(ref this, out value);
+			public HRESULT GetService(in Guid riid, void** service) mut => VT.GetService(ref this, riid, service);
+			public HRESULT Start() mut => VT.Start(ref this);
+			public HRESULT Stop() mut => VT.Stop(ref this);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT BeginUpdatingAudioObjects(out uint32 availableDynamicObjectCount, out uint32 frameCountPerBuffer) mut => VT.BeginUpdatingAudioObjects(ref this, out availableDynamicObjectCount, out frameCountPerBuffer);
+			public HRESULT EndUpdatingAudioObjects() mut => VT.EndUpdatingAudioObjects(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2507,10 +2317,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateSpatialAudioObject(AudioObjectType type, out ISpatialAudioObject* audioObject) mut
-			{
-				return VT.ActivateSpatialAudioObject(ref this, type, out audioObject);
-			}
+			public HRESULT ActivateSpatialAudioObject(AudioObjectType type, out ISpatialAudioObject* audioObject) mut => VT.ActivateSpatialAudioObject(ref this, type, out audioObject);
+
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectRenderStreamBase.VTable
 			{
@@ -2524,10 +2332,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnAvailableDynamicObjectCountChange(ref ISpatialAudioObjectRenderStreamBase sender, int64 hnsComplianceDeadlineTime, uint32 availableDynamicObjectCountChange) mut
-			{
-				return VT.OnAvailableDynamicObjectCountChange(ref this, ref sender, hnsComplianceDeadlineTime, availableDynamicObjectCountChange);
-			}
+			public HRESULT OnAvailableDynamicObjectCountChange(ref ISpatialAudioObjectRenderStreamBase sender, int64 hnsComplianceDeadlineTime, uint32 availableDynamicObjectCountChange) mut => VT.OnAvailableDynamicObjectCountChange(ref this, ref sender, hnsComplianceDeadlineTime, availableDynamicObjectCountChange);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2541,38 +2347,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStaticObjectPosition(AudioObjectType type, out float x, out float y, out float z) mut
-			{
-				return VT.GetStaticObjectPosition(ref this, type, out x, out y, out z);
-			}
-			public HRESULT GetNativeStaticObjectTypeMask(out AudioObjectType mask) mut
-			{
-				return VT.GetNativeStaticObjectTypeMask(ref this, out mask);
-			}
-			public HRESULT GetMaxDynamicObjectCount(out uint32 value) mut
-			{
-				return VT.GetMaxDynamicObjectCount(ref this, out value);
-			}
-			public HRESULT GetSupportedAudioObjectFormatEnumerator(out IAudioFormatEnumerator* enumerator) mut
-			{
-				return VT.GetSupportedAudioObjectFormatEnumerator(ref this, out enumerator);
-			}
-			public HRESULT GetMaxFrameCount(in WAVEFORMATEX objectFormat, out uint32 frameCountPerBuffer) mut
-			{
-				return VT.GetMaxFrameCount(ref this, objectFormat, out frameCountPerBuffer);
-			}
-			public HRESULT IsAudioObjectFormatSupported(in WAVEFORMATEX objectFormat) mut
-			{
-				return VT.IsAudioObjectFormatSupported(ref this, objectFormat);
-			}
-			public HRESULT IsSpatialAudioStreamAvailable(in Guid streamUuid, PROPVARIANT* auxiliaryInfo) mut
-			{
-				return VT.IsSpatialAudioStreamAvailable(ref this, streamUuid, auxiliaryInfo);
-			}
-			public HRESULT ActivateSpatialAudioStream(in PROPVARIANT activationParams, in Guid riid, void** stream) mut
-			{
-				return VT.ActivateSpatialAudioStream(ref this, activationParams, riid, stream);
-			}
+			public HRESULT GetStaticObjectPosition(AudioObjectType type, out float x, out float y, out float z) mut => VT.GetStaticObjectPosition(ref this, type, out x, out y, out z);
+			public HRESULT GetNativeStaticObjectTypeMask(out AudioObjectType mask) mut => VT.GetNativeStaticObjectTypeMask(ref this, out mask);
+			public HRESULT GetMaxDynamicObjectCount(out uint32 value) mut => VT.GetMaxDynamicObjectCount(ref this, out value);
+			public HRESULT GetSupportedAudioObjectFormatEnumerator(out IAudioFormatEnumerator* enumerator) mut => VT.GetSupportedAudioObjectFormatEnumerator(ref this, out enumerator);
+			public HRESULT GetMaxFrameCount(in WAVEFORMATEX objectFormat, out uint32 frameCountPerBuffer) mut => VT.GetMaxFrameCount(ref this, objectFormat, out frameCountPerBuffer);
+			public HRESULT IsAudioObjectFormatSupported(in WAVEFORMATEX objectFormat) mut => VT.IsAudioObjectFormatSupported(ref this, objectFormat);
+			public HRESULT IsSpatialAudioStreamAvailable(in Guid streamUuid, PROPVARIANT* auxiliaryInfo) mut => VT.IsSpatialAudioStreamAvailable(ref this, streamUuid, auxiliaryInfo);
+			public HRESULT ActivateSpatialAudioStream(in PROPVARIANT activationParams, in Guid riid, void** stream) mut => VT.ActivateSpatialAudioStream(ref this, activationParams, riid, stream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2593,14 +2376,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY category, out BOOL isOffloadCapable) mut
-			{
-				return VT.IsOffloadCapable(ref this, category, out isOffloadCapable);
-			}
-			public HRESULT GetMaxFrameCountForCategory(AUDIO_STREAM_CATEGORY category, BOOL offloadEnabled, in WAVEFORMATEX objectFormat, out uint32 frameCountPerBuffer) mut
-			{
-				return VT.GetMaxFrameCountForCategory(ref this, category, offloadEnabled, objectFormat, out frameCountPerBuffer);
-			}
+			public HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY category, out BOOL isOffloadCapable) mut => VT.IsOffloadCapable(ref this, category, out isOffloadCapable);
+			public HRESULT GetMaxFrameCountForCategory(AUDIO_STREAM_CATEGORY category, BOOL offloadEnabled, in WAVEFORMATEX objectFormat, out uint32 frameCountPerBuffer) mut => VT.GetMaxFrameCountForCategory(ref this, category, offloadEnabled, objectFormat, out frameCountPerBuffer);
+
 			[CRepr]
 			public struct VTable : ISpatialAudioClient.VTable
 			{
@@ -2615,30 +2393,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPosition(float x, float y, float z) mut
-			{
-				return VT.SetPosition(ref this, x, y, z);
-			}
-			public HRESULT SetGain(float gain) mut
-			{
-				return VT.SetGain(ref this, gain);
-			}
-			public HRESULT SetOrientation(in float* orientation) mut
-			{
-				return VT.SetOrientation(ref this, orientation);
-			}
-			public HRESULT SetEnvironment(SpatialAudioHrtfEnvironmentType environment) mut
-			{
-				return VT.SetEnvironment(ref this, environment);
-			}
-			public HRESULT SetDistanceDecay(ref SpatialAudioHrtfDistanceDecay distanceDecay) mut
-			{
-				return VT.SetDistanceDecay(ref this, ref distanceDecay);
-			}
-			public HRESULT SetDirectivity(ref SpatialAudioHrtfDirectivityUnion directivity) mut
-			{
-				return VT.SetDirectivity(ref this, ref directivity);
-			}
+			public HRESULT SetPosition(float x, float y, float z) mut => VT.SetPosition(ref this, x, y, z);
+			public HRESULT SetGain(float gain) mut => VT.SetGain(ref this, gain);
+			public HRESULT SetOrientation(in float* orientation) mut => VT.SetOrientation(ref this, orientation);
+			public HRESULT SetEnvironment(SpatialAudioHrtfEnvironmentType environment) mut => VT.SetEnvironment(ref this, environment);
+			public HRESULT SetDistanceDecay(ref SpatialAudioHrtfDistanceDecay distanceDecay) mut => VT.SetDistanceDecay(ref this, ref distanceDecay);
+			public HRESULT SetDirectivity(ref SpatialAudioHrtfDirectivityUnion directivity) mut => VT.SetDirectivity(ref this, ref directivity);
+
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectBase.VTable
 			{
@@ -2657,10 +2418,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateSpatialAudioObjectForHrtf(AudioObjectType type, out ISpatialAudioObjectForHrtf* audioObject) mut
-			{
-				return VT.ActivateSpatialAudioObjectForHrtf(ref this, type, out audioObject);
-			}
+			public HRESULT ActivateSpatialAudioObjectForHrtf(AudioObjectType type, out ISpatialAudioObjectForHrtf* audioObject) mut => VT.ActivateSpatialAudioObjectForHrtf(ref this, type, out audioObject);
+
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectRenderStreamBase.VTable
 			{
@@ -2674,26 +2433,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnDeviceStateChanged(PWSTR pwstrDeviceId, uint32 dwNewState) mut
-			{
-				return VT.OnDeviceStateChanged(ref this, pwstrDeviceId, dwNewState);
-			}
-			public HRESULT OnDeviceAdded(PWSTR pwstrDeviceId) mut
-			{
-				return VT.OnDeviceAdded(ref this, pwstrDeviceId);
-			}
-			public HRESULT OnDeviceRemoved(PWSTR pwstrDeviceId) mut
-			{
-				return VT.OnDeviceRemoved(ref this, pwstrDeviceId);
-			}
-			public HRESULT OnDefaultDeviceChanged(EDataFlow flow, ERole role, PWSTR pwstrDefaultDeviceId) mut
-			{
-				return VT.OnDefaultDeviceChanged(ref this, flow, role, pwstrDefaultDeviceId);
-			}
-			public HRESULT OnPropertyValueChanged(PWSTR pwstrDeviceId, PROPERTYKEY key) mut
-			{
-				return VT.OnPropertyValueChanged(ref this, pwstrDeviceId, key);
-			}
+			public HRESULT OnDeviceStateChanged(PWSTR pwstrDeviceId, uint32 dwNewState) mut => VT.OnDeviceStateChanged(ref this, pwstrDeviceId, dwNewState);
+			public HRESULT OnDeviceAdded(PWSTR pwstrDeviceId) mut => VT.OnDeviceAdded(ref this, pwstrDeviceId);
+			public HRESULT OnDeviceRemoved(PWSTR pwstrDeviceId) mut => VT.OnDeviceRemoved(ref this, pwstrDeviceId);
+			public HRESULT OnDefaultDeviceChanged(EDataFlow flow, ERole role, PWSTR pwstrDefaultDeviceId) mut => VT.OnDefaultDeviceChanged(ref this, flow, role, pwstrDefaultDeviceId);
+			public HRESULT OnPropertyValueChanged(PWSTR pwstrDeviceId, PROPERTYKEY key) mut => VT.OnPropertyValueChanged(ref this, pwstrDeviceId, key);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2711,22 +2456,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Activate(in Guid iid, uint32 dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) mut
-			{
-				return VT.Activate(ref this, iid, dwClsCtx, pActivationParams, ppInterface);
-			}
-			public HRESULT OpenPropertyStore(uint32 stgmAccess, out IPropertyStore* ppProperties) mut
-			{
-				return VT.OpenPropertyStore(ref this, stgmAccess, out ppProperties);
-			}
-			public HRESULT GetId(out PWSTR ppstrId) mut
-			{
-				return VT.GetId(ref this, out ppstrId);
-			}
-			public HRESULT GetState(out uint32 pdwState) mut
-			{
-				return VT.GetState(ref this, out pdwState);
-			}
+			public HRESULT Activate(in Guid iid, uint32 dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) mut => VT.Activate(ref this, iid, dwClsCtx, pActivationParams, ppInterface);
+			public HRESULT OpenPropertyStore(uint32 stgmAccess, out IPropertyStore* ppProperties) mut => VT.OpenPropertyStore(ref this, stgmAccess, out ppProperties);
+			public HRESULT GetId(out PWSTR ppstrId) mut => VT.GetId(ref this, out ppstrId);
+			public HRESULT GetState(out uint32 pdwState) mut => VT.GetState(ref this, out pdwState);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2743,14 +2477,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pcDevices) mut
-			{
-				return VT.GetCount(ref this, out pcDevices);
-			}
-			public HRESULT Item(uint32 nDevice, out IMMDevice* ppDevice) mut
-			{
-				return VT.Item(ref this, nDevice, out ppDevice);
-			}
+			public HRESULT GetCount(out uint32 pcDevices) mut => VT.GetCount(ref this, out pcDevices);
+			public HRESULT Item(uint32 nDevice, out IMMDevice* ppDevice) mut => VT.Item(ref this, nDevice, out ppDevice);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2765,10 +2494,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDataFlow(out EDataFlow pDataFlow) mut
-			{
-				return VT.GetDataFlow(ref this, out pDataFlow);
-			}
+			public HRESULT GetDataFlow(out EDataFlow pDataFlow) mut => VT.GetDataFlow(ref this, out pDataFlow);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2782,26 +2509,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumAudioEndpoints(EDataFlow dataFlow, uint32 dwStateMask, out IMMDeviceCollection* ppDevices) mut
-			{
-				return VT.EnumAudioEndpoints(ref this, dataFlow, dwStateMask, out ppDevices);
-			}
-			public HRESULT GetDefaultAudioEndpoint(EDataFlow dataFlow, ERole role, out IMMDevice* ppEndpoint) mut
-			{
-				return VT.GetDefaultAudioEndpoint(ref this, dataFlow, role, out ppEndpoint);
-			}
-			public HRESULT GetDevice(PWSTR pwstrId, out IMMDevice* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, pwstrId, out ppDevice);
-			}
-			public HRESULT RegisterEndpointNotificationCallback(ref IMMNotificationClient pClient) mut
-			{
-				return VT.RegisterEndpointNotificationCallback(ref this, ref pClient);
-			}
-			public HRESULT UnregisterEndpointNotificationCallback(ref IMMNotificationClient pClient) mut
-			{
-				return VT.UnregisterEndpointNotificationCallback(ref this, ref pClient);
-			}
+			public HRESULT EnumAudioEndpoints(EDataFlow dataFlow, uint32 dwStateMask, out IMMDeviceCollection* ppDevices) mut => VT.EnumAudioEndpoints(ref this, dataFlow, dwStateMask, out ppDevices);
+			public HRESULT GetDefaultAudioEndpoint(EDataFlow dataFlow, ERole role, out IMMDevice* ppEndpoint) mut => VT.GetDefaultAudioEndpoint(ref this, dataFlow, role, out ppEndpoint);
+			public HRESULT GetDevice(PWSTR pwstrId, out IMMDevice* ppDevice) mut => VT.GetDevice(ref this, pwstrId, out ppDevice);
+			public HRESULT RegisterEndpointNotificationCallback(ref IMMNotificationClient pClient) mut => VT.RegisterEndpointNotificationCallback(ref this, ref pClient);
+			public HRESULT UnregisterEndpointNotificationCallback(ref IMMNotificationClient pClient) mut => VT.UnregisterEndpointNotificationCallback(ref this, ref pClient);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2819,10 +2532,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Activate(in Guid iid, ref IMMDevice pDevice, PROPVARIANT* pActivationParams, void** ppInterface) mut
-			{
-				return VT.Activate(ref this, iid, ref pDevice, pActivationParams, ppInterface);
-			}
+			public HRESULT Activate(in Guid iid, ref IMMDevice pDevice, PROPVARIANT* pActivationParams, void** ppInterface) mut => VT.Activate(ref this, iid, ref pDevice, pActivationParams, ppInterface);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2836,10 +2547,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateCompleted(ref IActivateAudioInterfaceAsyncOperation activateOperation) mut
-			{
-				return VT.ActivateCompleted(ref this, ref activateOperation);
-			}
+			public HRESULT ActivateCompleted(ref IActivateAudioInterfaceAsyncOperation activateOperation) mut => VT.ActivateCompleted(ref this, ref activateOperation);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2853,10 +2562,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetActivateResult(out HRESULT activateResult, IUnknown** activatedInterface) mut
-			{
-				return VT.GetActivateResult(ref this, out activateResult, activatedInterface);
-			}
+			public HRESULT GetActivateResult(out HRESULT activateResult, IUnknown** activatedInterface) mut => VT.GetActivateResult(ref this, out activateResult, activatedInterface);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2870,10 +2577,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnPropertyChanged(__MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 type, PROPERTYKEY key) mut
-			{
-				return VT.OnPropertyChanged(ref this, type, key);
-			}
+			public HRESULT OnPropertyChanged(__MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 type, PROPERTYKEY key) mut => VT.OnPropertyChanged(ref this, type, key);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2887,34 +2592,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenDefaultPropertyStore(uint32 stgmAccess, out IPropertyStore* propStore) mut
-			{
-				return VT.OpenDefaultPropertyStore(ref this, stgmAccess, out propStore);
-			}
-			public HRESULT OpenUserPropertyStore(uint32 stgmAccess, out IPropertyStore* propStore) mut
-			{
-				return VT.OpenUserPropertyStore(ref this, stgmAccess, out propStore);
-			}
-			public HRESULT OpenVolatilePropertyStore(uint32 stgmAccess, out IPropertyStore* propStore) mut
-			{
-				return VT.OpenVolatilePropertyStore(ref this, stgmAccess, out propStore);
-			}
-			public HRESULT ResetUserPropertyStore() mut
-			{
-				return VT.ResetUserPropertyStore(ref this);
-			}
-			public HRESULT ResetVolatilePropertyStore() mut
-			{
-				return VT.ResetVolatilePropertyStore(ref this);
-			}
-			public HRESULT RegisterPropertyChangeNotification(ref IAudioSystemEffectsPropertyChangeNotificationClient callback) mut
-			{
-				return VT.RegisterPropertyChangeNotification(ref this, ref callback);
-			}
-			public HRESULT UnregisterPropertyChangeNotification(ref IAudioSystemEffectsPropertyChangeNotificationClient callback) mut
-			{
-				return VT.UnregisterPropertyChangeNotification(ref this, ref callback);
-			}
+			public HRESULT OpenDefaultPropertyStore(uint32 stgmAccess, out IPropertyStore* propStore) mut => VT.OpenDefaultPropertyStore(ref this, stgmAccess, out propStore);
+			public HRESULT OpenUserPropertyStore(uint32 stgmAccess, out IPropertyStore* propStore) mut => VT.OpenUserPropertyStore(ref this, stgmAccess, out propStore);
+			public HRESULT OpenVolatilePropertyStore(uint32 stgmAccess, out IPropertyStore* propStore) mut => VT.OpenVolatilePropertyStore(ref this, stgmAccess, out propStore);
+			public HRESULT ResetUserPropertyStore() mut => VT.ResetUserPropertyStore(ref this);
+			public HRESULT ResetVolatilePropertyStore() mut => VT.ResetVolatilePropertyStore(ref this);
+			public HRESULT RegisterPropertyChangeNotification(ref IAudioSystemEffectsPropertyChangeNotificationClient callback) mut => VT.RegisterPropertyChangeNotification(ref this, ref callback);
+			public HRESULT UnregisterPropertyChangeNotification(ref IAudioSystemEffectsPropertyChangeNotificationClient callback) mut => VT.UnregisterPropertyChangeNotification(ref this, ref callback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2934,30 +2619,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetChannelCount(out uint32 pcChannels) mut
-			{
-				return VT.GetChannelCount(ref this, out pcChannels);
-			}
-			public HRESULT GetLevelRange(uint32 nChannel, out float pfMinLevelDB, out float pfMaxLevelDB, out float pfStepping) mut
-			{
-				return VT.GetLevelRange(ref this, nChannel, out pfMinLevelDB, out pfMaxLevelDB, out pfStepping);
-			}
-			public HRESULT GetLevel(uint32 nChannel, out float pfLevelDB) mut
-			{
-				return VT.GetLevel(ref this, nChannel, out pfLevelDB);
-			}
-			public HRESULT SetLevel(uint32 nChannel, float fLevelDB, Guid* pguidEventContext) mut
-			{
-				return VT.SetLevel(ref this, nChannel, fLevelDB, pguidEventContext);
-			}
-			public HRESULT SetLevelUniform(float fLevelDB, Guid* pguidEventContext) mut
-			{
-				return VT.SetLevelUniform(ref this, fLevelDB, pguidEventContext);
-			}
-			public HRESULT SetLevelAllChannels(float* aLevelsDB, uint32 cChannels, Guid* pguidEventContext) mut
-			{
-				return VT.SetLevelAllChannels(ref this, aLevelsDB, cChannels, pguidEventContext);
-			}
+			public HRESULT GetChannelCount(out uint32 pcChannels) mut => VT.GetChannelCount(ref this, out pcChannels);
+			public HRESULT GetLevelRange(uint32 nChannel, out float pfMinLevelDB, out float pfMaxLevelDB, out float pfStepping) mut => VT.GetLevelRange(ref this, nChannel, out pfMinLevelDB, out pfMaxLevelDB, out pfStepping);
+			public HRESULT GetLevel(uint32 nChannel, out float pfLevelDB) mut => VT.GetLevel(ref this, nChannel, out pfLevelDB);
+			public HRESULT SetLevel(uint32 nChannel, float fLevelDB, Guid* pguidEventContext) mut => VT.SetLevel(ref this, nChannel, fLevelDB, pguidEventContext);
+			public HRESULT SetLevelUniform(float fLevelDB, Guid* pguidEventContext) mut => VT.SetLevelUniform(ref this, fLevelDB, pguidEventContext);
+			public HRESULT SetLevelAllChannels(float* aLevelsDB, uint32 cChannels, Guid* pguidEventContext) mut => VT.SetLevelAllChannels(ref this, aLevelsDB, cChannels, pguidEventContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2976,6 +2644,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IPerChannelDbLevel.VTable
 			{
@@ -2988,14 +2657,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetChannelConfig(uint32 dwConfig, Guid* pguidEventContext) mut
-			{
-				return VT.SetChannelConfig(ref this, dwConfig, pguidEventContext);
-			}
-			public HRESULT GetChannelConfig(out uint32 pdwConfig) mut
-			{
-				return VT.GetChannelConfig(ref this, out pdwConfig);
-			}
+			public HRESULT SetChannelConfig(uint32 dwConfig, Guid* pguidEventContext) mut => VT.SetChannelConfig(ref this, dwConfig, pguidEventContext);
+			public HRESULT GetChannelConfig(out uint32 pdwConfig) mut => VT.GetChannelConfig(ref this, out pdwConfig);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3010,14 +2674,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEnabled(out BOOL pbEnabled) mut
-			{
-				return VT.GetEnabled(ref this, out pbEnabled);
-			}
-			public HRESULT SetEnabled(BOOL bEnable, Guid* pguidEventContext) mut
-			{
-				return VT.SetEnabled(ref this, bEnable, pguidEventContext);
-			}
+			public HRESULT GetEnabled(out BOOL pbEnabled) mut => VT.GetEnabled(ref this, out pbEnabled);
+			public HRESULT SetEnabled(BOOL bEnable, Guid* pguidEventContext) mut => VT.SetEnabled(ref this, bEnable, pguidEventContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3032,14 +2691,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSelection(out uint32 pnIdSelected) mut
-			{
-				return VT.GetSelection(ref this, out pnIdSelected);
-			}
-			public HRESULT SetSelection(uint32 nIdSelect, Guid* pguidEventContext) mut
-			{
-				return VT.SetSelection(ref this, nIdSelect, pguidEventContext);
-			}
+			public HRESULT GetSelection(out uint32 pnIdSelected) mut => VT.GetSelection(ref this, out pnIdSelected);
+			public HRESULT SetSelection(uint32 nIdSelect, Guid* pguidEventContext) mut => VT.SetSelection(ref this, nIdSelect, pguidEventContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3054,14 +2708,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSelection(out uint32 pnIdSelected) mut
-			{
-				return VT.GetSelection(ref this, out pnIdSelected);
-			}
-			public HRESULT SetSelection(uint32 nIdSelect, Guid* pguidEventContext) mut
-			{
-				return VT.SetSelection(ref this, nIdSelect, pguidEventContext);
-			}
+			public HRESULT GetSelection(out uint32 pnIdSelected) mut => VT.GetSelection(ref this, out pnIdSelected);
+			public HRESULT SetSelection(uint32 nIdSelect, Guid* pguidEventContext) mut => VT.SetSelection(ref this, nIdSelect, pguidEventContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3076,14 +2725,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMute(BOOL bMuted, Guid* pguidEventContext) mut
-			{
-				return VT.SetMute(ref this, bMuted, pguidEventContext);
-			}
-			public HRESULT GetMute(out BOOL pbMuted) mut
-			{
-				return VT.GetMute(ref this, out pbMuted);
-			}
+			public HRESULT SetMute(BOOL bMuted, Guid* pguidEventContext) mut => VT.SetMute(ref this, bMuted, pguidEventContext);
+			public HRESULT GetMute(out BOOL pbMuted) mut => VT.GetMute(ref this, out pbMuted);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3098,6 +2742,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IPerChannelDbLevel.VTable
 			{
@@ -3110,6 +2755,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IPerChannelDbLevel.VTable
 			{
@@ -3122,6 +2768,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IPerChannelDbLevel.VTable
 			{
@@ -3134,14 +2781,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEnabled(out BOOL pbEnabled) mut
-			{
-				return VT.GetEnabled(ref this, out pbEnabled);
-			}
-			public HRESULT SetEnabled(BOOL bEnable, Guid* pguidEventContext) mut
-			{
-				return VT.SetEnabled(ref this, bEnable, pguidEventContext);
-			}
+			public HRESULT GetEnabled(out BOOL pbEnabled) mut => VT.GetEnabled(ref this, out pbEnabled);
+			public HRESULT SetEnabled(BOOL bEnable, Guid* pguidEventContext) mut => VT.SetEnabled(ref this, bEnable, pguidEventContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3156,14 +2798,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetChannelCount(out uint32 pcChannels) mut
-			{
-				return VT.GetChannelCount(ref this, out pcChannels);
-			}
-			public HRESULT GetLevel(uint32 nChannel, out float pfLevel) mut
-			{
-				return VT.GetLevel(ref this, nChannel, out pfLevel);
-			}
+			public HRESULT GetChannelCount(out uint32 pcChannels) mut => VT.GetChannelCount(ref this, out pcChannels);
+			public HRESULT GetLevel(uint32 nChannel, out float pfLevel) mut => VT.GetLevel(ref this, nChannel, out pfLevel);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3178,22 +2815,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetType(out uint16 pVType) mut
-			{
-				return VT.ComGetType(ref this, out pVType);
-			}
-			public HRESULT GetValue(void* pvValue, out uint32 pcbValue) mut
-			{
-				return VT.GetValue(ref this, pvValue, out pcbValue);
-			}
-			public HRESULT SetValue(void* pvValue, uint32 cbValue, Guid* pguidEventContext) mut
-			{
-				return VT.SetValue(ref this, pvValue, cbValue, pguidEventContext);
-			}
-			public HRESULT Get4BRange(out int32 plMin, out int32 plMax, out int32 plStepping) mut
-			{
-				return VT.Get4BRange(ref this, out plMin, out plMax, out plStepping);
-			}
+			public HRESULT ComGetType(out uint16 pVType) mut => VT.ComGetType(ref this, out pVType);
+			public HRESULT GetValue(void* pvValue, out uint32 pcbValue) mut => VT.GetValue(ref this, pvValue, out pcbValue);
+			public HRESULT SetValue(void* pvValue, uint32 cbValue, Guid* pguidEventContext) mut => VT.SetValue(ref this, pvValue, cbValue, pguidEventContext);
+			public HRESULT Get4BRange(out int32 plMin, out int32 plMax, out int32 plStepping) mut => VT.Get4BRange(ref this, out plMin, out plMax, out plStepping);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3210,14 +2836,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pCount) mut
-			{
-				return VT.GetCount(ref this, out pCount);
-			}
-			public HRESULT GetPart(uint32 nIndex, out IPart* ppPart) mut
-			{
-				return VT.GetPart(ref this, nIndex, out ppPart);
-			}
+			public HRESULT GetCount(out uint32 pCount) mut => VT.GetCount(ref this, out pCount);
+			public HRESULT GetPart(uint32 nIndex, out IPart* ppPart) mut => VT.GetPart(ref this, nIndex, out ppPart);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3232,58 +2853,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR ppwstrName) mut
-			{
-				return VT.GetName(ref this, out ppwstrName);
-			}
-			public HRESULT GetLocalId(out uint32 pnId) mut
-			{
-				return VT.GetLocalId(ref this, out pnId);
-			}
-			public HRESULT GetGlobalId(out PWSTR ppwstrGlobalId) mut
-			{
-				return VT.GetGlobalId(ref this, out ppwstrGlobalId);
-			}
-			public HRESULT GetPartType(out PartType pPartType) mut
-			{
-				return VT.GetPartType(ref this, out pPartType);
-			}
-			public HRESULT GetSubType(out Guid pSubType) mut
-			{
-				return VT.GetSubType(ref this, out pSubType);
-			}
-			public HRESULT GetControlInterfaceCount(out uint32 pCount) mut
-			{
-				return VT.GetControlInterfaceCount(ref this, out pCount);
-			}
-			public HRESULT GetControlInterface(uint32 nIndex, out IControlInterface* ppInterfaceDesc) mut
-			{
-				return VT.GetControlInterface(ref this, nIndex, out ppInterfaceDesc);
-			}
-			public HRESULT EnumPartsIncoming(out IPartsList* ppParts) mut
-			{
-				return VT.EnumPartsIncoming(ref this, out ppParts);
-			}
-			public HRESULT EnumPartsOutgoing(out IPartsList* ppParts) mut
-			{
-				return VT.EnumPartsOutgoing(ref this, out ppParts);
-			}
-			public HRESULT GetTopologyObject(out IDeviceTopology* ppTopology) mut
-			{
-				return VT.GetTopologyObject(ref this, out ppTopology);
-			}
-			public HRESULT Activate(uint32 dwClsContext, in Guid refiid, void** ppvObject) mut
-			{
-				return VT.Activate(ref this, dwClsContext, refiid, ppvObject);
-			}
-			public HRESULT RegisterControlChangeCallback(in Guid riid, ref IControlChangeNotify pNotify) mut
-			{
-				return VT.RegisterControlChangeCallback(ref this, riid, ref pNotify);
-			}
-			public HRESULT UnregisterControlChangeCallback(ref IControlChangeNotify pNotify) mut
-			{
-				return VT.UnregisterControlChangeCallback(ref this, ref pNotify);
-			}
+			public HRESULT GetName(out PWSTR ppwstrName) mut => VT.GetName(ref this, out ppwstrName);
+			public HRESULT GetLocalId(out uint32 pnId) mut => VT.GetLocalId(ref this, out pnId);
+			public HRESULT GetGlobalId(out PWSTR ppwstrGlobalId) mut => VT.GetGlobalId(ref this, out ppwstrGlobalId);
+			public HRESULT GetPartType(out PartType pPartType) mut => VT.GetPartType(ref this, out pPartType);
+			public HRESULT GetSubType(out Guid pSubType) mut => VT.GetSubType(ref this, out pSubType);
+			public HRESULT GetControlInterfaceCount(out uint32 pCount) mut => VT.GetControlInterfaceCount(ref this, out pCount);
+			public HRESULT GetControlInterface(uint32 nIndex, out IControlInterface* ppInterfaceDesc) mut => VT.GetControlInterface(ref this, nIndex, out ppInterfaceDesc);
+			public HRESULT EnumPartsIncoming(out IPartsList* ppParts) mut => VT.EnumPartsIncoming(ref this, out ppParts);
+			public HRESULT EnumPartsOutgoing(out IPartsList* ppParts) mut => VT.EnumPartsOutgoing(ref this, out ppParts);
+			public HRESULT GetTopologyObject(out IDeviceTopology* ppTopology) mut => VT.GetTopologyObject(ref this, out ppTopology);
+			public HRESULT Activate(uint32 dwClsContext, in Guid refiid, void** ppvObject) mut => VT.Activate(ref this, dwClsContext, refiid, ppvObject);
+			public HRESULT RegisterControlChangeCallback(in Guid riid, ref IControlChangeNotify pNotify) mut => VT.RegisterControlChangeCallback(ref this, riid, ref pNotify);
+			public HRESULT UnregisterControlChangeCallback(ref IControlChangeNotify pNotify) mut => VT.UnregisterControlChangeCallback(ref this, ref pNotify);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3309,38 +2892,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetType(out ConnectorType pType) mut
-			{
-				return VT.ComGetType(ref this, out pType);
-			}
-			public HRESULT GetDataFlow(out DataFlow pFlow) mut
-			{
-				return VT.GetDataFlow(ref this, out pFlow);
-			}
-			public HRESULT ConnectTo(ref IConnector pConnectTo) mut
-			{
-				return VT.ConnectTo(ref this, ref pConnectTo);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
-			public HRESULT IsConnected(out BOOL pbConnected) mut
-			{
-				return VT.IsConnected(ref this, out pbConnected);
-			}
-			public HRESULT GetConnectedTo(out IConnector* ppConTo) mut
-			{
-				return VT.GetConnectedTo(ref this, out ppConTo);
-			}
-			public HRESULT GetConnectorIdConnectedTo(out PWSTR ppwstrConnectorId) mut
-			{
-				return VT.GetConnectorIdConnectedTo(ref this, out ppwstrConnectorId);
-			}
-			public HRESULT GetDeviceIdConnectedTo(out PWSTR ppwstrDeviceId) mut
-			{
-				return VT.GetDeviceIdConnectedTo(ref this, out ppwstrDeviceId);
-			}
+			public HRESULT ComGetType(out ConnectorType pType) mut => VT.ComGetType(ref this, out pType);
+			public HRESULT GetDataFlow(out DataFlow pFlow) mut => VT.GetDataFlow(ref this, out pFlow);
+			public HRESULT ConnectTo(ref IConnector pConnectTo) mut => VT.ConnectTo(ref this, ref pConnectTo);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+			public HRESULT IsConnected(out BOOL pbConnected) mut => VT.IsConnected(ref this, out pbConnected);
+			public HRESULT GetConnectedTo(out IConnector* ppConTo) mut => VT.GetConnectedTo(ref this, out ppConTo);
+			public HRESULT GetConnectorIdConnectedTo(out PWSTR ppwstrConnectorId) mut => VT.GetConnectorIdConnectedTo(ref this, out ppwstrConnectorId);
+			public HRESULT GetDeviceIdConnectedTo(out PWSTR ppwstrDeviceId) mut => VT.GetDeviceIdConnectedTo(ref this, out ppwstrDeviceId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3361,6 +2921,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3373,14 +2934,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR ppwstrName) mut
-			{
-				return VT.GetName(ref this, out ppwstrName);
-			}
-			public HRESULT GetIID(out Guid pIID) mut
-			{
-				return VT.GetIID(ref this, out pIID);
-			}
+			public HRESULT GetName(out PWSTR ppwstrName) mut => VT.GetName(ref this, out ppwstrName);
+			public HRESULT GetIID(out Guid pIID) mut => VT.GetIID(ref this, out pIID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3395,10 +2951,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnNotify(uint32 dwSenderProcessId, Guid* pguidEventContext) mut
-			{
-				return VT.OnNotify(ref this, dwSenderProcessId, pguidEventContext);
-			}
+			public HRESULT OnNotify(uint32 dwSenderProcessId, Guid* pguidEventContext) mut => VT.OnNotify(ref this, dwSenderProcessId, pguidEventContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3412,34 +2966,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConnectorCount(out uint32 pCount) mut
-			{
-				return VT.GetConnectorCount(ref this, out pCount);
-			}
-			public HRESULT GetConnector(uint32 nIndex, out IConnector* ppConnector) mut
-			{
-				return VT.GetConnector(ref this, nIndex, out ppConnector);
-			}
-			public HRESULT GetSubunitCount(out uint32 pCount) mut
-			{
-				return VT.GetSubunitCount(ref this, out pCount);
-			}
-			public HRESULT GetSubunit(uint32 nIndex, out ISubunit* ppSubunit) mut
-			{
-				return VT.GetSubunit(ref this, nIndex, out ppSubunit);
-			}
-			public HRESULT GetPartById(uint32 nId, out IPart* ppPart) mut
-			{
-				return VT.GetPartById(ref this, nId, out ppPart);
-			}
-			public HRESULT GetDeviceId(out PWSTR ppwstrDeviceId) mut
-			{
-				return VT.GetDeviceId(ref this, out ppwstrDeviceId);
-			}
-			public HRESULT GetSignalPath(ref IPart pIPartFrom, ref IPart pIPartTo, BOOL bRejectMixedPaths, out IPartsList* ppParts) mut
-			{
-				return VT.GetSignalPath(ref this, ref pIPartFrom, ref pIPartTo, bRejectMixedPaths, out ppParts);
-			}
+			public HRESULT GetConnectorCount(out uint32 pCount) mut => VT.GetConnectorCount(ref this, out pCount);
+			public HRESULT GetConnector(uint32 nIndex, out IConnector* ppConnector) mut => VT.GetConnector(ref this, nIndex, out ppConnector);
+			public HRESULT GetSubunitCount(out uint32 pCount) mut => VT.GetSubunitCount(ref this, out pCount);
+			public HRESULT GetSubunit(uint32 nIndex, out ISubunit* ppSubunit) mut => VT.GetSubunit(ref this, nIndex, out ppSubunit);
+			public HRESULT GetPartById(uint32 nId, out IPart* ppPart) mut => VT.GetPartById(ref this, nId, out ppPart);
+			public HRESULT GetDeviceId(out PWSTR ppwstrDeviceId) mut => VT.GetDeviceId(ref this, out ppwstrDeviceId);
+			public HRESULT GetSignalPath(ref IPart pIPartFrom, ref IPart pIPartTo, BOOL bRejectMixedPaths, out IPartsList* ppParts) mut => VT.GetSignalPath(ref this, ref pIPartFrom, ref pIPartTo, bRejectMixedPaths, out ppParts);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3459,34 +2993,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnDisplayNameChanged(PWSTR NewDisplayName, in Guid EventContext) mut
-			{
-				return VT.OnDisplayNameChanged(ref this, NewDisplayName, EventContext);
-			}
-			public HRESULT OnIconPathChanged(PWSTR NewIconPath, in Guid EventContext) mut
-			{
-				return VT.OnIconPathChanged(ref this, NewIconPath, EventContext);
-			}
-			public HRESULT OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, in Guid EventContext) mut
-			{
-				return VT.OnSimpleVolumeChanged(ref this, NewVolume, NewMute, EventContext);
-			}
-			public HRESULT OnChannelVolumeChanged(uint32 ChannelCount, float* NewChannelVolumeArray, uint32 ChangedChannel, in Guid EventContext) mut
-			{
-				return VT.OnChannelVolumeChanged(ref this, ChannelCount, NewChannelVolumeArray, ChangedChannel, EventContext);
-			}
-			public HRESULT OnGroupingParamChanged(in Guid NewGroupingParam, in Guid EventContext) mut
-			{
-				return VT.OnGroupingParamChanged(ref this, NewGroupingParam, EventContext);
-			}
-			public HRESULT OnStateChanged(AudioSessionState NewState) mut
-			{
-				return VT.OnStateChanged(ref this, NewState);
-			}
-			public HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason) mut
-			{
-				return VT.OnSessionDisconnected(ref this, DisconnectReason);
-			}
+			public HRESULT OnDisplayNameChanged(PWSTR NewDisplayName, in Guid EventContext) mut => VT.OnDisplayNameChanged(ref this, NewDisplayName, EventContext);
+			public HRESULT OnIconPathChanged(PWSTR NewIconPath, in Guid EventContext) mut => VT.OnIconPathChanged(ref this, NewIconPath, EventContext);
+			public HRESULT OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, in Guid EventContext) mut => VT.OnSimpleVolumeChanged(ref this, NewVolume, NewMute, EventContext);
+			public HRESULT OnChannelVolumeChanged(uint32 ChannelCount, float* NewChannelVolumeArray, uint32 ChangedChannel, in Guid EventContext) mut => VT.OnChannelVolumeChanged(ref this, ChannelCount, NewChannelVolumeArray, ChangedChannel, EventContext);
+			public HRESULT OnGroupingParamChanged(in Guid NewGroupingParam, in Guid EventContext) mut => VT.OnGroupingParamChanged(ref this, NewGroupingParam, EventContext);
+			public HRESULT OnStateChanged(AudioSessionState NewState) mut => VT.OnStateChanged(ref this, NewState);
+			public HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason) mut => VT.OnSessionDisconnected(ref this, DisconnectReason);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3506,42 +3020,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetState(out AudioSessionState pRetVal) mut
-			{
-				return VT.GetState(ref this, out pRetVal);
-			}
-			public HRESULT GetDisplayName(out PWSTR pRetVal) mut
-			{
-				return VT.GetDisplayName(ref this, out pRetVal);
-			}
-			public HRESULT SetDisplayName(PWSTR Value, in Guid EventContext) mut
-			{
-				return VT.SetDisplayName(ref this, Value, EventContext);
-			}
-			public HRESULT GetIconPath(out PWSTR pRetVal) mut
-			{
-				return VT.GetIconPath(ref this, out pRetVal);
-			}
-			public HRESULT SetIconPath(PWSTR Value, in Guid EventContext) mut
-			{
-				return VT.SetIconPath(ref this, Value, EventContext);
-			}
-			public HRESULT GetGroupingParam(out Guid pRetVal) mut
-			{
-				return VT.GetGroupingParam(ref this, out pRetVal);
-			}
-			public HRESULT SetGroupingParam(in Guid Override, in Guid EventContext) mut
-			{
-				return VT.SetGroupingParam(ref this, Override, EventContext);
-			}
-			public HRESULT RegisterAudioSessionNotification(ref IAudioSessionEvents NewNotifications) mut
-			{
-				return VT.RegisterAudioSessionNotification(ref this, ref NewNotifications);
-			}
-			public HRESULT UnregisterAudioSessionNotification(ref IAudioSessionEvents NewNotifications) mut
-			{
-				return VT.UnregisterAudioSessionNotification(ref this, ref NewNotifications);
-			}
+			public HRESULT GetState(out AudioSessionState pRetVal) mut => VT.GetState(ref this, out pRetVal);
+			public HRESULT GetDisplayName(out PWSTR pRetVal) mut => VT.GetDisplayName(ref this, out pRetVal);
+			public HRESULT SetDisplayName(PWSTR Value, in Guid EventContext) mut => VT.SetDisplayName(ref this, Value, EventContext);
+			public HRESULT GetIconPath(out PWSTR pRetVal) mut => VT.GetIconPath(ref this, out pRetVal);
+			public HRESULT SetIconPath(PWSTR Value, in Guid EventContext) mut => VT.SetIconPath(ref this, Value, EventContext);
+			public HRESULT GetGroupingParam(out Guid pRetVal) mut => VT.GetGroupingParam(ref this, out pRetVal);
+			public HRESULT SetGroupingParam(in Guid Override, in Guid EventContext) mut => VT.SetGroupingParam(ref this, Override, EventContext);
+			public HRESULT RegisterAudioSessionNotification(ref IAudioSessionEvents NewNotifications) mut => VT.RegisterAudioSessionNotification(ref this, ref NewNotifications);
+			public HRESULT UnregisterAudioSessionNotification(ref IAudioSessionEvents NewNotifications) mut => VT.UnregisterAudioSessionNotification(ref this, ref NewNotifications);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3563,26 +3051,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSessionIdentifier(out PWSTR pRetVal) mut
-			{
-				return VT.GetSessionIdentifier(ref this, out pRetVal);
-			}
-			public HRESULT GetSessionInstanceIdentifier(out PWSTR pRetVal) mut
-			{
-				return VT.GetSessionInstanceIdentifier(ref this, out pRetVal);
-			}
-			public HRESULT GetProcessId(out uint32 pRetVal) mut
-			{
-				return VT.GetProcessId(ref this, out pRetVal);
-			}
-			public HRESULT IsSystemSoundsSession() mut
-			{
-				return VT.IsSystemSoundsSession(ref this);
-			}
-			public HRESULT SetDuckingPreference(BOOL optOut) mut
-			{
-				return VT.SetDuckingPreference(ref this, optOut);
-			}
+			public HRESULT GetSessionIdentifier(out PWSTR pRetVal) mut => VT.GetSessionIdentifier(ref this, out pRetVal);
+			public HRESULT GetSessionInstanceIdentifier(out PWSTR pRetVal) mut => VT.GetSessionInstanceIdentifier(ref this, out pRetVal);
+			public HRESULT GetProcessId(out uint32 pRetVal) mut => VT.GetProcessId(ref this, out pRetVal);
+			public HRESULT IsSystemSoundsSession() mut => VT.IsSystemSoundsSession(ref this);
+			public HRESULT SetDuckingPreference(BOOL optOut) mut => VT.SetDuckingPreference(ref this, optOut);
+
 			[CRepr]
 			public struct VTable : IAudioSessionControl.VTable
 			{
@@ -3600,14 +3074,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAudioSessionControl(Guid* AudioSessionGuid, uint32 StreamFlags, out IAudioSessionControl* SessionControl) mut
-			{
-				return VT.GetAudioSessionControl(ref this, AudioSessionGuid, StreamFlags, out SessionControl);
-			}
-			public HRESULT GetSimpleAudioVolume(Guid* AudioSessionGuid, uint32 StreamFlags, out ISimpleAudioVolume* AudioVolume) mut
-			{
-				return VT.GetSimpleAudioVolume(ref this, AudioSessionGuid, StreamFlags, out AudioVolume);
-			}
+			public HRESULT GetAudioSessionControl(Guid* AudioSessionGuid, uint32 StreamFlags, out IAudioSessionControl* SessionControl) mut => VT.GetAudioSessionControl(ref this, AudioSessionGuid, StreamFlags, out SessionControl);
+			public HRESULT GetSimpleAudioVolume(Guid* AudioSessionGuid, uint32 StreamFlags, out ISimpleAudioVolume* AudioVolume) mut => VT.GetSimpleAudioVolume(ref this, AudioSessionGuid, StreamFlags, out AudioVolume);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3622,14 +3091,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnVolumeDuckNotification(PWSTR sessionID, uint32 countCommunicationSessions) mut
-			{
-				return VT.OnVolumeDuckNotification(ref this, sessionID, countCommunicationSessions);
-			}
-			public HRESULT OnVolumeUnduckNotification(PWSTR sessionID) mut
-			{
-				return VT.OnVolumeUnduckNotification(ref this, sessionID);
-			}
+			public HRESULT OnVolumeDuckNotification(PWSTR sessionID, uint32 countCommunicationSessions) mut => VT.OnVolumeDuckNotification(ref this, sessionID, countCommunicationSessions);
+			public HRESULT OnVolumeUnduckNotification(PWSTR sessionID) mut => VT.OnVolumeUnduckNotification(ref this, sessionID);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3644,10 +3108,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSessionCreated(ref IAudioSessionControl NewSession) mut
-			{
-				return VT.OnSessionCreated(ref this, ref NewSession);
-			}
+			public HRESULT OnSessionCreated(ref IAudioSessionControl NewSession) mut => VT.OnSessionCreated(ref this, ref NewSession);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3661,14 +3123,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out int32 SessionCount) mut
-			{
-				return VT.GetCount(ref this, out SessionCount);
-			}
-			public HRESULT GetSession(int32 SessionCount, out IAudioSessionControl* Session) mut
-			{
-				return VT.GetSession(ref this, SessionCount, out Session);
-			}
+			public HRESULT GetCount(out int32 SessionCount) mut => VT.GetCount(ref this, out SessionCount);
+			public HRESULT GetSession(int32 SessionCount, out IAudioSessionControl* Session) mut => VT.GetSession(ref this, SessionCount, out Session);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3683,26 +3140,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSessionEnumerator(out IAudioSessionEnumerator* SessionEnum) mut
-			{
-				return VT.GetSessionEnumerator(ref this, out SessionEnum);
-			}
-			public HRESULT RegisterSessionNotification(ref IAudioSessionNotification SessionNotification) mut
-			{
-				return VT.RegisterSessionNotification(ref this, ref SessionNotification);
-			}
-			public HRESULT UnregisterSessionNotification(ref IAudioSessionNotification SessionNotification) mut
-			{
-				return VT.UnregisterSessionNotification(ref this, ref SessionNotification);
-			}
-			public HRESULT RegisterDuckNotification(PWSTR sessionID, ref IAudioVolumeDuckNotification duckNotification) mut
-			{
-				return VT.RegisterDuckNotification(ref this, sessionID, ref duckNotification);
-			}
-			public HRESULT UnregisterDuckNotification(ref IAudioVolumeDuckNotification duckNotification) mut
-			{
-				return VT.UnregisterDuckNotification(ref this, ref duckNotification);
-			}
+			public HRESULT GetSessionEnumerator(out IAudioSessionEnumerator* SessionEnum) mut => VT.GetSessionEnumerator(ref this, out SessionEnum);
+			public HRESULT RegisterSessionNotification(ref IAudioSessionNotification SessionNotification) mut => VT.RegisterSessionNotification(ref this, ref SessionNotification);
+			public HRESULT UnregisterSessionNotification(ref IAudioSessionNotification SessionNotification) mut => VT.UnregisterSessionNotification(ref this, ref SessionNotification);
+			public HRESULT RegisterDuckNotification(PWSTR sessionID, ref IAudioVolumeDuckNotification duckNotification) mut => VT.RegisterDuckNotification(ref this, sessionID, ref duckNotification);
+			public HRESULT UnregisterDuckNotification(ref IAudioVolumeDuckNotification duckNotification) mut => VT.UnregisterDuckNotification(ref this, ref duckNotification);
+
 			[CRepr]
 			public struct VTable : IAudioSessionManager.VTable
 			{
@@ -3720,26 +3163,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFrameCount(out uint16 frameCount) mut
-			{
-				return VT.GetFrameCount(ref this, out frameCount);
-			}
-			public HRESULT GetItemCount(out uint16 itemCount) mut
-			{
-				return VT.GetItemCount(ref this, out itemCount);
-			}
-			public HRESULT GetMaxItemCount(out uint16 maxItemCount) mut
-			{
-				return VT.GetMaxItemCount(ref this, out maxItemCount);
-			}
-			public HRESULT GetMaxValueBufferLength(out uint32 maxValueBufferLength) mut
-			{
-				return VT.GetMaxValueBufferLength(ref this, out maxValueBufferLength);
-			}
-			public HRESULT GetInfo(out SpatialAudioMetadataItemsInfo info) mut
-			{
-				return VT.GetInfo(ref this, out info);
-			}
+			public HRESULT GetFrameCount(out uint16 frameCount) mut => VT.GetFrameCount(ref this, out frameCount);
+			public HRESULT GetItemCount(out uint16 itemCount) mut => VT.GetItemCount(ref this, out itemCount);
+			public HRESULT GetMaxItemCount(out uint16 maxItemCount) mut => VT.GetMaxItemCount(ref this, out maxItemCount);
+			public HRESULT GetMaxValueBufferLength(out uint32 maxValueBufferLength) mut => VT.GetMaxValueBufferLength(ref this, out maxValueBufferLength);
+			public HRESULT GetInfo(out SpatialAudioMetadataItemsInfo info) mut => VT.GetInfo(ref this, out info);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3757,22 +3186,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(ref ISpatialAudioMetadataItems metadataItems) mut
-			{
-				return VT.Open(ref this, ref metadataItems);
-			}
-			public HRESULT WriteNextItem(uint16 frameOffset) mut
-			{
-				return VT.WriteNextItem(ref this, frameOffset);
-			}
-			public HRESULT WriteNextItemCommand(uint8 commandID, void* valueBuffer, uint32 valueBufferLength) mut
-			{
-				return VT.WriteNextItemCommand(ref this, commandID, valueBuffer, valueBufferLength);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT Open(ref ISpatialAudioMetadataItems metadataItems) mut => VT.Open(ref this, ref metadataItems);
+			public HRESULT WriteNextItem(uint16 frameOffset) mut => VT.WriteNextItem(ref this, frameOffset);
+			public HRESULT WriteNextItemCommand(uint8 commandID, void* valueBuffer, uint32 valueBufferLength) mut => VT.WriteNextItemCommand(ref this, commandID, valueBuffer, valueBufferLength);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3789,22 +3207,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(ref ISpatialAudioMetadataItems metadataItems) mut
-			{
-				return VT.Open(ref this, ref metadataItems);
-			}
-			public HRESULT ReadNextItem(out uint8 commandCount, out uint16 frameOffset) mut
-			{
-				return VT.ReadNextItem(ref this, out commandCount, out frameOffset);
-			}
-			public HRESULT ReadNextItemCommand(out uint8 commandID, void* valueBuffer, uint32 maxValueBufferLength, out uint32 valueBufferLength) mut
-			{
-				return VT.ReadNextItemCommand(ref this, out commandID, valueBuffer, maxValueBufferLength, out valueBufferLength);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT Open(ref ISpatialAudioMetadataItems metadataItems) mut => VT.Open(ref this, ref metadataItems);
+			public HRESULT ReadNextItem(out uint8 commandCount, out uint16 frameOffset) mut => VT.ReadNextItem(ref this, out commandCount, out frameOffset);
+			public HRESULT ReadNextItemCommand(out uint8 commandID, void* valueBuffer, uint32 maxValueBufferLength, out uint32 valueBufferLength) mut => VT.ReadNextItemCommand(ref this, out commandID, valueBuffer, maxValueBufferLength, out valueBufferLength);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3821,18 +3228,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(ref ISpatialAudioMetadataItems metadataItems) mut
-			{
-				return VT.Open(ref this, ref metadataItems);
-			}
-			public HRESULT CopyMetadataForFrames(uint16 copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ref ISpatialAudioMetadataItems dstMetadataItems, out uint16 itemsCopied) mut
-			{
-				return VT.CopyMetadataForFrames(ref this, copyFrameCount, copyMode, ref dstMetadataItems, out itemsCopied);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT Open(ref ISpatialAudioMetadataItems metadataItems) mut => VT.Open(ref this, ref metadataItems);
+			public HRESULT CopyMetadataForFrames(uint16 copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ref ISpatialAudioMetadataItems dstMetadataItems, out uint16 itemsCopied) mut => VT.CopyMetadataForFrames(ref this, copyFrameCount, copyMode, ref dstMetadataItems, out itemsCopied);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3848,18 +3247,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AttachToBuffer(out uint8 buffer, uint32 bufferLength) mut
-			{
-				return VT.AttachToBuffer(ref this, out buffer, bufferLength);
-			}
-			public HRESULT AttachToPopulatedBuffer(out uint8 buffer, uint32 bufferLength) mut
-			{
-				return VT.AttachToPopulatedBuffer(ref this, out buffer, bufferLength);
-			}
-			public HRESULT DetachBuffer() mut
-			{
-				return VT.DetachBuffer(ref this);
-			}
+			public HRESULT AttachToBuffer(out uint8 buffer, uint32 bufferLength) mut => VT.AttachToBuffer(ref this, out buffer, bufferLength);
+			public HRESULT AttachToPopulatedBuffer(out uint8 buffer, uint32 bufferLength) mut => VT.AttachToPopulatedBuffer(ref this, out buffer, bufferLength);
+			public HRESULT DetachBuffer() mut => VT.DetachBuffer(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3875,26 +3266,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateSpatialAudioMetadataItems(uint16 maxItemCount, uint16 frameCount, ISpatialAudioMetadataItemsBuffer** metadataItemsBuffer, out ISpatialAudioMetadataItems* metadataItems) mut
-			{
-				return VT.ActivateSpatialAudioMetadataItems(ref this, maxItemCount, frameCount, metadataItemsBuffer, out metadataItems);
-			}
-			public HRESULT GetSpatialAudioMetadataItemsBufferLength(uint16 maxItemCount, out uint32 bufferLength) mut
-			{
-				return VT.GetSpatialAudioMetadataItemsBufferLength(ref this, maxItemCount, out bufferLength);
-			}
-			public HRESULT ActivateSpatialAudioMetadataWriter(SpatialAudioMetadataWriterOverflowMode overflowMode, out ISpatialAudioMetadataWriter* metadataWriter) mut
-			{
-				return VT.ActivateSpatialAudioMetadataWriter(ref this, overflowMode, out metadataWriter);
-			}
-			public HRESULT ActivateSpatialAudioMetadataCopier(out ISpatialAudioMetadataCopier* metadataCopier) mut
-			{
-				return VT.ActivateSpatialAudioMetadataCopier(ref this, out metadataCopier);
-			}
-			public HRESULT ActivateSpatialAudioMetadataReader(out ISpatialAudioMetadataReader* metadataReader) mut
-			{
-				return VT.ActivateSpatialAudioMetadataReader(ref this, out metadataReader);
-			}
+			public HRESULT ActivateSpatialAudioMetadataItems(uint16 maxItemCount, uint16 frameCount, ISpatialAudioMetadataItemsBuffer** metadataItemsBuffer, out ISpatialAudioMetadataItems* metadataItems) mut => VT.ActivateSpatialAudioMetadataItems(ref this, maxItemCount, frameCount, metadataItemsBuffer, out metadataItems);
+			public HRESULT GetSpatialAudioMetadataItemsBufferLength(uint16 maxItemCount, out uint32 bufferLength) mut => VT.GetSpatialAudioMetadataItemsBufferLength(ref this, maxItemCount, out bufferLength);
+			public HRESULT ActivateSpatialAudioMetadataWriter(SpatialAudioMetadataWriterOverflowMode overflowMode, out ISpatialAudioMetadataWriter* metadataWriter) mut => VT.ActivateSpatialAudioMetadataWriter(ref this, overflowMode, out metadataWriter);
+			public HRESULT ActivateSpatialAudioMetadataCopier(out ISpatialAudioMetadataCopier* metadataCopier) mut => VT.ActivateSpatialAudioMetadataCopier(ref this, out metadataCopier);
+			public HRESULT ActivateSpatialAudioMetadataReader(out ISpatialAudioMetadataReader* metadataReader) mut => VT.ActivateSpatialAudioMetadataReader(ref this, out metadataReader);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3912,10 +3289,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WriteNextMetadataCommand(uint8 commandID, void* valueBuffer, uint32 valueBufferLength) mut
-			{
-				return VT.WriteNextMetadataCommand(ref this, commandID, valueBuffer, valueBufferLength);
-			}
+			public HRESULT WriteNextMetadataCommand(uint8 commandID, void* valueBuffer, uint32 valueBufferLength) mut => VT.WriteNextMetadataCommand(ref this, commandID, valueBuffer, valueBufferLength);
+
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectBase.VTable
 			{
@@ -3929,10 +3304,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSpatialAudioMetadataItems(out ISpatialAudioMetadataItems* metadataItems) mut
-			{
-				return VT.GetSpatialAudioMetadataItems(ref this, out metadataItems);
-			}
+			public HRESULT GetSpatialAudioMetadataItems(out ISpatialAudioMetadataItems* metadataItems) mut => VT.GetSpatialAudioMetadataItems(ref this, out metadataItems);
+
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectBase.VTable
 			{
@@ -3946,14 +3319,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateSpatialAudioObjectForMetadataCommands(AudioObjectType type, out ISpatialAudioObjectForMetadataCommands* audioObject) mut
-			{
-				return VT.ActivateSpatialAudioObjectForMetadataCommands(ref this, type, out audioObject);
-			}
-			public HRESULT ActivateSpatialAudioObjectForMetadataItems(AudioObjectType type, out ISpatialAudioObjectForMetadataItems* audioObject) mut
-			{
-				return VT.ActivateSpatialAudioObjectForMetadataItems(ref this, type, out audioObject);
-			}
+			public HRESULT ActivateSpatialAudioObjectForMetadataCommands(AudioObjectType type, out ISpatialAudioObjectForMetadataCommands* audioObject) mut => VT.ActivateSpatialAudioObjectForMetadataCommands(ref this, type, out audioObject);
+			public HRESULT ActivateSpatialAudioObjectForMetadataItems(AudioObjectType type, out ISpatialAudioObjectForMetadataItems* audioObject) mut => VT.ActivateSpatialAudioObjectForMetadataItems(ref this, type, out audioObject);
+
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectRenderStreamBase.VTable
 			{
@@ -3968,18 +3336,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterCallback(PAudioStateMonitorCallback callback, void* context, out int64 registration) mut
-			{
-				return VT.RegisterCallback(ref this, callback, context, out registration);
-			}
-			public void UnregisterCallback(int64 registration) mut
-			{
-				VT.UnregisterCallback(ref this, registration);
-			}
-			public AudioStateMonitorSoundLevel GetSoundLevel() mut
-			{
-				return VT.GetSoundLevel(ref this);
-			}
+			public HRESULT RegisterCallback(PAudioStateMonitorCallback callback, void* context, out int64 registration) mut => VT.RegisterCallback(ref this, callback, context, out registration);
+			public void UnregisterCallback(int64 registration) mut => VT.UnregisterCallback(ref this, registration);
+			public AudioStateMonitorSoundLevel GetSoundLevel() mut => VT.GetSoundLevel(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

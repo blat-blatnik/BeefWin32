@@ -116,18 +116,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ManipulationStarted(float x, float y) mut
-			{
-				return VT.ManipulationStarted(ref this, x, y);
-			}
-			public HRESULT ManipulationDelta(float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) mut
-			{
-				return VT.ManipulationDelta(ref this, x, y, translationDeltaX, translationDeltaY, scaleDelta, expansionDelta, rotationDelta, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
-			}
-			public HRESULT ManipulationCompleted(float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) mut
-			{
-				return VT.ManipulationCompleted(ref this, x, y, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
-			}
+			public HRESULT ManipulationStarted(float x, float y) mut => VT.ManipulationStarted(ref this, x, y);
+			public HRESULT ManipulationDelta(float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) mut => VT.ManipulationDelta(ref this, x, y, translationDeltaX, translationDeltaY, scaleDelta, expansionDelta, rotationDelta, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
+			public HRESULT ManipulationCompleted(float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) mut => VT.ManipulationCompleted(ref this, x, y, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -143,202 +135,56 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_InitialOriginX(out float x) mut
-			{
-				return VT.get_InitialOriginX(ref this, out x);
-			}
-			public HRESULT put_InitialOriginX(float x) mut
-			{
-				return VT.put_InitialOriginX(ref this, x);
-			}
-			public HRESULT get_InitialOriginY(out float y) mut
-			{
-				return VT.get_InitialOriginY(ref this, out y);
-			}
-			public HRESULT put_InitialOriginY(float y) mut
-			{
-				return VT.put_InitialOriginY(ref this, y);
-			}
-			public HRESULT get_InitialVelocityX(out float x) mut
-			{
-				return VT.get_InitialVelocityX(ref this, out x);
-			}
-			public HRESULT put_InitialVelocityX(float x) mut
-			{
-				return VT.put_InitialVelocityX(ref this, x);
-			}
-			public HRESULT get_InitialVelocityY(out float y) mut
-			{
-				return VT.get_InitialVelocityY(ref this, out y);
-			}
-			public HRESULT put_InitialVelocityY(float y) mut
-			{
-				return VT.put_InitialVelocityY(ref this, y);
-			}
-			public HRESULT get_InitialAngularVelocity(out float velocity) mut
-			{
-				return VT.get_InitialAngularVelocity(ref this, out velocity);
-			}
-			public HRESULT put_InitialAngularVelocity(float velocity) mut
-			{
-				return VT.put_InitialAngularVelocity(ref this, velocity);
-			}
-			public HRESULT get_InitialExpansionVelocity(out float velocity) mut
-			{
-				return VT.get_InitialExpansionVelocity(ref this, out velocity);
-			}
-			public HRESULT put_InitialExpansionVelocity(float velocity) mut
-			{
-				return VT.put_InitialExpansionVelocity(ref this, velocity);
-			}
-			public HRESULT get_InitialRadius(out float radius) mut
-			{
-				return VT.get_InitialRadius(ref this, out radius);
-			}
-			public HRESULT put_InitialRadius(float radius) mut
-			{
-				return VT.put_InitialRadius(ref this, radius);
-			}
-			public HRESULT get_BoundaryLeft(out float left) mut
-			{
-				return VT.get_BoundaryLeft(ref this, out left);
-			}
-			public HRESULT put_BoundaryLeft(float left) mut
-			{
-				return VT.put_BoundaryLeft(ref this, left);
-			}
-			public HRESULT get_BoundaryTop(out float top) mut
-			{
-				return VT.get_BoundaryTop(ref this, out top);
-			}
-			public HRESULT put_BoundaryTop(float top) mut
-			{
-				return VT.put_BoundaryTop(ref this, top);
-			}
-			public HRESULT get_BoundaryRight(out float right) mut
-			{
-				return VT.get_BoundaryRight(ref this, out right);
-			}
-			public HRESULT put_BoundaryRight(float right) mut
-			{
-				return VT.put_BoundaryRight(ref this, right);
-			}
-			public HRESULT get_BoundaryBottom(out float bottom) mut
-			{
-				return VT.get_BoundaryBottom(ref this, out bottom);
-			}
-			public HRESULT put_BoundaryBottom(float bottom) mut
-			{
-				return VT.put_BoundaryBottom(ref this, bottom);
-			}
-			public HRESULT get_ElasticMarginLeft(out float left) mut
-			{
-				return VT.get_ElasticMarginLeft(ref this, out left);
-			}
-			public HRESULT put_ElasticMarginLeft(float left) mut
-			{
-				return VT.put_ElasticMarginLeft(ref this, left);
-			}
-			public HRESULT get_ElasticMarginTop(out float top) mut
-			{
-				return VT.get_ElasticMarginTop(ref this, out top);
-			}
-			public HRESULT put_ElasticMarginTop(float top) mut
-			{
-				return VT.put_ElasticMarginTop(ref this, top);
-			}
-			public HRESULT get_ElasticMarginRight(out float right) mut
-			{
-				return VT.get_ElasticMarginRight(ref this, out right);
-			}
-			public HRESULT put_ElasticMarginRight(float right) mut
-			{
-				return VT.put_ElasticMarginRight(ref this, right);
-			}
-			public HRESULT get_ElasticMarginBottom(out float bottom) mut
-			{
-				return VT.get_ElasticMarginBottom(ref this, out bottom);
-			}
-			public HRESULT put_ElasticMarginBottom(float bottom) mut
-			{
-				return VT.put_ElasticMarginBottom(ref this, bottom);
-			}
-			public HRESULT get_DesiredDisplacement(out float displacement) mut
-			{
-				return VT.get_DesiredDisplacement(ref this, out displacement);
-			}
-			public HRESULT put_DesiredDisplacement(float displacement) mut
-			{
-				return VT.put_DesiredDisplacement(ref this, displacement);
-			}
-			public HRESULT get_DesiredRotation(out float rotation) mut
-			{
-				return VT.get_DesiredRotation(ref this, out rotation);
-			}
-			public HRESULT put_DesiredRotation(float rotation) mut
-			{
-				return VT.put_DesiredRotation(ref this, rotation);
-			}
-			public HRESULT get_DesiredExpansion(out float expansion) mut
-			{
-				return VT.get_DesiredExpansion(ref this, out expansion);
-			}
-			public HRESULT put_DesiredExpansion(float expansion) mut
-			{
-				return VT.put_DesiredExpansion(ref this, expansion);
-			}
-			public HRESULT get_DesiredDeceleration(out float deceleration) mut
-			{
-				return VT.get_DesiredDeceleration(ref this, out deceleration);
-			}
-			public HRESULT put_DesiredDeceleration(float deceleration) mut
-			{
-				return VT.put_DesiredDeceleration(ref this, deceleration);
-			}
-			public HRESULT get_DesiredAngularDeceleration(out float deceleration) mut
-			{
-				return VT.get_DesiredAngularDeceleration(ref this, out deceleration);
-			}
-			public HRESULT put_DesiredAngularDeceleration(float deceleration) mut
-			{
-				return VT.put_DesiredAngularDeceleration(ref this, deceleration);
-			}
-			public HRESULT get_DesiredExpansionDeceleration(out float deceleration) mut
-			{
-				return VT.get_DesiredExpansionDeceleration(ref this, out deceleration);
-			}
-			public HRESULT put_DesiredExpansionDeceleration(float deceleration) mut
-			{
-				return VT.put_DesiredExpansionDeceleration(ref this, deceleration);
-			}
-			public HRESULT get_InitialTimestamp(out uint32 timestamp) mut
-			{
-				return VT.get_InitialTimestamp(ref this, out timestamp);
-			}
-			public HRESULT put_InitialTimestamp(uint32 timestamp) mut
-			{
-				return VT.put_InitialTimestamp(ref this, timestamp);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Process(out BOOL completed) mut
-			{
-				return VT.Process(ref this, out completed);
-			}
-			public HRESULT ProcessTime(uint32 timestamp, out BOOL completed) mut
-			{
-				return VT.ProcessTime(ref this, timestamp, out completed);
-			}
-			public HRESULT Complete() mut
-			{
-				return VT.Complete(ref this);
-			}
-			public HRESULT CompleteTime(uint32 timestamp) mut
-			{
-				return VT.CompleteTime(ref this, timestamp);
-			}
+			public HRESULT get_InitialOriginX(out float x) mut => VT.get_InitialOriginX(ref this, out x);
+			public HRESULT put_InitialOriginX(float x) mut => VT.put_InitialOriginX(ref this, x);
+			public HRESULT get_InitialOriginY(out float y) mut => VT.get_InitialOriginY(ref this, out y);
+			public HRESULT put_InitialOriginY(float y) mut => VT.put_InitialOriginY(ref this, y);
+			public HRESULT get_InitialVelocityX(out float x) mut => VT.get_InitialVelocityX(ref this, out x);
+			public HRESULT put_InitialVelocityX(float x) mut => VT.put_InitialVelocityX(ref this, x);
+			public HRESULT get_InitialVelocityY(out float y) mut => VT.get_InitialVelocityY(ref this, out y);
+			public HRESULT put_InitialVelocityY(float y) mut => VT.put_InitialVelocityY(ref this, y);
+			public HRESULT get_InitialAngularVelocity(out float velocity) mut => VT.get_InitialAngularVelocity(ref this, out velocity);
+			public HRESULT put_InitialAngularVelocity(float velocity) mut => VT.put_InitialAngularVelocity(ref this, velocity);
+			public HRESULT get_InitialExpansionVelocity(out float velocity) mut => VT.get_InitialExpansionVelocity(ref this, out velocity);
+			public HRESULT put_InitialExpansionVelocity(float velocity) mut => VT.put_InitialExpansionVelocity(ref this, velocity);
+			public HRESULT get_InitialRadius(out float radius) mut => VT.get_InitialRadius(ref this, out radius);
+			public HRESULT put_InitialRadius(float radius) mut => VT.put_InitialRadius(ref this, radius);
+			public HRESULT get_BoundaryLeft(out float left) mut => VT.get_BoundaryLeft(ref this, out left);
+			public HRESULT put_BoundaryLeft(float left) mut => VT.put_BoundaryLeft(ref this, left);
+			public HRESULT get_BoundaryTop(out float top) mut => VT.get_BoundaryTop(ref this, out top);
+			public HRESULT put_BoundaryTop(float top) mut => VT.put_BoundaryTop(ref this, top);
+			public HRESULT get_BoundaryRight(out float right) mut => VT.get_BoundaryRight(ref this, out right);
+			public HRESULT put_BoundaryRight(float right) mut => VT.put_BoundaryRight(ref this, right);
+			public HRESULT get_BoundaryBottom(out float bottom) mut => VT.get_BoundaryBottom(ref this, out bottom);
+			public HRESULT put_BoundaryBottom(float bottom) mut => VT.put_BoundaryBottom(ref this, bottom);
+			public HRESULT get_ElasticMarginLeft(out float left) mut => VT.get_ElasticMarginLeft(ref this, out left);
+			public HRESULT put_ElasticMarginLeft(float left) mut => VT.put_ElasticMarginLeft(ref this, left);
+			public HRESULT get_ElasticMarginTop(out float top) mut => VT.get_ElasticMarginTop(ref this, out top);
+			public HRESULT put_ElasticMarginTop(float top) mut => VT.put_ElasticMarginTop(ref this, top);
+			public HRESULT get_ElasticMarginRight(out float right) mut => VT.get_ElasticMarginRight(ref this, out right);
+			public HRESULT put_ElasticMarginRight(float right) mut => VT.put_ElasticMarginRight(ref this, right);
+			public HRESULT get_ElasticMarginBottom(out float bottom) mut => VT.get_ElasticMarginBottom(ref this, out bottom);
+			public HRESULT put_ElasticMarginBottom(float bottom) mut => VT.put_ElasticMarginBottom(ref this, bottom);
+			public HRESULT get_DesiredDisplacement(out float displacement) mut => VT.get_DesiredDisplacement(ref this, out displacement);
+			public HRESULT put_DesiredDisplacement(float displacement) mut => VT.put_DesiredDisplacement(ref this, displacement);
+			public HRESULT get_DesiredRotation(out float rotation) mut => VT.get_DesiredRotation(ref this, out rotation);
+			public HRESULT put_DesiredRotation(float rotation) mut => VT.put_DesiredRotation(ref this, rotation);
+			public HRESULT get_DesiredExpansion(out float expansion) mut => VT.get_DesiredExpansion(ref this, out expansion);
+			public HRESULT put_DesiredExpansion(float expansion) mut => VT.put_DesiredExpansion(ref this, expansion);
+			public HRESULT get_DesiredDeceleration(out float deceleration) mut => VT.get_DesiredDeceleration(ref this, out deceleration);
+			public HRESULT put_DesiredDeceleration(float deceleration) mut => VT.put_DesiredDeceleration(ref this, deceleration);
+			public HRESULT get_DesiredAngularDeceleration(out float deceleration) mut => VT.get_DesiredAngularDeceleration(ref this, out deceleration);
+			public HRESULT put_DesiredAngularDeceleration(float deceleration) mut => VT.put_DesiredAngularDeceleration(ref this, deceleration);
+			public HRESULT get_DesiredExpansionDeceleration(out float deceleration) mut => VT.get_DesiredExpansionDeceleration(ref this, out deceleration);
+			public HRESULT put_DesiredExpansionDeceleration(float deceleration) mut => VT.put_DesiredExpansionDeceleration(ref this, deceleration);
+			public HRESULT get_InitialTimestamp(out uint32 timestamp) mut => VT.get_InitialTimestamp(ref this, out timestamp);
+			public HRESULT put_InitialTimestamp(uint32 timestamp) mut => VT.put_InitialTimestamp(ref this, timestamp);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Process(out BOOL completed) mut => VT.Process(ref this, out completed);
+			public HRESULT ProcessTime(uint32 timestamp, out BOOL completed) mut => VT.ProcessTime(ref this, timestamp, out completed);
+			public HRESULT Complete() mut => VT.Complete(ref this);
+			public HRESULT CompleteTime(uint32 timestamp) mut => VT.CompleteTime(ref this, timestamp);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -400,90 +246,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SupportedManipulations(out MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) mut
-			{
-				return VT.get_SupportedManipulations(ref this, out manipulations);
-			}
-			public HRESULT put_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) mut
-			{
-				return VT.put_SupportedManipulations(ref this, manipulations);
-			}
-			public HRESULT get_PivotPointX(out float pivotPointX) mut
-			{
-				return VT.get_PivotPointX(ref this, out pivotPointX);
-			}
-			public HRESULT put_PivotPointX(float pivotPointX) mut
-			{
-				return VT.put_PivotPointX(ref this, pivotPointX);
-			}
-			public HRESULT get_PivotPointY(out float pivotPointY) mut
-			{
-				return VT.get_PivotPointY(ref this, out pivotPointY);
-			}
-			public HRESULT put_PivotPointY(float pivotPointY) mut
-			{
-				return VT.put_PivotPointY(ref this, pivotPointY);
-			}
-			public HRESULT get_PivotRadius(out float pivotRadius) mut
-			{
-				return VT.get_PivotRadius(ref this, out pivotRadius);
-			}
-			public HRESULT put_PivotRadius(float pivotRadius) mut
-			{
-				return VT.put_PivotRadius(ref this, pivotRadius);
-			}
-			public HRESULT CompleteManipulation() mut
-			{
-				return VT.CompleteManipulation(ref this);
-			}
-			public HRESULT ProcessDown(uint32 manipulatorId, float x, float y) mut
-			{
-				return VT.ProcessDown(ref this, manipulatorId, x, y);
-			}
-			public HRESULT ProcessMove(uint32 manipulatorId, float x, float y) mut
-			{
-				return VT.ProcessMove(ref this, manipulatorId, x, y);
-			}
-			public HRESULT ProcessUp(uint32 manipulatorId, float x, float y) mut
-			{
-				return VT.ProcessUp(ref this, manipulatorId, x, y);
-			}
-			public HRESULT ProcessDownWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut
-			{
-				return VT.ProcessDownWithTime(ref this, manipulatorId, x, y, timestamp);
-			}
-			public HRESULT ProcessMoveWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut
-			{
-				return VT.ProcessMoveWithTime(ref this, manipulatorId, x, y, timestamp);
-			}
-			public HRESULT ProcessUpWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut
-			{
-				return VT.ProcessUpWithTime(ref this, manipulatorId, x, y, timestamp);
-			}
-			public HRESULT GetVelocityX(out float velocityX) mut
-			{
-				return VT.GetVelocityX(ref this, out velocityX);
-			}
-			public HRESULT GetVelocityY(out float velocityY) mut
-			{
-				return VT.GetVelocityY(ref this, out velocityY);
-			}
-			public HRESULT GetExpansionVelocity(out float expansionVelocity) mut
-			{
-				return VT.GetExpansionVelocity(ref this, out expansionVelocity);
-			}
-			public HRESULT GetAngularVelocity(out float angularVelocity) mut
-			{
-				return VT.GetAngularVelocity(ref this, out angularVelocity);
-			}
-			public HRESULT get_MinimumScaleRotateRadius(out float minRadius) mut
-			{
-				return VT.get_MinimumScaleRotateRadius(ref this, out minRadius);
-			}
-			public HRESULT put_MinimumScaleRotateRadius(float minRadius) mut
-			{
-				return VT.put_MinimumScaleRotateRadius(ref this, minRadius);
-			}
+			public HRESULT get_SupportedManipulations(out MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) mut => VT.get_SupportedManipulations(ref this, out manipulations);
+			public HRESULT put_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) mut => VT.put_SupportedManipulations(ref this, manipulations);
+			public HRESULT get_PivotPointX(out float pivotPointX) mut => VT.get_PivotPointX(ref this, out pivotPointX);
+			public HRESULT put_PivotPointX(float pivotPointX) mut => VT.put_PivotPointX(ref this, pivotPointX);
+			public HRESULT get_PivotPointY(out float pivotPointY) mut => VT.get_PivotPointY(ref this, out pivotPointY);
+			public HRESULT put_PivotPointY(float pivotPointY) mut => VT.put_PivotPointY(ref this, pivotPointY);
+			public HRESULT get_PivotRadius(out float pivotRadius) mut => VT.get_PivotRadius(ref this, out pivotRadius);
+			public HRESULT put_PivotRadius(float pivotRadius) mut => VT.put_PivotRadius(ref this, pivotRadius);
+			public HRESULT CompleteManipulation() mut => VT.CompleteManipulation(ref this);
+			public HRESULT ProcessDown(uint32 manipulatorId, float x, float y) mut => VT.ProcessDown(ref this, manipulatorId, x, y);
+			public HRESULT ProcessMove(uint32 manipulatorId, float x, float y) mut => VT.ProcessMove(ref this, manipulatorId, x, y);
+			public HRESULT ProcessUp(uint32 manipulatorId, float x, float y) mut => VT.ProcessUp(ref this, manipulatorId, x, y);
+			public HRESULT ProcessDownWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut => VT.ProcessDownWithTime(ref this, manipulatorId, x, y, timestamp);
+			public HRESULT ProcessMoveWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut => VT.ProcessMoveWithTime(ref this, manipulatorId, x, y, timestamp);
+			public HRESULT ProcessUpWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut => VT.ProcessUpWithTime(ref this, manipulatorId, x, y, timestamp);
+			public HRESULT GetVelocityX(out float velocityX) mut => VT.GetVelocityX(ref this, out velocityX);
+			public HRESULT GetVelocityY(out float velocityY) mut => VT.GetVelocityY(ref this, out velocityY);
+			public HRESULT GetExpansionVelocity(out float expansionVelocity) mut => VT.GetExpansionVelocity(ref this, out expansionVelocity);
+			public HRESULT GetAngularVelocity(out float angularVelocity) mut => VT.GetAngularVelocity(ref this, out angularVelocity);
+			public HRESULT get_MinimumScaleRotateRadius(out float minRadius) mut => VT.get_MinimumScaleRotateRadius(ref this, out minRadius);
+			public HRESULT put_MinimumScaleRotateRadius(float minRadius) mut => VT.put_MinimumScaleRotateRadius(ref this, minRadius);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

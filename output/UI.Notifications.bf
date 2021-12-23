@@ -23,10 +23,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Activate(PWSTR appUserModelId, PWSTR invokedArgs, NOTIFICATION_USER_INPUT_DATA* data, uint32 count) mut
-			{
-				return VT.Activate(ref this, appUserModelId, invokedArgs, data, count);
-			}
+			public HRESULT Activate(PWSTR appUserModelId, PWSTR invokedArgs, NOTIFICATION_USER_INPUT_DATA* data, uint32 count) mut => VT.Activate(ref this, appUserModelId, invokedArgs, data, count);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

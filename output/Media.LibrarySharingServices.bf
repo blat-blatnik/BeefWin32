@@ -27,14 +27,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR name) mut
-			{
-				return VT.get_Name(ref this, out name);
-			}
-			public HRESULT get_Value(out VARIANT value) mut
-			{
-				return VT.get_Value(ref this, out value);
-			}
+			public HRESULT get_Name(out BSTR name) mut => VT.get_Name(ref this, out name);
+			public HRESULT get_Value(out VARIANT value) mut => VT.get_Value(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -49,18 +44,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Item(int32 index, out IWindowsMediaLibrarySharingDeviceProperty* property) mut
-			{
-				return VT.get_Item(ref this, index, out property);
-			}
-			public HRESULT get_Count(out int32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT GetProperty(BSTR name, out IWindowsMediaLibrarySharingDeviceProperty* property) mut
-			{
-				return VT.GetProperty(ref this, name, out property);
-			}
+			public HRESULT get_Item(int32 index, out IWindowsMediaLibrarySharingDeviceProperty* property) mut => VT.get_Item(ref this, index, out property);
+			public HRESULT get_Count(out int32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT GetProperty(BSTR name, out IWindowsMediaLibrarySharingDeviceProperty* property) mut => VT.GetProperty(ref this, name, out property);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -76,22 +63,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DeviceID(out BSTR deviceID) mut
-			{
-				return VT.get_DeviceID(ref this, out deviceID);
-			}
-			public HRESULT get_Authorization(out WindowsMediaLibrarySharingDeviceAuthorizationStatus authorization) mut
-			{
-				return VT.get_Authorization(ref this, out authorization);
-			}
-			public HRESULT put_Authorization(WindowsMediaLibrarySharingDeviceAuthorizationStatus authorization) mut
-			{
-				return VT.put_Authorization(ref this, authorization);
-			}
-			public HRESULT get_Properties(out IWindowsMediaLibrarySharingDeviceProperties* deviceProperties) mut
-			{
-				return VT.get_Properties(ref this, out deviceProperties);
-			}
+			public HRESULT get_DeviceID(out BSTR deviceID) mut => VT.get_DeviceID(ref this, out deviceID);
+			public HRESULT get_Authorization(out WindowsMediaLibrarySharingDeviceAuthorizationStatus authorization) mut => VT.get_Authorization(ref this, out authorization);
+			public HRESULT put_Authorization(WindowsMediaLibrarySharingDeviceAuthorizationStatus authorization) mut => VT.put_Authorization(ref this, authorization);
+			public HRESULT get_Properties(out IWindowsMediaLibrarySharingDeviceProperties* deviceProperties) mut => VT.get_Properties(ref this, out deviceProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -108,18 +84,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Item(int32 index, out IWindowsMediaLibrarySharingDevice* device) mut
-			{
-				return VT.get_Item(ref this, index, out device);
-			}
-			public HRESULT get_Count(out int32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT GetDevice(BSTR deviceID, out IWindowsMediaLibrarySharingDevice* device) mut
-			{
-				return VT.GetDevice(ref this, deviceID, out device);
-			}
+			public HRESULT get_Item(int32 index, out IWindowsMediaLibrarySharingDevice* device) mut => VT.get_Item(ref this, index, out device);
+			public HRESULT get_Count(out int32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT GetDevice(BSTR deviceID, out IWindowsMediaLibrarySharingDevice* device) mut => VT.GetDevice(ref this, deviceID, out device);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -135,82 +103,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT showShareMediaCPL(BSTR device) mut
-			{
-				return VT.showShareMediaCPL(ref this, device);
-			}
-			public HRESULT get_userHomeMediaSharingState(out int16 sharingEnabled) mut
-			{
-				return VT.get_userHomeMediaSharingState(ref this, out sharingEnabled);
-			}
-			public HRESULT put_userHomeMediaSharingState(int16 sharingEnabled) mut
-			{
-				return VT.put_userHomeMediaSharingState(ref this, sharingEnabled);
-			}
-			public HRESULT get_userHomeMediaSharingLibraryName(out BSTR libraryName) mut
-			{
-				return VT.get_userHomeMediaSharingLibraryName(ref this, out libraryName);
-			}
-			public HRESULT put_userHomeMediaSharingLibraryName(BSTR libraryName) mut
-			{
-				return VT.put_userHomeMediaSharingLibraryName(ref this, libraryName);
-			}
-			public HRESULT get_computerHomeMediaSharingAllowedState(out int16 sharingAllowed) mut
-			{
-				return VT.get_computerHomeMediaSharingAllowedState(ref this, out sharingAllowed);
-			}
-			public HRESULT put_computerHomeMediaSharingAllowedState(int16 sharingAllowed) mut
-			{
-				return VT.put_computerHomeMediaSharingAllowedState(ref this, sharingAllowed);
-			}
-			public HRESULT get_userInternetMediaSharingState(out int16 sharingEnabled) mut
-			{
-				return VT.get_userInternetMediaSharingState(ref this, out sharingEnabled);
-			}
-			public HRESULT put_userInternetMediaSharingState(int16 sharingEnabled) mut
-			{
-				return VT.put_userInternetMediaSharingState(ref this, sharingEnabled);
-			}
-			public HRESULT get_computerInternetMediaSharingAllowedState(out int16 sharingAllowed) mut
-			{
-				return VT.get_computerInternetMediaSharingAllowedState(ref this, out sharingAllowed);
-			}
-			public HRESULT put_computerInternetMediaSharingAllowedState(int16 sharingAllowed) mut
-			{
-				return VT.put_computerInternetMediaSharingAllowedState(ref this, sharingAllowed);
-			}
-			public HRESULT get_internetMediaSharingSecurityGroup(out BSTR securityGroup) mut
-			{
-				return VT.get_internetMediaSharingSecurityGroup(ref this, out securityGroup);
-			}
-			public HRESULT put_internetMediaSharingSecurityGroup(BSTR securityGroup) mut
-			{
-				return VT.put_internetMediaSharingSecurityGroup(ref this, securityGroup);
-			}
-			public HRESULT get_allowSharingToAllDevices(out int16 sharingEnabled) mut
-			{
-				return VT.get_allowSharingToAllDevices(ref this, out sharingEnabled);
-			}
-			public HRESULT put_allowSharingToAllDevices(int16 sharingEnabled) mut
-			{
-				return VT.put_allowSharingToAllDevices(ref this, sharingEnabled);
-			}
-			public HRESULT setDefaultAuthorization(BSTR MACAddresses, BSTR friendlyName, int16 authorization) mut
-			{
-				return VT.setDefaultAuthorization(ref this, MACAddresses, friendlyName, authorization);
-			}
-			public HRESULT setAuthorizationState(BSTR MACAddress, int16 authorizationState) mut
-			{
-				return VT.setAuthorizationState(ref this, MACAddress, authorizationState);
-			}
-			public HRESULT getAllDevices(out IWindowsMediaLibrarySharingDevices* devices) mut
-			{
-				return VT.getAllDevices(ref this, out devices);
-			}
-			public HRESULT get_customSettingsApplied(out int16 customSettingsApplied) mut
-			{
-				return VT.get_customSettingsApplied(ref this, out customSettingsApplied);
-			}
+			public HRESULT showShareMediaCPL(BSTR device) mut => VT.showShareMediaCPL(ref this, device);
+			public HRESULT get_userHomeMediaSharingState(out int16 sharingEnabled) mut => VT.get_userHomeMediaSharingState(ref this, out sharingEnabled);
+			public HRESULT put_userHomeMediaSharingState(int16 sharingEnabled) mut => VT.put_userHomeMediaSharingState(ref this, sharingEnabled);
+			public HRESULT get_userHomeMediaSharingLibraryName(out BSTR libraryName) mut => VT.get_userHomeMediaSharingLibraryName(ref this, out libraryName);
+			public HRESULT put_userHomeMediaSharingLibraryName(BSTR libraryName) mut => VT.put_userHomeMediaSharingLibraryName(ref this, libraryName);
+			public HRESULT get_computerHomeMediaSharingAllowedState(out int16 sharingAllowed) mut => VT.get_computerHomeMediaSharingAllowedState(ref this, out sharingAllowed);
+			public HRESULT put_computerHomeMediaSharingAllowedState(int16 sharingAllowed) mut => VT.put_computerHomeMediaSharingAllowedState(ref this, sharingAllowed);
+			public HRESULT get_userInternetMediaSharingState(out int16 sharingEnabled) mut => VT.get_userInternetMediaSharingState(ref this, out sharingEnabled);
+			public HRESULT put_userInternetMediaSharingState(int16 sharingEnabled) mut => VT.put_userInternetMediaSharingState(ref this, sharingEnabled);
+			public HRESULT get_computerInternetMediaSharingAllowedState(out int16 sharingAllowed) mut => VT.get_computerInternetMediaSharingAllowedState(ref this, out sharingAllowed);
+			public HRESULT put_computerInternetMediaSharingAllowedState(int16 sharingAllowed) mut => VT.put_computerInternetMediaSharingAllowedState(ref this, sharingAllowed);
+			public HRESULT get_internetMediaSharingSecurityGroup(out BSTR securityGroup) mut => VT.get_internetMediaSharingSecurityGroup(ref this, out securityGroup);
+			public HRESULT put_internetMediaSharingSecurityGroup(BSTR securityGroup) mut => VT.put_internetMediaSharingSecurityGroup(ref this, securityGroup);
+			public HRESULT get_allowSharingToAllDevices(out int16 sharingEnabled) mut => VT.get_allowSharingToAllDevices(ref this, out sharingEnabled);
+			public HRESULT put_allowSharingToAllDevices(int16 sharingEnabled) mut => VT.put_allowSharingToAllDevices(ref this, sharingEnabled);
+			public HRESULT setDefaultAuthorization(BSTR MACAddresses, BSTR friendlyName, int16 authorization) mut => VT.setDefaultAuthorization(ref this, MACAddresses, friendlyName, authorization);
+			public HRESULT setAuthorizationState(BSTR MACAddress, int16 authorizationState) mut => VT.setAuthorizationState(ref this, MACAddress, authorizationState);
+			public HRESULT getAllDevices(out IWindowsMediaLibrarySharingDevices* devices) mut => VT.getAllDevices(ref this, out devices);
+			public HRESULT get_customSettingsApplied(out int16 customSettingsApplied) mut => VT.get_customSettingsApplied(ref this, out customSettingsApplied);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

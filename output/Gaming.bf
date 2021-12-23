@@ -104,22 +104,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddGame(BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, out Guid pguidInstanceID) mut
-			{
-				return VT.AddGame(ref this, bstrGDFBinaryPath, bstrGameInstallDirectory, installScope, out pguidInstanceID);
-			}
-			public HRESULT RemoveGame(Guid guidInstanceID) mut
-			{
-				return VT.RemoveGame(ref this, guidInstanceID);
-			}
-			public HRESULT UpdateGame(Guid guidInstanceID) mut
-			{
-				return VT.UpdateGame(ref this, guidInstanceID);
-			}
-			public HRESULT VerifyAccess(BSTR bstrGDFBinaryPath, out BOOL pfHasAccess) mut
-			{
-				return VT.VerifyAccess(ref this, bstrGDFBinaryPath, out pfHasAccess);
-			}
+			public HRESULT AddGame(BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, out Guid pguidInstanceID) mut => VT.AddGame(ref this, bstrGDFBinaryPath, bstrGameInstallDirectory, installScope, out pguidInstanceID);
+			public HRESULT RemoveGame(Guid guidInstanceID) mut => VT.RemoveGame(ref this, guidInstanceID);
+			public HRESULT UpdateGame(Guid guidInstanceID) mut => VT.UpdateGame(ref this, guidInstanceID);
+			public HRESULT VerifyAccess(BSTR bstrGDFBinaryPath, out BOOL pfHasAccess) mut => VT.VerifyAccess(ref this, bstrGDFBinaryPath, out pfHasAccess);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -136,54 +125,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMaxCategoryLength(out uint32 cch) mut
-			{
-				return VT.GetMaxCategoryLength(ref this, out cch);
-			}
-			public HRESULT GetMaxNameLength(out uint32 cch) mut
-			{
-				return VT.GetMaxNameLength(ref this, out cch);
-			}
-			public HRESULT GetMaxValueLength(out uint32 cch) mut
-			{
-				return VT.GetMaxValueLength(ref this, out cch);
-			}
-			public HRESULT GetMaxCategories(out uint16 pMax) mut
-			{
-				return VT.GetMaxCategories(ref this, out pMax);
-			}
-			public HRESULT GetMaxStatsPerCategory(out uint16 pMax) mut
-			{
-				return VT.GetMaxStatsPerCategory(ref this, out pMax);
-			}
-			public HRESULT SetCategoryTitle(uint16 categoryIndex, PWSTR title) mut
-			{
-				return VT.SetCategoryTitle(ref this, categoryIndex, title);
-			}
-			public HRESULT GetCategoryTitle(uint16 categoryIndex, PWSTR* pTitle) mut
-			{
-				return VT.GetCategoryTitle(ref this, categoryIndex, pTitle);
-			}
-			public HRESULT GetStatistic(uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) mut
-			{
-				return VT.GetStatistic(ref this, categoryIndex, statIndex, pName, pValue);
-			}
-			public HRESULT SetStatistic(uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) mut
-			{
-				return VT.SetStatistic(ref this, categoryIndex, statIndex, name, value);
-			}
-			public HRESULT Save(BOOL trackChanges) mut
-			{
-				return VT.Save(ref this, trackChanges);
-			}
-			public HRESULT SetLastPlayedCategory(uint32 categoryIndex) mut
-			{
-				return VT.SetLastPlayedCategory(ref this, categoryIndex);
-			}
-			public HRESULT GetLastPlayedCategory(out uint32 pCategoryIndex) mut
-			{
-				return VT.GetLastPlayedCategory(ref this, out pCategoryIndex);
-			}
+			public HRESULT GetMaxCategoryLength(out uint32 cch) mut => VT.GetMaxCategoryLength(ref this, out cch);
+			public HRESULT GetMaxNameLength(out uint32 cch) mut => VT.GetMaxNameLength(ref this, out cch);
+			public HRESULT GetMaxValueLength(out uint32 cch) mut => VT.GetMaxValueLength(ref this, out cch);
+			public HRESULT GetMaxCategories(out uint16 pMax) mut => VT.GetMaxCategories(ref this, out pMax);
+			public HRESULT GetMaxStatsPerCategory(out uint16 pMax) mut => VT.GetMaxStatsPerCategory(ref this, out pMax);
+			public HRESULT SetCategoryTitle(uint16 categoryIndex, PWSTR title) mut => VT.SetCategoryTitle(ref this, categoryIndex, title);
+			public HRESULT GetCategoryTitle(uint16 categoryIndex, PWSTR* pTitle) mut => VT.GetCategoryTitle(ref this, categoryIndex, pTitle);
+			public HRESULT GetStatistic(uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) mut => VT.GetStatistic(ref this, categoryIndex, statIndex, pName, pValue);
+			public HRESULT SetStatistic(uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) mut => VT.SetStatistic(ref this, categoryIndex, statIndex, name, value);
+			public HRESULT Save(BOOL trackChanges) mut => VT.Save(ref this, trackChanges);
+			public HRESULT SetLastPlayedCategory(uint32 categoryIndex) mut => VT.SetLastPlayedCategory(ref this, categoryIndex);
+			public HRESULT GetLastPlayedCategory(out uint32 pCategoryIndex) mut => VT.GetLastPlayedCategory(ref this, out pCategoryIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -208,14 +162,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGameStatistics(PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, IGameStatistics** ppiStats) mut
-			{
-				return VT.GetGameStatistics(ref this, GDFBinaryPath, openType, out pOpenResult, ppiStats);
-			}
-			public HRESULT RemoveGameStatistics(PWSTR GDFBinaryPath) mut
-			{
-				return VT.RemoveGameStatistics(ref this, GDFBinaryPath);
-			}
+			public HRESULT GetGameStatistics(PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, IGameStatistics** ppiStats) mut => VT.GetGameStatistics(ref this, GDFBinaryPath, openType, out pOpenResult, ppiStats);
+			public HRESULT RemoveGameStatistics(PWSTR GDFBinaryPath) mut => VT.RemoveGameStatistics(ref this, GDFBinaryPath);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -230,18 +179,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InstallGame(PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) mut
-			{
-				return VT.InstallGame(ref this, binaryGDFPath, installDirectory, installScope);
-			}
-			public HRESULT UninstallGame(PWSTR binaryGDFPath) mut
-			{
-				return VT.UninstallGame(ref this, binaryGDFPath);
-			}
-			public HRESULT CheckAccess(PWSTR binaryGDFPath, out BOOL pHasAccess) mut
-			{
-				return VT.CheckAccess(ref this, binaryGDFPath, out pHasAccess);
-			}
+			public HRESULT InstallGame(PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) mut => VT.InstallGame(ref this, binaryGDFPath, installDirectory, installScope);
+			public HRESULT UninstallGame(PWSTR binaryGDFPath) mut => VT.UninstallGame(ref this, binaryGDFPath);
+			public HRESULT CheckAccess(PWSTR binaryGDFPath, out BOOL pHasAccess) mut => VT.CheckAccess(ref this, binaryGDFPath, out pHasAccess);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -257,30 +198,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetGamerAccount(PWSTR msaAccountId, PWSTR xuid) mut
-			{
-				return VT.SetGamerAccount(ref this, msaAccountId, xuid);
-			}
-			public HRESULT GetGamerAccount(out PWSTR msaAccountId, out PWSTR xuid) mut
-			{
-				return VT.GetGamerAccount(ref this, out msaAccountId, out xuid);
-			}
-			public HRESULT SetAppViewInitialized(PWSTR appSid, PWSTR msaAccountId) mut
-			{
-				return VT.SetAppViewInitialized(ref this, appSid, msaAccountId);
-			}
-			public HRESULT GetEnvironment(out PWSTR environment) mut
-			{
-				return VT.GetEnvironment(ref this, out environment);
-			}
-			public HRESULT GetSandbox(out PWSTR sandbox) mut
-			{
-				return VT.GetSandbox(ref this, out sandbox);
-			}
-			public HRESULT GetTokenAndSignatureWithTokenResult(PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, out IXblIdpAuthTokenResult* result) mut
-			{
-				return VT.GetTokenAndSignatureWithTokenResult(ref this, msaAccountId, appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, out result);
-			}
+			public HRESULT SetGamerAccount(PWSTR msaAccountId, PWSTR xuid) mut => VT.SetGamerAccount(ref this, msaAccountId, xuid);
+			public HRESULT GetGamerAccount(out PWSTR msaAccountId, out PWSTR xuid) mut => VT.GetGamerAccount(ref this, out msaAccountId, out xuid);
+			public HRESULT SetAppViewInitialized(PWSTR appSid, PWSTR msaAccountId) mut => VT.SetAppViewInitialized(ref this, appSid, msaAccountId);
+			public HRESULT GetEnvironment(out PWSTR environment) mut => VT.GetEnvironment(ref this, out environment);
+			public HRESULT GetSandbox(out PWSTR sandbox) mut => VT.GetSandbox(ref this, out sandbox);
+			public HRESULT GetTokenAndSignatureWithTokenResult(PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, out IXblIdpAuthTokenResult* result) mut => VT.GetTokenAndSignatureWithTokenResult(ref this, msaAccountId, appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, out result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -299,86 +223,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStatus(out XBL_IDP_AUTH_TOKEN_STATUS status) mut
-			{
-				return VT.GetStatus(ref this, out status);
-			}
-			public HRESULT GetErrorCode(out HRESULT errorCode) mut
-			{
-				return VT.GetErrorCode(ref this, out errorCode);
-			}
-			public HRESULT GetToken(out PWSTR token) mut
-			{
-				return VT.GetToken(ref this, out token);
-			}
-			public HRESULT GetSignature(out PWSTR signature) mut
-			{
-				return VT.GetSignature(ref this, out signature);
-			}
-			public HRESULT GetSandbox(out PWSTR sandbox) mut
-			{
-				return VT.GetSandbox(ref this, out sandbox);
-			}
-			public HRESULT GetEnvironment(out PWSTR environment) mut
-			{
-				return VT.GetEnvironment(ref this, out environment);
-			}
-			public HRESULT GetMsaAccountId(out PWSTR msaAccountId) mut
-			{
-				return VT.GetMsaAccountId(ref this, out msaAccountId);
-			}
-			public HRESULT GetXuid(out PWSTR xuid) mut
-			{
-				return VT.GetXuid(ref this, out xuid);
-			}
-			public HRESULT GetGamertag(out PWSTR gamertag) mut
-			{
-				return VT.GetGamertag(ref this, out gamertag);
-			}
-			public HRESULT GetAgeGroup(out PWSTR ageGroup) mut
-			{
-				return VT.GetAgeGroup(ref this, out ageGroup);
-			}
-			public HRESULT GetPrivileges(out PWSTR privileges) mut
-			{
-				return VT.GetPrivileges(ref this, out privileges);
-			}
-			public HRESULT GetMsaTarget(out PWSTR msaTarget) mut
-			{
-				return VT.GetMsaTarget(ref this, out msaTarget);
-			}
-			public HRESULT GetMsaPolicy(out PWSTR msaPolicy) mut
-			{
-				return VT.GetMsaPolicy(ref this, out msaPolicy);
-			}
-			public HRESULT GetMsaAppId(out PWSTR msaAppId) mut
-			{
-				return VT.GetMsaAppId(ref this, out msaAppId);
-			}
-			public HRESULT GetRedirect(out PWSTR redirect) mut
-			{
-				return VT.GetRedirect(ref this, out redirect);
-			}
-			public HRESULT GetMessage(out PWSTR message) mut
-			{
-				return VT.GetMessage(ref this, out message);
-			}
-			public HRESULT GetHelpId(out PWSTR helpId) mut
-			{
-				return VT.GetHelpId(ref this, out helpId);
-			}
-			public HRESULT GetEnforcementBans(out PWSTR enforcementBans) mut
-			{
-				return VT.GetEnforcementBans(ref this, out enforcementBans);
-			}
-			public HRESULT GetRestrictions(out PWSTR restrictions) mut
-			{
-				return VT.GetRestrictions(ref this, out restrictions);
-			}
-			public HRESULT GetTitleRestrictions(out PWSTR titleRestrictions) mut
-			{
-				return VT.GetTitleRestrictions(ref this, out titleRestrictions);
-			}
+			public HRESULT GetStatus(out XBL_IDP_AUTH_TOKEN_STATUS status) mut => VT.GetStatus(ref this, out status);
+			public HRESULT GetErrorCode(out HRESULT errorCode) mut => VT.GetErrorCode(ref this, out errorCode);
+			public HRESULT GetToken(out PWSTR token) mut => VT.GetToken(ref this, out token);
+			public HRESULT GetSignature(out PWSTR signature) mut => VT.GetSignature(ref this, out signature);
+			public HRESULT GetSandbox(out PWSTR sandbox) mut => VT.GetSandbox(ref this, out sandbox);
+			public HRESULT GetEnvironment(out PWSTR environment) mut => VT.GetEnvironment(ref this, out environment);
+			public HRESULT GetMsaAccountId(out PWSTR msaAccountId) mut => VT.GetMsaAccountId(ref this, out msaAccountId);
+			public HRESULT GetXuid(out PWSTR xuid) mut => VT.GetXuid(ref this, out xuid);
+			public HRESULT GetGamertag(out PWSTR gamertag) mut => VT.GetGamertag(ref this, out gamertag);
+			public HRESULT GetAgeGroup(out PWSTR ageGroup) mut => VT.GetAgeGroup(ref this, out ageGroup);
+			public HRESULT GetPrivileges(out PWSTR privileges) mut => VT.GetPrivileges(ref this, out privileges);
+			public HRESULT GetMsaTarget(out PWSTR msaTarget) mut => VT.GetMsaTarget(ref this, out msaTarget);
+			public HRESULT GetMsaPolicy(out PWSTR msaPolicy) mut => VT.GetMsaPolicy(ref this, out msaPolicy);
+			public HRESULT GetMsaAppId(out PWSTR msaAppId) mut => VT.GetMsaAppId(ref this, out msaAppId);
+			public HRESULT GetRedirect(out PWSTR redirect) mut => VT.GetRedirect(ref this, out redirect);
+			public HRESULT GetMessage(out PWSTR message) mut => VT.GetMessage(ref this, out message);
+			public HRESULT GetHelpId(out PWSTR helpId) mut => VT.GetHelpId(ref this, out helpId);
+			public HRESULT GetEnforcementBans(out PWSTR enforcementBans) mut => VT.GetEnforcementBans(ref this, out enforcementBans);
+			public HRESULT GetRestrictions(out PWSTR restrictions) mut => VT.GetRestrictions(ref this, out restrictions);
+			public HRESULT GetTitleRestrictions(out PWSTR titleRestrictions) mut => VT.GetTitleRestrictions(ref this, out titleRestrictions);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -411,18 +276,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetModernGamertag(out PWSTR value) mut
-			{
-				return VT.GetModernGamertag(ref this, out value);
-			}
-			public HRESULT GetModernGamertagSuffix(out PWSTR value) mut
-			{
-				return VT.GetModernGamertagSuffix(ref this, out value);
-			}
-			public HRESULT GetUniqueModernGamertag(out PWSTR value) mut
-			{
-				return VT.GetUniqueModernGamertag(ref this, out value);
-			}
+			public HRESULT GetModernGamertag(out PWSTR value) mut => VT.GetModernGamertag(ref this, out value);
+			public HRESULT GetModernGamertagSuffix(out PWSTR value) mut => VT.GetModernGamertagSuffix(ref this, out value);
+			public HRESULT GetUniqueModernGamertag(out PWSTR value) mut => VT.GetUniqueModernGamertag(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

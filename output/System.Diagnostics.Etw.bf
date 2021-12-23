@@ -1957,54 +1957,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out ITraceEvent* NewEvent) mut
-			{
-				return VT.Clone(ref this, out NewEvent);
-			}
-			public HRESULT GetUserContext(void** UserContext) mut
-			{
-				return VT.GetUserContext(ref this, UserContext);
-			}
-			public HRESULT GetEventRecord(out EVENT_RECORD* EventRecord) mut
-			{
-				return VT.GetEventRecord(ref this, out EventRecord);
-			}
-			public HRESULT SetPayload(uint8* Payload, uint32 PayloadSize) mut
-			{
-				return VT.SetPayload(ref this, Payload, PayloadSize);
-			}
-			public HRESULT SetEventDescriptor(in EVENT_DESCRIPTOR EventDescriptor) mut
-			{
-				return VT.SetEventDescriptor(ref this, EventDescriptor);
-			}
-			public HRESULT SetProcessId(uint32 ProcessId) mut
-			{
-				return VT.SetProcessId(ref this, ProcessId);
-			}
-			public HRESULT SetProcessorIndex(uint32 ProcessorIndex) mut
-			{
-				return VT.SetProcessorIndex(ref this, ProcessorIndex);
-			}
-			public HRESULT SetThreadId(uint32 ThreadId) mut
-			{
-				return VT.SetThreadId(ref this, ThreadId);
-			}
-			public HRESULT SetThreadTimes(uint32 KernelTime, uint32 UserTime) mut
-			{
-				return VT.SetThreadTimes(ref this, KernelTime, UserTime);
-			}
-			public HRESULT SetActivityId(in Guid ActivityId) mut
-			{
-				return VT.SetActivityId(ref this, ActivityId);
-			}
-			public HRESULT SetTimeStamp(ref LARGE_INTEGER TimeStamp) mut
-			{
-				return VT.SetTimeStamp(ref this, ref TimeStamp);
-			}
-			public HRESULT SetProviderId(in Guid ProviderId) mut
-			{
-				return VT.SetProviderId(ref this, ProviderId);
-			}
+			public HRESULT Clone(out ITraceEvent* NewEvent) mut => VT.Clone(ref this, out NewEvent);
+			public HRESULT GetUserContext(void** UserContext) mut => VT.GetUserContext(ref this, UserContext);
+			public HRESULT GetEventRecord(out EVENT_RECORD* EventRecord) mut => VT.GetEventRecord(ref this, out EventRecord);
+			public HRESULT SetPayload(uint8* Payload, uint32 PayloadSize) mut => VT.SetPayload(ref this, Payload, PayloadSize);
+			public HRESULT SetEventDescriptor(in EVENT_DESCRIPTOR EventDescriptor) mut => VT.SetEventDescriptor(ref this, EventDescriptor);
+			public HRESULT SetProcessId(uint32 ProcessId) mut => VT.SetProcessId(ref this, ProcessId);
+			public HRESULT SetProcessorIndex(uint32 ProcessorIndex) mut => VT.SetProcessorIndex(ref this, ProcessorIndex);
+			public HRESULT SetThreadId(uint32 ThreadId) mut => VT.SetThreadId(ref this, ThreadId);
+			public HRESULT SetThreadTimes(uint32 KernelTime, uint32 UserTime) mut => VT.SetThreadTimes(ref this, KernelTime, UserTime);
+			public HRESULT SetActivityId(in Guid ActivityId) mut => VT.SetActivityId(ref this, ActivityId);
+			public HRESULT SetTimeStamp(ref LARGE_INTEGER TimeStamp) mut => VT.SetTimeStamp(ref this, ref TimeStamp);
+			public HRESULT SetProviderId(in Guid ProviderId) mut => VT.SetProviderId(ref this, ProviderId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2029,18 +1994,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnBeginProcessTrace(ref ITraceEvent HeaderEvent, ref ITraceRelogger Relogger) mut
-			{
-				return VT.OnBeginProcessTrace(ref this, ref HeaderEvent, ref Relogger);
-			}
-			public HRESULT OnFinalizeProcessTrace(ref ITraceRelogger Relogger) mut
-			{
-				return VT.OnFinalizeProcessTrace(ref this, ref Relogger);
-			}
-			public HRESULT OnEvent(ref ITraceEvent Event, ref ITraceRelogger Relogger) mut
-			{
-				return VT.OnEvent(ref this, ref Event, ref Relogger);
-			}
+			public HRESULT OnBeginProcessTrace(ref ITraceEvent HeaderEvent, ref ITraceRelogger Relogger) mut => VT.OnBeginProcessTrace(ref this, ref HeaderEvent, ref Relogger);
+			public HRESULT OnFinalizeProcessTrace(ref ITraceRelogger Relogger) mut => VT.OnFinalizeProcessTrace(ref this, ref Relogger);
+			public HRESULT OnEvent(ref ITraceEvent Event, ref ITraceRelogger Relogger) mut => VT.OnEvent(ref this, ref Event, ref Relogger);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2056,42 +2013,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddLogfileTraceStream(BSTR LogfileName, void* UserContext, out uint64 TraceHandle) mut
-			{
-				return VT.AddLogfileTraceStream(ref this, LogfileName, UserContext, out TraceHandle);
-			}
-			public HRESULT AddRealtimeTraceStream(BSTR LoggerName, void* UserContext, out uint64 TraceHandle) mut
-			{
-				return VT.AddRealtimeTraceStream(ref this, LoggerName, UserContext, out TraceHandle);
-			}
-			public HRESULT RegisterCallback(ref ITraceEventCallback Callback) mut
-			{
-				return VT.RegisterCallback(ref this, ref Callback);
-			}
-			public HRESULT Inject(ref ITraceEvent Event) mut
-			{
-				return VT.Inject(ref this, ref Event);
-			}
-			public HRESULT CreateEventInstance(uint64 TraceHandle, uint32 Flags, out ITraceEvent* Event) mut
-			{
-				return VT.CreateEventInstance(ref this, TraceHandle, Flags, out Event);
-			}
-			public HRESULT ProcessTrace() mut
-			{
-				return VT.ProcessTrace(ref this);
-			}
-			public HRESULT SetOutputFilename(BSTR LogfileName) mut
-			{
-				return VT.SetOutputFilename(ref this, LogfileName);
-			}
-			public HRESULT SetCompressionMode(BOOLEAN CompressionMode) mut
-			{
-				return VT.SetCompressionMode(ref this, CompressionMode);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
+			public HRESULT AddLogfileTraceStream(BSTR LogfileName, void* UserContext, out uint64 TraceHandle) mut => VT.AddLogfileTraceStream(ref this, LogfileName, UserContext, out TraceHandle);
+			public HRESULT AddRealtimeTraceStream(BSTR LoggerName, void* UserContext, out uint64 TraceHandle) mut => VT.AddRealtimeTraceStream(ref this, LoggerName, UserContext, out TraceHandle);
+			public HRESULT RegisterCallback(ref ITraceEventCallback Callback) mut => VT.RegisterCallback(ref this, ref Callback);
+			public HRESULT Inject(ref ITraceEvent Event) mut => VT.Inject(ref this, ref Event);
+			public HRESULT CreateEventInstance(uint64 TraceHandle, uint32 Flags, out ITraceEvent* Event) mut => VT.CreateEventInstance(ref this, TraceHandle, Flags, out Event);
+			public HRESULT ProcessTrace() mut => VT.ProcessTrace(ref this);
+			public HRESULT SetOutputFilename(BSTR LogfileName) mut => VT.SetOutputFilename(ref this, LogfileName);
+			public HRESULT SetCompressionMode(BOOLEAN CompressionMode) mut => VT.SetCompressionMode(ref this, CompressionMode);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

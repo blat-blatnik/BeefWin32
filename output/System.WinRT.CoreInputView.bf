@@ -14,10 +14,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** coreFrameworkInputView) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, coreFrameworkInputView);
-			}
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** coreFrameworkInputView) mut => VT.GetForWindow(ref this, appWindow, riid, coreFrameworkInputView);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{

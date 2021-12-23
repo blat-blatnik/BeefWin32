@@ -5409,122 +5409,36 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(HBITMAP hbmImage, HBITMAP hbmMask, out int32 pi) mut
-			{
-				return VT.Add(ref this, hbmImage, hbmMask, out pi);
-			}
-			public HRESULT ReplaceIcon(int32 i, HICON hicon, out int32 pi) mut
-			{
-				return VT.ReplaceIcon(ref this, i, hicon, out pi);
-			}
-			public HRESULT SetOverlayImage(int32 iImage, int32 iOverlay) mut
-			{
-				return VT.SetOverlayImage(ref this, iImage, iOverlay);
-			}
-			public HRESULT Replace(int32 i, HBITMAP hbmImage, HBITMAP hbmMask) mut
-			{
-				return VT.Replace(ref this, i, hbmImage, hbmMask);
-			}
-			public HRESULT AddMasked(HBITMAP hbmImage, uint32 crMask, out int32 pi) mut
-			{
-				return VT.AddMasked(ref this, hbmImage, crMask, out pi);
-			}
-			public HRESULT Draw(ref IMAGELISTDRAWPARAMS pimldp) mut
-			{
-				return VT.Draw(ref this, ref pimldp);
-			}
-			public HRESULT Remove(int32 i) mut
-			{
-				return VT.Remove(ref this, i);
-			}
-			public HRESULT GetIcon(int32 i, uint32 flags, out HICON picon) mut
-			{
-				return VT.GetIcon(ref this, i, flags, out picon);
-			}
-			public HRESULT GetImageInfo(int32 i, out IMAGEINFO pImageInfo) mut
-			{
-				return VT.GetImageInfo(ref this, i, out pImageInfo);
-			}
-			public HRESULT Copy(int32 iDst, ref IUnknown punkSrc, int32 iSrc, uint32 uFlags) mut
-			{
-				return VT.Copy(ref this, iDst, ref punkSrc, iSrc, uFlags);
-			}
-			public HRESULT Merge(int32 i1, ref IUnknown punk2, int32 i2, int32 dx, int32 dy, in Guid riid, void** ppv) mut
-			{
-				return VT.Merge(ref this, i1, ref punk2, i2, dx, dy, riid, ppv);
-			}
-			public HRESULT Clone(in Guid riid, void** ppv) mut
-			{
-				return VT.Clone(ref this, riid, ppv);
-			}
-			public HRESULT GetImageRect(int32 i, out RECT prc) mut
-			{
-				return VT.GetImageRect(ref this, i, out prc);
-			}
-			public HRESULT GetIconSize(out int32 cx, out int32 cy) mut
-			{
-				return VT.GetIconSize(ref this, out cx, out cy);
-			}
-			public HRESULT SetIconSize(int32 cx, int32 cy) mut
-			{
-				return VT.SetIconSize(ref this, cx, cy);
-			}
-			public HRESULT GetImageCount(out int32 pi) mut
-			{
-				return VT.GetImageCount(ref this, out pi);
-			}
-			public HRESULT SetImageCount(uint32 uNewCount) mut
-			{
-				return VT.SetImageCount(ref this, uNewCount);
-			}
-			public HRESULT SetBkColor(uint32 clrBk, out uint32 pclr) mut
-			{
-				return VT.SetBkColor(ref this, clrBk, out pclr);
-			}
-			public HRESULT GetBkColor(out uint32 pclr) mut
-			{
-				return VT.GetBkColor(ref this, out pclr);
-			}
-			public HRESULT BeginDrag(int32 iTrack, int32 dxHotspot, int32 dyHotspot) mut
-			{
-				return VT.BeginDrag(ref this, iTrack, dxHotspot, dyHotspot);
-			}
-			public HRESULT EndDrag() mut
-			{
-				return VT.EndDrag(ref this);
-			}
-			public HRESULT DragEnter(HWND hwndLock, int32 x, int32 y) mut
-			{
-				return VT.DragEnter(ref this, hwndLock, x, y);
-			}
-			public HRESULT DragLeave(HWND hwndLock) mut
-			{
-				return VT.DragLeave(ref this, hwndLock);
-			}
-			public HRESULT DragMove(int32 x, int32 y) mut
-			{
-				return VT.DragMove(ref this, x, y);
-			}
-			public HRESULT SetDragCursorImage(ref IUnknown punk, int32 iDrag, int32 dxHotspot, int32 dyHotspot) mut
-			{
-				return VT.SetDragCursorImage(ref this, ref punk, iDrag, dxHotspot, dyHotspot);
-			}
-			public HRESULT DragShowNolock(BOOL fShow) mut
-			{
-				return VT.DragShowNolock(ref this, fShow);
-			}
-			public HRESULT GetDragImage(POINT* ppt, POINT* pptHotspot, in Guid riid, void** ppv) mut
-			{
-				return VT.GetDragImage(ref this, ppt, pptHotspot, riid, ppv);
-			}
-			public HRESULT GetItemFlags(int32 i, out IMAGE_LIST_ITEM_FLAGS dwFlags) mut
-			{
-				return VT.GetItemFlags(ref this, i, out dwFlags);
-			}
-			public HRESULT GetOverlayImage(int32 iOverlay, out int32 piIndex) mut
-			{
-				return VT.GetOverlayImage(ref this, iOverlay, out piIndex);
-			}
+			public HRESULT Add(HBITMAP hbmImage, HBITMAP hbmMask, out int32 pi) mut => VT.Add(ref this, hbmImage, hbmMask, out pi);
+			public HRESULT ReplaceIcon(int32 i, HICON hicon, out int32 pi) mut => VT.ReplaceIcon(ref this, i, hicon, out pi);
+			public HRESULT SetOverlayImage(int32 iImage, int32 iOverlay) mut => VT.SetOverlayImage(ref this, iImage, iOverlay);
+			public HRESULT Replace(int32 i, HBITMAP hbmImage, HBITMAP hbmMask) mut => VT.Replace(ref this, i, hbmImage, hbmMask);
+			public HRESULT AddMasked(HBITMAP hbmImage, uint32 crMask, out int32 pi) mut => VT.AddMasked(ref this, hbmImage, crMask, out pi);
+			public HRESULT Draw(ref IMAGELISTDRAWPARAMS pimldp) mut => VT.Draw(ref this, ref pimldp);
+			public HRESULT Remove(int32 i) mut => VT.Remove(ref this, i);
+			public HRESULT GetIcon(int32 i, uint32 flags, out HICON picon) mut => VT.GetIcon(ref this, i, flags, out picon);
+			public HRESULT GetImageInfo(int32 i, out IMAGEINFO pImageInfo) mut => VT.GetImageInfo(ref this, i, out pImageInfo);
+			public HRESULT Copy(int32 iDst, ref IUnknown punkSrc, int32 iSrc, uint32 uFlags) mut => VT.Copy(ref this, iDst, ref punkSrc, iSrc, uFlags);
+			public HRESULT Merge(int32 i1, ref IUnknown punk2, int32 i2, int32 dx, int32 dy, in Guid riid, void** ppv) mut => VT.Merge(ref this, i1, ref punk2, i2, dx, dy, riid, ppv);
+			public HRESULT Clone(in Guid riid, void** ppv) mut => VT.Clone(ref this, riid, ppv);
+			public HRESULT GetImageRect(int32 i, out RECT prc) mut => VT.GetImageRect(ref this, i, out prc);
+			public HRESULT GetIconSize(out int32 cx, out int32 cy) mut => VT.GetIconSize(ref this, out cx, out cy);
+			public HRESULT SetIconSize(int32 cx, int32 cy) mut => VT.SetIconSize(ref this, cx, cy);
+			public HRESULT GetImageCount(out int32 pi) mut => VT.GetImageCount(ref this, out pi);
+			public HRESULT SetImageCount(uint32 uNewCount) mut => VT.SetImageCount(ref this, uNewCount);
+			public HRESULT SetBkColor(uint32 clrBk, out uint32 pclr) mut => VT.SetBkColor(ref this, clrBk, out pclr);
+			public HRESULT GetBkColor(out uint32 pclr) mut => VT.GetBkColor(ref this, out pclr);
+			public HRESULT BeginDrag(int32 iTrack, int32 dxHotspot, int32 dyHotspot) mut => VT.BeginDrag(ref this, iTrack, dxHotspot, dyHotspot);
+			public HRESULT EndDrag() mut => VT.EndDrag(ref this);
+			public HRESULT DragEnter(HWND hwndLock, int32 x, int32 y) mut => VT.DragEnter(ref this, hwndLock, x, y);
+			public HRESULT DragLeave(HWND hwndLock) mut => VT.DragLeave(ref this, hwndLock);
+			public HRESULT DragMove(int32 x, int32 y) mut => VT.DragMove(ref this, x, y);
+			public HRESULT SetDragCursorImage(ref IUnknown punk, int32 iDrag, int32 dxHotspot, int32 dyHotspot) mut => VT.SetDragCursorImage(ref this, ref punk, iDrag, dxHotspot, dyHotspot);
+			public HRESULT DragShowNolock(BOOL fShow) mut => VT.DragShowNolock(ref this, fShow);
+			public HRESULT GetDragImage(POINT* ppt, POINT* pptHotspot, in Guid riid, void** ppv) mut => VT.GetDragImage(ref this, ppt, pptHotspot, riid, ppv);
+			public HRESULT GetItemFlags(int32 i, out IMAGE_LIST_ITEM_FLAGS dwFlags) mut => VT.GetItemFlags(ref this, i, out dwFlags);
+			public HRESULT GetOverlayImage(int32 iOverlay, out int32 piIndex) mut => VT.GetOverlayImage(ref this, iOverlay, out piIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5566,54 +5480,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Resize(int32 cxNewIconSize, int32 cyNewIconSize) mut
-			{
-				return VT.Resize(ref this, cxNewIconSize, cyNewIconSize);
-			}
-			public HRESULT GetOriginalSize(int32 iImage, uint32 dwFlags, out int32 pcx, out int32 pcy) mut
-			{
-				return VT.GetOriginalSize(ref this, iImage, dwFlags, out pcx, out pcy);
-			}
-			public HRESULT SetOriginalSize(int32 iImage, int32 cx, int32 cy) mut
-			{
-				return VT.SetOriginalSize(ref this, iImage, cx, cy);
-			}
-			public HRESULT SetCallback(IUnknown* punk) mut
-			{
-				return VT.SetCallback(ref this, punk);
-			}
-			public HRESULT GetCallback(in Guid riid, void** ppv) mut
-			{
-				return VT.GetCallback(ref this, riid, ppv);
-			}
-			public HRESULT ForceImagePresent(int32 iImage, uint32 dwFlags) mut
-			{
-				return VT.ForceImagePresent(ref this, iImage, dwFlags);
-			}
-			public HRESULT DiscardImages(int32 iFirstImage, int32 iLastImage, uint32 dwFlags) mut
-			{
-				return VT.DiscardImages(ref this, iFirstImage, iLastImage, dwFlags);
-			}
-			public HRESULT PreloadImages(ref IMAGELISTDRAWPARAMS pimldp) mut
-			{
-				return VT.PreloadImages(ref this, ref pimldp);
-			}
-			public HRESULT GetStatistics(out IMAGELISTSTATS pils) mut
-			{
-				return VT.GetStatistics(ref this, out pils);
-			}
-			public HRESULT Initialize(int32 cx, int32 cy, IMAGELIST_CREATION_FLAGS flags, int32 cInitial, int32 cGrow) mut
-			{
-				return VT.Initialize(ref this, cx, cy, flags, cInitial, cGrow);
-			}
-			public HRESULT Replace2(int32 i, HBITMAP hbmImage, HBITMAP hbmMask, IUnknown* punk, uint32 dwFlags) mut
-			{
-				return VT.Replace2(ref this, i, hbmImage, hbmMask, punk, dwFlags);
-			}
-			public HRESULT ReplaceFromImageList(int32 i, ref IImageList pil, int32 iSrc, IUnknown* punk, uint32 dwFlags) mut
-			{
-				return VT.ReplaceFromImageList(ref this, i, ref pil, iSrc, punk, dwFlags);
-			}
+			public HRESULT Resize(int32 cxNewIconSize, int32 cyNewIconSize) mut => VT.Resize(ref this, cxNewIconSize, cyNewIconSize);
+			public HRESULT GetOriginalSize(int32 iImage, uint32 dwFlags, out int32 pcx, out int32 pcy) mut => VT.GetOriginalSize(ref this, iImage, dwFlags, out pcx, out pcy);
+			public HRESULT SetOriginalSize(int32 iImage, int32 cx, int32 cy) mut => VT.SetOriginalSize(ref this, iImage, cx, cy);
+			public HRESULT SetCallback(IUnknown* punk) mut => VT.SetCallback(ref this, punk);
+			public HRESULT GetCallback(in Guid riid, void** ppv) mut => VT.GetCallback(ref this, riid, ppv);
+			public HRESULT ForceImagePresent(int32 iImage, uint32 dwFlags) mut => VT.ForceImagePresent(ref this, iImage, dwFlags);
+			public HRESULT DiscardImages(int32 iFirstImage, int32 iLastImage, uint32 dwFlags) mut => VT.DiscardImages(ref this, iFirstImage, iLastImage, dwFlags);
+			public HRESULT PreloadImages(ref IMAGELISTDRAWPARAMS pimldp) mut => VT.PreloadImages(ref this, ref pimldp);
+			public HRESULT GetStatistics(out IMAGELISTSTATS pils) mut => VT.GetStatistics(ref this, out pils);
+			public HRESULT Initialize(int32 cx, int32 cy, IMAGELIST_CREATION_FLAGS flags, int32 cInitial, int32 cGrow) mut => VT.Initialize(ref this, cx, cy, flags, cInitial, cGrow);
+			public HRESULT Replace2(int32 i, HBITMAP hbmImage, HBITMAP hbmMask, IUnknown* punk, uint32 dwFlags) mut => VT.Replace2(ref this, i, hbmImage, hbmMask, punk, dwFlags);
+			public HRESULT ReplaceFromImageList(int32 i, ref IImageList pil, int32 iSrc, IUnknown* punk, uint32 dwFlags) mut => VT.ReplaceFromImageList(ref this, i, ref pil, iSrc, punk, dwFlags);
+
 			[CRepr]
 			public struct VTable : IImageList.VTable
 			{

@@ -182,98 +182,30 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetInput(IUnknown* pInput) mut
-			{
-				return VT.SetInput(ref this, pInput);
-			}
-			public HRESULT GetProperty(uint32 nProperty, out int ppValue) mut
-			{
-				return VT.GetProperty(ref this, nProperty, out ppValue);
-			}
-			public HRESULT SetProperty(uint32 nProperty, int pValue) mut
-			{
-				return VT.SetProperty(ref this, nProperty, pValue);
-			}
-			public HRESULT Read(XmlNodeType* pNodeType) mut
-			{
-				return VT.Read(ref this, pNodeType);
-			}
-			public HRESULT GetNodeType(out XmlNodeType pNodeType) mut
-			{
-				return VT.GetNodeType(ref this, out pNodeType);
-			}
-			public HRESULT MoveToFirstAttribute() mut
-			{
-				return VT.MoveToFirstAttribute(ref this);
-			}
-			public HRESULT MoveToNextAttribute() mut
-			{
-				return VT.MoveToNextAttribute(ref this);
-			}
-			public HRESULT MoveToAttributeByName(PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut
-			{
-				return VT.MoveToAttributeByName(ref this, pwszLocalName, pwszNamespaceUri);
-			}
-			public HRESULT MoveToElement() mut
-			{
-				return VT.MoveToElement(ref this);
-			}
-			public HRESULT GetQualifiedName(PWSTR* ppwszQualifiedName, uint32* pcwchQualifiedName) mut
-			{
-				return VT.GetQualifiedName(ref this, ppwszQualifiedName, pcwchQualifiedName);
-			}
-			public HRESULT GetNamespaceUri(PWSTR* ppwszNamespaceUri, uint32* pcwchNamespaceUri) mut
-			{
-				return VT.GetNamespaceUri(ref this, ppwszNamespaceUri, pcwchNamespaceUri);
-			}
-			public HRESULT GetLocalName(PWSTR* ppwszLocalName, uint32* pcwchLocalName) mut
-			{
-				return VT.GetLocalName(ref this, ppwszLocalName, pcwchLocalName);
-			}
-			public HRESULT GetPrefix(PWSTR* ppwszPrefix, uint32* pcwchPrefix) mut
-			{
-				return VT.GetPrefix(ref this, ppwszPrefix, pcwchPrefix);
-			}
-			public HRESULT GetValue(PWSTR* ppwszValue, uint32* pcwchValue) mut
-			{
-				return VT.GetValue(ref this, ppwszValue, pcwchValue);
-			}
-			public HRESULT ReadValueChunk(char16* pwchBuffer, uint32 cwchChunkSize, out uint32 pcwchRead) mut
-			{
-				return VT.ReadValueChunk(ref this, pwchBuffer, cwchChunkSize, out pcwchRead);
-			}
-			public HRESULT GetBaseUri(PWSTR* ppwszBaseUri, uint32* pcwchBaseUri) mut
-			{
-				return VT.GetBaseUri(ref this, ppwszBaseUri, pcwchBaseUri);
-			}
-			public BOOL IsDefault() mut
-			{
-				return VT.IsDefault(ref this);
-			}
-			public BOOL IsEmptyElement() mut
-			{
-				return VT.IsEmptyElement(ref this);
-			}
-			public HRESULT GetLineNumber(out uint32 pnLineNumber) mut
-			{
-				return VT.GetLineNumber(ref this, out pnLineNumber);
-			}
-			public HRESULT GetLinePosition(out uint32 pnLinePosition) mut
-			{
-				return VT.GetLinePosition(ref this, out pnLinePosition);
-			}
-			public HRESULT GetAttributeCount(out uint32 pnAttributeCount) mut
-			{
-				return VT.GetAttributeCount(ref this, out pnAttributeCount);
-			}
-			public HRESULT GetDepth(out uint32 pnDepth) mut
-			{
-				return VT.GetDepth(ref this, out pnDepth);
-			}
-			public BOOL IsEOF() mut
-			{
-				return VT.IsEOF(ref this);
-			}
+			public HRESULT SetInput(IUnknown* pInput) mut => VT.SetInput(ref this, pInput);
+			public HRESULT GetProperty(uint32 nProperty, out int ppValue) mut => VT.GetProperty(ref this, nProperty, out ppValue);
+			public HRESULT SetProperty(uint32 nProperty, int pValue) mut => VT.SetProperty(ref this, nProperty, pValue);
+			public HRESULT Read(XmlNodeType* pNodeType) mut => VT.Read(ref this, pNodeType);
+			public HRESULT GetNodeType(out XmlNodeType pNodeType) mut => VT.GetNodeType(ref this, out pNodeType);
+			public HRESULT MoveToFirstAttribute() mut => VT.MoveToFirstAttribute(ref this);
+			public HRESULT MoveToNextAttribute() mut => VT.MoveToNextAttribute(ref this);
+			public HRESULT MoveToAttributeByName(PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut => VT.MoveToAttributeByName(ref this, pwszLocalName, pwszNamespaceUri);
+			public HRESULT MoveToElement() mut => VT.MoveToElement(ref this);
+			public HRESULT GetQualifiedName(PWSTR* ppwszQualifiedName, uint32* pcwchQualifiedName) mut => VT.GetQualifiedName(ref this, ppwszQualifiedName, pcwchQualifiedName);
+			public HRESULT GetNamespaceUri(PWSTR* ppwszNamespaceUri, uint32* pcwchNamespaceUri) mut => VT.GetNamespaceUri(ref this, ppwszNamespaceUri, pcwchNamespaceUri);
+			public HRESULT GetLocalName(PWSTR* ppwszLocalName, uint32* pcwchLocalName) mut => VT.GetLocalName(ref this, ppwszLocalName, pcwchLocalName);
+			public HRESULT GetPrefix(PWSTR* ppwszPrefix, uint32* pcwchPrefix) mut => VT.GetPrefix(ref this, ppwszPrefix, pcwchPrefix);
+			public HRESULT GetValue(PWSTR* ppwszValue, uint32* pcwchValue) mut => VT.GetValue(ref this, ppwszValue, pcwchValue);
+			public HRESULT ReadValueChunk(char16* pwchBuffer, uint32 cwchChunkSize, out uint32 pcwchRead) mut => VT.ReadValueChunk(ref this, pwchBuffer, cwchChunkSize, out pcwchRead);
+			public HRESULT GetBaseUri(PWSTR* ppwszBaseUri, uint32* pcwchBaseUri) mut => VT.GetBaseUri(ref this, ppwszBaseUri, pcwchBaseUri);
+			public BOOL IsDefault() mut => VT.IsDefault(ref this);
+			public BOOL IsEmptyElement() mut => VT.IsEmptyElement(ref this);
+			public HRESULT GetLineNumber(out uint32 pnLineNumber) mut => VT.GetLineNumber(ref this, out pnLineNumber);
+			public HRESULT GetLinePosition(out uint32 pnLinePosition) mut => VT.GetLinePosition(ref this, out pnLinePosition);
+			public HRESULT GetAttributeCount(out uint32 pnAttributeCount) mut => VT.GetAttributeCount(ref this, out pnAttributeCount);
+			public HRESULT GetDepth(out uint32 pnDepth) mut => VT.GetDepth(ref this, out pnDepth);
+			public BOOL IsEOF() mut => VT.IsEOF(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -309,10 +241,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ResolveUri(PWSTR pwszBaseUri, PWSTR pwszPublicIdentifier, PWSTR pwszSystemIdentifier, out IUnknown* ppResolvedInput) mut
-			{
-				return VT.ResolveUri(ref this, pwszBaseUri, pwszPublicIdentifier, pwszSystemIdentifier, out ppResolvedInput);
-			}
+			public HRESULT ResolveUri(PWSTR pwszBaseUri, PWSTR pwszPublicIdentifier, PWSTR pwszSystemIdentifier, out IUnknown* ppResolvedInput) mut => VT.ResolveUri(ref this, pwszBaseUri, pwszPublicIdentifier, pwszSystemIdentifier, out ppResolvedInput);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -326,122 +256,36 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOutput(IUnknown* pOutput) mut
-			{
-				return VT.SetOutput(ref this, pOutput);
-			}
-			public HRESULT GetProperty(uint32 nProperty, out int ppValue) mut
-			{
-				return VT.GetProperty(ref this, nProperty, out ppValue);
-			}
-			public HRESULT SetProperty(uint32 nProperty, int pValue) mut
-			{
-				return VT.SetProperty(ref this, nProperty, pValue);
-			}
-			public HRESULT WriteAttributes(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut
-			{
-				return VT.WriteAttributes(ref this, ref pReader, fWriteDefaultAttributes);
-			}
-			public HRESULT WriteAttributeString(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) mut
-			{
-				return VT.WriteAttributeString(ref this, pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
-			}
-			public HRESULT WriteCData(PWSTR pwszText) mut
-			{
-				return VT.WriteCData(ref this, pwszText);
-			}
-			public HRESULT WriteCharEntity(char16 wch) mut
-			{
-				return VT.WriteCharEntity(ref this, wch);
-			}
-			public HRESULT WriteChars(char16* pwch, uint32 cwch) mut
-			{
-				return VT.WriteChars(ref this, pwch, cwch);
-			}
-			public HRESULT WriteComment(PWSTR pwszComment) mut
-			{
-				return VT.WriteComment(ref this, pwszComment);
-			}
-			public HRESULT WriteDocType(PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) mut
-			{
-				return VT.WriteDocType(ref this, pwszName, pwszPublicId, pwszSystemId, pwszSubset);
-			}
-			public HRESULT WriteElementString(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) mut
-			{
-				return VT.WriteElementString(ref this, pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
-			}
-			public HRESULT WriteEndDocument() mut
-			{
-				return VT.WriteEndDocument(ref this);
-			}
-			public HRESULT WriteEndElement() mut
-			{
-				return VT.WriteEndElement(ref this);
-			}
-			public HRESULT WriteEntityRef(PWSTR pwszName) mut
-			{
-				return VT.WriteEntityRef(ref this, pwszName);
-			}
-			public HRESULT WriteFullEndElement() mut
-			{
-				return VT.WriteFullEndElement(ref this);
-			}
-			public HRESULT WriteName(PWSTR pwszName) mut
-			{
-				return VT.WriteName(ref this, pwszName);
-			}
-			public HRESULT WriteNmToken(PWSTR pwszNmToken) mut
-			{
-				return VT.WriteNmToken(ref this, pwszNmToken);
-			}
-			public HRESULT WriteNode(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut
-			{
-				return VT.WriteNode(ref this, ref pReader, fWriteDefaultAttributes);
-			}
-			public HRESULT WriteNodeShallow(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut
-			{
-				return VT.WriteNodeShallow(ref this, ref pReader, fWriteDefaultAttributes);
-			}
-			public HRESULT WriteProcessingInstruction(PWSTR pwszName, PWSTR pwszText) mut
-			{
-				return VT.WriteProcessingInstruction(ref this, pwszName, pwszText);
-			}
-			public HRESULT WriteQualifiedName(PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut
-			{
-				return VT.WriteQualifiedName(ref this, pwszLocalName, pwszNamespaceUri);
-			}
-			public HRESULT WriteRaw(PWSTR pwszData) mut
-			{
-				return VT.WriteRaw(ref this, pwszData);
-			}
-			public HRESULT WriteRawChars(char16* pwch, uint32 cwch) mut
-			{
-				return VT.WriteRawChars(ref this, pwch, cwch);
-			}
-			public HRESULT WriteStartDocument(XmlStandalone standalone) mut
-			{
-				return VT.WriteStartDocument(ref this, standalone);
-			}
-			public HRESULT WriteStartElement(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut
-			{
-				return VT.WriteStartElement(ref this, pwszPrefix, pwszLocalName, pwszNamespaceUri);
-			}
-			public HRESULT WriteString(PWSTR pwszText) mut
-			{
-				return VT.WriteString(ref this, pwszText);
-			}
-			public HRESULT WriteSurrogateCharEntity(char16 wchLow, char16 wchHigh) mut
-			{
-				return VT.WriteSurrogateCharEntity(ref this, wchLow, wchHigh);
-			}
-			public HRESULT WriteWhitespace(PWSTR pwszWhitespace) mut
-			{
-				return VT.WriteWhitespace(ref this, pwszWhitespace);
-			}
-			public HRESULT Flush() mut
-			{
-				return VT.Flush(ref this);
-			}
+			public HRESULT SetOutput(IUnknown* pOutput) mut => VT.SetOutput(ref this, pOutput);
+			public HRESULT GetProperty(uint32 nProperty, out int ppValue) mut => VT.GetProperty(ref this, nProperty, out ppValue);
+			public HRESULT SetProperty(uint32 nProperty, int pValue) mut => VT.SetProperty(ref this, nProperty, pValue);
+			public HRESULT WriteAttributes(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut => VT.WriteAttributes(ref this, ref pReader, fWriteDefaultAttributes);
+			public HRESULT WriteAttributeString(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) mut => VT.WriteAttributeString(ref this, pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
+			public HRESULT WriteCData(PWSTR pwszText) mut => VT.WriteCData(ref this, pwszText);
+			public HRESULT WriteCharEntity(char16 wch) mut => VT.WriteCharEntity(ref this, wch);
+			public HRESULT WriteChars(char16* pwch, uint32 cwch) mut => VT.WriteChars(ref this, pwch, cwch);
+			public HRESULT WriteComment(PWSTR pwszComment) mut => VT.WriteComment(ref this, pwszComment);
+			public HRESULT WriteDocType(PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) mut => VT.WriteDocType(ref this, pwszName, pwszPublicId, pwszSystemId, pwszSubset);
+			public HRESULT WriteElementString(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) mut => VT.WriteElementString(ref this, pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
+			public HRESULT WriteEndDocument() mut => VT.WriteEndDocument(ref this);
+			public HRESULT WriteEndElement() mut => VT.WriteEndElement(ref this);
+			public HRESULT WriteEntityRef(PWSTR pwszName) mut => VT.WriteEntityRef(ref this, pwszName);
+			public HRESULT WriteFullEndElement() mut => VT.WriteFullEndElement(ref this);
+			public HRESULT WriteName(PWSTR pwszName) mut => VT.WriteName(ref this, pwszName);
+			public HRESULT WriteNmToken(PWSTR pwszNmToken) mut => VT.WriteNmToken(ref this, pwszNmToken);
+			public HRESULT WriteNode(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut => VT.WriteNode(ref this, ref pReader, fWriteDefaultAttributes);
+			public HRESULT WriteNodeShallow(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut => VT.WriteNodeShallow(ref this, ref pReader, fWriteDefaultAttributes);
+			public HRESULT WriteProcessingInstruction(PWSTR pwszName, PWSTR pwszText) mut => VT.WriteProcessingInstruction(ref this, pwszName, pwszText);
+			public HRESULT WriteQualifiedName(PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut => VT.WriteQualifiedName(ref this, pwszLocalName, pwszNamespaceUri);
+			public HRESULT WriteRaw(PWSTR pwszData) mut => VT.WriteRaw(ref this, pwszData);
+			public HRESULT WriteRawChars(char16* pwch, uint32 cwch) mut => VT.WriteRawChars(ref this, pwch, cwch);
+			public HRESULT WriteStartDocument(XmlStandalone standalone) mut => VT.WriteStartDocument(ref this, standalone);
+			public HRESULT WriteStartElement(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut => VT.WriteStartElement(ref this, pwszPrefix, pwszLocalName, pwszNamespaceUri);
+			public HRESULT WriteString(PWSTR pwszText) mut => VT.WriteString(ref this, pwszText);
+			public HRESULT WriteSurrogateCharEntity(char16 wchLow, char16 wchHigh) mut => VT.WriteSurrogateCharEntity(ref this, wchLow, wchHigh);
+			public HRESULT WriteWhitespace(PWSTR pwszWhitespace) mut => VT.WriteWhitespace(ref this, pwszWhitespace);
+			public HRESULT Flush() mut => VT.Flush(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -483,118 +327,35 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOutput(IUnknown* pOutput) mut
-			{
-				return VT.SetOutput(ref this, pOutput);
-			}
-			public HRESULT GetProperty(uint32 nProperty, out int ppValue) mut
-			{
-				return VT.GetProperty(ref this, nProperty, out ppValue);
-			}
-			public HRESULT SetProperty(uint32 nProperty, int pValue) mut
-			{
-				return VT.SetProperty(ref this, nProperty, pValue);
-			}
-			public HRESULT WriteAttributes(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut
-			{
-				return VT.WriteAttributes(ref this, ref pReader, fWriteDefaultAttributes);
-			}
-			public HRESULT WriteAttributeString(char16* pwszQName, uint32 cwszQName, char16* pwszValue, uint32 cwszValue) mut
-			{
-				return VT.WriteAttributeString(ref this, pwszQName, cwszQName, pwszValue, cwszValue);
-			}
-			public HRESULT WriteCData(PWSTR pwszText) mut
-			{
-				return VT.WriteCData(ref this, pwszText);
-			}
-			public HRESULT WriteCharEntity(char16 wch) mut
-			{
-				return VT.WriteCharEntity(ref this, wch);
-			}
-			public HRESULT WriteChars(char16* pwch, uint32 cwch) mut
-			{
-				return VT.WriteChars(ref this, pwch, cwch);
-			}
-			public HRESULT WriteComment(PWSTR pwszComment) mut
-			{
-				return VT.WriteComment(ref this, pwszComment);
-			}
-			public HRESULT WriteDocType(PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) mut
-			{
-				return VT.WriteDocType(ref this, pwszName, pwszPublicId, pwszSystemId, pwszSubset);
-			}
-			public HRESULT WriteElementString(char16* pwszQName, uint32 cwszQName, PWSTR pwszValue) mut
-			{
-				return VT.WriteElementString(ref this, pwszQName, cwszQName, pwszValue);
-			}
-			public HRESULT WriteEndDocument() mut
-			{
-				return VT.WriteEndDocument(ref this);
-			}
-			public HRESULT WriteEndElement(char16* pwszQName, uint32 cwszQName) mut
-			{
-				return VT.WriteEndElement(ref this, pwszQName, cwszQName);
-			}
-			public HRESULT WriteEntityRef(PWSTR pwszName) mut
-			{
-				return VT.WriteEntityRef(ref this, pwszName);
-			}
-			public HRESULT WriteFullEndElement(char16* pwszQName, uint32 cwszQName) mut
-			{
-				return VT.WriteFullEndElement(ref this, pwszQName, cwszQName);
-			}
-			public HRESULT WriteName(PWSTR pwszName) mut
-			{
-				return VT.WriteName(ref this, pwszName);
-			}
-			public HRESULT WriteNmToken(PWSTR pwszNmToken) mut
-			{
-				return VT.WriteNmToken(ref this, pwszNmToken);
-			}
-			public HRESULT WriteNode(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut
-			{
-				return VT.WriteNode(ref this, ref pReader, fWriteDefaultAttributes);
-			}
-			public HRESULT WriteNodeShallow(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut
-			{
-				return VT.WriteNodeShallow(ref this, ref pReader, fWriteDefaultAttributes);
-			}
-			public HRESULT WriteProcessingInstruction(PWSTR pwszName, PWSTR pwszText) mut
-			{
-				return VT.WriteProcessingInstruction(ref this, pwszName, pwszText);
-			}
-			public HRESULT WriteRaw(PWSTR pwszData) mut
-			{
-				return VT.WriteRaw(ref this, pwszData);
-			}
-			public HRESULT WriteRawChars(char16* pwch, uint32 cwch) mut
-			{
-				return VT.WriteRawChars(ref this, pwch, cwch);
-			}
-			public HRESULT WriteStartDocument(XmlStandalone standalone) mut
-			{
-				return VT.WriteStartDocument(ref this, standalone);
-			}
-			public HRESULT WriteStartElement(char16* pwszQName, uint32 cwszQName) mut
-			{
-				return VT.WriteStartElement(ref this, pwszQName, cwszQName);
-			}
-			public HRESULT WriteString(PWSTR pwszText) mut
-			{
-				return VT.WriteString(ref this, pwszText);
-			}
-			public HRESULT WriteSurrogateCharEntity(char16 wchLow, char16 wchHigh) mut
-			{
-				return VT.WriteSurrogateCharEntity(ref this, wchLow, wchHigh);
-			}
-			public HRESULT WriteWhitespace(PWSTR pwszWhitespace) mut
-			{
-				return VT.WriteWhitespace(ref this, pwszWhitespace);
-			}
-			public HRESULT Flush() mut
-			{
-				return VT.Flush(ref this);
-			}
+			public HRESULT SetOutput(IUnknown* pOutput) mut => VT.SetOutput(ref this, pOutput);
+			public HRESULT GetProperty(uint32 nProperty, out int ppValue) mut => VT.GetProperty(ref this, nProperty, out ppValue);
+			public HRESULT SetProperty(uint32 nProperty, int pValue) mut => VT.SetProperty(ref this, nProperty, pValue);
+			public HRESULT WriteAttributes(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut => VT.WriteAttributes(ref this, ref pReader, fWriteDefaultAttributes);
+			public HRESULT WriteAttributeString(char16* pwszQName, uint32 cwszQName, char16* pwszValue, uint32 cwszValue) mut => VT.WriteAttributeString(ref this, pwszQName, cwszQName, pwszValue, cwszValue);
+			public HRESULT WriteCData(PWSTR pwszText) mut => VT.WriteCData(ref this, pwszText);
+			public HRESULT WriteCharEntity(char16 wch) mut => VT.WriteCharEntity(ref this, wch);
+			public HRESULT WriteChars(char16* pwch, uint32 cwch) mut => VT.WriteChars(ref this, pwch, cwch);
+			public HRESULT WriteComment(PWSTR pwszComment) mut => VT.WriteComment(ref this, pwszComment);
+			public HRESULT WriteDocType(PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) mut => VT.WriteDocType(ref this, pwszName, pwszPublicId, pwszSystemId, pwszSubset);
+			public HRESULT WriteElementString(char16* pwszQName, uint32 cwszQName, PWSTR pwszValue) mut => VT.WriteElementString(ref this, pwszQName, cwszQName, pwszValue);
+			public HRESULT WriteEndDocument() mut => VT.WriteEndDocument(ref this);
+			public HRESULT WriteEndElement(char16* pwszQName, uint32 cwszQName) mut => VT.WriteEndElement(ref this, pwszQName, cwszQName);
+			public HRESULT WriteEntityRef(PWSTR pwszName) mut => VT.WriteEntityRef(ref this, pwszName);
+			public HRESULT WriteFullEndElement(char16* pwszQName, uint32 cwszQName) mut => VT.WriteFullEndElement(ref this, pwszQName, cwszQName);
+			public HRESULT WriteName(PWSTR pwszName) mut => VT.WriteName(ref this, pwszName);
+			public HRESULT WriteNmToken(PWSTR pwszNmToken) mut => VT.WriteNmToken(ref this, pwszNmToken);
+			public HRESULT WriteNode(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut => VT.WriteNode(ref this, ref pReader, fWriteDefaultAttributes);
+			public HRESULT WriteNodeShallow(ref IXmlReader pReader, BOOL fWriteDefaultAttributes) mut => VT.WriteNodeShallow(ref this, ref pReader, fWriteDefaultAttributes);
+			public HRESULT WriteProcessingInstruction(PWSTR pwszName, PWSTR pwszText) mut => VT.WriteProcessingInstruction(ref this, pwszName, pwszText);
+			public HRESULT WriteRaw(PWSTR pwszData) mut => VT.WriteRaw(ref this, pwszData);
+			public HRESULT WriteRawChars(char16* pwch, uint32 cwch) mut => VT.WriteRawChars(ref this, pwch, cwch);
+			public HRESULT WriteStartDocument(XmlStandalone standalone) mut => VT.WriteStartDocument(ref this, standalone);
+			public HRESULT WriteStartElement(char16* pwszQName, uint32 cwszQName) mut => VT.WriteStartElement(ref this, pwszQName, cwszQName);
+			public HRESULT WriteString(PWSTR pwszText) mut => VT.WriteString(ref this, pwszText);
+			public HRESULT WriteSurrogateCharEntity(char16 wchLow, char16 wchHigh) mut => VT.WriteSurrogateCharEntity(ref this, wchLow, wchHigh);
+			public HRESULT WriteWhitespace(PWSTR pwszWhitespace) mut => VT.WriteWhitespace(ref this, pwszWhitespace);
+			public HRESULT Flush() mut => VT.Flush(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

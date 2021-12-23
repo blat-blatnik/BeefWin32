@@ -1925,10 +1925,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnEvent(uint32 dwEvent, uint32 dwStatus) mut
-			{
-				return VT.OnEvent(ref this, dwEvent, dwStatus);
-			}
+			public HRESULT OnEvent(uint32 dwEvent, uint32 dwStatus) mut => VT.OnEvent(ref this, dwEvent, dwStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1942,34 +1940,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pwzConnectoid, ref IDialEventSink pIDES) mut
-			{
-				return VT.Initialize(ref this, pwzConnectoid, ref pIDES);
-			}
-			public HRESULT GetProperty(PWSTR pwzProperty, PWSTR pwzValue, uint32 dwBufSize) mut
-			{
-				return VT.GetProperty(ref this, pwzProperty, pwzValue, dwBufSize);
-			}
-			public HRESULT SetProperty(PWSTR pwzProperty, PWSTR pwzValue) mut
-			{
-				return VT.SetProperty(ref this, pwzProperty, pwzValue);
-			}
-			public HRESULT Dial() mut
-			{
-				return VT.Dial(ref this);
-			}
-			public HRESULT HangUp() mut
-			{
-				return VT.HangUp(ref this);
-			}
-			public HRESULT GetConnectedState(out uint32 pdwState) mut
-			{
-				return VT.GetConnectedState(ref this, out pdwState);
-			}
-			public HRESULT GetConnectHandle(out uint pdwHandle) mut
-			{
-				return VT.GetConnectHandle(ref this, out pdwHandle);
-			}
+			public HRESULT Initialize(PWSTR pwzConnectoid, ref IDialEventSink pIDES) mut => VT.Initialize(ref this, pwzConnectoid, ref pIDES);
+			public HRESULT GetProperty(PWSTR pwzProperty, PWSTR pwzValue, uint32 dwBufSize) mut => VT.GetProperty(ref this, pwzProperty, pwzValue, dwBufSize);
+			public HRESULT SetProperty(PWSTR pwzProperty, PWSTR pwzValue) mut => VT.SetProperty(ref this, pwzProperty, pwzValue);
+			public HRESULT Dial() mut => VT.Dial(ref this);
+			public HRESULT HangUp() mut => VT.HangUp(ref this);
+			public HRESULT GetConnectedState(out uint32 pdwState) mut => VT.GetConnectedState(ref this, out pdwState);
+			public HRESULT GetConnectHandle(out uint pdwHandle) mut => VT.GetConnectHandle(ref this, out pdwHandle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1989,14 +1967,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pwzConnectoid) mut
-			{
-				return VT.Initialize(ref this, pwzConnectoid);
-			}
-			public HRESULT GetBitmap(uint32 dwIndex, out HBITMAP phBitmap) mut
-			{
-				return VT.GetBitmap(ref this, dwIndex, out phBitmap);
-			}
+			public HRESULT Initialize(PWSTR pwzConnectoid) mut => VT.Initialize(ref this, pwzConnectoid);
+			public HRESULT GetBitmap(uint32 dwIndex, out HBITMAP phBitmap) mut => VT.GetBitmap(ref this, dwIndex, out phBitmap);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2011,10 +1984,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCookieInfoForUri(PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) mut
-			{
-				return VT.GetCookieInfoForUri(ref this, uri, out cookieInfoCount, cookieInfo);
-			}
+			public HRESULT GetCookieInfoForUri(PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) mut => VT.GetCookieInfoForUri(ref this, uri, out cookieInfoCount, cookieInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2028,10 +1999,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCookieInfoWithUriForAccount(ref IInspectable webAccount, PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) mut
-			{
-				return VT.GetCookieInfoWithUriForAccount(ref this, ref webAccount, uri, out cookieInfoCount, cookieInfo);
-			}
+			public HRESULT GetCookieInfoWithUriForAccount(ref IInspectable webAccount, PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) mut => VT.GetCookieInfoWithUriForAccount(ref this, ref webAccount, uri, out cookieInfoCount, cookieInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

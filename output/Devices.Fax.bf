@@ -1171,74 +1171,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Status(out FAX_JOB_STATUS_ENUM pStatus) mut
-			{
-				return VT.get_Status(ref this, out pStatus);
-			}
-			public HRESULT get_Pages(out int32 plPages) mut
-			{
-				return VT.get_Pages(ref this, out plPages);
-			}
-			public HRESULT get_Size(out int32 plSize) mut
-			{
-				return VT.get_Size(ref this, out plSize);
-			}
-			public HRESULT get_CurrentPage(out int32 plCurrentPage) mut
-			{
-				return VT.get_CurrentPage(ref this, out plCurrentPage);
-			}
-			public HRESULT get_DeviceId(out int32 plDeviceId) mut
-			{
-				return VT.get_DeviceId(ref this, out plDeviceId);
-			}
-			public HRESULT get_CSID(BSTR* pbstrCSID) mut
-			{
-				return VT.get_CSID(ref this, pbstrCSID);
-			}
-			public HRESULT get_TSID(BSTR* pbstrTSID) mut
-			{
-				return VT.get_TSID(ref this, pbstrTSID);
-			}
-			public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut
-			{
-				return VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
-			}
-			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut
-			{
-				return VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
-			}
-			public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut
-			{
-				return VT.get_AvailableOperations(ref this, out pAvailableOperations);
-			}
-			public HRESULT get_Retries(out int32 plRetries) mut
-			{
-				return VT.get_Retries(ref this, out plRetries);
-			}
-			public HRESULT get_JobType(out FAX_JOB_TYPE_ENUM pJobType) mut
-			{
-				return VT.get_JobType(ref this, out pJobType);
-			}
-			public HRESULT get_ScheduledTime(out double pdateScheduledTime) mut
-			{
-				return VT.get_ScheduledTime(ref this, out pdateScheduledTime);
-			}
-			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut
-			{
-				return VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
-			}
-			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut
-			{
-				return VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-			}
-			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut
-			{
-				return VT.get_CallerId(ref this, pbstrCallerId);
-			}
-			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut
-			{
-				return VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
-			}
+			public HRESULT get_Status(out FAX_JOB_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
+			public HRESULT get_Pages(out int32 plPages) mut => VT.get_Pages(ref this, out plPages);
+			public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
+			public HRESULT get_CurrentPage(out int32 plCurrentPage) mut => VT.get_CurrentPage(ref this, out plCurrentPage);
+			public HRESULT get_DeviceId(out int32 plDeviceId) mut => VT.get_DeviceId(ref this, out plDeviceId);
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+			public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut => VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
+			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
+			public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut => VT.get_AvailableOperations(ref this, out pAvailableOperations);
+			public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
+			public HRESULT get_JobType(out FAX_JOB_TYPE_ENUM pJobType) mut => VT.get_JobType(ref this, out pJobType);
+			public HRESULT get_ScheduledTime(out double pdateScheduledTime) mut => VT.get_ScheduledTime(ref this, out pdateScheduledTime);
+			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
+			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
+			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut => VT.get_CallerId(ref this, pbstrCallerId);
+			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1268,110 +1218,33 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Connect(BSTR bstrServerName) mut
-			{
-				return VT.Connect(ref this, bstrServerName);
-			}
-			public HRESULT get_ServerName(BSTR* pbstrServerName) mut
-			{
-				return VT.get_ServerName(ref this, pbstrServerName);
-			}
-			public HRESULT GetDeviceProviders(IFaxDeviceProviders** ppFaxDeviceProviders) mut
-			{
-				return VT.GetDeviceProviders(ref this, ppFaxDeviceProviders);
-			}
-			public HRESULT GetDevices(IFaxDevices** ppFaxDevices) mut
-			{
-				return VT.GetDevices(ref this, ppFaxDevices);
-			}
-			public HRESULT get_InboundRouting(IFaxInboundRouting** ppFaxInboundRouting) mut
-			{
-				return VT.get_InboundRouting(ref this, ppFaxInboundRouting);
-			}
-			public HRESULT get_Folders(IFaxFolders** pFaxFolders) mut
-			{
-				return VT.get_Folders(ref this, pFaxFolders);
-			}
-			public HRESULT get_LoggingOptions(IFaxLoggingOptions** ppFaxLoggingOptions) mut
-			{
-				return VT.get_LoggingOptions(ref this, ppFaxLoggingOptions);
-			}
-			public HRESULT get_MajorVersion(out int32 plMajorVersion) mut
-			{
-				return VT.get_MajorVersion(ref this, out plMajorVersion);
-			}
-			public HRESULT get_MinorVersion(out int32 plMinorVersion) mut
-			{
-				return VT.get_MinorVersion(ref this, out plMinorVersion);
-			}
-			public HRESULT get_MajorBuild(out int32 plMajorBuild) mut
-			{
-				return VT.get_MajorBuild(ref this, out plMajorBuild);
-			}
-			public HRESULT get_MinorBuild(out int32 plMinorBuild) mut
-			{
-				return VT.get_MinorBuild(ref this, out plMinorBuild);
-			}
-			public HRESULT get_Debug(out int16 pbDebug) mut
-			{
-				return VT.get_Debug(ref this, out pbDebug);
-			}
-			public HRESULT get_Activity(IFaxActivity** ppFaxActivity) mut
-			{
-				return VT.get_Activity(ref this, ppFaxActivity);
-			}
-			public HRESULT get_OutboundRouting(IFaxOutboundRouting** ppFaxOutboundRouting) mut
-			{
-				return VT.get_OutboundRouting(ref this, ppFaxOutboundRouting);
-			}
-			public HRESULT get_ReceiptOptions(IFaxReceiptOptions** ppFaxReceiptOptions) mut
-			{
-				return VT.get_ReceiptOptions(ref this, ppFaxReceiptOptions);
-			}
-			public HRESULT get_Security(IFaxSecurity** ppFaxSecurity) mut
-			{
-				return VT.get_Security(ref this, ppFaxSecurity);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
-			public HRESULT GetExtensionProperty(BSTR bstrGUID, out VARIANT pvProperty) mut
-			{
-				return VT.GetExtensionProperty(ref this, bstrGUID, out pvProperty);
-			}
-			public HRESULT SetExtensionProperty(BSTR bstrGUID, VARIANT vProperty) mut
-			{
-				return VT.SetExtensionProperty(ref this, bstrGUID, vProperty);
-			}
-			public HRESULT ListenToServerEvents(FAX_SERVER_EVENTS_TYPE_ENUM EventTypes) mut
-			{
-				return VT.ListenToServerEvents(ref this, EventTypes);
-			}
-			public HRESULT RegisterDeviceProvider(BSTR bstrGUID, BSTR bstrFriendlyName, BSTR bstrImageName, BSTR TspName, int32 lFSPIVersion) mut
-			{
-				return VT.RegisterDeviceProvider(ref this, bstrGUID, bstrFriendlyName, bstrImageName, TspName, lFSPIVersion);
-			}
-			public HRESULT UnregisterDeviceProvider(BSTR bstrUniqueName) mut
-			{
-				return VT.UnregisterDeviceProvider(ref this, bstrUniqueName);
-			}
-			public HRESULT RegisterInboundRoutingExtension(BSTR bstrExtensionName, BSTR bstrFriendlyName, BSTR bstrImageName, VARIANT vMethods) mut
-			{
-				return VT.RegisterInboundRoutingExtension(ref this, bstrExtensionName, bstrFriendlyName, bstrImageName, vMethods);
-			}
-			public HRESULT UnregisterInboundRoutingExtension(BSTR bstrExtensionUniqueName) mut
-			{
-				return VT.UnregisterInboundRoutingExtension(ref this, bstrExtensionUniqueName);
-			}
-			public HRESULT get_RegisteredEvents(out FAX_SERVER_EVENTS_TYPE_ENUM pEventTypes) mut
-			{
-				return VT.get_RegisteredEvents(ref this, out pEventTypes);
-			}
-			public HRESULT get_APIVersion(out FAX_SERVER_APIVERSION_ENUM pAPIVersion) mut
-			{
-				return VT.get_APIVersion(ref this, out pAPIVersion);
-			}
+			public HRESULT Connect(BSTR bstrServerName) mut => VT.Connect(ref this, bstrServerName);
+			public HRESULT get_ServerName(BSTR* pbstrServerName) mut => VT.get_ServerName(ref this, pbstrServerName);
+			public HRESULT GetDeviceProviders(IFaxDeviceProviders** ppFaxDeviceProviders) mut => VT.GetDeviceProviders(ref this, ppFaxDeviceProviders);
+			public HRESULT GetDevices(IFaxDevices** ppFaxDevices) mut => VT.GetDevices(ref this, ppFaxDevices);
+			public HRESULT get_InboundRouting(IFaxInboundRouting** ppFaxInboundRouting) mut => VT.get_InboundRouting(ref this, ppFaxInboundRouting);
+			public HRESULT get_Folders(IFaxFolders** pFaxFolders) mut => VT.get_Folders(ref this, pFaxFolders);
+			public HRESULT get_LoggingOptions(IFaxLoggingOptions** ppFaxLoggingOptions) mut => VT.get_LoggingOptions(ref this, ppFaxLoggingOptions);
+			public HRESULT get_MajorVersion(out int32 plMajorVersion) mut => VT.get_MajorVersion(ref this, out plMajorVersion);
+			public HRESULT get_MinorVersion(out int32 plMinorVersion) mut => VT.get_MinorVersion(ref this, out plMinorVersion);
+			public HRESULT get_MajorBuild(out int32 plMajorBuild) mut => VT.get_MajorBuild(ref this, out plMajorBuild);
+			public HRESULT get_MinorBuild(out int32 plMinorBuild) mut => VT.get_MinorBuild(ref this, out plMinorBuild);
+			public HRESULT get_Debug(out int16 pbDebug) mut => VT.get_Debug(ref this, out pbDebug);
+			public HRESULT get_Activity(IFaxActivity** ppFaxActivity) mut => VT.get_Activity(ref this, ppFaxActivity);
+			public HRESULT get_OutboundRouting(IFaxOutboundRouting** ppFaxOutboundRouting) mut => VT.get_OutboundRouting(ref this, ppFaxOutboundRouting);
+			public HRESULT get_ReceiptOptions(IFaxReceiptOptions** ppFaxReceiptOptions) mut => VT.get_ReceiptOptions(ref this, ppFaxReceiptOptions);
+			public HRESULT get_Security(IFaxSecurity** ppFaxSecurity) mut => VT.get_Security(ref this, ppFaxSecurity);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+			public HRESULT GetExtensionProperty(BSTR bstrGUID, out VARIANT pvProperty) mut => VT.GetExtensionProperty(ref this, bstrGUID, out pvProperty);
+			public HRESULT SetExtensionProperty(BSTR bstrGUID, VARIANT vProperty) mut => VT.SetExtensionProperty(ref this, bstrGUID, vProperty);
+			public HRESULT ListenToServerEvents(FAX_SERVER_EVENTS_TYPE_ENUM EventTypes) mut => VT.ListenToServerEvents(ref this, EventTypes);
+			public HRESULT RegisterDeviceProvider(BSTR bstrGUID, BSTR bstrFriendlyName, BSTR bstrImageName, BSTR TspName, int32 lFSPIVersion) mut => VT.RegisterDeviceProvider(ref this, bstrGUID, bstrFriendlyName, bstrImageName, TspName, lFSPIVersion);
+			public HRESULT UnregisterDeviceProvider(BSTR bstrUniqueName) mut => VT.UnregisterDeviceProvider(ref this, bstrUniqueName);
+			public HRESULT RegisterInboundRoutingExtension(BSTR bstrExtensionName, BSTR bstrFriendlyName, BSTR bstrImageName, VARIANT vMethods) mut => VT.RegisterInboundRoutingExtension(ref this, bstrExtensionName, bstrFriendlyName, bstrImageName, vMethods);
+			public HRESULT UnregisterInboundRoutingExtension(BSTR bstrExtensionUniqueName) mut => VT.UnregisterInboundRoutingExtension(ref this, bstrExtensionUniqueName);
+			public HRESULT get_RegisteredEvents(out FAX_SERVER_EVENTS_TYPE_ENUM pEventTypes) mut => VT.get_RegisteredEvents(ref this, out pEventTypes);
+			public HRESULT get_APIVersion(out FAX_SERVER_APIVERSION_ENUM pAPIVersion) mut => VT.get_APIVersion(ref this, out pAPIVersion);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1410,18 +1283,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(VARIANT vIndex, IFaxDeviceProvider** pFaxDeviceProvider) mut
-			{
-				return VT.get_Item(ref this, vIndex, pFaxDeviceProvider);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(VARIANT vIndex, IFaxDeviceProvider** pFaxDeviceProvider) mut => VT.get_Item(ref this, vIndex, pFaxDeviceProvider);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1437,22 +1302,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(VARIANT vIndex, IFaxDevice** pFaxDevice) mut
-			{
-				return VT.get_Item(ref this, vIndex, pFaxDevice);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT get_ItemById(int32 lId, IFaxDevice** ppFaxDevice) mut
-			{
-				return VT.get_ItemById(ref this, lId, ppFaxDevice);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(VARIANT vIndex, IFaxDevice** pFaxDevice) mut => VT.get_Item(ref this, vIndex, pFaxDevice);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT get_ItemById(int32 lId, IFaxDevice** ppFaxDevice) mut => VT.get_ItemById(ref this, lId, ppFaxDevice);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1469,14 +1323,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetExtensions(IFaxInboundRoutingExtensions** pFaxInboundRoutingExtensions) mut
-			{
-				return VT.GetExtensions(ref this, pFaxInboundRoutingExtensions);
-			}
-			public HRESULT GetMethods(IFaxInboundRoutingMethods** pFaxInboundRoutingMethods) mut
-			{
-				return VT.GetMethods(ref this, pFaxInboundRoutingMethods);
-			}
+			public HRESULT GetExtensions(IFaxInboundRoutingExtensions** pFaxInboundRoutingExtensions) mut => VT.GetExtensions(ref this, pFaxInboundRoutingExtensions);
+			public HRESULT GetMethods(IFaxInboundRoutingMethods** pFaxInboundRoutingMethods) mut => VT.GetMethods(ref this, pFaxInboundRoutingMethods);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1491,22 +1340,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_OutgoingQueue(IFaxOutgoingQueue** pFaxOutgoingQueue) mut
-			{
-				return VT.get_OutgoingQueue(ref this, pFaxOutgoingQueue);
-			}
-			public HRESULT get_IncomingQueue(IFaxIncomingQueue** pFaxIncomingQueue) mut
-			{
-				return VT.get_IncomingQueue(ref this, pFaxIncomingQueue);
-			}
-			public HRESULT get_IncomingArchive(IFaxIncomingArchive** pFaxIncomingArchive) mut
-			{
-				return VT.get_IncomingArchive(ref this, pFaxIncomingArchive);
-			}
-			public HRESULT get_OutgoingArchive(IFaxOutgoingArchive** pFaxOutgoingArchive) mut
-			{
-				return VT.get_OutgoingArchive(ref this, pFaxOutgoingArchive);
-			}
+			public HRESULT get_OutgoingQueue(IFaxOutgoingQueue** pFaxOutgoingQueue) mut => VT.get_OutgoingQueue(ref this, pFaxOutgoingQueue);
+			public HRESULT get_IncomingQueue(IFaxIncomingQueue** pFaxIncomingQueue) mut => VT.get_IncomingQueue(ref this, pFaxIncomingQueue);
+			public HRESULT get_IncomingArchive(IFaxIncomingArchive** pFaxIncomingArchive) mut => VT.get_IncomingArchive(ref this, pFaxIncomingArchive);
+			public HRESULT get_OutgoingArchive(IFaxOutgoingArchive** pFaxOutgoingArchive) mut => VT.get_OutgoingArchive(ref this, pFaxOutgoingArchive);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1523,14 +1361,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventLogging(IFaxEventLogging** pFaxEventLogging) mut
-			{
-				return VT.get_EventLogging(ref this, pFaxEventLogging);
-			}
-			public HRESULT get_ActivityLogging(IFaxActivityLogging** pFaxActivityLogging) mut
-			{
-				return VT.get_ActivityLogging(ref this, pFaxActivityLogging);
-			}
+			public HRESULT get_EventLogging(IFaxEventLogging** pFaxEventLogging) mut => VT.get_EventLogging(ref this, pFaxEventLogging);
+			public HRESULT get_ActivityLogging(IFaxActivityLogging** pFaxActivityLogging) mut => VT.get_ActivityLogging(ref this, pFaxActivityLogging);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1545,26 +1378,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IncomingMessages(out int32 plIncomingMessages) mut
-			{
-				return VT.get_IncomingMessages(ref this, out plIncomingMessages);
-			}
-			public HRESULT get_RoutingMessages(out int32 plRoutingMessages) mut
-			{
-				return VT.get_RoutingMessages(ref this, out plRoutingMessages);
-			}
-			public HRESULT get_OutgoingMessages(out int32 plOutgoingMessages) mut
-			{
-				return VT.get_OutgoingMessages(ref this, out plOutgoingMessages);
-			}
-			public HRESULT get_QueuedMessages(out int32 plQueuedMessages) mut
-			{
-				return VT.get_QueuedMessages(ref this, out plQueuedMessages);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
+			public HRESULT get_IncomingMessages(out int32 plIncomingMessages) mut => VT.get_IncomingMessages(ref this, out plIncomingMessages);
+			public HRESULT get_RoutingMessages(out int32 plRoutingMessages) mut => VT.get_RoutingMessages(ref this, out plRoutingMessages);
+			public HRESULT get_OutgoingMessages(out int32 plOutgoingMessages) mut => VT.get_OutgoingMessages(ref this, out plOutgoingMessages);
+			public HRESULT get_QueuedMessages(out int32 plQueuedMessages) mut => VT.get_QueuedMessages(ref this, out plQueuedMessages);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1582,14 +1401,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGroups(IFaxOutboundRoutingGroups** pFaxOutboundRoutingGroups) mut
-			{
-				return VT.GetGroups(ref this, pFaxOutboundRoutingGroups);
-			}
-			public HRESULT GetRules(IFaxOutboundRoutingRules** pFaxOutboundRoutingRules) mut
-			{
-				return VT.GetRules(ref this, pFaxOutboundRoutingRules);
-			}
+			public HRESULT GetGroups(IFaxOutboundRoutingGroups** pFaxOutboundRoutingGroups) mut => VT.GetGroups(ref this, pFaxOutboundRoutingGroups);
+			public HRESULT GetRules(IFaxOutboundRoutingRules** pFaxOutboundRoutingRules) mut => VT.GetRules(ref this, pFaxOutboundRoutingRules);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1604,78 +1418,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AuthenticationType(out FAX_SMTP_AUTHENTICATION_TYPE_ENUM pType) mut
-			{
-				return VT.get_AuthenticationType(ref this, out pType);
-			}
-			public HRESULT put_AuthenticationType(FAX_SMTP_AUTHENTICATION_TYPE_ENUM Type) mut
-			{
-				return VT.put_AuthenticationType(ref this, Type);
-			}
-			public HRESULT get_SMTPServer(BSTR* pbstrSMTPServer) mut
-			{
-				return VT.get_SMTPServer(ref this, pbstrSMTPServer);
-			}
-			public HRESULT put_SMTPServer(BSTR bstrSMTPServer) mut
-			{
-				return VT.put_SMTPServer(ref this, bstrSMTPServer);
-			}
-			public HRESULT get_SMTPPort(out int32 plSMTPPort) mut
-			{
-				return VT.get_SMTPPort(ref this, out plSMTPPort);
-			}
-			public HRESULT put_SMTPPort(int32 lSMTPPort) mut
-			{
-				return VT.put_SMTPPort(ref this, lSMTPPort);
-			}
-			public HRESULT get_SMTPSender(BSTR* pbstrSMTPSender) mut
-			{
-				return VT.get_SMTPSender(ref this, pbstrSMTPSender);
-			}
-			public HRESULT put_SMTPSender(BSTR bstrSMTPSender) mut
-			{
-				return VT.put_SMTPSender(ref this, bstrSMTPSender);
-			}
-			public HRESULT get_SMTPUser(BSTR* pbstrSMTPUser) mut
-			{
-				return VT.get_SMTPUser(ref this, pbstrSMTPUser);
-			}
-			public HRESULT put_SMTPUser(BSTR bstrSMTPUser) mut
-			{
-				return VT.put_SMTPUser(ref this, bstrSMTPUser);
-			}
-			public HRESULT get_AllowedReceipts(out FAX_RECEIPT_TYPE_ENUM pAllowedReceipts) mut
-			{
-				return VT.get_AllowedReceipts(ref this, out pAllowedReceipts);
-			}
-			public HRESULT put_AllowedReceipts(FAX_RECEIPT_TYPE_ENUM AllowedReceipts) mut
-			{
-				return VT.put_AllowedReceipts(ref this, AllowedReceipts);
-			}
-			public HRESULT get_SMTPPassword(BSTR* pbstrSMTPPassword) mut
-			{
-				return VT.get_SMTPPassword(ref this, pbstrSMTPPassword);
-			}
-			public HRESULT put_SMTPPassword(BSTR bstrSMTPPassword) mut
-			{
-				return VT.put_SMTPPassword(ref this, bstrSMTPPassword);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT get_UseForInboundRouting(out int16 pbUseForInboundRouting) mut
-			{
-				return VT.get_UseForInboundRouting(ref this, out pbUseForInboundRouting);
-			}
-			public HRESULT put_UseForInboundRouting(int16 bUseForInboundRouting) mut
-			{
-				return VT.put_UseForInboundRouting(ref this, bUseForInboundRouting);
-			}
+			public HRESULT get_AuthenticationType(out FAX_SMTP_AUTHENTICATION_TYPE_ENUM pType) mut => VT.get_AuthenticationType(ref this, out pType);
+			public HRESULT put_AuthenticationType(FAX_SMTP_AUTHENTICATION_TYPE_ENUM Type) mut => VT.put_AuthenticationType(ref this, Type);
+			public HRESULT get_SMTPServer(BSTR* pbstrSMTPServer) mut => VT.get_SMTPServer(ref this, pbstrSMTPServer);
+			public HRESULT put_SMTPServer(BSTR bstrSMTPServer) mut => VT.put_SMTPServer(ref this, bstrSMTPServer);
+			public HRESULT get_SMTPPort(out int32 plSMTPPort) mut => VT.get_SMTPPort(ref this, out plSMTPPort);
+			public HRESULT put_SMTPPort(int32 lSMTPPort) mut => VT.put_SMTPPort(ref this, lSMTPPort);
+			public HRESULT get_SMTPSender(BSTR* pbstrSMTPSender) mut => VT.get_SMTPSender(ref this, pbstrSMTPSender);
+			public HRESULT put_SMTPSender(BSTR bstrSMTPSender) mut => VT.put_SMTPSender(ref this, bstrSMTPSender);
+			public HRESULT get_SMTPUser(BSTR* pbstrSMTPUser) mut => VT.get_SMTPUser(ref this, pbstrSMTPUser);
+			public HRESULT put_SMTPUser(BSTR bstrSMTPUser) mut => VT.put_SMTPUser(ref this, bstrSMTPUser);
+			public HRESULT get_AllowedReceipts(out FAX_RECEIPT_TYPE_ENUM pAllowedReceipts) mut => VT.get_AllowedReceipts(ref this, out pAllowedReceipts);
+			public HRESULT put_AllowedReceipts(FAX_RECEIPT_TYPE_ENUM AllowedReceipts) mut => VT.put_AllowedReceipts(ref this, AllowedReceipts);
+			public HRESULT get_SMTPPassword(BSTR* pbstrSMTPPassword) mut => VT.get_SMTPPassword(ref this, pbstrSMTPPassword);
+			public HRESULT put_SMTPPassword(BSTR bstrSMTPPassword) mut => VT.put_SMTPPassword(ref this, bstrSMTPPassword);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT get_UseForInboundRouting(out int16 pbUseForInboundRouting) mut => VT.get_UseForInboundRouting(ref this, out pbUseForInboundRouting);
+			public HRESULT put_UseForInboundRouting(int16 bUseForInboundRouting) mut => VT.put_UseForInboundRouting(ref this, bUseForInboundRouting);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1706,34 +1467,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Descriptor(out VARIANT pvDescriptor) mut
-			{
-				return VT.get_Descriptor(ref this, out pvDescriptor);
-			}
-			public HRESULT put_Descriptor(VARIANT vDescriptor) mut
-			{
-				return VT.put_Descriptor(ref this, vDescriptor);
-			}
-			public HRESULT get_GrantedRights(out FAX_ACCESS_RIGHTS_ENUM pGrantedRights) mut
-			{
-				return VT.get_GrantedRights(ref this, out pGrantedRights);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT get_InformationType(out int32 plInformationType) mut
-			{
-				return VT.get_InformationType(ref this, out plInformationType);
-			}
-			public HRESULT put_InformationType(int32 lInformationType) mut
-			{
-				return VT.put_InformationType(ref this, lInformationType);
-			}
+			public HRESULT get_Descriptor(out VARIANT pvDescriptor) mut => VT.get_Descriptor(ref this, out pvDescriptor);
+			public HRESULT put_Descriptor(VARIANT vDescriptor) mut => VT.put_Descriptor(ref this, vDescriptor);
+			public HRESULT get_GrantedRights(out FAX_ACCESS_RIGHTS_ENUM pGrantedRights) mut => VT.get_GrantedRights(ref this, out pGrantedRights);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT get_InformationType(out int32 plInformationType) mut => VT.get_InformationType(ref this, out plInformationType);
+			public HRESULT put_InformationType(int32 lInformationType) mut => VT.put_InformationType(ref this, lInformationType);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1753,142 +1494,41 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Body(BSTR* pbstrBody) mut
-			{
-				return VT.get_Body(ref this, pbstrBody);
-			}
-			public HRESULT put_Body(BSTR bstrBody) mut
-			{
-				return VT.put_Body(ref this, bstrBody);
-			}
-			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut
-			{
-				return VT.get_Sender(ref this, ppFaxSender);
-			}
-			public HRESULT get_Recipients(IFaxRecipients** ppFaxRecipients) mut
-			{
-				return VT.get_Recipients(ref this, ppFaxRecipients);
-			}
-			public HRESULT get_CoverPage(BSTR* pbstrCoverPage) mut
-			{
-				return VT.get_CoverPage(ref this, pbstrCoverPage);
-			}
-			public HRESULT put_CoverPage(BSTR bstrCoverPage) mut
-			{
-				return VT.put_CoverPage(ref this, bstrCoverPage);
-			}
-			public HRESULT get_Subject(BSTR* pbstrSubject) mut
-			{
-				return VT.get_Subject(ref this, pbstrSubject);
-			}
-			public HRESULT put_Subject(BSTR bstrSubject) mut
-			{
-				return VT.put_Subject(ref this, bstrSubject);
-			}
-			public HRESULT get_Note(BSTR* pbstrNote) mut
-			{
-				return VT.get_Note(ref this, pbstrNote);
-			}
-			public HRESULT put_Note(BSTR bstrNote) mut
-			{
-				return VT.put_Note(ref this, bstrNote);
-			}
-			public HRESULT get_ScheduleTime(out double pdateScheduleTime) mut
-			{
-				return VT.get_ScheduleTime(ref this, out pdateScheduleTime);
-			}
-			public HRESULT put_ScheduleTime(double dateScheduleTime) mut
-			{
-				return VT.put_ScheduleTime(ref this, dateScheduleTime);
-			}
-			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut
-			{
-				return VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
-			}
-			public HRESULT put_ReceiptAddress(BSTR bstrReceiptAddress) mut
-			{
-				return VT.put_ReceiptAddress(ref this, bstrReceiptAddress);
-			}
-			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut
-			{
-				return VT.get_DocumentName(ref this, pbstrDocumentName);
-			}
-			public HRESULT put_DocumentName(BSTR bstrDocumentName) mut
-			{
-				return VT.put_DocumentName(ref this, bstrDocumentName);
-			}
-			public HRESULT get_CallHandle(out int32 plCallHandle) mut
-			{
-				return VT.get_CallHandle(ref this, out plCallHandle);
-			}
-			public HRESULT put_CallHandle(int32 lCallHandle) mut
-			{
-				return VT.put_CallHandle(ref this, lCallHandle);
-			}
-			public HRESULT get_CoverPageType(out FAX_COVERPAGE_TYPE_ENUM pCoverPageType) mut
-			{
-				return VT.get_CoverPageType(ref this, out pCoverPageType);
-			}
-			public HRESULT put_CoverPageType(FAX_COVERPAGE_TYPE_ENUM CoverPageType) mut
-			{
-				return VT.put_CoverPageType(ref this, CoverPageType);
-			}
-			public HRESULT get_ScheduleType(out FAX_SCHEDULE_TYPE_ENUM pScheduleType) mut
-			{
-				return VT.get_ScheduleType(ref this, out pScheduleType);
-			}
-			public HRESULT put_ScheduleType(FAX_SCHEDULE_TYPE_ENUM ScheduleType) mut
-			{
-				return VT.put_ScheduleType(ref this, ScheduleType);
-			}
-			public HRESULT get_ReceiptType(out FAX_RECEIPT_TYPE_ENUM pReceiptType) mut
-			{
-				return VT.get_ReceiptType(ref this, out pReceiptType);
-			}
-			public HRESULT put_ReceiptType(FAX_RECEIPT_TYPE_ENUM ReceiptType) mut
-			{
-				return VT.put_ReceiptType(ref this, ReceiptType);
-			}
-			public HRESULT get_GroupBroadcastReceipts(out int16 pbUseGrouping) mut
-			{
-				return VT.get_GroupBroadcastReceipts(ref this, out pbUseGrouping);
-			}
-			public HRESULT put_GroupBroadcastReceipts(int16 bUseGrouping) mut
-			{
-				return VT.put_GroupBroadcastReceipts(ref this, bUseGrouping);
-			}
-			public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut
-			{
-				return VT.get_Priority(ref this, out pPriority);
-			}
-			public HRESULT put_Priority(FAX_PRIORITY_TYPE_ENUM Priority) mut
-			{
-				return VT.put_Priority(ref this, Priority);
-			}
-			public HRESULT get_TapiConnection(IDispatch** ppTapiConnection) mut
-			{
-				return VT.get_TapiConnection(ref this, ppTapiConnection);
-			}
-			public HRESULT putref_TapiConnection(IDispatch* pTapiConnection) mut
-			{
-				return VT.putref_TapiConnection(ref this, pTapiConnection);
-			}
-			public HRESULT Submit(BSTR bstrFaxServerName, out VARIANT pvFaxOutgoingJobIDs) mut
-			{
-				return VT.Submit(ref this, bstrFaxServerName, out pvFaxOutgoingJobIDs);
-			}
-			public HRESULT ConnectedSubmit(IFaxServer* pFaxServer, out VARIANT pvFaxOutgoingJobIDs) mut
-			{
-				return VT.ConnectedSubmit(ref this, pFaxServer, out pvFaxOutgoingJobIDs);
-			}
-			public HRESULT get_AttachFaxToReceipt(out int16 pbAttachFax) mut
-			{
-				return VT.get_AttachFaxToReceipt(ref this, out pbAttachFax);
-			}
-			public HRESULT put_AttachFaxToReceipt(int16 bAttachFax) mut
-			{
-				return VT.put_AttachFaxToReceipt(ref this, bAttachFax);
-			}
+			public HRESULT get_Body(BSTR* pbstrBody) mut => VT.get_Body(ref this, pbstrBody);
+			public HRESULT put_Body(BSTR bstrBody) mut => VT.put_Body(ref this, bstrBody);
+			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut => VT.get_Sender(ref this, ppFaxSender);
+			public HRESULT get_Recipients(IFaxRecipients** ppFaxRecipients) mut => VT.get_Recipients(ref this, ppFaxRecipients);
+			public HRESULT get_CoverPage(BSTR* pbstrCoverPage) mut => VT.get_CoverPage(ref this, pbstrCoverPage);
+			public HRESULT put_CoverPage(BSTR bstrCoverPage) mut => VT.put_CoverPage(ref this, bstrCoverPage);
+			public HRESULT get_Subject(BSTR* pbstrSubject) mut => VT.get_Subject(ref this, pbstrSubject);
+			public HRESULT put_Subject(BSTR bstrSubject) mut => VT.put_Subject(ref this, bstrSubject);
+			public HRESULT get_Note(BSTR* pbstrNote) mut => VT.get_Note(ref this, pbstrNote);
+			public HRESULT put_Note(BSTR bstrNote) mut => VT.put_Note(ref this, bstrNote);
+			public HRESULT get_ScheduleTime(out double pdateScheduleTime) mut => VT.get_ScheduleTime(ref this, out pdateScheduleTime);
+			public HRESULT put_ScheduleTime(double dateScheduleTime) mut => VT.put_ScheduleTime(ref this, dateScheduleTime);
+			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
+			public HRESULT put_ReceiptAddress(BSTR bstrReceiptAddress) mut => VT.put_ReceiptAddress(ref this, bstrReceiptAddress);
+			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut => VT.get_DocumentName(ref this, pbstrDocumentName);
+			public HRESULT put_DocumentName(BSTR bstrDocumentName) mut => VT.put_DocumentName(ref this, bstrDocumentName);
+			public HRESULT get_CallHandle(out int32 plCallHandle) mut => VT.get_CallHandle(ref this, out plCallHandle);
+			public HRESULT put_CallHandle(int32 lCallHandle) mut => VT.put_CallHandle(ref this, lCallHandle);
+			public HRESULT get_CoverPageType(out FAX_COVERPAGE_TYPE_ENUM pCoverPageType) mut => VT.get_CoverPageType(ref this, out pCoverPageType);
+			public HRESULT put_CoverPageType(FAX_COVERPAGE_TYPE_ENUM CoverPageType) mut => VT.put_CoverPageType(ref this, CoverPageType);
+			public HRESULT get_ScheduleType(out FAX_SCHEDULE_TYPE_ENUM pScheduleType) mut => VT.get_ScheduleType(ref this, out pScheduleType);
+			public HRESULT put_ScheduleType(FAX_SCHEDULE_TYPE_ENUM ScheduleType) mut => VT.put_ScheduleType(ref this, ScheduleType);
+			public HRESULT get_ReceiptType(out FAX_RECEIPT_TYPE_ENUM pReceiptType) mut => VT.get_ReceiptType(ref this, out pReceiptType);
+			public HRESULT put_ReceiptType(FAX_RECEIPT_TYPE_ENUM ReceiptType) mut => VT.put_ReceiptType(ref this, ReceiptType);
+			public HRESULT get_GroupBroadcastReceipts(out int16 pbUseGrouping) mut => VT.get_GroupBroadcastReceipts(ref this, out pbUseGrouping);
+			public HRESULT put_GroupBroadcastReceipts(int16 bUseGrouping) mut => VT.put_GroupBroadcastReceipts(ref this, bUseGrouping);
+			public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut => VT.get_Priority(ref this, out pPriority);
+			public HRESULT put_Priority(FAX_PRIORITY_TYPE_ENUM Priority) mut => VT.put_Priority(ref this, Priority);
+			public HRESULT get_TapiConnection(IDispatch** ppTapiConnection) mut => VT.get_TapiConnection(ref this, ppTapiConnection);
+			public HRESULT putref_TapiConnection(IDispatch* pTapiConnection) mut => VT.putref_TapiConnection(ref this, pTapiConnection);
+			public HRESULT Submit(BSTR bstrFaxServerName, out VARIANT pvFaxOutgoingJobIDs) mut => VT.Submit(ref this, bstrFaxServerName, out pvFaxOutgoingJobIDs);
+			public HRESULT ConnectedSubmit(IFaxServer* pFaxServer, out VARIANT pvFaxOutgoingJobIDs) mut => VT.ConnectedSubmit(ref this, pFaxServer, out pvFaxOutgoingJobIDs);
+			public HRESULT get_AttachFaxToReceipt(out int16 pbAttachFax) mut => VT.get_AttachFaxToReceipt(ref this, out pbAttachFax);
+			public HRESULT put_AttachFaxToReceipt(int16 bAttachFax) mut => VT.put_AttachFaxToReceipt(ref this, bAttachFax);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1935,142 +1575,41 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BillingCode(BSTR* pbstrBillingCode) mut
-			{
-				return VT.get_BillingCode(ref this, pbstrBillingCode);
-			}
-			public HRESULT put_BillingCode(BSTR bstrBillingCode) mut
-			{
-				return VT.put_BillingCode(ref this, bstrBillingCode);
-			}
-			public HRESULT get_City(BSTR* pbstrCity) mut
-			{
-				return VT.get_City(ref this, pbstrCity);
-			}
-			public HRESULT put_City(BSTR bstrCity) mut
-			{
-				return VT.put_City(ref this, bstrCity);
-			}
-			public HRESULT get_Company(BSTR* pbstrCompany) mut
-			{
-				return VT.get_Company(ref this, pbstrCompany);
-			}
-			public HRESULT put_Company(BSTR bstrCompany) mut
-			{
-				return VT.put_Company(ref this, bstrCompany);
-			}
-			public HRESULT get_Country(BSTR* pbstrCountry) mut
-			{
-				return VT.get_Country(ref this, pbstrCountry);
-			}
-			public HRESULT put_Country(BSTR bstrCountry) mut
-			{
-				return VT.put_Country(ref this, bstrCountry);
-			}
-			public HRESULT get_Department(BSTR* pbstrDepartment) mut
-			{
-				return VT.get_Department(ref this, pbstrDepartment);
-			}
-			public HRESULT put_Department(BSTR bstrDepartment) mut
-			{
-				return VT.put_Department(ref this, bstrDepartment);
-			}
-			public HRESULT get_Email(BSTR* pbstrEmail) mut
-			{
-				return VT.get_Email(ref this, pbstrEmail);
-			}
-			public HRESULT put_Email(BSTR bstrEmail) mut
-			{
-				return VT.put_Email(ref this, bstrEmail);
-			}
-			public HRESULT get_FaxNumber(BSTR* pbstrFaxNumber) mut
-			{
-				return VT.get_FaxNumber(ref this, pbstrFaxNumber);
-			}
-			public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut
-			{
-				return VT.put_FaxNumber(ref this, bstrFaxNumber);
-			}
-			public HRESULT get_HomePhone(BSTR* pbstrHomePhone) mut
-			{
-				return VT.get_HomePhone(ref this, pbstrHomePhone);
-			}
-			public HRESULT put_HomePhone(BSTR bstrHomePhone) mut
-			{
-				return VT.put_HomePhone(ref this, bstrHomePhone);
-			}
-			public HRESULT get_Name(BSTR* pbstrName) mut
-			{
-				return VT.get_Name(ref this, pbstrName);
-			}
-			public HRESULT put_Name(BSTR bstrName) mut
-			{
-				return VT.put_Name(ref this, bstrName);
-			}
-			public HRESULT get_TSID(BSTR* pbstrTSID) mut
-			{
-				return VT.get_TSID(ref this, pbstrTSID);
-			}
-			public HRESULT put_TSID(BSTR bstrTSID) mut
-			{
-				return VT.put_TSID(ref this, bstrTSID);
-			}
-			public HRESULT get_OfficePhone(BSTR* pbstrOfficePhone) mut
-			{
-				return VT.get_OfficePhone(ref this, pbstrOfficePhone);
-			}
-			public HRESULT put_OfficePhone(BSTR bstrOfficePhone) mut
-			{
-				return VT.put_OfficePhone(ref this, bstrOfficePhone);
-			}
-			public HRESULT get_OfficeLocation(BSTR* pbstrOfficeLocation) mut
-			{
-				return VT.get_OfficeLocation(ref this, pbstrOfficeLocation);
-			}
-			public HRESULT put_OfficeLocation(BSTR bstrOfficeLocation) mut
-			{
-				return VT.put_OfficeLocation(ref this, bstrOfficeLocation);
-			}
-			public HRESULT get_State(BSTR* pbstrState) mut
-			{
-				return VT.get_State(ref this, pbstrState);
-			}
-			public HRESULT put_State(BSTR bstrState) mut
-			{
-				return VT.put_State(ref this, bstrState);
-			}
-			public HRESULT get_StreetAddress(BSTR* pbstrStreetAddress) mut
-			{
-				return VT.get_StreetAddress(ref this, pbstrStreetAddress);
-			}
-			public HRESULT put_StreetAddress(BSTR bstrStreetAddress) mut
-			{
-				return VT.put_StreetAddress(ref this, bstrStreetAddress);
-			}
-			public HRESULT get_Title(BSTR* pbstrTitle) mut
-			{
-				return VT.get_Title(ref this, pbstrTitle);
-			}
-			public HRESULT put_Title(BSTR bstrTitle) mut
-			{
-				return VT.put_Title(ref this, bstrTitle);
-			}
-			public HRESULT get_ZipCode(BSTR* pbstrZipCode) mut
-			{
-				return VT.get_ZipCode(ref this, pbstrZipCode);
-			}
-			public HRESULT put_ZipCode(BSTR bstrZipCode) mut
-			{
-				return VT.put_ZipCode(ref this, bstrZipCode);
-			}
-			public HRESULT LoadDefaultSender() mut
-			{
-				return VT.LoadDefaultSender(ref this);
-			}
-			public HRESULT SaveDefaultSender() mut
-			{
-				return VT.SaveDefaultSender(ref this);
-			}
+			public HRESULT get_BillingCode(BSTR* pbstrBillingCode) mut => VT.get_BillingCode(ref this, pbstrBillingCode);
+			public HRESULT put_BillingCode(BSTR bstrBillingCode) mut => VT.put_BillingCode(ref this, bstrBillingCode);
+			public HRESULT get_City(BSTR* pbstrCity) mut => VT.get_City(ref this, pbstrCity);
+			public HRESULT put_City(BSTR bstrCity) mut => VT.put_City(ref this, bstrCity);
+			public HRESULT get_Company(BSTR* pbstrCompany) mut => VT.get_Company(ref this, pbstrCompany);
+			public HRESULT put_Company(BSTR bstrCompany) mut => VT.put_Company(ref this, bstrCompany);
+			public HRESULT get_Country(BSTR* pbstrCountry) mut => VT.get_Country(ref this, pbstrCountry);
+			public HRESULT put_Country(BSTR bstrCountry) mut => VT.put_Country(ref this, bstrCountry);
+			public HRESULT get_Department(BSTR* pbstrDepartment) mut => VT.get_Department(ref this, pbstrDepartment);
+			public HRESULT put_Department(BSTR bstrDepartment) mut => VT.put_Department(ref this, bstrDepartment);
+			public HRESULT get_Email(BSTR* pbstrEmail) mut => VT.get_Email(ref this, pbstrEmail);
+			public HRESULT put_Email(BSTR bstrEmail) mut => VT.put_Email(ref this, bstrEmail);
+			public HRESULT get_FaxNumber(BSTR* pbstrFaxNumber) mut => VT.get_FaxNumber(ref this, pbstrFaxNumber);
+			public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut => VT.put_FaxNumber(ref this, bstrFaxNumber);
+			public HRESULT get_HomePhone(BSTR* pbstrHomePhone) mut => VT.get_HomePhone(ref this, pbstrHomePhone);
+			public HRESULT put_HomePhone(BSTR bstrHomePhone) mut => VT.put_HomePhone(ref this, bstrHomePhone);
+			public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+			public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+			public HRESULT put_TSID(BSTR bstrTSID) mut => VT.put_TSID(ref this, bstrTSID);
+			public HRESULT get_OfficePhone(BSTR* pbstrOfficePhone) mut => VT.get_OfficePhone(ref this, pbstrOfficePhone);
+			public HRESULT put_OfficePhone(BSTR bstrOfficePhone) mut => VT.put_OfficePhone(ref this, bstrOfficePhone);
+			public HRESULT get_OfficeLocation(BSTR* pbstrOfficeLocation) mut => VT.get_OfficeLocation(ref this, pbstrOfficeLocation);
+			public HRESULT put_OfficeLocation(BSTR bstrOfficeLocation) mut => VT.put_OfficeLocation(ref this, bstrOfficeLocation);
+			public HRESULT get_State(BSTR* pbstrState) mut => VT.get_State(ref this, pbstrState);
+			public HRESULT put_State(BSTR bstrState) mut => VT.put_State(ref this, bstrState);
+			public HRESULT get_StreetAddress(BSTR* pbstrStreetAddress) mut => VT.get_StreetAddress(ref this, pbstrStreetAddress);
+			public HRESULT put_StreetAddress(BSTR bstrStreetAddress) mut => VT.put_StreetAddress(ref this, bstrStreetAddress);
+			public HRESULT get_Title(BSTR* pbstrTitle) mut => VT.get_Title(ref this, pbstrTitle);
+			public HRESULT put_Title(BSTR bstrTitle) mut => VT.put_Title(ref this, bstrTitle);
+			public HRESULT get_ZipCode(BSTR* pbstrZipCode) mut => VT.get_ZipCode(ref this, pbstrZipCode);
+			public HRESULT put_ZipCode(BSTR bstrZipCode) mut => VT.put_ZipCode(ref this, bstrZipCode);
+			public HRESULT LoadDefaultSender() mut => VT.LoadDefaultSender(ref this);
+			public HRESULT SaveDefaultSender() mut => VT.SaveDefaultSender(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2117,22 +1656,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FaxNumber(BSTR* pbstrFaxNumber) mut
-			{
-				return VT.get_FaxNumber(ref this, pbstrFaxNumber);
-			}
-			public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut
-			{
-				return VT.put_FaxNumber(ref this, bstrFaxNumber);
-			}
-			public HRESULT get_Name(BSTR* pbstrName) mut
-			{
-				return VT.get_Name(ref this, pbstrName);
-			}
-			public HRESULT put_Name(BSTR bstrName) mut
-			{
-				return VT.put_Name(ref this, bstrName);
-			}
+			public HRESULT get_FaxNumber(BSTR* pbstrFaxNumber) mut => VT.get_FaxNumber(ref this, pbstrFaxNumber);
+			public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut => VT.put_FaxNumber(ref this, bstrFaxNumber);
+			public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+			public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2149,26 +1677,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(int32 lIndex, IFaxRecipient** ppFaxRecipient) mut
-			{
-				return VT.get_Item(ref this, lIndex, ppFaxRecipient);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT Add(BSTR bstrFaxNumber, BSTR bstrRecipientName, IFaxRecipient** ppFaxRecipient) mut
-			{
-				return VT.Add(ref this, bstrFaxNumber, bstrRecipientName, ppFaxRecipient);
-			}
-			public HRESULT Remove(int32 lIndex) mut
-			{
-				return VT.Remove(ref this, lIndex);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(int32 lIndex, IFaxRecipient** ppFaxRecipient) mut => VT.get_Item(ref this, lIndex, ppFaxRecipient);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT Add(BSTR bstrFaxNumber, BSTR bstrRecipientName, IFaxRecipient** ppFaxRecipient) mut => VT.Add(ref this, bstrFaxNumber, bstrRecipientName, ppFaxRecipient);
+			public HRESULT Remove(int32 lIndex) mut => VT.Remove(ref this, lIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2186,78 +1700,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UseArchive(out int16 pbUseArchive) mut
-			{
-				return VT.get_UseArchive(ref this, out pbUseArchive);
-			}
-			public HRESULT put_UseArchive(int16 bUseArchive) mut
-			{
-				return VT.put_UseArchive(ref this, bUseArchive);
-			}
-			public HRESULT get_ArchiveFolder(BSTR* pbstrArchiveFolder) mut
-			{
-				return VT.get_ArchiveFolder(ref this, pbstrArchiveFolder);
-			}
-			public HRESULT put_ArchiveFolder(BSTR bstrArchiveFolder) mut
-			{
-				return VT.put_ArchiveFolder(ref this, bstrArchiveFolder);
-			}
-			public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut
-			{
-				return VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
-			}
-			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut
-			{
-				return VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
-			}
-			public HRESULT get_HighQuotaWaterMark(out int32 plHighQuotaWaterMark) mut
-			{
-				return VT.get_HighQuotaWaterMark(ref this, out plHighQuotaWaterMark);
-			}
-			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut
-			{
-				return VT.put_HighQuotaWaterMark(ref this, lHighQuotaWaterMark);
-			}
-			public HRESULT get_LowQuotaWaterMark(out int32 plLowQuotaWaterMark) mut
-			{
-				return VT.get_LowQuotaWaterMark(ref this, out plLowQuotaWaterMark);
-			}
-			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut
-			{
-				return VT.put_LowQuotaWaterMark(ref this, lLowQuotaWaterMark);
-			}
-			public HRESULT get_AgeLimit(out int32 plAgeLimit) mut
-			{
-				return VT.get_AgeLimit(ref this, out plAgeLimit);
-			}
-			public HRESULT put_AgeLimit(int32 lAgeLimit) mut
-			{
-				return VT.put_AgeLimit(ref this, lAgeLimit);
-			}
-			public HRESULT get_SizeLow(out int32 plSizeLow) mut
-			{
-				return VT.get_SizeLow(ref this, out plSizeLow);
-			}
-			public HRESULT get_SizeHigh(out int32 plSizeHigh) mut
-			{
-				return VT.get_SizeHigh(ref this, out plSizeHigh);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT GetMessages(int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) mut
-			{
-				return VT.GetMessages(ref this, lPrefetchSize, pFaxIncomingMessageIterator);
-			}
-			public HRESULT GetMessage(BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) mut
-			{
-				return VT.GetMessage(ref this, bstrMessageId, pFaxIncomingMessage);
-			}
+			public HRESULT get_UseArchive(out int16 pbUseArchive) mut => VT.get_UseArchive(ref this, out pbUseArchive);
+			public HRESULT put_UseArchive(int16 bUseArchive) mut => VT.put_UseArchive(ref this, bUseArchive);
+			public HRESULT get_ArchiveFolder(BSTR* pbstrArchiveFolder) mut => VT.get_ArchiveFolder(ref this, pbstrArchiveFolder);
+			public HRESULT put_ArchiveFolder(BSTR bstrArchiveFolder) mut => VT.put_ArchiveFolder(ref this, bstrArchiveFolder);
+			public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut => VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
+			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut => VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
+			public HRESULT get_HighQuotaWaterMark(out int32 plHighQuotaWaterMark) mut => VT.get_HighQuotaWaterMark(ref this, out plHighQuotaWaterMark);
+			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut => VT.put_HighQuotaWaterMark(ref this, lHighQuotaWaterMark);
+			public HRESULT get_LowQuotaWaterMark(out int32 plLowQuotaWaterMark) mut => VT.get_LowQuotaWaterMark(ref this, out plLowQuotaWaterMark);
+			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut => VT.put_LowQuotaWaterMark(ref this, lLowQuotaWaterMark);
+			public HRESULT get_AgeLimit(out int32 plAgeLimit) mut => VT.get_AgeLimit(ref this, out plAgeLimit);
+			public HRESULT put_AgeLimit(int32 lAgeLimit) mut => VT.put_AgeLimit(ref this, lAgeLimit);
+			public HRESULT get_SizeLow(out int32 plSizeLow) mut => VT.get_SizeLow(ref this, out plSizeLow);
+			public HRESULT get_SizeHigh(out int32 plSizeHigh) mut => VT.get_SizeHigh(ref this, out plSizeHigh);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT GetMessages(int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, pFaxIncomingMessageIterator);
+			public HRESULT GetMessage(BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) mut => VT.GetMessage(ref this, bstrMessageId, pFaxIncomingMessage);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2288,30 +1749,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Blocked(out int16 pbBlocked) mut
-			{
-				return VT.get_Blocked(ref this, out pbBlocked);
-			}
-			public HRESULT put_Blocked(int16 bBlocked) mut
-			{
-				return VT.put_Blocked(ref this, bBlocked);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT GetJobs(IFaxIncomingJobs** pFaxIncomingJobs) mut
-			{
-				return VT.GetJobs(ref this, pFaxIncomingJobs);
-			}
-			public HRESULT GetJob(BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) mut
-			{
-				return VT.GetJob(ref this, bstrJobId, pFaxIncomingJob);
-			}
+			public HRESULT get_Blocked(out int16 pbBlocked) mut => VT.get_Blocked(ref this, out pbBlocked);
+			public HRESULT put_Blocked(int16 bBlocked) mut => VT.put_Blocked(ref this, bBlocked);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT GetJobs(IFaxIncomingJobs** pFaxIncomingJobs) mut => VT.GetJobs(ref this, pFaxIncomingJobs);
+			public HRESULT GetJob(BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) mut => VT.GetJob(ref this, bstrJobId, pFaxIncomingJob);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2330,78 +1774,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UseArchive(out int16 pbUseArchive) mut
-			{
-				return VT.get_UseArchive(ref this, out pbUseArchive);
-			}
-			public HRESULT put_UseArchive(int16 bUseArchive) mut
-			{
-				return VT.put_UseArchive(ref this, bUseArchive);
-			}
-			public HRESULT get_ArchiveFolder(BSTR* pbstrArchiveFolder) mut
-			{
-				return VT.get_ArchiveFolder(ref this, pbstrArchiveFolder);
-			}
-			public HRESULT put_ArchiveFolder(BSTR bstrArchiveFolder) mut
-			{
-				return VT.put_ArchiveFolder(ref this, bstrArchiveFolder);
-			}
-			public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut
-			{
-				return VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
-			}
-			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut
-			{
-				return VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
-			}
-			public HRESULT get_HighQuotaWaterMark(out int32 plHighQuotaWaterMark) mut
-			{
-				return VT.get_HighQuotaWaterMark(ref this, out plHighQuotaWaterMark);
-			}
-			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut
-			{
-				return VT.put_HighQuotaWaterMark(ref this, lHighQuotaWaterMark);
-			}
-			public HRESULT get_LowQuotaWaterMark(out int32 plLowQuotaWaterMark) mut
-			{
-				return VT.get_LowQuotaWaterMark(ref this, out plLowQuotaWaterMark);
-			}
-			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut
-			{
-				return VT.put_LowQuotaWaterMark(ref this, lLowQuotaWaterMark);
-			}
-			public HRESULT get_AgeLimit(out int32 plAgeLimit) mut
-			{
-				return VT.get_AgeLimit(ref this, out plAgeLimit);
-			}
-			public HRESULT put_AgeLimit(int32 lAgeLimit) mut
-			{
-				return VT.put_AgeLimit(ref this, lAgeLimit);
-			}
-			public HRESULT get_SizeLow(out int32 plSizeLow) mut
-			{
-				return VT.get_SizeLow(ref this, out plSizeLow);
-			}
-			public HRESULT get_SizeHigh(out int32 plSizeHigh) mut
-			{
-				return VT.get_SizeHigh(ref this, out plSizeHigh);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT GetMessages(int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) mut
-			{
-				return VT.GetMessages(ref this, lPrefetchSize, pFaxOutgoingMessageIterator);
-			}
-			public HRESULT GetMessage(BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) mut
-			{
-				return VT.GetMessage(ref this, bstrMessageId, pFaxOutgoingMessage);
-			}
+			public HRESULT get_UseArchive(out int16 pbUseArchive) mut => VT.get_UseArchive(ref this, out pbUseArchive);
+			public HRESULT put_UseArchive(int16 bUseArchive) mut => VT.put_UseArchive(ref this, bUseArchive);
+			public HRESULT get_ArchiveFolder(BSTR* pbstrArchiveFolder) mut => VT.get_ArchiveFolder(ref this, pbstrArchiveFolder);
+			public HRESULT put_ArchiveFolder(BSTR bstrArchiveFolder) mut => VT.put_ArchiveFolder(ref this, bstrArchiveFolder);
+			public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut => VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
+			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut => VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
+			public HRESULT get_HighQuotaWaterMark(out int32 plHighQuotaWaterMark) mut => VT.get_HighQuotaWaterMark(ref this, out plHighQuotaWaterMark);
+			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut => VT.put_HighQuotaWaterMark(ref this, lHighQuotaWaterMark);
+			public HRESULT get_LowQuotaWaterMark(out int32 plLowQuotaWaterMark) mut => VT.get_LowQuotaWaterMark(ref this, out plLowQuotaWaterMark);
+			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut => VT.put_LowQuotaWaterMark(ref this, lLowQuotaWaterMark);
+			public HRESULT get_AgeLimit(out int32 plAgeLimit) mut => VT.get_AgeLimit(ref this, out plAgeLimit);
+			public HRESULT put_AgeLimit(int32 lAgeLimit) mut => VT.put_AgeLimit(ref this, lAgeLimit);
+			public HRESULT get_SizeLow(out int32 plSizeLow) mut => VT.get_SizeLow(ref this, out plSizeLow);
+			public HRESULT get_SizeHigh(out int32 plSizeHigh) mut => VT.get_SizeHigh(ref this, out plSizeHigh);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT GetMessages(int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, pFaxOutgoingMessageIterator);
+			public HRESULT GetMessage(BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) mut => VT.GetMessage(ref this, bstrMessageId, pFaxOutgoingMessage);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2432,102 +1823,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Blocked(out int16 pbBlocked) mut
-			{
-				return VT.get_Blocked(ref this, out pbBlocked);
-			}
-			public HRESULT put_Blocked(int16 bBlocked) mut
-			{
-				return VT.put_Blocked(ref this, bBlocked);
-			}
-			public HRESULT get_Paused(out int16 pbPaused) mut
-			{
-				return VT.get_Paused(ref this, out pbPaused);
-			}
-			public HRESULT put_Paused(int16 bPaused) mut
-			{
-				return VT.put_Paused(ref this, bPaused);
-			}
-			public HRESULT get_AllowPersonalCoverPages(out int16 pbAllowPersonalCoverPages) mut
-			{
-				return VT.get_AllowPersonalCoverPages(ref this, out pbAllowPersonalCoverPages);
-			}
-			public HRESULT put_AllowPersonalCoverPages(int16 bAllowPersonalCoverPages) mut
-			{
-				return VT.put_AllowPersonalCoverPages(ref this, bAllowPersonalCoverPages);
-			}
-			public HRESULT get_UseDeviceTSID(out int16 pbUseDeviceTSID) mut
-			{
-				return VT.get_UseDeviceTSID(ref this, out pbUseDeviceTSID);
-			}
-			public HRESULT put_UseDeviceTSID(int16 bUseDeviceTSID) mut
-			{
-				return VT.put_UseDeviceTSID(ref this, bUseDeviceTSID);
-			}
-			public HRESULT get_Retries(out int32 plRetries) mut
-			{
-				return VT.get_Retries(ref this, out plRetries);
-			}
-			public HRESULT put_Retries(int32 lRetries) mut
-			{
-				return VT.put_Retries(ref this, lRetries);
-			}
-			public HRESULT get_RetryDelay(out int32 plRetryDelay) mut
-			{
-				return VT.get_RetryDelay(ref this, out plRetryDelay);
-			}
-			public HRESULT put_RetryDelay(int32 lRetryDelay) mut
-			{
-				return VT.put_RetryDelay(ref this, lRetryDelay);
-			}
-			public HRESULT get_DiscountRateStart(out double pdateDiscountRateStart) mut
-			{
-				return VT.get_DiscountRateStart(ref this, out pdateDiscountRateStart);
-			}
-			public HRESULT put_DiscountRateStart(double dateDiscountRateStart) mut
-			{
-				return VT.put_DiscountRateStart(ref this, dateDiscountRateStart);
-			}
-			public HRESULT get_DiscountRateEnd(out double pdateDiscountRateEnd) mut
-			{
-				return VT.get_DiscountRateEnd(ref this, out pdateDiscountRateEnd);
-			}
-			public HRESULT put_DiscountRateEnd(double dateDiscountRateEnd) mut
-			{
-				return VT.put_DiscountRateEnd(ref this, dateDiscountRateEnd);
-			}
-			public HRESULT get_AgeLimit(out int32 plAgeLimit) mut
-			{
-				return VT.get_AgeLimit(ref this, out plAgeLimit);
-			}
-			public HRESULT put_AgeLimit(int32 lAgeLimit) mut
-			{
-				return VT.put_AgeLimit(ref this, lAgeLimit);
-			}
-			public HRESULT get_Branding(out int16 pbBranding) mut
-			{
-				return VT.get_Branding(ref this, out pbBranding);
-			}
-			public HRESULT put_Branding(int16 bBranding) mut
-			{
-				return VT.put_Branding(ref this, bBranding);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT GetJobs(IFaxOutgoingJobs** pFaxOutgoingJobs) mut
-			{
-				return VT.GetJobs(ref this, pFaxOutgoingJobs);
-			}
-			public HRESULT GetJob(BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) mut
-			{
-				return VT.GetJob(ref this, bstrJobId, pFaxOutgoingJob);
-			}
+			public HRESULT get_Blocked(out int16 pbBlocked) mut => VT.get_Blocked(ref this, out pbBlocked);
+			public HRESULT put_Blocked(int16 bBlocked) mut => VT.put_Blocked(ref this, bBlocked);
+			public HRESULT get_Paused(out int16 pbPaused) mut => VT.get_Paused(ref this, out pbPaused);
+			public HRESULT put_Paused(int16 bPaused) mut => VT.put_Paused(ref this, bPaused);
+			public HRESULT get_AllowPersonalCoverPages(out int16 pbAllowPersonalCoverPages) mut => VT.get_AllowPersonalCoverPages(ref this, out pbAllowPersonalCoverPages);
+			public HRESULT put_AllowPersonalCoverPages(int16 bAllowPersonalCoverPages) mut => VT.put_AllowPersonalCoverPages(ref this, bAllowPersonalCoverPages);
+			public HRESULT get_UseDeviceTSID(out int16 pbUseDeviceTSID) mut => VT.get_UseDeviceTSID(ref this, out pbUseDeviceTSID);
+			public HRESULT put_UseDeviceTSID(int16 bUseDeviceTSID) mut => VT.put_UseDeviceTSID(ref this, bUseDeviceTSID);
+			public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
+			public HRESULT put_Retries(int32 lRetries) mut => VT.put_Retries(ref this, lRetries);
+			public HRESULT get_RetryDelay(out int32 plRetryDelay) mut => VT.get_RetryDelay(ref this, out plRetryDelay);
+			public HRESULT put_RetryDelay(int32 lRetryDelay) mut => VT.put_RetryDelay(ref this, lRetryDelay);
+			public HRESULT get_DiscountRateStart(out double pdateDiscountRateStart) mut => VT.get_DiscountRateStart(ref this, out pdateDiscountRateStart);
+			public HRESULT put_DiscountRateStart(double dateDiscountRateStart) mut => VT.put_DiscountRateStart(ref this, dateDiscountRateStart);
+			public HRESULT get_DiscountRateEnd(out double pdateDiscountRateEnd) mut => VT.get_DiscountRateEnd(ref this, out pdateDiscountRateEnd);
+			public HRESULT put_DiscountRateEnd(double dateDiscountRateEnd) mut => VT.put_DiscountRateEnd(ref this, dateDiscountRateEnd);
+			public HRESULT get_AgeLimit(out int32 plAgeLimit) mut => VT.get_AgeLimit(ref this, out plAgeLimit);
+			public HRESULT put_AgeLimit(int32 lAgeLimit) mut => VT.put_AgeLimit(ref this, lAgeLimit);
+			public HRESULT get_Branding(out int16 pbBranding) mut => VT.get_Branding(ref this, out pbBranding);
+			public HRESULT put_Branding(int16 bBranding) mut => VT.put_Branding(ref this, bBranding);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT GetJobs(IFaxOutgoingJobs** pFaxOutgoingJobs) mut => VT.GetJobs(ref this, pFaxOutgoingJobs);
+			public HRESULT GetJob(BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) mut => VT.GetJob(ref this, bstrJobId, pFaxOutgoingJob);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2564,30 +1884,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Message(IFaxIncomingMessage** pFaxIncomingMessage) mut
-			{
-				return VT.get_Message(ref this, pFaxIncomingMessage);
-			}
-			public HRESULT get_PrefetchSize(out int32 plPrefetchSize) mut
-			{
-				return VT.get_PrefetchSize(ref this, out plPrefetchSize);
-			}
-			public HRESULT put_PrefetchSize(int32 lPrefetchSize) mut
-			{
-				return VT.put_PrefetchSize(ref this, lPrefetchSize);
-			}
-			public HRESULT get_AtEOF(out int16 pbEOF) mut
-			{
-				return VT.get_AtEOF(ref this, out pbEOF);
-			}
-			public HRESULT MoveFirst() mut
-			{
-				return VT.MoveFirst(ref this);
-			}
-			public HRESULT MoveNext() mut
-			{
-				return VT.MoveNext(ref this);
-			}
+			public HRESULT get_Message(IFaxIncomingMessage** pFaxIncomingMessage) mut => VT.get_Message(ref this, pFaxIncomingMessage);
+			public HRESULT get_PrefetchSize(out int32 plPrefetchSize) mut => VT.get_PrefetchSize(ref this, out plPrefetchSize);
+			public HRESULT put_PrefetchSize(int32 lPrefetchSize) mut => VT.put_PrefetchSize(ref this, lPrefetchSize);
+			public HRESULT get_AtEOF(out int16 pbEOF) mut => VT.get_AtEOF(ref this, out pbEOF);
+			public HRESULT MoveFirst() mut => VT.MoveFirst(ref this);
+			public HRESULT MoveNext() mut => VT.MoveNext(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2606,58 +1909,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Id(BSTR* pbstrId) mut
-			{
-				return VT.get_Id(ref this, pbstrId);
-			}
-			public HRESULT get_Pages(out int32 plPages) mut
-			{
-				return VT.get_Pages(ref this, out plPages);
-			}
-			public HRESULT get_Size(out int32 plSize) mut
-			{
-				return VT.get_Size(ref this, out plSize);
-			}
-			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut
-			{
-				return VT.get_DeviceName(ref this, pbstrDeviceName);
-			}
-			public HRESULT get_Retries(out int32 plRetries) mut
-			{
-				return VT.get_Retries(ref this, out plRetries);
-			}
-			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut
-			{
-				return VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
-			}
-			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut
-			{
-				return VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-			}
-			public HRESULT get_CSID(BSTR* pbstrCSID) mut
-			{
-				return VT.get_CSID(ref this, pbstrCSID);
-			}
-			public HRESULT get_TSID(BSTR* pbstrTSID) mut
-			{
-				return VT.get_TSID(ref this, pbstrTSID);
-			}
-			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut
-			{
-				return VT.get_CallerId(ref this, pbstrCallerId);
-			}
-			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut
-			{
-				return VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
-			}
-			public HRESULT CopyTiff(BSTR bstrTiffPath) mut
-			{
-				return VT.CopyTiff(ref this, bstrTiffPath);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
+			public HRESULT get_Id(BSTR* pbstrId) mut => VT.get_Id(ref this, pbstrId);
+			public HRESULT get_Pages(out int32 plPages) mut => VT.get_Pages(ref this, out plPages);
+			public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
+			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut => VT.get_DeviceName(ref this, pbstrDeviceName);
+			public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
+			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
+			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut => VT.get_CallerId(ref this, pbstrCallerId);
+			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
+			public HRESULT CopyTiff(BSTR bstrTiffPath) mut => VT.CopyTiff(ref this, bstrTiffPath);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2683,18 +1948,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(VARIANT vIndex, IFaxOutgoingJob** pFaxOutgoingJob) mut
-			{
-				return VT.get_Item(ref this, vIndex, pFaxOutgoingJob);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(VARIANT vIndex, IFaxOutgoingJob** pFaxOutgoingJob) mut => VT.get_Item(ref this, vIndex, pFaxOutgoingJob);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2710,130 +1967,38 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Subject(BSTR* pbstrSubject) mut
-			{
-				return VT.get_Subject(ref this, pbstrSubject);
-			}
-			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut
-			{
-				return VT.get_DocumentName(ref this, pbstrDocumentName);
-			}
-			public HRESULT get_Pages(out int32 plPages) mut
-			{
-				return VT.get_Pages(ref this, out plPages);
-			}
-			public HRESULT get_Size(out int32 plSize) mut
-			{
-				return VT.get_Size(ref this, out plSize);
-			}
-			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut
-			{
-				return VT.get_SubmissionId(ref this, pbstrSubmissionId);
-			}
-			public HRESULT get_Id(BSTR* pbstrId) mut
-			{
-				return VT.get_Id(ref this, pbstrId);
-			}
-			public HRESULT get_OriginalScheduledTime(out double pdateOriginalScheduledTime) mut
-			{
-				return VT.get_OriginalScheduledTime(ref this, out pdateOriginalScheduledTime);
-			}
-			public HRESULT get_SubmissionTime(out double pdateSubmissionTime) mut
-			{
-				return VT.get_SubmissionTime(ref this, out pdateSubmissionTime);
-			}
-			public HRESULT get_ReceiptType(out FAX_RECEIPT_TYPE_ENUM pReceiptType) mut
-			{
-				return VT.get_ReceiptType(ref this, out pReceiptType);
-			}
-			public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut
-			{
-				return VT.get_Priority(ref this, out pPriority);
-			}
-			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut
-			{
-				return VT.get_Sender(ref this, ppFaxSender);
-			}
-			public HRESULT get_Recipient(IFaxRecipient** ppFaxRecipient) mut
-			{
-				return VT.get_Recipient(ref this, ppFaxRecipient);
-			}
-			public HRESULT get_CurrentPage(out int32 plCurrentPage) mut
-			{
-				return VT.get_CurrentPage(ref this, out plCurrentPage);
-			}
-			public HRESULT get_DeviceId(out int32 plDeviceId) mut
-			{
-				return VT.get_DeviceId(ref this, out plDeviceId);
-			}
-			public HRESULT get_Status(out FAX_JOB_STATUS_ENUM pStatus) mut
-			{
-				return VT.get_Status(ref this, out pStatus);
-			}
-			public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut
-			{
-				return VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
-			}
-			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut
-			{
-				return VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
-			}
-			public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut
-			{
-				return VT.get_AvailableOperations(ref this, out pAvailableOperations);
-			}
-			public HRESULT get_Retries(out int32 plRetries) mut
-			{
-				return VT.get_Retries(ref this, out plRetries);
-			}
-			public HRESULT get_ScheduledTime(out double pdateScheduledTime) mut
-			{
-				return VT.get_ScheduledTime(ref this, out pdateScheduledTime);
-			}
-			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut
-			{
-				return VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
-			}
-			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut
-			{
-				return VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-			}
-			public HRESULT get_CSID(BSTR* pbstrCSID) mut
-			{
-				return VT.get_CSID(ref this, pbstrCSID);
-			}
-			public HRESULT get_TSID(BSTR* pbstrTSID) mut
-			{
-				return VT.get_TSID(ref this, pbstrTSID);
-			}
-			public HRESULT get_GroupBroadcastReceipts(out int16 pbGroupBroadcastReceipts) mut
-			{
-				return VT.get_GroupBroadcastReceipts(ref this, out pbGroupBroadcastReceipts);
-			}
-			public HRESULT Pause() mut
-			{
-				return VT.Pause(ref this);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
-			public HRESULT Restart() mut
-			{
-				return VT.Restart(ref this);
-			}
-			public HRESULT CopyTiff(BSTR bstrTiffPath) mut
-			{
-				return VT.CopyTiff(ref this, bstrTiffPath);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
+			public HRESULT get_Subject(BSTR* pbstrSubject) mut => VT.get_Subject(ref this, pbstrSubject);
+			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut => VT.get_DocumentName(ref this, pbstrDocumentName);
+			public HRESULT get_Pages(out int32 plPages) mut => VT.get_Pages(ref this, out plPages);
+			public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
+			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, pbstrSubmissionId);
+			public HRESULT get_Id(BSTR* pbstrId) mut => VT.get_Id(ref this, pbstrId);
+			public HRESULT get_OriginalScheduledTime(out double pdateOriginalScheduledTime) mut => VT.get_OriginalScheduledTime(ref this, out pdateOriginalScheduledTime);
+			public HRESULT get_SubmissionTime(out double pdateSubmissionTime) mut => VT.get_SubmissionTime(ref this, out pdateSubmissionTime);
+			public HRESULT get_ReceiptType(out FAX_RECEIPT_TYPE_ENUM pReceiptType) mut => VT.get_ReceiptType(ref this, out pReceiptType);
+			public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut => VT.get_Priority(ref this, out pPriority);
+			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut => VT.get_Sender(ref this, ppFaxSender);
+			public HRESULT get_Recipient(IFaxRecipient** ppFaxRecipient) mut => VT.get_Recipient(ref this, ppFaxRecipient);
+			public HRESULT get_CurrentPage(out int32 plCurrentPage) mut => VT.get_CurrentPage(ref this, out plCurrentPage);
+			public HRESULT get_DeviceId(out int32 plDeviceId) mut => VT.get_DeviceId(ref this, out plDeviceId);
+			public HRESULT get_Status(out FAX_JOB_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
+			public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut => VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
+			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
+			public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut => VT.get_AvailableOperations(ref this, out pAvailableOperations);
+			public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
+			public HRESULT get_ScheduledTime(out double pdateScheduledTime) mut => VT.get_ScheduledTime(ref this, out pdateScheduledTime);
+			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
+			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+			public HRESULT get_GroupBroadcastReceipts(out int16 pbGroupBroadcastReceipts) mut => VT.get_GroupBroadcastReceipts(ref this, out pbGroupBroadcastReceipts);
+			public HRESULT Pause() mut => VT.Pause(ref this);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+			public HRESULT Restart() mut => VT.Restart(ref this);
+			public HRESULT CopyTiff(BSTR bstrTiffPath) mut => VT.CopyTiff(ref this, bstrTiffPath);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2877,30 +2042,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Message(IFaxOutgoingMessage** pFaxOutgoingMessage) mut
-			{
-				return VT.get_Message(ref this, pFaxOutgoingMessage);
-			}
-			public HRESULT get_AtEOF(out int16 pbEOF) mut
-			{
-				return VT.get_AtEOF(ref this, out pbEOF);
-			}
-			public HRESULT get_PrefetchSize(out int32 plPrefetchSize) mut
-			{
-				return VT.get_PrefetchSize(ref this, out plPrefetchSize);
-			}
-			public HRESULT put_PrefetchSize(int32 lPrefetchSize) mut
-			{
-				return VT.put_PrefetchSize(ref this, lPrefetchSize);
-			}
-			public HRESULT MoveFirst() mut
-			{
-				return VT.MoveFirst(ref this);
-			}
-			public HRESULT MoveNext() mut
-			{
-				return VT.MoveNext(ref this);
-			}
+			public HRESULT get_Message(IFaxOutgoingMessage** pFaxOutgoingMessage) mut => VT.get_Message(ref this, pFaxOutgoingMessage);
+			public HRESULT get_AtEOF(out int16 pbEOF) mut => VT.get_AtEOF(ref this, out pbEOF);
+			public HRESULT get_PrefetchSize(out int32 plPrefetchSize) mut => VT.get_PrefetchSize(ref this, out plPrefetchSize);
+			public HRESULT put_PrefetchSize(int32 lPrefetchSize) mut => VT.put_PrefetchSize(ref this, lPrefetchSize);
+			public HRESULT MoveFirst() mut => VT.MoveFirst(ref this);
+			public HRESULT MoveNext() mut => VT.MoveNext(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2919,82 +2067,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut
-			{
-				return VT.get_SubmissionId(ref this, pbstrSubmissionId);
-			}
-			public HRESULT get_Id(BSTR* pbstrId) mut
-			{
-				return VT.get_Id(ref this, pbstrId);
-			}
-			public HRESULT get_Subject(BSTR* pbstrSubject) mut
-			{
-				return VT.get_Subject(ref this, pbstrSubject);
-			}
-			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut
-			{
-				return VT.get_DocumentName(ref this, pbstrDocumentName);
-			}
-			public HRESULT get_Retries(out int32 plRetries) mut
-			{
-				return VT.get_Retries(ref this, out plRetries);
-			}
-			public HRESULT get_Pages(out int32 plPages) mut
-			{
-				return VT.get_Pages(ref this, out plPages);
-			}
-			public HRESULT get_Size(out int32 plSize) mut
-			{
-				return VT.get_Size(ref this, out plSize);
-			}
-			public HRESULT get_OriginalScheduledTime(out double pdateOriginalScheduledTime) mut
-			{
-				return VT.get_OriginalScheduledTime(ref this, out pdateOriginalScheduledTime);
-			}
-			public HRESULT get_SubmissionTime(out double pdateSubmissionTime) mut
-			{
-				return VT.get_SubmissionTime(ref this, out pdateSubmissionTime);
-			}
-			public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut
-			{
-				return VT.get_Priority(ref this, out pPriority);
-			}
-			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut
-			{
-				return VT.get_Sender(ref this, ppFaxSender);
-			}
-			public HRESULT get_Recipient(IFaxRecipient** ppFaxRecipient) mut
-			{
-				return VT.get_Recipient(ref this, ppFaxRecipient);
-			}
-			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut
-			{
-				return VT.get_DeviceName(ref this, pbstrDeviceName);
-			}
-			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut
-			{
-				return VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
-			}
-			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut
-			{
-				return VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-			}
-			public HRESULT get_CSID(BSTR* pbstrCSID) mut
-			{
-				return VT.get_CSID(ref this, pbstrCSID);
-			}
-			public HRESULT get_TSID(BSTR* pbstrTSID) mut
-			{
-				return VT.get_TSID(ref this, pbstrTSID);
-			}
-			public HRESULT CopyTiff(BSTR bstrTiffPath) mut
-			{
-				return VT.CopyTiff(ref this, bstrTiffPath);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
+			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, pbstrSubmissionId);
+			public HRESULT get_Id(BSTR* pbstrId) mut => VT.get_Id(ref this, pbstrId);
+			public HRESULT get_Subject(BSTR* pbstrSubject) mut => VT.get_Subject(ref this, pbstrSubject);
+			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut => VT.get_DocumentName(ref this, pbstrDocumentName);
+			public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
+			public HRESULT get_Pages(out int32 plPages) mut => VT.get_Pages(ref this, out plPages);
+			public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
+			public HRESULT get_OriginalScheduledTime(out double pdateOriginalScheduledTime) mut => VT.get_OriginalScheduledTime(ref this, out pdateOriginalScheduledTime);
+			public HRESULT get_SubmissionTime(out double pdateSubmissionTime) mut => VT.get_SubmissionTime(ref this, out pdateSubmissionTime);
+			public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut => VT.get_Priority(ref this, out pPriority);
+			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut => VT.get_Sender(ref this, ppFaxSender);
+			public HRESULT get_Recipient(IFaxRecipient** ppFaxRecipient) mut => VT.get_Recipient(ref this, ppFaxRecipient);
+			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut => VT.get_DeviceName(ref this, pbstrDeviceName);
+			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
+			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+			public HRESULT CopyTiff(BSTR bstrTiffPath) mut => VT.CopyTiff(ref this, bstrTiffPath);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3026,18 +2118,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(VARIANT vIndex, IFaxIncomingJob** pFaxIncomingJob) mut
-			{
-				return VT.get_Item(ref this, vIndex, pFaxIncomingJob);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(VARIANT vIndex, IFaxIncomingJob** pFaxIncomingJob) mut => VT.get_Item(ref this, vIndex, pFaxIncomingJob);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3053,82 +2137,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Size(out int32 plSize) mut
-			{
-				return VT.get_Size(ref this, out plSize);
-			}
-			public HRESULT get_Id(BSTR* pbstrId) mut
-			{
-				return VT.get_Id(ref this, pbstrId);
-			}
-			public HRESULT get_CurrentPage(out int32 plCurrentPage) mut
-			{
-				return VT.get_CurrentPage(ref this, out plCurrentPage);
-			}
-			public HRESULT get_DeviceId(out int32 plDeviceId) mut
-			{
-				return VT.get_DeviceId(ref this, out plDeviceId);
-			}
-			public HRESULT get_Status(out FAX_JOB_STATUS_ENUM pStatus) mut
-			{
-				return VT.get_Status(ref this, out pStatus);
-			}
-			public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut
-			{
-				return VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
-			}
-			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut
-			{
-				return VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
-			}
-			public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut
-			{
-				return VT.get_AvailableOperations(ref this, out pAvailableOperations);
-			}
-			public HRESULT get_Retries(out int32 plRetries) mut
-			{
-				return VT.get_Retries(ref this, out plRetries);
-			}
-			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut
-			{
-				return VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
-			}
-			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut
-			{
-				return VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-			}
-			public HRESULT get_CSID(BSTR* pbstrCSID) mut
-			{
-				return VT.get_CSID(ref this, pbstrCSID);
-			}
-			public HRESULT get_TSID(BSTR* pbstrTSID) mut
-			{
-				return VT.get_TSID(ref this, pbstrTSID);
-			}
-			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut
-			{
-				return VT.get_CallerId(ref this, pbstrCallerId);
-			}
-			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut
-			{
-				return VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
-			}
-			public HRESULT get_JobType(out FAX_JOB_TYPE_ENUM pJobType) mut
-			{
-				return VT.get_JobType(ref this, out pJobType);
-			}
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT CopyTiff(BSTR bstrTiffPath) mut
-			{
-				return VT.CopyTiff(ref this, bstrTiffPath);
-			}
+			public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
+			public HRESULT get_Id(BSTR* pbstrId) mut => VT.get_Id(ref this, pbstrId);
+			public HRESULT get_CurrentPage(out int32 plCurrentPage) mut => VT.get_CurrentPage(ref this, out plCurrentPage);
+			public HRESULT get_DeviceId(out int32 plDeviceId) mut => VT.get_DeviceId(ref this, out plDeviceId);
+			public HRESULT get_Status(out FAX_JOB_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
+			public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut => VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
+			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
+			public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut => VT.get_AvailableOperations(ref this, out pAvailableOperations);
+			public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
+			public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
+			public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut => VT.get_CallerId(ref this, pbstrCallerId);
+			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
+			public HRESULT get_JobType(out FAX_JOB_TYPE_ENUM pJobType) mut => VT.get_JobType(ref this, out pJobType);
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT CopyTiff(BSTR bstrTiffPath) mut => VT.CopyTiff(ref this, bstrTiffPath);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3160,54 +2188,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FriendlyName(BSTR* pbstrFriendlyName) mut
-			{
-				return VT.get_FriendlyName(ref this, pbstrFriendlyName);
-			}
-			public HRESULT get_ImageName(BSTR* pbstrImageName) mut
-			{
-				return VT.get_ImageName(ref this, pbstrImageName);
-			}
-			public HRESULT get_UniqueName(BSTR* pbstrUniqueName) mut
-			{
-				return VT.get_UniqueName(ref this, pbstrUniqueName);
-			}
-			public HRESULT get_TapiProviderName(BSTR* pbstrTapiProviderName) mut
-			{
-				return VT.get_TapiProviderName(ref this, pbstrTapiProviderName);
-			}
-			public HRESULT get_MajorVersion(out int32 plMajorVersion) mut
-			{
-				return VT.get_MajorVersion(ref this, out plMajorVersion);
-			}
-			public HRESULT get_MinorVersion(out int32 plMinorVersion) mut
-			{
-				return VT.get_MinorVersion(ref this, out plMinorVersion);
-			}
-			public HRESULT get_MajorBuild(out int32 plMajorBuild) mut
-			{
-				return VT.get_MajorBuild(ref this, out plMajorBuild);
-			}
-			public HRESULT get_MinorBuild(out int32 plMinorBuild) mut
-			{
-				return VT.get_MinorBuild(ref this, out plMinorBuild);
-			}
-			public HRESULT get_Debug(out int16 pbDebug) mut
-			{
-				return VT.get_Debug(ref this, out pbDebug);
-			}
-			public HRESULT get_Status(out FAX_PROVIDER_STATUS_ENUM pStatus) mut
-			{
-				return VT.get_Status(ref this, out pStatus);
-			}
-			public HRESULT get_InitErrorCode(out int32 plInitErrorCode) mut
-			{
-				return VT.get_InitErrorCode(ref this, out plInitErrorCode);
-			}
-			public HRESULT get_DeviceIds(out VARIANT pvDeviceIds) mut
-			{
-				return VT.get_DeviceIds(ref this, out pvDeviceIds);
-			}
+			public HRESULT get_FriendlyName(BSTR* pbstrFriendlyName) mut => VT.get_FriendlyName(ref this, pbstrFriendlyName);
+			public HRESULT get_ImageName(BSTR* pbstrImageName) mut => VT.get_ImageName(ref this, pbstrImageName);
+			public HRESULT get_UniqueName(BSTR* pbstrUniqueName) mut => VT.get_UniqueName(ref this, pbstrUniqueName);
+			public HRESULT get_TapiProviderName(BSTR* pbstrTapiProviderName) mut => VT.get_TapiProviderName(ref this, pbstrTapiProviderName);
+			public HRESULT get_MajorVersion(out int32 plMajorVersion) mut => VT.get_MajorVersion(ref this, out plMajorVersion);
+			public HRESULT get_MinorVersion(out int32 plMinorVersion) mut => VT.get_MinorVersion(ref this, out plMinorVersion);
+			public HRESULT get_MajorBuild(out int32 plMajorBuild) mut => VT.get_MajorBuild(ref this, out plMajorBuild);
+			public HRESULT get_MinorBuild(out int32 plMinorBuild) mut => VT.get_MinorBuild(ref this, out plMinorBuild);
+			public HRESULT get_Debug(out int16 pbDebug) mut => VT.get_Debug(ref this, out pbDebug);
+			public HRESULT get_Status(out FAX_PROVIDER_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
+			public HRESULT get_InitErrorCode(out int32 plInitErrorCode) mut => VT.get_InitErrorCode(ref this, out plInitErrorCode);
+			public HRESULT get_DeviceIds(out VARIANT pvDeviceIds) mut => VT.get_DeviceIds(ref this, out pvDeviceIds);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3232,110 +2225,33 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Id(out int32 plId) mut
-			{
-				return VT.get_Id(ref this, out plId);
-			}
-			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut
-			{
-				return VT.get_DeviceName(ref this, pbstrDeviceName);
-			}
-			public HRESULT get_ProviderUniqueName(BSTR* pbstrProviderUniqueName) mut
-			{
-				return VT.get_ProviderUniqueName(ref this, pbstrProviderUniqueName);
-			}
-			public HRESULT get_PoweredOff(out int16 pbPoweredOff) mut
-			{
-				return VT.get_PoweredOff(ref this, out pbPoweredOff);
-			}
-			public HRESULT get_ReceivingNow(out int16 pbReceivingNow) mut
-			{
-				return VT.get_ReceivingNow(ref this, out pbReceivingNow);
-			}
-			public HRESULT get_SendingNow(out int16 pbSendingNow) mut
-			{
-				return VT.get_SendingNow(ref this, out pbSendingNow);
-			}
-			public HRESULT get_UsedRoutingMethods(out VARIANT pvUsedRoutingMethods) mut
-			{
-				return VT.get_UsedRoutingMethods(ref this, out pvUsedRoutingMethods);
-			}
-			public HRESULT get_Description(BSTR* pbstrDescription) mut
-			{
-				return VT.get_Description(ref this, pbstrDescription);
-			}
-			public HRESULT put_Description(BSTR bstrDescription) mut
-			{
-				return VT.put_Description(ref this, bstrDescription);
-			}
-			public HRESULT get_SendEnabled(out int16 pbSendEnabled) mut
-			{
-				return VT.get_SendEnabled(ref this, out pbSendEnabled);
-			}
-			public HRESULT put_SendEnabled(int16 bSendEnabled) mut
-			{
-				return VT.put_SendEnabled(ref this, bSendEnabled);
-			}
-			public HRESULT get_ReceiveMode(out FAX_DEVICE_RECEIVE_MODE_ENUM pReceiveMode) mut
-			{
-				return VT.get_ReceiveMode(ref this, out pReceiveMode);
-			}
-			public HRESULT put_ReceiveMode(FAX_DEVICE_RECEIVE_MODE_ENUM ReceiveMode) mut
-			{
-				return VT.put_ReceiveMode(ref this, ReceiveMode);
-			}
-			public HRESULT get_RingsBeforeAnswer(out int32 plRingsBeforeAnswer) mut
-			{
-				return VT.get_RingsBeforeAnswer(ref this, out plRingsBeforeAnswer);
-			}
-			public HRESULT put_RingsBeforeAnswer(int32 lRingsBeforeAnswer) mut
-			{
-				return VT.put_RingsBeforeAnswer(ref this, lRingsBeforeAnswer);
-			}
-			public HRESULT get_CSID(BSTR* pbstrCSID) mut
-			{
-				return VT.get_CSID(ref this, pbstrCSID);
-			}
-			public HRESULT put_CSID(BSTR bstrCSID) mut
-			{
-				return VT.put_CSID(ref this, bstrCSID);
-			}
-			public HRESULT get_TSID(BSTR* pbstrTSID) mut
-			{
-				return VT.get_TSID(ref this, pbstrTSID);
-			}
-			public HRESULT put_TSID(BSTR bstrTSID) mut
-			{
-				return VT.put_TSID(ref this, bstrTSID);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT GetExtensionProperty(BSTR bstrGUID, out VARIANT pvProperty) mut
-			{
-				return VT.GetExtensionProperty(ref this, bstrGUID, out pvProperty);
-			}
-			public HRESULT SetExtensionProperty(BSTR bstrGUID, VARIANT vProperty) mut
-			{
-				return VT.SetExtensionProperty(ref this, bstrGUID, vProperty);
-			}
-			public HRESULT UseRoutingMethod(BSTR bstrMethodGUID, int16 bUse) mut
-			{
-				return VT.UseRoutingMethod(ref this, bstrMethodGUID, bUse);
-			}
-			public HRESULT get_RingingNow(out int16 pbRingingNow) mut
-			{
-				return VT.get_RingingNow(ref this, out pbRingingNow);
-			}
-			public HRESULT AnswerCall() mut
-			{
-				return VT.AnswerCall(ref this);
-			}
+			public HRESULT get_Id(out int32 plId) mut => VT.get_Id(ref this, out plId);
+			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut => VT.get_DeviceName(ref this, pbstrDeviceName);
+			public HRESULT get_ProviderUniqueName(BSTR* pbstrProviderUniqueName) mut => VT.get_ProviderUniqueName(ref this, pbstrProviderUniqueName);
+			public HRESULT get_PoweredOff(out int16 pbPoweredOff) mut => VT.get_PoweredOff(ref this, out pbPoweredOff);
+			public HRESULT get_ReceivingNow(out int16 pbReceivingNow) mut => VT.get_ReceivingNow(ref this, out pbReceivingNow);
+			public HRESULT get_SendingNow(out int16 pbSendingNow) mut => VT.get_SendingNow(ref this, out pbSendingNow);
+			public HRESULT get_UsedRoutingMethods(out VARIANT pvUsedRoutingMethods) mut => VT.get_UsedRoutingMethods(ref this, out pvUsedRoutingMethods);
+			public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+			public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
+			public HRESULT get_SendEnabled(out int16 pbSendEnabled) mut => VT.get_SendEnabled(ref this, out pbSendEnabled);
+			public HRESULT put_SendEnabled(int16 bSendEnabled) mut => VT.put_SendEnabled(ref this, bSendEnabled);
+			public HRESULT get_ReceiveMode(out FAX_DEVICE_RECEIVE_MODE_ENUM pReceiveMode) mut => VT.get_ReceiveMode(ref this, out pReceiveMode);
+			public HRESULT put_ReceiveMode(FAX_DEVICE_RECEIVE_MODE_ENUM ReceiveMode) mut => VT.put_ReceiveMode(ref this, ReceiveMode);
+			public HRESULT get_RingsBeforeAnswer(out int32 plRingsBeforeAnswer) mut => VT.get_RingsBeforeAnswer(ref this, out plRingsBeforeAnswer);
+			public HRESULT put_RingsBeforeAnswer(int32 lRingsBeforeAnswer) mut => VT.put_RingsBeforeAnswer(ref this, lRingsBeforeAnswer);
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
+			public HRESULT put_CSID(BSTR bstrCSID) mut => VT.put_CSID(ref this, bstrCSID);
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+			public HRESULT put_TSID(BSTR bstrTSID) mut => VT.put_TSID(ref this, bstrTSID);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT GetExtensionProperty(BSTR bstrGUID, out VARIANT pvProperty) mut => VT.GetExtensionProperty(ref this, bstrGUID, out pvProperty);
+			public HRESULT SetExtensionProperty(BSTR bstrGUID, VARIANT vProperty) mut => VT.SetExtensionProperty(ref this, bstrGUID, vProperty);
+			public HRESULT UseRoutingMethod(BSTR bstrMethodGUID, int16 bUse) mut => VT.UseRoutingMethod(ref this, bstrMethodGUID, bUse);
+			public HRESULT get_RingingNow(out int16 pbRingingNow) mut => VT.get_RingingNow(ref this, out pbRingingNow);
+			public HRESULT AnswerCall() mut => VT.AnswerCall(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3374,38 +2290,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LogIncoming(out int16 pbLogIncoming) mut
-			{
-				return VT.get_LogIncoming(ref this, out pbLogIncoming);
-			}
-			public HRESULT put_LogIncoming(int16 bLogIncoming) mut
-			{
-				return VT.put_LogIncoming(ref this, bLogIncoming);
-			}
-			public HRESULT get_LogOutgoing(out int16 pbLogOutgoing) mut
-			{
-				return VT.get_LogOutgoing(ref this, out pbLogOutgoing);
-			}
-			public HRESULT put_LogOutgoing(int16 bLogOutgoing) mut
-			{
-				return VT.put_LogOutgoing(ref this, bLogOutgoing);
-			}
-			public HRESULT get_DatabasePath(BSTR* pbstrDatabasePath) mut
-			{
-				return VT.get_DatabasePath(ref this, pbstrDatabasePath);
-			}
-			public HRESULT put_DatabasePath(BSTR bstrDatabasePath) mut
-			{
-				return VT.put_DatabasePath(ref this, bstrDatabasePath);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
+			public HRESULT get_LogIncoming(out int16 pbLogIncoming) mut => VT.get_LogIncoming(ref this, out pbLogIncoming);
+			public HRESULT put_LogIncoming(int16 bLogIncoming) mut => VT.put_LogIncoming(ref this, bLogIncoming);
+			public HRESULT get_LogOutgoing(out int16 pbLogOutgoing) mut => VT.get_LogOutgoing(ref this, out pbLogOutgoing);
+			public HRESULT put_LogOutgoing(int16 bLogOutgoing) mut => VT.put_LogOutgoing(ref this, bLogOutgoing);
+			public HRESULT get_DatabasePath(BSTR* pbstrDatabasePath) mut => VT.get_DatabasePath(ref this, pbstrDatabasePath);
+			public HRESULT put_DatabasePath(BSTR bstrDatabasePath) mut => VT.put_DatabasePath(ref this, bstrDatabasePath);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3426,46 +2319,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_InitEventsLevel(out FAX_LOG_LEVEL_ENUM pInitEventLevel) mut
-			{
-				return VT.get_InitEventsLevel(ref this, out pInitEventLevel);
-			}
-			public HRESULT put_InitEventsLevel(FAX_LOG_LEVEL_ENUM InitEventLevel) mut
-			{
-				return VT.put_InitEventsLevel(ref this, InitEventLevel);
-			}
-			public HRESULT get_InboundEventsLevel(out FAX_LOG_LEVEL_ENUM pInboundEventLevel) mut
-			{
-				return VT.get_InboundEventsLevel(ref this, out pInboundEventLevel);
-			}
-			public HRESULT put_InboundEventsLevel(FAX_LOG_LEVEL_ENUM InboundEventLevel) mut
-			{
-				return VT.put_InboundEventsLevel(ref this, InboundEventLevel);
-			}
-			public HRESULT get_OutboundEventsLevel(out FAX_LOG_LEVEL_ENUM pOutboundEventLevel) mut
-			{
-				return VT.get_OutboundEventsLevel(ref this, out pOutboundEventLevel);
-			}
-			public HRESULT put_OutboundEventsLevel(FAX_LOG_LEVEL_ENUM OutboundEventLevel) mut
-			{
-				return VT.put_OutboundEventsLevel(ref this, OutboundEventLevel);
-			}
-			public HRESULT get_GeneralEventsLevel(out FAX_LOG_LEVEL_ENUM pGeneralEventLevel) mut
-			{
-				return VT.get_GeneralEventsLevel(ref this, out pGeneralEventLevel);
-			}
-			public HRESULT put_GeneralEventsLevel(FAX_LOG_LEVEL_ENUM GeneralEventLevel) mut
-			{
-				return VT.put_GeneralEventsLevel(ref this, GeneralEventLevel);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
+			public HRESULT get_InitEventsLevel(out FAX_LOG_LEVEL_ENUM pInitEventLevel) mut => VT.get_InitEventsLevel(ref this, out pInitEventLevel);
+			public HRESULT put_InitEventsLevel(FAX_LOG_LEVEL_ENUM InitEventLevel) mut => VT.put_InitEventsLevel(ref this, InitEventLevel);
+			public HRESULT get_InboundEventsLevel(out FAX_LOG_LEVEL_ENUM pInboundEventLevel) mut => VT.get_InboundEventsLevel(ref this, out pInboundEventLevel);
+			public HRESULT put_InboundEventsLevel(FAX_LOG_LEVEL_ENUM InboundEventLevel) mut => VT.put_InboundEventsLevel(ref this, InboundEventLevel);
+			public HRESULT get_OutboundEventsLevel(out FAX_LOG_LEVEL_ENUM pOutboundEventLevel) mut => VT.get_OutboundEventsLevel(ref this, out pOutboundEventLevel);
+			public HRESULT put_OutboundEventsLevel(FAX_LOG_LEVEL_ENUM OutboundEventLevel) mut => VT.put_OutboundEventsLevel(ref this, OutboundEventLevel);
+			public HRESULT get_GeneralEventsLevel(out FAX_LOG_LEVEL_ENUM pGeneralEventLevel) mut => VT.get_GeneralEventsLevel(ref this, out pGeneralEventLevel);
+			public HRESULT put_GeneralEventsLevel(FAX_LOG_LEVEL_ENUM GeneralEventLevel) mut => VT.put_GeneralEventsLevel(ref this, GeneralEventLevel);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3488,26 +2352,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(VARIANT vIndex, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) mut
-			{
-				return VT.get_Item(ref this, vIndex, pFaxOutboundRoutingGroup);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT Add(BSTR bstrName, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) mut
-			{
-				return VT.Add(ref this, bstrName, pFaxOutboundRoutingGroup);
-			}
-			public HRESULT Remove(VARIANT vIndex) mut
-			{
-				return VT.Remove(ref this, vIndex);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(VARIANT vIndex, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) mut => VT.get_Item(ref this, vIndex, pFaxOutboundRoutingGroup);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT Add(BSTR bstrName, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) mut => VT.Add(ref this, bstrName, pFaxOutboundRoutingGroup);
+			public HRESULT Remove(VARIANT vIndex) mut => VT.Remove(ref this, vIndex);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3525,18 +2375,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pbstrName) mut
-			{
-				return VT.get_Name(ref this, pbstrName);
-			}
-			public HRESULT get_Status(out FAX_GROUP_STATUS_ENUM pStatus) mut
-			{
-				return VT.get_Status(ref this, out pStatus);
-			}
-			public HRESULT get_DeviceIds(IFaxDeviceIds** pFaxDeviceIds) mut
-			{
-				return VT.get_DeviceIds(ref this, pFaxDeviceIds);
-			}
+			public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+			public HRESULT get_Status(out FAX_GROUP_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
+			public HRESULT get_DeviceIds(IFaxDeviceIds** pFaxDeviceIds) mut => VT.get_DeviceIds(ref this, pFaxDeviceIds);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3552,30 +2394,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(int32 lIndex, out int32 plDeviceId) mut
-			{
-				return VT.get_Item(ref this, lIndex, out plDeviceId);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT Add(int32 lDeviceId) mut
-			{
-				return VT.Add(ref this, lDeviceId);
-			}
-			public HRESULT Remove(int32 lIndex) mut
-			{
-				return VT.Remove(ref this, lIndex);
-			}
-			public HRESULT SetOrder(int32 lDeviceId, int32 lNewOrder) mut
-			{
-				return VT.SetOrder(ref this, lDeviceId, lNewOrder);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(int32 lIndex, out int32 plDeviceId) mut => VT.get_Item(ref this, lIndex, out plDeviceId);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT Add(int32 lDeviceId) mut => VT.Add(ref this, lDeviceId);
+			public HRESULT Remove(int32 lIndex) mut => VT.Remove(ref this, lIndex);
+			public HRESULT SetOrder(int32 lDeviceId, int32 lNewOrder) mut => VT.SetOrder(ref this, lDeviceId, lNewOrder);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3594,34 +2419,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(int32 lIndex, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut
-			{
-				return VT.get_Item(ref this, lIndex, pFaxOutboundRoutingRule);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
-			public HRESULT ItemByCountryAndArea(int32 lCountryCode, int32 lAreaCode, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut
-			{
-				return VT.ItemByCountryAndArea(ref this, lCountryCode, lAreaCode, pFaxOutboundRoutingRule);
-			}
-			public HRESULT RemoveByCountryAndArea(int32 lCountryCode, int32 lAreaCode) mut
-			{
-				return VT.RemoveByCountryAndArea(ref this, lCountryCode, lAreaCode);
-			}
-			public HRESULT Remove(int32 lIndex) mut
-			{
-				return VT.Remove(ref this, lIndex);
-			}
-			public HRESULT Add(int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut
-			{
-				return VT.Add(ref this, lCountryCode, lAreaCode, bUseDevice, bstrGroupName, lDeviceId, pFaxOutboundRoutingRule);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(int32 lIndex, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut => VT.get_Item(ref this, lIndex, pFaxOutboundRoutingRule);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+			public HRESULT ItemByCountryAndArea(int32 lCountryCode, int32 lAreaCode, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut => VT.ItemByCountryAndArea(ref this, lCountryCode, lAreaCode, pFaxOutboundRoutingRule);
+			public HRESULT RemoveByCountryAndArea(int32 lCountryCode, int32 lAreaCode) mut => VT.RemoveByCountryAndArea(ref this, lCountryCode, lAreaCode);
+			public HRESULT Remove(int32 lIndex) mut => VT.Remove(ref this, lIndex);
+			public HRESULT Add(int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut => VT.Add(ref this, lCountryCode, lAreaCode, bUseDevice, bstrGroupName, lDeviceId, pFaxOutboundRoutingRule);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3641,50 +2446,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CountryCode(out int32 plCountryCode) mut
-			{
-				return VT.get_CountryCode(ref this, out plCountryCode);
-			}
-			public HRESULT get_AreaCode(out int32 plAreaCode) mut
-			{
-				return VT.get_AreaCode(ref this, out plAreaCode);
-			}
-			public HRESULT get_Status(out FAX_RULE_STATUS_ENUM pStatus) mut
-			{
-				return VT.get_Status(ref this, out pStatus);
-			}
-			public HRESULT get_UseDevice(out int16 pbUseDevice) mut
-			{
-				return VT.get_UseDevice(ref this, out pbUseDevice);
-			}
-			public HRESULT put_UseDevice(int16 bUseDevice) mut
-			{
-				return VT.put_UseDevice(ref this, bUseDevice);
-			}
-			public HRESULT get_DeviceId(out int32 plDeviceId) mut
-			{
-				return VT.get_DeviceId(ref this, out plDeviceId);
-			}
-			public HRESULT put_DeviceId(int32 DeviceId) mut
-			{
-				return VT.put_DeviceId(ref this, DeviceId);
-			}
-			public HRESULT get_GroupName(BSTR* pbstrGroupName) mut
-			{
-				return VT.get_GroupName(ref this, pbstrGroupName);
-			}
-			public HRESULT put_GroupName(BSTR bstrGroupName) mut
-			{
-				return VT.put_GroupName(ref this, bstrGroupName);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
+			public HRESULT get_CountryCode(out int32 plCountryCode) mut => VT.get_CountryCode(ref this, out plCountryCode);
+			public HRESULT get_AreaCode(out int32 plAreaCode) mut => VT.get_AreaCode(ref this, out plAreaCode);
+			public HRESULT get_Status(out FAX_RULE_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
+			public HRESULT get_UseDevice(out int16 pbUseDevice) mut => VT.get_UseDevice(ref this, out pbUseDevice);
+			public HRESULT put_UseDevice(int16 bUseDevice) mut => VT.put_UseDevice(ref this, bUseDevice);
+			public HRESULT get_DeviceId(out int32 plDeviceId) mut => VT.get_DeviceId(ref this, out plDeviceId);
+			public HRESULT put_DeviceId(int32 DeviceId) mut => VT.put_DeviceId(ref this, DeviceId);
+			public HRESULT get_GroupName(BSTR* pbstrGroupName) mut => VT.get_GroupName(ref this, pbstrGroupName);
+			public HRESULT put_GroupName(BSTR bstrGroupName) mut => VT.put_GroupName(ref this, bstrGroupName);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3708,18 +2481,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(VARIANT vIndex, IFaxInboundRoutingExtension** pFaxInboundRoutingExtension) mut
-			{
-				return VT.get_Item(ref this, vIndex, pFaxInboundRoutingExtension);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(VARIANT vIndex, IFaxInboundRoutingExtension** pFaxInboundRoutingExtension) mut => VT.get_Item(ref this, vIndex, pFaxInboundRoutingExtension);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3735,50 +2500,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FriendlyName(BSTR* pbstrFriendlyName) mut
-			{
-				return VT.get_FriendlyName(ref this, pbstrFriendlyName);
-			}
-			public HRESULT get_ImageName(BSTR* pbstrImageName) mut
-			{
-				return VT.get_ImageName(ref this, pbstrImageName);
-			}
-			public HRESULT get_UniqueName(BSTR* pbstrUniqueName) mut
-			{
-				return VT.get_UniqueName(ref this, pbstrUniqueName);
-			}
-			public HRESULT get_MajorVersion(out int32 plMajorVersion) mut
-			{
-				return VT.get_MajorVersion(ref this, out plMajorVersion);
-			}
-			public HRESULT get_MinorVersion(out int32 plMinorVersion) mut
-			{
-				return VT.get_MinorVersion(ref this, out plMinorVersion);
-			}
-			public HRESULT get_MajorBuild(out int32 plMajorBuild) mut
-			{
-				return VT.get_MajorBuild(ref this, out plMajorBuild);
-			}
-			public HRESULT get_MinorBuild(out int32 plMinorBuild) mut
-			{
-				return VT.get_MinorBuild(ref this, out plMinorBuild);
-			}
-			public HRESULT get_Debug(out int16 pbDebug) mut
-			{
-				return VT.get_Debug(ref this, out pbDebug);
-			}
-			public HRESULT get_Status(out FAX_PROVIDER_STATUS_ENUM pStatus) mut
-			{
-				return VT.get_Status(ref this, out pStatus);
-			}
-			public HRESULT get_InitErrorCode(out int32 plInitErrorCode) mut
-			{
-				return VT.get_InitErrorCode(ref this, out plInitErrorCode);
-			}
-			public HRESULT get_Methods(out VARIANT pvMethods) mut
-			{
-				return VT.get_Methods(ref this, out pvMethods);
-			}
+			public HRESULT get_FriendlyName(BSTR* pbstrFriendlyName) mut => VT.get_FriendlyName(ref this, pbstrFriendlyName);
+			public HRESULT get_ImageName(BSTR* pbstrImageName) mut => VT.get_ImageName(ref this, pbstrImageName);
+			public HRESULT get_UniqueName(BSTR* pbstrUniqueName) mut => VT.get_UniqueName(ref this, pbstrUniqueName);
+			public HRESULT get_MajorVersion(out int32 plMajorVersion) mut => VT.get_MajorVersion(ref this, out plMajorVersion);
+			public HRESULT get_MinorVersion(out int32 plMinorVersion) mut => VT.get_MinorVersion(ref this, out plMinorVersion);
+			public HRESULT get_MajorBuild(out int32 plMajorBuild) mut => VT.get_MajorBuild(ref this, out plMajorBuild);
+			public HRESULT get_MinorBuild(out int32 plMinorBuild) mut => VT.get_MinorBuild(ref this, out plMinorBuild);
+			public HRESULT get_Debug(out int16 pbDebug) mut => VT.get_Debug(ref this, out pbDebug);
+			public HRESULT get_Status(out FAX_PROVIDER_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
+			public HRESULT get_InitErrorCode(out int32 plInitErrorCode) mut => VT.get_InitErrorCode(ref this, out plInitErrorCode);
+			public HRESULT get_Methods(out VARIANT pvMethods) mut => VT.get_Methods(ref this, out pvMethods);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3802,18 +2535,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(VARIANT vIndex, IFaxInboundRoutingMethod** pFaxInboundRoutingMethod) mut
-			{
-				return VT.get_Item(ref this, vIndex, pFaxInboundRoutingMethod);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(VARIANT vIndex, IFaxInboundRoutingMethod** pFaxInboundRoutingMethod) mut => VT.get_Item(ref this, vIndex, pFaxInboundRoutingMethod);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3829,42 +2554,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pbstrName) mut
-			{
-				return VT.get_Name(ref this, pbstrName);
-			}
-			public HRESULT get_GUID(BSTR* pbstrGUID) mut
-			{
-				return VT.get_GUID(ref this, pbstrGUID);
-			}
-			public HRESULT get_FunctionName(BSTR* pbstrFunctionName) mut
-			{
-				return VT.get_FunctionName(ref this, pbstrFunctionName);
-			}
-			public HRESULT get_ExtensionFriendlyName(BSTR* pbstrExtensionFriendlyName) mut
-			{
-				return VT.get_ExtensionFriendlyName(ref this, pbstrExtensionFriendlyName);
-			}
-			public HRESULT get_ExtensionImageName(BSTR* pbstrExtensionImageName) mut
-			{
-				return VT.get_ExtensionImageName(ref this, pbstrExtensionImageName);
-			}
-			public HRESULT get_Priority(out int32 plPriority) mut
-			{
-				return VT.get_Priority(ref this, out plPriority);
-			}
-			public HRESULT put_Priority(int32 lPriority) mut
-			{
-				return VT.put_Priority(ref this, lPriority);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
+			public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+			public HRESULT get_GUID(BSTR* pbstrGUID) mut => VT.get_GUID(ref this, pbstrGUID);
+			public HRESULT get_FunctionName(BSTR* pbstrFunctionName) mut => VT.get_FunctionName(ref this, pbstrFunctionName);
+			public HRESULT get_ExtensionFriendlyName(BSTR* pbstrExtensionFriendlyName) mut => VT.get_ExtensionFriendlyName(ref this, pbstrExtensionFriendlyName);
+			public HRESULT get_ExtensionImageName(BSTR* pbstrExtensionImageName) mut => VT.get_ExtensionImageName(ref this, pbstrExtensionImageName);
+			public HRESULT get_Priority(out int32 plPriority) mut => VT.get_Priority(ref this, out plPriority);
+			public HRESULT put_Priority(int32 lPriority) mut => VT.put_Priority(ref this, lPriority);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3886,26 +2585,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut
-			{
-				return VT.get_SubmissionId(ref this, pbstrSubmissionId);
-			}
-			public HRESULT get_Bodies(out VARIANT pvBodies) mut
-			{
-				return VT.get_Bodies(ref this, out pvBodies);
-			}
-			public HRESULT put_Bodies(VARIANT vBodies) mut
-			{
-				return VT.put_Bodies(ref this, vBodies);
-			}
-			public HRESULT Submit2(BSTR bstrFaxServerName, out VARIANT pvFaxOutgoingJobIDs, out int32 plErrorBodyFile) mut
-			{
-				return VT.Submit2(ref this, bstrFaxServerName, out pvFaxOutgoingJobIDs, out plErrorBodyFile);
-			}
-			public HRESULT ConnectedSubmit2(IFaxServer* pFaxServer, out VARIANT pvFaxOutgoingJobIDs, out int32 plErrorBodyFile) mut
-			{
-				return VT.ConnectedSubmit2(ref this, pFaxServer, out pvFaxOutgoingJobIDs, out plErrorBodyFile);
-			}
+			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, pbstrSubmissionId);
+			public HRESULT get_Bodies(out VARIANT pvBodies) mut => VT.get_Bodies(ref this, out pvBodies);
+			public HRESULT put_Bodies(VARIANT vBodies) mut => VT.put_Bodies(ref this, vBodies);
+			public HRESULT Submit2(BSTR bstrFaxServerName, out VARIANT pvFaxOutgoingJobIDs, out int32 plErrorBodyFile) mut => VT.Submit2(ref this, bstrFaxServerName, out pvFaxOutgoingJobIDs, out plErrorBodyFile);
+			public HRESULT ConnectedSubmit2(IFaxServer* pFaxServer, out VARIANT pvFaxOutgoingJobIDs, out int32 plErrorBodyFile) mut => VT.ConnectedSubmit2(ref this, pFaxServer, out pvFaxOutgoingJobIDs, out plErrorBodyFile);
+
 			[CRepr]
 			public struct VTable : IFaxDocument.VTable
 			{
@@ -3923,174 +2608,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UseArchive(out int16 pbUseArchive) mut
-			{
-				return VT.get_UseArchive(ref this, out pbUseArchive);
-			}
-			public HRESULT put_UseArchive(int16 bUseArchive) mut
-			{
-				return VT.put_UseArchive(ref this, bUseArchive);
-			}
-			public HRESULT get_ArchiveLocation(BSTR* pbstrArchiveLocation) mut
-			{
-				return VT.get_ArchiveLocation(ref this, pbstrArchiveLocation);
-			}
-			public HRESULT put_ArchiveLocation(BSTR bstrArchiveLocation) mut
-			{
-				return VT.put_ArchiveLocation(ref this, bstrArchiveLocation);
-			}
-			public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut
-			{
-				return VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
-			}
-			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut
-			{
-				return VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
-			}
-			public HRESULT get_HighQuotaWaterMark(out int32 plHighQuotaWaterMark) mut
-			{
-				return VT.get_HighQuotaWaterMark(ref this, out plHighQuotaWaterMark);
-			}
-			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut
-			{
-				return VT.put_HighQuotaWaterMark(ref this, lHighQuotaWaterMark);
-			}
-			public HRESULT get_LowQuotaWaterMark(out int32 plLowQuotaWaterMark) mut
-			{
-				return VT.get_LowQuotaWaterMark(ref this, out plLowQuotaWaterMark);
-			}
-			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut
-			{
-				return VT.put_LowQuotaWaterMark(ref this, lLowQuotaWaterMark);
-			}
-			public HRESULT get_ArchiveAgeLimit(out int32 plArchiveAgeLimit) mut
-			{
-				return VT.get_ArchiveAgeLimit(ref this, out plArchiveAgeLimit);
-			}
-			public HRESULT put_ArchiveAgeLimit(int32 lArchiveAgeLimit) mut
-			{
-				return VT.put_ArchiveAgeLimit(ref this, lArchiveAgeLimit);
-			}
-			public HRESULT get_ArchiveSizeLow(out int32 plSizeLow) mut
-			{
-				return VT.get_ArchiveSizeLow(ref this, out plSizeLow);
-			}
-			public HRESULT get_ArchiveSizeHigh(out int32 plSizeHigh) mut
-			{
-				return VT.get_ArchiveSizeHigh(ref this, out plSizeHigh);
-			}
-			public HRESULT get_OutgoingQueueBlocked(out int16 pbOutgoingBlocked) mut
-			{
-				return VT.get_OutgoingQueueBlocked(ref this, out pbOutgoingBlocked);
-			}
-			public HRESULT put_OutgoingQueueBlocked(int16 bOutgoingBlocked) mut
-			{
-				return VT.put_OutgoingQueueBlocked(ref this, bOutgoingBlocked);
-			}
-			public HRESULT get_OutgoingQueuePaused(out int16 pbOutgoingPaused) mut
-			{
-				return VT.get_OutgoingQueuePaused(ref this, out pbOutgoingPaused);
-			}
-			public HRESULT put_OutgoingQueuePaused(int16 bOutgoingPaused) mut
-			{
-				return VT.put_OutgoingQueuePaused(ref this, bOutgoingPaused);
-			}
-			public HRESULT get_AllowPersonalCoverPages(out int16 pbAllowPersonalCoverPages) mut
-			{
-				return VT.get_AllowPersonalCoverPages(ref this, out pbAllowPersonalCoverPages);
-			}
-			public HRESULT put_AllowPersonalCoverPages(int16 bAllowPersonalCoverPages) mut
-			{
-				return VT.put_AllowPersonalCoverPages(ref this, bAllowPersonalCoverPages);
-			}
-			public HRESULT get_UseDeviceTSID(out int16 pbUseDeviceTSID) mut
-			{
-				return VT.get_UseDeviceTSID(ref this, out pbUseDeviceTSID);
-			}
-			public HRESULT put_UseDeviceTSID(int16 bUseDeviceTSID) mut
-			{
-				return VT.put_UseDeviceTSID(ref this, bUseDeviceTSID);
-			}
-			public HRESULT get_Retries(out int32 plRetries) mut
-			{
-				return VT.get_Retries(ref this, out plRetries);
-			}
-			public HRESULT put_Retries(int32 lRetries) mut
-			{
-				return VT.put_Retries(ref this, lRetries);
-			}
-			public HRESULT get_RetryDelay(out int32 plRetryDelay) mut
-			{
-				return VT.get_RetryDelay(ref this, out plRetryDelay);
-			}
-			public HRESULT put_RetryDelay(int32 lRetryDelay) mut
-			{
-				return VT.put_RetryDelay(ref this, lRetryDelay);
-			}
-			public HRESULT get_DiscountRateStart(out double pdateDiscountRateStart) mut
-			{
-				return VT.get_DiscountRateStart(ref this, out pdateDiscountRateStart);
-			}
-			public HRESULT put_DiscountRateStart(double dateDiscountRateStart) mut
-			{
-				return VT.put_DiscountRateStart(ref this, dateDiscountRateStart);
-			}
-			public HRESULT get_DiscountRateEnd(out double pdateDiscountRateEnd) mut
-			{
-				return VT.get_DiscountRateEnd(ref this, out pdateDiscountRateEnd);
-			}
-			public HRESULT put_DiscountRateEnd(double dateDiscountRateEnd) mut
-			{
-				return VT.put_DiscountRateEnd(ref this, dateDiscountRateEnd);
-			}
-			public HRESULT get_OutgoingQueueAgeLimit(out int32 plOutgoingQueueAgeLimit) mut
-			{
-				return VT.get_OutgoingQueueAgeLimit(ref this, out plOutgoingQueueAgeLimit);
-			}
-			public HRESULT put_OutgoingQueueAgeLimit(int32 lOutgoingQueueAgeLimit) mut
-			{
-				return VT.put_OutgoingQueueAgeLimit(ref this, lOutgoingQueueAgeLimit);
-			}
-			public HRESULT get_Branding(out int16 pbBranding) mut
-			{
-				return VT.get_Branding(ref this, out pbBranding);
-			}
-			public HRESULT put_Branding(int16 bBranding) mut
-			{
-				return VT.put_Branding(ref this, bBranding);
-			}
-			public HRESULT get_IncomingQueueBlocked(out int16 pbIncomingBlocked) mut
-			{
-				return VT.get_IncomingQueueBlocked(ref this, out pbIncomingBlocked);
-			}
-			public HRESULT put_IncomingQueueBlocked(int16 bIncomingBlocked) mut
-			{
-				return VT.put_IncomingQueueBlocked(ref this, bIncomingBlocked);
-			}
-			public HRESULT get_AutoCreateAccountOnConnect(out int16 pbAutoCreateAccountOnConnect) mut
-			{
-				return VT.get_AutoCreateAccountOnConnect(ref this, out pbAutoCreateAccountOnConnect);
-			}
-			public HRESULT put_AutoCreateAccountOnConnect(int16 bAutoCreateAccountOnConnect) mut
-			{
-				return VT.put_AutoCreateAccountOnConnect(ref this, bAutoCreateAccountOnConnect);
-			}
-			public HRESULT get_IncomingFaxesArePublic(out int16 pbIncomingFaxesArePublic) mut
-			{
-				return VT.get_IncomingFaxesArePublic(ref this, out pbIncomingFaxesArePublic);
-			}
-			public HRESULT put_IncomingFaxesArePublic(int16 bIncomingFaxesArePublic) mut
-			{
-				return VT.put_IncomingFaxesArePublic(ref this, bIncomingFaxesArePublic);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
+			public HRESULT get_UseArchive(out int16 pbUseArchive) mut => VT.get_UseArchive(ref this, out pbUseArchive);
+			public HRESULT put_UseArchive(int16 bUseArchive) mut => VT.put_UseArchive(ref this, bUseArchive);
+			public HRESULT get_ArchiveLocation(BSTR* pbstrArchiveLocation) mut => VT.get_ArchiveLocation(ref this, pbstrArchiveLocation);
+			public HRESULT put_ArchiveLocation(BSTR bstrArchiveLocation) mut => VT.put_ArchiveLocation(ref this, bstrArchiveLocation);
+			public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut => VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
+			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut => VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
+			public HRESULT get_HighQuotaWaterMark(out int32 plHighQuotaWaterMark) mut => VT.get_HighQuotaWaterMark(ref this, out plHighQuotaWaterMark);
+			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut => VT.put_HighQuotaWaterMark(ref this, lHighQuotaWaterMark);
+			public HRESULT get_LowQuotaWaterMark(out int32 plLowQuotaWaterMark) mut => VT.get_LowQuotaWaterMark(ref this, out plLowQuotaWaterMark);
+			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut => VT.put_LowQuotaWaterMark(ref this, lLowQuotaWaterMark);
+			public HRESULT get_ArchiveAgeLimit(out int32 plArchiveAgeLimit) mut => VT.get_ArchiveAgeLimit(ref this, out plArchiveAgeLimit);
+			public HRESULT put_ArchiveAgeLimit(int32 lArchiveAgeLimit) mut => VT.put_ArchiveAgeLimit(ref this, lArchiveAgeLimit);
+			public HRESULT get_ArchiveSizeLow(out int32 plSizeLow) mut => VT.get_ArchiveSizeLow(ref this, out plSizeLow);
+			public HRESULT get_ArchiveSizeHigh(out int32 plSizeHigh) mut => VT.get_ArchiveSizeHigh(ref this, out plSizeHigh);
+			public HRESULT get_OutgoingQueueBlocked(out int16 pbOutgoingBlocked) mut => VT.get_OutgoingQueueBlocked(ref this, out pbOutgoingBlocked);
+			public HRESULT put_OutgoingQueueBlocked(int16 bOutgoingBlocked) mut => VT.put_OutgoingQueueBlocked(ref this, bOutgoingBlocked);
+			public HRESULT get_OutgoingQueuePaused(out int16 pbOutgoingPaused) mut => VT.get_OutgoingQueuePaused(ref this, out pbOutgoingPaused);
+			public HRESULT put_OutgoingQueuePaused(int16 bOutgoingPaused) mut => VT.put_OutgoingQueuePaused(ref this, bOutgoingPaused);
+			public HRESULT get_AllowPersonalCoverPages(out int16 pbAllowPersonalCoverPages) mut => VT.get_AllowPersonalCoverPages(ref this, out pbAllowPersonalCoverPages);
+			public HRESULT put_AllowPersonalCoverPages(int16 bAllowPersonalCoverPages) mut => VT.put_AllowPersonalCoverPages(ref this, bAllowPersonalCoverPages);
+			public HRESULT get_UseDeviceTSID(out int16 pbUseDeviceTSID) mut => VT.get_UseDeviceTSID(ref this, out pbUseDeviceTSID);
+			public HRESULT put_UseDeviceTSID(int16 bUseDeviceTSID) mut => VT.put_UseDeviceTSID(ref this, bUseDeviceTSID);
+			public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
+			public HRESULT put_Retries(int32 lRetries) mut => VT.put_Retries(ref this, lRetries);
+			public HRESULT get_RetryDelay(out int32 plRetryDelay) mut => VT.get_RetryDelay(ref this, out plRetryDelay);
+			public HRESULT put_RetryDelay(int32 lRetryDelay) mut => VT.put_RetryDelay(ref this, lRetryDelay);
+			public HRESULT get_DiscountRateStart(out double pdateDiscountRateStart) mut => VT.get_DiscountRateStart(ref this, out pdateDiscountRateStart);
+			public HRESULT put_DiscountRateStart(double dateDiscountRateStart) mut => VT.put_DiscountRateStart(ref this, dateDiscountRateStart);
+			public HRESULT get_DiscountRateEnd(out double pdateDiscountRateEnd) mut => VT.get_DiscountRateEnd(ref this, out pdateDiscountRateEnd);
+			public HRESULT put_DiscountRateEnd(double dateDiscountRateEnd) mut => VT.put_DiscountRateEnd(ref this, dateDiscountRateEnd);
+			public HRESULT get_OutgoingQueueAgeLimit(out int32 plOutgoingQueueAgeLimit) mut => VT.get_OutgoingQueueAgeLimit(ref this, out plOutgoingQueueAgeLimit);
+			public HRESULT put_OutgoingQueueAgeLimit(int32 lOutgoingQueueAgeLimit) mut => VT.put_OutgoingQueueAgeLimit(ref this, lOutgoingQueueAgeLimit);
+			public HRESULT get_Branding(out int16 pbBranding) mut => VT.get_Branding(ref this, out pbBranding);
+			public HRESULT put_Branding(int16 bBranding) mut => VT.put_Branding(ref this, bBranding);
+			public HRESULT get_IncomingQueueBlocked(out int16 pbIncomingBlocked) mut => VT.get_IncomingQueueBlocked(ref this, out pbIncomingBlocked);
+			public HRESULT put_IncomingQueueBlocked(int16 bIncomingBlocked) mut => VT.put_IncomingQueueBlocked(ref this, bIncomingBlocked);
+			public HRESULT get_AutoCreateAccountOnConnect(out int16 pbAutoCreateAccountOnConnect) mut => VT.get_AutoCreateAccountOnConnect(ref this, out pbAutoCreateAccountOnConnect);
+			public HRESULT put_AutoCreateAccountOnConnect(int16 bAutoCreateAccountOnConnect) mut => VT.put_AutoCreateAccountOnConnect(ref this, bAutoCreateAccountOnConnect);
+			public HRESULT get_IncomingFaxesArePublic(out int16 pbIncomingFaxesArePublic) mut => VT.get_IncomingFaxesArePublic(ref this, out pbIncomingFaxesArePublic);
+			public HRESULT put_IncomingFaxesArePublic(int16 bIncomingFaxesArePublic) mut => VT.put_IncomingFaxesArePublic(ref this, bIncomingFaxesArePublic);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4145,22 +2705,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Configuration(IFaxConfiguration** ppFaxConfiguration) mut
-			{
-				return VT.get_Configuration(ref this, ppFaxConfiguration);
-			}
-			public HRESULT get_CurrentAccount(IFaxAccount** ppCurrentAccount) mut
-			{
-				return VT.get_CurrentAccount(ref this, ppCurrentAccount);
-			}
-			public HRESULT get_FaxAccountSet(IFaxAccountSet** ppFaxAccountSet) mut
-			{
-				return VT.get_FaxAccountSet(ref this, ppFaxAccountSet);
-			}
-			public HRESULT get_Security2(IFaxSecurity2** ppFaxSecurity2) mut
-			{
-				return VT.get_Security2(ref this, ppFaxSecurity2);
-			}
+			public HRESULT get_Configuration(IFaxConfiguration** ppFaxConfiguration) mut => VT.get_Configuration(ref this, ppFaxConfiguration);
+			public HRESULT get_CurrentAccount(IFaxAccount** ppCurrentAccount) mut => VT.get_CurrentAccount(ref this, ppCurrentAccount);
+			public HRESULT get_FaxAccountSet(IFaxAccountSet** ppFaxAccountSet) mut => VT.get_FaxAccountSet(ref this, ppFaxAccountSet);
+			public HRESULT get_Security2(IFaxSecurity2** ppFaxSecurity2) mut => VT.get_Security2(ref this, ppFaxSecurity2);
+
 			[CRepr]
 			public struct VTable : IFaxServer.VTable
 			{
@@ -4177,22 +2726,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAccounts(IFaxAccounts** ppFaxAccounts) mut
-			{
-				return VT.GetAccounts(ref this, ppFaxAccounts);
-			}
-			public HRESULT GetAccount(BSTR bstrAccountName, IFaxAccount** pFaxAccount) mut
-			{
-				return VT.GetAccount(ref this, bstrAccountName, pFaxAccount);
-			}
-			public HRESULT AddAccount(BSTR bstrAccountName, IFaxAccount** pFaxAccount) mut
-			{
-				return VT.AddAccount(ref this, bstrAccountName, pFaxAccount);
-			}
-			public HRESULT RemoveAccount(BSTR bstrAccountName) mut
-			{
-				return VT.RemoveAccount(ref this, bstrAccountName);
-			}
+			public HRESULT GetAccounts(IFaxAccounts** ppFaxAccounts) mut => VT.GetAccounts(ref this, ppFaxAccounts);
+			public HRESULT GetAccount(BSTR bstrAccountName, IFaxAccount** pFaxAccount) mut => VT.GetAccount(ref this, bstrAccountName, pFaxAccount);
+			public HRESULT AddAccount(BSTR bstrAccountName, IFaxAccount** pFaxAccount) mut => VT.AddAccount(ref this, bstrAccountName, pFaxAccount);
+			public HRESULT RemoveAccount(BSTR bstrAccountName) mut => VT.RemoveAccount(ref this, bstrAccountName);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4209,18 +2747,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
-			{
-				return VT.get__NewEnum(ref this, ppUnk);
-			}
-			public HRESULT get_Item(VARIANT vIndex, IFaxAccount** pFaxAccount) mut
-			{
-				return VT.get_Item(ref this, vIndex, pFaxAccount);
-			}
-			public HRESULT get_Count(out int32 plCount) mut
-			{
-				return VT.get_Count(ref this, out plCount);
-			}
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+			public HRESULT get_Item(VARIANT vIndex, IFaxAccount** pFaxAccount) mut => VT.get_Item(ref this, vIndex, pFaxAccount);
+			public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4236,22 +2766,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AccountName(BSTR* pbstrAccountName) mut
-			{
-				return VT.get_AccountName(ref this, pbstrAccountName);
-			}
-			public HRESULT get_Folders(IFaxAccountFolders** ppFolders) mut
-			{
-				return VT.get_Folders(ref this, ppFolders);
-			}
-			public HRESULT ListenToAccountEvents(FAX_ACCOUNT_EVENTS_TYPE_ENUM EventTypes) mut
-			{
-				return VT.ListenToAccountEvents(ref this, EventTypes);
-			}
-			public HRESULT get_RegisteredEvents(out FAX_ACCOUNT_EVENTS_TYPE_ENUM pRegisteredEvents) mut
-			{
-				return VT.get_RegisteredEvents(ref this, out pRegisteredEvents);
-			}
+			public HRESULT get_AccountName(BSTR* pbstrAccountName) mut => VT.get_AccountName(ref this, pbstrAccountName);
+			public HRESULT get_Folders(IFaxAccountFolders** ppFolders) mut => VT.get_Folders(ref this, ppFolders);
+			public HRESULT ListenToAccountEvents(FAX_ACCOUNT_EVENTS_TYPE_ENUM EventTypes) mut => VT.ListenToAccountEvents(ref this, EventTypes);
+			public HRESULT get_RegisteredEvents(out FAX_ACCOUNT_EVENTS_TYPE_ENUM pRegisteredEvents) mut => VT.get_RegisteredEvents(ref this, out pRegisteredEvents);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4268,18 +2787,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut
-			{
-				return VT.get_HasCoverPage(ref this, out pbHasCoverPage);
-			}
-			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut
-			{
-				return VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
-			}
-			public HRESULT get_ScheduleType(out FAX_SCHEDULE_TYPE_ENUM pScheduleType) mut
-			{
-				return VT.get_ScheduleType(ref this, out pScheduleType);
-			}
+			public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut => VT.get_HasCoverPage(ref this, out pbHasCoverPage);
+			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
+			public HRESULT get_ScheduleType(out FAX_SCHEDULE_TYPE_ENUM pScheduleType) mut => VT.get_ScheduleType(ref this, out pScheduleType);
+
 			[CRepr]
 			public struct VTable : IFaxOutgoingJob.VTable
 			{
@@ -4295,22 +2806,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_OutgoingQueue(IFaxAccountOutgoingQueue** pFaxOutgoingQueue) mut
-			{
-				return VT.get_OutgoingQueue(ref this, pFaxOutgoingQueue);
-			}
-			public HRESULT get_IncomingQueue(IFaxAccountIncomingQueue** pFaxIncomingQueue) mut
-			{
-				return VT.get_IncomingQueue(ref this, pFaxIncomingQueue);
-			}
-			public HRESULT get_IncomingArchive(IFaxAccountIncomingArchive** pFaxIncomingArchive) mut
-			{
-				return VT.get_IncomingArchive(ref this, pFaxIncomingArchive);
-			}
-			public HRESULT get_OutgoingArchive(IFaxAccountOutgoingArchive** pFaxOutgoingArchive) mut
-			{
-				return VT.get_OutgoingArchive(ref this, pFaxOutgoingArchive);
-			}
+			public HRESULT get_OutgoingQueue(IFaxAccountOutgoingQueue** pFaxOutgoingQueue) mut => VT.get_OutgoingQueue(ref this, pFaxOutgoingQueue);
+			public HRESULT get_IncomingQueue(IFaxAccountIncomingQueue** pFaxIncomingQueue) mut => VT.get_IncomingQueue(ref this, pFaxIncomingQueue);
+			public HRESULT get_IncomingArchive(IFaxAccountIncomingArchive** pFaxIncomingArchive) mut => VT.get_IncomingArchive(ref this, pFaxIncomingArchive);
+			public HRESULT get_OutgoingArchive(IFaxAccountOutgoingArchive** pFaxOutgoingArchive) mut => VT.get_OutgoingArchive(ref this, pFaxOutgoingArchive);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4327,14 +2827,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJobs(IFaxIncomingJobs** pFaxIncomingJobs) mut
-			{
-				return VT.GetJobs(ref this, pFaxIncomingJobs);
-			}
-			public HRESULT GetJob(BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) mut
-			{
-				return VT.GetJob(ref this, bstrJobId, pFaxIncomingJob);
-			}
+			public HRESULT GetJobs(IFaxIncomingJobs** pFaxIncomingJobs) mut => VT.GetJobs(ref this, pFaxIncomingJobs);
+			public HRESULT GetJob(BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) mut => VT.GetJob(ref this, bstrJobId, pFaxIncomingJob);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4349,14 +2844,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJobs(IFaxOutgoingJobs** pFaxOutgoingJobs) mut
-			{
-				return VT.GetJobs(ref this, pFaxOutgoingJobs);
-			}
-			public HRESULT GetJob(BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) mut
-			{
-				return VT.GetJob(ref this, bstrJobId, pFaxOutgoingJob);
-			}
+			public HRESULT GetJobs(IFaxOutgoingJobs** pFaxOutgoingJobs) mut => VT.GetJobs(ref this, pFaxOutgoingJobs);
+			public HRESULT GetJob(BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) mut => VT.GetJob(ref this, bstrJobId, pFaxOutgoingJob);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4371,34 +2861,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut
-			{
-				return VT.get_HasCoverPage(ref this, out pbHasCoverPage);
-			}
-			public HRESULT get_ReceiptType(out FAX_RECEIPT_TYPE_ENUM pReceiptType) mut
-			{
-				return VT.get_ReceiptType(ref this, out pReceiptType);
-			}
-			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut
-			{
-				return VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
-			}
-			public HRESULT get_Read(out int16 pbRead) mut
-			{
-				return VT.get_Read(ref this, out pbRead);
-			}
-			public HRESULT put_Read(int16 bRead) mut
-			{
-				return VT.put_Read(ref this, bRead);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
+			public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut => VT.get_HasCoverPage(ref this, out pbHasCoverPage);
+			public HRESULT get_ReceiptType(out FAX_RECEIPT_TYPE_ENUM pReceiptType) mut => VT.get_ReceiptType(ref this, out pReceiptType);
+			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
+			public HRESULT get_Read(out int16 pbRead) mut => VT.get_Read(ref this, out pbRead);
+			public HRESULT put_Read(int16 bRead) mut => VT.put_Read(ref this, bRead);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+
 			[CRepr]
 			public struct VTable : IFaxOutgoingMessage.VTable
 			{
@@ -4418,26 +2888,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SizeLow(out int32 plSizeLow) mut
-			{
-				return VT.get_SizeLow(ref this, out plSizeLow);
-			}
-			public HRESULT get_SizeHigh(out int32 plSizeHigh) mut
-			{
-				return VT.get_SizeHigh(ref this, out plSizeHigh);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT GetMessages(int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) mut
-			{
-				return VT.GetMessages(ref this, lPrefetchSize, pFaxIncomingMessageIterator);
-			}
-			public HRESULT GetMessage(BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) mut
-			{
-				return VT.GetMessage(ref this, bstrMessageId, pFaxIncomingMessage);
-			}
+			public HRESULT get_SizeLow(out int32 plSizeLow) mut => VT.get_SizeLow(ref this, out plSizeLow);
+			public HRESULT get_SizeHigh(out int32 plSizeHigh) mut => VT.get_SizeHigh(ref this, out plSizeHigh);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT GetMessages(int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, pFaxIncomingMessageIterator);
+			public HRESULT GetMessage(BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) mut => VT.GetMessage(ref this, bstrMessageId, pFaxIncomingMessage);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4455,26 +2911,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SizeLow(out int32 plSizeLow) mut
-			{
-				return VT.get_SizeLow(ref this, out plSizeLow);
-			}
-			public HRESULT get_SizeHigh(out int32 plSizeHigh) mut
-			{
-				return VT.get_SizeHigh(ref this, out plSizeHigh);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT GetMessages(int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) mut
-			{
-				return VT.GetMessages(ref this, lPrefetchSize, pFaxOutgoingMessageIterator);
-			}
-			public HRESULT GetMessage(BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) mut
-			{
-				return VT.GetMessage(ref this, bstrMessageId, pFaxOutgoingMessage);
-			}
+			public HRESULT get_SizeLow(out int32 plSizeLow) mut => VT.get_SizeLow(ref this, out plSizeLow);
+			public HRESULT get_SizeHigh(out int32 plSizeHigh) mut => VT.get_SizeHigh(ref this, out plSizeHigh);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT GetMessages(int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, pFaxOutgoingMessageIterator);
+			public HRESULT GetMessage(BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) mut => VT.GetMessage(ref this, bstrMessageId, pFaxOutgoingMessage);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4492,34 +2934,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Descriptor(out VARIANT pvDescriptor) mut
-			{
-				return VT.get_Descriptor(ref this, out pvDescriptor);
-			}
-			public HRESULT put_Descriptor(VARIANT vDescriptor) mut
-			{
-				return VT.put_Descriptor(ref this, vDescriptor);
-			}
-			public HRESULT get_GrantedRights(out FAX_ACCESS_RIGHTS_ENUM_2 pGrantedRights) mut
-			{
-				return VT.get_GrantedRights(ref this, out pGrantedRights);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT get_InformationType(out int32 plInformationType) mut
-			{
-				return VT.get_InformationType(ref this, out plInformationType);
-			}
-			public HRESULT put_InformationType(int32 lInformationType) mut
-			{
-				return VT.put_InformationType(ref this, lInformationType);
-			}
+			public HRESULT get_Descriptor(out VARIANT pvDescriptor) mut => VT.get_Descriptor(ref this, out pvDescriptor);
+			public HRESULT put_Descriptor(VARIANT vDescriptor) mut => VT.put_Descriptor(ref this, vDescriptor);
+			public HRESULT get_GrantedRights(out FAX_ACCESS_RIGHTS_ENUM_2 pGrantedRights) mut => VT.get_GrantedRights(ref this, out pGrantedRights);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT get_InformationType(out int32 plInformationType) mut => VT.get_InformationType(ref this, out plInformationType);
+			public HRESULT put_InformationType(int32 lInformationType) mut => VT.put_InformationType(ref this, lInformationType);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4539,70 +2961,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Subject(BSTR* pbstrSubject) mut
-			{
-				return VT.get_Subject(ref this, pbstrSubject);
-			}
-			public HRESULT put_Subject(BSTR bstrSubject) mut
-			{
-				return VT.put_Subject(ref this, bstrSubject);
-			}
-			public HRESULT get_SenderName(BSTR* pbstrSenderName) mut
-			{
-				return VT.get_SenderName(ref this, pbstrSenderName);
-			}
-			public HRESULT put_SenderName(BSTR bstrSenderName) mut
-			{
-				return VT.put_SenderName(ref this, bstrSenderName);
-			}
-			public HRESULT get_SenderFaxNumber(BSTR* pbstrSenderFaxNumber) mut
-			{
-				return VT.get_SenderFaxNumber(ref this, pbstrSenderFaxNumber);
-			}
-			public HRESULT put_SenderFaxNumber(BSTR bstrSenderFaxNumber) mut
-			{
-				return VT.put_SenderFaxNumber(ref this, bstrSenderFaxNumber);
-			}
-			public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut
-			{
-				return VT.get_HasCoverPage(ref this, out pbHasCoverPage);
-			}
-			public HRESULT put_HasCoverPage(int16 bHasCoverPage) mut
-			{
-				return VT.put_HasCoverPage(ref this, bHasCoverPage);
-			}
-			public HRESULT get_Recipients(BSTR* pbstrRecipients) mut
-			{
-				return VT.get_Recipients(ref this, pbstrRecipients);
-			}
-			public HRESULT put_Recipients(BSTR bstrRecipients) mut
-			{
-				return VT.put_Recipients(ref this, bstrRecipients);
-			}
-			public HRESULT get_WasReAssigned(out int16 pbWasReAssigned) mut
-			{
-				return VT.get_WasReAssigned(ref this, out pbWasReAssigned);
-			}
-			public HRESULT get_Read(out int16 pbRead) mut
-			{
-				return VT.get_Read(ref this, out pbRead);
-			}
-			public HRESULT put_Read(int16 bRead) mut
-			{
-				return VT.put_Read(ref this, bRead);
-			}
-			public HRESULT ReAssign() mut
-			{
-				return VT.ReAssign(ref this);
-			}
-			public HRESULT Save() mut
-			{
-				return VT.Save(ref this);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
+			public HRESULT get_Subject(BSTR* pbstrSubject) mut => VT.get_Subject(ref this, pbstrSubject);
+			public HRESULT put_Subject(BSTR bstrSubject) mut => VT.put_Subject(ref this, bstrSubject);
+			public HRESULT get_SenderName(BSTR* pbstrSenderName) mut => VT.get_SenderName(ref this, pbstrSenderName);
+			public HRESULT put_SenderName(BSTR bstrSenderName) mut => VT.put_SenderName(ref this, bstrSenderName);
+			public HRESULT get_SenderFaxNumber(BSTR* pbstrSenderFaxNumber) mut => VT.get_SenderFaxNumber(ref this, pbstrSenderFaxNumber);
+			public HRESULT put_SenderFaxNumber(BSTR bstrSenderFaxNumber) mut => VT.put_SenderFaxNumber(ref this, bstrSenderFaxNumber);
+			public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut => VT.get_HasCoverPage(ref this, out pbHasCoverPage);
+			public HRESULT put_HasCoverPage(int16 bHasCoverPage) mut => VT.put_HasCoverPage(ref this, bHasCoverPage);
+			public HRESULT get_Recipients(BSTR* pbstrRecipients) mut => VT.get_Recipients(ref this, pbstrRecipients);
+			public HRESULT put_Recipients(BSTR bstrRecipients) mut => VT.put_Recipients(ref this, bstrRecipients);
+			public HRESULT get_WasReAssigned(out int16 pbWasReAssigned) mut => VT.get_WasReAssigned(ref this, out pbWasReAssigned);
+			public HRESULT get_Read(out int16 pbRead) mut => VT.get_Read(ref this, out pbRead);
+			public HRESULT put_Read(int16 bRead) mut => VT.put_Read(ref this, bRead);
+			public HRESULT ReAssign() mut => VT.ReAssign(ref this);
+			public HRESULT Save() mut => VT.Save(ref this);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+
 			[CRepr]
 			public struct VTable : IFaxIncomingMessage.VTable
 			{
@@ -4631,6 +3006,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4643,110 +3019,33 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnIncomingJobAdded(IFaxServer2* pFaxServer, BSTR bstrJobId) mut
-			{
-				return VT.OnIncomingJobAdded(ref this, pFaxServer, bstrJobId);
-			}
-			public HRESULT OnIncomingJobRemoved(IFaxServer2* pFaxServer, BSTR bstrJobId) mut
-			{
-				return VT.OnIncomingJobRemoved(ref this, pFaxServer, bstrJobId);
-			}
-			public HRESULT OnIncomingJobChanged(IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut
-			{
-				return VT.OnIncomingJobChanged(ref this, pFaxServer, bstrJobId, pJobStatus);
-			}
-			public HRESULT OnOutgoingJobAdded(IFaxServer2* pFaxServer, BSTR bstrJobId) mut
-			{
-				return VT.OnOutgoingJobAdded(ref this, pFaxServer, bstrJobId);
-			}
-			public HRESULT OnOutgoingJobRemoved(IFaxServer2* pFaxServer, BSTR bstrJobId) mut
-			{
-				return VT.OnOutgoingJobRemoved(ref this, pFaxServer, bstrJobId);
-			}
-			public HRESULT OnOutgoingJobChanged(IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut
-			{
-				return VT.OnOutgoingJobChanged(ref this, pFaxServer, bstrJobId, pJobStatus);
-			}
-			public HRESULT OnIncomingMessageAdded(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut
-			{
-				return VT.OnIncomingMessageAdded(ref this, pFaxServer, bstrMessageId);
-			}
-			public HRESULT OnIncomingMessageRemoved(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut
-			{
-				return VT.OnIncomingMessageRemoved(ref this, pFaxServer, bstrMessageId);
-			}
-			public HRESULT OnOutgoingMessageAdded(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut
-			{
-				return VT.OnOutgoingMessageAdded(ref this, pFaxServer, bstrMessageId);
-			}
-			public HRESULT OnOutgoingMessageRemoved(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut
-			{
-				return VT.OnOutgoingMessageRemoved(ref this, pFaxServer, bstrMessageId);
-			}
-			public HRESULT OnReceiptOptionsChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnReceiptOptionsChange(ref this, pFaxServer);
-			}
-			public HRESULT OnActivityLoggingConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnActivityLoggingConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnSecurityConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnSecurityConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnEventLoggingConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnEventLoggingConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnOutgoingQueueConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnOutgoingQueueConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnOutgoingArchiveConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnOutgoingArchiveConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnIncomingArchiveConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnIncomingArchiveConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnDevicesConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnDevicesConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnOutboundRoutingGroupsConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnOutboundRoutingGroupsConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnOutboundRoutingRulesConfigChange(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnOutboundRoutingRulesConfigChange(ref this, pFaxServer);
-			}
-			public HRESULT OnServerActivityChange(IFaxServer2* pFaxServer, int32 lIncomingMessages, int32 lRoutingMessages, int32 lOutgoingMessages, int32 lQueuedMessages) mut
-			{
-				return VT.OnServerActivityChange(ref this, pFaxServer, lIncomingMessages, lRoutingMessages, lOutgoingMessages, lQueuedMessages);
-			}
-			public HRESULT OnQueuesStatusChange(IFaxServer2* pFaxServer, int16 bOutgoingQueueBlocked, int16 bOutgoingQueuePaused, int16 bIncomingQueueBlocked) mut
-			{
-				return VT.OnQueuesStatusChange(ref this, pFaxServer, bOutgoingQueueBlocked, bOutgoingQueuePaused, bIncomingQueueBlocked);
-			}
-			public HRESULT OnNewCall(IFaxServer2* pFaxServer, int32 lCallId, int32 lDeviceId, BSTR bstrCallerId) mut
-			{
-				return VT.OnNewCall(ref this, pFaxServer, lCallId, lDeviceId, bstrCallerId);
-			}
-			public HRESULT OnServerShutDown(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnServerShutDown(ref this, pFaxServer);
-			}
-			public HRESULT OnDeviceStatusChange(IFaxServer2* pFaxServer, int32 lDeviceId, int16 bPoweredOff, int16 bSending, int16 bReceiving, int16 bRinging) mut
-			{
-				return VT.OnDeviceStatusChange(ref this, pFaxServer, lDeviceId, bPoweredOff, bSending, bReceiving, bRinging);
-			}
-			public HRESULT OnGeneralServerConfigChanged(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnGeneralServerConfigChanged(ref this, pFaxServer);
-			}
+			public HRESULT OnIncomingJobAdded(IFaxServer2* pFaxServer, BSTR bstrJobId) mut => VT.OnIncomingJobAdded(ref this, pFaxServer, bstrJobId);
+			public HRESULT OnIncomingJobRemoved(IFaxServer2* pFaxServer, BSTR bstrJobId) mut => VT.OnIncomingJobRemoved(ref this, pFaxServer, bstrJobId);
+			public HRESULT OnIncomingJobChanged(IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut => VT.OnIncomingJobChanged(ref this, pFaxServer, bstrJobId, pJobStatus);
+			public HRESULT OnOutgoingJobAdded(IFaxServer2* pFaxServer, BSTR bstrJobId) mut => VT.OnOutgoingJobAdded(ref this, pFaxServer, bstrJobId);
+			public HRESULT OnOutgoingJobRemoved(IFaxServer2* pFaxServer, BSTR bstrJobId) mut => VT.OnOutgoingJobRemoved(ref this, pFaxServer, bstrJobId);
+			public HRESULT OnOutgoingJobChanged(IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut => VT.OnOutgoingJobChanged(ref this, pFaxServer, bstrJobId, pJobStatus);
+			public HRESULT OnIncomingMessageAdded(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut => VT.OnIncomingMessageAdded(ref this, pFaxServer, bstrMessageId);
+			public HRESULT OnIncomingMessageRemoved(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut => VT.OnIncomingMessageRemoved(ref this, pFaxServer, bstrMessageId);
+			public HRESULT OnOutgoingMessageAdded(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut => VT.OnOutgoingMessageAdded(ref this, pFaxServer, bstrMessageId);
+			public HRESULT OnOutgoingMessageRemoved(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut => VT.OnOutgoingMessageRemoved(ref this, pFaxServer, bstrMessageId);
+			public HRESULT OnReceiptOptionsChange(IFaxServer2* pFaxServer) mut => VT.OnReceiptOptionsChange(ref this, pFaxServer);
+			public HRESULT OnActivityLoggingConfigChange(IFaxServer2* pFaxServer) mut => VT.OnActivityLoggingConfigChange(ref this, pFaxServer);
+			public HRESULT OnSecurityConfigChange(IFaxServer2* pFaxServer) mut => VT.OnSecurityConfigChange(ref this, pFaxServer);
+			public HRESULT OnEventLoggingConfigChange(IFaxServer2* pFaxServer) mut => VT.OnEventLoggingConfigChange(ref this, pFaxServer);
+			public HRESULT OnOutgoingQueueConfigChange(IFaxServer2* pFaxServer) mut => VT.OnOutgoingQueueConfigChange(ref this, pFaxServer);
+			public HRESULT OnOutgoingArchiveConfigChange(IFaxServer2* pFaxServer) mut => VT.OnOutgoingArchiveConfigChange(ref this, pFaxServer);
+			public HRESULT OnIncomingArchiveConfigChange(IFaxServer2* pFaxServer) mut => VT.OnIncomingArchiveConfigChange(ref this, pFaxServer);
+			public HRESULT OnDevicesConfigChange(IFaxServer2* pFaxServer) mut => VT.OnDevicesConfigChange(ref this, pFaxServer);
+			public HRESULT OnOutboundRoutingGroupsConfigChange(IFaxServer2* pFaxServer) mut => VT.OnOutboundRoutingGroupsConfigChange(ref this, pFaxServer);
+			public HRESULT OnOutboundRoutingRulesConfigChange(IFaxServer2* pFaxServer) mut => VT.OnOutboundRoutingRulesConfigChange(ref this, pFaxServer);
+			public HRESULT OnServerActivityChange(IFaxServer2* pFaxServer, int32 lIncomingMessages, int32 lRoutingMessages, int32 lOutgoingMessages, int32 lQueuedMessages) mut => VT.OnServerActivityChange(ref this, pFaxServer, lIncomingMessages, lRoutingMessages, lOutgoingMessages, lQueuedMessages);
+			public HRESULT OnQueuesStatusChange(IFaxServer2* pFaxServer, int16 bOutgoingQueueBlocked, int16 bOutgoingQueuePaused, int16 bIncomingQueueBlocked) mut => VT.OnQueuesStatusChange(ref this, pFaxServer, bOutgoingQueueBlocked, bOutgoingQueuePaused, bIncomingQueueBlocked);
+			public HRESULT OnNewCall(IFaxServer2* pFaxServer, int32 lCallId, int32 lDeviceId, BSTR bstrCallerId) mut => VT.OnNewCall(ref this, pFaxServer, lCallId, lDeviceId, bstrCallerId);
+			public HRESULT OnServerShutDown(IFaxServer2* pFaxServer) mut => VT.OnServerShutDown(ref this, pFaxServer);
+			public HRESULT OnDeviceStatusChange(IFaxServer2* pFaxServer, int32 lDeviceId, int16 bPoweredOff, int16 bSending, int16 bReceiving, int16 bRinging) mut => VT.OnDeviceStatusChange(ref this, pFaxServer, lDeviceId, bPoweredOff, bSending, bReceiving, bRinging);
+			public HRESULT OnGeneralServerConfigChanged(IFaxServer2* pFaxServer) mut => VT.OnGeneralServerConfigChanged(ref this, pFaxServer);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4785,6 +3084,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4797,50 +3097,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnIncomingJobAdded(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut
-			{
-				return VT.OnIncomingJobAdded(ref this, pFaxAccount, bstrJobId);
-			}
-			public HRESULT OnIncomingJobRemoved(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut
-			{
-				return VT.OnIncomingJobRemoved(ref this, pFaxAccount, bstrJobId);
-			}
-			public HRESULT OnIncomingJobChanged(IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut
-			{
-				return VT.OnIncomingJobChanged(ref this, pFaxAccount, bstrJobId, pJobStatus);
-			}
-			public HRESULT OnOutgoingJobAdded(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut
-			{
-				return VT.OnOutgoingJobAdded(ref this, pFaxAccount, bstrJobId);
-			}
-			public HRESULT OnOutgoingJobRemoved(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut
-			{
-				return VT.OnOutgoingJobRemoved(ref this, pFaxAccount, bstrJobId);
-			}
-			public HRESULT OnOutgoingJobChanged(IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut
-			{
-				return VT.OnOutgoingJobChanged(ref this, pFaxAccount, bstrJobId, pJobStatus);
-			}
-			public HRESULT OnIncomingMessageAdded(IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fAddedToReceiveFolder) mut
-			{
-				return VT.OnIncomingMessageAdded(ref this, pFaxAccount, bstrMessageId, fAddedToReceiveFolder);
-			}
-			public HRESULT OnIncomingMessageRemoved(IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fRemovedFromReceiveFolder) mut
-			{
-				return VT.OnIncomingMessageRemoved(ref this, pFaxAccount, bstrMessageId, fRemovedFromReceiveFolder);
-			}
-			public HRESULT OnOutgoingMessageAdded(IFaxAccount* pFaxAccount, BSTR bstrMessageId) mut
-			{
-				return VT.OnOutgoingMessageAdded(ref this, pFaxAccount, bstrMessageId);
-			}
-			public HRESULT OnOutgoingMessageRemoved(IFaxAccount* pFaxAccount, BSTR bstrMessageId) mut
-			{
-				return VT.OnOutgoingMessageRemoved(ref this, pFaxAccount, bstrMessageId);
-			}
-			public HRESULT OnServerShutDown(IFaxServer2* pFaxServer) mut
-			{
-				return VT.OnServerShutDown(ref this, pFaxServer);
-			}
+			public HRESULT OnIncomingJobAdded(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut => VT.OnIncomingJobAdded(ref this, pFaxAccount, bstrJobId);
+			public HRESULT OnIncomingJobRemoved(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut => VT.OnIncomingJobRemoved(ref this, pFaxAccount, bstrJobId);
+			public HRESULT OnIncomingJobChanged(IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut => VT.OnIncomingJobChanged(ref this, pFaxAccount, bstrJobId, pJobStatus);
+			public HRESULT OnOutgoingJobAdded(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut => VT.OnOutgoingJobAdded(ref this, pFaxAccount, bstrJobId);
+			public HRESULT OnOutgoingJobRemoved(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut => VT.OnOutgoingJobRemoved(ref this, pFaxAccount, bstrJobId);
+			public HRESULT OnOutgoingJobChanged(IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut => VT.OnOutgoingJobChanged(ref this, pFaxAccount, bstrJobId, pJobStatus);
+			public HRESULT OnIncomingMessageAdded(IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fAddedToReceiveFolder) mut => VT.OnIncomingMessageAdded(ref this, pFaxAccount, bstrMessageId, fAddedToReceiveFolder);
+			public HRESULT OnIncomingMessageRemoved(IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fRemovedFromReceiveFolder) mut => VT.OnIncomingMessageRemoved(ref this, pFaxAccount, bstrMessageId, fRemovedFromReceiveFolder);
+			public HRESULT OnOutgoingMessageAdded(IFaxAccount* pFaxAccount, BSTR bstrMessageId) mut => VT.OnOutgoingMessageAdded(ref this, pFaxAccount, bstrMessageId);
+			public HRESULT OnOutgoingMessageRemoved(IFaxAccount* pFaxAccount, BSTR bstrMessageId) mut => VT.OnOutgoingMessageRemoved(ref this, pFaxAccount, bstrMessageId);
+			public HRESULT OnServerShutDown(IFaxServer2* pFaxServer) mut => VT.OnServerShutDown(ref this, pFaxServer);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4864,6 +3132,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4876,66 +3145,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HINSTANCE hinst, uint32 dwVersion) mut
-			{
-				return VT.Initialize(ref this, hinst, dwVersion);
-			}
-			public HRESULT GetDeviceList(uint32 dwType, uint32 dwFlags, out uint32 pdwItemsReturned, void** ppBuffer) mut
-			{
-				return VT.GetDeviceList(ref this, dwType, dwFlags, out pdwItemsReturned, ppBuffer);
-			}
-			public HRESULT GetDeviceInfo(PWSTR pwszDeviceName, void** ppBuffer) mut
-			{
-				return VT.GetDeviceInfo(ref this, pwszDeviceName, ppBuffer);
-			}
-			public HRESULT CreateDevice(PWSTR pwszDeviceName, uint32 dwMode, out IStiDevice* pDevice, IUnknown* punkOuter) mut
-			{
-				return VT.CreateDevice(ref this, pwszDeviceName, dwMode, out pDevice, punkOuter);
-			}
-			public HRESULT GetDeviceValue(PWSTR pwszDeviceName, PWSTR pValueName, out uint32 pType, out uint8 pData, out uint32 cbData) mut
-			{
-				return VT.GetDeviceValue(ref this, pwszDeviceName, pValueName, out pType, out pData, out cbData);
-			}
-			public HRESULT SetDeviceValue(PWSTR pwszDeviceName, PWSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData) mut
-			{
-				return VT.SetDeviceValue(ref this, pwszDeviceName, pValueName, Type, ref pData, cbData);
-			}
-			public HRESULT GetSTILaunchInformation(char16* pwszDeviceName, uint32* pdwEventCode, char16* pwszEventName) mut
-			{
-				return VT.GetSTILaunchInformation(ref this, pwszDeviceName, pdwEventCode, pwszEventName);
-			}
-			public HRESULT RegisterLaunchApplication(PWSTR pwszAppName, PWSTR pwszCommandLine) mut
-			{
-				return VT.RegisterLaunchApplication(ref this, pwszAppName, pwszCommandLine);
-			}
-			public HRESULT UnregisterLaunchApplication(PWSTR pwszAppName) mut
-			{
-				return VT.UnregisterLaunchApplication(ref this, pwszAppName);
-			}
-			public HRESULT EnableHwNotifications(PWSTR pwszDeviceName, BOOL bNewState) mut
-			{
-				return VT.EnableHwNotifications(ref this, pwszDeviceName, bNewState);
-			}
-			public HRESULT GetHwNotificationState(PWSTR pwszDeviceName, out BOOL pbCurrentState) mut
-			{
-				return VT.GetHwNotificationState(ref this, pwszDeviceName, out pbCurrentState);
-			}
-			public HRESULT RefreshDeviceBus(PWSTR pwszDeviceName) mut
-			{
-				return VT.RefreshDeviceBus(ref this, pwszDeviceName);
-			}
-			public HRESULT LaunchApplicationForDevice(PWSTR pwszDeviceName, PWSTR pwszAppName, ref STINOTIFY pStiNotify) mut
-			{
-				return VT.LaunchApplicationForDevice(ref this, pwszDeviceName, pwszAppName, ref pStiNotify);
-			}
-			public HRESULT SetupDeviceParameters(out STI_DEVICE_INFORMATIONW param0) mut
-			{
-				return VT.SetupDeviceParameters(ref this, out param0);
-			}
-			public HRESULT WriteToErrorLog(uint32 dwMessageType, PWSTR pszMessage) mut
-			{
-				return VT.WriteToErrorLog(ref this, dwMessageType, pszMessage);
-			}
+			public HRESULT Initialize(HINSTANCE hinst, uint32 dwVersion) mut => VT.Initialize(ref this, hinst, dwVersion);
+			public HRESULT GetDeviceList(uint32 dwType, uint32 dwFlags, out uint32 pdwItemsReturned, void** ppBuffer) mut => VT.GetDeviceList(ref this, dwType, dwFlags, out pdwItemsReturned, ppBuffer);
+			public HRESULT GetDeviceInfo(PWSTR pwszDeviceName, void** ppBuffer) mut => VT.GetDeviceInfo(ref this, pwszDeviceName, ppBuffer);
+			public HRESULT CreateDevice(PWSTR pwszDeviceName, uint32 dwMode, out IStiDevice* pDevice, IUnknown* punkOuter) mut => VT.CreateDevice(ref this, pwszDeviceName, dwMode, out pDevice, punkOuter);
+			public HRESULT GetDeviceValue(PWSTR pwszDeviceName, PWSTR pValueName, out uint32 pType, out uint8 pData, out uint32 cbData) mut => VT.GetDeviceValue(ref this, pwszDeviceName, pValueName, out pType, out pData, out cbData);
+			public HRESULT SetDeviceValue(PWSTR pwszDeviceName, PWSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData) mut => VT.SetDeviceValue(ref this, pwszDeviceName, pValueName, Type, ref pData, cbData);
+			public HRESULT GetSTILaunchInformation(char16* pwszDeviceName, uint32* pdwEventCode, char16* pwszEventName) mut => VT.GetSTILaunchInformation(ref this, pwszDeviceName, pdwEventCode, pwszEventName);
+			public HRESULT RegisterLaunchApplication(PWSTR pwszAppName, PWSTR pwszCommandLine) mut => VT.RegisterLaunchApplication(ref this, pwszAppName, pwszCommandLine);
+			public HRESULT UnregisterLaunchApplication(PWSTR pwszAppName) mut => VT.UnregisterLaunchApplication(ref this, pwszAppName);
+			public HRESULT EnableHwNotifications(PWSTR pwszDeviceName, BOOL bNewState) mut => VT.EnableHwNotifications(ref this, pwszDeviceName, bNewState);
+			public HRESULT GetHwNotificationState(PWSTR pwszDeviceName, out BOOL pbCurrentState) mut => VT.GetHwNotificationState(ref this, pwszDeviceName, out pbCurrentState);
+			public HRESULT RefreshDeviceBus(PWSTR pwszDeviceName) mut => VT.RefreshDeviceBus(ref this, pwszDeviceName);
+			public HRESULT LaunchApplicationForDevice(PWSTR pwszDeviceName, PWSTR pwszAppName, ref STINOTIFY pStiNotify) mut => VT.LaunchApplicationForDevice(ref this, pwszDeviceName, pwszAppName, ref pStiNotify);
+			public HRESULT SetupDeviceParameters(out STI_DEVICE_INFORMATIONW param0) mut => VT.SetupDeviceParameters(ref this, out param0);
+			public HRESULT WriteToErrorLog(uint32 dwMessageType, PWSTR pszMessage) mut => VT.WriteToErrorLog(ref this, dwMessageType, pszMessage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4963,74 +3188,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HINSTANCE hinst, PWSTR pwszDeviceName, uint32 dwVersion, uint32 dwMode) mut
-			{
-				return VT.Initialize(ref this, hinst, pwszDeviceName, dwVersion, dwMode);
-			}
-			public HRESULT GetCapabilities(out STI_DEV_CAPS pDevCaps) mut
-			{
-				return VT.GetCapabilities(ref this, out pDevCaps);
-			}
-			public HRESULT GetStatus(out STI_DEVICE_STATUS pDevStatus) mut
-			{
-				return VT.GetStatus(ref this, out pDevStatus);
-			}
-			public HRESULT DeviceReset() mut
-			{
-				return VT.DeviceReset(ref this);
-			}
-			public HRESULT Diagnostic(out STI_DIAG pBuffer) mut
-			{
-				return VT.Diagnostic(ref this, out pBuffer);
-			}
-			public HRESULT Escape(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, out uint32 pdwActualData) mut
-			{
-				return VT.Escape(ref this, EscapeFunction, lpInData, cbInDataSize, pOutData, dwOutDataSize, out pdwActualData);
-			}
-			public HRESULT GetLastError(out uint32 pdwLastDeviceError) mut
-			{
-				return VT.GetLastError(ref this, out pdwLastDeviceError);
-			}
-			public HRESULT LockDevice(uint32 dwTimeOut) mut
-			{
-				return VT.LockDevice(ref this, dwTimeOut);
-			}
-			public HRESULT UnLockDevice() mut
-			{
-				return VT.UnLockDevice(ref this);
-			}
-			public HRESULT RawReadData(void* lpBuffer, out uint32 lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
-			{
-				return VT.RawReadData(ref this, lpBuffer, out lpdwNumberOfBytes, lpOverlapped);
-			}
-			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
-			{
-				return VT.RawWriteData(ref this, lpBuffer, nNumberOfBytes, lpOverlapped);
-			}
-			public HRESULT RawReadCommand(void* lpBuffer, out uint32 lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
-			{
-				return VT.RawReadCommand(ref this, lpBuffer, out lpdwNumberOfBytes, lpOverlapped);
-			}
-			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
-			{
-				return VT.RawWriteCommand(ref this, lpBuffer, nNumberOfBytes, lpOverlapped);
-			}
-			public HRESULT Subscribe(out STISUBSCRIBE lpSubsribe) mut
-			{
-				return VT.Subscribe(ref this, out lpSubsribe);
-			}
-			public HRESULT GetLastNotificationData(out STINOTIFY lpNotify) mut
-			{
-				return VT.GetLastNotificationData(ref this, out lpNotify);
-			}
-			public HRESULT UnSubscribe() mut
-			{
-				return VT.UnSubscribe(ref this);
-			}
-			public HRESULT GetLastErrorInfo(out _ERROR_INFOW pLastErrorInfo) mut
-			{
-				return VT.GetLastErrorInfo(ref this, out pLastErrorInfo);
-			}
+			public HRESULT Initialize(HINSTANCE hinst, PWSTR pwszDeviceName, uint32 dwVersion, uint32 dwMode) mut => VT.Initialize(ref this, hinst, pwszDeviceName, dwVersion, dwMode);
+			public HRESULT GetCapabilities(out STI_DEV_CAPS pDevCaps) mut => VT.GetCapabilities(ref this, out pDevCaps);
+			public HRESULT GetStatus(out STI_DEVICE_STATUS pDevStatus) mut => VT.GetStatus(ref this, out pDevStatus);
+			public HRESULT DeviceReset() mut => VT.DeviceReset(ref this);
+			public HRESULT Diagnostic(out STI_DIAG pBuffer) mut => VT.Diagnostic(ref this, out pBuffer);
+			public HRESULT Escape(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, out uint32 pdwActualData) mut => VT.Escape(ref this, EscapeFunction, lpInData, cbInDataSize, pOutData, dwOutDataSize, out pdwActualData);
+			public HRESULT GetLastError(out uint32 pdwLastDeviceError) mut => VT.GetLastError(ref this, out pdwLastDeviceError);
+			public HRESULT LockDevice(uint32 dwTimeOut) mut => VT.LockDevice(ref this, dwTimeOut);
+			public HRESULT UnLockDevice() mut => VT.UnLockDevice(ref this);
+			public HRESULT RawReadData(void* lpBuffer, out uint32 lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut => VT.RawReadData(ref this, lpBuffer, out lpdwNumberOfBytes, lpOverlapped);
+			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut => VT.RawWriteData(ref this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			public HRESULT RawReadCommand(void* lpBuffer, out uint32 lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut => VT.RawReadCommand(ref this, lpBuffer, out lpdwNumberOfBytes, lpOverlapped);
+			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut => VT.RawWriteCommand(ref this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			public HRESULT Subscribe(out STISUBSCRIBE lpSubsribe) mut => VT.Subscribe(ref this, out lpSubsribe);
+			public HRESULT GetLastNotificationData(out STINOTIFY lpNotify) mut => VT.GetLastNotificationData(ref this, out lpNotify);
+			public HRESULT UnSubscribe() mut => VT.UnSubscribe(ref this);
+			public HRESULT GetLastErrorInfo(out _ERROR_INFOW pLastErrorInfo) mut => VT.GetLastErrorInfo(ref this, out pLastErrorInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5060,50 +3235,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(uint32 dwDeviceType, uint32 dwMode, PWSTR pwszPortName, uint32 dwFlags) mut
-			{
-				return VT.Initialize(ref this, dwDeviceType, dwMode, pwszPortName, dwFlags);
-			}
-			public HRESULT RawReadData(void* lpBuffer, out uint32 lpdwNumberOfBytes, out OVERLAPPED lpOverlapped) mut
-			{
-				return VT.RawReadData(ref this, lpBuffer, out lpdwNumberOfBytes, out lpOverlapped);
-			}
-			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, out OVERLAPPED lpOverlapped) mut
-			{
-				return VT.RawWriteData(ref this, lpBuffer, nNumberOfBytes, out lpOverlapped);
-			}
-			public HRESULT RawReadCommand(void* lpBuffer, out uint32 lpdwNumberOfBytes, out OVERLAPPED lpOverlapped) mut
-			{
-				return VT.RawReadCommand(ref this, lpBuffer, out lpdwNumberOfBytes, out lpOverlapped);
-			}
-			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, out OVERLAPPED lpOverlapped) mut
-			{
-				return VT.RawWriteCommand(ref this, lpBuffer, nNumberOfBytes, out lpOverlapped);
-			}
-			public HRESULT RawDeviceControl(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, out uint32 pdwActualData) mut
-			{
-				return VT.RawDeviceControl(ref this, EscapeFunction, lpInData, cbInDataSize, pOutData, dwOutDataSize, out pdwActualData);
-			}
-			public HRESULT GetLastError(out uint32 lpdwLastError) mut
-			{
-				return VT.GetLastError(ref this, out lpdwLastError);
-			}
-			public HRESULT GetMyDevicePortName(char16* lpszDevicePath, uint32 cwDevicePathSize) mut
-			{
-				return VT.GetMyDevicePortName(ref this, lpszDevicePath, cwDevicePathSize);
-			}
-			public HRESULT GetMyDeviceHandle(out HANDLE lph) mut
-			{
-				return VT.GetMyDeviceHandle(ref this, out lph);
-			}
-			public HRESULT GetMyDeviceOpenMode(out uint32 pdwOpenMode) mut
-			{
-				return VT.GetMyDeviceOpenMode(ref this, out pdwOpenMode);
-			}
-			public HRESULT WriteToErrorLog(uint32 dwMessageType, PWSTR pszMessage, uint32 dwErrorCode) mut
-			{
-				return VT.WriteToErrorLog(ref this, dwMessageType, pszMessage, dwErrorCode);
-			}
+			public HRESULT Initialize(uint32 dwDeviceType, uint32 dwMode, PWSTR pwszPortName, uint32 dwFlags) mut => VT.Initialize(ref this, dwDeviceType, dwMode, pwszPortName, dwFlags);
+			public HRESULT RawReadData(void* lpBuffer, out uint32 lpdwNumberOfBytes, out OVERLAPPED lpOverlapped) mut => VT.RawReadData(ref this, lpBuffer, out lpdwNumberOfBytes, out lpOverlapped);
+			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, out OVERLAPPED lpOverlapped) mut => VT.RawWriteData(ref this, lpBuffer, nNumberOfBytes, out lpOverlapped);
+			public HRESULT RawReadCommand(void* lpBuffer, out uint32 lpdwNumberOfBytes, out OVERLAPPED lpOverlapped) mut => VT.RawReadCommand(ref this, lpBuffer, out lpdwNumberOfBytes, out lpOverlapped);
+			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, out OVERLAPPED lpOverlapped) mut => VT.RawWriteCommand(ref this, lpBuffer, nNumberOfBytes, out lpOverlapped);
+			public HRESULT RawDeviceControl(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, out uint32 pdwActualData) mut => VT.RawDeviceControl(ref this, EscapeFunction, lpInData, cbInDataSize, pOutData, dwOutDataSize, out pdwActualData);
+			public HRESULT GetLastError(out uint32 lpdwLastError) mut => VT.GetLastError(ref this, out lpdwLastError);
+			public HRESULT GetMyDevicePortName(char16* lpszDevicePath, uint32 cwDevicePathSize) mut => VT.GetMyDevicePortName(ref this, lpszDevicePath, cwDevicePathSize);
+			public HRESULT GetMyDeviceHandle(out HANDLE lph) mut => VT.GetMyDeviceHandle(ref this, out lph);
+			public HRESULT GetMyDeviceOpenMode(out uint32 pdwOpenMode) mut => VT.GetMyDeviceOpenMode(ref this, out pdwOpenMode);
+			public HRESULT WriteToErrorLog(uint32 dwMessageType, PWSTR pszMessage, uint32 dwErrorCode) mut => VT.WriteToErrorLog(ref this, dwMessageType, pszMessage, dwErrorCode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5127,70 +3270,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IStiDeviceControl pHelDcb, uint32 dwStiVersion, HKEY hParametersKey) mut
-			{
-				return VT.Initialize(ref this, ref pHelDcb, dwStiVersion, hParametersKey);
-			}
-			public HRESULT GetCapabilities(out STI_USD_CAPS pDevCaps) mut
-			{
-				return VT.GetCapabilities(ref this, out pDevCaps);
-			}
-			public HRESULT GetStatus(out STI_DEVICE_STATUS pDevStatus) mut
-			{
-				return VT.GetStatus(ref this, out pDevStatus);
-			}
-			public HRESULT DeviceReset() mut
-			{
-				return VT.DeviceReset(ref this);
-			}
-			public HRESULT Diagnostic(out STI_DIAG pBuffer) mut
-			{
-				return VT.Diagnostic(ref this, out pBuffer);
-			}
-			public HRESULT Escape(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 cbOutDataSize, out uint32 pdwActualData) mut
-			{
-				return VT.Escape(ref this, EscapeFunction, lpInData, cbInDataSize, pOutData, cbOutDataSize, out pdwActualData);
-			}
-			public HRESULT GetLastError(out uint32 pdwLastDeviceError) mut
-			{
-				return VT.GetLastError(ref this, out pdwLastDeviceError);
-			}
-			public HRESULT LockDevice() mut
-			{
-				return VT.LockDevice(ref this);
-			}
-			public HRESULT UnLockDevice() mut
-			{
-				return VT.UnLockDevice(ref this);
-			}
-			public HRESULT RawReadData(void* lpBuffer, out uint32 lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
-			{
-				return VT.RawReadData(ref this, lpBuffer, out lpdwNumberOfBytes, lpOverlapped);
-			}
-			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
-			{
-				return VT.RawWriteData(ref this, lpBuffer, nNumberOfBytes, lpOverlapped);
-			}
-			public HRESULT RawReadCommand(void* lpBuffer, out uint32 lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
-			{
-				return VT.RawReadCommand(ref this, lpBuffer, out lpdwNumberOfBytes, lpOverlapped);
-			}
-			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
-			{
-				return VT.RawWriteCommand(ref this, lpBuffer, nNumberOfBytes, lpOverlapped);
-			}
-			public HRESULT SetNotificationHandle(HANDLE hEvent) mut
-			{
-				return VT.SetNotificationHandle(ref this, hEvent);
-			}
-			public HRESULT GetNotificationData(out STINOTIFY lpNotify) mut
-			{
-				return VT.GetNotificationData(ref this, out lpNotify);
-			}
-			public HRESULT GetLastErrorInfo(out _ERROR_INFOW pLastErrorInfo) mut
-			{
-				return VT.GetLastErrorInfo(ref this, out pLastErrorInfo);
-			}
+			public HRESULT Initialize(ref IStiDeviceControl pHelDcb, uint32 dwStiVersion, HKEY hParametersKey) mut => VT.Initialize(ref this, ref pHelDcb, dwStiVersion, hParametersKey);
+			public HRESULT GetCapabilities(out STI_USD_CAPS pDevCaps) mut => VT.GetCapabilities(ref this, out pDevCaps);
+			public HRESULT GetStatus(out STI_DEVICE_STATUS pDevStatus) mut => VT.GetStatus(ref this, out pDevStatus);
+			public HRESULT DeviceReset() mut => VT.DeviceReset(ref this);
+			public HRESULT Diagnostic(out STI_DIAG pBuffer) mut => VT.Diagnostic(ref this, out pBuffer);
+			public HRESULT Escape(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 cbOutDataSize, out uint32 pdwActualData) mut => VT.Escape(ref this, EscapeFunction, lpInData, cbInDataSize, pOutData, cbOutDataSize, out pdwActualData);
+			public HRESULT GetLastError(out uint32 pdwLastDeviceError) mut => VT.GetLastError(ref this, out pdwLastDeviceError);
+			public HRESULT LockDevice() mut => VT.LockDevice(ref this);
+			public HRESULT UnLockDevice() mut => VT.UnLockDevice(ref this);
+			public HRESULT RawReadData(void* lpBuffer, out uint32 lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut => VT.RawReadData(ref this, lpBuffer, out lpdwNumberOfBytes, lpOverlapped);
+			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut => VT.RawWriteData(ref this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			public HRESULT RawReadCommand(void* lpBuffer, out uint32 lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut => VT.RawReadCommand(ref this, lpBuffer, out lpdwNumberOfBytes, lpOverlapped);
+			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut => VT.RawWriteCommand(ref this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			public HRESULT SetNotificationHandle(HANDLE hEvent) mut => VT.SetNotificationHandle(ref this, hEvent);
+			public HRESULT GetNotificationData(out STINOTIFY lpNotify) mut => VT.GetNotificationData(ref this, out lpNotify);
+			public HRESULT GetLastErrorInfo(out _ERROR_INFOW pLastErrorInfo) mut => VT.GetLastErrorInfo(ref this, out pLastErrorInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

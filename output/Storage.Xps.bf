@@ -471,14 +471,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IUnknown* owner) mut
-			{
-				return VT.GetOwner(ref this, out owner);
-			}
-			public HRESULT ComGetType(out XPS_OBJECT_TYPE type) mut
-			{
-				return VT.ComGetType(ref this, out type);
-			}
+			public HRESULT GetOwner(out IUnknown* owner) mut => VT.GetOwner(ref this, out owner);
+			public HRESULT ComGetType(out XPS_OBJECT_TYPE type) mut => VT.ComGetType(ref this, out type);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -493,106 +488,32 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTransform(out IXpsOMMatrixTransform* matrixTransform) mut
-			{
-				return VT.GetTransform(ref this, out matrixTransform);
-			}
-			public HRESULT GetTransformLocal(out IXpsOMMatrixTransform* matrixTransform) mut
-			{
-				return VT.GetTransformLocal(ref this, out matrixTransform);
-			}
-			public HRESULT SetTransformLocal(ref IXpsOMMatrixTransform matrixTransform) mut
-			{
-				return VT.SetTransformLocal(ref this, ref matrixTransform);
-			}
-			public HRESULT GetTransformLookup(out PWSTR key) mut
-			{
-				return VT.GetTransformLookup(ref this, out key);
-			}
-			public HRESULT SetTransformLookup(PWSTR key) mut
-			{
-				return VT.SetTransformLookup(ref this, key);
-			}
-			public HRESULT GetClipGeometry(out IXpsOMGeometry* clipGeometry) mut
-			{
-				return VT.GetClipGeometry(ref this, out clipGeometry);
-			}
-			public HRESULT GetClipGeometryLocal(out IXpsOMGeometry* clipGeometry) mut
-			{
-				return VT.GetClipGeometryLocal(ref this, out clipGeometry);
-			}
-			public HRESULT SetClipGeometryLocal(ref IXpsOMGeometry clipGeometry) mut
-			{
-				return VT.SetClipGeometryLocal(ref this, ref clipGeometry);
-			}
-			public HRESULT GetClipGeometryLookup(out PWSTR key) mut
-			{
-				return VT.GetClipGeometryLookup(ref this, out key);
-			}
-			public HRESULT SetClipGeometryLookup(PWSTR key) mut
-			{
-				return VT.SetClipGeometryLookup(ref this, key);
-			}
-			public HRESULT GetOpacity(out float opacity) mut
-			{
-				return VT.GetOpacity(ref this, out opacity);
-			}
-			public HRESULT SetOpacity(float opacity) mut
-			{
-				return VT.SetOpacity(ref this, opacity);
-			}
-			public HRESULT GetOpacityMaskBrush(out IXpsOMBrush* opacityMaskBrush) mut
-			{
-				return VT.GetOpacityMaskBrush(ref this, out opacityMaskBrush);
-			}
-			public HRESULT GetOpacityMaskBrushLocal(out IXpsOMBrush* opacityMaskBrush) mut
-			{
-				return VT.GetOpacityMaskBrushLocal(ref this, out opacityMaskBrush);
-			}
-			public HRESULT SetOpacityMaskBrushLocal(ref IXpsOMBrush opacityMaskBrush) mut
-			{
-				return VT.SetOpacityMaskBrushLocal(ref this, ref opacityMaskBrush);
-			}
-			public HRESULT GetOpacityMaskBrushLookup(out PWSTR key) mut
-			{
-				return VT.GetOpacityMaskBrushLookup(ref this, out key);
-			}
-			public HRESULT SetOpacityMaskBrushLookup(PWSTR key) mut
-			{
-				return VT.SetOpacityMaskBrushLookup(ref this, key);
-			}
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT SetName(PWSTR name) mut
-			{
-				return VT.SetName(ref this, name);
-			}
-			public HRESULT GetIsHyperlinkTarget(out BOOL isHyperlink) mut
-			{
-				return VT.GetIsHyperlinkTarget(ref this, out isHyperlink);
-			}
-			public HRESULT SetIsHyperlinkTarget(BOOL isHyperlink) mut
-			{
-				return VT.SetIsHyperlinkTarget(ref this, isHyperlink);
-			}
-			public HRESULT GetHyperlinkNavigateUri(out IUri* hyperlinkUri) mut
-			{
-				return VT.GetHyperlinkNavigateUri(ref this, out hyperlinkUri);
-			}
-			public HRESULT SetHyperlinkNavigateUri(ref IUri hyperlinkUri) mut
-			{
-				return VT.SetHyperlinkNavigateUri(ref this, ref hyperlinkUri);
-			}
-			public HRESULT GetLanguage(out PWSTR language) mut
-			{
-				return VT.GetLanguage(ref this, out language);
-			}
-			public HRESULT SetLanguage(PWSTR language) mut
-			{
-				return VT.SetLanguage(ref this, language);
-			}
+			public HRESULT GetTransform(out IXpsOMMatrixTransform* matrixTransform) mut => VT.GetTransform(ref this, out matrixTransform);
+			public HRESULT GetTransformLocal(out IXpsOMMatrixTransform* matrixTransform) mut => VT.GetTransformLocal(ref this, out matrixTransform);
+			public HRESULT SetTransformLocal(ref IXpsOMMatrixTransform matrixTransform) mut => VT.SetTransformLocal(ref this, ref matrixTransform);
+			public HRESULT GetTransformLookup(out PWSTR key) mut => VT.GetTransformLookup(ref this, out key);
+			public HRESULT SetTransformLookup(PWSTR key) mut => VT.SetTransformLookup(ref this, key);
+			public HRESULT GetClipGeometry(out IXpsOMGeometry* clipGeometry) mut => VT.GetClipGeometry(ref this, out clipGeometry);
+			public HRESULT GetClipGeometryLocal(out IXpsOMGeometry* clipGeometry) mut => VT.GetClipGeometryLocal(ref this, out clipGeometry);
+			public HRESULT SetClipGeometryLocal(ref IXpsOMGeometry clipGeometry) mut => VT.SetClipGeometryLocal(ref this, ref clipGeometry);
+			public HRESULT GetClipGeometryLookup(out PWSTR key) mut => VT.GetClipGeometryLookup(ref this, out key);
+			public HRESULT SetClipGeometryLookup(PWSTR key) mut => VT.SetClipGeometryLookup(ref this, key);
+			public HRESULT GetOpacity(out float opacity) mut => VT.GetOpacity(ref this, out opacity);
+			public HRESULT SetOpacity(float opacity) mut => VT.SetOpacity(ref this, opacity);
+			public HRESULT GetOpacityMaskBrush(out IXpsOMBrush* opacityMaskBrush) mut => VT.GetOpacityMaskBrush(ref this, out opacityMaskBrush);
+			public HRESULT GetOpacityMaskBrushLocal(out IXpsOMBrush* opacityMaskBrush) mut => VT.GetOpacityMaskBrushLocal(ref this, out opacityMaskBrush);
+			public HRESULT SetOpacityMaskBrushLocal(ref IXpsOMBrush opacityMaskBrush) mut => VT.SetOpacityMaskBrushLocal(ref this, ref opacityMaskBrush);
+			public HRESULT GetOpacityMaskBrushLookup(out PWSTR key) mut => VT.GetOpacityMaskBrushLookup(ref this, out key);
+			public HRESULT SetOpacityMaskBrushLookup(PWSTR key) mut => VT.SetOpacityMaskBrushLookup(ref this, key);
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT SetName(PWSTR name) mut => VT.SetName(ref this, name);
+			public HRESULT GetIsHyperlinkTarget(out BOOL isHyperlink) mut => VT.GetIsHyperlinkTarget(ref this, out isHyperlink);
+			public HRESULT SetIsHyperlinkTarget(BOOL isHyperlink) mut => VT.SetIsHyperlinkTarget(ref this, isHyperlink);
+			public HRESULT GetHyperlinkNavigateUri(out IUri* hyperlinkUri) mut => VT.GetHyperlinkNavigateUri(ref this, out hyperlinkUri);
+			public HRESULT SetHyperlinkNavigateUri(ref IUri hyperlinkUri) mut => VT.SetHyperlinkNavigateUri(ref this, ref hyperlinkUri);
+			public HRESULT GetLanguage(out PWSTR language) mut => VT.GetLanguage(ref this, out language);
+			public HRESULT SetLanguage(PWSTR language) mut => VT.SetLanguage(ref this, language);
+
 			[CRepr]
 			public struct VTable : IXpsOMShareable.VTable
 			{
@@ -630,14 +551,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPartName(out IOpcPartUri* partUri) mut
-			{
-				return VT.GetPartName(ref this, out partUri);
-			}
-			public HRESULT SetPartName(ref IOpcPartUri partUri) mut
-			{
-				return VT.SetPartName(ref this, ref partUri);
-			}
+			public HRESULT GetPartName(out IOpcPartUri* partUri) mut => VT.GetPartName(ref this, out partUri);
+			public HRESULT SetPartName(ref IOpcPartUri partUri) mut => VT.SetPartName(ref this, ref partUri);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -652,78 +568,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ApplyEdits() mut
-			{
-				return VT.ApplyEdits(ref this);
-			}
-			public HRESULT GetUnicodeString(out PWSTR unicodeString) mut
-			{
-				return VT.GetUnicodeString(ref this, out unicodeString);
-			}
-			public HRESULT SetUnicodeString(PWSTR unicodeString) mut
-			{
-				return VT.SetUnicodeString(ref this, unicodeString);
-			}
-			public HRESULT GetGlyphIndexCount(out uint32 indexCount) mut
-			{
-				return VT.GetGlyphIndexCount(ref this, out indexCount);
-			}
-			public HRESULT GetGlyphIndices(out uint32 indexCount, out XPS_GLYPH_INDEX glyphIndices) mut
-			{
-				return VT.GetGlyphIndices(ref this, out indexCount, out glyphIndices);
-			}
-			public HRESULT SetGlyphIndices(uint32 indexCount, in XPS_GLYPH_INDEX glyphIndices) mut
-			{
-				return VT.SetGlyphIndices(ref this, indexCount, glyphIndices);
-			}
-			public HRESULT GetGlyphMappingCount(out uint32 glyphMappingCount) mut
-			{
-				return VT.GetGlyphMappingCount(ref this, out glyphMappingCount);
-			}
-			public HRESULT GetGlyphMappings(out uint32 glyphMappingCount, out XPS_GLYPH_MAPPING glyphMappings) mut
-			{
-				return VT.GetGlyphMappings(ref this, out glyphMappingCount, out glyphMappings);
-			}
-			public HRESULT SetGlyphMappings(uint32 glyphMappingCount, in XPS_GLYPH_MAPPING glyphMappings) mut
-			{
-				return VT.SetGlyphMappings(ref this, glyphMappingCount, glyphMappings);
-			}
-			public HRESULT GetProhibitedCaretStopCount(out uint32 prohibitedCaretStopCount) mut
-			{
-				return VT.GetProhibitedCaretStopCount(ref this, out prohibitedCaretStopCount);
-			}
-			public HRESULT GetProhibitedCaretStops(out uint32 count, out uint32 prohibitedCaretStops) mut
-			{
-				return VT.GetProhibitedCaretStops(ref this, out count, out prohibitedCaretStops);
-			}
-			public HRESULT SetProhibitedCaretStops(uint32 count, in uint32 prohibitedCaretStops) mut
-			{
-				return VT.SetProhibitedCaretStops(ref this, count, prohibitedCaretStops);
-			}
-			public HRESULT GetBidiLevel(out uint32 bidiLevel) mut
-			{
-				return VT.GetBidiLevel(ref this, out bidiLevel);
-			}
-			public HRESULT SetBidiLevel(uint32 bidiLevel) mut
-			{
-				return VT.SetBidiLevel(ref this, bidiLevel);
-			}
-			public HRESULT GetIsSideways(out BOOL isSideways) mut
-			{
-				return VT.GetIsSideways(ref this, out isSideways);
-			}
-			public HRESULT SetIsSideways(BOOL isSideways) mut
-			{
-				return VT.SetIsSideways(ref this, isSideways);
-			}
-			public HRESULT GetDeviceFontName(out PWSTR deviceFontName) mut
-			{
-				return VT.GetDeviceFontName(ref this, out deviceFontName);
-			}
-			public HRESULT SetDeviceFontName(PWSTR deviceFontName) mut
-			{
-				return VT.SetDeviceFontName(ref this, deviceFontName);
-			}
+			public HRESULT ApplyEdits() mut => VT.ApplyEdits(ref this);
+			public HRESULT GetUnicodeString(out PWSTR unicodeString) mut => VT.GetUnicodeString(ref this, out unicodeString);
+			public HRESULT SetUnicodeString(PWSTR unicodeString) mut => VT.SetUnicodeString(ref this, unicodeString);
+			public HRESULT GetGlyphIndexCount(out uint32 indexCount) mut => VT.GetGlyphIndexCount(ref this, out indexCount);
+			public HRESULT GetGlyphIndices(out uint32 indexCount, out XPS_GLYPH_INDEX glyphIndices) mut => VT.GetGlyphIndices(ref this, out indexCount, out glyphIndices);
+			public HRESULT SetGlyphIndices(uint32 indexCount, in XPS_GLYPH_INDEX glyphIndices) mut => VT.SetGlyphIndices(ref this, indexCount, glyphIndices);
+			public HRESULT GetGlyphMappingCount(out uint32 glyphMappingCount) mut => VT.GetGlyphMappingCount(ref this, out glyphMappingCount);
+			public HRESULT GetGlyphMappings(out uint32 glyphMappingCount, out XPS_GLYPH_MAPPING glyphMappings) mut => VT.GetGlyphMappings(ref this, out glyphMappingCount, out glyphMappings);
+			public HRESULT SetGlyphMappings(uint32 glyphMappingCount, in XPS_GLYPH_MAPPING glyphMappings) mut => VT.SetGlyphMappings(ref this, glyphMappingCount, glyphMappings);
+			public HRESULT GetProhibitedCaretStopCount(out uint32 prohibitedCaretStopCount) mut => VT.GetProhibitedCaretStopCount(ref this, out prohibitedCaretStopCount);
+			public HRESULT GetProhibitedCaretStops(out uint32 count, out uint32 prohibitedCaretStops) mut => VT.GetProhibitedCaretStops(ref this, out count, out prohibitedCaretStops);
+			public HRESULT SetProhibitedCaretStops(uint32 count, in uint32 prohibitedCaretStops) mut => VT.SetProhibitedCaretStops(ref this, count, prohibitedCaretStops);
+			public HRESULT GetBidiLevel(out uint32 bidiLevel) mut => VT.GetBidiLevel(ref this, out bidiLevel);
+			public HRESULT SetBidiLevel(uint32 bidiLevel) mut => VT.SetBidiLevel(ref this, bidiLevel);
+			public HRESULT GetIsSideways(out BOOL isSideways) mut => VT.GetIsSideways(ref this, out isSideways);
+			public HRESULT SetIsSideways(BOOL isSideways) mut => VT.SetIsSideways(ref this, isSideways);
+			public HRESULT GetDeviceFontName(out PWSTR deviceFontName) mut => VT.GetDeviceFontName(ref this, out deviceFontName);
+			public HRESULT SetDeviceFontName(PWSTR deviceFontName) mut => VT.SetDeviceFontName(ref this, deviceFontName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -754,114 +617,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUnicodeString(out PWSTR unicodeString) mut
-			{
-				return VT.GetUnicodeString(ref this, out unicodeString);
-			}
-			public HRESULT GetGlyphIndexCount(out uint32 indexCount) mut
-			{
-				return VT.GetGlyphIndexCount(ref this, out indexCount);
-			}
-			public HRESULT GetGlyphIndices(out uint32 indexCount, out XPS_GLYPH_INDEX glyphIndices) mut
-			{
-				return VT.GetGlyphIndices(ref this, out indexCount, out glyphIndices);
-			}
-			public HRESULT GetGlyphMappingCount(out uint32 glyphMappingCount) mut
-			{
-				return VT.GetGlyphMappingCount(ref this, out glyphMappingCount);
-			}
-			public HRESULT GetGlyphMappings(out uint32 glyphMappingCount, out XPS_GLYPH_MAPPING glyphMappings) mut
-			{
-				return VT.GetGlyphMappings(ref this, out glyphMappingCount, out glyphMappings);
-			}
-			public HRESULT GetProhibitedCaretStopCount(out uint32 prohibitedCaretStopCount) mut
-			{
-				return VT.GetProhibitedCaretStopCount(ref this, out prohibitedCaretStopCount);
-			}
-			public HRESULT GetProhibitedCaretStops(out uint32 prohibitedCaretStopCount, out uint32 prohibitedCaretStops) mut
-			{
-				return VT.GetProhibitedCaretStops(ref this, out prohibitedCaretStopCount, out prohibitedCaretStops);
-			}
-			public HRESULT GetBidiLevel(out uint32 bidiLevel) mut
-			{
-				return VT.GetBidiLevel(ref this, out bidiLevel);
-			}
-			public HRESULT GetIsSideways(out BOOL isSideways) mut
-			{
-				return VT.GetIsSideways(ref this, out isSideways);
-			}
-			public HRESULT GetDeviceFontName(out PWSTR deviceFontName) mut
-			{
-				return VT.GetDeviceFontName(ref this, out deviceFontName);
-			}
-			public HRESULT GetStyleSimulations(out XPS_STYLE_SIMULATION styleSimulations) mut
-			{
-				return VT.GetStyleSimulations(ref this, out styleSimulations);
-			}
-			public HRESULT SetStyleSimulations(XPS_STYLE_SIMULATION styleSimulations) mut
-			{
-				return VT.SetStyleSimulations(ref this, styleSimulations);
-			}
-			public HRESULT GetOrigin(out XPS_POINT origin) mut
-			{
-				return VT.GetOrigin(ref this, out origin);
-			}
-			public HRESULT SetOrigin(in XPS_POINT origin) mut
-			{
-				return VT.SetOrigin(ref this, origin);
-			}
-			public HRESULT GetFontRenderingEmSize(out float fontRenderingEmSize) mut
-			{
-				return VT.GetFontRenderingEmSize(ref this, out fontRenderingEmSize);
-			}
-			public HRESULT SetFontRenderingEmSize(float fontRenderingEmSize) mut
-			{
-				return VT.SetFontRenderingEmSize(ref this, fontRenderingEmSize);
-			}
-			public HRESULT GetFontResource(out IXpsOMFontResource* fontResource) mut
-			{
-				return VT.GetFontResource(ref this, out fontResource);
-			}
-			public HRESULT SetFontResource(ref IXpsOMFontResource fontResource) mut
-			{
-				return VT.SetFontResource(ref this, ref fontResource);
-			}
-			public HRESULT GetFontFaceIndex(out int16 fontFaceIndex) mut
-			{
-				return VT.GetFontFaceIndex(ref this, out fontFaceIndex);
-			}
-			public HRESULT SetFontFaceIndex(int16 fontFaceIndex) mut
-			{
-				return VT.SetFontFaceIndex(ref this, fontFaceIndex);
-			}
-			public HRESULT GetFillBrush(out IXpsOMBrush* fillBrush) mut
-			{
-				return VT.GetFillBrush(ref this, out fillBrush);
-			}
-			public HRESULT GetFillBrushLocal(out IXpsOMBrush* fillBrush) mut
-			{
-				return VT.GetFillBrushLocal(ref this, out fillBrush);
-			}
-			public HRESULT SetFillBrushLocal(ref IXpsOMBrush fillBrush) mut
-			{
-				return VT.SetFillBrushLocal(ref this, ref fillBrush);
-			}
-			public HRESULT GetFillBrushLookup(out PWSTR key) mut
-			{
-				return VT.GetFillBrushLookup(ref this, out key);
-			}
-			public HRESULT SetFillBrushLookup(PWSTR key) mut
-			{
-				return VT.SetFillBrushLookup(ref this, key);
-			}
-			public HRESULT GetGlyphsEditor(out IXpsOMGlyphsEditor* editor) mut
-			{
-				return VT.GetGlyphsEditor(ref this, out editor);
-			}
-			public HRESULT Clone(out IXpsOMGlyphs* glyphs) mut
-			{
-				return VT.Clone(ref this, out glyphs);
-			}
+			public HRESULT GetUnicodeString(out PWSTR unicodeString) mut => VT.GetUnicodeString(ref this, out unicodeString);
+			public HRESULT GetGlyphIndexCount(out uint32 indexCount) mut => VT.GetGlyphIndexCount(ref this, out indexCount);
+			public HRESULT GetGlyphIndices(out uint32 indexCount, out XPS_GLYPH_INDEX glyphIndices) mut => VT.GetGlyphIndices(ref this, out indexCount, out glyphIndices);
+			public HRESULT GetGlyphMappingCount(out uint32 glyphMappingCount) mut => VT.GetGlyphMappingCount(ref this, out glyphMappingCount);
+			public HRESULT GetGlyphMappings(out uint32 glyphMappingCount, out XPS_GLYPH_MAPPING glyphMappings) mut => VT.GetGlyphMappings(ref this, out glyphMappingCount, out glyphMappings);
+			public HRESULT GetProhibitedCaretStopCount(out uint32 prohibitedCaretStopCount) mut => VT.GetProhibitedCaretStopCount(ref this, out prohibitedCaretStopCount);
+			public HRESULT GetProhibitedCaretStops(out uint32 prohibitedCaretStopCount, out uint32 prohibitedCaretStops) mut => VT.GetProhibitedCaretStops(ref this, out prohibitedCaretStopCount, out prohibitedCaretStops);
+			public HRESULT GetBidiLevel(out uint32 bidiLevel) mut => VT.GetBidiLevel(ref this, out bidiLevel);
+			public HRESULT GetIsSideways(out BOOL isSideways) mut => VT.GetIsSideways(ref this, out isSideways);
+			public HRESULT GetDeviceFontName(out PWSTR deviceFontName) mut => VT.GetDeviceFontName(ref this, out deviceFontName);
+			public HRESULT GetStyleSimulations(out XPS_STYLE_SIMULATION styleSimulations) mut => VT.GetStyleSimulations(ref this, out styleSimulations);
+			public HRESULT SetStyleSimulations(XPS_STYLE_SIMULATION styleSimulations) mut => VT.SetStyleSimulations(ref this, styleSimulations);
+			public HRESULT GetOrigin(out XPS_POINT origin) mut => VT.GetOrigin(ref this, out origin);
+			public HRESULT SetOrigin(in XPS_POINT origin) mut => VT.SetOrigin(ref this, origin);
+			public HRESULT GetFontRenderingEmSize(out float fontRenderingEmSize) mut => VT.GetFontRenderingEmSize(ref this, out fontRenderingEmSize);
+			public HRESULT SetFontRenderingEmSize(float fontRenderingEmSize) mut => VT.SetFontRenderingEmSize(ref this, fontRenderingEmSize);
+			public HRESULT GetFontResource(out IXpsOMFontResource* fontResource) mut => VT.GetFontResource(ref this, out fontResource);
+			public HRESULT SetFontResource(ref IXpsOMFontResource fontResource) mut => VT.SetFontResource(ref this, ref fontResource);
+			public HRESULT GetFontFaceIndex(out int16 fontFaceIndex) mut => VT.GetFontFaceIndex(ref this, out fontFaceIndex);
+			public HRESULT SetFontFaceIndex(int16 fontFaceIndex) mut => VT.SetFontFaceIndex(ref this, fontFaceIndex);
+			public HRESULT GetFillBrush(out IXpsOMBrush* fillBrush) mut => VT.GetFillBrush(ref this, out fillBrush);
+			public HRESULT GetFillBrushLocal(out IXpsOMBrush* fillBrush) mut => VT.GetFillBrushLocal(ref this, out fillBrush);
+			public HRESULT SetFillBrushLocal(ref IXpsOMBrush fillBrush) mut => VT.SetFillBrushLocal(ref this, ref fillBrush);
+			public HRESULT GetFillBrushLookup(out PWSTR key) mut => VT.GetFillBrushLookup(ref this, out key);
+			public HRESULT SetFillBrushLookup(PWSTR key) mut => VT.SetFillBrushLookup(ref this, key);
+			public HRESULT GetGlyphsEditor(out IXpsOMGlyphsEditor* editor) mut => VT.GetGlyphsEditor(ref this, out editor);
+			public HRESULT Clone(out IXpsOMGlyphs* glyphs) mut => VT.Clone(ref this, out glyphs);
+
 			[CRepr]
 			public struct VTable : IXpsOMVisual.VTable
 			{
@@ -901,30 +684,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out XPS_DASH dash) mut
-			{
-				return VT.GetAt(ref this, index, out dash);
-			}
-			public HRESULT InsertAt(uint32 index, in XPS_DASH dash) mut
-			{
-				return VT.InsertAt(ref this, index, dash);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, in XPS_DASH dash) mut
-			{
-				return VT.SetAt(ref this, index, dash);
-			}
-			public HRESULT Append(in XPS_DASH dash) mut
-			{
-				return VT.Append(ref this, dash);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out XPS_DASH dash) mut => VT.GetAt(ref this, index, out dash);
+			public HRESULT InsertAt(uint32 index, in XPS_DASH dash) mut => VT.InsertAt(ref this, index, dash);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, in XPS_DASH dash) mut => VT.SetAt(ref this, index, dash);
+			public HRESULT Append(in XPS_DASH dash) mut => VT.Append(ref this, dash);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -943,18 +709,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMatrix(out XPS_MATRIX matrix) mut
-			{
-				return VT.GetMatrix(ref this, out matrix);
-			}
-			public HRESULT SetMatrix(in XPS_MATRIX matrix) mut
-			{
-				return VT.SetMatrix(ref this, matrix);
-			}
-			public HRESULT Clone(out IXpsOMMatrixTransform* matrixTransform) mut
-			{
-				return VT.Clone(ref this, out matrixTransform);
-			}
+			public HRESULT GetMatrix(out XPS_MATRIX matrix) mut => VT.GetMatrix(ref this, out matrix);
+			public HRESULT SetMatrix(in XPS_MATRIX matrix) mut => VT.SetMatrix(ref this, matrix);
+			public HRESULT Clone(out IXpsOMMatrixTransform* matrixTransform) mut => VT.Clone(ref this, out matrixTransform);
+
 			[CRepr]
 			public struct VTable : IXpsOMShareable.VTable
 			{
@@ -970,42 +728,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFigures(out IXpsOMGeometryFigureCollection* figures) mut
-			{
-				return VT.GetFigures(ref this, out figures);
-			}
-			public HRESULT GetFillRule(out XPS_FILL_RULE fillRule) mut
-			{
-				return VT.GetFillRule(ref this, out fillRule);
-			}
-			public HRESULT SetFillRule(XPS_FILL_RULE fillRule) mut
-			{
-				return VT.SetFillRule(ref this, fillRule);
-			}
-			public HRESULT GetTransform(out IXpsOMMatrixTransform* transform) mut
-			{
-				return VT.GetTransform(ref this, out transform);
-			}
-			public HRESULT GetTransformLocal(out IXpsOMMatrixTransform* transform) mut
-			{
-				return VT.GetTransformLocal(ref this, out transform);
-			}
-			public HRESULT SetTransformLocal(ref IXpsOMMatrixTransform transform) mut
-			{
-				return VT.SetTransformLocal(ref this, ref transform);
-			}
-			public HRESULT GetTransformLookup(out PWSTR lookup) mut
-			{
-				return VT.GetTransformLookup(ref this, out lookup);
-			}
-			public HRESULT SetTransformLookup(PWSTR lookup) mut
-			{
-				return VT.SetTransformLookup(ref this, lookup);
-			}
-			public HRESULT Clone(out IXpsOMGeometry* geometry) mut
-			{
-				return VT.Clone(ref this, out geometry);
-			}
+			public HRESULT GetFigures(out IXpsOMGeometryFigureCollection* figures) mut => VT.GetFigures(ref this, out figures);
+			public HRESULT GetFillRule(out XPS_FILL_RULE fillRule) mut => VT.GetFillRule(ref this, out fillRule);
+			public HRESULT SetFillRule(XPS_FILL_RULE fillRule) mut => VT.SetFillRule(ref this, fillRule);
+			public HRESULT GetTransform(out IXpsOMMatrixTransform* transform) mut => VT.GetTransform(ref this, out transform);
+			public HRESULT GetTransformLocal(out IXpsOMMatrixTransform* transform) mut => VT.GetTransformLocal(ref this, out transform);
+			public HRESULT SetTransformLocal(ref IXpsOMMatrixTransform transform) mut => VT.SetTransformLocal(ref this, ref transform);
+			public HRESULT GetTransformLookup(out PWSTR lookup) mut => VT.GetTransformLookup(ref this, out lookup);
+			public HRESULT SetTransformLookup(PWSTR lookup) mut => VT.SetTransformLookup(ref this, lookup);
+			public HRESULT Clone(out IXpsOMGeometry* geometry) mut => VT.Clone(ref this, out geometry);
+
 			[CRepr]
 			public struct VTable : IXpsOMShareable.VTable
 			{
@@ -1027,66 +759,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMGeometry* owner) mut
-			{
-				return VT.GetOwner(ref this, out owner);
-			}
-			public HRESULT GetSegmentData(out uint32 dataCount, out float segmentData) mut
-			{
-				return VT.GetSegmentData(ref this, out dataCount, out segmentData);
-			}
-			public HRESULT GetSegmentTypes(out uint32 segmentCount, out XPS_SEGMENT_TYPE segmentTypes) mut
-			{
-				return VT.GetSegmentTypes(ref this, out segmentCount, out segmentTypes);
-			}
-			public HRESULT GetSegmentStrokes(out uint32 segmentCount, out BOOL segmentStrokes) mut
-			{
-				return VT.GetSegmentStrokes(ref this, out segmentCount, out segmentStrokes);
-			}
-			public HRESULT SetSegments(uint32 segmentCount, uint32 segmentDataCount, in XPS_SEGMENT_TYPE segmentTypes, in float segmentData, in BOOL segmentStrokes) mut
-			{
-				return VT.SetSegments(ref this, segmentCount, segmentDataCount, segmentTypes, segmentData, segmentStrokes);
-			}
-			public HRESULT GetStartPoint(out XPS_POINT startPoint) mut
-			{
-				return VT.GetStartPoint(ref this, out startPoint);
-			}
-			public HRESULT SetStartPoint(in XPS_POINT startPoint) mut
-			{
-				return VT.SetStartPoint(ref this, startPoint);
-			}
-			public HRESULT GetIsClosed(out BOOL isClosed) mut
-			{
-				return VT.GetIsClosed(ref this, out isClosed);
-			}
-			public HRESULT SetIsClosed(BOOL isClosed) mut
-			{
-				return VT.SetIsClosed(ref this, isClosed);
-			}
-			public HRESULT GetIsFilled(out BOOL isFilled) mut
-			{
-				return VT.GetIsFilled(ref this, out isFilled);
-			}
-			public HRESULT SetIsFilled(BOOL isFilled) mut
-			{
-				return VT.SetIsFilled(ref this, isFilled);
-			}
-			public HRESULT GetSegmentCount(out uint32 segmentCount) mut
-			{
-				return VT.GetSegmentCount(ref this, out segmentCount);
-			}
-			public HRESULT GetSegmentDataCount(out uint32 segmentDataCount) mut
-			{
-				return VT.GetSegmentDataCount(ref this, out segmentDataCount);
-			}
-			public HRESULT GetSegmentStrokePattern(out XPS_SEGMENT_STROKE_PATTERN segmentStrokePattern) mut
-			{
-				return VT.GetSegmentStrokePattern(ref this, out segmentStrokePattern);
-			}
-			public HRESULT Clone(out IXpsOMGeometryFigure* geometryFigure) mut
-			{
-				return VT.Clone(ref this, out geometryFigure);
-			}
+			public HRESULT GetOwner(out IXpsOMGeometry* owner) mut => VT.GetOwner(ref this, out owner);
+			public HRESULT GetSegmentData(out uint32 dataCount, out float segmentData) mut => VT.GetSegmentData(ref this, out dataCount, out segmentData);
+			public HRESULT GetSegmentTypes(out uint32 segmentCount, out XPS_SEGMENT_TYPE segmentTypes) mut => VT.GetSegmentTypes(ref this, out segmentCount, out segmentTypes);
+			public HRESULT GetSegmentStrokes(out uint32 segmentCount, out BOOL segmentStrokes) mut => VT.GetSegmentStrokes(ref this, out segmentCount, out segmentStrokes);
+			public HRESULT SetSegments(uint32 segmentCount, uint32 segmentDataCount, in XPS_SEGMENT_TYPE segmentTypes, in float segmentData, in BOOL segmentStrokes) mut => VT.SetSegments(ref this, segmentCount, segmentDataCount, segmentTypes, segmentData, segmentStrokes);
+			public HRESULT GetStartPoint(out XPS_POINT startPoint) mut => VT.GetStartPoint(ref this, out startPoint);
+			public HRESULT SetStartPoint(in XPS_POINT startPoint) mut => VT.SetStartPoint(ref this, startPoint);
+			public HRESULT GetIsClosed(out BOOL isClosed) mut => VT.GetIsClosed(ref this, out isClosed);
+			public HRESULT SetIsClosed(BOOL isClosed) mut => VT.SetIsClosed(ref this, isClosed);
+			public HRESULT GetIsFilled(out BOOL isFilled) mut => VT.GetIsFilled(ref this, out isFilled);
+			public HRESULT SetIsFilled(BOOL isFilled) mut => VT.SetIsFilled(ref this, isFilled);
+			public HRESULT GetSegmentCount(out uint32 segmentCount) mut => VT.GetSegmentCount(ref this, out segmentCount);
+			public HRESULT GetSegmentDataCount(out uint32 segmentDataCount) mut => VT.GetSegmentDataCount(ref this, out segmentDataCount);
+			public HRESULT GetSegmentStrokePattern(out XPS_SEGMENT_STROKE_PATTERN segmentStrokePattern) mut => VT.GetSegmentStrokePattern(ref this, out segmentStrokePattern);
+			public HRESULT Clone(out IXpsOMGeometryFigure* geometryFigure) mut => VT.Clone(ref this, out geometryFigure);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1114,30 +802,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMGeometryFigure* geometryFigure) mut
-			{
-				return VT.GetAt(ref this, index, out geometryFigure);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMGeometryFigure geometryFigure) mut
-			{
-				return VT.InsertAt(ref this, index, ref geometryFigure);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMGeometryFigure geometryFigure) mut
-			{
-				return VT.SetAt(ref this, index, ref geometryFigure);
-			}
-			public HRESULT Append(ref IXpsOMGeometryFigure geometryFigure) mut
-			{
-				return VT.Append(ref this, ref geometryFigure);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMGeometryFigure* geometryFigure) mut => VT.GetAt(ref this, index, out geometryFigure);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMGeometryFigure geometryFigure) mut => VT.InsertAt(ref this, index, ref geometryFigure);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMGeometryFigure geometryFigure) mut => VT.SetAt(ref this, index, ref geometryFigure);
+			public HRESULT Append(ref IXpsOMGeometryFigure geometryFigure) mut => VT.Append(ref this, ref geometryFigure);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1156,154 +827,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGeometry(out IXpsOMGeometry* geometry) mut
-			{
-				return VT.GetGeometry(ref this, out geometry);
-			}
-			public HRESULT GetGeometryLocal(out IXpsOMGeometry* geometry) mut
-			{
-				return VT.GetGeometryLocal(ref this, out geometry);
-			}
-			public HRESULT SetGeometryLocal(ref IXpsOMGeometry geometry) mut
-			{
-				return VT.SetGeometryLocal(ref this, ref geometry);
-			}
-			public HRESULT GetGeometryLookup(out PWSTR lookup) mut
-			{
-				return VT.GetGeometryLookup(ref this, out lookup);
-			}
-			public HRESULT SetGeometryLookup(PWSTR lookup) mut
-			{
-				return VT.SetGeometryLookup(ref this, lookup);
-			}
-			public HRESULT GetAccessibilityShortDescription(out PWSTR shortDescription) mut
-			{
-				return VT.GetAccessibilityShortDescription(ref this, out shortDescription);
-			}
-			public HRESULT SetAccessibilityShortDescription(PWSTR shortDescription) mut
-			{
-				return VT.SetAccessibilityShortDescription(ref this, shortDescription);
-			}
-			public HRESULT GetAccessibilityLongDescription(out PWSTR longDescription) mut
-			{
-				return VT.GetAccessibilityLongDescription(ref this, out longDescription);
-			}
-			public HRESULT SetAccessibilityLongDescription(PWSTR longDescription) mut
-			{
-				return VT.SetAccessibilityLongDescription(ref this, longDescription);
-			}
-			public HRESULT GetSnapsToPixels(out BOOL snapsToPixels) mut
-			{
-				return VT.GetSnapsToPixels(ref this, out snapsToPixels);
-			}
-			public HRESULT SetSnapsToPixels(BOOL snapsToPixels) mut
-			{
-				return VT.SetSnapsToPixels(ref this, snapsToPixels);
-			}
-			public HRESULT GetStrokeBrush(out IXpsOMBrush* brush) mut
-			{
-				return VT.GetStrokeBrush(ref this, out brush);
-			}
-			public HRESULT GetStrokeBrushLocal(out IXpsOMBrush* brush) mut
-			{
-				return VT.GetStrokeBrushLocal(ref this, out brush);
-			}
-			public HRESULT SetStrokeBrushLocal(ref IXpsOMBrush brush) mut
-			{
-				return VT.SetStrokeBrushLocal(ref this, ref brush);
-			}
-			public HRESULT GetStrokeBrushLookup(out PWSTR lookup) mut
-			{
-				return VT.GetStrokeBrushLookup(ref this, out lookup);
-			}
-			public HRESULT SetStrokeBrushLookup(PWSTR lookup) mut
-			{
-				return VT.SetStrokeBrushLookup(ref this, lookup);
-			}
-			public HRESULT GetStrokeDashes(out IXpsOMDashCollection* strokeDashes) mut
-			{
-				return VT.GetStrokeDashes(ref this, out strokeDashes);
-			}
-			public HRESULT GetStrokeDashCap(out XPS_DASH_CAP strokeDashCap) mut
-			{
-				return VT.GetStrokeDashCap(ref this, out strokeDashCap);
-			}
-			public HRESULT SetStrokeDashCap(XPS_DASH_CAP strokeDashCap) mut
-			{
-				return VT.SetStrokeDashCap(ref this, strokeDashCap);
-			}
-			public HRESULT GetStrokeDashOffset(out float strokeDashOffset) mut
-			{
-				return VT.GetStrokeDashOffset(ref this, out strokeDashOffset);
-			}
-			public HRESULT SetStrokeDashOffset(float strokeDashOffset) mut
-			{
-				return VT.SetStrokeDashOffset(ref this, strokeDashOffset);
-			}
-			public HRESULT GetStrokeStartLineCap(out XPS_LINE_CAP strokeStartLineCap) mut
-			{
-				return VT.GetStrokeStartLineCap(ref this, out strokeStartLineCap);
-			}
-			public HRESULT SetStrokeStartLineCap(XPS_LINE_CAP strokeStartLineCap) mut
-			{
-				return VT.SetStrokeStartLineCap(ref this, strokeStartLineCap);
-			}
-			public HRESULT GetStrokeEndLineCap(out XPS_LINE_CAP strokeEndLineCap) mut
-			{
-				return VT.GetStrokeEndLineCap(ref this, out strokeEndLineCap);
-			}
-			public HRESULT SetStrokeEndLineCap(XPS_LINE_CAP strokeEndLineCap) mut
-			{
-				return VT.SetStrokeEndLineCap(ref this, strokeEndLineCap);
-			}
-			public HRESULT GetStrokeLineJoin(out XPS_LINE_JOIN strokeLineJoin) mut
-			{
-				return VT.GetStrokeLineJoin(ref this, out strokeLineJoin);
-			}
-			public HRESULT SetStrokeLineJoin(XPS_LINE_JOIN strokeLineJoin) mut
-			{
-				return VT.SetStrokeLineJoin(ref this, strokeLineJoin);
-			}
-			public HRESULT GetStrokeMiterLimit(out float strokeMiterLimit) mut
-			{
-				return VT.GetStrokeMiterLimit(ref this, out strokeMiterLimit);
-			}
-			public HRESULT SetStrokeMiterLimit(float strokeMiterLimit) mut
-			{
-				return VT.SetStrokeMiterLimit(ref this, strokeMiterLimit);
-			}
-			public HRESULT GetStrokeThickness(out float strokeThickness) mut
-			{
-				return VT.GetStrokeThickness(ref this, out strokeThickness);
-			}
-			public HRESULT SetStrokeThickness(float strokeThickness) mut
-			{
-				return VT.SetStrokeThickness(ref this, strokeThickness);
-			}
-			public HRESULT GetFillBrush(out IXpsOMBrush* brush) mut
-			{
-				return VT.GetFillBrush(ref this, out brush);
-			}
-			public HRESULT GetFillBrushLocal(out IXpsOMBrush* brush) mut
-			{
-				return VT.GetFillBrushLocal(ref this, out brush);
-			}
-			public HRESULT SetFillBrushLocal(ref IXpsOMBrush brush) mut
-			{
-				return VT.SetFillBrushLocal(ref this, ref brush);
-			}
-			public HRESULT GetFillBrushLookup(out PWSTR lookup) mut
-			{
-				return VT.GetFillBrushLookup(ref this, out lookup);
-			}
-			public HRESULT SetFillBrushLookup(PWSTR lookup) mut
-			{
-				return VT.SetFillBrushLookup(ref this, lookup);
-			}
-			public HRESULT Clone(out IXpsOMPath* path) mut
-			{
-				return VT.Clone(ref this, out path);
-			}
+			public HRESULT GetGeometry(out IXpsOMGeometry* geometry) mut => VT.GetGeometry(ref this, out geometry);
+			public HRESULT GetGeometryLocal(out IXpsOMGeometry* geometry) mut => VT.GetGeometryLocal(ref this, out geometry);
+			public HRESULT SetGeometryLocal(ref IXpsOMGeometry geometry) mut => VT.SetGeometryLocal(ref this, ref geometry);
+			public HRESULT GetGeometryLookup(out PWSTR lookup) mut => VT.GetGeometryLookup(ref this, out lookup);
+			public HRESULT SetGeometryLookup(PWSTR lookup) mut => VT.SetGeometryLookup(ref this, lookup);
+			public HRESULT GetAccessibilityShortDescription(out PWSTR shortDescription) mut => VT.GetAccessibilityShortDescription(ref this, out shortDescription);
+			public HRESULT SetAccessibilityShortDescription(PWSTR shortDescription) mut => VT.SetAccessibilityShortDescription(ref this, shortDescription);
+			public HRESULT GetAccessibilityLongDescription(out PWSTR longDescription) mut => VT.GetAccessibilityLongDescription(ref this, out longDescription);
+			public HRESULT SetAccessibilityLongDescription(PWSTR longDescription) mut => VT.SetAccessibilityLongDescription(ref this, longDescription);
+			public HRESULT GetSnapsToPixels(out BOOL snapsToPixels) mut => VT.GetSnapsToPixels(ref this, out snapsToPixels);
+			public HRESULT SetSnapsToPixels(BOOL snapsToPixels) mut => VT.SetSnapsToPixels(ref this, snapsToPixels);
+			public HRESULT GetStrokeBrush(out IXpsOMBrush* brush) mut => VT.GetStrokeBrush(ref this, out brush);
+			public HRESULT GetStrokeBrushLocal(out IXpsOMBrush* brush) mut => VT.GetStrokeBrushLocal(ref this, out brush);
+			public HRESULT SetStrokeBrushLocal(ref IXpsOMBrush brush) mut => VT.SetStrokeBrushLocal(ref this, ref brush);
+			public HRESULT GetStrokeBrushLookup(out PWSTR lookup) mut => VT.GetStrokeBrushLookup(ref this, out lookup);
+			public HRESULT SetStrokeBrushLookup(PWSTR lookup) mut => VT.SetStrokeBrushLookup(ref this, lookup);
+			public HRESULT GetStrokeDashes(out IXpsOMDashCollection* strokeDashes) mut => VT.GetStrokeDashes(ref this, out strokeDashes);
+			public HRESULT GetStrokeDashCap(out XPS_DASH_CAP strokeDashCap) mut => VT.GetStrokeDashCap(ref this, out strokeDashCap);
+			public HRESULT SetStrokeDashCap(XPS_DASH_CAP strokeDashCap) mut => VT.SetStrokeDashCap(ref this, strokeDashCap);
+			public HRESULT GetStrokeDashOffset(out float strokeDashOffset) mut => VT.GetStrokeDashOffset(ref this, out strokeDashOffset);
+			public HRESULT SetStrokeDashOffset(float strokeDashOffset) mut => VT.SetStrokeDashOffset(ref this, strokeDashOffset);
+			public HRESULT GetStrokeStartLineCap(out XPS_LINE_CAP strokeStartLineCap) mut => VT.GetStrokeStartLineCap(ref this, out strokeStartLineCap);
+			public HRESULT SetStrokeStartLineCap(XPS_LINE_CAP strokeStartLineCap) mut => VT.SetStrokeStartLineCap(ref this, strokeStartLineCap);
+			public HRESULT GetStrokeEndLineCap(out XPS_LINE_CAP strokeEndLineCap) mut => VT.GetStrokeEndLineCap(ref this, out strokeEndLineCap);
+			public HRESULT SetStrokeEndLineCap(XPS_LINE_CAP strokeEndLineCap) mut => VT.SetStrokeEndLineCap(ref this, strokeEndLineCap);
+			public HRESULT GetStrokeLineJoin(out XPS_LINE_JOIN strokeLineJoin) mut => VT.GetStrokeLineJoin(ref this, out strokeLineJoin);
+			public HRESULT SetStrokeLineJoin(XPS_LINE_JOIN strokeLineJoin) mut => VT.SetStrokeLineJoin(ref this, strokeLineJoin);
+			public HRESULT GetStrokeMiterLimit(out float strokeMiterLimit) mut => VT.GetStrokeMiterLimit(ref this, out strokeMiterLimit);
+			public HRESULT SetStrokeMiterLimit(float strokeMiterLimit) mut => VT.SetStrokeMiterLimit(ref this, strokeMiterLimit);
+			public HRESULT GetStrokeThickness(out float strokeThickness) mut => VT.GetStrokeThickness(ref this, out strokeThickness);
+			public HRESULT SetStrokeThickness(float strokeThickness) mut => VT.SetStrokeThickness(ref this, strokeThickness);
+			public HRESULT GetFillBrush(out IXpsOMBrush* brush) mut => VT.GetFillBrush(ref this, out brush);
+			public HRESULT GetFillBrushLocal(out IXpsOMBrush* brush) mut => VT.GetFillBrushLocal(ref this, out brush);
+			public HRESULT SetFillBrushLocal(ref IXpsOMBrush brush) mut => VT.SetFillBrushLocal(ref this, ref brush);
+			public HRESULT GetFillBrushLookup(out PWSTR lookup) mut => VT.GetFillBrushLookup(ref this, out lookup);
+			public HRESULT SetFillBrushLookup(PWSTR lookup) mut => VT.SetFillBrushLookup(ref this, lookup);
+			public HRESULT Clone(out IXpsOMPath* path) mut => VT.Clone(ref this, out path);
+
 			[CRepr]
 			public struct VTable : IXpsOMVisual.VTable
 			{
@@ -1353,14 +914,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOpacity(out float opacity) mut
-			{
-				return VT.GetOpacity(ref this, out opacity);
-			}
-			public HRESULT SetOpacity(float opacity) mut
-			{
-				return VT.SetOpacity(ref this, opacity);
-			}
+			public HRESULT GetOpacity(out float opacity) mut => VT.GetOpacity(ref this, out opacity);
+			public HRESULT SetOpacity(float opacity) mut => VT.SetOpacity(ref this, opacity);
+
 			[CRepr]
 			public struct VTable : IXpsOMShareable.VTable
 			{
@@ -1375,30 +931,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMGradientStop* stop) mut
-			{
-				return VT.GetAt(ref this, index, out stop);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMGradientStop stop) mut
-			{
-				return VT.InsertAt(ref this, index, ref stop);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMGradientStop stop) mut
-			{
-				return VT.SetAt(ref this, index, ref stop);
-			}
-			public HRESULT Append(ref IXpsOMGradientStop stop) mut
-			{
-				return VT.Append(ref this, ref stop);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMGradientStop* stop) mut => VT.GetAt(ref this, index, out stop);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMGradientStop stop) mut => VT.InsertAt(ref this, index, ref stop);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMGradientStop stop) mut => VT.SetAt(ref this, index, ref stop);
+			public HRESULT Append(ref IXpsOMGradientStop stop) mut => VT.Append(ref this, ref stop);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1417,18 +956,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetColor(out XPS_COLOR color, out IXpsOMColorProfileResource* colorProfile) mut
-			{
-				return VT.GetColor(ref this, out color, out colorProfile);
-			}
-			public HRESULT SetColor(in XPS_COLOR color, ref IXpsOMColorProfileResource colorProfile) mut
-			{
-				return VT.SetColor(ref this, color, ref colorProfile);
-			}
-			public HRESULT Clone(out IXpsOMSolidColorBrush* solidColorBrush) mut
-			{
-				return VT.Clone(ref this, out solidColorBrush);
-			}
+			public HRESULT GetColor(out XPS_COLOR color, out IXpsOMColorProfileResource* colorProfile) mut => VT.GetColor(ref this, out color, out colorProfile);
+			public HRESULT SetColor(in XPS_COLOR color, ref IXpsOMColorProfileResource colorProfile) mut => VT.SetColor(ref this, color, ref colorProfile);
+			public HRESULT Clone(out IXpsOMSolidColorBrush* solidColorBrush) mut => VT.Clone(ref this, out solidColorBrush);
+
 			[CRepr]
 			public struct VTable : IXpsOMBrush.VTable
 			{
@@ -1444,50 +975,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTransform(out IXpsOMMatrixTransform* transform) mut
-			{
-				return VT.GetTransform(ref this, out transform);
-			}
-			public HRESULT GetTransformLocal(out IXpsOMMatrixTransform* transform) mut
-			{
-				return VT.GetTransformLocal(ref this, out transform);
-			}
-			public HRESULT SetTransformLocal(ref IXpsOMMatrixTransform transform) mut
-			{
-				return VT.SetTransformLocal(ref this, ref transform);
-			}
-			public HRESULT GetTransformLookup(out PWSTR key) mut
-			{
-				return VT.GetTransformLookup(ref this, out key);
-			}
-			public HRESULT SetTransformLookup(PWSTR key) mut
-			{
-				return VT.SetTransformLookup(ref this, key);
-			}
-			public HRESULT GetViewbox(out XPS_RECT viewbox) mut
-			{
-				return VT.GetViewbox(ref this, out viewbox);
-			}
-			public HRESULT SetViewbox(in XPS_RECT viewbox) mut
-			{
-				return VT.SetViewbox(ref this, viewbox);
-			}
-			public HRESULT GetViewport(out XPS_RECT viewport) mut
-			{
-				return VT.GetViewport(ref this, out viewport);
-			}
-			public HRESULT SetViewport(in XPS_RECT viewport) mut
-			{
-				return VT.SetViewport(ref this, viewport);
-			}
-			public HRESULT GetTileMode(out XPS_TILE_MODE tileMode) mut
-			{
-				return VT.GetTileMode(ref this, out tileMode);
-			}
-			public HRESULT SetTileMode(XPS_TILE_MODE tileMode) mut
-			{
-				return VT.SetTileMode(ref this, tileMode);
-			}
+			public HRESULT GetTransform(out IXpsOMMatrixTransform* transform) mut => VT.GetTransform(ref this, out transform);
+			public HRESULT GetTransformLocal(out IXpsOMMatrixTransform* transform) mut => VT.GetTransformLocal(ref this, out transform);
+			public HRESULT SetTransformLocal(ref IXpsOMMatrixTransform transform) mut => VT.SetTransformLocal(ref this, ref transform);
+			public HRESULT GetTransformLookup(out PWSTR key) mut => VT.GetTransformLookup(ref this, out key);
+			public HRESULT SetTransformLookup(PWSTR key) mut => VT.SetTransformLookup(ref this, key);
+			public HRESULT GetViewbox(out XPS_RECT viewbox) mut => VT.GetViewbox(ref this, out viewbox);
+			public HRESULT SetViewbox(in XPS_RECT viewbox) mut => VT.SetViewbox(ref this, viewbox);
+			public HRESULT GetViewport(out XPS_RECT viewport) mut => VT.GetViewport(ref this, out viewport);
+			public HRESULT SetViewport(in XPS_RECT viewport) mut => VT.SetViewport(ref this, viewport);
+			public HRESULT GetTileMode(out XPS_TILE_MODE tileMode) mut => VT.GetTileMode(ref this, out tileMode);
+			public HRESULT SetTileMode(XPS_TILE_MODE tileMode) mut => VT.SetTileMode(ref this, tileMode);
+
 			[CRepr]
 			public struct VTable : IXpsOMBrush.VTable
 			{
@@ -1511,30 +1010,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVisual(out IXpsOMVisual* visual) mut
-			{
-				return VT.GetVisual(ref this, out visual);
-			}
-			public HRESULT GetVisualLocal(out IXpsOMVisual* visual) mut
-			{
-				return VT.GetVisualLocal(ref this, out visual);
-			}
-			public HRESULT SetVisualLocal(ref IXpsOMVisual visual) mut
-			{
-				return VT.SetVisualLocal(ref this, ref visual);
-			}
-			public HRESULT GetVisualLookup(out PWSTR lookup) mut
-			{
-				return VT.GetVisualLookup(ref this, out lookup);
-			}
-			public HRESULT SetVisualLookup(PWSTR lookup) mut
-			{
-				return VT.SetVisualLookup(ref this, lookup);
-			}
-			public HRESULT Clone(out IXpsOMVisualBrush* visualBrush) mut
-			{
-				return VT.Clone(ref this, out visualBrush);
-			}
+			public HRESULT GetVisual(out IXpsOMVisual* visual) mut => VT.GetVisual(ref this, out visual);
+			public HRESULT GetVisualLocal(out IXpsOMVisual* visual) mut => VT.GetVisualLocal(ref this, out visual);
+			public HRESULT SetVisualLocal(ref IXpsOMVisual visual) mut => VT.SetVisualLocal(ref this, ref visual);
+			public HRESULT GetVisualLookup(out PWSTR lookup) mut => VT.GetVisualLookup(ref this, out lookup);
+			public HRESULT SetVisualLookup(PWSTR lookup) mut => VT.SetVisualLookup(ref this, lookup);
+			public HRESULT Clone(out IXpsOMVisualBrush* visualBrush) mut => VT.Clone(ref this, out visualBrush);
+
 			[CRepr]
 			public struct VTable : IXpsOMTileBrush.VTable
 			{
@@ -1553,26 +1035,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetImageResource(out IXpsOMImageResource* imageResource) mut
-			{
-				return VT.GetImageResource(ref this, out imageResource);
-			}
-			public HRESULT SetImageResource(ref IXpsOMImageResource imageResource) mut
-			{
-				return VT.SetImageResource(ref this, ref imageResource);
-			}
-			public HRESULT GetColorProfileResource(out IXpsOMColorProfileResource* colorProfileResource) mut
-			{
-				return VT.GetColorProfileResource(ref this, out colorProfileResource);
-			}
-			public HRESULT SetColorProfileResource(ref IXpsOMColorProfileResource colorProfileResource) mut
-			{
-				return VT.SetColorProfileResource(ref this, ref colorProfileResource);
-			}
-			public HRESULT Clone(out IXpsOMImageBrush* imageBrush) mut
-			{
-				return VT.Clone(ref this, out imageBrush);
-			}
+			public HRESULT GetImageResource(out IXpsOMImageResource* imageResource) mut => VT.GetImageResource(ref this, out imageResource);
+			public HRESULT SetImageResource(ref IXpsOMImageResource imageResource) mut => VT.SetImageResource(ref this, ref imageResource);
+			public HRESULT GetColorProfileResource(out IXpsOMColorProfileResource* colorProfileResource) mut => VT.GetColorProfileResource(ref this, out colorProfileResource);
+			public HRESULT SetColorProfileResource(ref IXpsOMColorProfileResource colorProfileResource) mut => VT.SetColorProfileResource(ref this, ref colorProfileResource);
+			public HRESULT Clone(out IXpsOMImageBrush* imageBrush) mut => VT.Clone(ref this, out imageBrush);
+
 			[CRepr]
 			public struct VTable : IXpsOMTileBrush.VTable
 			{
@@ -1590,30 +1058,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMGradientBrush* owner) mut
-			{
-				return VT.GetOwner(ref this, out owner);
-			}
-			public HRESULT GetOffset(out float offset) mut
-			{
-				return VT.GetOffset(ref this, out offset);
-			}
-			public HRESULT SetOffset(float offset) mut
-			{
-				return VT.SetOffset(ref this, offset);
-			}
-			public HRESULT GetColor(out XPS_COLOR color, out IXpsOMColorProfileResource* colorProfile) mut
-			{
-				return VT.GetColor(ref this, out color, out colorProfile);
-			}
-			public HRESULT SetColor(in XPS_COLOR color, ref IXpsOMColorProfileResource colorProfile) mut
-			{
-				return VT.SetColor(ref this, color, ref colorProfile);
-			}
-			public HRESULT Clone(out IXpsOMGradientStop* gradientStop) mut
-			{
-				return VT.Clone(ref this, out gradientStop);
-			}
+			public HRESULT GetOwner(out IXpsOMGradientBrush* owner) mut => VT.GetOwner(ref this, out owner);
+			public HRESULT GetOffset(out float offset) mut => VT.GetOffset(ref this, out offset);
+			public HRESULT SetOffset(float offset) mut => VT.SetOffset(ref this, offset);
+			public HRESULT GetColor(out XPS_COLOR color, out IXpsOMColorProfileResource* colorProfile) mut => VT.GetColor(ref this, out color, out colorProfile);
+			public HRESULT SetColor(in XPS_COLOR color, ref IXpsOMColorProfileResource colorProfile) mut => VT.SetColor(ref this, color, ref colorProfile);
+			public HRESULT Clone(out IXpsOMGradientStop* gradientStop) mut => VT.Clone(ref this, out gradientStop);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1632,46 +1083,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGradientStops(out IXpsOMGradientStopCollection* gradientStops) mut
-			{
-				return VT.GetGradientStops(ref this, out gradientStops);
-			}
-			public HRESULT GetTransform(out IXpsOMMatrixTransform* transform) mut
-			{
-				return VT.GetTransform(ref this, out transform);
-			}
-			public HRESULT GetTransformLocal(out IXpsOMMatrixTransform* transform) mut
-			{
-				return VT.GetTransformLocal(ref this, out transform);
-			}
-			public HRESULT SetTransformLocal(ref IXpsOMMatrixTransform transform) mut
-			{
-				return VT.SetTransformLocal(ref this, ref transform);
-			}
-			public HRESULT GetTransformLookup(out PWSTR key) mut
-			{
-				return VT.GetTransformLookup(ref this, out key);
-			}
-			public HRESULT SetTransformLookup(PWSTR key) mut
-			{
-				return VT.SetTransformLookup(ref this, key);
-			}
-			public HRESULT GetSpreadMethod(out XPS_SPREAD_METHOD spreadMethod) mut
-			{
-				return VT.GetSpreadMethod(ref this, out spreadMethod);
-			}
-			public HRESULT SetSpreadMethod(XPS_SPREAD_METHOD spreadMethod) mut
-			{
-				return VT.SetSpreadMethod(ref this, spreadMethod);
-			}
-			public HRESULT GetColorInterpolationMode(out XPS_COLOR_INTERPOLATION colorInterpolationMode) mut
-			{
-				return VT.GetColorInterpolationMode(ref this, out colorInterpolationMode);
-			}
-			public HRESULT SetColorInterpolationMode(XPS_COLOR_INTERPOLATION colorInterpolationMode) mut
-			{
-				return VT.SetColorInterpolationMode(ref this, colorInterpolationMode);
-			}
+			public HRESULT GetGradientStops(out IXpsOMGradientStopCollection* gradientStops) mut => VT.GetGradientStops(ref this, out gradientStops);
+			public HRESULT GetTransform(out IXpsOMMatrixTransform* transform) mut => VT.GetTransform(ref this, out transform);
+			public HRESULT GetTransformLocal(out IXpsOMMatrixTransform* transform) mut => VT.GetTransformLocal(ref this, out transform);
+			public HRESULT SetTransformLocal(ref IXpsOMMatrixTransform transform) mut => VT.SetTransformLocal(ref this, ref transform);
+			public HRESULT GetTransformLookup(out PWSTR key) mut => VT.GetTransformLookup(ref this, out key);
+			public HRESULT SetTransformLookup(PWSTR key) mut => VT.SetTransformLookup(ref this, key);
+			public HRESULT GetSpreadMethod(out XPS_SPREAD_METHOD spreadMethod) mut => VT.GetSpreadMethod(ref this, out spreadMethod);
+			public HRESULT SetSpreadMethod(XPS_SPREAD_METHOD spreadMethod) mut => VT.SetSpreadMethod(ref this, spreadMethod);
+			public HRESULT GetColorInterpolationMode(out XPS_COLOR_INTERPOLATION colorInterpolationMode) mut => VT.GetColorInterpolationMode(ref this, out colorInterpolationMode);
+			public HRESULT SetColorInterpolationMode(XPS_COLOR_INTERPOLATION colorInterpolationMode) mut => VT.SetColorInterpolationMode(ref this, colorInterpolationMode);
+
 			[CRepr]
 			public struct VTable : IXpsOMBrush.VTable
 			{
@@ -1694,26 +1116,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStartPoint(out XPS_POINT startPoint) mut
-			{
-				return VT.GetStartPoint(ref this, out startPoint);
-			}
-			public HRESULT SetStartPoint(in XPS_POINT startPoint) mut
-			{
-				return VT.SetStartPoint(ref this, startPoint);
-			}
-			public HRESULT GetEndPoint(out XPS_POINT endPoint) mut
-			{
-				return VT.GetEndPoint(ref this, out endPoint);
-			}
-			public HRESULT SetEndPoint(in XPS_POINT endPoint) mut
-			{
-				return VT.SetEndPoint(ref this, endPoint);
-			}
-			public HRESULT Clone(out IXpsOMLinearGradientBrush* linearGradientBrush) mut
-			{
-				return VT.Clone(ref this, out linearGradientBrush);
-			}
+			public HRESULT GetStartPoint(out XPS_POINT startPoint) mut => VT.GetStartPoint(ref this, out startPoint);
+			public HRESULT SetStartPoint(in XPS_POINT startPoint) mut => VT.SetStartPoint(ref this, startPoint);
+			public HRESULT GetEndPoint(out XPS_POINT endPoint) mut => VT.GetEndPoint(ref this, out endPoint);
+			public HRESULT SetEndPoint(in XPS_POINT endPoint) mut => VT.SetEndPoint(ref this, endPoint);
+			public HRESULT Clone(out IXpsOMLinearGradientBrush* linearGradientBrush) mut => VT.Clone(ref this, out linearGradientBrush);
+
 			[CRepr]
 			public struct VTable : IXpsOMGradientBrush.VTable
 			{
@@ -1731,34 +1139,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCenter(out XPS_POINT center) mut
-			{
-				return VT.GetCenter(ref this, out center);
-			}
-			public HRESULT SetCenter(in XPS_POINT center) mut
-			{
-				return VT.SetCenter(ref this, center);
-			}
-			public HRESULT GetRadiiSizes(out XPS_SIZE radiiSizes) mut
-			{
-				return VT.GetRadiiSizes(ref this, out radiiSizes);
-			}
-			public HRESULT SetRadiiSizes(in XPS_SIZE radiiSizes) mut
-			{
-				return VT.SetRadiiSizes(ref this, radiiSizes);
-			}
-			public HRESULT GetGradientOrigin(out XPS_POINT origin) mut
-			{
-				return VT.GetGradientOrigin(ref this, out origin);
-			}
-			public HRESULT SetGradientOrigin(in XPS_POINT origin) mut
-			{
-				return VT.SetGradientOrigin(ref this, origin);
-			}
-			public HRESULT Clone(out IXpsOMRadialGradientBrush* radialGradientBrush) mut
-			{
-				return VT.Clone(ref this, out radialGradientBrush);
-			}
+			public HRESULT GetCenter(out XPS_POINT center) mut => VT.GetCenter(ref this, out center);
+			public HRESULT SetCenter(in XPS_POINT center) mut => VT.SetCenter(ref this, center);
+			public HRESULT GetRadiiSizes(out XPS_SIZE radiiSizes) mut => VT.GetRadiiSizes(ref this, out radiiSizes);
+			public HRESULT SetRadiiSizes(in XPS_SIZE radiiSizes) mut => VT.SetRadiiSizes(ref this, radiiSizes);
+			public HRESULT GetGradientOrigin(out XPS_POINT origin) mut => VT.GetGradientOrigin(ref this, out origin);
+			public HRESULT SetGradientOrigin(in XPS_POINT origin) mut => VT.SetGradientOrigin(ref this, origin);
+			public HRESULT Clone(out IXpsOMRadialGradientBrush* radialGradientBrush) mut => VT.Clone(ref this, out radialGradientBrush);
+
 			[CRepr]
 			public struct VTable : IXpsOMGradientBrush.VTable
 			{
@@ -1778,6 +1166,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IXpsOMPart.VTable
 			{
@@ -1790,22 +1179,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFontResources(out IXpsOMFontResourceCollection* fontResources) mut
-			{
-				return VT.GetFontResources(ref this, out fontResources);
-			}
-			public HRESULT GetImageResources(out IXpsOMImageResourceCollection* imageResources) mut
-			{
-				return VT.GetImageResources(ref this, out imageResources);
-			}
-			public HRESULT GetColorProfileResources(out IXpsOMColorProfileResourceCollection* colorProfileResources) mut
-			{
-				return VT.GetColorProfileResources(ref this, out colorProfileResources);
-			}
-			public HRESULT GetRemoteDictionaryResources(out IXpsOMRemoteDictionaryResourceCollection* dictionaryResources) mut
-			{
-				return VT.GetRemoteDictionaryResources(ref this, out dictionaryResources);
-			}
+			public HRESULT GetFontResources(out IXpsOMFontResourceCollection* fontResources) mut => VT.GetFontResources(ref this, out fontResources);
+			public HRESULT GetImageResources(out IXpsOMImageResourceCollection* imageResources) mut => VT.GetImageResources(ref this, out imageResources);
+			public HRESULT GetColorProfileResources(out IXpsOMColorProfileResourceCollection* colorProfileResources) mut => VT.GetColorProfileResources(ref this, out colorProfileResources);
+			public HRESULT GetRemoteDictionaryResources(out IXpsOMRemoteDictionaryResourceCollection* dictionaryResources) mut => VT.GetRemoteDictionaryResources(ref this, out dictionaryResources);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1822,46 +1200,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IUnknown* owner) mut
-			{
-				return VT.GetOwner(ref this, out owner);
-			}
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out PWSTR key, out IXpsOMShareable* entry) mut
-			{
-				return VT.GetAt(ref this, index, out key, out entry);
-			}
-			public HRESULT GetByKey(PWSTR key, ref IXpsOMShareable beforeEntry, out IXpsOMShareable* entry) mut
-			{
-				return VT.GetByKey(ref this, key, ref beforeEntry, out entry);
-			}
-			public HRESULT GetIndex(ref IXpsOMShareable entry, out uint32 index) mut
-			{
-				return VT.GetIndex(ref this, ref entry, out index);
-			}
-			public HRESULT Append(PWSTR key, ref IXpsOMShareable entry) mut
-			{
-				return VT.Append(ref this, key, ref entry);
-			}
-			public HRESULT InsertAt(uint32 index, PWSTR key, ref IXpsOMShareable entry) mut
-			{
-				return VT.InsertAt(ref this, index, key, ref entry);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, PWSTR key, ref IXpsOMShareable entry) mut
-			{
-				return VT.SetAt(ref this, index, key, ref entry);
-			}
-			public HRESULT Clone(out IXpsOMDictionary* dictionary) mut
-			{
-				return VT.Clone(ref this, out dictionary);
-			}
+			public HRESULT GetOwner(out IUnknown* owner) mut => VT.GetOwner(ref this, out owner);
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out PWSTR key, out IXpsOMShareable* entry) mut => VT.GetAt(ref this, index, out key, out entry);
+			public HRESULT GetByKey(PWSTR key, ref IXpsOMShareable beforeEntry, out IXpsOMShareable* entry) mut => VT.GetByKey(ref this, key, ref beforeEntry, out entry);
+			public HRESULT GetIndex(ref IXpsOMShareable entry, out uint32 index) mut => VT.GetIndex(ref this, ref entry, out index);
+			public HRESULT Append(PWSTR key, ref IXpsOMShareable entry) mut => VT.Append(ref this, key, ref entry);
+			public HRESULT InsertAt(uint32 index, PWSTR key, ref IXpsOMShareable entry) mut => VT.InsertAt(ref this, index, key, ref entry);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, PWSTR key, ref IXpsOMShareable entry) mut => VT.SetAt(ref this, index, key, ref entry);
+			public HRESULT Clone(out IXpsOMDictionary* dictionary) mut => VT.Clone(ref this, out dictionary);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1884,18 +1233,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStream(out IStream* readerStream) mut
-			{
-				return VT.GetStream(ref this, out readerStream);
-			}
-			public HRESULT SetContent(ref IStream sourceStream, XPS_FONT_EMBEDDING embeddingOption, ref IOpcPartUri partName) mut
-			{
-				return VT.SetContent(ref this, ref sourceStream, embeddingOption, ref partName);
-			}
-			public HRESULT GetEmbeddingOption(out XPS_FONT_EMBEDDING embeddingOption) mut
-			{
-				return VT.GetEmbeddingOption(ref this, out embeddingOption);
-			}
+			public HRESULT GetStream(out IStream* readerStream) mut => VT.GetStream(ref this, out readerStream);
+			public HRESULT SetContent(ref IStream sourceStream, XPS_FONT_EMBEDDING embeddingOption, ref IOpcPartUri partName) mut => VT.SetContent(ref this, ref sourceStream, embeddingOption, ref partName);
+			public HRESULT GetEmbeddingOption(out XPS_FONT_EMBEDDING embeddingOption) mut => VT.GetEmbeddingOption(ref this, out embeddingOption);
+
 			[CRepr]
 			public struct VTable : IXpsOMResource.VTable
 			{
@@ -1911,34 +1252,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMFontResource* value) mut
-			{
-				return VT.GetAt(ref this, index, out value);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMFontResource value) mut
-			{
-				return VT.SetAt(ref this, index, ref value);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMFontResource value) mut
-			{
-				return VT.InsertAt(ref this, index, ref value);
-			}
-			public HRESULT Append(ref IXpsOMFontResource value) mut
-			{
-				return VT.Append(ref this, ref value);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMFontResource* part) mut
-			{
-				return VT.GetByPartName(ref this, ref partName, out part);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMFontResource* value) mut => VT.GetAt(ref this, index, out value);
+			public HRESULT SetAt(uint32 index, ref IXpsOMFontResource value) mut => VT.SetAt(ref this, index, ref value);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMFontResource value) mut => VT.InsertAt(ref this, index, ref value);
+			public HRESULT Append(ref IXpsOMFontResource value) mut => VT.Append(ref this, ref value);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMFontResource* part) mut => VT.GetByPartName(ref this, ref partName, out part);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1958,18 +1279,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStream(out IStream* readerStream) mut
-			{
-				return VT.GetStream(ref this, out readerStream);
-			}
-			public HRESULT SetContent(ref IStream sourceStream, XPS_IMAGE_TYPE imageType, ref IOpcPartUri partName) mut
-			{
-				return VT.SetContent(ref this, ref sourceStream, imageType, ref partName);
-			}
-			public HRESULT GetImageType(out XPS_IMAGE_TYPE imageType) mut
-			{
-				return VT.GetImageType(ref this, out imageType);
-			}
+			public HRESULT GetStream(out IStream* readerStream) mut => VT.GetStream(ref this, out readerStream);
+			public HRESULT SetContent(ref IStream sourceStream, XPS_IMAGE_TYPE imageType, ref IOpcPartUri partName) mut => VT.SetContent(ref this, ref sourceStream, imageType, ref partName);
+			public HRESULT GetImageType(out XPS_IMAGE_TYPE imageType) mut => VT.GetImageType(ref this, out imageType);
+
 			[CRepr]
 			public struct VTable : IXpsOMResource.VTable
 			{
@@ -1985,34 +1298,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMImageResource* object) mut
-			{
-				return VT.GetAt(ref this, index, out object);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMImageResource object) mut
-			{
-				return VT.InsertAt(ref this, index, ref object);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMImageResource object) mut
-			{
-				return VT.SetAt(ref this, index, ref object);
-			}
-			public HRESULT Append(ref IXpsOMImageResource object) mut
-			{
-				return VT.Append(ref this, ref object);
-			}
-			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMImageResource* part) mut
-			{
-				return VT.GetByPartName(ref this, ref partName, out part);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMImageResource* object) mut => VT.GetAt(ref this, index, out object);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMImageResource object) mut => VT.InsertAt(ref this, index, ref object);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMImageResource object) mut => VT.SetAt(ref this, index, ref object);
+			public HRESULT Append(ref IXpsOMImageResource object) mut => VT.Append(ref this, ref object);
+			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMImageResource* part) mut => VT.GetByPartName(ref this, ref partName, out part);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2032,14 +1325,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStream(out IStream* stream) mut
-			{
-				return VT.GetStream(ref this, out stream);
-			}
-			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut
-			{
-				return VT.SetContent(ref this, ref sourceStream, ref partName);
-			}
+			public HRESULT GetStream(out IStream* stream) mut => VT.GetStream(ref this, out stream);
+			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut => VT.SetContent(ref this, ref sourceStream, ref partName);
+
 			[CRepr]
 			public struct VTable : IXpsOMResource.VTable
 			{
@@ -2054,34 +1342,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMColorProfileResource* object) mut
-			{
-				return VT.GetAt(ref this, index, out object);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMColorProfileResource object) mut
-			{
-				return VT.InsertAt(ref this, index, ref object);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMColorProfileResource object) mut
-			{
-				return VT.SetAt(ref this, index, ref object);
-			}
-			public HRESULT Append(ref IXpsOMColorProfileResource object) mut
-			{
-				return VT.Append(ref this, ref object);
-			}
-			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMColorProfileResource* part) mut
-			{
-				return VT.GetByPartName(ref this, ref partName, out part);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMColorProfileResource* object) mut => VT.GetAt(ref this, index, out object);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMColorProfileResource object) mut => VT.InsertAt(ref this, index, ref object);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMColorProfileResource object) mut => VT.SetAt(ref this, index, ref object);
+			public HRESULT Append(ref IXpsOMColorProfileResource object) mut => VT.Append(ref this, ref object);
+			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMColorProfileResource* part) mut => VT.GetByPartName(ref this, ref partName, out part);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2101,14 +1369,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStream(out IStream* stream) mut
-			{
-				return VT.GetStream(ref this, out stream);
-			}
-			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut
-			{
-				return VT.SetContent(ref this, ref sourceStream, ref partName);
-			}
+			public HRESULT GetStream(out IStream* stream) mut => VT.GetStream(ref this, out stream);
+			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut => VT.SetContent(ref this, ref sourceStream, ref partName);
+
 			[CRepr]
 			public struct VTable : IXpsOMResource.VTable
 			{
@@ -2123,14 +1386,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDictionary(out IXpsOMDictionary* dictionary) mut
-			{
-				return VT.GetDictionary(ref this, out dictionary);
-			}
-			public HRESULT SetDictionary(ref IXpsOMDictionary dictionary) mut
-			{
-				return VT.SetDictionary(ref this, ref dictionary);
-			}
+			public HRESULT GetDictionary(out IXpsOMDictionary* dictionary) mut => VT.GetDictionary(ref this, out dictionary);
+			public HRESULT SetDictionary(ref IXpsOMDictionary dictionary) mut => VT.SetDictionary(ref this, ref dictionary);
+
 			[CRepr]
 			public struct VTable : IXpsOMResource.VTable
 			{
@@ -2145,34 +1403,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMRemoteDictionaryResource* object) mut
-			{
-				return VT.GetAt(ref this, index, out object);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMRemoteDictionaryResource object) mut
-			{
-				return VT.InsertAt(ref this, index, ref object);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMRemoteDictionaryResource object) mut
-			{
-				return VT.SetAt(ref this, index, ref object);
-			}
-			public HRESULT Append(ref IXpsOMRemoteDictionaryResource object) mut
-			{
-				return VT.Append(ref this, ref object);
-			}
-			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMRemoteDictionaryResource* remoteDictionaryResource) mut
-			{
-				return VT.GetByPartName(ref this, ref partName, out remoteDictionaryResource);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMRemoteDictionaryResource* object) mut => VT.GetAt(ref this, index, out object);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMRemoteDictionaryResource object) mut => VT.InsertAt(ref this, index, ref object);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMRemoteDictionaryResource object) mut => VT.SetAt(ref this, index, ref object);
+			public HRESULT Append(ref IXpsOMRemoteDictionaryResource object) mut => VT.Append(ref this, ref object);
+			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMRemoteDictionaryResource* remoteDictionaryResource) mut => VT.GetByPartName(ref this, ref partName, out remoteDictionaryResource);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2192,34 +1430,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMSignatureBlockResource* signatureBlockResource) mut
-			{
-				return VT.GetAt(ref this, index, out signatureBlockResource);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMSignatureBlockResource signatureBlockResource) mut
-			{
-				return VT.InsertAt(ref this, index, ref signatureBlockResource);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMSignatureBlockResource signatureBlockResource) mut
-			{
-				return VT.SetAt(ref this, index, ref signatureBlockResource);
-			}
-			public HRESULT Append(ref IXpsOMSignatureBlockResource signatureBlockResource) mut
-			{
-				return VT.Append(ref this, ref signatureBlockResource);
-			}
-			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMSignatureBlockResource* signatureBlockResource) mut
-			{
-				return VT.GetByPartName(ref this, ref partName, out signatureBlockResource);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMSignatureBlockResource* signatureBlockResource) mut => VT.GetAt(ref this, index, out signatureBlockResource);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMSignatureBlockResource signatureBlockResource) mut => VT.InsertAt(ref this, index, ref signatureBlockResource);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMSignatureBlockResource signatureBlockResource) mut => VT.SetAt(ref this, index, ref signatureBlockResource);
+			public HRESULT Append(ref IXpsOMSignatureBlockResource signatureBlockResource) mut => VT.Append(ref this, ref signatureBlockResource);
+			public HRESULT GetByPartName(ref IOpcPartUri partName, out IXpsOMSignatureBlockResource* signatureBlockResource) mut => VT.GetByPartName(ref this, ref partName, out signatureBlockResource);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2239,18 +1457,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMDocument* owner) mut
-			{
-				return VT.GetOwner(ref this, out owner);
-			}
-			public HRESULT GetStream(out IStream* stream) mut
-			{
-				return VT.GetStream(ref this, out stream);
-			}
-			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut
-			{
-				return VT.SetContent(ref this, ref sourceStream, ref partName);
-			}
+			public HRESULT GetOwner(out IXpsOMDocument* owner) mut => VT.GetOwner(ref this, out owner);
+			public HRESULT GetStream(out IStream* stream) mut => VT.GetStream(ref this, out stream);
+			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut => VT.SetContent(ref this, ref sourceStream, ref partName);
+
 			[CRepr]
 			public struct VTable : IXpsOMResource.VTable
 			{
@@ -2266,18 +1476,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMPageReference* owner) mut
-			{
-				return VT.GetOwner(ref this, out owner);
-			}
-			public HRESULT GetStream(out IStream* stream) mut
-			{
-				return VT.GetStream(ref this, out stream);
-			}
-			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut
-			{
-				return VT.SetContent(ref this, ref sourceStream, ref partName);
-			}
+			public HRESULT GetOwner(out IXpsOMPageReference* owner) mut => VT.GetOwner(ref this, out owner);
+			public HRESULT GetStream(out IStream* stream) mut => VT.GetStream(ref this, out stream);
+			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut => VT.SetContent(ref this, ref sourceStream, ref partName);
+
 			[CRepr]
 			public struct VTable : IXpsOMResource.VTable
 			{
@@ -2293,18 +1495,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMDocument* owner) mut
-			{
-				return VT.GetOwner(ref this, out owner);
-			}
-			public HRESULT GetStream(out IStream* stream) mut
-			{
-				return VT.GetStream(ref this, out stream);
-			}
-			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut
-			{
-				return VT.SetContent(ref this, ref sourceStream, ref partName);
-			}
+			public HRESULT GetOwner(out IXpsOMDocument* owner) mut => VT.GetOwner(ref this, out owner);
+			public HRESULT GetStream(out IStream* stream) mut => VT.GetStream(ref this, out stream);
+			public HRESULT SetContent(ref IStream sourceStream, ref IOpcPartUri partName) mut => VT.SetContent(ref this, ref sourceStream, ref partName);
+
 			[CRepr]
 			public struct VTable : IXpsOMResource.VTable
 			{
@@ -2320,30 +1514,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMVisual* object) mut
-			{
-				return VT.GetAt(ref this, index, out object);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMVisual object) mut
-			{
-				return VT.InsertAt(ref this, index, ref object);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMVisual object) mut
-			{
-				return VT.SetAt(ref this, index, ref object);
-			}
-			public HRESULT Append(ref IXpsOMVisual object) mut
-			{
-				return VT.Append(ref this, ref object);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMVisual* object) mut => VT.GetAt(ref this, index, out object);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMVisual object) mut => VT.InsertAt(ref this, index, ref object);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMVisual object) mut => VT.SetAt(ref this, index, ref object);
+			public HRESULT Append(ref IXpsOMVisual object) mut => VT.Append(ref this, ref object);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2362,58 +1539,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVisuals(out IXpsOMVisualCollection* visuals) mut
-			{
-				return VT.GetVisuals(ref this, out visuals);
-			}
-			public HRESULT GetUseAliasedEdgeMode(out BOOL useAliasedEdgeMode) mut
-			{
-				return VT.GetUseAliasedEdgeMode(ref this, out useAliasedEdgeMode);
-			}
-			public HRESULT SetUseAliasedEdgeMode(BOOL useAliasedEdgeMode) mut
-			{
-				return VT.SetUseAliasedEdgeMode(ref this, useAliasedEdgeMode);
-			}
-			public HRESULT GetAccessibilityShortDescription(out PWSTR shortDescription) mut
-			{
-				return VT.GetAccessibilityShortDescription(ref this, out shortDescription);
-			}
-			public HRESULT SetAccessibilityShortDescription(PWSTR shortDescription) mut
-			{
-				return VT.SetAccessibilityShortDescription(ref this, shortDescription);
-			}
-			public HRESULT GetAccessibilityLongDescription(out PWSTR longDescription) mut
-			{
-				return VT.GetAccessibilityLongDescription(ref this, out longDescription);
-			}
-			public HRESULT SetAccessibilityLongDescription(PWSTR longDescription) mut
-			{
-				return VT.SetAccessibilityLongDescription(ref this, longDescription);
-			}
-			public HRESULT GetDictionary(out IXpsOMDictionary* resourceDictionary) mut
-			{
-				return VT.GetDictionary(ref this, out resourceDictionary);
-			}
-			public HRESULT GetDictionaryLocal(out IXpsOMDictionary* resourceDictionary) mut
-			{
-				return VT.GetDictionaryLocal(ref this, out resourceDictionary);
-			}
-			public HRESULT SetDictionaryLocal(ref IXpsOMDictionary resourceDictionary) mut
-			{
-				return VT.SetDictionaryLocal(ref this, ref resourceDictionary);
-			}
-			public HRESULT GetDictionaryResource(out IXpsOMRemoteDictionaryResource* remoteDictionaryResource) mut
-			{
-				return VT.GetDictionaryResource(ref this, out remoteDictionaryResource);
-			}
-			public HRESULT SetDictionaryResource(ref IXpsOMRemoteDictionaryResource remoteDictionaryResource) mut
-			{
-				return VT.SetDictionaryResource(ref this, ref remoteDictionaryResource);
-			}
-			public HRESULT Clone(out IXpsOMCanvas* canvas) mut
-			{
-				return VT.Clone(ref this, out canvas);
-			}
+			public HRESULT GetVisuals(out IXpsOMVisualCollection* visuals) mut => VT.GetVisuals(ref this, out visuals);
+			public HRESULT GetUseAliasedEdgeMode(out BOOL useAliasedEdgeMode) mut => VT.GetUseAliasedEdgeMode(ref this, out useAliasedEdgeMode);
+			public HRESULT SetUseAliasedEdgeMode(BOOL useAliasedEdgeMode) mut => VT.SetUseAliasedEdgeMode(ref this, useAliasedEdgeMode);
+			public HRESULT GetAccessibilityShortDescription(out PWSTR shortDescription) mut => VT.GetAccessibilityShortDescription(ref this, out shortDescription);
+			public HRESULT SetAccessibilityShortDescription(PWSTR shortDescription) mut => VT.SetAccessibilityShortDescription(ref this, shortDescription);
+			public HRESULT GetAccessibilityLongDescription(out PWSTR longDescription) mut => VT.GetAccessibilityLongDescription(ref this, out longDescription);
+			public HRESULT SetAccessibilityLongDescription(PWSTR longDescription) mut => VT.SetAccessibilityLongDescription(ref this, longDescription);
+			public HRESULT GetDictionary(out IXpsOMDictionary* resourceDictionary) mut => VT.GetDictionary(ref this, out resourceDictionary);
+			public HRESULT GetDictionaryLocal(out IXpsOMDictionary* resourceDictionary) mut => VT.GetDictionaryLocal(ref this, out resourceDictionary);
+			public HRESULT SetDictionaryLocal(ref IXpsOMDictionary resourceDictionary) mut => VT.SetDictionaryLocal(ref this, ref resourceDictionary);
+			public HRESULT GetDictionaryResource(out IXpsOMRemoteDictionaryResource* remoteDictionaryResource) mut => VT.GetDictionaryResource(ref this, out remoteDictionaryResource);
+			public HRESULT SetDictionaryResource(ref IXpsOMRemoteDictionaryResource remoteDictionaryResource) mut => VT.SetDictionaryResource(ref this, ref remoteDictionaryResource);
+			public HRESULT Clone(out IXpsOMCanvas* canvas) mut => VT.Clone(ref this, out canvas);
+
 			[CRepr]
 			public struct VTable : IXpsOMVisual.VTable
 			{
@@ -2439,94 +1578,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMPageReference* pageReference) mut
-			{
-				return VT.GetOwner(ref this, out pageReference);
-			}
-			public HRESULT GetVisuals(out IXpsOMVisualCollection* visuals) mut
-			{
-				return VT.GetVisuals(ref this, out visuals);
-			}
-			public HRESULT GetPageDimensions(out XPS_SIZE pageDimensions) mut
-			{
-				return VT.GetPageDimensions(ref this, out pageDimensions);
-			}
-			public HRESULT SetPageDimensions(in XPS_SIZE pageDimensions) mut
-			{
-				return VT.SetPageDimensions(ref this, pageDimensions);
-			}
-			public HRESULT GetContentBox(out XPS_RECT contentBox) mut
-			{
-				return VT.GetContentBox(ref this, out contentBox);
-			}
-			public HRESULT SetContentBox(in XPS_RECT contentBox) mut
-			{
-				return VT.SetContentBox(ref this, contentBox);
-			}
-			public HRESULT GetBleedBox(out XPS_RECT bleedBox) mut
-			{
-				return VT.GetBleedBox(ref this, out bleedBox);
-			}
-			public HRESULT SetBleedBox(in XPS_RECT bleedBox) mut
-			{
-				return VT.SetBleedBox(ref this, bleedBox);
-			}
-			public HRESULT GetLanguage(out PWSTR language) mut
-			{
-				return VT.GetLanguage(ref this, out language);
-			}
-			public HRESULT SetLanguage(PWSTR language) mut
-			{
-				return VT.SetLanguage(ref this, language);
-			}
-			public HRESULT GetName(out PWSTR name) mut
-			{
-				return VT.GetName(ref this, out name);
-			}
-			public HRESULT SetName(PWSTR name) mut
-			{
-				return VT.SetName(ref this, name);
-			}
-			public HRESULT GetIsHyperlinkTarget(out BOOL isHyperlinkTarget) mut
-			{
-				return VT.GetIsHyperlinkTarget(ref this, out isHyperlinkTarget);
-			}
-			public HRESULT SetIsHyperlinkTarget(BOOL isHyperlinkTarget) mut
-			{
-				return VT.SetIsHyperlinkTarget(ref this, isHyperlinkTarget);
-			}
-			public HRESULT GetDictionary(out IXpsOMDictionary* resourceDictionary) mut
-			{
-				return VT.GetDictionary(ref this, out resourceDictionary);
-			}
-			public HRESULT GetDictionaryLocal(out IXpsOMDictionary* resourceDictionary) mut
-			{
-				return VT.GetDictionaryLocal(ref this, out resourceDictionary);
-			}
-			public HRESULT SetDictionaryLocal(ref IXpsOMDictionary resourceDictionary) mut
-			{
-				return VT.SetDictionaryLocal(ref this, ref resourceDictionary);
-			}
-			public HRESULT GetDictionaryResource(out IXpsOMRemoteDictionaryResource* remoteDictionaryResource) mut
-			{
-				return VT.GetDictionaryResource(ref this, out remoteDictionaryResource);
-			}
-			public HRESULT SetDictionaryResource(ref IXpsOMRemoteDictionaryResource remoteDictionaryResource) mut
-			{
-				return VT.SetDictionaryResource(ref this, ref remoteDictionaryResource);
-			}
-			public HRESULT Write(ref ISequentialStream stream, BOOL optimizeMarkupSize) mut
-			{
-				return VT.Write(ref this, ref stream, optimizeMarkupSize);
-			}
-			public HRESULT GenerateUnusedLookupKey(XPS_OBJECT_TYPE type, out PWSTR key) mut
-			{
-				return VT.GenerateUnusedLookupKey(ref this, type, out key);
-			}
-			public HRESULT Clone(out IXpsOMPage* page) mut
-			{
-				return VT.Clone(ref this, out page);
-			}
+			public HRESULT GetOwner(out IXpsOMPageReference* pageReference) mut => VT.GetOwner(ref this, out pageReference);
+			public HRESULT GetVisuals(out IXpsOMVisualCollection* visuals) mut => VT.GetVisuals(ref this, out visuals);
+			public HRESULT GetPageDimensions(out XPS_SIZE pageDimensions) mut => VT.GetPageDimensions(ref this, out pageDimensions);
+			public HRESULT SetPageDimensions(in XPS_SIZE pageDimensions) mut => VT.SetPageDimensions(ref this, pageDimensions);
+			public HRESULT GetContentBox(out XPS_RECT contentBox) mut => VT.GetContentBox(ref this, out contentBox);
+			public HRESULT SetContentBox(in XPS_RECT contentBox) mut => VT.SetContentBox(ref this, contentBox);
+			public HRESULT GetBleedBox(out XPS_RECT bleedBox) mut => VT.GetBleedBox(ref this, out bleedBox);
+			public HRESULT SetBleedBox(in XPS_RECT bleedBox) mut => VT.SetBleedBox(ref this, bleedBox);
+			public HRESULT GetLanguage(out PWSTR language) mut => VT.GetLanguage(ref this, out language);
+			public HRESULT SetLanguage(PWSTR language) mut => VT.SetLanguage(ref this, language);
+			public HRESULT GetName(out PWSTR name) mut => VT.GetName(ref this, out name);
+			public HRESULT SetName(PWSTR name) mut => VT.SetName(ref this, name);
+			public HRESULT GetIsHyperlinkTarget(out BOOL isHyperlinkTarget) mut => VT.GetIsHyperlinkTarget(ref this, out isHyperlinkTarget);
+			public HRESULT SetIsHyperlinkTarget(BOOL isHyperlinkTarget) mut => VT.SetIsHyperlinkTarget(ref this, isHyperlinkTarget);
+			public HRESULT GetDictionary(out IXpsOMDictionary* resourceDictionary) mut => VT.GetDictionary(ref this, out resourceDictionary);
+			public HRESULT GetDictionaryLocal(out IXpsOMDictionary* resourceDictionary) mut => VT.GetDictionaryLocal(ref this, out resourceDictionary);
+			public HRESULT SetDictionaryLocal(ref IXpsOMDictionary resourceDictionary) mut => VT.SetDictionaryLocal(ref this, ref resourceDictionary);
+			public HRESULT GetDictionaryResource(out IXpsOMRemoteDictionaryResource* remoteDictionaryResource) mut => VT.GetDictionaryResource(ref this, out remoteDictionaryResource);
+			public HRESULT SetDictionaryResource(ref IXpsOMRemoteDictionaryResource remoteDictionaryResource) mut => VT.SetDictionaryResource(ref this, ref remoteDictionaryResource);
+			public HRESULT Write(ref ISequentialStream stream, BOOL optimizeMarkupSize) mut => VT.Write(ref this, ref stream, optimizeMarkupSize);
+			public HRESULT GenerateUnusedLookupKey(XPS_OBJECT_TYPE type, out PWSTR key) mut => VT.GenerateUnusedLookupKey(ref this, type, out key);
+			public HRESULT Clone(out IXpsOMPage* page) mut => VT.Clone(ref this, out page);
+
 			[CRepr]
 			public struct VTable : IXpsOMPart.VTable
 			{
@@ -2561,74 +1635,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMDocument* document) mut
-			{
-				return VT.GetOwner(ref this, out document);
-			}
-			public HRESULT GetPage(out IXpsOMPage* page) mut
-			{
-				return VT.GetPage(ref this, out page);
-			}
-			public HRESULT SetPage(ref IXpsOMPage page) mut
-			{
-				return VT.SetPage(ref this, ref page);
-			}
-			public HRESULT DiscardPage() mut
-			{
-				return VT.DiscardPage(ref this);
-			}
-			public HRESULT IsPageLoaded(out BOOL isPageLoaded) mut
-			{
-				return VT.IsPageLoaded(ref this, out isPageLoaded);
-			}
-			public HRESULT GetAdvisoryPageDimensions(out XPS_SIZE pageDimensions) mut
-			{
-				return VT.GetAdvisoryPageDimensions(ref this, out pageDimensions);
-			}
-			public HRESULT SetAdvisoryPageDimensions(in XPS_SIZE pageDimensions) mut
-			{
-				return VT.SetAdvisoryPageDimensions(ref this, pageDimensions);
-			}
-			public HRESULT GetStoryFragmentsResource(out IXpsOMStoryFragmentsResource* storyFragmentsResource) mut
-			{
-				return VT.GetStoryFragmentsResource(ref this, out storyFragmentsResource);
-			}
-			public HRESULT SetStoryFragmentsResource(ref IXpsOMStoryFragmentsResource storyFragmentsResource) mut
-			{
-				return VT.SetStoryFragmentsResource(ref this, ref storyFragmentsResource);
-			}
-			public HRESULT GetPrintTicketResource(out IXpsOMPrintTicketResource* printTicketResource) mut
-			{
-				return VT.GetPrintTicketResource(ref this, out printTicketResource);
-			}
-			public HRESULT SetPrintTicketResource(ref IXpsOMPrintTicketResource printTicketResource) mut
-			{
-				return VT.SetPrintTicketResource(ref this, ref printTicketResource);
-			}
-			public HRESULT GetThumbnailResource(out IXpsOMImageResource* imageResource) mut
-			{
-				return VT.GetThumbnailResource(ref this, out imageResource);
-			}
-			public HRESULT SetThumbnailResource(ref IXpsOMImageResource imageResource) mut
-			{
-				return VT.SetThumbnailResource(ref this, ref imageResource);
-			}
-			public HRESULT CollectLinkTargets(out IXpsOMNameCollection* linkTargets) mut
-			{
-				return VT.CollectLinkTargets(ref this, out linkTargets);
-			}
-			public HRESULT CollectPartResources(out IXpsOMPartResources* partResources) mut
-			{
-				return VT.CollectPartResources(ref this, out partResources);
-			}
-			public HRESULT HasRestrictedFonts(out BOOL restrictedFonts) mut
-			{
-				return VT.HasRestrictedFonts(ref this, out restrictedFonts);
-			}
-			public HRESULT Clone(out IXpsOMPageReference* pageReference) mut
-			{
-				return VT.Clone(ref this, out pageReference);
-			}
+			public HRESULT GetOwner(out IXpsOMDocument* document) mut => VT.GetOwner(ref this, out document);
+			public HRESULT GetPage(out IXpsOMPage* page) mut => VT.GetPage(ref this, out page);
+			public HRESULT SetPage(ref IXpsOMPage page) mut => VT.SetPage(ref this, ref page);
+			public HRESULT DiscardPage() mut => VT.DiscardPage(ref this);
+			public HRESULT IsPageLoaded(out BOOL isPageLoaded) mut => VT.IsPageLoaded(ref this, out isPageLoaded);
+			public HRESULT GetAdvisoryPageDimensions(out XPS_SIZE pageDimensions) mut => VT.GetAdvisoryPageDimensions(ref this, out pageDimensions);
+			public HRESULT SetAdvisoryPageDimensions(in XPS_SIZE pageDimensions) mut => VT.SetAdvisoryPageDimensions(ref this, pageDimensions);
+			public HRESULT GetStoryFragmentsResource(out IXpsOMStoryFragmentsResource* storyFragmentsResource) mut => VT.GetStoryFragmentsResource(ref this, out storyFragmentsResource);
+			public HRESULT SetStoryFragmentsResource(ref IXpsOMStoryFragmentsResource storyFragmentsResource) mut => VT.SetStoryFragmentsResource(ref this, ref storyFragmentsResource);
+			public HRESULT GetPrintTicketResource(out IXpsOMPrintTicketResource* printTicketResource) mut => VT.GetPrintTicketResource(ref this, out printTicketResource);
+			public HRESULT SetPrintTicketResource(ref IXpsOMPrintTicketResource printTicketResource) mut => VT.SetPrintTicketResource(ref this, ref printTicketResource);
+			public HRESULT GetThumbnailResource(out IXpsOMImageResource* imageResource) mut => VT.GetThumbnailResource(ref this, out imageResource);
+			public HRESULT SetThumbnailResource(ref IXpsOMImageResource imageResource) mut => VT.SetThumbnailResource(ref this, ref imageResource);
+			public HRESULT CollectLinkTargets(out IXpsOMNameCollection* linkTargets) mut => VT.CollectLinkTargets(ref this, out linkTargets);
+			public HRESULT CollectPartResources(out IXpsOMPartResources* partResources) mut => VT.CollectPartResources(ref this, out partResources);
+			public HRESULT HasRestrictedFonts(out BOOL restrictedFonts) mut => VT.HasRestrictedFonts(ref this, out restrictedFonts);
+			public HRESULT Clone(out IXpsOMPageReference* pageReference) mut => VT.Clone(ref this, out pageReference);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2658,30 +1682,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMPageReference* pageReference) mut
-			{
-				return VT.GetAt(ref this, index, out pageReference);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMPageReference pageReference) mut
-			{
-				return VT.InsertAt(ref this, index, ref pageReference);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMPageReference pageReference) mut
-			{
-				return VT.SetAt(ref this, index, ref pageReference);
-			}
-			public HRESULT Append(ref IXpsOMPageReference pageReference) mut
-			{
-				return VT.Append(ref this, ref pageReference);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMPageReference* pageReference) mut => VT.GetAt(ref this, index, out pageReference);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMPageReference pageReference) mut => VT.InsertAt(ref this, index, ref pageReference);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMPageReference pageReference) mut => VT.SetAt(ref this, index, ref pageReference);
+			public HRESULT Append(ref IXpsOMPageReference pageReference) mut => VT.Append(ref this, ref pageReference);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2700,38 +1707,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMDocumentSequence* documentSequence) mut
-			{
-				return VT.GetOwner(ref this, out documentSequence);
-			}
-			public HRESULT GetPageReferences(out IXpsOMPageReferenceCollection* pageReferences) mut
-			{
-				return VT.GetPageReferences(ref this, out pageReferences);
-			}
-			public HRESULT GetPrintTicketResource(out IXpsOMPrintTicketResource* printTicketResource) mut
-			{
-				return VT.GetPrintTicketResource(ref this, out printTicketResource);
-			}
-			public HRESULT SetPrintTicketResource(ref IXpsOMPrintTicketResource printTicketResource) mut
-			{
-				return VT.SetPrintTicketResource(ref this, ref printTicketResource);
-			}
-			public HRESULT GetDocumentStructureResource(out IXpsOMDocumentStructureResource* documentStructureResource) mut
-			{
-				return VT.GetDocumentStructureResource(ref this, out documentStructureResource);
-			}
-			public HRESULT SetDocumentStructureResource(ref IXpsOMDocumentStructureResource documentStructureResource) mut
-			{
-				return VT.SetDocumentStructureResource(ref this, ref documentStructureResource);
-			}
-			public HRESULT GetSignatureBlockResources(out IXpsOMSignatureBlockResourceCollection* signatureBlockResources) mut
-			{
-				return VT.GetSignatureBlockResources(ref this, out signatureBlockResources);
-			}
-			public HRESULT Clone(out IXpsOMDocument* document) mut
-			{
-				return VT.Clone(ref this, out document);
-			}
+			public HRESULT GetOwner(out IXpsOMDocumentSequence* documentSequence) mut => VT.GetOwner(ref this, out documentSequence);
+			public HRESULT GetPageReferences(out IXpsOMPageReferenceCollection* pageReferences) mut => VT.GetPageReferences(ref this, out pageReferences);
+			public HRESULT GetPrintTicketResource(out IXpsOMPrintTicketResource* printTicketResource) mut => VT.GetPrintTicketResource(ref this, out printTicketResource);
+			public HRESULT SetPrintTicketResource(ref IXpsOMPrintTicketResource printTicketResource) mut => VT.SetPrintTicketResource(ref this, ref printTicketResource);
+			public HRESULT GetDocumentStructureResource(out IXpsOMDocumentStructureResource* documentStructureResource) mut => VT.GetDocumentStructureResource(ref this, out documentStructureResource);
+			public HRESULT SetDocumentStructureResource(ref IXpsOMDocumentStructureResource documentStructureResource) mut => VT.SetDocumentStructureResource(ref this, ref documentStructureResource);
+			public HRESULT GetSignatureBlockResources(out IXpsOMSignatureBlockResourceCollection* signatureBlockResources) mut => VT.GetSignatureBlockResources(ref this, out signatureBlockResources);
+			public HRESULT Clone(out IXpsOMDocument* document) mut => VT.Clone(ref this, out document);
+
 			[CRepr]
 			public struct VTable : IXpsOMPart.VTable
 			{
@@ -2752,30 +1736,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsOMDocument* document) mut
-			{
-				return VT.GetAt(ref this, index, out document);
-			}
-			public HRESULT InsertAt(uint32 index, ref IXpsOMDocument document) mut
-			{
-				return VT.InsertAt(ref this, index, ref document);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IXpsOMDocument document) mut
-			{
-				return VT.SetAt(ref this, index, ref document);
-			}
-			public HRESULT Append(ref IXpsOMDocument document) mut
-			{
-				return VT.Append(ref this, ref document);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsOMDocument* document) mut => VT.GetAt(ref this, index, out document);
+			public HRESULT InsertAt(uint32 index, ref IXpsOMDocument document) mut => VT.InsertAt(ref this, index, ref document);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IXpsOMDocument document) mut => VT.SetAt(ref this, index, ref document);
+			public HRESULT Append(ref IXpsOMDocument document) mut => VT.Append(ref this, ref document);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2794,22 +1761,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMPackage* package) mut
-			{
-				return VT.GetOwner(ref this, out package);
-			}
-			public HRESULT GetDocuments(out IXpsOMDocumentCollection* documents) mut
-			{
-				return VT.GetDocuments(ref this, out documents);
-			}
-			public HRESULT GetPrintTicketResource(out IXpsOMPrintTicketResource* printTicketResource) mut
-			{
-				return VT.GetPrintTicketResource(ref this, out printTicketResource);
-			}
-			public HRESULT SetPrintTicketResource(ref IXpsOMPrintTicketResource printTicketResource) mut
-			{
-				return VT.SetPrintTicketResource(ref this, ref printTicketResource);
-			}
+			public HRESULT GetOwner(out IXpsOMPackage* package) mut => VT.GetOwner(ref this, out package);
+			public HRESULT GetDocuments(out IXpsOMDocumentCollection* documents) mut => VT.GetDocuments(ref this, out documents);
+			public HRESULT GetPrintTicketResource(out IXpsOMPrintTicketResource* printTicketResource) mut => VT.GetPrintTicketResource(ref this, out printTicketResource);
+			public HRESULT SetPrintTicketResource(ref IXpsOMPrintTicketResource printTicketResource) mut => VT.SetPrintTicketResource(ref this, ref printTicketResource);
+
 			[CRepr]
 			public struct VTable : IXpsOMPart.VTable
 			{
@@ -2826,142 +1782,41 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwner(out IXpsOMPackage* package) mut
-			{
-				return VT.GetOwner(ref this, out package);
-			}
-			public HRESULT GetCategory(out PWSTR category) mut
-			{
-				return VT.GetCategory(ref this, out category);
-			}
-			public HRESULT SetCategory(PWSTR category) mut
-			{
-				return VT.SetCategory(ref this, category);
-			}
-			public HRESULT GetContentStatus(out PWSTR contentStatus) mut
-			{
-				return VT.GetContentStatus(ref this, out contentStatus);
-			}
-			public HRESULT SetContentStatus(PWSTR contentStatus) mut
-			{
-				return VT.SetContentStatus(ref this, contentStatus);
-			}
-			public HRESULT GetContentType(out PWSTR contentType) mut
-			{
-				return VT.GetContentType(ref this, out contentType);
-			}
-			public HRESULT SetContentType(PWSTR contentType) mut
-			{
-				return VT.SetContentType(ref this, contentType);
-			}
-			public HRESULT GetCreated(out SYSTEMTIME created) mut
-			{
-				return VT.GetCreated(ref this, out created);
-			}
-			public HRESULT SetCreated(in SYSTEMTIME created) mut
-			{
-				return VT.SetCreated(ref this, created);
-			}
-			public HRESULT GetCreator(out PWSTR creator) mut
-			{
-				return VT.GetCreator(ref this, out creator);
-			}
-			public HRESULT SetCreator(PWSTR creator) mut
-			{
-				return VT.SetCreator(ref this, creator);
-			}
-			public HRESULT GetDescription(out PWSTR description) mut
-			{
-				return VT.GetDescription(ref this, out description);
-			}
-			public HRESULT SetDescription(PWSTR description) mut
-			{
-				return VT.SetDescription(ref this, description);
-			}
-			public HRESULT GetIdentifier(out PWSTR identifier) mut
-			{
-				return VT.GetIdentifier(ref this, out identifier);
-			}
-			public HRESULT SetIdentifier(PWSTR identifier) mut
-			{
-				return VT.SetIdentifier(ref this, identifier);
-			}
-			public HRESULT GetKeywords(out PWSTR keywords) mut
-			{
-				return VT.GetKeywords(ref this, out keywords);
-			}
-			public HRESULT SetKeywords(PWSTR keywords) mut
-			{
-				return VT.SetKeywords(ref this, keywords);
-			}
-			public HRESULT GetLanguage(out PWSTR language) mut
-			{
-				return VT.GetLanguage(ref this, out language);
-			}
-			public HRESULT SetLanguage(PWSTR language) mut
-			{
-				return VT.SetLanguage(ref this, language);
-			}
-			public HRESULT GetLastModifiedBy(out PWSTR lastModifiedBy) mut
-			{
-				return VT.GetLastModifiedBy(ref this, out lastModifiedBy);
-			}
-			public HRESULT SetLastModifiedBy(PWSTR lastModifiedBy) mut
-			{
-				return VT.SetLastModifiedBy(ref this, lastModifiedBy);
-			}
-			public HRESULT GetLastPrinted(out SYSTEMTIME lastPrinted) mut
-			{
-				return VT.GetLastPrinted(ref this, out lastPrinted);
-			}
-			public HRESULT SetLastPrinted(in SYSTEMTIME lastPrinted) mut
-			{
-				return VT.SetLastPrinted(ref this, lastPrinted);
-			}
-			public HRESULT GetModified(out SYSTEMTIME modified) mut
-			{
-				return VT.GetModified(ref this, out modified);
-			}
-			public HRESULT SetModified(in SYSTEMTIME modified) mut
-			{
-				return VT.SetModified(ref this, modified);
-			}
-			public HRESULT GetRevision(out PWSTR revision) mut
-			{
-				return VT.GetRevision(ref this, out revision);
-			}
-			public HRESULT SetRevision(PWSTR revision) mut
-			{
-				return VT.SetRevision(ref this, revision);
-			}
-			public HRESULT GetSubject(out PWSTR subject) mut
-			{
-				return VT.GetSubject(ref this, out subject);
-			}
-			public HRESULT SetSubject(PWSTR subject) mut
-			{
-				return VT.SetSubject(ref this, subject);
-			}
-			public HRESULT GetTitle(out PWSTR title) mut
-			{
-				return VT.GetTitle(ref this, out title);
-			}
-			public HRESULT SetTitle(PWSTR title) mut
-			{
-				return VT.SetTitle(ref this, title);
-			}
-			public HRESULT GetVersion(out PWSTR version) mut
-			{
-				return VT.GetVersion(ref this, out version);
-			}
-			public HRESULT SetVersion(PWSTR version) mut
-			{
-				return VT.SetVersion(ref this, version);
-			}
-			public HRESULT Clone(out IXpsOMCoreProperties* coreProperties) mut
-			{
-				return VT.Clone(ref this, out coreProperties);
-			}
+			public HRESULT GetOwner(out IXpsOMPackage* package) mut => VT.GetOwner(ref this, out package);
+			public HRESULT GetCategory(out PWSTR category) mut => VT.GetCategory(ref this, out category);
+			public HRESULT SetCategory(PWSTR category) mut => VT.SetCategory(ref this, category);
+			public HRESULT GetContentStatus(out PWSTR contentStatus) mut => VT.GetContentStatus(ref this, out contentStatus);
+			public HRESULT SetContentStatus(PWSTR contentStatus) mut => VT.SetContentStatus(ref this, contentStatus);
+			public HRESULT GetContentType(out PWSTR contentType) mut => VT.GetContentType(ref this, out contentType);
+			public HRESULT SetContentType(PWSTR contentType) mut => VT.SetContentType(ref this, contentType);
+			public HRESULT GetCreated(out SYSTEMTIME created) mut => VT.GetCreated(ref this, out created);
+			public HRESULT SetCreated(in SYSTEMTIME created) mut => VT.SetCreated(ref this, created);
+			public HRESULT GetCreator(out PWSTR creator) mut => VT.GetCreator(ref this, out creator);
+			public HRESULT SetCreator(PWSTR creator) mut => VT.SetCreator(ref this, creator);
+			public HRESULT GetDescription(out PWSTR description) mut => VT.GetDescription(ref this, out description);
+			public HRESULT SetDescription(PWSTR description) mut => VT.SetDescription(ref this, description);
+			public HRESULT GetIdentifier(out PWSTR identifier) mut => VT.GetIdentifier(ref this, out identifier);
+			public HRESULT SetIdentifier(PWSTR identifier) mut => VT.SetIdentifier(ref this, identifier);
+			public HRESULT GetKeywords(out PWSTR keywords) mut => VT.GetKeywords(ref this, out keywords);
+			public HRESULT SetKeywords(PWSTR keywords) mut => VT.SetKeywords(ref this, keywords);
+			public HRESULT GetLanguage(out PWSTR language) mut => VT.GetLanguage(ref this, out language);
+			public HRESULT SetLanguage(PWSTR language) mut => VT.SetLanguage(ref this, language);
+			public HRESULT GetLastModifiedBy(out PWSTR lastModifiedBy) mut => VT.GetLastModifiedBy(ref this, out lastModifiedBy);
+			public HRESULT SetLastModifiedBy(PWSTR lastModifiedBy) mut => VT.SetLastModifiedBy(ref this, lastModifiedBy);
+			public HRESULT GetLastPrinted(out SYSTEMTIME lastPrinted) mut => VT.GetLastPrinted(ref this, out lastPrinted);
+			public HRESULT SetLastPrinted(in SYSTEMTIME lastPrinted) mut => VT.SetLastPrinted(ref this, lastPrinted);
+			public HRESULT GetModified(out SYSTEMTIME modified) mut => VT.GetModified(ref this, out modified);
+			public HRESULT SetModified(in SYSTEMTIME modified) mut => VT.SetModified(ref this, modified);
+			public HRESULT GetRevision(out PWSTR revision) mut => VT.GetRevision(ref this, out revision);
+			public HRESULT SetRevision(PWSTR revision) mut => VT.SetRevision(ref this, revision);
+			public HRESULT GetSubject(out PWSTR subject) mut => VT.GetSubject(ref this, out subject);
+			public HRESULT SetSubject(PWSTR subject) mut => VT.SetSubject(ref this, subject);
+			public HRESULT GetTitle(out PWSTR title) mut => VT.GetTitle(ref this, out title);
+			public HRESULT SetTitle(PWSTR title) mut => VT.SetTitle(ref this, title);
+			public HRESULT GetVersion(out PWSTR version) mut => VT.GetVersion(ref this, out version);
+			public HRESULT SetVersion(PWSTR version) mut => VT.SetVersion(ref this, version);
+			public HRESULT Clone(out IXpsOMCoreProperties* coreProperties) mut => VT.Clone(ref this, out coreProperties);
+
 			[CRepr]
 			public struct VTable : IXpsOMPart.VTable
 			{
@@ -3008,46 +1863,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDocumentSequence(out IXpsOMDocumentSequence* documentSequence) mut
-			{
-				return VT.GetDocumentSequence(ref this, out documentSequence);
-			}
-			public HRESULT SetDocumentSequence(ref IXpsOMDocumentSequence documentSequence) mut
-			{
-				return VT.SetDocumentSequence(ref this, ref documentSequence);
-			}
-			public HRESULT GetCoreProperties(out IXpsOMCoreProperties* coreProperties) mut
-			{
-				return VT.GetCoreProperties(ref this, out coreProperties);
-			}
-			public HRESULT SetCoreProperties(ref IXpsOMCoreProperties coreProperties) mut
-			{
-				return VT.SetCoreProperties(ref this, ref coreProperties);
-			}
-			public HRESULT GetDiscardControlPartName(out IOpcPartUri* discardControlPartUri) mut
-			{
-				return VT.GetDiscardControlPartName(ref this, out discardControlPartUri);
-			}
-			public HRESULT SetDiscardControlPartName(ref IOpcPartUri discardControlPartUri) mut
-			{
-				return VT.SetDiscardControlPartName(ref this, ref discardControlPartUri);
-			}
-			public HRESULT GetThumbnailResource(out IXpsOMImageResource* imageResource) mut
-			{
-				return VT.GetThumbnailResource(ref this, out imageResource);
-			}
-			public HRESULT SetThumbnailResource(ref IXpsOMImageResource imageResource) mut
-			{
-				return VT.SetThumbnailResource(ref this, ref imageResource);
-			}
-			public HRESULT WriteToFile(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize) mut
-			{
-				return VT.WriteToFile(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize);
-			}
-			public HRESULT WriteToStream(ref ISequentialStream stream, BOOL optimizeMarkupSize) mut
-			{
-				return VT.WriteToStream(ref this, ref stream, optimizeMarkupSize);
-			}
+			public HRESULT GetDocumentSequence(out IXpsOMDocumentSequence* documentSequence) mut => VT.GetDocumentSequence(ref this, out documentSequence);
+			public HRESULT SetDocumentSequence(ref IXpsOMDocumentSequence documentSequence) mut => VT.SetDocumentSequence(ref this, ref documentSequence);
+			public HRESULT GetCoreProperties(out IXpsOMCoreProperties* coreProperties) mut => VT.GetCoreProperties(ref this, out coreProperties);
+			public HRESULT SetCoreProperties(ref IXpsOMCoreProperties coreProperties) mut => VT.SetCoreProperties(ref this, ref coreProperties);
+			public HRESULT GetDiscardControlPartName(out IOpcPartUri* discardControlPartUri) mut => VT.GetDiscardControlPartName(ref this, out discardControlPartUri);
+			public HRESULT SetDiscardControlPartName(ref IOpcPartUri discardControlPartUri) mut => VT.SetDiscardControlPartName(ref this, ref discardControlPartUri);
+			public HRESULT GetThumbnailResource(out IXpsOMImageResource* imageResource) mut => VT.GetThumbnailResource(ref this, out imageResource);
+			public HRESULT SetThumbnailResource(ref IXpsOMImageResource imageResource) mut => VT.SetThumbnailResource(ref this, ref imageResource);
+			public HRESULT WriteToFile(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize) mut => VT.WriteToFile(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize);
+			public HRESULT WriteToStream(ref ISequentialStream stream, BOOL optimizeMarkupSize) mut => VT.WriteToStream(ref this, ref stream, optimizeMarkupSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3070,154 +1896,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreatePackage(out IXpsOMPackage* package) mut
-			{
-				return VT.CreatePackage(ref this, out package);
-			}
-			public HRESULT CreatePackageFromFile(PWSTR filename, BOOL reuseObjects, out IXpsOMPackage* package) mut
-			{
-				return VT.CreatePackageFromFile(ref this, filename, reuseObjects, out package);
-			}
-			public HRESULT CreatePackageFromStream(ref IStream stream, BOOL reuseObjects, out IXpsOMPackage* package) mut
-			{
-				return VT.CreatePackageFromStream(ref this, ref stream, reuseObjects, out package);
-			}
-			public HRESULT CreateStoryFragmentsResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMStoryFragmentsResource* storyFragmentsResource) mut
-			{
-				return VT.CreateStoryFragmentsResource(ref this, ref acquiredStream, ref partUri, out storyFragmentsResource);
-			}
-			public HRESULT CreateDocumentStructureResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMDocumentStructureResource* documentStructureResource) mut
-			{
-				return VT.CreateDocumentStructureResource(ref this, ref acquiredStream, ref partUri, out documentStructureResource);
-			}
-			public HRESULT CreateSignatureBlockResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMSignatureBlockResource* signatureBlockResource) mut
-			{
-				return VT.CreateSignatureBlockResource(ref this, ref acquiredStream, ref partUri, out signatureBlockResource);
-			}
-			public HRESULT CreateRemoteDictionaryResource(ref IXpsOMDictionary dictionary, ref IOpcPartUri partUri, out IXpsOMRemoteDictionaryResource* remoteDictionaryResource) mut
-			{
-				return VT.CreateRemoteDictionaryResource(ref this, ref dictionary, ref partUri, out remoteDictionaryResource);
-			}
-			public HRESULT CreateRemoteDictionaryResourceFromStream(ref IStream dictionaryMarkupStream, ref IOpcPartUri dictionaryPartUri, ref IXpsOMPartResources resources, out IXpsOMRemoteDictionaryResource* dictionaryResource) mut
-			{
-				return VT.CreateRemoteDictionaryResourceFromStream(ref this, ref dictionaryMarkupStream, ref dictionaryPartUri, ref resources, out dictionaryResource);
-			}
-			public HRESULT CreatePartResources(out IXpsOMPartResources* partResources) mut
-			{
-				return VT.CreatePartResources(ref this, out partResources);
-			}
-			public HRESULT CreateDocumentSequence(ref IOpcPartUri partUri, out IXpsOMDocumentSequence* documentSequence) mut
-			{
-				return VT.CreateDocumentSequence(ref this, ref partUri, out documentSequence);
-			}
-			public HRESULT CreateDocument(ref IOpcPartUri partUri, out IXpsOMDocument* document) mut
-			{
-				return VT.CreateDocument(ref this, ref partUri, out document);
-			}
-			public HRESULT CreatePageReference(in XPS_SIZE advisoryPageDimensions, out IXpsOMPageReference* pageReference) mut
-			{
-				return VT.CreatePageReference(ref this, advisoryPageDimensions, out pageReference);
-			}
-			public HRESULT CreatePage(in XPS_SIZE pageDimensions, PWSTR language, ref IOpcPartUri partUri, out IXpsOMPage* page) mut
-			{
-				return VT.CreatePage(ref this, pageDimensions, language, ref partUri, out page);
-			}
-			public HRESULT CreatePageFromStream(ref IStream pageMarkupStream, ref IOpcPartUri partUri, ref IXpsOMPartResources resources, BOOL reuseObjects, out IXpsOMPage* page) mut
-			{
-				return VT.CreatePageFromStream(ref this, ref pageMarkupStream, ref partUri, ref resources, reuseObjects, out page);
-			}
-			public HRESULT CreateCanvas(out IXpsOMCanvas* canvas) mut
-			{
-				return VT.CreateCanvas(ref this, out canvas);
-			}
-			public HRESULT CreateGlyphs(ref IXpsOMFontResource fontResource, out IXpsOMGlyphs* glyphs) mut
-			{
-				return VT.CreateGlyphs(ref this, ref fontResource, out glyphs);
-			}
-			public HRESULT CreatePath(out IXpsOMPath* path) mut
-			{
-				return VT.CreatePath(ref this, out path);
-			}
-			public HRESULT CreateGeometry(out IXpsOMGeometry* geometry) mut
-			{
-				return VT.CreateGeometry(ref this, out geometry);
-			}
-			public HRESULT CreateGeometryFigure(in XPS_POINT startPoint, out IXpsOMGeometryFigure* figure) mut
-			{
-				return VT.CreateGeometryFigure(ref this, startPoint, out figure);
-			}
-			public HRESULT CreateMatrixTransform(in XPS_MATRIX matrix, out IXpsOMMatrixTransform* transform) mut
-			{
-				return VT.CreateMatrixTransform(ref this, matrix, out transform);
-			}
-			public HRESULT CreateSolidColorBrush(in XPS_COLOR color, ref IXpsOMColorProfileResource colorProfile, out IXpsOMSolidColorBrush* solidColorBrush) mut
-			{
-				return VT.CreateSolidColorBrush(ref this, color, ref colorProfile, out solidColorBrush);
-			}
-			public HRESULT CreateColorProfileResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMColorProfileResource* colorProfileResource) mut
-			{
-				return VT.CreateColorProfileResource(ref this, ref acquiredStream, ref partUri, out colorProfileResource);
-			}
-			public HRESULT CreateImageBrush(ref IXpsOMImageResource image, in XPS_RECT viewBox, in XPS_RECT viewPort, out IXpsOMImageBrush* imageBrush) mut
-			{
-				return VT.CreateImageBrush(ref this, ref image, viewBox, viewPort, out imageBrush);
-			}
-			public HRESULT CreateVisualBrush(in XPS_RECT viewBox, in XPS_RECT viewPort, out IXpsOMVisualBrush* visualBrush) mut
-			{
-				return VT.CreateVisualBrush(ref this, viewBox, viewPort, out visualBrush);
-			}
-			public HRESULT CreateImageResource(ref IStream acquiredStream, XPS_IMAGE_TYPE contentType, ref IOpcPartUri partUri, out IXpsOMImageResource* imageResource) mut
-			{
-				return VT.CreateImageResource(ref this, ref acquiredStream, contentType, ref partUri, out imageResource);
-			}
-			public HRESULT CreatePrintTicketResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMPrintTicketResource* printTicketResource) mut
-			{
-				return VT.CreatePrintTicketResource(ref this, ref acquiredStream, ref partUri, out printTicketResource);
-			}
-			public HRESULT CreateFontResource(ref IStream acquiredStream, XPS_FONT_EMBEDDING fontEmbedding, ref IOpcPartUri partUri, BOOL isObfSourceStream, out IXpsOMFontResource* fontResource) mut
-			{
-				return VT.CreateFontResource(ref this, ref acquiredStream, fontEmbedding, ref partUri, isObfSourceStream, out fontResource);
-			}
-			public HRESULT CreateGradientStop(in XPS_COLOR color, ref IXpsOMColorProfileResource colorProfile, float offset, out IXpsOMGradientStop* gradientStop) mut
-			{
-				return VT.CreateGradientStop(ref this, color, ref colorProfile, offset, out gradientStop);
-			}
-			public HRESULT CreateLinearGradientBrush(ref IXpsOMGradientStop gradStop1, ref IXpsOMGradientStop gradStop2, in XPS_POINT startPoint, in XPS_POINT endPoint, out IXpsOMLinearGradientBrush* linearGradientBrush) mut
-			{
-				return VT.CreateLinearGradientBrush(ref this, ref gradStop1, ref gradStop2, startPoint, endPoint, out linearGradientBrush);
-			}
-			public HRESULT CreateRadialGradientBrush(ref IXpsOMGradientStop gradStop1, ref IXpsOMGradientStop gradStop2, in XPS_POINT centerPoint, in XPS_POINT gradientOrigin, in XPS_SIZE radiiSizes, out IXpsOMRadialGradientBrush* radialGradientBrush) mut
-			{
-				return VT.CreateRadialGradientBrush(ref this, ref gradStop1, ref gradStop2, centerPoint, gradientOrigin, radiiSizes, out radialGradientBrush);
-			}
-			public HRESULT CreateCoreProperties(ref IOpcPartUri partUri, out IXpsOMCoreProperties* coreProperties) mut
-			{
-				return VT.CreateCoreProperties(ref this, ref partUri, out coreProperties);
-			}
-			public HRESULT CreateDictionary(out IXpsOMDictionary* dictionary) mut
-			{
-				return VT.CreateDictionary(ref this, out dictionary);
-			}
-			public HRESULT CreatePartUriCollection(out IXpsOMPartUriCollection* partUriCollection) mut
-			{
-				return VT.CreatePartUriCollection(ref this, out partUriCollection);
-			}
-			public HRESULT CreatePackageWriterOnFile(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, out IXpsOMPackageWriter* packageWriter) mut
-			{
-				return VT.CreatePackageWriterOnFile(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, out packageWriter);
-			}
-			public HRESULT CreatePackageWriterOnStream(ref ISequentialStream outputStream, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, out IXpsOMPackageWriter* packageWriter) mut
-			{
-				return VT.CreatePackageWriterOnStream(ref this, ref outputStream, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, out packageWriter);
-			}
-			public HRESULT CreatePartUri(PWSTR uri, out IOpcPartUri* partUri) mut
-			{
-				return VT.CreatePartUri(ref this, uri, out partUri);
-			}
-			public HRESULT CreateReadOnlyStreamOnFile(PWSTR filename, out IStream* stream) mut
-			{
-				return VT.CreateReadOnlyStreamOnFile(ref this, filename, out stream);
-			}
+			public HRESULT CreatePackage(out IXpsOMPackage* package) mut => VT.CreatePackage(ref this, out package);
+			public HRESULT CreatePackageFromFile(PWSTR filename, BOOL reuseObjects, out IXpsOMPackage* package) mut => VT.CreatePackageFromFile(ref this, filename, reuseObjects, out package);
+			public HRESULT CreatePackageFromStream(ref IStream stream, BOOL reuseObjects, out IXpsOMPackage* package) mut => VT.CreatePackageFromStream(ref this, ref stream, reuseObjects, out package);
+			public HRESULT CreateStoryFragmentsResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMStoryFragmentsResource* storyFragmentsResource) mut => VT.CreateStoryFragmentsResource(ref this, ref acquiredStream, ref partUri, out storyFragmentsResource);
+			public HRESULT CreateDocumentStructureResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMDocumentStructureResource* documentStructureResource) mut => VT.CreateDocumentStructureResource(ref this, ref acquiredStream, ref partUri, out documentStructureResource);
+			public HRESULT CreateSignatureBlockResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMSignatureBlockResource* signatureBlockResource) mut => VT.CreateSignatureBlockResource(ref this, ref acquiredStream, ref partUri, out signatureBlockResource);
+			public HRESULT CreateRemoteDictionaryResource(ref IXpsOMDictionary dictionary, ref IOpcPartUri partUri, out IXpsOMRemoteDictionaryResource* remoteDictionaryResource) mut => VT.CreateRemoteDictionaryResource(ref this, ref dictionary, ref partUri, out remoteDictionaryResource);
+			public HRESULT CreateRemoteDictionaryResourceFromStream(ref IStream dictionaryMarkupStream, ref IOpcPartUri dictionaryPartUri, ref IXpsOMPartResources resources, out IXpsOMRemoteDictionaryResource* dictionaryResource) mut => VT.CreateRemoteDictionaryResourceFromStream(ref this, ref dictionaryMarkupStream, ref dictionaryPartUri, ref resources, out dictionaryResource);
+			public HRESULT CreatePartResources(out IXpsOMPartResources* partResources) mut => VT.CreatePartResources(ref this, out partResources);
+			public HRESULT CreateDocumentSequence(ref IOpcPartUri partUri, out IXpsOMDocumentSequence* documentSequence) mut => VT.CreateDocumentSequence(ref this, ref partUri, out documentSequence);
+			public HRESULT CreateDocument(ref IOpcPartUri partUri, out IXpsOMDocument* document) mut => VT.CreateDocument(ref this, ref partUri, out document);
+			public HRESULT CreatePageReference(in XPS_SIZE advisoryPageDimensions, out IXpsOMPageReference* pageReference) mut => VT.CreatePageReference(ref this, advisoryPageDimensions, out pageReference);
+			public HRESULT CreatePage(in XPS_SIZE pageDimensions, PWSTR language, ref IOpcPartUri partUri, out IXpsOMPage* page) mut => VT.CreatePage(ref this, pageDimensions, language, ref partUri, out page);
+			public HRESULT CreatePageFromStream(ref IStream pageMarkupStream, ref IOpcPartUri partUri, ref IXpsOMPartResources resources, BOOL reuseObjects, out IXpsOMPage* page) mut => VT.CreatePageFromStream(ref this, ref pageMarkupStream, ref partUri, ref resources, reuseObjects, out page);
+			public HRESULT CreateCanvas(out IXpsOMCanvas* canvas) mut => VT.CreateCanvas(ref this, out canvas);
+			public HRESULT CreateGlyphs(ref IXpsOMFontResource fontResource, out IXpsOMGlyphs* glyphs) mut => VT.CreateGlyphs(ref this, ref fontResource, out glyphs);
+			public HRESULT CreatePath(out IXpsOMPath* path) mut => VT.CreatePath(ref this, out path);
+			public HRESULT CreateGeometry(out IXpsOMGeometry* geometry) mut => VT.CreateGeometry(ref this, out geometry);
+			public HRESULT CreateGeometryFigure(in XPS_POINT startPoint, out IXpsOMGeometryFigure* figure) mut => VT.CreateGeometryFigure(ref this, startPoint, out figure);
+			public HRESULT CreateMatrixTransform(in XPS_MATRIX matrix, out IXpsOMMatrixTransform* transform) mut => VT.CreateMatrixTransform(ref this, matrix, out transform);
+			public HRESULT CreateSolidColorBrush(in XPS_COLOR color, ref IXpsOMColorProfileResource colorProfile, out IXpsOMSolidColorBrush* solidColorBrush) mut => VT.CreateSolidColorBrush(ref this, color, ref colorProfile, out solidColorBrush);
+			public HRESULT CreateColorProfileResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMColorProfileResource* colorProfileResource) mut => VT.CreateColorProfileResource(ref this, ref acquiredStream, ref partUri, out colorProfileResource);
+			public HRESULT CreateImageBrush(ref IXpsOMImageResource image, in XPS_RECT viewBox, in XPS_RECT viewPort, out IXpsOMImageBrush* imageBrush) mut => VT.CreateImageBrush(ref this, ref image, viewBox, viewPort, out imageBrush);
+			public HRESULT CreateVisualBrush(in XPS_RECT viewBox, in XPS_RECT viewPort, out IXpsOMVisualBrush* visualBrush) mut => VT.CreateVisualBrush(ref this, viewBox, viewPort, out visualBrush);
+			public HRESULT CreateImageResource(ref IStream acquiredStream, XPS_IMAGE_TYPE contentType, ref IOpcPartUri partUri, out IXpsOMImageResource* imageResource) mut => VT.CreateImageResource(ref this, ref acquiredStream, contentType, ref partUri, out imageResource);
+			public HRESULT CreatePrintTicketResource(ref IStream acquiredStream, ref IOpcPartUri partUri, out IXpsOMPrintTicketResource* printTicketResource) mut => VT.CreatePrintTicketResource(ref this, ref acquiredStream, ref partUri, out printTicketResource);
+			public HRESULT CreateFontResource(ref IStream acquiredStream, XPS_FONT_EMBEDDING fontEmbedding, ref IOpcPartUri partUri, BOOL isObfSourceStream, out IXpsOMFontResource* fontResource) mut => VT.CreateFontResource(ref this, ref acquiredStream, fontEmbedding, ref partUri, isObfSourceStream, out fontResource);
+			public HRESULT CreateGradientStop(in XPS_COLOR color, ref IXpsOMColorProfileResource colorProfile, float offset, out IXpsOMGradientStop* gradientStop) mut => VT.CreateGradientStop(ref this, color, ref colorProfile, offset, out gradientStop);
+			public HRESULT CreateLinearGradientBrush(ref IXpsOMGradientStop gradStop1, ref IXpsOMGradientStop gradStop2, in XPS_POINT startPoint, in XPS_POINT endPoint, out IXpsOMLinearGradientBrush* linearGradientBrush) mut => VT.CreateLinearGradientBrush(ref this, ref gradStop1, ref gradStop2, startPoint, endPoint, out linearGradientBrush);
+			public HRESULT CreateRadialGradientBrush(ref IXpsOMGradientStop gradStop1, ref IXpsOMGradientStop gradStop2, in XPS_POINT centerPoint, in XPS_POINT gradientOrigin, in XPS_SIZE radiiSizes, out IXpsOMRadialGradientBrush* radialGradientBrush) mut => VT.CreateRadialGradientBrush(ref this, ref gradStop1, ref gradStop2, centerPoint, gradientOrigin, radiiSizes, out radialGradientBrush);
+			public HRESULT CreateCoreProperties(ref IOpcPartUri partUri, out IXpsOMCoreProperties* coreProperties) mut => VT.CreateCoreProperties(ref this, ref partUri, out coreProperties);
+			public HRESULT CreateDictionary(out IXpsOMDictionary* dictionary) mut => VT.CreateDictionary(ref this, out dictionary);
+			public HRESULT CreatePartUriCollection(out IXpsOMPartUriCollection* partUriCollection) mut => VT.CreatePartUriCollection(ref this, out partUriCollection);
+			public HRESULT CreatePackageWriterOnFile(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, out IXpsOMPackageWriter* packageWriter) mut => VT.CreatePackageWriterOnFile(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, out packageWriter);
+			public HRESULT CreatePackageWriterOnStream(ref ISequentialStream outputStream, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, out IXpsOMPackageWriter* packageWriter) mut => VT.CreatePackageWriterOnStream(ref this, ref outputStream, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, out packageWriter);
+			public HRESULT CreatePartUri(PWSTR uri, out IOpcPartUri* partUri) mut => VT.CreatePartUri(ref this, uri, out partUri);
+			public HRESULT CreateReadOnlyStreamOnFile(PWSTR filename, out IStream* stream) mut => VT.CreateReadOnlyStreamOnFile(ref this, filename, out stream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3267,14 +1983,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out PWSTR name) mut
-			{
-				return VT.GetAt(ref this, index, out name);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out PWSTR name) mut => VT.GetAt(ref this, index, out name);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3289,30 +2000,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IOpcPartUri* partUri) mut
-			{
-				return VT.GetAt(ref this, index, out partUri);
-			}
-			public HRESULT InsertAt(uint32 index, ref IOpcPartUri partUri) mut
-			{
-				return VT.InsertAt(ref this, index, ref partUri);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
-			public HRESULT SetAt(uint32 index, ref IOpcPartUri partUri) mut
-			{
-				return VT.SetAt(ref this, index, ref partUri);
-			}
-			public HRESULT Append(ref IOpcPartUri partUri) mut
-			{
-				return VT.Append(ref this, ref partUri);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IOpcPartUri* partUri) mut => VT.GetAt(ref this, index, out partUri);
+			public HRESULT InsertAt(uint32 index, ref IOpcPartUri partUri) mut => VT.InsertAt(ref this, index, ref partUri);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+			public HRESULT SetAt(uint32 index, ref IOpcPartUri partUri) mut => VT.SetAt(ref this, index, ref partUri);
+			public HRESULT Append(ref IOpcPartUri partUri) mut => VT.Append(ref this, ref partUri);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3331,26 +2025,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartNewDocument(ref IOpcPartUri documentPartName, ref IXpsOMPrintTicketResource documentPrintTicket, ref IXpsOMDocumentStructureResource documentStructure, ref IXpsOMSignatureBlockResourceCollection signatureBlockResources, ref IXpsOMPartUriCollection restrictedFonts) mut
-			{
-				return VT.StartNewDocument(ref this, ref documentPartName, ref documentPrintTicket, ref documentStructure, ref signatureBlockResources, ref restrictedFonts);
-			}
-			public HRESULT AddPage(ref IXpsOMPage page, in XPS_SIZE advisoryPageDimensions, ref IXpsOMPartUriCollection discardableResourceParts, ref IXpsOMStoryFragmentsResource storyFragments, ref IXpsOMPrintTicketResource pagePrintTicket, ref IXpsOMImageResource pageThumbnail) mut
-			{
-				return VT.AddPage(ref this, ref page, advisoryPageDimensions, ref discardableResourceParts, ref storyFragments, ref pagePrintTicket, ref pageThumbnail);
-			}
-			public HRESULT AddResource(ref IXpsOMResource resource) mut
-			{
-				return VT.AddResource(ref this, ref resource);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT IsClosed(out BOOL isClosed) mut
-			{
-				return VT.IsClosed(ref this, out isClosed);
-			}
+			public HRESULT StartNewDocument(ref IOpcPartUri documentPartName, ref IXpsOMPrintTicketResource documentPrintTicket, ref IXpsOMDocumentStructureResource documentStructure, ref IXpsOMSignatureBlockResourceCollection signatureBlockResources, ref IXpsOMPartUriCollection restrictedFonts) mut => VT.StartNewDocument(ref this, ref documentPartName, ref documentPrintTicket, ref documentStructure, ref signatureBlockResources, ref restrictedFonts);
+			public HRESULT AddPage(ref IXpsOMPage page, in XPS_SIZE advisoryPageDimensions, ref IXpsOMPartUriCollection discardableResourceParts, ref IXpsOMStoryFragmentsResource storyFragments, ref IXpsOMPrintTicketResource pagePrintTicket, ref IXpsOMImageResource pageThumbnail) mut => VT.AddPage(ref this, ref page, advisoryPageDimensions, ref discardableResourceParts, ref storyFragments, ref pagePrintTicket, ref pageThumbnail);
+			public HRESULT AddResource(ref IXpsOMResource resource) mut => VT.AddResource(ref this, ref resource);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT IsClosed(out BOOL isClosed) mut => VT.IsClosed(ref this, out isClosed);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3368,10 +2048,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateXpsOMPackageWriter(ref IOpcPartUri documentSequencePartName, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, out IXpsOMPackageWriter* packageWriter) mut
-			{
-				return VT.CreateXpsOMPackageWriter(ref this, ref documentSequencePartName, ref documentSequencePrintTicket, ref discardControlPartName, out packageWriter);
-			}
+			public HRESULT CreateXpsOMPackageWriter(ref IOpcPartUri documentSequencePartName, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, out IXpsOMPackageWriter* packageWriter) mut => VT.CreateXpsOMPackageWriter(ref this, ref documentSequencePartName, ref documentSequencePrintTicket, ref discardControlPartName, out packageWriter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3385,10 +2063,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GenerateThumbnail(ref IXpsOMPage page, XPS_IMAGE_TYPE thumbnailType, XPS_THUMBNAIL_SIZE thumbnailSize, ref IOpcPartUri imageResourcePartName, out IXpsOMImageResource* imageResource) mut
-			{
-				return VT.GenerateThumbnail(ref this, ref page, thumbnailType, thumbnailSize, ref imageResourcePartName, out imageResource);
-			}
+			public HRESULT GenerateThumbnail(ref IXpsOMPage page, XPS_IMAGE_TYPE thumbnailType, XPS_THUMBNAIL_SIZE thumbnailSize, ref IOpcPartUri imageResourcePartName, out IXpsOMImageResource* imageResource) mut => VT.GenerateThumbnail(ref this, ref page, thumbnailType, thumbnailSize, ref imageResourcePartName, out imageResource);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3402,54 +2078,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDocumentTypeFromFile(PWSTR filename, out XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.GetDocumentTypeFromFile(ref this, filename, out documentType);
-			}
-			public HRESULT GetDocumentTypeFromStream(ref IStream xpsDocumentStream, out XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.GetDocumentTypeFromStream(ref this, ref xpsDocumentStream, out documentType);
-			}
-			public HRESULT ConvertHDPhotoToJpegXR(out IXpsOMImageResource imageResource) mut
-			{
-				return VT.ConvertHDPhotoToJpegXR(ref this, out imageResource);
-			}
-			public HRESULT ConvertJpegXRToHDPhoto(out IXpsOMImageResource imageResource) mut
-			{
-				return VT.ConvertJpegXRToHDPhoto(ref this, out imageResource);
-			}
-			public HRESULT CreatePackageWriterOnFile1(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, XPS_DOCUMENT_TYPE documentType, out IXpsOMPackageWriter* packageWriter) mut
-			{
-				return VT.CreatePackageWriterOnFile1(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, documentType, out packageWriter);
-			}
-			public HRESULT CreatePackageWriterOnStream1(ref ISequentialStream outputStream, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, XPS_DOCUMENT_TYPE documentType, out IXpsOMPackageWriter* packageWriter) mut
-			{
-				return VT.CreatePackageWriterOnStream1(ref this, ref outputStream, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, documentType, out packageWriter);
-			}
-			public HRESULT CreatePackage1(out IXpsOMPackage1* package) mut
-			{
-				return VT.CreatePackage1(ref this, out package);
-			}
-			public HRESULT CreatePackageFromStream1(ref IStream stream, BOOL reuseObjects, out IXpsOMPackage1* package) mut
-			{
-				return VT.CreatePackageFromStream1(ref this, ref stream, reuseObjects, out package);
-			}
-			public HRESULT CreatePackageFromFile1(PWSTR filename, BOOL reuseObjects, out IXpsOMPackage1* package) mut
-			{
-				return VT.CreatePackageFromFile1(ref this, filename, reuseObjects, out package);
-			}
-			public HRESULT CreatePage1(in XPS_SIZE pageDimensions, PWSTR language, ref IOpcPartUri partUri, out IXpsOMPage1* page) mut
-			{
-				return VT.CreatePage1(ref this, pageDimensions, language, ref partUri, out page);
-			}
-			public HRESULT CreatePageFromStream1(ref IStream pageMarkupStream, ref IOpcPartUri partUri, ref IXpsOMPartResources resources, BOOL reuseObjects, out IXpsOMPage1* page) mut
-			{
-				return VT.CreatePageFromStream1(ref this, ref pageMarkupStream, ref partUri, ref resources, reuseObjects, out page);
-			}
-			public HRESULT CreateRemoteDictionaryResourceFromStream1(ref IStream dictionaryMarkupStream, ref IOpcPartUri partUri, ref IXpsOMPartResources resources, out IXpsOMRemoteDictionaryResource* dictionaryResource) mut
-			{
-				return VT.CreateRemoteDictionaryResourceFromStream1(ref this, ref dictionaryMarkupStream, ref partUri, ref resources, out dictionaryResource);
-			}
+			public HRESULT GetDocumentTypeFromFile(PWSTR filename, out XPS_DOCUMENT_TYPE documentType) mut => VT.GetDocumentTypeFromFile(ref this, filename, out documentType);
+			public HRESULT GetDocumentTypeFromStream(ref IStream xpsDocumentStream, out XPS_DOCUMENT_TYPE documentType) mut => VT.GetDocumentTypeFromStream(ref this, ref xpsDocumentStream, out documentType);
+			public HRESULT ConvertHDPhotoToJpegXR(out IXpsOMImageResource imageResource) mut => VT.ConvertHDPhotoToJpegXR(ref this, out imageResource);
+			public HRESULT ConvertJpegXRToHDPhoto(out IXpsOMImageResource imageResource) mut => VT.ConvertJpegXRToHDPhoto(ref this, out imageResource);
+			public HRESULT CreatePackageWriterOnFile1(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, XPS_DOCUMENT_TYPE documentType, out IXpsOMPackageWriter* packageWriter) mut => VT.CreatePackageWriterOnFile1(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, documentType, out packageWriter);
+			public HRESULT CreatePackageWriterOnStream1(ref ISequentialStream outputStream, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, XPS_DOCUMENT_TYPE documentType, out IXpsOMPackageWriter* packageWriter) mut => VT.CreatePackageWriterOnStream1(ref this, ref outputStream, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, documentType, out packageWriter);
+			public HRESULT CreatePackage1(out IXpsOMPackage1* package) mut => VT.CreatePackage1(ref this, out package);
+			public HRESULT CreatePackageFromStream1(ref IStream stream, BOOL reuseObjects, out IXpsOMPackage1* package) mut => VT.CreatePackageFromStream1(ref this, ref stream, reuseObjects, out package);
+			public HRESULT CreatePackageFromFile1(PWSTR filename, BOOL reuseObjects, out IXpsOMPackage1* package) mut => VT.CreatePackageFromFile1(ref this, filename, reuseObjects, out package);
+			public HRESULT CreatePage1(in XPS_SIZE pageDimensions, PWSTR language, ref IOpcPartUri partUri, out IXpsOMPage1* page) mut => VT.CreatePage1(ref this, pageDimensions, language, ref partUri, out page);
+			public HRESULT CreatePageFromStream1(ref IStream pageMarkupStream, ref IOpcPartUri partUri, ref IXpsOMPartResources resources, BOOL reuseObjects, out IXpsOMPage1* page) mut => VT.CreatePageFromStream1(ref this, ref pageMarkupStream, ref partUri, ref resources, reuseObjects, out page);
+			public HRESULT CreateRemoteDictionaryResourceFromStream1(ref IStream dictionaryMarkupStream, ref IOpcPartUri partUri, ref IXpsOMPartResources resources, out IXpsOMRemoteDictionaryResource* dictionaryResource) mut => VT.CreateRemoteDictionaryResourceFromStream1(ref this, ref dictionaryMarkupStream, ref partUri, ref resources, out dictionaryResource);
+
 			[CRepr]
 			public struct VTable : IXpsOMObjectFactory.VTable
 			{
@@ -3474,18 +2115,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDocumentType(out XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.GetDocumentType(ref this, out documentType);
-			}
-			public HRESULT WriteToFile1(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize, XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.WriteToFile1(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize, documentType);
-			}
-			public HRESULT WriteToStream1(ref ISequentialStream outputStream, BOOL optimizeMarkupSize, XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.WriteToStream1(ref this, ref outputStream, optimizeMarkupSize, documentType);
-			}
+			public HRESULT GetDocumentType(out XPS_DOCUMENT_TYPE documentType) mut => VT.GetDocumentType(ref this, out documentType);
+			public HRESULT WriteToFile1(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize, XPS_DOCUMENT_TYPE documentType) mut => VT.WriteToFile1(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize, documentType);
+			public HRESULT WriteToStream1(ref ISequentialStream outputStream, BOOL optimizeMarkupSize, XPS_DOCUMENT_TYPE documentType) mut => VT.WriteToStream1(ref this, ref outputStream, optimizeMarkupSize, documentType);
+
 			[CRepr]
 			public struct VTable : IXpsOMPackage.VTable
 			{
@@ -3501,14 +2134,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDocumentType(out XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.GetDocumentType(ref this, out documentType);
-			}
-			public HRESULT Write1(ref ISequentialStream stream, BOOL optimizeMarkupSize, XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.Write1(ref this, ref stream, optimizeMarkupSize, documentType);
-			}
+			public HRESULT GetDocumentType(out XPS_DOCUMENT_TYPE documentType) mut => VT.GetDocumentType(ref this, out documentType);
+			public HRESULT Write1(ref ISequentialStream stream, BOOL optimizeMarkupSize, XPS_DOCUMENT_TYPE documentType) mut => VT.Write1(ref this, ref stream, optimizeMarkupSize, documentType);
+
 			[CRepr]
 			public struct VTable : IXpsOMPage.VTable
 			{
@@ -3523,18 +2151,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetXpsOMPackageWriter(ref IOpcPartUri documentSequencePartName, ref IOpcPartUri discardControlPartName, out IXpsOMPackageWriter* packageWriter) mut
-			{
-				return VT.GetXpsOMPackageWriter(ref this, ref documentSequencePartName, ref discardControlPartName, out packageWriter);
-			}
-			public HRESULT GetXpsOMFactory(out IXpsOMObjectFactory* xpsFactory) mut
-			{
-				return VT.GetXpsOMFactory(ref this, out xpsFactory);
-			}
-			public HRESULT GetXpsType(out XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.GetXpsType(ref this, out documentType);
-			}
+			public HRESULT GetXpsOMPackageWriter(ref IOpcPartUri documentSequencePartName, ref IOpcPartUri discardControlPartName, out IXpsOMPackageWriter* packageWriter) mut => VT.GetXpsOMPackageWriter(ref this, ref documentSequencePartName, ref discardControlPartName, out packageWriter);
+			public HRESULT GetXpsOMFactory(out IXpsOMObjectFactory* xpsFactory) mut => VT.GetXpsOMFactory(ref this, out xpsFactory);
+			public HRESULT GetXpsType(out XPS_DOCUMENT_TYPE documentType) mut => VT.GetXpsType(ref this, out documentType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3550,14 +2170,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDocumentType(out XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.GetDocumentType(ref this, out documentType);
-			}
-			public HRESULT Write1(ref ISequentialStream stream, XPS_DOCUMENT_TYPE documentType) mut
-			{
-				return VT.Write1(ref this, ref stream, documentType);
-			}
+			public HRESULT GetDocumentType(out XPS_DOCUMENT_TYPE documentType) mut => VT.GetDocumentType(ref this, out documentType);
+			public HRESULT Write1(ref ISequentialStream stream, XPS_DOCUMENT_TYPE documentType) mut => VT.Write1(ref this, ref stream, documentType);
+
 			[CRepr]
 			public struct VTable : IXpsOMRemoteDictionaryResource.VTable
 			{
@@ -3572,14 +2187,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddModelTexture(ref IOpcPartUri texturePartName, ref IStream textureData) mut
-			{
-				return VT.AddModelTexture(ref this, ref texturePartName, ref textureData);
-			}
-			public HRESULT SetModelPrintTicket(ref IOpcPartUri printTicketPartName, ref IStream printTicketData) mut
-			{
-				return VT.SetModelPrintTicket(ref this, ref printTicketPartName, ref printTicketData);
-			}
+			public HRESULT AddModelTexture(ref IOpcPartUri texturePartName, ref IStream textureData) mut => VT.AddModelTexture(ref this, ref texturePartName, ref textureData);
+			public HRESULT SetModelPrintTicket(ref IOpcPartUri printTicketPartName, ref IStream printTicketData) mut => VT.SetModelPrintTicket(ref this, ref printTicketPartName, ref printTicketData);
+
 			[CRepr]
 			public struct VTable : IXpsOMPackageWriter.VTable
 			{
@@ -3594,14 +2204,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetXpsOMPackageWriter3D(ref IOpcPartUri documentSequencePartName, ref IOpcPartUri discardControlPartName, ref IOpcPartUri modelPartName, ref IStream modelData, out IXpsOMPackageWriter3D* packageWriter) mut
-			{
-				return VT.GetXpsOMPackageWriter3D(ref this, ref documentSequencePartName, ref discardControlPartName, ref modelPartName, ref modelData, out packageWriter);
-			}
-			public HRESULT GetXpsOMFactory(out IXpsOMObjectFactory* xpsFactory) mut
-			{
-				return VT.GetXpsOMFactory(ref this, out xpsFactory);
-			}
+			public HRESULT GetXpsOMPackageWriter3D(ref IOpcPartUri documentSequencePartName, ref IOpcPartUri discardControlPartName, ref IOpcPartUri modelPartName, ref IStream modelData, out IXpsOMPackageWriter3D* packageWriter) mut => VT.GetXpsOMPackageWriter3D(ref this, ref documentSequencePartName, ref discardControlPartName, ref modelPartName, ref modelData, out packageWriter);
+			public HRESULT GetXpsOMFactory(out IXpsOMObjectFactory* xpsFactory) mut => VT.GetXpsOMFactory(ref this, out xpsFactory);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3616,74 +2221,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSignatureId(out PWSTR signatureId) mut
-			{
-				return VT.GetSignatureId(ref this, out signatureId);
-			}
-			public HRESULT SetSignatureId(PWSTR signatureId) mut
-			{
-				return VT.SetSignatureId(ref this, signatureId);
-			}
-			public HRESULT GetSignatureMethod(out PWSTR signatureMethod) mut
-			{
-				return VT.GetSignatureMethod(ref this, out signatureMethod);
-			}
-			public HRESULT SetSignatureMethod(PWSTR signatureMethod) mut
-			{
-				return VT.SetSignatureMethod(ref this, signatureMethod);
-			}
-			public HRESULT GetDigestMethod(out PWSTR digestMethod) mut
-			{
-				return VT.GetDigestMethod(ref this, out digestMethod);
-			}
-			public HRESULT SetDigestMethod(PWSTR digestMethod) mut
-			{
-				return VT.SetDigestMethod(ref this, digestMethod);
-			}
-			public HRESULT GetSignaturePartName(out IOpcPartUri* signaturePartName) mut
-			{
-				return VT.GetSignaturePartName(ref this, out signaturePartName);
-			}
-			public HRESULT SetSignaturePartName(ref IOpcPartUri signaturePartName) mut
-			{
-				return VT.SetSignaturePartName(ref this, ref signaturePartName);
-			}
-			public HRESULT GetPolicy(out XPS_SIGN_POLICY policy) mut
-			{
-				return VT.GetPolicy(ref this, out policy);
-			}
-			public HRESULT SetPolicy(XPS_SIGN_POLICY policy) mut
-			{
-				return VT.SetPolicy(ref this, policy);
-			}
-			public HRESULT GetSigningTimeFormat(out OPC_SIGNATURE_TIME_FORMAT timeFormat) mut
-			{
-				return VT.GetSigningTimeFormat(ref this, out timeFormat);
-			}
-			public HRESULT SetSigningTimeFormat(OPC_SIGNATURE_TIME_FORMAT timeFormat) mut
-			{
-				return VT.SetSigningTimeFormat(ref this, timeFormat);
-			}
-			public HRESULT GetCustomObjects(out IOpcSignatureCustomObjectSet* customObjectSet) mut
-			{
-				return VT.GetCustomObjects(ref this, out customObjectSet);
-			}
-			public HRESULT GetCustomReferences(out IOpcSignatureReferenceSet* customReferenceSet) mut
-			{
-				return VT.GetCustomReferences(ref this, out customReferenceSet);
-			}
-			public HRESULT GetCertificateSet(out IOpcCertificateSet* certificateSet) mut
-			{
-				return VT.GetCertificateSet(ref this, out certificateSet);
-			}
-			public HRESULT ComGetFlags(out XPS_SIGN_FLAGS flags) mut
-			{
-				return VT.ComGetFlags(ref this, out flags);
-			}
-			public HRESULT SetFlags(XPS_SIGN_FLAGS flags) mut
-			{
-				return VT.SetFlags(ref this, flags);
-			}
+			public HRESULT GetSignatureId(out PWSTR signatureId) mut => VT.GetSignatureId(ref this, out signatureId);
+			public HRESULT SetSignatureId(PWSTR signatureId) mut => VT.SetSignatureId(ref this, signatureId);
+			public HRESULT GetSignatureMethod(out PWSTR signatureMethod) mut => VT.GetSignatureMethod(ref this, out signatureMethod);
+			public HRESULT SetSignatureMethod(PWSTR signatureMethod) mut => VT.SetSignatureMethod(ref this, signatureMethod);
+			public HRESULT GetDigestMethod(out PWSTR digestMethod) mut => VT.GetDigestMethod(ref this, out digestMethod);
+			public HRESULT SetDigestMethod(PWSTR digestMethod) mut => VT.SetDigestMethod(ref this, digestMethod);
+			public HRESULT GetSignaturePartName(out IOpcPartUri* signaturePartName) mut => VT.GetSignaturePartName(ref this, out signaturePartName);
+			public HRESULT SetSignaturePartName(ref IOpcPartUri signaturePartName) mut => VT.SetSignaturePartName(ref this, ref signaturePartName);
+			public HRESULT GetPolicy(out XPS_SIGN_POLICY policy) mut => VT.GetPolicy(ref this, out policy);
+			public HRESULT SetPolicy(XPS_SIGN_POLICY policy) mut => VT.SetPolicy(ref this, policy);
+			public HRESULT GetSigningTimeFormat(out OPC_SIGNATURE_TIME_FORMAT timeFormat) mut => VT.GetSigningTimeFormat(ref this, out timeFormat);
+			public HRESULT SetSigningTimeFormat(OPC_SIGNATURE_TIME_FORMAT timeFormat) mut => VT.SetSigningTimeFormat(ref this, timeFormat);
+			public HRESULT GetCustomObjects(out IOpcSignatureCustomObjectSet* customObjectSet) mut => VT.GetCustomObjects(ref this, out customObjectSet);
+			public HRESULT GetCustomReferences(out IOpcSignatureReferenceSet* customReferenceSet) mut => VT.GetCustomReferences(ref this, out customReferenceSet);
+			public HRESULT GetCertificateSet(out IOpcCertificateSet* certificateSet) mut => VT.GetCertificateSet(ref this, out certificateSet);
+			public HRESULT ComGetFlags(out XPS_SIGN_FLAGS flags) mut => VT.ComGetFlags(ref this, out flags);
+			public HRESULT SetFlags(XPS_SIGN_FLAGS flags) mut => VT.SetFlags(ref this, flags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3713,18 +2268,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsSignature* signature) mut
-			{
-				return VT.GetAt(ref this, index, out signature);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsSignature* signature) mut => VT.GetAt(ref this, index, out signature);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3740,54 +2287,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSignatureId(out PWSTR sigId) mut
-			{
-				return VT.GetSignatureId(ref this, out sigId);
-			}
-			public HRESULT GetSignatureValue(uint8** signatureHashValue, out uint32 count) mut
-			{
-				return VT.GetSignatureValue(ref this, signatureHashValue, out count);
-			}
-			public HRESULT GetCertificateEnumerator(out IOpcCertificateEnumerator* certificateEnumerator) mut
-			{
-				return VT.GetCertificateEnumerator(ref this, out certificateEnumerator);
-			}
-			public HRESULT GetSigningTime(out PWSTR sigDateTimeString) mut
-			{
-				return VT.GetSigningTime(ref this, out sigDateTimeString);
-			}
-			public HRESULT GetSigningTimeFormat(out OPC_SIGNATURE_TIME_FORMAT timeFormat) mut
-			{
-				return VT.GetSigningTimeFormat(ref this, out timeFormat);
-			}
-			public HRESULT GetSignaturePartName(out IOpcPartUri* signaturePartName) mut
-			{
-				return VT.GetSignaturePartName(ref this, out signaturePartName);
-			}
-			public HRESULT Verify(in CERT_CONTEXT x509Certificate, out XPS_SIGNATURE_STATUS sigStatus) mut
-			{
-				return VT.Verify(ref this, x509Certificate, out sigStatus);
-			}
-			public HRESULT GetPolicy(out XPS_SIGN_POLICY policy) mut
-			{
-				return VT.GetPolicy(ref this, out policy);
-			}
-			public HRESULT GetCustomObjectEnumerator(out IOpcSignatureCustomObjectEnumerator* customObjectEnumerator) mut
-			{
-				return VT.GetCustomObjectEnumerator(ref this, out customObjectEnumerator);
-			}
-			public HRESULT GetCustomReferenceEnumerator(out IOpcSignatureReferenceEnumerator* customReferenceEnumerator) mut
-			{
-				return VT.GetCustomReferenceEnumerator(ref this, out customReferenceEnumerator);
-			}
-			public HRESULT GetSignatureXml(uint8** signatureXml, out uint32 count) mut
-			{
-				return VT.GetSignatureXml(ref this, signatureXml, out count);
-			}
-			public HRESULT SetSignatureXml(uint8* signatureXml, uint32 count) mut
-			{
-				return VT.SetSignatureXml(ref this, signatureXml, count);
-			}
+			public HRESULT GetSignatureId(out PWSTR sigId) mut => VT.GetSignatureId(ref this, out sigId);
+			public HRESULT GetSignatureValue(uint8** signatureHashValue, out uint32 count) mut => VT.GetSignatureValue(ref this, signatureHashValue, out count);
+			public HRESULT GetCertificateEnumerator(out IOpcCertificateEnumerator* certificateEnumerator) mut => VT.GetCertificateEnumerator(ref this, out certificateEnumerator);
+			public HRESULT GetSigningTime(out PWSTR sigDateTimeString) mut => VT.GetSigningTime(ref this, out sigDateTimeString);
+			public HRESULT GetSigningTimeFormat(out OPC_SIGNATURE_TIME_FORMAT timeFormat) mut => VT.GetSigningTimeFormat(ref this, out timeFormat);
+			public HRESULT GetSignaturePartName(out IOpcPartUri* signaturePartName) mut => VT.GetSignaturePartName(ref this, out signaturePartName);
+			public HRESULT Verify(in CERT_CONTEXT x509Certificate, out XPS_SIGNATURE_STATUS sigStatus) mut => VT.Verify(ref this, x509Certificate, out sigStatus);
+			public HRESULT GetPolicy(out XPS_SIGN_POLICY policy) mut => VT.GetPolicy(ref this, out policy);
+			public HRESULT GetCustomObjectEnumerator(out IOpcSignatureCustomObjectEnumerator* customObjectEnumerator) mut => VT.GetCustomObjectEnumerator(ref this, out customObjectEnumerator);
+			public HRESULT GetCustomReferenceEnumerator(out IOpcSignatureReferenceEnumerator* customReferenceEnumerator) mut => VT.GetCustomReferenceEnumerator(ref this, out customReferenceEnumerator);
+			public HRESULT GetSignatureXml(uint8** signatureXml, out uint32 count) mut => VT.GetSignatureXml(ref this, signatureXml, out count);
+			public HRESULT SetSignatureXml(uint8* signatureXml, uint32 count) mut => VT.SetSignatureXml(ref this, signatureXml, count);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3812,18 +2324,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsSignatureBlock* signatureBlock) mut
-			{
-				return VT.GetAt(ref this, index, out signatureBlock);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsSignatureBlock* signatureBlock) mut => VT.GetAt(ref this, index, out signatureBlock);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3839,26 +2343,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRequests(out IXpsSignatureRequestCollection* requests) mut
-			{
-				return VT.GetRequests(ref this, out requests);
-			}
-			public HRESULT GetPartName(out IOpcPartUri* partName) mut
-			{
-				return VT.GetPartName(ref this, out partName);
-			}
-			public HRESULT GetDocumentIndex(out uint32 fixedDocumentIndex) mut
-			{
-				return VT.GetDocumentIndex(ref this, out fixedDocumentIndex);
-			}
-			public HRESULT GetDocumentName(out IOpcPartUri* fixedDocumentName) mut
-			{
-				return VT.GetDocumentName(ref this, out fixedDocumentName);
-			}
-			public HRESULT CreateRequest(PWSTR requestId, out IXpsSignatureRequest* signatureRequest) mut
-			{
-				return VT.CreateRequest(ref this, requestId, out signatureRequest);
-			}
+			public HRESULT GetRequests(out IXpsSignatureRequestCollection* requests) mut => VT.GetRequests(ref this, out requests);
+			public HRESULT GetPartName(out IOpcPartUri* partName) mut => VT.GetPartName(ref this, out partName);
+			public HRESULT GetDocumentIndex(out uint32 fixedDocumentIndex) mut => VT.GetDocumentIndex(ref this, out fixedDocumentIndex);
+			public HRESULT GetDocumentName(out IOpcPartUri* fixedDocumentName) mut => VT.GetDocumentName(ref this, out fixedDocumentName);
+			public HRESULT CreateRequest(PWSTR requestId, out IXpsSignatureRequest* signatureRequest) mut => VT.CreateRequest(ref this, requestId, out signatureRequest);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3876,18 +2366,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 count) mut
-			{
-				return VT.GetCount(ref this, out count);
-			}
-			public HRESULT GetAt(uint32 index, out IXpsSignatureRequest* signatureRequest) mut
-			{
-				return VT.GetAt(ref this, index, out signatureRequest);
-			}
-			public HRESULT RemoveAt(uint32 index) mut
-			{
-				return VT.RemoveAt(ref this, index);
-			}
+			public HRESULT GetCount(out uint32 count) mut => VT.GetCount(ref this, out count);
+			public HRESULT GetAt(uint32 index, out IXpsSignatureRequest* signatureRequest) mut => VT.GetAt(ref this, index, out signatureRequest);
+			public HRESULT RemoveAt(uint32 index) mut => VT.RemoveAt(ref this, index);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3903,54 +2385,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIntent(out PWSTR intent) mut
-			{
-				return VT.GetIntent(ref this, out intent);
-			}
-			public HRESULT SetIntent(PWSTR intent) mut
-			{
-				return VT.SetIntent(ref this, intent);
-			}
-			public HRESULT GetRequestedSigner(out PWSTR signerName) mut
-			{
-				return VT.GetRequestedSigner(ref this, out signerName);
-			}
-			public HRESULT SetRequestedSigner(PWSTR signerName) mut
-			{
-				return VT.SetRequestedSigner(ref this, signerName);
-			}
-			public HRESULT GetRequestSignByDate(out PWSTR dateString) mut
-			{
-				return VT.GetRequestSignByDate(ref this, out dateString);
-			}
-			public HRESULT SetRequestSignByDate(PWSTR dateString) mut
-			{
-				return VT.SetRequestSignByDate(ref this, dateString);
-			}
-			public HRESULT GetSigningLocale(out PWSTR place) mut
-			{
-				return VT.GetSigningLocale(ref this, out place);
-			}
-			public HRESULT SetSigningLocale(PWSTR place) mut
-			{
-				return VT.SetSigningLocale(ref this, place);
-			}
-			public HRESULT GetSpotLocation(out int32 pageIndex, out IOpcPartUri* pagePartName, out float x, out float y) mut
-			{
-				return VT.GetSpotLocation(ref this, out pageIndex, out pagePartName, out x, out y);
-			}
-			public HRESULT SetSpotLocation(int32 pageIndex, float x, float y) mut
-			{
-				return VT.SetSpotLocation(ref this, pageIndex, x, y);
-			}
-			public HRESULT GetRequestId(out PWSTR requestId) mut
-			{
-				return VT.GetRequestId(ref this, out requestId);
-			}
-			public HRESULT GetSignature(out IXpsSignature* signature) mut
-			{
-				return VT.GetSignature(ref this, out signature);
-			}
+			public HRESULT GetIntent(out PWSTR intent) mut => VT.GetIntent(ref this, out intent);
+			public HRESULT SetIntent(PWSTR intent) mut => VT.SetIntent(ref this, intent);
+			public HRESULT GetRequestedSigner(out PWSTR signerName) mut => VT.GetRequestedSigner(ref this, out signerName);
+			public HRESULT SetRequestedSigner(PWSTR signerName) mut => VT.SetRequestedSigner(ref this, signerName);
+			public HRESULT GetRequestSignByDate(out PWSTR dateString) mut => VT.GetRequestSignByDate(ref this, out dateString);
+			public HRESULT SetRequestSignByDate(PWSTR dateString) mut => VT.SetRequestSignByDate(ref this, dateString);
+			public HRESULT GetSigningLocale(out PWSTR place) mut => VT.GetSigningLocale(ref this, out place);
+			public HRESULT SetSigningLocale(PWSTR place) mut => VT.SetSigningLocale(ref this, place);
+			public HRESULT GetSpotLocation(out int32 pageIndex, out IOpcPartUri* pagePartName, out float x, out float y) mut => VT.GetSpotLocation(ref this, out pageIndex, out pagePartName, out x, out y);
+			public HRESULT SetSpotLocation(int32 pageIndex, float x, float y) mut => VT.SetSpotLocation(ref this, pageIndex, x, y);
+			public HRESULT GetRequestId(out PWSTR requestId) mut => VT.GetRequestId(ref this, out requestId);
+			public HRESULT GetSignature(out IXpsSignature* signature) mut => VT.GetSignature(ref this, out signature);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3975,50 +2422,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LoadPackageFile(PWSTR fileName) mut
-			{
-				return VT.LoadPackageFile(ref this, fileName);
-			}
-			public HRESULT LoadPackageStream(ref IStream stream) mut
-			{
-				return VT.LoadPackageStream(ref this, ref stream);
-			}
-			public HRESULT Sign(ref IXpsSigningOptions signOptions, in CERT_CONTEXT x509Certificate, out IXpsSignature* signature) mut
-			{
-				return VT.Sign(ref this, ref signOptions, x509Certificate, out signature);
-			}
-			public HRESULT GetSignatureOriginPartName(out IOpcPartUri* signatureOriginPartName) mut
-			{
-				return VT.GetSignatureOriginPartName(ref this, out signatureOriginPartName);
-			}
-			public HRESULT SetSignatureOriginPartName(ref IOpcPartUri signatureOriginPartName) mut
-			{
-				return VT.SetSignatureOriginPartName(ref this, ref signatureOriginPartName);
-			}
-			public HRESULT GetSignatures(out IXpsSignatureCollection* signatures) mut
-			{
-				return VT.GetSignatures(ref this, out signatures);
-			}
-			public HRESULT AddSignatureBlock(ref IOpcPartUri partName, uint32 fixedDocumentIndex, out IXpsSignatureBlock* signatureBlock) mut
-			{
-				return VT.AddSignatureBlock(ref this, ref partName, fixedDocumentIndex, out signatureBlock);
-			}
-			public HRESULT GetSignatureBlocks(out IXpsSignatureBlockCollection* signatureBlocks) mut
-			{
-				return VT.GetSignatureBlocks(ref this, out signatureBlocks);
-			}
-			public HRESULT CreateSigningOptions(out IXpsSigningOptions* signingOptions) mut
-			{
-				return VT.CreateSigningOptions(ref this, out signingOptions);
-			}
-			public HRESULT SavePackageToFile(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes) mut
-			{
-				return VT.SavePackageToFile(ref this, fileName, ref securityAttributes, flagsAndAttributes);
-			}
-			public HRESULT SavePackageToStream(ref IStream stream) mut
-			{
-				return VT.SavePackageToStream(ref this, ref stream);
-			}
+			public HRESULT LoadPackageFile(PWSTR fileName) mut => VT.LoadPackageFile(ref this, fileName);
+			public HRESULT LoadPackageStream(ref IStream stream) mut => VT.LoadPackageStream(ref this, ref stream);
+			public HRESULT Sign(ref IXpsSigningOptions signOptions, in CERT_CONTEXT x509Certificate, out IXpsSignature* signature) mut => VT.Sign(ref this, ref signOptions, x509Certificate, out signature);
+			public HRESULT GetSignatureOriginPartName(out IOpcPartUri* signatureOriginPartName) mut => VT.GetSignatureOriginPartName(ref this, out signatureOriginPartName);
+			public HRESULT SetSignatureOriginPartName(ref IOpcPartUri signatureOriginPartName) mut => VT.SetSignatureOriginPartName(ref this, ref signatureOriginPartName);
+			public HRESULT GetSignatures(out IXpsSignatureCollection* signatures) mut => VT.GetSignatures(ref this, out signatures);
+			public HRESULT AddSignatureBlock(ref IOpcPartUri partName, uint32 fixedDocumentIndex, out IXpsSignatureBlock* signatureBlock) mut => VT.AddSignatureBlock(ref this, ref partName, fixedDocumentIndex, out signatureBlock);
+			public HRESULT GetSignatureBlocks(out IXpsSignatureBlockCollection* signatureBlocks) mut => VT.GetSignatureBlocks(ref this, out signatureBlocks);
+			public HRESULT CreateSigningOptions(out IXpsSigningOptions* signingOptions) mut => VT.CreateSigningOptions(ref this, out signingOptions);
+			public HRESULT SavePackageToFile(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes) mut => VT.SavePackageToFile(ref this, fileName, ref securityAttributes, flagsAndAttributes);
+			public HRESULT SavePackageToStream(ref IStream stream) mut => VT.SavePackageToStream(ref this, ref stream);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

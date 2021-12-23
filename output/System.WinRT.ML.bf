@@ -14,10 +14,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRegistry(out IMLOperatorRegistry* ppOperatorRegistry) mut
-			{
-				return VT.GetRegistry(ref this, out ppOperatorRegistry);
-			}
+			public HRESULT GetRegistry(out IMLOperatorRegistry* ppOperatorRegistry) mut => VT.GetRegistry(ref this, out ppOperatorRegistry);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -31,14 +29,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBuffer(uint8** value, out uint32 capacity) mut
-			{
-				return VT.GetBuffer(ref this, value, out capacity);
-			}
-			public HRESULT GetD3D12Resource(out ID3D12Resource* result) mut
-			{
-				return VT.GetD3D12Resource(ref this, out result);
-			}
+			public HRESULT GetBuffer(uint8** value, out uint32 capacity) mut => VT.GetBuffer(ref this, value, out capacity);
+			public HRESULT GetD3D12Resource(out ID3D12Resource* result) mut => VT.GetD3D12Resource(ref this, out result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -53,10 +46,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromD3D12Resource(ref ID3D12Resource value, out int64 shape, int32 shapeCount, out IUnknown* result) mut
-			{
-				return VT.CreateFromD3D12Resource(ref this, ref value, out shape, shapeCount, out result);
-			}
+			public HRESULT CreateFromD3D12Resource(ref ID3D12Resource value, out int64 shape, int32 shapeCount, out IUnknown* result) mut => VT.CreateFromD3D12Resource(ref this, ref value, out shape, shapeCount, out result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -70,10 +61,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromD3D12CommandQueue(ref ID3D12CommandQueue value, out IUnknown* result) mut
-			{
-				return VT.CreateFromD3D12CommandQueue(ref this, ref value, out result);
-			}
+			public HRESULT CreateFromD3D12CommandQueue(ref ID3D12CommandQueue value, out IUnknown* result) mut => VT.CreateFromD3D12CommandQueue(ref this, ref value, out result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -87,10 +76,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetIntraOpNumThreadsOverride(uint32 intraOpNumThreads) mut
-			{
-				return VT.SetIntraOpNumThreadsOverride(ref this, intraOpNumThreads);
-			}
+			public HRESULT SetIntraOpNumThreadsOverride(uint32 intraOpNumThreads) mut => VT.SetIntraOpNumThreadsOverride(ref this, intraOpNumThreads);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

@@ -3446,66 +3446,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetID(out uint32 pulID) mut
-			{
-				return VT.GetID(ref this, out pulID);
-			}
-			public HRESULT GetName(PWSTR pszAccountContainer, uint32 cchAccountContainer, PWSTR pszLogonName, uint32 cchLogonName, PWSTR pszDisplayName, uint32 cchDisplayName) mut
-			{
-				return VT.GetName(ref this, pszAccountContainer, cchAccountContainer, pszLogonName, cchLogonName, pszDisplayName, cchDisplayName);
-			}
-			public HRESULT GetSidLength(out uint32 pdwLength) mut
-			{
-				return VT.GetSidLength(ref this, out pdwLength);
-			}
-			public HRESULT GetSid(out uint8 pbSidBuffer, uint32 cbSidBuffer) mut
-			{
-				return VT.GetSid(ref this, out pbSidBuffer, cbSidBuffer);
-			}
-			public HRESULT GetQuotaThreshold(out int64 pllThreshold) mut
-			{
-				return VT.GetQuotaThreshold(ref this, out pllThreshold);
-			}
-			public HRESULT GetQuotaThresholdText(PWSTR pszText, uint32 cchText) mut
-			{
-				return VT.GetQuotaThresholdText(ref this, pszText, cchText);
-			}
-			public HRESULT GetQuotaLimit(out int64 pllLimit) mut
-			{
-				return VT.GetQuotaLimit(ref this, out pllLimit);
-			}
-			public HRESULT GetQuotaLimitText(PWSTR pszText, uint32 cchText) mut
-			{
-				return VT.GetQuotaLimitText(ref this, pszText, cchText);
-			}
-			public HRESULT GetQuotaUsed(out int64 pllUsed) mut
-			{
-				return VT.GetQuotaUsed(ref this, out pllUsed);
-			}
-			public HRESULT GetQuotaUsedText(PWSTR pszText, uint32 cchText) mut
-			{
-				return VT.GetQuotaUsedText(ref this, pszText, cchText);
-			}
-			public HRESULT GetQuotaInformation(void* pbQuotaInfo, uint32 cbQuotaInfo) mut
-			{
-				return VT.GetQuotaInformation(ref this, pbQuotaInfo, cbQuotaInfo);
-			}
-			public HRESULT SetQuotaThreshold(int64 llThreshold, BOOL fWriteThrough) mut
-			{
-				return VT.SetQuotaThreshold(ref this, llThreshold, fWriteThrough);
-			}
-			public HRESULT SetQuotaLimit(int64 llLimit, BOOL fWriteThrough) mut
-			{
-				return VT.SetQuotaLimit(ref this, llLimit, fWriteThrough);
-			}
-			public HRESULT Invalidate() mut
-			{
-				return VT.Invalidate(ref this);
-			}
-			public HRESULT GetAccountStatus(out uint32 pdwStatus) mut
-			{
-				return VT.GetAccountStatus(ref this, out pdwStatus);
-			}
+			public HRESULT GetID(out uint32 pulID) mut => VT.GetID(ref this, out pulID);
+			public HRESULT GetName(PWSTR pszAccountContainer, uint32 cchAccountContainer, PWSTR pszLogonName, uint32 cchLogonName, PWSTR pszDisplayName, uint32 cchDisplayName) mut => VT.GetName(ref this, pszAccountContainer, cchAccountContainer, pszLogonName, cchLogonName, pszDisplayName, cchDisplayName);
+			public HRESULT GetSidLength(out uint32 pdwLength) mut => VT.GetSidLength(ref this, out pdwLength);
+			public HRESULT GetSid(out uint8 pbSidBuffer, uint32 cbSidBuffer) mut => VT.GetSid(ref this, out pbSidBuffer, cbSidBuffer);
+			public HRESULT GetQuotaThreshold(out int64 pllThreshold) mut => VT.GetQuotaThreshold(ref this, out pllThreshold);
+			public HRESULT GetQuotaThresholdText(PWSTR pszText, uint32 cchText) mut => VT.GetQuotaThresholdText(ref this, pszText, cchText);
+			public HRESULT GetQuotaLimit(out int64 pllLimit) mut => VT.GetQuotaLimit(ref this, out pllLimit);
+			public HRESULT GetQuotaLimitText(PWSTR pszText, uint32 cchText) mut => VT.GetQuotaLimitText(ref this, pszText, cchText);
+			public HRESULT GetQuotaUsed(out int64 pllUsed) mut => VT.GetQuotaUsed(ref this, out pllUsed);
+			public HRESULT GetQuotaUsedText(PWSTR pszText, uint32 cchText) mut => VT.GetQuotaUsedText(ref this, pszText, cchText);
+			public HRESULT GetQuotaInformation(void* pbQuotaInfo, uint32 cbQuotaInfo) mut => VT.GetQuotaInformation(ref this, pbQuotaInfo, cbQuotaInfo);
+			public HRESULT SetQuotaThreshold(int64 llThreshold, BOOL fWriteThrough) mut => VT.SetQuotaThreshold(ref this, llThreshold, fWriteThrough);
+			public HRESULT SetQuotaLimit(int64 llLimit, BOOL fWriteThrough) mut => VT.SetQuotaLimit(ref this, llLimit, fWriteThrough);
+			public HRESULT Invalidate() mut => VT.Invalidate(ref this);
+			public HRESULT GetAccountStatus(out uint32 pdwStatus) mut => VT.GetAccountStatus(ref this, out pdwStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3533,22 +3489,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cUsers, out IDiskQuotaUser* rgUsers, out uint32 pcUsersFetched) mut
-			{
-				return VT.Next(ref this, cUsers, out rgUsers, out pcUsersFetched);
-			}
-			public HRESULT Skip(uint32 cUsers) mut
-			{
-				return VT.Skip(ref this, cUsers);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumDiskQuotaUsers* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cUsers, out IDiskQuotaUser* rgUsers, out uint32 pcUsersFetched) mut => VT.Next(ref this, cUsers, out rgUsers, out pcUsersFetched);
+			public HRESULT Skip(uint32 cUsers) mut => VT.Skip(ref this, cUsers);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumDiskQuotaUsers* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3565,22 +3510,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(ref IDiskQuotaUser pUser) mut
-			{
-				return VT.Add(ref this, ref pUser);
-			}
-			public HRESULT Remove(ref IDiskQuotaUser pUser) mut
-			{
-				return VT.Remove(ref this, ref pUser);
-			}
-			public HRESULT RemoveAll() mut
-			{
-				return VT.RemoveAll(ref this);
-			}
-			public HRESULT FlushToDisk() mut
-			{
-				return VT.FlushToDisk(ref this);
-			}
+			public HRESULT Add(ref IDiskQuotaUser pUser) mut => VT.Add(ref this, ref pUser);
+			public HRESULT Remove(ref IDiskQuotaUser pUser) mut => VT.Remove(ref this, ref pUser);
+			public HRESULT RemoveAll() mut => VT.RemoveAll(ref this);
+			public HRESULT FlushToDisk() mut => VT.FlushToDisk(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3597,90 +3531,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszPath, BOOL bReadWrite) mut
-			{
-				return VT.Initialize(ref this, pszPath, bReadWrite);
-			}
-			public HRESULT SetQuotaState(uint32 dwState) mut
-			{
-				return VT.SetQuotaState(ref this, dwState);
-			}
-			public HRESULT GetQuotaState(out uint32 pdwState) mut
-			{
-				return VT.GetQuotaState(ref this, out pdwState);
-			}
-			public HRESULT SetQuotaLogFlags(uint32 dwFlags) mut
-			{
-				return VT.SetQuotaLogFlags(ref this, dwFlags);
-			}
-			public HRESULT GetQuotaLogFlags(out uint32 pdwFlags) mut
-			{
-				return VT.GetQuotaLogFlags(ref this, out pdwFlags);
-			}
-			public HRESULT SetDefaultQuotaThreshold(int64 llThreshold) mut
-			{
-				return VT.SetDefaultQuotaThreshold(ref this, llThreshold);
-			}
-			public HRESULT GetDefaultQuotaThreshold(out int64 pllThreshold) mut
-			{
-				return VT.GetDefaultQuotaThreshold(ref this, out pllThreshold);
-			}
-			public HRESULT GetDefaultQuotaThresholdText(PWSTR pszText, uint32 cchText) mut
-			{
-				return VT.GetDefaultQuotaThresholdText(ref this, pszText, cchText);
-			}
-			public HRESULT SetDefaultQuotaLimit(int64 llLimit) mut
-			{
-				return VT.SetDefaultQuotaLimit(ref this, llLimit);
-			}
-			public HRESULT GetDefaultQuotaLimit(out int64 pllLimit) mut
-			{
-				return VT.GetDefaultQuotaLimit(ref this, out pllLimit);
-			}
-			public HRESULT GetDefaultQuotaLimitText(PWSTR pszText, uint32 cchText) mut
-			{
-				return VT.GetDefaultQuotaLimitText(ref this, pszText, cchText);
-			}
-			public HRESULT AddUserSid(PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) mut
-			{
-				return VT.AddUserSid(ref this, pUserSid, fNameResolution, out ppUser);
-			}
-			public HRESULT AddUserName(PWSTR pszLogonName, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) mut
-			{
-				return VT.AddUserName(ref this, pszLogonName, fNameResolution, out ppUser);
-			}
-			public HRESULT DeleteUser(ref IDiskQuotaUser pUser) mut
-			{
-				return VT.DeleteUser(ref this, ref pUser);
-			}
-			public HRESULT FindUserSid(PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) mut
-			{
-				return VT.FindUserSid(ref this, pUserSid, fNameResolution, out ppUser);
-			}
-			public HRESULT FindUserName(PWSTR pszLogonName, out IDiskQuotaUser* ppUser) mut
-			{
-				return VT.FindUserName(ref this, pszLogonName, out ppUser);
-			}
-			public HRESULT CreateEnumUsers(out PSID rgpUserSids, uint32 cpSids, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IEnumDiskQuotaUsers* ppEnum) mut
-			{
-				return VT.CreateEnumUsers(ref this, out rgpUserSids, cpSids, fNameResolution, out ppEnum);
-			}
-			public HRESULT CreateUserBatch(out IDiskQuotaUserBatch* ppBatch) mut
-			{
-				return VT.CreateUserBatch(ref this, out ppBatch);
-			}
-			public HRESULT InvalidateSidNameCache() mut
-			{
-				return VT.InvalidateSidNameCache(ref this);
-			}
-			public HRESULT GiveUserNameResolutionPriority(ref IDiskQuotaUser pUser) mut
-			{
-				return VT.GiveUserNameResolutionPriority(ref this, ref pUser);
-			}
-			public HRESULT ShutdownNameResolution() mut
-			{
-				return VT.ShutdownNameResolution(ref this);
-			}
+			public HRESULT Initialize(PWSTR pszPath, BOOL bReadWrite) mut => VT.Initialize(ref this, pszPath, bReadWrite);
+			public HRESULT SetQuotaState(uint32 dwState) mut => VT.SetQuotaState(ref this, dwState);
+			public HRESULT GetQuotaState(out uint32 pdwState) mut => VT.GetQuotaState(ref this, out pdwState);
+			public HRESULT SetQuotaLogFlags(uint32 dwFlags) mut => VT.SetQuotaLogFlags(ref this, dwFlags);
+			public HRESULT GetQuotaLogFlags(out uint32 pdwFlags) mut => VT.GetQuotaLogFlags(ref this, out pdwFlags);
+			public HRESULT SetDefaultQuotaThreshold(int64 llThreshold) mut => VT.SetDefaultQuotaThreshold(ref this, llThreshold);
+			public HRESULT GetDefaultQuotaThreshold(out int64 pllThreshold) mut => VT.GetDefaultQuotaThreshold(ref this, out pllThreshold);
+			public HRESULT GetDefaultQuotaThresholdText(PWSTR pszText, uint32 cchText) mut => VT.GetDefaultQuotaThresholdText(ref this, pszText, cchText);
+			public HRESULT SetDefaultQuotaLimit(int64 llLimit) mut => VT.SetDefaultQuotaLimit(ref this, llLimit);
+			public HRESULT GetDefaultQuotaLimit(out int64 pllLimit) mut => VT.GetDefaultQuotaLimit(ref this, out pllLimit);
+			public HRESULT GetDefaultQuotaLimitText(PWSTR pszText, uint32 cchText) mut => VT.GetDefaultQuotaLimitText(ref this, pszText, cchText);
+			public HRESULT AddUserSid(PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) mut => VT.AddUserSid(ref this, pUserSid, fNameResolution, out ppUser);
+			public HRESULT AddUserName(PWSTR pszLogonName, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) mut => VT.AddUserName(ref this, pszLogonName, fNameResolution, out ppUser);
+			public HRESULT DeleteUser(ref IDiskQuotaUser pUser) mut => VT.DeleteUser(ref this, ref pUser);
+			public HRESULT FindUserSid(PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) mut => VT.FindUserSid(ref this, pUserSid, fNameResolution, out ppUser);
+			public HRESULT FindUserName(PWSTR pszLogonName, out IDiskQuotaUser* ppUser) mut => VT.FindUserName(ref this, pszLogonName, out ppUser);
+			public HRESULT CreateEnumUsers(out PSID rgpUserSids, uint32 cpSids, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IEnumDiskQuotaUsers* ppEnum) mut => VT.CreateEnumUsers(ref this, out rgpUserSids, cpSids, fNameResolution, out ppEnum);
+			public HRESULT CreateUserBatch(out IDiskQuotaUserBatch* ppBatch) mut => VT.CreateUserBatch(ref this, out ppBatch);
+			public HRESULT InvalidateSidNameCache() mut => VT.InvalidateSidNameCache(ref this);
+			public HRESULT GiveUserNameResolutionPriority(ref IDiskQuotaUser pUser) mut => VT.GiveUserNameResolutionPriority(ref this, ref pUser);
+			public HRESULT ShutdownNameResolution() mut => VT.ShutdownNameResolution(ref this);
+
 			[CRepr]
 			public struct VTable : IConnectionPointContainer.VTable
 			{
@@ -3714,10 +3586,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnUserNameChanged(ref IDiskQuotaUser pUser) mut
-			{
-				return VT.OnUserNameChanged(ref this, ref pUser);
-			}
+			public HRESULT OnUserNameChanged(ref IDiskQuotaUser pUser) mut => VT.OnUserNameChanged(ref this, ref pUser);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

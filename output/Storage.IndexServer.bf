@@ -275,26 +275,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public int32 Init(uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, out uint32 pFlags) mut
-			{
-				return VT.Init(ref this, grfFlags, cAttributes, aAttributes, out pFlags);
-			}
-			public int32 GetChunk(out STAT_CHUNK pStat) mut
-			{
-				return VT.GetChunk(ref this, out pStat);
-			}
-			public int32 GetText(out uint32 pcwcBuffer, char16* awcBuffer) mut
-			{
-				return VT.GetText(ref this, out pcwcBuffer, awcBuffer);
-			}
-			public int32 GetValue(out PROPVARIANT* ppPropValue) mut
-			{
-				return VT.GetValue(ref this, out ppPropValue);
-			}
-			public int32 BindRegion(FILTERREGION origPos, in Guid riid, void** ppunk) mut
-			{
-				return VT.BindRegion(ref this, origPos, riid, ppunk);
-			}
+			public int32 Init(uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, out uint32 pFlags) mut => VT.Init(ref this, grfFlags, cAttributes, aAttributes, out pFlags);
+			public int32 GetChunk(out STAT_CHUNK pStat) mut => VT.GetChunk(ref this, out pStat);
+			public int32 GetText(out uint32 pcwcBuffer, char16* awcBuffer) mut => VT.GetText(ref this, out pcwcBuffer, awcBuffer);
+			public int32 GetValue(out PROPVARIANT* ppPropValue) mut => VT.GetValue(ref this, out ppPropValue);
+			public int32 BindRegion(FILTERREGION origPos, in Guid riid, void** ppunk) mut => VT.BindRegion(ref this, origPos, riid, ppunk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -312,14 +298,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PutSmallPhrase(PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) mut
-			{
-				return VT.PutSmallPhrase(ref this, pwcNoun, cwcNoun, pwcModifier, cwcModifier, ulAttachmentType);
-			}
-			public HRESULT PutPhrase(PWSTR pwcPhrase, uint32 cwcPhrase) mut
-			{
-				return VT.PutPhrase(ref this, pwcPhrase, cwcPhrase);
-			}
+			public HRESULT PutSmallPhrase(PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) mut => VT.PutSmallPhrase(ref this, pwcNoun, cwcNoun, pwcModifier, cwcModifier, ulAttachmentType);
+			public HRESULT PutPhrase(PWSTR pwcPhrase, uint32 cwcPhrase) mut => VT.PutPhrase(ref this, pwcPhrase, cwcPhrase);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

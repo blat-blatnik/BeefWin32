@@ -522,14 +522,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Enable() mut
-			{
-				return VT.Enable(ref this);
-			}
-			public HRESULT Disable() mut
-			{
-				return VT.Disable(ref this);
-			}
+			public HRESULT Enable() mut => VT.Enable(ref this);
+			public HRESULT Disable() mut => VT.Disable(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -544,18 +539,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUserSummary(BSTR bstrSID, BSTR* pbstrUserSummary) mut
-			{
-				return VT.GetUserSummary(ref this, bstrSID, pbstrUserSummary);
-			}
-			public HRESULT Configure(HWND hWnd, BSTR bstrSID) mut
-			{
-				return VT.Configure(ref this, hWnd, bstrSID);
-			}
-			public HRESULT RequestOverride(HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) mut
-			{
-				return VT.RequestOverride(ref this, hWnd, bstrPath, dwFlags);
-			}
+			public HRESULT GetUserSummary(BSTR bstrSID, BSTR* pbstrUserSummary) mut => VT.GetUserSummary(ref this, bstrSID, pbstrUserSummary);
+			public HRESULT Configure(HWND hWnd, BSTR bstrSID) mut => VT.Configure(ref this, hWnd, bstrSID);
+			public HRESULT RequestOverride(HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) mut => VT.RequestOverride(ref this, hWnd, bstrPath, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -571,18 +558,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsLoggingRequired(out BOOL pfRequired) mut
-			{
-				return VT.IsLoggingRequired(ref this, out pfRequired);
-			}
-			public HRESULT GetLastSettingsChangeTime(out SYSTEMTIME pTime) mut
-			{
-				return VT.GetLastSettingsChangeTime(ref this, out pTime);
-			}
-			public HRESULT GetRestrictions(out WPCFLAG_RESTRICTION pdwRestrictions) mut
-			{
-				return VT.GetRestrictions(ref this, out pdwRestrictions);
-			}
+			public HRESULT IsLoggingRequired(out BOOL pfRequired) mut => VT.IsLoggingRequired(ref this, out pfRequired);
+			public HRESULT GetLastSettingsChangeTime(out SYSTEMTIME pTime) mut => VT.GetLastSettingsChangeTime(ref this, out pTime);
+			public HRESULT GetRestrictions(out WPCFLAG_RESTRICTION pdwRestrictions) mut => VT.GetRestrictions(ref this, out pdwRestrictions);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -598,10 +577,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsBlocked(Guid guidAppID, out uint32 pdwReasons) mut
-			{
-				return VT.IsBlocked(ref this, guidAppID, out pdwReasons);
-			}
+			public HRESULT IsBlocked(Guid guidAppID, out uint32 pdwReasons) mut => VT.IsBlocked(ref this, guidAppID, out pdwReasons);
+
 			[CRepr]
 			public struct VTable : IWPCSettings.VTable
 			{
@@ -615,14 +592,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSettings(out WPCFLAG_WEB_SETTING pdwSettings) mut
-			{
-				return VT.GetSettings(ref this, out pdwSettings);
-			}
-			public HRESULT RequestURLOverride(HWND hWnd, PWSTR pcszURL, uint32 cURLs, PWSTR* ppcszSubURLs, out BOOL pfChanged) mut
-			{
-				return VT.RequestURLOverride(ref this, hWnd, pcszURL, cURLs, ppcszSubURLs, out pfChanged);
-			}
+			public HRESULT GetSettings(out WPCFLAG_WEB_SETTING pdwSettings) mut => VT.GetSettings(ref this, out pdwSettings);
+			public HRESULT RequestURLOverride(HWND hWnd, PWSTR pcszURL, uint32 cURLs, PWSTR* ppcszSubURLs, out BOOL pfChanged) mut => VT.RequestURLOverride(ref this, hWnd, pcszURL, cURLs, ppcszSubURLs, out pfChanged);
+
 			[CRepr]
 			public struct VTable : IWPCSettings.VTable
 			{
@@ -637,22 +609,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVisibility(out WPCFLAG_VISIBILITY peVisibility) mut
-			{
-				return VT.GetVisibility(ref this, out peVisibility);
-			}
-			public HRESULT GetUserSettings(PWSTR pcszSID, IWPCSettings** ppSettings) mut
-			{
-				return VT.GetUserSettings(ref this, pcszSID, ppSettings);
-			}
-			public HRESULT GetWebSettings(PWSTR pcszSID, IWPCWebSettings** ppSettings) mut
-			{
-				return VT.GetWebSettings(ref this, pcszSID, ppSettings);
-			}
-			public HRESULT GetWebFilterInfo(out Guid pguidID, PWSTR* ppszName) mut
-			{
-				return VT.GetWebFilterInfo(ref this, out pguidID, ppszName);
-			}
+			public HRESULT GetVisibility(out WPCFLAG_VISIBILITY peVisibility) mut => VT.GetVisibility(ref this, out peVisibility);
+			public HRESULT GetUserSettings(PWSTR pcszSID, IWPCSettings** ppSettings) mut => VT.GetUserSettings(ref this, pcszSID, ppSettings);
+			public HRESULT GetWebSettings(PWSTR pcszSID, IWPCWebSettings** ppSettings) mut => VT.GetWebSettings(ref this, pcszSID, ppSettings);
+			public HRESULT GetWebFilterInfo(out Guid pguidID, PWSTR* ppszName) mut => VT.GetWebFilterInfo(ref this, out pguidID, ppszName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -669,10 +630,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGamesSettings(PWSTR pcszSID, IWPCGamesSettings** ppSettings) mut
-			{
-				return VT.GetGamesSettings(ref this, pcszSID, ppSettings);
-			}
+			public HRESULT GetGamesSettings(PWSTR pcszSID, IWPCGamesSettings** ppSettings) mut => VT.GetGamesSettings(ref this, pcszSID, ppSettings);
+
 			[CRepr]
 			public struct VTable : IWindowsParentalControlsCore.VTable
 			{
@@ -686,10 +645,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrent(out Guid pguidProvider) mut
-			{
-				return VT.GetCurrent(ref this, out pguidProvider);
-			}
+			public HRESULT GetCurrent(out Guid pguidProvider) mut => VT.GetCurrent(ref this, out pguidProvider);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

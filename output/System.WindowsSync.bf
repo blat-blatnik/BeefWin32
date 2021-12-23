@@ -189,14 +189,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetReplicaKey(out uint32 pdwReplicaKey) mut
-			{
-				return VT.GetReplicaKey(ref this, out pdwReplicaKey);
-			}
-			public HRESULT GetTickCount(out uint64 pullTickCount) mut
-			{
-				return VT.GetTickCount(ref this, out pullTickCount);
-			}
+			public HRESULT GetReplicaKey(out uint32 pdwReplicaKey) mut => VT.GetReplicaKey(ref this, out pdwReplicaKey);
+			public HRESULT GetTickCount(out uint64 pullTickCount) mut => VT.GetTickCount(ref this, out pullTickCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -211,14 +206,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSyncTime(out SYNC_TIME pSyncTime) mut
-			{
-				return VT.GetSyncTime(ref this, out pSyncTime);
-			}
-			public HRESULT ComGetFlags(out uint8 pbFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pbFlags);
-			}
+			public HRESULT GetSyncTime(out SYNC_TIME pSyncTime) mut => VT.GetSyncTime(ref this, out pSyncTime);
+			public HRESULT ComGetFlags(out uint8 pbFlags) mut => VT.ComGetFlags(ref this, out pbFlags);
+
 			[CRepr]
 			public struct VTable : IClockVectorElement.VTable
 			{
@@ -233,14 +223,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClockVectorElements(in Guid riid, void** ppiEnumClockVector) mut
-			{
-				return VT.GetClockVectorElements(ref this, riid, ppiEnumClockVector);
-			}
-			public HRESULT GetClockVectorElementCount(out uint32 pdwCount) mut
-			{
-				return VT.GetClockVectorElementCount(ref this, out pdwCount);
-			}
+			public HRESULT GetClockVectorElements(in Guid riid, void** ppiEnumClockVector) mut => VT.GetClockVectorElements(ref this, riid, ppiEnumClockVector);
+			public HRESULT GetClockVectorElementCount(out uint32 pdwCount) mut => VT.GetClockVectorElementCount(ref this, out pdwCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -255,14 +240,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUpdateCount(out uint32 pdwUpdateCount) mut
-			{
-				return VT.GetUpdateCount(ref this, out pdwUpdateCount);
-			}
-			public HRESULT IsNoConflictsSpecified(out BOOL pfIsNoConflictsSpecified) mut
-			{
-				return VT.IsNoConflictsSpecified(ref this, out pfIsNoConflictsSpecified);
-			}
+			public HRESULT GetUpdateCount(out uint32 pdwUpdateCount) mut => VT.GetUpdateCount(ref this, out pdwUpdateCount);
+			public HRESULT IsNoConflictsSpecified(out BOOL pfIsNoConflictsSpecified) mut => VT.IsNoConflictsSpecified(ref this, out pfIsNoConflictsSpecified);
+
 			[CRepr]
 			public struct VTable : IClockVector.VTable
 			{
@@ -277,22 +257,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cClockVectorElements, out IClockVectorElement* ppiClockVectorElements, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cClockVectorElements, out ppiClockVectorElements, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cSyncVersions) mut
-			{
-				return VT.Skip(ref this, cSyncVersions);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumClockVector* ppiEnum) mut
-			{
-				return VT.Clone(ref this, out ppiEnum);
-			}
+			public HRESULT Next(uint32 cClockVectorElements, out IClockVectorElement* ppiClockVectorElements, out uint32 pcFetched) mut => VT.Next(ref this, cClockVectorElements, out ppiClockVectorElements, out pcFetched);
+			public HRESULT Skip(uint32 cSyncVersions) mut => VT.Skip(ref this, cSyncVersions);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumClockVector* ppiEnum) mut => VT.Clone(ref this, out ppiEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -309,22 +278,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cClockVectorElements, out IFeedClockVectorElement* ppiClockVectorElements, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cClockVectorElements, out ppiClockVectorElements, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cSyncVersions) mut
-			{
-				return VT.Skip(ref this, cSyncVersions);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumFeedClockVector* ppiEnum) mut
-			{
-				return VT.Clone(ref this, out ppiEnum);
-			}
+			public HRESULT Next(uint32 cClockVectorElements, out IFeedClockVectorElement* ppiClockVectorElements, out uint32 pcFetched) mut => VT.Next(ref this, cClockVectorElements, out ppiClockVectorElements, out pcFetched);
+			public HRESULT Skip(uint32 cSyncVersions) mut => VT.Skip(ref this, cSyncVersions);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumFeedClockVector* ppiEnum) mut => VT.Clone(ref this, out ppiEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -341,26 +299,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NextColumn(out uint8 pChangeUnitId, out uint32 pChangeUnitIdSize) mut
-			{
-				return VT.NextColumn(ref this, out pChangeUnitId, out pChangeUnitIdSize);
-			}
-			public HRESULT NextRange(out uint8 pItemId, out uint32 pItemIdSize, out IClockVector* piClockVector) mut
-			{
-				return VT.NextRange(ref this, out pItemId, out pItemIdSize, out piClockVector);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT GetColumnCount(out uint32 pColumnCount) mut
-			{
-				return VT.GetColumnCount(ref this, out pColumnCount);
-			}
-			public HRESULT GetRangeCount(out uint32 pRangeCount) mut
-			{
-				return VT.GetRangeCount(ref this, out pRangeCount);
-			}
+			public HRESULT NextColumn(out uint8 pChangeUnitId, out uint32 pChangeUnitIdSize) mut => VT.NextColumn(ref this, out pChangeUnitId, out pChangeUnitIdSize);
+			public HRESULT NextRange(out uint8 pItemId, out uint32 pItemIdSize, out IClockVector* piClockVector) mut => VT.NextRange(ref this, out pItemId, out pItemIdSize, out piClockVector);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT GetColumnCount(out uint32 pColumnCount) mut => VT.GetColumnCount(ref this, out pColumnCount);
+			public HRESULT GetRangeCount(out uint32 pRangeCount) mut => VT.GetRangeCount(ref this, out pRangeCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -378,14 +322,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NextCoreFragments(uint32 requestedCount, out ICoreFragment* ppiCoreFragments, out uint32 pFetchedCount) mut
-			{
-				return VT.NextCoreFragments(ref this, requestedCount, out ppiCoreFragments, out pFetchedCount);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT NextCoreFragments(uint32 requestedCount, out ICoreFragment* ppiCoreFragments, out uint32 pFetchedCount) mut => VT.NextCoreFragments(ref this, requestedCount, out ppiCoreFragments, out pFetchedCount);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -400,18 +339,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClosedRangeStart(out uint8 pbClosedRangeStart, out uint32 pcbIdSize) mut
-			{
-				return VT.GetClosedRangeStart(ref this, out pbClosedRangeStart, out pcbIdSize);
-			}
-			public HRESULT GetClosedRangeEnd(out uint8 pbClosedRangeEnd, out uint32 pcbIdSize) mut
-			{
-				return VT.GetClosedRangeEnd(ref this, out pbClosedRangeEnd, out pcbIdSize);
-			}
-			public HRESULT GetClockVector(in Guid riid, void** ppUnk) mut
-			{
-				return VT.GetClockVector(ref this, riid, ppUnk);
-			}
+			public HRESULT GetClosedRangeStart(out uint8 pbClosedRangeStart, out uint32 pcbIdSize) mut => VT.GetClosedRangeStart(ref this, out pbClosedRangeStart, out pcbIdSize);
+			public HRESULT GetClosedRangeEnd(out uint8 pbClosedRangeEnd, out uint32 pcbIdSize) mut => VT.GetClosedRangeEnd(ref this, out pbClosedRangeEnd, out pcbIdSize);
+			public HRESULT GetClockVector(in Guid riid, void** ppUnk) mut => VT.GetClockVector(ref this, riid, ppUnk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -427,22 +358,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cExceptions, out IRangeExceptionAlt* ppRangeException, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cExceptions, out ppRangeException, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cExceptions) mut
-			{
-				return VT.Skip(ref this, cExceptions);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumRangeExceptions* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cExceptions, out IRangeExceptionAlt* ppRangeException, out uint32 pcFetched) mut => VT.Next(ref this, cExceptions, out ppRangeException, out pcFetched);
+			public HRESULT Skip(uint32 cExceptions) mut => VT.Skip(ref this, cExceptions);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumRangeExceptions* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -459,14 +379,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemId(out uint8 pbItemId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetItemId(ref this, out pbItemId, out pcbIdSize);
-			}
-			public HRESULT GetClockVector(in Guid riid, void** ppUnk) mut
-			{
-				return VT.GetClockVector(ref this, riid, ppUnk);
-			}
+			public HRESULT GetItemId(out uint8 pbItemId, out uint32 pcbIdSize) mut => VT.GetItemId(ref this, out pbItemId, out pcbIdSize);
+			public HRESULT GetClockVector(in Guid riid, void** ppUnk) mut => VT.GetClockVector(ref this, riid, ppUnk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -481,22 +396,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cExceptions, out ISingleItemException* ppSingleItemException, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cExceptions, out ppSingleItemException, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cExceptions) mut
-			{
-				return VT.Skip(ref this, cExceptions);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumSingleItemExceptions* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cExceptions, out ISingleItemException* ppSingleItemException, out uint32 pcFetched) mut => VT.Next(ref this, cExceptions, out ppSingleItemException, out pcFetched);
+			public HRESULT Skip(uint32 cExceptions) mut => VT.Skip(ref this, cExceptions);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumSingleItemExceptions* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -513,18 +417,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemId(out uint8 pbItemId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetItemId(ref this, out pbItemId, out pcbIdSize);
-			}
-			public HRESULT GetChangeUnitId(out uint8 pbChangeUnitId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetChangeUnitId(ref this, out pbChangeUnitId, out pcbIdSize);
-			}
-			public HRESULT GetClockVector(in Guid riid, void** ppUnk) mut
-			{
-				return VT.GetClockVector(ref this, riid, ppUnk);
-			}
+			public HRESULT GetItemId(out uint8 pbItemId, out uint32 pcbIdSize) mut => VT.GetItemId(ref this, out pbItemId, out pcbIdSize);
+			public HRESULT GetChangeUnitId(out uint8 pbChangeUnitId, out uint32 pcbIdSize) mut => VT.GetChangeUnitId(ref this, out pbChangeUnitId, out pcbIdSize);
+			public HRESULT GetClockVector(in Guid riid, void** ppUnk) mut => VT.GetClockVector(ref this, riid, ppUnk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -540,22 +436,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cExceptions, out IChangeUnitException* ppChangeUnitException, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cExceptions, out ppChangeUnitException, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cExceptions) mut
-			{
-				return VT.Skip(ref this, cExceptions);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumChangeUnitExceptions* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cExceptions, out IChangeUnitException* ppChangeUnitException, out uint32 pcFetched) mut => VT.Next(ref this, cExceptions, out ppChangeUnitException, out pcFetched);
+			public HRESULT Skip(uint32 cExceptions) mut => VT.Skip(ref this, cExceptions);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumChangeUnitExceptions* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -572,18 +457,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LookupReplicaKey(in uint8 pbReplicaId, out uint32 pdwReplicaKey) mut
-			{
-				return VT.LookupReplicaKey(ref this, pbReplicaId, out pdwReplicaKey);
-			}
-			public HRESULT LookupReplicaId(uint32 dwReplicaKey, out uint8 pbReplicaId, out uint32 pcbIdSize) mut
-			{
-				return VT.LookupReplicaId(ref this, dwReplicaKey, out pbReplicaId, out pcbIdSize);
-			}
-			public HRESULT Serialize(out uint8 pbReplicaKeyMap, out uint32 pcbReplicaKeyMap) mut
-			{
-				return VT.Serialize(ref this, out pbReplicaKeyMap, out pcbReplicaKeyMap);
-			}
+			public HRESULT LookupReplicaKey(in uint8 pbReplicaId, out uint32 pdwReplicaKey) mut => VT.LookupReplicaKey(ref this, pbReplicaId, out pdwReplicaKey);
+			public HRESULT LookupReplicaId(uint32 dwReplicaKey, out uint8 pbReplicaId, out uint32 pcbIdSize) mut => VT.LookupReplicaId(ref this, dwReplicaKey, out pbReplicaId, out pcbIdSize);
+			public HRESULT Serialize(out uint8 pbReplicaKeyMap, out uint32 pcbReplicaKeyMap) mut => VT.Serialize(ref this, out pbReplicaKeyMap, out pcbReplicaKeyMap);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -599,10 +476,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindOrAddReplica(in uint8 pbReplicaId, out uint32 pdwReplicaKey) mut
-			{
-				return VT.FindOrAddReplica(ref this, pbReplicaId, out pdwReplicaKey);
-			}
+			public HRESULT FindOrAddReplica(in uint8 pbReplicaId, out uint32 pdwReplicaKey) mut => VT.FindOrAddReplica(ref this, pbReplicaId, out pdwReplicaKey);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -616,102 +491,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwnerReplicaId(out uint8 pbReplicaId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetOwnerReplicaId(ref this, out pbReplicaId, out pcbIdSize);
-			}
-			public HRESULT Serialize(BOOL fSerializeReplicaKeyMap, out uint8 pbKnowledge, out uint32 pcbKnowledge) mut
-			{
-				return VT.Serialize(ref this, fSerializeReplicaKeyMap, out pbKnowledge, out pcbKnowledge);
-			}
-			public HRESULT SetLocalTickCount(uint64 ullTickCount) mut
-			{
-				return VT.SetLocalTickCount(ref this, ullTickCount);
-			}
-			public HRESULT ContainsChange(in uint8 pbVersionOwnerReplicaId, in uint8 pgidItemId, in SYNC_VERSION pSyncVersion) mut
-			{
-				return VT.ContainsChange(ref this, pbVersionOwnerReplicaId, pgidItemId, pSyncVersion);
-			}
-			public HRESULT ContainsChangeUnit(in uint8 pbVersionOwnerReplicaId, in uint8 pbItemId, in uint8 pbChangeUnitId, in SYNC_VERSION pSyncVersion) mut
-			{
-				return VT.ContainsChangeUnit(ref this, pbVersionOwnerReplicaId, pbItemId, pbChangeUnitId, pSyncVersion);
-			}
-			public HRESULT GetScopeVector(in Guid riid, void** ppUnk) mut
-			{
-				return VT.GetScopeVector(ref this, riid, ppUnk);
-			}
-			public HRESULT GetReplicaKeyMap(out IReplicaKeyMap* ppReplicaKeyMap) mut
-			{
-				return VT.GetReplicaKeyMap(ref this, out ppReplicaKeyMap);
-			}
-			public HRESULT Clone(out ISyncKnowledge* ppClonedKnowledge) mut
-			{
-				return VT.Clone(ref this, out ppClonedKnowledge);
-			}
-			public HRESULT ConvertVersion(ref ISyncKnowledge pKnowledgeIn, in uint8 pbCurrentOwnerId, in SYNC_VERSION pVersionIn, out uint8 pbNewOwnerId, out uint32 pcbIdSize, out SYNC_VERSION pVersionOut) mut
-			{
-				return VT.ConvertVersion(ref this, ref pKnowledgeIn, pbCurrentOwnerId, pVersionIn, out pbNewOwnerId, out pcbIdSize, out pVersionOut);
-			}
-			public HRESULT MapRemoteToLocal(ref ISyncKnowledge pRemoteKnowledge, out ISyncKnowledge* ppMappedKnowledge) mut
-			{
-				return VT.MapRemoteToLocal(ref this, ref pRemoteKnowledge, out ppMappedKnowledge);
-			}
-			public HRESULT Union(ref ISyncKnowledge pKnowledge) mut
-			{
-				return VT.Union(ref this, ref pKnowledge);
-			}
-			public HRESULT ProjectOntoItem(in uint8 pbItemId, out ISyncKnowledge* ppKnowledgeOut) mut
-			{
-				return VT.ProjectOntoItem(ref this, pbItemId, out ppKnowledgeOut);
-			}
-			public HRESULT ProjectOntoChangeUnit(in uint8 pbItemId, in uint8 pbChangeUnitId, out ISyncKnowledge* ppKnowledgeOut) mut
-			{
-				return VT.ProjectOntoChangeUnit(ref this, pbItemId, pbChangeUnitId, out ppKnowledgeOut);
-			}
-			public HRESULT ProjectOntoRange(in SYNC_RANGE psrngSyncRange, out ISyncKnowledge* ppKnowledgeOut) mut
-			{
-				return VT.ProjectOntoRange(ref this, psrngSyncRange, out ppKnowledgeOut);
-			}
-			public HRESULT ExcludeItem(in uint8 pbItemId) mut
-			{
-				return VT.ExcludeItem(ref this, pbItemId);
-			}
-			public HRESULT ExcludeChangeUnit(in uint8 pbItemId, in uint8 pbChangeUnitId) mut
-			{
-				return VT.ExcludeChangeUnit(ref this, pbItemId, pbChangeUnitId);
-			}
-			public HRESULT ContainsKnowledge(ref ISyncKnowledge pKnowledge) mut
-			{
-				return VT.ContainsKnowledge(ref this, ref pKnowledge);
-			}
-			public HRESULT FindMinTickCountForReplica(in uint8 pbReplicaId, out uint64 pullReplicaTickCount) mut
-			{
-				return VT.FindMinTickCountForReplica(ref this, pbReplicaId, out pullReplicaTickCount);
-			}
-			public HRESULT GetRangeExceptions(in Guid riid, void** ppUnk) mut
-			{
-				return VT.GetRangeExceptions(ref this, riid, ppUnk);
-			}
-			public HRESULT GetSingleItemExceptions(in Guid riid, void** ppUnk) mut
-			{
-				return VT.GetSingleItemExceptions(ref this, riid, ppUnk);
-			}
-			public HRESULT GetChangeUnitExceptions(in Guid riid, void** ppUnk) mut
-			{
-				return VT.GetChangeUnitExceptions(ref this, riid, ppUnk);
-			}
-			public HRESULT FindClockVectorForItem(in uint8 pbItemId, in Guid riid, void** ppUnk) mut
-			{
-				return VT.FindClockVectorForItem(ref this, pbItemId, riid, ppUnk);
-			}
-			public HRESULT FindClockVectorForChangeUnit(in uint8 pbItemId, in uint8 pbChangeUnitId, in Guid riid, void** ppUnk) mut
-			{
-				return VT.FindClockVectorForChangeUnit(ref this, pbItemId, pbChangeUnitId, riid, ppUnk);
-			}
-			public HRESULT GetVersion(out uint32 pdwVersion) mut
-			{
-				return VT.GetVersion(ref this, out pdwVersion);
-			}
+			public HRESULT GetOwnerReplicaId(out uint8 pbReplicaId, out uint32 pcbIdSize) mut => VT.GetOwnerReplicaId(ref this, out pbReplicaId, out pcbIdSize);
+			public HRESULT Serialize(BOOL fSerializeReplicaKeyMap, out uint8 pbKnowledge, out uint32 pcbKnowledge) mut => VT.Serialize(ref this, fSerializeReplicaKeyMap, out pbKnowledge, out pcbKnowledge);
+			public HRESULT SetLocalTickCount(uint64 ullTickCount) mut => VT.SetLocalTickCount(ref this, ullTickCount);
+			public HRESULT ContainsChange(in uint8 pbVersionOwnerReplicaId, in uint8 pgidItemId, in SYNC_VERSION pSyncVersion) mut => VT.ContainsChange(ref this, pbVersionOwnerReplicaId, pgidItemId, pSyncVersion);
+			public HRESULT ContainsChangeUnit(in uint8 pbVersionOwnerReplicaId, in uint8 pbItemId, in uint8 pbChangeUnitId, in SYNC_VERSION pSyncVersion) mut => VT.ContainsChangeUnit(ref this, pbVersionOwnerReplicaId, pbItemId, pbChangeUnitId, pSyncVersion);
+			public HRESULT GetScopeVector(in Guid riid, void** ppUnk) mut => VT.GetScopeVector(ref this, riid, ppUnk);
+			public HRESULT GetReplicaKeyMap(out IReplicaKeyMap* ppReplicaKeyMap) mut => VT.GetReplicaKeyMap(ref this, out ppReplicaKeyMap);
+			public HRESULT Clone(out ISyncKnowledge* ppClonedKnowledge) mut => VT.Clone(ref this, out ppClonedKnowledge);
+			public HRESULT ConvertVersion(ref ISyncKnowledge pKnowledgeIn, in uint8 pbCurrentOwnerId, in SYNC_VERSION pVersionIn, out uint8 pbNewOwnerId, out uint32 pcbIdSize, out SYNC_VERSION pVersionOut) mut => VT.ConvertVersion(ref this, ref pKnowledgeIn, pbCurrentOwnerId, pVersionIn, out pbNewOwnerId, out pcbIdSize, out pVersionOut);
+			public HRESULT MapRemoteToLocal(ref ISyncKnowledge pRemoteKnowledge, out ISyncKnowledge* ppMappedKnowledge) mut => VT.MapRemoteToLocal(ref this, ref pRemoteKnowledge, out ppMappedKnowledge);
+			public HRESULT Union(ref ISyncKnowledge pKnowledge) mut => VT.Union(ref this, ref pKnowledge);
+			public HRESULT ProjectOntoItem(in uint8 pbItemId, out ISyncKnowledge* ppKnowledgeOut) mut => VT.ProjectOntoItem(ref this, pbItemId, out ppKnowledgeOut);
+			public HRESULT ProjectOntoChangeUnit(in uint8 pbItemId, in uint8 pbChangeUnitId, out ISyncKnowledge* ppKnowledgeOut) mut => VT.ProjectOntoChangeUnit(ref this, pbItemId, pbChangeUnitId, out ppKnowledgeOut);
+			public HRESULT ProjectOntoRange(in SYNC_RANGE psrngSyncRange, out ISyncKnowledge* ppKnowledgeOut) mut => VT.ProjectOntoRange(ref this, psrngSyncRange, out ppKnowledgeOut);
+			public HRESULT ExcludeItem(in uint8 pbItemId) mut => VT.ExcludeItem(ref this, pbItemId);
+			public HRESULT ExcludeChangeUnit(in uint8 pbItemId, in uint8 pbChangeUnitId) mut => VT.ExcludeChangeUnit(ref this, pbItemId, pbChangeUnitId);
+			public HRESULT ContainsKnowledge(ref ISyncKnowledge pKnowledge) mut => VT.ContainsKnowledge(ref this, ref pKnowledge);
+			public HRESULT FindMinTickCountForReplica(in uint8 pbReplicaId, out uint64 pullReplicaTickCount) mut => VT.FindMinTickCountForReplica(ref this, pbReplicaId, out pullReplicaTickCount);
+			public HRESULT GetRangeExceptions(in Guid riid, void** ppUnk) mut => VT.GetRangeExceptions(ref this, riid, ppUnk);
+			public HRESULT GetSingleItemExceptions(in Guid riid, void** ppUnk) mut => VT.GetSingleItemExceptions(ref this, riid, ppUnk);
+			public HRESULT GetChangeUnitExceptions(in Guid riid, void** ppUnk) mut => VT.GetChangeUnitExceptions(ref this, riid, ppUnk);
+			public HRESULT FindClockVectorForItem(in uint8 pbItemId, in Guid riid, void** ppUnk) mut => VT.FindClockVectorForItem(ref this, pbItemId, riid, ppUnk);
+			public HRESULT FindClockVectorForChangeUnit(in uint8 pbItemId, in uint8 pbChangeUnitId, in Guid riid, void** ppUnk) mut => VT.FindClockVectorForChangeUnit(ref this, pbItemId, pbChangeUnitId, riid, ppUnk);
+			public HRESULT GetVersion(out uint32 pdwVersion) mut => VT.GetVersion(ref this, out pdwVersion);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -748,10 +552,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ForgetToVersion(ref ISyncKnowledge pKnowledge, in SYNC_VERSION pVersion) mut
-			{
-				return VT.ForgetToVersion(ref this, ref pKnowledge, pVersion);
-			}
+			public HRESULT ForgetToVersion(ref ISyncKnowledge pKnowledge, in SYNC_VERSION pVersion) mut => VT.ForgetToVersion(ref this, ref pKnowledge, pVersion);
+
 			[CRepr]
 			public struct VTable : ISyncKnowledge.VTable
 			{
@@ -765,62 +567,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIdParameters(out ID_PARAMETERS pIdParameters) mut
-			{
-				return VT.GetIdParameters(ref this, out pIdParameters);
-			}
-			public HRESULT ProjectOntoColumnSet(in uint8* ppColumns, uint32 count, out ISyncKnowledge2* ppiKnowledgeOut) mut
-			{
-				return VT.ProjectOntoColumnSet(ref this, ppColumns, count, out ppiKnowledgeOut);
-			}
-			public HRESULT SerializeWithOptions(SYNC_SERIALIZATION_VERSION targetFormatVersion, uint32 dwFlags, out uint8 pbBuffer, out uint32 pdwSerializedSize) mut
-			{
-				return VT.SerializeWithOptions(ref this, targetFormatVersion, dwFlags, out pbBuffer, out pdwSerializedSize);
-			}
-			public HRESULT GetLowestUncontainedId(ref ISyncKnowledge2 piSyncKnowledge, out uint8 pbItemId, out uint32 pcbItemIdSize) mut
-			{
-				return VT.GetLowestUncontainedId(ref this, ref piSyncKnowledge, out pbItemId, out pcbItemIdSize);
-			}
-			public HRESULT GetInspector(in Guid riid, void** ppiInspector) mut
-			{
-				return VT.GetInspector(ref this, riid, ppiInspector);
-			}
-			public HRESULT GetMinimumSupportedVersion(out SYNC_SERIALIZATION_VERSION pVersion) mut
-			{
-				return VT.GetMinimumSupportedVersion(ref this, out pVersion);
-			}
-			public HRESULT GetStatistics(SYNC_STATISTICS which, out uint32 pValue) mut
-			{
-				return VT.GetStatistics(ref this, which, out pValue);
-			}
-			public HRESULT ContainsKnowledgeForItem(ref ISyncKnowledge pKnowledge, in uint8 pbItemId) mut
-			{
-				return VT.ContainsKnowledgeForItem(ref this, ref pKnowledge, pbItemId);
-			}
-			public HRESULT ContainsKnowledgeForChangeUnit(ref ISyncKnowledge pKnowledge, in uint8 pbItemId, in uint8 pbChangeUnitId) mut
-			{
-				return VT.ContainsKnowledgeForChangeUnit(ref this, ref pKnowledge, pbItemId, pbChangeUnitId);
-			}
-			public HRESULT ProjectOntoKnowledgeWithPrerequisite(ref ISyncKnowledge pPrerequisiteKnowledge, ref ISyncKnowledge pTemplateKnowledge, out ISyncKnowledge* ppProjectedKnowledge) mut
-			{
-				return VT.ProjectOntoKnowledgeWithPrerequisite(ref this, ref pPrerequisiteKnowledge, ref pTemplateKnowledge, out ppProjectedKnowledge);
-			}
-			public HRESULT Complement(ref ISyncKnowledge pSyncKnowledge, out ISyncKnowledge* ppComplementedKnowledge) mut
-			{
-				return VT.Complement(ref this, ref pSyncKnowledge, out ppComplementedKnowledge);
-			}
-			public HRESULT IntersectsWithKnowledge(ref ISyncKnowledge pSyncKnowledge) mut
-			{
-				return VT.IntersectsWithKnowledge(ref this, ref pSyncKnowledge);
-			}
-			public HRESULT GetKnowledgeCookie(out IUnknown* ppKnowledgeCookie) mut
-			{
-				return VT.GetKnowledgeCookie(ref this, out ppKnowledgeCookie);
-			}
-			public HRESULT CompareToKnowledgeCookie(ref IUnknown pKnowledgeCookie, out KNOWLEDGE_COOKIE_COMPARISON_RESULT pResult) mut
-			{
-				return VT.CompareToKnowledgeCookie(ref this, ref pKnowledgeCookie, out pResult);
-			}
+			public HRESULT GetIdParameters(out ID_PARAMETERS pIdParameters) mut => VT.GetIdParameters(ref this, out pIdParameters);
+			public HRESULT ProjectOntoColumnSet(in uint8* ppColumns, uint32 count, out ISyncKnowledge2* ppiKnowledgeOut) mut => VT.ProjectOntoColumnSet(ref this, ppColumns, count, out ppiKnowledgeOut);
+			public HRESULT SerializeWithOptions(SYNC_SERIALIZATION_VERSION targetFormatVersion, uint32 dwFlags, out uint8 pbBuffer, out uint32 pdwSerializedSize) mut => VT.SerializeWithOptions(ref this, targetFormatVersion, dwFlags, out pbBuffer, out pdwSerializedSize);
+			public HRESULT GetLowestUncontainedId(ref ISyncKnowledge2 piSyncKnowledge, out uint8 pbItemId, out uint32 pcbItemIdSize) mut => VT.GetLowestUncontainedId(ref this, ref piSyncKnowledge, out pbItemId, out pcbItemIdSize);
+			public HRESULT GetInspector(in Guid riid, void** ppiInspector) mut => VT.GetInspector(ref this, riid, ppiInspector);
+			public HRESULT GetMinimumSupportedVersion(out SYNC_SERIALIZATION_VERSION pVersion) mut => VT.GetMinimumSupportedVersion(ref this, out pVersion);
+			public HRESULT GetStatistics(SYNC_STATISTICS which, out uint32 pValue) mut => VT.GetStatistics(ref this, which, out pValue);
+			public HRESULT ContainsKnowledgeForItem(ref ISyncKnowledge pKnowledge, in uint8 pbItemId) mut => VT.ContainsKnowledgeForItem(ref this, ref pKnowledge, pbItemId);
+			public HRESULT ContainsKnowledgeForChangeUnit(ref ISyncKnowledge pKnowledge, in uint8 pbItemId, in uint8 pbChangeUnitId) mut => VT.ContainsKnowledgeForChangeUnit(ref this, ref pKnowledge, pbItemId, pbChangeUnitId);
+			public HRESULT ProjectOntoKnowledgeWithPrerequisite(ref ISyncKnowledge pPrerequisiteKnowledge, ref ISyncKnowledge pTemplateKnowledge, out ISyncKnowledge* ppProjectedKnowledge) mut => VT.ProjectOntoKnowledgeWithPrerequisite(ref this, ref pPrerequisiteKnowledge, ref pTemplateKnowledge, out ppProjectedKnowledge);
+			public HRESULT Complement(ref ISyncKnowledge pSyncKnowledge, out ISyncKnowledge* ppComplementedKnowledge) mut => VT.Complement(ref this, ref pSyncKnowledge, out ppComplementedKnowledge);
+			public HRESULT IntersectsWithKnowledge(ref ISyncKnowledge pSyncKnowledge) mut => VT.IntersectsWithKnowledge(ref this, ref pSyncKnowledge);
+			public HRESULT GetKnowledgeCookie(out IUnknown* ppKnowledgeCookie) mut => VT.GetKnowledgeCookie(ref this, out ppKnowledgeCookie);
+			public HRESULT CompareToKnowledgeCookie(ref IUnknown pKnowledgeCookie, out KNOWLEDGE_COOKIE_COMPARISON_RESULT pResult) mut => VT.CompareToKnowledgeCookie(ref this, ref pKnowledgeCookie, out pResult);
+
 			[CRepr]
 			public struct VTable : ISyncKnowledge.VTable
 			{
@@ -847,18 +608,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pcszItemDisplayName, PWSTR pcszErrorDescription) mut
-			{
-				return VT.Initialize(ref this, pcszItemDisplayName, pcszErrorDescription);
-			}
-			public HRESULT GetItemDisplayName(PWSTR pszItemDisplayName, out uint32 pcchItemDisplayName) mut
-			{
-				return VT.GetItemDisplayName(ref this, pszItemDisplayName, out pcchItemDisplayName);
-			}
-			public HRESULT GetErrorDescription(PWSTR pszErrorDescription, out uint32 pcchErrorDescription) mut
-			{
-				return VT.GetErrorDescription(ref this, pszErrorDescription, out pcchErrorDescription);
-			}
+			public HRESULT Initialize(PWSTR pcszItemDisplayName, PWSTR pcszErrorDescription) mut => VT.Initialize(ref this, pcszItemDisplayName, pcszErrorDescription);
+			public HRESULT GetItemDisplayName(PWSTR pszItemDisplayName, out uint32 pcchItemDisplayName) mut => VT.GetItemDisplayName(ref this, pszItemDisplayName, out pcchItemDisplayName);
+			public HRESULT GetErrorDescription(PWSTR pszErrorDescription, out uint32 pcchErrorDescription) mut => VT.GetErrorDescription(ref this, pszErrorDescription, out pcchErrorDescription);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -874,26 +627,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStage(out SYNC_PROGRESS_STAGE pStage) mut
-			{
-				return VT.GetStage(ref this, out pStage);
-			}
-			public HRESULT GetProvider(out SYNC_PROVIDER_ROLE pProviderRole) mut
-			{
-				return VT.GetProvider(ref this, out pProviderRole);
-			}
-			public HRESULT GetChangeWithRecoverableError(out ISyncChange* ppChangeWithRecoverableError) mut
-			{
-				return VT.GetChangeWithRecoverableError(ref this, out ppChangeWithRecoverableError);
-			}
-			public HRESULT GetRecoverableErrorDataForChange(out HRESULT phrError, out IRecoverableErrorData* ppErrorData) mut
-			{
-				return VT.GetRecoverableErrorDataForChange(ref this, out phrError, out ppErrorData);
-			}
-			public HRESULT GetRecoverableErrorDataForChangeUnit(ref ISyncChangeUnit pChangeUnit, out HRESULT phrError, out IRecoverableErrorData* ppErrorData) mut
-			{
-				return VT.GetRecoverableErrorDataForChangeUnit(ref this, ref pChangeUnit, out phrError, out ppErrorData);
-			}
+			public HRESULT GetStage(out SYNC_PROGRESS_STAGE pStage) mut => VT.GetStage(ref this, out pStage);
+			public HRESULT GetProvider(out SYNC_PROVIDER_ROLE pProviderRole) mut => VT.GetProvider(ref this, out pProviderRole);
+			public HRESULT GetChangeWithRecoverableError(out ISyncChange* ppChangeWithRecoverableError) mut => VT.GetChangeWithRecoverableError(ref this, out ppChangeWithRecoverableError);
+			public HRESULT GetRecoverableErrorDataForChange(out HRESULT phrError, out IRecoverableErrorData* ppErrorData) mut => VT.GetRecoverableErrorDataForChange(ref this, out phrError, out ppErrorData);
+			public HRESULT GetRecoverableErrorDataForChangeUnit(ref ISyncChangeUnit pChangeUnit, out HRESULT phrError, out IRecoverableErrorData* ppErrorData) mut => VT.GetRecoverableErrorDataForChangeUnit(ref this, ref pChangeUnit, out phrError, out ppErrorData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -911,38 +650,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDestinationProviderConflictingChange(out ISyncChange* ppConflictingChange) mut
-			{
-				return VT.GetDestinationProviderConflictingChange(ref this, out ppConflictingChange);
-			}
-			public HRESULT GetSourceProviderConflictingChange(out ISyncChange* ppConflictingChange) mut
-			{
-				return VT.GetSourceProviderConflictingChange(ref this, out ppConflictingChange);
-			}
-			public HRESULT GetDestinationProviderConflictingData(out IUnknown* ppConflictingData) mut
-			{
-				return VT.GetDestinationProviderConflictingData(ref this, out ppConflictingData);
-			}
-			public HRESULT GetSourceProviderConflictingData(out IUnknown* ppConflictingData) mut
-			{
-				return VT.GetSourceProviderConflictingData(ref this, out ppConflictingData);
-			}
-			public HRESULT GetResolveActionForChange(out SYNC_RESOLVE_ACTION pResolveAction) mut
-			{
-				return VT.GetResolveActionForChange(ref this, out pResolveAction);
-			}
-			public HRESULT SetResolveActionForChange(SYNC_RESOLVE_ACTION resolveAction) mut
-			{
-				return VT.SetResolveActionForChange(ref this, resolveAction);
-			}
-			public HRESULT GetResolveActionForChangeUnit(ref ISyncChangeUnit pChangeUnit, out SYNC_RESOLVE_ACTION pResolveAction) mut
-			{
-				return VT.GetResolveActionForChangeUnit(ref this, ref pChangeUnit, out pResolveAction);
-			}
-			public HRESULT SetResolveActionForChangeUnit(ref ISyncChangeUnit pChangeUnit, SYNC_RESOLVE_ACTION resolveAction) mut
-			{
-				return VT.SetResolveActionForChangeUnit(ref this, ref pChangeUnit, resolveAction);
-			}
+			public HRESULT GetDestinationProviderConflictingChange(out ISyncChange* ppConflictingChange) mut => VT.GetDestinationProviderConflictingChange(ref this, out ppConflictingChange);
+			public HRESULT GetSourceProviderConflictingChange(out ISyncChange* ppConflictingChange) mut => VT.GetSourceProviderConflictingChange(ref this, out ppConflictingChange);
+			public HRESULT GetDestinationProviderConflictingData(out IUnknown* ppConflictingData) mut => VT.GetDestinationProviderConflictingData(ref this, out ppConflictingData);
+			public HRESULT GetSourceProviderConflictingData(out IUnknown* ppConflictingData) mut => VT.GetSourceProviderConflictingData(ref this, out ppConflictingData);
+			public HRESULT GetResolveActionForChange(out SYNC_RESOLVE_ACTION pResolveAction) mut => VT.GetResolveActionForChange(ref this, out pResolveAction);
+			public HRESULT SetResolveActionForChange(SYNC_RESOLVE_ACTION resolveAction) mut => VT.SetResolveActionForChange(ref this, resolveAction);
+			public HRESULT GetResolveActionForChangeUnit(ref ISyncChangeUnit pChangeUnit, out SYNC_RESOLVE_ACTION pResolveAction) mut => VT.GetResolveActionForChangeUnit(ref this, ref pChangeUnit, out pResolveAction);
+			public HRESULT SetResolveActionForChangeUnit(ref ISyncChangeUnit pChangeUnit, SYNC_RESOLVE_ACTION resolveAction) mut => VT.SetResolveActionForChangeUnit(ref this, ref pChangeUnit, resolveAction);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -963,54 +679,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDestinationProviderConflictingChange(out ISyncChange* ppConflictingChange) mut
-			{
-				return VT.GetDestinationProviderConflictingChange(ref this, out ppConflictingChange);
-			}
-			public HRESULT GetSourceProviderConflictingChange(out ISyncChange* ppConflictingChange) mut
-			{
-				return VT.GetSourceProviderConflictingChange(ref this, out ppConflictingChange);
-			}
-			public HRESULT GetDestinationProviderOriginalChange(out ISyncChange* ppOriginalChange) mut
-			{
-				return VT.GetDestinationProviderOriginalChange(ref this, out ppOriginalChange);
-			}
-			public HRESULT GetDestinationProviderConflictingData(out IUnknown* ppConflictingData) mut
-			{
-				return VT.GetDestinationProviderConflictingData(ref this, out ppConflictingData);
-			}
-			public HRESULT GetSourceProviderConflictingData(out IUnknown* ppConflictingData) mut
-			{
-				return VT.GetSourceProviderConflictingData(ref this, out ppConflictingData);
-			}
-			public HRESULT GetDestinationProviderOriginalData(out IUnknown* ppOriginalData) mut
-			{
-				return VT.GetDestinationProviderOriginalData(ref this, out ppOriginalData);
-			}
-			public HRESULT GetConstraintResolveActionForChange(out SYNC_CONSTRAINT_RESOLVE_ACTION pConstraintResolveAction) mut
-			{
-				return VT.GetConstraintResolveActionForChange(ref this, out pConstraintResolveAction);
-			}
-			public HRESULT SetConstraintResolveActionForChange(SYNC_CONSTRAINT_RESOLVE_ACTION constraintResolveAction) mut
-			{
-				return VT.SetConstraintResolveActionForChange(ref this, constraintResolveAction);
-			}
-			public HRESULT GetConstraintResolveActionForChangeUnit(ref ISyncChangeUnit pChangeUnit, out SYNC_CONSTRAINT_RESOLVE_ACTION pConstraintResolveAction) mut
-			{
-				return VT.GetConstraintResolveActionForChangeUnit(ref this, ref pChangeUnit, out pConstraintResolveAction);
-			}
-			public HRESULT SetConstraintResolveActionForChangeUnit(ref ISyncChangeUnit pChangeUnit, SYNC_CONSTRAINT_RESOLVE_ACTION constraintResolveAction) mut
-			{
-				return VT.SetConstraintResolveActionForChangeUnit(ref this, ref pChangeUnit, constraintResolveAction);
-			}
-			public HRESULT GetConstraintConflictReason(out CONSTRAINT_CONFLICT_REASON pConstraintConflictReason) mut
-			{
-				return VT.GetConstraintConflictReason(ref this, out pConstraintConflictReason);
-			}
-			public HRESULT IsTemporary() mut
-			{
-				return VT.IsTemporary(ref this);
-			}
+			public HRESULT GetDestinationProviderConflictingChange(out ISyncChange* ppConflictingChange) mut => VT.GetDestinationProviderConflictingChange(ref this, out ppConflictingChange);
+			public HRESULT GetSourceProviderConflictingChange(out ISyncChange* ppConflictingChange) mut => VT.GetSourceProviderConflictingChange(ref this, out ppConflictingChange);
+			public HRESULT GetDestinationProviderOriginalChange(out ISyncChange* ppOriginalChange) mut => VT.GetDestinationProviderOriginalChange(ref this, out ppOriginalChange);
+			public HRESULT GetDestinationProviderConflictingData(out IUnknown* ppConflictingData) mut => VT.GetDestinationProviderConflictingData(ref this, out ppConflictingData);
+			public HRESULT GetSourceProviderConflictingData(out IUnknown* ppConflictingData) mut => VT.GetSourceProviderConflictingData(ref this, out ppConflictingData);
+			public HRESULT GetDestinationProviderOriginalData(out IUnknown* ppOriginalData) mut => VT.GetDestinationProviderOriginalData(ref this, out ppOriginalData);
+			public HRESULT GetConstraintResolveActionForChange(out SYNC_CONSTRAINT_RESOLVE_ACTION pConstraintResolveAction) mut => VT.GetConstraintResolveActionForChange(ref this, out pConstraintResolveAction);
+			public HRESULT SetConstraintResolveActionForChange(SYNC_CONSTRAINT_RESOLVE_ACTION constraintResolveAction) mut => VT.SetConstraintResolveActionForChange(ref this, constraintResolveAction);
+			public HRESULT GetConstraintResolveActionForChangeUnit(ref ISyncChangeUnit pChangeUnit, out SYNC_CONSTRAINT_RESOLVE_ACTION pConstraintResolveAction) mut => VT.GetConstraintResolveActionForChangeUnit(ref this, ref pChangeUnit, out pConstraintResolveAction);
+			public HRESULT SetConstraintResolveActionForChangeUnit(ref ISyncChangeUnit pChangeUnit, SYNC_CONSTRAINT_RESOLVE_ACTION constraintResolveAction) mut => VT.SetConstraintResolveActionForChangeUnit(ref this, ref pChangeUnit, constraintResolveAction);
+			public HRESULT GetConstraintConflictReason(out CONSTRAINT_CONFLICT_REASON pConstraintConflictReason) mut => VT.GetConstraintConflictReason(ref this, out pConstraintConflictReason);
+			public HRESULT IsTemporary() mut => VT.IsTemporary(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1035,26 +716,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnProgress(SYNC_PROVIDER_ROLE provider, SYNC_PROGRESS_STAGE syncStage, uint32 dwCompletedWork, uint32 dwTotalWork) mut
-			{
-				return VT.OnProgress(ref this, provider, syncStage, dwCompletedWork, dwTotalWork);
-			}
-			public HRESULT OnChange(ref ISyncChange pSyncChange) mut
-			{
-				return VT.OnChange(ref this, ref pSyncChange);
-			}
-			public HRESULT OnConflict(ref IChangeConflict pConflict) mut
-			{
-				return VT.OnConflict(ref this, ref pConflict);
-			}
-			public HRESULT OnFullEnumerationNeeded(out SYNC_FULL_ENUMERATION_ACTION pFullEnumerationAction) mut
-			{
-				return VT.OnFullEnumerationNeeded(ref this, out pFullEnumerationAction);
-			}
-			public HRESULT OnRecoverableError(ref IRecoverableError pRecoverableError) mut
-			{
-				return VT.OnRecoverableError(ref this, ref pRecoverableError);
-			}
+			public HRESULT OnProgress(SYNC_PROVIDER_ROLE provider, SYNC_PROGRESS_STAGE syncStage, uint32 dwCompletedWork, uint32 dwTotalWork) mut => VT.OnProgress(ref this, provider, syncStage, dwCompletedWork, dwTotalWork);
+			public HRESULT OnChange(ref ISyncChange pSyncChange) mut => VT.OnChange(ref this, ref pSyncChange);
+			public HRESULT OnConflict(ref IChangeConflict pConflict) mut => VT.OnConflict(ref this, ref pConflict);
+			public HRESULT OnFullEnumerationNeeded(out SYNC_FULL_ENUMERATION_ACTION pFullEnumerationAction) mut => VT.OnFullEnumerationNeeded(ref this, out pFullEnumerationAction);
+			public HRESULT OnRecoverableError(ref IRecoverableError pRecoverableError) mut => VT.OnRecoverableError(ref this, ref pRecoverableError);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1072,14 +739,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnChangeApplied(uint32 dwChangesApplied, uint32 dwChangesFailed) mut
-			{
-				return VT.OnChangeApplied(ref this, dwChangesApplied, dwChangesFailed);
-			}
-			public HRESULT OnChangeFailed(uint32 dwChangesApplied, uint32 dwChangesFailed) mut
-			{
-				return VT.OnChangeFailed(ref this, dwChangesApplied, dwChangesFailed);
-			}
+			public HRESULT OnChangeApplied(uint32 dwChangesApplied, uint32 dwChangesFailed) mut => VT.OnChangeApplied(ref this, dwChangesApplied, dwChangesFailed);
+			public HRESULT OnChangeFailed(uint32 dwChangesApplied, uint32 dwChangesFailed) mut => VT.OnChangeFailed(ref this, dwChangesApplied, dwChangesFailed);
+
 			[CRepr]
 			public struct VTable : ISyncCallback.VTable
 			{
@@ -1094,10 +756,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnConstraintConflict(ref IConstraintConflict pConflict) mut
-			{
-				return VT.OnConstraintConflict(ref this, ref pConflict);
-			}
+			public HRESULT OnConstraintConflict(ref IConstraintConflict pConflict) mut => VT.OnConstraintConflict(ref this, ref pConflict);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1111,10 +771,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIdParameters(out ID_PARAMETERS pIdParameters) mut
-			{
-				return VT.GetIdParameters(ref this, out pIdParameters);
-			}
+			public HRESULT GetIdParameters(out ID_PARAMETERS pIdParameters) mut => VT.GetIdParameters(ref this, out pIdParameters);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1128,34 +786,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsCanceled(out BOOL pfIsCanceled) mut
-			{
-				return VT.IsCanceled(ref this, out pfIsCanceled);
-			}
-			public HRESULT GetInfoForChangeApplication(out uint8 pbChangeApplierInfo, out uint32 pcbChangeApplierInfo) mut
-			{
-				return VT.GetInfoForChangeApplication(ref this, out pbChangeApplierInfo, out pcbChangeApplierInfo);
-			}
-			public HRESULT LoadInfoFromChangeApplication(in uint8 pbChangeApplierInfo, uint32 cbChangeApplierInfo) mut
-			{
-				return VT.LoadInfoFromChangeApplication(ref this, pbChangeApplierInfo, cbChangeApplierInfo);
-			}
-			public HRESULT GetForgottenKnowledgeRecoveryRangeStart(out uint8 pbRangeStart, out uint32 pcbRangeStart) mut
-			{
-				return VT.GetForgottenKnowledgeRecoveryRangeStart(ref this, out pbRangeStart, out pcbRangeStart);
-			}
-			public HRESULT GetForgottenKnowledgeRecoveryRangeEnd(out uint8 pbRangeEnd, out uint32 pcbRangeEnd) mut
-			{
-				return VT.GetForgottenKnowledgeRecoveryRangeEnd(ref this, out pbRangeEnd, out pcbRangeEnd);
-			}
-			public HRESULT SetForgottenKnowledgeRecoveryRange(in SYNC_RANGE pRange) mut
-			{
-				return VT.SetForgottenKnowledgeRecoveryRange(ref this, pRange);
-			}
-			public HRESULT OnProgress(SYNC_PROVIDER_ROLE provider, SYNC_PROGRESS_STAGE syncStage, uint32 dwCompletedWork, uint32 dwTotalWork) mut
-			{
-				return VT.OnProgress(ref this, provider, syncStage, dwCompletedWork, dwTotalWork);
-			}
+			public HRESULT IsCanceled(out BOOL pfIsCanceled) mut => VT.IsCanceled(ref this, out pfIsCanceled);
+			public HRESULT GetInfoForChangeApplication(out uint8 pbChangeApplierInfo, out uint32 pcbChangeApplierInfo) mut => VT.GetInfoForChangeApplication(ref this, out pbChangeApplierInfo, out pcbChangeApplierInfo);
+			public HRESULT LoadInfoFromChangeApplication(in uint8 pbChangeApplierInfo, uint32 cbChangeApplierInfo) mut => VT.LoadInfoFromChangeApplication(ref this, pbChangeApplierInfo, cbChangeApplierInfo);
+			public HRESULT GetForgottenKnowledgeRecoveryRangeStart(out uint8 pbRangeStart, out uint32 pcbRangeStart) mut => VT.GetForgottenKnowledgeRecoveryRangeStart(ref this, out pbRangeStart, out pcbRangeStart);
+			public HRESULT GetForgottenKnowledgeRecoveryRangeEnd(out uint8 pbRangeEnd, out uint32 pcbRangeEnd) mut => VT.GetForgottenKnowledgeRecoveryRangeEnd(ref this, out pbRangeEnd, out pcbRangeEnd);
+			public HRESULT SetForgottenKnowledgeRecoveryRange(in SYNC_RANGE pRange) mut => VT.SetForgottenKnowledgeRecoveryRange(ref this, pRange);
+			public HRESULT OnProgress(SYNC_PROVIDER_ROLE provider, SYNC_PROGRESS_STAGE syncStage, uint32 dwCompletedWork, uint32 dwTotalWork) mut => VT.OnProgress(ref this, provider, syncStage, dwCompletedWork, dwTotalWork);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1175,10 +813,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSyncProviderWithError(out ISyncProvider* ppProviderWithError) mut
-			{
-				return VT.GetSyncProviderWithError(ref this, out ppProviderWithError);
-			}
+			public HRESULT GetSyncProviderWithError(out ISyncProvider* ppProviderWithError) mut => VT.GetSyncProviderWithError(ref this, out ppProviderWithError);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1192,14 +828,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProviderWithError(BOOL fSelf) mut
-			{
-				return VT.SetProviderWithError(ref this, fSelf);
-			}
-			public HRESULT GetSessionErrorStatus(out HRESULT phrSessionError) mut
-			{
-				return VT.GetSessionErrorStatus(ref this, out phrSessionError);
-			}
+			public HRESULT SetProviderWithError(BOOL fSelf) mut => VT.SetProviderWithError(ref this, fSelf);
+			public HRESULT GetSessionErrorStatus(out HRESULT phrSessionError) mut => VT.GetSessionErrorStatus(ref this, out phrSessionError);
+
 			[CRepr]
 			public struct VTable : ISyncSessionState.VTable
 			{
@@ -1214,10 +845,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Serialize(out uint8 pbBuffer, out uint32 pcbBuffer) mut
-			{
-				return VT.Serialize(ref this, out pbBuffer, out pcbBuffer);
-			}
+			public HRESULT Serialize(out uint8 pbBuffer, out uint32 pcbBuffer) mut => VT.Serialize(ref this, out pbBuffer, out pcbBuffer);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1231,10 +860,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pdwFlags);
-			}
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut => VT.ComGetFlags(ref this, out pdwFlags);
+
 			[CRepr]
 			public struct VTable : ISyncFilterInfo.VTable
 			{
@@ -1248,18 +875,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(in uint8* ppbChangeUnitIds, uint32 dwChangeUnitCount) mut
-			{
-				return VT.Initialize(ref this, ppbChangeUnitIds, dwChangeUnitCount);
-			}
-			public HRESULT GetChangeUnitIdCount(out uint32 pdwChangeUnitIdCount) mut
-			{
-				return VT.GetChangeUnitIdCount(ref this, out pdwChangeUnitIdCount);
-			}
-			public HRESULT GetChangeUnitId(uint32 dwChangeUnitIdIndex, out uint8 pbChangeUnitId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetChangeUnitId(ref this, dwChangeUnitIdIndex, out pbChangeUnitId, out pcbIdSize);
-			}
+			public HRESULT Initialize(in uint8* ppbChangeUnitIds, uint32 dwChangeUnitCount) mut => VT.Initialize(ref this, ppbChangeUnitIds, dwChangeUnitCount);
+			public HRESULT GetChangeUnitIdCount(out uint32 pdwChangeUnitIdCount) mut => VT.GetChangeUnitIdCount(ref this, out pdwChangeUnitIdCount);
+			public HRESULT GetChangeUnitId(uint32 dwChangeUnitIdIndex, out uint8 pbChangeUnitId, out uint32 pcbIdSize) mut => VT.GetChangeUnitId(ref this, dwChangeUnitIdIndex, out pbChangeUnitId, out pcbIdSize);
+
 			[CRepr]
 			public struct VTable : ISyncFilterInfo.VTable
 			{
@@ -1275,14 +894,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsIdentical(ref ISyncFilter pSyncFilter) mut
-			{
-				return VT.IsIdentical(ref this, ref pSyncFilter);
-			}
-			public HRESULT Serialize(out uint8 pbSyncFilter, out uint32 pcbSyncFilter) mut
-			{
-				return VT.Serialize(ref this, out pbSyncFilter, out pcbSyncFilter);
-			}
+			public HRESULT IsIdentical(ref ISyncFilter pSyncFilter) mut => VT.IsIdentical(ref this, ref pSyncFilter);
+			public HRESULT Serialize(out uint8 pbSyncFilter, out uint32 pcbSyncFilter) mut => VT.Serialize(ref this, out pbSyncFilter, out pcbSyncFilter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1297,10 +911,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DeserializeSyncFilter(in uint8 pbSyncFilter, uint32 dwCbSyncFilter, out ISyncFilter* ppISyncFilter) mut
-			{
-				return VT.DeserializeSyncFilter(ref this, pbSyncFilter, dwCbSyncFilter, out ppISyncFilter);
-			}
+			public HRESULT DeserializeSyncFilter(in uint8 pbSyncFilter, uint32 dwCbSyncFilter, out ISyncFilter* ppISyncFilter) mut => VT.DeserializeSyncFilter(ref this, pbSyncFilter, dwCbSyncFilter, out ppISyncFilter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1314,10 +926,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSyncFilter(out ISyncFilter* pISyncFilter) mut
-			{
-				return VT.GetSyncFilter(ref this, out pISyncFilter);
-			}
+			public HRESULT GetSyncFilter(out ISyncFilter* pISyncFilter) mut => VT.GetSyncFilter(ref this, out pISyncFilter);
+
 			[CRepr]
 			public struct VTable : ISyncFilterInfo.VTable
 			{
@@ -1331,18 +941,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFilterCount(out uint32 pdwFilterCount) mut
-			{
-				return VT.GetFilterCount(ref this, out pdwFilterCount);
-			}
-			public HRESULT GetFilterInfo(uint32 dwFilterIndex, out ISyncFilterInfo* ppIFilterInfo) mut
-			{
-				return VT.GetFilterInfo(ref this, dwFilterIndex, out ppIFilterInfo);
-			}
-			public HRESULT GetFilterCombinationType(out FILTER_COMBINATION_TYPE pFilterCombinationType) mut
-			{
-				return VT.GetFilterCombinationType(ref this, out pFilterCombinationType);
-			}
+			public HRESULT GetFilterCount(out uint32 pdwFilterCount) mut => VT.GetFilterCount(ref this, out pdwFilterCount);
+			public HRESULT GetFilterInfo(uint32 dwFilterIndex, out ISyncFilterInfo* ppIFilterInfo) mut => VT.GetFilterInfo(ref this, dwFilterIndex, out ppIFilterInfo);
+			public HRESULT GetFilterCombinationType(out FILTER_COMBINATION_TYPE pFilterCombinationType) mut => VT.GetFilterCombinationType(ref this, out pFilterCombinationType);
+
 			[CRepr]
 			public struct VTable : ISyncFilterInfo.VTable
 			{
@@ -1358,22 +960,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cChanges, out ISyncChange* ppChange, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cChanges, out ppChange, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cChanges) mut
-			{
-				return VT.Skip(ref this, cChanges);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumSyncChanges* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cChanges, out ISyncChange* ppChange, out uint32 pcFetched) mut => VT.Next(ref this, cChanges, out ppChange, out pcFetched);
+			public HRESULT Skip(uint32 cChanges) mut => VT.Skip(ref this, cChanges);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumSyncChanges* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1390,10 +981,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddChangeUnitMetadata(in uint8 pbChangeUnitId, in SYNC_VERSION pChangeUnitVersion) mut
-			{
-				return VT.AddChangeUnitMetadata(ref this, pbChangeUnitId, pChangeUnitVersion);
-			}
+			public HRESULT AddChangeUnitMetadata(in uint8 pbChangeUnitId, in SYNC_VERSION pChangeUnitVersion) mut => VT.AddChangeUnitMetadata(ref this, pbChangeUnitId, pChangeUnitVersion);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1407,14 +996,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddFilterChange(uint32 dwFilterKey, in SYNC_FILTER_CHANGE pFilterChange) mut
-			{
-				return VT.AddFilterChange(ref this, dwFilterKey, pFilterChange);
-			}
-			public HRESULT SetAllChangeUnitsPresentFlag() mut
-			{
-				return VT.SetAllChangeUnitsPresentFlag(ref this);
-			}
+			public HRESULT AddFilterChange(uint32 dwFilterKey, in SYNC_FILTER_CHANGE pFilterChange) mut => VT.AddFilterChange(ref this, dwFilterKey, pFilterChange);
+			public HRESULT SetAllChangeUnitsPresentFlag() mut => VT.SetAllChangeUnitsPresentFlag(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1429,62 +1013,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetChangeEnumerator(out IEnumSyncChanges* ppEnum) mut
-			{
-				return VT.GetChangeEnumerator(ref this, out ppEnum);
-			}
-			public HRESULT GetIsLastBatch(out BOOL pfLastBatch) mut
-			{
-				return VT.GetIsLastBatch(ref this, out pfLastBatch);
-			}
-			public HRESULT GetWorkEstimateForBatch(out uint32 pdwWorkForBatch) mut
-			{
-				return VT.GetWorkEstimateForBatch(ref this, out pdwWorkForBatch);
-			}
-			public HRESULT GetRemainingWorkEstimateForSession(out uint32 pdwRemainingWorkForSession) mut
-			{
-				return VT.GetRemainingWorkEstimateForSession(ref this, out pdwRemainingWorkForSession);
-			}
-			public HRESULT BeginOrderedGroup(in uint8 pbLowerBound) mut
-			{
-				return VT.BeginOrderedGroup(ref this, pbLowerBound);
-			}
-			public HRESULT EndOrderedGroup(in uint8 pbUpperBound, ref ISyncKnowledge pMadeWithKnowledge) mut
-			{
-				return VT.EndOrderedGroup(ref this, pbUpperBound, ref pMadeWithKnowledge);
-			}
-			public HRESULT AddItemMetadataToGroup(in uint8 pbOwnerReplicaId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwFlags, uint32 dwWorkForChange, out ISyncChangeBuilder* ppChangeBuilder) mut
-			{
-				return VT.AddItemMetadataToGroup(ref this, pbOwnerReplicaId, pbItemId, pChangeVersion, pCreationVersion, dwFlags, dwWorkForChange, out ppChangeBuilder);
-			}
-			public HRESULT GetLearnedKnowledge(out ISyncKnowledge* ppLearnedKnowledge) mut
-			{
-				return VT.GetLearnedKnowledge(ref this, out ppLearnedKnowledge);
-			}
-			public HRESULT GetPrerequisiteKnowledge(out ISyncKnowledge* ppPrerequisteKnowledge) mut
-			{
-				return VT.GetPrerequisiteKnowledge(ref this, out ppPrerequisteKnowledge);
-			}
-			public HRESULT GetSourceForgottenKnowledge(out IForgottenKnowledge* ppSourceForgottenKnowledge) mut
-			{
-				return VT.GetSourceForgottenKnowledge(ref this, out ppSourceForgottenKnowledge);
-			}
-			public HRESULT SetLastBatch() mut
-			{
-				return VT.SetLastBatch(ref this);
-			}
-			public HRESULT SetWorkEstimateForBatch(uint32 dwWorkForBatch) mut
-			{
-				return VT.SetWorkEstimateForBatch(ref this, dwWorkForBatch);
-			}
-			public HRESULT SetRemainingWorkEstimateForSession(uint32 dwRemainingWorkForSession) mut
-			{
-				return VT.SetRemainingWorkEstimateForSession(ref this, dwRemainingWorkForSession);
-			}
-			public HRESULT Serialize(out uint8 pbChangeBatch, out uint32 pcbChangeBatch) mut
-			{
-				return VT.Serialize(ref this, out pbChangeBatch, out pcbChangeBatch);
-			}
+			public HRESULT GetChangeEnumerator(out IEnumSyncChanges* ppEnum) mut => VT.GetChangeEnumerator(ref this, out ppEnum);
+			public HRESULT GetIsLastBatch(out BOOL pfLastBatch) mut => VT.GetIsLastBatch(ref this, out pfLastBatch);
+			public HRESULT GetWorkEstimateForBatch(out uint32 pdwWorkForBatch) mut => VT.GetWorkEstimateForBatch(ref this, out pdwWorkForBatch);
+			public HRESULT GetRemainingWorkEstimateForSession(out uint32 pdwRemainingWorkForSession) mut => VT.GetRemainingWorkEstimateForSession(ref this, out pdwRemainingWorkForSession);
+			public HRESULT BeginOrderedGroup(in uint8 pbLowerBound) mut => VT.BeginOrderedGroup(ref this, pbLowerBound);
+			public HRESULT EndOrderedGroup(in uint8 pbUpperBound, ref ISyncKnowledge pMadeWithKnowledge) mut => VT.EndOrderedGroup(ref this, pbUpperBound, ref pMadeWithKnowledge);
+			public HRESULT AddItemMetadataToGroup(in uint8 pbOwnerReplicaId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwFlags, uint32 dwWorkForChange, out ISyncChangeBuilder* ppChangeBuilder) mut => VT.AddItemMetadataToGroup(ref this, pbOwnerReplicaId, pbItemId, pChangeVersion, pCreationVersion, dwFlags, dwWorkForChange, out ppChangeBuilder);
+			public HRESULT GetLearnedKnowledge(out ISyncKnowledge* ppLearnedKnowledge) mut => VT.GetLearnedKnowledge(ref this, out ppLearnedKnowledge);
+			public HRESULT GetPrerequisiteKnowledge(out ISyncKnowledge* ppPrerequisteKnowledge) mut => VT.GetPrerequisiteKnowledge(ref this, out ppPrerequisteKnowledge);
+			public HRESULT GetSourceForgottenKnowledge(out IForgottenKnowledge* ppSourceForgottenKnowledge) mut => VT.GetSourceForgottenKnowledge(ref this, out ppSourceForgottenKnowledge);
+			public HRESULT SetLastBatch() mut => VT.SetLastBatch(ref this);
+			public HRESULT SetWorkEstimateForBatch(uint32 dwWorkForBatch) mut => VT.SetWorkEstimateForBatch(ref this, dwWorkForBatch);
+			public HRESULT SetRemainingWorkEstimateForSession(uint32 dwRemainingWorkForSession) mut => VT.SetRemainingWorkEstimateForSession(ref this, dwRemainingWorkForSession);
+			public HRESULT Serialize(out uint8 pbChangeBatch, out uint32 pcbChangeBatch) mut => VT.Serialize(ref this, out pbChangeBatch, out pcbChangeBatch);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1511,18 +1054,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginUnorderedGroup() mut
-			{
-				return VT.BeginUnorderedGroup(ref this);
-			}
-			public HRESULT EndUnorderedGroup(ref ISyncKnowledge pMadeWithKnowledge, BOOL fAllChangesForKnowledge) mut
-			{
-				return VT.EndUnorderedGroup(ref this, ref pMadeWithKnowledge, fAllChangesForKnowledge);
-			}
-			public HRESULT AddLoggedConflict(in uint8 pbOwnerReplicaId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwFlags, uint32 dwWorkForChange, ref ISyncKnowledge pConflictKnowledge, out ISyncChangeBuilder* ppChangeBuilder) mut
-			{
-				return VT.AddLoggedConflict(ref this, pbOwnerReplicaId, pbItemId, pChangeVersion, pCreationVersion, dwFlags, dwWorkForChange, ref pConflictKnowledge, out ppChangeBuilder);
-			}
+			public HRESULT BeginUnorderedGroup() mut => VT.BeginUnorderedGroup(ref this);
+			public HRESULT EndUnorderedGroup(ref ISyncKnowledge pMadeWithKnowledge, BOOL fAllChangesForKnowledge) mut => VT.EndUnorderedGroup(ref this, ref pMadeWithKnowledge, fAllChangesForKnowledge);
+			public HRESULT AddLoggedConflict(in uint8 pbOwnerReplicaId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwFlags, uint32 dwWorkForChange, ref ISyncKnowledge pConflictKnowledge, out ISyncChangeBuilder* ppChangeBuilder) mut => VT.AddLoggedConflict(ref this, pbOwnerReplicaId, pbItemId, pChangeVersion, pCreationVersion, dwFlags, dwWorkForChange, ref pConflictKnowledge, out ppChangeBuilder);
+
 			[CRepr]
 			public struct VTable : ISyncChangeBatchBase.VTable
 			{
@@ -1538,18 +1073,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLearnedKnowledgeAfterRecoveryComplete(out ISyncKnowledge* ppLearnedKnowledgeAfterRecoveryComplete) mut
-			{
-				return VT.GetLearnedKnowledgeAfterRecoveryComplete(ref this, out ppLearnedKnowledgeAfterRecoveryComplete);
-			}
-			public HRESULT GetClosedLowerBoundItemId(out uint8 pbClosedLowerBoundItemId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetClosedLowerBoundItemId(ref this, out pbClosedLowerBoundItemId, out pcbIdSize);
-			}
-			public HRESULT GetClosedUpperBoundItemId(out uint8 pbClosedUpperBoundItemId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetClosedUpperBoundItemId(ref this, out pbClosedUpperBoundItemId, out pcbIdSize);
-			}
+			public HRESULT GetLearnedKnowledgeAfterRecoveryComplete(out ISyncKnowledge* ppLearnedKnowledgeAfterRecoveryComplete) mut => VT.GetLearnedKnowledgeAfterRecoveryComplete(ref this, out ppLearnedKnowledgeAfterRecoveryComplete);
+			public HRESULT GetClosedLowerBoundItemId(out uint8 pbClosedLowerBoundItemId, out uint32 pcbIdSize) mut => VT.GetClosedLowerBoundItemId(ref this, out pbClosedLowerBoundItemId, out pcbIdSize);
+			public HRESULT GetClosedUpperBoundItemId(out uint8 pbClosedUpperBoundItemId, out uint32 pcbIdSize) mut => VT.GetClosedUpperBoundItemId(ref this, out pbClosedUpperBoundItemId, out pcbIdSize);
+
 			[CRepr]
 			public struct VTable : ISyncChangeBatchBase.VTable
 			{
@@ -1565,18 +1092,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPrerequisiteKnowledge(ref ISyncKnowledge pPrerequisiteKnowledge) mut
-			{
-				return VT.SetPrerequisiteKnowledge(ref this, ref pPrerequisiteKnowledge);
-			}
-			public HRESULT GetLearnedKnowledgeWithPrerequisite(ref ISyncKnowledge pDestinationKnowledge, out ISyncKnowledge* ppLearnedWithPrerequisiteKnowledge) mut
-			{
-				return VT.GetLearnedKnowledgeWithPrerequisite(ref this, ref pDestinationKnowledge, out ppLearnedWithPrerequisiteKnowledge);
-			}
-			public HRESULT GetLearnedForgottenKnowledge(out IForgottenKnowledge* ppLearnedForgottenKnowledge) mut
-			{
-				return VT.GetLearnedForgottenKnowledge(ref this, out ppLearnedForgottenKnowledge);
-			}
+			public HRESULT SetPrerequisiteKnowledge(ref ISyncKnowledge pPrerequisiteKnowledge) mut => VT.SetPrerequisiteKnowledge(ref this, ref pPrerequisiteKnowledge);
+			public HRESULT GetLearnedKnowledgeWithPrerequisite(ref ISyncKnowledge pDestinationKnowledge, out ISyncKnowledge* ppLearnedWithPrerequisiteKnowledge) mut => VT.GetLearnedKnowledgeWithPrerequisite(ref this, ref pDestinationKnowledge, out ppLearnedWithPrerequisiteKnowledge);
+			public HRESULT GetLearnedForgottenKnowledge(out IForgottenKnowledge* ppLearnedForgottenKnowledge) mut => VT.GetLearnedForgottenKnowledge(ref this, out ppLearnedForgottenKnowledge);
+
 			[CRepr]
 			public struct VTable : ISyncChangeBatchBase.VTable
 			{
@@ -1592,10 +1111,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SerializeWithOptions(SYNC_SERIALIZATION_VERSION targetFormatVersion, uint32 dwFlags, out uint8 pbBuffer, out uint32 pdwSerializedSize) mut
-			{
-				return VT.SerializeWithOptions(ref this, targetFormatVersion, dwFlags, out pbBuffer, out pdwSerializedSize);
-			}
+			public HRESULT SerializeWithOptions(SYNC_SERIALIZATION_VERSION targetFormatVersion, uint32 dwFlags, out uint8 pbBuffer, out uint32 pdwSerializedSize) mut => VT.SerializeWithOptions(ref this, targetFormatVersion, dwFlags, out pbBuffer, out pdwSerializedSize);
+
 			[CRepr]
 			public struct VTable : ISyncChangeBatchBase.VTable
 			{
@@ -1609,22 +1126,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFilterInfo(out ISyncFilterInfo* ppFilterInfo) mut
-			{
-				return VT.GetFilterInfo(ref this, out ppFilterInfo);
-			}
-			public HRESULT ConvertFullEnumerationChangeBatchToRegularChangeBatch(out ISyncChangeBatch* ppChangeBatch) mut
-			{
-				return VT.ConvertFullEnumerationChangeBatchToRegularChangeBatch(ref this, out ppChangeBatch);
-			}
-			public HRESULT GetUpperBoundItemId(out uint8 pbItemId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetUpperBoundItemId(ref this, out pbItemId, out pcbIdSize);
-			}
-			public HRESULT GetBatchLevelKnowledgeShouldBeApplied(out BOOL pfBatchKnowledgeShouldBeApplied) mut
-			{
-				return VT.GetBatchLevelKnowledgeShouldBeApplied(ref this, out pfBatchKnowledgeShouldBeApplied);
-			}
+			public HRESULT GetFilterInfo(out ISyncFilterInfo* ppFilterInfo) mut => VT.GetFilterInfo(ref this, out ppFilterInfo);
+			public HRESULT ConvertFullEnumerationChangeBatchToRegularChangeBatch(out ISyncChangeBatch* ppChangeBatch) mut => VT.ConvertFullEnumerationChangeBatchToRegularChangeBatch(ref this, out ppChangeBatch);
+			public HRESULT GetUpperBoundItemId(out uint8 pbItemId, out uint32 pcbIdSize) mut => VT.GetUpperBoundItemId(ref this, out pbItemId, out pcbIdSize);
+			public HRESULT GetBatchLevelKnowledgeShouldBeApplied(out BOOL pfBatchKnowledgeShouldBeApplied) mut => VT.GetBatchLevelKnowledgeShouldBeApplied(ref this, out pfBatchKnowledgeShouldBeApplied);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1641,14 +1147,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddMergeTombstoneMetadataToGroup(in uint8 pbOwnerReplicaId, in uint8 pbWinnerItemId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwWorkForChange, out ISyncChangeBuilder* ppChangeBuilder) mut
-			{
-				return VT.AddMergeTombstoneMetadataToGroup(ref this, pbOwnerReplicaId, pbWinnerItemId, pbItemId, pChangeVersion, pCreationVersion, dwWorkForChange, out ppChangeBuilder);
-			}
-			public HRESULT AddMergeTombstoneLoggedConflict(in uint8 pbOwnerReplicaId, in uint8 pbWinnerItemId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwWorkForChange, ref ISyncKnowledge pConflictKnowledge, out ISyncChangeBuilder* ppChangeBuilder) mut
-			{
-				return VT.AddMergeTombstoneLoggedConflict(ref this, pbOwnerReplicaId, pbWinnerItemId, pbItemId, pChangeVersion, pCreationVersion, dwWorkForChange, ref pConflictKnowledge, out ppChangeBuilder);
-			}
+			public HRESULT AddMergeTombstoneMetadataToGroup(in uint8 pbOwnerReplicaId, in uint8 pbWinnerItemId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwWorkForChange, out ISyncChangeBuilder* ppChangeBuilder) mut => VT.AddMergeTombstoneMetadataToGroup(ref this, pbOwnerReplicaId, pbWinnerItemId, pbItemId, pChangeVersion, pCreationVersion, dwWorkForChange, out ppChangeBuilder);
+			public HRESULT AddMergeTombstoneLoggedConflict(in uint8 pbOwnerReplicaId, in uint8 pbWinnerItemId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwWorkForChange, ref ISyncKnowledge pConflictKnowledge, out ISyncChangeBuilder* ppChangeBuilder) mut => VT.AddMergeTombstoneLoggedConflict(ref this, pbOwnerReplicaId, pbWinnerItemId, pbItemId, pChangeVersion, pCreationVersion, dwWorkForChange, ref pConflictKnowledge, out ppChangeBuilder);
+
 			[CRepr]
 			public struct VTable : ISyncChangeBatch.VTable
 			{
@@ -1663,10 +1164,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddMergeTombstoneMetadataToGroup(in uint8 pbOwnerReplicaId, in uint8 pbWinnerItemId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwWorkForChange, out ISyncChangeBuilder* ppChangeBuilder) mut
-			{
-				return VT.AddMergeTombstoneMetadataToGroup(ref this, pbOwnerReplicaId, pbWinnerItemId, pbItemId, pChangeVersion, pCreationVersion, dwWorkForChange, out ppChangeBuilder);
-			}
+			public HRESULT AddMergeTombstoneMetadataToGroup(in uint8 pbOwnerReplicaId, in uint8 pbWinnerItemId, in uint8 pbItemId, in SYNC_VERSION pChangeVersion, in SYNC_VERSION pCreationVersion, uint32 dwWorkForChange, out ISyncChangeBuilder* ppChangeBuilder) mut => VT.AddMergeTombstoneMetadataToGroup(ref this, pbOwnerReplicaId, pbWinnerItemId, pbItemId, pChangeVersion, pCreationVersion, dwWorkForChange, out ppChangeBuilder);
+
 			[CRepr]
 			public struct VTable : ISyncFullEnumerationChangeBatch.VTable
 			{
@@ -1680,34 +1179,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginSession(SYNC_PROVIDER_ROLE role, ref ISyncSessionState pSessionState) mut
-			{
-				return VT.BeginSession(ref this, role, ref pSessionState);
-			}
-			public HRESULT GetSyncBatchParameters(out ISyncKnowledge* ppSyncKnowledge, out uint32 pdwRequestedBatchSize) mut
-			{
-				return VT.GetSyncBatchParameters(ref this, out ppSyncKnowledge, out pdwRequestedBatchSize);
-			}
-			public HRESULT GetChangeBatch(uint32 dwBatchSize, ref ISyncKnowledge pSyncKnowledge, out ISyncChangeBatch* ppSyncChangeBatch, out IUnknown* ppUnkDataRetriever) mut
-			{
-				return VT.GetChangeBatch(ref this, dwBatchSize, ref pSyncKnowledge, out ppSyncChangeBatch, out ppUnkDataRetriever);
-			}
-			public HRESULT GetFullEnumerationChangeBatch(uint32 dwBatchSize, in uint8 pbLowerEnumerationBound, ref ISyncKnowledge pSyncKnowledge, out ISyncFullEnumerationChangeBatch* ppSyncChangeBatch, out IUnknown* ppUnkDataRetriever) mut
-			{
-				return VT.GetFullEnumerationChangeBatch(ref this, dwBatchSize, pbLowerEnumerationBound, ref pSyncKnowledge, out ppSyncChangeBatch, out ppUnkDataRetriever);
-			}
-			public HRESULT ProcessChangeBatch(CONFLICT_RESOLUTION_POLICY resolutionPolicy, ref ISyncChangeBatch pSourceChangeBatch, ref IUnknown pUnkDataRetriever, ref ISyncCallback pCallback, out SYNC_SESSION_STATISTICS pSyncSessionStatistics) mut
-			{
-				return VT.ProcessChangeBatch(ref this, resolutionPolicy, ref pSourceChangeBatch, ref pUnkDataRetriever, ref pCallback, out pSyncSessionStatistics);
-			}
-			public HRESULT ProcessFullEnumerationChangeBatch(CONFLICT_RESOLUTION_POLICY resolutionPolicy, ref ISyncFullEnumerationChangeBatch pSourceChangeBatch, ref IUnknown pUnkDataRetriever, ref ISyncCallback pCallback, out SYNC_SESSION_STATISTICS pSyncSessionStatistics) mut
-			{
-				return VT.ProcessFullEnumerationChangeBatch(ref this, resolutionPolicy, ref pSourceChangeBatch, ref pUnkDataRetriever, ref pCallback, out pSyncSessionStatistics);
-			}
-			public HRESULT EndSession(ref ISyncSessionState pSessionState) mut
-			{
-				return VT.EndSession(ref this, ref pSessionState);
-			}
+			public HRESULT BeginSession(SYNC_PROVIDER_ROLE role, ref ISyncSessionState pSessionState) mut => VT.BeginSession(ref this, role, ref pSessionState);
+			public HRESULT GetSyncBatchParameters(out ISyncKnowledge* ppSyncKnowledge, out uint32 pdwRequestedBatchSize) mut => VT.GetSyncBatchParameters(ref this, out ppSyncKnowledge, out pdwRequestedBatchSize);
+			public HRESULT GetChangeBatch(uint32 dwBatchSize, ref ISyncKnowledge pSyncKnowledge, out ISyncChangeBatch* ppSyncChangeBatch, out IUnknown* ppUnkDataRetriever) mut => VT.GetChangeBatch(ref this, dwBatchSize, ref pSyncKnowledge, out ppSyncChangeBatch, out ppUnkDataRetriever);
+			public HRESULT GetFullEnumerationChangeBatch(uint32 dwBatchSize, in uint8 pbLowerEnumerationBound, ref ISyncKnowledge pSyncKnowledge, out ISyncFullEnumerationChangeBatch* ppSyncChangeBatch, out IUnknown* ppUnkDataRetriever) mut => VT.GetFullEnumerationChangeBatch(ref this, dwBatchSize, pbLowerEnumerationBound, ref pSyncKnowledge, out ppSyncChangeBatch, out ppUnkDataRetriever);
+			public HRESULT ProcessChangeBatch(CONFLICT_RESOLUTION_POLICY resolutionPolicy, ref ISyncChangeBatch pSourceChangeBatch, ref IUnknown pUnkDataRetriever, ref ISyncCallback pCallback, out SYNC_SESSION_STATISTICS pSyncSessionStatistics) mut => VT.ProcessChangeBatch(ref this, resolutionPolicy, ref pSourceChangeBatch, ref pUnkDataRetriever, ref pCallback, out pSyncSessionStatistics);
+			public HRESULT ProcessFullEnumerationChangeBatch(CONFLICT_RESOLUTION_POLICY resolutionPolicy, ref ISyncFullEnumerationChangeBatch pSourceChangeBatch, ref IUnknown pUnkDataRetriever, ref ISyncCallback pCallback, out SYNC_SESSION_STATISTICS pSyncSessionStatistics) mut => VT.ProcessFullEnumerationChangeBatch(ref this, resolutionPolicy, ref pSourceChangeBatch, ref pUnkDataRetriever, ref pCallback, out pSyncSessionStatistics);
+			public HRESULT EndSession(ref ISyncSessionState pSessionState) mut => VT.EndSession(ref this, ref pSessionState);
+
 			[CRepr]
 			public struct VTable : ISyncProvider.VTable
 			{
@@ -1727,18 +1206,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemChange(out ISyncChange* ppSyncChange) mut
-			{
-				return VT.GetItemChange(ref this, out ppSyncChange);
-			}
-			public HRESULT GetChangeUnitId(out uint8 pbChangeUnitId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetChangeUnitId(ref this, out pbChangeUnitId, out pcbIdSize);
-			}
-			public HRESULT GetChangeUnitVersion(in uint8 pbCurrentReplicaId, out SYNC_VERSION pVersion) mut
-			{
-				return VT.GetChangeUnitVersion(ref this, pbCurrentReplicaId, out pVersion);
-			}
+			public HRESULT GetItemChange(out ISyncChange* ppSyncChange) mut => VT.GetItemChange(ref this, out ppSyncChange);
+			public HRESULT GetChangeUnitId(out uint8 pbChangeUnitId, out uint32 pcbIdSize) mut => VT.GetChangeUnitId(ref this, out pbChangeUnitId, out pcbIdSize);
+			public HRESULT GetChangeUnitVersion(in uint8 pbCurrentReplicaId, out SYNC_VERSION pVersion) mut => VT.GetChangeUnitVersion(ref this, pbCurrentReplicaId, out pVersion);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1754,22 +1225,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cChanges, out ISyncChangeUnit* ppChangeUnit, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cChanges, out ppChangeUnit, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cChanges) mut
-			{
-				return VT.Skip(ref this, cChanges);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumSyncChangeUnits* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cChanges, out ISyncChangeUnit* ppChangeUnit, out uint32 pcFetched) mut => VT.Next(ref this, cChanges, out ppChangeUnit, out pcFetched);
+			public HRESULT Skip(uint32 cChanges) mut => VT.Skip(ref this, cChanges);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumSyncChangeUnits* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1786,46 +1246,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOwnerReplicaId(out uint8 pbReplicaId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetOwnerReplicaId(ref this, out pbReplicaId, out pcbIdSize);
-			}
-			public HRESULT GetRootItemId(out uint8 pbRootItemId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetRootItemId(ref this, out pbRootItemId, out pcbIdSize);
-			}
-			public HRESULT GetChangeVersion(in uint8 pbCurrentReplicaId, out SYNC_VERSION pVersion) mut
-			{
-				return VT.GetChangeVersion(ref this, pbCurrentReplicaId, out pVersion);
-			}
-			public HRESULT GetCreationVersion(in uint8 pbCurrentReplicaId, out SYNC_VERSION pVersion) mut
-			{
-				return VT.GetCreationVersion(ref this, pbCurrentReplicaId, out pVersion);
-			}
-			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pdwFlags);
-			}
-			public HRESULT GetWorkEstimate(out uint32 pdwWork) mut
-			{
-				return VT.GetWorkEstimate(ref this, out pdwWork);
-			}
-			public HRESULT GetChangeUnits(out IEnumSyncChangeUnits* ppEnum) mut
-			{
-				return VT.GetChangeUnits(ref this, out ppEnum);
-			}
-			public HRESULT GetMadeWithKnowledge(out ISyncKnowledge* ppMadeWithKnowledge) mut
-			{
-				return VT.GetMadeWithKnowledge(ref this, out ppMadeWithKnowledge);
-			}
-			public HRESULT GetLearnedKnowledge(out ISyncKnowledge* ppLearnedKnowledge) mut
-			{
-				return VT.GetLearnedKnowledge(ref this, out ppLearnedKnowledge);
-			}
-			public HRESULT SetWorkEstimate(uint32 dwWork) mut
-			{
-				return VT.SetWorkEstimate(ref this, dwWork);
-			}
+			public HRESULT GetOwnerReplicaId(out uint8 pbReplicaId, out uint32 pcbIdSize) mut => VT.GetOwnerReplicaId(ref this, out pbReplicaId, out pcbIdSize);
+			public HRESULT GetRootItemId(out uint8 pbRootItemId, out uint32 pcbIdSize) mut => VT.GetRootItemId(ref this, out pbRootItemId, out pcbIdSize);
+			public HRESULT GetChangeVersion(in uint8 pbCurrentReplicaId, out SYNC_VERSION pVersion) mut => VT.GetChangeVersion(ref this, pbCurrentReplicaId, out pVersion);
+			public HRESULT GetCreationVersion(in uint8 pbCurrentReplicaId, out SYNC_VERSION pVersion) mut => VT.GetCreationVersion(ref this, pbCurrentReplicaId, out pVersion);
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut => VT.ComGetFlags(ref this, out pdwFlags);
+			public HRESULT GetWorkEstimate(out uint32 pdwWork) mut => VT.GetWorkEstimate(ref this, out pdwWork);
+			public HRESULT GetChangeUnits(out IEnumSyncChangeUnits* ppEnum) mut => VT.GetChangeUnits(ref this, out ppEnum);
+			public HRESULT GetMadeWithKnowledge(out ISyncKnowledge* ppMadeWithKnowledge) mut => VT.GetMadeWithKnowledge(ref this, out ppMadeWithKnowledge);
+			public HRESULT GetLearnedKnowledge(out ISyncKnowledge* ppLearnedKnowledge) mut => VT.GetLearnedKnowledge(ref this, out ppLearnedKnowledge);
+			public HRESULT SetWorkEstimate(uint32 dwWork) mut => VT.SetWorkEstimate(ref this, dwWork);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1848,14 +1279,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPrerequisiteKnowledge(out ISyncKnowledge* ppPrerequisiteKnowledge) mut
-			{
-				return VT.GetPrerequisiteKnowledge(ref this, out ppPrerequisiteKnowledge);
-			}
-			public HRESULT GetLearnedKnowledgeWithPrerequisite(ref ISyncKnowledge pDestinationKnowledge, out ISyncKnowledge* ppLearnedKnowledgeWithPrerequisite) mut
-			{
-				return VT.GetLearnedKnowledgeWithPrerequisite(ref this, ref pDestinationKnowledge, out ppLearnedKnowledgeWithPrerequisite);
-			}
+			public HRESULT GetPrerequisiteKnowledge(out ISyncKnowledge* ppPrerequisiteKnowledge) mut => VT.GetPrerequisiteKnowledge(ref this, out ppPrerequisiteKnowledge);
+			public HRESULT GetLearnedKnowledgeWithPrerequisite(ref ISyncKnowledge pDestinationKnowledge, out ISyncKnowledge* ppLearnedKnowledgeWithPrerequisite) mut => VT.GetLearnedKnowledgeWithPrerequisite(ref this, ref pDestinationKnowledge, out ppLearnedKnowledgeWithPrerequisite);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1870,14 +1296,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLearnedKnowledgeAfterRecoveryComplete(out ISyncKnowledge* ppLearnedKnowledge) mut
-			{
-				return VT.GetLearnedKnowledgeAfterRecoveryComplete(ref this, out ppLearnedKnowledge);
-			}
-			public HRESULT GetLearnedForgottenKnowledge(out IForgottenKnowledge* ppLearnedForgottenKnowledge) mut
-			{
-				return VT.GetLearnedForgottenKnowledge(ref this, out ppLearnedForgottenKnowledge);
-			}
+			public HRESULT GetLearnedKnowledgeAfterRecoveryComplete(out ISyncKnowledge* ppLearnedKnowledge) mut => VT.GetLearnedKnowledgeAfterRecoveryComplete(ref this, out ppLearnedKnowledge);
+			public HRESULT GetLearnedForgottenKnowledge(out IForgottenKnowledge* ppLearnedForgottenKnowledge) mut => VT.GetLearnedForgottenKnowledge(ref this, out ppLearnedForgottenKnowledge);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1892,10 +1313,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWinnerItemId(out uint8 pbWinnerItemId, out uint32 pcbIdSize) mut
-			{
-				return VT.GetWinnerItemId(ref this, out pbWinnerItemId, out pcbIdSize);
-			}
+			public HRESULT GetWinnerItemId(out uint8 pbWinnerItemId, out uint32 pcbIdSize) mut => VT.GetWinnerItemId(ref this, out pbWinnerItemId, out pcbIdSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1909,10 +1328,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(out uint8 pbItemId, out uint32 pcbItemIdSize) mut
-			{
-				return VT.Next(ref this, out pbItemId, out pcbItemIdSize);
-			}
+			public HRESULT Next(out uint8 pbItemId, out uint32 pcbItemIdSize) mut => VT.Next(ref this, out pbItemId, out pcbItemIdSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1926,22 +1343,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pdwCount) mut
-			{
-				return VT.GetCount(ref this, out pdwCount);
-			}
-			public HRESULT AddFilter(ref ISyncFilter pISyncFilter, out uint32 pdwFilterKey) mut
-			{
-				return VT.AddFilter(ref this, ref pISyncFilter, out pdwFilterKey);
-			}
-			public HRESULT GetFilter(uint32 dwFilterKey, out ISyncFilter* ppISyncFilter) mut
-			{
-				return VT.GetFilter(ref this, dwFilterKey, out ppISyncFilter);
-			}
-			public HRESULT Serialize(out uint8 pbFilterKeyMap, out uint32 pcbFilterKeyMap) mut
-			{
-				return VT.Serialize(ref this, out pbFilterKeyMap, out pcbFilterKeyMap);
-			}
+			public HRESULT GetCount(out uint32 pdwCount) mut => VT.GetCount(ref this, out pdwCount);
+			public HRESULT AddFilter(ref ISyncFilter pISyncFilter, out uint32 pdwFilterKey) mut => VT.AddFilter(ref this, ref pISyncFilter, out pdwFilterKey);
+			public HRESULT GetFilter(uint32 dwFilterKey, out ISyncFilter* ppISyncFilter) mut => VT.GetFilter(ref this, dwFilterKey, out ppISyncFilter);
+			public HRESULT Serialize(out uint8 pbFilterKeyMap, out uint32 pcbFilterKeyMap) mut => VT.Serialize(ref this, out pbFilterKeyMap, out pcbFilterKeyMap);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1958,42 +1364,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFilterCount(out uint32 pdwFilterCount) mut
-			{
-				return VT.GetFilterCount(ref this, out pdwFilterCount);
-			}
-			public HRESULT GetFilterChange(uint32 dwFilterKey, out SYNC_FILTER_CHANGE pFilterChange) mut
-			{
-				return VT.GetFilterChange(ref this, dwFilterKey, out pFilterChange);
-			}
-			public HRESULT GetAllChangeUnitsPresentFlag(out BOOL pfAllChangeUnitsPresent) mut
-			{
-				return VT.GetAllChangeUnitsPresentFlag(ref this, out pfAllChangeUnitsPresent);
-			}
-			public HRESULT GetFilterForgottenKnowledge(uint32 dwFilterKey, out ISyncKnowledge* ppIFilterForgottenKnowledge) mut
-			{
-				return VT.GetFilterForgottenKnowledge(ref this, dwFilterKey, out ppIFilterForgottenKnowledge);
-			}
-			public HRESULT GetFilteredReplicaLearnedKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedKnowledge) mut
-			{
-				return VT.GetFilteredReplicaLearnedKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedKnowledge);
-			}
-			public HRESULT GetLearnedFilterForgottenKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, uint32 dwFilterKey, out ISyncKnowledge* ppLearnedFilterForgottenKnowledge) mut
-			{
-				return VT.GetLearnedFilterForgottenKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, dwFilterKey, out ppLearnedFilterForgottenKnowledge);
-			}
-			public HRESULT GetFilteredReplicaLearnedForgottenKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut
-			{
-				return VT.GetFilteredReplicaLearnedForgottenKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
-			}
-			public HRESULT GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut
-			{
-				return VT.GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
-			}
-			public HRESULT GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, uint32 dwFilterKey, out ISyncKnowledge* ppLearnedFilterForgottenKnowledge) mut
-			{
-				return VT.GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete(ref this, ref pDestinationKnowledge, ref pNewMoveins, dwFilterKey, out ppLearnedFilterForgottenKnowledge);
-			}
+			public HRESULT GetFilterCount(out uint32 pdwFilterCount) mut => VT.GetFilterCount(ref this, out pdwFilterCount);
+			public HRESULT GetFilterChange(uint32 dwFilterKey, out SYNC_FILTER_CHANGE pFilterChange) mut => VT.GetFilterChange(ref this, dwFilterKey, out pFilterChange);
+			public HRESULT GetAllChangeUnitsPresentFlag(out BOOL pfAllChangeUnitsPresent) mut => VT.GetAllChangeUnitsPresentFlag(ref this, out pfAllChangeUnitsPresent);
+			public HRESULT GetFilterForgottenKnowledge(uint32 dwFilterKey, out ISyncKnowledge* ppIFilterForgottenKnowledge) mut => VT.GetFilterForgottenKnowledge(ref this, dwFilterKey, out ppIFilterForgottenKnowledge);
+			public HRESULT GetFilteredReplicaLearnedKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedKnowledge) mut => VT.GetFilteredReplicaLearnedKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedKnowledge);
+			public HRESULT GetLearnedFilterForgottenKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, uint32 dwFilterKey, out ISyncKnowledge* ppLearnedFilterForgottenKnowledge) mut => VT.GetLearnedFilterForgottenKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, dwFilterKey, out ppLearnedFilterForgottenKnowledge);
+			public HRESULT GetFilteredReplicaLearnedForgottenKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut => VT.GetFilteredReplicaLearnedForgottenKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
+			public HRESULT GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut => VT.GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
+			public HRESULT GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, uint32 dwFilterKey, out ISyncKnowledge* ppLearnedFilterForgottenKnowledge) mut => VT.GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete(ref this, ref pDestinationKnowledge, ref pNewMoveins, dwFilterKey, out ppLearnedFilterForgottenKnowledge);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2015,38 +1395,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFilterKeyMap(out IFilterKeyMap* ppIFilterKeyMap) mut
-			{
-				return VT.GetFilterKeyMap(ref this, out ppIFilterKeyMap);
-			}
-			public HRESULT SetFilterKeyMap(ref IFilterKeyMap pIFilterKeyMap) mut
-			{
-				return VT.SetFilterKeyMap(ref this, ref pIFilterKeyMap);
-			}
-			public HRESULT SetFilterForgottenKnowledge(uint32 dwFilterKey, ref ISyncKnowledge pFilterForgottenKnowledge) mut
-			{
-				return VT.SetFilterForgottenKnowledge(ref this, dwFilterKey, ref pFilterForgottenKnowledge);
-			}
-			public HRESULT GetFilteredReplicaLearnedKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut
-			{
-				return VT.GetFilteredReplicaLearnedKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
-			}
-			public HRESULT GetLearnedFilterForgottenKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, uint32 dwFilterKey, out ISyncKnowledge* ppLearnedFilterForgottenKnowledge) mut
-			{
-				return VT.GetLearnedFilterForgottenKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, dwFilterKey, out ppLearnedFilterForgottenKnowledge);
-			}
-			public HRESULT GetFilteredReplicaLearnedForgottenKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut
-			{
-				return VT.GetFilteredReplicaLearnedForgottenKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
-			}
-			public HRESULT GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut
-			{
-				return VT.GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
-			}
-			public HRESULT GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, uint32 dwFilterKey, out ISyncKnowledge* ppLearnedFilterForgottenKnowledge) mut
-			{
-				return VT.GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete(ref this, ref pDestinationKnowledge, ref pNewMoveins, dwFilterKey, out ppLearnedFilterForgottenKnowledge);
-			}
+			public HRESULT GetFilterKeyMap(out IFilterKeyMap* ppIFilterKeyMap) mut => VT.GetFilterKeyMap(ref this, out ppIFilterKeyMap);
+			public HRESULT SetFilterKeyMap(ref IFilterKeyMap pIFilterKeyMap) mut => VT.SetFilterKeyMap(ref this, ref pIFilterKeyMap);
+			public HRESULT SetFilterForgottenKnowledge(uint32 dwFilterKey, ref ISyncKnowledge pFilterForgottenKnowledge) mut => VT.SetFilterForgottenKnowledge(ref this, dwFilterKey, ref pFilterForgottenKnowledge);
+			public HRESULT GetFilteredReplicaLearnedKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut => VT.GetFilteredReplicaLearnedKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
+			public HRESULT GetLearnedFilterForgottenKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, uint32 dwFilterKey, out ISyncKnowledge* ppLearnedFilterForgottenKnowledge) mut => VT.GetLearnedFilterForgottenKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, dwFilterKey, out ppLearnedFilterForgottenKnowledge);
+			public HRESULT GetFilteredReplicaLearnedForgottenKnowledge(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut => VT.GetFilteredReplicaLearnedForgottenKnowledge(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
+			public HRESULT GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, out ISyncKnowledge* ppLearnedForgottenKnowledge) mut => VT.GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete(ref this, ref pDestinationKnowledge, ref pNewMoveins, out ppLearnedForgottenKnowledge);
+			public HRESULT GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete(ref ISyncKnowledge pDestinationKnowledge, ref IEnumItemIds pNewMoveins, uint32 dwFilterKey, out ISyncKnowledge* ppLearnedFilterForgottenKnowledge) mut => VT.GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete(ref this, ref pDestinationKnowledge, ref pNewMoveins, dwFilterKey, out ppLearnedFilterForgottenKnowledge);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2067,14 +1424,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LoadChangeDataComplete(ref IUnknown pUnkData) mut
-			{
-				return VT.LoadChangeDataComplete(ref this, ref pUnkData);
-			}
-			public HRESULT LoadChangeDataError(HRESULT hrError) mut
-			{
-				return VT.LoadChangeDataError(ref this, hrError);
-			}
+			public HRESULT LoadChangeDataComplete(ref IUnknown pUnkData) mut => VT.LoadChangeDataComplete(ref this, ref pUnkData);
+			public HRESULT LoadChangeDataError(HRESULT hrError) mut => VT.LoadChangeDataError(ref this, hrError);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2089,18 +1441,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSyncChange(out ISyncChange* ppSyncChange) mut
-			{
-				return VT.GetSyncChange(ref this, out ppSyncChange);
-			}
-			public HRESULT SetRecoverableErrorOnChange(HRESULT hrError, ref IRecoverableErrorData pErrorData) mut
-			{
-				return VT.SetRecoverableErrorOnChange(ref this, hrError, ref pErrorData);
-			}
-			public HRESULT SetRecoverableErrorOnChangeUnit(HRESULT hrError, ref ISyncChangeUnit pChangeUnit, ref IRecoverableErrorData pErrorData) mut
-			{
-				return VT.SetRecoverableErrorOnChangeUnit(ref this, hrError, ref pChangeUnit, ref pErrorData);
-			}
+			public HRESULT GetSyncChange(out ISyncChange* ppSyncChange) mut => VT.GetSyncChange(ref this, out ppSyncChange);
+			public HRESULT SetRecoverableErrorOnChange(HRESULT hrError, ref IRecoverableErrorData pErrorData) mut => VT.SetRecoverableErrorOnChange(ref this, hrError, ref pErrorData);
+			public HRESULT SetRecoverableErrorOnChangeUnit(HRESULT hrError, ref ISyncChangeUnit pChangeUnit, ref IRecoverableErrorData pErrorData) mut => VT.SetRecoverableErrorOnChangeUnit(ref this, hrError, ref pChangeUnit, ref pErrorData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2116,14 +1460,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIdParameters(out ID_PARAMETERS pIdParameters) mut
-			{
-				return VT.GetIdParameters(ref this, out pIdParameters);
-			}
-			public HRESULT LoadChangeData(ref ILoadChangeContext pLoadChangeContext, out IUnknown* ppUnkData) mut
-			{
-				return VT.LoadChangeData(ref this, ref pLoadChangeContext, out ppUnkData);
-			}
+			public HRESULT GetIdParameters(out ID_PARAMETERS pIdParameters) mut => VT.GetIdParameters(ref this, out pIdParameters);
+			public HRESULT LoadChangeData(ref ILoadChangeContext pLoadChangeContext, out IUnknown* ppUnkData) mut => VT.LoadChangeData(ref this, ref pLoadChangeContext, out ppUnkData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2138,22 +1477,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIdParameters(out ID_PARAMETERS pIdParameters) mut
-			{
-				return VT.GetIdParameters(ref this, out pIdParameters);
-			}
-			public HRESULT RegisterCallback(ref IDataRetrieverCallback pDataRetrieverCallback) mut
-			{
-				return VT.RegisterCallback(ref this, ref pDataRetrieverCallback);
-			}
-			public HRESULT RevokeCallback(ref IDataRetrieverCallback pDataRetrieverCallback) mut
-			{
-				return VT.RevokeCallback(ref this, ref pDataRetrieverCallback);
-			}
-			public HRESULT LoadChangeData(ref ILoadChangeContext pLoadChangeContext) mut
-			{
-				return VT.LoadChangeData(ref this, ref pLoadChangeContext);
-			}
+			public HRESULT GetIdParameters(out ID_PARAMETERS pIdParameters) mut => VT.GetIdParameters(ref this, out pIdParameters);
+			public HRESULT RegisterCallback(ref IDataRetrieverCallback pDataRetrieverCallback) mut => VT.RegisterCallback(ref this, ref pDataRetrieverCallback);
+			public HRESULT RevokeCallback(ref IDataRetrieverCallback pDataRetrieverCallback) mut => VT.RevokeCallback(ref this, ref pDataRetrieverCallback);
+			public HRESULT LoadChangeData(ref ILoadChangeContext pLoadChangeContext) mut => VT.LoadChangeData(ref this, ref pLoadChangeContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2170,10 +1498,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestFilter(IUnknown* pFilter, FILTERING_TYPE filteringType) mut
-			{
-				return VT.RequestFilter(ref this, pFilter, filteringType);
-			}
+			public HRESULT RequestFilter(IUnknown* pFilter, FILTERING_TYPE filteringType) mut => VT.RequestFilter(ref this, pFilter, filteringType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2187,10 +1513,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SpecifyFilter(IFilterRequestCallback* pCallback) mut
-			{
-				return VT.SpecifyFilter(ref this, pCallback);
-			}
+			public HRESULT SpecifyFilter(IFilterRequestCallback* pCallback) mut => VT.SpecifyFilter(ref this, pCallback);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2204,10 +1528,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddFilter(IUnknown* pFilter, FILTERING_TYPE filteringType) mut
-			{
-				return VT.AddFilter(ref this, pFilter, filteringType);
-			}
+			public HRESULT AddFilter(IUnknown* pFilter, FILTERING_TYPE filteringType) mut => VT.AddFilter(ref this, pFilter, filteringType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2221,10 +1543,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestTrackedFilter(ISyncFilter* pFilter) mut
-			{
-				return VT.RequestTrackedFilter(ref this, pFilter);
-			}
+			public HRESULT RequestTrackedFilter(ISyncFilter* pFilter) mut => VT.RequestTrackedFilter(ref this, pFilter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2238,14 +1558,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SpecifyTrackedFilters(IFilterTrackingRequestCallback* pCallback) mut
-			{
-				return VT.SpecifyTrackedFilters(ref this, pCallback);
-			}
-			public HRESULT AddTrackedFilter(ISyncFilter* pFilter) mut
-			{
-				return VT.AddTrackedFilter(ref this, pFilter);
-			}
+			public HRESULT SpecifyTrackedFilters(IFilterTrackingRequestCallback* pCallback) mut => VT.SpecifyTrackedFilters(ref this, pCallback);
+			public HRESULT AddTrackedFilter(ISyncFilter* pFilter) mut => VT.AddTrackedFilter(ref this, pFilter);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2260,14 +1575,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemChangeTime(in uint8 pbItemId, out uint64 pullTimestamp) mut
-			{
-				return VT.GetItemChangeTime(ref this, pbItemId, out pullTimestamp);
-			}
-			public HRESULT GetChangeUnitChangeTime(in uint8 pbItemId, in uint8 pbChangeUnitId, out uint64 pullTimestamp) mut
-			{
-				return VT.GetChangeUnitChangeTime(ref this, pbItemId, pbChangeUnitId, out pullTimestamp);
-			}
+			public HRESULT GetItemChangeTime(in uint8 pbItemId, out uint64 pullTimestamp) mut => VT.GetItemChangeTime(ref this, pbItemId, out pullTimestamp);
+			public HRESULT GetChangeUnitChangeTime(in uint8 pbItemId, in uint8 pbChangeUnitId, out uint64 pullTimestamp) mut => VT.GetChangeUnitChangeTime(ref this, pbItemId, pbChangeUnitId, out pullTimestamp);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2282,10 +1592,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref ISyncProvider pISyncProvider) mut
-			{
-				return VT.Initialize(ref this, ref pISyncProvider);
-			}
+			public HRESULT Initialize(ref ISyncProvider pISyncProvider) mut => VT.Initialize(ref this, ref pISyncProvider);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2299,22 +1607,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConvertDataRetrieverFromProviderFormat(ref IUnknown pUnkDataRetrieverIn, ref IEnumSyncChanges pEnumSyncChanges, out IUnknown* ppUnkDataOut) mut
-			{
-				return VT.ConvertDataRetrieverFromProviderFormat(ref this, ref pUnkDataRetrieverIn, ref pEnumSyncChanges, out ppUnkDataOut);
-			}
-			public HRESULT ConvertDataRetrieverToProviderFormat(ref IUnknown pUnkDataRetrieverIn, ref IEnumSyncChanges pEnumSyncChanges, out IUnknown* ppUnkDataOut) mut
-			{
-				return VT.ConvertDataRetrieverToProviderFormat(ref this, ref pUnkDataRetrieverIn, ref pEnumSyncChanges, out ppUnkDataOut);
-			}
-			public HRESULT ConvertDataFromProviderFormat(ref ILoadChangeContext pDataContext, ref IUnknown pUnkDataIn, out IUnknown* ppUnkDataOut) mut
-			{
-				return VT.ConvertDataFromProviderFormat(ref this, ref pDataContext, ref pUnkDataIn, out ppUnkDataOut);
-			}
-			public HRESULT ConvertDataToProviderFormat(ref ILoadChangeContext pDataContext, ref IUnknown pUnkDataOut, out IUnknown* ppUnkDataout) mut
-			{
-				return VT.ConvertDataToProviderFormat(ref this, ref pDataContext, ref pUnkDataOut, out ppUnkDataout);
-			}
+			public HRESULT ConvertDataRetrieverFromProviderFormat(ref IUnknown pUnkDataRetrieverIn, ref IEnumSyncChanges pEnumSyncChanges, out IUnknown* ppUnkDataOut) mut => VT.ConvertDataRetrieverFromProviderFormat(ref this, ref pUnkDataRetrieverIn, ref pEnumSyncChanges, out ppUnkDataOut);
+			public HRESULT ConvertDataRetrieverToProviderFormat(ref IUnknown pUnkDataRetrieverIn, ref IEnumSyncChanges pEnumSyncChanges, out IUnknown* ppUnkDataOut) mut => VT.ConvertDataRetrieverToProviderFormat(ref this, ref pUnkDataRetrieverIn, ref pEnumSyncChanges, out ppUnkDataOut);
+			public HRESULT ConvertDataFromProviderFormat(ref ILoadChangeContext pDataContext, ref IUnknown pUnkDataIn, out IUnknown* ppUnkDataOut) mut => VT.ConvertDataFromProviderFormat(ref this, ref pDataContext, ref pUnkDataIn, out ppUnkDataOut);
+			public HRESULT ConvertDataToProviderFormat(ref ILoadChangeContext pDataContext, ref IUnknown pUnkDataOut, out IUnknown* ppUnkDataout) mut => VT.ConvertDataToProviderFormat(ref this, ref pDataContext, ref pUnkDataOut, out ppUnkDataout);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2331,70 +1628,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSyncProviderConfigUIRegistrationInstance(in SyncProviderConfigUIConfiguration pConfigUIConfig, ISyncProviderConfigUIInfo** ppConfigUIInfo) mut
-			{
-				return VT.CreateSyncProviderConfigUIRegistrationInstance(ref this, pConfigUIConfig, ppConfigUIInfo);
-			}
-			public HRESULT UnregisterSyncProviderConfigUI(in Guid pguidInstanceId) mut
-			{
-				return VT.UnregisterSyncProviderConfigUI(ref this, pguidInstanceId);
-			}
-			public HRESULT EnumerateSyncProviderConfigUIs(Guid* pguidContentType, uint32 dwSupportedArchitecture, IEnumSyncProviderConfigUIInfos** ppEnumSyncProviderConfigUIInfos) mut
-			{
-				return VT.EnumerateSyncProviderConfigUIs(ref this, pguidContentType, dwSupportedArchitecture, ppEnumSyncProviderConfigUIInfos);
-			}
-			public HRESULT CreateSyncProviderRegistrationInstance(in SyncProviderConfiguration pProviderConfiguration, ISyncProviderInfo** ppProviderInfo) mut
-			{
-				return VT.CreateSyncProviderRegistrationInstance(ref this, pProviderConfiguration, ppProviderInfo);
-			}
-			public HRESULT UnregisterSyncProvider(in Guid pguidInstanceId) mut
-			{
-				return VT.UnregisterSyncProvider(ref this, pguidInstanceId);
-			}
-			public HRESULT GetSyncProviderConfigUIInfoforProvider(in Guid pguidProviderInstanceId, ISyncProviderConfigUIInfo** ppProviderConfigUIInfo) mut
-			{
-				return VT.GetSyncProviderConfigUIInfoforProvider(ref this, pguidProviderInstanceId, ppProviderConfigUIInfo);
-			}
-			public HRESULT EnumerateSyncProviders(Guid* pguidContentType, uint32 dwStateFlagsToFilterMask, uint32 dwStateFlagsToFilter, in Guid refProviderClsId, uint32 dwSupportedArchitecture, IEnumSyncProviderInfos** ppEnumSyncProviderInfos) mut
-			{
-				return VT.EnumerateSyncProviders(ref this, pguidContentType, dwStateFlagsToFilterMask, dwStateFlagsToFilter, refProviderClsId, dwSupportedArchitecture, ppEnumSyncProviderInfos);
-			}
-			public HRESULT GetSyncProviderInfo(in Guid pguidInstanceId, ISyncProviderInfo** ppProviderInfo) mut
-			{
-				return VT.GetSyncProviderInfo(ref this, pguidInstanceId, ppProviderInfo);
-			}
-			public HRESULT GetSyncProviderFromInstanceId(in Guid pguidInstanceId, uint32 dwClsContext, IRegisteredSyncProvider** ppSyncProvider) mut
-			{
-				return VT.GetSyncProviderFromInstanceId(ref this, pguidInstanceId, dwClsContext, ppSyncProvider);
-			}
-			public HRESULT GetSyncProviderConfigUIInfo(in Guid pguidInstanceId, ISyncProviderConfigUIInfo** ppConfigUIInfo) mut
-			{
-				return VT.GetSyncProviderConfigUIInfo(ref this, pguidInstanceId, ppConfigUIInfo);
-			}
-			public HRESULT GetSyncProviderConfigUIFromInstanceId(in Guid pguidInstanceId, uint32 dwClsContext, ISyncProviderConfigUI** ppConfigUI) mut
-			{
-				return VT.GetSyncProviderConfigUIFromInstanceId(ref this, pguidInstanceId, dwClsContext, ppConfigUI);
-			}
-			public HRESULT GetSyncProviderState(in Guid pguidInstanceId, out uint32 pdwStateFlags) mut
-			{
-				return VT.GetSyncProviderState(ref this, pguidInstanceId, out pdwStateFlags);
-			}
-			public HRESULT SetSyncProviderState(in Guid pguidInstanceId, uint32 dwStateFlagsMask, uint32 dwStateFlags) mut
-			{
-				return VT.SetSyncProviderState(ref this, pguidInstanceId, dwStateFlagsMask, dwStateFlags);
-			}
-			public HRESULT RegisterForEvent(out HANDLE phEvent) mut
-			{
-				return VT.RegisterForEvent(ref this, out phEvent);
-			}
-			public HRESULT RevokeEvent(HANDLE hEvent) mut
-			{
-				return VT.RevokeEvent(ref this, hEvent);
-			}
-			public HRESULT GetChange(HANDLE hEvent, out ISyncRegistrationChange* ppChange) mut
-			{
-				return VT.GetChange(ref this, hEvent, out ppChange);
-			}
+			public HRESULT CreateSyncProviderConfigUIRegistrationInstance(in SyncProviderConfigUIConfiguration pConfigUIConfig, ISyncProviderConfigUIInfo** ppConfigUIInfo) mut => VT.CreateSyncProviderConfigUIRegistrationInstance(ref this, pConfigUIConfig, ppConfigUIInfo);
+			public HRESULT UnregisterSyncProviderConfigUI(in Guid pguidInstanceId) mut => VT.UnregisterSyncProviderConfigUI(ref this, pguidInstanceId);
+			public HRESULT EnumerateSyncProviderConfigUIs(Guid* pguidContentType, uint32 dwSupportedArchitecture, IEnumSyncProviderConfigUIInfos** ppEnumSyncProviderConfigUIInfos) mut => VT.EnumerateSyncProviderConfigUIs(ref this, pguidContentType, dwSupportedArchitecture, ppEnumSyncProviderConfigUIInfos);
+			public HRESULT CreateSyncProviderRegistrationInstance(in SyncProviderConfiguration pProviderConfiguration, ISyncProviderInfo** ppProviderInfo) mut => VT.CreateSyncProviderRegistrationInstance(ref this, pProviderConfiguration, ppProviderInfo);
+			public HRESULT UnregisterSyncProvider(in Guid pguidInstanceId) mut => VT.UnregisterSyncProvider(ref this, pguidInstanceId);
+			public HRESULT GetSyncProviderConfigUIInfoforProvider(in Guid pguidProviderInstanceId, ISyncProviderConfigUIInfo** ppProviderConfigUIInfo) mut => VT.GetSyncProviderConfigUIInfoforProvider(ref this, pguidProviderInstanceId, ppProviderConfigUIInfo);
+			public HRESULT EnumerateSyncProviders(Guid* pguidContentType, uint32 dwStateFlagsToFilterMask, uint32 dwStateFlagsToFilter, in Guid refProviderClsId, uint32 dwSupportedArchitecture, IEnumSyncProviderInfos** ppEnumSyncProviderInfos) mut => VT.EnumerateSyncProviders(ref this, pguidContentType, dwStateFlagsToFilterMask, dwStateFlagsToFilter, refProviderClsId, dwSupportedArchitecture, ppEnumSyncProviderInfos);
+			public HRESULT GetSyncProviderInfo(in Guid pguidInstanceId, ISyncProviderInfo** ppProviderInfo) mut => VT.GetSyncProviderInfo(ref this, pguidInstanceId, ppProviderInfo);
+			public HRESULT GetSyncProviderFromInstanceId(in Guid pguidInstanceId, uint32 dwClsContext, IRegisteredSyncProvider** ppSyncProvider) mut => VT.GetSyncProviderFromInstanceId(ref this, pguidInstanceId, dwClsContext, ppSyncProvider);
+			public HRESULT GetSyncProviderConfigUIInfo(in Guid pguidInstanceId, ISyncProviderConfigUIInfo** ppConfigUIInfo) mut => VT.GetSyncProviderConfigUIInfo(ref this, pguidInstanceId, ppConfigUIInfo);
+			public HRESULT GetSyncProviderConfigUIFromInstanceId(in Guid pguidInstanceId, uint32 dwClsContext, ISyncProviderConfigUI** ppConfigUI) mut => VT.GetSyncProviderConfigUIFromInstanceId(ref this, pguidInstanceId, dwClsContext, ppConfigUI);
+			public HRESULT GetSyncProviderState(in Guid pguidInstanceId, out uint32 pdwStateFlags) mut => VT.GetSyncProviderState(ref this, pguidInstanceId, out pdwStateFlags);
+			public HRESULT SetSyncProviderState(in Guid pguidInstanceId, uint32 dwStateFlagsMask, uint32 dwStateFlags) mut => VT.SetSyncProviderState(ref this, pguidInstanceId, dwStateFlagsMask, dwStateFlags);
+			public HRESULT RegisterForEvent(out HANDLE phEvent) mut => VT.RegisterForEvent(ref this, out phEvent);
+			public HRESULT RevokeEvent(HANDLE hEvent) mut => VT.RevokeEvent(ref this, hEvent);
+			public HRESULT GetChange(HANDLE hEvent, out ISyncRegistrationChange* ppChange) mut => VT.GetChange(ref this, hEvent, out ppChange);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2423,22 +1673,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cFactories, ISyncProviderConfigUIInfo** ppSyncProviderConfigUIInfo, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cFactories, ppSyncProviderConfigUIInfo, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cFactories) mut
-			{
-				return VT.Skip(ref this, cFactories);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(IEnumSyncProviderConfigUIInfos** ppEnum) mut
-			{
-				return VT.Clone(ref this, ppEnum);
-			}
+			public HRESULT Next(uint32 cFactories, ISyncProviderConfigUIInfo** ppSyncProviderConfigUIInfo, out uint32 pcFetched) mut => VT.Next(ref this, cFactories, ppSyncProviderConfigUIInfo, out pcFetched);
+			public HRESULT Skip(uint32 cFactories) mut => VT.Skip(ref this, cFactories);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(IEnumSyncProviderConfigUIInfos** ppEnum) mut => VT.Clone(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2455,22 +1694,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cInstances, ISyncProviderInfo** ppSyncProviderInfo, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cInstances, ppSyncProviderInfo, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cInstances) mut
-			{
-				return VT.Skip(ref this, cInstances);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(IEnumSyncProviderInfos** ppEnum) mut
-			{
-				return VT.Clone(ref this, ppEnum);
-			}
+			public HRESULT Next(uint32 cInstances, ISyncProviderInfo** ppSyncProviderInfo, out uint32 pcFetched) mut => VT.Next(ref this, cInstances, ppSyncProviderInfo, out pcFetched);
+			public HRESULT Skip(uint32 cInstances) mut => VT.Skip(ref this, cInstances);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(IEnumSyncProviderInfos** ppEnum) mut => VT.Clone(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2487,10 +1715,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSyncProvider(uint32 dwClsContext, IRegisteredSyncProvider** ppSyncProvider) mut
-			{
-				return VT.GetSyncProvider(ref this, dwClsContext, ppSyncProvider);
-			}
+			public HRESULT GetSyncProvider(uint32 dwClsContext, IRegisteredSyncProvider** ppSyncProvider) mut => VT.GetSyncProvider(ref this, dwClsContext, ppSyncProvider);
+
 			[CRepr]
 			public struct VTable : IPropertyStore.VTable
 			{
@@ -2504,10 +1730,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSyncProviderConfigUI(uint32 dwClsContext, ISyncProviderConfigUI** ppSyncProviderConfigUI) mut
-			{
-				return VT.GetSyncProviderConfigUI(ref this, dwClsContext, ppSyncProviderConfigUI);
-			}
+			public HRESULT GetSyncProviderConfigUI(uint32 dwClsContext, ISyncProviderConfigUI** ppSyncProviderConfigUI) mut => VT.GetSyncProviderConfigUI(ref this, dwClsContext, ppSyncProviderConfigUI);
+
 			[CRepr]
 			public struct VTable : IPropertyStore.VTable
 			{
@@ -2521,22 +1745,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Init(in Guid pguidInstanceId, in Guid pguidContentType, IPropertyStore* pConfigurationProperties) mut
-			{
-				return VT.Init(ref this, pguidInstanceId, pguidContentType, pConfigurationProperties);
-			}
-			public HRESULT GetRegisteredProperties(IPropertyStore** ppConfigUIProperties) mut
-			{
-				return VT.GetRegisteredProperties(ref this, ppConfigUIProperties);
-			}
-			public HRESULT CreateAndRegisterNewSyncProvider(HWND hwndParent, IUnknown* pUnkContext, ISyncProviderInfo** ppProviderInfo) mut
-			{
-				return VT.CreateAndRegisterNewSyncProvider(ref this, hwndParent, pUnkContext, ppProviderInfo);
-			}
-			public HRESULT ModifySyncProvider(HWND hwndParent, IUnknown* pUnkContext, ISyncProviderInfo* pProviderInfo) mut
-			{
-				return VT.ModifySyncProvider(ref this, hwndParent, pUnkContext, pProviderInfo);
-			}
+			public HRESULT Init(in Guid pguidInstanceId, in Guid pguidContentType, IPropertyStore* pConfigurationProperties) mut => VT.Init(ref this, pguidInstanceId, pguidContentType, pConfigurationProperties);
+			public HRESULT GetRegisteredProperties(IPropertyStore** ppConfigUIProperties) mut => VT.GetRegisteredProperties(ref this, ppConfigUIProperties);
+			public HRESULT CreateAndRegisterNewSyncProvider(HWND hwndParent, IUnknown* pUnkContext, ISyncProviderInfo** ppProviderInfo) mut => VT.CreateAndRegisterNewSyncProvider(ref this, hwndParent, pUnkContext, ppProviderInfo);
+			public HRESULT ModifySyncProvider(HWND hwndParent, IUnknown* pUnkContext, ISyncProviderInfo* pProviderInfo) mut => VT.ModifySyncProvider(ref this, hwndParent, pUnkContext, pProviderInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2553,18 +1766,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Init(in Guid pguidInstanceId, in Guid pguidContentType, IPropertyStore* pContextPropertyStore) mut
-			{
-				return VT.Init(ref this, pguidInstanceId, pguidContentType, pContextPropertyStore);
-			}
-			public HRESULT GetInstanceId(out Guid pguidInstanceId) mut
-			{
-				return VT.GetInstanceId(ref this, out pguidInstanceId);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT Init(in Guid pguidInstanceId, in Guid pguidContentType, IPropertyStore* pContextPropertyStore) mut => VT.Init(ref this, pguidInstanceId, pguidContentType, pContextPropertyStore);
+			public HRESULT GetInstanceId(out Guid pguidInstanceId) mut => VT.GetInstanceId(ref this, out pguidInstanceId);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2580,14 +1785,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEvent(out SYNC_REGISTRATION_EVENT psreEvent) mut
-			{
-				return VT.GetEvent(ref this, out psreEvent);
-			}
-			public HRESULT GetInstanceId(out Guid pguidInstanceId) mut
-			{
-				return VT.GetInstanceId(ref this, out pguidInstanceId);
-			}
+			public HRESULT GetEvent(out SYNC_REGISTRATION_EVENT psreEvent) mut => VT.GetEvent(ref this, out psreEvent);
+			public HRESULT GetInstanceId(out Guid pguidInstanceId) mut => VT.GetInstanceId(ref this, out pguidInstanceId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

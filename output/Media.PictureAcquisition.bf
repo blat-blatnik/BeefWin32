@@ -101,42 +101,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemName(BSTR* pbstrItemName) mut
-			{
-				return VT.GetItemName(ref this, pbstrItemName);
-			}
-			public HRESULT GetThumbnail(SIZE sizeThumbnail, HBITMAP* phbmpThumbnail) mut
-			{
-				return VT.GetThumbnail(ref this, sizeThumbnail, phbmpThumbnail);
-			}
-			public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT pv) mut
-			{
-				return VT.GetProperty(ref this, key, out pv);
-			}
-			public HRESULT SetProperty(in PROPERTYKEY key, in PROPVARIANT pv) mut
-			{
-				return VT.SetProperty(ref this, key, pv);
-			}
-			public HRESULT GetStream(IStream** ppStream) mut
-			{
-				return VT.GetStream(ref this, ppStream);
-			}
-			public HRESULT CanDelete(out BOOL pfCanDelete) mut
-			{
-				return VT.CanDelete(ref this, out pfCanDelete);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT GetSubItemCount(out uint32 pnCount) mut
-			{
-				return VT.GetSubItemCount(ref this, out pnCount);
-			}
-			public HRESULT GetSubItemAt(uint32 nItemIndex, IPhotoAcquireItem** ppPhotoAcquireItem) mut
-			{
-				return VT.GetSubItemAt(ref this, nItemIndex, ppPhotoAcquireItem);
-			}
+			public HRESULT GetItemName(BSTR* pbstrItemName) mut => VT.GetItemName(ref this, pbstrItemName);
+			public HRESULT GetThumbnail(SIZE sizeThumbnail, HBITMAP* phbmpThumbnail) mut => VT.GetThumbnail(ref this, sizeThumbnail, phbmpThumbnail);
+			public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT pv) mut => VT.GetProperty(ref this, key, out pv);
+			public HRESULT SetProperty(in PROPERTYKEY key, in PROPVARIANT pv) mut => VT.SetProperty(ref this, key, pv);
+			public HRESULT GetStream(IStream** ppStream) mut => VT.GetStream(ref this, ppStream);
+			public HRESULT CanDelete(out BOOL pfCanDelete) mut => VT.CanDelete(ref this, out pfCanDelete);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT GetSubItemCount(out uint32 pnCount) mut => VT.GetSubItemCount(ref this, out pnCount);
+			public HRESULT GetSubItemAt(uint32 nItemIndex, IPhotoAcquireItem** ppPhotoAcquireItem) mut => VT.GetSubItemAt(ref this, nItemIndex, ppPhotoAcquireItem);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -158,46 +132,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSubmitButtonText(BSTR* pbstrSubmitButtonText) mut
-			{
-				return VT.GetSubmitButtonText(ref this, pbstrSubmitButtonText);
-			}
-			public HRESULT GetPrompt(BSTR* pbstrPromptTitle) mut
-			{
-				return VT.GetPrompt(ref this, pbstrPromptTitle);
-			}
-			public HRESULT GetStringId(BSTR* pbstrStringId) mut
-			{
-				return VT.GetStringId(ref this, pbstrStringId);
-			}
-			public HRESULT GetStringType(out USER_INPUT_STRING_TYPE pnStringType) mut
-			{
-				return VT.GetStringType(ref this, out pnStringType);
-			}
-			public HRESULT GetTooltipText(BSTR* pbstrTooltipText) mut
-			{
-				return VT.GetTooltipText(ref this, pbstrTooltipText);
-			}
-			public HRESULT GetMaxLength(out uint32 pcchMaxLength) mut
-			{
-				return VT.GetMaxLength(ref this, out pcchMaxLength);
-			}
-			public HRESULT GetDefault(BSTR* pbstrDefault) mut
-			{
-				return VT.GetDefault(ref this, pbstrDefault);
-			}
-			public HRESULT GetMruCount(out uint32 pnMruCount) mut
-			{
-				return VT.GetMruCount(ref this, out pnMruCount);
-			}
-			public HRESULT GetMruEntryAt(uint32 nIndex, BSTR* pbstrMruEntry) mut
-			{
-				return VT.GetMruEntryAt(ref this, nIndex, pbstrMruEntry);
-			}
-			public HRESULT GetImage(uint32 nSize, HBITMAP* phBitmap, HICON* phIcon) mut
-			{
-				return VT.GetImage(ref this, nSize, phBitmap, phIcon);
-			}
+			public HRESULT GetSubmitButtonText(BSTR* pbstrSubmitButtonText) mut => VT.GetSubmitButtonText(ref this, pbstrSubmitButtonText);
+			public HRESULT GetPrompt(BSTR* pbstrPromptTitle) mut => VT.GetPrompt(ref this, pbstrPromptTitle);
+			public HRESULT GetStringId(BSTR* pbstrStringId) mut => VT.GetStringId(ref this, pbstrStringId);
+			public HRESULT GetStringType(out USER_INPUT_STRING_TYPE pnStringType) mut => VT.GetStringType(ref this, out pnStringType);
+			public HRESULT GetTooltipText(BSTR* pbstrTooltipText) mut => VT.GetTooltipText(ref this, pbstrTooltipText);
+			public HRESULT GetMaxLength(out uint32 pcchMaxLength) mut => VT.GetMaxLength(ref this, out pcchMaxLength);
+			public HRESULT GetDefault(BSTR* pbstrDefault) mut => VT.GetDefault(ref this, pbstrDefault);
+			public HRESULT GetMruCount(out uint32 pnMruCount) mut => VT.GetMruCount(ref this, out pnMruCount);
+			public HRESULT GetMruEntryAt(uint32 nIndex, BSTR* pbstrMruEntry) mut => VT.GetMruEntryAt(ref this, nIndex, pbstrMruEntry);
+			public HRESULT GetImage(uint32 nSize, HBITMAP* phBitmap, HICON* phIcon) mut => VT.GetImage(ref this, nSize, phBitmap, phIcon);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -220,82 +165,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Cancelled(out BOOL pfCancelled) mut
-			{
-				return VT.Cancelled(ref this, out pfCancelled);
-			}
-			public HRESULT StartEnumeration(IPhotoAcquireSource* pPhotoAcquireSource) mut
-			{
-				return VT.StartEnumeration(ref this, pPhotoAcquireSource);
-			}
-			public HRESULT FoundItem(IPhotoAcquireItem* pPhotoAcquireItem) mut
-			{
-				return VT.FoundItem(ref this, pPhotoAcquireItem);
-			}
-			public HRESULT EndEnumeration(HRESULT hr) mut
-			{
-				return VT.EndEnumeration(ref this, hr);
-			}
-			public HRESULT StartTransfer(IPhotoAcquireSource* pPhotoAcquireSource) mut
-			{
-				return VT.StartTransfer(ref this, pPhotoAcquireSource);
-			}
-			public HRESULT StartItemTransfer(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) mut
-			{
-				return VT.StartItemTransfer(ref this, nItemIndex, pPhotoAcquireItem);
-			}
-			public HRESULT DirectoryCreated(PWSTR pszDirectory) mut
-			{
-				return VT.DirectoryCreated(ref this, pszDirectory);
-			}
-			public HRESULT UpdateTransferPercent(BOOL fOverall, uint32 nPercent) mut
-			{
-				return VT.UpdateTransferPercent(ref this, fOverall, nPercent);
-			}
-			public HRESULT EndItemTransfer(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) mut
-			{
-				return VT.EndItemTransfer(ref this, nItemIndex, pPhotoAcquireItem, hr);
-			}
-			public HRESULT EndTransfer(HRESULT hr) mut
-			{
-				return VT.EndTransfer(ref this, hr);
-			}
-			public HRESULT StartDelete(IPhotoAcquireSource* pPhotoAcquireSource) mut
-			{
-				return VT.StartDelete(ref this, pPhotoAcquireSource);
-			}
-			public HRESULT StartItemDelete(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) mut
-			{
-				return VT.StartItemDelete(ref this, nItemIndex, pPhotoAcquireItem);
-			}
-			public HRESULT UpdateDeletePercent(uint32 nPercent) mut
-			{
-				return VT.UpdateDeletePercent(ref this, nPercent);
-			}
-			public HRESULT EndItemDelete(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) mut
-			{
-				return VT.EndItemDelete(ref this, nItemIndex, pPhotoAcquireItem, hr);
-			}
-			public HRESULT EndDelete(HRESULT hr) mut
-			{
-				return VT.EndDelete(ref this, hr);
-			}
-			public HRESULT EndSession(HRESULT hr) mut
-			{
-				return VT.EndSession(ref this, hr);
-			}
-			public HRESULT GetDeleteAfterAcquire(out BOOL pfDeleteAfterAcquire) mut
-			{
-				return VT.GetDeleteAfterAcquire(ref this, out pfDeleteAfterAcquire);
-			}
-			public HRESULT ErrorAdvise(HRESULT hr, PWSTR pszErrorMessage, ERROR_ADVISE_MESSAGE_TYPE nMessageType, out ERROR_ADVISE_RESULT pnErrorAdviseResult) mut
-			{
-				return VT.ErrorAdvise(ref this, hr, pszErrorMessage, nMessageType, out pnErrorAdviseResult);
-			}
-			public HRESULT GetUserInput(in Guid riidType, IUnknown* pUnknown, out PROPVARIANT pPropVarResult, PROPVARIANT* pPropVarDefault) mut
-			{
-				return VT.GetUserInput(ref this, riidType, pUnknown, out pPropVarResult, pPropVarDefault);
-			}
+			public HRESULT Cancelled(out BOOL pfCancelled) mut => VT.Cancelled(ref this, out pfCancelled);
+			public HRESULT StartEnumeration(IPhotoAcquireSource* pPhotoAcquireSource) mut => VT.StartEnumeration(ref this, pPhotoAcquireSource);
+			public HRESULT FoundItem(IPhotoAcquireItem* pPhotoAcquireItem) mut => VT.FoundItem(ref this, pPhotoAcquireItem);
+			public HRESULT EndEnumeration(HRESULT hr) mut => VT.EndEnumeration(ref this, hr);
+			public HRESULT StartTransfer(IPhotoAcquireSource* pPhotoAcquireSource) mut => VT.StartTransfer(ref this, pPhotoAcquireSource);
+			public HRESULT StartItemTransfer(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) mut => VT.StartItemTransfer(ref this, nItemIndex, pPhotoAcquireItem);
+			public HRESULT DirectoryCreated(PWSTR pszDirectory) mut => VT.DirectoryCreated(ref this, pszDirectory);
+			public HRESULT UpdateTransferPercent(BOOL fOverall, uint32 nPercent) mut => VT.UpdateTransferPercent(ref this, fOverall, nPercent);
+			public HRESULT EndItemTransfer(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) mut => VT.EndItemTransfer(ref this, nItemIndex, pPhotoAcquireItem, hr);
+			public HRESULT EndTransfer(HRESULT hr) mut => VT.EndTransfer(ref this, hr);
+			public HRESULT StartDelete(IPhotoAcquireSource* pPhotoAcquireSource) mut => VT.StartDelete(ref this, pPhotoAcquireSource);
+			public HRESULT StartItemDelete(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) mut => VT.StartItemDelete(ref this, nItemIndex, pPhotoAcquireItem);
+			public HRESULT UpdateDeletePercent(uint32 nPercent) mut => VT.UpdateDeletePercent(ref this, nPercent);
+			public HRESULT EndItemDelete(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) mut => VT.EndItemDelete(ref this, nItemIndex, pPhotoAcquireItem, hr);
+			public HRESULT EndDelete(HRESULT hr) mut => VT.EndDelete(ref this, hr);
+			public HRESULT EndSession(HRESULT hr) mut => VT.EndSession(ref this, hr);
+			public HRESULT GetDeleteAfterAcquire(out BOOL pfDeleteAfterAcquire) mut => VT.GetDeleteAfterAcquire(ref this, out pfDeleteAfterAcquire);
+			public HRESULT ErrorAdvise(HRESULT hr, PWSTR pszErrorMessage, ERROR_ADVISE_MESSAGE_TYPE nMessageType, out ERROR_ADVISE_RESULT pnErrorAdviseResult) mut => VT.ErrorAdvise(ref this, hr, pszErrorMessage, nMessageType, out pnErrorAdviseResult);
+			public HRESULT GetUserInput(in Guid riidType, IUnknown* pUnknown, out PROPVARIANT pPropVarResult, PROPVARIANT* pPropVarDefault) mut => VT.GetUserInput(ref this, riidType, pUnknown, out pPropVarResult, pPropVarDefault);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -327,10 +216,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DoAction(HWND hWndParent) mut
-			{
-				return VT.DoAction(ref this, hWndParent);
-			}
+			public HRESULT DoAction(HWND hWndParent) mut => VT.DoAction(ref this, hWndParent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -344,78 +231,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(HWND hwndParent) mut
-			{
-				return VT.Create(ref this, hwndParent);
-			}
-			public HRESULT GetWindow(HWND* phwndProgressDialog) mut
-			{
-				return VT.GetWindow(ref this, phwndProgressDialog);
-			}
-			public HRESULT Destroy() mut
-			{
-				return VT.Destroy(ref this);
-			}
-			public HRESULT SetTitle(PWSTR pszTitle) mut
-			{
-				return VT.SetTitle(ref this, pszTitle);
-			}
-			public HRESULT ShowCheckbox(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fShow) mut
-			{
-				return VT.ShowCheckbox(ref this, nCheckboxId, fShow);
-			}
-			public HRESULT SetCheckboxText(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxText) mut
-			{
-				return VT.SetCheckboxText(ref this, nCheckboxId, pszCheckboxText);
-			}
-			public HRESULT SetCheckboxCheck(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fChecked) mut
-			{
-				return VT.SetCheckboxCheck(ref this, nCheckboxId, fChecked);
-			}
-			public HRESULT SetCheckboxTooltip(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxTooltipText) mut
-			{
-				return VT.SetCheckboxTooltip(ref this, nCheckboxId, pszCheckboxTooltipText);
-			}
-			public HRESULT IsCheckboxChecked(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, out BOOL pfChecked) mut
-			{
-				return VT.IsCheckboxChecked(ref this, nCheckboxId, out pfChecked);
-			}
-			public HRESULT SetCaption(PWSTR pszTitle) mut
-			{
-				return VT.SetCaption(ref this, pszTitle);
-			}
-			public HRESULT SetImage(PROGRESS_DIALOG_IMAGE_TYPE nImageType, HICON hIcon, HBITMAP hBitmap) mut
-			{
-				return VT.SetImage(ref this, nImageType, hIcon, hBitmap);
-			}
-			public HRESULT SetPercentComplete(int32 nPercent) mut
-			{
-				return VT.SetPercentComplete(ref this, nPercent);
-			}
-			public HRESULT SetProgressText(PWSTR pszProgressText) mut
-			{
-				return VT.SetProgressText(ref this, pszProgressText);
-			}
-			public HRESULT SetActionLinkCallback(IPhotoProgressActionCB* pPhotoProgressActionCB) mut
-			{
-				return VT.SetActionLinkCallback(ref this, pPhotoProgressActionCB);
-			}
-			public HRESULT SetActionLinkText(PWSTR pszCaption) mut
-			{
-				return VT.SetActionLinkText(ref this, pszCaption);
-			}
-			public HRESULT ShowActionLink(BOOL fShow) mut
-			{
-				return VT.ShowActionLink(ref this, fShow);
-			}
-			public HRESULT IsCancelled(out BOOL pfCancelled) mut
-			{
-				return VT.IsCancelled(ref this, out pfCancelled);
-			}
-			public HRESULT GetUserInput(in Guid riidType, IUnknown* pUnknown, out PROPVARIANT pPropVarResult, PROPVARIANT* pPropVarDefault) mut
-			{
-				return VT.GetUserInput(ref this, riidType, pUnknown, out pPropVarResult, pPropVarDefault);
-			}
+			public HRESULT Create(HWND hwndParent) mut => VT.Create(ref this, hwndParent);
+			public HRESULT GetWindow(HWND* phwndProgressDialog) mut => VT.GetWindow(ref this, phwndProgressDialog);
+			public HRESULT Destroy() mut => VT.Destroy(ref this);
+			public HRESULT SetTitle(PWSTR pszTitle) mut => VT.SetTitle(ref this, pszTitle);
+			public HRESULT ShowCheckbox(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fShow) mut => VT.ShowCheckbox(ref this, nCheckboxId, fShow);
+			public HRESULT SetCheckboxText(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxText) mut => VT.SetCheckboxText(ref this, nCheckboxId, pszCheckboxText);
+			public HRESULT SetCheckboxCheck(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fChecked) mut => VT.SetCheckboxCheck(ref this, nCheckboxId, fChecked);
+			public HRESULT SetCheckboxTooltip(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxTooltipText) mut => VT.SetCheckboxTooltip(ref this, nCheckboxId, pszCheckboxTooltipText);
+			public HRESULT IsCheckboxChecked(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, out BOOL pfChecked) mut => VT.IsCheckboxChecked(ref this, nCheckboxId, out pfChecked);
+			public HRESULT SetCaption(PWSTR pszTitle) mut => VT.SetCaption(ref this, pszTitle);
+			public HRESULT SetImage(PROGRESS_DIALOG_IMAGE_TYPE nImageType, HICON hIcon, HBITMAP hBitmap) mut => VT.SetImage(ref this, nImageType, hIcon, hBitmap);
+			public HRESULT SetPercentComplete(int32 nPercent) mut => VT.SetPercentComplete(ref this, nPercent);
+			public HRESULT SetProgressText(PWSTR pszProgressText) mut => VT.SetProgressText(ref this, pszProgressText);
+			public HRESULT SetActionLinkCallback(IPhotoProgressActionCB* pPhotoProgressActionCB) mut => VT.SetActionLinkCallback(ref this, pPhotoProgressActionCB);
+			public HRESULT SetActionLinkText(PWSTR pszCaption) mut => VT.SetActionLinkText(ref this, pszCaption);
+			public HRESULT ShowActionLink(BOOL fShow) mut => VT.ShowActionLink(ref this, fShow);
+			public HRESULT IsCancelled(out BOOL pfCancelled) mut => VT.IsCancelled(ref this, out pfCancelled);
+			public HRESULT GetUserInput(in Guid riidType, IUnknown* pUnknown, out PROPVARIANT pPropVarResult, PROPVARIANT* pPropVarDefault) mut => VT.GetUserInput(ref this, riidType, pUnknown, out pPropVarResult, pPropVarDefault);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -446,38 +280,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFriendlyName(BSTR* pbstrFriendlyName) mut
-			{
-				return VT.GetFriendlyName(ref this, pbstrFriendlyName);
-			}
-			public HRESULT GetDeviceIcons(uint32 nSize, HICON* phLargeIcon, HICON* phSmallIcon) mut
-			{
-				return VT.GetDeviceIcons(ref this, nSize, phLargeIcon, phSmallIcon);
-			}
-			public HRESULT InitializeItemList(BOOL fForceEnumeration, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB, uint32* pnItemCount) mut
-			{
-				return VT.InitializeItemList(ref this, fForceEnumeration, pPhotoAcquireProgressCB, pnItemCount);
-			}
-			public HRESULT GetItemCount(out uint32 pnItemCount) mut
-			{
-				return VT.GetItemCount(ref this, out pnItemCount);
-			}
-			public HRESULT GetItemAt(uint32 nIndex, IPhotoAcquireItem** ppPhotoAcquireItem) mut
-			{
-				return VT.GetItemAt(ref this, nIndex, ppPhotoAcquireItem);
-			}
-			public HRESULT GetPhotoAcquireSettings(IPhotoAcquireSettings** ppPhotoAcquireSettings) mut
-			{
-				return VT.GetPhotoAcquireSettings(ref this, ppPhotoAcquireSettings);
-			}
-			public HRESULT GetDeviceId(BSTR* pbstrDeviceId) mut
-			{
-				return VT.GetDeviceId(ref this, pbstrDeviceId);
-			}
-			public HRESULT BindToObject(in Guid riid, void** ppv) mut
-			{
-				return VT.BindToObject(ref this, riid, ppv);
-			}
+			public HRESULT GetFriendlyName(BSTR* pbstrFriendlyName) mut => VT.GetFriendlyName(ref this, pbstrFriendlyName);
+			public HRESULT GetDeviceIcons(uint32 nSize, HICON* phLargeIcon, HICON* phSmallIcon) mut => VT.GetDeviceIcons(ref this, nSize, phLargeIcon, phSmallIcon);
+			public HRESULT InitializeItemList(BOOL fForceEnumeration, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB, uint32* pnItemCount) mut => VT.InitializeItemList(ref this, fForceEnumeration, pPhotoAcquireProgressCB, pnItemCount);
+			public HRESULT GetItemCount(out uint32 pnItemCount) mut => VT.GetItemCount(ref this, out pnItemCount);
+			public HRESULT GetItemAt(uint32 nIndex, IPhotoAcquireItem** ppPhotoAcquireItem) mut => VT.GetItemAt(ref this, nIndex, ppPhotoAcquireItem);
+			public HRESULT GetPhotoAcquireSettings(IPhotoAcquireSettings** ppPhotoAcquireSettings) mut => VT.GetPhotoAcquireSettings(ref this, ppPhotoAcquireSettings);
+			public HRESULT GetDeviceId(BSTR* pbstrDeviceId) mut => VT.GetDeviceId(ref this, pbstrDeviceId);
+			public HRESULT BindToObject(in Guid riid, void** ppv) mut => VT.BindToObject(ref this, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -498,18 +309,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreatePhotoSource(PWSTR pszDevice, IPhotoAcquireSource** ppPhotoAcquireSource) mut
-			{
-				return VT.CreatePhotoSource(ref this, pszDevice, ppPhotoAcquireSource);
-			}
-			public HRESULT Acquire(IPhotoAcquireSource* pPhotoAcquireSource, BOOL fShowProgress, HWND hWndParent, PWSTR pszApplicationName, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) mut
-			{
-				return VT.Acquire(ref this, pPhotoAcquireSource, fShowProgress, hWndParent, pszApplicationName, pPhotoAcquireProgressCB);
-			}
-			public HRESULT EnumResults(IEnumString** ppEnumFilePaths) mut
-			{
-				return VT.EnumResults(ref this, ppEnumFilePaths);
-			}
+			public HRESULT CreatePhotoSource(PWSTR pszDevice, IPhotoAcquireSource** ppPhotoAcquireSource) mut => VT.CreatePhotoSource(ref this, pszDevice, ppPhotoAcquireSource);
+			public HRESULT Acquire(IPhotoAcquireSource* pPhotoAcquireSource, BOOL fShowProgress, HWND hWndParent, PWSTR pszApplicationName, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) mut => VT.Acquire(ref this, pPhotoAcquireSource, fShowProgress, hWndParent, pszApplicationName, pPhotoAcquireProgressCB);
+			public HRESULT EnumResults(IEnumString** ppEnumFilePaths) mut => VT.EnumResults(ref this, ppEnumFilePaths);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -525,58 +328,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeFromRegistry(PWSTR pszRegistryKey) mut
-			{
-				return VT.InitializeFromRegistry(ref this, pszRegistryKey);
-			}
-			public HRESULT SetFlags(uint32 dwPhotoAcquireFlags) mut
-			{
-				return VT.SetFlags(ref this, dwPhotoAcquireFlags);
-			}
-			public HRESULT SetOutputFilenameTemplate(PWSTR pszTemplate) mut
-			{
-				return VT.SetOutputFilenameTemplate(ref this, pszTemplate);
-			}
-			public HRESULT SetSequencePaddingWidth(uint32 dwWidth) mut
-			{
-				return VT.SetSequencePaddingWidth(ref this, dwWidth);
-			}
-			public HRESULT SetSequenceZeroPadding(BOOL fZeroPad) mut
-			{
-				return VT.SetSequenceZeroPadding(ref this, fZeroPad);
-			}
-			public HRESULT SetGroupTag(PWSTR pszGroupTag) mut
-			{
-				return VT.SetGroupTag(ref this, pszGroupTag);
-			}
-			public HRESULT SetAcquisitionTime(in FILETIME pftAcquisitionTime) mut
-			{
-				return VT.SetAcquisitionTime(ref this, pftAcquisitionTime);
-			}
-			public HRESULT ComGetFlags(out uint32 pdwPhotoAcquireFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pdwPhotoAcquireFlags);
-			}
-			public HRESULT GetOutputFilenameTemplate(BSTR* pbstrTemplate) mut
-			{
-				return VT.GetOutputFilenameTemplate(ref this, pbstrTemplate);
-			}
-			public HRESULT GetSequencePaddingWidth(out uint32 pdwWidth) mut
-			{
-				return VT.GetSequencePaddingWidth(ref this, out pdwWidth);
-			}
-			public HRESULT GetSequenceZeroPadding(out BOOL pfZeroPad) mut
-			{
-				return VT.GetSequenceZeroPadding(ref this, out pfZeroPad);
-			}
-			public HRESULT GetGroupTag(BSTR* pbstrGroupTag) mut
-			{
-				return VT.GetGroupTag(ref this, pbstrGroupTag);
-			}
-			public HRESULT GetAcquisitionTime(out FILETIME pftAcquisitionTime) mut
-			{
-				return VT.GetAcquisitionTime(ref this, out pftAcquisitionTime);
-			}
+			public HRESULT InitializeFromRegistry(PWSTR pszRegistryKey) mut => VT.InitializeFromRegistry(ref this, pszRegistryKey);
+			public HRESULT SetFlags(uint32 dwPhotoAcquireFlags) mut => VT.SetFlags(ref this, dwPhotoAcquireFlags);
+			public HRESULT SetOutputFilenameTemplate(PWSTR pszTemplate) mut => VT.SetOutputFilenameTemplate(ref this, pszTemplate);
+			public HRESULT SetSequencePaddingWidth(uint32 dwWidth) mut => VT.SetSequencePaddingWidth(ref this, dwWidth);
+			public HRESULT SetSequenceZeroPadding(BOOL fZeroPad) mut => VT.SetSequenceZeroPadding(ref this, fZeroPad);
+			public HRESULT SetGroupTag(PWSTR pszGroupTag) mut => VT.SetGroupTag(ref this, pszGroupTag);
+			public HRESULT SetAcquisitionTime(in FILETIME pftAcquisitionTime) mut => VT.SetAcquisitionTime(ref this, pftAcquisitionTime);
+			public HRESULT ComGetFlags(out uint32 pdwPhotoAcquireFlags) mut => VT.ComGetFlags(ref this, out pdwPhotoAcquireFlags);
+			public HRESULT GetOutputFilenameTemplate(BSTR* pbstrTemplate) mut => VT.GetOutputFilenameTemplate(ref this, pbstrTemplate);
+			public HRESULT GetSequencePaddingWidth(out uint32 pdwWidth) mut => VT.GetSequencePaddingWidth(ref this, out pdwWidth);
+			public HRESULT GetSequenceZeroPadding(out BOOL pfZeroPad) mut => VT.GetSequenceZeroPadding(ref this, out pfZeroPad);
+			public HRESULT GetGroupTag(BSTR* pbstrGroupTag) mut => VT.GetGroupTag(ref this, pbstrGroupTag);
+			public HRESULT GetAcquisitionTime(out FILETIME pftAcquisitionTime) mut => VT.GetAcquisitionTime(ref this, out pftAcquisitionTime);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -602,26 +367,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR pszRegistryRoot) mut
-			{
-				return VT.Initialize(ref this, pszRegistryRoot);
-			}
-			public HRESULT Create(HWND hWndParent, HWND* phWndDialog) mut
-			{
-				return VT.Create(ref this, hWndParent, phWndDialog);
-			}
-			public HRESULT Destroy() mut
-			{
-				return VT.Destroy(ref this);
-			}
-			public HRESULT DoModal(HWND hWndParent, int* ppnReturnCode) mut
-			{
-				return VT.DoModal(ref this, hWndParent, ppnReturnCode);
-			}
-			public HRESULT SaveData() mut
-			{
-				return VT.SaveData(ref this);
-			}
+			public HRESULT Initialize(PWSTR pszRegistryRoot) mut => VT.Initialize(ref this, pszRegistryRoot);
+			public HRESULT Create(HWND hWndParent, HWND* phWndDialog) mut => VT.Create(ref this, hWndParent, phWndDialog);
+			public HRESULT Destroy() mut => VT.Destroy(ref this);
+			public HRESULT DoModal(HWND hWndParent, int* ppnReturnCode) mut => VT.DoModal(ref this, hWndParent, ppnReturnCode);
+			public HRESULT SaveData() mut => VT.SaveData(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -639,18 +390,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTitle(PWSTR pszTitle) mut
-			{
-				return VT.SetTitle(ref this, pszTitle);
-			}
-			public HRESULT SetSubmitButtonText(PWSTR pszSubmitButtonText) mut
-			{
-				return VT.SetSubmitButtonText(ref this, pszSubmitButtonText);
-			}
-			public HRESULT DoModal(HWND hWndParent, uint32 dwDeviceFlags, BSTR* pbstrDeviceId, DEVICE_SELECTION_DEVICE_TYPE* pnDeviceType) mut
-			{
-				return VT.DoModal(ref this, hWndParent, dwDeviceFlags, pbstrDeviceId, pnDeviceType);
-			}
+			public HRESULT SetTitle(PWSTR pszTitle) mut => VT.SetTitle(ref this, pszTitle);
+			public HRESULT SetSubmitButtonText(PWSTR pszSubmitButtonText) mut => VT.SetSubmitButtonText(ref this, pszSubmitButtonText);
+			public HRESULT DoModal(HWND hWndParent, uint32 dwDeviceFlags, BSTR* pbstrDeviceId, DEVICE_SELECTION_DEVICE_TYPE* pnDeviceType) mut => VT.DoModal(ref this, hWndParent, dwDeviceFlags, pbstrDeviceId, pnDeviceType);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -666,22 +409,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IPhotoAcquireSource* pPhotoAcquireSource, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) mut
-			{
-				return VT.Initialize(ref this, pPhotoAcquireSource, pPhotoAcquireProgressCB);
-			}
-			public HRESULT ProcessItem(uint32 dwAcquireStage, IPhotoAcquireItem* pPhotoAcquireItem, IStream* pOriginalItemStream, PWSTR pszFinalFilename, IPropertyStore* pPropertyStore) mut
-			{
-				return VT.ProcessItem(ref this, dwAcquireStage, pPhotoAcquireItem, pOriginalItemStream, pszFinalFilename, pPropertyStore);
-			}
-			public HRESULT TransferComplete(HRESULT hr) mut
-			{
-				return VT.TransferComplete(ref this, hr);
-			}
-			public HRESULT DisplayConfigureDialog(HWND hWndParent) mut
-			{
-				return VT.DisplayConfigureDialog(ref this, hWndParent);
-			}
+			public HRESULT Initialize(IPhotoAcquireSource* pPhotoAcquireSource, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) mut => VT.Initialize(ref this, pPhotoAcquireSource, pPhotoAcquireProgressCB);
+			public HRESULT ProcessItem(uint32 dwAcquireStage, IPhotoAcquireItem* pPhotoAcquireItem, IStream* pOriginalItemStream, PWSTR pszFinalFilename, IPropertyStore* pPropertyStore) mut => VT.ProcessItem(ref this, dwAcquireStage, pPhotoAcquireItem, pOriginalItemStream, pszFinalFilename, pPropertyStore);
+			public HRESULT TransferComplete(HRESULT hr) mut => VT.TransferComplete(ref this, hr);
+			public HRESULT DisplayConfigureDialog(HWND hWndParent) mut => VT.DisplayConfigureDialog(ref this, hWndParent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

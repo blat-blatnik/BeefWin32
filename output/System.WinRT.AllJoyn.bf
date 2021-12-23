@@ -14,10 +14,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Win32Handle(out uint64 value) mut
-			{
-				return VT.get_Win32Handle(ref this, out value);
-			}
+			public HRESULT get_Win32Handle(out uint64 value) mut => VT.get_Win32Handle(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -31,10 +29,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromWin32Handle(uint64 win32handle, uint8 enableAboutData, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateFromWin32Handle(ref this, win32handle, enableAboutData, riid, ppv);
-			}
+			public HRESULT CreateFromWin32Handle(uint64 win32handle, uint8 enableAboutData, in Guid riid, void** ppv) mut => VT.CreateFromWin32Handle(ref this, win32handle, enableAboutData, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -48,18 +44,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddPropertyGetHandler(void* context, HSTRING interfaceName, int callback) mut
-			{
-				return VT.AddPropertyGetHandler(ref this, context, interfaceName, callback);
-			}
-			public HRESULT AddPropertySetHandler(void* context, HSTRING interfaceName, int callback) mut
-			{
-				return VT.AddPropertySetHandler(ref this, context, interfaceName, callback);
-			}
-			public HRESULT get_Win32Handle(out uint64 value) mut
-			{
-				return VT.get_Win32Handle(ref this, out value);
-			}
+			public HRESULT AddPropertyGetHandler(void* context, HSTRING interfaceName, int callback) mut => VT.AddPropertyGetHandler(ref this, context, interfaceName, callback);
+			public HRESULT AddPropertySetHandler(void* context, HSTRING interfaceName, int callback) mut => VT.AddPropertySetHandler(ref this, context, interfaceName, callback);
+			public HRESULT get_Win32Handle(out uint64 value) mut => VT.get_Win32Handle(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -75,10 +63,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromWin32Handle(uint64 win32handle, in Guid riid, void** ppv) mut
-			{
-				return VT.CreateFromWin32Handle(ref this, win32handle, riid, ppv);
-			}
+			public HRESULT CreateFromWin32Handle(uint64 win32handle, in Guid riid, void** ppv) mut => VT.CreateFromWin32Handle(ref this, win32handle, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{

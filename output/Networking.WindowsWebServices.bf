@@ -3427,14 +3427,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TriggerContentPrefetcherTask(PWSTR packageFullName) mut
-			{
-				return VT.TriggerContentPrefetcherTask(ref this, packageFullName);
-			}
-			public HRESULT IsRegisteredForContentPrefetch(PWSTR packageFullName, out uint8 isRegistered) mut
-			{
-				return VT.IsRegisteredForContentPrefetch(ref this, packageFullName, out isRegistered);
-			}
+			public HRESULT TriggerContentPrefetcherTask(PWSTR packageFullName) mut => VT.TriggerContentPrefetcherTask(ref this, packageFullName);
+			public HRESULT IsRegisteredForContentPrefetch(PWSTR packageFullName, out uint8 isRegistered) mut => VT.IsRegisteredForContentPrefetch(ref this, packageFullName, out isRegistered);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{

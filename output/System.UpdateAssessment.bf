@@ -67,10 +67,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOSUpdateAssessment(out OSUpdateAssessment result) mut
-			{
-				return VT.GetOSUpdateAssessment(ref this, out result);
-			}
+			public HRESULT GetOSUpdateAssessment(out OSUpdateAssessment result) mut => VT.GetOSUpdateAssessment(ref this, out result);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

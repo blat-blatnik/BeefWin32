@@ -151,34 +151,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectInformation(out SI_OBJECT_INFO pObjectInfo) mut
-			{
-				return VT.GetObjectInformation(ref this, out pObjectInfo);
-			}
-			public HRESULT GetSecurity(OBJECT_SECURITY_INFORMATION RequestedInformation, out SECURITY_DESCRIPTOR* ppSecurityDescriptor, BOOL fDefault) mut
-			{
-				return VT.GetSecurity(ref this, RequestedInformation, out ppSecurityDescriptor, fDefault);
-			}
-			public HRESULT SetSecurity(OBJECT_SECURITY_INFORMATION SecurityInformation, out SECURITY_DESCRIPTOR pSecurityDescriptor) mut
-			{
-				return VT.SetSecurity(ref this, SecurityInformation, out pSecurityDescriptor);
-			}
-			public HRESULT GetAccessRights(in Guid pguidObjectType, SECURITY_INFO_PAGE_FLAGS dwFlags, out SI_ACCESS* ppAccess, out uint32 pcAccesses, out uint32 piDefaultAccess) mut
-			{
-				return VT.GetAccessRights(ref this, pguidObjectType, dwFlags, out ppAccess, out pcAccesses, out piDefaultAccess);
-			}
-			public HRESULT MapGeneric(in Guid pguidObjectType, out uint8 pAceFlags, out uint32 pMask) mut
-			{
-				return VT.MapGeneric(ref this, pguidObjectType, out pAceFlags, out pMask);
-			}
-			public HRESULT GetInheritTypes(out SI_INHERIT_TYPE* ppInheritTypes, out uint32 pcInheritTypes) mut
-			{
-				return VT.GetInheritTypes(ref this, out ppInheritTypes, out pcInheritTypes);
-			}
-			public HRESULT PropertySheetPageCallback(HWND hwnd, PSPCB_MESSAGE uMsg, SI_PAGE_TYPE uPage) mut
-			{
-				return VT.PropertySheetPageCallback(ref this, hwnd, uMsg, uPage);
-			}
+			public HRESULT GetObjectInformation(out SI_OBJECT_INFO pObjectInfo) mut => VT.GetObjectInformation(ref this, out pObjectInfo);
+			public HRESULT GetSecurity(OBJECT_SECURITY_INFORMATION RequestedInformation, out SECURITY_DESCRIPTOR* ppSecurityDescriptor, BOOL fDefault) mut => VT.GetSecurity(ref this, RequestedInformation, out ppSecurityDescriptor, fDefault);
+			public HRESULT SetSecurity(OBJECT_SECURITY_INFORMATION SecurityInformation, out SECURITY_DESCRIPTOR pSecurityDescriptor) mut => VT.SetSecurity(ref this, SecurityInformation, out pSecurityDescriptor);
+			public HRESULT GetAccessRights(in Guid pguidObjectType, SECURITY_INFO_PAGE_FLAGS dwFlags, out SI_ACCESS* ppAccess, out uint32 pcAccesses, out uint32 piDefaultAccess) mut => VT.GetAccessRights(ref this, pguidObjectType, dwFlags, out ppAccess, out pcAccesses, out piDefaultAccess);
+			public HRESULT MapGeneric(in Guid pguidObjectType, out uint8 pAceFlags, out uint32 pMask) mut => VT.MapGeneric(ref this, pguidObjectType, out pAceFlags, out pMask);
+			public HRESULT GetInheritTypes(out SI_INHERIT_TYPE* ppInheritTypes, out uint32 pcInheritTypes) mut => VT.GetInheritTypes(ref this, out ppInheritTypes, out pcInheritTypes);
+			public HRESULT PropertySheetPageCallback(HWND hwnd, PSPCB_MESSAGE uMsg, SI_PAGE_TYPE uPage) mut => VT.PropertySheetPageCallback(ref this, hwnd, uMsg, uPage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -198,14 +178,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL IsDaclCanonical(out ACL pDacl) mut
-			{
-				return VT.IsDaclCanonical(ref this, out pDacl);
-			}
-			public HRESULT LookupSids(uint32 cSids, out PSID rgpSids, out IDataObject* ppdo) mut
-			{
-				return VT.LookupSids(ref this, cSids, out rgpSids, out ppdo);
-			}
+			public BOOL IsDaclCanonical(out ACL pDacl) mut => VT.IsDaclCanonical(ref this, out pDacl);
+			public HRESULT LookupSids(uint32 cSids, out PSID rgpSids, out IDataObject* ppdo) mut => VT.LookupSids(ref this, cSids, out rgpSids, out ppdo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -220,10 +195,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEffectivePermission(in Guid pguidObjectType, PSID pUserSid, PWSTR pszServerName, out SECURITY_DESCRIPTOR pSD, out OBJECT_TYPE_LIST* ppObjectTypeList, out uint32 pcObjectTypeListLength, out uint32* ppGrantedAccessList, out uint32 pcGrantedAccessListLength) mut
-			{
-				return VT.GetEffectivePermission(ref this, pguidObjectType, pUserSid, pszServerName, out pSD, out ppObjectTypeList, out pcObjectTypeListLength, out ppGrantedAccessList, out pcGrantedAccessListLength);
-			}
+			public HRESULT GetEffectivePermission(in Guid pguidObjectType, PSID pUserSid, PWSTR pszServerName, out SECURITY_DESCRIPTOR pSD, out OBJECT_TYPE_LIST* ppObjectTypeList, out uint32 pcObjectTypeListLength, out uint32* ppGrantedAccessList, out uint32 pcGrantedAccessListLength) mut => VT.GetEffectivePermission(ref this, pguidObjectType, pUserSid, pszServerName, out pSD, out ppObjectTypeList, out pcObjectTypeListLength, out ppGrantedAccessList, out pcGrantedAccessListLength);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -237,10 +210,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInheritSource(uint32 si, out ACL pACL, out INHERITED_FROMA* ppInheritArray) mut
-			{
-				return VT.GetInheritSource(ref this, si, out pACL, out ppInheritArray);
-			}
+			public HRESULT GetInheritSource(uint32 si, out ACL pACL, out INHERITED_FROMA* ppInheritArray) mut => VT.GetInheritSource(ref this, si, out pACL, out ppInheritArray);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -254,14 +225,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFullResourceName(out PWSTR ppszResourceName) mut
-			{
-				return VT.GetFullResourceName(ref this, out ppszResourceName);
-			}
-			public HRESULT OpenElevatedEditor(HWND hWnd, SI_PAGE_TYPE uPage) mut
-			{
-				return VT.OpenElevatedEditor(ref this, hWnd, uPage);
-			}
+			public HRESULT GetFullResourceName(out PWSTR ppszResourceName) mut => VT.GetFullResourceName(ref this, out ppszResourceName);
+			public HRESULT OpenElevatedEditor(HWND hWnd, SI_PAGE_TYPE uPage) mut => VT.OpenElevatedEditor(ref this, hWnd, uPage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -276,10 +242,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSecondarySecurity(out SECURITY_OBJECT* pSecurityObjects, out uint32 pSecurityObjectCount) mut
-			{
-				return VT.GetSecondarySecurity(ref this, out pSecurityObjects, out pSecurityObjectCount);
-			}
+			public HRESULT GetSecondarySecurity(out SECURITY_OBJECT* pSecurityObjects, out uint32 pSecurityObjectCount) mut => VT.GetSecondarySecurity(ref this, out pSecurityObjects, out pSecurityObjectCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -293,10 +257,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComputeEffectivePermissionWithSecondarySecurity(PSID pSid, PSID pDeviceSid, PWSTR pszServerName, SECURITY_OBJECT* pSecurityObjects, uint32 dwSecurityObjectCount, TOKEN_GROUPS* pUserGroups, AUTHZ_SID_OPERATION* pAuthzUserGroupsOperations, TOKEN_GROUPS* pDeviceGroups, AUTHZ_SID_OPERATION* pAuthzDeviceGroupsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzUserClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzUserClaimsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzDeviceClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzDeviceClaimsOperations, EFFPERM_RESULT_LIST* pEffpermResultLists) mut
-			{
-				return VT.ComputeEffectivePermissionWithSecondarySecurity(ref this, pSid, pDeviceSid, pszServerName, pSecurityObjects, dwSecurityObjectCount, pUserGroups, pAuthzUserGroupsOperations, pDeviceGroups, pAuthzDeviceGroupsOperations, pAuthzUserClaims, pAuthzUserClaimsOperations, pAuthzDeviceClaims, pAuthzDeviceClaimsOperations, pEffpermResultLists);
-			}
+			public HRESULT ComputeEffectivePermissionWithSecondarySecurity(PSID pSid, PSID pDeviceSid, PWSTR pszServerName, SECURITY_OBJECT* pSecurityObjects, uint32 dwSecurityObjectCount, TOKEN_GROUPS* pUserGroups, AUTHZ_SID_OPERATION* pAuthzUserGroupsOperations, TOKEN_GROUPS* pDeviceGroups, AUTHZ_SID_OPERATION* pAuthzDeviceGroupsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzUserClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzUserClaimsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzDeviceClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzDeviceClaimsOperations, EFFPERM_RESULT_LIST* pEffpermResultLists) mut => VT.ComputeEffectivePermissionWithSecondarySecurity(ref this, pSid, pDeviceSid, pszServerName, pSecurityObjects, dwSecurityObjectCount, pUserGroups, pAuthzUserGroupsOperations, pDeviceGroups, pAuthzDeviceGroupsOperations, pAuthzUserClaims, pAuthzUserClaimsOperations, pAuthzDeviceClaims, pAuthzDeviceClaimsOperations, pEffpermResultLists);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

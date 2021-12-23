@@ -136,18 +136,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReadBackupFile(BSTR FileFullPath, int64 FileOffset, uint32 SizeToRead, uint8* FileBuffer, out uint32 ReturnedSize, uint32 Flags) mut
-			{
-				return VT.ReadBackupFile(ref this, FileFullPath, FileOffset, SizeToRead, FileBuffer, out ReturnedSize, Flags);
-			}
-			public HRESULT OrderContainersRestore(uint32 NumberOfContainers, BSTR* ContainerPaths, out uint32 ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan) mut
-			{
-				return VT.OrderContainersRestore(ref this, NumberOfContainers, ContainerPaths, out ReadPlanEntries, ReadPlan);
-			}
-			public HRESULT PreviewContainerRead(BSTR FileFullPath, uint32 NumberOfReads, DDP_FILE_EXTENT* ReadOffsets) mut
-			{
-				return VT.PreviewContainerRead(ref this, FileFullPath, NumberOfReads, ReadOffsets);
-			}
+			public HRESULT ReadBackupFile(BSTR FileFullPath, int64 FileOffset, uint32 SizeToRead, uint8* FileBuffer, out uint32 ReturnedSize, uint32 Flags) mut => VT.ReadBackupFile(ref this, FileFullPath, FileOffset, SizeToRead, FileBuffer, out ReturnedSize, Flags);
+			public HRESULT OrderContainersRestore(uint32 NumberOfContainers, BSTR* ContainerPaths, out uint32 ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan) mut => VT.OrderContainersRestore(ref this, NumberOfContainers, ContainerPaths, out ReadPlanEntries, ReadPlan);
+			public HRESULT PreviewContainerRead(BSTR FileFullPath, uint32 NumberOfReads, DDP_FILE_EXTENT* ReadOffsets) mut => VT.PreviewContainerRead(ref this, FileFullPath, NumberOfReads, ReadOffsets);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -163,10 +155,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RestoreFiles(uint32 NumberOfFiles, BSTR* FileFullPaths, ref IDedupReadFileCallback Store, uint32 Flags, HRESULT* FileResults) mut
-			{
-				return VT.RestoreFiles(ref this, NumberOfFiles, FileFullPaths, ref Store, Flags, FileResults);
-			}
+			public HRESULT RestoreFiles(uint32 NumberOfFiles, BSTR* FileFullPaths, ref IDedupReadFileCallback Store, uint32 Flags, HRESULT* FileResults) mut => VT.RestoreFiles(ref this, NumberOfFiles, FileFullPaths, ref Store, Flags, FileResults);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -180,22 +170,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeForPushBuffers() mut
-			{
-				return VT.InitializeForPushBuffers(ref this);
-			}
-			public HRESULT Uninitialize() mut
-			{
-				return VT.Uninitialize(ref this);
-			}
-			public HRESULT SetParameter(uint32 dwParamType, VARIANT vParamValue) mut
-			{
-				return VT.SetParameter(ref this, dwParamType, vParamValue);
-			}
-			public HRESULT StartChunking(Guid iidIteratorInterfaceID, out IUnknown* ppChunksEnum) mut
-			{
-				return VT.StartChunking(ref this, iidIteratorInterfaceID, out ppChunksEnum);
-			}
+			public HRESULT InitializeForPushBuffers() mut => VT.InitializeForPushBuffers(ref this);
+			public HRESULT Uninitialize() mut => VT.Uninitialize(ref this);
+			public HRESULT SetParameter(uint32 dwParamType, VARIANT vParamValue) mut => VT.SetParameter(ref this, dwParamType, vParamValue);
+			public HRESULT StartChunking(Guid iidIteratorInterfaceID, out IUnknown* ppChunksEnum) mut => VT.StartChunking(ref this, iidIteratorInterfaceID, out ppChunksEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -212,22 +191,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PushBuffer(uint8* pBuffer, uint32 ulBufferLength) mut
-			{
-				return VT.PushBuffer(ref this, pBuffer, ulBufferLength);
-			}
-			public HRESULT Next(uint32 ulMaxChunks, DEDUP_CHUNK_INFO_HASH32* pArrChunks, out uint32 pulFetched) mut
-			{
-				return VT.Next(ref this, ulMaxChunks, pArrChunks, out pulFetched);
-			}
-			public HRESULT Drain() mut
-			{
-				return VT.Drain(ref this);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT PushBuffer(uint8* pBuffer, uint32 ulBufferLength) mut => VT.PushBuffer(ref this, pBuffer, ulBufferLength);
+			public HRESULT Next(uint32 ulMaxChunks, DEDUP_CHUNK_INFO_HASH32* pArrChunks, out uint32 pulFetched) mut => VT.Next(ref this, ulMaxChunks, pArrChunks, out pulFetched);
+			public HRESULT Drain() mut => VT.Drain(ref this);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -244,54 +212,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStatus(out DedupDataPortVolumeStatus pStatus, out uint32 pDataHeadroomMb) mut
-			{
-				return VT.GetStatus(ref this, out pStatus, out pDataHeadroomMb);
-			}
-			public HRESULT LookupChunks(uint32 Count, DedupHash* pHashes, out Guid pRequestId) mut
-			{
-				return VT.LookupChunks(ref this, Count, pHashes, out pRequestId);
-			}
-			public HRESULT InsertChunks(uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, uint8* pChunkData, out Guid pRequestId) mut
-			{
-				return VT.InsertChunks(ref this, ChunkCount, pChunkMetadata, DataByteCount, pChunkData, out pRequestId);
-			}
-			public HRESULT InsertChunksWithStream(uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, ref IStream pChunkDataStream, out Guid pRequestId) mut
-			{
-				return VT.InsertChunksWithStream(ref this, ChunkCount, pChunkMetadata, DataByteCount, ref pChunkDataStream, out pRequestId);
-			}
-			public HRESULT CommitStreams(uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, DedupStreamEntry* pEntries, out Guid pRequestId) mut
-			{
-				return VT.CommitStreams(ref this, StreamCount, pStreams, EntryCount, pEntries, out pRequestId);
-			}
-			public HRESULT CommitStreamsWithStream(uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, ref IStream pEntriesStream, out Guid pRequestId) mut
-			{
-				return VT.CommitStreamsWithStream(ref this, StreamCount, pStreams, EntryCount, ref pEntriesStream, out pRequestId);
-			}
-			public HRESULT GetStreams(uint32 StreamCount, BSTR* pStreamPaths, out Guid pRequestId) mut
-			{
-				return VT.GetStreams(ref this, StreamCount, pStreamPaths, out pRequestId);
-			}
-			public HRESULT GetStreamsResults(Guid RequestId, uint32 MaxWaitMs, uint32 StreamEntryIndex, out uint32 pStreamCount, DedupStream** ppStreams, out uint32 pEntryCount, DedupStreamEntry** ppEntries, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) mut
-			{
-				return VT.GetStreamsResults(ref this, RequestId, MaxWaitMs, StreamEntryIndex, out pStreamCount, ppStreams, out pEntryCount, ppEntries, out pStatus, ppItemResults);
-			}
-			public HRESULT GetChunks(uint32 Count, DedupHash* pHashes, out Guid pRequestId) mut
-			{
-				return VT.GetChunks(ref this, Count, pHashes, out pRequestId);
-			}
-			public HRESULT GetChunksResults(Guid RequestId, uint32 MaxWaitMs, uint32 ChunkIndex, out uint32 pChunkCount, DedupChunk** ppChunkMetadata, out uint32 pDataByteCount, uint8** ppChunkData, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) mut
-			{
-				return VT.GetChunksResults(ref this, RequestId, MaxWaitMs, ChunkIndex, out pChunkCount, ppChunkMetadata, out pDataByteCount, ppChunkData, out pStatus, ppItemResults);
-			}
-			public HRESULT GetRequestStatus(Guid RequestId, out DedupDataPortRequestStatus pStatus) mut
-			{
-				return VT.GetRequestStatus(ref this, RequestId, out pStatus);
-			}
-			public HRESULT GetRequestResults(Guid RequestId, uint32 MaxWaitMs, out HRESULT pBatchResult, out uint32 pBatchCount, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) mut
-			{
-				return VT.GetRequestResults(ref this, RequestId, MaxWaitMs, out pBatchResult, out pBatchCount, out pStatus, ppItemResults);
-			}
+			public HRESULT GetStatus(out DedupDataPortVolumeStatus pStatus, out uint32 pDataHeadroomMb) mut => VT.GetStatus(ref this, out pStatus, out pDataHeadroomMb);
+			public HRESULT LookupChunks(uint32 Count, DedupHash* pHashes, out Guid pRequestId) mut => VT.LookupChunks(ref this, Count, pHashes, out pRequestId);
+			public HRESULT InsertChunks(uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, uint8* pChunkData, out Guid pRequestId) mut => VT.InsertChunks(ref this, ChunkCount, pChunkMetadata, DataByteCount, pChunkData, out pRequestId);
+			public HRESULT InsertChunksWithStream(uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, ref IStream pChunkDataStream, out Guid pRequestId) mut => VT.InsertChunksWithStream(ref this, ChunkCount, pChunkMetadata, DataByteCount, ref pChunkDataStream, out pRequestId);
+			public HRESULT CommitStreams(uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, DedupStreamEntry* pEntries, out Guid pRequestId) mut => VT.CommitStreams(ref this, StreamCount, pStreams, EntryCount, pEntries, out pRequestId);
+			public HRESULT CommitStreamsWithStream(uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, ref IStream pEntriesStream, out Guid pRequestId) mut => VT.CommitStreamsWithStream(ref this, StreamCount, pStreams, EntryCount, ref pEntriesStream, out pRequestId);
+			public HRESULT GetStreams(uint32 StreamCount, BSTR* pStreamPaths, out Guid pRequestId) mut => VT.GetStreams(ref this, StreamCount, pStreamPaths, out pRequestId);
+			public HRESULT GetStreamsResults(Guid RequestId, uint32 MaxWaitMs, uint32 StreamEntryIndex, out uint32 pStreamCount, DedupStream** ppStreams, out uint32 pEntryCount, DedupStreamEntry** ppEntries, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) mut => VT.GetStreamsResults(ref this, RequestId, MaxWaitMs, StreamEntryIndex, out pStreamCount, ppStreams, out pEntryCount, ppEntries, out pStatus, ppItemResults);
+			public HRESULT GetChunks(uint32 Count, DedupHash* pHashes, out Guid pRequestId) mut => VT.GetChunks(ref this, Count, pHashes, out pRequestId);
+			public HRESULT GetChunksResults(Guid RequestId, uint32 MaxWaitMs, uint32 ChunkIndex, out uint32 pChunkCount, DedupChunk** ppChunkMetadata, out uint32 pDataByteCount, uint8** ppChunkData, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) mut => VT.GetChunksResults(ref this, RequestId, MaxWaitMs, ChunkIndex, out pChunkCount, ppChunkMetadata, out pDataByteCount, ppChunkData, out pStatus, ppItemResults);
+			public HRESULT GetRequestStatus(Guid RequestId, out DedupDataPortRequestStatus pStatus) mut => VT.GetRequestStatus(ref this, RequestId, out pStatus);
+			public HRESULT GetRequestResults(Guid RequestId, uint32 MaxWaitMs, out HRESULT pBatchResult, out uint32 pBatchCount, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) mut => VT.GetRequestResults(ref this, RequestId, MaxWaitMs, out pBatchResult, out pBatchCount, out pStatus, ppItemResults);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -316,18 +249,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConfiguration(out uint32 pMinChunkSize, out uint32 pMaxChunkSize, out DedupChunkingAlgorithm pChunkingAlgorithm, out DedupHashingAlgorithm pHashingAlgorithm, out DedupCompressionAlgorithm pCompressionAlgorithm) mut
-			{
-				return VT.GetConfiguration(ref this, out pMinChunkSize, out pMaxChunkSize, out pChunkingAlgorithm, out pHashingAlgorithm, out pCompressionAlgorithm);
-			}
-			public HRESULT GetVolumeStatus(uint32 Options, BSTR Path, out DedupDataPortVolumeStatus pStatus) mut
-			{
-				return VT.GetVolumeStatus(ref this, Options, Path, out pStatus);
-			}
-			public HRESULT GetVolumeDataPort(uint32 Options, BSTR Path, out IDedupDataPort* ppDataPort) mut
-			{
-				return VT.GetVolumeDataPort(ref this, Options, Path, out ppDataPort);
-			}
+			public HRESULT GetConfiguration(out uint32 pMinChunkSize, out uint32 pMaxChunkSize, out DedupChunkingAlgorithm pChunkingAlgorithm, out DedupHashingAlgorithm pHashingAlgorithm, out DedupCompressionAlgorithm pCompressionAlgorithm) mut => VT.GetConfiguration(ref this, out pMinChunkSize, out pMaxChunkSize, out pChunkingAlgorithm, out pHashingAlgorithm, out pCompressionAlgorithm);
+			public HRESULT GetVolumeStatus(uint32 Options, BSTR Path, out DedupDataPortVolumeStatus pStatus) mut => VT.GetVolumeStatus(ref this, Options, Path, out pStatus);
+			public HRESULT GetVolumeDataPort(uint32 Options, BSTR Path, out IDedupDataPort* ppDataPort) mut => VT.GetVolumeDataPort(ref this, Options, Path, out ppDataPort);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

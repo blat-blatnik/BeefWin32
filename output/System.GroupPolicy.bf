@@ -432,54 +432,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDomain(BSTR bstrDomain, BSTR bstrDomainController, int32 lDCFlags, out IGPMDomain* pIGPMDomain) mut
-			{
-				return VT.GetDomain(ref this, bstrDomain, bstrDomainController, lDCFlags, out pIGPMDomain);
-			}
-			public HRESULT GetBackupDir(BSTR bstrBackupDir, out IGPMBackupDir* pIGPMBackupDir) mut
-			{
-				return VT.GetBackupDir(ref this, bstrBackupDir, out pIGPMBackupDir);
-			}
-			public HRESULT GetSitesContainer(BSTR bstrForest, BSTR bstrDomain, BSTR bstrDomainController, int32 lDCFlags, out IGPMSitesContainer* ppIGPMSitesContainer) mut
-			{
-				return VT.GetSitesContainer(ref this, bstrForest, bstrDomain, bstrDomainController, lDCFlags, out ppIGPMSitesContainer);
-			}
-			public HRESULT GetRSOP(GPMRSOPMode gpmRSoPMode, BSTR bstrNamespace, int32 lFlags, out IGPMRSOP* ppIGPMRSOP) mut
-			{
-				return VT.GetRSOP(ref this, gpmRSoPMode, bstrNamespace, lFlags, out ppIGPMRSOP);
-			}
-			public HRESULT CreatePermission(BSTR bstrTrustee, GPMPermissionType perm, int16 bInheritable, out IGPMPermission* ppPerm) mut
-			{
-				return VT.CreatePermission(ref this, bstrTrustee, perm, bInheritable, out ppPerm);
-			}
-			public HRESULT CreateSearchCriteria(out IGPMSearchCriteria* ppIGPMSearchCriteria) mut
-			{
-				return VT.CreateSearchCriteria(ref this, out ppIGPMSearchCriteria);
-			}
-			public HRESULT CreateTrustee(BSTR bstrTrustee, out IGPMTrustee* ppIGPMTrustee) mut
-			{
-				return VT.CreateTrustee(ref this, bstrTrustee, out ppIGPMTrustee);
-			}
-			public HRESULT GetClientSideExtensions(out IGPMCSECollection* ppIGPMCSECollection) mut
-			{
-				return VT.GetClientSideExtensions(ref this, out ppIGPMCSECollection);
-			}
-			public HRESULT GetConstants(out IGPMConstants* ppIGPMConstants) mut
-			{
-				return VT.GetConstants(ref this, out ppIGPMConstants);
-			}
-			public HRESULT GetMigrationTable(BSTR bstrMigrationTablePath, out IGPMMigrationTable* ppMigrationTable) mut
-			{
-				return VT.GetMigrationTable(ref this, bstrMigrationTablePath, out ppMigrationTable);
-			}
-			public HRESULT CreateMigrationTable(out IGPMMigrationTable* ppMigrationTable) mut
-			{
-				return VT.CreateMigrationTable(ref this, out ppMigrationTable);
-			}
-			public HRESULT InitializeReporting(BSTR bstrAdmPath) mut
-			{
-				return VT.InitializeReporting(ref this, bstrAdmPath);
-			}
+			public HRESULT GetDomain(BSTR bstrDomain, BSTR bstrDomainController, int32 lDCFlags, out IGPMDomain* pIGPMDomain) mut => VT.GetDomain(ref this, bstrDomain, bstrDomainController, lDCFlags, out pIGPMDomain);
+			public HRESULT GetBackupDir(BSTR bstrBackupDir, out IGPMBackupDir* pIGPMBackupDir) mut => VT.GetBackupDir(ref this, bstrBackupDir, out pIGPMBackupDir);
+			public HRESULT GetSitesContainer(BSTR bstrForest, BSTR bstrDomain, BSTR bstrDomainController, int32 lDCFlags, out IGPMSitesContainer* ppIGPMSitesContainer) mut => VT.GetSitesContainer(ref this, bstrForest, bstrDomain, bstrDomainController, lDCFlags, out ppIGPMSitesContainer);
+			public HRESULT GetRSOP(GPMRSOPMode gpmRSoPMode, BSTR bstrNamespace, int32 lFlags, out IGPMRSOP* ppIGPMRSOP) mut => VT.GetRSOP(ref this, gpmRSoPMode, bstrNamespace, lFlags, out ppIGPMRSOP);
+			public HRESULT CreatePermission(BSTR bstrTrustee, GPMPermissionType perm, int16 bInheritable, out IGPMPermission* ppPerm) mut => VT.CreatePermission(ref this, bstrTrustee, perm, bInheritable, out ppPerm);
+			public HRESULT CreateSearchCriteria(out IGPMSearchCriteria* ppIGPMSearchCriteria) mut => VT.CreateSearchCriteria(ref this, out ppIGPMSearchCriteria);
+			public HRESULT CreateTrustee(BSTR bstrTrustee, out IGPMTrustee* ppIGPMTrustee) mut => VT.CreateTrustee(ref this, bstrTrustee, out ppIGPMTrustee);
+			public HRESULT GetClientSideExtensions(out IGPMCSECollection* ppIGPMCSECollection) mut => VT.GetClientSideExtensions(ref this, out ppIGPMCSECollection);
+			public HRESULT GetConstants(out IGPMConstants* ppIGPMConstants) mut => VT.GetConstants(ref this, out ppIGPMConstants);
+			public HRESULT GetMigrationTable(BSTR bstrMigrationTablePath, out IGPMMigrationTable* ppMigrationTable) mut => VT.GetMigrationTable(ref this, bstrMigrationTablePath, out ppMigrationTable);
+			public HRESULT CreateMigrationTable(out IGPMMigrationTable* ppMigrationTable) mut => VT.CreateMigrationTable(ref this, out ppMigrationTable);
+			public HRESULT InitializeReporting(BSTR bstrAdmPath) mut => VT.InitializeReporting(ref this, bstrAdmPath);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -504,46 +469,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DomainController(out BSTR pVal) mut
-			{
-				return VT.get_DomainController(ref this, out pVal);
-			}
-			public HRESULT get_Domain(out BSTR pVal) mut
-			{
-				return VT.get_Domain(ref this, out pVal);
-			}
-			public HRESULT CreateGPO(out IGPMGPO* ppNewGPO) mut
-			{
-				return VT.CreateGPO(ref this, out ppNewGPO);
-			}
-			public HRESULT GetGPO(BSTR bstrGuid, out IGPMGPO* ppGPO) mut
-			{
-				return VT.GetGPO(ref this, bstrGuid, out ppGPO);
-			}
-			public HRESULT SearchGPOs(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMGPOCollection* ppIGPMGPOCollection) mut
-			{
-				return VT.SearchGPOs(ref this, ref pIGPMSearchCriteria, out ppIGPMGPOCollection);
-			}
-			public HRESULT RestoreGPO(ref IGPMBackup pIGPMBackup, int32 lDCFlags, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.RestoreGPO(ref this, ref pIGPMBackup, lDCFlags, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT GetSOM(BSTR bstrPath, out IGPMSOM* ppSOM) mut
-			{
-				return VT.GetSOM(ref this, bstrPath, out ppSOM);
-			}
-			public HRESULT SearchSOMs(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMSOMCollection* ppIGPMSOMCollection) mut
-			{
-				return VT.SearchSOMs(ref this, ref pIGPMSearchCriteria, out ppIGPMSOMCollection);
-			}
-			public HRESULT GetWMIFilter(BSTR bstrPath, out IGPMWMIFilter* ppWMIFilter) mut
-			{
-				return VT.GetWMIFilter(ref this, bstrPath, out ppWMIFilter);
-			}
-			public HRESULT SearchWMIFilters(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMWMIFilterCollection* ppIGPMWMIFilterCollection) mut
-			{
-				return VT.SearchWMIFilters(ref this, ref pIGPMSearchCriteria, out ppIGPMWMIFilterCollection);
-			}
+			public HRESULT get_DomainController(out BSTR pVal) mut => VT.get_DomainController(ref this, out pVal);
+			public HRESULT get_Domain(out BSTR pVal) mut => VT.get_Domain(ref this, out pVal);
+			public HRESULT CreateGPO(out IGPMGPO* ppNewGPO) mut => VT.CreateGPO(ref this, out ppNewGPO);
+			public HRESULT GetGPO(BSTR bstrGuid, out IGPMGPO* ppGPO) mut => VT.GetGPO(ref this, bstrGuid, out ppGPO);
+			public HRESULT SearchGPOs(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMGPOCollection* ppIGPMGPOCollection) mut => VT.SearchGPOs(ref this, ref pIGPMSearchCriteria, out ppIGPMGPOCollection);
+			public HRESULT RestoreGPO(ref IGPMBackup pIGPMBackup, int32 lDCFlags, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.RestoreGPO(ref this, ref pIGPMBackup, lDCFlags, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT GetSOM(BSTR bstrPath, out IGPMSOM* ppSOM) mut => VT.GetSOM(ref this, bstrPath, out ppSOM);
+			public HRESULT SearchSOMs(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMSOMCollection* ppIGPMSOMCollection) mut => VT.SearchSOMs(ref this, ref pIGPMSearchCriteria, out ppIGPMSOMCollection);
+			public HRESULT GetWMIFilter(BSTR bstrPath, out IGPMWMIFilter* ppWMIFilter) mut => VT.GetWMIFilter(ref this, bstrPath, out ppWMIFilter);
+			public HRESULT SearchWMIFilters(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMWMIFilterCollection* ppIGPMWMIFilterCollection) mut => VT.SearchWMIFilters(ref this, ref pIGPMSearchCriteria, out ppIGPMWMIFilterCollection);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -566,18 +502,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BackupDirectory(out BSTR pVal) mut
-			{
-				return VT.get_BackupDirectory(ref this, out pVal);
-			}
-			public HRESULT GetBackup(BSTR bstrID, out IGPMBackup* ppBackup) mut
-			{
-				return VT.GetBackup(ref this, bstrID, out ppBackup);
-			}
-			public HRESULT SearchBackups(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMBackupCollection* ppIGPMBackupCollection) mut
-			{
-				return VT.SearchBackups(ref this, ref pIGPMSearchCriteria, out ppIGPMBackupCollection);
-			}
+			public HRESULT get_BackupDirectory(out BSTR pVal) mut => VT.get_BackupDirectory(ref this, out pVal);
+			public HRESULT GetBackup(BSTR bstrID, out IGPMBackup* ppBackup) mut => VT.GetBackup(ref this, bstrID, out ppBackup);
+			public HRESULT SearchBackups(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMBackupCollection* ppIGPMBackupCollection) mut => VT.SearchBackups(ref this, ref pIGPMSearchCriteria, out ppIGPMBackupCollection);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -593,26 +521,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DomainController(out BSTR pVal) mut
-			{
-				return VT.get_DomainController(ref this, out pVal);
-			}
-			public HRESULT get_Domain(out BSTR pVal) mut
-			{
-				return VT.get_Domain(ref this, out pVal);
-			}
-			public HRESULT get_Forest(out BSTR pVal) mut
-			{
-				return VT.get_Forest(ref this, out pVal);
-			}
-			public HRESULT GetSite(BSTR bstrSiteName, out IGPMSOM* ppSOM) mut
-			{
-				return VT.GetSite(ref this, bstrSiteName, out ppSOM);
-			}
-			public HRESULT SearchSites(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMSOMCollection* ppIGPMSOMCollection) mut
-			{
-				return VT.SearchSites(ref this, ref pIGPMSearchCriteria, out ppIGPMSOMCollection);
-			}
+			public HRESULT get_DomainController(out BSTR pVal) mut => VT.get_DomainController(ref this, out pVal);
+			public HRESULT get_Domain(out BSTR pVal) mut => VT.get_Domain(ref this, out pVal);
+			public HRESULT get_Forest(out BSTR pVal) mut => VT.get_Forest(ref this, out pVal);
+			public HRESULT GetSite(BSTR bstrSiteName, out IGPMSOM* ppSOM) mut => VT.GetSite(ref this, bstrSiteName, out ppSOM);
+			public HRESULT SearchSites(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMSOMCollection* ppIGPMSOMCollection) mut => VT.SearchSites(ref this, ref pIGPMSearchCriteria, out ppIGPMSOMCollection);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -630,10 +544,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(GPMSearchProperty searchProperty, GPMSearchOperation searchOperation, VARIANT varValue) mut
-			{
-				return VT.Add(ref this, searchProperty, searchOperation, varValue);
-			}
+			public HRESULT Add(GPMSearchProperty searchProperty, GPMSearchOperation searchOperation, VARIANT varValue) mut => VT.Add(ref this, searchProperty, searchOperation, varValue);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -647,26 +559,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TrusteeSid(out BSTR bstrVal) mut
-			{
-				return VT.get_TrusteeSid(ref this, out bstrVal);
-			}
-			public HRESULT get_TrusteeName(out BSTR bstrVal) mut
-			{
-				return VT.get_TrusteeName(ref this, out bstrVal);
-			}
-			public HRESULT get_TrusteeDomain(out BSTR bstrVal) mut
-			{
-				return VT.get_TrusteeDomain(ref this, out bstrVal);
-			}
-			public HRESULT get_TrusteeDSPath(out BSTR pVal) mut
-			{
-				return VT.get_TrusteeDSPath(ref this, out pVal);
-			}
-			public HRESULT get_TrusteeType(out int32 lVal) mut
-			{
-				return VT.get_TrusteeType(ref this, out lVal);
-			}
+			public HRESULT get_TrusteeSid(out BSTR bstrVal) mut => VT.get_TrusteeSid(ref this, out bstrVal);
+			public HRESULT get_TrusteeName(out BSTR bstrVal) mut => VT.get_TrusteeName(ref this, out bstrVal);
+			public HRESULT get_TrusteeDomain(out BSTR bstrVal) mut => VT.get_TrusteeDomain(ref this, out bstrVal);
+			public HRESULT get_TrusteeDSPath(out BSTR pVal) mut => VT.get_TrusteeDSPath(ref this, out pVal);
+			public HRESULT get_TrusteeType(out int32 lVal) mut => VT.get_TrusteeType(ref this, out lVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -684,26 +582,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Inherited(out int16 pVal) mut
-			{
-				return VT.get_Inherited(ref this, out pVal);
-			}
-			public HRESULT get_Inheritable(out int16 pVal) mut
-			{
-				return VT.get_Inheritable(ref this, out pVal);
-			}
-			public HRESULT get_Denied(out int16 pVal) mut
-			{
-				return VT.get_Denied(ref this, out pVal);
-			}
-			public HRESULT get_Permission(out GPMPermissionType pVal) mut
-			{
-				return VT.get_Permission(ref this, out pVal);
-			}
-			public HRESULT get_Trustee(out IGPMTrustee* ppIGPMTrustee) mut
-			{
-				return VT.get_Trustee(ref this, out ppIGPMTrustee);
-			}
+			public HRESULT get_Inherited(out int16 pVal) mut => VT.get_Inherited(ref this, out pVal);
+			public HRESULT get_Inheritable(out int16 pVal) mut => VT.get_Inheritable(ref this, out pVal);
+			public HRESULT get_Denied(out int16 pVal) mut => VT.get_Denied(ref this, out pVal);
+			public HRESULT get_Permission(out GPMPermissionType pVal) mut => VT.get_Permission(ref this, out pVal);
+			public HRESULT get_Trustee(out IGPMTrustee* ppIGPMTrustee) mut => VT.get_Trustee(ref this, out ppIGPMTrustee);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -721,30 +605,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out ppEnum);
-			}
-			public HRESULT Add(ref IGPMPermission pPerm) mut
-			{
-				return VT.Add(ref this, ref pPerm);
-			}
-			public HRESULT Remove(ref IGPMPermission pPerm) mut
-			{
-				return VT.Remove(ref this, ref pPerm);
-			}
-			public HRESULT RemoveTrustee(BSTR bstrTrustee) mut
-			{
-				return VT.RemoveTrustee(ref this, bstrTrustee);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppEnum) mut => VT.get__NewEnum(ref this, out ppEnum);
+			public HRESULT Add(ref IGPMPermission pPerm) mut => VT.Add(ref this, ref pPerm);
+			public HRESULT Remove(ref IGPMPermission pPerm) mut => VT.Remove(ref this, ref pPerm);
+			public HRESULT RemoveTrustee(BSTR bstrTrustee) mut => VT.RemoveTrustee(ref this, bstrTrustee);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -763,46 +630,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ID(out BSTR pVal) mut
-			{
-				return VT.get_ID(ref this, out pVal);
-			}
-			public HRESULT get_GPOID(out BSTR pVal) mut
-			{
-				return VT.get_GPOID(ref this, out pVal);
-			}
-			public HRESULT get_GPODomain(out BSTR pVal) mut
-			{
-				return VT.get_GPODomain(ref this, out pVal);
-			}
-			public HRESULT get_GPODisplayName(out BSTR pVal) mut
-			{
-				return VT.get_GPODisplayName(ref this, out pVal);
-			}
-			public HRESULT get_Timestamp(out double pVal) mut
-			{
-				return VT.get_Timestamp(ref this, out pVal);
-			}
-			public HRESULT get_Comment(out BSTR pVal) mut
-			{
-				return VT.get_Comment(ref this, out pVal);
-			}
-			public HRESULT get_BackupDir(out BSTR pVal) mut
-			{
-				return VT.get_BackupDir(ref this, out pVal);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
-			}
+			public HRESULT get_ID(out BSTR pVal) mut => VT.get_ID(ref this, out pVal);
+			public HRESULT get_GPOID(out BSTR pVal) mut => VT.get_GPOID(ref this, out pVal);
+			public HRESULT get_GPODomain(out BSTR pVal) mut => VT.get_GPODomain(ref this, out pVal);
+			public HRESULT get_GPODisplayName(out BSTR pVal) mut => VT.get_GPODisplayName(ref this, out pVal);
+			public HRESULT get_Timestamp(out double pVal) mut => VT.get_Timestamp(ref this, out pVal);
+			public HRESULT get_Comment(out BSTR pVal) mut => VT.get_Comment(ref this, out pVal);
+			public HRESULT get_BackupDir(out BSTR pVal) mut => VT.get_BackupDir(ref this, out pVal);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut => VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -825,18 +663,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMBackup) mut
-			{
-				return VT.get__NewEnum(ref this, out ppIGPMBackup);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMBackup) mut => VT.get__NewEnum(ref this, out ppIGPMBackup);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -852,46 +682,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_GPOInheritanceBlocked(out int16 pVal) mut
-			{
-				return VT.get_GPOInheritanceBlocked(ref this, out pVal);
-			}
-			public HRESULT put_GPOInheritanceBlocked(int16 newVal) mut
-			{
-				return VT.put_GPOInheritanceBlocked(ref this, newVal);
-			}
-			public HRESULT get_Name(out BSTR pVal) mut
-			{
-				return VT.get_Name(ref this, out pVal);
-			}
-			public HRESULT get_Path(out BSTR pVal) mut
-			{
-				return VT.get_Path(ref this, out pVal);
-			}
-			public HRESULT CreateGPOLink(int32 lLinkPos, ref IGPMGPO pGPO, out IGPMGPOLink* ppNewGPOLink) mut
-			{
-				return VT.CreateGPOLink(ref this, lLinkPos, ref pGPO, out ppNewGPOLink);
-			}
-			public HRESULT get_Type(out GPMSOMType pVal) mut
-			{
-				return VT.get_Type(ref this, out pVal);
-			}
-			public HRESULT GetGPOLinks(out IGPMGPOLinksCollection* ppGPOLinks) mut
-			{
-				return VT.GetGPOLinks(ref this, out ppGPOLinks);
-			}
-			public HRESULT GetInheritedGPOLinks(out IGPMGPOLinksCollection* ppGPOLinks) mut
-			{
-				return VT.GetInheritedGPOLinks(ref this, out ppGPOLinks);
-			}
-			public HRESULT GetSecurityInfo(out IGPMSecurityInfo* ppSecurityInfo) mut
-			{
-				return VT.GetSecurityInfo(ref this, out ppSecurityInfo);
-			}
-			public HRESULT SetSecurityInfo(ref IGPMSecurityInfo pSecurityInfo) mut
-			{
-				return VT.SetSecurityInfo(ref this, ref pSecurityInfo);
-			}
+			public HRESULT get_GPOInheritanceBlocked(out int16 pVal) mut => VT.get_GPOInheritanceBlocked(ref this, out pVal);
+			public HRESULT put_GPOInheritanceBlocked(int16 newVal) mut => VT.put_GPOInheritanceBlocked(ref this, newVal);
+			public HRESULT get_Name(out BSTR pVal) mut => VT.get_Name(ref this, out pVal);
+			public HRESULT get_Path(out BSTR pVal) mut => VT.get_Path(ref this, out pVal);
+			public HRESULT CreateGPOLink(int32 lLinkPos, ref IGPMGPO pGPO, out IGPMGPOLink* ppNewGPOLink) mut => VT.CreateGPOLink(ref this, lLinkPos, ref pGPO, out ppNewGPOLink);
+			public HRESULT get_Type(out GPMSOMType pVal) mut => VT.get_Type(ref this, out pVal);
+			public HRESULT GetGPOLinks(out IGPMGPOLinksCollection* ppGPOLinks) mut => VT.GetGPOLinks(ref this, out ppGPOLinks);
+			public HRESULT GetInheritedGPOLinks(out IGPMGPOLinksCollection* ppGPOLinks) mut => VT.GetInheritedGPOLinks(ref this, out ppGPOLinks);
+			public HRESULT GetSecurityInfo(out IGPMSecurityInfo* ppSecurityInfo) mut => VT.GetSecurityInfo(ref this, out ppSecurityInfo);
+			public HRESULT SetSecurityInfo(ref IGPMSecurityInfo pSecurityInfo) mut => VT.SetSecurityInfo(ref this, ref pSecurityInfo);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -914,18 +715,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMSOM) mut
-			{
-				return VT.get__NewEnum(ref this, out ppIGPMSOM);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMSOM) mut => VT.get__NewEnum(ref this, out ppIGPMSOM);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -941,38 +734,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Path(out BSTR pVal) mut
-			{
-				return VT.get_Path(ref this, out pVal);
-			}
-			public HRESULT put_Name(BSTR newVal) mut
-			{
-				return VT.put_Name(ref this, newVal);
-			}
-			public HRESULT get_Name(out BSTR pVal) mut
-			{
-				return VT.get_Name(ref this, out pVal);
-			}
-			public HRESULT put_Description(BSTR newVal) mut
-			{
-				return VT.put_Description(ref this, newVal);
-			}
-			public HRESULT get_Description(out BSTR pVal) mut
-			{
-				return VT.get_Description(ref this, out pVal);
-			}
-			public HRESULT GetQueryList(out VARIANT pQryList) mut
-			{
-				return VT.GetQueryList(ref this, out pQryList);
-			}
-			public HRESULT GetSecurityInfo(out IGPMSecurityInfo* ppSecurityInfo) mut
-			{
-				return VT.GetSecurityInfo(ref this, out ppSecurityInfo);
-			}
-			public HRESULT SetSecurityInfo(ref IGPMSecurityInfo pSecurityInfo) mut
-			{
-				return VT.SetSecurityInfo(ref this, ref pSecurityInfo);
-			}
+			public HRESULT get_Path(out BSTR pVal) mut => VT.get_Path(ref this, out pVal);
+			public HRESULT put_Name(BSTR newVal) mut => VT.put_Name(ref this, newVal);
+			public HRESULT get_Name(out BSTR pVal) mut => VT.get_Name(ref this, out pVal);
+			public HRESULT put_Description(BSTR newVal) mut => VT.put_Description(ref this, newVal);
+			public HRESULT get_Description(out BSTR pVal) mut => VT.get_Description(ref this, out pVal);
+			public HRESULT GetQueryList(out VARIANT pQryList) mut => VT.GetQueryList(ref this, out pQryList);
+			public HRESULT GetSecurityInfo(out IGPMSecurityInfo* ppSecurityInfo) mut => VT.GetSecurityInfo(ref this, out ppSecurityInfo);
+			public HRESULT SetSecurityInfo(ref IGPMSecurityInfo pSecurityInfo) mut => VT.SetSecurityInfo(ref this, ref pSecurityInfo);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -993,18 +763,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1020,146 +782,42 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Mode(out GPMRSOPMode pVal) mut
-			{
-				return VT.get_Mode(ref this, out pVal);
-			}
-			public HRESULT get_Namespace(out BSTR bstrVal) mut
-			{
-				return VT.get_Namespace(ref this, out bstrVal);
-			}
-			public HRESULT put_LoggingComputer(BSTR bstrVal) mut
-			{
-				return VT.put_LoggingComputer(ref this, bstrVal);
-			}
-			public HRESULT get_LoggingComputer(out BSTR bstrVal) mut
-			{
-				return VT.get_LoggingComputer(ref this, out bstrVal);
-			}
-			public HRESULT put_LoggingUser(BSTR bstrVal) mut
-			{
-				return VT.put_LoggingUser(ref this, bstrVal);
-			}
-			public HRESULT get_LoggingUser(out BSTR bstrVal) mut
-			{
-				return VT.get_LoggingUser(ref this, out bstrVal);
-			}
-			public HRESULT put_LoggingFlags(int32 lVal) mut
-			{
-				return VT.put_LoggingFlags(ref this, lVal);
-			}
-			public HRESULT get_LoggingFlags(out int32 lVal) mut
-			{
-				return VT.get_LoggingFlags(ref this, out lVal);
-			}
-			public HRESULT put_PlanningFlags(int32 lVal) mut
-			{
-				return VT.put_PlanningFlags(ref this, lVal);
-			}
-			public HRESULT get_PlanningFlags(out int32 lVal) mut
-			{
-				return VT.get_PlanningFlags(ref this, out lVal);
-			}
-			public HRESULT put_PlanningDomainController(BSTR bstrVal) mut
-			{
-				return VT.put_PlanningDomainController(ref this, bstrVal);
-			}
-			public HRESULT get_PlanningDomainController(out BSTR bstrVal) mut
-			{
-				return VT.get_PlanningDomainController(ref this, out bstrVal);
-			}
-			public HRESULT put_PlanningSiteName(BSTR bstrVal) mut
-			{
-				return VT.put_PlanningSiteName(ref this, bstrVal);
-			}
-			public HRESULT get_PlanningSiteName(out BSTR bstrVal) mut
-			{
-				return VT.get_PlanningSiteName(ref this, out bstrVal);
-			}
-			public HRESULT put_PlanningUser(BSTR bstrVal) mut
-			{
-				return VT.put_PlanningUser(ref this, bstrVal);
-			}
-			public HRESULT get_PlanningUser(out BSTR bstrVal) mut
-			{
-				return VT.get_PlanningUser(ref this, out bstrVal);
-			}
-			public HRESULT put_PlanningUserSOM(BSTR bstrVal) mut
-			{
-				return VT.put_PlanningUserSOM(ref this, bstrVal);
-			}
-			public HRESULT get_PlanningUserSOM(out BSTR bstrVal) mut
-			{
-				return VT.get_PlanningUserSOM(ref this, out bstrVal);
-			}
-			public HRESULT put_PlanningUserWMIFilters(VARIANT varVal) mut
-			{
-				return VT.put_PlanningUserWMIFilters(ref this, varVal);
-			}
-			public HRESULT get_PlanningUserWMIFilters(out VARIANT varVal) mut
-			{
-				return VT.get_PlanningUserWMIFilters(ref this, out varVal);
-			}
-			public HRESULT put_PlanningUserSecurityGroups(VARIANT varVal) mut
-			{
-				return VT.put_PlanningUserSecurityGroups(ref this, varVal);
-			}
-			public HRESULT get_PlanningUserSecurityGroups(out VARIANT varVal) mut
-			{
-				return VT.get_PlanningUserSecurityGroups(ref this, out varVal);
-			}
-			public HRESULT put_PlanningComputer(BSTR bstrVal) mut
-			{
-				return VT.put_PlanningComputer(ref this, bstrVal);
-			}
-			public HRESULT get_PlanningComputer(out BSTR bstrVal) mut
-			{
-				return VT.get_PlanningComputer(ref this, out bstrVal);
-			}
-			public HRESULT put_PlanningComputerSOM(BSTR bstrVal) mut
-			{
-				return VT.put_PlanningComputerSOM(ref this, bstrVal);
-			}
-			public HRESULT get_PlanningComputerSOM(out BSTR bstrVal) mut
-			{
-				return VT.get_PlanningComputerSOM(ref this, out bstrVal);
-			}
-			public HRESULT put_PlanningComputerWMIFilters(VARIANT varVal) mut
-			{
-				return VT.put_PlanningComputerWMIFilters(ref this, varVal);
-			}
-			public HRESULT get_PlanningComputerWMIFilters(out VARIANT varVal) mut
-			{
-				return VT.get_PlanningComputerWMIFilters(ref this, out varVal);
-			}
-			public HRESULT put_PlanningComputerSecurityGroups(VARIANT varVal) mut
-			{
-				return VT.put_PlanningComputerSecurityGroups(ref this, varVal);
-			}
-			public HRESULT get_PlanningComputerSecurityGroups(out VARIANT varVal) mut
-			{
-				return VT.get_PlanningComputerSecurityGroups(ref this, out varVal);
-			}
-			public HRESULT LoggingEnumerateUsers(out VARIANT varVal) mut
-			{
-				return VT.LoggingEnumerateUsers(ref this, out varVal);
-			}
-			public HRESULT CreateQueryResults() mut
-			{
-				return VT.CreateQueryResults(ref this);
-			}
-			public HRESULT ReleaseQueryResults() mut
-			{
-				return VT.ReleaseQueryResults(ref this);
-			}
-			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
-			}
+			public HRESULT get_Mode(out GPMRSOPMode pVal) mut => VT.get_Mode(ref this, out pVal);
+			public HRESULT get_Namespace(out BSTR bstrVal) mut => VT.get_Namespace(ref this, out bstrVal);
+			public HRESULT put_LoggingComputer(BSTR bstrVal) mut => VT.put_LoggingComputer(ref this, bstrVal);
+			public HRESULT get_LoggingComputer(out BSTR bstrVal) mut => VT.get_LoggingComputer(ref this, out bstrVal);
+			public HRESULT put_LoggingUser(BSTR bstrVal) mut => VT.put_LoggingUser(ref this, bstrVal);
+			public HRESULT get_LoggingUser(out BSTR bstrVal) mut => VT.get_LoggingUser(ref this, out bstrVal);
+			public HRESULT put_LoggingFlags(int32 lVal) mut => VT.put_LoggingFlags(ref this, lVal);
+			public HRESULT get_LoggingFlags(out int32 lVal) mut => VT.get_LoggingFlags(ref this, out lVal);
+			public HRESULT put_PlanningFlags(int32 lVal) mut => VT.put_PlanningFlags(ref this, lVal);
+			public HRESULT get_PlanningFlags(out int32 lVal) mut => VT.get_PlanningFlags(ref this, out lVal);
+			public HRESULT put_PlanningDomainController(BSTR bstrVal) mut => VT.put_PlanningDomainController(ref this, bstrVal);
+			public HRESULT get_PlanningDomainController(out BSTR bstrVal) mut => VT.get_PlanningDomainController(ref this, out bstrVal);
+			public HRESULT put_PlanningSiteName(BSTR bstrVal) mut => VT.put_PlanningSiteName(ref this, bstrVal);
+			public HRESULT get_PlanningSiteName(out BSTR bstrVal) mut => VT.get_PlanningSiteName(ref this, out bstrVal);
+			public HRESULT put_PlanningUser(BSTR bstrVal) mut => VT.put_PlanningUser(ref this, bstrVal);
+			public HRESULT get_PlanningUser(out BSTR bstrVal) mut => VT.get_PlanningUser(ref this, out bstrVal);
+			public HRESULT put_PlanningUserSOM(BSTR bstrVal) mut => VT.put_PlanningUserSOM(ref this, bstrVal);
+			public HRESULT get_PlanningUserSOM(out BSTR bstrVal) mut => VT.get_PlanningUserSOM(ref this, out bstrVal);
+			public HRESULT put_PlanningUserWMIFilters(VARIANT varVal) mut => VT.put_PlanningUserWMIFilters(ref this, varVal);
+			public HRESULT get_PlanningUserWMIFilters(out VARIANT varVal) mut => VT.get_PlanningUserWMIFilters(ref this, out varVal);
+			public HRESULT put_PlanningUserSecurityGroups(VARIANT varVal) mut => VT.put_PlanningUserSecurityGroups(ref this, varVal);
+			public HRESULT get_PlanningUserSecurityGroups(out VARIANT varVal) mut => VT.get_PlanningUserSecurityGroups(ref this, out varVal);
+			public HRESULT put_PlanningComputer(BSTR bstrVal) mut => VT.put_PlanningComputer(ref this, bstrVal);
+			public HRESULT get_PlanningComputer(out BSTR bstrVal) mut => VT.get_PlanningComputer(ref this, out bstrVal);
+			public HRESULT put_PlanningComputerSOM(BSTR bstrVal) mut => VT.put_PlanningComputerSOM(ref this, bstrVal);
+			public HRESULT get_PlanningComputerSOM(out BSTR bstrVal) mut => VT.get_PlanningComputerSOM(ref this, out bstrVal);
+			public HRESULT put_PlanningComputerWMIFilters(VARIANT varVal) mut => VT.put_PlanningComputerWMIFilters(ref this, varVal);
+			public HRESULT get_PlanningComputerWMIFilters(out VARIANT varVal) mut => VT.get_PlanningComputerWMIFilters(ref this, out varVal);
+			public HRESULT put_PlanningComputerSecurityGroups(VARIANT varVal) mut => VT.put_PlanningComputerSecurityGroups(ref this, varVal);
+			public HRESULT get_PlanningComputerSecurityGroups(out VARIANT varVal) mut => VT.get_PlanningComputerSecurityGroups(ref this, out varVal);
+			public HRESULT LoggingEnumerateUsers(out VARIANT varVal) mut => VT.LoggingEnumerateUsers(ref this, out varVal);
+			public HRESULT CreateQueryResults() mut => VT.CreateQueryResults(ref this);
+			public HRESULT ReleaseQueryResults() mut => VT.ReleaseQueryResults(ref this);
+			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut => VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1207,122 +865,36 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DisplayName(out BSTR pVal) mut
-			{
-				return VT.get_DisplayName(ref this, out pVal);
-			}
-			public HRESULT put_DisplayName(BSTR newVal) mut
-			{
-				return VT.put_DisplayName(ref this, newVal);
-			}
-			public HRESULT get_Path(out BSTR pVal) mut
-			{
-				return VT.get_Path(ref this, out pVal);
-			}
-			public HRESULT get_ID(out BSTR pVal) mut
-			{
-				return VT.get_ID(ref this, out pVal);
-			}
-			public HRESULT get_DomainName(out BSTR pVal) mut
-			{
-				return VT.get_DomainName(ref this, out pVal);
-			}
-			public HRESULT get_CreationTime(out double pDate) mut
-			{
-				return VT.get_CreationTime(ref this, out pDate);
-			}
-			public HRESULT get_ModificationTime(out double pDate) mut
-			{
-				return VT.get_ModificationTime(ref this, out pDate);
-			}
-			public HRESULT get_UserDSVersionNumber(out int32 pVal) mut
-			{
-				return VT.get_UserDSVersionNumber(ref this, out pVal);
-			}
-			public HRESULT get_ComputerDSVersionNumber(out int32 pVal) mut
-			{
-				return VT.get_ComputerDSVersionNumber(ref this, out pVal);
-			}
-			public HRESULT get_UserSysvolVersionNumber(out int32 pVal) mut
-			{
-				return VT.get_UserSysvolVersionNumber(ref this, out pVal);
-			}
-			public HRESULT get_ComputerSysvolVersionNumber(out int32 pVal) mut
-			{
-				return VT.get_ComputerSysvolVersionNumber(ref this, out pVal);
-			}
-			public HRESULT GetWMIFilter(out IGPMWMIFilter* ppIGPMWMIFilter) mut
-			{
-				return VT.GetWMIFilter(ref this, out ppIGPMWMIFilter);
-			}
-			public HRESULT SetWMIFilter(ref IGPMWMIFilter pIGPMWMIFilter) mut
-			{
-				return VT.SetWMIFilter(ref this, ref pIGPMWMIFilter);
-			}
-			public HRESULT SetUserEnabled(int16 vbEnabled) mut
-			{
-				return VT.SetUserEnabled(ref this, vbEnabled);
-			}
-			public HRESULT SetComputerEnabled(int16 vbEnabled) mut
-			{
-				return VT.SetComputerEnabled(ref this, vbEnabled);
-			}
-			public HRESULT IsUserEnabled(out int16 pvbEnabled) mut
-			{
-				return VT.IsUserEnabled(ref this, out pvbEnabled);
-			}
-			public HRESULT IsComputerEnabled(out int16 pvbEnabled) mut
-			{
-				return VT.IsComputerEnabled(ref this, out pvbEnabled);
-			}
-			public HRESULT GetSecurityInfo(out IGPMSecurityInfo* ppSecurityInfo) mut
-			{
-				return VT.GetSecurityInfo(ref this, out ppSecurityInfo);
-			}
-			public HRESULT SetSecurityInfo(ref IGPMSecurityInfo pSecurityInfo) mut
-			{
-				return VT.SetSecurityInfo(ref this, ref pSecurityInfo);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Backup(BSTR bstrBackupDir, BSTR bstrComment, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.Backup(ref this, bstrBackupDir, bstrComment, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT Import(int32 lFlags, ref IGPMBackup pIGPMBackup, ref VARIANT pvarMigrationTable, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.Import(ref this, lFlags, ref pIGPMBackup, ref pvarMigrationTable, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
-			}
-			public HRESULT CopyTo(int32 lFlags, ref IGPMDomain pIGPMDomain, ref VARIANT pvarNewDisplayName, ref VARIANT pvarMigrationTable, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.CopyTo(ref this, lFlags, ref pIGPMDomain, ref pvarNewDisplayName, ref pvarMigrationTable, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT SetSecurityDescriptor(int32 lFlags, ref IDispatch pSD) mut
-			{
-				return VT.SetSecurityDescriptor(ref this, lFlags, ref pSD);
-			}
-			public HRESULT GetSecurityDescriptor(int32 lFlags, out IDispatch* ppSD) mut
-			{
-				return VT.GetSecurityDescriptor(ref this, lFlags, out ppSD);
-			}
-			public HRESULT IsACLConsistent(out int16 pvbConsistent) mut
-			{
-				return VT.IsACLConsistent(ref this, out pvbConsistent);
-			}
-			public HRESULT MakeACLConsistent() mut
-			{
-				return VT.MakeACLConsistent(ref this);
-			}
+			public HRESULT get_DisplayName(out BSTR pVal) mut => VT.get_DisplayName(ref this, out pVal);
+			public HRESULT put_DisplayName(BSTR newVal) mut => VT.put_DisplayName(ref this, newVal);
+			public HRESULT get_Path(out BSTR pVal) mut => VT.get_Path(ref this, out pVal);
+			public HRESULT get_ID(out BSTR pVal) mut => VT.get_ID(ref this, out pVal);
+			public HRESULT get_DomainName(out BSTR pVal) mut => VT.get_DomainName(ref this, out pVal);
+			public HRESULT get_CreationTime(out double pDate) mut => VT.get_CreationTime(ref this, out pDate);
+			public HRESULT get_ModificationTime(out double pDate) mut => VT.get_ModificationTime(ref this, out pDate);
+			public HRESULT get_UserDSVersionNumber(out int32 pVal) mut => VT.get_UserDSVersionNumber(ref this, out pVal);
+			public HRESULT get_ComputerDSVersionNumber(out int32 pVal) mut => VT.get_ComputerDSVersionNumber(ref this, out pVal);
+			public HRESULT get_UserSysvolVersionNumber(out int32 pVal) mut => VT.get_UserSysvolVersionNumber(ref this, out pVal);
+			public HRESULT get_ComputerSysvolVersionNumber(out int32 pVal) mut => VT.get_ComputerSysvolVersionNumber(ref this, out pVal);
+			public HRESULT GetWMIFilter(out IGPMWMIFilter* ppIGPMWMIFilter) mut => VT.GetWMIFilter(ref this, out ppIGPMWMIFilter);
+			public HRESULT SetWMIFilter(ref IGPMWMIFilter pIGPMWMIFilter) mut => VT.SetWMIFilter(ref this, ref pIGPMWMIFilter);
+			public HRESULT SetUserEnabled(int16 vbEnabled) mut => VT.SetUserEnabled(ref this, vbEnabled);
+			public HRESULT SetComputerEnabled(int16 vbEnabled) mut => VT.SetComputerEnabled(ref this, vbEnabled);
+			public HRESULT IsUserEnabled(out int16 pvbEnabled) mut => VT.IsUserEnabled(ref this, out pvbEnabled);
+			public HRESULT IsComputerEnabled(out int16 pvbEnabled) mut => VT.IsComputerEnabled(ref this, out pvbEnabled);
+			public HRESULT GetSecurityInfo(out IGPMSecurityInfo* ppSecurityInfo) mut => VT.GetSecurityInfo(ref this, out ppSecurityInfo);
+			public HRESULT SetSecurityInfo(ref IGPMSecurityInfo pSecurityInfo) mut => VT.SetSecurityInfo(ref this, ref pSecurityInfo);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Backup(BSTR bstrBackupDir, BSTR bstrComment, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.Backup(ref this, bstrBackupDir, bstrComment, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT Import(int32 lFlags, ref IGPMBackup pIGPMBackup, ref VARIANT pvarMigrationTable, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.Import(ref this, lFlags, ref pIGPMBackup, ref pvarMigrationTable, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut => VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
+			public HRESULT CopyTo(int32 lFlags, ref IGPMDomain pIGPMDomain, ref VARIANT pvarNewDisplayName, ref VARIANT pvarMigrationTable, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.CopyTo(ref this, lFlags, ref pIGPMDomain, ref pvarNewDisplayName, ref pvarMigrationTable, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT SetSecurityDescriptor(int32 lFlags, ref IDispatch pSD) mut => VT.SetSecurityDescriptor(ref this, lFlags, ref pSD);
+			public HRESULT GetSecurityDescriptor(int32 lFlags, out IDispatch* ppSD) mut => VT.GetSecurityDescriptor(ref this, lFlags, out ppSD);
+			public HRESULT IsACLConsistent(out int16 pvbConsistent) mut => VT.IsACLConsistent(ref this, out pvbConsistent);
+			public HRESULT MakeACLConsistent() mut => VT.MakeACLConsistent(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1364,18 +936,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMGPOs) mut
-			{
-				return VT.get__NewEnum(ref this, out ppIGPMGPOs);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMGPOs) mut => VT.get__NewEnum(ref this, out ppIGPMGPOs);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1391,42 +955,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_GPOID(out BSTR pVal) mut
-			{
-				return VT.get_GPOID(ref this, out pVal);
-			}
-			public HRESULT get_GPODomain(out BSTR pVal) mut
-			{
-				return VT.get_GPODomain(ref this, out pVal);
-			}
-			public HRESULT get_Enabled(out int16 pVal) mut
-			{
-				return VT.get_Enabled(ref this, out pVal);
-			}
-			public HRESULT put_Enabled(int16 newVal) mut
-			{
-				return VT.put_Enabled(ref this, newVal);
-			}
-			public HRESULT get_Enforced(out int16 pVal) mut
-			{
-				return VT.get_Enforced(ref this, out pVal);
-			}
-			public HRESULT put_Enforced(int16 newVal) mut
-			{
-				return VT.put_Enforced(ref this, newVal);
-			}
-			public HRESULT get_SOMLinkOrder(out int32 lVal) mut
-			{
-				return VT.get_SOMLinkOrder(ref this, out lVal);
-			}
-			public HRESULT get_SOM(out IGPMSOM* ppIGPMSOM) mut
-			{
-				return VT.get_SOM(ref this, out ppIGPMSOM);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
+			public HRESULT get_GPOID(out BSTR pVal) mut => VT.get_GPOID(ref this, out pVal);
+			public HRESULT get_GPODomain(out BSTR pVal) mut => VT.get_GPODomain(ref this, out pVal);
+			public HRESULT get_Enabled(out int16 pVal) mut => VT.get_Enabled(ref this, out pVal);
+			public HRESULT put_Enabled(int16 newVal) mut => VT.put_Enabled(ref this, newVal);
+			public HRESULT get_Enforced(out int16 pVal) mut => VT.get_Enforced(ref this, out pVal);
+			public HRESULT put_Enforced(int16 newVal) mut => VT.put_Enforced(ref this, newVal);
+			public HRESULT get_SOMLinkOrder(out int32 lVal) mut => VT.get_SOMLinkOrder(ref this, out lVal);
+			public HRESULT get_SOM(out IGPMSOM* ppIGPMSOM) mut => VT.get_SOM(ref this, out ppIGPMSOM);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1448,18 +986,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMLinks) mut
-			{
-				return VT.get__NewEnum(ref this, out ppIGPMLinks);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMLinks) mut => VT.get__NewEnum(ref this, out ppIGPMLinks);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1475,18 +1005,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMCSEs) mut
-			{
-				return VT.get__NewEnum(ref this, out ppIGPMCSEs);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMCSEs) mut => VT.get__NewEnum(ref this, out ppIGPMCSEs);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1502,22 +1024,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ID(out BSTR pVal) mut
-			{
-				return VT.get_ID(ref this, out pVal);
-			}
-			public HRESULT get_DisplayName(out BSTR pVal) mut
-			{
-				return VT.get_DisplayName(ref this, out pVal);
-			}
-			public HRESULT IsUserEnabled(out int16 pvbEnabled) mut
-			{
-				return VT.IsUserEnabled(ref this, out pvbEnabled);
-			}
-			public HRESULT IsComputerEnabled(out int16 pvbEnabled) mut
-			{
-				return VT.IsComputerEnabled(ref this, out pvbEnabled);
-			}
+			public HRESULT get_ID(out BSTR pVal) mut => VT.get_ID(ref this, out pVal);
+			public HRESULT get_DisplayName(out BSTR pVal) mut => VT.get_DisplayName(ref this, out pVal);
+			public HRESULT IsUserEnabled(out int16 pvbEnabled) mut => VT.IsUserEnabled(ref this, out pvbEnabled);
+			public HRESULT IsComputerEnabled(out int16 pvbEnabled) mut => VT.IsComputerEnabled(ref this, out pvbEnabled);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1534,10 +1045,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Cancel() mut
-			{
-				return VT.Cancel(ref this);
-			}
+			public HRESULT Cancel() mut => VT.Cancel(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1551,10 +1060,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Status(int32 lProgressNumerator, int32 lProgressDenominator, HRESULT hrStatus, ref VARIANT pResult, ref IGPMStatusMsgCollection ppIGPMStatusMsgCollection) mut
-			{
-				return VT.Status(ref this, lProgressNumerator, lProgressDenominator, hrStatus, ref pResult, ref ppIGPMStatusMsgCollection);
-			}
+			public HRESULT Status(int32 lProgressNumerator, int32 lProgressDenominator, HRESULT hrStatus, ref VARIANT pResult, ref IGPMStatusMsgCollection ppIGPMStatusMsgCollection) mut => VT.Status(ref this, lProgressNumerator, lProgressDenominator, hrStatus, ref pResult, ref ppIGPMStatusMsgCollection);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1568,18 +1075,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1595,30 +1094,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ObjectPath(out BSTR pVal) mut
-			{
-				return VT.get_ObjectPath(ref this, out pVal);
-			}
-			public HRESULT ErrorCode() mut
-			{
-				return VT.ErrorCode(ref this);
-			}
-			public HRESULT get_ExtensionName(out BSTR pVal) mut
-			{
-				return VT.get_ExtensionName(ref this, out pVal);
-			}
-			public HRESULT get_SettingsName(out BSTR pVal) mut
-			{
-				return VT.get_SettingsName(ref this, out pVal);
-			}
-			public HRESULT OperationCode() mut
-			{
-				return VT.OperationCode(ref this);
-			}
-			public HRESULT get_Message(out BSTR pVal) mut
-			{
-				return VT.get_Message(ref this, out pVal);
-			}
+			public HRESULT get_ObjectPath(out BSTR pVal) mut => VT.get_ObjectPath(ref this, out pVal);
+			public HRESULT ErrorCode() mut => VT.ErrorCode(ref this);
+			public HRESULT get_ExtensionName(out BSTR pVal) mut => VT.get_ExtensionName(ref this, out pVal);
+			public HRESULT get_SettingsName(out BSTR pVal) mut => VT.get_SettingsName(ref this, out pVal);
+			public HRESULT OperationCode() mut => VT.OperationCode(ref this);
+			public HRESULT get_Message(out BSTR pVal) mut => VT.get_Message(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1637,246 +1119,67 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PermGPOApply(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermGPOApply(ref this, out pVal);
-			}
-			public HRESULT get_PermGPORead(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermGPORead(ref this, out pVal);
-			}
-			public HRESULT get_PermGPOEdit(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermGPOEdit(ref this, out pVal);
-			}
-			public HRESULT get_PermGPOEditSecurityAndDelete(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermGPOEditSecurityAndDelete(ref this, out pVal);
-			}
-			public HRESULT get_PermGPOCustom(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermGPOCustom(ref this, out pVal);
-			}
-			public HRESULT get_PermWMIFilterEdit(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermWMIFilterEdit(ref this, out pVal);
-			}
-			public HRESULT get_PermWMIFilterFullControl(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermWMIFilterFullControl(ref this, out pVal);
-			}
-			public HRESULT get_PermWMIFilterCustom(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermWMIFilterCustom(ref this, out pVal);
-			}
-			public HRESULT get_PermSOMLink(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermSOMLink(ref this, out pVal);
-			}
-			public HRESULT get_PermSOMLogging(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermSOMLogging(ref this, out pVal);
-			}
-			public HRESULT get_PermSOMPlanning(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermSOMPlanning(ref this, out pVal);
-			}
-			public HRESULT get_PermSOMGPOCreate(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermSOMGPOCreate(ref this, out pVal);
-			}
-			public HRESULT get_PermSOMWMICreate(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermSOMWMICreate(ref this, out pVal);
-			}
-			public HRESULT get_PermSOMWMIFullControl(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermSOMWMIFullControl(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyGPOPermissions(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyGPOPermissions(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyGPOEffectivePermissions(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyGPOEffectivePermissions(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyGPODisplayName(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyGPODisplayName(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyGPOWMIFilter(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyGPOWMIFilter(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyGPOID(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyGPOID(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyGPOComputerExtensions(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyGPOComputerExtensions(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyGPOUserExtensions(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyGPOUserExtensions(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertySOMLinks(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertySOMLinks(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyGPODomain(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyGPODomain(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyBackupMostRecent(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyBackupMostRecent(ref this, out pVal);
-			}
-			public HRESULT get_SearchOpEquals(out GPMSearchOperation pVal) mut
-			{
-				return VT.get_SearchOpEquals(ref this, out pVal);
-			}
-			public HRESULT get_SearchOpContains(out GPMSearchOperation pVal) mut
-			{
-				return VT.get_SearchOpContains(ref this, out pVal);
-			}
-			public HRESULT get_SearchOpNotContains(out GPMSearchOperation pVal) mut
-			{
-				return VT.get_SearchOpNotContains(ref this, out pVal);
-			}
-			public HRESULT get_SearchOpNotEquals(out GPMSearchOperation pVal) mut
-			{
-				return VT.get_SearchOpNotEquals(ref this, out pVal);
-			}
-			public HRESULT get_UsePDC(out int32 pVal) mut
-			{
-				return VT.get_UsePDC(ref this, out pVal);
-			}
-			public HRESULT get_UseAnyDC(out int32 pVal) mut
-			{
-				return VT.get_UseAnyDC(ref this, out pVal);
-			}
-			public HRESULT get_DoNotUseW2KDC(out int32 pVal) mut
-			{
-				return VT.get_DoNotUseW2KDC(ref this, out pVal);
-			}
-			public HRESULT get_SOMSite(out GPMSOMType pVal) mut
-			{
-				return VT.get_SOMSite(ref this, out pVal);
-			}
-			public HRESULT get_SOMDomain(out GPMSOMType pVal) mut
-			{
-				return VT.get_SOMDomain(ref this, out pVal);
-			}
-			public HRESULT get_SOMOU(out GPMSOMType pVal) mut
-			{
-				return VT.get_SOMOU(ref this, out pVal);
-			}
-			public HRESULT get_SecurityFlags(int16 vbOwner, int16 vbGroup, int16 vbDACL, int16 vbSACL, out int32 pVal) mut
-			{
-				return VT.get_SecurityFlags(ref this, vbOwner, vbGroup, vbDACL, vbSACL, out pVal);
-			}
-			public HRESULT get_DoNotValidateDC(out int32 pVal) mut
-			{
-				return VT.get_DoNotValidateDC(ref this, out pVal);
-			}
-			public HRESULT get_ReportHTML(out GPMReportType pVal) mut
-			{
-				return VT.get_ReportHTML(ref this, out pVal);
-			}
-			public HRESULT get_ReportXML(out GPMReportType pVal) mut
-			{
-				return VT.get_ReportXML(ref this, out pVal);
-			}
-			public HRESULT get_RSOPModeUnknown(out GPMRSOPMode pVal) mut
-			{
-				return VT.get_RSOPModeUnknown(ref this, out pVal);
-			}
-			public HRESULT get_RSOPModePlanning(out GPMRSOPMode pVal) mut
-			{
-				return VT.get_RSOPModePlanning(ref this, out pVal);
-			}
-			public HRESULT get_RSOPModeLogging(out GPMRSOPMode pVal) mut
-			{
-				return VT.get_RSOPModeLogging(ref this, out pVal);
-			}
-			public HRESULT get_EntryTypeUser(out GPMEntryType pVal) mut
-			{
-				return VT.get_EntryTypeUser(ref this, out pVal);
-			}
-			public HRESULT get_EntryTypeComputer(out GPMEntryType pVal) mut
-			{
-				return VT.get_EntryTypeComputer(ref this, out pVal);
-			}
-			public HRESULT get_EntryTypeLocalGroup(out GPMEntryType pVal) mut
-			{
-				return VT.get_EntryTypeLocalGroup(ref this, out pVal);
-			}
-			public HRESULT get_EntryTypeGlobalGroup(out GPMEntryType pVal) mut
-			{
-				return VT.get_EntryTypeGlobalGroup(ref this, out pVal);
-			}
-			public HRESULT get_EntryTypeUniversalGroup(out GPMEntryType pVal) mut
-			{
-				return VT.get_EntryTypeUniversalGroup(ref this, out pVal);
-			}
-			public HRESULT get_EntryTypeUNCPath(out GPMEntryType pVal) mut
-			{
-				return VT.get_EntryTypeUNCPath(ref this, out pVal);
-			}
-			public HRESULT get_EntryTypeUnknown(out GPMEntryType pVal) mut
-			{
-				return VT.get_EntryTypeUnknown(ref this, out pVal);
-			}
-			public HRESULT get_DestinationOptionSameAsSource(out GPMDestinationOption pVal) mut
-			{
-				return VT.get_DestinationOptionSameAsSource(ref this, out pVal);
-			}
-			public HRESULT get_DestinationOptionNone(out GPMDestinationOption pVal) mut
-			{
-				return VT.get_DestinationOptionNone(ref this, out pVal);
-			}
-			public HRESULT get_DestinationOptionByRelativeName(out GPMDestinationOption pVal) mut
-			{
-				return VT.get_DestinationOptionByRelativeName(ref this, out pVal);
-			}
-			public HRESULT get_DestinationOptionSet(out GPMDestinationOption pVal) mut
-			{
-				return VT.get_DestinationOptionSet(ref this, out pVal);
-			}
-			public HRESULT get_MigrationTableOnly(out int32 pVal) mut
-			{
-				return VT.get_MigrationTableOnly(ref this, out pVal);
-			}
-			public HRESULT get_ProcessSecurity(out int32 pVal) mut
-			{
-				return VT.get_ProcessSecurity(ref this, out pVal);
-			}
-			public HRESULT get_RsopLoggingNoComputer(out int32 pVal) mut
-			{
-				return VT.get_RsopLoggingNoComputer(ref this, out pVal);
-			}
-			public HRESULT get_RsopLoggingNoUser(out int32 pVal) mut
-			{
-				return VT.get_RsopLoggingNoUser(ref this, out pVal);
-			}
-			public HRESULT get_RsopPlanningAssumeSlowLink(out int32 pVal) mut
-			{
-				return VT.get_RsopPlanningAssumeSlowLink(ref this, out pVal);
-			}
-			public HRESULT get_RsopPlanningLoopbackOption(int16 vbMerge, out int32 pVal) mut
-			{
-				return VT.get_RsopPlanningLoopbackOption(ref this, vbMerge, out pVal);
-			}
-			public HRESULT get_RsopPlanningAssumeUserWQLFilterTrue(out int32 pVal) mut
-			{
-				return VT.get_RsopPlanningAssumeUserWQLFilterTrue(ref this, out pVal);
-			}
-			public HRESULT get_RsopPlanningAssumeCompWQLFilterTrue(out int32 pVal) mut
-			{
-				return VT.get_RsopPlanningAssumeCompWQLFilterTrue(ref this, out pVal);
-			}
+			public HRESULT get_PermGPOApply(out GPMPermissionType pVal) mut => VT.get_PermGPOApply(ref this, out pVal);
+			public HRESULT get_PermGPORead(out GPMPermissionType pVal) mut => VT.get_PermGPORead(ref this, out pVal);
+			public HRESULT get_PermGPOEdit(out GPMPermissionType pVal) mut => VT.get_PermGPOEdit(ref this, out pVal);
+			public HRESULT get_PermGPOEditSecurityAndDelete(out GPMPermissionType pVal) mut => VT.get_PermGPOEditSecurityAndDelete(ref this, out pVal);
+			public HRESULT get_PermGPOCustom(out GPMPermissionType pVal) mut => VT.get_PermGPOCustom(ref this, out pVal);
+			public HRESULT get_PermWMIFilterEdit(out GPMPermissionType pVal) mut => VT.get_PermWMIFilterEdit(ref this, out pVal);
+			public HRESULT get_PermWMIFilterFullControl(out GPMPermissionType pVal) mut => VT.get_PermWMIFilterFullControl(ref this, out pVal);
+			public HRESULT get_PermWMIFilterCustom(out GPMPermissionType pVal) mut => VT.get_PermWMIFilterCustom(ref this, out pVal);
+			public HRESULT get_PermSOMLink(out GPMPermissionType pVal) mut => VT.get_PermSOMLink(ref this, out pVal);
+			public HRESULT get_PermSOMLogging(out GPMPermissionType pVal) mut => VT.get_PermSOMLogging(ref this, out pVal);
+			public HRESULT get_PermSOMPlanning(out GPMPermissionType pVal) mut => VT.get_PermSOMPlanning(ref this, out pVal);
+			public HRESULT get_PermSOMGPOCreate(out GPMPermissionType pVal) mut => VT.get_PermSOMGPOCreate(ref this, out pVal);
+			public HRESULT get_PermSOMWMICreate(out GPMPermissionType pVal) mut => VT.get_PermSOMWMICreate(ref this, out pVal);
+			public HRESULT get_PermSOMWMIFullControl(out GPMPermissionType pVal) mut => VT.get_PermSOMWMIFullControl(ref this, out pVal);
+			public HRESULT get_SearchPropertyGPOPermissions(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyGPOPermissions(ref this, out pVal);
+			public HRESULT get_SearchPropertyGPOEffectivePermissions(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyGPOEffectivePermissions(ref this, out pVal);
+			public HRESULT get_SearchPropertyGPODisplayName(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyGPODisplayName(ref this, out pVal);
+			public HRESULT get_SearchPropertyGPOWMIFilter(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyGPOWMIFilter(ref this, out pVal);
+			public HRESULT get_SearchPropertyGPOID(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyGPOID(ref this, out pVal);
+			public HRESULT get_SearchPropertyGPOComputerExtensions(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyGPOComputerExtensions(ref this, out pVal);
+			public HRESULT get_SearchPropertyGPOUserExtensions(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyGPOUserExtensions(ref this, out pVal);
+			public HRESULT get_SearchPropertySOMLinks(out GPMSearchProperty pVal) mut => VT.get_SearchPropertySOMLinks(ref this, out pVal);
+			public HRESULT get_SearchPropertyGPODomain(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyGPODomain(ref this, out pVal);
+			public HRESULT get_SearchPropertyBackupMostRecent(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyBackupMostRecent(ref this, out pVal);
+			public HRESULT get_SearchOpEquals(out GPMSearchOperation pVal) mut => VT.get_SearchOpEquals(ref this, out pVal);
+			public HRESULT get_SearchOpContains(out GPMSearchOperation pVal) mut => VT.get_SearchOpContains(ref this, out pVal);
+			public HRESULT get_SearchOpNotContains(out GPMSearchOperation pVal) mut => VT.get_SearchOpNotContains(ref this, out pVal);
+			public HRESULT get_SearchOpNotEquals(out GPMSearchOperation pVal) mut => VT.get_SearchOpNotEquals(ref this, out pVal);
+			public HRESULT get_UsePDC(out int32 pVal) mut => VT.get_UsePDC(ref this, out pVal);
+			public HRESULT get_UseAnyDC(out int32 pVal) mut => VT.get_UseAnyDC(ref this, out pVal);
+			public HRESULT get_DoNotUseW2KDC(out int32 pVal) mut => VT.get_DoNotUseW2KDC(ref this, out pVal);
+			public HRESULT get_SOMSite(out GPMSOMType pVal) mut => VT.get_SOMSite(ref this, out pVal);
+			public HRESULT get_SOMDomain(out GPMSOMType pVal) mut => VT.get_SOMDomain(ref this, out pVal);
+			public HRESULT get_SOMOU(out GPMSOMType pVal) mut => VT.get_SOMOU(ref this, out pVal);
+			public HRESULT get_SecurityFlags(int16 vbOwner, int16 vbGroup, int16 vbDACL, int16 vbSACL, out int32 pVal) mut => VT.get_SecurityFlags(ref this, vbOwner, vbGroup, vbDACL, vbSACL, out pVal);
+			public HRESULT get_DoNotValidateDC(out int32 pVal) mut => VT.get_DoNotValidateDC(ref this, out pVal);
+			public HRESULT get_ReportHTML(out GPMReportType pVal) mut => VT.get_ReportHTML(ref this, out pVal);
+			public HRESULT get_ReportXML(out GPMReportType pVal) mut => VT.get_ReportXML(ref this, out pVal);
+			public HRESULT get_RSOPModeUnknown(out GPMRSOPMode pVal) mut => VT.get_RSOPModeUnknown(ref this, out pVal);
+			public HRESULT get_RSOPModePlanning(out GPMRSOPMode pVal) mut => VT.get_RSOPModePlanning(ref this, out pVal);
+			public HRESULT get_RSOPModeLogging(out GPMRSOPMode pVal) mut => VT.get_RSOPModeLogging(ref this, out pVal);
+			public HRESULT get_EntryTypeUser(out GPMEntryType pVal) mut => VT.get_EntryTypeUser(ref this, out pVal);
+			public HRESULT get_EntryTypeComputer(out GPMEntryType pVal) mut => VT.get_EntryTypeComputer(ref this, out pVal);
+			public HRESULT get_EntryTypeLocalGroup(out GPMEntryType pVal) mut => VT.get_EntryTypeLocalGroup(ref this, out pVal);
+			public HRESULT get_EntryTypeGlobalGroup(out GPMEntryType pVal) mut => VT.get_EntryTypeGlobalGroup(ref this, out pVal);
+			public HRESULT get_EntryTypeUniversalGroup(out GPMEntryType pVal) mut => VT.get_EntryTypeUniversalGroup(ref this, out pVal);
+			public HRESULT get_EntryTypeUNCPath(out GPMEntryType pVal) mut => VT.get_EntryTypeUNCPath(ref this, out pVal);
+			public HRESULT get_EntryTypeUnknown(out GPMEntryType pVal) mut => VT.get_EntryTypeUnknown(ref this, out pVal);
+			public HRESULT get_DestinationOptionSameAsSource(out GPMDestinationOption pVal) mut => VT.get_DestinationOptionSameAsSource(ref this, out pVal);
+			public HRESULT get_DestinationOptionNone(out GPMDestinationOption pVal) mut => VT.get_DestinationOptionNone(ref this, out pVal);
+			public HRESULT get_DestinationOptionByRelativeName(out GPMDestinationOption pVal) mut => VT.get_DestinationOptionByRelativeName(ref this, out pVal);
+			public HRESULT get_DestinationOptionSet(out GPMDestinationOption pVal) mut => VT.get_DestinationOptionSet(ref this, out pVal);
+			public HRESULT get_MigrationTableOnly(out int32 pVal) mut => VT.get_MigrationTableOnly(ref this, out pVal);
+			public HRESULT get_ProcessSecurity(out int32 pVal) mut => VT.get_ProcessSecurity(ref this, out pVal);
+			public HRESULT get_RsopLoggingNoComputer(out int32 pVal) mut => VT.get_RsopLoggingNoComputer(ref this, out pVal);
+			public HRESULT get_RsopLoggingNoUser(out int32 pVal) mut => VT.get_RsopLoggingNoUser(ref this, out pVal);
+			public HRESULT get_RsopPlanningAssumeSlowLink(out int32 pVal) mut => VT.get_RsopPlanningAssumeSlowLink(ref this, out pVal);
+			public HRESULT get_RsopPlanningLoopbackOption(int16 vbMerge, out int32 pVal) mut => VT.get_RsopPlanningLoopbackOption(ref this, vbMerge, out pVal);
+			public HRESULT get_RsopPlanningAssumeUserWQLFilterTrue(out int32 pVal) mut => VT.get_RsopPlanningAssumeUserWQLFilterTrue(ref this, out pVal);
+			public HRESULT get_RsopPlanningAssumeCompWQLFilterTrue(out int32 pVal) mut => VT.get_RsopPlanningAssumeCompWQLFilterTrue(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1949,18 +1252,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Status(out IGPMStatusMsgCollection* ppIGPMStatusMsgCollection) mut
-			{
-				return VT.get_Status(ref this, out ppIGPMStatusMsgCollection);
-			}
-			public HRESULT get_Result(out VARIANT pvarResult) mut
-			{
-				return VT.get_Result(ref this, out pvarResult);
-			}
-			public HRESULT OverallStatus() mut
-			{
-				return VT.OverallStatus(ref this);
-			}
+			public HRESULT get_Status(out IGPMStatusMsgCollection* ppIGPMStatusMsgCollection) mut => VT.get_Status(ref this, out ppIGPMStatusMsgCollection);
+			public HRESULT get_Result(out VARIANT pvarResult) mut => VT.get_Result(ref this, out pvarResult);
+			public HRESULT OverallStatus() mut => VT.OverallStatus(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1976,18 +1271,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* pVal) mut
-			{
-				return VT.get__NewEnum(ref this, out pVal);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* pVal) mut => VT.get__NewEnum(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2003,22 +1290,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Source(out BSTR pbstrSource) mut
-			{
-				return VT.get_Source(ref this, out pbstrSource);
-			}
-			public HRESULT get_Destination(out BSTR pbstrDestination) mut
-			{
-				return VT.get_Destination(ref this, out pbstrDestination);
-			}
-			public HRESULT get_DestinationOption(out GPMDestinationOption pgpmDestOption) mut
-			{
-				return VT.get_DestinationOption(ref this, out pgpmDestOption);
-			}
-			public HRESULT get_EntryType(out GPMEntryType pgpmEntryType) mut
-			{
-				return VT.get_EntryType(ref this, out pgpmEntryType);
-			}
+			public HRESULT get_Source(out BSTR pbstrSource) mut => VT.get_Source(ref this, out pbstrSource);
+			public HRESULT get_Destination(out BSTR pbstrDestination) mut => VT.get_Destination(ref this, out pbstrDestination);
+			public HRESULT get_DestinationOption(out GPMDestinationOption pgpmDestOption) mut => VT.get_DestinationOption(ref this, out pgpmDestOption);
+			public HRESULT get_EntryType(out GPMEntryType pgpmEntryType) mut => VT.get_EntryType(ref this, out pgpmEntryType);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2035,38 +1311,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Save(BSTR bstrMigrationTablePath) mut
-			{
-				return VT.Save(ref this, bstrMigrationTablePath);
-			}
-			public HRESULT Add(int32 lFlags, VARIANT @var) mut
-			{
-				return VT.Add(ref this, lFlags, @var);
-			}
-			public HRESULT AddEntry(BSTR bstrSource, GPMEntryType gpmEntryType, ref VARIANT pvarDestination, out IGPMMapEntry* ppEntry) mut
-			{
-				return VT.AddEntry(ref this, bstrSource, gpmEntryType, ref pvarDestination, out ppEntry);
-			}
-			public HRESULT GetEntry(BSTR bstrSource, out IGPMMapEntry* ppEntry) mut
-			{
-				return VT.GetEntry(ref this, bstrSource, out ppEntry);
-			}
-			public HRESULT DeleteEntry(BSTR bstrSource) mut
-			{
-				return VT.DeleteEntry(ref this, bstrSource);
-			}
-			public HRESULT UpdateDestination(BSTR bstrSource, ref VARIANT pvarDestination, out IGPMMapEntry* ppEntry) mut
-			{
-				return VT.UpdateDestination(ref this, bstrSource, ref pvarDestination, out ppEntry);
-			}
-			public HRESULT Validate(out IGPMResult* ppResult) mut
-			{
-				return VT.Validate(ref this, out ppResult);
-			}
-			public HRESULT GetEntries(out IGPMMapEntryCollection* ppEntries) mut
-			{
-				return VT.GetEntries(ref this, out ppEntries);
-			}
+			public HRESULT Save(BSTR bstrMigrationTablePath) mut => VT.Save(ref this, bstrMigrationTablePath);
+			public HRESULT Add(int32 lFlags, VARIANT @var) mut => VT.Add(ref this, lFlags, @var);
+			public HRESULT AddEntry(BSTR bstrSource, GPMEntryType gpmEntryType, ref VARIANT pvarDestination, out IGPMMapEntry* ppEntry) mut => VT.AddEntry(ref this, bstrSource, gpmEntryType, ref pvarDestination, out ppEntry);
+			public HRESULT GetEntry(BSTR bstrSource, out IGPMMapEntry* ppEntry) mut => VT.GetEntry(ref this, bstrSource, out ppEntry);
+			public HRESULT DeleteEntry(BSTR bstrSource) mut => VT.DeleteEntry(ref this, bstrSource);
+			public HRESULT UpdateDestination(BSTR bstrSource, ref VARIANT pvarDestination, out IGPMMapEntry* ppEntry) mut => VT.UpdateDestination(ref this, bstrSource, ref pvarDestination, out ppEntry);
+			public HRESULT Validate(out IGPMResult* ppResult) mut => VT.Validate(ref this, out ppResult);
+			public HRESULT GetEntries(out IGPMMapEntryCollection* ppEntries) mut => VT.GetEntries(ref this, out ppEntries);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2087,22 +1340,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BackupDir(out BSTR pbstrBackupDir) mut
-			{
-				return VT.get_BackupDir(ref this, out pbstrBackupDir);
-			}
-			public HRESULT get_BackupType(out GPMBackupType pgpmBackupType) mut
-			{
-				return VT.get_BackupType(ref this, out pgpmBackupType);
-			}
-			public HRESULT GetBackup(BSTR bstrID, out VARIANT pvarBackup) mut
-			{
-				return VT.GetBackup(ref this, bstrID, out pvarBackup);
-			}
-			public HRESULT SearchBackups(ref IGPMSearchCriteria pIGPMSearchCriteria, out VARIANT pvarBackupCollection) mut
-			{
-				return VT.SearchBackups(ref this, ref pIGPMSearchCriteria, out pvarBackupCollection);
-			}
+			public HRESULT get_BackupDir(out BSTR pbstrBackupDir) mut => VT.get_BackupDir(ref this, out pbstrBackupDir);
+			public HRESULT get_BackupType(out GPMBackupType pgpmBackupType) mut => VT.get_BackupType(ref this, out pgpmBackupType);
+			public HRESULT GetBackup(BSTR bstrID, out VARIANT pvarBackup) mut => VT.GetBackup(ref this, bstrID, out pvarBackup);
+			public HRESULT SearchBackups(ref IGPMSearchCriteria pIGPMSearchCriteria, out VARIANT pvarBackupCollection) mut => VT.SearchBackups(ref this, ref pIGPMSearchCriteria, out pvarBackupCollection);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2119,18 +1361,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMTmplBackup) mut
-			{
-				return VT.get__NewEnum(ref this, out ppIGPMTmplBackup);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMTmplBackup) mut => VT.get__NewEnum(ref this, out ppIGPMTmplBackup);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2146,50 +1380,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BackupDir(out BSTR pbstrBackupDir) mut
-			{
-				return VT.get_BackupDir(ref this, out pbstrBackupDir);
-			}
-			public HRESULT get_Comment(out BSTR pbstrComment) mut
-			{
-				return VT.get_Comment(ref this, out pbstrComment);
-			}
-			public HRESULT get_DisplayName(out BSTR pbstrDisplayName) mut
-			{
-				return VT.get_DisplayName(ref this, out pbstrDisplayName);
-			}
-			public HRESULT get_Domain(out BSTR pbstrTemplateDomain) mut
-			{
-				return VT.get_Domain(ref this, out pbstrTemplateDomain);
-			}
-			public HRESULT get_StarterGPOID(out BSTR pbstrTemplateID) mut
-			{
-				return VT.get_StarterGPOID(ref this, out pbstrTemplateID);
-			}
-			public HRESULT get_ID(out BSTR pbstrID) mut
-			{
-				return VT.get_ID(ref this, out pbstrID);
-			}
-			public HRESULT get_Timestamp(out double pTimestamp) mut
-			{
-				return VT.get_Timestamp(ref this, out pTimestamp);
-			}
-			public HRESULT get_Type(out GPMStarterGPOType pType) mut
-			{
-				return VT.get_Type(ref this, out pType);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
-			}
+			public HRESULT get_BackupDir(out BSTR pbstrBackupDir) mut => VT.get_BackupDir(ref this, out pbstrBackupDir);
+			public HRESULT get_Comment(out BSTR pbstrComment) mut => VT.get_Comment(ref this, out pbstrComment);
+			public HRESULT get_DisplayName(out BSTR pbstrDisplayName) mut => VT.get_DisplayName(ref this, out pbstrDisplayName);
+			public HRESULT get_Domain(out BSTR pbstrTemplateDomain) mut => VT.get_Domain(ref this, out pbstrTemplateDomain);
+			public HRESULT get_StarterGPOID(out BSTR pbstrTemplateID) mut => VT.get_StarterGPOID(ref this, out pbstrTemplateID);
+			public HRESULT get_ID(out BSTR pbstrID) mut => VT.get_ID(ref this, out pbstrID);
+			public HRESULT get_Timestamp(out double pTimestamp) mut => VT.get_Timestamp(ref this, out pTimestamp);
+			public HRESULT get_Type(out GPMStarterGPOType pType) mut => VT.get_Type(ref this, out pType);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut => VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2213,14 +1415,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBackupDirEx(BSTR bstrBackupDir, GPMBackupType backupDirType, out IGPMBackupDirEx* ppIGPMBackupDirEx) mut
-			{
-				return VT.GetBackupDirEx(ref this, bstrBackupDir, backupDirType, out ppIGPMBackupDirEx);
-			}
-			public HRESULT InitializeReportingEx(BSTR bstrAdmPath, int32 reportingOptions) mut
-			{
-				return VT.InitializeReportingEx(ref this, bstrAdmPath, reportingOptions);
-			}
+			public HRESULT GetBackupDirEx(BSTR bstrBackupDir, GPMBackupType backupDirType, out IGPMBackupDirEx* ppIGPMBackupDirEx) mut => VT.GetBackupDirEx(ref this, bstrBackupDir, backupDirType, out ppIGPMBackupDirEx);
+			public HRESULT InitializeReportingEx(BSTR bstrAdmPath, int32 reportingOptions) mut => VT.InitializeReportingEx(ref this, bstrAdmPath, reportingOptions);
+
 			[CRepr]
 			public struct VTable : IGPM.VTable
 			{
@@ -2235,90 +1432,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DisplayName(out BSTR pVal) mut
-			{
-				return VT.get_DisplayName(ref this, out pVal);
-			}
-			public HRESULT put_DisplayName(BSTR newVal) mut
-			{
-				return VT.put_DisplayName(ref this, newVal);
-			}
-			public HRESULT get_Description(out BSTR pVal) mut
-			{
-				return VT.get_Description(ref this, out pVal);
-			}
-			public HRESULT put_Description(BSTR newVal) mut
-			{
-				return VT.put_Description(ref this, newVal);
-			}
-			public HRESULT get_Author(out BSTR pVal) mut
-			{
-				return VT.get_Author(ref this, out pVal);
-			}
-			public HRESULT get_Product(out BSTR pVal) mut
-			{
-				return VT.get_Product(ref this, out pVal);
-			}
-			public HRESULT get_CreationTime(out double pVal) mut
-			{
-				return VT.get_CreationTime(ref this, out pVal);
-			}
-			public HRESULT get_ID(out BSTR pVal) mut
-			{
-				return VT.get_ID(ref this, out pVal);
-			}
-			public HRESULT get_ModifiedTime(out double pVal) mut
-			{
-				return VT.get_ModifiedTime(ref this, out pVal);
-			}
-			public HRESULT get_Type(out GPMStarterGPOType pVal) mut
-			{
-				return VT.get_Type(ref this, out pVal);
-			}
-			public HRESULT get_ComputerVersion(out uint16 pVal) mut
-			{
-				return VT.get_ComputerVersion(ref this, out pVal);
-			}
-			public HRESULT get_UserVersion(out uint16 pVal) mut
-			{
-				return VT.get_UserVersion(ref this, out pVal);
-			}
-			public HRESULT get_StarterGPOVersion(out BSTR pVal) mut
-			{
-				return VT.get_StarterGPOVersion(ref this, out pVal);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Save(BSTR bstrSaveFile, int16 bOverwrite, int16 bSaveAsSystem, ref VARIANT bstrLanguage, ref VARIANT bstrAuthor, ref VARIANT bstrProduct, ref VARIANT bstrUniqueID, ref VARIANT bstrVersion, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.Save(ref this, bstrSaveFile, bOverwrite, bSaveAsSystem, ref bstrLanguage, ref bstrAuthor, ref bstrProduct, ref bstrUniqueID, ref bstrVersion, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT Backup(BSTR bstrBackupDir, BSTR bstrComment, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.Backup(ref this, bstrBackupDir, bstrComment, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT CopyTo(ref VARIANT pvarNewDisplayName, ref VARIANT pvarGPMProgress, ref VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.CopyTo(ref this, ref pvarNewDisplayName, ref pvarGPMProgress, ref pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, ref VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, ref pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
-			}
-			public HRESULT GetSecurityInfo(out IGPMSecurityInfo* ppSecurityInfo) mut
-			{
-				return VT.GetSecurityInfo(ref this, out ppSecurityInfo);
-			}
-			public HRESULT SetSecurityInfo(ref IGPMSecurityInfo pSecurityInfo) mut
-			{
-				return VT.SetSecurityInfo(ref this, ref pSecurityInfo);
-			}
+			public HRESULT get_DisplayName(out BSTR pVal) mut => VT.get_DisplayName(ref this, out pVal);
+			public HRESULT put_DisplayName(BSTR newVal) mut => VT.put_DisplayName(ref this, newVal);
+			public HRESULT get_Description(out BSTR pVal) mut => VT.get_Description(ref this, out pVal);
+			public HRESULT put_Description(BSTR newVal) mut => VT.put_Description(ref this, newVal);
+			public HRESULT get_Author(out BSTR pVal) mut => VT.get_Author(ref this, out pVal);
+			public HRESULT get_Product(out BSTR pVal) mut => VT.get_Product(ref this, out pVal);
+			public HRESULT get_CreationTime(out double pVal) mut => VT.get_CreationTime(ref this, out pVal);
+			public HRESULT get_ID(out BSTR pVal) mut => VT.get_ID(ref this, out pVal);
+			public HRESULT get_ModifiedTime(out double pVal) mut => VT.get_ModifiedTime(ref this, out pVal);
+			public HRESULT get_Type(out GPMStarterGPOType pVal) mut => VT.get_Type(ref this, out pVal);
+			public HRESULT get_ComputerVersion(out uint16 pVal) mut => VT.get_ComputerVersion(ref this, out pVal);
+			public HRESULT get_UserVersion(out uint16 pVal) mut => VT.get_UserVersion(ref this, out pVal);
+			public HRESULT get_StarterGPOVersion(out BSTR pVal) mut => VT.get_StarterGPOVersion(ref this, out pVal);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Save(BSTR bstrSaveFile, int16 bOverwrite, int16 bSaveAsSystem, ref VARIANT bstrLanguage, ref VARIANT bstrAuthor, ref VARIANT bstrProduct, ref VARIANT bstrUniqueID, ref VARIANT bstrVersion, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.Save(ref this, bstrSaveFile, bOverwrite, bSaveAsSystem, ref bstrLanguage, ref bstrAuthor, ref bstrProduct, ref bstrUniqueID, ref bstrVersion, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT Backup(BSTR bstrBackupDir, BSTR bstrComment, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.Backup(ref this, bstrBackupDir, bstrComment, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT CopyTo(ref VARIANT pvarNewDisplayName, ref VARIANT pvarGPMProgress, ref VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.CopyTo(ref this, ref pvarNewDisplayName, ref pvarGPMProgress, ref pvarGPMCancel, out ppIGPMResult);
+			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, ref VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, ref pvarGPMCancel, out ppIGPMResult);
+			public HRESULT GenerateReportToFile(GPMReportType gpmReportType, BSTR bstrTargetFilePath, out IGPMResult* ppIGPMResult) mut => VT.GenerateReportToFile(ref this, gpmReportType, bstrTargetFilePath, out ppIGPMResult);
+			public HRESULT GetSecurityInfo(out IGPMSecurityInfo* ppSecurityInfo) mut => VT.GetSecurityInfo(ref this, out ppSecurityInfo);
+			public HRESULT SetSecurityInfo(ref IGPMSecurityInfo pSecurityInfo) mut => VT.SetSecurityInfo(ref this, ref pSecurityInfo);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2352,18 +1487,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut
-			{
-				return VT.get_Item(ref this, lIndex, out pVal);
-			}
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMTemplates) mut
-			{
-				return VT.get__NewEnum(ref this, out ppIGPMTemplates);
-			}
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(int32 lIndex, out VARIANT pVal) mut => VT.get_Item(ref this, lIndex, out pVal);
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppIGPMTemplates) mut => VT.get__NewEnum(ref this, out ppIGPMTemplates);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2379,30 +1506,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateStarterGPO(out IGPMStarterGPO* ppnewTemplate) mut
-			{
-				return VT.CreateStarterGPO(ref this, out ppnewTemplate);
-			}
-			public HRESULT CreateGPOFromStarterGPO(ref IGPMStarterGPO pGPOTemplate, out IGPMGPO* ppnewGPO) mut
-			{
-				return VT.CreateGPOFromStarterGPO(ref this, ref pGPOTemplate, out ppnewGPO);
-			}
-			public HRESULT GetStarterGPO(BSTR bstrGuid, out IGPMStarterGPO* ppTemplate) mut
-			{
-				return VT.GetStarterGPO(ref this, bstrGuid, out ppTemplate);
-			}
-			public HRESULT SearchStarterGPOs(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMStarterGPOCollection* ppIGPMTemplateCollection) mut
-			{
-				return VT.SearchStarterGPOs(ref this, ref pIGPMSearchCriteria, out ppIGPMTemplateCollection);
-			}
-			public HRESULT LoadStarterGPO(BSTR bstrLoadFile, int16 bOverwrite, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.LoadStarterGPO(ref this, bstrLoadFile, bOverwrite, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT RestoreStarterGPO(ref IGPMStarterGPOBackup pIGPMTmplBackup, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.RestoreStarterGPO(ref this, ref pIGPMTmplBackup, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
+			public HRESULT CreateStarterGPO(out IGPMStarterGPO* ppnewTemplate) mut => VT.CreateStarterGPO(ref this, out ppnewTemplate);
+			public HRESULT CreateGPOFromStarterGPO(ref IGPMStarterGPO pGPOTemplate, out IGPMGPO* ppnewGPO) mut => VT.CreateGPOFromStarterGPO(ref this, ref pGPOTemplate, out ppnewGPO);
+			public HRESULT GetStarterGPO(BSTR bstrGuid, out IGPMStarterGPO* ppTemplate) mut => VT.GetStarterGPO(ref this, bstrGuid, out ppTemplate);
+			public HRESULT SearchStarterGPOs(ref IGPMSearchCriteria pIGPMSearchCriteria, out IGPMStarterGPOCollection* ppIGPMTemplateCollection) mut => VT.SearchStarterGPOs(ref this, ref pIGPMSearchCriteria, out ppIGPMTemplateCollection);
+			public HRESULT LoadStarterGPO(BSTR bstrLoadFile, int16 bOverwrite, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.LoadStarterGPO(ref this, bstrLoadFile, bOverwrite, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT RestoreStarterGPO(ref IGPMStarterGPOBackup pIGPMTmplBackup, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.RestoreStarterGPO(ref this, ref pIGPMTmplBackup, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+
 			[CRepr]
 			public struct VTable : IGPMDomain.VTable
 			{
@@ -2421,66 +1531,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BackupTypeGPO(out GPMBackupType pVal) mut
-			{
-				return VT.get_BackupTypeGPO(ref this, out pVal);
-			}
-			public HRESULT get_BackupTypeStarterGPO(out GPMBackupType pVal) mut
-			{
-				return VT.get_BackupTypeStarterGPO(ref this, out pVal);
-			}
-			public HRESULT get_StarterGPOTypeSystem(out GPMStarterGPOType pVal) mut
-			{
-				return VT.get_StarterGPOTypeSystem(ref this, out pVal);
-			}
-			public HRESULT get_StarterGPOTypeCustom(out GPMStarterGPOType pVal) mut
-			{
-				return VT.get_StarterGPOTypeCustom(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyStarterGPOPermissions(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyStarterGPOPermissions(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyStarterGPOEffectivePermissions(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyStarterGPOEffectivePermissions(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyStarterGPODisplayName(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyStarterGPODisplayName(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyStarterGPOID(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyStarterGPOID(ref this, out pVal);
-			}
-			public HRESULT get_SearchPropertyStarterGPODomain(out GPMSearchProperty pVal) mut
-			{
-				return VT.get_SearchPropertyStarterGPODomain(ref this, out pVal);
-			}
-			public HRESULT get_PermStarterGPORead(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermStarterGPORead(ref this, out pVal);
-			}
-			public HRESULT get_PermStarterGPOEdit(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermStarterGPOEdit(ref this, out pVal);
-			}
-			public HRESULT get_PermStarterGPOFullControl(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermStarterGPOFullControl(ref this, out pVal);
-			}
-			public HRESULT get_PermStarterGPOCustom(out GPMPermissionType pVal) mut
-			{
-				return VT.get_PermStarterGPOCustom(ref this, out pVal);
-			}
-			public HRESULT get_ReportLegacy(out GPMReportingOptions pVal) mut
-			{
-				return VT.get_ReportLegacy(ref this, out pVal);
-			}
-			public HRESULT get_ReportComments(out GPMReportingOptions pVal) mut
-			{
-				return VT.get_ReportComments(ref this, out pVal);
-			}
+			public HRESULT get_BackupTypeGPO(out GPMBackupType pVal) mut => VT.get_BackupTypeGPO(ref this, out pVal);
+			public HRESULT get_BackupTypeStarterGPO(out GPMBackupType pVal) mut => VT.get_BackupTypeStarterGPO(ref this, out pVal);
+			public HRESULT get_StarterGPOTypeSystem(out GPMStarterGPOType pVal) mut => VT.get_StarterGPOTypeSystem(ref this, out pVal);
+			public HRESULT get_StarterGPOTypeCustom(out GPMStarterGPOType pVal) mut => VT.get_StarterGPOTypeCustom(ref this, out pVal);
+			public HRESULT get_SearchPropertyStarterGPOPermissions(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyStarterGPOPermissions(ref this, out pVal);
+			public HRESULT get_SearchPropertyStarterGPOEffectivePermissions(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyStarterGPOEffectivePermissions(ref this, out pVal);
+			public HRESULT get_SearchPropertyStarterGPODisplayName(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyStarterGPODisplayName(ref this, out pVal);
+			public HRESULT get_SearchPropertyStarterGPOID(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyStarterGPOID(ref this, out pVal);
+			public HRESULT get_SearchPropertyStarterGPODomain(out GPMSearchProperty pVal) mut => VT.get_SearchPropertyStarterGPODomain(ref this, out pVal);
+			public HRESULT get_PermStarterGPORead(out GPMPermissionType pVal) mut => VT.get_PermStarterGPORead(ref this, out pVal);
+			public HRESULT get_PermStarterGPOEdit(out GPMPermissionType pVal) mut => VT.get_PermStarterGPOEdit(ref this, out pVal);
+			public HRESULT get_PermStarterGPOFullControl(out GPMPermissionType pVal) mut => VT.get_PermStarterGPOFullControl(ref this, out pVal);
+			public HRESULT get_PermStarterGPOCustom(out GPMPermissionType pVal) mut => VT.get_PermStarterGPOCustom(ref this, out pVal);
+			public HRESULT get_ReportLegacy(out GPMReportingOptions pVal) mut => VT.get_ReportLegacy(ref this, out pVal);
+			public HRESULT get_ReportComments(out GPMReportingOptions pVal) mut => VT.get_ReportComments(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IGPMConstants.VTable
 			{
@@ -2508,14 +1574,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Description(out BSTR pVal) mut
-			{
-				return VT.get_Description(ref this, out pVal);
-			}
-			public HRESULT put_Description(BSTR newVal) mut
-			{
-				return VT.put_Description(ref this, newVal);
-			}
+			public HRESULT get_Description(out BSTR pVal) mut => VT.get_Description(ref this, out pVal);
+			public HRESULT put_Description(BSTR newVal) mut => VT.put_Description(ref this, newVal);
+
 			[CRepr]
 			public struct VTable : IGPMGPO.VTable
 			{
@@ -2530,22 +1591,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut
-			{
-				return VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
-			}
-			public HRESULT get_InfrastructureDC(out BSTR pVal) mut
-			{
-				return VT.get_InfrastructureDC(ref this, out pVal);
-			}
-			public HRESULT put_InfrastructureDC(BSTR newVal) mut
-			{
-				return VT.put_InfrastructureDC(ref this, newVal);
-			}
-			public HRESULT put_InfrastructureFlags(uint32 dwFlags) mut
-			{
-				return VT.put_InfrastructureFlags(ref this, dwFlags);
-			}
+			public HRESULT GenerateReport(GPMReportType gpmReportType, ref VARIANT pvarGPMProgress, out VARIANT pvarGPMCancel, out IGPMResult* ppIGPMResult) mut => VT.GenerateReport(ref this, gpmReportType, ref pvarGPMProgress, out pvarGPMCancel, out ppIGPMResult);
+			public HRESULT get_InfrastructureDC(out BSTR pVal) mut => VT.get_InfrastructureDC(ref this, out pVal);
+			public HRESULT put_InfrastructureDC(BSTR newVal) mut => VT.put_InfrastructureDC(ref this, newVal);
+			public HRESULT put_InfrastructureFlags(uint32 dwFlags) mut => VT.put_InfrastructureFlags(ref this, dwFlags);
+
 			[CRepr]
 			public struct VTable : IGPMDomain2.VTable
 			{
@@ -2562,18 +1612,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_InfrastructureDC(out BSTR pVal) mut
-			{
-				return VT.get_InfrastructureDC(ref this, out pVal);
-			}
-			public HRESULT put_InfrastructureDC(BSTR newVal) mut
-			{
-				return VT.put_InfrastructureDC(ref this, newVal);
-			}
-			public HRESULT put_InfrastructureFlags(uint32 dwFlags) mut
-			{
-				return VT.put_InfrastructureFlags(ref this, dwFlags);
-			}
+			public HRESULT get_InfrastructureDC(out BSTR pVal) mut => VT.get_InfrastructureDC(ref this, out pVal);
+			public HRESULT put_InfrastructureDC(BSTR newVal) mut => VT.put_InfrastructureDC(ref this, newVal);
+			public HRESULT put_InfrastructureFlags(uint32 dwFlags) mut => VT.put_InfrastructureFlags(ref this, dwFlags);
+
 			[CRepr]
 			public struct VTable : IGPMGPO2.VTable
 			{
@@ -2589,42 +1631,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(char16* pszName, int32 cchMaxLength) mut
-			{
-				return VT.GetName(ref this, pszName, cchMaxLength);
-			}
-			public HRESULT GetDisplayName(char16* pszName, int32 cchMaxLength) mut
-			{
-				return VT.GetDisplayName(ref this, pszName, cchMaxLength);
-			}
-			public HRESULT GetRegistryKey(uint32 dwSection, out HKEY hKey) mut
-			{
-				return VT.GetRegistryKey(ref this, dwSection, out hKey);
-			}
-			public HRESULT GetDSPath(uint32 dwSection, char16* pszPath, int32 cchMaxPath) mut
-			{
-				return VT.GetDSPath(ref this, dwSection, pszPath, cchMaxPath);
-			}
-			public HRESULT GetFileSysPath(uint32 dwSection, char16* pszPath, int32 cchMaxPath) mut
-			{
-				return VT.GetFileSysPath(ref this, dwSection, pszPath, cchMaxPath);
-			}
-			public HRESULT GetOptions(out uint32 dwOptions) mut
-			{
-				return VT.GetOptions(ref this, out dwOptions);
-			}
-			public HRESULT ComGetType(out GROUP_POLICY_OBJECT_TYPE gpoType) mut
-			{
-				return VT.ComGetType(ref this, out gpoType);
-			}
-			public HRESULT GetHint(out GROUP_POLICY_HINT_TYPE gpHint) mut
-			{
-				return VT.GetHint(ref this, out gpHint);
-			}
-			public HRESULT PolicyChanged(BOOL bMachine, BOOL bAdd, out Guid pGuidExtension, out Guid pGuidSnapin) mut
-			{
-				return VT.PolicyChanged(ref this, bMachine, bAdd, out pGuidExtension, out pGuidSnapin);
-			}
+			public HRESULT GetName(char16* pszName, int32 cchMaxLength) mut => VT.GetName(ref this, pszName, cchMaxLength);
+			public HRESULT GetDisplayName(char16* pszName, int32 cchMaxLength) mut => VT.GetDisplayName(ref this, pszName, cchMaxLength);
+			public HRESULT GetRegistryKey(uint32 dwSection, out HKEY hKey) mut => VT.GetRegistryKey(ref this, dwSection, out hKey);
+			public HRESULT GetDSPath(uint32 dwSection, char16* pszPath, int32 cchMaxPath) mut => VT.GetDSPath(ref this, dwSection, pszPath, cchMaxPath);
+			public HRESULT GetFileSysPath(uint32 dwSection, char16* pszPath, int32 cchMaxPath) mut => VT.GetFileSysPath(ref this, dwSection, pszPath, cchMaxPath);
+			public HRESULT GetOptions(out uint32 dwOptions) mut => VT.GetOptions(ref this, out dwOptions);
+			public HRESULT ComGetType(out GROUP_POLICY_OBJECT_TYPE gpoType) mut => VT.ComGetType(ref this, out gpoType);
+			public HRESULT GetHint(out GROUP_POLICY_HINT_TYPE gpHint) mut => VT.GetHint(ref this, out gpHint);
+			public HRESULT PolicyChanged(BOOL bMachine, BOOL bAdd, out Guid pGuidExtension, out Guid pGuidSnapin) mut => VT.PolicyChanged(ref this, bMachine, bAdd, out pGuidExtension, out pGuidSnapin);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2646,78 +1662,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT New(PWSTR pszDomainName, PWSTR pszDisplayName, uint32 dwFlags) mut
-			{
-				return VT.New(ref this, pszDomainName, pszDisplayName, dwFlags);
-			}
-			public HRESULT OpenDSGPO(PWSTR pszPath, uint32 dwFlags) mut
-			{
-				return VT.OpenDSGPO(ref this, pszPath, dwFlags);
-			}
-			public HRESULT OpenLocalMachineGPO(uint32 dwFlags) mut
-			{
-				return VT.OpenLocalMachineGPO(ref this, dwFlags);
-			}
-			public HRESULT OpenRemoteMachineGPO(PWSTR pszComputerName, uint32 dwFlags) mut
-			{
-				return VT.OpenRemoteMachineGPO(ref this, pszComputerName, dwFlags);
-			}
-			public HRESULT Save(BOOL bMachine, BOOL bAdd, out Guid pGuidExtension, out Guid pGuid) mut
-			{
-				return VT.Save(ref this, bMachine, bAdd, out pGuidExtension, out pGuid);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT GetName(char16* pszName, int32 cchMaxLength) mut
-			{
-				return VT.GetName(ref this, pszName, cchMaxLength);
-			}
-			public HRESULT GetDisplayName(char16* pszName, int32 cchMaxLength) mut
-			{
-				return VT.GetDisplayName(ref this, pszName, cchMaxLength);
-			}
-			public HRESULT SetDisplayName(PWSTR pszName) mut
-			{
-				return VT.SetDisplayName(ref this, pszName);
-			}
-			public HRESULT GetPath(char16* pszPath, int32 cchMaxLength) mut
-			{
-				return VT.GetPath(ref this, pszPath, cchMaxLength);
-			}
-			public HRESULT GetDSPath(uint32 dwSection, char16* pszPath, int32 cchMaxPath) mut
-			{
-				return VT.GetDSPath(ref this, dwSection, pszPath, cchMaxPath);
-			}
-			public HRESULT GetFileSysPath(uint32 dwSection, char16* pszPath, int32 cchMaxPath) mut
-			{
-				return VT.GetFileSysPath(ref this, dwSection, pszPath, cchMaxPath);
-			}
-			public HRESULT GetRegistryKey(uint32 dwSection, out HKEY hKey) mut
-			{
-				return VT.GetRegistryKey(ref this, dwSection, out hKey);
-			}
-			public HRESULT GetOptions(out uint32 dwOptions) mut
-			{
-				return VT.GetOptions(ref this, out dwOptions);
-			}
-			public HRESULT SetOptions(uint32 dwOptions, uint32 dwMask) mut
-			{
-				return VT.SetOptions(ref this, dwOptions, dwMask);
-			}
-			public HRESULT ComGetType(out GROUP_POLICY_OBJECT_TYPE gpoType) mut
-			{
-				return VT.ComGetType(ref this, out gpoType);
-			}
-			public HRESULT GetMachineName(char16* pszName, int32 cchMaxLength) mut
-			{
-				return VT.GetMachineName(ref this, pszName, cchMaxLength);
-			}
-			public HRESULT GetPropertySheetPages(out HPROPSHEETPAGE* hPages, out uint32 uPageCount) mut
-			{
-				return VT.GetPropertySheetPages(ref this, out hPages, out uPageCount);
-			}
+			public HRESULT New(PWSTR pszDomainName, PWSTR pszDisplayName, uint32 dwFlags) mut => VT.New(ref this, pszDomainName, pszDisplayName, dwFlags);
+			public HRESULT OpenDSGPO(PWSTR pszPath, uint32 dwFlags) mut => VT.OpenDSGPO(ref this, pszPath, dwFlags);
+			public HRESULT OpenLocalMachineGPO(uint32 dwFlags) mut => VT.OpenLocalMachineGPO(ref this, dwFlags);
+			public HRESULT OpenRemoteMachineGPO(PWSTR pszComputerName, uint32 dwFlags) mut => VT.OpenRemoteMachineGPO(ref this, pszComputerName, dwFlags);
+			public HRESULT Save(BOOL bMachine, BOOL bAdd, out Guid pGuidExtension, out Guid pGuid) mut => VT.Save(ref this, bMachine, bAdd, out pGuidExtension, out pGuid);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT GetName(char16* pszName, int32 cchMaxLength) mut => VT.GetName(ref this, pszName, cchMaxLength);
+			public HRESULT GetDisplayName(char16* pszName, int32 cchMaxLength) mut => VT.GetDisplayName(ref this, pszName, cchMaxLength);
+			public HRESULT SetDisplayName(PWSTR pszName) mut => VT.SetDisplayName(ref this, pszName);
+			public HRESULT GetPath(char16* pszPath, int32 cchMaxLength) mut => VT.GetPath(ref this, pszPath, cchMaxLength);
+			public HRESULT GetDSPath(uint32 dwSection, char16* pszPath, int32 cchMaxPath) mut => VT.GetDSPath(ref this, dwSection, pszPath, cchMaxPath);
+			public HRESULT GetFileSysPath(uint32 dwSection, char16* pszPath, int32 cchMaxPath) mut => VT.GetFileSysPath(ref this, dwSection, pszPath, cchMaxPath);
+			public HRESULT GetRegistryKey(uint32 dwSection, out HKEY hKey) mut => VT.GetRegistryKey(ref this, dwSection, out hKey);
+			public HRESULT GetOptions(out uint32 dwOptions) mut => VT.GetOptions(ref this, out dwOptions);
+			public HRESULT SetOptions(uint32 dwOptions, uint32 dwMask) mut => VT.SetOptions(ref this, dwOptions, dwMask);
+			public HRESULT ComGetType(out GROUP_POLICY_OBJECT_TYPE gpoType) mut => VT.ComGetType(ref this, out gpoType);
+			public HRESULT GetMachineName(char16* pszName, int32 cchMaxLength) mut => VT.GetMachineName(ref this, pszName, cchMaxLength);
+			public HRESULT GetPropertySheetPages(out HPROPSHEETPAGE* hPages, out uint32 uPageCount) mut => VT.GetPropertySheetPages(ref this, out hPages, out uPageCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2748,18 +1711,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNamespace(uint32 dwSection, char16* pszName, int32 cchMaxLength) mut
-			{
-				return VT.GetNamespace(ref this, dwSection, pszName, cchMaxLength);
-			}
-			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
-			{
-				return VT.ComGetFlags(ref this, out pdwFlags);
-			}
-			public HRESULT GetEventLogEntryText(PWSTR pszEventSource, PWSTR pszEventLogName, PWSTR pszEventTime, uint32 dwEventID, out PWSTR ppszText) mut
-			{
-				return VT.GetEventLogEntryText(ref this, pszEventSource, pszEventLogName, pszEventTime, dwEventID, out ppszText);
-			}
+			public HRESULT GetNamespace(uint32 dwSection, char16* pszName, int32 cchMaxLength) mut => VT.GetNamespace(ref this, dwSection, pszName, cchMaxLength);
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut => VT.ComGetFlags(ref this, out pdwFlags);
+			public HRESULT GetEventLogEntryText(PWSTR pszEventSource, PWSTR pszEventLogName, PWSTR pszEventTime, uint32 dwEventID, out PWSTR ppszText) mut => VT.GetEventLogEntryText(ref this, pszEventSource, pszEventLogName, pszEventTime, dwEventID, out ppszText);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

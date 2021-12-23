@@ -6214,50 +6214,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(LPARAM lParam1, LPARAM lParam2) mut
-			{
-				return VT.Create(ref this, lParam1, lParam2);
-			}
-			public HRESULT Info(out AVISTREAMINFOW psi, int32 lSize) mut
-			{
-				return VT.Info(ref this, out psi, lSize);
-			}
-			public int32 FindSample(int32 lPos, int32 lFlags) mut
-			{
-				return VT.FindSample(ref this, lPos, lFlags);
-			}
-			public HRESULT ReadFormat(int32 lPos, void* lpFormat, out int32 lpcbFormat) mut
-			{
-				return VT.ReadFormat(ref this, lPos, lpFormat, out lpcbFormat);
-			}
-			public HRESULT SetFormat(int32 lPos, void* lpFormat, int32 cbFormat) mut
-			{
-				return VT.SetFormat(ref this, lPos, lpFormat, cbFormat);
-			}
-			public HRESULT Read(int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples) mut
-			{
-				return VT.Read(ref this, lStart, lSamples, lpBuffer, cbBuffer, plBytes, plSamples);
-			}
-			public HRESULT Write(int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten) mut
-			{
-				return VT.Write(ref this, lStart, lSamples, lpBuffer, cbBuffer, dwFlags, plSampWritten, plBytesWritten);
-			}
-			public HRESULT Delete(int32 lStart, int32 lSamples) mut
-			{
-				return VT.Delete(ref this, lStart, lSamples);
-			}
-			public HRESULT ReadData(uint32 fcc, void* lp, out int32 lpcb) mut
-			{
-				return VT.ReadData(ref this, fcc, lp, out lpcb);
-			}
-			public HRESULT WriteData(uint32 fcc, void* lp, int32 cb) mut
-			{
-				return VT.WriteData(ref this, fcc, lp, cb);
-			}
-			public HRESULT SetInfo(ref AVISTREAMINFOW lpInfo, int32 cbInfo) mut
-			{
-				return VT.SetInfo(ref this, ref lpInfo, cbInfo);
-			}
+			public HRESULT Create(LPARAM lParam1, LPARAM lParam2) mut => VT.Create(ref this, lParam1, lParam2);
+			public HRESULT Info(out AVISTREAMINFOW psi, int32 lSize) mut => VT.Info(ref this, out psi, lSize);
+			public int32 FindSample(int32 lPos, int32 lFlags) mut => VT.FindSample(ref this, lPos, lFlags);
+			public HRESULT ReadFormat(int32 lPos, void* lpFormat, out int32 lpcbFormat) mut => VT.ReadFormat(ref this, lPos, lpFormat, out lpcbFormat);
+			public HRESULT SetFormat(int32 lPos, void* lpFormat, int32 cbFormat) mut => VT.SetFormat(ref this, lPos, lpFormat, cbFormat);
+			public HRESULT Read(int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples) mut => VT.Read(ref this, lStart, lSamples, lpBuffer, cbBuffer, plBytes, plSamples);
+			public HRESULT Write(int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten) mut => VT.Write(ref this, lStart, lSamples, lpBuffer, cbBuffer, dwFlags, plSampWritten, plBytesWritten);
+			public HRESULT Delete(int32 lStart, int32 lSamples) mut => VT.Delete(ref this, lStart, lSamples);
+			public HRESULT ReadData(uint32 fcc, void* lp, out int32 lpcb) mut => VT.ReadData(ref this, fcc, lp, out lpcb);
+			public HRESULT WriteData(uint32 fcc, void* lp, int32 cb) mut => VT.WriteData(ref this, fcc, lp, cb);
+			public HRESULT SetInfo(ref AVISTREAMINFOW lpInfo, int32 cbInfo) mut => VT.SetInfo(ref this, ref lpInfo, cbInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6281,14 +6249,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin(int32 lStart, int32 lEnd, int32 lRate) mut
-			{
-				return VT.Begin(ref this, lStart, lEnd, lRate);
-			}
-			public HRESULT End() mut
-			{
-				return VT.End(ref this);
-			}
+			public HRESULT Begin(int32 lStart, int32 lEnd, int32 lRate) mut => VT.Begin(ref this, lStart, lEnd, lRate);
+			public HRESULT End() mut => VT.End(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6303,26 +6266,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Cut(out int32 plStart, out int32 plLength, out IAVIStream* ppResult) mut
-			{
-				return VT.Cut(ref this, out plStart, out plLength, out ppResult);
-			}
-			public HRESULT Copy(out int32 plStart, out int32 plLength, out IAVIStream* ppResult) mut
-			{
-				return VT.Copy(ref this, out plStart, out plLength, out ppResult);
-			}
-			public HRESULT Paste(out int32 plPos, out int32 plLength, out IAVIStream pstream, int32 lStart, int32 lEnd) mut
-			{
-				return VT.Paste(ref this, out plPos, out plLength, out pstream, lStart, lEnd);
-			}
-			public HRESULT Clone(out IAVIStream* ppResult) mut
-			{
-				return VT.Clone(ref this, out ppResult);
-			}
-			public HRESULT SetInfo(ref AVISTREAMINFOW lpInfo, int32 cbInfo) mut
-			{
-				return VT.SetInfo(ref this, ref lpInfo, cbInfo);
-			}
+			public HRESULT Cut(out int32 plStart, out int32 plLength, out IAVIStream* ppResult) mut => VT.Cut(ref this, out plStart, out plLength, out ppResult);
+			public HRESULT Copy(out int32 plStart, out int32 plLength, out IAVIStream* ppResult) mut => VT.Copy(ref this, out plStart, out plLength, out ppResult);
+			public HRESULT Paste(out int32 plPos, out int32 plLength, out IAVIStream pstream, int32 lStart, int32 lEnd) mut => VT.Paste(ref this, out plPos, out plLength, out pstream, lStart, lEnd);
+			public HRESULT Clone(out IAVIStream* ppResult) mut => VT.Clone(ref this, out ppResult);
+			public HRESULT SetInfo(ref AVISTREAMINFOW lpInfo, int32 cbInfo) mut => VT.SetInfo(ref this, ref lpInfo, cbInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6340,10 +6289,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reserved1() mut
-			{
-				return VT.Reserved1(ref this);
-			}
+			public HRESULT Reserved1() mut => VT.Reserved1(ref this);
+
 			[CRepr]
 			public struct VTable : IPersistFile.VTable
 			{
@@ -6357,34 +6304,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Info(out AVIFILEINFOW pfi, int32 lSize) mut
-			{
-				return VT.Info(ref this, out pfi, lSize);
-			}
-			public HRESULT GetStream(out IAVIStream* ppStream, uint32 fccType, int32 lParam) mut
-			{
-				return VT.GetStream(ref this, out ppStream, fccType, lParam);
-			}
-			public HRESULT CreateStream(out IAVIStream* ppStream, ref AVISTREAMINFOW psi) mut
-			{
-				return VT.CreateStream(ref this, out ppStream, ref psi);
-			}
-			public HRESULT WriteData(uint32 ckid, void* lpData, int32 cbData) mut
-			{
-				return VT.WriteData(ref this, ckid, lpData, cbData);
-			}
-			public HRESULT ReadData(uint32 ckid, void* lpData, out int32 lpcbData) mut
-			{
-				return VT.ReadData(ref this, ckid, lpData, out lpcbData);
-			}
-			public HRESULT EndRecord() mut
-			{
-				return VT.EndRecord(ref this);
-			}
-			public HRESULT DeleteStream(uint32 fccType, int32 lParam) mut
-			{
-				return VT.DeleteStream(ref this, fccType, lParam);
-			}
+			public HRESULT Info(out AVIFILEINFOW pfi, int32 lSize) mut => VT.Info(ref this, out pfi, lSize);
+			public HRESULT GetStream(out IAVIStream* ppStream, uint32 fccType, int32 lParam) mut => VT.GetStream(ref this, out ppStream, fccType, lParam);
+			public HRESULT CreateStream(out IAVIStream* ppStream, ref AVISTREAMINFOW psi) mut => VT.CreateStream(ref this, out ppStream, ref psi);
+			public HRESULT WriteData(uint32 ckid, void* lpData, int32 cbData) mut => VT.WriteData(ref this, ckid, lpData, cbData);
+			public HRESULT ReadData(uint32 ckid, void* lpData, out int32 lpcbData) mut => VT.ReadData(ref this, ckid, lpData, out lpcbData);
+			public HRESULT EndRecord() mut => VT.EndRecord(ref this);
+			public HRESULT DeleteStream(uint32 fccType, int32 lParam) mut => VT.DeleteStream(ref this, fccType, lParam);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6404,22 +6331,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void* GetFrame(int32 lPos) mut
-			{
-				return VT.GetFrame(ref this, lPos);
-			}
-			public HRESULT Begin(int32 lStart, int32 lEnd, int32 lRate) mut
-			{
-				return VT.Begin(ref this, lStart, lEnd, lRate);
-			}
-			public HRESULT End() mut
-			{
-				return VT.End(ref this);
-			}
-			public HRESULT SetFormat(ref BITMAPINFOHEADER lpbi, void* lpBits, int32 x, int32 y, int32 dx, int32 dy) mut
-			{
-				return VT.SetFormat(ref this, ref lpbi, lpBits, x, y, dx, dy);
-			}
+			public void* GetFrame(int32 lPos) mut => VT.GetFrame(ref this, lPos);
+			public HRESULT Begin(int32 lStart, int32 lEnd, int32 lRate) mut => VT.Begin(ref this, lStart, lEnd, lRate);
+			public HRESULT End() mut => VT.End(ref this);
+			public HRESULT SetFormat(ref BITMAPINFOHEADER lpbi, void* lpBits, int32 x, int32 y, int32 dx, int32 dy) mut => VT.SetFormat(ref this, ref lpbi, lpBits, x, y, dx, dy);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

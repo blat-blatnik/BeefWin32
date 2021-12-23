@@ -281,14 +281,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetACTs(IEnhancedStorageACT*** pppIEnhancedStorageACTs, out uint32 pcEnhancedStorageACTs) mut
-			{
-				return VT.GetACTs(ref this, pppIEnhancedStorageACTs, out pcEnhancedStorageACTs);
-			}
-			public HRESULT GetMatchingACT(PWSTR szVolume, out IEnhancedStorageACT* ppIEnhancedStorageACT) mut
-			{
-				return VT.GetMatchingACT(ref this, szVolume, out ppIEnhancedStorageACT);
-			}
+			public HRESULT GetACTs(IEnhancedStorageACT*** pppIEnhancedStorageACTs, out uint32 pcEnhancedStorageACTs) mut => VT.GetACTs(ref this, pppIEnhancedStorageACTs, out pcEnhancedStorageACTs);
+			public HRESULT GetMatchingACT(PWSTR szVolume, out IEnhancedStorageACT* ppIEnhancedStorageACT) mut => VT.GetMatchingACT(ref this, szVolume, out ppIEnhancedStorageACT);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -303,30 +298,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Authorize(uint32 hwndParent, uint32 dwFlags) mut
-			{
-				return VT.Authorize(ref this, hwndParent, dwFlags);
-			}
-			public HRESULT Unauthorize() mut
-			{
-				return VT.Unauthorize(ref this);
-			}
-			public HRESULT GetAuthorizationState(out ACT_AUTHORIZATION_STATE pState) mut
-			{
-				return VT.GetAuthorizationState(ref this, out pState);
-			}
-			public HRESULT GetMatchingVolume(out PWSTR ppwszVolume) mut
-			{
-				return VT.GetMatchingVolume(ref this, out ppwszVolume);
-			}
-			public HRESULT GetUniqueIdentity(out PWSTR ppwszIdentity) mut
-			{
-				return VT.GetUniqueIdentity(ref this, out ppwszIdentity);
-			}
-			public HRESULT GetSilos(IEnhancedStorageSilo*** pppIEnhancedStorageSilos, out uint32 pcEnhancedStorageSilos) mut
-			{
-				return VT.GetSilos(ref this, pppIEnhancedStorageSilos, out pcEnhancedStorageSilos);
-			}
+			public HRESULT Authorize(uint32 hwndParent, uint32 dwFlags) mut => VT.Authorize(ref this, hwndParent, dwFlags);
+			public HRESULT Unauthorize() mut => VT.Unauthorize(ref this);
+			public HRESULT GetAuthorizationState(out ACT_AUTHORIZATION_STATE pState) mut => VT.GetAuthorizationState(ref this, out pState);
+			public HRESULT GetMatchingVolume(out PWSTR ppwszVolume) mut => VT.GetMatchingVolume(ref this, out ppwszVolume);
+			public HRESULT GetUniqueIdentity(out PWSTR ppwszIdentity) mut => VT.GetUniqueIdentity(ref this, out ppwszIdentity);
+			public HRESULT GetSilos(IEnhancedStorageSilo*** pppIEnhancedStorageSilos, out uint32 pcEnhancedStorageSilos) mut => VT.GetSilos(ref this, pppIEnhancedStorageSilos, out pcEnhancedStorageSilos);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -345,14 +323,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceName(out PWSTR ppwszDeviceName) mut
-			{
-				return VT.GetDeviceName(ref this, out ppwszDeviceName);
-			}
-			public HRESULT IsDeviceRemovable(out BOOL pIsDeviceRemovable) mut
-			{
-				return VT.IsDeviceRemovable(ref this, out pIsDeviceRemovable);
-			}
+			public HRESULT GetDeviceName(out PWSTR ppwszDeviceName) mut => VT.GetDeviceName(ref this, out ppwszDeviceName);
+			public HRESULT IsDeviceRemovable(out BOOL pIsDeviceRemovable) mut => VT.IsDeviceRemovable(ref this, out pIsDeviceRemovable);
+
 			[CRepr]
 			public struct VTable : IEnhancedStorageACT.VTable
 			{
@@ -367,18 +340,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UnauthorizeEx(uint32 dwFlags) mut
-			{
-				return VT.UnauthorizeEx(ref this, dwFlags);
-			}
-			public HRESULT IsQueueFrozen(out BOOL pIsQueueFrozen) mut
-			{
-				return VT.IsQueueFrozen(ref this, out pIsQueueFrozen);
-			}
-			public HRESULT GetShellExtSupport(out BOOL pShellExtSupport) mut
-			{
-				return VT.GetShellExtSupport(ref this, out pShellExtSupport);
-			}
+			public HRESULT UnauthorizeEx(uint32 dwFlags) mut => VT.UnauthorizeEx(ref this, dwFlags);
+			public HRESULT IsQueueFrozen(out BOOL pIsQueueFrozen) mut => VT.IsQueueFrozen(ref this, out pIsQueueFrozen);
+			public HRESULT GetShellExtSupport(out BOOL pShellExtSupport) mut => VT.GetShellExtSupport(ref this, out pShellExtSupport);
+
 			[CRepr]
 			public struct VTable : IEnhancedStorageACT2.VTable
 			{
@@ -394,26 +359,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInfo(out SILO_INFO pSiloInfo) mut
-			{
-				return VT.GetInfo(ref this, out pSiloInfo);
-			}
-			public HRESULT GetActions(IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, out uint32 pcEnhancedStorageSiloActions) mut
-			{
-				return VT.GetActions(ref this, pppIEnhancedStorageSiloActions, out pcEnhancedStorageSiloActions);
-			}
-			public HRESULT SendCommand(uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, out uint32 pcbResponseBuffer) mut
-			{
-				return VT.SendCommand(ref this, Command, pbCommandBuffer, cbCommandBuffer, pbResponseBuffer, out pcbResponseBuffer);
-			}
-			public HRESULT GetPortableDevice(out IPortableDevice* ppIPortableDevice) mut
-			{
-				return VT.GetPortableDevice(ref this, out ppIPortableDevice);
-			}
-			public HRESULT GetDevicePath(out PWSTR ppwszSiloDevicePath) mut
-			{
-				return VT.GetDevicePath(ref this, out ppwszSiloDevicePath);
-			}
+			public HRESULT GetInfo(out SILO_INFO pSiloInfo) mut => VT.GetInfo(ref this, out pSiloInfo);
+			public HRESULT GetActions(IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, out uint32 pcEnhancedStorageSiloActions) mut => VT.GetActions(ref this, pppIEnhancedStorageSiloActions, out pcEnhancedStorageSiloActions);
+			public HRESULT SendCommand(uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, out uint32 pcbResponseBuffer) mut => VT.SendCommand(ref this, Command, pbCommandBuffer, cbCommandBuffer, pbResponseBuffer, out pcbResponseBuffer);
+			public HRESULT GetPortableDevice(out IPortableDevice* ppIPortableDevice) mut => VT.GetPortableDevice(ref this, out ppIPortableDevice);
+			public HRESULT GetDevicePath(out PWSTR ppwszSiloDevicePath) mut => VT.GetDevicePath(ref this, out ppwszSiloDevicePath);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -431,18 +382,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out PWSTR ppwszActionName) mut
-			{
-				return VT.GetName(ref this, out ppwszActionName);
-			}
-			public HRESULT GetDescription(out PWSTR ppwszActionDescription) mut
-			{
-				return VT.GetDescription(ref this, out ppwszActionDescription);
-			}
-			public HRESULT Invoke() mut
-			{
-				return VT.Invoke(ref this);
-			}
+			public HRESULT GetName(out PWSTR ppwszActionName) mut => VT.GetName(ref this, out ppwszActionName);
+			public HRESULT GetDescription(out PWSTR ppwszActionDescription) mut => VT.GetDescription(ref this, out ppwszActionDescription);
+			public HRESULT Invoke() mut => VT.Invoke(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

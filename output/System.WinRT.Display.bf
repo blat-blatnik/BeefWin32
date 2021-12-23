@@ -14,14 +14,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSharedHandle(ref IInspectable pObject, in SECURITY_ATTRIBUTES pSecurityAttributes, uint32 Access, HSTRING Name, out HANDLE pHandle) mut
-			{
-				return VT.CreateSharedHandle(ref this, ref pObject, pSecurityAttributes, Access, Name, out pHandle);
-			}
-			public HRESULT OpenSharedHandle(HANDLE NTHandle, Guid riid, void** ppvObj) mut
-			{
-				return VT.OpenSharedHandle(ref this, NTHandle, riid, ppvObj);
-			}
+			public HRESULT CreateSharedHandle(ref IInspectable pObject, in SECURITY_ATTRIBUTES pSecurityAttributes, uint32 Access, HSTRING Name, out HANDLE pHandle) mut => VT.CreateSharedHandle(ref this, ref pObject, pSecurityAttributes, Access, Name, out pHandle);
+			public HRESULT OpenSharedHandle(HANDLE NTHandle, Guid riid, void** ppvObj) mut => VT.OpenSharedHandle(ref this, NTHandle, riid, ppvObj);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -36,14 +31,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSourcePresentationHandle(out HANDLE pValue) mut
-			{
-				return VT.CreateSourcePresentationHandle(ref this, out pValue);
-			}
-			public HRESULT GetSourceId(out uint32 pSourceId) mut
-			{
-				return VT.GetSourceId(ref this, out pSourceId);
-			}
+			public HRESULT CreateSourcePresentationHandle(out HANDLE pValue) mut => VT.CreateSourcePresentationHandle(ref this, out pValue);
+			public HRESULT GetSourceId(out uint32 pSourceId) mut => VT.GetSourceId(ref this, out pSourceId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

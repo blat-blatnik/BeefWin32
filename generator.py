@@ -536,13 +536,7 @@ for filename in filenames:
                             output.write(f'{param_type} {param_name}')
                             if i != len(parameters) - 1:
                                 output.write(', ')
-                        output.write(f') mut\n')
-                        output.write(f'{indent}{{\n')
-                        indent += '\t'
-                        if return_type == 'void':
-                            output.write(f'{indent}VT.{mangled_name}({ref}this')
-                        else:
-                            output.write(f'{indent}return VT.{mangled_name}({ref}this')
+                        output.write(f') mut => VT.{mangled_name}({ref}this')
                         for param in parameters:
                             param_name = replace_name(param['Name'])
                             param_type = get_param_type(param)
@@ -552,10 +546,9 @@ for filename in filenames:
                                 output.write(f', out {param_name}')
                             else:
                                 output.write(f', {param_name}')
-                        output.write(f');\n')
-                        indent = indent[:-1]
-                        output.write(f'{indent}}}\n')
+                        output.write(');\n')
 
+                    output.write(f'\n')
                     output.write(f'{indent}[CRepr]\n')
                     if base != None:
                         output.write(f'{indent}public struct VTable : {base_name}.VTable\n')

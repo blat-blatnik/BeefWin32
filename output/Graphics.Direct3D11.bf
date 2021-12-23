@@ -4567,22 +4567,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDevice(out ID3D11Device* ppDevice) mut
-			{
-				VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut
-			{
-				return VT.GetPrivateData(ref this, guid, out pDataSize, pData);
-			}
-			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut
-			{
-				return VT.SetPrivateData(ref this, guid, DataSize, pData);
-			}
-			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut
-			{
-				return VT.SetPrivateDataInterface(ref this, guid, pData);
-			}
+			public void GetDevice(out ID3D11Device* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut => VT.GetPrivateData(ref this, guid, out pDataSize, pData);
+			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut => VT.SetPrivateData(ref this, guid, DataSize, pData);
+			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut => VT.SetPrivateDataInterface(ref this, guid, pData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4599,10 +4588,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_DEPTH_STENCIL_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_DEPTH_STENCIL_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4616,10 +4603,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_BLEND_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_BLEND_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4633,10 +4618,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_RASTERIZER_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_RASTERIZER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4650,18 +4633,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void ComGetType(out D3D11_RESOURCE_DIMENSION pResourceDimension) mut
-			{
-				VT.ComGetType(ref this, out pResourceDimension);
-			}
-			public void SetEvictionPriority(uint32 EvictionPriority) mut
-			{
-				VT.SetEvictionPriority(ref this, EvictionPriority);
-			}
-			public uint32 GetEvictionPriority() mut
-			{
-				return VT.GetEvictionPriority(ref this);
-			}
+			public void ComGetType(out D3D11_RESOURCE_DIMENSION pResourceDimension) mut => VT.ComGetType(ref this, out pResourceDimension);
+			public void SetEvictionPriority(uint32 EvictionPriority) mut => VT.SetEvictionPriority(ref this, EvictionPriority);
+			public uint32 GetEvictionPriority() mut => VT.GetEvictionPriority(ref this);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4677,10 +4652,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_BUFFER_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_BUFFER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11Resource.VTable
 			{
@@ -4694,10 +4667,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_TEXTURE1D_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_TEXTURE1D_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11Resource.VTable
 			{
@@ -4711,10 +4682,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_TEXTURE2D_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_TEXTURE2D_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11Resource.VTable
 			{
@@ -4728,10 +4697,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_TEXTURE3D_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_TEXTURE3D_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11Resource.VTable
 			{
@@ -4745,10 +4712,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetResource(out ID3D11Resource* ppResource) mut
-			{
-				VT.GetResource(ref this, out ppResource);
-			}
+			public void GetResource(out ID3D11Resource* ppResource) mut => VT.GetResource(ref this, out ppResource);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4762,10 +4727,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_SHADER_RESOURCE_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_SHADER_RESOURCE_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
@@ -4779,10 +4742,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_RENDER_TARGET_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_RENDER_TARGET_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
@@ -4796,10 +4757,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_DEPTH_STENCIL_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_DEPTH_STENCIL_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
@@ -4813,10 +4772,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_UNORDERED_ACCESS_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_UNORDERED_ACCESS_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
@@ -4830,6 +4787,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4842,6 +4800,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4854,6 +4813,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4866,6 +4826,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4878,6 +4839,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4890,6 +4852,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4902,6 +4865,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4914,10 +4878,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_SAMPLER_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_SAMPLER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4931,10 +4893,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetDataSize() mut
-			{
-				return VT.GetDataSize(ref this);
-			}
+			public uint32 GetDataSize() mut => VT.GetDataSize(ref this);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -4948,10 +4908,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_QUERY_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_QUERY_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11Asynchronous.VTable
 			{
@@ -4965,6 +4923,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11Query.VTable
 			{
@@ -4977,10 +4936,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_COUNTER_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_COUNTER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11Asynchronous.VTable
 			{
@@ -4994,22 +4951,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetClassLinkage(out ID3D11ClassLinkage* ppLinkage) mut
-			{
-				VT.GetClassLinkage(ref this, out ppLinkage);
-			}
-			public void GetDesc(out D3D11_CLASS_INSTANCE_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
-			public void GetInstanceName(uint8* pInstanceName, out uint pBufferLength) mut
-			{
-				VT.GetInstanceName(ref this, pInstanceName, out pBufferLength);
-			}
-			public void GetTypeName(uint8* pTypeName, out uint pBufferLength) mut
-			{
-				VT.GetTypeName(ref this, pTypeName, out pBufferLength);
-			}
+			public void GetClassLinkage(out ID3D11ClassLinkage* ppLinkage) mut => VT.GetClassLinkage(ref this, out ppLinkage);
+			public void GetDesc(out D3D11_CLASS_INSTANCE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public void GetInstanceName(uint8* pInstanceName, out uint pBufferLength) mut => VT.GetInstanceName(ref this, pInstanceName, out pBufferLength);
+			public void GetTypeName(uint8* pTypeName, out uint pBufferLength) mut => VT.GetTypeName(ref this, pTypeName, out pBufferLength);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5026,14 +4972,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClassInstance(PSTR pClassInstanceName, uint32 InstanceIndex, out ID3D11ClassInstance* ppInstance) mut
-			{
-				return VT.GetClassInstance(ref this, pClassInstanceName, InstanceIndex, out ppInstance);
-			}
-			public HRESULT CreateClassInstance(PSTR pClassTypeName, uint32 ConstantBufferOffset, uint32 ConstantVectorOffset, uint32 TextureOffset, uint32 SamplerOffset, out ID3D11ClassInstance* ppInstance) mut
-			{
-				return VT.CreateClassInstance(ref this, pClassTypeName, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, out ppInstance);
-			}
+			public HRESULT GetClassInstance(PSTR pClassInstanceName, uint32 InstanceIndex, out ID3D11ClassInstance* ppInstance) mut => VT.GetClassInstance(ref this, pClassInstanceName, InstanceIndex, out ppInstance);
+			public HRESULT CreateClassInstance(PSTR pClassTypeName, uint32 ConstantBufferOffset, uint32 ConstantVectorOffset, uint32 TextureOffset, uint32 SamplerOffset, out ID3D11ClassInstance* ppInstance) mut => VT.CreateClassInstance(ref this, pClassTypeName, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, out ppInstance);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5048,10 +4989,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetContextFlags() mut
-			{
-				return VT.GetContextFlags(ref this);
-			}
+			public uint32 GetContextFlags() mut => VT.GetContextFlags(ref this);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5065,438 +5004,115 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void VSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.VSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void PSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.PSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void PSSetShader(ID3D11PixelShader* pPixelShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut
-			{
-				VT.PSSetShader(ref this, pPixelShader, ppClassInstances, NumClassInstances);
-			}
-			public void PSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.PSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void VSSetShader(ID3D11VertexShader* pVertexShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut
-			{
-				VT.VSSetShader(ref this, pVertexShader, ppClassInstances, NumClassInstances);
-			}
-			public void DrawIndexed(uint32 IndexCount, uint32 StartIndexLocation, int32 BaseVertexLocation) mut
-			{
-				VT.DrawIndexed(ref this, IndexCount, StartIndexLocation, BaseVertexLocation);
-			}
-			public void Draw(uint32 VertexCount, uint32 StartVertexLocation) mut
-			{
-				VT.Draw(ref this, VertexCount, StartVertexLocation);
-			}
-			public HRESULT Map(ref ID3D11Resource pResource, uint32 Subresource, D3D11_MAP MapType, uint32 MapFlags, D3D11_MAPPED_SUBRESOURCE* pMappedResource) mut
-			{
-				return VT.Map(ref this, ref pResource, Subresource, MapType, MapFlags, pMappedResource);
-			}
-			public void Unmap(ref ID3D11Resource pResource, uint32 Subresource) mut
-			{
-				VT.Unmap(ref this, ref pResource, Subresource);
-			}
-			public void PSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.PSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void IASetInputLayout(ID3D11InputLayout* pInputLayout) mut
-			{
-				VT.IASetInputLayout(ref this, pInputLayout);
-			}
-			public void IASetVertexBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) mut
-			{
-				VT.IASetVertexBuffers(ref this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
-			}
-			public void IASetIndexBuffer(ID3D11Buffer* pIndexBuffer, DXGI_FORMAT Format, uint32 Offset) mut
-			{
-				VT.IASetIndexBuffer(ref this, pIndexBuffer, Format, Offset);
-			}
-			public void DrawIndexedInstanced(uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) mut
-			{
-				VT.DrawIndexedInstanced(ref this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
-			}
-			public void DrawInstanced(uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) mut
-			{
-				VT.DrawInstanced(ref this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
-			}
-			public void GSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.GSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void GSSetShader(ID3D11GeometryShader* pShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut
-			{
-				VT.GSSetShader(ref this, pShader, ppClassInstances, NumClassInstances);
-			}
-			public void IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY Topology) mut
-			{
-				VT.IASetPrimitiveTopology(ref this, Topology);
-			}
-			public void VSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.VSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void VSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.VSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void Begin(ref ID3D11Asynchronous pAsync) mut
-			{
-				VT.Begin(ref this, ref pAsync);
-			}
-			public void End(ref ID3D11Asynchronous pAsync) mut
-			{
-				VT.End(ref this, ref pAsync);
-			}
-			public HRESULT GetData(ref ID3D11Asynchronous pAsync, void* pData, uint32 DataSize, uint32 GetDataFlags) mut
-			{
-				return VT.GetData(ref this, ref pAsync, pData, DataSize, GetDataFlags);
-			}
-			public void SetPredication(ID3D11Predicate* pPredicate, BOOL PredicateValue) mut
-			{
-				VT.SetPredication(ref this, pPredicate, PredicateValue);
-			}
-			public void GSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.GSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void GSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.GSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void OMSetRenderTargets(uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView) mut
-			{
-				VT.OMSetRenderTargets(ref this, NumViews, ppRenderTargetViews, pDepthStencilView);
-			}
-			public void OMSetRenderTargetsAndUnorderedAccessViews(uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) mut
-			{
-				VT.OMSetRenderTargetsAndUnorderedAccessViews(ref this, NumRTVs, ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
-			}
-			public void OMSetBlendState(ID3D11BlendState* pBlendState, float* BlendFactor, uint32 SampleMask) mut
-			{
-				VT.OMSetBlendState(ref this, pBlendState, BlendFactor, SampleMask);
-			}
-			public void OMSetDepthStencilState(ID3D11DepthStencilState* pDepthStencilState, uint32 StencilRef) mut
-			{
-				VT.OMSetDepthStencilState(ref this, pDepthStencilState, StencilRef);
-			}
-			public void SOSetTargets(uint32 NumBuffers, ID3D11Buffer** ppSOTargets, uint32* pOffsets) mut
-			{
-				VT.SOSetTargets(ref this, NumBuffers, ppSOTargets, pOffsets);
-			}
-			public void DrawAuto() mut
-			{
-				VT.DrawAuto(ref this);
-			}
-			public void DrawIndexedInstancedIndirect(ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) mut
-			{
-				VT.DrawIndexedInstancedIndirect(ref this, ref pBufferForArgs, AlignedByteOffsetForArgs);
-			}
-			public void DrawInstancedIndirect(ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) mut
-			{
-				VT.DrawInstancedIndirect(ref this, ref pBufferForArgs, AlignedByteOffsetForArgs);
-			}
-			public void Dispatch(uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) mut
-			{
-				VT.Dispatch(ref this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
-			}
-			public void DispatchIndirect(ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) mut
-			{
-				VT.DispatchIndirect(ref this, ref pBufferForArgs, AlignedByteOffsetForArgs);
-			}
-			public void RSSetState(ID3D11RasterizerState* pRasterizerState) mut
-			{
-				VT.RSSetState(ref this, pRasterizerState);
-			}
-			public void RSSetViewports(uint32 NumViewports, D3D11_VIEWPORT* pViewports) mut
-			{
-				VT.RSSetViewports(ref this, NumViewports, pViewports);
-			}
-			public void RSSetScissorRects(uint32 NumRects, RECT* pRects) mut
-			{
-				VT.RSSetScissorRects(ref this, NumRects, pRects);
-			}
-			public void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) mut
-			{
-				VT.CopySubresourceRegion(ref this, ref pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, pSrcBox);
-			}
-			public void CopyResource(ref ID3D11Resource pDstResource, ref ID3D11Resource pSrcResource) mut
-			{
-				VT.CopyResource(ref this, ref pDstResource, ref pSrcResource);
-			}
-			public void UpdateSubresource(ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) mut
-			{
-				VT.UpdateSubresource(ref this, ref pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
-			}
-			public void CopyStructureCount(ref ID3D11Buffer pDstBuffer, uint32 DstAlignedByteOffset, ref ID3D11UnorderedAccessView pSrcView) mut
-			{
-				VT.CopyStructureCount(ref this, ref pDstBuffer, DstAlignedByteOffset, ref pSrcView);
-			}
-			public void ClearRenderTargetView(ref ID3D11RenderTargetView pRenderTargetView, in float ColorRGBA) mut
-			{
-				VT.ClearRenderTargetView(ref this, ref pRenderTargetView, ColorRGBA);
-			}
-			public void ClearUnorderedAccessViewUint(ref ID3D11UnorderedAccessView pUnorderedAccessView, in uint32 Values) mut
-			{
-				VT.ClearUnorderedAccessViewUint(ref this, ref pUnorderedAccessView, Values);
-			}
-			public void ClearUnorderedAccessViewFloat(ref ID3D11UnorderedAccessView pUnorderedAccessView, in float Values) mut
-			{
-				VT.ClearUnorderedAccessViewFloat(ref this, ref pUnorderedAccessView, Values);
-			}
-			public void ClearDepthStencilView(ref ID3D11DepthStencilView pDepthStencilView, uint32 ClearFlags, float Depth, uint8 Stencil) mut
-			{
-				VT.ClearDepthStencilView(ref this, ref pDepthStencilView, ClearFlags, Depth, Stencil);
-			}
-			public void GenerateMips(ref ID3D11ShaderResourceView pShaderResourceView) mut
-			{
-				VT.GenerateMips(ref this, ref pShaderResourceView);
-			}
-			public void SetResourceMinLOD(ref ID3D11Resource pResource, float MinLOD) mut
-			{
-				VT.SetResourceMinLOD(ref this, ref pResource, MinLOD);
-			}
-			public float GetResourceMinLOD(ref ID3D11Resource pResource) mut
-			{
-				return VT.GetResourceMinLOD(ref this, ref pResource);
-			}
-			public void ResolveSubresource(ref ID3D11Resource pDstResource, uint32 DstSubresource, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) mut
-			{
-				VT.ResolveSubresource(ref this, ref pDstResource, DstSubresource, ref pSrcResource, SrcSubresource, Format);
-			}
-			public void ExecuteCommandList(ref ID3D11CommandList pCommandList, BOOL RestoreContextState) mut
-			{
-				VT.ExecuteCommandList(ref this, ref pCommandList, RestoreContextState);
-			}
-			public void HSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.HSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void HSSetShader(ID3D11HullShader* pHullShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut
-			{
-				VT.HSSetShader(ref this, pHullShader, ppClassInstances, NumClassInstances);
-			}
-			public void HSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.HSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void HSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.HSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void DSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.DSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void DSSetShader(ID3D11DomainShader* pDomainShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut
-			{
-				VT.DSSetShader(ref this, pDomainShader, ppClassInstances, NumClassInstances);
-			}
-			public void DSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.DSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void DSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.DSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void CSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.CSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void CSSetUnorderedAccessViews(uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) mut
-			{
-				VT.CSSetUnorderedAccessViews(ref this, StartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
-			}
-			public void CSSetShader(ID3D11ComputeShader* pComputeShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut
-			{
-				VT.CSSetShader(ref this, pComputeShader, ppClassInstances, NumClassInstances);
-			}
-			public void CSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.CSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void CSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.CSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void VSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.VSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void PSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.PSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void PSGetShader(ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut
-			{
-				VT.PSGetShader(ref this, ppPixelShader, ppClassInstances, pNumClassInstances);
-			}
-			public void PSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.PSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void VSGetShader(ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut
-			{
-				VT.VSGetShader(ref this, ppVertexShader, ppClassInstances, pNumClassInstances);
-			}
-			public void PSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.PSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void IAGetInputLayout(ID3D11InputLayout** ppInputLayout) mut
-			{
-				VT.IAGetInputLayout(ref this, ppInputLayout);
-			}
-			public void IAGetVertexBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) mut
-			{
-				VT.IAGetVertexBuffers(ref this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
-			}
-			public void IAGetIndexBuffer(ID3D11Buffer** pIndexBuffer, DXGI_FORMAT* Format, uint32* Offset) mut
-			{
-				VT.IAGetIndexBuffer(ref this, pIndexBuffer, Format, Offset);
-			}
-			public void GSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.GSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void GSGetShader(ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut
-			{
-				VT.GSGetShader(ref this, ppGeometryShader, ppClassInstances, pNumClassInstances);
-			}
-			public void IAGetPrimitiveTopology(out D3D_PRIMITIVE_TOPOLOGY pTopology) mut
-			{
-				VT.IAGetPrimitiveTopology(ref this, out pTopology);
-			}
-			public void VSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.VSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void VSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.VSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void GetPredication(ID3D11Predicate** ppPredicate, BOOL* pPredicateValue) mut
-			{
-				VT.GetPredication(ref this, ppPredicate, pPredicateValue);
-			}
-			public void GSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.GSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void GSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.GSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void OMGetRenderTargets(uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView) mut
-			{
-				VT.OMGetRenderTargets(ref this, NumViews, ppRenderTargetViews, ppDepthStencilView);
-			}
-			public void OMGetRenderTargetsAndUnorderedAccessViews(uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) mut
-			{
-				VT.OMGetRenderTargetsAndUnorderedAccessViews(ref this, NumRTVs, ppRenderTargetViews, ppDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews);
-			}
-			public void OMGetBlendState(ID3D11BlendState** ppBlendState, float* BlendFactor, uint32* pSampleMask) mut
-			{
-				VT.OMGetBlendState(ref this, ppBlendState, BlendFactor, pSampleMask);
-			}
-			public void OMGetDepthStencilState(ID3D11DepthStencilState** ppDepthStencilState, uint32* pStencilRef) mut
-			{
-				VT.OMGetDepthStencilState(ref this, ppDepthStencilState, pStencilRef);
-			}
-			public void SOGetTargets(uint32 NumBuffers, ID3D11Buffer** ppSOTargets) mut
-			{
-				VT.SOGetTargets(ref this, NumBuffers, ppSOTargets);
-			}
-			public void RSGetState(ID3D11RasterizerState** ppRasterizerState) mut
-			{
-				VT.RSGetState(ref this, ppRasterizerState);
-			}
-			public void RSGetViewports(out uint32 pNumViewports, D3D11_VIEWPORT* pViewports) mut
-			{
-				VT.RSGetViewports(ref this, out pNumViewports, pViewports);
-			}
-			public void RSGetScissorRects(out uint32 pNumRects, RECT* pRects) mut
-			{
-				VT.RSGetScissorRects(ref this, out pNumRects, pRects);
-			}
-			public void HSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.HSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void HSGetShader(ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut
-			{
-				VT.HSGetShader(ref this, ppHullShader, ppClassInstances, pNumClassInstances);
-			}
-			public void HSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.HSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void HSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.HSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void DSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.DSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void DSGetShader(ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut
-			{
-				VT.DSGetShader(ref this, ppDomainShader, ppClassInstances, pNumClassInstances);
-			}
-			public void DSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.DSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void DSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.DSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void CSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut
-			{
-				VT.CSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
-			}
-			public void CSGetUnorderedAccessViews(uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) mut
-			{
-				VT.CSGetUnorderedAccessViews(ref this, StartSlot, NumUAVs, ppUnorderedAccessViews);
-			}
-			public void CSGetShader(ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut
-			{
-				VT.CSGetShader(ref this, ppComputeShader, ppClassInstances, pNumClassInstances);
-			}
-			public void CSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut
-			{
-				VT.CSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
-			}
-			public void CSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut
-			{
-				VT.CSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
-			}
-			public void ClearState() mut
-			{
-				VT.ClearState(ref this);
-			}
-			public void Flush() mut
-			{
-				VT.Flush(ref this);
-			}
-			public D3D11_DEVICE_CONTEXT_TYPE ComGetType() mut
-			{
-				return VT.ComGetType(ref this);
-			}
-			public uint32 GetContextFlags() mut
-			{
-				return VT.GetContextFlags(ref this);
-			}
-			public HRESULT FinishCommandList(BOOL RestoreDeferredContextState, ID3D11CommandList** ppCommandList) mut
-			{
-				return VT.FinishCommandList(ref this, RestoreDeferredContextState, ppCommandList);
-			}
+			public void VSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.VSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void PSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.PSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void PSSetShader(ID3D11PixelShader* pPixelShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut => VT.PSSetShader(ref this, pPixelShader, ppClassInstances, NumClassInstances);
+			public void PSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.PSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void VSSetShader(ID3D11VertexShader* pVertexShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut => VT.VSSetShader(ref this, pVertexShader, ppClassInstances, NumClassInstances);
+			public void DrawIndexed(uint32 IndexCount, uint32 StartIndexLocation, int32 BaseVertexLocation) mut => VT.DrawIndexed(ref this, IndexCount, StartIndexLocation, BaseVertexLocation);
+			public void Draw(uint32 VertexCount, uint32 StartVertexLocation) mut => VT.Draw(ref this, VertexCount, StartVertexLocation);
+			public HRESULT Map(ref ID3D11Resource pResource, uint32 Subresource, D3D11_MAP MapType, uint32 MapFlags, D3D11_MAPPED_SUBRESOURCE* pMappedResource) mut => VT.Map(ref this, ref pResource, Subresource, MapType, MapFlags, pMappedResource);
+			public void Unmap(ref ID3D11Resource pResource, uint32 Subresource) mut => VT.Unmap(ref this, ref pResource, Subresource);
+			public void PSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.PSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void IASetInputLayout(ID3D11InputLayout* pInputLayout) mut => VT.IASetInputLayout(ref this, pInputLayout);
+			public void IASetVertexBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) mut => VT.IASetVertexBuffers(ref this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
+			public void IASetIndexBuffer(ID3D11Buffer* pIndexBuffer, DXGI_FORMAT Format, uint32 Offset) mut => VT.IASetIndexBuffer(ref this, pIndexBuffer, Format, Offset);
+			public void DrawIndexedInstanced(uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) mut => VT.DrawIndexedInstanced(ref this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
+			public void DrawInstanced(uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) mut => VT.DrawInstanced(ref this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
+			public void GSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.GSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void GSSetShader(ID3D11GeometryShader* pShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut => VT.GSSetShader(ref this, pShader, ppClassInstances, NumClassInstances);
+			public void IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY Topology) mut => VT.IASetPrimitiveTopology(ref this, Topology);
+			public void VSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.VSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void VSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.VSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void Begin(ref ID3D11Asynchronous pAsync) mut => VT.Begin(ref this, ref pAsync);
+			public void End(ref ID3D11Asynchronous pAsync) mut => VT.End(ref this, ref pAsync);
+			public HRESULT GetData(ref ID3D11Asynchronous pAsync, void* pData, uint32 DataSize, uint32 GetDataFlags) mut => VT.GetData(ref this, ref pAsync, pData, DataSize, GetDataFlags);
+			public void SetPredication(ID3D11Predicate* pPredicate, BOOL PredicateValue) mut => VT.SetPredication(ref this, pPredicate, PredicateValue);
+			public void GSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.GSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void GSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.GSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void OMSetRenderTargets(uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView) mut => VT.OMSetRenderTargets(ref this, NumViews, ppRenderTargetViews, pDepthStencilView);
+			public void OMSetRenderTargetsAndUnorderedAccessViews(uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) mut => VT.OMSetRenderTargetsAndUnorderedAccessViews(ref this, NumRTVs, ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
+			public void OMSetBlendState(ID3D11BlendState* pBlendState, float* BlendFactor, uint32 SampleMask) mut => VT.OMSetBlendState(ref this, pBlendState, BlendFactor, SampleMask);
+			public void OMSetDepthStencilState(ID3D11DepthStencilState* pDepthStencilState, uint32 StencilRef) mut => VT.OMSetDepthStencilState(ref this, pDepthStencilState, StencilRef);
+			public void SOSetTargets(uint32 NumBuffers, ID3D11Buffer** ppSOTargets, uint32* pOffsets) mut => VT.SOSetTargets(ref this, NumBuffers, ppSOTargets, pOffsets);
+			public void DrawAuto() mut => VT.DrawAuto(ref this);
+			public void DrawIndexedInstancedIndirect(ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) mut => VT.DrawIndexedInstancedIndirect(ref this, ref pBufferForArgs, AlignedByteOffsetForArgs);
+			public void DrawInstancedIndirect(ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) mut => VT.DrawInstancedIndirect(ref this, ref pBufferForArgs, AlignedByteOffsetForArgs);
+			public void Dispatch(uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) mut => VT.Dispatch(ref this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
+			public void DispatchIndirect(ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) mut => VT.DispatchIndirect(ref this, ref pBufferForArgs, AlignedByteOffsetForArgs);
+			public void RSSetState(ID3D11RasterizerState* pRasterizerState) mut => VT.RSSetState(ref this, pRasterizerState);
+			public void RSSetViewports(uint32 NumViewports, D3D11_VIEWPORT* pViewports) mut => VT.RSSetViewports(ref this, NumViewports, pViewports);
+			public void RSSetScissorRects(uint32 NumRects, RECT* pRects) mut => VT.RSSetScissorRects(ref this, NumRects, pRects);
+			public void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) mut => VT.CopySubresourceRegion(ref this, ref pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, pSrcBox);
+			public void CopyResource(ref ID3D11Resource pDstResource, ref ID3D11Resource pSrcResource) mut => VT.CopyResource(ref this, ref pDstResource, ref pSrcResource);
+			public void UpdateSubresource(ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) mut => VT.UpdateSubresource(ref this, ref pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+			public void CopyStructureCount(ref ID3D11Buffer pDstBuffer, uint32 DstAlignedByteOffset, ref ID3D11UnorderedAccessView pSrcView) mut => VT.CopyStructureCount(ref this, ref pDstBuffer, DstAlignedByteOffset, ref pSrcView);
+			public void ClearRenderTargetView(ref ID3D11RenderTargetView pRenderTargetView, in float ColorRGBA) mut => VT.ClearRenderTargetView(ref this, ref pRenderTargetView, ColorRGBA);
+			public void ClearUnorderedAccessViewUint(ref ID3D11UnorderedAccessView pUnorderedAccessView, in uint32 Values) mut => VT.ClearUnorderedAccessViewUint(ref this, ref pUnorderedAccessView, Values);
+			public void ClearUnorderedAccessViewFloat(ref ID3D11UnorderedAccessView pUnorderedAccessView, in float Values) mut => VT.ClearUnorderedAccessViewFloat(ref this, ref pUnorderedAccessView, Values);
+			public void ClearDepthStencilView(ref ID3D11DepthStencilView pDepthStencilView, uint32 ClearFlags, float Depth, uint8 Stencil) mut => VT.ClearDepthStencilView(ref this, ref pDepthStencilView, ClearFlags, Depth, Stencil);
+			public void GenerateMips(ref ID3D11ShaderResourceView pShaderResourceView) mut => VT.GenerateMips(ref this, ref pShaderResourceView);
+			public void SetResourceMinLOD(ref ID3D11Resource pResource, float MinLOD) mut => VT.SetResourceMinLOD(ref this, ref pResource, MinLOD);
+			public float GetResourceMinLOD(ref ID3D11Resource pResource) mut => VT.GetResourceMinLOD(ref this, ref pResource);
+			public void ResolveSubresource(ref ID3D11Resource pDstResource, uint32 DstSubresource, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) mut => VT.ResolveSubresource(ref this, ref pDstResource, DstSubresource, ref pSrcResource, SrcSubresource, Format);
+			public void ExecuteCommandList(ref ID3D11CommandList pCommandList, BOOL RestoreContextState) mut => VT.ExecuteCommandList(ref this, ref pCommandList, RestoreContextState);
+			public void HSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.HSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void HSSetShader(ID3D11HullShader* pHullShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut => VT.HSSetShader(ref this, pHullShader, ppClassInstances, NumClassInstances);
+			public void HSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.HSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void HSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.HSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void DSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.DSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void DSSetShader(ID3D11DomainShader* pDomainShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut => VT.DSSetShader(ref this, pDomainShader, ppClassInstances, NumClassInstances);
+			public void DSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.DSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void DSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.DSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void CSSetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.CSSetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void CSSetUnorderedAccessViews(uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) mut => VT.CSSetUnorderedAccessViews(ref this, StartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
+			public void CSSetShader(ID3D11ComputeShader* pComputeShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) mut => VT.CSSetShader(ref this, pComputeShader, ppClassInstances, NumClassInstances);
+			public void CSSetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.CSSetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void CSSetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.CSSetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void VSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.VSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void PSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.PSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void PSGetShader(ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut => VT.PSGetShader(ref this, ppPixelShader, ppClassInstances, pNumClassInstances);
+			public void PSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.PSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void VSGetShader(ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut => VT.VSGetShader(ref this, ppVertexShader, ppClassInstances, pNumClassInstances);
+			public void PSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.PSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void IAGetInputLayout(ID3D11InputLayout** ppInputLayout) mut => VT.IAGetInputLayout(ref this, ppInputLayout);
+			public void IAGetVertexBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) mut => VT.IAGetVertexBuffers(ref this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
+			public void IAGetIndexBuffer(ID3D11Buffer** pIndexBuffer, DXGI_FORMAT* Format, uint32* Offset) mut => VT.IAGetIndexBuffer(ref this, pIndexBuffer, Format, Offset);
+			public void GSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.GSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void GSGetShader(ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut => VT.GSGetShader(ref this, ppGeometryShader, ppClassInstances, pNumClassInstances);
+			public void IAGetPrimitiveTopology(out D3D_PRIMITIVE_TOPOLOGY pTopology) mut => VT.IAGetPrimitiveTopology(ref this, out pTopology);
+			public void VSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.VSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void VSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.VSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void GetPredication(ID3D11Predicate** ppPredicate, BOOL* pPredicateValue) mut => VT.GetPredication(ref this, ppPredicate, pPredicateValue);
+			public void GSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.GSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void GSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.GSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void OMGetRenderTargets(uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView) mut => VT.OMGetRenderTargets(ref this, NumViews, ppRenderTargetViews, ppDepthStencilView);
+			public void OMGetRenderTargetsAndUnorderedAccessViews(uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) mut => VT.OMGetRenderTargetsAndUnorderedAccessViews(ref this, NumRTVs, ppRenderTargetViews, ppDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews);
+			public void OMGetBlendState(ID3D11BlendState** ppBlendState, float* BlendFactor, uint32* pSampleMask) mut => VT.OMGetBlendState(ref this, ppBlendState, BlendFactor, pSampleMask);
+			public void OMGetDepthStencilState(ID3D11DepthStencilState** ppDepthStencilState, uint32* pStencilRef) mut => VT.OMGetDepthStencilState(ref this, ppDepthStencilState, pStencilRef);
+			public void SOGetTargets(uint32 NumBuffers, ID3D11Buffer** ppSOTargets) mut => VT.SOGetTargets(ref this, NumBuffers, ppSOTargets);
+			public void RSGetState(ID3D11RasterizerState** ppRasterizerState) mut => VT.RSGetState(ref this, ppRasterizerState);
+			public void RSGetViewports(out uint32 pNumViewports, D3D11_VIEWPORT* pViewports) mut => VT.RSGetViewports(ref this, out pNumViewports, pViewports);
+			public void RSGetScissorRects(out uint32 pNumRects, RECT* pRects) mut => VT.RSGetScissorRects(ref this, out pNumRects, pRects);
+			public void HSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.HSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void HSGetShader(ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut => VT.HSGetShader(ref this, ppHullShader, ppClassInstances, pNumClassInstances);
+			public void HSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.HSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void HSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.HSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void DSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.DSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void DSGetShader(ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut => VT.DSGetShader(ref this, ppDomainShader, ppClassInstances, pNumClassInstances);
+			public void DSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.DSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void DSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.DSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void CSGetShaderResources(uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) mut => VT.CSGetShaderResources(ref this, StartSlot, NumViews, ppShaderResourceViews);
+			public void CSGetUnorderedAccessViews(uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) mut => VT.CSGetUnorderedAccessViews(ref this, StartSlot, NumUAVs, ppUnorderedAccessViews);
+			public void CSGetShader(ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) mut => VT.CSGetShader(ref this, ppComputeShader, ppClassInstances, pNumClassInstances);
+			public void CSGetSamplers(uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) mut => VT.CSGetSamplers(ref this, StartSlot, NumSamplers, ppSamplers);
+			public void CSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.CSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
+			public void ClearState() mut => VT.ClearState(ref this);
+			public void Flush() mut => VT.Flush(ref this);
+			public D3D11_DEVICE_CONTEXT_TYPE ComGetType() mut => VT.ComGetType(ref this);
+			public uint32 GetContextFlags() mut => VT.GetContextFlags(ref this);
+			public HRESULT FinishCommandList(BOOL RestoreDeferredContextState, ID3D11CommandList** ppCommandList) mut => VT.FinishCommandList(ref this, RestoreDeferredContextState, ppCommandList);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5617,14 +5233,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCreationParameters(out D3D11_VIDEO_DECODER_DESC pVideoDesc, out D3D11_VIDEO_DECODER_CONFIG pConfig) mut
-			{
-				return VT.GetCreationParameters(ref this, out pVideoDesc, out pConfig);
-			}
-			public HRESULT GetDriverHandle(out HANDLE pDriverHandle) mut
-			{
-				return VT.GetDriverHandle(ref this, out pDriverHandle);
-			}
+			public HRESULT GetCreationParameters(out D3D11_VIDEO_DECODER_DESC pVideoDesc, out D3D11_VIDEO_DECODER_CONFIG pConfig) mut => VT.GetCreationParameters(ref this, out pVideoDesc, out pConfig);
+			public HRESULT GetDriverHandle(out HANDLE pDriverHandle) mut => VT.GetDriverHandle(ref this, out pDriverHandle);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5639,30 +5250,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVideoProcessorContentDesc(out D3D11_VIDEO_PROCESSOR_CONTENT_DESC pContentDesc) mut
-			{
-				return VT.GetVideoProcessorContentDesc(ref this, out pContentDesc);
-			}
-			public HRESULT CheckVideoProcessorFormat(DXGI_FORMAT Format, out uint32 pFlags) mut
-			{
-				return VT.CheckVideoProcessorFormat(ref this, Format, out pFlags);
-			}
-			public HRESULT GetVideoProcessorCaps(out D3D11_VIDEO_PROCESSOR_CAPS pCaps) mut
-			{
-				return VT.GetVideoProcessorCaps(ref this, out pCaps);
-			}
-			public HRESULT GetVideoProcessorRateConversionCaps(uint32 TypeIndex, out D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS pCaps) mut
-			{
-				return VT.GetVideoProcessorRateConversionCaps(ref this, TypeIndex, out pCaps);
-			}
-			public HRESULT GetVideoProcessorCustomRate(uint32 TypeIndex, uint32 CustomRateIndex, out D3D11_VIDEO_PROCESSOR_CUSTOM_RATE pRate) mut
-			{
-				return VT.GetVideoProcessorCustomRate(ref this, TypeIndex, CustomRateIndex, out pRate);
-			}
-			public HRESULT GetVideoProcessorFilterRange(D3D11_VIDEO_PROCESSOR_FILTER Filter, out D3D11_VIDEO_PROCESSOR_FILTER_RANGE pRange) mut
-			{
-				return VT.GetVideoProcessorFilterRange(ref this, Filter, out pRange);
-			}
+			public HRESULT GetVideoProcessorContentDesc(out D3D11_VIDEO_PROCESSOR_CONTENT_DESC pContentDesc) mut => VT.GetVideoProcessorContentDesc(ref this, out pContentDesc);
+			public HRESULT CheckVideoProcessorFormat(DXGI_FORMAT Format, out uint32 pFlags) mut => VT.CheckVideoProcessorFormat(ref this, Format, out pFlags);
+			public HRESULT GetVideoProcessorCaps(out D3D11_VIDEO_PROCESSOR_CAPS pCaps) mut => VT.GetVideoProcessorCaps(ref this, out pCaps);
+			public HRESULT GetVideoProcessorRateConversionCaps(uint32 TypeIndex, out D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS pCaps) mut => VT.GetVideoProcessorRateConversionCaps(ref this, TypeIndex, out pCaps);
+			public HRESULT GetVideoProcessorCustomRate(uint32 TypeIndex, uint32 CustomRateIndex, out D3D11_VIDEO_PROCESSOR_CUSTOM_RATE pRate) mut => VT.GetVideoProcessorCustomRate(ref this, TypeIndex, CustomRateIndex, out pRate);
+			public HRESULT GetVideoProcessorFilterRange(D3D11_VIDEO_PROCESSOR_FILTER Filter, out D3D11_VIDEO_PROCESSOR_FILTER_RANGE pRange) mut => VT.GetVideoProcessorFilterRange(ref this, Filter, out pRange);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5681,14 +5275,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetContentDesc(out D3D11_VIDEO_PROCESSOR_CONTENT_DESC pDesc) mut
-			{
-				VT.GetContentDesc(ref this, out pDesc);
-			}
-			public void GetRateConversionCaps(out D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS pCaps) mut
-			{
-				VT.GetRateConversionCaps(ref this, out pCaps);
-			}
+			public void GetContentDesc(out D3D11_VIDEO_PROCESSOR_CONTENT_DESC pDesc) mut => VT.GetContentDesc(ref this, out pDesc);
+			public void GetRateConversionCaps(out D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS pCaps) mut => VT.GetRateConversionCaps(ref this, out pCaps);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5703,18 +5292,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCertificateSize(out uint32 pCertificateSize) mut
-			{
-				return VT.GetCertificateSize(ref this, out pCertificateSize);
-			}
-			public HRESULT GetCertificate(uint32 CertificateSize, out uint8 pCertificate) mut
-			{
-				return VT.GetCertificate(ref this, CertificateSize, out pCertificate);
-			}
-			public void GetChannelHandle(out HANDLE pChannelHandle) mut
-			{
-				VT.GetChannelHandle(ref this, out pChannelHandle);
-			}
+			public HRESULT GetCertificateSize(out uint32 pCertificateSize) mut => VT.GetCertificateSize(ref this, out pCertificateSize);
+			public HRESULT GetCertificate(uint32 CertificateSize, out uint8 pCertificate) mut => VT.GetCertificate(ref this, CertificateSize, out pCertificate);
+			public void GetChannelHandle(out HANDLE pChannelHandle) mut => VT.GetChannelHandle(ref this, out pChannelHandle);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5730,26 +5311,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetCryptoType(out Guid pCryptoType) mut
-			{
-				VT.GetCryptoType(ref this, out pCryptoType);
-			}
-			public void GetDecoderProfile(out Guid pDecoderProfile) mut
-			{
-				VT.GetDecoderProfile(ref this, out pDecoderProfile);
-			}
-			public HRESULT GetCertificateSize(out uint32 pCertificateSize) mut
-			{
-				return VT.GetCertificateSize(ref this, out pCertificateSize);
-			}
-			public HRESULT GetCertificate(uint32 CertificateSize, out uint8 pCertificate) mut
-			{
-				return VT.GetCertificate(ref this, CertificateSize, out pCertificate);
-			}
-			public void GetCryptoSessionHandle(out HANDLE pCryptoSessionHandle) mut
-			{
-				VT.GetCryptoSessionHandle(ref this, out pCryptoSessionHandle);
-			}
+			public void GetCryptoType(out Guid pCryptoType) mut => VT.GetCryptoType(ref this, out pCryptoType);
+			public void GetDecoderProfile(out Guid pDecoderProfile) mut => VT.GetDecoderProfile(ref this, out pDecoderProfile);
+			public HRESULT GetCertificateSize(out uint32 pCertificateSize) mut => VT.GetCertificateSize(ref this, out pCertificateSize);
+			public HRESULT GetCertificate(uint32 CertificateSize, out uint8 pCertificate) mut => VT.GetCertificate(ref this, CertificateSize, out pCertificate);
+			public void GetCryptoSessionHandle(out HANDLE pCryptoSessionHandle) mut => VT.GetCryptoSessionHandle(ref this, out pCryptoSessionHandle);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -5767,10 +5334,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
@@ -5784,10 +5349,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
@@ -5801,10 +5364,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc(out D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC pDesc) mut
-			{
-				VT.GetDesc(ref this, out pDesc);
-			}
+			public void GetDesc(out D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
@@ -5818,238 +5379,65 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDecoderBuffer(ref ID3D11VideoDecoder pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type, out uint32 pBufferSize, void** ppBuffer) mut
-			{
-				return VT.GetDecoderBuffer(ref this, ref pDecoder, Type, out pBufferSize, ppBuffer);
-			}
-			public HRESULT ReleaseDecoderBuffer(ref ID3D11VideoDecoder pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type) mut
-			{
-				return VT.ReleaseDecoderBuffer(ref this, ref pDecoder, Type);
-			}
-			public HRESULT DecoderBeginFrame(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint32 ContentKeySize, void* pContentKey) mut
-			{
-				return VT.DecoderBeginFrame(ref this, ref pDecoder, ref pView, ContentKeySize, pContentKey);
-			}
-			public HRESULT DecoderEndFrame(ref ID3D11VideoDecoder pDecoder) mut
-			{
-				return VT.DecoderEndFrame(ref this, ref pDecoder);
-			}
-			public HRESULT SubmitDecoderBuffers(ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC* pBufferDesc) mut
-			{
-				return VT.SubmitDecoderBuffers(ref this, ref pDecoder, NumBuffers, pBufferDesc);
-			}
-			public int32 DecoderExtension(ref ID3D11VideoDecoder pDecoder, in D3D11_VIDEO_DECODER_EXTENSION pExtensionData) mut
-			{
-				return VT.DecoderExtension(ref this, ref pDecoder, pExtensionData);
-			}
-			public void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable, RECT* pRect) mut
-			{
-				VT.VideoProcessorSetOutputTargetRect(ref this, ref pVideoProcessor, Enable, pRect);
-			}
-			public void VideoProcessorSetOutputBackgroundColor(ref ID3D11VideoProcessor pVideoProcessor, BOOL YCbCr, in D3D11_VIDEO_COLOR pColor) mut
-			{
-				VT.VideoProcessorSetOutputBackgroundColor(ref this, ref pVideoProcessor, YCbCr, pColor);
-			}
-			public void VideoProcessorSetOutputColorSpace(ref ID3D11VideoProcessor pVideoProcessor, in D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) mut
-			{
-				VT.VideoProcessorSetOutputColorSpace(ref this, ref pVideoProcessor, pColorSpace);
-			}
-			public void VideoProcessorSetOutputAlphaFillMode(ref ID3D11VideoProcessor pVideoProcessor, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE AlphaFillMode, uint32 StreamIndex) mut
-			{
-				VT.VideoProcessorSetOutputAlphaFillMode(ref this, ref pVideoProcessor, AlphaFillMode, StreamIndex);
-			}
-			public void VideoProcessorSetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable, SIZE Size) mut
-			{
-				VT.VideoProcessorSetOutputConstriction(ref this, ref pVideoProcessor, Enable, Size);
-			}
-			public void VideoProcessorSetOutputStereoMode(ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable) mut
-			{
-				VT.VideoProcessorSetOutputStereoMode(ref this, ref pVideoProcessor, Enable);
-			}
-			public int32 VideoProcessorSetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, in Guid pExtensionGuid, uint32 DataSize, void* pData) mut
-			{
-				return VT.VideoProcessorSetOutputExtension(ref this, ref pVideoProcessor, pExtensionGuid, DataSize, pData);
-			}
-			public void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, out BOOL Enabled, out RECT pRect) mut
-			{
-				VT.VideoProcessorGetOutputTargetRect(ref this, ref pVideoProcessor, out Enabled, out pRect);
-			}
-			public void VideoProcessorGetOutputBackgroundColor(ref ID3D11VideoProcessor pVideoProcessor, out BOOL pYCbCr, out D3D11_VIDEO_COLOR pColor) mut
-			{
-				VT.VideoProcessorGetOutputBackgroundColor(ref this, ref pVideoProcessor, out pYCbCr, out pColor);
-			}
-			public void VideoProcessorGetOutputColorSpace(ref ID3D11VideoProcessor pVideoProcessor, out D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) mut
-			{
-				VT.VideoProcessorGetOutputColorSpace(ref this, ref pVideoProcessor, out pColorSpace);
-			}
-			public void VideoProcessorGetOutputAlphaFillMode(ref ID3D11VideoProcessor pVideoProcessor, out D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE pAlphaFillMode, out uint32 pStreamIndex) mut
-			{
-				VT.VideoProcessorGetOutputAlphaFillMode(ref this, ref pVideoProcessor, out pAlphaFillMode, out pStreamIndex);
-			}
-			public void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, out BOOL pEnabled, out SIZE pSize) mut
-			{
-				VT.VideoProcessorGetOutputConstriction(ref this, ref pVideoProcessor, out pEnabled, out pSize);
-			}
-			public void VideoProcessorGetOutputStereoMode(ref ID3D11VideoProcessor pVideoProcessor, out BOOL pEnabled) mut
-			{
-				VT.VideoProcessorGetOutputStereoMode(ref this, ref pVideoProcessor, out pEnabled);
-			}
-			public int32 VideoProcessorGetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, in Guid pExtensionGuid, uint32 DataSize, void* pData) mut
-			{
-				return VT.VideoProcessorGetOutputExtension(ref this, ref pVideoProcessor, pExtensionGuid, DataSize, pData);
-			}
-			public void VideoProcessorSetStreamFrameFormat(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_FRAME_FORMAT FrameFormat) mut
-			{
-				VT.VideoProcessorSetStreamFrameFormat(ref this, ref pVideoProcessor, StreamIndex, FrameFormat);
-			}
-			public void VideoProcessorSetStreamColorSpace(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) mut
-			{
-				VT.VideoProcessorSetStreamColorSpace(ref this, ref pVideoProcessor, StreamIndex, pColorSpace);
-			}
-			public void VideoProcessorSetStreamOutputRate(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, BOOL RepeatFrame, DXGI_RATIONAL* pCustomRate) mut
-			{
-				VT.VideoProcessorSetStreamOutputRate(ref this, ref pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
-			}
-			public void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) mut
-			{
-				VT.VideoProcessorSetStreamSourceRect(ref this, ref pVideoProcessor, StreamIndex, Enable, pRect);
-			}
-			public void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) mut
-			{
-				VT.VideoProcessorSetStreamDestRect(ref this, ref pVideoProcessor, StreamIndex, Enable, pRect);
-			}
-			public void VideoProcessorSetStreamAlpha(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Alpha) mut
-			{
-				VT.VideoProcessorSetStreamAlpha(ref this, ref pVideoProcessor, StreamIndex, Enable, Alpha);
-			}
-			public void VideoProcessorSetStreamPalette(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) mut
-			{
-				VT.VideoProcessorSetStreamPalette(ref this, ref pVideoProcessor, StreamIndex, Count, pEntries);
-			}
-			public void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio) mut
-			{
-				VT.VideoProcessorSetStreamPixelAspectRatio(ref this, ref pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
-			}
-			public void VideoProcessorSetStreamLumaKey(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Lower, float Upper) mut
-			{
-				VT.VideoProcessorSetStreamLumaKey(ref this, ref pVideoProcessor, StreamIndex, Enable, Lower, Upper);
-			}
-			public void VideoProcessorSetStreamStereoFormat(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, BOOL LeftViewFrame0, BOOL BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int32 MonoOffset) mut
-			{
-				VT.VideoProcessorSetStreamStereoFormat(ref this, ref pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
-			}
-			public void VideoProcessorSetStreamAutoProcessingMode(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable) mut
-			{
-				VT.VideoProcessorSetStreamAutoProcessingMode(ref this, ref pVideoProcessor, StreamIndex, Enable);
-			}
-			public void VideoProcessorSetStreamFilter(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL Enable, int32 Level) mut
-			{
-				VT.VideoProcessorSetStreamFilter(ref this, ref pVideoProcessor, StreamIndex, Filter, Enable, Level);
-			}
-			public int32 VideoProcessorSetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in Guid pExtensionGuid, uint32 DataSize, void* pData) mut
-			{
-				return VT.VideoProcessorSetStreamExtension(ref this, ref pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
-			}
-			public void VideoProcessorGetStreamFrameFormat(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_FRAME_FORMAT pFrameFormat) mut
-			{
-				VT.VideoProcessorGetStreamFrameFormat(ref this, ref pVideoProcessor, StreamIndex, out pFrameFormat);
-			}
-			public void VideoProcessorGetStreamColorSpace(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) mut
-			{
-				VT.VideoProcessorGetStreamColorSpace(ref this, ref pVideoProcessor, StreamIndex, out pColorSpace);
-			}
-			public void VideoProcessorGetStreamOutputRate(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_PROCESSOR_OUTPUT_RATE pOutputRate, out BOOL pRepeatFrame, out DXGI_RATIONAL pCustomRate) mut
-			{
-				VT.VideoProcessorGetStreamOutputRate(ref this, ref pVideoProcessor, StreamIndex, out pOutputRate, out pRepeatFrame, out pCustomRate);
-			}
-			public void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out RECT pRect) mut
-			{
-				VT.VideoProcessorGetStreamSourceRect(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pRect);
-			}
-			public void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out RECT pRect) mut
-			{
-				VT.VideoProcessorGetStreamDestRect(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pRect);
-			}
-			public void VideoProcessorGetStreamAlpha(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out float pAlpha) mut
-			{
-				VT.VideoProcessorGetStreamAlpha(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pAlpha);
-			}
-			public void VideoProcessorGetStreamPalette(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) mut
-			{
-				VT.VideoProcessorGetStreamPalette(ref this, ref pVideoProcessor, StreamIndex, Count, pEntries);
-			}
-			public void VideoProcessorGetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out DXGI_RATIONAL pSourceAspectRatio, out DXGI_RATIONAL pDestinationAspectRatio) mut
-			{
-				VT.VideoProcessorGetStreamPixelAspectRatio(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pSourceAspectRatio, out pDestinationAspectRatio);
-			}
-			public void VideoProcessorGetStreamLumaKey(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out float pLower, out float pUpper) mut
-			{
-				VT.VideoProcessorGetStreamLumaKey(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pLower, out pUpper);
-			}
-			public void VideoProcessorGetStreamStereoFormat(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out D3D11_VIDEO_PROCESSOR_STEREO_FORMAT pFormat, out BOOL pLeftViewFrame0, out BOOL pBaseViewFrame0, out D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE pFlipMode, out int32 MonoOffset) mut
-			{
-				VT.VideoProcessorGetStreamStereoFormat(ref this, ref pVideoProcessor, StreamIndex, out pEnable, out pFormat, out pLeftViewFrame0, out pBaseViewFrame0, out pFlipMode, out MonoOffset);
-			}
-			public void VideoProcessorGetStreamAutoProcessingMode(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled) mut
-			{
-				VT.VideoProcessorGetStreamAutoProcessingMode(ref this, ref pVideoProcessor, StreamIndex, out pEnabled);
-			}
-			public void VideoProcessorGetStreamFilter(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, out BOOL pEnabled, out int32 pLevel) mut
-			{
-				VT.VideoProcessorGetStreamFilter(ref this, ref pVideoProcessor, StreamIndex, Filter, out pEnabled, out pLevel);
-			}
-			public int32 VideoProcessorGetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in Guid pExtensionGuid, uint32 DataSize, void* pData) mut
-			{
-				return VT.VideoProcessorGetStreamExtension(ref this, ref pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
-			}
-			public HRESULT VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint32 OutputFrame, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM* pStreams) mut
-			{
-				return VT.VideoProcessorBlt(ref this, ref pVideoProcessor, ref pView, OutputFrame, StreamCount, pStreams);
-			}
-			public HRESULT NegotiateCryptoSessionKeyExchange(ref ID3D11CryptoSession pCryptoSession, uint32 DataSize, void* pData) mut
-			{
-				return VT.NegotiateCryptoSessionKeyExchange(ref this, ref pCryptoSession, DataSize, pData);
-			}
-			public void EncryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, uint32 IVSize, void* pIV) mut
-			{
-				VT.EncryptionBlt(ref this, ref pCryptoSession, ref pSrcSurface, ref pDstSurface, IVSize, pIV);
-			}
-			public void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, D3D11_ENCRYPTED_BLOCK_INFO* pEncryptedBlockInfo, uint32 ContentKeySize, void* pContentKey, uint32 IVSize, void* pIV) mut
-			{
-				VT.DecryptionBlt(ref this, ref pCryptoSession, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
-			}
-			public void StartSessionKeyRefresh(ref ID3D11CryptoSession pCryptoSession, uint32 RandomNumberSize, void* pRandomNumber) mut
-			{
-				VT.StartSessionKeyRefresh(ref this, ref pCryptoSession, RandomNumberSize, pRandomNumber);
-			}
-			public void FinishSessionKeyRefresh(ref ID3D11CryptoSession pCryptoSession) mut
-			{
-				VT.FinishSessionKeyRefresh(ref this, ref pCryptoSession);
-			}
-			public HRESULT GetEncryptionBltKey(ref ID3D11CryptoSession pCryptoSession, uint32 KeySize, void* pReadbackKey) mut
-			{
-				return VT.GetEncryptionBltKey(ref this, ref pCryptoSession, KeySize, pReadbackKey);
-			}
-			public HRESULT NegotiateAuthenticatedChannelKeyExchange(ref ID3D11AuthenticatedChannel pChannel, uint32 DataSize, void* pData) mut
-			{
-				return VT.NegotiateAuthenticatedChannelKeyExchange(ref this, ref pChannel, DataSize, pData);
-			}
-			public HRESULT QueryAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) mut
-			{
-				return VT.QueryAuthenticatedChannel(ref this, ref pChannel, InputSize, pInput, OutputSize, pOutput);
-			}
-			public HRESULT ConfigureAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint32 InputSize, void* pInput, out D3D11_AUTHENTICATED_CONFIGURE_OUTPUT pOutput) mut
-			{
-				return VT.ConfigureAuthenticatedChannel(ref this, ref pChannel, InputSize, pInput, out pOutput);
-			}
-			public void VideoProcessorSetStreamRotation(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation) mut
-			{
-				VT.VideoProcessorSetStreamRotation(ref this, ref pVideoProcessor, StreamIndex, Enable, Rotation);
-			}
-			public void VideoProcessorGetStreamRotation(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out D3D11_VIDEO_PROCESSOR_ROTATION pRotation) mut
-			{
-				VT.VideoProcessorGetStreamRotation(ref this, ref pVideoProcessor, StreamIndex, out pEnable, out pRotation);
-			}
+			public HRESULT GetDecoderBuffer(ref ID3D11VideoDecoder pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type, out uint32 pBufferSize, void** ppBuffer) mut => VT.GetDecoderBuffer(ref this, ref pDecoder, Type, out pBufferSize, ppBuffer);
+			public HRESULT ReleaseDecoderBuffer(ref ID3D11VideoDecoder pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type) mut => VT.ReleaseDecoderBuffer(ref this, ref pDecoder, Type);
+			public HRESULT DecoderBeginFrame(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint32 ContentKeySize, void* pContentKey) mut => VT.DecoderBeginFrame(ref this, ref pDecoder, ref pView, ContentKeySize, pContentKey);
+			public HRESULT DecoderEndFrame(ref ID3D11VideoDecoder pDecoder) mut => VT.DecoderEndFrame(ref this, ref pDecoder);
+			public HRESULT SubmitDecoderBuffers(ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC* pBufferDesc) mut => VT.SubmitDecoderBuffers(ref this, ref pDecoder, NumBuffers, pBufferDesc);
+			public int32 DecoderExtension(ref ID3D11VideoDecoder pDecoder, in D3D11_VIDEO_DECODER_EXTENSION pExtensionData) mut => VT.DecoderExtension(ref this, ref pDecoder, pExtensionData);
+			public void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable, RECT* pRect) mut => VT.VideoProcessorSetOutputTargetRect(ref this, ref pVideoProcessor, Enable, pRect);
+			public void VideoProcessorSetOutputBackgroundColor(ref ID3D11VideoProcessor pVideoProcessor, BOOL YCbCr, in D3D11_VIDEO_COLOR pColor) mut => VT.VideoProcessorSetOutputBackgroundColor(ref this, ref pVideoProcessor, YCbCr, pColor);
+			public void VideoProcessorSetOutputColorSpace(ref ID3D11VideoProcessor pVideoProcessor, in D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) mut => VT.VideoProcessorSetOutputColorSpace(ref this, ref pVideoProcessor, pColorSpace);
+			public void VideoProcessorSetOutputAlphaFillMode(ref ID3D11VideoProcessor pVideoProcessor, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE AlphaFillMode, uint32 StreamIndex) mut => VT.VideoProcessorSetOutputAlphaFillMode(ref this, ref pVideoProcessor, AlphaFillMode, StreamIndex);
+			public void VideoProcessorSetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable, SIZE Size) mut => VT.VideoProcessorSetOutputConstriction(ref this, ref pVideoProcessor, Enable, Size);
+			public void VideoProcessorSetOutputStereoMode(ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable) mut => VT.VideoProcessorSetOutputStereoMode(ref this, ref pVideoProcessor, Enable);
+			public int32 VideoProcessorSetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, in Guid pExtensionGuid, uint32 DataSize, void* pData) mut => VT.VideoProcessorSetOutputExtension(ref this, ref pVideoProcessor, pExtensionGuid, DataSize, pData);
+			public void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, out BOOL Enabled, out RECT pRect) mut => VT.VideoProcessorGetOutputTargetRect(ref this, ref pVideoProcessor, out Enabled, out pRect);
+			public void VideoProcessorGetOutputBackgroundColor(ref ID3D11VideoProcessor pVideoProcessor, out BOOL pYCbCr, out D3D11_VIDEO_COLOR pColor) mut => VT.VideoProcessorGetOutputBackgroundColor(ref this, ref pVideoProcessor, out pYCbCr, out pColor);
+			public void VideoProcessorGetOutputColorSpace(ref ID3D11VideoProcessor pVideoProcessor, out D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) mut => VT.VideoProcessorGetOutputColorSpace(ref this, ref pVideoProcessor, out pColorSpace);
+			public void VideoProcessorGetOutputAlphaFillMode(ref ID3D11VideoProcessor pVideoProcessor, out D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE pAlphaFillMode, out uint32 pStreamIndex) mut => VT.VideoProcessorGetOutputAlphaFillMode(ref this, ref pVideoProcessor, out pAlphaFillMode, out pStreamIndex);
+			public void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, out BOOL pEnabled, out SIZE pSize) mut => VT.VideoProcessorGetOutputConstriction(ref this, ref pVideoProcessor, out pEnabled, out pSize);
+			public void VideoProcessorGetOutputStereoMode(ref ID3D11VideoProcessor pVideoProcessor, out BOOL pEnabled) mut => VT.VideoProcessorGetOutputStereoMode(ref this, ref pVideoProcessor, out pEnabled);
+			public int32 VideoProcessorGetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, in Guid pExtensionGuid, uint32 DataSize, void* pData) mut => VT.VideoProcessorGetOutputExtension(ref this, ref pVideoProcessor, pExtensionGuid, DataSize, pData);
+			public void VideoProcessorSetStreamFrameFormat(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_FRAME_FORMAT FrameFormat) mut => VT.VideoProcessorSetStreamFrameFormat(ref this, ref pVideoProcessor, StreamIndex, FrameFormat);
+			public void VideoProcessorSetStreamColorSpace(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) mut => VT.VideoProcessorSetStreamColorSpace(ref this, ref pVideoProcessor, StreamIndex, pColorSpace);
+			public void VideoProcessorSetStreamOutputRate(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, BOOL RepeatFrame, DXGI_RATIONAL* pCustomRate) mut => VT.VideoProcessorSetStreamOutputRate(ref this, ref pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+			public void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) mut => VT.VideoProcessorSetStreamSourceRect(ref this, ref pVideoProcessor, StreamIndex, Enable, pRect);
+			public void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) mut => VT.VideoProcessorSetStreamDestRect(ref this, ref pVideoProcessor, StreamIndex, Enable, pRect);
+			public void VideoProcessorSetStreamAlpha(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Alpha) mut => VT.VideoProcessorSetStreamAlpha(ref this, ref pVideoProcessor, StreamIndex, Enable, Alpha);
+			public void VideoProcessorSetStreamPalette(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) mut => VT.VideoProcessorSetStreamPalette(ref this, ref pVideoProcessor, StreamIndex, Count, pEntries);
+			public void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio) mut => VT.VideoProcessorSetStreamPixelAspectRatio(ref this, ref pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+			public void VideoProcessorSetStreamLumaKey(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Lower, float Upper) mut => VT.VideoProcessorSetStreamLumaKey(ref this, ref pVideoProcessor, StreamIndex, Enable, Lower, Upper);
+			public void VideoProcessorSetStreamStereoFormat(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, BOOL LeftViewFrame0, BOOL BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int32 MonoOffset) mut => VT.VideoProcessorSetStreamStereoFormat(ref this, ref pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+			public void VideoProcessorSetStreamAutoProcessingMode(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable) mut => VT.VideoProcessorSetStreamAutoProcessingMode(ref this, ref pVideoProcessor, StreamIndex, Enable);
+			public void VideoProcessorSetStreamFilter(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL Enable, int32 Level) mut => VT.VideoProcessorSetStreamFilter(ref this, ref pVideoProcessor, StreamIndex, Filter, Enable, Level);
+			public int32 VideoProcessorSetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in Guid pExtensionGuid, uint32 DataSize, void* pData) mut => VT.VideoProcessorSetStreamExtension(ref this, ref pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+			public void VideoProcessorGetStreamFrameFormat(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_FRAME_FORMAT pFrameFormat) mut => VT.VideoProcessorGetStreamFrameFormat(ref this, ref pVideoProcessor, StreamIndex, out pFrameFormat);
+			public void VideoProcessorGetStreamColorSpace(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) mut => VT.VideoProcessorGetStreamColorSpace(ref this, ref pVideoProcessor, StreamIndex, out pColorSpace);
+			public void VideoProcessorGetStreamOutputRate(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_PROCESSOR_OUTPUT_RATE pOutputRate, out BOOL pRepeatFrame, out DXGI_RATIONAL pCustomRate) mut => VT.VideoProcessorGetStreamOutputRate(ref this, ref pVideoProcessor, StreamIndex, out pOutputRate, out pRepeatFrame, out pCustomRate);
+			public void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out RECT pRect) mut => VT.VideoProcessorGetStreamSourceRect(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pRect);
+			public void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out RECT pRect) mut => VT.VideoProcessorGetStreamDestRect(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pRect);
+			public void VideoProcessorGetStreamAlpha(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out float pAlpha) mut => VT.VideoProcessorGetStreamAlpha(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pAlpha);
+			public void VideoProcessorGetStreamPalette(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) mut => VT.VideoProcessorGetStreamPalette(ref this, ref pVideoProcessor, StreamIndex, Count, pEntries);
+			public void VideoProcessorGetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out DXGI_RATIONAL pSourceAspectRatio, out DXGI_RATIONAL pDestinationAspectRatio) mut => VT.VideoProcessorGetStreamPixelAspectRatio(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pSourceAspectRatio, out pDestinationAspectRatio);
+			public void VideoProcessorGetStreamLumaKey(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out float pLower, out float pUpper) mut => VT.VideoProcessorGetStreamLumaKey(ref this, ref pVideoProcessor, StreamIndex, out pEnabled, out pLower, out pUpper);
+			public void VideoProcessorGetStreamStereoFormat(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out D3D11_VIDEO_PROCESSOR_STEREO_FORMAT pFormat, out BOOL pLeftViewFrame0, out BOOL pBaseViewFrame0, out D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE pFlipMode, out int32 MonoOffset) mut => VT.VideoProcessorGetStreamStereoFormat(ref this, ref pVideoProcessor, StreamIndex, out pEnable, out pFormat, out pLeftViewFrame0, out pBaseViewFrame0, out pFlipMode, out MonoOffset);
+			public void VideoProcessorGetStreamAutoProcessingMode(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled) mut => VT.VideoProcessorGetStreamAutoProcessingMode(ref this, ref pVideoProcessor, StreamIndex, out pEnabled);
+			public void VideoProcessorGetStreamFilter(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, out BOOL pEnabled, out int32 pLevel) mut => VT.VideoProcessorGetStreamFilter(ref this, ref pVideoProcessor, StreamIndex, Filter, out pEnabled, out pLevel);
+			public int32 VideoProcessorGetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in Guid pExtensionGuid, uint32 DataSize, void* pData) mut => VT.VideoProcessorGetStreamExtension(ref this, ref pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+			public HRESULT VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint32 OutputFrame, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM* pStreams) mut => VT.VideoProcessorBlt(ref this, ref pVideoProcessor, ref pView, OutputFrame, StreamCount, pStreams);
+			public HRESULT NegotiateCryptoSessionKeyExchange(ref ID3D11CryptoSession pCryptoSession, uint32 DataSize, void* pData) mut => VT.NegotiateCryptoSessionKeyExchange(ref this, ref pCryptoSession, DataSize, pData);
+			public void EncryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, uint32 IVSize, void* pIV) mut => VT.EncryptionBlt(ref this, ref pCryptoSession, ref pSrcSurface, ref pDstSurface, IVSize, pIV);
+			public void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, D3D11_ENCRYPTED_BLOCK_INFO* pEncryptedBlockInfo, uint32 ContentKeySize, void* pContentKey, uint32 IVSize, void* pIV) mut => VT.DecryptionBlt(ref this, ref pCryptoSession, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+			public void StartSessionKeyRefresh(ref ID3D11CryptoSession pCryptoSession, uint32 RandomNumberSize, void* pRandomNumber) mut => VT.StartSessionKeyRefresh(ref this, ref pCryptoSession, RandomNumberSize, pRandomNumber);
+			public void FinishSessionKeyRefresh(ref ID3D11CryptoSession pCryptoSession) mut => VT.FinishSessionKeyRefresh(ref this, ref pCryptoSession);
+			public HRESULT GetEncryptionBltKey(ref ID3D11CryptoSession pCryptoSession, uint32 KeySize, void* pReadbackKey) mut => VT.GetEncryptionBltKey(ref this, ref pCryptoSession, KeySize, pReadbackKey);
+			public HRESULT NegotiateAuthenticatedChannelKeyExchange(ref ID3D11AuthenticatedChannel pChannel, uint32 DataSize, void* pData) mut => VT.NegotiateAuthenticatedChannelKeyExchange(ref this, ref pChannel, DataSize, pData);
+			public HRESULT QueryAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) mut => VT.QueryAuthenticatedChannel(ref this, ref pChannel, InputSize, pInput, OutputSize, pOutput);
+			public HRESULT ConfigureAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint32 InputSize, void* pInput, out D3D11_AUTHENTICATED_CONFIGURE_OUTPUT pOutput) mut => VT.ConfigureAuthenticatedChannel(ref this, ref pChannel, InputSize, pInput, out pOutput);
+			public void VideoProcessorSetStreamRotation(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation) mut => VT.VideoProcessorSetStreamRotation(ref this, ref pVideoProcessor, StreamIndex, Enable, Rotation);
+			public void VideoProcessorGetStreamRotation(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out D3D11_VIDEO_PROCESSOR_ROTATION pRotation) mut => VT.VideoProcessorGetStreamRotation(ref this, ref pVideoProcessor, StreamIndex, out pEnable, out pRotation);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -6120,74 +5508,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateVideoDecoder(in D3D11_VIDEO_DECODER_DESC pVideoDesc, in D3D11_VIDEO_DECODER_CONFIG pConfig, out ID3D11VideoDecoder* ppDecoder) mut
-			{
-				return VT.CreateVideoDecoder(ref this, pVideoDesc, pConfig, out ppDecoder);
-			}
-			public HRESULT CreateVideoProcessor(ref ID3D11VideoProcessorEnumerator pEnum, uint32 RateConversionIndex, out ID3D11VideoProcessor* ppVideoProcessor) mut
-			{
-				return VT.CreateVideoProcessor(ref this, ref pEnum, RateConversionIndex, out ppVideoProcessor);
-			}
-			public HRESULT CreateAuthenticatedChannel(D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType, out ID3D11AuthenticatedChannel* ppAuthenticatedChannel) mut
-			{
-				return VT.CreateAuthenticatedChannel(ref this, ChannelType, out ppAuthenticatedChannel);
-			}
-			public HRESULT CreateCryptoSession(in Guid pCryptoType, Guid* pDecoderProfile, in Guid pKeyExchangeType, out ID3D11CryptoSession* ppCryptoSession) mut
-			{
-				return VT.CreateCryptoSession(ref this, pCryptoType, pDecoderProfile, pKeyExchangeType, out ppCryptoSession);
-			}
-			public HRESULT CreateVideoDecoderOutputView(ref ID3D11Resource pResource, in D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc, ID3D11VideoDecoderOutputView** ppVDOVView) mut
-			{
-				return VT.CreateVideoDecoderOutputView(ref this, ref pResource, pDesc, ppVDOVView);
-			}
-			public HRESULT CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, in D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC pDesc, ID3D11VideoProcessorInputView** ppVPIView) mut
-			{
-				return VT.CreateVideoProcessorInputView(ref this, ref pResource, ref pEnum, pDesc, ppVPIView);
-			}
-			public HRESULT CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, in D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC pDesc, ID3D11VideoProcessorOutputView** ppVPOView) mut
-			{
-				return VT.CreateVideoProcessorOutputView(ref this, ref pResource, ref pEnum, pDesc, ppVPOView);
-			}
-			public HRESULT CreateVideoProcessorEnumerator(in D3D11_VIDEO_PROCESSOR_CONTENT_DESC pDesc, out ID3D11VideoProcessorEnumerator* ppEnum) mut
-			{
-				return VT.CreateVideoProcessorEnumerator(ref this, pDesc, out ppEnum);
-			}
-			public uint32 GetVideoDecoderProfileCount() mut
-			{
-				return VT.GetVideoDecoderProfileCount(ref this);
-			}
-			public HRESULT GetVideoDecoderProfile(uint32 Index, out Guid pDecoderProfile) mut
-			{
-				return VT.GetVideoDecoderProfile(ref this, Index, out pDecoderProfile);
-			}
-			public HRESULT CheckVideoDecoderFormat(in Guid pDecoderProfile, DXGI_FORMAT Format, out BOOL pSupported) mut
-			{
-				return VT.CheckVideoDecoderFormat(ref this, pDecoderProfile, Format, out pSupported);
-			}
-			public HRESULT GetVideoDecoderConfigCount(in D3D11_VIDEO_DECODER_DESC pDesc, out uint32 pCount) mut
-			{
-				return VT.GetVideoDecoderConfigCount(ref this, pDesc, out pCount);
-			}
-			public HRESULT GetVideoDecoderConfig(in D3D11_VIDEO_DECODER_DESC pDesc, uint32 Index, out D3D11_VIDEO_DECODER_CONFIG pConfig) mut
-			{
-				return VT.GetVideoDecoderConfig(ref this, pDesc, Index, out pConfig);
-			}
-			public HRESULT GetContentProtectionCaps(Guid* pCryptoType, Guid* pDecoderProfile, out D3D11_VIDEO_CONTENT_PROTECTION_CAPS pCaps) mut
-			{
-				return VT.GetContentProtectionCaps(ref this, pCryptoType, pDecoderProfile, out pCaps);
-			}
-			public HRESULT CheckCryptoKeyExchange(in Guid pCryptoType, Guid* pDecoderProfile, uint32 Index, out Guid pKeyExchangeType) mut
-			{
-				return VT.CheckCryptoKeyExchange(ref this, pCryptoType, pDecoderProfile, Index, out pKeyExchangeType);
-			}
-			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut
-			{
-				return VT.SetPrivateData(ref this, guid, DataSize, pData);
-			}
-			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut
-			{
-				return VT.SetPrivateDataInterface(ref this, guid, pData);
-			}
+			public HRESULT CreateVideoDecoder(in D3D11_VIDEO_DECODER_DESC pVideoDesc, in D3D11_VIDEO_DECODER_CONFIG pConfig, out ID3D11VideoDecoder* ppDecoder) mut => VT.CreateVideoDecoder(ref this, pVideoDesc, pConfig, out ppDecoder);
+			public HRESULT CreateVideoProcessor(ref ID3D11VideoProcessorEnumerator pEnum, uint32 RateConversionIndex, out ID3D11VideoProcessor* ppVideoProcessor) mut => VT.CreateVideoProcessor(ref this, ref pEnum, RateConversionIndex, out ppVideoProcessor);
+			public HRESULT CreateAuthenticatedChannel(D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType, out ID3D11AuthenticatedChannel* ppAuthenticatedChannel) mut => VT.CreateAuthenticatedChannel(ref this, ChannelType, out ppAuthenticatedChannel);
+			public HRESULT CreateCryptoSession(in Guid pCryptoType, Guid* pDecoderProfile, in Guid pKeyExchangeType, out ID3D11CryptoSession* ppCryptoSession) mut => VT.CreateCryptoSession(ref this, pCryptoType, pDecoderProfile, pKeyExchangeType, out ppCryptoSession);
+			public HRESULT CreateVideoDecoderOutputView(ref ID3D11Resource pResource, in D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc, ID3D11VideoDecoderOutputView** ppVDOVView) mut => VT.CreateVideoDecoderOutputView(ref this, ref pResource, pDesc, ppVDOVView);
+			public HRESULT CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, in D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC pDesc, ID3D11VideoProcessorInputView** ppVPIView) mut => VT.CreateVideoProcessorInputView(ref this, ref pResource, ref pEnum, pDesc, ppVPIView);
+			public HRESULT CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, in D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC pDesc, ID3D11VideoProcessorOutputView** ppVPOView) mut => VT.CreateVideoProcessorOutputView(ref this, ref pResource, ref pEnum, pDesc, ppVPOView);
+			public HRESULT CreateVideoProcessorEnumerator(in D3D11_VIDEO_PROCESSOR_CONTENT_DESC pDesc, out ID3D11VideoProcessorEnumerator* ppEnum) mut => VT.CreateVideoProcessorEnumerator(ref this, pDesc, out ppEnum);
+			public uint32 GetVideoDecoderProfileCount() mut => VT.GetVideoDecoderProfileCount(ref this);
+			public HRESULT GetVideoDecoderProfile(uint32 Index, out Guid pDecoderProfile) mut => VT.GetVideoDecoderProfile(ref this, Index, out pDecoderProfile);
+			public HRESULT CheckVideoDecoderFormat(in Guid pDecoderProfile, DXGI_FORMAT Format, out BOOL pSupported) mut => VT.CheckVideoDecoderFormat(ref this, pDecoderProfile, Format, out pSupported);
+			public HRESULT GetVideoDecoderConfigCount(in D3D11_VIDEO_DECODER_DESC pDesc, out uint32 pCount) mut => VT.GetVideoDecoderConfigCount(ref this, pDesc, out pCount);
+			public HRESULT GetVideoDecoderConfig(in D3D11_VIDEO_DECODER_DESC pDesc, uint32 Index, out D3D11_VIDEO_DECODER_CONFIG pConfig) mut => VT.GetVideoDecoderConfig(ref this, pDesc, Index, out pConfig);
+			public HRESULT GetContentProtectionCaps(Guid* pCryptoType, Guid* pDecoderProfile, out D3D11_VIDEO_CONTENT_PROTECTION_CAPS pCaps) mut => VT.GetContentProtectionCaps(ref this, pCryptoType, pDecoderProfile, out pCaps);
+			public HRESULT CheckCryptoKeyExchange(in Guid pCryptoType, Guid* pDecoderProfile, uint32 Index, out Guid pKeyExchangeType) mut => VT.CheckCryptoKeyExchange(ref this, pCryptoType, pDecoderProfile, Index, out pKeyExchangeType);
+			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut => VT.SetPrivateData(ref this, guid, DataSize, pData);
+			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut => VT.SetPrivateDataInterface(ref this, guid, pData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6217,166 +5555,47 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateBuffer(in D3D11_BUFFER_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Buffer** ppBuffer) mut
-			{
-				return VT.CreateBuffer(ref this, pDesc, pInitialData, ppBuffer);
-			}
-			public HRESULT CreateTexture1D(in D3D11_TEXTURE1D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture1D** ppTexture1D) mut
-			{
-				return VT.CreateTexture1D(ref this, pDesc, pInitialData, ppTexture1D);
-			}
-			public HRESULT CreateTexture2D(in D3D11_TEXTURE2D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D** ppTexture2D) mut
-			{
-				return VT.CreateTexture2D(ref this, pDesc, pInitialData, ppTexture2D);
-			}
-			public HRESULT CreateTexture3D(in D3D11_TEXTURE3D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D** ppTexture3D) mut
-			{
-				return VT.CreateTexture3D(ref this, pDesc, pInitialData, ppTexture3D);
-			}
-			public HRESULT CreateShaderResourceView(ref ID3D11Resource pResource, D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D11ShaderResourceView** ppSRView) mut
-			{
-				return VT.CreateShaderResourceView(ref this, ref pResource, pDesc, ppSRView);
-			}
-			public HRESULT CreateUnorderedAccessView(ref ID3D11Resource pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC* pDesc, ID3D11UnorderedAccessView** ppUAView) mut
-			{
-				return VT.CreateUnorderedAccessView(ref this, ref pResource, pDesc, ppUAView);
-			}
-			public HRESULT CreateRenderTargetView(ref ID3D11Resource pResource, D3D11_RENDER_TARGET_VIEW_DESC* pDesc, ID3D11RenderTargetView** ppRTView) mut
-			{
-				return VT.CreateRenderTargetView(ref this, ref pResource, pDesc, ppRTView);
-			}
-			public HRESULT CreateDepthStencilView(ref ID3D11Resource pResource, D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D11DepthStencilView** ppDepthStencilView) mut
-			{
-				return VT.CreateDepthStencilView(ref this, ref pResource, pDesc, ppDepthStencilView);
-			}
-			public HRESULT CreateInputLayout(D3D11_INPUT_ELEMENT_DESC* pInputElementDescs, uint32 NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout) mut
-			{
-				return VT.CreateInputLayout(ref this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
-			}
-			public HRESULT CreateVertexShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) mut
-			{
-				return VT.CreateVertexShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppVertexShader);
-			}
-			public HRESULT CreateGeometryShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) mut
-			{
-				return VT.CreateGeometryShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppGeometryShader);
-			}
-			public HRESULT CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, D3D11_SO_DECLARATION_ENTRY* pSODeclaration, uint32 NumEntries, uint32* pBufferStrides, uint32 NumStrides, uint32 RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) mut
-			{
-				return VT.CreateGeometryShaderWithStreamOutput(ref this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
-			}
-			public HRESULT CreatePixelShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) mut
-			{
-				return VT.CreatePixelShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppPixelShader);
-			}
-			public HRESULT CreateHullShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) mut
-			{
-				return VT.CreateHullShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppHullShader);
-			}
-			public HRESULT CreateDomainShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) mut
-			{
-				return VT.CreateDomainShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppDomainShader);
-			}
-			public HRESULT CreateComputeShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) mut
-			{
-				return VT.CreateComputeShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppComputeShader);
-			}
-			public HRESULT CreateClassLinkage(out ID3D11ClassLinkage* ppLinkage) mut
-			{
-				return VT.CreateClassLinkage(ref this, out ppLinkage);
-			}
-			public HRESULT CreateBlendState(in D3D11_BLEND_DESC pBlendStateDesc, ID3D11BlendState** ppBlendState) mut
-			{
-				return VT.CreateBlendState(ref this, pBlendStateDesc, ppBlendState);
-			}
-			public HRESULT CreateDepthStencilState(in D3D11_DEPTH_STENCIL_DESC pDepthStencilDesc, ID3D11DepthStencilState** ppDepthStencilState) mut
-			{
-				return VT.CreateDepthStencilState(ref this, pDepthStencilDesc, ppDepthStencilState);
-			}
-			public HRESULT CreateRasterizerState(in D3D11_RASTERIZER_DESC pRasterizerDesc, ID3D11RasterizerState** ppRasterizerState) mut
-			{
-				return VT.CreateRasterizerState(ref this, pRasterizerDesc, ppRasterizerState);
-			}
-			public HRESULT CreateSamplerState(in D3D11_SAMPLER_DESC pSamplerDesc, ID3D11SamplerState** ppSamplerState) mut
-			{
-				return VT.CreateSamplerState(ref this, pSamplerDesc, ppSamplerState);
-			}
-			public HRESULT CreateQuery(in D3D11_QUERY_DESC pQueryDesc, ID3D11Query** ppQuery) mut
-			{
-				return VT.CreateQuery(ref this, pQueryDesc, ppQuery);
-			}
-			public HRESULT CreatePredicate(in D3D11_QUERY_DESC pPredicateDesc, ID3D11Predicate** ppPredicate) mut
-			{
-				return VT.CreatePredicate(ref this, pPredicateDesc, ppPredicate);
-			}
-			public HRESULT CreateCounter(in D3D11_COUNTER_DESC pCounterDesc, ID3D11Counter** ppCounter) mut
-			{
-				return VT.CreateCounter(ref this, pCounterDesc, ppCounter);
-			}
-			public HRESULT CreateDeferredContext(uint32 ContextFlags, ID3D11DeviceContext** ppDeferredContext) mut
-			{
-				return VT.CreateDeferredContext(ref this, ContextFlags, ppDeferredContext);
-			}
-			public HRESULT OpenSharedResource(HANDLE hResource, in Guid ReturnedInterface, void** ppResource) mut
-			{
-				return VT.OpenSharedResource(ref this, hResource, ReturnedInterface, ppResource);
-			}
-			public HRESULT CheckFormatSupport(DXGI_FORMAT Format, out uint32 pFormatSupport) mut
-			{
-				return VT.CheckFormatSupport(ref this, Format, out pFormatSupport);
-			}
-			public HRESULT CheckMultisampleQualityLevels(DXGI_FORMAT Format, uint32 SampleCount, out uint32 pNumQualityLevels) mut
-			{
-				return VT.CheckMultisampleQualityLevels(ref this, Format, SampleCount, out pNumQualityLevels);
-			}
-			public void CheckCounterInfo(out D3D11_COUNTER_INFO pCounterInfo) mut
-			{
-				VT.CheckCounterInfo(ref this, out pCounterInfo);
-			}
-			public HRESULT CheckCounter(in D3D11_COUNTER_DESC pDesc, out D3D11_COUNTER_TYPE pType, out uint32 pActiveCounters, uint8* szName, uint32* pNameLength, uint8* szUnits, uint32* pUnitsLength, uint8* szDescription, uint32* pDescriptionLength) mut
-			{
-				return VT.CheckCounter(ref this, pDesc, out pType, out pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-			}
-			public HRESULT CheckFeatureSupport(D3D11_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) mut
-			{
-				return VT.CheckFeatureSupport(ref this, Feature, pFeatureSupportData, FeatureSupportDataSize);
-			}
-			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut
-			{
-				return VT.GetPrivateData(ref this, guid, out pDataSize, pData);
-			}
-			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut
-			{
-				return VT.SetPrivateData(ref this, guid, DataSize, pData);
-			}
-			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut
-			{
-				return VT.SetPrivateDataInterface(ref this, guid, pData);
-			}
-			public D3D_FEATURE_LEVEL GetFeatureLevel() mut
-			{
-				return VT.GetFeatureLevel(ref this);
-			}
-			public uint32 GetCreationFlags() mut
-			{
-				return VT.GetCreationFlags(ref this);
-			}
-			public HRESULT GetDeviceRemovedReason() mut
-			{
-				return VT.GetDeviceRemovedReason(ref this);
-			}
-			public void GetImmediateContext(out ID3D11DeviceContext* ppImmediateContext) mut
-			{
-				VT.GetImmediateContext(ref this, out ppImmediateContext);
-			}
-			public HRESULT SetExceptionMode(uint32 RaiseFlags) mut
-			{
-				return VT.SetExceptionMode(ref this, RaiseFlags);
-			}
-			public uint32 GetExceptionMode() mut
-			{
-				return VT.GetExceptionMode(ref this);
-			}
+			public HRESULT CreateBuffer(in D3D11_BUFFER_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Buffer** ppBuffer) mut => VT.CreateBuffer(ref this, pDesc, pInitialData, ppBuffer);
+			public HRESULT CreateTexture1D(in D3D11_TEXTURE1D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture1D** ppTexture1D) mut => VT.CreateTexture1D(ref this, pDesc, pInitialData, ppTexture1D);
+			public HRESULT CreateTexture2D(in D3D11_TEXTURE2D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D** ppTexture2D) mut => VT.CreateTexture2D(ref this, pDesc, pInitialData, ppTexture2D);
+			public HRESULT CreateTexture3D(in D3D11_TEXTURE3D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D** ppTexture3D) mut => VT.CreateTexture3D(ref this, pDesc, pInitialData, ppTexture3D);
+			public HRESULT CreateShaderResourceView(ref ID3D11Resource pResource, D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D11ShaderResourceView** ppSRView) mut => VT.CreateShaderResourceView(ref this, ref pResource, pDesc, ppSRView);
+			public HRESULT CreateUnorderedAccessView(ref ID3D11Resource pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC* pDesc, ID3D11UnorderedAccessView** ppUAView) mut => VT.CreateUnorderedAccessView(ref this, ref pResource, pDesc, ppUAView);
+			public HRESULT CreateRenderTargetView(ref ID3D11Resource pResource, D3D11_RENDER_TARGET_VIEW_DESC* pDesc, ID3D11RenderTargetView** ppRTView) mut => VT.CreateRenderTargetView(ref this, ref pResource, pDesc, ppRTView);
+			public HRESULT CreateDepthStencilView(ref ID3D11Resource pResource, D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D11DepthStencilView** ppDepthStencilView) mut => VT.CreateDepthStencilView(ref this, ref pResource, pDesc, ppDepthStencilView);
+			public HRESULT CreateInputLayout(D3D11_INPUT_ELEMENT_DESC* pInputElementDescs, uint32 NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout) mut => VT.CreateInputLayout(ref this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
+			public HRESULT CreateVertexShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) mut => VT.CreateVertexShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppVertexShader);
+			public HRESULT CreateGeometryShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) mut => VT.CreateGeometryShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppGeometryShader);
+			public HRESULT CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, D3D11_SO_DECLARATION_ENTRY* pSODeclaration, uint32 NumEntries, uint32* pBufferStrides, uint32 NumStrides, uint32 RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) mut => VT.CreateGeometryShaderWithStreamOutput(ref this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+			public HRESULT CreatePixelShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) mut => VT.CreatePixelShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppPixelShader);
+			public HRESULT CreateHullShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) mut => VT.CreateHullShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppHullShader);
+			public HRESULT CreateDomainShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) mut => VT.CreateDomainShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppDomainShader);
+			public HRESULT CreateComputeShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) mut => VT.CreateComputeShader(ref this, pShaderBytecode, BytecodeLength, pClassLinkage, ppComputeShader);
+			public HRESULT CreateClassLinkage(out ID3D11ClassLinkage* ppLinkage) mut => VT.CreateClassLinkage(ref this, out ppLinkage);
+			public HRESULT CreateBlendState(in D3D11_BLEND_DESC pBlendStateDesc, ID3D11BlendState** ppBlendState) mut => VT.CreateBlendState(ref this, pBlendStateDesc, ppBlendState);
+			public HRESULT CreateDepthStencilState(in D3D11_DEPTH_STENCIL_DESC pDepthStencilDesc, ID3D11DepthStencilState** ppDepthStencilState) mut => VT.CreateDepthStencilState(ref this, pDepthStencilDesc, ppDepthStencilState);
+			public HRESULT CreateRasterizerState(in D3D11_RASTERIZER_DESC pRasterizerDesc, ID3D11RasterizerState** ppRasterizerState) mut => VT.CreateRasterizerState(ref this, pRasterizerDesc, ppRasterizerState);
+			public HRESULT CreateSamplerState(in D3D11_SAMPLER_DESC pSamplerDesc, ID3D11SamplerState** ppSamplerState) mut => VT.CreateSamplerState(ref this, pSamplerDesc, ppSamplerState);
+			public HRESULT CreateQuery(in D3D11_QUERY_DESC pQueryDesc, ID3D11Query** ppQuery) mut => VT.CreateQuery(ref this, pQueryDesc, ppQuery);
+			public HRESULT CreatePredicate(in D3D11_QUERY_DESC pPredicateDesc, ID3D11Predicate** ppPredicate) mut => VT.CreatePredicate(ref this, pPredicateDesc, ppPredicate);
+			public HRESULT CreateCounter(in D3D11_COUNTER_DESC pCounterDesc, ID3D11Counter** ppCounter) mut => VT.CreateCounter(ref this, pCounterDesc, ppCounter);
+			public HRESULT CreateDeferredContext(uint32 ContextFlags, ID3D11DeviceContext** ppDeferredContext) mut => VT.CreateDeferredContext(ref this, ContextFlags, ppDeferredContext);
+			public HRESULT OpenSharedResource(HANDLE hResource, in Guid ReturnedInterface, void** ppResource) mut => VT.OpenSharedResource(ref this, hResource, ReturnedInterface, ppResource);
+			public HRESULT CheckFormatSupport(DXGI_FORMAT Format, out uint32 pFormatSupport) mut => VT.CheckFormatSupport(ref this, Format, out pFormatSupport);
+			public HRESULT CheckMultisampleQualityLevels(DXGI_FORMAT Format, uint32 SampleCount, out uint32 pNumQualityLevels) mut => VT.CheckMultisampleQualityLevels(ref this, Format, SampleCount, out pNumQualityLevels);
+			public void CheckCounterInfo(out D3D11_COUNTER_INFO pCounterInfo) mut => VT.CheckCounterInfo(ref this, out pCounterInfo);
+			public HRESULT CheckCounter(in D3D11_COUNTER_DESC pDesc, out D3D11_COUNTER_TYPE pType, out uint32 pActiveCounters, uint8* szName, uint32* pNameLength, uint8* szUnits, uint32* pUnitsLength, uint8* szDescription, uint32* pDescriptionLength) mut => VT.CheckCounter(ref this, pDesc, out pType, out pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
+			public HRESULT CheckFeatureSupport(D3D11_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) mut => VT.CheckFeatureSupport(ref this, Feature, pFeatureSupportData, FeatureSupportDataSize);
+			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut => VT.GetPrivateData(ref this, guid, out pDataSize, pData);
+			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut => VT.SetPrivateData(ref this, guid, DataSize, pData);
+			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut => VT.SetPrivateDataInterface(ref this, guid, pData);
+			public D3D_FEATURE_LEVEL GetFeatureLevel() mut => VT.GetFeatureLevel(ref this);
+			public uint32 GetCreationFlags() mut => VT.GetCreationFlags(ref this);
+			public HRESULT GetDeviceRemovedReason() mut => VT.GetDeviceRemovedReason(ref this);
+			public void GetImmediateContext(out ID3D11DeviceContext* ppImmediateContext) mut => VT.GetImmediateContext(ref this, out ppImmediateContext);
+			public HRESULT SetExceptionMode(uint32 RaiseFlags) mut => VT.SetExceptionMode(ref this, RaiseFlags);
+			public uint32 GetExceptionMode() mut => VT.GetExceptionMode(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6429,42 +5648,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFeatureMask(uint32 Mask) mut
-			{
-				return VT.SetFeatureMask(ref this, Mask);
-			}
-			public uint32 GetFeatureMask() mut
-			{
-				return VT.GetFeatureMask(ref this);
-			}
-			public HRESULT SetPresentPerRenderOpDelay(uint32 Milliseconds) mut
-			{
-				return VT.SetPresentPerRenderOpDelay(ref this, Milliseconds);
-			}
-			public uint32 GetPresentPerRenderOpDelay() mut
-			{
-				return VT.GetPresentPerRenderOpDelay(ref this);
-			}
-			public HRESULT SetSwapChain(IDXGISwapChain* pSwapChain) mut
-			{
-				return VT.SetSwapChain(ref this, pSwapChain);
-			}
-			public HRESULT GetSwapChain(out IDXGISwapChain* ppSwapChain) mut
-			{
-				return VT.GetSwapChain(ref this, out ppSwapChain);
-			}
-			public HRESULT ValidateContext(ref ID3D11DeviceContext pContext) mut
-			{
-				return VT.ValidateContext(ref this, ref pContext);
-			}
-			public HRESULT ReportLiveDeviceObjects(D3D11_RLDO_FLAGS Flags) mut
-			{
-				return VT.ReportLiveDeviceObjects(ref this, Flags);
-			}
-			public HRESULT ValidateContextForDispatch(ref ID3D11DeviceContext pContext) mut
-			{
-				return VT.ValidateContextForDispatch(ref this, ref pContext);
-			}
+			public HRESULT SetFeatureMask(uint32 Mask) mut => VT.SetFeatureMask(ref this, Mask);
+			public uint32 GetFeatureMask() mut => VT.GetFeatureMask(ref this);
+			public HRESULT SetPresentPerRenderOpDelay(uint32 Milliseconds) mut => VT.SetPresentPerRenderOpDelay(ref this, Milliseconds);
+			public uint32 GetPresentPerRenderOpDelay() mut => VT.GetPresentPerRenderOpDelay(ref this);
+			public HRESULT SetSwapChain(IDXGISwapChain* pSwapChain) mut => VT.SetSwapChain(ref this, pSwapChain);
+			public HRESULT GetSwapChain(out IDXGISwapChain* ppSwapChain) mut => VT.GetSwapChain(ref this, out ppSwapChain);
+			public HRESULT ValidateContext(ref ID3D11DeviceContext pContext) mut => VT.ValidateContext(ref this, ref pContext);
+			public HRESULT ReportLiveDeviceObjects(D3D11_RLDO_FLAGS Flags) mut => VT.ReportLiveDeviceObjects(ref this, Flags);
+			public HRESULT ValidateContextForDispatch(ref ID3D11DeviceContext pContext) mut => VT.ValidateContextForDispatch(ref this, ref pContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6486,14 +5679,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public BOOL SetUseRef(BOOL UseRef) mut
-			{
-				return VT.SetUseRef(ref this, UseRef);
-			}
-			public BOOL GetUseRef() mut
-			{
-				return VT.GetUseRef(ref this);
-			}
+			public BOOL SetUseRef(BOOL UseRef) mut => VT.SetUseRef(ref this, UseRef);
+			public BOOL GetUseRef() mut => VT.GetUseRef(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6508,14 +5696,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetShaderTrackingOptionsByType(uint32 ResourceTypeFlags, uint32 Options) mut
-			{
-				return VT.SetShaderTrackingOptionsByType(ref this, ResourceTypeFlags, Options);
-			}
-			public HRESULT SetShaderTrackingOptions(ref IUnknown pShader, uint32 Options) mut
-			{
-				return VT.SetShaderTrackingOptions(ref this, ref pShader, Options);
-			}
+			public HRESULT SetShaderTrackingOptionsByType(uint32 ResourceTypeFlags, uint32 Options) mut => VT.SetShaderTrackingOptionsByType(ref this, ResourceTypeFlags, Options);
+			public HRESULT SetShaderTrackingOptions(ref IUnknown pShader, uint32 Options) mut => VT.SetShaderTrackingOptions(ref this, ref pShader, Options);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6530,10 +5713,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTrackingOptions(uint32 uOptions) mut
-			{
-				return VT.SetTrackingOptions(ref this, uOptions);
-			}
+			public HRESULT SetTrackingOptions(uint32 uOptions) mut => VT.SetTrackingOptions(ref this, uOptions);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6547,10 +5728,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTrackingOptions(uint32 ResourceTypeFlags, uint32 Options) mut
-			{
-				return VT.SetTrackingOptions(ref this, ResourceTypeFlags, Options);
-			}
+			public HRESULT SetTrackingOptions(uint32 ResourceTypeFlags, uint32 Options) mut => VT.SetTrackingOptions(ref this, ResourceTypeFlags, Options);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6564,146 +5743,42 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMessageCountLimit(uint64 MessageCountLimit) mut
-			{
-				return VT.SetMessageCountLimit(ref this, MessageCountLimit);
-			}
-			public void ClearStoredMessages() mut
-			{
-				VT.ClearStoredMessages(ref this);
-			}
-			public HRESULT GetMessage(uint64 MessageIndex, D3D11_MESSAGE* pMessage, out uint pMessageByteLength) mut
-			{
-				return VT.GetMessage(ref this, MessageIndex, pMessage, out pMessageByteLength);
-			}
-			public uint64 GetNumMessagesAllowedByStorageFilter() mut
-			{
-				return VT.GetNumMessagesAllowedByStorageFilter(ref this);
-			}
-			public uint64 GetNumMessagesDeniedByStorageFilter() mut
-			{
-				return VT.GetNumMessagesDeniedByStorageFilter(ref this);
-			}
-			public uint64 GetNumStoredMessages() mut
-			{
-				return VT.GetNumStoredMessages(ref this);
-			}
-			public uint64 GetNumStoredMessagesAllowedByRetrievalFilter() mut
-			{
-				return VT.GetNumStoredMessagesAllowedByRetrievalFilter(ref this);
-			}
-			public uint64 GetNumMessagesDiscardedByMessageCountLimit() mut
-			{
-				return VT.GetNumMessagesDiscardedByMessageCountLimit(ref this);
-			}
-			public uint64 GetMessageCountLimit() mut
-			{
-				return VT.GetMessageCountLimit(ref this);
-			}
-			public HRESULT AddStorageFilterEntries(ref D3D11_INFO_QUEUE_FILTER pFilter) mut
-			{
-				return VT.AddStorageFilterEntries(ref this, ref pFilter);
-			}
-			public HRESULT GetStorageFilter(D3D11_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) mut
-			{
-				return VT.GetStorageFilter(ref this, pFilter, out pFilterByteLength);
-			}
-			public void ClearStorageFilter() mut
-			{
-				VT.ClearStorageFilter(ref this);
-			}
-			public HRESULT PushEmptyStorageFilter() mut
-			{
-				return VT.PushEmptyStorageFilter(ref this);
-			}
-			public HRESULT PushCopyOfStorageFilter() mut
-			{
-				return VT.PushCopyOfStorageFilter(ref this);
-			}
-			public HRESULT PushStorageFilter(ref D3D11_INFO_QUEUE_FILTER pFilter) mut
-			{
-				return VT.PushStorageFilter(ref this, ref pFilter);
-			}
-			public void PopStorageFilter() mut
-			{
-				VT.PopStorageFilter(ref this);
-			}
-			public uint32 GetStorageFilterStackSize() mut
-			{
-				return VT.GetStorageFilterStackSize(ref this);
-			}
-			public HRESULT AddRetrievalFilterEntries(ref D3D11_INFO_QUEUE_FILTER pFilter) mut
-			{
-				return VT.AddRetrievalFilterEntries(ref this, ref pFilter);
-			}
-			public HRESULT GetRetrievalFilter(D3D11_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) mut
-			{
-				return VT.GetRetrievalFilter(ref this, pFilter, out pFilterByteLength);
-			}
-			public void ClearRetrievalFilter() mut
-			{
-				VT.ClearRetrievalFilter(ref this);
-			}
-			public HRESULT PushEmptyRetrievalFilter() mut
-			{
-				return VT.PushEmptyRetrievalFilter(ref this);
-			}
-			public HRESULT PushCopyOfRetrievalFilter() mut
-			{
-				return VT.PushCopyOfRetrievalFilter(ref this);
-			}
-			public HRESULT PushRetrievalFilter(ref D3D11_INFO_QUEUE_FILTER pFilter) mut
-			{
-				return VT.PushRetrievalFilter(ref this, ref pFilter);
-			}
-			public void PopRetrievalFilter() mut
-			{
-				VT.PopRetrievalFilter(ref this);
-			}
-			public uint32 GetRetrievalFilterStackSize() mut
-			{
-				return VT.GetRetrievalFilterStackSize(ref this);
-			}
-			public HRESULT AddMessage(D3D11_MESSAGE_CATEGORY Category, D3D11_MESSAGE_SEVERITY Severity, D3D11_MESSAGE_ID ID, PSTR pDescription) mut
-			{
-				return VT.AddMessage(ref this, Category, Severity, ID, pDescription);
-			}
-			public HRESULT AddApplicationMessage(D3D11_MESSAGE_SEVERITY Severity, PSTR pDescription) mut
-			{
-				return VT.AddApplicationMessage(ref this, Severity, pDescription);
-			}
-			public HRESULT SetBreakOnCategory(D3D11_MESSAGE_CATEGORY Category, BOOL bEnable) mut
-			{
-				return VT.SetBreakOnCategory(ref this, Category, bEnable);
-			}
-			public HRESULT SetBreakOnSeverity(D3D11_MESSAGE_SEVERITY Severity, BOOL bEnable) mut
-			{
-				return VT.SetBreakOnSeverity(ref this, Severity, bEnable);
-			}
-			public HRESULT SetBreakOnID(D3D11_MESSAGE_ID ID, BOOL bEnable) mut
-			{
-				return VT.SetBreakOnID(ref this, ID, bEnable);
-			}
-			public BOOL GetBreakOnCategory(D3D11_MESSAGE_CATEGORY Category) mut
-			{
-				return VT.GetBreakOnCategory(ref this, Category);
-			}
-			public BOOL GetBreakOnSeverity(D3D11_MESSAGE_SEVERITY Severity) mut
-			{
-				return VT.GetBreakOnSeverity(ref this, Severity);
-			}
-			public BOOL GetBreakOnID(D3D11_MESSAGE_ID ID) mut
-			{
-				return VT.GetBreakOnID(ref this, ID);
-			}
-			public void SetMuteDebugOutput(BOOL bMute) mut
-			{
-				VT.SetMuteDebugOutput(ref this, bMute);
-			}
-			public BOOL GetMuteDebugOutput() mut
-			{
-				return VT.GetMuteDebugOutput(ref this);
-			}
+			public HRESULT SetMessageCountLimit(uint64 MessageCountLimit) mut => VT.SetMessageCountLimit(ref this, MessageCountLimit);
+			public void ClearStoredMessages() mut => VT.ClearStoredMessages(ref this);
+			public HRESULT GetMessage(uint64 MessageIndex, D3D11_MESSAGE* pMessage, out uint pMessageByteLength) mut => VT.GetMessage(ref this, MessageIndex, pMessage, out pMessageByteLength);
+			public uint64 GetNumMessagesAllowedByStorageFilter() mut => VT.GetNumMessagesAllowedByStorageFilter(ref this);
+			public uint64 GetNumMessagesDeniedByStorageFilter() mut => VT.GetNumMessagesDeniedByStorageFilter(ref this);
+			public uint64 GetNumStoredMessages() mut => VT.GetNumStoredMessages(ref this);
+			public uint64 GetNumStoredMessagesAllowedByRetrievalFilter() mut => VT.GetNumStoredMessagesAllowedByRetrievalFilter(ref this);
+			public uint64 GetNumMessagesDiscardedByMessageCountLimit() mut => VT.GetNumMessagesDiscardedByMessageCountLimit(ref this);
+			public uint64 GetMessageCountLimit() mut => VT.GetMessageCountLimit(ref this);
+			public HRESULT AddStorageFilterEntries(ref D3D11_INFO_QUEUE_FILTER pFilter) mut => VT.AddStorageFilterEntries(ref this, ref pFilter);
+			public HRESULT GetStorageFilter(D3D11_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) mut => VT.GetStorageFilter(ref this, pFilter, out pFilterByteLength);
+			public void ClearStorageFilter() mut => VT.ClearStorageFilter(ref this);
+			public HRESULT PushEmptyStorageFilter() mut => VT.PushEmptyStorageFilter(ref this);
+			public HRESULT PushCopyOfStorageFilter() mut => VT.PushCopyOfStorageFilter(ref this);
+			public HRESULT PushStorageFilter(ref D3D11_INFO_QUEUE_FILTER pFilter) mut => VT.PushStorageFilter(ref this, ref pFilter);
+			public void PopStorageFilter() mut => VT.PopStorageFilter(ref this);
+			public uint32 GetStorageFilterStackSize() mut => VT.GetStorageFilterStackSize(ref this);
+			public HRESULT AddRetrievalFilterEntries(ref D3D11_INFO_QUEUE_FILTER pFilter) mut => VT.AddRetrievalFilterEntries(ref this, ref pFilter);
+			public HRESULT GetRetrievalFilter(D3D11_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) mut => VT.GetRetrievalFilter(ref this, pFilter, out pFilterByteLength);
+			public void ClearRetrievalFilter() mut => VT.ClearRetrievalFilter(ref this);
+			public HRESULT PushEmptyRetrievalFilter() mut => VT.PushEmptyRetrievalFilter(ref this);
+			public HRESULT PushCopyOfRetrievalFilter() mut => VT.PushCopyOfRetrievalFilter(ref this);
+			public HRESULT PushRetrievalFilter(ref D3D11_INFO_QUEUE_FILTER pFilter) mut => VT.PushRetrievalFilter(ref this, ref pFilter);
+			public void PopRetrievalFilter() mut => VT.PopRetrievalFilter(ref this);
+			public uint32 GetRetrievalFilterStackSize() mut => VT.GetRetrievalFilterStackSize(ref this);
+			public HRESULT AddMessage(D3D11_MESSAGE_CATEGORY Category, D3D11_MESSAGE_SEVERITY Severity, D3D11_MESSAGE_ID ID, PSTR pDescription) mut => VT.AddMessage(ref this, Category, Severity, ID, pDescription);
+			public HRESULT AddApplicationMessage(D3D11_MESSAGE_SEVERITY Severity, PSTR pDescription) mut => VT.AddApplicationMessage(ref this, Severity, pDescription);
+			public HRESULT SetBreakOnCategory(D3D11_MESSAGE_CATEGORY Category, BOOL bEnable) mut => VT.SetBreakOnCategory(ref this, Category, bEnable);
+			public HRESULT SetBreakOnSeverity(D3D11_MESSAGE_SEVERITY Severity, BOOL bEnable) mut => VT.SetBreakOnSeverity(ref this, Severity, bEnable);
+			public HRESULT SetBreakOnID(D3D11_MESSAGE_ID ID, BOOL bEnable) mut => VT.SetBreakOnID(ref this, ID, bEnable);
+			public BOOL GetBreakOnCategory(D3D11_MESSAGE_CATEGORY Category) mut => VT.GetBreakOnCategory(ref this, Category);
+			public BOOL GetBreakOnSeverity(D3D11_MESSAGE_SEVERITY Severity) mut => VT.GetBreakOnSeverity(ref this, Severity);
+			public BOOL GetBreakOnID(D3D11_MESSAGE_ID ID) mut => VT.GetBreakOnID(ref this, ID);
+			public void SetMuteDebugOutput(BOOL bMute) mut => VT.SetMuteDebugOutput(ref this, bMute);
+			public BOOL GetMuteDebugOutput() mut => VT.GetMuteDebugOutput(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -6751,10 +5826,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D11_BLEND_DESC1 pDesc) mut
-			{
-				VT.GetDesc1(ref this, out pDesc);
-			}
+			public void GetDesc1(out D3D11_BLEND_DESC1 pDesc) mut => VT.GetDesc1(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11BlendState.VTable
 			{
@@ -6768,10 +5841,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D11_RASTERIZER_DESC1 pDesc) mut
-			{
-				VT.GetDesc1(ref this, out pDesc);
-			}
+			public void GetDesc1(out D3D11_RASTERIZER_DESC1 pDesc) mut => VT.GetDesc1(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11RasterizerState.VTable
 			{
@@ -6785,6 +5856,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -6797,82 +5869,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox, uint32 CopyFlags) mut
-			{
-				VT.CopySubresourceRegion1(ref this, ref pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, pSrcBox, CopyFlags);
-			}
-			public void UpdateSubresource1(ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch, uint32 CopyFlags) mut
-			{
-				VT.UpdateSubresource1(ref this, ref pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
-			}
-			public void DiscardResource(ref ID3D11Resource pResource) mut
-			{
-				VT.DiscardResource(ref this, ref pResource);
-			}
-			public void DiscardView(ref ID3D11View pResourceView) mut
-			{
-				VT.DiscardView(ref this, ref pResourceView);
-			}
-			public void VSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.VSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void HSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.HSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void DSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.DSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void GSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.GSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void PSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.PSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void CSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.CSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void VSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.VSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void HSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.HSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void DSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.DSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void GSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.GSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void PSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.PSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void CSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut
-			{
-				VT.CSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
-			}
-			public void SwapDeviceContextState(ref ID3DDeviceContextState pState, ID3DDeviceContextState** ppPreviousState) mut
-			{
-				VT.SwapDeviceContextState(ref this, ref pState, ppPreviousState);
-			}
-			public void ClearView(ref ID3D11View pView, in float Color, RECT* pRect, uint32 NumRects) mut
-			{
-				VT.ClearView(ref this, ref pView, Color, pRect, NumRects);
-			}
-			public void DiscardView1(ref ID3D11View pResourceView, RECT* pRects, uint32 NumRects) mut
-			{
-				VT.DiscardView1(ref this, ref pResourceView, pRects, NumRects);
-			}
+			public void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox, uint32 CopyFlags) mut => VT.CopySubresourceRegion1(ref this, ref pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, pSrcBox, CopyFlags);
+			public void UpdateSubresource1(ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch, uint32 CopyFlags) mut => VT.UpdateSubresource1(ref this, ref pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+			public void DiscardResource(ref ID3D11Resource pResource) mut => VT.DiscardResource(ref this, ref pResource);
+			public void DiscardView(ref ID3D11View pResourceView) mut => VT.DiscardView(ref this, ref pResourceView);
+			public void VSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.VSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void HSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.HSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void DSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.DSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void GSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.GSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void PSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.PSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void CSSetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.CSSetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void VSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.VSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void HSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.HSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void DSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.DSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void GSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.GSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void PSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.PSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void CSGetConstantBuffers1(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) mut => VT.CSGetConstantBuffers1(ref this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+			public void SwapDeviceContextState(ref ID3DDeviceContextState pState, ID3DDeviceContextState** ppPreviousState) mut => VT.SwapDeviceContextState(ref this, ref pState, ppPreviousState);
+			public void ClearView(ref ID3D11View pView, in float Color, RECT* pRect, uint32 NumRects) mut => VT.ClearView(ref this, ref pView, Color, pRect, NumRects);
+			public void DiscardView1(ref ID3D11View pResourceView, RECT* pRects, uint32 NumRects) mut => VT.DiscardView1(ref this, ref pResourceView, pRects, NumRects);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceContext.VTable
 			{
@@ -6904,62 +5920,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SubmitDecoderBuffers1(ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC1* pBufferDesc) mut
-			{
-				return VT.SubmitDecoderBuffers1(ref this, ref pDecoder, NumBuffers, pBufferDesc);
-			}
-			public HRESULT GetDataForNewHardwareKey(ref ID3D11CryptoSession pCryptoSession, uint32 PrivateInputSize, void* pPrivatInputData, out uint64 pPrivateOutputData) mut
-			{
-				return VT.GetDataForNewHardwareKey(ref this, ref pCryptoSession, PrivateInputSize, pPrivatInputData, out pPrivateOutputData);
-			}
-			public HRESULT CheckCryptoSessionStatus(ref ID3D11CryptoSession pCryptoSession, out D3D11_CRYPTO_SESSION_STATUS pStatus) mut
-			{
-				return VT.CheckCryptoSessionStatus(ref this, ref pCryptoSession, out pStatus);
-			}
-			public HRESULT DecoderEnableDownsampling(ref ID3D11VideoDecoder pDecoder, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc, uint32 ReferenceFrameCount) mut
-			{
-				return VT.DecoderEnableDownsampling(ref this, ref pDecoder, InputColorSpace, pOutputDesc, ReferenceFrameCount);
-			}
-			public HRESULT DecoderUpdateDownsampling(ref ID3D11VideoDecoder pDecoder, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc) mut
-			{
-				return VT.DecoderUpdateDownsampling(ref this, ref pDecoder, pOutputDesc);
-			}
-			public void VideoProcessorSetOutputColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, DXGI_COLOR_SPACE_TYPE ColorSpace) mut
-			{
-				VT.VideoProcessorSetOutputColorSpace1(ref this, ref pVideoProcessor, ColorSpace);
-			}
-			public void VideoProcessorSetOutputShaderUsage(ref ID3D11VideoProcessor pVideoProcessor, BOOL ShaderUsage) mut
-			{
-				VT.VideoProcessorSetOutputShaderUsage(ref this, ref pVideoProcessor, ShaderUsage);
-			}
-			public void VideoProcessorGetOutputColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, out DXGI_COLOR_SPACE_TYPE pColorSpace) mut
-			{
-				VT.VideoProcessorGetOutputColorSpace1(ref this, ref pVideoProcessor, out pColorSpace);
-			}
-			public void VideoProcessorGetOutputShaderUsage(ref ID3D11VideoProcessor pVideoProcessor, out BOOL pShaderUsage) mut
-			{
-				VT.VideoProcessorGetOutputShaderUsage(ref this, ref pVideoProcessor, out pShaderUsage);
-			}
-			public void VideoProcessorSetStreamColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, DXGI_COLOR_SPACE_TYPE ColorSpace) mut
-			{
-				VT.VideoProcessorSetStreamColorSpace1(ref this, ref pVideoProcessor, StreamIndex, ColorSpace);
-			}
-			public void VideoProcessorSetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, BOOL FlipHorizontal, BOOL FlipVertical) mut
-			{
-				VT.VideoProcessorSetStreamMirror(ref this, ref pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
-			}
-			public void VideoProcessorGetStreamColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out DXGI_COLOR_SPACE_TYPE pColorSpace) mut
-			{
-				VT.VideoProcessorGetStreamColorSpace1(ref this, ref pVideoProcessor, StreamIndex, out pColorSpace);
-			}
-			public void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out BOOL pFlipHorizontal, out BOOL pFlipVertical) mut
-			{
-				VT.VideoProcessorGetStreamMirror(ref this, ref pVideoProcessor, StreamIndex, out pEnable, out pFlipHorizontal, out pFlipVertical);
-			}
-			public HRESULT VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint32 OutputWidth, uint32 OutputHeight, DXGI_FORMAT OutputFormat, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT* pStreams, out uint32 pBehaviorHints) mut
-			{
-				return VT.VideoProcessorGetBehaviorHints(ref this, ref pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, out pBehaviorHints);
-			}
+			public HRESULT SubmitDecoderBuffers1(ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC1* pBufferDesc) mut => VT.SubmitDecoderBuffers1(ref this, ref pDecoder, NumBuffers, pBufferDesc);
+			public HRESULT GetDataForNewHardwareKey(ref ID3D11CryptoSession pCryptoSession, uint32 PrivateInputSize, void* pPrivatInputData, out uint64 pPrivateOutputData) mut => VT.GetDataForNewHardwareKey(ref this, ref pCryptoSession, PrivateInputSize, pPrivatInputData, out pPrivateOutputData);
+			public HRESULT CheckCryptoSessionStatus(ref ID3D11CryptoSession pCryptoSession, out D3D11_CRYPTO_SESSION_STATUS pStatus) mut => VT.CheckCryptoSessionStatus(ref this, ref pCryptoSession, out pStatus);
+			public HRESULT DecoderEnableDownsampling(ref ID3D11VideoDecoder pDecoder, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc, uint32 ReferenceFrameCount) mut => VT.DecoderEnableDownsampling(ref this, ref pDecoder, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+			public HRESULT DecoderUpdateDownsampling(ref ID3D11VideoDecoder pDecoder, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc) mut => VT.DecoderUpdateDownsampling(ref this, ref pDecoder, pOutputDesc);
+			public void VideoProcessorSetOutputColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, DXGI_COLOR_SPACE_TYPE ColorSpace) mut => VT.VideoProcessorSetOutputColorSpace1(ref this, ref pVideoProcessor, ColorSpace);
+			public void VideoProcessorSetOutputShaderUsage(ref ID3D11VideoProcessor pVideoProcessor, BOOL ShaderUsage) mut => VT.VideoProcessorSetOutputShaderUsage(ref this, ref pVideoProcessor, ShaderUsage);
+			public void VideoProcessorGetOutputColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, out DXGI_COLOR_SPACE_TYPE pColorSpace) mut => VT.VideoProcessorGetOutputColorSpace1(ref this, ref pVideoProcessor, out pColorSpace);
+			public void VideoProcessorGetOutputShaderUsage(ref ID3D11VideoProcessor pVideoProcessor, out BOOL pShaderUsage) mut => VT.VideoProcessorGetOutputShaderUsage(ref this, ref pVideoProcessor, out pShaderUsage);
+			public void VideoProcessorSetStreamColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, DXGI_COLOR_SPACE_TYPE ColorSpace) mut => VT.VideoProcessorSetStreamColorSpace1(ref this, ref pVideoProcessor, StreamIndex, ColorSpace);
+			public void VideoProcessorSetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, BOOL FlipHorizontal, BOOL FlipVertical) mut => VT.VideoProcessorSetStreamMirror(ref this, ref pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+			public void VideoProcessorGetStreamColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out DXGI_COLOR_SPACE_TYPE pColorSpace) mut => VT.VideoProcessorGetStreamColorSpace1(ref this, ref pVideoProcessor, StreamIndex, out pColorSpace);
+			public void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out BOOL pFlipHorizontal, out BOOL pFlipVertical) mut => VT.VideoProcessorGetStreamMirror(ref this, ref pVideoProcessor, StreamIndex, out pEnable, out pFlipHorizontal, out pFlipVertical);
+			public HRESULT VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint32 OutputWidth, uint32 OutputHeight, DXGI_FORMAT OutputFormat, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT* pStreams, out uint32 pBehaviorHints) mut => VT.VideoProcessorGetBehaviorHints(ref this, ref pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, out pBehaviorHints);
+
 			[CRepr]
 			public struct VTable : ID3D11VideoContext.VTable
 			{
@@ -6986,22 +5961,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCryptoSessionPrivateDataSize(in Guid pCryptoType, Guid* pDecoderProfile, in Guid pKeyExchangeType, out uint32 pPrivateInputSize, out uint32 pPrivateOutputSize) mut
-			{
-				return VT.GetCryptoSessionPrivateDataSize(ref this, pCryptoType, pDecoderProfile, pKeyExchangeType, out pPrivateInputSize, out pPrivateOutputSize);
-			}
-			public HRESULT GetVideoDecoderCaps(in Guid pDecoderProfile, uint32 SampleWidth, uint32 SampleHeight, in DXGI_RATIONAL pFrameRate, uint32 BitRate, Guid* pCryptoType, out uint32 pDecoderCaps) mut
-			{
-				return VT.GetVideoDecoderCaps(ref this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, out pDecoderCaps);
-			}
-			public HRESULT CheckVideoDecoderDownsampling(in D3D11_VIDEO_DECODER_DESC pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_DECODER_CONFIG pInputConfig, in DXGI_RATIONAL pFrameRate, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc, out BOOL pSupported, out BOOL pRealTimeHint) mut
-			{
-				return VT.CheckVideoDecoderDownsampling(ref this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, out pSupported, out pRealTimeHint);
-			}
-			public HRESULT RecommendVideoDecoderDownsampleParameters(in D3D11_VIDEO_DECODER_DESC pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_DECODER_CONFIG pInputConfig, in DXGI_RATIONAL pFrameRate, out D3D11_VIDEO_SAMPLE_DESC pRecommendedOutputDesc) mut
-			{
-				return VT.RecommendVideoDecoderDownsampleParameters(ref this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, out pRecommendedOutputDesc);
-			}
+			public HRESULT GetCryptoSessionPrivateDataSize(in Guid pCryptoType, Guid* pDecoderProfile, in Guid pKeyExchangeType, out uint32 pPrivateInputSize, out uint32 pPrivateOutputSize) mut => VT.GetCryptoSessionPrivateDataSize(ref this, pCryptoType, pDecoderProfile, pKeyExchangeType, out pPrivateInputSize, out pPrivateOutputSize);
+			public HRESULT GetVideoDecoderCaps(in Guid pDecoderProfile, uint32 SampleWidth, uint32 SampleHeight, in DXGI_RATIONAL pFrameRate, uint32 BitRate, Guid* pCryptoType, out uint32 pDecoderCaps) mut => VT.GetVideoDecoderCaps(ref this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, out pDecoderCaps);
+			public HRESULT CheckVideoDecoderDownsampling(in D3D11_VIDEO_DECODER_DESC pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_DECODER_CONFIG pInputConfig, in DXGI_RATIONAL pFrameRate, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc, out BOOL pSupported, out BOOL pRealTimeHint) mut => VT.CheckVideoDecoderDownsampling(ref this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, out pSupported, out pRealTimeHint);
+			public HRESULT RecommendVideoDecoderDownsampleParameters(in D3D11_VIDEO_DECODER_DESC pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_DECODER_CONFIG pInputConfig, in DXGI_RATIONAL pFrameRate, out D3D11_VIDEO_SAMPLE_DESC pRecommendedOutputDesc) mut => VT.RecommendVideoDecoderDownsampleParameters(ref this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, out pRecommendedOutputDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11VideoDevice.VTable
 			{
@@ -7018,10 +5982,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CheckVideoProcessorFormatConversion(DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, out BOOL pSupported) mut
-			{
-				return VT.CheckVideoProcessorFormatConversion(ref this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, out pSupported);
-			}
+			public HRESULT CheckVideoProcessorFormatConversion(DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, out BOOL pSupported) mut => VT.CheckVideoProcessorFormatConversion(ref this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, out pSupported);
+
 			[CRepr]
 			public struct VTable : ID3D11VideoProcessorEnumerator.VTable
 			{
@@ -7035,34 +5997,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetImmediateContext1(out ID3D11DeviceContext1* ppImmediateContext) mut
-			{
-				VT.GetImmediateContext1(ref this, out ppImmediateContext);
-			}
-			public HRESULT CreateDeferredContext1(uint32 ContextFlags, ID3D11DeviceContext1** ppDeferredContext) mut
-			{
-				return VT.CreateDeferredContext1(ref this, ContextFlags, ppDeferredContext);
-			}
-			public HRESULT CreateBlendState1(in D3D11_BLEND_DESC1 pBlendStateDesc, ID3D11BlendState1** ppBlendState) mut
-			{
-				return VT.CreateBlendState1(ref this, pBlendStateDesc, ppBlendState);
-			}
-			public HRESULT CreateRasterizerState1(in D3D11_RASTERIZER_DESC1 pRasterizerDesc, ID3D11RasterizerState1** ppRasterizerState) mut
-			{
-				return VT.CreateRasterizerState1(ref this, pRasterizerDesc, ppRasterizerState);
-			}
-			public HRESULT CreateDeviceContextState(uint32 Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, in Guid EmulatedInterface, D3D_FEATURE_LEVEL* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState) mut
-			{
-				return VT.CreateDeviceContextState(ref this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextState);
-			}
-			public HRESULT OpenSharedResource1(HANDLE hResource, in Guid returnedInterface, void** ppResource) mut
-			{
-				return VT.OpenSharedResource1(ref this, hResource, returnedInterface, ppResource);
-			}
-			public HRESULT OpenSharedResourceByName(PWSTR lpName, uint32 dwDesiredAccess, in Guid returnedInterface, void** ppResource) mut
-			{
-				return VT.OpenSharedResourceByName(ref this, lpName, dwDesiredAccess, returnedInterface, ppResource);
-			}
+			public void GetImmediateContext1(out ID3D11DeviceContext1* ppImmediateContext) mut => VT.GetImmediateContext1(ref this, out ppImmediateContext);
+			public HRESULT CreateDeferredContext1(uint32 ContextFlags, ID3D11DeviceContext1** ppDeferredContext) mut => VT.CreateDeferredContext1(ref this, ContextFlags, ppDeferredContext);
+			public HRESULT CreateBlendState1(in D3D11_BLEND_DESC1 pBlendStateDesc, ID3D11BlendState1** ppBlendState) mut => VT.CreateBlendState1(ref this, pBlendStateDesc, ppBlendState);
+			public HRESULT CreateRasterizerState1(in D3D11_RASTERIZER_DESC1 pRasterizerDesc, ID3D11RasterizerState1** ppRasterizerState) mut => VT.CreateRasterizerState1(ref this, pRasterizerDesc, ppRasterizerState);
+			public HRESULT CreateDeviceContextState(uint32 Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, in Guid EmulatedInterface, D3D_FEATURE_LEVEL* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState) mut => VT.CreateDeviceContextState(ref this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextState);
+			public HRESULT OpenSharedResource1(HANDLE hResource, in Guid returnedInterface, void** ppResource) mut => VT.OpenSharedResource1(ref this, hResource, returnedInterface, ppResource);
+			public HRESULT OpenSharedResourceByName(PWSTR lpName, uint32 dwDesiredAccess, in Guid returnedInterface, void** ppResource) mut => VT.OpenSharedResourceByName(ref this, lpName, dwDesiredAccess, returnedInterface, ppResource);
+
 			[CRepr]
 			public struct VTable : ID3D11Device.VTable
 			{
@@ -7082,22 +6024,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public int32 BeginEvent(PWSTR Name) mut
-			{
-				return VT.BeginEvent(ref this, Name);
-			}
-			public int32 EndEvent() mut
-			{
-				return VT.EndEvent(ref this);
-			}
-			public void SetMarker(PWSTR Name) mut
-			{
-				VT.SetMarker(ref this, Name);
-			}
-			public BOOL GetStatus() mut
-			{
-				return VT.GetStatus(ref this);
-			}
+			public int32 BeginEvent(PWSTR Name) mut => VT.BeginEvent(ref this, Name);
+			public int32 EndEvent() mut => VT.EndEvent(ref this);
+			public void SetMarker(PWSTR Name) mut => VT.SetMarker(ref this, Name);
+			public BOOL GetStatus() mut => VT.GetStatus(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7114,46 +6045,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateTileMappings(ref ID3D11Resource pTiledResource, uint32 NumTiledResourceRegions, D3D11_TILED_RESOURCE_COORDINATE* pTiledResourceRegionStartCoordinates, D3D11_TILE_REGION_SIZE* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint32 NumRanges, uint32* pRangeFlags, uint32* pTilePoolStartOffsets, uint32* pRangeTileCounts, uint32 Flags) mut
-			{
-				return VT.UpdateTileMappings(ref this, ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
-			}
-			public HRESULT CopyTileMappings(ref ID3D11Resource pDestTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pSourceRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pTileRegionSize, uint32 Flags) mut
-			{
-				return VT.CopyTileMappings(ref this, ref pDestTiledResource, pDestRegionStartCoordinate, ref pSourceTiledResource, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
-			}
-			public void CopyTiles(ref ID3D11Resource pTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pTileRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pTileRegionSize, ref ID3D11Buffer pBuffer, uint64 BufferStartOffsetInBytes, uint32 Flags) mut
-			{
-				VT.CopyTiles(ref this, ref pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
-			}
-			public void UpdateTiles(ref ID3D11Resource pDestTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pDestTileRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pDestTileRegionSize, void* pSourceTileData, uint32 Flags) mut
-			{
-				VT.UpdateTiles(ref this, ref pDestTiledResource, pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
-			}
-			public HRESULT ResizeTilePool(ref ID3D11Buffer pTilePool, uint64 NewSizeInBytes) mut
-			{
-				return VT.ResizeTilePool(ref this, ref pTilePool, NewSizeInBytes);
-			}
-			public void TiledResourceBarrier(ID3D11DeviceChild* pTiledResourceOrViewAccessBeforeBarrier, ID3D11DeviceChild* pTiledResourceOrViewAccessAfterBarrier) mut
-			{
-				VT.TiledResourceBarrier(ref this, pTiledResourceOrViewAccessBeforeBarrier, pTiledResourceOrViewAccessAfterBarrier);
-			}
-			public BOOL IsAnnotationEnabled() mut
-			{
-				return VT.IsAnnotationEnabled(ref this);
-			}
-			public void SetMarkerInt(PWSTR pLabel, int32 Data) mut
-			{
-				VT.SetMarkerInt(ref this, pLabel, Data);
-			}
-			public void BeginEventInt(PWSTR pLabel, int32 Data) mut
-			{
-				VT.BeginEventInt(ref this, pLabel, Data);
-			}
-			public void EndEvent() mut
-			{
-				VT.EndEvent(ref this);
-			}
+			public HRESULT UpdateTileMappings(ref ID3D11Resource pTiledResource, uint32 NumTiledResourceRegions, D3D11_TILED_RESOURCE_COORDINATE* pTiledResourceRegionStartCoordinates, D3D11_TILE_REGION_SIZE* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint32 NumRanges, uint32* pRangeFlags, uint32* pTilePoolStartOffsets, uint32* pRangeTileCounts, uint32 Flags) mut => VT.UpdateTileMappings(ref this, ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+			public HRESULT CopyTileMappings(ref ID3D11Resource pDestTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pSourceRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pTileRegionSize, uint32 Flags) mut => VT.CopyTileMappings(ref this, ref pDestTiledResource, pDestRegionStartCoordinate, ref pSourceTiledResource, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+			public void CopyTiles(ref ID3D11Resource pTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pTileRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pTileRegionSize, ref ID3D11Buffer pBuffer, uint64 BufferStartOffsetInBytes, uint32 Flags) mut => VT.CopyTiles(ref this, ref pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+			public void UpdateTiles(ref ID3D11Resource pDestTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pDestTileRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pDestTileRegionSize, void* pSourceTileData, uint32 Flags) mut => VT.UpdateTiles(ref this, ref pDestTiledResource, pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
+			public HRESULT ResizeTilePool(ref ID3D11Buffer pTilePool, uint64 NewSizeInBytes) mut => VT.ResizeTilePool(ref this, ref pTilePool, NewSizeInBytes);
+			public void TiledResourceBarrier(ID3D11DeviceChild* pTiledResourceOrViewAccessBeforeBarrier, ID3D11DeviceChild* pTiledResourceOrViewAccessAfterBarrier) mut => VT.TiledResourceBarrier(ref this, pTiledResourceOrViewAccessBeforeBarrier, pTiledResourceOrViewAccessAfterBarrier);
+			public BOOL IsAnnotationEnabled() mut => VT.IsAnnotationEnabled(ref this);
+			public void SetMarkerInt(PWSTR pLabel, int32 Data) mut => VT.SetMarkerInt(ref this, pLabel, Data);
+			public void BeginEventInt(PWSTR pLabel, int32 Data) mut => VT.BeginEventInt(ref this, pLabel, Data);
+			public void EndEvent() mut => VT.EndEvent(ref this);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceContext1.VTable
 			{
@@ -7176,22 +6078,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetImmediateContext2(out ID3D11DeviceContext2* ppImmediateContext) mut
-			{
-				VT.GetImmediateContext2(ref this, out ppImmediateContext);
-			}
-			public HRESULT CreateDeferredContext2(uint32 ContextFlags, ID3D11DeviceContext2** ppDeferredContext) mut
-			{
-				return VT.CreateDeferredContext2(ref this, ContextFlags, ppDeferredContext);
-			}
-			public void GetResourceTiling(ref ID3D11Resource pTiledResource, uint32* pNumTilesForEntireResource, D3D11_PACKED_MIP_DESC* pPackedMipDesc, D3D11_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D11_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) mut
-			{
-				VT.GetResourceTiling(ref this, ref pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
-			}
-			public HRESULT CheckMultisampleQualityLevels1(DXGI_FORMAT Format, uint32 SampleCount, uint32 Flags, out uint32 pNumQualityLevels) mut
-			{
-				return VT.CheckMultisampleQualityLevels1(ref this, Format, SampleCount, Flags, out pNumQualityLevels);
-			}
+			public void GetImmediateContext2(out ID3D11DeviceContext2* ppImmediateContext) mut => VT.GetImmediateContext2(ref this, out ppImmediateContext);
+			public HRESULT CreateDeferredContext2(uint32 ContextFlags, ID3D11DeviceContext2** ppDeferredContext) mut => VT.CreateDeferredContext2(ref this, ContextFlags, ppDeferredContext);
+			public void GetResourceTiling(ref ID3D11Resource pTiledResource, uint32* pNumTilesForEntireResource, D3D11_PACKED_MIP_DESC* pPackedMipDesc, D3D11_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D11_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) mut => VT.GetResourceTiling(ref this, ref pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+			public HRESULT CheckMultisampleQualityLevels1(DXGI_FORMAT Format, uint32 SampleCount, uint32 Flags, out uint32 pNumQualityLevels) mut => VT.CheckMultisampleQualityLevels1(ref this, Format, SampleCount, Flags, out pNumQualityLevels);
+
 			[CRepr]
 			public struct VTable : ID3D11Device1.VTable
 			{
@@ -7208,10 +6099,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D11_TEXTURE2D_DESC1 pDesc) mut
-			{
-				VT.GetDesc1(ref this, out pDesc);
-			}
+			public void GetDesc1(out D3D11_TEXTURE2D_DESC1 pDesc) mut => VT.GetDesc1(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11Texture2D.VTable
 			{
@@ -7225,10 +6114,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D11_TEXTURE3D_DESC1 pDesc) mut
-			{
-				VT.GetDesc1(ref this, out pDesc);
-			}
+			public void GetDesc1(out D3D11_TEXTURE3D_DESC1 pDesc) mut => VT.GetDesc1(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11Texture3D.VTable
 			{
@@ -7242,10 +6129,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc2(out D3D11_RASTERIZER_DESC2 pDesc) mut
-			{
-				VT.GetDesc2(ref this, out pDesc);
-			}
+			public void GetDesc2(out D3D11_RASTERIZER_DESC2 pDesc) mut => VT.GetDesc2(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11RasterizerState1.VTable
 			{
@@ -7259,10 +6144,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D11_SHADER_RESOURCE_VIEW_DESC1 pDesc1) mut
-			{
-				VT.GetDesc1(ref this, out pDesc1);
-			}
+			public void GetDesc1(out D3D11_SHADER_RESOURCE_VIEW_DESC1 pDesc1) mut => VT.GetDesc1(ref this, out pDesc1);
+
 			[CRepr]
 			public struct VTable : ID3D11ShaderResourceView.VTable
 			{
@@ -7276,10 +6159,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D11_RENDER_TARGET_VIEW_DESC1 pDesc1) mut
-			{
-				VT.GetDesc1(ref this, out pDesc1);
-			}
+			public void GetDesc1(out D3D11_RENDER_TARGET_VIEW_DESC1 pDesc1) mut => VT.GetDesc1(ref this, out pDesc1);
+
 			[CRepr]
 			public struct VTable : ID3D11RenderTargetView.VTable
 			{
@@ -7293,10 +6174,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D11_UNORDERED_ACCESS_VIEW_DESC1 pDesc1) mut
-			{
-				VT.GetDesc1(ref this, out pDesc1);
-			}
+			public void GetDesc1(out D3D11_UNORDERED_ACCESS_VIEW_DESC1 pDesc1) mut => VT.GetDesc1(ref this, out pDesc1);
+
 			[CRepr]
 			public struct VTable : ID3D11UnorderedAccessView.VTable
 			{
@@ -7310,10 +6189,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetDesc1(out D3D11_QUERY_DESC1 pDesc1) mut
-			{
-				VT.GetDesc1(ref this, out pDesc1);
-			}
+			public void GetDesc1(out D3D11_QUERY_DESC1 pDesc1) mut => VT.GetDesc1(ref this, out pDesc1);
+
 			[CRepr]
 			public struct VTable : ID3D11Query.VTable
 			{
@@ -7327,18 +6204,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void Flush1(D3D11_CONTEXT_TYPE ContextType, HANDLE hEvent) mut
-			{
-				VT.Flush1(ref this, ContextType, hEvent);
-			}
-			public void SetHardwareProtectionState(BOOL HwProtectionEnable) mut
-			{
-				VT.SetHardwareProtectionState(ref this, HwProtectionEnable);
-			}
-			public void GetHardwareProtectionState(out BOOL pHwProtectionEnable) mut
-			{
-				VT.GetHardwareProtectionState(ref this, out pHwProtectionEnable);
-			}
+			public void Flush1(D3D11_CONTEXT_TYPE ContextType, HANDLE hEvent) mut => VT.Flush1(ref this, ContextType, hEvent);
+			public void SetHardwareProtectionState(BOOL HwProtectionEnable) mut => VT.SetHardwareProtectionState(ref this, HwProtectionEnable);
+			public void GetHardwareProtectionState(out BOOL pHwProtectionEnable) mut => VT.GetHardwareProtectionState(ref this, out pHwProtectionEnable);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceContext2.VTable
 			{
@@ -7354,18 +6223,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSharedHandle(SECURITY_ATTRIBUTES* pAttributes, uint32 dwAccess, PWSTR lpName, out HANDLE pHandle) mut
-			{
-				return VT.CreateSharedHandle(ref this, pAttributes, dwAccess, lpName, out pHandle);
-			}
-			public uint64 GetCompletedValue() mut
-			{
-				return VT.GetCompletedValue(ref this);
-			}
-			public HRESULT SetEventOnCompletion(uint64 Value, HANDLE hEvent) mut
-			{
-				return VT.SetEventOnCompletion(ref this, Value, hEvent);
-			}
+			public HRESULT CreateSharedHandle(SECURITY_ATTRIBUTES* pAttributes, uint32 dwAccess, PWSTR lpName, out HANDLE pHandle) mut => VT.CreateSharedHandle(ref this, pAttributes, dwAccess, lpName, out pHandle);
+			public uint64 GetCompletedValue() mut => VT.GetCompletedValue(ref this);
+			public HRESULT SetEventOnCompletion(uint64 Value, HANDLE hEvent) mut => VT.SetEventOnCompletion(ref this, Value, hEvent);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
@@ -7381,14 +6242,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Signal(ref ID3D11Fence pFence, uint64 Value) mut
-			{
-				return VT.Signal(ref this, ref pFence, Value);
-			}
-			public HRESULT Wait(ref ID3D11Fence pFence, uint64 Value) mut
-			{
-				return VT.Wait(ref this, ref pFence, Value);
-			}
+			public HRESULT Signal(ref ID3D11Fence pFence, uint64 Value) mut => VT.Signal(ref this, ref pFence, Value);
+			public HRESULT Wait(ref ID3D11Fence pFence, uint64 Value) mut => VT.Wait(ref this, ref pFence, Value);
+
 			[CRepr]
 			public struct VTable : ID3D11DeviceContext3.VTable
 			{
@@ -7403,50 +6259,18 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateTexture2D1(in D3D11_TEXTURE2D_DESC1 pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D1** ppTexture2D) mut
-			{
-				return VT.CreateTexture2D1(ref this, pDesc1, pInitialData, ppTexture2D);
-			}
-			public HRESULT CreateTexture3D1(in D3D11_TEXTURE3D_DESC1 pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D1** ppTexture3D) mut
-			{
-				return VT.CreateTexture3D1(ref this, pDesc1, pInitialData, ppTexture3D);
-			}
-			public HRESULT CreateRasterizerState2(in D3D11_RASTERIZER_DESC2 pRasterizerDesc, ID3D11RasterizerState2** ppRasterizerState) mut
-			{
-				return VT.CreateRasterizerState2(ref this, pRasterizerDesc, ppRasterizerState);
-			}
-			public HRESULT CreateShaderResourceView1(ref ID3D11Resource pResource, D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1, ID3D11ShaderResourceView1** ppSRView1) mut
-			{
-				return VT.CreateShaderResourceView1(ref this, ref pResource, pDesc1, ppSRView1);
-			}
-			public HRESULT CreateUnorderedAccessView1(ref ID3D11Resource pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1, ID3D11UnorderedAccessView1** ppUAView1) mut
-			{
-				return VT.CreateUnorderedAccessView1(ref this, ref pResource, pDesc1, ppUAView1);
-			}
-			public HRESULT CreateRenderTargetView1(ref ID3D11Resource pResource, D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1, ID3D11RenderTargetView1** ppRTView1) mut
-			{
-				return VT.CreateRenderTargetView1(ref this, ref pResource, pDesc1, ppRTView1);
-			}
-			public HRESULT CreateQuery1(in D3D11_QUERY_DESC1 pQueryDesc1, ID3D11Query1** ppQuery1) mut
-			{
-				return VT.CreateQuery1(ref this, pQueryDesc1, ppQuery1);
-			}
-			public void GetImmediateContext3(out ID3D11DeviceContext3* ppImmediateContext) mut
-			{
-				VT.GetImmediateContext3(ref this, out ppImmediateContext);
-			}
-			public HRESULT CreateDeferredContext3(uint32 ContextFlags, ID3D11DeviceContext3** ppDeferredContext) mut
-			{
-				return VT.CreateDeferredContext3(ref this, ContextFlags, ppDeferredContext);
-			}
-			public void WriteToSubresource(ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) mut
-			{
-				VT.WriteToSubresource(ref this, ref pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
-			}
-			public void ReadFromSubresource(void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) mut
-			{
-				VT.ReadFromSubresource(ref this, pDstData, DstRowPitch, DstDepthPitch, ref pSrcResource, SrcSubresource, pSrcBox);
-			}
+			public HRESULT CreateTexture2D1(in D3D11_TEXTURE2D_DESC1 pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D1** ppTexture2D) mut => VT.CreateTexture2D1(ref this, pDesc1, pInitialData, ppTexture2D);
+			public HRESULT CreateTexture3D1(in D3D11_TEXTURE3D_DESC1 pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D1** ppTexture3D) mut => VT.CreateTexture3D1(ref this, pDesc1, pInitialData, ppTexture3D);
+			public HRESULT CreateRasterizerState2(in D3D11_RASTERIZER_DESC2 pRasterizerDesc, ID3D11RasterizerState2** ppRasterizerState) mut => VT.CreateRasterizerState2(ref this, pRasterizerDesc, ppRasterizerState);
+			public HRESULT CreateShaderResourceView1(ref ID3D11Resource pResource, D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1, ID3D11ShaderResourceView1** ppSRView1) mut => VT.CreateShaderResourceView1(ref this, ref pResource, pDesc1, ppSRView1);
+			public HRESULT CreateUnorderedAccessView1(ref ID3D11Resource pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1, ID3D11UnorderedAccessView1** ppUAView1) mut => VT.CreateUnorderedAccessView1(ref this, ref pResource, pDesc1, ppUAView1);
+			public HRESULT CreateRenderTargetView1(ref ID3D11Resource pResource, D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1, ID3D11RenderTargetView1** ppRTView1) mut => VT.CreateRenderTargetView1(ref this, ref pResource, pDesc1, ppRTView1);
+			public HRESULT CreateQuery1(in D3D11_QUERY_DESC1 pQueryDesc1, ID3D11Query1** ppQuery1) mut => VT.CreateQuery1(ref this, pQueryDesc1, ppQuery1);
+			public void GetImmediateContext3(out ID3D11DeviceContext3* ppImmediateContext) mut => VT.GetImmediateContext3(ref this, out ppImmediateContext);
+			public HRESULT CreateDeferredContext3(uint32 ContextFlags, ID3D11DeviceContext3** ppDeferredContext) mut => VT.CreateDeferredContext3(ref this, ContextFlags, ppDeferredContext);
+			public void WriteToSubresource(ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) mut => VT.WriteToSubresource(ref this, ref pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+			public void ReadFromSubresource(void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) mut => VT.ReadFromSubresource(ref this, pDstData, DstRowPitch, DstDepthPitch, ref pSrcResource, SrcSubresource, pSrcBox);
+
 			[CRepr]
 			public struct VTable : ID3D11Device2.VTable
 			{
@@ -7470,14 +6294,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterDeviceRemovedEvent(HANDLE hEvent, out uint32 pdwCookie) mut
-			{
-				return VT.RegisterDeviceRemovedEvent(ref this, hEvent, out pdwCookie);
-			}
-			public void UnregisterDeviceRemoved(uint32 dwCookie) mut
-			{
-				VT.UnregisterDeviceRemoved(ref this, dwCookie);
-			}
+			public HRESULT RegisterDeviceRemovedEvent(HANDLE hEvent, out uint32 pdwCookie) mut => VT.RegisterDeviceRemovedEvent(ref this, hEvent, out pdwCookie);
+			public void UnregisterDeviceRemoved(uint32 dwCookie) mut => VT.UnregisterDeviceRemoved(ref this, dwCookie);
+
 			[CRepr]
 			public struct VTable : ID3D11Device3.VTable
 			{
@@ -7492,14 +6311,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenSharedFence(HANDLE hFence, in Guid ReturnedInterface, void** ppFence) mut
-			{
-				return VT.OpenSharedFence(ref this, hFence, ReturnedInterface, ppFence);
-			}
-			public HRESULT CreateFence(uint64 InitialValue, D3D11_FENCE_FLAG Flags, in Guid ReturnedInterface, void** ppFence) mut
-			{
-				return VT.CreateFence(ref this, InitialValue, Flags, ReturnedInterface, ppFence);
-			}
+			public HRESULT OpenSharedFence(HANDLE hFence, in Guid ReturnedInterface, void** ppFence) mut => VT.OpenSharedFence(ref this, hFence, ReturnedInterface, ppFence);
+			public HRESULT CreateFence(uint64 InitialValue, D3D11_FENCE_FLAG Flags, in Guid ReturnedInterface, void** ppFence) mut => VT.CreateFence(ref this, InitialValue, Flags, ReturnedInterface, ppFence);
+
 			[CRepr]
 			public struct VTable : ID3D11Device4.VTable
 			{
@@ -7514,22 +6328,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void Enter() mut
-			{
-				VT.Enter(ref this);
-			}
-			public void Leave() mut
-			{
-				VT.Leave(ref this);
-			}
-			public BOOL SetMultithreadProtected(BOOL bMTProtect) mut
-			{
-				return VT.SetMultithreadProtected(ref this, bMTProtect);
-			}
-			public BOOL GetMultithreadProtected() mut
-			{
-				return VT.GetMultithreadProtected(ref this);
-			}
+			public void Enter() mut => VT.Enter(ref this);
+			public void Leave() mut => VT.Leave(ref this);
+			public BOOL SetMultithreadProtected(BOOL bMTProtect) mut => VT.SetMultithreadProtected(ref this, bMTProtect);
+			public BOOL GetMultithreadProtected() mut => VT.GetMultithreadProtected(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7546,22 +6349,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void VideoProcessorSetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) mut
-			{
-				VT.VideoProcessorSetOutputHDRMetaData(ref this, ref pVideoProcessor, Type, Size, pHDRMetaData);
-			}
-			public void VideoProcessorGetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, out DXGI_HDR_METADATA_TYPE pType, uint32 Size, void* pMetaData) mut
-			{
-				VT.VideoProcessorGetOutputHDRMetaData(ref this, ref pVideoProcessor, out pType, Size, pMetaData);
-			}
-			public void VideoProcessorSetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) mut
-			{
-				VT.VideoProcessorSetStreamHDRMetaData(ref this, ref pVideoProcessor, StreamIndex, Type, Size, pHDRMetaData);
-			}
-			public void VideoProcessorGetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out DXGI_HDR_METADATA_TYPE pType, uint32 Size, void* pMetaData) mut
-			{
-				VT.VideoProcessorGetStreamHDRMetaData(ref this, ref pVideoProcessor, StreamIndex, out pType, Size, pMetaData);
-			}
+			public void VideoProcessorSetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) mut => VT.VideoProcessorSetOutputHDRMetaData(ref this, ref pVideoProcessor, Type, Size, pHDRMetaData);
+			public void VideoProcessorGetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, out DXGI_HDR_METADATA_TYPE pType, uint32 Size, void* pMetaData) mut => VT.VideoProcessorGetOutputHDRMetaData(ref this, ref pVideoProcessor, out pType, Size, pMetaData);
+			public void VideoProcessorSetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) mut => VT.VideoProcessorSetStreamHDRMetaData(ref this, ref pVideoProcessor, StreamIndex, Type, Size, pHDRMetaData);
+			public void VideoProcessorGetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out DXGI_HDR_METADATA_TYPE pType, uint32 Size, void* pMetaData) mut => VT.VideoProcessorGetStreamHDRMetaData(ref this, ref pVideoProcessor, StreamIndex, out pType, Size, pMetaData);
+
 			[CRepr]
 			public struct VTable : ID3D11VideoContext1.VTable
 			{
@@ -7578,14 +6370,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CheckFeatureSupport(D3D11_FEATURE_VIDEO Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) mut
-			{
-				return VT.CheckFeatureSupport(ref this, Feature, pFeatureSupportData, FeatureSupportDataSize);
-			}
-			public HRESULT NegotiateCryptoSessionKeyExchangeMT(ref ID3D11CryptoSession pCryptoSession, D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, uint32 DataSize, void* pData) mut
-			{
-				return VT.NegotiateCryptoSessionKeyExchangeMT(ref this, ref pCryptoSession, flags, DataSize, pData);
-			}
+			public HRESULT CheckFeatureSupport(D3D11_FEATURE_VIDEO Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) mut => VT.CheckFeatureSupport(ref this, Feature, pFeatureSupportData, FeatureSupportDataSize);
+			public HRESULT NegotiateCryptoSessionKeyExchangeMT(ref ID3D11CryptoSession pCryptoSession, D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, uint32 DataSize, void* pData) mut => VT.NegotiateCryptoSessionKeyExchangeMT(ref this, ref pCryptoSession, flags, DataSize, pData);
+
 			[CRepr]
 			public struct VTable : ID3D11VideoDevice1.VTable
 			{
@@ -7600,14 +6387,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint32 ContentKeySize, void* pContentKey, uint32 NumComponentHistograms, uint32* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) mut
-			{
-				return VT.DecoderBeginFrame1(ref this, ref pDecoder, ref pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
-			}
-			public HRESULT SubmitDecoderBuffers2(ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC2* pBufferDesc) mut
-			{
-				return VT.SubmitDecoderBuffers2(ref this, ref pDecoder, NumBuffers, pBufferDesc);
-			}
+			public HRESULT DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint32 ContentKeySize, void* pContentKey, uint32 NumComponentHistograms, uint32* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) mut => VT.DecoderBeginFrame1(ref this, ref pDecoder, ref pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+			public HRESULT SubmitDecoderBuffers2(ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC2* pBufferDesc) mut => VT.SubmitDecoderBuffers2(ref this, ref pDecoder, NumBuffers, pBufferDesc);
+
 			[CRepr]
 			public struct VTable : ID3D11VideoContext2.VTable
 			{
@@ -7623,50 +6405,18 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D11_SHADER_TYPE_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D11ShaderReflectionType* GetMemberTypeByIndex(uint32 Index) mut
-			{
-				return VT.GetMemberTypeByIndex(ref this, Index);
-			}
-			public ID3D11ShaderReflectionType* GetMemberTypeByName(PSTR Name) mut
-			{
-				return VT.GetMemberTypeByName(ref this, Name);
-			}
-			public PSTR GetMemberTypeName(uint32 Index) mut
-			{
-				return VT.GetMemberTypeName(ref this, Index);
-			}
-			public HRESULT IsEqual(ref ID3D11ShaderReflectionType pType) mut
-			{
-				return VT.IsEqual(ref this, ref pType);
-			}
-			public ID3D11ShaderReflectionType* GetSubType() mut
-			{
-				return VT.GetSubType(ref this);
-			}
-			public ID3D11ShaderReflectionType* GetBaseClass() mut
-			{
-				return VT.GetBaseClass(ref this);
-			}
-			public uint32 GetNumInterfaces() mut
-			{
-				return VT.GetNumInterfaces(ref this);
-			}
-			public ID3D11ShaderReflectionType* GetInterfaceByIndex(uint32 uIndex) mut
-			{
-				return VT.GetInterfaceByIndex(ref this, uIndex);
-			}
-			public HRESULT IsOfType(ref ID3D11ShaderReflectionType pType) mut
-			{
-				return VT.IsOfType(ref this, ref pType);
-			}
-			public HRESULT ImplementsInterface(ref ID3D11ShaderReflectionType pBase) mut
-			{
-				return VT.ImplementsInterface(ref this, ref pBase);
-			}
+			public HRESULT GetDesc(out D3D11_SHADER_TYPE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D11ShaderReflectionType* GetMemberTypeByIndex(uint32 Index) mut => VT.GetMemberTypeByIndex(ref this, Index);
+			public ID3D11ShaderReflectionType* GetMemberTypeByName(PSTR Name) mut => VT.GetMemberTypeByName(ref this, Name);
+			public PSTR GetMemberTypeName(uint32 Index) mut => VT.GetMemberTypeName(ref this, Index);
+			public HRESULT IsEqual(ref ID3D11ShaderReflectionType pType) mut => VT.IsEqual(ref this, ref pType);
+			public ID3D11ShaderReflectionType* GetSubType() mut => VT.GetSubType(ref this);
+			public ID3D11ShaderReflectionType* GetBaseClass() mut => VT.GetBaseClass(ref this);
+			public uint32 GetNumInterfaces() mut => VT.GetNumInterfaces(ref this);
+			public ID3D11ShaderReflectionType* GetInterfaceByIndex(uint32 uIndex) mut => VT.GetInterfaceByIndex(ref this, uIndex);
+			public HRESULT IsOfType(ref ID3D11ShaderReflectionType pType) mut => VT.IsOfType(ref this, ref pType);
+			public HRESULT ImplementsInterface(ref ID3D11ShaderReflectionType pBase) mut => VT.ImplementsInterface(ref this, ref pBase);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -7691,22 +6441,11 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D11_SHADER_VARIABLE_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D11ShaderReflectionType* ComGetType() mut
-			{
-				return VT.ComGetType(ref this);
-			}
-			public ID3D11ShaderReflectionConstantBuffer* GetBuffer() mut
-			{
-				return VT.GetBuffer(ref this);
-			}
-			public uint32 GetInterfaceSlot(uint32 uArrayIndex) mut
-			{
-				return VT.GetInterfaceSlot(ref this, uArrayIndex);
-			}
+			public HRESULT GetDesc(out D3D11_SHADER_VARIABLE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D11ShaderReflectionType* ComGetType() mut => VT.ComGetType(ref this);
+			public ID3D11ShaderReflectionConstantBuffer* GetBuffer() mut => VT.GetBuffer(ref this);
+			public uint32 GetInterfaceSlot(uint32 uArrayIndex) mut => VT.GetInterfaceSlot(ref this, uArrayIndex);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -7724,18 +6463,10 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D11_SHADER_BUFFER_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D11ShaderReflectionVariable* GetVariableByIndex(uint32 Index) mut
-			{
-				return VT.GetVariableByIndex(ref this, Index);
-			}
-			public ID3D11ShaderReflectionVariable* GetVariableByName(PSTR Name) mut
-			{
-				return VT.GetVariableByName(ref this, Name);
-			}
+			public HRESULT GetDesc(out D3D11_SHADER_BUFFER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D11ShaderReflectionVariable* GetVariableByIndex(uint32 Index) mut => VT.GetVariableByIndex(ref this, Index);
+			public ID3D11ShaderReflectionVariable* GetVariableByName(PSTR Name) mut => VT.GetVariableByName(ref this, Name);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -7751,82 +6482,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D11_SHADER_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut
-			{
-				return VT.GetConstantBufferByIndex(ref this, Index);
-			}
-			public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut
-			{
-				return VT.GetConstantBufferByName(ref this, Name);
-			}
-			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, out D3D11_SHADER_INPUT_BIND_DESC pDesc) mut
-			{
-				return VT.GetResourceBindingDesc(ref this, ResourceIndex, out pDesc);
-			}
-			public HRESULT GetInputParameterDesc(uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetInputParameterDesc(ref this, ParameterIndex, out pDesc);
-			}
-			public HRESULT GetOutputParameterDesc(uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetOutputParameterDesc(ref this, ParameterIndex, out pDesc);
-			}
-			public HRESULT GetPatchConstantParameterDesc(uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetPatchConstantParameterDesc(ref this, ParameterIndex, out pDesc);
-			}
-			public ID3D11ShaderReflectionVariable* GetVariableByName(PSTR Name) mut
-			{
-				return VT.GetVariableByName(ref this, Name);
-			}
-			public HRESULT GetResourceBindingDescByName(PSTR Name, out D3D11_SHADER_INPUT_BIND_DESC pDesc) mut
-			{
-				return VT.GetResourceBindingDescByName(ref this, Name, out pDesc);
-			}
-			public uint32 GetMovInstructionCount() mut
-			{
-				return VT.GetMovInstructionCount(ref this);
-			}
-			public uint32 GetMovcInstructionCount() mut
-			{
-				return VT.GetMovcInstructionCount(ref this);
-			}
-			public uint32 GetConversionInstructionCount() mut
-			{
-				return VT.GetConversionInstructionCount(ref this);
-			}
-			public uint32 GetBitwiseInstructionCount() mut
-			{
-				return VT.GetBitwiseInstructionCount(ref this);
-			}
-			public D3D_PRIMITIVE GetGSInputPrimitive() mut
-			{
-				return VT.GetGSInputPrimitive(ref this);
-			}
-			public BOOL IsSampleFrequencyShader() mut
-			{
-				return VT.IsSampleFrequencyShader(ref this);
-			}
-			public uint32 GetNumInterfaceSlots() mut
-			{
-				return VT.GetNumInterfaceSlots(ref this);
-			}
-			public HRESULT GetMinFeatureLevel(out D3D_FEATURE_LEVEL pLevel) mut
-			{
-				return VT.GetMinFeatureLevel(ref this, out pLevel);
-			}
-			public uint32 GetThreadGroupSize(uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) mut
-			{
-				return VT.GetThreadGroupSize(ref this, pSizeX, pSizeY, pSizeZ);
-			}
-			public uint64 GetRequiresFlags() mut
-			{
-				return VT.GetRequiresFlags(ref this);
-			}
+			public HRESULT GetDesc(out D3D11_SHADER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut => VT.GetConstantBufferByIndex(ref this, Index);
+			public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut => VT.GetConstantBufferByName(ref this, Name);
+			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, out D3D11_SHADER_INPUT_BIND_DESC pDesc) mut => VT.GetResourceBindingDesc(ref this, ResourceIndex, out pDesc);
+			public HRESULT GetInputParameterDesc(uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetInputParameterDesc(ref this, ParameterIndex, out pDesc);
+			public HRESULT GetOutputParameterDesc(uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetOutputParameterDesc(ref this, ParameterIndex, out pDesc);
+			public HRESULT GetPatchConstantParameterDesc(uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) mut => VT.GetPatchConstantParameterDesc(ref this, ParameterIndex, out pDesc);
+			public ID3D11ShaderReflectionVariable* GetVariableByName(PSTR Name) mut => VT.GetVariableByName(ref this, Name);
+			public HRESULT GetResourceBindingDescByName(PSTR Name, out D3D11_SHADER_INPUT_BIND_DESC pDesc) mut => VT.GetResourceBindingDescByName(ref this, Name, out pDesc);
+			public uint32 GetMovInstructionCount() mut => VT.GetMovInstructionCount(ref this);
+			public uint32 GetMovcInstructionCount() mut => VT.GetMovcInstructionCount(ref this);
+			public uint32 GetConversionInstructionCount() mut => VT.GetConversionInstructionCount(ref this);
+			public uint32 GetBitwiseInstructionCount() mut => VT.GetBitwiseInstructionCount(ref this);
+			public D3D_PRIMITIVE GetGSInputPrimitive() mut => VT.GetGSInputPrimitive(ref this);
+			public BOOL IsSampleFrequencyShader() mut => VT.IsSampleFrequencyShader(ref this);
+			public uint32 GetNumInterfaceSlots() mut => VT.GetNumInterfaceSlots(ref this);
+			public HRESULT GetMinFeatureLevel(out D3D_FEATURE_LEVEL pLevel) mut => VT.GetMinFeatureLevel(ref this, out pLevel);
+			public uint32 GetThreadGroupSize(uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) mut => VT.GetThreadGroupSize(ref this, pSizeX, pSizeY, pSizeZ);
+			public uint64 GetRequiresFlags() mut => VT.GetRequiresFlags(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7858,14 +6533,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D11_LIBRARY_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D11FunctionReflection* GetFunctionByIndex(int32 FunctionIndex) mut
-			{
-				return VT.GetFunctionByIndex(ref this, FunctionIndex);
-			}
+			public HRESULT GetDesc(out D3D11_LIBRARY_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D11FunctionReflection* GetFunctionByIndex(int32 FunctionIndex) mut => VT.GetFunctionByIndex(ref this, FunctionIndex);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -7881,34 +6551,14 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D11_FUNCTION_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 BufferIndex) mut
-			{
-				return VT.GetConstantBufferByIndex(ref this, BufferIndex);
-			}
-			public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut
-			{
-				return VT.GetConstantBufferByName(ref this, Name);
-			}
-			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, out D3D11_SHADER_INPUT_BIND_DESC pDesc) mut
-			{
-				return VT.GetResourceBindingDesc(ref this, ResourceIndex, out pDesc);
-			}
-			public ID3D11ShaderReflectionVariable* GetVariableByName(PSTR Name) mut
-			{
-				return VT.GetVariableByName(ref this, Name);
-			}
-			public HRESULT GetResourceBindingDescByName(PSTR Name, out D3D11_SHADER_INPUT_BIND_DESC pDesc) mut
-			{
-				return VT.GetResourceBindingDescByName(ref this, Name, out pDesc);
-			}
-			public ID3D11FunctionParameterReflection* GetFunctionParameter(int32 ParameterIndex) mut
-			{
-				return VT.GetFunctionParameter(ref this, ParameterIndex);
-			}
+			public HRESULT GetDesc(out D3D11_FUNCTION_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 BufferIndex) mut => VT.GetConstantBufferByIndex(ref this, BufferIndex);
+			public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut => VT.GetConstantBufferByName(ref this, Name);
+			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, out D3D11_SHADER_INPUT_BIND_DESC pDesc) mut => VT.GetResourceBindingDesc(ref this, ResourceIndex, out pDesc);
+			public ID3D11ShaderReflectionVariable* GetVariableByName(PSTR Name) mut => VT.GetVariableByName(ref this, Name);
+			public HRESULT GetResourceBindingDescByName(PSTR Name, out D3D11_SHADER_INPUT_BIND_DESC pDesc) mut => VT.GetResourceBindingDescByName(ref this, Name, out pDesc);
+			public ID3D11FunctionParameterReflection* GetFunctionParameter(int32 ParameterIndex) mut => VT.GetFunctionParameter(ref this, ParameterIndex);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -7929,10 +6579,8 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesc(out D3D11_PARAMETER_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
+			public HRESULT GetDesc(out D3D11_PARAMETER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable
 			{
@@ -7946,46 +6594,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BindConstantBuffer(uint32 uSrcSlot, uint32 uDstSlot, uint32 cbDstOffset) mut
-			{
-				return VT.BindConstantBuffer(ref this, uSrcSlot, uDstSlot, cbDstOffset);
-			}
-			public HRESULT BindConstantBufferByName(PSTR pName, uint32 uDstSlot, uint32 cbDstOffset) mut
-			{
-				return VT.BindConstantBufferByName(ref this, pName, uDstSlot, cbDstOffset);
-			}
-			public HRESULT BindResource(uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) mut
-			{
-				return VT.BindResource(ref this, uSrcSlot, uDstSlot, uCount);
-			}
-			public HRESULT BindResourceByName(PSTR pName, uint32 uDstSlot, uint32 uCount) mut
-			{
-				return VT.BindResourceByName(ref this, pName, uDstSlot, uCount);
-			}
-			public HRESULT BindSampler(uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) mut
-			{
-				return VT.BindSampler(ref this, uSrcSlot, uDstSlot, uCount);
-			}
-			public HRESULT BindSamplerByName(PSTR pName, uint32 uDstSlot, uint32 uCount) mut
-			{
-				return VT.BindSamplerByName(ref this, pName, uDstSlot, uCount);
-			}
-			public HRESULT BindUnorderedAccessView(uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) mut
-			{
-				return VT.BindUnorderedAccessView(ref this, uSrcSlot, uDstSlot, uCount);
-			}
-			public HRESULT BindUnorderedAccessViewByName(PSTR pName, uint32 uDstSlot, uint32 uCount) mut
-			{
-				return VT.BindUnorderedAccessViewByName(ref this, pName, uDstSlot, uCount);
-			}
-			public HRESULT BindResourceAsUnorderedAccessView(uint32 uSrcSrvSlot, uint32 uDstUavSlot, uint32 uCount) mut
-			{
-				return VT.BindResourceAsUnorderedAccessView(ref this, uSrcSrvSlot, uDstUavSlot, uCount);
-			}
-			public HRESULT BindResourceAsUnorderedAccessViewByName(PSTR pSrvName, uint32 uDstUavSlot, uint32 uCount) mut
-			{
-				return VT.BindResourceAsUnorderedAccessViewByName(ref this, pSrvName, uDstUavSlot, uCount);
-			}
+			public HRESULT BindConstantBuffer(uint32 uSrcSlot, uint32 uDstSlot, uint32 cbDstOffset) mut => VT.BindConstantBuffer(ref this, uSrcSlot, uDstSlot, cbDstOffset);
+			public HRESULT BindConstantBufferByName(PSTR pName, uint32 uDstSlot, uint32 cbDstOffset) mut => VT.BindConstantBufferByName(ref this, pName, uDstSlot, cbDstOffset);
+			public HRESULT BindResource(uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) mut => VT.BindResource(ref this, uSrcSlot, uDstSlot, uCount);
+			public HRESULT BindResourceByName(PSTR pName, uint32 uDstSlot, uint32 uCount) mut => VT.BindResourceByName(ref this, pName, uDstSlot, uCount);
+			public HRESULT BindSampler(uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) mut => VT.BindSampler(ref this, uSrcSlot, uDstSlot, uCount);
+			public HRESULT BindSamplerByName(PSTR pName, uint32 uDstSlot, uint32 uCount) mut => VT.BindSamplerByName(ref this, pName, uDstSlot, uCount);
+			public HRESULT BindUnorderedAccessView(uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) mut => VT.BindUnorderedAccessView(ref this, uSrcSlot, uDstSlot, uCount);
+			public HRESULT BindUnorderedAccessViewByName(PSTR pName, uint32 uDstSlot, uint32 uCount) mut => VT.BindUnorderedAccessViewByName(ref this, pName, uDstSlot, uCount);
+			public HRESULT BindResourceAsUnorderedAccessView(uint32 uSrcSrvSlot, uint32 uDstUavSlot, uint32 uCount) mut => VT.BindResourceAsUnorderedAccessView(ref this, uSrcSrvSlot, uDstUavSlot, uCount);
+			public HRESULT BindResourceAsUnorderedAccessViewByName(PSTR pSrvName, uint32 uDstUavSlot, uint32 uCount) mut => VT.BindResourceAsUnorderedAccessViewByName(ref this, pSrvName, uDstUavSlot, uCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8008,10 +6627,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstance(PSTR pNamespace, out ID3D11ModuleInstance* ppModuleInstance) mut
-			{
-				return VT.CreateInstance(ref this, pNamespace, out ppModuleInstance);
-			}
+			public HRESULT CreateInstance(PSTR pNamespace, out ID3D11ModuleInstance* ppModuleInstance) mut => VT.CreateInstance(ref this, pNamespace, out ppModuleInstance);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8025,18 +6642,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Link(ref ID3D11ModuleInstance pEntry, PSTR pEntryName, PSTR pTargetName, uint32 uFlags, out ID3DBlob* ppShaderBlob, ID3DBlob** ppErrorBuffer) mut
-			{
-				return VT.Link(ref this, ref pEntry, pEntryName, pTargetName, uFlags, out ppShaderBlob, ppErrorBuffer);
-			}
-			public HRESULT UseLibrary(ref ID3D11ModuleInstance pLibraryMI) mut
-			{
-				return VT.UseLibrary(ref this, ref pLibraryMI);
-			}
-			public HRESULT AddClipPlaneFromCBuffer(uint32 uCBufferSlot, uint32 uCBufferEntry) mut
-			{
-				return VT.AddClipPlaneFromCBuffer(ref this, uCBufferSlot, uCBufferEntry);
-			}
+			public HRESULT Link(ref ID3D11ModuleInstance pEntry, PSTR pEntryName, PSTR pTargetName, uint32 uFlags, out ID3DBlob* ppShaderBlob, ID3DBlob** ppErrorBuffer) mut => VT.Link(ref this, ref pEntry, pEntryName, pTargetName, uFlags, out ppShaderBlob, ppErrorBuffer);
+			public HRESULT UseLibrary(ref ID3D11ModuleInstance pLibraryMI) mut => VT.UseLibrary(ref this, ref pLibraryMI);
+			public HRESULT AddClipPlaneFromCBuffer(uint32 uCBufferSlot, uint32 uCBufferEntry) mut => VT.AddClipPlaneFromCBuffer(ref this, uCBufferSlot, uCBufferEntry);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8052,6 +6661,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8064,38 +6674,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateModuleInstance(out ID3D11ModuleInstance* ppModuleInstance, ID3DBlob** ppErrorBuffer) mut
-			{
-				return VT.CreateModuleInstance(ref this, out ppModuleInstance, ppErrorBuffer);
-			}
-			public HRESULT SetInputSignature(D3D11_PARAMETER_DESC* pInputParameters, uint32 cInputParameters, out ID3D11LinkingNode* ppInputNode) mut
-			{
-				return VT.SetInputSignature(ref this, pInputParameters, cInputParameters, out ppInputNode);
-			}
-			public HRESULT SetOutputSignature(D3D11_PARAMETER_DESC* pOutputParameters, uint32 cOutputParameters, out ID3D11LinkingNode* ppOutputNode) mut
-			{
-				return VT.SetOutputSignature(ref this, pOutputParameters, cOutputParameters, out ppOutputNode);
-			}
-			public HRESULT CallFunction(PSTR pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, PSTR pFunctionName, out ID3D11LinkingNode* ppCallNode) mut
-			{
-				return VT.CallFunction(ref this, pModuleInstanceNamespace, ref pModuleWithFunctionPrototype, pFunctionName, out ppCallNode);
-			}
-			public HRESULT PassValue(ref ID3D11LinkingNode pSrcNode, int32 SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int32 DstParameterIndex) mut
-			{
-				return VT.PassValue(ref this, ref pSrcNode, SrcParameterIndex, ref pDstNode, DstParameterIndex);
-			}
-			public HRESULT PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int32 SrcParameterIndex, PSTR pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int32 DstParameterIndex, PSTR pDstSwizzle) mut
-			{
-				return VT.PassValueWithSwizzle(ref this, ref pSrcNode, SrcParameterIndex, pSrcSwizzle, ref pDstNode, DstParameterIndex, pDstSwizzle);
-			}
-			public HRESULT GetLastError(ID3DBlob** ppErrorBuffer) mut
-			{
-				return VT.GetLastError(ref this, ppErrorBuffer);
-			}
-			public HRESULT GenerateHlsl(uint32 uFlags, out ID3DBlob* ppBuffer) mut
-			{
-				return VT.GenerateHlsl(ref this, uFlags, out ppBuffer);
-			}
+			public HRESULT CreateModuleInstance(out ID3D11ModuleInstance* ppModuleInstance, ID3DBlob** ppErrorBuffer) mut => VT.CreateModuleInstance(ref this, out ppModuleInstance, ppErrorBuffer);
+			public HRESULT SetInputSignature(D3D11_PARAMETER_DESC* pInputParameters, uint32 cInputParameters, out ID3D11LinkingNode* ppInputNode) mut => VT.SetInputSignature(ref this, pInputParameters, cInputParameters, out ppInputNode);
+			public HRESULT SetOutputSignature(D3D11_PARAMETER_DESC* pOutputParameters, uint32 cOutputParameters, out ID3D11LinkingNode* ppOutputNode) mut => VT.SetOutputSignature(ref this, pOutputParameters, cOutputParameters, out ppOutputNode);
+			public HRESULT CallFunction(PSTR pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, PSTR pFunctionName, out ID3D11LinkingNode* ppCallNode) mut => VT.CallFunction(ref this, pModuleInstanceNamespace, ref pModuleWithFunctionPrototype, pFunctionName, out ppCallNode);
+			public HRESULT PassValue(ref ID3D11LinkingNode pSrcNode, int32 SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int32 DstParameterIndex) mut => VT.PassValue(ref this, ref pSrcNode, SrcParameterIndex, ref pDstNode, DstParameterIndex);
+			public HRESULT PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int32 SrcParameterIndex, PSTR pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int32 DstParameterIndex, PSTR pDstSwizzle) mut => VT.PassValueWithSwizzle(ref this, ref pSrcNode, SrcParameterIndex, pSrcSwizzle, ref pDstNode, DstParameterIndex, pDstSwizzle);
+			public HRESULT GetLastError(ID3DBlob** ppErrorBuffer) mut => VT.GetLastError(ref this, ppErrorBuffer);
+			public HRESULT GenerateHlsl(uint32 uFlags, out ID3DBlob* ppBuffer) mut => VT.GenerateHlsl(ref this, uFlags, out ppBuffer);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8116,38 +6703,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TraceReady(uint64* pTestCount) mut
-			{
-				return VT.TraceReady(ref this, pTestCount);
-			}
-			public void ResetTrace() mut
-			{
-				VT.ResetTrace(ref this);
-			}
-			public HRESULT GetTraceStats(out D3D11_TRACE_STATS pTraceStats) mut
-			{
-				return VT.GetTraceStats(ref this, out pTraceStats);
-			}
-			public HRESULT PSSelectStamp(uint32 stampIndex) mut
-			{
-				return VT.PSSelectStamp(ref this, stampIndex);
-			}
-			public HRESULT GetInitialRegisterContents(ref D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) mut
-			{
-				return VT.GetInitialRegisterContents(ref this, ref pRegister, out pValue);
-			}
-			public HRESULT GetStep(uint32 stepIndex, out D3D11_TRACE_STEP pTraceStep) mut
-			{
-				return VT.GetStep(ref this, stepIndex, out pTraceStep);
-			}
-			public HRESULT GetWrittenRegister(uint32 stepIndex, uint32 writtenRegisterIndex, out D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) mut
-			{
-				return VT.GetWrittenRegister(ref this, stepIndex, writtenRegisterIndex, out pRegister, out pValue);
-			}
-			public HRESULT GetReadRegister(uint32 stepIndex, uint32 readRegisterIndex, out D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) mut
-			{
-				return VT.GetReadRegister(ref this, stepIndex, readRegisterIndex, out pRegister, out pValue);
-			}
+			public HRESULT TraceReady(uint64* pTestCount) mut => VT.TraceReady(ref this, pTestCount);
+			public void ResetTrace() mut => VT.ResetTrace(ref this);
+			public HRESULT GetTraceStats(out D3D11_TRACE_STATS pTraceStats) mut => VT.GetTraceStats(ref this, out pTraceStats);
+			public HRESULT PSSelectStamp(uint32 stampIndex) mut => VT.PSSelectStamp(ref this, stampIndex);
+			public HRESULT GetInitialRegisterContents(ref D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) mut => VT.GetInitialRegisterContents(ref this, ref pRegister, out pValue);
+			public HRESULT GetStep(uint32 stepIndex, out D3D11_TRACE_STEP pTraceStep) mut => VT.GetStep(ref this, stepIndex, out pTraceStep);
+			public HRESULT GetWrittenRegister(uint32 stepIndex, uint32 writtenRegisterIndex, out D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) mut => VT.GetWrittenRegister(ref this, stepIndex, writtenRegisterIndex, out pRegister, out pValue);
+			public HRESULT GetReadRegister(uint32 stepIndex, uint32 readRegisterIndex, out D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) mut => VT.GetReadRegister(ref this, stepIndex, readRegisterIndex, out pRegister, out pValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8168,10 +6732,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateShaderTrace(ref IUnknown pShader, ref D3D11_SHADER_TRACE_DESC pTraceDesc, out ID3D11ShaderTrace* ppShaderTrace) mut
-			{
-				return VT.CreateShaderTrace(ref this, ref pShader, ref pTraceDesc, out ppShaderTrace);
-			}
+			public HRESULT CreateShaderTrace(ref IUnknown pShader, ref D3D11_SHADER_TRACE_DESC pTraceDesc, out ID3D11ShaderTrace* ppShaderTrace) mut => VT.CreateShaderTrace(ref this, ref pShader, ref pTraceDesc, out ppShaderTrace);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8185,18 +6747,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetScanDirection(D3DX11_SCAN_DIRECTION Direction) mut
-			{
-				return VT.SetScanDirection(ref this, Direction);
-			}
-			public HRESULT Scan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ref ID3D11UnorderedAccessView pSrc, ref ID3D11UnorderedAccessView pDst) mut
-			{
-				return VT.Scan(ref this, ElementType, OpCode, ElementScanSize, ref pSrc, ref pDst);
-			}
-			public HRESULT Multiscan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, uint32 ElementScanPitch, uint32 ScanCount, ref ID3D11UnorderedAccessView pSrc, ref ID3D11UnorderedAccessView pDst) mut
-			{
-				return VT.Multiscan(ref this, ElementType, OpCode, ElementScanSize, ElementScanPitch, ScanCount, ref pSrc, ref pDst);
-			}
+			public HRESULT SetScanDirection(D3DX11_SCAN_DIRECTION Direction) mut => VT.SetScanDirection(ref this, Direction);
+			public HRESULT Scan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ref ID3D11UnorderedAccessView pSrc, ref ID3D11UnorderedAccessView pDst) mut => VT.Scan(ref this, ElementType, OpCode, ElementScanSize, ref pSrc, ref pDst);
+			public HRESULT Multiscan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, uint32 ElementScanPitch, uint32 ScanCount, ref ID3D11UnorderedAccessView pSrc, ref ID3D11UnorderedAccessView pDst) mut => VT.Multiscan(ref this, ElementType, OpCode, ElementScanSize, ElementScanPitch, ScanCount, ref pSrc, ref pDst);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8212,14 +6766,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetScanDirection(D3DX11_SCAN_DIRECTION Direction) mut
-			{
-				return VT.SetScanDirection(ref this, Direction);
-			}
-			public HRESULT SegScan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ID3D11UnorderedAccessView* pSrc, ref ID3D11UnorderedAccessView pSrcElementFlags, ref ID3D11UnorderedAccessView pDst) mut
-			{
-				return VT.SegScan(ref this, ElementType, OpCode, ElementScanSize, pSrc, ref pSrcElementFlags, ref pDst);
-			}
+			public HRESULT SetScanDirection(D3DX11_SCAN_DIRECTION Direction) mut => VT.SetScanDirection(ref this, Direction);
+			public HRESULT SegScan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ID3D11UnorderedAccessView* pSrc, ref ID3D11UnorderedAccessView pSrcElementFlags, ref ID3D11UnorderedAccessView pDst) mut => VT.SegScan(ref this, ElementType, OpCode, ElementScanSize, pSrc, ref pSrcElementFlags, ref pDst);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -8234,34 +6783,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetForwardScale(float ForwardScale) mut
-			{
-				return VT.SetForwardScale(ref this, ForwardScale);
-			}
-			public float GetForwardScale() mut
-			{
-				return VT.GetForwardScale(ref this);
-			}
-			public HRESULT SetInverseScale(float InverseScale) mut
-			{
-				return VT.SetInverseScale(ref this, InverseScale);
-			}
-			public float GetInverseScale() mut
-			{
-				return VT.GetInverseScale(ref this);
-			}
-			public HRESULT AttachBuffersAndPrecompute(uint32 NumTempBuffers, ID3D11UnorderedAccessView** ppTempBuffers, uint32 NumPrecomputeBuffers, ID3D11UnorderedAccessView** ppPrecomputeBufferSizes) mut
-			{
-				return VT.AttachBuffersAndPrecompute(ref this, NumTempBuffers, ppTempBuffers, NumPrecomputeBuffers, ppPrecomputeBufferSizes);
-			}
-			public HRESULT ForwardTransform(in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) mut
-			{
-				return VT.ForwardTransform(ref this, pInputBuffer, out ppOutputBuffer);
-			}
-			public HRESULT InverseTransform(in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) mut
-			{
-				return VT.InverseTransform(ref this, pInputBuffer, out ppOutputBuffer);
-			}
+			public HRESULT SetForwardScale(float ForwardScale) mut => VT.SetForwardScale(ref this, ForwardScale);
+			public float GetForwardScale() mut => VT.GetForwardScale(ref this);
+			public HRESULT SetInverseScale(float InverseScale) mut => VT.SetInverseScale(ref this, InverseScale);
+			public float GetInverseScale() mut => VT.GetInverseScale(ref this);
+			public HRESULT AttachBuffersAndPrecompute(uint32 NumTempBuffers, ID3D11UnorderedAccessView** ppTempBuffers, uint32 NumPrecomputeBuffers, ID3D11UnorderedAccessView** ppPrecomputeBufferSizes) mut => VT.AttachBuffersAndPrecompute(ref this, NumTempBuffers, ppTempBuffers, NumPrecomputeBuffers, ppPrecomputeBufferSizes);
+			public HRESULT ForwardTransform(in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) mut => VT.ForwardTransform(ref this, pInputBuffer, out ppOutputBuffer);
+			public HRESULT InverseTransform(in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) mut => VT.InverseTransform(ref this, pInputBuffer, out ppOutputBuffer);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

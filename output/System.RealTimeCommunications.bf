@@ -608,174 +608,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize() mut
-			{
-				return VT.Initialize(ref this);
-			}
-			public HRESULT Shutdown() mut
-			{
-				return VT.Shutdown(ref this);
-			}
-			public HRESULT PrepareForShutdown() mut
-			{
-				return VT.PrepareForShutdown(ref this);
-			}
-			public HRESULT put_EventFilter(int32 lFilter) mut
-			{
-				return VT.put_EventFilter(ref this, lFilter);
-			}
-			public HRESULT get_EventFilter(out int32 plFilter) mut
-			{
-				return VT.get_EventFilter(ref this, out plFilter);
-			}
-			public HRESULT SetPreferredMediaTypes(int32 lMediaTypes, int16 fPersistent) mut
-			{
-				return VT.SetPreferredMediaTypes(ref this, lMediaTypes, fPersistent);
-			}
-			public HRESULT get_PreferredMediaTypes(out int32 plMediaTypes) mut
-			{
-				return VT.get_PreferredMediaTypes(ref this, out plMediaTypes);
-			}
-			public HRESULT get_MediaCapabilities(out int32 plMediaTypes) mut
-			{
-				return VT.get_MediaCapabilities(ref this, out plMediaTypes);
-			}
-			public HRESULT CreateSession(RTC_SESSION_TYPE enType, BSTR bstrLocalPhoneURI, ref IRTCProfile pProfile, int32 lFlags, out IRTCSession* ppSession) mut
-			{
-				return VT.CreateSession(ref this, enType, bstrLocalPhoneURI, ref pProfile, lFlags, out ppSession);
-			}
-			public HRESULT put_ListenForIncomingSessions(RTC_LISTEN_MODE enListen) mut
-			{
-				return VT.put_ListenForIncomingSessions(ref this, enListen);
-			}
-			public HRESULT get_ListenForIncomingSessions(out RTC_LISTEN_MODE penListen) mut
-			{
-				return VT.get_ListenForIncomingSessions(ref this, out penListen);
-			}
-			public HRESULT get_NetworkAddresses(int16 fTCP, int16 fExternal, out VARIANT pvAddresses) mut
-			{
-				return VT.get_NetworkAddresses(ref this, fTCP, fExternal, out pvAddresses);
-			}
-			public HRESULT put_Volume(RTC_AUDIO_DEVICE enDevice, int32 lVolume) mut
-			{
-				return VT.put_Volume(ref this, enDevice, lVolume);
-			}
-			public HRESULT get_Volume(RTC_AUDIO_DEVICE enDevice, out int32 plVolume) mut
-			{
-				return VT.get_Volume(ref this, enDevice, out plVolume);
-			}
-			public HRESULT put_AudioMuted(RTC_AUDIO_DEVICE enDevice, int16 fMuted) mut
-			{
-				return VT.put_AudioMuted(ref this, enDevice, fMuted);
-			}
-			public HRESULT get_AudioMuted(RTC_AUDIO_DEVICE enDevice, out int16 pfMuted) mut
-			{
-				return VT.get_AudioMuted(ref this, enDevice, out pfMuted);
-			}
-			public HRESULT get_IVideoWindow(RTC_VIDEO_DEVICE enDevice, out IVideoWindow* ppIVideoWindow) mut
-			{
-				return VT.get_IVideoWindow(ref this, enDevice, out ppIVideoWindow);
-			}
-			public HRESULT put_PreferredAudioDevice(RTC_AUDIO_DEVICE enDevice, BSTR bstrDeviceName) mut
-			{
-				return VT.put_PreferredAudioDevice(ref this, enDevice, bstrDeviceName);
-			}
-			public HRESULT get_PreferredAudioDevice(RTC_AUDIO_DEVICE enDevice, out BSTR pbstrDeviceName) mut
-			{
-				return VT.get_PreferredAudioDevice(ref this, enDevice, out pbstrDeviceName);
-			}
-			public HRESULT put_PreferredVolume(RTC_AUDIO_DEVICE enDevice, int32 lVolume) mut
-			{
-				return VT.put_PreferredVolume(ref this, enDevice, lVolume);
-			}
-			public HRESULT get_PreferredVolume(RTC_AUDIO_DEVICE enDevice, out int32 plVolume) mut
-			{
-				return VT.get_PreferredVolume(ref this, enDevice, out plVolume);
-			}
-			public HRESULT put_PreferredAEC(int16 bEnable) mut
-			{
-				return VT.put_PreferredAEC(ref this, bEnable);
-			}
-			public HRESULT get_PreferredAEC(out int16 pbEnabled) mut
-			{
-				return VT.get_PreferredAEC(ref this, out pbEnabled);
-			}
-			public HRESULT put_PreferredVideoDevice(BSTR bstrDeviceName) mut
-			{
-				return VT.put_PreferredVideoDevice(ref this, bstrDeviceName);
-			}
-			public HRESULT get_PreferredVideoDevice(out BSTR pbstrDeviceName) mut
-			{
-				return VT.get_PreferredVideoDevice(ref this, out pbstrDeviceName);
-			}
-			public HRESULT get_ActiveMedia(out int32 plMediaType) mut
-			{
-				return VT.get_ActiveMedia(ref this, out plMediaType);
-			}
-			public HRESULT put_MaxBitrate(int32 lMaxBitrate) mut
-			{
-				return VT.put_MaxBitrate(ref this, lMaxBitrate);
-			}
-			public HRESULT get_MaxBitrate(out int32 plMaxBitrate) mut
-			{
-				return VT.get_MaxBitrate(ref this, out plMaxBitrate);
-			}
-			public HRESULT put_TemporalSpatialTradeOff(int32 lValue) mut
-			{
-				return VT.put_TemporalSpatialTradeOff(ref this, lValue);
-			}
-			public HRESULT get_TemporalSpatialTradeOff(out int32 plValue) mut
-			{
-				return VT.get_TemporalSpatialTradeOff(ref this, out plValue);
-			}
-			public HRESULT get_NetworkQuality(out int32 plNetworkQuality) mut
-			{
-				return VT.get_NetworkQuality(ref this, out plNetworkQuality);
-			}
-			public HRESULT StartT120Applet(RTC_T120_APPLET enApplet) mut
-			{
-				return VT.StartT120Applet(ref this, enApplet);
-			}
-			public HRESULT StopT120Applets() mut
-			{
-				return VT.StopT120Applets(ref this);
-			}
-			public HRESULT get_IsT120AppletRunning(RTC_T120_APPLET enApplet, out int16 pfRunning) mut
-			{
-				return VT.get_IsT120AppletRunning(ref this, enApplet, out pfRunning);
-			}
-			public HRESULT get_LocalUserURI(out BSTR pbstrUserURI) mut
-			{
-				return VT.get_LocalUserURI(ref this, out pbstrUserURI);
-			}
-			public HRESULT put_LocalUserURI(BSTR bstrUserURI) mut
-			{
-				return VT.put_LocalUserURI(ref this, bstrUserURI);
-			}
-			public HRESULT get_LocalUserName(out BSTR pbstrUserName) mut
-			{
-				return VT.get_LocalUserName(ref this, out pbstrUserName);
-			}
-			public HRESULT put_LocalUserName(BSTR bstrUserName) mut
-			{
-				return VT.put_LocalUserName(ref this, bstrUserName);
-			}
-			public HRESULT PlayRing(RTC_RING_TYPE enType, int16 bPlay) mut
-			{
-				return VT.PlayRing(ref this, enType, bPlay);
-			}
-			public HRESULT SendDTMF(RTC_DTMF enDTMF) mut
-			{
-				return VT.SendDTMF(ref this, enDTMF);
-			}
-			public HRESULT InvokeTuningWizard(int hwndParent) mut
-			{
-				return VT.InvokeTuningWizard(ref this, hwndParent);
-			}
-			public HRESULT get_IsTuned(out int16 pfTuned) mut
-			{
-				return VT.get_IsTuned(ref this, out pfTuned);
-			}
+			public HRESULT Initialize() mut => VT.Initialize(ref this);
+			public HRESULT Shutdown() mut => VT.Shutdown(ref this);
+			public HRESULT PrepareForShutdown() mut => VT.PrepareForShutdown(ref this);
+			public HRESULT put_EventFilter(int32 lFilter) mut => VT.put_EventFilter(ref this, lFilter);
+			public HRESULT get_EventFilter(out int32 plFilter) mut => VT.get_EventFilter(ref this, out plFilter);
+			public HRESULT SetPreferredMediaTypes(int32 lMediaTypes, int16 fPersistent) mut => VT.SetPreferredMediaTypes(ref this, lMediaTypes, fPersistent);
+			public HRESULT get_PreferredMediaTypes(out int32 plMediaTypes) mut => VT.get_PreferredMediaTypes(ref this, out plMediaTypes);
+			public HRESULT get_MediaCapabilities(out int32 plMediaTypes) mut => VT.get_MediaCapabilities(ref this, out plMediaTypes);
+			public HRESULT CreateSession(RTC_SESSION_TYPE enType, BSTR bstrLocalPhoneURI, ref IRTCProfile pProfile, int32 lFlags, out IRTCSession* ppSession) mut => VT.CreateSession(ref this, enType, bstrLocalPhoneURI, ref pProfile, lFlags, out ppSession);
+			public HRESULT put_ListenForIncomingSessions(RTC_LISTEN_MODE enListen) mut => VT.put_ListenForIncomingSessions(ref this, enListen);
+			public HRESULT get_ListenForIncomingSessions(out RTC_LISTEN_MODE penListen) mut => VT.get_ListenForIncomingSessions(ref this, out penListen);
+			public HRESULT get_NetworkAddresses(int16 fTCP, int16 fExternal, out VARIANT pvAddresses) mut => VT.get_NetworkAddresses(ref this, fTCP, fExternal, out pvAddresses);
+			public HRESULT put_Volume(RTC_AUDIO_DEVICE enDevice, int32 lVolume) mut => VT.put_Volume(ref this, enDevice, lVolume);
+			public HRESULT get_Volume(RTC_AUDIO_DEVICE enDevice, out int32 plVolume) mut => VT.get_Volume(ref this, enDevice, out plVolume);
+			public HRESULT put_AudioMuted(RTC_AUDIO_DEVICE enDevice, int16 fMuted) mut => VT.put_AudioMuted(ref this, enDevice, fMuted);
+			public HRESULT get_AudioMuted(RTC_AUDIO_DEVICE enDevice, out int16 pfMuted) mut => VT.get_AudioMuted(ref this, enDevice, out pfMuted);
+			public HRESULT get_IVideoWindow(RTC_VIDEO_DEVICE enDevice, out IVideoWindow* ppIVideoWindow) mut => VT.get_IVideoWindow(ref this, enDevice, out ppIVideoWindow);
+			public HRESULT put_PreferredAudioDevice(RTC_AUDIO_DEVICE enDevice, BSTR bstrDeviceName) mut => VT.put_PreferredAudioDevice(ref this, enDevice, bstrDeviceName);
+			public HRESULT get_PreferredAudioDevice(RTC_AUDIO_DEVICE enDevice, out BSTR pbstrDeviceName) mut => VT.get_PreferredAudioDevice(ref this, enDevice, out pbstrDeviceName);
+			public HRESULT put_PreferredVolume(RTC_AUDIO_DEVICE enDevice, int32 lVolume) mut => VT.put_PreferredVolume(ref this, enDevice, lVolume);
+			public HRESULT get_PreferredVolume(RTC_AUDIO_DEVICE enDevice, out int32 plVolume) mut => VT.get_PreferredVolume(ref this, enDevice, out plVolume);
+			public HRESULT put_PreferredAEC(int16 bEnable) mut => VT.put_PreferredAEC(ref this, bEnable);
+			public HRESULT get_PreferredAEC(out int16 pbEnabled) mut => VT.get_PreferredAEC(ref this, out pbEnabled);
+			public HRESULT put_PreferredVideoDevice(BSTR bstrDeviceName) mut => VT.put_PreferredVideoDevice(ref this, bstrDeviceName);
+			public HRESULT get_PreferredVideoDevice(out BSTR pbstrDeviceName) mut => VT.get_PreferredVideoDevice(ref this, out pbstrDeviceName);
+			public HRESULT get_ActiveMedia(out int32 plMediaType) mut => VT.get_ActiveMedia(ref this, out plMediaType);
+			public HRESULT put_MaxBitrate(int32 lMaxBitrate) mut => VT.put_MaxBitrate(ref this, lMaxBitrate);
+			public HRESULT get_MaxBitrate(out int32 plMaxBitrate) mut => VT.get_MaxBitrate(ref this, out plMaxBitrate);
+			public HRESULT put_TemporalSpatialTradeOff(int32 lValue) mut => VT.put_TemporalSpatialTradeOff(ref this, lValue);
+			public HRESULT get_TemporalSpatialTradeOff(out int32 plValue) mut => VT.get_TemporalSpatialTradeOff(ref this, out plValue);
+			public HRESULT get_NetworkQuality(out int32 plNetworkQuality) mut => VT.get_NetworkQuality(ref this, out plNetworkQuality);
+			public HRESULT StartT120Applet(RTC_T120_APPLET enApplet) mut => VT.StartT120Applet(ref this, enApplet);
+			public HRESULT StopT120Applets() mut => VT.StopT120Applets(ref this);
+			public HRESULT get_IsT120AppletRunning(RTC_T120_APPLET enApplet, out int16 pfRunning) mut => VT.get_IsT120AppletRunning(ref this, enApplet, out pfRunning);
+			public HRESULT get_LocalUserURI(out BSTR pbstrUserURI) mut => VT.get_LocalUserURI(ref this, out pbstrUserURI);
+			public HRESULT put_LocalUserURI(BSTR bstrUserURI) mut => VT.put_LocalUserURI(ref this, bstrUserURI);
+			public HRESULT get_LocalUserName(out BSTR pbstrUserName) mut => VT.get_LocalUserName(ref this, out pbstrUserName);
+			public HRESULT put_LocalUserName(BSTR bstrUserName) mut => VT.put_LocalUserName(ref this, bstrUserName);
+			public HRESULT PlayRing(RTC_RING_TYPE enType, int16 bPlay) mut => VT.PlayRing(ref this, enType, bPlay);
+			public HRESULT SendDTMF(RTC_DTMF enDTMF) mut => VT.SendDTMF(ref this, enDTMF);
+			public HRESULT InvokeTuningWizard(int hwndParent) mut => VT.InvokeTuningWizard(ref this, hwndParent);
+			public HRESULT get_IsTuned(out int16 pfTuned) mut => VT.get_IsTuned(ref this, out pfTuned);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -830,58 +705,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT put_AnswerMode(RTC_SESSION_TYPE enType, RTC_ANSWER_MODE enMode) mut
-			{
-				return VT.put_AnswerMode(ref this, enType, enMode);
-			}
-			public HRESULT get_AnswerMode(RTC_SESSION_TYPE enType, out RTC_ANSWER_MODE penMode) mut
-			{
-				return VT.get_AnswerMode(ref this, enType, out penMode);
-			}
-			public HRESULT InvokeTuningWizardEx(int hwndParent, int16 fAllowAudio, int16 fAllowVideo) mut
-			{
-				return VT.InvokeTuningWizardEx(ref this, hwndParent, fAllowAudio, fAllowVideo);
-			}
-			public HRESULT get_Version(out int32 plVersion) mut
-			{
-				return VT.get_Version(ref this, out plVersion);
-			}
-			public HRESULT put_ClientName(BSTR bstrClientName) mut
-			{
-				return VT.put_ClientName(ref this, bstrClientName);
-			}
-			public HRESULT put_ClientCurVer(BSTR bstrClientCurVer) mut
-			{
-				return VT.put_ClientCurVer(ref this, bstrClientCurVer);
-			}
-			public HRESULT InitializeEx(int32 lFlags) mut
-			{
-				return VT.InitializeEx(ref this, lFlags);
-			}
-			public HRESULT CreateSessionWithDescription(BSTR bstrContentType, BSTR bstrSessionDescription, ref IRTCProfile pProfile, int32 lFlags, out IRTCSession2* ppSession2) mut
-			{
-				return VT.CreateSessionWithDescription(ref this, bstrContentType, bstrSessionDescription, ref pProfile, lFlags, out ppSession2);
-			}
-			public HRESULT SetSessionDescriptionManager(ref IRTCSessionDescriptionManager pSessionDescriptionManager) mut
-			{
-				return VT.SetSessionDescriptionManager(ref this, ref pSessionDescriptionManager);
-			}
-			public HRESULT put_PreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, RTC_SECURITY_LEVEL enSecurityLevel) mut
-			{
-				return VT.put_PreferredSecurityLevel(ref this, enSecurityType, enSecurityLevel);
-			}
-			public HRESULT get_PreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) mut
-			{
-				return VT.get_PreferredSecurityLevel(ref this, enSecurityType, out penSecurityLevel);
-			}
-			public HRESULT put_AllowedPorts(int32 lTransport, RTC_LISTEN_MODE enListenMode) mut
-			{
-				return VT.put_AllowedPorts(ref this, lTransport, enListenMode);
-			}
-			public HRESULT get_AllowedPorts(int32 lTransport, out RTC_LISTEN_MODE penListenMode) mut
-			{
-				return VT.get_AllowedPorts(ref this, lTransport, out penListenMode);
-			}
+			public HRESULT put_AnswerMode(RTC_SESSION_TYPE enType, RTC_ANSWER_MODE enMode) mut => VT.put_AnswerMode(ref this, enType, enMode);
+			public HRESULT get_AnswerMode(RTC_SESSION_TYPE enType, out RTC_ANSWER_MODE penMode) mut => VT.get_AnswerMode(ref this, enType, out penMode);
+			public HRESULT InvokeTuningWizardEx(int hwndParent, int16 fAllowAudio, int16 fAllowVideo) mut => VT.InvokeTuningWizardEx(ref this, hwndParent, fAllowAudio, fAllowVideo);
+			public HRESULT get_Version(out int32 plVersion) mut => VT.get_Version(ref this, out plVersion);
+			public HRESULT put_ClientName(BSTR bstrClientName) mut => VT.put_ClientName(ref this, bstrClientName);
+			public HRESULT put_ClientCurVer(BSTR bstrClientCurVer) mut => VT.put_ClientCurVer(ref this, bstrClientCurVer);
+			public HRESULT InitializeEx(int32 lFlags) mut => VT.InitializeEx(ref this, lFlags);
+			public HRESULT CreateSessionWithDescription(BSTR bstrContentType, BSTR bstrSessionDescription, ref IRTCProfile pProfile, int32 lFlags, out IRTCSession2* ppSession2) mut => VT.CreateSessionWithDescription(ref this, bstrContentType, bstrSessionDescription, ref pProfile, lFlags, out ppSession2);
+			public HRESULT SetSessionDescriptionManager(ref IRTCSessionDescriptionManager pSessionDescriptionManager) mut => VT.SetSessionDescriptionManager(ref this, ref pSessionDescriptionManager);
+			public HRESULT put_PreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, RTC_SECURITY_LEVEL enSecurityLevel) mut => VT.put_PreferredSecurityLevel(ref this, enSecurityType, enSecurityLevel);
+			public HRESULT get_PreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) mut => VT.get_PreferredSecurityLevel(ref this, enSecurityType, out penSecurityLevel);
+			public HRESULT put_AllowedPorts(int32 lTransport, RTC_LISTEN_MODE enListenMode) mut => VT.put_AllowedPorts(ref this, lTransport, enListenMode);
+			public HRESULT get_AllowedPorts(int32 lTransport, out RTC_LISTEN_MODE penListenMode) mut => VT.get_AllowedPorts(ref this, lTransport, out penListenMode);
+
 			[CRepr]
 			public struct VTable : IRTCClient.VTable
 			{
@@ -907,78 +744,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnablePresence(int16 fUseStorage, VARIANT varStorage) mut
-			{
-				return VT.EnablePresence(ref this, fUseStorage, varStorage);
-			}
-			public HRESULT Export(VARIANT varStorage) mut
-			{
-				return VT.Export(ref this, varStorage);
-			}
-			public HRESULT Import(VARIANT varStorage, int16 fReplaceAll) mut
-			{
-				return VT.Import(ref this, varStorage, fReplaceAll);
-			}
-			public HRESULT EnumerateBuddies(out IRTCEnumBuddies* ppEnum) mut
-			{
-				return VT.EnumerateBuddies(ref this, out ppEnum);
-			}
-			public HRESULT get_Buddies(out IRTCCollection* ppCollection) mut
-			{
-				return VT.get_Buddies(ref this, out ppCollection);
-			}
-			public HRESULT get_Buddy(BSTR bstrPresentityURI, out IRTCBuddy* ppBuddy) mut
-			{
-				return VT.get_Buddy(ref this, bstrPresentityURI, out ppBuddy);
-			}
-			public HRESULT AddBuddy(BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fPersistent, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddy* ppBuddy) mut
-			{
-				return VT.AddBuddy(ref this, bstrPresentityURI, bstrUserName, bstrData, fPersistent, ref pProfile, lFlags, out ppBuddy);
-			}
-			public HRESULT RemoveBuddy(ref IRTCBuddy pBuddy) mut
-			{
-				return VT.RemoveBuddy(ref this, ref pBuddy);
-			}
-			public HRESULT EnumerateWatchers(out IRTCEnumWatchers* ppEnum) mut
-			{
-				return VT.EnumerateWatchers(ref this, out ppEnum);
-			}
-			public HRESULT get_Watchers(out IRTCCollection* ppCollection) mut
-			{
-				return VT.get_Watchers(ref this, out ppCollection);
-			}
-			public HRESULT get_Watcher(BSTR bstrPresentityURI, out IRTCWatcher* ppWatcher) mut
-			{
-				return VT.get_Watcher(ref this, bstrPresentityURI, out ppWatcher);
-			}
-			public HRESULT AddWatcher(BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fBlocked, int16 fPersistent, out IRTCWatcher* ppWatcher) mut
-			{
-				return VT.AddWatcher(ref this, bstrPresentityURI, bstrUserName, bstrData, fBlocked, fPersistent, out ppWatcher);
-			}
-			public HRESULT RemoveWatcher(ref IRTCWatcher pWatcher) mut
-			{
-				return VT.RemoveWatcher(ref this, ref pWatcher);
-			}
-			public HRESULT SetLocalPresenceInfo(RTC_PRESENCE_STATUS enStatus, BSTR bstrNotes) mut
-			{
-				return VT.SetLocalPresenceInfo(ref this, enStatus, bstrNotes);
-			}
-			public HRESULT get_OfferWatcherMode(out RTC_OFFER_WATCHER_MODE penMode) mut
-			{
-				return VT.get_OfferWatcherMode(ref this, out penMode);
-			}
-			public HRESULT put_OfferWatcherMode(RTC_OFFER_WATCHER_MODE enMode) mut
-			{
-				return VT.put_OfferWatcherMode(ref this, enMode);
-			}
-			public HRESULT get_PrivacyMode(out RTC_PRIVACY_MODE penMode) mut
-			{
-				return VT.get_PrivacyMode(ref this, out penMode);
-			}
-			public HRESULT put_PrivacyMode(RTC_PRIVACY_MODE enMode) mut
-			{
-				return VT.put_PrivacyMode(ref this, enMode);
-			}
+			public HRESULT EnablePresence(int16 fUseStorage, VARIANT varStorage) mut => VT.EnablePresence(ref this, fUseStorage, varStorage);
+			public HRESULT Export(VARIANT varStorage) mut => VT.Export(ref this, varStorage);
+			public HRESULT Import(VARIANT varStorage, int16 fReplaceAll) mut => VT.Import(ref this, varStorage, fReplaceAll);
+			public HRESULT EnumerateBuddies(out IRTCEnumBuddies* ppEnum) mut => VT.EnumerateBuddies(ref this, out ppEnum);
+			public HRESULT get_Buddies(out IRTCCollection* ppCollection) mut => VT.get_Buddies(ref this, out ppCollection);
+			public HRESULT get_Buddy(BSTR bstrPresentityURI, out IRTCBuddy* ppBuddy) mut => VT.get_Buddy(ref this, bstrPresentityURI, out ppBuddy);
+			public HRESULT AddBuddy(BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fPersistent, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddy* ppBuddy) mut => VT.AddBuddy(ref this, bstrPresentityURI, bstrUserName, bstrData, fPersistent, ref pProfile, lFlags, out ppBuddy);
+			public HRESULT RemoveBuddy(ref IRTCBuddy pBuddy) mut => VT.RemoveBuddy(ref this, ref pBuddy);
+			public HRESULT EnumerateWatchers(out IRTCEnumWatchers* ppEnum) mut => VT.EnumerateWatchers(ref this, out ppEnum);
+			public HRESULT get_Watchers(out IRTCCollection* ppCollection) mut => VT.get_Watchers(ref this, out ppCollection);
+			public HRESULT get_Watcher(BSTR bstrPresentityURI, out IRTCWatcher* ppWatcher) mut => VT.get_Watcher(ref this, bstrPresentityURI, out ppWatcher);
+			public HRESULT AddWatcher(BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fBlocked, int16 fPersistent, out IRTCWatcher* ppWatcher) mut => VT.AddWatcher(ref this, bstrPresentityURI, bstrUserName, bstrData, fBlocked, fPersistent, out ppWatcher);
+			public HRESULT RemoveWatcher(ref IRTCWatcher pWatcher) mut => VT.RemoveWatcher(ref this, ref pWatcher);
+			public HRESULT SetLocalPresenceInfo(RTC_PRESENCE_STATUS enStatus, BSTR bstrNotes) mut => VT.SetLocalPresenceInfo(ref this, enStatus, bstrNotes);
+			public HRESULT get_OfferWatcherMode(out RTC_OFFER_WATCHER_MODE penMode) mut => VT.get_OfferWatcherMode(ref this, out penMode);
+			public HRESULT put_OfferWatcherMode(RTC_OFFER_WATCHER_MODE enMode) mut => VT.put_OfferWatcherMode(ref this, enMode);
+			public HRESULT get_PrivacyMode(out RTC_PRIVACY_MODE penMode) mut => VT.get_PrivacyMode(ref this, out penMode);
+			public HRESULT put_PrivacyMode(RTC_PRIVACY_MODE enMode) mut => VT.put_PrivacyMode(ref this, enMode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1009,66 +793,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnablePresenceEx(ref IRTCProfile pProfile, VARIANT varStorage, int32 lFlags) mut
-			{
-				return VT.EnablePresenceEx(ref this, ref pProfile, varStorage, lFlags);
-			}
-			public HRESULT DisablePresence() mut
-			{
-				return VT.DisablePresence(ref this);
-			}
-			public HRESULT AddGroup(BSTR bstrGroupName, BSTR bstrData, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddyGroup* ppGroup) mut
-			{
-				return VT.AddGroup(ref this, bstrGroupName, bstrData, ref pProfile, lFlags, out ppGroup);
-			}
-			public HRESULT RemoveGroup(ref IRTCBuddyGroup pGroup) mut
-			{
-				return VT.RemoveGroup(ref this, ref pGroup);
-			}
-			public HRESULT EnumerateGroups(out IRTCEnumGroups* ppEnum) mut
-			{
-				return VT.EnumerateGroups(ref this, out ppEnum);
-			}
-			public HRESULT get_Groups(out IRTCCollection* ppCollection) mut
-			{
-				return VT.get_Groups(ref this, out ppCollection);
-			}
-			public HRESULT get_Group(BSTR bstrGroupName, out IRTCBuddyGroup* ppGroup) mut
-			{
-				return VT.get_Group(ref this, bstrGroupName, out ppGroup);
-			}
-			public HRESULT AddWatcherEx(BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, RTC_WATCHER_STATE enState, int16 fPersistent, RTC_ACE_SCOPE enScope, ref IRTCProfile pProfile, int32 lFlags, out IRTCWatcher2* ppWatcher) mut
-			{
-				return VT.AddWatcherEx(ref this, bstrPresentityURI, bstrUserName, bstrData, enState, fPersistent, enScope, ref pProfile, lFlags, out ppWatcher);
-			}
-			public HRESULT get_WatcherEx(RTC_WATCHER_MATCH_MODE enMode, BSTR bstrPresentityURI, out IRTCWatcher2* ppWatcher) mut
-			{
-				return VT.get_WatcherEx(ref this, enMode, bstrPresentityURI, out ppWatcher);
-			}
-			public HRESULT put_PresenceProperty(RTC_PRESENCE_PROPERTY enProperty, BSTR bstrProperty) mut
-			{
-				return VT.put_PresenceProperty(ref this, enProperty, bstrProperty);
-			}
-			public HRESULT get_PresenceProperty(RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) mut
-			{
-				return VT.get_PresenceProperty(ref this, enProperty, out pbstrProperty);
-			}
-			public HRESULT SetPresenceData(BSTR bstrNamespace, BSTR bstrData) mut
-			{
-				return VT.SetPresenceData(ref this, bstrNamespace, bstrData);
-			}
-			public HRESULT GetPresenceData(out BSTR pbstrNamespace, out BSTR pbstrData) mut
-			{
-				return VT.GetPresenceData(ref this, out pbstrNamespace, out pbstrData);
-			}
-			public HRESULT GetLocalPresenceInfo(out RTC_PRESENCE_STATUS penStatus, out BSTR pbstrNotes) mut
-			{
-				return VT.GetLocalPresenceInfo(ref this, out penStatus, out pbstrNotes);
-			}
-			public HRESULT AddBuddyEx(BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fPersistent, RTC_BUDDY_SUBSCRIPTION_TYPE enSubscriptionType, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddy2* ppBuddy) mut
-			{
-				return VT.AddBuddyEx(ref this, bstrPresentityURI, bstrUserName, bstrData, fPersistent, enSubscriptionType, ref pProfile, lFlags, out ppBuddy);
-			}
+			public HRESULT EnablePresenceEx(ref IRTCProfile pProfile, VARIANT varStorage, int32 lFlags) mut => VT.EnablePresenceEx(ref this, ref pProfile, varStorage, lFlags);
+			public HRESULT DisablePresence() mut => VT.DisablePresence(ref this);
+			public HRESULT AddGroup(BSTR bstrGroupName, BSTR bstrData, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddyGroup* ppGroup) mut => VT.AddGroup(ref this, bstrGroupName, bstrData, ref pProfile, lFlags, out ppGroup);
+			public HRESULT RemoveGroup(ref IRTCBuddyGroup pGroup) mut => VT.RemoveGroup(ref this, ref pGroup);
+			public HRESULT EnumerateGroups(out IRTCEnumGroups* ppEnum) mut => VT.EnumerateGroups(ref this, out ppEnum);
+			public HRESULT get_Groups(out IRTCCollection* ppCollection) mut => VT.get_Groups(ref this, out ppCollection);
+			public HRESULT get_Group(BSTR bstrGroupName, out IRTCBuddyGroup* ppGroup) mut => VT.get_Group(ref this, bstrGroupName, out ppGroup);
+			public HRESULT AddWatcherEx(BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, RTC_WATCHER_STATE enState, int16 fPersistent, RTC_ACE_SCOPE enScope, ref IRTCProfile pProfile, int32 lFlags, out IRTCWatcher2* ppWatcher) mut => VT.AddWatcherEx(ref this, bstrPresentityURI, bstrUserName, bstrData, enState, fPersistent, enScope, ref pProfile, lFlags, out ppWatcher);
+			public HRESULT get_WatcherEx(RTC_WATCHER_MATCH_MODE enMode, BSTR bstrPresentityURI, out IRTCWatcher2* ppWatcher) mut => VT.get_WatcherEx(ref this, enMode, bstrPresentityURI, out ppWatcher);
+			public HRESULT put_PresenceProperty(RTC_PRESENCE_PROPERTY enProperty, BSTR bstrProperty) mut => VT.put_PresenceProperty(ref this, enProperty, bstrProperty);
+			public HRESULT get_PresenceProperty(RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) mut => VT.get_PresenceProperty(ref this, enProperty, out pbstrProperty);
+			public HRESULT SetPresenceData(BSTR bstrNamespace, BSTR bstrData) mut => VT.SetPresenceData(ref this, bstrNamespace, bstrData);
+			public HRESULT GetPresenceData(out BSTR pbstrNamespace, out BSTR pbstrData) mut => VT.GetPresenceData(ref this, out pbstrNamespace, out pbstrData);
+			public HRESULT GetLocalPresenceInfo(out RTC_PRESENCE_STATUS penStatus, out BSTR pbstrNotes) mut => VT.GetLocalPresenceInfo(ref this, out penStatus, out pbstrNotes);
+			public HRESULT AddBuddyEx(BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fPersistent, RTC_BUDDY_SUBSCRIPTION_TYPE enSubscriptionType, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddy2* ppBuddy) mut => VT.AddBuddyEx(ref this, bstrPresentityURI, bstrUserName, bstrData, fPersistent, enSubscriptionType, ref pProfile, lFlags, out ppBuddy);
+
 			[CRepr]
 			public struct VTable : IRTCClientPresence.VTable
 			{
@@ -1096,34 +836,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateProfile(BSTR bstrProfileXML, out IRTCProfile* ppProfile) mut
-			{
-				return VT.CreateProfile(ref this, bstrProfileXML, out ppProfile);
-			}
-			public HRESULT EnableProfile(ref IRTCProfile pProfile, int32 lRegisterFlags) mut
-			{
-				return VT.EnableProfile(ref this, ref pProfile, lRegisterFlags);
-			}
-			public HRESULT DisableProfile(ref IRTCProfile pProfile) mut
-			{
-				return VT.DisableProfile(ref this, ref pProfile);
-			}
-			public HRESULT EnumerateProfiles(out IRTCEnumProfiles* ppEnum) mut
-			{
-				return VT.EnumerateProfiles(ref this, out ppEnum);
-			}
-			public HRESULT get_Profiles(out IRTCCollection* ppCollection) mut
-			{
-				return VT.get_Profiles(ref this, out ppCollection);
-			}
-			public HRESULT GetProfile(BSTR bstrUserAccount, BSTR bstrUserPassword, BSTR bstrUserURI, BSTR bstrServer, int32 lTransport, int lCookie) mut
-			{
-				return VT.GetProfile(ref this, bstrUserAccount, bstrUserPassword, bstrUserURI, bstrServer, lTransport, lCookie);
-			}
-			public HRESULT get_SessionCapabilities(out int32 plSupportedSessions) mut
-			{
-				return VT.get_SessionCapabilities(ref this, out plSupportedSessions);
-			}
+			public HRESULT CreateProfile(BSTR bstrProfileXML, out IRTCProfile* ppProfile) mut => VT.CreateProfile(ref this, bstrProfileXML, out ppProfile);
+			public HRESULT EnableProfile(ref IRTCProfile pProfile, int32 lRegisterFlags) mut => VT.EnableProfile(ref this, ref pProfile, lRegisterFlags);
+			public HRESULT DisableProfile(ref IRTCProfile pProfile) mut => VT.DisableProfile(ref this, ref pProfile);
+			public HRESULT EnumerateProfiles(out IRTCEnumProfiles* ppEnum) mut => VT.EnumerateProfiles(ref this, out ppEnum);
+			public HRESULT get_Profiles(out IRTCCollection* ppCollection) mut => VT.get_Profiles(ref this, out ppCollection);
+			public HRESULT GetProfile(BSTR bstrUserAccount, BSTR bstrUserPassword, BSTR bstrUserURI, BSTR bstrServer, int32 lTransport, int lCookie) mut => VT.GetProfile(ref this, bstrUserAccount, bstrUserPassword, bstrUserURI, bstrServer, lTransport, lCookie);
+			public HRESULT get_SessionCapabilities(out int32 plSupportedSessions) mut => VT.get_SessionCapabilities(ref this, out plSupportedSessions);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1143,10 +863,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnableProfileEx(ref IRTCProfile pProfile, int32 lRegisterFlags, int32 lRoamingFlags) mut
-			{
-				return VT.EnableProfileEx(ref this, ref pProfile, lRegisterFlags, lRoamingFlags);
-			}
+			public HRESULT EnableProfileEx(ref IRTCProfile pProfile, int32 lRegisterFlags, int32 lRoamingFlags) mut => VT.EnableProfileEx(ref this, ref pProfile, lRegisterFlags, lRoamingFlags);
+
 			[CRepr]
 			public struct VTable : IRTCClientProvisioning.VTable
 			{
@@ -1160,78 +878,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Key(out BSTR pbstrKey) mut
-			{
-				return VT.get_Key(ref this, out pbstrKey);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT get_XML(out BSTR pbstrXML) mut
-			{
-				return VT.get_XML(ref this, out pbstrXML);
-			}
-			public HRESULT get_ProviderName(out BSTR pbstrName) mut
-			{
-				return VT.get_ProviderName(ref this, out pbstrName);
-			}
-			public HRESULT get_ProviderURI(RTC_PROVIDER_URI enURI, out BSTR pbstrURI) mut
-			{
-				return VT.get_ProviderURI(ref this, enURI, out pbstrURI);
-			}
-			public HRESULT get_ProviderData(out BSTR pbstrData) mut
-			{
-				return VT.get_ProviderData(ref this, out pbstrData);
-			}
-			public HRESULT get_ClientName(out BSTR pbstrName) mut
-			{
-				return VT.get_ClientName(ref this, out pbstrName);
-			}
-			public HRESULT get_ClientBanner(out int16 pfBanner) mut
-			{
-				return VT.get_ClientBanner(ref this, out pfBanner);
-			}
-			public HRESULT get_ClientMinVer(out BSTR pbstrMinVer) mut
-			{
-				return VT.get_ClientMinVer(ref this, out pbstrMinVer);
-			}
-			public HRESULT get_ClientCurVer(out BSTR pbstrCurVer) mut
-			{
-				return VT.get_ClientCurVer(ref this, out pbstrCurVer);
-			}
-			public HRESULT get_ClientUpdateURI(out BSTR pbstrUpdateURI) mut
-			{
-				return VT.get_ClientUpdateURI(ref this, out pbstrUpdateURI);
-			}
-			public HRESULT get_ClientData(out BSTR pbstrData) mut
-			{
-				return VT.get_ClientData(ref this, out pbstrData);
-			}
-			public HRESULT get_UserURI(out BSTR pbstrUserURI) mut
-			{
-				return VT.get_UserURI(ref this, out pbstrUserURI);
-			}
-			public HRESULT get_UserName(out BSTR pbstrUserName) mut
-			{
-				return VT.get_UserName(ref this, out pbstrUserName);
-			}
-			public HRESULT get_UserAccount(out BSTR pbstrUserAccount) mut
-			{
-				return VT.get_UserAccount(ref this, out pbstrUserAccount);
-			}
-			public HRESULT SetCredentials(BSTR bstrUserURI, BSTR bstrUserAccount, BSTR bstrPassword) mut
-			{
-				return VT.SetCredentials(ref this, bstrUserURI, bstrUserAccount, bstrPassword);
-			}
-			public HRESULT get_SessionCapabilities(out int32 plSupportedSessions) mut
-			{
-				return VT.get_SessionCapabilities(ref this, out plSupportedSessions);
-			}
-			public HRESULT get_State(out RTC_REGISTRATION_STATE penState) mut
-			{
-				return VT.get_State(ref this, out penState);
-			}
+			public HRESULT get_Key(out BSTR pbstrKey) mut => VT.get_Key(ref this, out pbstrKey);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT get_XML(out BSTR pbstrXML) mut => VT.get_XML(ref this, out pbstrXML);
+			public HRESULT get_ProviderName(out BSTR pbstrName) mut => VT.get_ProviderName(ref this, out pbstrName);
+			public HRESULT get_ProviderURI(RTC_PROVIDER_URI enURI, out BSTR pbstrURI) mut => VT.get_ProviderURI(ref this, enURI, out pbstrURI);
+			public HRESULT get_ProviderData(out BSTR pbstrData) mut => VT.get_ProviderData(ref this, out pbstrData);
+			public HRESULT get_ClientName(out BSTR pbstrName) mut => VT.get_ClientName(ref this, out pbstrName);
+			public HRESULT get_ClientBanner(out int16 pfBanner) mut => VT.get_ClientBanner(ref this, out pfBanner);
+			public HRESULT get_ClientMinVer(out BSTR pbstrMinVer) mut => VT.get_ClientMinVer(ref this, out pbstrMinVer);
+			public HRESULT get_ClientCurVer(out BSTR pbstrCurVer) mut => VT.get_ClientCurVer(ref this, out pbstrCurVer);
+			public HRESULT get_ClientUpdateURI(out BSTR pbstrUpdateURI) mut => VT.get_ClientUpdateURI(ref this, out pbstrUpdateURI);
+			public HRESULT get_ClientData(out BSTR pbstrData) mut => VT.get_ClientData(ref this, out pbstrData);
+			public HRESULT get_UserURI(out BSTR pbstrUserURI) mut => VT.get_UserURI(ref this, out pbstrUserURI);
+			public HRESULT get_UserName(out BSTR pbstrUserName) mut => VT.get_UserName(ref this, out pbstrUserName);
+			public HRESULT get_UserAccount(out BSTR pbstrUserAccount) mut => VT.get_UserAccount(ref this, out pbstrUserAccount);
+			public HRESULT SetCredentials(BSTR bstrUserURI, BSTR bstrUserAccount, BSTR bstrPassword) mut => VT.SetCredentials(ref this, bstrUserURI, bstrUserAccount, bstrPassword);
+			public HRESULT get_SessionCapabilities(out int32 plSupportedSessions) mut => VT.get_SessionCapabilities(ref this, out plSupportedSessions);
+			public HRESULT get_State(out RTC_REGISTRATION_STATE penState) mut => VT.get_State(ref this, out penState);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1262,22 +927,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Realm(out BSTR pbstrRealm) mut
-			{
-				return VT.get_Realm(ref this, out pbstrRealm);
-			}
-			public HRESULT put_Realm(BSTR bstrRealm) mut
-			{
-				return VT.put_Realm(ref this, bstrRealm);
-			}
-			public HRESULT get_AllowedAuth(out int32 plAllowedAuth) mut
-			{
-				return VT.get_AllowedAuth(ref this, out plAllowedAuth);
-			}
-			public HRESULT put_AllowedAuth(int32 lAllowedAuth) mut
-			{
-				return VT.put_AllowedAuth(ref this, lAllowedAuth);
-			}
+			public HRESULT get_Realm(out BSTR pbstrRealm) mut => VT.get_Realm(ref this, out pbstrRealm);
+			public HRESULT put_Realm(BSTR bstrRealm) mut => VT.put_Realm(ref this, bstrRealm);
+			public HRESULT get_AllowedAuth(out int32 plAllowedAuth) mut => VT.get_AllowedAuth(ref this, out plAllowedAuth);
+			public HRESULT put_AllowedAuth(int32 lAllowedAuth) mut => VT.put_AllowedAuth(ref this, lAllowedAuth);
+
 			[CRepr]
 			public struct VTable : IRTCProfile.VTable
 			{
@@ -1294,86 +948,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Client(out IRTCClient* ppClient) mut
-			{
-				return VT.get_Client(ref this, out ppClient);
-			}
-			public HRESULT get_State(out RTC_SESSION_STATE penState) mut
-			{
-				return VT.get_State(ref this, out penState);
-			}
-			public HRESULT get_Type(out RTC_SESSION_TYPE penType) mut
-			{
-				return VT.get_Type(ref this, out penType);
-			}
-			public HRESULT get_Profile(out IRTCProfile* ppProfile) mut
-			{
-				return VT.get_Profile(ref this, out ppProfile);
-			}
-			public HRESULT get_Participants(out IRTCCollection* ppCollection) mut
-			{
-				return VT.get_Participants(ref this, out ppCollection);
-			}
-			public HRESULT Answer() mut
-			{
-				return VT.Answer(ref this);
-			}
-			public HRESULT Terminate(RTC_TERMINATE_REASON enReason) mut
-			{
-				return VT.Terminate(ref this, enReason);
-			}
-			public HRESULT Redirect(RTC_SESSION_TYPE enType, BSTR bstrLocalPhoneURI, ref IRTCProfile pProfile, int32 lFlags) mut
-			{
-				return VT.Redirect(ref this, enType, bstrLocalPhoneURI, ref pProfile, lFlags);
-			}
-			public HRESULT AddParticipant(BSTR bstrAddress, BSTR bstrName, out IRTCParticipant* ppParticipant) mut
-			{
-				return VT.AddParticipant(ref this, bstrAddress, bstrName, out ppParticipant);
-			}
-			public HRESULT RemoveParticipant(ref IRTCParticipant pParticipant) mut
-			{
-				return VT.RemoveParticipant(ref this, ref pParticipant);
-			}
-			public HRESULT EnumerateParticipants(out IRTCEnumParticipants* ppEnum) mut
-			{
-				return VT.EnumerateParticipants(ref this, out ppEnum);
-			}
-			public HRESULT get_CanAddParticipants(out int16 pfCanAdd) mut
-			{
-				return VT.get_CanAddParticipants(ref this, out pfCanAdd);
-			}
-			public HRESULT get_RedirectedUserURI(out BSTR pbstrUserURI) mut
-			{
-				return VT.get_RedirectedUserURI(ref this, out pbstrUserURI);
-			}
-			public HRESULT get_RedirectedUserName(out BSTR pbstrUserName) mut
-			{
-				return VT.get_RedirectedUserName(ref this, out pbstrUserName);
-			}
-			public HRESULT NextRedirectedUser() mut
-			{
-				return VT.NextRedirectedUser(ref this);
-			}
-			public HRESULT SendMessage(BSTR bstrMessageHeader, BSTR bstrMessage, int lCookie) mut
-			{
-				return VT.SendMessage(ref this, bstrMessageHeader, bstrMessage, lCookie);
-			}
-			public HRESULT SendMessageStatus(RTC_MESSAGING_USER_STATUS enUserStatus, int lCookie) mut
-			{
-				return VT.SendMessageStatus(ref this, enUserStatus, lCookie);
-			}
-			public HRESULT AddStream(int32 lMediaType, int lCookie) mut
-			{
-				return VT.AddStream(ref this, lMediaType, lCookie);
-			}
-			public HRESULT RemoveStream(int32 lMediaType, int lCookie) mut
-			{
-				return VT.RemoveStream(ref this, lMediaType, lCookie);
-			}
-			public HRESULT put_EncryptionKey(int32 lMediaType, BSTR EncryptionKey) mut
-			{
-				return VT.put_EncryptionKey(ref this, lMediaType, EncryptionKey);
-			}
+			public HRESULT get_Client(out IRTCClient* ppClient) mut => VT.get_Client(ref this, out ppClient);
+			public HRESULT get_State(out RTC_SESSION_STATE penState) mut => VT.get_State(ref this, out penState);
+			public HRESULT get_Type(out RTC_SESSION_TYPE penType) mut => VT.get_Type(ref this, out penType);
+			public HRESULT get_Profile(out IRTCProfile* ppProfile) mut => VT.get_Profile(ref this, out ppProfile);
+			public HRESULT get_Participants(out IRTCCollection* ppCollection) mut => VT.get_Participants(ref this, out ppCollection);
+			public HRESULT Answer() mut => VT.Answer(ref this);
+			public HRESULT Terminate(RTC_TERMINATE_REASON enReason) mut => VT.Terminate(ref this, enReason);
+			public HRESULT Redirect(RTC_SESSION_TYPE enType, BSTR bstrLocalPhoneURI, ref IRTCProfile pProfile, int32 lFlags) mut => VT.Redirect(ref this, enType, bstrLocalPhoneURI, ref pProfile, lFlags);
+			public HRESULT AddParticipant(BSTR bstrAddress, BSTR bstrName, out IRTCParticipant* ppParticipant) mut => VT.AddParticipant(ref this, bstrAddress, bstrName, out ppParticipant);
+			public HRESULT RemoveParticipant(ref IRTCParticipant pParticipant) mut => VT.RemoveParticipant(ref this, ref pParticipant);
+			public HRESULT EnumerateParticipants(out IRTCEnumParticipants* ppEnum) mut => VT.EnumerateParticipants(ref this, out ppEnum);
+			public HRESULT get_CanAddParticipants(out int16 pfCanAdd) mut => VT.get_CanAddParticipants(ref this, out pfCanAdd);
+			public HRESULT get_RedirectedUserURI(out BSTR pbstrUserURI) mut => VT.get_RedirectedUserURI(ref this, out pbstrUserURI);
+			public HRESULT get_RedirectedUserName(out BSTR pbstrUserName) mut => VT.get_RedirectedUserName(ref this, out pbstrUserName);
+			public HRESULT NextRedirectedUser() mut => VT.NextRedirectedUser(ref this);
+			public HRESULT SendMessage(BSTR bstrMessageHeader, BSTR bstrMessage, int lCookie) mut => VT.SendMessage(ref this, bstrMessageHeader, bstrMessage, lCookie);
+			public HRESULT SendMessageStatus(RTC_MESSAGING_USER_STATUS enUserStatus, int lCookie) mut => VT.SendMessageStatus(ref this, enUserStatus, lCookie);
+			public HRESULT AddStream(int32 lMediaType, int lCookie) mut => VT.AddStream(ref this, lMediaType, lCookie);
+			public HRESULT RemoveStream(int32 lMediaType, int lCookie) mut => VT.RemoveStream(ref this, lMediaType, lCookie);
+			public HRESULT put_EncryptionKey(int32 lMediaType, BSTR EncryptionKey) mut => VT.put_EncryptionKey(ref this, lMediaType, EncryptionKey);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1406,30 +1001,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SendInfo(BSTR bstrInfoHeader, BSTR bstrInfo, int lCookie) mut
-			{
-				return VT.SendInfo(ref this, bstrInfoHeader, bstrInfo, lCookie);
-			}
-			public HRESULT put_PreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, RTC_SECURITY_LEVEL enSecurityLevel) mut
-			{
-				return VT.put_PreferredSecurityLevel(ref this, enSecurityType, enSecurityLevel);
-			}
-			public HRESULT get_PreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) mut
-			{
-				return VT.get_PreferredSecurityLevel(ref this, enSecurityType, out penSecurityLevel);
-			}
-			public HRESULT IsSecurityEnabled(RTC_SECURITY_TYPE enSecurityType, out int16 pfSecurityEnabled) mut
-			{
-				return VT.IsSecurityEnabled(ref this, enSecurityType, out pfSecurityEnabled);
-			}
-			public HRESULT AnswerWithSessionDescription(BSTR bstrContentType, BSTR bstrSessionDescription) mut
-			{
-				return VT.AnswerWithSessionDescription(ref this, bstrContentType, bstrSessionDescription);
-			}
-			public HRESULT ReInviteWithSessionDescription(BSTR bstrContentType, BSTR bstrSessionDescription, int lCookie) mut
-			{
-				return VT.ReInviteWithSessionDescription(ref this, bstrContentType, bstrSessionDescription, lCookie);
-			}
+			public HRESULT SendInfo(BSTR bstrInfoHeader, BSTR bstrInfo, int lCookie) mut => VT.SendInfo(ref this, bstrInfoHeader, bstrInfo, lCookie);
+			public HRESULT put_PreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, RTC_SECURITY_LEVEL enSecurityLevel) mut => VT.put_PreferredSecurityLevel(ref this, enSecurityType, enSecurityLevel);
+			public HRESULT get_PreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) mut => VT.get_PreferredSecurityLevel(ref this, enSecurityType, out penSecurityLevel);
+			public HRESULT IsSecurityEnabled(RTC_SECURITY_TYPE enSecurityType, out int16 pfSecurityEnabled) mut => VT.IsSecurityEnabled(ref this, enSecurityType, out pfSecurityEnabled);
+			public HRESULT AnswerWithSessionDescription(BSTR bstrContentType, BSTR bstrSessionDescription) mut => VT.AnswerWithSessionDescription(ref this, bstrContentType, bstrSessionDescription);
+			public HRESULT ReInviteWithSessionDescription(BSTR bstrContentType, BSTR bstrSessionDescription, int lCookie) mut => VT.ReInviteWithSessionDescription(ref this, bstrContentType, bstrSessionDescription, lCookie);
+
 			[CRepr]
 			public struct VTable : IRTCSession.VTable
 			{
@@ -1448,42 +1026,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Hold(int lCookie) mut
-			{
-				return VT.Hold(ref this, lCookie);
-			}
-			public HRESULT UnHold(int lCookie) mut
-			{
-				return VT.UnHold(ref this, lCookie);
-			}
-			public HRESULT Forward(BSTR bstrForwardToURI) mut
-			{
-				return VT.Forward(ref this, bstrForwardToURI);
-			}
-			public HRESULT Refer(BSTR bstrReferToURI, BSTR bstrReferCookie) mut
-			{
-				return VT.Refer(ref this, bstrReferToURI, bstrReferCookie);
-			}
-			public HRESULT put_ReferredByURI(BSTR bstrReferredByURI) mut
-			{
-				return VT.put_ReferredByURI(ref this, bstrReferredByURI);
-			}
-			public HRESULT get_ReferredByURI(out BSTR pbstrReferredByURI) mut
-			{
-				return VT.get_ReferredByURI(ref this, out pbstrReferredByURI);
-			}
-			public HRESULT put_ReferCookie(BSTR bstrReferCookie) mut
-			{
-				return VT.put_ReferCookie(ref this, bstrReferCookie);
-			}
-			public HRESULT get_ReferCookie(out BSTR pbstrReferCookie) mut
-			{
-				return VT.get_ReferCookie(ref this, out pbstrReferCookie);
-			}
-			public HRESULT get_IsReferred(out int16 pfIsReferred) mut
-			{
-				return VT.get_IsReferred(ref this, out pfIsReferred);
-			}
+			public HRESULT Hold(int lCookie) mut => VT.Hold(ref this, lCookie);
+			public HRESULT UnHold(int lCookie) mut => VT.UnHold(ref this, lCookie);
+			public HRESULT Forward(BSTR bstrForwardToURI) mut => VT.Forward(ref this, bstrForwardToURI);
+			public HRESULT Refer(BSTR bstrReferToURI, BSTR bstrReferCookie) mut => VT.Refer(ref this, bstrReferToURI, bstrReferCookie);
+			public HRESULT put_ReferredByURI(BSTR bstrReferredByURI) mut => VT.put_ReferredByURI(ref this, bstrReferredByURI);
+			public HRESULT get_ReferredByURI(out BSTR pbstrReferredByURI) mut => VT.get_ReferredByURI(ref this, out pbstrReferredByURI);
+			public HRESULT put_ReferCookie(BSTR bstrReferCookie) mut => VT.put_ReferCookie(ref this, bstrReferCookie);
+			public HRESULT get_ReferCookie(out BSTR pbstrReferCookie) mut => VT.get_ReferCookie(ref this, out pbstrReferCookie);
+			public HRESULT get_IsReferred(out int16 pfIsReferred) mut => VT.get_IsReferred(ref this, out pfIsReferred);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1505,26 +1057,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UserURI(out BSTR pbstrUserURI) mut
-			{
-				return VT.get_UserURI(ref this, out pbstrUserURI);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT get_Removable(out int16 pfRemovable) mut
-			{
-				return VT.get_Removable(ref this, out pfRemovable);
-			}
-			public HRESULT get_State(out RTC_PARTICIPANT_STATE penState) mut
-			{
-				return VT.get_State(ref this, out penState);
-			}
-			public HRESULT get_Session(out IRTCSession* ppSession) mut
-			{
-				return VT.get_Session(ref this, out ppSession);
-			}
+			public HRESULT get_UserURI(out BSTR pbstrUserURI) mut => VT.get_UserURI(ref this, out pbstrUserURI);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT get_Removable(out int16 pfRemovable) mut => VT.get_Removable(ref this, out pfRemovable);
+			public HRESULT get_State(out RTC_PARTICIPANT_STATE penState) mut => VT.get_State(ref this, out penState);
+			public HRESULT get_Session(out IRTCSession* ppSession) mut => VT.get_Session(ref this, out ppSession);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1542,22 +1080,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventType(out RTC_ROAMING_EVENT_TYPE pEventType) mut
-			{
-				return VT.get_EventType(ref this, out pEventType);
-			}
-			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut
-			{
-				return VT.get_Profile(ref this, out ppProfile);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
+			public HRESULT get_EventType(out RTC_ROAMING_EVENT_TYPE pEventType) mut => VT.get_EventType(ref this, out pEventType);
+			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut => VT.get_Profile(ref this, out ppProfile);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1574,18 +1101,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Profile(out IRTCProfile* ppProfile) mut
-			{
-				return VT.get_Profile(ref this, out ppProfile);
-			}
-			public HRESULT get_Cookie(out int plCookie) mut
-			{
-				return VT.get_Cookie(ref this, out plCookie);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
+			public HRESULT get_Profile(out IRTCProfile* ppProfile) mut => VT.get_Profile(ref this, out ppProfile);
+			public HRESULT get_Cookie(out int plCookie) mut => VT.get_Cookie(ref this, out plCookie);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1601,10 +1120,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventType(out RTC_PROFILE_EVENT_TYPE pEventType) mut
-			{
-				return VT.get_EventType(ref this, out pEventType);
-			}
+			public HRESULT get_EventType(out RTC_PROFILE_EVENT_TYPE pEventType) mut => VT.get_EventType(ref this, out pEventType);
+
 			[CRepr]
 			public struct VTable : IRTCProfileEvent.VTable
 			{
@@ -1618,14 +1135,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventType(out RTC_CLIENT_EVENT_TYPE penEventType) mut
-			{
-				return VT.get_EventType(ref this, out penEventType);
-			}
-			public HRESULT get_Client(out IRTCClient* ppClient) mut
-			{
-				return VT.get_Client(ref this, out ppClient);
-			}
+			public HRESULT get_EventType(out RTC_CLIENT_EVENT_TYPE penEventType) mut => VT.get_EventType(ref this, out penEventType);
+			public HRESULT get_Client(out IRTCClient* ppClient) mut => VT.get_Client(ref this, out ppClient);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1640,22 +1152,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Profile(out IRTCProfile* ppProfile) mut
-			{
-				return VT.get_Profile(ref this, out ppProfile);
-			}
-			public HRESULT get_State(out RTC_REGISTRATION_STATE penState) mut
-			{
-				return VT.get_State(ref this, out penState);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
+			public HRESULT get_Profile(out IRTCProfile* ppProfile) mut => VT.get_Profile(ref this, out ppProfile);
+			public HRESULT get_State(out RTC_REGISTRATION_STATE penState) mut => VT.get_State(ref this, out penState);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1672,22 +1173,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IRTCSession* ppSession) mut
-			{
-				return VT.get_Session(ref this, out ppSession);
-			}
-			public HRESULT get_State(out RTC_SESSION_STATE penState) mut
-			{
-				return VT.get_State(ref this, out penState);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
+			public HRESULT get_Session(out IRTCSession* ppSession) mut => VT.get_Session(ref this, out ppSession);
+			public HRESULT get_State(out RTC_SESSION_STATE penState) mut => VT.get_State(ref this, out penState);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1704,22 +1194,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MediaTypes(out int32 pMediaTypes) mut
-			{
-				return VT.get_MediaTypes(ref this, out pMediaTypes);
-			}
-			public HRESULT get_RemotePreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) mut
-			{
-				return VT.get_RemotePreferredSecurityLevel(ref this, enSecurityType, out penSecurityLevel);
-			}
-			public HRESULT get_IsForked(out int16 pfIsForked) mut
-			{
-				return VT.get_IsForked(ref this, out pfIsForked);
-			}
-			public HRESULT GetRemoteSessionDescription(out BSTR pbstrContentType, out BSTR pbstrSessionDescription) mut
-			{
-				return VT.GetRemoteSessionDescription(ref this, out pbstrContentType, out pbstrSessionDescription);
-			}
+			public HRESULT get_MediaTypes(out int32 pMediaTypes) mut => VT.get_MediaTypes(ref this, out pMediaTypes);
+			public HRESULT get_RemotePreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) mut => VT.get_RemotePreferredSecurityLevel(ref this, enSecurityType, out penSecurityLevel);
+			public HRESULT get_IsForked(out int16 pfIsForked) mut => VT.get_IsForked(ref this, out pfIsForked);
+			public HRESULT GetRemoteSessionDescription(out BSTR pbstrContentType, out BSTR pbstrSessionDescription) mut => VT.GetRemoteSessionDescription(ref this, out pbstrContentType, out pbstrSessionDescription);
+
 			[CRepr]
 			public struct VTable : IRTCSessionStateChangeEvent.VTable
 			{
@@ -1736,22 +1215,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IRTCSession* ppSession) mut
-			{
-				return VT.get_Session(ref this, out ppSession);
-			}
-			public HRESULT get_Cookie(out int plCookie) mut
-			{
-				return VT.get_Cookie(ref this, out plCookie);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
+			public HRESULT get_Session(out IRTCSession* ppSession) mut => VT.get_Session(ref this, out ppSession);
+			public HRESULT get_Cookie(out int plCookie) mut => VT.get_Cookie(ref this, out plCookie);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1768,14 +1236,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Participant(out IRTCParticipant* ppParticipant) mut
-			{
-				return VT.get_Participant(ref this, out ppParticipant);
-			}
-			public HRESULT GetRemoteSessionDescription(out BSTR pbstrContentType, out BSTR pbstrSessionDescription) mut
-			{
-				return VT.GetRemoteSessionDescription(ref this, out pbstrContentType, out pbstrSessionDescription);
-			}
+			public HRESULT get_Participant(out IRTCParticipant* ppParticipant) mut => VT.get_Participant(ref this, out ppParticipant);
+			public HRESULT GetRemoteSessionDescription(out BSTR pbstrContentType, out BSTR pbstrSessionDescription) mut => VT.GetRemoteSessionDescription(ref this, out pbstrContentType, out pbstrSessionDescription);
+
 			[CRepr]
 			public struct VTable : IRTCSessionOperationCompleteEvent.VTable
 			{
@@ -1790,18 +1253,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Participant(out IRTCParticipant* ppParticipant) mut
-			{
-				return VT.get_Participant(ref this, out ppParticipant);
-			}
-			public HRESULT get_State(out RTC_PARTICIPANT_STATE penState) mut
-			{
-				return VT.get_State(ref this, out penState);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
+			public HRESULT get_Participant(out IRTCParticipant* ppParticipant) mut => VT.get_Participant(ref this, out ppParticipant);
+			public HRESULT get_State(out RTC_PARTICIPANT_STATE penState) mut => VT.get_State(ref this, out penState);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1817,18 +1272,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MediaType(out int32 pMediaType) mut
-			{
-				return VT.get_MediaType(ref this, out pMediaType);
-			}
-			public HRESULT get_EventType(out RTC_MEDIA_EVENT_TYPE penEventType) mut
-			{
-				return VT.get_EventType(ref this, out penEventType);
-			}
-			public HRESULT get_EventReason(out RTC_MEDIA_EVENT_REASON penEventReason) mut
-			{
-				return VT.get_EventReason(ref this, out penEventReason);
-			}
+			public HRESULT get_MediaType(out int32 pMediaType) mut => VT.get_MediaType(ref this, out pMediaType);
+			public HRESULT get_EventType(out RTC_MEDIA_EVENT_TYPE penEventType) mut => VT.get_EventType(ref this, out penEventType);
+			public HRESULT get_EventReason(out RTC_MEDIA_EVENT_REASON penEventReason) mut => VT.get_EventReason(ref this, out penEventReason);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1844,22 +1291,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Level(out int32 plLevel) mut
-			{
-				return VT.get_Level(ref this, out plLevel);
-			}
-			public HRESULT get_Min(out int32 plMin) mut
-			{
-				return VT.get_Min(ref this, out plMin);
-			}
-			public HRESULT get_Max(out int32 plMax) mut
-			{
-				return VT.get_Max(ref this, out plMax);
-			}
-			public HRESULT get_Direction(out RTC_AUDIO_DEVICE penDirection) mut
-			{
-				return VT.get_Direction(ref this, out penDirection);
-			}
+			public HRESULT get_Level(out int32 plLevel) mut => VT.get_Level(ref this, out plLevel);
+			public HRESULT get_Min(out int32 plMin) mut => VT.get_Min(ref this, out plMin);
+			public HRESULT get_Max(out int32 plMax) mut => VT.get_Max(ref this, out plMax);
+			public HRESULT get_Direction(out RTC_AUDIO_DEVICE penDirection) mut => VT.get_Direction(ref this, out penDirection);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1876,30 +1312,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IRTCSession* ppSession) mut
-			{
-				return VT.get_Session(ref this, out ppSession);
-			}
-			public HRESULT get_Participant(out IRTCParticipant* ppParticipant) mut
-			{
-				return VT.get_Participant(ref this, out ppParticipant);
-			}
-			public HRESULT get_EventType(out RTC_MESSAGING_EVENT_TYPE penEventType) mut
-			{
-				return VT.get_EventType(ref this, out penEventType);
-			}
-			public HRESULT get_Message(out BSTR pbstrMessage) mut
-			{
-				return VT.get_Message(ref this, out pbstrMessage);
-			}
-			public HRESULT get_MessageHeader(out BSTR pbstrMessageHeader) mut
-			{
-				return VT.get_MessageHeader(ref this, out pbstrMessageHeader);
-			}
-			public HRESULT get_UserStatus(out RTC_MESSAGING_USER_STATUS penUserStatus) mut
-			{
-				return VT.get_UserStatus(ref this, out penUserStatus);
-			}
+			public HRESULT get_Session(out IRTCSession* ppSession) mut => VT.get_Session(ref this, out ppSession);
+			public HRESULT get_Participant(out IRTCParticipant* ppParticipant) mut => VT.get_Participant(ref this, out ppParticipant);
+			public HRESULT get_EventType(out RTC_MESSAGING_EVENT_TYPE penEventType) mut => VT.get_EventType(ref this, out penEventType);
+			public HRESULT get_Message(out BSTR pbstrMessage) mut => VT.get_Message(ref this, out pbstrMessage);
+			public HRESULT get_MessageHeader(out BSTR pbstrMessageHeader) mut => VT.get_MessageHeader(ref this, out pbstrMessageHeader);
+			public HRESULT get_UserStatus(out RTC_MESSAGING_USER_STATUS penUserStatus) mut => VT.get_UserStatus(ref this, out penUserStatus);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1918,10 +1337,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Buddy(out IRTCBuddy* ppBuddy) mut
-			{
-				return VT.get_Buddy(ref this, out ppBuddy);
-			}
+			public HRESULT get_Buddy(out IRTCBuddy* ppBuddy) mut => VT.get_Buddy(ref this, out ppBuddy);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1935,18 +1352,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventType(out RTC_BUDDY_EVENT_TYPE pEventType) mut
-			{
-				return VT.get_EventType(ref this, out pEventType);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
+			public HRESULT get_EventType(out RTC_BUDDY_EVENT_TYPE pEventType) mut => VT.get_EventType(ref this, out pEventType);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+
 			[CRepr]
 			public struct VTable : IRTCBuddyEvent.VTable
 			{
@@ -1962,10 +1371,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Watcher(out IRTCWatcher* ppWatcher) mut
-			{
-				return VT.get_Watcher(ref this, out ppWatcher);
-			}
+			public HRESULT get_Watcher(out IRTCWatcher* ppWatcher) mut => VT.get_Watcher(ref this, out ppWatcher);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1979,14 +1386,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventType(out RTC_WATCHER_EVENT_TYPE pEventType) mut
-			{
-				return VT.get_EventType(ref this, out pEventType);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
+			public HRESULT get_EventType(out RTC_WATCHER_EVENT_TYPE pEventType) mut => VT.get_EventType(ref this, out pEventType);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+
 			[CRepr]
 			public struct VTable : IRTCWatcherEvent.VTable
 			{
@@ -2001,22 +1403,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventType(out RTC_GROUP_EVENT_TYPE pEventType) mut
-			{
-				return VT.get_EventType(ref this, out pEventType);
-			}
-			public HRESULT get_Group(out IRTCBuddyGroup* ppGroup) mut
-			{
-				return VT.get_Group(ref this, out ppGroup);
-			}
-			public HRESULT get_Buddy(out IRTCBuddy2* ppBuddy) mut
-			{
-				return VT.get_Buddy(ref this, out ppBuddy);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
+			public HRESULT get_EventType(out RTC_GROUP_EVENT_TYPE pEventType) mut => VT.get_EventType(ref this, out pEventType);
+			public HRESULT get_Group(out IRTCBuddyGroup* ppGroup) mut => VT.get_Group(ref this, out ppGroup);
+			public HRESULT get_Buddy(out IRTCBuddy2* ppBuddy) mut => VT.get_Buddy(ref this, out ppBuddy);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2033,22 +1424,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IRTCSession2* ppSession) mut
-			{
-				return VT.get_Session(ref this, out ppSession);
-			}
-			public HRESULT get_Participant(out IRTCParticipant* ppParticipant) mut
-			{
-				return VT.get_Participant(ref this, out ppParticipant);
-			}
-			public HRESULT get_Info(out BSTR pbstrInfo) mut
-			{
-				return VT.get_Info(ref this, out pbstrInfo);
-			}
-			public HRESULT get_InfoHeader(out BSTR pbstrInfoHeader) mut
-			{
-				return VT.get_InfoHeader(ref this, out pbstrInfoHeader);
-			}
+			public HRESULT get_Session(out IRTCSession2* ppSession) mut => VT.get_Session(ref this, out ppSession);
+			public HRESULT get_Participant(out IRTCParticipant* ppParticipant) mut => VT.get_Participant(ref this, out ppParticipant);
+			public HRESULT get_Info(out BSTR pbstrInfo) mut => VT.get_Info(ref this, out pbstrInfo);
+			public HRESULT get_InfoHeader(out BSTR pbstrInfoHeader) mut => VT.get_InfoHeader(ref this, out pbstrInfoHeader);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2065,34 +1445,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IRTCSession2* ppSession) mut
-			{
-				return VT.get_Session(ref this, out ppSession);
-			}
-			public HRESULT get_ProposedMedia(out int32 plMediaTypes) mut
-			{
-				return VT.get_ProposedMedia(ref this, out plMediaTypes);
-			}
-			public HRESULT get_CurrentMedia(out int32 plMediaTypes) mut
-			{
-				return VT.get_CurrentMedia(ref this, out plMediaTypes);
-			}
-			public HRESULT Accept(int32 lMediaTypes) mut
-			{
-				return VT.Accept(ref this, lMediaTypes);
-			}
-			public HRESULT get_RemotePreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) mut
-			{
-				return VT.get_RemotePreferredSecurityLevel(ref this, enSecurityType, out penSecurityLevel);
-			}
-			public HRESULT Reject() mut
-			{
-				return VT.Reject(ref this);
-			}
-			public HRESULT get_State(out RTC_REINVITE_STATE pState) mut
-			{
-				return VT.get_State(ref this, out pState);
-			}
+			public HRESULT get_Session(out IRTCSession2* ppSession) mut => VT.get_Session(ref this, out ppSession);
+			public HRESULT get_ProposedMedia(out int32 plMediaTypes) mut => VT.get_ProposedMedia(ref this, out plMediaTypes);
+			public HRESULT get_CurrentMedia(out int32 plMediaTypes) mut => VT.get_CurrentMedia(ref this, out plMediaTypes);
+			public HRESULT Accept(int32 lMediaTypes) mut => VT.Accept(ref this, lMediaTypes);
+			public HRESULT get_RemotePreferredSecurityLevel(RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) mut => VT.get_RemotePreferredSecurityLevel(ref this, enSecurityType, out penSecurityLevel);
+			public HRESULT Reject() mut => VT.Reject(ref this);
+			public HRESULT get_State(out RTC_REINVITE_STATE pState) mut => VT.get_State(ref this, out pState);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2112,26 +1472,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IRTCSession2* ppSession2) mut
-			{
-				return VT.get_Session(ref this, out ppSession2);
-			}
-			public HRESULT Accept(BSTR bstrContentType, BSTR bstrSessionDescription) mut
-			{
-				return VT.Accept(ref this, bstrContentType, bstrSessionDescription);
-			}
-			public HRESULT Reject() mut
-			{
-				return VT.Reject(ref this);
-			}
-			public HRESULT get_State(out RTC_REINVITE_STATE pState) mut
-			{
-				return VT.get_State(ref this, out pState);
-			}
-			public HRESULT GetRemoteSessionDescription(out BSTR pbstrContentType, out BSTR pbstrSessionDescription) mut
-			{
-				return VT.GetRemoteSessionDescription(ref this, out pbstrContentType, out pbstrSessionDescription);
-			}
+			public HRESULT get_Session(out IRTCSession2* ppSession2) mut => VT.get_Session(ref this, out ppSession2);
+			public HRESULT Accept(BSTR bstrContentType, BSTR bstrSessionDescription) mut => VT.Accept(ref this, bstrContentType, bstrSessionDescription);
+			public HRESULT Reject() mut => VT.Reject(ref this);
+			public HRESULT get_State(out RTC_REINVITE_STATE pState) mut => VT.get_State(ref this, out pState);
+			public HRESULT GetRemoteSessionDescription(out BSTR pbstrContentType, out BSTR pbstrSessionDescription) mut => VT.GetRemoteSessionDescription(ref this, out pbstrContentType, out pbstrSessionDescription);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2149,22 +1495,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
-			public HRESULT get_PresenceProperty(out RTC_PRESENCE_PROPERTY penPresProp) mut
-			{
-				return VT.get_PresenceProperty(ref this, out penPresProp);
-			}
-			public HRESULT get_Value(out BSTR pbstrValue) mut
-			{
-				return VT.get_Value(ref this, out pbstrValue);
-			}
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+			public HRESULT get_PresenceProperty(out RTC_PRESENCE_PROPERTY penPresProp) mut => VT.get_PresenceProperty(ref this, out penPresProp);
+			public HRESULT get_Value(out BSTR pbstrValue) mut => VT.get_Value(ref this, out pbstrValue);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2181,18 +1516,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
-			public HRESULT GetPresenceData(out BSTR pbstrNamespace, out BSTR pbstrData) mut
-			{
-				return VT.GetPresenceData(ref this, out pbstrNamespace, out pbstrData);
-			}
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+			public HRESULT GetPresenceData(out BSTR pbstrNamespace, out BSTR pbstrData) mut => VT.GetPresenceData(ref this, out pbstrNamespace, out pbstrData);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2208,18 +1535,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
-			public HRESULT GetLocalPresenceInfo(out RTC_PRESENCE_STATUS penStatus, out BSTR pbstrNotes) mut
-			{
-				return VT.GetLocalPresenceInfo(ref this, out penStatus, out pbstrNotes);
-			}
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+			public HRESULT GetLocalPresenceInfo(out RTC_PRESENCE_STATUS penStatus, out BSTR pbstrNotes) mut => VT.GetLocalPresenceInfo(ref this, out penStatus, out pbstrNotes);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2235,18 +1554,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(out int32 lCount) mut
-			{
-				return VT.get_Count(ref this, out lCount);
-			}
-			public HRESULT get_Item(int32 Index, out VARIANT pVariant) mut
-			{
-				return VT.get_Item(ref this, Index, out pVariant);
-			}
-			public HRESULT get__NewEnum(out IUnknown* ppNewEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out ppNewEnum);
-			}
+			public HRESULT get_Count(out int32 lCount) mut => VT.get_Count(ref this, out lCount);
+			public HRESULT get_Item(int32 Index, out VARIANT pVariant) mut => VT.get_Item(ref this, Index, out pVariant);
+			public HRESULT get__NewEnum(out IUnknown* ppNewEnum) mut => VT.get__NewEnum(ref this, out ppNewEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2262,22 +1573,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IRTCParticipant** ppElements, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, ppElements, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Clone(out IRTCEnumParticipants* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IRTCParticipant** ppElements, uint32* pceltFetched) mut => VT.Next(ref this, celt, ppElements, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Clone(out IRTCEnumParticipants* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2294,22 +1594,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IRTCProfile** ppElements, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, ppElements, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Clone(out IRTCEnumProfiles* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IRTCProfile** ppElements, uint32* pceltFetched) mut => VT.Next(ref this, celt, ppElements, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Clone(out IRTCEnumProfiles* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2326,22 +1615,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IRTCBuddy** ppElements, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, ppElements, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Clone(out IRTCEnumBuddies* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IRTCBuddy** ppElements, uint32* pceltFetched) mut => VT.Next(ref this, celt, ppElements, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Clone(out IRTCEnumBuddies* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2358,22 +1636,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IRTCWatcher** ppElements, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, ppElements, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Clone(out IRTCEnumWatchers* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IRTCWatcher** ppElements, uint32* pceltFetched) mut => VT.Next(ref this, celt, ppElements, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Clone(out IRTCEnumWatchers* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2390,22 +1657,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IRTCBuddyGroup** ppElements, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, ppElements, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Clone(out IRTCEnumGroups* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IRTCBuddyGroup** ppElements, uint32* pceltFetched) mut => VT.Next(ref this, celt, ppElements, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Clone(out IRTCEnumGroups* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2422,38 +1678,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PresentityURI(out BSTR pbstrPresentityURI) mut
-			{
-				return VT.get_PresentityURI(ref this, out pbstrPresentityURI);
-			}
-			public HRESULT put_PresentityURI(BSTR bstrPresentityURI) mut
-			{
-				return VT.put_PresentityURI(ref this, bstrPresentityURI);
-			}
-			public HRESULT get_Name(out BSTR pbstrName) mut
-			{
-				return VT.get_Name(ref this, out pbstrName);
-			}
-			public HRESULT put_Name(BSTR bstrName) mut
-			{
-				return VT.put_Name(ref this, bstrName);
-			}
-			public HRESULT get_Data(out BSTR pbstrData) mut
-			{
-				return VT.get_Data(ref this, out pbstrData);
-			}
-			public HRESULT put_Data(BSTR bstrData) mut
-			{
-				return VT.put_Data(ref this, bstrData);
-			}
-			public HRESULT get_Persistent(out int16 pfPersistent) mut
-			{
-				return VT.get_Persistent(ref this, out pfPersistent);
-			}
-			public HRESULT put_Persistent(int16 fPersistent) mut
-			{
-				return VT.put_Persistent(ref this, fPersistent);
-			}
+			public HRESULT get_PresentityURI(out BSTR pbstrPresentityURI) mut => VT.get_PresentityURI(ref this, out pbstrPresentityURI);
+			public HRESULT put_PresentityURI(BSTR bstrPresentityURI) mut => VT.put_PresentityURI(ref this, bstrPresentityURI);
+			public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+			public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
+			public HRESULT get_Data(out BSTR pbstrData) mut => VT.get_Data(ref this, out pbstrData);
+			public HRESULT put_Data(BSTR bstrData) mut => VT.put_Data(ref this, bstrData);
+			public HRESULT get_Persistent(out int16 pfPersistent) mut => VT.get_Persistent(ref this, out pfPersistent);
+			public HRESULT put_Persistent(int16 fPersistent) mut => VT.put_Persistent(ref this, fPersistent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2474,14 +1707,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Status(out RTC_PRESENCE_STATUS penStatus) mut
-			{
-				return VT.get_Status(ref this, out penStatus);
-			}
-			public HRESULT get_Notes(out BSTR pbstrNotes) mut
-			{
-				return VT.get_Notes(ref this, out pbstrNotes);
-			}
+			public HRESULT get_Status(out RTC_PRESENCE_STATUS penStatus) mut => VT.get_Status(ref this, out penStatus);
+			public HRESULT get_Notes(out BSTR pbstrNotes) mut => VT.get_Notes(ref this, out pbstrNotes);
+
 			[CRepr]
 			public struct VTable : IRTCPresenceContact.VTable
 			{
@@ -2496,38 +1724,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut
-			{
-				return VT.get_Profile(ref this, out ppProfile);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT EnumerateGroups(out IRTCEnumGroups* ppEnum) mut
-			{
-				return VT.EnumerateGroups(ref this, out ppEnum);
-			}
-			public HRESULT get_Groups(out IRTCCollection* ppCollection) mut
-			{
-				return VT.get_Groups(ref this, out ppCollection);
-			}
-			public HRESULT get_PresenceProperty(RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) mut
-			{
-				return VT.get_PresenceProperty(ref this, enProperty, out pbstrProperty);
-			}
-			public HRESULT EnumeratePresenceDevices(out IRTCEnumPresenceDevices* ppEnumDevices) mut
-			{
-				return VT.EnumeratePresenceDevices(ref this, out ppEnumDevices);
-			}
-			public HRESULT get_PresenceDevices(out IRTCCollection* ppDevicesCollection) mut
-			{
-				return VT.get_PresenceDevices(ref this, out ppDevicesCollection);
-			}
-			public HRESULT get_SubscriptionType(out RTC_BUDDY_SUBSCRIPTION_TYPE penSubscriptionType) mut
-			{
-				return VT.get_SubscriptionType(ref this, out penSubscriptionType);
-			}
+			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut => VT.get_Profile(ref this, out ppProfile);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT EnumerateGroups(out IRTCEnumGroups* ppEnum) mut => VT.EnumerateGroups(ref this, out ppEnum);
+			public HRESULT get_Groups(out IRTCCollection* ppCollection) mut => VT.get_Groups(ref this, out ppCollection);
+			public HRESULT get_PresenceProperty(RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) mut => VT.get_PresenceProperty(ref this, enProperty, out pbstrProperty);
+			public HRESULT EnumeratePresenceDevices(out IRTCEnumPresenceDevices* ppEnumDevices) mut => VT.EnumeratePresenceDevices(ref this, out ppEnumDevices);
+			public HRESULT get_PresenceDevices(out IRTCCollection* ppDevicesCollection) mut => VT.get_PresenceDevices(ref this, out ppDevicesCollection);
+			public HRESULT get_SubscriptionType(out RTC_BUDDY_SUBSCRIPTION_TYPE penSubscriptionType) mut => VT.get_SubscriptionType(ref this, out penSubscriptionType);
+
 			[CRepr]
 			public struct VTable : IRTCBuddy.VTable
 			{
@@ -2548,14 +1753,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_State(out RTC_WATCHER_STATE penState) mut
-			{
-				return VT.get_State(ref this, out penState);
-			}
-			public HRESULT put_State(RTC_WATCHER_STATE enState) mut
-			{
-				return VT.put_State(ref this, enState);
-			}
+			public HRESULT get_State(out RTC_WATCHER_STATE penState) mut => VT.get_State(ref this, out penState);
+			public HRESULT put_State(RTC_WATCHER_STATE enState) mut => VT.put_State(ref this, enState);
+
 			[CRepr]
 			public struct VTable : IRTCPresenceContact.VTable
 			{
@@ -2570,14 +1770,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut
-			{
-				return VT.get_Profile(ref this, out ppProfile);
-			}
-			public HRESULT get_Scope(out RTC_ACE_SCOPE penScope) mut
-			{
-				return VT.get_Scope(ref this, out penScope);
-			}
+			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut => VT.get_Profile(ref this, out ppProfile);
+			public HRESULT get_Scope(out RTC_ACE_SCOPE penScope) mut => VT.get_Scope(ref this, out penScope);
+
 			[CRepr]
 			public struct VTable : IRTCWatcher.VTable
 			{
@@ -2592,42 +1787,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR pbstrGroupName) mut
-			{
-				return VT.get_Name(ref this, out pbstrGroupName);
-			}
-			public HRESULT put_Name(BSTR bstrGroupName) mut
-			{
-				return VT.put_Name(ref this, bstrGroupName);
-			}
-			public HRESULT AddBuddy(ref IRTCBuddy pBuddy) mut
-			{
-				return VT.AddBuddy(ref this, ref pBuddy);
-			}
-			public HRESULT RemoveBuddy(ref IRTCBuddy pBuddy) mut
-			{
-				return VT.RemoveBuddy(ref this, ref pBuddy);
-			}
-			public HRESULT EnumerateBuddies(out IRTCEnumBuddies* ppEnum) mut
-			{
-				return VT.EnumerateBuddies(ref this, out ppEnum);
-			}
-			public HRESULT get_Buddies(out IRTCCollection* ppCollection) mut
-			{
-				return VT.get_Buddies(ref this, out ppCollection);
-			}
-			public HRESULT get_Data(out BSTR pbstrData) mut
-			{
-				return VT.get_Data(ref this, out pbstrData);
-			}
-			public HRESULT put_Data(BSTR bstrData) mut
-			{
-				return VT.put_Data(ref this, bstrData);
-			}
-			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut
-			{
-				return VT.get_Profile(ref this, out ppProfile);
-			}
+			public HRESULT get_Name(out BSTR pbstrGroupName) mut => VT.get_Name(ref this, out pbstrGroupName);
+			public HRESULT put_Name(BSTR bstrGroupName) mut => VT.put_Name(ref this, bstrGroupName);
+			public HRESULT AddBuddy(ref IRTCBuddy pBuddy) mut => VT.AddBuddy(ref this, ref pBuddy);
+			public HRESULT RemoveBuddy(ref IRTCBuddy pBuddy) mut => VT.RemoveBuddy(ref this, ref pBuddy);
+			public HRESULT EnumerateBuddies(out IRTCEnumBuddies* ppEnum) mut => VT.EnumerateBuddies(ref this, out ppEnum);
+			public HRESULT get_Buddies(out IRTCCollection* ppCollection) mut => VT.get_Buddies(ref this, out ppCollection);
+			public HRESULT get_Data(out BSTR pbstrData) mut => VT.get_Data(ref this, out pbstrData);
+			public HRESULT put_Data(BSTR bstrData) mut => VT.put_Data(ref this, bstrData);
+			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut => VT.get_Profile(ref this, out ppProfile);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2649,10 +1818,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Event(RTC_EVENT RTCEvent, ref IDispatch pEvent) mut
-			{
-				return VT.Event(ref this, RTCEvent, ref pEvent);
-			}
+			public HRESULT Event(RTC_EVENT RTCEvent, ref IDispatch pEvent) mut => VT.Event(ref this, RTCEvent, ref pEvent);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2666,18 +1833,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMapping(BSTR bstrRemoteAddress, RTC_PORT_TYPE enPortType, out BSTR pbstrInternalLocalAddress, out int32 plInternalLocalPort, out BSTR pbstrExternalLocalAddress, out int32 plExternalLocalPort) mut
-			{
-				return VT.GetMapping(ref this, bstrRemoteAddress, enPortType, out pbstrInternalLocalAddress, out plInternalLocalPort, out pbstrExternalLocalAddress, out plExternalLocalPort);
-			}
-			public HRESULT UpdateRemoteAddress(BSTR bstrRemoteAddress, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort, BSTR bstrExternalLocalAddress, int32 lExternalLocalPort) mut
-			{
-				return VT.UpdateRemoteAddress(ref this, bstrRemoteAddress, bstrInternalLocalAddress, lInternalLocalPort, bstrExternalLocalAddress, lExternalLocalPort);
-			}
-			public HRESULT ReleaseMapping(BSTR bstrInternalLocalAddress, int32 lInternalLocalPort, BSTR bstrExternalLocalAddress, int32 lExternalLocalAddress) mut
-			{
-				return VT.ReleaseMapping(ref this, bstrInternalLocalAddress, lInternalLocalPort, bstrExternalLocalAddress, lExternalLocalAddress);
-			}
+			public HRESULT GetMapping(BSTR bstrRemoteAddress, RTC_PORT_TYPE enPortType, out BSTR pbstrInternalLocalAddress, out int32 plInternalLocalPort, out BSTR pbstrExternalLocalAddress, out int32 plExternalLocalPort) mut => VT.GetMapping(ref this, bstrRemoteAddress, enPortType, out pbstrInternalLocalAddress, out plInternalLocalPort, out pbstrExternalLocalAddress, out plExternalLocalPort);
+			public HRESULT UpdateRemoteAddress(BSTR bstrRemoteAddress, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort, BSTR bstrExternalLocalAddress, int32 lExternalLocalPort) mut => VT.UpdateRemoteAddress(ref this, bstrRemoteAddress, bstrInternalLocalAddress, lInternalLocalPort, bstrExternalLocalAddress, lExternalLocalPort);
+			public HRESULT ReleaseMapping(BSTR bstrInternalLocalAddress, int32 lInternalLocalPort, BSTR bstrExternalLocalAddress, int32 lExternalLocalAddress) mut => VT.ReleaseMapping(ref this, bstrInternalLocalAddress, lInternalLocalPort, bstrExternalLocalAddress, lExternalLocalAddress);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2693,10 +1852,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPortManager(ref IRTCPortManager pPortManager) mut
-			{
-				return VT.SetPortManager(ref this, ref pPortManager);
-			}
+			public HRESULT SetPortManager(ref IRTCPortManager pPortManager) mut => VT.SetPortManager(ref this, ref pPortManager);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2710,18 +1867,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartListenAddressAndPort(BSTR bstrInternalLocalAddress, int32 lInternalLocalPort) mut
-			{
-				return VT.StartListenAddressAndPort(ref this, bstrInternalLocalAddress, lInternalLocalPort);
-			}
-			public HRESULT StopListenAddressAndPort(BSTR bstrInternalLocalAddress, int32 lInternalLocalPort) mut
-			{
-				return VT.StopListenAddressAndPort(ref this, bstrInternalLocalAddress, lInternalLocalPort);
-			}
-			public HRESULT GetPortRange(RTC_PORT_TYPE enPortType, out int32 plMinValue, out int32 plMaxValue) mut
-			{
-				return VT.GetPortRange(ref this, enPortType, out plMinValue, out plMaxValue);
-			}
+			public HRESULT StartListenAddressAndPort(BSTR bstrInternalLocalAddress, int32 lInternalLocalPort) mut => VT.StartListenAddressAndPort(ref this, bstrInternalLocalAddress, lInternalLocalPort);
+			public HRESULT StopListenAddressAndPort(BSTR bstrInternalLocalAddress, int32 lInternalLocalPort) mut => VT.StopListenAddressAndPort(ref this, bstrInternalLocalAddress, lInternalLocalPort);
+			public HRESULT GetPortRange(RTC_PORT_TYPE enPortType, out int32 plMinValue, out int32 plMaxValue) mut => VT.GetPortRange(ref this, enPortType, out plMinValue, out plMaxValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2737,14 +1886,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateQuery(out IRTCUserSearchQuery* ppQuery) mut
-			{
-				return VT.CreateQuery(ref this, out ppQuery);
-			}
-			public HRESULT ExecuteSearch(ref IRTCUserSearchQuery pQuery, ref IRTCProfile pProfile, int lCookie) mut
-			{
-				return VT.ExecuteSearch(ref this, ref pQuery, ref pProfile, lCookie);
-			}
+			public HRESULT CreateQuery(out IRTCUserSearchQuery* ppQuery) mut => VT.CreateQuery(ref this, out ppQuery);
+			public HRESULT ExecuteSearch(ref IRTCUserSearchQuery pQuery, ref IRTCProfile pProfile, int lCookie) mut => VT.ExecuteSearch(ref this, ref pQuery, ref pProfile, lCookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2759,34 +1903,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT put_SearchTerm(BSTR bstrName, BSTR bstrValue) mut
-			{
-				return VT.put_SearchTerm(ref this, bstrName, bstrValue);
-			}
-			public HRESULT get_SearchTerm(BSTR bstrName, out BSTR pbstrValue) mut
-			{
-				return VT.get_SearchTerm(ref this, bstrName, out pbstrValue);
-			}
-			public HRESULT get_SearchTerms(out BSTR pbstrNames) mut
-			{
-				return VT.get_SearchTerms(ref this, out pbstrNames);
-			}
-			public HRESULT put_SearchPreference(RTC_USER_SEARCH_PREFERENCE enPreference, int32 lValue) mut
-			{
-				return VT.put_SearchPreference(ref this, enPreference, lValue);
-			}
-			public HRESULT get_SearchPreference(RTC_USER_SEARCH_PREFERENCE enPreference, out int32 plValue) mut
-			{
-				return VT.get_SearchPreference(ref this, enPreference, out plValue);
-			}
-			public HRESULT put_SearchDomain(BSTR bstrDomain) mut
-			{
-				return VT.put_SearchDomain(ref this, bstrDomain);
-			}
-			public HRESULT get_SearchDomain(out BSTR pbstrDomain) mut
-			{
-				return VT.get_SearchDomain(ref this, out pbstrDomain);
-			}
+			public HRESULT put_SearchTerm(BSTR bstrName, BSTR bstrValue) mut => VT.put_SearchTerm(ref this, bstrName, bstrValue);
+			public HRESULT get_SearchTerm(BSTR bstrName, out BSTR pbstrValue) mut => VT.get_SearchTerm(ref this, bstrName, out pbstrValue);
+			public HRESULT get_SearchTerms(out BSTR pbstrNames) mut => VT.get_SearchTerms(ref this, out pbstrNames);
+			public HRESULT put_SearchPreference(RTC_USER_SEARCH_PREFERENCE enPreference, int32 lValue) mut => VT.put_SearchPreference(ref this, enPreference, lValue);
+			public HRESULT get_SearchPreference(RTC_USER_SEARCH_PREFERENCE enPreference, out int32 plValue) mut => VT.get_SearchPreference(ref this, enPreference, out plValue);
+			public HRESULT put_SearchDomain(BSTR bstrDomain) mut => VT.put_SearchDomain(ref this, bstrDomain);
+			public HRESULT get_SearchDomain(out BSTR pbstrDomain) mut => VT.get_SearchDomain(ref this, out pbstrDomain);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2806,10 +1930,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(RTC_USER_SEARCH_COLUMN enColumn, out BSTR pbstrValue) mut
-			{
-				return VT.get_Value(ref this, enColumn, out pbstrValue);
-			}
+			public HRESULT get_Value(RTC_USER_SEARCH_COLUMN enColumn, out BSTR pbstrValue) mut => VT.get_Value(ref this, enColumn, out pbstrValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2823,22 +1945,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IRTCUserSearchResult** ppElements, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, ppElements, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Clone(out IRTCEnumUserSearchResults* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IRTCUserSearchResult** ppElements, uint32* pceltFetched) mut => VT.Next(ref this, celt, ppElements, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Clone(out IRTCEnumUserSearchResults* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2855,34 +1966,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumerateResults(out IRTCEnumUserSearchResults* ppEnum) mut
-			{
-				return VT.EnumerateResults(ref this, out ppEnum);
-			}
-			public HRESULT get_Results(out IRTCCollection* ppCollection) mut
-			{
-				return VT.get_Results(ref this, out ppCollection);
-			}
-			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut
-			{
-				return VT.get_Profile(ref this, out ppProfile);
-			}
-			public HRESULT get_Query(out IRTCUserSearchQuery* ppQuery) mut
-			{
-				return VT.get_Query(ref this, out ppQuery);
-			}
-			public HRESULT get_Cookie(out int plCookie) mut
-			{
-				return VT.get_Cookie(ref this, out plCookie);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_MoreAvailable(out int16 pfMoreAvailable) mut
-			{
-				return VT.get_MoreAvailable(ref this, out pfMoreAvailable);
-			}
+			public HRESULT EnumerateResults(out IRTCEnumUserSearchResults* ppEnum) mut => VT.EnumerateResults(ref this, out ppEnum);
+			public HRESULT get_Results(out IRTCCollection* ppCollection) mut => VT.get_Results(ref this, out ppCollection);
+			public HRESULT get_Profile(out IRTCProfile2* ppProfile) mut => VT.get_Profile(ref this, out ppProfile);
+			public HRESULT get_Query(out IRTCUserSearchQuery* ppQuery) mut => VT.get_Query(ref this, out ppQuery);
+			public HRESULT get_Cookie(out int plCookie) mut => VT.get_Cookie(ref this, out plCookie);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_MoreAvailable(out int16 pfMoreAvailable) mut => VT.get_MoreAvailable(ref this, out pfMoreAvailable);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2902,22 +1993,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IRTCSession2* ppSession) mut
-			{
-				return VT.get_Session(ref this, out ppSession);
-			}
-			public HRESULT get_ReferStatus(out RTC_SESSION_REFER_STATUS penReferStatus) mut
-			{
-				return VT.get_ReferStatus(ref this, out penReferStatus);
-			}
-			public HRESULT get_StatusCode(out int32 plStatusCode) mut
-			{
-				return VT.get_StatusCode(ref this, out plStatusCode);
-			}
-			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut
-			{
-				return VT.get_StatusText(ref this, out pbstrStatusText);
-			}
+			public HRESULT get_Session(out IRTCSession2* ppSession) mut => VT.get_Session(ref this, out ppSession);
+			public HRESULT get_ReferStatus(out RTC_SESSION_REFER_STATUS penReferStatus) mut => VT.get_ReferStatus(ref this, out penReferStatus);
+			public HRESULT get_StatusCode(out int32 plStatusCode) mut => VT.get_StatusCode(ref this, out plStatusCode);
+			public HRESULT get_StatusText(out BSTR pbstrStatusText) mut => VT.get_StatusText(ref this, out pbstrStatusText);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2934,34 +2014,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Session(out IRTCSession2* ppSession) mut
-			{
-				return VT.get_Session(ref this, out ppSession);
-			}
-			public HRESULT get_ReferredByURI(out BSTR pbstrReferredByURI) mut
-			{
-				return VT.get_ReferredByURI(ref this, out pbstrReferredByURI);
-			}
-			public HRESULT get_ReferToURI(out BSTR pbstrReferoURI) mut
-			{
-				return VT.get_ReferToURI(ref this, out pbstrReferoURI);
-			}
-			public HRESULT get_ReferCookie(out BSTR pbstrReferCookie) mut
-			{
-				return VT.get_ReferCookie(ref this, out pbstrReferCookie);
-			}
-			public HRESULT Accept() mut
-			{
-				return VT.Accept(ref this);
-			}
-			public HRESULT Reject() mut
-			{
-				return VT.Reject(ref this);
-			}
-			public HRESULT SetReferredSessionState(RTC_SESSION_STATE enState) mut
-			{
-				return VT.SetReferredSessionState(ref this, enState);
-			}
+			public HRESULT get_Session(out IRTCSession2* ppSession) mut => VT.get_Session(ref this, out ppSession);
+			public HRESULT get_ReferredByURI(out BSTR pbstrReferredByURI) mut => VT.get_ReferredByURI(ref this, out pbstrReferredByURI);
+			public HRESULT get_ReferToURI(out BSTR pbstrReferoURI) mut => VT.get_ReferToURI(ref this, out pbstrReferoURI);
+			public HRESULT get_ReferCookie(out BSTR pbstrReferCookie) mut => VT.get_ReferCookie(ref this, out pbstrReferCookie);
+			public HRESULT Accept() mut => VT.Accept(ref this);
+			public HRESULT Reject() mut => VT.Reject(ref this);
+			public HRESULT SetReferredSessionState(RTC_SESSION_STATE enState) mut => VT.SetReferredSessionState(ref this, enState);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2981,10 +2041,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EvaluateSessionDescription(BSTR bstrContentType, BSTR bstrSessionDescription, out int16 pfApplicationSession) mut
-			{
-				return VT.EvaluateSessionDescription(ref this, bstrContentType, bstrSessionDescription, out pfApplicationSession);
-			}
+			public HRESULT EvaluateSessionDescription(BSTR bstrContentType, BSTR bstrSessionDescription, out int16 pfApplicationSession) mut => VT.EvaluateSessionDescription(ref this, bstrContentType, bstrSessionDescription, out pfApplicationSession);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2998,22 +2056,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IRTCPresenceDevice** ppElements, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, ppElements, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Clone(out IRTCEnumPresenceDevices* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IRTCPresenceDevice** ppElements, uint32* pceltFetched) mut => VT.Next(ref this, celt, ppElements, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Clone(out IRTCEnumPresenceDevices* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3030,22 +2077,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Status(out RTC_PRESENCE_STATUS penStatus) mut
-			{
-				return VT.get_Status(ref this, out penStatus);
-			}
-			public HRESULT get_Notes(out BSTR pbstrNotes) mut
-			{
-				return VT.get_Notes(ref this, out pbstrNotes);
-			}
-			public HRESULT get_PresenceProperty(RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) mut
-			{
-				return VT.get_PresenceProperty(ref this, enProperty, out pbstrProperty);
-			}
-			public HRESULT GetPresenceData(out BSTR pbstrNamespace, out BSTR pbstrData) mut
-			{
-				return VT.GetPresenceData(ref this, out pbstrNamespace, out pbstrData);
-			}
+			public HRESULT get_Status(out RTC_PRESENCE_STATUS penStatus) mut => VT.get_Status(ref this, out penStatus);
+			public HRESULT get_Notes(out BSTR pbstrNotes) mut => VT.get_Notes(ref this, out pbstrNotes);
+			public HRESULT get_PresenceProperty(RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) mut => VT.get_PresenceProperty(ref this, enProperty, out pbstrProperty);
+			public HRESULT GetPresenceData(out BSTR pbstrNamespace, out BSTR pbstrData) mut => VT.GetPresenceData(ref this, out pbstrNamespace, out pbstrData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3062,6 +2098,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3074,14 +2111,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ApplySetting(out TRANSPORT_SETTING Setting) mut
-			{
-				return VT.ApplySetting(ref this, out Setting);
-			}
-			public HRESULT QuerySetting(out TRANSPORT_SETTING Setting) mut
-			{
-				return VT.QuerySetting(ref this, out Setting);
-			}
+			public HRESULT ApplySetting(out TRANSPORT_SETTING Setting) mut => VT.ApplySetting(ref this, out Setting);
+			public HRESULT QuerySetting(out TRANSPORT_SETTING Setting) mut => VT.QuerySetting(ref this, out Setting);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3096,14 +2128,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ApplySetting(in TRANSPORT_SETTING_ID SettingId, uint32 LengthIn, uint8* ValueIn, out uint32 LengthOut, uint8** ValueOut) mut
-			{
-				return VT.ApplySetting(ref this, SettingId, LengthIn, ValueIn, out LengthOut, ValueOut);
-			}
-			public HRESULT QuerySetting(in TRANSPORT_SETTING_ID SettingId, uint32 LengthIn, uint8* ValueIn, out uint32 LengthOut, uint8** ValueOut) mut
-			{
-				return VT.QuerySetting(ref this, SettingId, LengthIn, ValueIn, out LengthOut, ValueOut);
-			}
+			public HRESULT ApplySetting(in TRANSPORT_SETTING_ID SettingId, uint32 LengthIn, uint8* ValueIn, out uint32 LengthOut, uint8** ValueOut) mut => VT.ApplySetting(ref this, SettingId, LengthIn, ValueIn, out LengthOut, ValueOut);
+			public HRESULT QuerySetting(in TRANSPORT_SETTING_ID SettingId, uint32 LengthIn, uint8* ValueIn, out uint32 LengthOut, uint8** ValueOut) mut => VT.QuerySetting(ref this, SettingId, LengthIn, ValueIn, out LengthOut, ValueOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3118,14 +2145,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CompleteDelivery() mut
-			{
-				return VT.CompleteDelivery(ref this);
-			}
-			public HRESULT Flush() mut
-			{
-				return VT.Flush(ref this);
-			}
+			public HRESULT CompleteDelivery() mut => VT.CompleteDelivery(ref this);
+			public HRESULT Flush() mut => VT.Flush(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

@@ -66,34 +66,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProductName(BSTR* pVal) mut
-			{
-				return VT.get_ProductName(ref this, pVal);
-			}
-			public HRESULT get_ProductState(out WSC_SECURITY_PRODUCT_STATE pVal) mut
-			{
-				return VT.get_ProductState(ref this, out pVal);
-			}
-			public HRESULT get_SignatureStatus(out WSC_SECURITY_SIGNATURE_STATUS pVal) mut
-			{
-				return VT.get_SignatureStatus(ref this, out pVal);
-			}
-			public HRESULT get_RemediationPath(BSTR* pVal) mut
-			{
-				return VT.get_RemediationPath(ref this, pVal);
-			}
-			public HRESULT get_ProductStateTimestamp(BSTR* pVal) mut
-			{
-				return VT.get_ProductStateTimestamp(ref this, pVal);
-			}
-			public HRESULT get_ProductGuid(BSTR* pVal) mut
-			{
-				return VT.get_ProductGuid(ref this, pVal);
-			}
-			public HRESULT get_ProductIsDefault(out BOOL pVal) mut
-			{
-				return VT.get_ProductIsDefault(ref this, out pVal);
-			}
+			public HRESULT get_ProductName(BSTR* pVal) mut => VT.get_ProductName(ref this, pVal);
+			public HRESULT get_ProductState(out WSC_SECURITY_PRODUCT_STATE pVal) mut => VT.get_ProductState(ref this, out pVal);
+			public HRESULT get_SignatureStatus(out WSC_SECURITY_SIGNATURE_STATUS pVal) mut => VT.get_SignatureStatus(ref this, out pVal);
+			public HRESULT get_RemediationPath(BSTR* pVal) mut => VT.get_RemediationPath(ref this, pVal);
+			public HRESULT get_ProductStateTimestamp(BSTR* pVal) mut => VT.get_ProductStateTimestamp(ref this, pVal);
+			public HRESULT get_ProductGuid(BSTR* pVal) mut => VT.get_ProductGuid(ref this, pVal);
+			public HRESULT get_ProductIsDefault(out BOOL pVal) mut => VT.get_ProductIsDefault(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -113,30 +93,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AntivirusScanSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut
-			{
-				return VT.get_AntivirusScanSubstatus(ref this, out peStatus);
-			}
-			public HRESULT get_AntivirusSettingsSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut
-			{
-				return VT.get_AntivirusSettingsSubstatus(ref this, out peStatus);
-			}
-			public HRESULT get_AntivirusProtectionUpdateSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut
-			{
-				return VT.get_AntivirusProtectionUpdateSubstatus(ref this, out peStatus);
-			}
-			public HRESULT get_FirewallDomainProfileSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut
-			{
-				return VT.get_FirewallDomainProfileSubstatus(ref this, out peStatus);
-			}
-			public HRESULT get_FirewallPrivateProfileSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut
-			{
-				return VT.get_FirewallPrivateProfileSubstatus(ref this, out peStatus);
-			}
-			public HRESULT get_FirewallPublicProfileSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut
-			{
-				return VT.get_FirewallPublicProfileSubstatus(ref this, out peStatus);
-			}
+			public HRESULT get_AntivirusScanSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut => VT.get_AntivirusScanSubstatus(ref this, out peStatus);
+			public HRESULT get_AntivirusSettingsSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut => VT.get_AntivirusSettingsSubstatus(ref this, out peStatus);
+			public HRESULT get_AntivirusProtectionUpdateSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut => VT.get_AntivirusProtectionUpdateSubstatus(ref this, out peStatus);
+			public HRESULT get_FirewallDomainProfileSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut => VT.get_FirewallDomainProfileSubstatus(ref this, out peStatus);
+			public HRESULT get_FirewallPrivateProfileSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut => VT.get_FirewallPrivateProfileSubstatus(ref this, out peStatus);
+			public HRESULT get_FirewallPublicProfileSubstatus(out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) mut => VT.get_FirewallPublicProfileSubstatus(ref this, out peStatus);
+
 			[CRepr]
 			public struct VTable : IWscProduct.VTable
 			{
@@ -155,10 +118,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AntivirusDaysUntilExpired(out uint32 pdwDays) mut
-			{
-				return VT.get_AntivirusDaysUntilExpired(ref this, out pdwDays);
-			}
+			public HRESULT get_AntivirusDaysUntilExpired(out uint32 pdwDays) mut => VT.get_AntivirusDaysUntilExpired(ref this, out pdwDays);
+
 			[CRepr]
 			public struct VTable : IWscProduct2.VTable
 			{
@@ -172,18 +133,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(WSC_SECURITY_PROVIDER provider) mut
-			{
-				return VT.Initialize(ref this, provider);
-			}
-			public HRESULT get_Count(out int32 pVal) mut
-			{
-				return VT.get_Count(ref this, out pVal);
-			}
-			public HRESULT get_Item(uint32 index, IWscProduct** pVal) mut
-			{
-				return VT.get_Item(ref this, index, pVal);
-			}
+			public HRESULT Initialize(WSC_SECURITY_PROVIDER provider) mut => VT.Initialize(ref this, provider);
+			public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
+			public HRESULT get_Item(uint32 index, IWscProduct** pVal) mut => VT.get_Item(ref this, index, pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -199,10 +152,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDefaultProduct(SECURITY_PRODUCT_TYPE eType, BSTR pGuid) mut
-			{
-				return VT.SetDefaultProduct(ref this, eType, pGuid);
-			}
+			public HRESULT SetDefaultProduct(SECURITY_PRODUCT_TYPE eType, BSTR pGuid) mut => VT.SetDefaultProduct(ref this, eType, pGuid);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

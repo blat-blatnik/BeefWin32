@@ -48,14 +48,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestAccessForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessForWindowAsync(ref this, appWindow, sourceIdentity, targetIdentity, riid, asyncOperation);
-			}
-			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** result) mut
-			{
-				return VT.GetForWindow(ref this, appWindow, riid, result);
-			}
+			public HRESULT RequestAccessForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, in Guid riid, void** asyncOperation) mut => VT.RequestAccessForWindowAsync(ref this, appWindow, sourceIdentity, targetIdentity, riid, asyncOperation);
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** result) mut => VT.GetForWindow(ref this, appWindow, riid, result);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -70,26 +65,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestAccessForAppWithWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessForAppWithWindowAsync(ref this, appWindow, sourceIdentity, appPackageFamilyName, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessWithAuditingInfoForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, ref IUnknown auditInfoUnk, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessWithAuditingInfoForWindowAsync(ref this, appWindow, sourceIdentity, targetIdentity, ref auditInfoUnk, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, ref IUnknown auditInfoUnk, HSTRING messageFromApp, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessWithMessageForWindowAsync(ref this, appWindow, sourceIdentity, targetIdentity, ref auditInfoUnk, messageFromApp, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessForAppWithAuditingInfoForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessForAppWithAuditingInfoForWindowAsync(ref this, appWindow, sourceIdentity, appPackageFamilyName, ref auditInfoUnk, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessForAppWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, HSTRING messageFromApp, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessForAppWithMessageForWindowAsync(ref this, appWindow, sourceIdentity, appPackageFamilyName, ref auditInfoUnk, messageFromApp, riid, asyncOperation);
-			}
+			public HRESULT RequestAccessForAppWithWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, in Guid riid, void** asyncOperation) mut => VT.RequestAccessForAppWithWindowAsync(ref this, appWindow, sourceIdentity, appPackageFamilyName, riid, asyncOperation);
+			public HRESULT RequestAccessWithAuditingInfoForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, ref IUnknown auditInfoUnk, in Guid riid, void** asyncOperation) mut => VT.RequestAccessWithAuditingInfoForWindowAsync(ref this, appWindow, sourceIdentity, targetIdentity, ref auditInfoUnk, riid, asyncOperation);
+			public HRESULT RequestAccessWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, ref IUnknown auditInfoUnk, HSTRING messageFromApp, in Guid riid, void** asyncOperation) mut => VT.RequestAccessWithMessageForWindowAsync(ref this, appWindow, sourceIdentity, targetIdentity, ref auditInfoUnk, messageFromApp, riid, asyncOperation);
+			public HRESULT RequestAccessForAppWithAuditingInfoForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, in Guid riid, void** asyncOperation) mut => VT.RequestAccessForAppWithAuditingInfoForWindowAsync(ref this, appWindow, sourceIdentity, appPackageFamilyName, ref auditInfoUnk, riid, asyncOperation);
+			public HRESULT RequestAccessForAppWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, HSTRING messageFromApp, in Guid riid, void** asyncOperation) mut => VT.RequestAccessForAppWithMessageForWindowAsync(ref this, appWindow, sourceIdentity, appPackageFamilyName, ref auditInfoUnk, messageFromApp, riid, asyncOperation);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
@@ -107,30 +88,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestAccessWithBehaviorForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessWithBehaviorForWindowAsync(ref this, appWindow, sourceIdentity, targetIdentity, ref auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessForAppWithBehaviorForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessForAppWithBehaviorForWindowAsync(ref this, appWindow, sourceIdentity, appPackageFamilyName, ref auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessToFilesForAppForWindowAsync(HWND appWindow, ref IUnknown sourceItemListUnk, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessToFilesForAppForWindowAsync(ref this, appWindow, ref sourceItemListUnk, appPackageFamilyName, ref auditInfoUnk, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync(HWND appWindow, ref IUnknown sourceItemListUnk, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync(ref this, appWindow, ref sourceItemListUnk, appPackageFamilyName, ref auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessToFilesForProcessForWindowAsync(HWND appWindow, ref IUnknown sourceItemListUnk, uint32 processId, ref IUnknown auditInfoUnk, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessToFilesForProcessForWindowAsync(ref this, appWindow, ref sourceItemListUnk, processId, ref auditInfoUnk, riid, asyncOperation);
-			}
-			public HRESULT RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync(HWND appWindow, ref IUnknown sourceItemListUnk, uint32 processId, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) mut
-			{
-				return VT.RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync(ref this, appWindow, ref sourceItemListUnk, processId, ref auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
-			}
+			public HRESULT RequestAccessWithBehaviorForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) mut => VT.RequestAccessWithBehaviorForWindowAsync(ref this, appWindow, sourceIdentity, targetIdentity, ref auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
+			public HRESULT RequestAccessForAppWithBehaviorForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) mut => VT.RequestAccessForAppWithBehaviorForWindowAsync(ref this, appWindow, sourceIdentity, appPackageFamilyName, ref auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
+			public HRESULT RequestAccessToFilesForAppForWindowAsync(HWND appWindow, ref IUnknown sourceItemListUnk, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, in Guid riid, void** asyncOperation) mut => VT.RequestAccessToFilesForAppForWindowAsync(ref this, appWindow, ref sourceItemListUnk, appPackageFamilyName, ref auditInfoUnk, riid, asyncOperation);
+			public HRESULT RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync(HWND appWindow, ref IUnknown sourceItemListUnk, HSTRING appPackageFamilyName, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) mut => VT.RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync(ref this, appWindow, ref sourceItemListUnk, appPackageFamilyName, ref auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
+			public HRESULT RequestAccessToFilesForProcessForWindowAsync(HWND appWindow, ref IUnknown sourceItemListUnk, uint32 processId, ref IUnknown auditInfoUnk, in Guid riid, void** asyncOperation) mut => VT.RequestAccessToFilesForProcessForWindowAsync(ref this, appWindow, ref sourceItemListUnk, processId, ref auditInfoUnk, riid, asyncOperation);
+			public HRESULT RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync(HWND appWindow, ref IUnknown sourceItemListUnk, uint32 processId, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) mut => VT.RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync(ref this, appWindow, ref sourceItemListUnk, processId, ref auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
+
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{

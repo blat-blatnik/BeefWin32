@@ -130,18 +130,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Current(out VARIANT Item) mut
-			{
-				return VT.Current(ref this, out Item);
-			}
-			public HRESULT MoveNext(out BOOL ItemValid) mut
-			{
-				return VT.MoveNext(ref this, out ItemValid);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT Current(out VARIANT Item) mut => VT.Current(ref this, out Item);
+			public HRESULT MoveNext(out BOOL ItemValid) mut => VT.MoveNext(ref this, out ItemValid);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -157,22 +149,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAttribute(void* Reserved, PWSTR Name, out BSTR Value) mut
-			{
-				return VT.GetAttribute(ref this, Reserved, Name, out Value);
-			}
-			public HRESULT SetAttribute(void* Reserved, PWSTR Name, PWSTR Value) mut
-			{
-				return VT.SetAttribute(ref this, Reserved, Name, Value);
-			}
-			public HRESULT ComGetFlags(out uint32 Flags) mut
-			{
-				return VT.ComGetFlags(ref this, out Flags);
-			}
-			public HRESULT SetFlags(uint32 Flags) mut
-			{
-				return VT.SetFlags(ref this, Flags);
-			}
+			public HRESULT GetAttribute(void* Reserved, PWSTR Name, out BSTR Value) mut => VT.GetAttribute(ref this, Reserved, Name, out Value);
+			public HRESULT SetAttribute(void* Reserved, PWSTR Name, PWSTR Value) mut => VT.SetAttribute(ref this, Reserved, Name, Value);
+			public HRESULT ComGetFlags(out uint32 Flags) mut => VT.ComGetFlags(ref this, out Flags);
+			public HRESULT SetFlags(uint32 Flags) mut => VT.SetFlags(ref this, Flags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -189,90 +170,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTargetMode(out WcmTargetMode TargetMode) mut
-			{
-				return VT.GetTargetMode(ref this, out TargetMode);
-			}
-			public HRESULT SetTargetMode(WcmTargetMode TargetMode) mut
-			{
-				return VT.SetTargetMode(ref this, TargetMode);
-			}
-			public HRESULT GetTemporaryStoreLocation(out BSTR TemporaryStoreLocation) mut
-			{
-				return VT.GetTemporaryStoreLocation(ref this, out TemporaryStoreLocation);
-			}
-			public HRESULT SetTemporaryStoreLocation(PWSTR TemporaryStoreLocation) mut
-			{
-				return VT.SetTemporaryStoreLocation(ref this, TemporaryStoreLocation);
-			}
-			public HRESULT GetTargetID(out BSTR TargetID) mut
-			{
-				return VT.GetTargetID(ref this, out TargetID);
-			}
-			public HRESULT SetTargetID(Guid TargetID) mut
-			{
-				return VT.SetTargetID(ref this, TargetID);
-			}
-			public HRESULT GetTargetProcessorArchitecture(out BSTR ProcessorArchitecture) mut
-			{
-				return VT.GetTargetProcessorArchitecture(ref this, out ProcessorArchitecture);
-			}
-			public HRESULT SetTargetProcessorArchitecture(PWSTR ProcessorArchitecture) mut
-			{
-				return VT.SetTargetProcessorArchitecture(ref this, ProcessorArchitecture);
-			}
-			public HRESULT GetProperty(BOOL Offline, PWSTR Property, out BSTR Value) mut
-			{
-				return VT.GetProperty(ref this, Offline, Property, out Value);
-			}
-			public HRESULT SetProperty(BOOL Offline, PWSTR Property, PWSTR Value) mut
-			{
-				return VT.SetProperty(ref this, Offline, Property, Value);
-			}
-			public HRESULT GetEnumerator(out IItemEnumerator* Enumerator) mut
-			{
-				return VT.GetEnumerator(ref this, out Enumerator);
-			}
-			public HRESULT ExpandTarget(BOOL Offline, PWSTR Location, out BSTR ExpandedLocation) mut
-			{
-				return VT.ExpandTarget(ref this, Offline, Location, out ExpandedLocation);
-			}
-			public HRESULT ExpandTargetPath(BOOL Offline, PWSTR Location, out BSTR ExpandedLocation) mut
-			{
-				return VT.ExpandTargetPath(ref this, Offline, Location, out ExpandedLocation);
-			}
-			public HRESULT SetModulePath(PWSTR Module, PWSTR Path) mut
-			{
-				return VT.SetModulePath(ref this, Module, Path);
-			}
-			public HRESULT LoadModule(PWSTR Module, out HINSTANCE ModuleHandle) mut
-			{
-				return VT.LoadModule(ref this, Module, out ModuleHandle);
-			}
-			public HRESULT SetWow64Context(PWSTR InstallerModule, ref uint8 Wow64Context) mut
-			{
-				return VT.SetWow64Context(ref this, InstallerModule, ref Wow64Context);
-			}
-			public HRESULT TranslateWow64(PWSTR ClientArchitecture, PWSTR Value, out BSTR TranslatedValue) mut
-			{
-				return VT.TranslateWow64(ref this, ClientArchitecture, Value, out TranslatedValue);
-			}
-			public HRESULT SetSchemaHiveLocation(PWSTR pwzHiveDir) mut
-			{
-				return VT.SetSchemaHiveLocation(ref this, pwzHiveDir);
-			}
-			public HRESULT GetSchemaHiveLocation(out BSTR pHiveLocation) mut
-			{
-				return VT.GetSchemaHiveLocation(ref this, out pHiveLocation);
-			}
-			public HRESULT SetSchemaHiveMountName(PWSTR pwzMountName) mut
-			{
-				return VT.SetSchemaHiveMountName(ref this, pwzMountName);
-			}
-			public HRESULT GetSchemaHiveMountName(out BSTR pMountName) mut
-			{
-				return VT.GetSchemaHiveMountName(ref this, out pMountName);
-			}
+			public HRESULT GetTargetMode(out WcmTargetMode TargetMode) mut => VT.GetTargetMode(ref this, out TargetMode);
+			public HRESULT SetTargetMode(WcmTargetMode TargetMode) mut => VT.SetTargetMode(ref this, TargetMode);
+			public HRESULT GetTemporaryStoreLocation(out BSTR TemporaryStoreLocation) mut => VT.GetTemporaryStoreLocation(ref this, out TemporaryStoreLocation);
+			public HRESULT SetTemporaryStoreLocation(PWSTR TemporaryStoreLocation) mut => VT.SetTemporaryStoreLocation(ref this, TemporaryStoreLocation);
+			public HRESULT GetTargetID(out BSTR TargetID) mut => VT.GetTargetID(ref this, out TargetID);
+			public HRESULT SetTargetID(Guid TargetID) mut => VT.SetTargetID(ref this, TargetID);
+			public HRESULT GetTargetProcessorArchitecture(out BSTR ProcessorArchitecture) mut => VT.GetTargetProcessorArchitecture(ref this, out ProcessorArchitecture);
+			public HRESULT SetTargetProcessorArchitecture(PWSTR ProcessorArchitecture) mut => VT.SetTargetProcessorArchitecture(ref this, ProcessorArchitecture);
+			public HRESULT GetProperty(BOOL Offline, PWSTR Property, out BSTR Value) mut => VT.GetProperty(ref this, Offline, Property, out Value);
+			public HRESULT SetProperty(BOOL Offline, PWSTR Property, PWSTR Value) mut => VT.SetProperty(ref this, Offline, Property, Value);
+			public HRESULT GetEnumerator(out IItemEnumerator* Enumerator) mut => VT.GetEnumerator(ref this, out Enumerator);
+			public HRESULT ExpandTarget(BOOL Offline, PWSTR Location, out BSTR ExpandedLocation) mut => VT.ExpandTarget(ref this, Offline, Location, out ExpandedLocation);
+			public HRESULT ExpandTargetPath(BOOL Offline, PWSTR Location, out BSTR ExpandedLocation) mut => VT.ExpandTargetPath(ref this, Offline, Location, out ExpandedLocation);
+			public HRESULT SetModulePath(PWSTR Module, PWSTR Path) mut => VT.SetModulePath(ref this, Module, Path);
+			public HRESULT LoadModule(PWSTR Module, out HINSTANCE ModuleHandle) mut => VT.LoadModule(ref this, Module, out ModuleHandle);
+			public HRESULT SetWow64Context(PWSTR InstallerModule, ref uint8 Wow64Context) mut => VT.SetWow64Context(ref this, InstallerModule, ref Wow64Context);
+			public HRESULT TranslateWow64(PWSTR ClientArchitecture, PWSTR Value, out BSTR TranslatedValue) mut => VT.TranslateWow64(ref this, ClientArchitecture, Value, out TranslatedValue);
+			public HRESULT SetSchemaHiveLocation(PWSTR pwzHiveDir) mut => VT.SetSchemaHiveLocation(ref this, pwzHiveDir);
+			public HRESULT GetSchemaHiveLocation(out BSTR pHiveLocation) mut => VT.GetSchemaHiveLocation(ref this, out pHiveLocation);
+			public HRESULT SetSchemaHiveMountName(PWSTR pwzMountName) mut => VT.SetSchemaHiveMountName(ref this, pwzMountName);
+			public HRESULT GetSchemaHiveMountName(out BSTR pMountName) mut => VT.GetSchemaHiveMountName(ref this, out pMountName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -306,70 +225,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNamespaces(WcmNamespaceEnumerationFlags Flags, void* Reserved, out IItemEnumerator* Namespaces) mut
-			{
-				return VT.GetNamespaces(ref this, Flags, Reserved, out Namespaces);
-			}
-			public HRESULT GetNamespace(ref ISettingsIdentity SettingsID, WcmNamespaceAccess Access, void* Reserved, out ISettingsNamespace* NamespaceItem) mut
-			{
-				return VT.GetNamespace(ref this, ref SettingsID, Access, Reserved, out NamespaceItem);
-			}
-			public HRESULT GetErrorDescription(int32 HResult, out BSTR Message) mut
-			{
-				return VT.GetErrorDescription(ref this, HResult, out Message);
-			}
-			public HRESULT CreateSettingsIdentity(out ISettingsIdentity* SettingsID) mut
-			{
-				return VT.CreateSettingsIdentity(ref this, out SettingsID);
-			}
-			public HRESULT GetStoreStatus(void* Reserved, out WcmUserStatus Status) mut
-			{
-				return VT.GetStoreStatus(ref this, Reserved, out Status);
-			}
-			public HRESULT LoadStore(uint32 Flags) mut
-			{
-				return VT.LoadStore(ref this, Flags);
-			}
-			public HRESULT UnloadStore(void* Reserved) mut
-			{
-				return VT.UnloadStore(ref this, Reserved);
-			}
-			public HRESULT RegisterNamespace(ref ISettingsIdentity SettingsID, ref IStream Stream, BOOL PushSettings, out VARIANT Results) mut
-			{
-				return VT.RegisterNamespace(ref this, ref SettingsID, ref Stream, PushSettings, out Results);
-			}
-			public HRESULT UnregisterNamespace(ref ISettingsIdentity SettingsID, BOOL RemoveSettings) mut
-			{
-				return VT.UnregisterNamespace(ref this, ref SettingsID, RemoveSettings);
-			}
-			public HRESULT CreateTargetInfo(out ITargetInfo* Target) mut
-			{
-				return VT.CreateTargetInfo(ref this, out Target);
-			}
-			public HRESULT GetTargetInfo(out ITargetInfo* Target) mut
-			{
-				return VT.GetTargetInfo(ref this, out Target);
-			}
-			public HRESULT SetTargetInfo(ref ITargetInfo Target) mut
-			{
-				return VT.SetTargetInfo(ref this, ref Target);
-			}
-			public HRESULT CreateSettingsContext(uint32 Flags, void* Reserved, out ISettingsContext* SettingsContext) mut
-			{
-				return VT.CreateSettingsContext(ref this, Flags, Reserved, out SettingsContext);
-			}
-			public HRESULT SetSettingsContext(ref ISettingsContext SettingsContext) mut
-			{
-				return VT.SetSettingsContext(ref this, ref SettingsContext);
-			}
-			public HRESULT ApplySettingsContext(ref ISettingsContext SettingsContext, out PWSTR* pppwzIdentities, out uint pcIdentities) mut
-			{
-				return VT.ApplySettingsContext(ref this, ref SettingsContext, out pppwzIdentities, out pcIdentities);
-			}
-			public HRESULT GetSettingsContext(out ISettingsContext* SettingsContext) mut
-			{
-				return VT.GetSettingsContext(ref this, out SettingsContext);
-			}
+			public HRESULT GetNamespaces(WcmNamespaceEnumerationFlags Flags, void* Reserved, out IItemEnumerator* Namespaces) mut => VT.GetNamespaces(ref this, Flags, Reserved, out Namespaces);
+			public HRESULT GetNamespace(ref ISettingsIdentity SettingsID, WcmNamespaceAccess Access, void* Reserved, out ISettingsNamespace* NamespaceItem) mut => VT.GetNamespace(ref this, ref SettingsID, Access, Reserved, out NamespaceItem);
+			public HRESULT GetErrorDescription(int32 HResult, out BSTR Message) mut => VT.GetErrorDescription(ref this, HResult, out Message);
+			public HRESULT CreateSettingsIdentity(out ISettingsIdentity* SettingsID) mut => VT.CreateSettingsIdentity(ref this, out SettingsID);
+			public HRESULT GetStoreStatus(void* Reserved, out WcmUserStatus Status) mut => VT.GetStoreStatus(ref this, Reserved, out Status);
+			public HRESULT LoadStore(uint32 Flags) mut => VT.LoadStore(ref this, Flags);
+			public HRESULT UnloadStore(void* Reserved) mut => VT.UnloadStore(ref this, Reserved);
+			public HRESULT RegisterNamespace(ref ISettingsIdentity SettingsID, ref IStream Stream, BOOL PushSettings, out VARIANT Results) mut => VT.RegisterNamespace(ref this, ref SettingsID, ref Stream, PushSettings, out Results);
+			public HRESULT UnregisterNamespace(ref ISettingsIdentity SettingsID, BOOL RemoveSettings) mut => VT.UnregisterNamespace(ref this, ref SettingsID, RemoveSettings);
+			public HRESULT CreateTargetInfo(out ITargetInfo* Target) mut => VT.CreateTargetInfo(ref this, out Target);
+			public HRESULT GetTargetInfo(out ITargetInfo* Target) mut => VT.GetTargetInfo(ref this, out Target);
+			public HRESULT SetTargetInfo(ref ITargetInfo Target) mut => VT.SetTargetInfo(ref this, ref Target);
+			public HRESULT CreateSettingsContext(uint32 Flags, void* Reserved, out ISettingsContext* SettingsContext) mut => VT.CreateSettingsContext(ref this, Flags, Reserved, out SettingsContext);
+			public HRESULT SetSettingsContext(ref ISettingsContext SettingsContext) mut => VT.SetSettingsContext(ref this, ref SettingsContext);
+			public HRESULT ApplySettingsContext(ref ISettingsContext SettingsContext, out PWSTR* pppwzIdentities, out uint pcIdentities) mut => VT.ApplySettingsContext(ref this, ref SettingsContext, out pppwzIdentities, out pcIdentities);
+			public HRESULT GetSettingsContext(out ISettingsContext* SettingsContext) mut => VT.GetSettingsContext(ref this, out SettingsContext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -398,94 +270,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out BSTR Name) mut
-			{
-				return VT.GetName(ref this, out Name);
-			}
-			public HRESULT GetValue(out VARIANT Value) mut
-			{
-				return VT.GetValue(ref this, out Value);
-			}
-			public HRESULT SetValue(in VARIANT Value) mut
-			{
-				return VT.SetValue(ref this, Value);
-			}
-			public HRESULT GetSettingType(out WcmSettingType Type) mut
-			{
-				return VT.GetSettingType(ref this, out Type);
-			}
-			public HRESULT GetDataType(out WcmDataType Type) mut
-			{
-				return VT.GetDataType(ref this, out Type);
-			}
-			public HRESULT GetValueRaw(uint8** Data, out uint32 DataSize) mut
-			{
-				return VT.GetValueRaw(ref this, Data, out DataSize);
-			}
-			public HRESULT SetValueRaw(int32 DataType, uint8* Data, uint32 DataSize) mut
-			{
-				return VT.SetValueRaw(ref this, DataType, Data, DataSize);
-			}
-			public HRESULT HasChild(out BOOL ItemHasChild) mut
-			{
-				return VT.HasChild(ref this, out ItemHasChild);
-			}
-			public HRESULT Children(out IItemEnumerator* Children) mut
-			{
-				return VT.Children(ref this, out Children);
-			}
-			public HRESULT GetChild(PWSTR Name, out ISettingsItem* Child) mut
-			{
-				return VT.GetChild(ref this, Name, out Child);
-			}
-			public HRESULT GetSettingByPath(PWSTR Path, out ISettingsItem* Setting) mut
-			{
-				return VT.GetSettingByPath(ref this, Path, out Setting);
-			}
-			public HRESULT CreateSettingByPath(PWSTR Path, out ISettingsItem* Setting) mut
-			{
-				return VT.CreateSettingByPath(ref this, Path, out Setting);
-			}
-			public HRESULT RemoveSettingByPath(PWSTR Path) mut
-			{
-				return VT.RemoveSettingByPath(ref this, Path);
-			}
-			public HRESULT GetListKeyInformation(out BSTR KeyName, out WcmDataType DataType) mut
-			{
-				return VT.GetListKeyInformation(ref this, out KeyName, out DataType);
-			}
-			public HRESULT CreateListElement(in VARIANT KeyData, out ISettingsItem* Child) mut
-			{
-				return VT.CreateListElement(ref this, KeyData, out Child);
-			}
-			public HRESULT RemoveListElement(PWSTR ElementName) mut
-			{
-				return VT.RemoveListElement(ref this, ElementName);
-			}
-			public HRESULT Attributes(out IItemEnumerator* Attributes) mut
-			{
-				return VT.Attributes(ref this, out Attributes);
-			}
-			public HRESULT GetAttribute(PWSTR Name, out VARIANT Value) mut
-			{
-				return VT.GetAttribute(ref this, Name, out Value);
-			}
-			public HRESULT GetPath(out BSTR Path) mut
-			{
-				return VT.GetPath(ref this, out Path);
-			}
-			public HRESULT GetRestrictionFacets(out WcmRestrictionFacets RestrictionFacets) mut
-			{
-				return VT.GetRestrictionFacets(ref this, out RestrictionFacets);
-			}
-			public HRESULT GetRestriction(WcmRestrictionFacets RestrictionFacet, out VARIANT FacetData) mut
-			{
-				return VT.GetRestriction(ref this, RestrictionFacet, out FacetData);
-			}
-			public HRESULT GetKeyValue(out VARIANT Value) mut
-			{
-				return VT.GetKeyValue(ref this, out Value);
-			}
+			public HRESULT GetName(out BSTR Name) mut => VT.GetName(ref this, out Name);
+			public HRESULT GetValue(out VARIANT Value) mut => VT.GetValue(ref this, out Value);
+			public HRESULT SetValue(in VARIANT Value) mut => VT.SetValue(ref this, Value);
+			public HRESULT GetSettingType(out WcmSettingType Type) mut => VT.GetSettingType(ref this, out Type);
+			public HRESULT GetDataType(out WcmDataType Type) mut => VT.GetDataType(ref this, out Type);
+			public HRESULT GetValueRaw(uint8** Data, out uint32 DataSize) mut => VT.GetValueRaw(ref this, Data, out DataSize);
+			public HRESULT SetValueRaw(int32 DataType, uint8* Data, uint32 DataSize) mut => VT.SetValueRaw(ref this, DataType, Data, DataSize);
+			public HRESULT HasChild(out BOOL ItemHasChild) mut => VT.HasChild(ref this, out ItemHasChild);
+			public HRESULT Children(out IItemEnumerator* Children) mut => VT.Children(ref this, out Children);
+			public HRESULT GetChild(PWSTR Name, out ISettingsItem* Child) mut => VT.GetChild(ref this, Name, out Child);
+			public HRESULT GetSettingByPath(PWSTR Path, out ISettingsItem* Setting) mut => VT.GetSettingByPath(ref this, Path, out Setting);
+			public HRESULT CreateSettingByPath(PWSTR Path, out ISettingsItem* Setting) mut => VT.CreateSettingByPath(ref this, Path, out Setting);
+			public HRESULT RemoveSettingByPath(PWSTR Path) mut => VT.RemoveSettingByPath(ref this, Path);
+			public HRESULT GetListKeyInformation(out BSTR KeyName, out WcmDataType DataType) mut => VT.GetListKeyInformation(ref this, out KeyName, out DataType);
+			public HRESULT CreateListElement(in VARIANT KeyData, out ISettingsItem* Child) mut => VT.CreateListElement(ref this, KeyData, out Child);
+			public HRESULT RemoveListElement(PWSTR ElementName) mut => VT.RemoveListElement(ref this, ElementName);
+			public HRESULT Attributes(out IItemEnumerator* Attributes) mut => VT.Attributes(ref this, out Attributes);
+			public HRESULT GetAttribute(PWSTR Name, out VARIANT Value) mut => VT.GetAttribute(ref this, Name, out Value);
+			public HRESULT GetPath(out BSTR Path) mut => VT.GetPath(ref this, out Path);
+			public HRESULT GetRestrictionFacets(out WcmRestrictionFacets RestrictionFacets) mut => VT.GetRestrictionFacets(ref this, out RestrictionFacets);
+			public HRESULT GetRestriction(WcmRestrictionFacets RestrictionFacet, out VARIANT FacetData) mut => VT.GetRestriction(ref this, RestrictionFacet, out FacetData);
+			public HRESULT GetKeyValue(out VARIANT Value) mut => VT.GetKeyValue(ref this, out Value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -520,34 +327,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIdentity(out ISettingsIdentity* SettingsID) mut
-			{
-				return VT.GetIdentity(ref this, out SettingsID);
-			}
-			public HRESULT Settings(out IItemEnumerator* Settings) mut
-			{
-				return VT.Settings(ref this, out Settings);
-			}
-			public HRESULT Save(BOOL PushSettings, out ISettingsResult* Result) mut
-			{
-				return VT.Save(ref this, PushSettings, out Result);
-			}
-			public HRESULT GetSettingByPath(PWSTR Path, out ISettingsItem* Setting) mut
-			{
-				return VT.GetSettingByPath(ref this, Path, out Setting);
-			}
-			public HRESULT CreateSettingByPath(PWSTR Path, out ISettingsItem* Setting) mut
-			{
-				return VT.CreateSettingByPath(ref this, Path, out Setting);
-			}
-			public HRESULT RemoveSettingByPath(PWSTR Path) mut
-			{
-				return VT.RemoveSettingByPath(ref this, Path);
-			}
-			public HRESULT GetAttribute(PWSTR Name, out VARIANT Value) mut
-			{
-				return VT.GetAttribute(ref this, Name, out Value);
-			}
+			public HRESULT GetIdentity(out ISettingsIdentity* SettingsID) mut => VT.GetIdentity(ref this, out SettingsID);
+			public HRESULT Settings(out IItemEnumerator* Settings) mut => VT.Settings(ref this, out Settings);
+			public HRESULT Save(BOOL PushSettings, out ISettingsResult* Result) mut => VT.Save(ref this, PushSettings, out Result);
+			public HRESULT GetSettingByPath(PWSTR Path, out ISettingsItem* Setting) mut => VT.GetSettingByPath(ref this, Path, out Setting);
+			public HRESULT CreateSettingByPath(PWSTR Path, out ISettingsItem* Setting) mut => VT.CreateSettingByPath(ref this, Path, out Setting);
+			public HRESULT RemoveSettingByPath(PWSTR Path) mut => VT.RemoveSettingByPath(ref this, Path);
+			public HRESULT GetAttribute(PWSTR Name, out VARIANT Value) mut => VT.GetAttribute(ref this, Name, out Value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -567,30 +354,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDescription(out BSTR description) mut
-			{
-				return VT.GetDescription(ref this, out description);
-			}
-			public HRESULT GetErrorCode(out HRESULT hrOut) mut
-			{
-				return VT.GetErrorCode(ref this, out hrOut);
-			}
-			public HRESULT GetContextDescription(out BSTR description) mut
-			{
-				return VT.GetContextDescription(ref this, out description);
-			}
-			public HRESULT GetLine(out uint32 dwLine) mut
-			{
-				return VT.GetLine(ref this, out dwLine);
-			}
-			public HRESULT GetColumn(out uint32 dwColumn) mut
-			{
-				return VT.GetColumn(ref this, out dwColumn);
-			}
-			public HRESULT GetSource(out BSTR file) mut
-			{
-				return VT.GetSource(ref this, out file);
-			}
+			public HRESULT GetDescription(out BSTR description) mut => VT.GetDescription(ref this, out description);
+			public HRESULT GetErrorCode(out HRESULT hrOut) mut => VT.GetErrorCode(ref this, out hrOut);
+			public HRESULT GetContextDescription(out BSTR description) mut => VT.GetContextDescription(ref this, out description);
+			public HRESULT GetLine(out uint32 dwLine) mut => VT.GetLine(ref this, out dwLine);
+			public HRESULT GetColumn(out uint32 dwColumn) mut => VT.GetColumn(ref this, out dwColumn);
+			public HRESULT GetSource(out BSTR file) mut => VT.GetSource(ref this, out file);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -609,34 +379,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Serialize(ref IStream pStream, ref ITargetInfo pTarget) mut
-			{
-				return VT.Serialize(ref this, ref pStream, ref pTarget);
-			}
-			public HRESULT Deserialize(ref IStream pStream, ref ITargetInfo pTarget, ISettingsResult*** pppResults, out uint pcResultCount) mut
-			{
-				return VT.Deserialize(ref this, ref pStream, ref pTarget, pppResults, out pcResultCount);
-			}
-			public HRESULT SetUserData(void* pUserData) mut
-			{
-				return VT.SetUserData(ref this, pUserData);
-			}
-			public HRESULT GetUserData(void** pUserData) mut
-			{
-				return VT.GetUserData(ref this, pUserData);
-			}
-			public HRESULT GetNamespaces(out IItemEnumerator* ppNamespaceIds) mut
-			{
-				return VT.GetNamespaces(ref this, out ppNamespaceIds);
-			}
-			public HRESULT GetStoredSettings(ref ISettingsIdentity pIdentity, out IItemEnumerator* ppAddedSettings, out IItemEnumerator* ppModifiedSettings, out IItemEnumerator* ppDeletedSettings) mut
-			{
-				return VT.GetStoredSettings(ref this, ref pIdentity, out ppAddedSettings, out ppModifiedSettings, out ppDeletedSettings);
-			}
-			public HRESULT RevertSetting(ref ISettingsIdentity pIdentity, PWSTR pwzSetting) mut
-			{
-				return VT.RevertSetting(ref this, ref pIdentity, pwzSetting);
-			}
+			public HRESULT Serialize(ref IStream pStream, ref ITargetInfo pTarget) mut => VT.Serialize(ref this, ref pStream, ref pTarget);
+			public HRESULT Deserialize(ref IStream pStream, ref ITargetInfo pTarget, ISettingsResult*** pppResults, out uint pcResultCount) mut => VT.Deserialize(ref this, ref pStream, ref pTarget, pppResults, out pcResultCount);
+			public HRESULT SetUserData(void* pUserData) mut => VT.SetUserData(ref this, pUserData);
+			public HRESULT GetUserData(void** pUserData) mut => VT.GetUserData(ref this, pUserData);
+			public HRESULT GetNamespaces(out IItemEnumerator* ppNamespaceIds) mut => VT.GetNamespaces(ref this, out ppNamespaceIds);
+			public HRESULT GetStoredSettings(ref ISettingsIdentity pIdentity, out IItemEnumerator* ppAddedSettings, out IItemEnumerator* ppModifiedSettings, out IItemEnumerator* ppDeletedSettings) mut => VT.GetStoredSettings(ref this, ref pIdentity, out ppAddedSettings, out ppModifiedSettings, out ppDeletedSettings);
+			public HRESULT RevertSetting(ref ISettingsIdentity pIdentity, PWSTR pwzSetting) mut => VT.RevertSetting(ref this, ref pIdentity, pwzSetting);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

@@ -125,42 +125,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNetworks(NLM_ENUM_NETWORK Flags, out IEnumNetworks* ppEnumNetwork) mut
-			{
-				return VT.GetNetworks(ref this, Flags, out ppEnumNetwork);
-			}
-			public HRESULT GetNetwork(Guid gdNetworkId, out INetwork* ppNetwork) mut
-			{
-				return VT.GetNetwork(ref this, gdNetworkId, out ppNetwork);
-			}
-			public HRESULT GetNetworkConnections(out IEnumNetworkConnections* ppEnum) mut
-			{
-				return VT.GetNetworkConnections(ref this, out ppEnum);
-			}
-			public HRESULT GetNetworkConnection(Guid gdNetworkConnectionId, out INetworkConnection* ppNetworkConnection) mut
-			{
-				return VT.GetNetworkConnection(ref this, gdNetworkConnectionId, out ppNetworkConnection);
-			}
-			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut
-			{
-				return VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
-			}
-			public HRESULT get_IsConnected(out int16 pbIsConnected) mut
-			{
-				return VT.get_IsConnected(ref this, out pbIsConnected);
-			}
-			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut
-			{
-				return VT.GetConnectivity(ref this, out pConnectivity);
-			}
-			public HRESULT SetSimulatedProfileInfo(ref NLM_SIMULATED_PROFILE_INFO pSimulatedInfo) mut
-			{
-				return VT.SetSimulatedProfileInfo(ref this, ref pSimulatedInfo);
-			}
-			public HRESULT ClearSimulatedProfileInfo() mut
-			{
-				return VT.ClearSimulatedProfileInfo(ref this);
-			}
+			public HRESULT GetNetworks(NLM_ENUM_NETWORK Flags, out IEnumNetworks* ppEnumNetwork) mut => VT.GetNetworks(ref this, Flags, out ppEnumNetwork);
+			public HRESULT GetNetwork(Guid gdNetworkId, out INetwork* ppNetwork) mut => VT.GetNetwork(ref this, gdNetworkId, out ppNetwork);
+			public HRESULT GetNetworkConnections(out IEnumNetworkConnections* ppEnum) mut => VT.GetNetworkConnections(ref this, out ppEnum);
+			public HRESULT GetNetworkConnection(Guid gdNetworkConnectionId, out INetworkConnection* ppNetworkConnection) mut => VT.GetNetworkConnection(ref this, gdNetworkConnectionId, out ppNetworkConnection);
+			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut => VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
+			public HRESULT get_IsConnected(out int16 pbIsConnected) mut => VT.get_IsConnected(ref this, out pbIsConnected);
+			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut => VT.GetConnectivity(ref this, out pConnectivity);
+			public HRESULT SetSimulatedProfileInfo(ref NLM_SIMULATED_PROFILE_INFO pSimulatedInfo) mut => VT.SetSimulatedProfileInfo(ref this, ref pSimulatedInfo);
+			public HRESULT ClearSimulatedProfileInfo() mut => VT.ClearSimulatedProfileInfo(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -182,10 +156,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectivityChanged(NLM_CONNECTIVITY newConnectivity) mut
-			{
-				return VT.ConnectivityChanged(ref this, newConnectivity);
-			}
+			public HRESULT ConnectivityChanged(NLM_CONNECTIVITY newConnectivity) mut => VT.ConnectivityChanged(ref this, newConnectivity);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -199,58 +171,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(out BSTR pszNetworkName) mut
-			{
-				return VT.GetName(ref this, out pszNetworkName);
-			}
-			public HRESULT SetName(BSTR szNetworkNewName) mut
-			{
-				return VT.SetName(ref this, szNetworkNewName);
-			}
-			public HRESULT GetDescription(out BSTR pszDescription) mut
-			{
-				return VT.GetDescription(ref this, out pszDescription);
-			}
-			public HRESULT SetDescription(BSTR szDescription) mut
-			{
-				return VT.SetDescription(ref this, szDescription);
-			}
-			public HRESULT GetNetworkId(out Guid pgdGuidNetworkId) mut
-			{
-				return VT.GetNetworkId(ref this, out pgdGuidNetworkId);
-			}
-			public HRESULT GetDomainType(out NLM_DOMAIN_TYPE pNetworkType) mut
-			{
-				return VT.GetDomainType(ref this, out pNetworkType);
-			}
-			public HRESULT GetNetworkConnections(out IEnumNetworkConnections* ppEnumNetworkConnection) mut
-			{
-				return VT.GetNetworkConnections(ref this, out ppEnumNetworkConnection);
-			}
-			public HRESULT GetTimeCreatedAndConnected(out uint32 pdwLowDateTimeCreated, out uint32 pdwHighDateTimeCreated, out uint32 pdwLowDateTimeConnected, out uint32 pdwHighDateTimeConnected) mut
-			{
-				return VT.GetTimeCreatedAndConnected(ref this, out pdwLowDateTimeCreated, out pdwHighDateTimeCreated, out pdwLowDateTimeConnected, out pdwHighDateTimeConnected);
-			}
-			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut
-			{
-				return VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
-			}
-			public HRESULT get_IsConnected(out int16 pbIsConnected) mut
-			{
-				return VT.get_IsConnected(ref this, out pbIsConnected);
-			}
-			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut
-			{
-				return VT.GetConnectivity(ref this, out pConnectivity);
-			}
-			public HRESULT GetCategory(out NLM_NETWORK_CATEGORY pCategory) mut
-			{
-				return VT.GetCategory(ref this, out pCategory);
-			}
-			public HRESULT SetCategory(NLM_NETWORK_CATEGORY NewCategory) mut
-			{
-				return VT.SetCategory(ref this, NewCategory);
-			}
+			public HRESULT GetName(out BSTR pszNetworkName) mut => VT.GetName(ref this, out pszNetworkName);
+			public HRESULT SetName(BSTR szNetworkNewName) mut => VT.SetName(ref this, szNetworkNewName);
+			public HRESULT GetDescription(out BSTR pszDescription) mut => VT.GetDescription(ref this, out pszDescription);
+			public HRESULT SetDescription(BSTR szDescription) mut => VT.SetDescription(ref this, szDescription);
+			public HRESULT GetNetworkId(out Guid pgdGuidNetworkId) mut => VT.GetNetworkId(ref this, out pgdGuidNetworkId);
+			public HRESULT GetDomainType(out NLM_DOMAIN_TYPE pNetworkType) mut => VT.GetDomainType(ref this, out pNetworkType);
+			public HRESULT GetNetworkConnections(out IEnumNetworkConnections* ppEnumNetworkConnection) mut => VT.GetNetworkConnections(ref this, out ppEnumNetworkConnection);
+			public HRESULT GetTimeCreatedAndConnected(out uint32 pdwLowDateTimeCreated, out uint32 pdwHighDateTimeCreated, out uint32 pdwLowDateTimeConnected, out uint32 pdwHighDateTimeConnected) mut => VT.GetTimeCreatedAndConnected(ref this, out pdwLowDateTimeCreated, out pdwHighDateTimeCreated, out pdwLowDateTimeConnected, out pdwHighDateTimeConnected);
+			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut => VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
+			public HRESULT get_IsConnected(out int16 pbIsConnected) mut => VT.get_IsConnected(ref this, out pbIsConnected);
+			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut => VT.GetConnectivity(ref this, out pConnectivity);
+			public HRESULT GetCategory(out NLM_NETWORK_CATEGORY pCategory) mut => VT.GetCategory(ref this, out pCategory);
+			public HRESULT SetCategory(NLM_NETWORK_CATEGORY NewCategory) mut => VT.SetCategory(ref this, NewCategory);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -276,26 +210,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppEnumVar) mut
-			{
-				return VT.get__NewEnum(ref this, out ppEnumVar);
-			}
-			public HRESULT Next(uint32 celt, INetwork** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetworks* ppEnumNetwork) mut
-			{
-				return VT.Clone(ref this, out ppEnumNetwork);
-			}
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppEnumVar) mut => VT.get__NewEnum(ref this, out ppEnumVar);
+			public HRESULT Next(uint32 celt, INetwork** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetworks* ppEnumNetwork) mut => VT.Clone(ref this, out ppEnumNetwork);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -313,22 +233,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NetworkAdded(Guid networkId) mut
-			{
-				return VT.NetworkAdded(ref this, networkId);
-			}
-			public HRESULT NetworkDeleted(Guid networkId) mut
-			{
-				return VT.NetworkDeleted(ref this, networkId);
-			}
-			public HRESULT NetworkConnectivityChanged(Guid networkId, NLM_CONNECTIVITY newConnectivity) mut
-			{
-				return VT.NetworkConnectivityChanged(ref this, networkId, newConnectivity);
-			}
-			public HRESULT NetworkPropertyChanged(Guid networkId, NLM_NETWORK_PROPERTY_CHANGE flags) mut
-			{
-				return VT.NetworkPropertyChanged(ref this, networkId, flags);
-			}
+			public HRESULT NetworkAdded(Guid networkId) mut => VT.NetworkAdded(ref this, networkId);
+			public HRESULT NetworkDeleted(Guid networkId) mut => VT.NetworkDeleted(ref this, networkId);
+			public HRESULT NetworkConnectivityChanged(Guid networkId, NLM_CONNECTIVITY newConnectivity) mut => VT.NetworkConnectivityChanged(ref this, networkId, newConnectivity);
+			public HRESULT NetworkPropertyChanged(Guid networkId, NLM_NETWORK_PROPERTY_CHANGE flags) mut => VT.NetworkPropertyChanged(ref this, networkId, flags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -345,34 +254,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNetwork(out INetwork* ppNetwork) mut
-			{
-				return VT.GetNetwork(ref this, out ppNetwork);
-			}
-			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut
-			{
-				return VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
-			}
-			public HRESULT get_IsConnected(out int16 pbIsConnected) mut
-			{
-				return VT.get_IsConnected(ref this, out pbIsConnected);
-			}
-			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut
-			{
-				return VT.GetConnectivity(ref this, out pConnectivity);
-			}
-			public HRESULT GetConnectionId(out Guid pgdConnectionId) mut
-			{
-				return VT.GetConnectionId(ref this, out pgdConnectionId);
-			}
-			public HRESULT GetAdapterId(out Guid pgdAdapterId) mut
-			{
-				return VT.GetAdapterId(ref this, out pgdAdapterId);
-			}
-			public HRESULT GetDomainType(out NLM_DOMAIN_TYPE pDomainType) mut
-			{
-				return VT.GetDomainType(ref this, out pDomainType);
-			}
+			public HRESULT GetNetwork(out INetwork* ppNetwork) mut => VT.GetNetwork(ref this, out ppNetwork);
+			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut => VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
+			public HRESULT get_IsConnected(out int16 pbIsConnected) mut => VT.get_IsConnected(ref this, out pbIsConnected);
+			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut => VT.GetConnectivity(ref this, out pConnectivity);
+			public HRESULT GetConnectionId(out Guid pgdConnectionId) mut => VT.GetConnectionId(ref this, out pgdConnectionId);
+			public HRESULT GetAdapterId(out Guid pgdAdapterId) mut => VT.GetAdapterId(ref this, out pgdAdapterId);
+			public HRESULT GetDomainType(out NLM_DOMAIN_TYPE pDomainType) mut => VT.GetDomainType(ref this, out pDomainType);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -392,26 +281,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IEnumVARIANT* ppEnumVar) mut
-			{
-				return VT.get__NewEnum(ref this, out ppEnumVar);
-			}
-			public HRESULT Next(uint32 celt, INetworkConnection** rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumNetworkConnections* ppEnumNetwork) mut
-			{
-				return VT.Clone(ref this, out ppEnumNetwork);
-			}
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppEnumVar) mut => VT.get__NewEnum(ref this, out ppEnumVar);
+			public HRESULT Next(uint32 celt, INetworkConnection** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumNetworkConnections* ppEnumNetwork) mut => VT.Clone(ref this, out ppEnumNetwork);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -429,14 +304,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NetworkConnectionConnectivityChanged(Guid connectionId, NLM_CONNECTIVITY newConnectivity) mut
-			{
-				return VT.NetworkConnectionConnectivityChanged(ref this, connectionId, newConnectivity);
-			}
-			public HRESULT NetworkConnectionPropertyChanged(Guid connectionId, NLM_CONNECTION_PROPERTY_CHANGE flags) mut
-			{
-				return VT.NetworkConnectionPropertyChanged(ref this, connectionId, flags);
-			}
+			public HRESULT NetworkConnectionConnectivityChanged(Guid connectionId, NLM_CONNECTIVITY newConnectivity) mut => VT.NetworkConnectionConnectivityChanged(ref this, connectionId, newConnectivity);
+			public HRESULT NetworkConnectionPropertyChanged(Guid connectionId, NLM_CONNECTION_PROPERTY_CHANGE flags) mut => VT.NetworkConnectionPropertyChanged(ref this, connectionId, flags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -451,18 +321,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCost(out uint32 pCost, ref NLM_SOCKADDR pDestIPAddr) mut
-			{
-				return VT.GetCost(ref this, out pCost, ref pDestIPAddr);
-			}
-			public HRESULT GetDataPlanStatus(out NLM_DATAPLAN_STATUS pDataPlanStatus, ref NLM_SOCKADDR pDestIPAddr) mut
-			{
-				return VT.GetDataPlanStatus(ref this, out pDataPlanStatus, ref pDestIPAddr);
-			}
-			public HRESULT SetDestinationAddresses(uint32 length, NLM_SOCKADDR* pDestIPAddrList, int16 bAppend) mut
-			{
-				return VT.SetDestinationAddresses(ref this, length, pDestIPAddrList, bAppend);
-			}
+			public HRESULT GetCost(out uint32 pCost, ref NLM_SOCKADDR pDestIPAddr) mut => VT.GetCost(ref this, out pCost, ref pDestIPAddr);
+			public HRESULT GetDataPlanStatus(out NLM_DATAPLAN_STATUS pDataPlanStatus, ref NLM_SOCKADDR pDestIPAddr) mut => VT.GetDataPlanStatus(ref this, out pDataPlanStatus, ref pDestIPAddr);
+			public HRESULT SetDestinationAddresses(uint32 length, NLM_SOCKADDR* pDestIPAddrList, int16 bAppend) mut => VT.SetDestinationAddresses(ref this, length, pDestIPAddrList, bAppend);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -478,14 +340,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CostChanged(uint32 newCost, ref NLM_SOCKADDR pDestAddr) mut
-			{
-				return VT.CostChanged(ref this, newCost, ref pDestAddr);
-			}
-			public HRESULT DataPlanStatusChanged(ref NLM_SOCKADDR pDestAddr) mut
-			{
-				return VT.DataPlanStatusChanged(ref this, ref pDestAddr);
-			}
+			public HRESULT CostChanged(uint32 newCost, ref NLM_SOCKADDR pDestAddr) mut => VT.CostChanged(ref this, newCost, ref pDestAddr);
+			public HRESULT DataPlanStatusChanged(ref NLM_SOCKADDR pDestAddr) mut => VT.DataPlanStatusChanged(ref this, ref pDestAddr);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -500,14 +357,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCost(out uint32 pCost) mut
-			{
-				return VT.GetCost(ref this, out pCost);
-			}
-			public HRESULT GetDataPlanStatus(out NLM_DATAPLAN_STATUS pDataPlanStatus) mut
-			{
-				return VT.GetDataPlanStatus(ref this, out pDataPlanStatus);
-			}
+			public HRESULT GetCost(out uint32 pCost) mut => VT.GetCost(ref this, out pCost);
+			public HRESULT GetDataPlanStatus(out NLM_DATAPLAN_STATUS pDataPlanStatus) mut => VT.GetDataPlanStatus(ref this, out pDataPlanStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -522,14 +374,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectionCostChanged(Guid connectionId, uint32 newCost) mut
-			{
-				return VT.ConnectionCostChanged(ref this, connectionId, newCost);
-			}
-			public HRESULT ConnectionDataPlanStatusChanged(Guid connectionId) mut
-			{
-				return VT.ConnectionDataPlanStatusChanged(ref this, connectionId);
-			}
+			public HRESULT ConnectionCostChanged(Guid connectionId, uint32 newCost) mut => VT.ConnectionCostChanged(ref this, connectionId, newCost);
+			public HRESULT ConnectionDataPlanStatusChanged(Guid connectionId) mut => VT.ConnectionDataPlanStatusChanged(ref this, connectionId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

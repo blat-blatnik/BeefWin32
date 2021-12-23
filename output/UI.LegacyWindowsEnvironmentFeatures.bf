@@ -50,14 +50,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ScanProgress(uint64 dwlSpaceUsed, uint32 dwFlags, PWSTR pcwszStatus) mut
-			{
-				return VT.ScanProgress(ref this, dwlSpaceUsed, dwFlags, pcwszStatus);
-			}
-			public HRESULT PurgeProgress(uint64 dwlSpaceFreed, uint64 dwlSpaceToFree, uint32 dwFlags, PWSTR pcwszStatus) mut
-			{
-				return VT.PurgeProgress(ref this, dwlSpaceFreed, dwlSpaceToFree, dwFlags, pcwszStatus);
-			}
+			public HRESULT ScanProgress(uint64 dwlSpaceUsed, uint32 dwFlags, PWSTR pcwszStatus) mut => VT.ScanProgress(ref this, dwlSpaceUsed, dwFlags, pcwszStatus);
+			public HRESULT PurgeProgress(uint64 dwlSpaceFreed, uint64 dwlSpaceToFree, uint32 dwFlags, PWSTR pcwszStatus) mut => VT.PurgeProgress(ref this, dwlSpaceFreed, dwlSpaceToFree, dwFlags, pcwszStatus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -72,26 +67,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HKEY hkRegKey, PWSTR pcwszVolume, out PWSTR ppwszDisplayName, out PWSTR ppwszDescription, out uint32 pdwFlags) mut
-			{
-				return VT.Initialize(ref this, hkRegKey, pcwszVolume, out ppwszDisplayName, out ppwszDescription, out pdwFlags);
-			}
-			public HRESULT GetSpaceUsed(out uint64 pdwlSpaceUsed, ref IEmptyVolumeCacheCallBack picb) mut
-			{
-				return VT.GetSpaceUsed(ref this, out pdwlSpaceUsed, ref picb);
-			}
-			public HRESULT Purge(uint64 dwlSpaceToFree, ref IEmptyVolumeCacheCallBack picb) mut
-			{
-				return VT.Purge(ref this, dwlSpaceToFree, ref picb);
-			}
-			public HRESULT ShowProperties(HWND hwnd) mut
-			{
-				return VT.ShowProperties(ref this, hwnd);
-			}
-			public HRESULT Deactivate(out uint32 pdwFlags) mut
-			{
-				return VT.Deactivate(ref this, out pdwFlags);
-			}
+			public HRESULT Initialize(HKEY hkRegKey, PWSTR pcwszVolume, out PWSTR ppwszDisplayName, out PWSTR ppwszDescription, out uint32 pdwFlags) mut => VT.Initialize(ref this, hkRegKey, pcwszVolume, out ppwszDisplayName, out ppwszDescription, out pdwFlags);
+			public HRESULT GetSpaceUsed(out uint64 pdwlSpaceUsed, ref IEmptyVolumeCacheCallBack picb) mut => VT.GetSpaceUsed(ref this, out pdwlSpaceUsed, ref picb);
+			public HRESULT Purge(uint64 dwlSpaceToFree, ref IEmptyVolumeCacheCallBack picb) mut => VT.Purge(ref this, dwlSpaceToFree, ref picb);
+			public HRESULT ShowProperties(HWND hwnd) mut => VT.ShowProperties(ref this, hwnd);
+			public HRESULT Deactivate(out uint32 pdwFlags) mut => VT.Deactivate(ref this, out pdwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -109,10 +90,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeEx(HKEY hkRegKey, PWSTR pcwszVolume, PWSTR pcwszKeyName, out PWSTR ppwszDisplayName, out PWSTR ppwszDescription, out PWSTR ppwszBtnText, out uint32 pdwFlags) mut
-			{
-				return VT.InitializeEx(ref this, hkRegKey, pcwszVolume, pcwszKeyName, out ppwszDisplayName, out ppwszDescription, out ppwszBtnText, out pdwFlags);
-			}
+			public HRESULT InitializeEx(HKEY hkRegKey, PWSTR pcwszVolume, PWSTR pcwszKeyName, out PWSTR ppwszDisplayName, out PWSTR ppwszDescription, out PWSTR ppwszBtnText, out uint32 pdwFlags) mut => VT.InitializeEx(ref this, hkRegKey, pcwszVolume, pcwszKeyName, out ppwszDisplayName, out ppwszDescription, out ppwszBtnText, out pdwFlags);
+
 			[CRepr]
 			public struct VTable : IEmptyVolumeCache.VTable
 			{
@@ -126,14 +105,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAbortCallback(IUnknown* punkForAbort) mut
-			{
-				return VT.SetAbortCallback(ref this, punkForAbort);
-			}
-			public HRESULT SetProgressFeedback(uint32 ulProgress, uint32 ulProgressMax) mut
-			{
-				return VT.SetProgressFeedback(ref this, ulProgress, ulProgressMax);
-			}
+			public HRESULT SetAbortCallback(IUnknown* punkForAbort) mut => VT.SetAbortCallback(ref this, punkForAbort);
+			public HRESULT SetProgressFeedback(uint32 ulProgress, uint32 ulProgressMax) mut => VT.SetProgressFeedback(ref this, ulProgress, ulProgressMax);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -148,14 +122,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reconcile(out IReconcileInitiator pInitiator, uint32 dwFlags, HWND hwndOwner, HWND hwndProgressFeedback, uint32 ulcInput, IMoniker** rgpmkOtherInput, out int32 plOutIndex, out IStorage pstgNewResidues, void* pvReserved) mut
-			{
-				return VT.Reconcile(ref this, out pInitiator, dwFlags, hwndOwner, hwndProgressFeedback, ulcInput, rgpmkOtherInput, out plOutIndex, out pstgNewResidues, pvReserved);
-			}
-			public HRESULT GetProgressFeedbackMaxEstimate(out uint32 pulProgressMax) mut
-			{
-				return VT.GetProgressFeedbackMaxEstimate(ref this, out pulProgressMax);
-			}
+			public HRESULT Reconcile(out IReconcileInitiator pInitiator, uint32 dwFlags, HWND hwndOwner, HWND hwndProgressFeedback, uint32 ulcInput, IMoniker** rgpmkOtherInput, out int32 plOutIndex, out IStorage pstgNewResidues, void* pvReserved) mut => VT.Reconcile(ref this, out pInitiator, dwFlags, hwndOwner, hwndProgressFeedback, ulcInput, rgpmkOtherInput, out plOutIndex, out pstgNewResidues, pvReserved);
+			public HRESULT GetProgressFeedbackMaxEstimate(out uint32 pulProgressMax) mut => VT.GetProgressFeedbackMaxEstimate(ref this, out pulProgressMax);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -170,10 +139,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsMonikerInBriefcase(out IMoniker pmk) mut
-			{
-				return VT.IsMonikerInBriefcase(ref this, out pmk);
-			}
+			public HRESULT IsMonikerInBriefcase(out IMoniker pmk) mut => VT.IsMonikerInBriefcase(ref this, out pmk);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -187,22 +154,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSafeMode(uint32 dwFlags) mut
-			{
-				return VT.SetSafeMode(ref this, dwFlags);
-			}
-			public HRESULT EnsureUpdateHTML() mut
-			{
-				return VT.EnsureUpdateHTML(ref this);
-			}
-			public HRESULT SetScheme(PWSTR pwszSchemeName, uint32 dwFlags) mut
-			{
-				return VT.SetScheme(ref this, pwszSchemeName, dwFlags);
-			}
-			public HRESULT GetScheme(char16* pwszSchemeName, out uint32 pdwcchBuffer, uint32 dwFlags) mut
-			{
-				return VT.GetScheme(ref this, pwszSchemeName, out pdwcchBuffer, dwFlags);
-			}
+			public HRESULT SetSafeMode(uint32 dwFlags) mut => VT.SetSafeMode(ref this, dwFlags);
+			public HRESULT EnsureUpdateHTML() mut => VT.EnsureUpdateHTML(ref this);
+			public HRESULT SetScheme(PWSTR pwszSchemeName, uint32 dwFlags) mut => VT.SetScheme(ref this, pwszSchemeName, dwFlags);
+			public HRESULT GetScheme(char16* pwszSchemeName, out uint32 pdwcchBuffer, uint32 dwFlags) mut => VT.GetScheme(ref this, pwszSchemeName, out pdwcchBuffer, dwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -219,22 +175,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReReadWallpaper() mut
-			{
-				return VT.ReReadWallpaper(ref this);
-			}
-			public HRESULT GetADObjectFlags(out uint32 pdwFlags, uint32 dwMask) mut
-			{
-				return VT.GetADObjectFlags(ref this, out pdwFlags, dwMask);
-			}
-			public HRESULT UpdateAllDesktopSubscriptions() mut
-			{
-				return VT.UpdateAllDesktopSubscriptions(ref this);
-			}
-			public HRESULT MakeDynamicChanges(ref IOleObject pOleObj) mut
-			{
-				return VT.MakeDynamicChanges(ref this, ref pOleObj);
-			}
+			public HRESULT ReReadWallpaper() mut => VT.ReReadWallpaper(ref this);
+			public HRESULT GetADObjectFlags(out uint32 pdwFlags, uint32 dwMask) mut => VT.GetADObjectFlags(ref this, out pdwFlags, dwMask);
+			public HRESULT UpdateAllDesktopSubscriptions() mut => VT.UpdateAllDesktopSubscriptions(ref this);
+			public HRESULT MakeDynamicChanges(ref IOleObject pOleObj) mut => VT.MakeDynamicChanges(ref this, ref pOleObj);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

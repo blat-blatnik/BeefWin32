@@ -105,18 +105,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Save(out int8 lpTemplateName, void** scesvcHandle, void** ppvData, out BOOL pbOverwriteAll) mut
-			{
-				return VT.Save(ref this, out lpTemplateName, scesvcHandle, ppvData, out pbOverwriteAll);
-			}
-			public HRESULT IsDirty(out int8 lpTemplateName) mut
-			{
-				return VT.IsDirty(ref this, out lpTemplateName);
-			}
-			public HRESULT FreeBuffer(void* pvData) mut
-			{
-				return VT.FreeBuffer(ref this, pvData);
-			}
+			public HRESULT Save(out int8 lpTemplateName, void** scesvcHandle, void** ppvData, out BOOL pbOverwriteAll) mut => VT.Save(ref this, out lpTemplateName, scesvcHandle, ppvData, out pbOverwriteAll);
+			public HRESULT IsDirty(out int8 lpTemplateName) mut => VT.IsDirty(ref this, out lpTemplateName);
+			public HRESULT FreeBuffer(void* pvData) mut => VT.FreeBuffer(ref this, pvData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -132,22 +124,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetData(void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, out uint32 psceEnumHandle) mut
-			{
-				return VT.GetData(ref this, scesvcHandle, sceType, ppvData, out psceEnumHandle);
-			}
-			public HRESULT Initialize(out int8 lpServiceName, out int8 lpTemplateName, ref ISceSvcAttachmentPersistInfo lpSceSvcPersistInfo, void** pscesvcHandle) mut
-			{
-				return VT.Initialize(ref this, out lpServiceName, out lpTemplateName, ref lpSceSvcPersistInfo, pscesvcHandle);
-			}
-			public HRESULT FreeBuffer(void* pvData) mut
-			{
-				return VT.FreeBuffer(ref this, pvData);
-			}
-			public HRESULT CloseHandle(void* scesvcHandle) mut
-			{
-				return VT.CloseHandle(ref this, scesvcHandle);
-			}
+			public HRESULT GetData(void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, out uint32 psceEnumHandle) mut => VT.GetData(ref this, scesvcHandle, sceType, ppvData, out psceEnumHandle);
+			public HRESULT Initialize(out int8 lpServiceName, out int8 lpTemplateName, ref ISceSvcAttachmentPersistInfo lpSceSvcPersistInfo, void** pscesvcHandle) mut => VT.Initialize(ref this, out lpServiceName, out lpTemplateName, ref lpSceSvcPersistInfo, pscesvcHandle);
+			public HRESULT FreeBuffer(void* pvData) mut => VT.FreeBuffer(ref this, pvData);
+			public HRESULT CloseHandle(void* scesvcHandle) mut => VT.CloseHandle(ref this, scesvcHandle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

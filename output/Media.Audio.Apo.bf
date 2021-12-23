@@ -276,22 +276,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsCompressedFormat(out BOOL pfCompressed) mut
-			{
-				return VT.IsCompressedFormat(ref this, out pfCompressed);
-			}
-			public HRESULT IsEqual(ref IAudioMediaType pIAudioType, out uint32 pdwFlags) mut
-			{
-				return VT.IsEqual(ref this, ref pIAudioType, out pdwFlags);
-			}
-			public WAVEFORMATEX* GetAudioFormat() mut
-			{
-				return VT.GetAudioFormat(ref this);
-			}
-			public HRESULT GetUncompressedAudioFormat(out UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat) mut
-			{
-				return VT.GetUncompressedAudioFormat(ref this, out pUncompressedAudioFormat);
-			}
+			public HRESULT IsCompressedFormat(out BOOL pfCompressed) mut => VT.IsCompressedFormat(ref this, out pfCompressed);
+			public HRESULT IsEqual(ref IAudioMediaType pIAudioType, out uint32 pdwFlags) mut => VT.IsEqual(ref this, ref pIAudioType, out pdwFlags);
+			public WAVEFORMATEX* GetAudioFormat() mut => VT.GetAudioFormat(ref this);
+			public HRESULT GetUncompressedAudioFormat(out UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat) mut => VT.GetUncompressedAudioFormat(ref this, out pUncompressedAudioFormat);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -308,18 +297,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void APOProcess(uint32 u32NumInputConnections, ref APO_CONNECTION_PROPERTY* ppInputConnections, uint32 u32NumOutputConnections, out APO_CONNECTION_PROPERTY* ppOutputConnections) mut
-			{
-				VT.APOProcess(ref this, u32NumInputConnections, ref ppInputConnections, u32NumOutputConnections, out ppOutputConnections);
-			}
-			public uint32 CalcInputFrames(uint32 u32OutputFrameCount) mut
-			{
-				return VT.CalcInputFrames(ref this, u32OutputFrameCount);
-			}
-			public uint32 CalcOutputFrames(uint32 u32InputFrameCount) mut
-			{
-				return VT.CalcOutputFrames(ref this, u32InputFrameCount);
-			}
+			public void APOProcess(uint32 u32NumInputConnections, ref APO_CONNECTION_PROPERTY* ppInputConnections, uint32 u32NumOutputConnections, out APO_CONNECTION_PROPERTY* ppOutputConnections) mut => VT.APOProcess(ref this, u32NumInputConnections, ref ppInputConnections, u32NumOutputConnections, out ppOutputConnections);
+			public uint32 CalcInputFrames(uint32 u32OutputFrameCount) mut => VT.CalcInputFrames(ref this, u32OutputFrameCount);
+			public uint32 CalcOutputFrames(uint32 u32InputFrameCount) mut => VT.CalcOutputFrames(ref this, u32InputFrameCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -335,14 +316,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CalcMaxInputFrames(uint32 u32MaxOutputFrameCount, out uint32 pu32InputFrameCount) mut
-			{
-				return VT.CalcMaxInputFrames(ref this, u32MaxOutputFrameCount, out pu32InputFrameCount);
-			}
-			public HRESULT CalcMaxOutputFrames(uint32 u32MaxInputFrameCount, out uint32 pu32OutputFrameCount) mut
-			{
-				return VT.CalcMaxOutputFrames(ref this, u32MaxInputFrameCount, out pu32OutputFrameCount);
-			}
+			public HRESULT CalcMaxInputFrames(uint32 u32MaxOutputFrameCount, out uint32 pu32InputFrameCount) mut => VT.CalcMaxInputFrames(ref this, u32MaxOutputFrameCount, out pu32InputFrameCount);
+			public HRESULT CalcMaxOutputFrames(uint32 u32MaxInputFrameCount, out uint32 pu32OutputFrameCount) mut => VT.CalcMaxOutputFrames(ref this, u32MaxInputFrameCount, out pu32OutputFrameCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -357,14 +333,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LockForProcess(uint32 u32NumInputConnections, ref APO_CONNECTION_DESCRIPTOR* ppInputConnections, uint32 u32NumOutputConnections, ref APO_CONNECTION_DESCRIPTOR* ppOutputConnections) mut
-			{
-				return VT.LockForProcess(ref this, u32NumInputConnections, ref ppInputConnections, u32NumOutputConnections, ref ppOutputConnections);
-			}
-			public HRESULT UnlockForProcess() mut
-			{
-				return VT.UnlockForProcess(ref this);
-			}
+			public HRESULT LockForProcess(uint32 u32NumInputConnections, ref APO_CONNECTION_DESCRIPTOR* ppInputConnections, uint32 u32NumOutputConnections, ref APO_CONNECTION_DESCRIPTOR* ppOutputConnections) mut => VT.LockForProcess(ref this, u32NumInputConnections, ref ppInputConnections, u32NumOutputConnections, ref ppOutputConnections);
+			public HRESULT UnlockForProcess() mut => VT.UnlockForProcess(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -379,34 +350,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT GetLatency(out int64 pTime) mut
-			{
-				return VT.GetLatency(ref this, out pTime);
-			}
-			public HRESULT GetRegistrationProperties(out APO_REG_PROPERTIES* ppRegProps) mut
-			{
-				return VT.GetRegistrationProperties(ref this, out ppRegProps);
-			}
-			public HRESULT Initialize(uint32 cbDataSize, uint8* pbyData) mut
-			{
-				return VT.Initialize(ref this, cbDataSize, pbyData);
-			}
-			public HRESULT IsInputFormatSupported(ref IAudioMediaType pOppositeFormat, ref IAudioMediaType pRequestedInputFormat, out IAudioMediaType* ppSupportedInputFormat) mut
-			{
-				return VT.IsInputFormatSupported(ref this, ref pOppositeFormat, ref pRequestedInputFormat, out ppSupportedInputFormat);
-			}
-			public HRESULT IsOutputFormatSupported(ref IAudioMediaType pOppositeFormat, ref IAudioMediaType pRequestedOutputFormat, out IAudioMediaType* ppSupportedOutputFormat) mut
-			{
-				return VT.IsOutputFormatSupported(ref this, ref pOppositeFormat, ref pRequestedOutputFormat, out ppSupportedOutputFormat);
-			}
-			public HRESULT GetInputChannelCount(out uint32 pu32ChannelCount) mut
-			{
-				return VT.GetInputChannelCount(ref this, out pu32ChannelCount);
-			}
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT GetLatency(out int64 pTime) mut => VT.GetLatency(ref this, out pTime);
+			public HRESULT GetRegistrationProperties(out APO_REG_PROPERTIES* ppRegProps) mut => VT.GetRegistrationProperties(ref this, out ppRegProps);
+			public HRESULT Initialize(uint32 cbDataSize, uint8* pbyData) mut => VT.Initialize(ref this, cbDataSize, pbyData);
+			public HRESULT IsInputFormatSupported(ref IAudioMediaType pOppositeFormat, ref IAudioMediaType pRequestedInputFormat, out IAudioMediaType* ppSupportedInputFormat) mut => VT.IsInputFormatSupported(ref this, ref pOppositeFormat, ref pRequestedInputFormat, out ppSupportedInputFormat);
+			public HRESULT IsOutputFormatSupported(ref IAudioMediaType pOppositeFormat, ref IAudioMediaType pRequestedOutputFormat, out IAudioMediaType* ppSupportedOutputFormat) mut => VT.IsOutputFormatSupported(ref this, ref pOppositeFormat, ref pRequestedOutputFormat, out ppSupportedOutputFormat);
+			public HRESULT GetInputChannelCount(out uint32 pu32ChannelCount) mut => VT.GetInputChannelCount(ref this, out pu32ChannelCount);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -426,10 +377,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAudioDeviceModulesManager(ref IUnknown pAudioDeviceModulesManager) mut
-			{
-				return VT.SetAudioDeviceModulesManager(ref this, ref pAudioDeviceModulesManager);
-			}
+			public HRESULT SetAudioDeviceModulesManager(ref IUnknown pAudioDeviceModulesManager) mut => VT.SetAudioDeviceModulesManager(ref this, ref pAudioDeviceModulesManager);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -443,6 +392,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -455,10 +405,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEffectsList(Guid** ppEffectsIds, out uint32 pcEffects, HANDLE Event) mut
-			{
-				return VT.GetEffectsList(ref this, ppEffectsIds, out pcEffects, Event);
-			}
+			public HRESULT GetEffectsList(Guid** ppEffectsIds, out uint32 pcEffects, HANDLE Event) mut => VT.GetEffectsList(ref this, ppEffectsIds, out pcEffects, Event);
+
 			[CRepr]
 			public struct VTable : IAudioSystemEffects.VTable
 			{
@@ -472,18 +420,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFormatCount(out uint32 pcFormats) mut
-			{
-				return VT.GetFormatCount(ref this, out pcFormats);
-			}
-			public HRESULT GetFormat(uint32 nFormat, out IAudioMediaType* ppFormat) mut
-			{
-				return VT.GetFormat(ref this, nFormat, out ppFormat);
-			}
-			public HRESULT GetFormatRepresentation(uint32 nFormat, out PWSTR ppwstrFormatRep) mut
-			{
-				return VT.GetFormatRepresentation(ref this, nFormat, out ppwstrFormatRep);
-			}
+			public HRESULT GetFormatCount(out uint32 pcFormats) mut => VT.GetFormatCount(ref this, out pcFormats);
+			public HRESULT GetFormat(uint32 nFormat, out IAudioMediaType* ppFormat) mut => VT.GetFormat(ref this, nFormat, out ppFormat);
+			public HRESULT GetFormatRepresentation(uint32 nFormat, out PWSTR ppwstrFormatRep) mut => VT.GetFormatRepresentation(ref this, nFormat, out ppwstrFormatRep);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -499,18 +439,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddAuxiliaryInput(uint32 dwInputId, uint32 cbDataSize, uint8* pbyData, ref APO_CONNECTION_DESCRIPTOR pInputConnection) mut
-			{
-				return VT.AddAuxiliaryInput(ref this, dwInputId, cbDataSize, pbyData, ref pInputConnection);
-			}
-			public HRESULT RemoveAuxiliaryInput(uint32 dwInputId) mut
-			{
-				return VT.RemoveAuxiliaryInput(ref this, dwInputId);
-			}
-			public HRESULT IsInputFormatSupported(ref IAudioMediaType pRequestedInputFormat, out IAudioMediaType* ppSupportedInputFormat) mut
-			{
-				return VT.IsInputFormatSupported(ref this, ref pRequestedInputFormat, out ppSupportedInputFormat);
-			}
+			public HRESULT AddAuxiliaryInput(uint32 dwInputId, uint32 cbDataSize, uint8* pbyData, ref APO_CONNECTION_DESCRIPTOR pInputConnection) mut => VT.AddAuxiliaryInput(ref this, dwInputId, cbDataSize, pbyData, ref pInputConnection);
+			public HRESULT RemoveAuxiliaryInput(uint32 dwInputId) mut => VT.RemoveAuxiliaryInput(ref this, dwInputId);
+			public HRESULT IsInputFormatSupported(ref IAudioMediaType pRequestedInputFormat, out IAudioMediaType* ppSupportedInputFormat) mut => VT.IsInputFormatSupported(ref this, ref pRequestedInputFormat, out ppSupportedInputFormat);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -526,10 +458,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void AcceptInput(uint32 dwInputId, in APO_CONNECTION_PROPERTY pInputConnection) mut
-			{
-				VT.AcceptInput(ref this, dwInputId, pInputConnection);
-			}
+			public void AcceptInput(uint32 dwInputId, in APO_CONNECTION_PROPERTY pInputConnection) mut => VT.AcceptInput(ref this, dwInputId, pInputConnection);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -543,6 +473,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -555,14 +486,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetControllableSystemEffectsList(AUDIO_SYSTEMEFFECT** effects, out uint32 numEffects, HANDLE event) mut
-			{
-				return VT.GetControllableSystemEffectsList(ref this, effects, out numEffects, event);
-			}
-			public HRESULT SetAudioSystemEffectState(Guid effectId, AUDIO_SYSTEMEFFECT_STATE state) mut
-			{
-				return VT.SetAudioSystemEffectState(ref this, effectId, state);
-			}
+			public HRESULT GetControllableSystemEffectsList(AUDIO_SYSTEMEFFECT** effects, out uint32 numEffects, HANDLE event) mut => VT.GetControllableSystemEffectsList(ref this, effects, out numEffects, event);
+			public HRESULT SetAudioSystemEffectState(Guid effectId, AUDIO_SYSTEMEFFECT_STATE state) mut => VT.SetAudioSystemEffectState(ref this, effectId, state);
+
 			[CRepr]
 			public struct VTable : IAudioSystemEffects2.VTable
 			{
@@ -577,10 +503,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRealTimeWorkQueue(out uint32 workQueueId) mut
-			{
-				return VT.GetRealTimeWorkQueue(ref this, out workQueueId);
-			}
+			public HRESULT GetRealTimeWorkQueue(out uint32 workQueueId) mut => VT.GetRealTimeWorkQueue(ref this, out workQueueId);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -594,10 +518,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void ApoLog(APO_LOG_LEVEL level, PWSTR format) mut
-			{
-				VT.ApoLog(ref this, level, format);
-			}
+			public void ApoLog(APO_LOG_LEVEL level, PWSTR format) mut => VT.ApoLog(ref this, level, format);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -611,14 +533,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetApoNotificationRegistrationInfo(APO_NOTIFICATION_DESCRIPTOR** apoNotifications, out uint32 count) mut
-			{
-				return VT.GetApoNotificationRegistrationInfo(ref this, apoNotifications, out count);
-			}
-			public void HandleNotification(ref APO_NOTIFICATION apoNotification) mut
-			{
-				VT.HandleNotification(ref this, ref apoNotification);
-			}
+			public HRESULT GetApoNotificationRegistrationInfo(APO_NOTIFICATION_DESCRIPTOR** apoNotifications, out uint32 count) mut => VT.GetApoNotificationRegistrationInfo(ref this, apoNotifications, out count);
+			public void HandleNotification(ref APO_NOTIFICATION apoNotification) mut => VT.HandleNotification(ref this, ref apoNotification);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

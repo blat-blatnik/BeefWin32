@@ -14,14 +14,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ExtractThumbnail(ref IStorage pStg, uint32 ulLength, uint32 ulHeight, out uint32 pulOutputLength, out uint32 pulOutputHeight, out HBITMAP phOutputBitmap) mut
-			{
-				return VT.ExtractThumbnail(ref this, ref pStg, ulLength, ulHeight, out pulOutputLength, out pulOutputHeight, out phOutputBitmap);
-			}
-			public HRESULT OnFileUpdated(ref IStorage pStg) mut
-			{
-				return VT.OnFileUpdated(ref this, ref pStg);
-			}
+			public HRESULT ExtractThumbnail(ref IStorage pStg, uint32 ulLength, uint32 ulHeight, out uint32 pulOutputLength, out uint32 pulOutputHeight, out HBITMAP phOutputBitmap) mut => VT.ExtractThumbnail(ref this, ref pStg, ulLength, ulHeight, out pulOutputLength, out pulOutputHeight, out phOutputBitmap);
+			public HRESULT OnFileUpdated(ref IStorage pStg) mut => VT.OnFileUpdated(ref this, ref pStg);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -36,10 +31,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Dummy(HICON h1, HDC h2) mut
-			{
-				return VT.Dummy(ref this, h1, h2);
-			}
+			public HRESULT Dummy(HICON h1, HDC h2) mut => VT.Dummy(ref this, h1, h2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

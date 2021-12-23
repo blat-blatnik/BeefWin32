@@ -23,10 +23,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR fileExtensionOrProtocol, CreateProcessMethod method, PWSTR currentDirectory, ref IShellItem execTarget, ref IUnknown site, PWSTR application, PWSTR targetFile, PWSTR arguments, PWSTR verb) mut
-			{
-				return VT.Initialize(ref this, fileExtensionOrProtocol, method, currentDirectory, ref execTarget, ref site, application, targetFile, arguments, verb);
-			}
+			public HRESULT Initialize(PWSTR fileExtensionOrProtocol, CreateProcessMethod method, PWSTR currentDirectory, ref IShellItem execTarget, ref IUnknown site, PWSTR application, PWSTR targetFile, PWSTR arguments, PWSTR verb) mut => VT.Initialize(ref this, fileExtensionOrProtocol, method, currentDirectory, ref execTarget, ref site, application, targetFile, arguments, verb);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

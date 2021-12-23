@@ -4258,22 +4258,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StartIndex(out uint32 value) mut
-			{
-				return VT.get_StartIndex(ref this, out value);
-			}
-			public HRESULT get_Length(out uint32 value) mut
-			{
-				return VT.get_Length(ref this, out value);
-			}
-			public HRESULT get_CorrectiveAction(out CORRECTIVE_ACTION value) mut
-			{
-				return VT.get_CorrectiveAction(ref this, out value);
-			}
-			public HRESULT get_Replacement(out PWSTR value) mut
-			{
-				return VT.get_Replacement(ref this, out value);
-			}
+			public HRESULT get_StartIndex(out uint32 value) mut => VT.get_StartIndex(ref this, out value);
+			public HRESULT get_Length(out uint32 value) mut => VT.get_Length(ref this, out value);
+			public HRESULT get_CorrectiveAction(out CORRECTIVE_ACTION value) mut => VT.get_CorrectiveAction(ref this, out value);
+			public HRESULT get_Replacement(out PWSTR value) mut => VT.get_Replacement(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4290,10 +4279,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(out ISpellingError* value) mut
-			{
-				return VT.Next(ref this, out value);
-			}
+			public HRESULT Next(out ISpellingError* value) mut => VT.Next(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4307,22 +4294,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Id(out PWSTR value) mut
-			{
-				return VT.get_Id(ref this, out value);
-			}
-			public HRESULT get_Heading(out PWSTR value) mut
-			{
-				return VT.get_Heading(ref this, out value);
-			}
-			public HRESULT get_Description(out PWSTR value) mut
-			{
-				return VT.get_Description(ref this, out value);
-			}
-			public HRESULT get_Labels(out IEnumString* value) mut
-			{
-				return VT.get_Labels(ref this, out value);
-			}
+			public HRESULT get_Id(out PWSTR value) mut => VT.get_Id(ref this, out value);
+			public HRESULT get_Heading(out PWSTR value) mut => VT.get_Heading(ref this, out value);
+			public HRESULT get_Description(out PWSTR value) mut => VT.get_Description(ref this, out value);
+			public HRESULT get_Labels(out IEnumString* value) mut => VT.get_Labels(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4339,10 +4315,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Invoke(ref ISpellChecker sender) mut
-			{
-				return VT.Invoke(ref this, ref sender);
-			}
+			public HRESULT Invoke(ref ISpellChecker sender) mut => VT.Invoke(ref this, ref sender);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4356,62 +4330,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LanguageTag(out PWSTR value) mut
-			{
-				return VT.get_LanguageTag(ref this, out value);
-			}
-			public HRESULT Check(PWSTR text, out IEnumSpellingError* value) mut
-			{
-				return VT.Check(ref this, text, out value);
-			}
-			public HRESULT Suggest(PWSTR word, out IEnumString* value) mut
-			{
-				return VT.Suggest(ref this, word, out value);
-			}
-			public HRESULT Add(PWSTR word) mut
-			{
-				return VT.Add(ref this, word);
-			}
-			public HRESULT Ignore(PWSTR word) mut
-			{
-				return VT.Ignore(ref this, word);
-			}
-			public HRESULT AutoCorrect(PWSTR from, PWSTR to) mut
-			{
-				return VT.AutoCorrect(ref this, from, to);
-			}
-			public HRESULT GetOptionValue(PWSTR optionId, out uint8 value) mut
-			{
-				return VT.GetOptionValue(ref this, optionId, out value);
-			}
-			public HRESULT get_OptionIds(out IEnumString* value) mut
-			{
-				return VT.get_OptionIds(ref this, out value);
-			}
-			public HRESULT get_Id(out PWSTR value) mut
-			{
-				return VT.get_Id(ref this, out value);
-			}
-			public HRESULT get_LocalizedName(out PWSTR value) mut
-			{
-				return VT.get_LocalizedName(ref this, out value);
-			}
-			public HRESULT add_SpellCheckerChanged(ref ISpellCheckerChangedEventHandler handler, out uint32 eventCookie) mut
-			{
-				return VT.add_SpellCheckerChanged(ref this, ref handler, out eventCookie);
-			}
-			public HRESULT remove_SpellCheckerChanged(uint32 eventCookie) mut
-			{
-				return VT.remove_SpellCheckerChanged(ref this, eventCookie);
-			}
-			public HRESULT GetOptionDescription(PWSTR optionId, out IOptionDescription* value) mut
-			{
-				return VT.GetOptionDescription(ref this, optionId, out value);
-			}
-			public HRESULT ComprehensiveCheck(PWSTR text, out IEnumSpellingError* value) mut
-			{
-				return VT.ComprehensiveCheck(ref this, text, out value);
-			}
+			public HRESULT get_LanguageTag(out PWSTR value) mut => VT.get_LanguageTag(ref this, out value);
+			public HRESULT Check(PWSTR text, out IEnumSpellingError* value) mut => VT.Check(ref this, text, out value);
+			public HRESULT Suggest(PWSTR word, out IEnumString* value) mut => VT.Suggest(ref this, word, out value);
+			public HRESULT Add(PWSTR word) mut => VT.Add(ref this, word);
+			public HRESULT Ignore(PWSTR word) mut => VT.Ignore(ref this, word);
+			public HRESULT AutoCorrect(PWSTR from, PWSTR to) mut => VT.AutoCorrect(ref this, from, to);
+			public HRESULT GetOptionValue(PWSTR optionId, out uint8 value) mut => VT.GetOptionValue(ref this, optionId, out value);
+			public HRESULT get_OptionIds(out IEnumString* value) mut => VT.get_OptionIds(ref this, out value);
+			public HRESULT get_Id(out PWSTR value) mut => VT.get_Id(ref this, out value);
+			public HRESULT get_LocalizedName(out PWSTR value) mut => VT.get_LocalizedName(ref this, out value);
+			public HRESULT add_SpellCheckerChanged(ref ISpellCheckerChangedEventHandler handler, out uint32 eventCookie) mut => VT.add_SpellCheckerChanged(ref this, ref handler, out eventCookie);
+			public HRESULT remove_SpellCheckerChanged(uint32 eventCookie) mut => VT.remove_SpellCheckerChanged(ref this, eventCookie);
+			public HRESULT GetOptionDescription(PWSTR optionId, out IOptionDescription* value) mut => VT.GetOptionDescription(ref this, optionId, out value);
+			public HRESULT ComprehensiveCheck(PWSTR text, out IEnumSpellingError* value) mut => VT.ComprehensiveCheck(ref this, text, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4438,10 +4371,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Remove(PWSTR word) mut
-			{
-				return VT.Remove(ref this, word);
-			}
+			public HRESULT Remove(PWSTR word) mut => VT.Remove(ref this, word);
+
 			[CRepr]
 			public struct VTable : ISpellChecker.VTable
 			{
@@ -4455,18 +4386,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SupportedLanguages(out IEnumString* value) mut
-			{
-				return VT.get_SupportedLanguages(ref this, out value);
-			}
-			public HRESULT IsSupported(PWSTR languageTag, out BOOL value) mut
-			{
-				return VT.IsSupported(ref this, languageTag, out value);
-			}
-			public HRESULT CreateSpellChecker(PWSTR languageTag, out ISpellChecker* value) mut
-			{
-				return VT.CreateSpellChecker(ref this, languageTag, out value);
-			}
+			public HRESULT get_SupportedLanguages(out IEnumString* value) mut => VT.get_SupportedLanguages(ref this, out value);
+			public HRESULT IsSupported(PWSTR languageTag, out BOOL value) mut => VT.IsSupported(ref this, languageTag, out value);
+			public HRESULT CreateSpellChecker(PWSTR languageTag, out ISpellChecker* value) mut => VT.CreateSpellChecker(ref this, languageTag, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4482,14 +4405,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterUserDictionary(PWSTR dictionaryPath, PWSTR languageTag) mut
-			{
-				return VT.RegisterUserDictionary(ref this, dictionaryPath, languageTag);
-			}
-			public HRESULT UnregisterUserDictionary(PWSTR dictionaryPath, PWSTR languageTag) mut
-			{
-				return VT.UnregisterUserDictionary(ref this, dictionaryPath, languageTag);
-			}
+			public HRESULT RegisterUserDictionary(PWSTR dictionaryPath, PWSTR languageTag) mut => VT.RegisterUserDictionary(ref this, dictionaryPath, languageTag);
+			public HRESULT UnregisterUserDictionary(PWSTR dictionaryPath, PWSTR languageTag) mut => VT.UnregisterUserDictionary(ref this, dictionaryPath, languageTag);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4504,46 +4422,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LanguageTag(out PWSTR value) mut
-			{
-				return VT.get_LanguageTag(ref this, out value);
-			}
-			public HRESULT Check(PWSTR text, out IEnumSpellingError* value) mut
-			{
-				return VT.Check(ref this, text, out value);
-			}
-			public HRESULT Suggest(PWSTR word, out IEnumString* value) mut
-			{
-				return VT.Suggest(ref this, word, out value);
-			}
-			public HRESULT GetOptionValue(PWSTR optionId, out uint8 value) mut
-			{
-				return VT.GetOptionValue(ref this, optionId, out value);
-			}
-			public HRESULT SetOptionValue(PWSTR optionId, uint8 value) mut
-			{
-				return VT.SetOptionValue(ref this, optionId, value);
-			}
-			public HRESULT get_OptionIds(out IEnumString* value) mut
-			{
-				return VT.get_OptionIds(ref this, out value);
-			}
-			public HRESULT get_Id(out PWSTR value) mut
-			{
-				return VT.get_Id(ref this, out value);
-			}
-			public HRESULT get_LocalizedName(out PWSTR value) mut
-			{
-				return VT.get_LocalizedName(ref this, out value);
-			}
-			public HRESULT GetOptionDescription(PWSTR optionId, out IOptionDescription* value) mut
-			{
-				return VT.GetOptionDescription(ref this, optionId, out value);
-			}
-			public HRESULT InitializeWordlist(WORDLIST_TYPE wordlistType, ref IEnumString words) mut
-			{
-				return VT.InitializeWordlist(ref this, wordlistType, ref words);
-			}
+			public HRESULT get_LanguageTag(out PWSTR value) mut => VT.get_LanguageTag(ref this, out value);
+			public HRESULT Check(PWSTR text, out IEnumSpellingError* value) mut => VT.Check(ref this, text, out value);
+			public HRESULT Suggest(PWSTR word, out IEnumString* value) mut => VT.Suggest(ref this, word, out value);
+			public HRESULT GetOptionValue(PWSTR optionId, out uint8 value) mut => VT.GetOptionValue(ref this, optionId, out value);
+			public HRESULT SetOptionValue(PWSTR optionId, uint8 value) mut => VT.SetOptionValue(ref this, optionId, value);
+			public HRESULT get_OptionIds(out IEnumString* value) mut => VT.get_OptionIds(ref this, out value);
+			public HRESULT get_Id(out PWSTR value) mut => VT.get_Id(ref this, out value);
+			public HRESULT get_LocalizedName(out PWSTR value) mut => VT.get_LocalizedName(ref this, out value);
+			public HRESULT GetOptionDescription(PWSTR optionId, out IOptionDescription* value) mut => VT.GetOptionDescription(ref this, optionId, out value);
+			public HRESULT InitializeWordlist(WORDLIST_TYPE wordlistType, ref IEnumString words) mut => VT.InitializeWordlist(ref this, wordlistType, ref words);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4566,10 +4455,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComprehensiveCheck(PWSTR text, out IEnumSpellingError* value) mut
-			{
-				return VT.ComprehensiveCheck(ref this, text, out value);
-			}
+			public HRESULT ComprehensiveCheck(PWSTR text, out IEnumSpellingError* value) mut => VT.ComprehensiveCheck(ref this, text, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4583,18 +4470,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SupportedLanguages(out IEnumString* value) mut
-			{
-				return VT.get_SupportedLanguages(ref this, out value);
-			}
-			public HRESULT IsSupported(PWSTR languageTag, out BOOL value) mut
-			{
-				return VT.IsSupported(ref this, languageTag, out value);
-			}
-			public HRESULT CreateSpellCheckProvider(PWSTR languageTag, out ISpellCheckProvider* value) mut
-			{
-				return VT.CreateSpellCheckProvider(ref this, languageTag, out value);
-			}
+			public HRESULT get_SupportedLanguages(out IEnumString* value) mut => VT.get_SupportedLanguages(ref this, out value);
+			public HRESULT IsSupported(PWSTR languageTag, out BOOL value) mut => VT.IsSupported(ref this, languageTag, out value);
+			public HRESULT CreateSpellCheckProvider(PWSTR languageTag, out ISpellCheckProvider* value) mut => VT.CreateSpellCheckProvider(ref this, languageTag, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4610,26 +4489,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStatus(int32* plFlags, int32* pcchBuf) mut
-			{
-				return VT.GetStatus(ref this, plFlags, pcchBuf);
-			}
-			public HRESULT LockBuf(int32 cchOffset, int32 cchMaxLock, out uint16* ppszBuf, int32* pcchBuf) mut
-			{
-				return VT.LockBuf(ref this, cchOffset, cchMaxLock, out ppszBuf, pcchBuf);
-			}
-			public HRESULT UnlockBuf(PWSTR pszBuf, int32 cchOffset, int32 cchWrite) mut
-			{
-				return VT.UnlockBuf(ref this, pszBuf, cchOffset, cchWrite);
-			}
-			public HRESULT Insert(int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) mut
-			{
-				return VT.Insert(ref this, cchOffset, cchMaxInsert, pcchActual);
-			}
-			public HRESULT Delete(int32 cchOffset, int32 cchDelete) mut
-			{
-				return VT.Delete(ref this, cchOffset, cchDelete);
-			}
+			public HRESULT GetStatus(int32* plFlags, int32* pcchBuf) mut => VT.GetStatus(ref this, plFlags, pcchBuf);
+			public HRESULT LockBuf(int32 cchOffset, int32 cchMaxLock, out uint16* ppszBuf, int32* pcchBuf) mut => VT.LockBuf(ref this, cchOffset, cchMaxLock, out ppszBuf, pcchBuf);
+			public HRESULT UnlockBuf(PWSTR pszBuf, int32 cchOffset, int32 cchWrite) mut => VT.UnlockBuf(ref this, pszBuf, cchOffset, cchWrite);
+			public HRESULT Insert(int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) mut => VT.Insert(ref this, cchOffset, cchMaxInsert, pcchActual);
+			public HRESULT Delete(int32 cchOffset, int32 cchDelete) mut => VT.Delete(ref this, cchOffset, cchDelete);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4647,26 +4512,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStatus(int32* plFlags, int32* pcchBuf) mut
-			{
-				return VT.GetStatus(ref this, plFlags, pcchBuf);
-			}
-			public HRESULT LockBuf(int32 cchOffset, int32 cchMaxLock, out CHAR* ppszBuf, int32* pcchBuf) mut
-			{
-				return VT.LockBuf(ref this, cchOffset, cchMaxLock, out ppszBuf, pcchBuf);
-			}
-			public HRESULT UnlockBuf(PSTR pszBuf, int32 cchOffset, int32 cchWrite) mut
-			{
-				return VT.UnlockBuf(ref this, pszBuf, cchOffset, cchWrite);
-			}
-			public HRESULT Insert(int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) mut
-			{
-				return VT.Insert(ref this, cchOffset, cchMaxInsert, pcchActual);
-			}
-			public HRESULT Delete(int32 cchOffset, int32 cchDelete) mut
-			{
-				return VT.Delete(ref this, cchOffset, cchDelete);
-			}
+			public HRESULT GetStatus(int32* plFlags, int32* pcchBuf) mut => VT.GetStatus(ref this, plFlags, pcchBuf);
+			public HRESULT LockBuf(int32 cchOffset, int32 cchMaxLock, out CHAR* ppszBuf, int32* pcchBuf) mut => VT.LockBuf(ref this, cchOffset, cchMaxLock, out ppszBuf, pcchBuf);
+			public HRESULT UnlockBuf(PSTR pszBuf, int32 cchOffset, int32 cchWrite) mut => VT.UnlockBuf(ref this, pszBuf, cchOffset, cchWrite);
+			public HRESULT Insert(int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) mut => VT.Insert(ref this, cchOffset, cchMaxInsert, pcchActual);
+			public HRESULT Delete(int32 cchOffset, int32 cchDelete) mut => VT.Delete(ref this, cchOffset, cchDelete);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4684,22 +4535,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Sync(BOOL fNoAccess) mut
-			{
-				return VT.Sync(ref this, fNoAccess);
-			}
-			public HRESULT GetLength(int32* plLen) mut
-			{
-				return VT.GetLength(ref this, plLen);
-			}
-			public HRESULT SetMLStr(int32 lDestPos, int32 lDestLen, ref IUnknown pSrcMLStr, int32 lSrcPos, int32 lSrcLen) mut
-			{
-				return VT.SetMLStr(ref this, lDestPos, lDestLen, ref pSrcMLStr, lSrcPos, lSrcLen);
-			}
-			public HRESULT GetMLStr(int32 lSrcPos, int32 lSrcLen, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid piid, out IUnknown* ppDestMLStr, int32* plDestPos, int32* plDestLen) mut
-			{
-				return VT.GetMLStr(ref this, lSrcPos, lSrcLen, ref pUnkOuter, dwClsContext, piid, out ppDestMLStr, plDestPos, plDestLen);
-			}
+			public HRESULT Sync(BOOL fNoAccess) mut => VT.Sync(ref this, fNoAccess);
+			public HRESULT GetLength(int32* plLen) mut => VT.GetLength(ref this, plLen);
+			public HRESULT SetMLStr(int32 lDestPos, int32 lDestLen, ref IUnknown pSrcMLStr, int32 lSrcPos, int32 lSrcLen) mut => VT.SetMLStr(ref this, lDestPos, lDestLen, ref pSrcMLStr, lSrcPos, lSrcLen);
+			public HRESULT GetMLStr(int32 lSrcPos, int32 lSrcLen, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid piid, out IUnknown* ppDestMLStr, int32* plDestPos, int32* plDestLen) mut => VT.GetMLStr(ref this, lSrcPos, lSrcLen, ref pUnkOuter, dwClsContext, piid, out ppDestMLStr, plDestPos, plDestLen);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4716,38 +4556,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetWStr(int32 lDestPos, int32 lDestLen, char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) mut
-			{
-				return VT.SetWStr(ref this, lDestPos, lDestLen, pszSrc, cchSrc, pcchActual, plActualLen);
-			}
-			public HRESULT SetStrBufW(int32 lDestPos, int32 lDestLen, IMLangStringBufW* pSrcBuf, int32* pcchActual, int32* plActualLen) mut
-			{
-				return VT.SetStrBufW(ref this, lDestPos, lDestLen, pSrcBuf, pcchActual, plActualLen);
-			}
-			public HRESULT GetWStr(int32 lSrcPos, int32 lSrcLen, char16* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) mut
-			{
-				return VT.GetWStr(ref this, lSrcPos, lSrcLen, pszDest, cchDest, pcchActual, plActualLen);
-			}
-			public HRESULT GetStrBufW(int32 lSrcPos, int32 lSrcMaxLen, out IMLangStringBufW* ppDestBuf, int32* plDestLen) mut
-			{
-				return VT.GetStrBufW(ref this, lSrcPos, lSrcMaxLen, out ppDestBuf, plDestLen);
-			}
-			public HRESULT LockWStr(int32 lSrcPos, int32 lSrcLen, int32 lFlags, int32 cchRequest, PWSTR* ppszDest, int32* pcchDest, int32* plDestLen) mut
-			{
-				return VT.LockWStr(ref this, lSrcPos, lSrcLen, lFlags, cchRequest, ppszDest, pcchDest, plDestLen);
-			}
-			public HRESULT UnlockWStr(char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) mut
-			{
-				return VT.UnlockWStr(ref this, pszSrc, cchSrc, pcchActual, plActualLen);
-			}
-			public HRESULT SetLocale(int32 lDestPos, int32 lDestLen, uint32 locale) mut
-			{
-				return VT.SetLocale(ref this, lDestPos, lDestLen, locale);
-			}
-			public HRESULT GetLocale(int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) mut
-			{
-				return VT.GetLocale(ref this, lSrcPos, lSrcMaxLen, plocale, plLocalePos, plLocaleLen);
-			}
+			public HRESULT SetWStr(int32 lDestPos, int32 lDestLen, char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) mut => VT.SetWStr(ref this, lDestPos, lDestLen, pszSrc, cchSrc, pcchActual, plActualLen);
+			public HRESULT SetStrBufW(int32 lDestPos, int32 lDestLen, IMLangStringBufW* pSrcBuf, int32* pcchActual, int32* plActualLen) mut => VT.SetStrBufW(ref this, lDestPos, lDestLen, pSrcBuf, pcchActual, plActualLen);
+			public HRESULT GetWStr(int32 lSrcPos, int32 lSrcLen, char16* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) mut => VT.GetWStr(ref this, lSrcPos, lSrcLen, pszDest, cchDest, pcchActual, plActualLen);
+			public HRESULT GetStrBufW(int32 lSrcPos, int32 lSrcMaxLen, out IMLangStringBufW* ppDestBuf, int32* plDestLen) mut => VT.GetStrBufW(ref this, lSrcPos, lSrcMaxLen, out ppDestBuf, plDestLen);
+			public HRESULT LockWStr(int32 lSrcPos, int32 lSrcLen, int32 lFlags, int32 cchRequest, PWSTR* ppszDest, int32* pcchDest, int32* plDestLen) mut => VT.LockWStr(ref this, lSrcPos, lSrcLen, lFlags, cchRequest, ppszDest, pcchDest, plDestLen);
+			public HRESULT UnlockWStr(char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) mut => VT.UnlockWStr(ref this, pszSrc, cchSrc, pcchActual, plActualLen);
+			public HRESULT SetLocale(int32 lDestPos, int32 lDestLen, uint32 locale) mut => VT.SetLocale(ref this, lDestPos, lDestLen, locale);
+			public HRESULT GetLocale(int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) mut => VT.GetLocale(ref this, lSrcPos, lSrcMaxLen, plocale, plLocalePos, plLocaleLen);
+
 			[CRepr]
 			public struct VTable : IMLangString.VTable
 			{
@@ -4768,38 +4585,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAStr(int32 lDestPos, int32 lDestLen, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) mut
-			{
-				return VT.SetAStr(ref this, lDestPos, lDestLen, uCodePage, pszSrc, cchSrc, pcchActual, plActualLen);
-			}
-			public HRESULT SetStrBufA(int32 lDestPos, int32 lDestLen, uint32 uCodePage, IMLangStringBufA* pSrcBuf, int32* pcchActual, int32* plActualLen) mut
-			{
-				return VT.SetStrBufA(ref this, lDestPos, lDestLen, uCodePage, pSrcBuf, pcchActual, plActualLen);
-			}
-			public HRESULT GetAStr(int32 lSrcPos, int32 lSrcLen, uint32 uCodePageIn, out uint32 puCodePageOut, uint8* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) mut
-			{
-				return VT.GetAStr(ref this, lSrcPos, lSrcLen, uCodePageIn, out puCodePageOut, pszDest, cchDest, pcchActual, plActualLen);
-			}
-			public HRESULT GetStrBufA(int32 lSrcPos, int32 lSrcMaxLen, uint32* puDestCodePage, out IMLangStringBufA* ppDestBuf, int32* plDestLen) mut
-			{
-				return VT.GetStrBufA(ref this, lSrcPos, lSrcMaxLen, puDestCodePage, out ppDestBuf, plDestLen);
-			}
-			public HRESULT LockAStr(int32 lSrcPos, int32 lSrcLen, int32 lFlags, uint32 uCodePageIn, int32 cchRequest, uint32* puCodePageOut, PSTR* ppszDest, int32* pcchDest, int32* plDestLen) mut
-			{
-				return VT.LockAStr(ref this, lSrcPos, lSrcLen, lFlags, uCodePageIn, cchRequest, puCodePageOut, ppszDest, pcchDest, plDestLen);
-			}
-			public HRESULT UnlockAStr(uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) mut
-			{
-				return VT.UnlockAStr(ref this, pszSrc, cchSrc, pcchActual, plActualLen);
-			}
-			public HRESULT SetLocale(int32 lDestPos, int32 lDestLen, uint32 locale) mut
-			{
-				return VT.SetLocale(ref this, lDestPos, lDestLen, locale);
-			}
-			public HRESULT GetLocale(int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) mut
-			{
-				return VT.GetLocale(ref this, lSrcPos, lSrcMaxLen, plocale, plLocalePos, plLocaleLen);
-			}
+			public HRESULT SetAStr(int32 lDestPos, int32 lDestLen, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) mut => VT.SetAStr(ref this, lDestPos, lDestLen, uCodePage, pszSrc, cchSrc, pcchActual, plActualLen);
+			public HRESULT SetStrBufA(int32 lDestPos, int32 lDestLen, uint32 uCodePage, IMLangStringBufA* pSrcBuf, int32* pcchActual, int32* plActualLen) mut => VT.SetStrBufA(ref this, lDestPos, lDestLen, uCodePage, pSrcBuf, pcchActual, plActualLen);
+			public HRESULT GetAStr(int32 lSrcPos, int32 lSrcLen, uint32 uCodePageIn, out uint32 puCodePageOut, uint8* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) mut => VT.GetAStr(ref this, lSrcPos, lSrcLen, uCodePageIn, out puCodePageOut, pszDest, cchDest, pcchActual, plActualLen);
+			public HRESULT GetStrBufA(int32 lSrcPos, int32 lSrcMaxLen, uint32* puDestCodePage, out IMLangStringBufA* ppDestBuf, int32* plDestLen) mut => VT.GetStrBufA(ref this, lSrcPos, lSrcMaxLen, puDestCodePage, out ppDestBuf, plDestLen);
+			public HRESULT LockAStr(int32 lSrcPos, int32 lSrcLen, int32 lFlags, uint32 uCodePageIn, int32 cchRequest, uint32* puCodePageOut, PSTR* ppszDest, int32* pcchDest, int32* plDestLen) mut => VT.LockAStr(ref this, lSrcPos, lSrcLen, lFlags, uCodePageIn, cchRequest, puCodePageOut, ppszDest, pcchDest, plDestLen);
+			public HRESULT UnlockAStr(uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) mut => VT.UnlockAStr(ref this, pszSrc, cchSrc, pcchActual, plActualLen);
+			public HRESULT SetLocale(int32 lDestPos, int32 lDestLen, uint32 locale) mut => VT.SetLocale(ref this, lDestPos, lDestLen, locale);
+			public HRESULT GetLocale(int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) mut => VT.GetLocale(ref this, lSrcPos, lSrcMaxLen, plocale, plLocalePos, plLocaleLen);
+
 			[CRepr]
 			public struct VTable : IMLangString.VTable
 			{
@@ -4820,18 +4614,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BreakLineML(ref IMLangString pSrcMLStr, int32 lSrcPos, int32 lSrcLen, int32 cMinColumns, int32 cMaxColumns, int32* plLineLen, int32* plSkipLen) mut
-			{
-				return VT.BreakLineML(ref this, ref pSrcMLStr, lSrcPos, lSrcLen, cMinColumns, cMaxColumns, plLineLen, plSkipLen);
-			}
-			public HRESULT BreakLineW(uint32 locale, char16* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) mut
-			{
-				return VT.BreakLineW(ref this, locale, pszSrc, cchSrc, cMaxColumns, pcchLine, pcchSkip);
-			}
-			public HRESULT BreakLineA(uint32 locale, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) mut
-			{
-				return VT.BreakLineA(ref this, locale, uCodePage, pszSrc, cchSrc, cMaxColumns, pcchLine, pcchSkip);
-			}
+			public HRESULT BreakLineML(ref IMLangString pSrcMLStr, int32 lSrcPos, int32 lSrcLen, int32 cMinColumns, int32 cMaxColumns, int32* plLineLen, int32* plSkipLen) mut => VT.BreakLineML(ref this, ref pSrcMLStr, lSrcPos, lSrcLen, cMinColumns, cMaxColumns, plLineLen, plSkipLen);
+			public HRESULT BreakLineW(uint32 locale, char16* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) mut => VT.BreakLineW(ref this, locale, pszSrc, cchSrc, cMaxColumns, pcchLine, pcchSkip);
+			public HRESULT BreakLineA(uint32 locale, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) mut => VT.BreakLineA(ref this, locale, uCodePage, pszSrc, cchSrc, cMaxColumns, pcchLine, pcchSkip);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4847,22 +4633,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out IEnumCodePage* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
-			public HRESULT Next(uint32 celt, out MIMECPINFO rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, out rgelt, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
+			public HRESULT Clone(out IEnumCodePage* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+			public HRESULT Next(uint32 celt, out MIMECPINFO rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, out rgelt, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4879,22 +4654,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out IEnumRfc1766* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
-			public HRESULT Next(uint32 celt, out RFC1766INFO rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, out rgelt, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
+			public HRESULT Clone(out IEnumRfc1766* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+			public HRESULT Next(uint32 celt, out RFC1766INFO rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, out rgelt, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4911,22 +4675,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(out IEnumScript* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
-			public HRESULT Next(uint32 celt, out SCRIPTINFO rgelt, uint32* pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, out rgelt, pceltFetched);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
+			public HRESULT Clone(out IEnumScript* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+			public HRESULT Next(uint32 celt, out SCRIPTINFO rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, out rgelt, pceltFetched);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4943,34 +4696,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty) mut
-			{
-				return VT.Initialize(ref this, uiSrcCodePage, uiDstCodePage, dwProperty);
-			}
-			public HRESULT GetSourceCodePage(out uint32 puiSrcCodePage) mut
-			{
-				return VT.GetSourceCodePage(ref this, out puiSrcCodePage);
-			}
-			public HRESULT GetDestinationCodePage(out uint32 puiDstCodePage) mut
-			{
-				return VT.GetDestinationCodePage(ref this, out puiDstCodePage);
-			}
-			public HRESULT GetProperty(out uint32 pdwProperty) mut
-			{
-				return VT.GetProperty(ref this, out pdwProperty);
-			}
-			public HRESULT DoConversion(ref uint8 pSrcStr, uint32* pcSrcSize, out uint8 pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.DoConversion(ref this, ref pSrcStr, pcSrcSize, out pDstStr, pcDstSize);
-			}
-			public HRESULT DoConversionToUnicode(PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.DoConversionToUnicode(ref this, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
-			}
-			public HRESULT DoConversionFromUnicode(char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.DoConversionFromUnicode(ref this, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
-			}
+			public HRESULT Initialize(uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty) mut => VT.Initialize(ref this, uiSrcCodePage, uiDstCodePage, dwProperty);
+			public HRESULT GetSourceCodePage(out uint32 puiSrcCodePage) mut => VT.GetSourceCodePage(ref this, out puiSrcCodePage);
+			public HRESULT GetDestinationCodePage(out uint32 puiDstCodePage) mut => VT.GetDestinationCodePage(ref this, out puiDstCodePage);
+			public HRESULT GetProperty(out uint32 pdwProperty) mut => VT.GetProperty(ref this, out pdwProperty);
+			public HRESULT DoConversion(ref uint8 pSrcStr, uint32* pcSrcSize, out uint8 pDstStr, uint32* pcDstSize) mut => VT.DoConversion(ref this, ref pSrcStr, pcSrcSize, out pDstStr, pcDstSize);
+			public HRESULT DoConversionToUnicode(PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) mut => VT.DoConversionToUnicode(ref this, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
+			public HRESULT DoConversionFromUnicode(char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) mut => VT.DoConversionFromUnicode(ref this, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -4990,66 +4723,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNumberOfCodePageInfo(out uint32 pcCodePage) mut
-			{
-				return VT.GetNumberOfCodePageInfo(ref this, out pcCodePage);
-			}
-			public HRESULT GetCodePageInfo(uint32 uiCodePage, out MIMECPINFO pCodePageInfo) mut
-			{
-				return VT.GetCodePageInfo(ref this, uiCodePage, out pCodePageInfo);
-			}
-			public HRESULT GetFamilyCodePage(uint32 uiCodePage, out uint32 puiFamilyCodePage) mut
-			{
-				return VT.GetFamilyCodePage(ref this, uiCodePage, out puiFamilyCodePage);
-			}
-			public HRESULT EnumCodePages(uint32 grfFlags, out IEnumCodePage* ppEnumCodePage) mut
-			{
-				return VT.EnumCodePages(ref this, grfFlags, out ppEnumCodePage);
-			}
-			public HRESULT GetCharsetInfo(BSTR Charset, out MIMECSETINFO pCharsetInfo) mut
-			{
-				return VT.GetCharsetInfo(ref this, Charset, out pCharsetInfo);
-			}
-			public HRESULT IsConvertible(uint32 dwSrcEncoding, uint32 dwDstEncoding) mut
-			{
-				return VT.IsConvertible(ref this, dwSrcEncoding, dwDstEncoding);
-			}
-			public HRESULT ConvertString(uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.ConvertString(ref this, pdwMode, dwSrcEncoding, dwDstEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
-			}
-			public HRESULT ConvertStringToUnicode(uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.ConvertStringToUnicode(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
-			}
-			public HRESULT ConvertStringFromUnicode(uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.ConvertStringFromUnicode(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
-			}
-			public HRESULT ConvertStringReset() mut
-			{
-				return VT.ConvertStringReset(ref this);
-			}
-			public HRESULT GetRfc1766FromLcid(uint32 Locale, out BSTR pbstrRfc1766) mut
-			{
-				return VT.GetRfc1766FromLcid(ref this, Locale, out pbstrRfc1766);
-			}
-			public HRESULT GetLcidFromRfc1766(out uint32 pLocale, BSTR bstrRfc1766) mut
-			{
-				return VT.GetLcidFromRfc1766(ref this, out pLocale, bstrRfc1766);
-			}
-			public HRESULT EnumRfc1766(out IEnumRfc1766* ppEnumRfc1766) mut
-			{
-				return VT.EnumRfc1766(ref this, out ppEnumRfc1766);
-			}
-			public HRESULT GetRfc1766Info(uint32 Locale, out RFC1766INFO pRfc1766Info) mut
-			{
-				return VT.GetRfc1766Info(ref this, Locale, out pRfc1766Info);
-			}
-			public HRESULT CreateConvertCharset(uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, out IMLangConvertCharset* ppMLangConvertCharset) mut
-			{
-				return VT.CreateConvertCharset(ref this, uiSrcCodePage, uiDstCodePage, dwProperty, out ppMLangConvertCharset);
-			}
+			public HRESULT GetNumberOfCodePageInfo(out uint32 pcCodePage) mut => VT.GetNumberOfCodePageInfo(ref this, out pcCodePage);
+			public HRESULT GetCodePageInfo(uint32 uiCodePage, out MIMECPINFO pCodePageInfo) mut => VT.GetCodePageInfo(ref this, uiCodePage, out pCodePageInfo);
+			public HRESULT GetFamilyCodePage(uint32 uiCodePage, out uint32 puiFamilyCodePage) mut => VT.GetFamilyCodePage(ref this, uiCodePage, out puiFamilyCodePage);
+			public HRESULT EnumCodePages(uint32 grfFlags, out IEnumCodePage* ppEnumCodePage) mut => VT.EnumCodePages(ref this, grfFlags, out ppEnumCodePage);
+			public HRESULT GetCharsetInfo(BSTR Charset, out MIMECSETINFO pCharsetInfo) mut => VT.GetCharsetInfo(ref this, Charset, out pCharsetInfo);
+			public HRESULT IsConvertible(uint32 dwSrcEncoding, uint32 dwDstEncoding) mut => VT.IsConvertible(ref this, dwSrcEncoding, dwDstEncoding);
+			public HRESULT ConvertString(uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) mut => VT.ConvertString(ref this, pdwMode, dwSrcEncoding, dwDstEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
+			public HRESULT ConvertStringToUnicode(uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) mut => VT.ConvertStringToUnicode(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
+			public HRESULT ConvertStringFromUnicode(uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) mut => VT.ConvertStringFromUnicode(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
+			public HRESULT ConvertStringReset() mut => VT.ConvertStringReset(ref this);
+			public HRESULT GetRfc1766FromLcid(uint32 Locale, out BSTR pbstrRfc1766) mut => VT.GetRfc1766FromLcid(ref this, Locale, out pbstrRfc1766);
+			public HRESULT GetLcidFromRfc1766(out uint32 pLocale, BSTR bstrRfc1766) mut => VT.GetLcidFromRfc1766(ref this, out pLocale, bstrRfc1766);
+			public HRESULT EnumRfc1766(out IEnumRfc1766* ppEnumRfc1766) mut => VT.EnumRfc1766(ref this, out ppEnumRfc1766);
+			public HRESULT GetRfc1766Info(uint32 Locale, out RFC1766INFO pRfc1766Info) mut => VT.GetRfc1766Info(ref this, Locale, out pRfc1766Info);
+			public HRESULT CreateConvertCharset(uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, out IMLangConvertCharset* ppMLangConvertCharset) mut => VT.CreateConvertCharset(ref this, uiSrcCodePage, uiDstCodePage, dwProperty, out ppMLangConvertCharset);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5077,114 +4766,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNumberOfCodePageInfo(out uint32 pcCodePage) mut
-			{
-				return VT.GetNumberOfCodePageInfo(ref this, out pcCodePage);
-			}
-			public HRESULT GetCodePageInfo(uint32 uiCodePage, uint16 LangId, out MIMECPINFO pCodePageInfo) mut
-			{
-				return VT.GetCodePageInfo(ref this, uiCodePage, LangId, out pCodePageInfo);
-			}
-			public HRESULT GetFamilyCodePage(uint32 uiCodePage, out uint32 puiFamilyCodePage) mut
-			{
-				return VT.GetFamilyCodePage(ref this, uiCodePage, out puiFamilyCodePage);
-			}
-			public HRESULT EnumCodePages(uint32 grfFlags, uint16 LangId, out IEnumCodePage* ppEnumCodePage) mut
-			{
-				return VT.EnumCodePages(ref this, grfFlags, LangId, out ppEnumCodePage);
-			}
-			public HRESULT GetCharsetInfo(BSTR Charset, out MIMECSETINFO pCharsetInfo) mut
-			{
-				return VT.GetCharsetInfo(ref this, Charset, out pCharsetInfo);
-			}
-			public HRESULT IsConvertible(uint32 dwSrcEncoding, uint32 dwDstEncoding) mut
-			{
-				return VT.IsConvertible(ref this, dwSrcEncoding, dwDstEncoding);
-			}
-			public HRESULT ConvertString(uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.ConvertString(ref this, pdwMode, dwSrcEncoding, dwDstEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
-			}
-			public HRESULT ConvertStringToUnicode(uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.ConvertStringToUnicode(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
-			}
-			public HRESULT ConvertStringFromUnicode(uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) mut
-			{
-				return VT.ConvertStringFromUnicode(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
-			}
-			public HRESULT ConvertStringReset() mut
-			{
-				return VT.ConvertStringReset(ref this);
-			}
-			public HRESULT GetRfc1766FromLcid(uint32 Locale, out BSTR pbstrRfc1766) mut
-			{
-				return VT.GetRfc1766FromLcid(ref this, Locale, out pbstrRfc1766);
-			}
-			public HRESULT GetLcidFromRfc1766(out uint32 pLocale, BSTR bstrRfc1766) mut
-			{
-				return VT.GetLcidFromRfc1766(ref this, out pLocale, bstrRfc1766);
-			}
-			public HRESULT EnumRfc1766(uint16 LangId, out IEnumRfc1766* ppEnumRfc1766) mut
-			{
-				return VT.EnumRfc1766(ref this, LangId, out ppEnumRfc1766);
-			}
-			public HRESULT GetRfc1766Info(uint32 Locale, uint16 LangId, out RFC1766INFO pRfc1766Info) mut
-			{
-				return VT.GetRfc1766Info(ref this, Locale, LangId, out pRfc1766Info);
-			}
-			public HRESULT CreateConvertCharset(uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, out IMLangConvertCharset* ppMLangConvertCharset) mut
-			{
-				return VT.CreateConvertCharset(ref this, uiSrcCodePage, uiDstCodePage, dwProperty, out ppMLangConvertCharset);
-			}
-			public HRESULT ConvertStringInIStream(uint32* pdwMode, uint32 dwFlag, PWSTR lpFallBack, uint32 dwSrcEncoding, uint32 dwDstEncoding, ref IStream pstmIn, ref IStream pstmOut) mut
-			{
-				return VT.ConvertStringInIStream(ref this, pdwMode, dwFlag, lpFallBack, dwSrcEncoding, dwDstEncoding, ref pstmIn, ref pstmOut);
-			}
-			public HRESULT ConvertStringToUnicodeEx(uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) mut
-			{
-				return VT.ConvertStringToUnicodeEx(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize, dwFlag, lpFallBack);
-			}
-			public HRESULT ConvertStringFromUnicodeEx(uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) mut
-			{
-				return VT.ConvertStringFromUnicodeEx(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize, dwFlag, lpFallBack);
-			}
-			public HRESULT DetectCodepageInIStream(uint32 dwFlag, uint32 dwPrefWinCodePage, ref IStream pstmIn, out DetectEncodingInfo lpEncoding, out int32 pnScores) mut
-			{
-				return VT.DetectCodepageInIStream(ref this, dwFlag, dwPrefWinCodePage, ref pstmIn, out lpEncoding, out pnScores);
-			}
-			public HRESULT DetectInputCodepage(uint32 dwFlag, uint32 dwPrefWinCodePage, PSTR pSrcStr, out int32 pcSrcSize, out DetectEncodingInfo lpEncoding, out int32 pnScores) mut
-			{
-				return VT.DetectInputCodepage(ref this, dwFlag, dwPrefWinCodePage, pSrcStr, out pcSrcSize, out lpEncoding, out pnScores);
-			}
-			public HRESULT ValidateCodePage(uint32 uiCodePage, HWND hwnd) mut
-			{
-				return VT.ValidateCodePage(ref this, uiCodePage, hwnd);
-			}
-			public HRESULT GetCodePageDescription(uint32 uiCodePage, uint32 lcid, char16* lpWideCharStr, int32 cchWideChar) mut
-			{
-				return VT.GetCodePageDescription(ref this, uiCodePage, lcid, lpWideCharStr, cchWideChar);
-			}
-			public HRESULT IsCodePageInstallable(uint32 uiCodePage) mut
-			{
-				return VT.IsCodePageInstallable(ref this, uiCodePage);
-			}
-			public HRESULT SetMimeDBSource(MIMECONTF dwSource) mut
-			{
-				return VT.SetMimeDBSource(ref this, dwSource);
-			}
-			public HRESULT GetNumberOfScripts(out uint32 pnScripts) mut
-			{
-				return VT.GetNumberOfScripts(ref this, out pnScripts);
-			}
-			public HRESULT EnumScripts(uint32 dwFlags, uint16 LangId, out IEnumScript* ppEnumScript) mut
-			{
-				return VT.EnumScripts(ref this, dwFlags, LangId, out ppEnumScript);
-			}
-			public HRESULT ValidateCodePageEx(uint32 uiCodePage, HWND hwnd, uint32 dwfIODControl) mut
-			{
-				return VT.ValidateCodePageEx(ref this, uiCodePage, hwnd, dwfIODControl);
-			}
+			public HRESULT GetNumberOfCodePageInfo(out uint32 pcCodePage) mut => VT.GetNumberOfCodePageInfo(ref this, out pcCodePage);
+			public HRESULT GetCodePageInfo(uint32 uiCodePage, uint16 LangId, out MIMECPINFO pCodePageInfo) mut => VT.GetCodePageInfo(ref this, uiCodePage, LangId, out pCodePageInfo);
+			public HRESULT GetFamilyCodePage(uint32 uiCodePage, out uint32 puiFamilyCodePage) mut => VT.GetFamilyCodePage(ref this, uiCodePage, out puiFamilyCodePage);
+			public HRESULT EnumCodePages(uint32 grfFlags, uint16 LangId, out IEnumCodePage* ppEnumCodePage) mut => VT.EnumCodePages(ref this, grfFlags, LangId, out ppEnumCodePage);
+			public HRESULT GetCharsetInfo(BSTR Charset, out MIMECSETINFO pCharsetInfo) mut => VT.GetCharsetInfo(ref this, Charset, out pCharsetInfo);
+			public HRESULT IsConvertible(uint32 dwSrcEncoding, uint32 dwDstEncoding) mut => VT.IsConvertible(ref this, dwSrcEncoding, dwDstEncoding);
+			public HRESULT ConvertString(uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) mut => VT.ConvertString(ref this, pdwMode, dwSrcEncoding, dwDstEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
+			public HRESULT ConvertStringToUnicode(uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) mut => VT.ConvertStringToUnicode(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
+			public HRESULT ConvertStringFromUnicode(uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) mut => VT.ConvertStringFromUnicode(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize);
+			public HRESULT ConvertStringReset() mut => VT.ConvertStringReset(ref this);
+			public HRESULT GetRfc1766FromLcid(uint32 Locale, out BSTR pbstrRfc1766) mut => VT.GetRfc1766FromLcid(ref this, Locale, out pbstrRfc1766);
+			public HRESULT GetLcidFromRfc1766(out uint32 pLocale, BSTR bstrRfc1766) mut => VT.GetLcidFromRfc1766(ref this, out pLocale, bstrRfc1766);
+			public HRESULT EnumRfc1766(uint16 LangId, out IEnumRfc1766* ppEnumRfc1766) mut => VT.EnumRfc1766(ref this, LangId, out ppEnumRfc1766);
+			public HRESULT GetRfc1766Info(uint32 Locale, uint16 LangId, out RFC1766INFO pRfc1766Info) mut => VT.GetRfc1766Info(ref this, Locale, LangId, out pRfc1766Info);
+			public HRESULT CreateConvertCharset(uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, out IMLangConvertCharset* ppMLangConvertCharset) mut => VT.CreateConvertCharset(ref this, uiSrcCodePage, uiDstCodePage, dwProperty, out ppMLangConvertCharset);
+			public HRESULT ConvertStringInIStream(uint32* pdwMode, uint32 dwFlag, PWSTR lpFallBack, uint32 dwSrcEncoding, uint32 dwDstEncoding, ref IStream pstmIn, ref IStream pstmOut) mut => VT.ConvertStringInIStream(ref this, pdwMode, dwFlag, lpFallBack, dwSrcEncoding, dwDstEncoding, ref pstmIn, ref pstmOut);
+			public HRESULT ConvertStringToUnicodeEx(uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) mut => VT.ConvertStringToUnicodeEx(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize, dwFlag, lpFallBack);
+			public HRESULT ConvertStringFromUnicodeEx(uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) mut => VT.ConvertStringFromUnicodeEx(ref this, pdwMode, dwEncoding, pSrcStr, pcSrcSize, pDstStr, pcDstSize, dwFlag, lpFallBack);
+			public HRESULT DetectCodepageInIStream(uint32 dwFlag, uint32 dwPrefWinCodePage, ref IStream pstmIn, out DetectEncodingInfo lpEncoding, out int32 pnScores) mut => VT.DetectCodepageInIStream(ref this, dwFlag, dwPrefWinCodePage, ref pstmIn, out lpEncoding, out pnScores);
+			public HRESULT DetectInputCodepage(uint32 dwFlag, uint32 dwPrefWinCodePage, PSTR pSrcStr, out int32 pcSrcSize, out DetectEncodingInfo lpEncoding, out int32 pnScores) mut => VT.DetectInputCodepage(ref this, dwFlag, dwPrefWinCodePage, pSrcStr, out pcSrcSize, out lpEncoding, out pnScores);
+			public HRESULT ValidateCodePage(uint32 uiCodePage, HWND hwnd) mut => VT.ValidateCodePage(ref this, uiCodePage, hwnd);
+			public HRESULT GetCodePageDescription(uint32 uiCodePage, uint32 lcid, char16* lpWideCharStr, int32 cchWideChar) mut => VT.GetCodePageDescription(ref this, uiCodePage, lcid, lpWideCharStr, cchWideChar);
+			public HRESULT IsCodePageInstallable(uint32 uiCodePage) mut => VT.IsCodePageInstallable(ref this, uiCodePage);
+			public HRESULT SetMimeDBSource(MIMECONTF dwSource) mut => VT.SetMimeDBSource(ref this, dwSource);
+			public HRESULT GetNumberOfScripts(out uint32 pnScripts) mut => VT.GetNumberOfScripts(ref this, out pnScripts);
+			public HRESULT EnumScripts(uint32 dwFlags, uint16 LangId, out IEnumScript* ppEnumScript) mut => VT.EnumScripts(ref this, dwFlags, LangId, out ppEnumScript);
+			public HRESULT ValidateCodePageEx(uint32 uiCodePage, HWND hwnd, uint32 dwfIODControl) mut => VT.ValidateCodePageEx(ref this, uiCodePage, hwnd, dwfIODControl);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5224,22 +4833,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCharCodePages(char16 chSrc, out uint32 pdwCodePages) mut
-			{
-				return VT.GetCharCodePages(ref this, chSrc, out pdwCodePages);
-			}
-			public HRESULT GetStrCodePages(char16* pszSrc, int32 cchSrc, uint32 dwPriorityCodePages, uint32* pdwCodePages, int32* pcchCodePages) mut
-			{
-				return VT.GetStrCodePages(ref this, pszSrc, cchSrc, dwPriorityCodePages, pdwCodePages, pcchCodePages);
-			}
-			public HRESULT CodePageToCodePages(uint32 uCodePage, out uint32 pdwCodePages) mut
-			{
-				return VT.CodePageToCodePages(ref this, uCodePage, out pdwCodePages);
-			}
-			public HRESULT CodePagesToCodePage(uint32 dwCodePages, uint32 uDefaultCodePage, out uint32 puCodePage) mut
-			{
-				return VT.CodePagesToCodePage(ref this, dwCodePages, uDefaultCodePage, out puCodePage);
-			}
+			public HRESULT GetCharCodePages(char16 chSrc, out uint32 pdwCodePages) mut => VT.GetCharCodePages(ref this, chSrc, out pdwCodePages);
+			public HRESULT GetStrCodePages(char16* pszSrc, int32 cchSrc, uint32 dwPriorityCodePages, uint32* pdwCodePages, int32* pcchCodePages) mut => VT.GetStrCodePages(ref this, pszSrc, cchSrc, dwPriorityCodePages, pdwCodePages, pcchCodePages);
+			public HRESULT CodePageToCodePages(uint32 uCodePage, out uint32 pdwCodePages) mut => VT.CodePageToCodePages(ref this, uCodePage, out pdwCodePages);
+			public HRESULT CodePagesToCodePage(uint32 dwCodePages, uint32 uDefaultCodePage, out uint32 puCodePage) mut => VT.CodePagesToCodePage(ref this, dwCodePages, uDefaultCodePage, out puCodePage);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -5256,22 +4854,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFontCodePages(HDC hDC, HFONT hFont, uint32* pdwCodePages) mut
-			{
-				return VT.GetFontCodePages(ref this, hDC, hFont, pdwCodePages);
-			}
-			public HRESULT MapFont(HDC hDC, uint32 dwCodePages, HFONT hSrcFont, HFONT* phDestFont) mut
-			{
-				return VT.MapFont(ref this, hDC, dwCodePages, hSrcFont, phDestFont);
-			}
-			public HRESULT ReleaseFont(HFONT hFont) mut
-			{
-				return VT.ReleaseFont(ref this, hFont);
-			}
-			public HRESULT ResetFontMapping() mut
-			{
-				return VT.ResetFontMapping(ref this);
-			}
+			public HRESULT GetFontCodePages(HDC hDC, HFONT hFont, uint32* pdwCodePages) mut => VT.GetFontCodePages(ref this, hDC, hFont, pdwCodePages);
+			public HRESULT MapFont(HDC hDC, uint32 dwCodePages, HFONT hSrcFont, HFONT* phDestFont) mut => VT.MapFont(ref this, hDC, dwCodePages, hSrcFont, phDestFont);
+			public HRESULT ReleaseFont(HFONT hFont) mut => VT.ReleaseFont(ref this, hFont);
+			public HRESULT ResetFontMapping() mut => VT.ResetFontMapping(ref this);
+
 			[CRepr]
 			public struct VTable : IMLangCodePages.VTable
 			{
@@ -5288,34 +4875,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFontCodePages(HDC hDC, HFONT hFont, uint32* pdwCodePages) mut
-			{
-				return VT.GetFontCodePages(ref this, hDC, hFont, pdwCodePages);
-			}
-			public HRESULT ReleaseFont(HFONT hFont) mut
-			{
-				return VT.ReleaseFont(ref this, hFont);
-			}
-			public HRESULT ResetFontMapping() mut
-			{
-				return VT.ResetFontMapping(ref this);
-			}
-			public HRESULT MapFont(HDC hDC, uint32 dwCodePages, char16 chSrc, HFONT* pFont) mut
-			{
-				return VT.MapFont(ref this, hDC, dwCodePages, chSrc, pFont);
-			}
-			public HRESULT GetFontUnicodeRanges(HDC hDC, ref uint32 puiRanges, UNICODERANGE* pUranges) mut
-			{
-				return VT.GetFontUnicodeRanges(ref this, hDC, ref puiRanges, pUranges);
-			}
-			public HRESULT GetScriptFontInfo(uint8 sid, uint32 dwFlags, out uint32 puiFonts, tagSCRIPFONTINFO* pScriptFont) mut
-			{
-				return VT.GetScriptFontInfo(ref this, sid, dwFlags, out puiFonts, pScriptFont);
-			}
-			public HRESULT CodePageToScriptID(uint32 uiCodePage, out uint8 pSid) mut
-			{
-				return VT.CodePageToScriptID(ref this, uiCodePage, out pSid);
-			}
+			public HRESULT GetFontCodePages(HDC hDC, HFONT hFont, uint32* pdwCodePages) mut => VT.GetFontCodePages(ref this, hDC, hFont, pdwCodePages);
+			public HRESULT ReleaseFont(HFONT hFont) mut => VT.ReleaseFont(ref this, hFont);
+			public HRESULT ResetFontMapping() mut => VT.ResetFontMapping(ref this);
+			public HRESULT MapFont(HDC hDC, uint32 dwCodePages, char16 chSrc, HFONT* pFont) mut => VT.MapFont(ref this, hDC, dwCodePages, chSrc, pFont);
+			public HRESULT GetFontUnicodeRanges(HDC hDC, ref uint32 puiRanges, UNICODERANGE* pUranges) mut => VT.GetFontUnicodeRanges(ref this, hDC, ref puiRanges, pUranges);
+			public HRESULT GetScriptFontInfo(uint8 sid, uint32 dwFlags, out uint32 puiFonts, tagSCRIPFONTINFO* pScriptFont) mut => VT.GetScriptFontInfo(ref this, sid, dwFlags, out puiFonts, pScriptFont);
+			public HRESULT CodePageToScriptID(uint32 uiCodePage, out uint8 pSid) mut => VT.CodePageToScriptID(ref this, uiCodePage, out pSid);
+
 			[CRepr]
 			public struct VTable : IMLangCodePages.VTable
 			{
@@ -5335,14 +4902,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DetectOutboundCodePage(uint32 dwFlags, char16* lpWideCharStr, uint32 cchWideChar, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) mut
-			{
-				return VT.DetectOutboundCodePage(ref this, dwFlags, lpWideCharStr, cchWideChar, puiPreferredCodePages, nPreferredCodePages, puiDetectedCodePages, out pnDetectedCodePages, lpSpecialChar);
-			}
-			public HRESULT DetectOutboundCodePageInIStream(uint32 dwFlags, ref IStream pStrIn, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) mut
-			{
-				return VT.DetectOutboundCodePageInIStream(ref this, dwFlags, ref pStrIn, puiPreferredCodePages, nPreferredCodePages, puiDetectedCodePages, out pnDetectedCodePages, lpSpecialChar);
-			}
+			public HRESULT DetectOutboundCodePage(uint32 dwFlags, char16* lpWideCharStr, uint32 cchWideChar, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) mut => VT.DetectOutboundCodePage(ref this, dwFlags, lpWideCharStr, cchWideChar, puiPreferredCodePages, nPreferredCodePages, puiDetectedCodePages, out pnDetectedCodePages, lpSpecialChar);
+			public HRESULT DetectOutboundCodePageInIStream(uint32 dwFlags, ref IStream pStrIn, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) mut => VT.DetectOutboundCodePageInIStream(ref this, dwFlags, ref pStrIn, puiPreferredCodePages, nPreferredCodePages, puiDetectedCodePages, out pnDetectedCodePages, lpSpecialChar);
+
 			[CRepr]
 			public struct VTable : IMultiLanguage2.VTable
 			{

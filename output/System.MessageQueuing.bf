@@ -610,10 +610,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LookupQueue(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, IMSMQQueueInfos** ppqinfos) mut
-			{
-				return VT.LookupQueue(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ppqinfos);
-			}
+			public HRESULT LookupQueue(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, IMSMQQueueInfos** ppqinfos) mut => VT.LookupQueue(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ppqinfos);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -627,126 +625,37 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_QueueGuid(BSTR* pbstrGuidQueue) mut
-			{
-				return VT.get_QueueGuid(ref this, pbstrGuidQueue);
-			}
-			public HRESULT get_ServiceTypeGuid(BSTR* pbstrGuidServiceType) mut
-			{
-				return VT.get_ServiceTypeGuid(ref this, pbstrGuidServiceType);
-			}
-			public HRESULT put_ServiceTypeGuid(BSTR bstrGuidServiceType) mut
-			{
-				return VT.put_ServiceTypeGuid(ref this, bstrGuidServiceType);
-			}
-			public HRESULT get_Label(BSTR* pbstrLabel) mut
-			{
-				return VT.get_Label(ref this, pbstrLabel);
-			}
-			public HRESULT put_Label(BSTR bstrLabel) mut
-			{
-				return VT.put_Label(ref this, bstrLabel);
-			}
-			public HRESULT get_PathName(BSTR* pbstrPathName) mut
-			{
-				return VT.get_PathName(ref this, pbstrPathName);
-			}
-			public HRESULT put_PathName(BSTR bstrPathName) mut
-			{
-				return VT.put_PathName(ref this, bstrPathName);
-			}
-			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut
-			{
-				return VT.get_FormatName(ref this, pbstrFormatName);
-			}
-			public HRESULT put_FormatName(BSTR bstrFormatName) mut
-			{
-				return VT.put_FormatName(ref this, bstrFormatName);
-			}
-			public HRESULT get_IsTransactional(out int16 pisTransactional) mut
-			{
-				return VT.get_IsTransactional(ref this, out pisTransactional);
-			}
-			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut
-			{
-				return VT.get_PrivLevel(ref this, out plPrivLevel);
-			}
-			public HRESULT put_PrivLevel(int32 lPrivLevel) mut
-			{
-				return VT.put_PrivLevel(ref this, lPrivLevel);
-			}
-			public HRESULT get_Journal(out int32 plJournal) mut
-			{
-				return VT.get_Journal(ref this, out plJournal);
-			}
-			public HRESULT put_Journal(int32 lJournal) mut
-			{
-				return VT.put_Journal(ref this, lJournal);
-			}
-			public HRESULT get_Quota(out int32 plQuota) mut
-			{
-				return VT.get_Quota(ref this, out plQuota);
-			}
-			public HRESULT put_Quota(int32 lQuota) mut
-			{
-				return VT.put_Quota(ref this, lQuota);
-			}
-			public HRESULT get_BasePriority(out int32 plBasePriority) mut
-			{
-				return VT.get_BasePriority(ref this, out plBasePriority);
-			}
-			public HRESULT put_BasePriority(int32 lBasePriority) mut
-			{
-				return VT.put_BasePriority(ref this, lBasePriority);
-			}
-			public HRESULT get_CreateTime(out VARIANT pvarCreateTime) mut
-			{
-				return VT.get_CreateTime(ref this, out pvarCreateTime);
-			}
-			public HRESULT get_ModifyTime(out VARIANT pvarModifyTime) mut
-			{
-				return VT.get_ModifyTime(ref this, out pvarModifyTime);
-			}
-			public HRESULT get_Authenticate(out int32 plAuthenticate) mut
-			{
-				return VT.get_Authenticate(ref this, out plAuthenticate);
-			}
-			public HRESULT put_Authenticate(int32 lAuthenticate) mut
-			{
-				return VT.put_Authenticate(ref this, lAuthenticate);
-			}
-			public HRESULT get_JournalQuota(out int32 plJournalQuota) mut
-			{
-				return VT.get_JournalQuota(ref this, out plJournalQuota);
-			}
-			public HRESULT put_JournalQuota(int32 lJournalQuota) mut
-			{
-				return VT.put_JournalQuota(ref this, lJournalQuota);
-			}
-			public HRESULT get_IsWorldReadable(out int16 pisWorldReadable) mut
-			{
-				return VT.get_IsWorldReadable(ref this, out pisWorldReadable);
-			}
-			public HRESULT Create(ref VARIANT IsTransactional, ref VARIANT IsWorldReadable) mut
-			{
-				return VT.Create(ref this, ref IsTransactional, ref IsWorldReadable);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Open(int32 Access, int32 ShareMode, IMSMQQueue** ppq) mut
-			{
-				return VT.Open(ref this, Access, ShareMode, ppq);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Update() mut
-			{
-				return VT.Update(ref this);
-			}
+			public HRESULT get_QueueGuid(BSTR* pbstrGuidQueue) mut => VT.get_QueueGuid(ref this, pbstrGuidQueue);
+			public HRESULT get_ServiceTypeGuid(BSTR* pbstrGuidServiceType) mut => VT.get_ServiceTypeGuid(ref this, pbstrGuidServiceType);
+			public HRESULT put_ServiceTypeGuid(BSTR bstrGuidServiceType) mut => VT.put_ServiceTypeGuid(ref this, bstrGuidServiceType);
+			public HRESULT get_Label(BSTR* pbstrLabel) mut => VT.get_Label(ref this, pbstrLabel);
+			public HRESULT put_Label(BSTR bstrLabel) mut => VT.put_Label(ref this, bstrLabel);
+			public HRESULT get_PathName(BSTR* pbstrPathName) mut => VT.get_PathName(ref this, pbstrPathName);
+			public HRESULT put_PathName(BSTR bstrPathName) mut => VT.put_PathName(ref this, bstrPathName);
+			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut => VT.get_FormatName(ref this, pbstrFormatName);
+			public HRESULT put_FormatName(BSTR bstrFormatName) mut => VT.put_FormatName(ref this, bstrFormatName);
+			public HRESULT get_IsTransactional(out int16 pisTransactional) mut => VT.get_IsTransactional(ref this, out pisTransactional);
+			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut => VT.get_PrivLevel(ref this, out plPrivLevel);
+			public HRESULT put_PrivLevel(int32 lPrivLevel) mut => VT.put_PrivLevel(ref this, lPrivLevel);
+			public HRESULT get_Journal(out int32 plJournal) mut => VT.get_Journal(ref this, out plJournal);
+			public HRESULT put_Journal(int32 lJournal) mut => VT.put_Journal(ref this, lJournal);
+			public HRESULT get_Quota(out int32 plQuota) mut => VT.get_Quota(ref this, out plQuota);
+			public HRESULT put_Quota(int32 lQuota) mut => VT.put_Quota(ref this, lQuota);
+			public HRESULT get_BasePriority(out int32 plBasePriority) mut => VT.get_BasePriority(ref this, out plBasePriority);
+			public HRESULT put_BasePriority(int32 lBasePriority) mut => VT.put_BasePriority(ref this, lBasePriority);
+			public HRESULT get_CreateTime(out VARIANT pvarCreateTime) mut => VT.get_CreateTime(ref this, out pvarCreateTime);
+			public HRESULT get_ModifyTime(out VARIANT pvarModifyTime) mut => VT.get_ModifyTime(ref this, out pvarModifyTime);
+			public HRESULT get_Authenticate(out int32 plAuthenticate) mut => VT.get_Authenticate(ref this, out plAuthenticate);
+			public HRESULT put_Authenticate(int32 lAuthenticate) mut => VT.put_Authenticate(ref this, lAuthenticate);
+			public HRESULT get_JournalQuota(out int32 plJournalQuota) mut => VT.get_JournalQuota(ref this, out plJournalQuota);
+			public HRESULT put_JournalQuota(int32 lJournalQuota) mut => VT.put_JournalQuota(ref this, lJournalQuota);
+			public HRESULT get_IsWorldReadable(out int16 pisWorldReadable) mut => VT.get_IsWorldReadable(ref this, out pisWorldReadable);
+			public HRESULT Create(ref VARIANT IsTransactional, ref VARIANT IsWorldReadable) mut => VT.Create(ref this, ref IsTransactional, ref IsWorldReadable);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Open(int32 Access, int32 ShareMode, IMSMQQueue** ppq) mut => VT.Open(ref this, Access, ShareMode, ppq);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Update() mut => VT.Update(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -789,142 +698,41 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_QueueGuid(BSTR* pbstrGuidQueue) mut
-			{
-				return VT.get_QueueGuid(ref this, pbstrGuidQueue);
-			}
-			public HRESULT get_ServiceTypeGuid(BSTR* pbstrGuidServiceType) mut
-			{
-				return VT.get_ServiceTypeGuid(ref this, pbstrGuidServiceType);
-			}
-			public HRESULT put_ServiceTypeGuid(BSTR bstrGuidServiceType) mut
-			{
-				return VT.put_ServiceTypeGuid(ref this, bstrGuidServiceType);
-			}
-			public HRESULT get_Label(BSTR* pbstrLabel) mut
-			{
-				return VT.get_Label(ref this, pbstrLabel);
-			}
-			public HRESULT put_Label(BSTR bstrLabel) mut
-			{
-				return VT.put_Label(ref this, bstrLabel);
-			}
-			public HRESULT get_PathName(BSTR* pbstrPathName) mut
-			{
-				return VT.get_PathName(ref this, pbstrPathName);
-			}
-			public HRESULT put_PathName(BSTR bstrPathName) mut
-			{
-				return VT.put_PathName(ref this, bstrPathName);
-			}
-			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut
-			{
-				return VT.get_FormatName(ref this, pbstrFormatName);
-			}
-			public HRESULT put_FormatName(BSTR bstrFormatName) mut
-			{
-				return VT.put_FormatName(ref this, bstrFormatName);
-			}
-			public HRESULT get_IsTransactional(out int16 pisTransactional) mut
-			{
-				return VT.get_IsTransactional(ref this, out pisTransactional);
-			}
-			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut
-			{
-				return VT.get_PrivLevel(ref this, out plPrivLevel);
-			}
-			public HRESULT put_PrivLevel(int32 lPrivLevel) mut
-			{
-				return VT.put_PrivLevel(ref this, lPrivLevel);
-			}
-			public HRESULT get_Journal(out int32 plJournal) mut
-			{
-				return VT.get_Journal(ref this, out plJournal);
-			}
-			public HRESULT put_Journal(int32 lJournal) mut
-			{
-				return VT.put_Journal(ref this, lJournal);
-			}
-			public HRESULT get_Quota(out int32 plQuota) mut
-			{
-				return VT.get_Quota(ref this, out plQuota);
-			}
-			public HRESULT put_Quota(int32 lQuota) mut
-			{
-				return VT.put_Quota(ref this, lQuota);
-			}
-			public HRESULT get_BasePriority(out int32 plBasePriority) mut
-			{
-				return VT.get_BasePriority(ref this, out plBasePriority);
-			}
-			public HRESULT put_BasePriority(int32 lBasePriority) mut
-			{
-				return VT.put_BasePriority(ref this, lBasePriority);
-			}
-			public HRESULT get_CreateTime(out VARIANT pvarCreateTime) mut
-			{
-				return VT.get_CreateTime(ref this, out pvarCreateTime);
-			}
-			public HRESULT get_ModifyTime(out VARIANT pvarModifyTime) mut
-			{
-				return VT.get_ModifyTime(ref this, out pvarModifyTime);
-			}
-			public HRESULT get_Authenticate(out int32 plAuthenticate) mut
-			{
-				return VT.get_Authenticate(ref this, out plAuthenticate);
-			}
-			public HRESULT put_Authenticate(int32 lAuthenticate) mut
-			{
-				return VT.put_Authenticate(ref this, lAuthenticate);
-			}
-			public HRESULT get_JournalQuota(out int32 plJournalQuota) mut
-			{
-				return VT.get_JournalQuota(ref this, out plJournalQuota);
-			}
-			public HRESULT put_JournalQuota(int32 lJournalQuota) mut
-			{
-				return VT.put_JournalQuota(ref this, lJournalQuota);
-			}
-			public HRESULT get_IsWorldReadable(out int16 pisWorldReadable) mut
-			{
-				return VT.get_IsWorldReadable(ref this, out pisWorldReadable);
-			}
-			public HRESULT Create(ref VARIANT IsTransactional, ref VARIANT IsWorldReadable) mut
-			{
-				return VT.Create(ref this, ref IsTransactional, ref IsWorldReadable);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Open(int32 Access, int32 ShareMode, IMSMQQueue2** ppq) mut
-			{
-				return VT.Open(ref this, Access, ShareMode, ppq);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Update() mut
-			{
-				return VT.Update(ref this);
-			}
-			public HRESULT get_PathNameDNS(BSTR* pbstrPathNameDNS) mut
-			{
-				return VT.get_PathNameDNS(ref this, pbstrPathNameDNS);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT get_Security(out VARIANT pvarSecurity) mut
-			{
-				return VT.get_Security(ref this, out pvarSecurity);
-			}
-			public HRESULT put_Security(VARIANT varSecurity) mut
-			{
-				return VT.put_Security(ref this, varSecurity);
-			}
+			public HRESULT get_QueueGuid(BSTR* pbstrGuidQueue) mut => VT.get_QueueGuid(ref this, pbstrGuidQueue);
+			public HRESULT get_ServiceTypeGuid(BSTR* pbstrGuidServiceType) mut => VT.get_ServiceTypeGuid(ref this, pbstrGuidServiceType);
+			public HRESULT put_ServiceTypeGuid(BSTR bstrGuidServiceType) mut => VT.put_ServiceTypeGuid(ref this, bstrGuidServiceType);
+			public HRESULT get_Label(BSTR* pbstrLabel) mut => VT.get_Label(ref this, pbstrLabel);
+			public HRESULT put_Label(BSTR bstrLabel) mut => VT.put_Label(ref this, bstrLabel);
+			public HRESULT get_PathName(BSTR* pbstrPathName) mut => VT.get_PathName(ref this, pbstrPathName);
+			public HRESULT put_PathName(BSTR bstrPathName) mut => VT.put_PathName(ref this, bstrPathName);
+			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut => VT.get_FormatName(ref this, pbstrFormatName);
+			public HRESULT put_FormatName(BSTR bstrFormatName) mut => VT.put_FormatName(ref this, bstrFormatName);
+			public HRESULT get_IsTransactional(out int16 pisTransactional) mut => VT.get_IsTransactional(ref this, out pisTransactional);
+			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut => VT.get_PrivLevel(ref this, out plPrivLevel);
+			public HRESULT put_PrivLevel(int32 lPrivLevel) mut => VT.put_PrivLevel(ref this, lPrivLevel);
+			public HRESULT get_Journal(out int32 plJournal) mut => VT.get_Journal(ref this, out plJournal);
+			public HRESULT put_Journal(int32 lJournal) mut => VT.put_Journal(ref this, lJournal);
+			public HRESULT get_Quota(out int32 plQuota) mut => VT.get_Quota(ref this, out plQuota);
+			public HRESULT put_Quota(int32 lQuota) mut => VT.put_Quota(ref this, lQuota);
+			public HRESULT get_BasePriority(out int32 plBasePriority) mut => VT.get_BasePriority(ref this, out plBasePriority);
+			public HRESULT put_BasePriority(int32 lBasePriority) mut => VT.put_BasePriority(ref this, lBasePriority);
+			public HRESULT get_CreateTime(out VARIANT pvarCreateTime) mut => VT.get_CreateTime(ref this, out pvarCreateTime);
+			public HRESULT get_ModifyTime(out VARIANT pvarModifyTime) mut => VT.get_ModifyTime(ref this, out pvarModifyTime);
+			public HRESULT get_Authenticate(out int32 plAuthenticate) mut => VT.get_Authenticate(ref this, out plAuthenticate);
+			public HRESULT put_Authenticate(int32 lAuthenticate) mut => VT.put_Authenticate(ref this, lAuthenticate);
+			public HRESULT get_JournalQuota(out int32 plJournalQuota) mut => VT.get_JournalQuota(ref this, out plJournalQuota);
+			public HRESULT put_JournalQuota(int32 lJournalQuota) mut => VT.put_JournalQuota(ref this, lJournalQuota);
+			public HRESULT get_IsWorldReadable(out int16 pisWorldReadable) mut => VT.get_IsWorldReadable(ref this, out pisWorldReadable);
+			public HRESULT Create(ref VARIANT IsTransactional, ref VARIANT IsWorldReadable) mut => VT.Create(ref this, ref IsTransactional, ref IsWorldReadable);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Open(int32 Access, int32 ShareMode, IMSMQQueue2** ppq) mut => VT.Open(ref this, Access, ShareMode, ppq);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Update() mut => VT.Update(ref this);
+			public HRESULT get_PathNameDNS(BSTR* pbstrPathNameDNS) mut => VT.get_PathNameDNS(ref this, pbstrPathNameDNS);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT get_Security(out VARIANT pvarSecurity) mut => VT.get_Security(ref this, out pvarSecurity);
+			public HRESULT put_Security(VARIANT varSecurity) mut => VT.put_Security(ref this, varSecurity);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -971,162 +779,46 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_QueueGuid(BSTR* pbstrGuidQueue) mut
-			{
-				return VT.get_QueueGuid(ref this, pbstrGuidQueue);
-			}
-			public HRESULT get_ServiceTypeGuid(BSTR* pbstrGuidServiceType) mut
-			{
-				return VT.get_ServiceTypeGuid(ref this, pbstrGuidServiceType);
-			}
-			public HRESULT put_ServiceTypeGuid(BSTR bstrGuidServiceType) mut
-			{
-				return VT.put_ServiceTypeGuid(ref this, bstrGuidServiceType);
-			}
-			public HRESULT get_Label(BSTR* pbstrLabel) mut
-			{
-				return VT.get_Label(ref this, pbstrLabel);
-			}
-			public HRESULT put_Label(BSTR bstrLabel) mut
-			{
-				return VT.put_Label(ref this, bstrLabel);
-			}
-			public HRESULT get_PathName(BSTR* pbstrPathName) mut
-			{
-				return VT.get_PathName(ref this, pbstrPathName);
-			}
-			public HRESULT put_PathName(BSTR bstrPathName) mut
-			{
-				return VT.put_PathName(ref this, bstrPathName);
-			}
-			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut
-			{
-				return VT.get_FormatName(ref this, pbstrFormatName);
-			}
-			public HRESULT put_FormatName(BSTR bstrFormatName) mut
-			{
-				return VT.put_FormatName(ref this, bstrFormatName);
-			}
-			public HRESULT get_IsTransactional(out int16 pisTransactional) mut
-			{
-				return VT.get_IsTransactional(ref this, out pisTransactional);
-			}
-			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut
-			{
-				return VT.get_PrivLevel(ref this, out plPrivLevel);
-			}
-			public HRESULT put_PrivLevel(int32 lPrivLevel) mut
-			{
-				return VT.put_PrivLevel(ref this, lPrivLevel);
-			}
-			public HRESULT get_Journal(out int32 plJournal) mut
-			{
-				return VT.get_Journal(ref this, out plJournal);
-			}
-			public HRESULT put_Journal(int32 lJournal) mut
-			{
-				return VT.put_Journal(ref this, lJournal);
-			}
-			public HRESULT get_Quota(out int32 plQuota) mut
-			{
-				return VT.get_Quota(ref this, out plQuota);
-			}
-			public HRESULT put_Quota(int32 lQuota) mut
-			{
-				return VT.put_Quota(ref this, lQuota);
-			}
-			public HRESULT get_BasePriority(out int32 plBasePriority) mut
-			{
-				return VT.get_BasePriority(ref this, out plBasePriority);
-			}
-			public HRESULT put_BasePriority(int32 lBasePriority) mut
-			{
-				return VT.put_BasePriority(ref this, lBasePriority);
-			}
-			public HRESULT get_CreateTime(out VARIANT pvarCreateTime) mut
-			{
-				return VT.get_CreateTime(ref this, out pvarCreateTime);
-			}
-			public HRESULT get_ModifyTime(out VARIANT pvarModifyTime) mut
-			{
-				return VT.get_ModifyTime(ref this, out pvarModifyTime);
-			}
-			public HRESULT get_Authenticate(out int32 plAuthenticate) mut
-			{
-				return VT.get_Authenticate(ref this, out plAuthenticate);
-			}
-			public HRESULT put_Authenticate(int32 lAuthenticate) mut
-			{
-				return VT.put_Authenticate(ref this, lAuthenticate);
-			}
-			public HRESULT get_JournalQuota(out int32 plJournalQuota) mut
-			{
-				return VT.get_JournalQuota(ref this, out plJournalQuota);
-			}
-			public HRESULT put_JournalQuota(int32 lJournalQuota) mut
-			{
-				return VT.put_JournalQuota(ref this, lJournalQuota);
-			}
-			public HRESULT get_IsWorldReadable(out int16 pisWorldReadable) mut
-			{
-				return VT.get_IsWorldReadable(ref this, out pisWorldReadable);
-			}
-			public HRESULT Create(ref VARIANT IsTransactional, ref VARIANT IsWorldReadable) mut
-			{
-				return VT.Create(ref this, ref IsTransactional, ref IsWorldReadable);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Open(int32 Access, int32 ShareMode, IMSMQQueue3** ppq) mut
-			{
-				return VT.Open(ref this, Access, ShareMode, ppq);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Update() mut
-			{
-				return VT.Update(ref this);
-			}
-			public HRESULT get_PathNameDNS(BSTR* pbstrPathNameDNS) mut
-			{
-				return VT.get_PathNameDNS(ref this, pbstrPathNameDNS);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT get_Security(out VARIANT pvarSecurity) mut
-			{
-				return VT.get_Security(ref this, out pvarSecurity);
-			}
-			public HRESULT put_Security(VARIANT varSecurity) mut
-			{
-				return VT.put_Security(ref this, varSecurity);
-			}
-			public HRESULT get_IsTransactional2(out int16 pisTransactional) mut
-			{
-				return VT.get_IsTransactional2(ref this, out pisTransactional);
-			}
-			public HRESULT get_IsWorldReadable2(out int16 pisWorldReadable) mut
-			{
-				return VT.get_IsWorldReadable2(ref this, out pisWorldReadable);
-			}
-			public HRESULT get_MulticastAddress(BSTR* pbstrMulticastAddress) mut
-			{
-				return VT.get_MulticastAddress(ref this, pbstrMulticastAddress);
-			}
-			public HRESULT put_MulticastAddress(BSTR bstrMulticastAddress) mut
-			{
-				return VT.put_MulticastAddress(ref this, bstrMulticastAddress);
-			}
-			public HRESULT get_ADsPath(BSTR* pbstrADsPath) mut
-			{
-				return VT.get_ADsPath(ref this, pbstrADsPath);
-			}
+			public HRESULT get_QueueGuid(BSTR* pbstrGuidQueue) mut => VT.get_QueueGuid(ref this, pbstrGuidQueue);
+			public HRESULT get_ServiceTypeGuid(BSTR* pbstrGuidServiceType) mut => VT.get_ServiceTypeGuid(ref this, pbstrGuidServiceType);
+			public HRESULT put_ServiceTypeGuid(BSTR bstrGuidServiceType) mut => VT.put_ServiceTypeGuid(ref this, bstrGuidServiceType);
+			public HRESULT get_Label(BSTR* pbstrLabel) mut => VT.get_Label(ref this, pbstrLabel);
+			public HRESULT put_Label(BSTR bstrLabel) mut => VT.put_Label(ref this, bstrLabel);
+			public HRESULT get_PathName(BSTR* pbstrPathName) mut => VT.get_PathName(ref this, pbstrPathName);
+			public HRESULT put_PathName(BSTR bstrPathName) mut => VT.put_PathName(ref this, bstrPathName);
+			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut => VT.get_FormatName(ref this, pbstrFormatName);
+			public HRESULT put_FormatName(BSTR bstrFormatName) mut => VT.put_FormatName(ref this, bstrFormatName);
+			public HRESULT get_IsTransactional(out int16 pisTransactional) mut => VT.get_IsTransactional(ref this, out pisTransactional);
+			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut => VT.get_PrivLevel(ref this, out plPrivLevel);
+			public HRESULT put_PrivLevel(int32 lPrivLevel) mut => VT.put_PrivLevel(ref this, lPrivLevel);
+			public HRESULT get_Journal(out int32 plJournal) mut => VT.get_Journal(ref this, out plJournal);
+			public HRESULT put_Journal(int32 lJournal) mut => VT.put_Journal(ref this, lJournal);
+			public HRESULT get_Quota(out int32 plQuota) mut => VT.get_Quota(ref this, out plQuota);
+			public HRESULT put_Quota(int32 lQuota) mut => VT.put_Quota(ref this, lQuota);
+			public HRESULT get_BasePriority(out int32 plBasePriority) mut => VT.get_BasePriority(ref this, out plBasePriority);
+			public HRESULT put_BasePriority(int32 lBasePriority) mut => VT.put_BasePriority(ref this, lBasePriority);
+			public HRESULT get_CreateTime(out VARIANT pvarCreateTime) mut => VT.get_CreateTime(ref this, out pvarCreateTime);
+			public HRESULT get_ModifyTime(out VARIANT pvarModifyTime) mut => VT.get_ModifyTime(ref this, out pvarModifyTime);
+			public HRESULT get_Authenticate(out int32 plAuthenticate) mut => VT.get_Authenticate(ref this, out plAuthenticate);
+			public HRESULT put_Authenticate(int32 lAuthenticate) mut => VT.put_Authenticate(ref this, lAuthenticate);
+			public HRESULT get_JournalQuota(out int32 plJournalQuota) mut => VT.get_JournalQuota(ref this, out plJournalQuota);
+			public HRESULT put_JournalQuota(int32 lJournalQuota) mut => VT.put_JournalQuota(ref this, lJournalQuota);
+			public HRESULT get_IsWorldReadable(out int16 pisWorldReadable) mut => VT.get_IsWorldReadable(ref this, out pisWorldReadable);
+			public HRESULT Create(ref VARIANT IsTransactional, ref VARIANT IsWorldReadable) mut => VT.Create(ref this, ref IsTransactional, ref IsWorldReadable);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Open(int32 Access, int32 ShareMode, IMSMQQueue3** ppq) mut => VT.Open(ref this, Access, ShareMode, ppq);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Update() mut => VT.Update(ref this);
+			public HRESULT get_PathNameDNS(BSTR* pbstrPathNameDNS) mut => VT.get_PathNameDNS(ref this, pbstrPathNameDNS);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT get_Security(out VARIANT pvarSecurity) mut => VT.get_Security(ref this, out pvarSecurity);
+			public HRESULT put_Security(VARIANT varSecurity) mut => VT.put_Security(ref this, varSecurity);
+			public HRESULT get_IsTransactional2(out int16 pisTransactional) mut => VT.get_IsTransactional2(ref this, out pisTransactional);
+			public HRESULT get_IsWorldReadable2(out int16 pisWorldReadable) mut => VT.get_IsWorldReadable2(ref this, out pisWorldReadable);
+			public HRESULT get_MulticastAddress(BSTR* pbstrMulticastAddress) mut => VT.get_MulticastAddress(ref this, pbstrMulticastAddress);
+			public HRESULT put_MulticastAddress(BSTR bstrMulticastAddress) mut => VT.put_MulticastAddress(ref this, bstrMulticastAddress);
+			public HRESULT get_ADsPath(BSTR* pbstrADsPath) mut => VT.get_ADsPath(ref this, pbstrADsPath);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1178,162 +870,46 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_QueueGuid(BSTR* pbstrGuidQueue) mut
-			{
-				return VT.get_QueueGuid(ref this, pbstrGuidQueue);
-			}
-			public HRESULT get_ServiceTypeGuid(BSTR* pbstrGuidServiceType) mut
-			{
-				return VT.get_ServiceTypeGuid(ref this, pbstrGuidServiceType);
-			}
-			public HRESULT put_ServiceTypeGuid(BSTR bstrGuidServiceType) mut
-			{
-				return VT.put_ServiceTypeGuid(ref this, bstrGuidServiceType);
-			}
-			public HRESULT get_Label(BSTR* pbstrLabel) mut
-			{
-				return VT.get_Label(ref this, pbstrLabel);
-			}
-			public HRESULT put_Label(BSTR bstrLabel) mut
-			{
-				return VT.put_Label(ref this, bstrLabel);
-			}
-			public HRESULT get_PathName(BSTR* pbstrPathName) mut
-			{
-				return VT.get_PathName(ref this, pbstrPathName);
-			}
-			public HRESULT put_PathName(BSTR bstrPathName) mut
-			{
-				return VT.put_PathName(ref this, bstrPathName);
-			}
-			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut
-			{
-				return VT.get_FormatName(ref this, pbstrFormatName);
-			}
-			public HRESULT put_FormatName(BSTR bstrFormatName) mut
-			{
-				return VT.put_FormatName(ref this, bstrFormatName);
-			}
-			public HRESULT get_IsTransactional(out int16 pisTransactional) mut
-			{
-				return VT.get_IsTransactional(ref this, out pisTransactional);
-			}
-			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut
-			{
-				return VT.get_PrivLevel(ref this, out plPrivLevel);
-			}
-			public HRESULT put_PrivLevel(int32 lPrivLevel) mut
-			{
-				return VT.put_PrivLevel(ref this, lPrivLevel);
-			}
-			public HRESULT get_Journal(out int32 plJournal) mut
-			{
-				return VT.get_Journal(ref this, out plJournal);
-			}
-			public HRESULT put_Journal(int32 lJournal) mut
-			{
-				return VT.put_Journal(ref this, lJournal);
-			}
-			public HRESULT get_Quota(out int32 plQuota) mut
-			{
-				return VT.get_Quota(ref this, out plQuota);
-			}
-			public HRESULT put_Quota(int32 lQuota) mut
-			{
-				return VT.put_Quota(ref this, lQuota);
-			}
-			public HRESULT get_BasePriority(out int32 plBasePriority) mut
-			{
-				return VT.get_BasePriority(ref this, out plBasePriority);
-			}
-			public HRESULT put_BasePriority(int32 lBasePriority) mut
-			{
-				return VT.put_BasePriority(ref this, lBasePriority);
-			}
-			public HRESULT get_CreateTime(out VARIANT pvarCreateTime) mut
-			{
-				return VT.get_CreateTime(ref this, out pvarCreateTime);
-			}
-			public HRESULT get_ModifyTime(out VARIANT pvarModifyTime) mut
-			{
-				return VT.get_ModifyTime(ref this, out pvarModifyTime);
-			}
-			public HRESULT get_Authenticate(out int32 plAuthenticate) mut
-			{
-				return VT.get_Authenticate(ref this, out plAuthenticate);
-			}
-			public HRESULT put_Authenticate(int32 lAuthenticate) mut
-			{
-				return VT.put_Authenticate(ref this, lAuthenticate);
-			}
-			public HRESULT get_JournalQuota(out int32 plJournalQuota) mut
-			{
-				return VT.get_JournalQuota(ref this, out plJournalQuota);
-			}
-			public HRESULT put_JournalQuota(int32 lJournalQuota) mut
-			{
-				return VT.put_JournalQuota(ref this, lJournalQuota);
-			}
-			public HRESULT get_IsWorldReadable(out int16 pisWorldReadable) mut
-			{
-				return VT.get_IsWorldReadable(ref this, out pisWorldReadable);
-			}
-			public HRESULT Create(ref VARIANT IsTransactional, ref VARIANT IsWorldReadable) mut
-			{
-				return VT.Create(ref this, ref IsTransactional, ref IsWorldReadable);
-			}
-			public HRESULT Delete() mut
-			{
-				return VT.Delete(ref this);
-			}
-			public HRESULT Open(int32 Access, int32 ShareMode, IMSMQQueue4** ppq) mut
-			{
-				return VT.Open(ref this, Access, ShareMode, ppq);
-			}
-			public HRESULT Refresh() mut
-			{
-				return VT.Refresh(ref this);
-			}
-			public HRESULT Update() mut
-			{
-				return VT.Update(ref this);
-			}
-			public HRESULT get_PathNameDNS(BSTR* pbstrPathNameDNS) mut
-			{
-				return VT.get_PathNameDNS(ref this, pbstrPathNameDNS);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT get_Security(out VARIANT pvarSecurity) mut
-			{
-				return VT.get_Security(ref this, out pvarSecurity);
-			}
-			public HRESULT put_Security(VARIANT varSecurity) mut
-			{
-				return VT.put_Security(ref this, varSecurity);
-			}
-			public HRESULT get_IsTransactional2(out int16 pisTransactional) mut
-			{
-				return VT.get_IsTransactional2(ref this, out pisTransactional);
-			}
-			public HRESULT get_IsWorldReadable2(out int16 pisWorldReadable) mut
-			{
-				return VT.get_IsWorldReadable2(ref this, out pisWorldReadable);
-			}
-			public HRESULT get_MulticastAddress(BSTR* pbstrMulticastAddress) mut
-			{
-				return VT.get_MulticastAddress(ref this, pbstrMulticastAddress);
-			}
-			public HRESULT put_MulticastAddress(BSTR bstrMulticastAddress) mut
-			{
-				return VT.put_MulticastAddress(ref this, bstrMulticastAddress);
-			}
-			public HRESULT get_ADsPath(BSTR* pbstrADsPath) mut
-			{
-				return VT.get_ADsPath(ref this, pbstrADsPath);
-			}
+			public HRESULT get_QueueGuid(BSTR* pbstrGuidQueue) mut => VT.get_QueueGuid(ref this, pbstrGuidQueue);
+			public HRESULT get_ServiceTypeGuid(BSTR* pbstrGuidServiceType) mut => VT.get_ServiceTypeGuid(ref this, pbstrGuidServiceType);
+			public HRESULT put_ServiceTypeGuid(BSTR bstrGuidServiceType) mut => VT.put_ServiceTypeGuid(ref this, bstrGuidServiceType);
+			public HRESULT get_Label(BSTR* pbstrLabel) mut => VT.get_Label(ref this, pbstrLabel);
+			public HRESULT put_Label(BSTR bstrLabel) mut => VT.put_Label(ref this, bstrLabel);
+			public HRESULT get_PathName(BSTR* pbstrPathName) mut => VT.get_PathName(ref this, pbstrPathName);
+			public HRESULT put_PathName(BSTR bstrPathName) mut => VT.put_PathName(ref this, bstrPathName);
+			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut => VT.get_FormatName(ref this, pbstrFormatName);
+			public HRESULT put_FormatName(BSTR bstrFormatName) mut => VT.put_FormatName(ref this, bstrFormatName);
+			public HRESULT get_IsTransactional(out int16 pisTransactional) mut => VT.get_IsTransactional(ref this, out pisTransactional);
+			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut => VT.get_PrivLevel(ref this, out plPrivLevel);
+			public HRESULT put_PrivLevel(int32 lPrivLevel) mut => VT.put_PrivLevel(ref this, lPrivLevel);
+			public HRESULT get_Journal(out int32 plJournal) mut => VT.get_Journal(ref this, out plJournal);
+			public HRESULT put_Journal(int32 lJournal) mut => VT.put_Journal(ref this, lJournal);
+			public HRESULT get_Quota(out int32 plQuota) mut => VT.get_Quota(ref this, out plQuota);
+			public HRESULT put_Quota(int32 lQuota) mut => VT.put_Quota(ref this, lQuota);
+			public HRESULT get_BasePriority(out int32 plBasePriority) mut => VT.get_BasePriority(ref this, out plBasePriority);
+			public HRESULT put_BasePriority(int32 lBasePriority) mut => VT.put_BasePriority(ref this, lBasePriority);
+			public HRESULT get_CreateTime(out VARIANT pvarCreateTime) mut => VT.get_CreateTime(ref this, out pvarCreateTime);
+			public HRESULT get_ModifyTime(out VARIANT pvarModifyTime) mut => VT.get_ModifyTime(ref this, out pvarModifyTime);
+			public HRESULT get_Authenticate(out int32 plAuthenticate) mut => VT.get_Authenticate(ref this, out plAuthenticate);
+			public HRESULT put_Authenticate(int32 lAuthenticate) mut => VT.put_Authenticate(ref this, lAuthenticate);
+			public HRESULT get_JournalQuota(out int32 plJournalQuota) mut => VT.get_JournalQuota(ref this, out plJournalQuota);
+			public HRESULT put_JournalQuota(int32 lJournalQuota) mut => VT.put_JournalQuota(ref this, lJournalQuota);
+			public HRESULT get_IsWorldReadable(out int16 pisWorldReadable) mut => VT.get_IsWorldReadable(ref this, out pisWorldReadable);
+			public HRESULT Create(ref VARIANT IsTransactional, ref VARIANT IsWorldReadable) mut => VT.Create(ref this, ref IsTransactional, ref IsWorldReadable);
+			public HRESULT Delete() mut => VT.Delete(ref this);
+			public HRESULT Open(int32 Access, int32 ShareMode, IMSMQQueue4** ppq) mut => VT.Open(ref this, Access, ShareMode, ppq);
+			public HRESULT Refresh() mut => VT.Refresh(ref this);
+			public HRESULT Update() mut => VT.Update(ref this);
+			public HRESULT get_PathNameDNS(BSTR* pbstrPathNameDNS) mut => VT.get_PathNameDNS(ref this, pbstrPathNameDNS);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT get_Security(out VARIANT pvarSecurity) mut => VT.get_Security(ref this, out pvarSecurity);
+			public HRESULT put_Security(VARIANT varSecurity) mut => VT.put_Security(ref this, varSecurity);
+			public HRESULT get_IsTransactional2(out int16 pisTransactional) mut => VT.get_IsTransactional2(ref this, out pisTransactional);
+			public HRESULT get_IsWorldReadable2(out int16 pisWorldReadable) mut => VT.get_IsWorldReadable2(ref this, out pisWorldReadable);
+			public HRESULT get_MulticastAddress(BSTR* pbstrMulticastAddress) mut => VT.get_MulticastAddress(ref this, pbstrMulticastAddress);
+			public HRESULT put_MulticastAddress(BSTR bstrMulticastAddress) mut => VT.put_MulticastAddress(ref this, bstrMulticastAddress);
+			public HRESULT get_ADsPath(BSTR* pbstrADsPath) mut => VT.get_ADsPath(ref this, pbstrADsPath);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1385,58 +961,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Access(out int32 plAccess) mut
-			{
-				return VT.get_Access(ref this, out plAccess);
-			}
-			public HRESULT get_ShareMode(out int32 plShareMode) mut
-			{
-				return VT.get_ShareMode(ref this, out plShareMode);
-			}
-			public HRESULT get_QueueInfo(IMSMQQueueInfo** ppqinfo) mut
-			{
-				return VT.get_QueueInfo(ref this, ppqinfo);
-			}
-			public HRESULT get_Handle(out int32 plHandle) mut
-			{
-				return VT.get_Handle(ref this, out plHandle);
-			}
-			public HRESULT get_IsOpen(out int16 pisOpen) mut
-			{
-				return VT.get_IsOpen(ref this, out pisOpen);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT Receive(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.Receive(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT Peek(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.Peek(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT EnableNotification(IMSMQEvent* Event, ref VARIANT Cursor, ref VARIANT ReceiveTimeout) mut
-			{
-				return VT.EnableNotification(ref this, Event, ref Cursor, ref ReceiveTimeout);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT ReceiveCurrent(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.ReceiveCurrent(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT PeekNext(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.PeekNext(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT PeekCurrent(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.PeekCurrent(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
+			public HRESULT get_Access(out int32 plAccess) mut => VT.get_Access(ref this, out plAccess);
+			public HRESULT get_ShareMode(out int32 plShareMode) mut => VT.get_ShareMode(ref this, out plShareMode);
+			public HRESULT get_QueueInfo(IMSMQQueueInfo** ppqinfo) mut => VT.get_QueueInfo(ref this, ppqinfo);
+			public HRESULT get_Handle(out int32 plHandle) mut => VT.get_Handle(ref this, out plHandle);
+			public HRESULT get_IsOpen(out int16 pisOpen) mut => VT.get_IsOpen(ref this, out pisOpen);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT Receive(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.Receive(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT Peek(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.Peek(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT EnableNotification(IMSMQEvent* Event, ref VARIANT Cursor, ref VARIANT ReceiveTimeout) mut => VT.EnableNotification(ref this, Event, ref Cursor, ref ReceiveTimeout);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT ReceiveCurrent(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.ReceiveCurrent(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT PeekNext(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.PeekNext(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT PeekCurrent(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.PeekCurrent(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1462,82 +1000,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Access(out int32 plAccess) mut
-			{
-				return VT.get_Access(ref this, out plAccess);
-			}
-			public HRESULT get_ShareMode(out int32 plShareMode) mut
-			{
-				return VT.get_ShareMode(ref this, out plShareMode);
-			}
-			public HRESULT get_QueueInfo(IMSMQQueueInfo2** ppqinfo) mut
-			{
-				return VT.get_QueueInfo(ref this, ppqinfo);
-			}
-			public HRESULT get_Handle(out int32 plHandle) mut
-			{
-				return VT.get_Handle(ref this, out plHandle);
-			}
-			public HRESULT get_IsOpen(out int16 pisOpen) mut
-			{
-				return VT.get_IsOpen(ref this, out pisOpen);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT Receive_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.Receive_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT Peek_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.Peek_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT EnableNotification(IMSMQEvent2* Event, ref VARIANT Cursor, ref VARIANT ReceiveTimeout) mut
-			{
-				return VT.EnableNotification(ref this, Event, ref Cursor, ref ReceiveTimeout);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT ReceiveCurrent_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.ReceiveCurrent_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT PeekNext_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.PeekNext_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT PeekCurrent_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.PeekCurrent_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT Receive(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut
-			{
-				return VT.Receive(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT Peek(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut
-			{
-				return VT.Peek(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveCurrent(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut
-			{
-				return VT.ReceiveCurrent(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekNext(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut
-			{
-				return VT.PeekNext(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekCurrent(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut
-			{
-				return VT.PeekCurrent(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT get_Access(out int32 plAccess) mut => VT.get_Access(ref this, out plAccess);
+			public HRESULT get_ShareMode(out int32 plShareMode) mut => VT.get_ShareMode(ref this, out plShareMode);
+			public HRESULT get_QueueInfo(IMSMQQueueInfo2** ppqinfo) mut => VT.get_QueueInfo(ref this, ppqinfo);
+			public HRESULT get_Handle(out int32 plHandle) mut => VT.get_Handle(ref this, out plHandle);
+			public HRESULT get_IsOpen(out int16 pisOpen) mut => VT.get_IsOpen(ref this, out pisOpen);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT Receive_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.Receive_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT Peek_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.Peek_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT EnableNotification(IMSMQEvent2* Event, ref VARIANT Cursor, ref VARIANT ReceiveTimeout) mut => VT.EnableNotification(ref this, Event, ref Cursor, ref ReceiveTimeout);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT ReceiveCurrent_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.ReceiveCurrent_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT PeekNext_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.PeekNext_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT PeekCurrent_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.PeekCurrent_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT Receive(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut => VT.Receive(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT Peek(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut => VT.Peek(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveCurrent(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut => VT.ReceiveCurrent(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT PeekNext(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut => VT.PeekNext(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT PeekCurrent(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage2** ppmsg) mut => VT.PeekCurrent(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1569,134 +1051,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Access(out int32 plAccess) mut
-			{
-				return VT.get_Access(ref this, out plAccess);
-			}
-			public HRESULT get_ShareMode(out int32 plShareMode) mut
-			{
-				return VT.get_ShareMode(ref this, out plShareMode);
-			}
-			public HRESULT get_QueueInfo(IMSMQQueueInfo3** ppqinfo) mut
-			{
-				return VT.get_QueueInfo(ref this, ppqinfo);
-			}
-			public HRESULT get_Handle(out int32 plHandle) mut
-			{
-				return VT.get_Handle(ref this, out plHandle);
-			}
-			public HRESULT get_IsOpen(out int16 pisOpen) mut
-			{
-				return VT.get_IsOpen(ref this, out pisOpen);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT Receive_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.Receive_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT Peek_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.Peek_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT EnableNotification(IMSMQEvent3* Event, ref VARIANT Cursor, ref VARIANT ReceiveTimeout) mut
-			{
-				return VT.EnableNotification(ref this, Event, ref Cursor, ref ReceiveTimeout);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT ReceiveCurrent_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.ReceiveCurrent_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT PeekNext_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.PeekNext_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT PeekCurrent_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.PeekCurrent_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT Receive(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.Receive(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT Peek(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.Peek(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveCurrent(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.ReceiveCurrent(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekNext(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.PeekNext(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekCurrent(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.PeekCurrent(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT get_Handle2(out VARIANT pvarHandle) mut
-			{
-				return VT.get_Handle2(ref this, out pvarHandle);
-			}
-			public HRESULT ReceiveByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.ReceiveByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveNextByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.ReceiveNextByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceivePreviousByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.ReceivePreviousByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveFirstByLookupId(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.ReceiveFirstByLookupId(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveLastByLookupId(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.ReceiveLastByLookupId(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.PeekByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekNextByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.PeekNextByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekPreviousByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.PeekPreviousByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekFirstByLookupId(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.PeekFirstByLookupId(ref this, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekLastByLookupId(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut
-			{
-				return VT.PeekLastByLookupId(ref this, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT Purge() mut
-			{
-				return VT.Purge(ref this);
-			}
-			public HRESULT get_IsOpen2(out int16 pisOpen) mut
-			{
-				return VT.get_IsOpen2(ref this, out pisOpen);
-			}
+			public HRESULT get_Access(out int32 plAccess) mut => VT.get_Access(ref this, out plAccess);
+			public HRESULT get_ShareMode(out int32 plShareMode) mut => VT.get_ShareMode(ref this, out plShareMode);
+			public HRESULT get_QueueInfo(IMSMQQueueInfo3** ppqinfo) mut => VT.get_QueueInfo(ref this, ppqinfo);
+			public HRESULT get_Handle(out int32 plHandle) mut => VT.get_Handle(ref this, out plHandle);
+			public HRESULT get_IsOpen(out int16 pisOpen) mut => VT.get_IsOpen(ref this, out pisOpen);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT Receive_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.Receive_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT Peek_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.Peek_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT EnableNotification(IMSMQEvent3* Event, ref VARIANT Cursor, ref VARIANT ReceiveTimeout) mut => VT.EnableNotification(ref this, Event, ref Cursor, ref ReceiveTimeout);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT ReceiveCurrent_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.ReceiveCurrent_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT PeekNext_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.PeekNext_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT PeekCurrent_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.PeekCurrent_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT Receive(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.Receive(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT Peek(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.Peek(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveCurrent(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.ReceiveCurrent(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT PeekNext(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.PeekNext(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT PeekCurrent(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.PeekCurrent(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT get_Handle2(out VARIANT pvarHandle) mut => VT.get_Handle2(ref this, out pvarHandle);
+			public HRESULT ReceiveByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.ReceiveByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveNextByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.ReceiveNextByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT ReceivePreviousByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.ReceivePreviousByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveFirstByLookupId(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.ReceiveFirstByLookupId(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveLastByLookupId(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.ReceiveLastByLookupId(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.PeekByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekNextByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.PeekNextByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekPreviousByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.PeekPreviousByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekFirstByLookupId(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.PeekFirstByLookupId(ref this, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekLastByLookupId(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage3** ppmsg) mut => VT.PeekLastByLookupId(ref this, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT Purge() mut => VT.Purge(ref this);
+			public HRESULT get_IsOpen2(out int16 pisOpen) mut => VT.get_IsOpen2(ref this, out pisOpen);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1741,138 +1128,40 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Access(out int32 plAccess) mut
-			{
-				return VT.get_Access(ref this, out plAccess);
-			}
-			public HRESULT get_ShareMode(out int32 plShareMode) mut
-			{
-				return VT.get_ShareMode(ref this, out plShareMode);
-			}
-			public HRESULT get_QueueInfo(IMSMQQueueInfo4** ppqinfo) mut
-			{
-				return VT.get_QueueInfo(ref this, ppqinfo);
-			}
-			public HRESULT get_Handle(out int32 plHandle) mut
-			{
-				return VT.get_Handle(ref this, out plHandle);
-			}
-			public HRESULT get_IsOpen(out int16 pisOpen) mut
-			{
-				return VT.get_IsOpen(ref this, out pisOpen);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT Receive_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.Receive_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT Peek_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.Peek_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT EnableNotification(IMSMQEvent3* Event, ref VARIANT Cursor, ref VARIANT ReceiveTimeout) mut
-			{
-				return VT.EnableNotification(ref this, Event, ref Cursor, ref ReceiveTimeout);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT ReceiveCurrent_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.ReceiveCurrent_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT PeekNext_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.PeekNext_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT PeekCurrent_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut
-			{
-				return VT.PeekCurrent_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
-			}
-			public HRESULT Receive(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.Receive(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT Peek(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.Peek(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveCurrent(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.ReceiveCurrent(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekNext(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.PeekNext(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekCurrent(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.PeekCurrent(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT get_Handle2(out VARIANT pvarHandle) mut
-			{
-				return VT.get_Handle2(ref this, out pvarHandle);
-			}
-			public HRESULT ReceiveByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.ReceiveByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveNextByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.ReceiveNextByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceivePreviousByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.ReceivePreviousByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveFirstByLookupId(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.ReceiveFirstByLookupId(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT ReceiveLastByLookupId(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.ReceiveLastByLookupId(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.PeekByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekNextByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.PeekNextByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekPreviousByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.PeekPreviousByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekFirstByLookupId(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.PeekFirstByLookupId(ref this, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT PeekLastByLookupId(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.PeekLastByLookupId(ref this, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
-			public HRESULT Purge() mut
-			{
-				return VT.Purge(ref this);
-			}
-			public HRESULT get_IsOpen2(out int16 pisOpen) mut
-			{
-				return VT.get_IsOpen2(ref this, out pisOpen);
-			}
-			public HRESULT ReceiveByLookupIdAllowPeek(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut
-			{
-				return VT.ReceiveByLookupIdAllowPeek(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
-			}
+			public HRESULT get_Access(out int32 plAccess) mut => VT.get_Access(ref this, out plAccess);
+			public HRESULT get_ShareMode(out int32 plShareMode) mut => VT.get_ShareMode(ref this, out plShareMode);
+			public HRESULT get_QueueInfo(IMSMQQueueInfo4** ppqinfo) mut => VT.get_QueueInfo(ref this, ppqinfo);
+			public HRESULT get_Handle(out int32 plHandle) mut => VT.get_Handle(ref this, out plHandle);
+			public HRESULT get_IsOpen(out int16 pisOpen) mut => VT.get_IsOpen(ref this, out pisOpen);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT Receive_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.Receive_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT Peek_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.Peek_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT EnableNotification(IMSMQEvent3* Event, ref VARIANT Cursor, ref VARIANT ReceiveTimeout) mut => VT.EnableNotification(ref this, Event, ref Cursor, ref ReceiveTimeout);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT ReceiveCurrent_v1(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.ReceiveCurrent_v1(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT PeekNext_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.PeekNext_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT PeekCurrent_v1(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, IMSMQMessage** ppmsg) mut => VT.PeekCurrent_v1(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ppmsg);
+			public HRESULT Receive(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.Receive(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT Peek(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.Peek(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveCurrent(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.ReceiveCurrent(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT PeekNext(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.PeekNext(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT PeekCurrent(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT ReceiveTimeout, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.PeekCurrent(ref this, ref WantDestinationQueue, ref WantBody, ref ReceiveTimeout, ref WantConnectorType, ppmsg);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT get_Handle2(out VARIANT pvarHandle) mut => VT.get_Handle2(ref this, out pvarHandle);
+			public HRESULT ReceiveByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.ReceiveByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveNextByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.ReceiveNextByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT ReceivePreviousByLookupId(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.ReceivePreviousByLookupId(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveFirstByLookupId(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.ReceiveFirstByLookupId(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT ReceiveLastByLookupId(ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.ReceiveLastByLookupId(ref this, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.PeekByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekNextByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.PeekNextByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekPreviousByLookupId(VARIANT LookupId, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.PeekPreviousByLookupId(ref this, LookupId, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekFirstByLookupId(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.PeekFirstByLookupId(ref this, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT PeekLastByLookupId(ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.PeekLastByLookupId(ref this, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+			public HRESULT Purge() mut => VT.Purge(ref this);
+			public HRESULT get_IsOpen2(out int16 pisOpen) mut => VT.get_IsOpen2(ref this, out pisOpen);
+			public HRESULT ReceiveByLookupIdAllowPeek(VARIANT LookupId, ref VARIANT Transaction, ref VARIANT WantDestinationQueue, ref VARIANT WantBody, ref VARIANT WantConnectorType, IMSMQMessage4** ppmsg) mut => VT.ReceiveByLookupIdAllowPeek(ref this, LookupId, ref Transaction, ref WantDestinationQueue, ref WantBody, ref WantConnectorType, ppmsg);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1918,202 +1207,56 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Class(out int32 plClass) mut
-			{
-				return VT.get_Class(ref this, out plClass);
-			}
-			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut
-			{
-				return VT.get_PrivLevel(ref this, out plPrivLevel);
-			}
-			public HRESULT put_PrivLevel(int32 lPrivLevel) mut
-			{
-				return VT.put_PrivLevel(ref this, lPrivLevel);
-			}
-			public HRESULT get_AuthLevel(out int32 plAuthLevel) mut
-			{
-				return VT.get_AuthLevel(ref this, out plAuthLevel);
-			}
-			public HRESULT put_AuthLevel(int32 lAuthLevel) mut
-			{
-				return VT.put_AuthLevel(ref this, lAuthLevel);
-			}
-			public HRESULT get_IsAuthenticated(out int16 pisAuthenticated) mut
-			{
-				return VT.get_IsAuthenticated(ref this, out pisAuthenticated);
-			}
-			public HRESULT get_Delivery(out int32 plDelivery) mut
-			{
-				return VT.get_Delivery(ref this, out plDelivery);
-			}
-			public HRESULT put_Delivery(int32 lDelivery) mut
-			{
-				return VT.put_Delivery(ref this, lDelivery);
-			}
-			public HRESULT get_Trace(out int32 plTrace) mut
-			{
-				return VT.get_Trace(ref this, out plTrace);
-			}
-			public HRESULT put_Trace(int32 lTrace) mut
-			{
-				return VT.put_Trace(ref this, lTrace);
-			}
-			public HRESULT get_Priority(out int32 plPriority) mut
-			{
-				return VT.get_Priority(ref this, out plPriority);
-			}
-			public HRESULT put_Priority(int32 lPriority) mut
-			{
-				return VT.put_Priority(ref this, lPriority);
-			}
-			public HRESULT get_Journal(out int32 plJournal) mut
-			{
-				return VT.get_Journal(ref this, out plJournal);
-			}
-			public HRESULT put_Journal(int32 lJournal) mut
-			{
-				return VT.put_Journal(ref this, lJournal);
-			}
-			public HRESULT get_ResponseQueueInfo(IMSMQQueueInfo** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo(IMSMQQueueInfo* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut
-			{
-				return VT.get_AppSpecific(ref this, out plAppSpecific);
-			}
-			public HRESULT put_AppSpecific(int32 lAppSpecific) mut
-			{
-				return VT.put_AppSpecific(ref this, lAppSpecific);
-			}
-			public HRESULT get_SourceMachineGuid(BSTR* pbstrGuidSrcMachine) mut
-			{
-				return VT.get_SourceMachineGuid(ref this, pbstrGuidSrcMachine);
-			}
-			public HRESULT get_BodyLength(out int32 pcbBody) mut
-			{
-				return VT.get_BodyLength(ref this, out pcbBody);
-			}
-			public HRESULT get_Body(out VARIANT pvarBody) mut
-			{
-				return VT.get_Body(ref this, out pvarBody);
-			}
-			public HRESULT put_Body(VARIANT varBody) mut
-			{
-				return VT.put_Body(ref this, varBody);
-			}
-			public HRESULT get_AdminQueueInfo(IMSMQQueueInfo** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo(IMSMQQueueInfo* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_Id(out VARIANT pvarMsgId) mut
-			{
-				return VT.get_Id(ref this, out pvarMsgId);
-			}
-			public HRESULT get_CorrelationId(out VARIANT pvarMsgId) mut
-			{
-				return VT.get_CorrelationId(ref this, out pvarMsgId);
-			}
-			public HRESULT put_CorrelationId(VARIANT varMsgId) mut
-			{
-				return VT.put_CorrelationId(ref this, varMsgId);
-			}
-			public HRESULT get_Ack(out int32 plAck) mut
-			{
-				return VT.get_Ack(ref this, out plAck);
-			}
-			public HRESULT put_Ack(int32 lAck) mut
-			{
-				return VT.put_Ack(ref this, lAck);
-			}
-			public HRESULT get_Label(BSTR* pbstrLabel) mut
-			{
-				return VT.get_Label(ref this, pbstrLabel);
-			}
-			public HRESULT put_Label(BSTR bstrLabel) mut
-			{
-				return VT.put_Label(ref this, bstrLabel);
-			}
-			public HRESULT get_MaxTimeToReachQueue(out int32 plMaxTimeToReachQueue) mut
-			{
-				return VT.get_MaxTimeToReachQueue(ref this, out plMaxTimeToReachQueue);
-			}
-			public HRESULT put_MaxTimeToReachQueue(int32 lMaxTimeToReachQueue) mut
-			{
-				return VT.put_MaxTimeToReachQueue(ref this, lMaxTimeToReachQueue);
-			}
-			public HRESULT get_MaxTimeToReceive(out int32 plMaxTimeToReceive) mut
-			{
-				return VT.get_MaxTimeToReceive(ref this, out plMaxTimeToReceive);
-			}
-			public HRESULT put_MaxTimeToReceive(int32 lMaxTimeToReceive) mut
-			{
-				return VT.put_MaxTimeToReceive(ref this, lMaxTimeToReceive);
-			}
-			public HRESULT get_HashAlgorithm(out int32 plHashAlg) mut
-			{
-				return VT.get_HashAlgorithm(ref this, out plHashAlg);
-			}
-			public HRESULT put_HashAlgorithm(int32 lHashAlg) mut
-			{
-				return VT.put_HashAlgorithm(ref this, lHashAlg);
-			}
-			public HRESULT get_EncryptAlgorithm(out int32 plEncryptAlg) mut
-			{
-				return VT.get_EncryptAlgorithm(ref this, out plEncryptAlg);
-			}
-			public HRESULT put_EncryptAlgorithm(int32 lEncryptAlg) mut
-			{
-				return VT.put_EncryptAlgorithm(ref this, lEncryptAlg);
-			}
-			public HRESULT get_SentTime(out VARIANT pvarSentTime) mut
-			{
-				return VT.get_SentTime(ref this, out pvarSentTime);
-			}
-			public HRESULT get_ArrivedTime(out VARIANT plArrivedTime) mut
-			{
-				return VT.get_ArrivedTime(ref this, out plArrivedTime);
-			}
-			public HRESULT get_DestinationQueueInfo(IMSMQQueueInfo** ppqinfoDest) mut
-			{
-				return VT.get_DestinationQueueInfo(ref this, ppqinfoDest);
-			}
-			public HRESULT get_SenderCertificate(out VARIANT pvarSenderCert) mut
-			{
-				return VT.get_SenderCertificate(ref this, out pvarSenderCert);
-			}
-			public HRESULT put_SenderCertificate(VARIANT varSenderCert) mut
-			{
-				return VT.put_SenderCertificate(ref this, varSenderCert);
-			}
-			public HRESULT get_SenderId(out VARIANT pvarSenderId) mut
-			{
-				return VT.get_SenderId(ref this, out pvarSenderId);
-			}
-			public HRESULT get_SenderIdType(out int32 plSenderIdType) mut
-			{
-				return VT.get_SenderIdType(ref this, out plSenderIdType);
-			}
-			public HRESULT put_SenderIdType(int32 lSenderIdType) mut
-			{
-				return VT.put_SenderIdType(ref this, lSenderIdType);
-			}
-			public HRESULT Send(IMSMQQueue* DestinationQueue, ref VARIANT Transaction) mut
-			{
-				return VT.Send(ref this, DestinationQueue, ref Transaction);
-			}
-			public HRESULT AttachCurrentSecurityContext() mut
-			{
-				return VT.AttachCurrentSecurityContext(ref this);
-			}
+			public HRESULT get_Class(out int32 plClass) mut => VT.get_Class(ref this, out plClass);
+			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut => VT.get_PrivLevel(ref this, out plPrivLevel);
+			public HRESULT put_PrivLevel(int32 lPrivLevel) mut => VT.put_PrivLevel(ref this, lPrivLevel);
+			public HRESULT get_AuthLevel(out int32 plAuthLevel) mut => VT.get_AuthLevel(ref this, out plAuthLevel);
+			public HRESULT put_AuthLevel(int32 lAuthLevel) mut => VT.put_AuthLevel(ref this, lAuthLevel);
+			public HRESULT get_IsAuthenticated(out int16 pisAuthenticated) mut => VT.get_IsAuthenticated(ref this, out pisAuthenticated);
+			public HRESULT get_Delivery(out int32 plDelivery) mut => VT.get_Delivery(ref this, out plDelivery);
+			public HRESULT put_Delivery(int32 lDelivery) mut => VT.put_Delivery(ref this, lDelivery);
+			public HRESULT get_Trace(out int32 plTrace) mut => VT.get_Trace(ref this, out plTrace);
+			public HRESULT put_Trace(int32 lTrace) mut => VT.put_Trace(ref this, lTrace);
+			public HRESULT get_Priority(out int32 plPriority) mut => VT.get_Priority(ref this, out plPriority);
+			public HRESULT put_Priority(int32 lPriority) mut => VT.put_Priority(ref this, lPriority);
+			public HRESULT get_Journal(out int32 plJournal) mut => VT.get_Journal(ref this, out plJournal);
+			public HRESULT put_Journal(int32 lJournal) mut => VT.put_Journal(ref this, lJournal);
+			public HRESULT get_ResponseQueueInfo(IMSMQQueueInfo** ppqinfoResponse) mut => VT.get_ResponseQueueInfo(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo(IMSMQQueueInfo* pqinfoResponse) mut => VT.putref_ResponseQueueInfo(ref this, pqinfoResponse);
+			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut => VT.get_AppSpecific(ref this, out plAppSpecific);
+			public HRESULT put_AppSpecific(int32 lAppSpecific) mut => VT.put_AppSpecific(ref this, lAppSpecific);
+			public HRESULT get_SourceMachineGuid(BSTR* pbstrGuidSrcMachine) mut => VT.get_SourceMachineGuid(ref this, pbstrGuidSrcMachine);
+			public HRESULT get_BodyLength(out int32 pcbBody) mut => VT.get_BodyLength(ref this, out pcbBody);
+			public HRESULT get_Body(out VARIANT pvarBody) mut => VT.get_Body(ref this, out pvarBody);
+			public HRESULT put_Body(VARIANT varBody) mut => VT.put_Body(ref this, varBody);
+			public HRESULT get_AdminQueueInfo(IMSMQQueueInfo** ppqinfoAdmin) mut => VT.get_AdminQueueInfo(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo(IMSMQQueueInfo* pqinfoAdmin) mut => VT.putref_AdminQueueInfo(ref this, pqinfoAdmin);
+			public HRESULT get_Id(out VARIANT pvarMsgId) mut => VT.get_Id(ref this, out pvarMsgId);
+			public HRESULT get_CorrelationId(out VARIANT pvarMsgId) mut => VT.get_CorrelationId(ref this, out pvarMsgId);
+			public HRESULT put_CorrelationId(VARIANT varMsgId) mut => VT.put_CorrelationId(ref this, varMsgId);
+			public HRESULT get_Ack(out int32 plAck) mut => VT.get_Ack(ref this, out plAck);
+			public HRESULT put_Ack(int32 lAck) mut => VT.put_Ack(ref this, lAck);
+			public HRESULT get_Label(BSTR* pbstrLabel) mut => VT.get_Label(ref this, pbstrLabel);
+			public HRESULT put_Label(BSTR bstrLabel) mut => VT.put_Label(ref this, bstrLabel);
+			public HRESULT get_MaxTimeToReachQueue(out int32 plMaxTimeToReachQueue) mut => VT.get_MaxTimeToReachQueue(ref this, out plMaxTimeToReachQueue);
+			public HRESULT put_MaxTimeToReachQueue(int32 lMaxTimeToReachQueue) mut => VT.put_MaxTimeToReachQueue(ref this, lMaxTimeToReachQueue);
+			public HRESULT get_MaxTimeToReceive(out int32 plMaxTimeToReceive) mut => VT.get_MaxTimeToReceive(ref this, out plMaxTimeToReceive);
+			public HRESULT put_MaxTimeToReceive(int32 lMaxTimeToReceive) mut => VT.put_MaxTimeToReceive(ref this, lMaxTimeToReceive);
+			public HRESULT get_HashAlgorithm(out int32 plHashAlg) mut => VT.get_HashAlgorithm(ref this, out plHashAlg);
+			public HRESULT put_HashAlgorithm(int32 lHashAlg) mut => VT.put_HashAlgorithm(ref this, lHashAlg);
+			public HRESULT get_EncryptAlgorithm(out int32 plEncryptAlg) mut => VT.get_EncryptAlgorithm(ref this, out plEncryptAlg);
+			public HRESULT put_EncryptAlgorithm(int32 lEncryptAlg) mut => VT.put_EncryptAlgorithm(ref this, lEncryptAlg);
+			public HRESULT get_SentTime(out VARIANT pvarSentTime) mut => VT.get_SentTime(ref this, out pvarSentTime);
+			public HRESULT get_ArrivedTime(out VARIANT plArrivedTime) mut => VT.get_ArrivedTime(ref this, out plArrivedTime);
+			public HRESULT get_DestinationQueueInfo(IMSMQQueueInfo** ppqinfoDest) mut => VT.get_DestinationQueueInfo(ref this, ppqinfoDest);
+			public HRESULT get_SenderCertificate(out VARIANT pvarSenderCert) mut => VT.get_SenderCertificate(ref this, out pvarSenderCert);
+			public HRESULT put_SenderCertificate(VARIANT varSenderCert) mut => VT.put_SenderCertificate(ref this, varSenderCert);
+			public HRESULT get_SenderId(out VARIANT pvarSenderId) mut => VT.get_SenderId(ref this, out pvarSenderId);
+			public HRESULT get_SenderIdType(out int32 plSenderIdType) mut => VT.get_SenderIdType(ref this, out plSenderIdType);
+			public HRESULT put_SenderIdType(int32 lSenderIdType) mut => VT.put_SenderIdType(ref this, lSenderIdType);
+			public HRESULT Send(IMSMQQueue* DestinationQueue, ref VARIANT Transaction) mut => VT.Send(ref this, DestinationQueue, ref Transaction);
+			public HRESULT AttachCurrentSecurityContext() mut => VT.AttachCurrentSecurityContext(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2175,14 +1318,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Next(IMSMQQueueInfo** ppqinfoNext) mut
-			{
-				return VT.Next(ref this, ppqinfoNext);
-			}
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Next(IMSMQQueueInfo** ppqinfoNext) mut => VT.Next(ref this, ppqinfoNext);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2197,18 +1335,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Next(IMSMQQueueInfo2** ppqinfoNext) mut
-			{
-				return VT.Next(ref this, ppqinfoNext);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Next(IMSMQQueueInfo2** ppqinfoNext) mut => VT.Next(ref this, ppqinfoNext);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2224,18 +1354,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Next(IMSMQQueueInfo3** ppqinfoNext) mut
-			{
-				return VT.Next(ref this, ppqinfoNext);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Next(IMSMQQueueInfo3** ppqinfoNext) mut => VT.Next(ref this, ppqinfoNext);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2251,18 +1373,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Next(IMSMQQueueInfo4** ppqinfoNext) mut
-			{
-				return VT.Next(ref this, ppqinfoNext);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Next(IMSMQQueueInfo4** ppqinfoNext) mut => VT.Next(ref this, ppqinfoNext);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2278,6 +1392,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2290,10 +1405,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IMSMQEvent.VTable
 			{
@@ -2307,6 +1420,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IMSMQEvent2.VTable
 			{
@@ -2319,18 +1433,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Transaction(out int32 plTransaction) mut
-			{
-				return VT.get_Transaction(ref this, out plTransaction);
-			}
-			public HRESULT Commit(ref VARIANT fRetaining, ref VARIANT grfTC, ref VARIANT grfRM) mut
-			{
-				return VT.Commit(ref this, ref fRetaining, ref grfTC, ref grfRM);
-			}
-			public HRESULT Abort(ref VARIANT fRetaining, ref VARIANT fAsync) mut
-			{
-				return VT.Abort(ref this, ref fRetaining, ref fAsync);
-			}
+			public HRESULT get_Transaction(out int32 plTransaction) mut => VT.get_Transaction(ref this, out plTransaction);
+			public HRESULT Commit(ref VARIANT fRetaining, ref VARIANT grfTC, ref VARIANT grfRM) mut => VT.Commit(ref this, ref fRetaining, ref grfTC, ref grfRM);
+			public HRESULT Abort(ref VARIANT fRetaining, ref VARIANT fAsync) mut => VT.Abort(ref this, ref fRetaining, ref fAsync);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2346,10 +1452,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginTransaction(IMSMQTransaction** ptransaction) mut
-			{
-				return VT.BeginTransaction(ref this, ptransaction);
-			}
+			public HRESULT BeginTransaction(IMSMQTransaction** ptransaction) mut => VT.BeginTransaction(ref this, ptransaction);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2363,10 +1467,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginTransaction(IMSMQTransaction** ptransaction) mut
-			{
-				return VT.BeginTransaction(ref this, ptransaction);
-			}
+			public HRESULT BeginTransaction(IMSMQTransaction** ptransaction) mut => VT.BeginTransaction(ref this, ptransaction);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2380,14 +1482,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LookupQueue(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, IMSMQQueueInfos2** ppqinfos) mut
-			{
-				return VT.LookupQueue(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ppqinfos);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT LookupQueue(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, IMSMQQueueInfos2** ppqinfos) mut => VT.LookupQueue(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ppqinfos);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2402,18 +1499,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LookupQueue_v2(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, IMSMQQueueInfos3** ppqinfos) mut
-			{
-				return VT.LookupQueue_v2(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ppqinfos);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT LookupQueue(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, ref VARIANT MulticastAddress, ref VARIANT RelMulticastAddress, IMSMQQueueInfos3** ppqinfos) mut
-			{
-				return VT.LookupQueue(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ref MulticastAddress, ref RelMulticastAddress, ppqinfos);
-			}
+			public HRESULT LookupQueue_v2(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, IMSMQQueueInfos3** ppqinfos) mut => VT.LookupQueue_v2(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ppqinfos);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT LookupQueue(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, ref VARIANT MulticastAddress, ref VARIANT RelMulticastAddress, IMSMQQueueInfos3** ppqinfos) mut => VT.LookupQueue(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ref MulticastAddress, ref RelMulticastAddress, ppqinfos);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2429,18 +1518,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LookupQueue_v2(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, IMSMQQueueInfos4** ppqinfos) mut
-			{
-				return VT.LookupQueue_v2(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ppqinfos);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT LookupQueue(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, ref VARIANT MulticastAddress, ref VARIANT RelMulticastAddress, IMSMQQueueInfos4** ppqinfos) mut
-			{
-				return VT.LookupQueue(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ref MulticastAddress, ref RelMulticastAddress, ppqinfos);
-			}
+			public HRESULT LookupQueue_v2(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, IMSMQQueueInfos4** ppqinfos) mut => VT.LookupQueue_v2(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ppqinfos);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT LookupQueue(ref VARIANT QueueGuid, ref VARIANT ServiceTypeGuid, ref VARIANT Label, ref VARIANT CreateTime, ref VARIANT ModifyTime, ref VARIANT RelServiceType, ref VARIANT RelLabel, ref VARIANT RelCreateTime, ref VARIANT RelModifyTime, ref VARIANT MulticastAddress, ref VARIANT RelMulticastAddress, IMSMQQueueInfos4** ppqinfos) mut => VT.LookupQueue(ref this, ref QueueGuid, ref ServiceTypeGuid, ref Label, ref CreateTime, ref ModifyTime, ref RelServiceType, ref RelLabel, ref RelCreateTime, ref RelModifyTime, ref MulticastAddress, ref RelMulticastAddress, ppqinfos);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2456,306 +1537,82 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Class(out int32 plClass) mut
-			{
-				return VT.get_Class(ref this, out plClass);
-			}
-			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut
-			{
-				return VT.get_PrivLevel(ref this, out plPrivLevel);
-			}
-			public HRESULT put_PrivLevel(int32 lPrivLevel) mut
-			{
-				return VT.put_PrivLevel(ref this, lPrivLevel);
-			}
-			public HRESULT get_AuthLevel(out int32 plAuthLevel) mut
-			{
-				return VT.get_AuthLevel(ref this, out plAuthLevel);
-			}
-			public HRESULT put_AuthLevel(int32 lAuthLevel) mut
-			{
-				return VT.put_AuthLevel(ref this, lAuthLevel);
-			}
-			public HRESULT get_IsAuthenticated(out int16 pisAuthenticated) mut
-			{
-				return VT.get_IsAuthenticated(ref this, out pisAuthenticated);
-			}
-			public HRESULT get_Delivery(out int32 plDelivery) mut
-			{
-				return VT.get_Delivery(ref this, out plDelivery);
-			}
-			public HRESULT put_Delivery(int32 lDelivery) mut
-			{
-				return VT.put_Delivery(ref this, lDelivery);
-			}
-			public HRESULT get_Trace(out int32 plTrace) mut
-			{
-				return VT.get_Trace(ref this, out plTrace);
-			}
-			public HRESULT put_Trace(int32 lTrace) mut
-			{
-				return VT.put_Trace(ref this, lTrace);
-			}
-			public HRESULT get_Priority(out int32 plPriority) mut
-			{
-				return VT.get_Priority(ref this, out plPriority);
-			}
-			public HRESULT put_Priority(int32 lPriority) mut
-			{
-				return VT.put_Priority(ref this, lPriority);
-			}
-			public HRESULT get_Journal(out int32 plJournal) mut
-			{
-				return VT.get_Journal(ref this, out plJournal);
-			}
-			public HRESULT put_Journal(int32 lJournal) mut
-			{
-				return VT.put_Journal(ref this, lJournal);
-			}
-			public HRESULT get_ResponseQueueInfo_v1(IMSMQQueueInfo** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo_v1(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo_v1(IMSMQQueueInfo* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo_v1(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut
-			{
-				return VT.get_AppSpecific(ref this, out plAppSpecific);
-			}
-			public HRESULT put_AppSpecific(int32 lAppSpecific) mut
-			{
-				return VT.put_AppSpecific(ref this, lAppSpecific);
-			}
-			public HRESULT get_SourceMachineGuid(BSTR* pbstrGuidSrcMachine) mut
-			{
-				return VT.get_SourceMachineGuid(ref this, pbstrGuidSrcMachine);
-			}
-			public HRESULT get_BodyLength(out int32 pcbBody) mut
-			{
-				return VT.get_BodyLength(ref this, out pcbBody);
-			}
-			public HRESULT get_Body(out VARIANT pvarBody) mut
-			{
-				return VT.get_Body(ref this, out pvarBody);
-			}
-			public HRESULT put_Body(VARIANT varBody) mut
-			{
-				return VT.put_Body(ref this, varBody);
-			}
-			public HRESULT get_AdminQueueInfo_v1(IMSMQQueueInfo** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo_v1(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo_v1(IMSMQQueueInfo* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo_v1(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_Id(out VARIANT pvarMsgId) mut
-			{
-				return VT.get_Id(ref this, out pvarMsgId);
-			}
-			public HRESULT get_CorrelationId(out VARIANT pvarMsgId) mut
-			{
-				return VT.get_CorrelationId(ref this, out pvarMsgId);
-			}
-			public HRESULT put_CorrelationId(VARIANT varMsgId) mut
-			{
-				return VT.put_CorrelationId(ref this, varMsgId);
-			}
-			public HRESULT get_Ack(out int32 plAck) mut
-			{
-				return VT.get_Ack(ref this, out plAck);
-			}
-			public HRESULT put_Ack(int32 lAck) mut
-			{
-				return VT.put_Ack(ref this, lAck);
-			}
-			public HRESULT get_Label(BSTR* pbstrLabel) mut
-			{
-				return VT.get_Label(ref this, pbstrLabel);
-			}
-			public HRESULT put_Label(BSTR bstrLabel) mut
-			{
-				return VT.put_Label(ref this, bstrLabel);
-			}
-			public HRESULT get_MaxTimeToReachQueue(out int32 plMaxTimeToReachQueue) mut
-			{
-				return VT.get_MaxTimeToReachQueue(ref this, out plMaxTimeToReachQueue);
-			}
-			public HRESULT put_MaxTimeToReachQueue(int32 lMaxTimeToReachQueue) mut
-			{
-				return VT.put_MaxTimeToReachQueue(ref this, lMaxTimeToReachQueue);
-			}
-			public HRESULT get_MaxTimeToReceive(out int32 plMaxTimeToReceive) mut
-			{
-				return VT.get_MaxTimeToReceive(ref this, out plMaxTimeToReceive);
-			}
-			public HRESULT put_MaxTimeToReceive(int32 lMaxTimeToReceive) mut
-			{
-				return VT.put_MaxTimeToReceive(ref this, lMaxTimeToReceive);
-			}
-			public HRESULT get_HashAlgorithm(out int32 plHashAlg) mut
-			{
-				return VT.get_HashAlgorithm(ref this, out plHashAlg);
-			}
-			public HRESULT put_HashAlgorithm(int32 lHashAlg) mut
-			{
-				return VT.put_HashAlgorithm(ref this, lHashAlg);
-			}
-			public HRESULT get_EncryptAlgorithm(out int32 plEncryptAlg) mut
-			{
-				return VT.get_EncryptAlgorithm(ref this, out plEncryptAlg);
-			}
-			public HRESULT put_EncryptAlgorithm(int32 lEncryptAlg) mut
-			{
-				return VT.put_EncryptAlgorithm(ref this, lEncryptAlg);
-			}
-			public HRESULT get_SentTime(out VARIANT pvarSentTime) mut
-			{
-				return VT.get_SentTime(ref this, out pvarSentTime);
-			}
-			public HRESULT get_ArrivedTime(out VARIANT plArrivedTime) mut
-			{
-				return VT.get_ArrivedTime(ref this, out plArrivedTime);
-			}
-			public HRESULT get_DestinationQueueInfo(IMSMQQueueInfo2** ppqinfoDest) mut
-			{
-				return VT.get_DestinationQueueInfo(ref this, ppqinfoDest);
-			}
-			public HRESULT get_SenderCertificate(out VARIANT pvarSenderCert) mut
-			{
-				return VT.get_SenderCertificate(ref this, out pvarSenderCert);
-			}
-			public HRESULT put_SenderCertificate(VARIANT varSenderCert) mut
-			{
-				return VT.put_SenderCertificate(ref this, varSenderCert);
-			}
-			public HRESULT get_SenderId(out VARIANT pvarSenderId) mut
-			{
-				return VT.get_SenderId(ref this, out pvarSenderId);
-			}
-			public HRESULT get_SenderIdType(out int32 plSenderIdType) mut
-			{
-				return VT.get_SenderIdType(ref this, out plSenderIdType);
-			}
-			public HRESULT put_SenderIdType(int32 lSenderIdType) mut
-			{
-				return VT.put_SenderIdType(ref this, lSenderIdType);
-			}
-			public HRESULT Send(IMSMQQueue2* DestinationQueue, ref VARIANT Transaction) mut
-			{
-				return VT.Send(ref this, DestinationQueue, ref Transaction);
-			}
-			public HRESULT AttachCurrentSecurityContext() mut
-			{
-				return VT.AttachCurrentSecurityContext(ref this);
-			}
-			public HRESULT get_SenderVersion(out int32 plSenderVersion) mut
-			{
-				return VT.get_SenderVersion(ref this, out plSenderVersion);
-			}
-			public HRESULT get_Extension(out VARIANT pvarExtension) mut
-			{
-				return VT.get_Extension(ref this, out pvarExtension);
-			}
-			public HRESULT put_Extension(VARIANT varExtension) mut
-			{
-				return VT.put_Extension(ref this, varExtension);
-			}
-			public HRESULT get_ConnectorTypeGuid(BSTR* pbstrGuidConnectorType) mut
-			{
-				return VT.get_ConnectorTypeGuid(ref this, pbstrGuidConnectorType);
-			}
-			public HRESULT put_ConnectorTypeGuid(BSTR bstrGuidConnectorType) mut
-			{
-				return VT.put_ConnectorTypeGuid(ref this, bstrGuidConnectorType);
-			}
-			public HRESULT get_TransactionStatusQueueInfo(IMSMQQueueInfo2** ppqinfoXactStatus) mut
-			{
-				return VT.get_TransactionStatusQueueInfo(ref this, ppqinfoXactStatus);
-			}
-			public HRESULT get_DestinationSymmetricKey(out VARIANT pvarDestSymmKey) mut
-			{
-				return VT.get_DestinationSymmetricKey(ref this, out pvarDestSymmKey);
-			}
-			public HRESULT put_DestinationSymmetricKey(VARIANT varDestSymmKey) mut
-			{
-				return VT.put_DestinationSymmetricKey(ref this, varDestSymmKey);
-			}
-			public HRESULT get_Signature(out VARIANT pvarSignature) mut
-			{
-				return VT.get_Signature(ref this, out pvarSignature);
-			}
-			public HRESULT put_Signature(VARIANT varSignature) mut
-			{
-				return VT.put_Signature(ref this, varSignature);
-			}
-			public HRESULT get_AuthenticationProviderType(out int32 plAuthProvType) mut
-			{
-				return VT.get_AuthenticationProviderType(ref this, out plAuthProvType);
-			}
-			public HRESULT put_AuthenticationProviderType(int32 lAuthProvType) mut
-			{
-				return VT.put_AuthenticationProviderType(ref this, lAuthProvType);
-			}
-			public HRESULT get_AuthenticationProviderName(BSTR* pbstrAuthProvName) mut
-			{
-				return VT.get_AuthenticationProviderName(ref this, pbstrAuthProvName);
-			}
-			public HRESULT put_AuthenticationProviderName(BSTR bstrAuthProvName) mut
-			{
-				return VT.put_AuthenticationProviderName(ref this, bstrAuthProvName);
-			}
-			public HRESULT put_SenderId(VARIANT varSenderId) mut
-			{
-				return VT.put_SenderId(ref this, varSenderId);
-			}
-			public HRESULT get_MsgClass(out int32 plMsgClass) mut
-			{
-				return VT.get_MsgClass(ref this, out plMsgClass);
-			}
-			public HRESULT put_MsgClass(int32 lMsgClass) mut
-			{
-				return VT.put_MsgClass(ref this, lMsgClass);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT get_TransactionId(out VARIANT pvarXactId) mut
-			{
-				return VT.get_TransactionId(ref this, out pvarXactId);
-			}
-			public HRESULT get_IsFirstInTransaction(out int16 pisFirstInXact) mut
-			{
-				return VT.get_IsFirstInTransaction(ref this, out pisFirstInXact);
-			}
-			public HRESULT get_IsLastInTransaction(out int16 pisLastInXact) mut
-			{
-				return VT.get_IsLastInTransaction(ref this, out pisLastInXact);
-			}
-			public HRESULT get_ResponseQueueInfo(IMSMQQueueInfo2** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo(IMSMQQueueInfo2* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AdminQueueInfo(IMSMQQueueInfo2** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo(IMSMQQueueInfo2* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_ReceivedAuthenticationLevel(out int16 psReceivedAuthenticationLevel) mut
-			{
-				return VT.get_ReceivedAuthenticationLevel(ref this, out psReceivedAuthenticationLevel);
-			}
+			public HRESULT get_Class(out int32 plClass) mut => VT.get_Class(ref this, out plClass);
+			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut => VT.get_PrivLevel(ref this, out plPrivLevel);
+			public HRESULT put_PrivLevel(int32 lPrivLevel) mut => VT.put_PrivLevel(ref this, lPrivLevel);
+			public HRESULT get_AuthLevel(out int32 plAuthLevel) mut => VT.get_AuthLevel(ref this, out plAuthLevel);
+			public HRESULT put_AuthLevel(int32 lAuthLevel) mut => VT.put_AuthLevel(ref this, lAuthLevel);
+			public HRESULT get_IsAuthenticated(out int16 pisAuthenticated) mut => VT.get_IsAuthenticated(ref this, out pisAuthenticated);
+			public HRESULT get_Delivery(out int32 plDelivery) mut => VT.get_Delivery(ref this, out plDelivery);
+			public HRESULT put_Delivery(int32 lDelivery) mut => VT.put_Delivery(ref this, lDelivery);
+			public HRESULT get_Trace(out int32 plTrace) mut => VT.get_Trace(ref this, out plTrace);
+			public HRESULT put_Trace(int32 lTrace) mut => VT.put_Trace(ref this, lTrace);
+			public HRESULT get_Priority(out int32 plPriority) mut => VT.get_Priority(ref this, out plPriority);
+			public HRESULT put_Priority(int32 lPriority) mut => VT.put_Priority(ref this, lPriority);
+			public HRESULT get_Journal(out int32 plJournal) mut => VT.get_Journal(ref this, out plJournal);
+			public HRESULT put_Journal(int32 lJournal) mut => VT.put_Journal(ref this, lJournal);
+			public HRESULT get_ResponseQueueInfo_v1(IMSMQQueueInfo** ppqinfoResponse) mut => VT.get_ResponseQueueInfo_v1(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo_v1(IMSMQQueueInfo* pqinfoResponse) mut => VT.putref_ResponseQueueInfo_v1(ref this, pqinfoResponse);
+			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut => VT.get_AppSpecific(ref this, out plAppSpecific);
+			public HRESULT put_AppSpecific(int32 lAppSpecific) mut => VT.put_AppSpecific(ref this, lAppSpecific);
+			public HRESULT get_SourceMachineGuid(BSTR* pbstrGuidSrcMachine) mut => VT.get_SourceMachineGuid(ref this, pbstrGuidSrcMachine);
+			public HRESULT get_BodyLength(out int32 pcbBody) mut => VT.get_BodyLength(ref this, out pcbBody);
+			public HRESULT get_Body(out VARIANT pvarBody) mut => VT.get_Body(ref this, out pvarBody);
+			public HRESULT put_Body(VARIANT varBody) mut => VT.put_Body(ref this, varBody);
+			public HRESULT get_AdminQueueInfo_v1(IMSMQQueueInfo** ppqinfoAdmin) mut => VT.get_AdminQueueInfo_v1(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo_v1(IMSMQQueueInfo* pqinfoAdmin) mut => VT.putref_AdminQueueInfo_v1(ref this, pqinfoAdmin);
+			public HRESULT get_Id(out VARIANT pvarMsgId) mut => VT.get_Id(ref this, out pvarMsgId);
+			public HRESULT get_CorrelationId(out VARIANT pvarMsgId) mut => VT.get_CorrelationId(ref this, out pvarMsgId);
+			public HRESULT put_CorrelationId(VARIANT varMsgId) mut => VT.put_CorrelationId(ref this, varMsgId);
+			public HRESULT get_Ack(out int32 plAck) mut => VT.get_Ack(ref this, out plAck);
+			public HRESULT put_Ack(int32 lAck) mut => VT.put_Ack(ref this, lAck);
+			public HRESULT get_Label(BSTR* pbstrLabel) mut => VT.get_Label(ref this, pbstrLabel);
+			public HRESULT put_Label(BSTR bstrLabel) mut => VT.put_Label(ref this, bstrLabel);
+			public HRESULT get_MaxTimeToReachQueue(out int32 plMaxTimeToReachQueue) mut => VT.get_MaxTimeToReachQueue(ref this, out plMaxTimeToReachQueue);
+			public HRESULT put_MaxTimeToReachQueue(int32 lMaxTimeToReachQueue) mut => VT.put_MaxTimeToReachQueue(ref this, lMaxTimeToReachQueue);
+			public HRESULT get_MaxTimeToReceive(out int32 plMaxTimeToReceive) mut => VT.get_MaxTimeToReceive(ref this, out plMaxTimeToReceive);
+			public HRESULT put_MaxTimeToReceive(int32 lMaxTimeToReceive) mut => VT.put_MaxTimeToReceive(ref this, lMaxTimeToReceive);
+			public HRESULT get_HashAlgorithm(out int32 plHashAlg) mut => VT.get_HashAlgorithm(ref this, out plHashAlg);
+			public HRESULT put_HashAlgorithm(int32 lHashAlg) mut => VT.put_HashAlgorithm(ref this, lHashAlg);
+			public HRESULT get_EncryptAlgorithm(out int32 plEncryptAlg) mut => VT.get_EncryptAlgorithm(ref this, out plEncryptAlg);
+			public HRESULT put_EncryptAlgorithm(int32 lEncryptAlg) mut => VT.put_EncryptAlgorithm(ref this, lEncryptAlg);
+			public HRESULT get_SentTime(out VARIANT pvarSentTime) mut => VT.get_SentTime(ref this, out pvarSentTime);
+			public HRESULT get_ArrivedTime(out VARIANT plArrivedTime) mut => VT.get_ArrivedTime(ref this, out plArrivedTime);
+			public HRESULT get_DestinationQueueInfo(IMSMQQueueInfo2** ppqinfoDest) mut => VT.get_DestinationQueueInfo(ref this, ppqinfoDest);
+			public HRESULT get_SenderCertificate(out VARIANT pvarSenderCert) mut => VT.get_SenderCertificate(ref this, out pvarSenderCert);
+			public HRESULT put_SenderCertificate(VARIANT varSenderCert) mut => VT.put_SenderCertificate(ref this, varSenderCert);
+			public HRESULT get_SenderId(out VARIANT pvarSenderId) mut => VT.get_SenderId(ref this, out pvarSenderId);
+			public HRESULT get_SenderIdType(out int32 plSenderIdType) mut => VT.get_SenderIdType(ref this, out plSenderIdType);
+			public HRESULT put_SenderIdType(int32 lSenderIdType) mut => VT.put_SenderIdType(ref this, lSenderIdType);
+			public HRESULT Send(IMSMQQueue2* DestinationQueue, ref VARIANT Transaction) mut => VT.Send(ref this, DestinationQueue, ref Transaction);
+			public HRESULT AttachCurrentSecurityContext() mut => VT.AttachCurrentSecurityContext(ref this);
+			public HRESULT get_SenderVersion(out int32 plSenderVersion) mut => VT.get_SenderVersion(ref this, out plSenderVersion);
+			public HRESULT get_Extension(out VARIANT pvarExtension) mut => VT.get_Extension(ref this, out pvarExtension);
+			public HRESULT put_Extension(VARIANT varExtension) mut => VT.put_Extension(ref this, varExtension);
+			public HRESULT get_ConnectorTypeGuid(BSTR* pbstrGuidConnectorType) mut => VT.get_ConnectorTypeGuid(ref this, pbstrGuidConnectorType);
+			public HRESULT put_ConnectorTypeGuid(BSTR bstrGuidConnectorType) mut => VT.put_ConnectorTypeGuid(ref this, bstrGuidConnectorType);
+			public HRESULT get_TransactionStatusQueueInfo(IMSMQQueueInfo2** ppqinfoXactStatus) mut => VT.get_TransactionStatusQueueInfo(ref this, ppqinfoXactStatus);
+			public HRESULT get_DestinationSymmetricKey(out VARIANT pvarDestSymmKey) mut => VT.get_DestinationSymmetricKey(ref this, out pvarDestSymmKey);
+			public HRESULT put_DestinationSymmetricKey(VARIANT varDestSymmKey) mut => VT.put_DestinationSymmetricKey(ref this, varDestSymmKey);
+			public HRESULT get_Signature(out VARIANT pvarSignature) mut => VT.get_Signature(ref this, out pvarSignature);
+			public HRESULT put_Signature(VARIANT varSignature) mut => VT.put_Signature(ref this, varSignature);
+			public HRESULT get_AuthenticationProviderType(out int32 plAuthProvType) mut => VT.get_AuthenticationProviderType(ref this, out plAuthProvType);
+			public HRESULT put_AuthenticationProviderType(int32 lAuthProvType) mut => VT.put_AuthenticationProviderType(ref this, lAuthProvType);
+			public HRESULT get_AuthenticationProviderName(BSTR* pbstrAuthProvName) mut => VT.get_AuthenticationProviderName(ref this, pbstrAuthProvName);
+			public HRESULT put_AuthenticationProviderName(BSTR bstrAuthProvName) mut => VT.put_AuthenticationProviderName(ref this, bstrAuthProvName);
+			public HRESULT put_SenderId(VARIANT varSenderId) mut => VT.put_SenderId(ref this, varSenderId);
+			public HRESULT get_MsgClass(out int32 plMsgClass) mut => VT.get_MsgClass(ref this, out plMsgClass);
+			public HRESULT put_MsgClass(int32 lMsgClass) mut => VT.put_MsgClass(ref this, lMsgClass);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT get_TransactionId(out VARIANT pvarXactId) mut => VT.get_TransactionId(ref this, out pvarXactId);
+			public HRESULT get_IsFirstInTransaction(out int16 pisFirstInXact) mut => VT.get_IsFirstInTransaction(ref this, out pisFirstInXact);
+			public HRESULT get_IsLastInTransaction(out int16 pisLastInXact) mut => VT.get_IsLastInTransaction(ref this, out pisLastInXact);
+			public HRESULT get_ResponseQueueInfo(IMSMQQueueInfo2** ppqinfoResponse) mut => VT.get_ResponseQueueInfo(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo(IMSMQQueueInfo2* pqinfoResponse) mut => VT.putref_ResponseQueueInfo(ref this, pqinfoResponse);
+			public HRESULT get_AdminQueueInfo(IMSMQQueueInfo2** ppqinfoAdmin) mut => VT.get_AdminQueueInfo(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo(IMSMQQueueInfo2* pqinfoAdmin) mut => VT.putref_AdminQueueInfo(ref this, pqinfoAdmin);
+			public HRESULT get_ReceivedAuthenticationLevel(out int16 psReceivedAuthenticationLevel) mut => VT.get_ReceivedAuthenticationLevel(ref this, out psReceivedAuthenticationLevel);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2843,370 +1700,98 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Class(out int32 plClass) mut
-			{
-				return VT.get_Class(ref this, out plClass);
-			}
-			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut
-			{
-				return VT.get_PrivLevel(ref this, out plPrivLevel);
-			}
-			public HRESULT put_PrivLevel(int32 lPrivLevel) mut
-			{
-				return VT.put_PrivLevel(ref this, lPrivLevel);
-			}
-			public HRESULT get_AuthLevel(out int32 plAuthLevel) mut
-			{
-				return VT.get_AuthLevel(ref this, out plAuthLevel);
-			}
-			public HRESULT put_AuthLevel(int32 lAuthLevel) mut
-			{
-				return VT.put_AuthLevel(ref this, lAuthLevel);
-			}
-			public HRESULT get_IsAuthenticated(out int16 pisAuthenticated) mut
-			{
-				return VT.get_IsAuthenticated(ref this, out pisAuthenticated);
-			}
-			public HRESULT get_Delivery(out int32 plDelivery) mut
-			{
-				return VT.get_Delivery(ref this, out plDelivery);
-			}
-			public HRESULT put_Delivery(int32 lDelivery) mut
-			{
-				return VT.put_Delivery(ref this, lDelivery);
-			}
-			public HRESULT get_Trace(out int32 plTrace) mut
-			{
-				return VT.get_Trace(ref this, out plTrace);
-			}
-			public HRESULT put_Trace(int32 lTrace) mut
-			{
-				return VT.put_Trace(ref this, lTrace);
-			}
-			public HRESULT get_Priority(out int32 plPriority) mut
-			{
-				return VT.get_Priority(ref this, out plPriority);
-			}
-			public HRESULT put_Priority(int32 lPriority) mut
-			{
-				return VT.put_Priority(ref this, lPriority);
-			}
-			public HRESULT get_Journal(out int32 plJournal) mut
-			{
-				return VT.get_Journal(ref this, out plJournal);
-			}
-			public HRESULT put_Journal(int32 lJournal) mut
-			{
-				return VT.put_Journal(ref this, lJournal);
-			}
-			public HRESULT get_ResponseQueueInfo_v1(IMSMQQueueInfo** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo_v1(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo_v1(IMSMQQueueInfo* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo_v1(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut
-			{
-				return VT.get_AppSpecific(ref this, out plAppSpecific);
-			}
-			public HRESULT put_AppSpecific(int32 lAppSpecific) mut
-			{
-				return VT.put_AppSpecific(ref this, lAppSpecific);
-			}
-			public HRESULT get_SourceMachineGuid(BSTR* pbstrGuidSrcMachine) mut
-			{
-				return VT.get_SourceMachineGuid(ref this, pbstrGuidSrcMachine);
-			}
-			public HRESULT get_BodyLength(out int32 pcbBody) mut
-			{
-				return VT.get_BodyLength(ref this, out pcbBody);
-			}
-			public HRESULT get_Body(out VARIANT pvarBody) mut
-			{
-				return VT.get_Body(ref this, out pvarBody);
-			}
-			public HRESULT put_Body(VARIANT varBody) mut
-			{
-				return VT.put_Body(ref this, varBody);
-			}
-			public HRESULT get_AdminQueueInfo_v1(IMSMQQueueInfo** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo_v1(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo_v1(IMSMQQueueInfo* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo_v1(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_Id(out VARIANT pvarMsgId) mut
-			{
-				return VT.get_Id(ref this, out pvarMsgId);
-			}
-			public HRESULT get_CorrelationId(out VARIANT pvarMsgId) mut
-			{
-				return VT.get_CorrelationId(ref this, out pvarMsgId);
-			}
-			public HRESULT put_CorrelationId(VARIANT varMsgId) mut
-			{
-				return VT.put_CorrelationId(ref this, varMsgId);
-			}
-			public HRESULT get_Ack(out int32 plAck) mut
-			{
-				return VT.get_Ack(ref this, out plAck);
-			}
-			public HRESULT put_Ack(int32 lAck) mut
-			{
-				return VT.put_Ack(ref this, lAck);
-			}
-			public HRESULT get_Label(BSTR* pbstrLabel) mut
-			{
-				return VT.get_Label(ref this, pbstrLabel);
-			}
-			public HRESULT put_Label(BSTR bstrLabel) mut
-			{
-				return VT.put_Label(ref this, bstrLabel);
-			}
-			public HRESULT get_MaxTimeToReachQueue(out int32 plMaxTimeToReachQueue) mut
-			{
-				return VT.get_MaxTimeToReachQueue(ref this, out plMaxTimeToReachQueue);
-			}
-			public HRESULT put_MaxTimeToReachQueue(int32 lMaxTimeToReachQueue) mut
-			{
-				return VT.put_MaxTimeToReachQueue(ref this, lMaxTimeToReachQueue);
-			}
-			public HRESULT get_MaxTimeToReceive(out int32 plMaxTimeToReceive) mut
-			{
-				return VT.get_MaxTimeToReceive(ref this, out plMaxTimeToReceive);
-			}
-			public HRESULT put_MaxTimeToReceive(int32 lMaxTimeToReceive) mut
-			{
-				return VT.put_MaxTimeToReceive(ref this, lMaxTimeToReceive);
-			}
-			public HRESULT get_HashAlgorithm(out int32 plHashAlg) mut
-			{
-				return VT.get_HashAlgorithm(ref this, out plHashAlg);
-			}
-			public HRESULT put_HashAlgorithm(int32 lHashAlg) mut
-			{
-				return VT.put_HashAlgorithm(ref this, lHashAlg);
-			}
-			public HRESULT get_EncryptAlgorithm(out int32 plEncryptAlg) mut
-			{
-				return VT.get_EncryptAlgorithm(ref this, out plEncryptAlg);
-			}
-			public HRESULT put_EncryptAlgorithm(int32 lEncryptAlg) mut
-			{
-				return VT.put_EncryptAlgorithm(ref this, lEncryptAlg);
-			}
-			public HRESULT get_SentTime(out VARIANT pvarSentTime) mut
-			{
-				return VT.get_SentTime(ref this, out pvarSentTime);
-			}
-			public HRESULT get_ArrivedTime(out VARIANT plArrivedTime) mut
-			{
-				return VT.get_ArrivedTime(ref this, out plArrivedTime);
-			}
-			public HRESULT get_DestinationQueueInfo(IMSMQQueueInfo3** ppqinfoDest) mut
-			{
-				return VT.get_DestinationQueueInfo(ref this, ppqinfoDest);
-			}
-			public HRESULT get_SenderCertificate(out VARIANT pvarSenderCert) mut
-			{
-				return VT.get_SenderCertificate(ref this, out pvarSenderCert);
-			}
-			public HRESULT put_SenderCertificate(VARIANT varSenderCert) mut
-			{
-				return VT.put_SenderCertificate(ref this, varSenderCert);
-			}
-			public HRESULT get_SenderId(out VARIANT pvarSenderId) mut
-			{
-				return VT.get_SenderId(ref this, out pvarSenderId);
-			}
-			public HRESULT get_SenderIdType(out int32 plSenderIdType) mut
-			{
-				return VT.get_SenderIdType(ref this, out plSenderIdType);
-			}
-			public HRESULT put_SenderIdType(int32 lSenderIdType) mut
-			{
-				return VT.put_SenderIdType(ref this, lSenderIdType);
-			}
-			public HRESULT Send(IDispatch* DestinationQueue, ref VARIANT Transaction) mut
-			{
-				return VT.Send(ref this, DestinationQueue, ref Transaction);
-			}
-			public HRESULT AttachCurrentSecurityContext() mut
-			{
-				return VT.AttachCurrentSecurityContext(ref this);
-			}
-			public HRESULT get_SenderVersion(out int32 plSenderVersion) mut
-			{
-				return VT.get_SenderVersion(ref this, out plSenderVersion);
-			}
-			public HRESULT get_Extension(out VARIANT pvarExtension) mut
-			{
-				return VT.get_Extension(ref this, out pvarExtension);
-			}
-			public HRESULT put_Extension(VARIANT varExtension) mut
-			{
-				return VT.put_Extension(ref this, varExtension);
-			}
-			public HRESULT get_ConnectorTypeGuid(BSTR* pbstrGuidConnectorType) mut
-			{
-				return VT.get_ConnectorTypeGuid(ref this, pbstrGuidConnectorType);
-			}
-			public HRESULT put_ConnectorTypeGuid(BSTR bstrGuidConnectorType) mut
-			{
-				return VT.put_ConnectorTypeGuid(ref this, bstrGuidConnectorType);
-			}
-			public HRESULT get_TransactionStatusQueueInfo(IMSMQQueueInfo3** ppqinfoXactStatus) mut
-			{
-				return VT.get_TransactionStatusQueueInfo(ref this, ppqinfoXactStatus);
-			}
-			public HRESULT get_DestinationSymmetricKey(out VARIANT pvarDestSymmKey) mut
-			{
-				return VT.get_DestinationSymmetricKey(ref this, out pvarDestSymmKey);
-			}
-			public HRESULT put_DestinationSymmetricKey(VARIANT varDestSymmKey) mut
-			{
-				return VT.put_DestinationSymmetricKey(ref this, varDestSymmKey);
-			}
-			public HRESULT get_Signature(out VARIANT pvarSignature) mut
-			{
-				return VT.get_Signature(ref this, out pvarSignature);
-			}
-			public HRESULT put_Signature(VARIANT varSignature) mut
-			{
-				return VT.put_Signature(ref this, varSignature);
-			}
-			public HRESULT get_AuthenticationProviderType(out int32 plAuthProvType) mut
-			{
-				return VT.get_AuthenticationProviderType(ref this, out plAuthProvType);
-			}
-			public HRESULT put_AuthenticationProviderType(int32 lAuthProvType) mut
-			{
-				return VT.put_AuthenticationProviderType(ref this, lAuthProvType);
-			}
-			public HRESULT get_AuthenticationProviderName(BSTR* pbstrAuthProvName) mut
-			{
-				return VT.get_AuthenticationProviderName(ref this, pbstrAuthProvName);
-			}
-			public HRESULT put_AuthenticationProviderName(BSTR bstrAuthProvName) mut
-			{
-				return VT.put_AuthenticationProviderName(ref this, bstrAuthProvName);
-			}
-			public HRESULT put_SenderId(VARIANT varSenderId) mut
-			{
-				return VT.put_SenderId(ref this, varSenderId);
-			}
-			public HRESULT get_MsgClass(out int32 plMsgClass) mut
-			{
-				return VT.get_MsgClass(ref this, out plMsgClass);
-			}
-			public HRESULT put_MsgClass(int32 lMsgClass) mut
-			{
-				return VT.put_MsgClass(ref this, lMsgClass);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT get_TransactionId(out VARIANT pvarXactId) mut
-			{
-				return VT.get_TransactionId(ref this, out pvarXactId);
-			}
-			public HRESULT get_IsFirstInTransaction(out int16 pisFirstInXact) mut
-			{
-				return VT.get_IsFirstInTransaction(ref this, out pisFirstInXact);
-			}
-			public HRESULT get_IsLastInTransaction(out int16 pisLastInXact) mut
-			{
-				return VT.get_IsLastInTransaction(ref this, out pisLastInXact);
-			}
-			public HRESULT get_ResponseQueueInfo_v2(IMSMQQueueInfo2** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo_v2(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo_v2(IMSMQQueueInfo2* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo_v2(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AdminQueueInfo_v2(IMSMQQueueInfo2** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo_v2(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo_v2(IMSMQQueueInfo2* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo_v2(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_ReceivedAuthenticationLevel(out int16 psReceivedAuthenticationLevel) mut
-			{
-				return VT.get_ReceivedAuthenticationLevel(ref this, out psReceivedAuthenticationLevel);
-			}
-			public HRESULT get_ResponseQueueInfo(IMSMQQueueInfo3** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo(IMSMQQueueInfo3* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AdminQueueInfo(IMSMQQueueInfo3** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo(IMSMQQueueInfo3* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_ResponseDestination(IDispatch** ppdestResponse) mut
-			{
-				return VT.get_ResponseDestination(ref this, ppdestResponse);
-			}
-			public HRESULT putref_ResponseDestination(IDispatch* pdestResponse) mut
-			{
-				return VT.putref_ResponseDestination(ref this, pdestResponse);
-			}
-			public HRESULT get_Destination(IDispatch** ppdestDestination) mut
-			{
-				return VT.get_Destination(ref this, ppdestDestination);
-			}
-			public HRESULT get_LookupId(out VARIANT pvarLookupId) mut
-			{
-				return VT.get_LookupId(ref this, out pvarLookupId);
-			}
-			public HRESULT get_IsAuthenticated2(out int16 pisAuthenticated) mut
-			{
-				return VT.get_IsAuthenticated2(ref this, out pisAuthenticated);
-			}
-			public HRESULT get_IsFirstInTransaction2(out int16 pisFirstInXact) mut
-			{
-				return VT.get_IsFirstInTransaction2(ref this, out pisFirstInXact);
-			}
-			public HRESULT get_IsLastInTransaction2(out int16 pisLastInXact) mut
-			{
-				return VT.get_IsLastInTransaction2(ref this, out pisLastInXact);
-			}
-			public HRESULT AttachCurrentSecurityContext2() mut
-			{
-				return VT.AttachCurrentSecurityContext2(ref this);
-			}
-			public HRESULT get_SoapEnvelope(BSTR* pbstrSoapEnvelope) mut
-			{
-				return VT.get_SoapEnvelope(ref this, pbstrSoapEnvelope);
-			}
-			public HRESULT get_CompoundMessage(out VARIANT pvarCompoundMessage) mut
-			{
-				return VT.get_CompoundMessage(ref this, out pvarCompoundMessage);
-			}
-			public HRESULT put_SoapHeader(BSTR bstrSoapHeader) mut
-			{
-				return VT.put_SoapHeader(ref this, bstrSoapHeader);
-			}
-			public HRESULT put_SoapBody(BSTR bstrSoapBody) mut
-			{
-				return VT.put_SoapBody(ref this, bstrSoapBody);
-			}
+			public HRESULT get_Class(out int32 plClass) mut => VT.get_Class(ref this, out plClass);
+			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut => VT.get_PrivLevel(ref this, out plPrivLevel);
+			public HRESULT put_PrivLevel(int32 lPrivLevel) mut => VT.put_PrivLevel(ref this, lPrivLevel);
+			public HRESULT get_AuthLevel(out int32 plAuthLevel) mut => VT.get_AuthLevel(ref this, out plAuthLevel);
+			public HRESULT put_AuthLevel(int32 lAuthLevel) mut => VT.put_AuthLevel(ref this, lAuthLevel);
+			public HRESULT get_IsAuthenticated(out int16 pisAuthenticated) mut => VT.get_IsAuthenticated(ref this, out pisAuthenticated);
+			public HRESULT get_Delivery(out int32 plDelivery) mut => VT.get_Delivery(ref this, out plDelivery);
+			public HRESULT put_Delivery(int32 lDelivery) mut => VT.put_Delivery(ref this, lDelivery);
+			public HRESULT get_Trace(out int32 plTrace) mut => VT.get_Trace(ref this, out plTrace);
+			public HRESULT put_Trace(int32 lTrace) mut => VT.put_Trace(ref this, lTrace);
+			public HRESULT get_Priority(out int32 plPriority) mut => VT.get_Priority(ref this, out plPriority);
+			public HRESULT put_Priority(int32 lPriority) mut => VT.put_Priority(ref this, lPriority);
+			public HRESULT get_Journal(out int32 plJournal) mut => VT.get_Journal(ref this, out plJournal);
+			public HRESULT put_Journal(int32 lJournal) mut => VT.put_Journal(ref this, lJournal);
+			public HRESULT get_ResponseQueueInfo_v1(IMSMQQueueInfo** ppqinfoResponse) mut => VT.get_ResponseQueueInfo_v1(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo_v1(IMSMQQueueInfo* pqinfoResponse) mut => VT.putref_ResponseQueueInfo_v1(ref this, pqinfoResponse);
+			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut => VT.get_AppSpecific(ref this, out plAppSpecific);
+			public HRESULT put_AppSpecific(int32 lAppSpecific) mut => VT.put_AppSpecific(ref this, lAppSpecific);
+			public HRESULT get_SourceMachineGuid(BSTR* pbstrGuidSrcMachine) mut => VT.get_SourceMachineGuid(ref this, pbstrGuidSrcMachine);
+			public HRESULT get_BodyLength(out int32 pcbBody) mut => VT.get_BodyLength(ref this, out pcbBody);
+			public HRESULT get_Body(out VARIANT pvarBody) mut => VT.get_Body(ref this, out pvarBody);
+			public HRESULT put_Body(VARIANT varBody) mut => VT.put_Body(ref this, varBody);
+			public HRESULT get_AdminQueueInfo_v1(IMSMQQueueInfo** ppqinfoAdmin) mut => VT.get_AdminQueueInfo_v1(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo_v1(IMSMQQueueInfo* pqinfoAdmin) mut => VT.putref_AdminQueueInfo_v1(ref this, pqinfoAdmin);
+			public HRESULT get_Id(out VARIANT pvarMsgId) mut => VT.get_Id(ref this, out pvarMsgId);
+			public HRESULT get_CorrelationId(out VARIANT pvarMsgId) mut => VT.get_CorrelationId(ref this, out pvarMsgId);
+			public HRESULT put_CorrelationId(VARIANT varMsgId) mut => VT.put_CorrelationId(ref this, varMsgId);
+			public HRESULT get_Ack(out int32 plAck) mut => VT.get_Ack(ref this, out plAck);
+			public HRESULT put_Ack(int32 lAck) mut => VT.put_Ack(ref this, lAck);
+			public HRESULT get_Label(BSTR* pbstrLabel) mut => VT.get_Label(ref this, pbstrLabel);
+			public HRESULT put_Label(BSTR bstrLabel) mut => VT.put_Label(ref this, bstrLabel);
+			public HRESULT get_MaxTimeToReachQueue(out int32 plMaxTimeToReachQueue) mut => VT.get_MaxTimeToReachQueue(ref this, out plMaxTimeToReachQueue);
+			public HRESULT put_MaxTimeToReachQueue(int32 lMaxTimeToReachQueue) mut => VT.put_MaxTimeToReachQueue(ref this, lMaxTimeToReachQueue);
+			public HRESULT get_MaxTimeToReceive(out int32 plMaxTimeToReceive) mut => VT.get_MaxTimeToReceive(ref this, out plMaxTimeToReceive);
+			public HRESULT put_MaxTimeToReceive(int32 lMaxTimeToReceive) mut => VT.put_MaxTimeToReceive(ref this, lMaxTimeToReceive);
+			public HRESULT get_HashAlgorithm(out int32 plHashAlg) mut => VT.get_HashAlgorithm(ref this, out plHashAlg);
+			public HRESULT put_HashAlgorithm(int32 lHashAlg) mut => VT.put_HashAlgorithm(ref this, lHashAlg);
+			public HRESULT get_EncryptAlgorithm(out int32 plEncryptAlg) mut => VT.get_EncryptAlgorithm(ref this, out plEncryptAlg);
+			public HRESULT put_EncryptAlgorithm(int32 lEncryptAlg) mut => VT.put_EncryptAlgorithm(ref this, lEncryptAlg);
+			public HRESULT get_SentTime(out VARIANT pvarSentTime) mut => VT.get_SentTime(ref this, out pvarSentTime);
+			public HRESULT get_ArrivedTime(out VARIANT plArrivedTime) mut => VT.get_ArrivedTime(ref this, out plArrivedTime);
+			public HRESULT get_DestinationQueueInfo(IMSMQQueueInfo3** ppqinfoDest) mut => VT.get_DestinationQueueInfo(ref this, ppqinfoDest);
+			public HRESULT get_SenderCertificate(out VARIANT pvarSenderCert) mut => VT.get_SenderCertificate(ref this, out pvarSenderCert);
+			public HRESULT put_SenderCertificate(VARIANT varSenderCert) mut => VT.put_SenderCertificate(ref this, varSenderCert);
+			public HRESULT get_SenderId(out VARIANT pvarSenderId) mut => VT.get_SenderId(ref this, out pvarSenderId);
+			public HRESULT get_SenderIdType(out int32 plSenderIdType) mut => VT.get_SenderIdType(ref this, out plSenderIdType);
+			public HRESULT put_SenderIdType(int32 lSenderIdType) mut => VT.put_SenderIdType(ref this, lSenderIdType);
+			public HRESULT Send(IDispatch* DestinationQueue, ref VARIANT Transaction) mut => VT.Send(ref this, DestinationQueue, ref Transaction);
+			public HRESULT AttachCurrentSecurityContext() mut => VT.AttachCurrentSecurityContext(ref this);
+			public HRESULT get_SenderVersion(out int32 plSenderVersion) mut => VT.get_SenderVersion(ref this, out plSenderVersion);
+			public HRESULT get_Extension(out VARIANT pvarExtension) mut => VT.get_Extension(ref this, out pvarExtension);
+			public HRESULT put_Extension(VARIANT varExtension) mut => VT.put_Extension(ref this, varExtension);
+			public HRESULT get_ConnectorTypeGuid(BSTR* pbstrGuidConnectorType) mut => VT.get_ConnectorTypeGuid(ref this, pbstrGuidConnectorType);
+			public HRESULT put_ConnectorTypeGuid(BSTR bstrGuidConnectorType) mut => VT.put_ConnectorTypeGuid(ref this, bstrGuidConnectorType);
+			public HRESULT get_TransactionStatusQueueInfo(IMSMQQueueInfo3** ppqinfoXactStatus) mut => VT.get_TransactionStatusQueueInfo(ref this, ppqinfoXactStatus);
+			public HRESULT get_DestinationSymmetricKey(out VARIANT pvarDestSymmKey) mut => VT.get_DestinationSymmetricKey(ref this, out pvarDestSymmKey);
+			public HRESULT put_DestinationSymmetricKey(VARIANT varDestSymmKey) mut => VT.put_DestinationSymmetricKey(ref this, varDestSymmKey);
+			public HRESULT get_Signature(out VARIANT pvarSignature) mut => VT.get_Signature(ref this, out pvarSignature);
+			public HRESULT put_Signature(VARIANT varSignature) mut => VT.put_Signature(ref this, varSignature);
+			public HRESULT get_AuthenticationProviderType(out int32 plAuthProvType) mut => VT.get_AuthenticationProviderType(ref this, out plAuthProvType);
+			public HRESULT put_AuthenticationProviderType(int32 lAuthProvType) mut => VT.put_AuthenticationProviderType(ref this, lAuthProvType);
+			public HRESULT get_AuthenticationProviderName(BSTR* pbstrAuthProvName) mut => VT.get_AuthenticationProviderName(ref this, pbstrAuthProvName);
+			public HRESULT put_AuthenticationProviderName(BSTR bstrAuthProvName) mut => VT.put_AuthenticationProviderName(ref this, bstrAuthProvName);
+			public HRESULT put_SenderId(VARIANT varSenderId) mut => VT.put_SenderId(ref this, varSenderId);
+			public HRESULT get_MsgClass(out int32 plMsgClass) mut => VT.get_MsgClass(ref this, out plMsgClass);
+			public HRESULT put_MsgClass(int32 lMsgClass) mut => VT.put_MsgClass(ref this, lMsgClass);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT get_TransactionId(out VARIANT pvarXactId) mut => VT.get_TransactionId(ref this, out pvarXactId);
+			public HRESULT get_IsFirstInTransaction(out int16 pisFirstInXact) mut => VT.get_IsFirstInTransaction(ref this, out pisFirstInXact);
+			public HRESULT get_IsLastInTransaction(out int16 pisLastInXact) mut => VT.get_IsLastInTransaction(ref this, out pisLastInXact);
+			public HRESULT get_ResponseQueueInfo_v2(IMSMQQueueInfo2** ppqinfoResponse) mut => VT.get_ResponseQueueInfo_v2(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo_v2(IMSMQQueueInfo2* pqinfoResponse) mut => VT.putref_ResponseQueueInfo_v2(ref this, pqinfoResponse);
+			public HRESULT get_AdminQueueInfo_v2(IMSMQQueueInfo2** ppqinfoAdmin) mut => VT.get_AdminQueueInfo_v2(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo_v2(IMSMQQueueInfo2* pqinfoAdmin) mut => VT.putref_AdminQueueInfo_v2(ref this, pqinfoAdmin);
+			public HRESULT get_ReceivedAuthenticationLevel(out int16 psReceivedAuthenticationLevel) mut => VT.get_ReceivedAuthenticationLevel(ref this, out psReceivedAuthenticationLevel);
+			public HRESULT get_ResponseQueueInfo(IMSMQQueueInfo3** ppqinfoResponse) mut => VT.get_ResponseQueueInfo(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo(IMSMQQueueInfo3* pqinfoResponse) mut => VT.putref_ResponseQueueInfo(ref this, pqinfoResponse);
+			public HRESULT get_AdminQueueInfo(IMSMQQueueInfo3** ppqinfoAdmin) mut => VT.get_AdminQueueInfo(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo(IMSMQQueueInfo3* pqinfoAdmin) mut => VT.putref_AdminQueueInfo(ref this, pqinfoAdmin);
+			public HRESULT get_ResponseDestination(IDispatch** ppdestResponse) mut => VT.get_ResponseDestination(ref this, ppdestResponse);
+			public HRESULT putref_ResponseDestination(IDispatch* pdestResponse) mut => VT.putref_ResponseDestination(ref this, pdestResponse);
+			public HRESULT get_Destination(IDispatch** ppdestDestination) mut => VT.get_Destination(ref this, ppdestDestination);
+			public HRESULT get_LookupId(out VARIANT pvarLookupId) mut => VT.get_LookupId(ref this, out pvarLookupId);
+			public HRESULT get_IsAuthenticated2(out int16 pisAuthenticated) mut => VT.get_IsAuthenticated2(ref this, out pisAuthenticated);
+			public HRESULT get_IsFirstInTransaction2(out int16 pisFirstInXact) mut => VT.get_IsFirstInTransaction2(ref this, out pisFirstInXact);
+			public HRESULT get_IsLastInTransaction2(out int16 pisLastInXact) mut => VT.get_IsLastInTransaction2(ref this, out pisLastInXact);
+			public HRESULT AttachCurrentSecurityContext2() mut => VT.AttachCurrentSecurityContext2(ref this);
+			public HRESULT get_SoapEnvelope(BSTR* pbstrSoapEnvelope) mut => VT.get_SoapEnvelope(ref this, pbstrSoapEnvelope);
+			public HRESULT get_CompoundMessage(out VARIANT pvarCompoundMessage) mut => VT.get_CompoundMessage(ref this, out pvarCompoundMessage);
+			public HRESULT put_SoapHeader(BSTR bstrSoapHeader) mut => VT.put_SoapHeader(ref this, bstrSoapHeader);
+			public HRESULT put_SoapBody(BSTR bstrSoapBody) mut => VT.put_SoapBody(ref this, bstrSoapBody);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3310,370 +1895,98 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Class(out int32 plClass) mut
-			{
-				return VT.get_Class(ref this, out plClass);
-			}
-			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut
-			{
-				return VT.get_PrivLevel(ref this, out plPrivLevel);
-			}
-			public HRESULT put_PrivLevel(int32 lPrivLevel) mut
-			{
-				return VT.put_PrivLevel(ref this, lPrivLevel);
-			}
-			public HRESULT get_AuthLevel(out int32 plAuthLevel) mut
-			{
-				return VT.get_AuthLevel(ref this, out plAuthLevel);
-			}
-			public HRESULT put_AuthLevel(int32 lAuthLevel) mut
-			{
-				return VT.put_AuthLevel(ref this, lAuthLevel);
-			}
-			public HRESULT get_IsAuthenticated(out int16 pisAuthenticated) mut
-			{
-				return VT.get_IsAuthenticated(ref this, out pisAuthenticated);
-			}
-			public HRESULT get_Delivery(out int32 plDelivery) mut
-			{
-				return VT.get_Delivery(ref this, out plDelivery);
-			}
-			public HRESULT put_Delivery(int32 lDelivery) mut
-			{
-				return VT.put_Delivery(ref this, lDelivery);
-			}
-			public HRESULT get_Trace(out int32 plTrace) mut
-			{
-				return VT.get_Trace(ref this, out plTrace);
-			}
-			public HRESULT put_Trace(int32 lTrace) mut
-			{
-				return VT.put_Trace(ref this, lTrace);
-			}
-			public HRESULT get_Priority(out int32 plPriority) mut
-			{
-				return VT.get_Priority(ref this, out plPriority);
-			}
-			public HRESULT put_Priority(int32 lPriority) mut
-			{
-				return VT.put_Priority(ref this, lPriority);
-			}
-			public HRESULT get_Journal(out int32 plJournal) mut
-			{
-				return VT.get_Journal(ref this, out plJournal);
-			}
-			public HRESULT put_Journal(int32 lJournal) mut
-			{
-				return VT.put_Journal(ref this, lJournal);
-			}
-			public HRESULT get_ResponseQueueInfo_v1(IMSMQQueueInfo** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo_v1(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo_v1(IMSMQQueueInfo* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo_v1(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut
-			{
-				return VT.get_AppSpecific(ref this, out plAppSpecific);
-			}
-			public HRESULT put_AppSpecific(int32 lAppSpecific) mut
-			{
-				return VT.put_AppSpecific(ref this, lAppSpecific);
-			}
-			public HRESULT get_SourceMachineGuid(BSTR* pbstrGuidSrcMachine) mut
-			{
-				return VT.get_SourceMachineGuid(ref this, pbstrGuidSrcMachine);
-			}
-			public HRESULT get_BodyLength(out int32 pcbBody) mut
-			{
-				return VT.get_BodyLength(ref this, out pcbBody);
-			}
-			public HRESULT get_Body(out VARIANT pvarBody) mut
-			{
-				return VT.get_Body(ref this, out pvarBody);
-			}
-			public HRESULT put_Body(VARIANT varBody) mut
-			{
-				return VT.put_Body(ref this, varBody);
-			}
-			public HRESULT get_AdminQueueInfo_v1(IMSMQQueueInfo** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo_v1(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo_v1(IMSMQQueueInfo* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo_v1(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_Id(out VARIANT pvarMsgId) mut
-			{
-				return VT.get_Id(ref this, out pvarMsgId);
-			}
-			public HRESULT get_CorrelationId(out VARIANT pvarMsgId) mut
-			{
-				return VT.get_CorrelationId(ref this, out pvarMsgId);
-			}
-			public HRESULT put_CorrelationId(VARIANT varMsgId) mut
-			{
-				return VT.put_CorrelationId(ref this, varMsgId);
-			}
-			public HRESULT get_Ack(out int32 plAck) mut
-			{
-				return VT.get_Ack(ref this, out plAck);
-			}
-			public HRESULT put_Ack(int32 lAck) mut
-			{
-				return VT.put_Ack(ref this, lAck);
-			}
-			public HRESULT get_Label(BSTR* pbstrLabel) mut
-			{
-				return VT.get_Label(ref this, pbstrLabel);
-			}
-			public HRESULT put_Label(BSTR bstrLabel) mut
-			{
-				return VT.put_Label(ref this, bstrLabel);
-			}
-			public HRESULT get_MaxTimeToReachQueue(out int32 plMaxTimeToReachQueue) mut
-			{
-				return VT.get_MaxTimeToReachQueue(ref this, out plMaxTimeToReachQueue);
-			}
-			public HRESULT put_MaxTimeToReachQueue(int32 lMaxTimeToReachQueue) mut
-			{
-				return VT.put_MaxTimeToReachQueue(ref this, lMaxTimeToReachQueue);
-			}
-			public HRESULT get_MaxTimeToReceive(out int32 plMaxTimeToReceive) mut
-			{
-				return VT.get_MaxTimeToReceive(ref this, out plMaxTimeToReceive);
-			}
-			public HRESULT put_MaxTimeToReceive(int32 lMaxTimeToReceive) mut
-			{
-				return VT.put_MaxTimeToReceive(ref this, lMaxTimeToReceive);
-			}
-			public HRESULT get_HashAlgorithm(out int32 plHashAlg) mut
-			{
-				return VT.get_HashAlgorithm(ref this, out plHashAlg);
-			}
-			public HRESULT put_HashAlgorithm(int32 lHashAlg) mut
-			{
-				return VT.put_HashAlgorithm(ref this, lHashAlg);
-			}
-			public HRESULT get_EncryptAlgorithm(out int32 plEncryptAlg) mut
-			{
-				return VT.get_EncryptAlgorithm(ref this, out plEncryptAlg);
-			}
-			public HRESULT put_EncryptAlgorithm(int32 lEncryptAlg) mut
-			{
-				return VT.put_EncryptAlgorithm(ref this, lEncryptAlg);
-			}
-			public HRESULT get_SentTime(out VARIANT pvarSentTime) mut
-			{
-				return VT.get_SentTime(ref this, out pvarSentTime);
-			}
-			public HRESULT get_ArrivedTime(out VARIANT plArrivedTime) mut
-			{
-				return VT.get_ArrivedTime(ref this, out plArrivedTime);
-			}
-			public HRESULT get_DestinationQueueInfo(IMSMQQueueInfo4** ppqinfoDest) mut
-			{
-				return VT.get_DestinationQueueInfo(ref this, ppqinfoDest);
-			}
-			public HRESULT get_SenderCertificate(out VARIANT pvarSenderCert) mut
-			{
-				return VT.get_SenderCertificate(ref this, out pvarSenderCert);
-			}
-			public HRESULT put_SenderCertificate(VARIANT varSenderCert) mut
-			{
-				return VT.put_SenderCertificate(ref this, varSenderCert);
-			}
-			public HRESULT get_SenderId(out VARIANT pvarSenderId) mut
-			{
-				return VT.get_SenderId(ref this, out pvarSenderId);
-			}
-			public HRESULT get_SenderIdType(out int32 plSenderIdType) mut
-			{
-				return VT.get_SenderIdType(ref this, out plSenderIdType);
-			}
-			public HRESULT put_SenderIdType(int32 lSenderIdType) mut
-			{
-				return VT.put_SenderIdType(ref this, lSenderIdType);
-			}
-			public HRESULT Send(IDispatch* DestinationQueue, ref VARIANT Transaction) mut
-			{
-				return VT.Send(ref this, DestinationQueue, ref Transaction);
-			}
-			public HRESULT AttachCurrentSecurityContext() mut
-			{
-				return VT.AttachCurrentSecurityContext(ref this);
-			}
-			public HRESULT get_SenderVersion(out int32 plSenderVersion) mut
-			{
-				return VT.get_SenderVersion(ref this, out plSenderVersion);
-			}
-			public HRESULT get_Extension(out VARIANT pvarExtension) mut
-			{
-				return VT.get_Extension(ref this, out pvarExtension);
-			}
-			public HRESULT put_Extension(VARIANT varExtension) mut
-			{
-				return VT.put_Extension(ref this, varExtension);
-			}
-			public HRESULT get_ConnectorTypeGuid(BSTR* pbstrGuidConnectorType) mut
-			{
-				return VT.get_ConnectorTypeGuid(ref this, pbstrGuidConnectorType);
-			}
-			public HRESULT put_ConnectorTypeGuid(BSTR bstrGuidConnectorType) mut
-			{
-				return VT.put_ConnectorTypeGuid(ref this, bstrGuidConnectorType);
-			}
-			public HRESULT get_TransactionStatusQueueInfo(IMSMQQueueInfo4** ppqinfoXactStatus) mut
-			{
-				return VT.get_TransactionStatusQueueInfo(ref this, ppqinfoXactStatus);
-			}
-			public HRESULT get_DestinationSymmetricKey(out VARIANT pvarDestSymmKey) mut
-			{
-				return VT.get_DestinationSymmetricKey(ref this, out pvarDestSymmKey);
-			}
-			public HRESULT put_DestinationSymmetricKey(VARIANT varDestSymmKey) mut
-			{
-				return VT.put_DestinationSymmetricKey(ref this, varDestSymmKey);
-			}
-			public HRESULT get_Signature(out VARIANT pvarSignature) mut
-			{
-				return VT.get_Signature(ref this, out pvarSignature);
-			}
-			public HRESULT put_Signature(VARIANT varSignature) mut
-			{
-				return VT.put_Signature(ref this, varSignature);
-			}
-			public HRESULT get_AuthenticationProviderType(out int32 plAuthProvType) mut
-			{
-				return VT.get_AuthenticationProviderType(ref this, out plAuthProvType);
-			}
-			public HRESULT put_AuthenticationProviderType(int32 lAuthProvType) mut
-			{
-				return VT.put_AuthenticationProviderType(ref this, lAuthProvType);
-			}
-			public HRESULT get_AuthenticationProviderName(BSTR* pbstrAuthProvName) mut
-			{
-				return VT.get_AuthenticationProviderName(ref this, pbstrAuthProvName);
-			}
-			public HRESULT put_AuthenticationProviderName(BSTR bstrAuthProvName) mut
-			{
-				return VT.put_AuthenticationProviderName(ref this, bstrAuthProvName);
-			}
-			public HRESULT put_SenderId(VARIANT varSenderId) mut
-			{
-				return VT.put_SenderId(ref this, varSenderId);
-			}
-			public HRESULT get_MsgClass(out int32 plMsgClass) mut
-			{
-				return VT.get_MsgClass(ref this, out plMsgClass);
-			}
-			public HRESULT put_MsgClass(int32 lMsgClass) mut
-			{
-				return VT.put_MsgClass(ref this, lMsgClass);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
-			public HRESULT get_TransactionId(out VARIANT pvarXactId) mut
-			{
-				return VT.get_TransactionId(ref this, out pvarXactId);
-			}
-			public HRESULT get_IsFirstInTransaction(out int16 pisFirstInXact) mut
-			{
-				return VT.get_IsFirstInTransaction(ref this, out pisFirstInXact);
-			}
-			public HRESULT get_IsLastInTransaction(out int16 pisLastInXact) mut
-			{
-				return VT.get_IsLastInTransaction(ref this, out pisLastInXact);
-			}
-			public HRESULT get_ResponseQueueInfo_v2(IMSMQQueueInfo2** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo_v2(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo_v2(IMSMQQueueInfo2* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo_v2(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AdminQueueInfo_v2(IMSMQQueueInfo2** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo_v2(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo_v2(IMSMQQueueInfo2* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo_v2(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_ReceivedAuthenticationLevel(out int16 psReceivedAuthenticationLevel) mut
-			{
-				return VT.get_ReceivedAuthenticationLevel(ref this, out psReceivedAuthenticationLevel);
-			}
-			public HRESULT get_ResponseQueueInfo(IMSMQQueueInfo4** ppqinfoResponse) mut
-			{
-				return VT.get_ResponseQueueInfo(ref this, ppqinfoResponse);
-			}
-			public HRESULT putref_ResponseQueueInfo(IMSMQQueueInfo4* pqinfoResponse) mut
-			{
-				return VT.putref_ResponseQueueInfo(ref this, pqinfoResponse);
-			}
-			public HRESULT get_AdminQueueInfo(IMSMQQueueInfo4** ppqinfoAdmin) mut
-			{
-				return VT.get_AdminQueueInfo(ref this, ppqinfoAdmin);
-			}
-			public HRESULT putref_AdminQueueInfo(IMSMQQueueInfo4* pqinfoAdmin) mut
-			{
-				return VT.putref_AdminQueueInfo(ref this, pqinfoAdmin);
-			}
-			public HRESULT get_ResponseDestination(IDispatch** ppdestResponse) mut
-			{
-				return VT.get_ResponseDestination(ref this, ppdestResponse);
-			}
-			public HRESULT putref_ResponseDestination(IDispatch* pdestResponse) mut
-			{
-				return VT.putref_ResponseDestination(ref this, pdestResponse);
-			}
-			public HRESULT get_Destination(IDispatch** ppdestDestination) mut
-			{
-				return VT.get_Destination(ref this, ppdestDestination);
-			}
-			public HRESULT get_LookupId(out VARIANT pvarLookupId) mut
-			{
-				return VT.get_LookupId(ref this, out pvarLookupId);
-			}
-			public HRESULT get_IsAuthenticated2(out int16 pisAuthenticated) mut
-			{
-				return VT.get_IsAuthenticated2(ref this, out pisAuthenticated);
-			}
-			public HRESULT get_IsFirstInTransaction2(out int16 pisFirstInXact) mut
-			{
-				return VT.get_IsFirstInTransaction2(ref this, out pisFirstInXact);
-			}
-			public HRESULT get_IsLastInTransaction2(out int16 pisLastInXact) mut
-			{
-				return VT.get_IsLastInTransaction2(ref this, out pisLastInXact);
-			}
-			public HRESULT AttachCurrentSecurityContext2() mut
-			{
-				return VT.AttachCurrentSecurityContext2(ref this);
-			}
-			public HRESULT get_SoapEnvelope(BSTR* pbstrSoapEnvelope) mut
-			{
-				return VT.get_SoapEnvelope(ref this, pbstrSoapEnvelope);
-			}
-			public HRESULT get_CompoundMessage(out VARIANT pvarCompoundMessage) mut
-			{
-				return VT.get_CompoundMessage(ref this, out pvarCompoundMessage);
-			}
-			public HRESULT put_SoapHeader(BSTR bstrSoapHeader) mut
-			{
-				return VT.put_SoapHeader(ref this, bstrSoapHeader);
-			}
-			public HRESULT put_SoapBody(BSTR bstrSoapBody) mut
-			{
-				return VT.put_SoapBody(ref this, bstrSoapBody);
-			}
+			public HRESULT get_Class(out int32 plClass) mut => VT.get_Class(ref this, out plClass);
+			public HRESULT get_PrivLevel(out int32 plPrivLevel) mut => VT.get_PrivLevel(ref this, out plPrivLevel);
+			public HRESULT put_PrivLevel(int32 lPrivLevel) mut => VT.put_PrivLevel(ref this, lPrivLevel);
+			public HRESULT get_AuthLevel(out int32 plAuthLevel) mut => VT.get_AuthLevel(ref this, out plAuthLevel);
+			public HRESULT put_AuthLevel(int32 lAuthLevel) mut => VT.put_AuthLevel(ref this, lAuthLevel);
+			public HRESULT get_IsAuthenticated(out int16 pisAuthenticated) mut => VT.get_IsAuthenticated(ref this, out pisAuthenticated);
+			public HRESULT get_Delivery(out int32 plDelivery) mut => VT.get_Delivery(ref this, out plDelivery);
+			public HRESULT put_Delivery(int32 lDelivery) mut => VT.put_Delivery(ref this, lDelivery);
+			public HRESULT get_Trace(out int32 plTrace) mut => VT.get_Trace(ref this, out plTrace);
+			public HRESULT put_Trace(int32 lTrace) mut => VT.put_Trace(ref this, lTrace);
+			public HRESULT get_Priority(out int32 plPriority) mut => VT.get_Priority(ref this, out plPriority);
+			public HRESULT put_Priority(int32 lPriority) mut => VT.put_Priority(ref this, lPriority);
+			public HRESULT get_Journal(out int32 plJournal) mut => VT.get_Journal(ref this, out plJournal);
+			public HRESULT put_Journal(int32 lJournal) mut => VT.put_Journal(ref this, lJournal);
+			public HRESULT get_ResponseQueueInfo_v1(IMSMQQueueInfo** ppqinfoResponse) mut => VT.get_ResponseQueueInfo_v1(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo_v1(IMSMQQueueInfo* pqinfoResponse) mut => VT.putref_ResponseQueueInfo_v1(ref this, pqinfoResponse);
+			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut => VT.get_AppSpecific(ref this, out plAppSpecific);
+			public HRESULT put_AppSpecific(int32 lAppSpecific) mut => VT.put_AppSpecific(ref this, lAppSpecific);
+			public HRESULT get_SourceMachineGuid(BSTR* pbstrGuidSrcMachine) mut => VT.get_SourceMachineGuid(ref this, pbstrGuidSrcMachine);
+			public HRESULT get_BodyLength(out int32 pcbBody) mut => VT.get_BodyLength(ref this, out pcbBody);
+			public HRESULT get_Body(out VARIANT pvarBody) mut => VT.get_Body(ref this, out pvarBody);
+			public HRESULT put_Body(VARIANT varBody) mut => VT.put_Body(ref this, varBody);
+			public HRESULT get_AdminQueueInfo_v1(IMSMQQueueInfo** ppqinfoAdmin) mut => VT.get_AdminQueueInfo_v1(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo_v1(IMSMQQueueInfo* pqinfoAdmin) mut => VT.putref_AdminQueueInfo_v1(ref this, pqinfoAdmin);
+			public HRESULT get_Id(out VARIANT pvarMsgId) mut => VT.get_Id(ref this, out pvarMsgId);
+			public HRESULT get_CorrelationId(out VARIANT pvarMsgId) mut => VT.get_CorrelationId(ref this, out pvarMsgId);
+			public HRESULT put_CorrelationId(VARIANT varMsgId) mut => VT.put_CorrelationId(ref this, varMsgId);
+			public HRESULT get_Ack(out int32 plAck) mut => VT.get_Ack(ref this, out plAck);
+			public HRESULT put_Ack(int32 lAck) mut => VT.put_Ack(ref this, lAck);
+			public HRESULT get_Label(BSTR* pbstrLabel) mut => VT.get_Label(ref this, pbstrLabel);
+			public HRESULT put_Label(BSTR bstrLabel) mut => VT.put_Label(ref this, bstrLabel);
+			public HRESULT get_MaxTimeToReachQueue(out int32 plMaxTimeToReachQueue) mut => VT.get_MaxTimeToReachQueue(ref this, out plMaxTimeToReachQueue);
+			public HRESULT put_MaxTimeToReachQueue(int32 lMaxTimeToReachQueue) mut => VT.put_MaxTimeToReachQueue(ref this, lMaxTimeToReachQueue);
+			public HRESULT get_MaxTimeToReceive(out int32 plMaxTimeToReceive) mut => VT.get_MaxTimeToReceive(ref this, out plMaxTimeToReceive);
+			public HRESULT put_MaxTimeToReceive(int32 lMaxTimeToReceive) mut => VT.put_MaxTimeToReceive(ref this, lMaxTimeToReceive);
+			public HRESULT get_HashAlgorithm(out int32 plHashAlg) mut => VT.get_HashAlgorithm(ref this, out plHashAlg);
+			public HRESULT put_HashAlgorithm(int32 lHashAlg) mut => VT.put_HashAlgorithm(ref this, lHashAlg);
+			public HRESULT get_EncryptAlgorithm(out int32 plEncryptAlg) mut => VT.get_EncryptAlgorithm(ref this, out plEncryptAlg);
+			public HRESULT put_EncryptAlgorithm(int32 lEncryptAlg) mut => VT.put_EncryptAlgorithm(ref this, lEncryptAlg);
+			public HRESULT get_SentTime(out VARIANT pvarSentTime) mut => VT.get_SentTime(ref this, out pvarSentTime);
+			public HRESULT get_ArrivedTime(out VARIANT plArrivedTime) mut => VT.get_ArrivedTime(ref this, out plArrivedTime);
+			public HRESULT get_DestinationQueueInfo(IMSMQQueueInfo4** ppqinfoDest) mut => VT.get_DestinationQueueInfo(ref this, ppqinfoDest);
+			public HRESULT get_SenderCertificate(out VARIANT pvarSenderCert) mut => VT.get_SenderCertificate(ref this, out pvarSenderCert);
+			public HRESULT put_SenderCertificate(VARIANT varSenderCert) mut => VT.put_SenderCertificate(ref this, varSenderCert);
+			public HRESULT get_SenderId(out VARIANT pvarSenderId) mut => VT.get_SenderId(ref this, out pvarSenderId);
+			public HRESULT get_SenderIdType(out int32 plSenderIdType) mut => VT.get_SenderIdType(ref this, out plSenderIdType);
+			public HRESULT put_SenderIdType(int32 lSenderIdType) mut => VT.put_SenderIdType(ref this, lSenderIdType);
+			public HRESULT Send(IDispatch* DestinationQueue, ref VARIANT Transaction) mut => VT.Send(ref this, DestinationQueue, ref Transaction);
+			public HRESULT AttachCurrentSecurityContext() mut => VT.AttachCurrentSecurityContext(ref this);
+			public HRESULT get_SenderVersion(out int32 plSenderVersion) mut => VT.get_SenderVersion(ref this, out plSenderVersion);
+			public HRESULT get_Extension(out VARIANT pvarExtension) mut => VT.get_Extension(ref this, out pvarExtension);
+			public HRESULT put_Extension(VARIANT varExtension) mut => VT.put_Extension(ref this, varExtension);
+			public HRESULT get_ConnectorTypeGuid(BSTR* pbstrGuidConnectorType) mut => VT.get_ConnectorTypeGuid(ref this, pbstrGuidConnectorType);
+			public HRESULT put_ConnectorTypeGuid(BSTR bstrGuidConnectorType) mut => VT.put_ConnectorTypeGuid(ref this, bstrGuidConnectorType);
+			public HRESULT get_TransactionStatusQueueInfo(IMSMQQueueInfo4** ppqinfoXactStatus) mut => VT.get_TransactionStatusQueueInfo(ref this, ppqinfoXactStatus);
+			public HRESULT get_DestinationSymmetricKey(out VARIANT pvarDestSymmKey) mut => VT.get_DestinationSymmetricKey(ref this, out pvarDestSymmKey);
+			public HRESULT put_DestinationSymmetricKey(VARIANT varDestSymmKey) mut => VT.put_DestinationSymmetricKey(ref this, varDestSymmKey);
+			public HRESULT get_Signature(out VARIANT pvarSignature) mut => VT.get_Signature(ref this, out pvarSignature);
+			public HRESULT put_Signature(VARIANT varSignature) mut => VT.put_Signature(ref this, varSignature);
+			public HRESULT get_AuthenticationProviderType(out int32 plAuthProvType) mut => VT.get_AuthenticationProviderType(ref this, out plAuthProvType);
+			public HRESULT put_AuthenticationProviderType(int32 lAuthProvType) mut => VT.put_AuthenticationProviderType(ref this, lAuthProvType);
+			public HRESULT get_AuthenticationProviderName(BSTR* pbstrAuthProvName) mut => VT.get_AuthenticationProviderName(ref this, pbstrAuthProvName);
+			public HRESULT put_AuthenticationProviderName(BSTR bstrAuthProvName) mut => VT.put_AuthenticationProviderName(ref this, bstrAuthProvName);
+			public HRESULT put_SenderId(VARIANT varSenderId) mut => VT.put_SenderId(ref this, varSenderId);
+			public HRESULT get_MsgClass(out int32 plMsgClass) mut => VT.get_MsgClass(ref this, out plMsgClass);
+			public HRESULT put_MsgClass(int32 lMsgClass) mut => VT.put_MsgClass(ref this, lMsgClass);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+			public HRESULT get_TransactionId(out VARIANT pvarXactId) mut => VT.get_TransactionId(ref this, out pvarXactId);
+			public HRESULT get_IsFirstInTransaction(out int16 pisFirstInXact) mut => VT.get_IsFirstInTransaction(ref this, out pisFirstInXact);
+			public HRESULT get_IsLastInTransaction(out int16 pisLastInXact) mut => VT.get_IsLastInTransaction(ref this, out pisLastInXact);
+			public HRESULT get_ResponseQueueInfo_v2(IMSMQQueueInfo2** ppqinfoResponse) mut => VT.get_ResponseQueueInfo_v2(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo_v2(IMSMQQueueInfo2* pqinfoResponse) mut => VT.putref_ResponseQueueInfo_v2(ref this, pqinfoResponse);
+			public HRESULT get_AdminQueueInfo_v2(IMSMQQueueInfo2** ppqinfoAdmin) mut => VT.get_AdminQueueInfo_v2(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo_v2(IMSMQQueueInfo2* pqinfoAdmin) mut => VT.putref_AdminQueueInfo_v2(ref this, pqinfoAdmin);
+			public HRESULT get_ReceivedAuthenticationLevel(out int16 psReceivedAuthenticationLevel) mut => VT.get_ReceivedAuthenticationLevel(ref this, out psReceivedAuthenticationLevel);
+			public HRESULT get_ResponseQueueInfo(IMSMQQueueInfo4** ppqinfoResponse) mut => VT.get_ResponseQueueInfo(ref this, ppqinfoResponse);
+			public HRESULT putref_ResponseQueueInfo(IMSMQQueueInfo4* pqinfoResponse) mut => VT.putref_ResponseQueueInfo(ref this, pqinfoResponse);
+			public HRESULT get_AdminQueueInfo(IMSMQQueueInfo4** ppqinfoAdmin) mut => VT.get_AdminQueueInfo(ref this, ppqinfoAdmin);
+			public HRESULT putref_AdminQueueInfo(IMSMQQueueInfo4* pqinfoAdmin) mut => VT.putref_AdminQueueInfo(ref this, pqinfoAdmin);
+			public HRESULT get_ResponseDestination(IDispatch** ppdestResponse) mut => VT.get_ResponseDestination(ref this, ppdestResponse);
+			public HRESULT putref_ResponseDestination(IDispatch* pdestResponse) mut => VT.putref_ResponseDestination(ref this, pdestResponse);
+			public HRESULT get_Destination(IDispatch** ppdestDestination) mut => VT.get_Destination(ref this, ppdestDestination);
+			public HRESULT get_LookupId(out VARIANT pvarLookupId) mut => VT.get_LookupId(ref this, out pvarLookupId);
+			public HRESULT get_IsAuthenticated2(out int16 pisAuthenticated) mut => VT.get_IsAuthenticated2(ref this, out pisAuthenticated);
+			public HRESULT get_IsFirstInTransaction2(out int16 pisFirstInXact) mut => VT.get_IsFirstInTransaction2(ref this, out pisFirstInXact);
+			public HRESULT get_IsLastInTransaction2(out int16 pisLastInXact) mut => VT.get_IsLastInTransaction2(ref this, out pisLastInXact);
+			public HRESULT AttachCurrentSecurityContext2() mut => VT.AttachCurrentSecurityContext2(ref this);
+			public HRESULT get_SoapEnvelope(BSTR* pbstrSoapEnvelope) mut => VT.get_SoapEnvelope(ref this, pbstrSoapEnvelope);
+			public HRESULT get_CompoundMessage(out VARIANT pvarCompoundMessage) mut => VT.get_CompoundMessage(ref this, out pvarCompoundMessage);
+			public HRESULT put_SoapHeader(BSTR bstrSoapHeader) mut => VT.put_SoapHeader(ref this, bstrSoapHeader);
+			public HRESULT put_SoapBody(BSTR bstrSoapBody) mut => VT.put_SoapBody(ref this, bstrSoapBody);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3777,18 +2090,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Hwnd(out int32 phwnd) mut
-			{
-				return VT.get_Hwnd(ref this, out phwnd);
-			}
-			public HRESULT FireArrivedEvent(IMSMQQueue* pq, int32 msgcursor) mut
-			{
-				return VT.FireArrivedEvent(ref this, pq, msgcursor);
-			}
-			public HRESULT FireArrivedErrorEvent(IMSMQQueue* pq, HRESULT hrStatus, int32 msgcursor) mut
-			{
-				return VT.FireArrivedErrorEvent(ref this, pq, hrStatus, msgcursor);
-			}
+			public HRESULT get_Hwnd(out int32 phwnd) mut => VT.get_Hwnd(ref this, out phwnd);
+			public HRESULT FireArrivedEvent(IMSMQQueue* pq, int32 msgcursor) mut => VT.FireArrivedEvent(ref this, pq, msgcursor);
+			public HRESULT FireArrivedErrorEvent(IMSMQQueue* pq, HRESULT hrStatus, int32 msgcursor) mut => VT.FireArrivedErrorEvent(ref this, pq, hrStatus, msgcursor);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3804,6 +2109,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3816,14 +2122,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitNew(VARIANT varTransaction) mut
-			{
-				return VT.InitNew(ref this, varTransaction);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT InitNew(VARIANT varTransaction) mut => VT.InitNew(ref this, varTransaction);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IMSMQTransaction.VTable
 			{
@@ -3838,10 +2139,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ITransaction(out VARIANT pvarITransaction) mut
-			{
-				return VT.get_ITransaction(ref this, out pvarITransaction);
-			}
+			public HRESULT get_ITransaction(out VARIANT pvarITransaction) mut => VT.get_ITransaction(ref this, out pvarITransaction);
+
 			[CRepr]
 			public struct VTable : IMSMQTransaction2.VTable
 			{
@@ -3855,14 +2154,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginTransaction(IMSMQTransaction2** ptransaction) mut
-			{
-				return VT.BeginTransaction(ref this, ptransaction);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT BeginTransaction(IMSMQTransaction2** ptransaction) mut => VT.BeginTransaction(ref this, ptransaction);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3877,14 +2171,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginTransaction(IMSMQTransaction3** ptransaction) mut
-			{
-				return VT.BeginTransaction(ref this, ptransaction);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT BeginTransaction(IMSMQTransaction3** ptransaction) mut => VT.BeginTransaction(ref this, ptransaction);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3899,14 +2188,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginTransaction(IMSMQTransaction2** ptransaction) mut
-			{
-				return VT.BeginTransaction(ref this, ptransaction);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT BeginTransaction(IMSMQTransaction2** ptransaction) mut => VT.BeginTransaction(ref this, ptransaction);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3921,14 +2205,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginTransaction(IMSMQTransaction3** ptransaction) mut
-			{
-				return VT.BeginTransaction(ref this, ptransaction);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT BeginTransaction(IMSMQTransaction3** ptransaction) mut => VT.BeginTransaction(ref this, ptransaction);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3943,10 +2222,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MachineIdOfMachineName(BSTR MachineName, BSTR* pbstrGuid) mut
-			{
-				return VT.MachineIdOfMachineName(ref this, MachineName, pbstrGuid);
-			}
+			public HRESULT MachineIdOfMachineName(BSTR MachineName, BSTR* pbstrGuid) mut => VT.MachineIdOfMachineName(ref this, MachineName, pbstrGuid);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3960,34 +2237,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterCertificate(ref VARIANT Flags, ref VARIANT ExternalCertificate) mut
-			{
-				return VT.RegisterCertificate(ref this, ref Flags, ref ExternalCertificate);
-			}
-			public HRESULT MachineNameOfMachineId(BSTR bstrGuid, BSTR* pbstrMachineName) mut
-			{
-				return VT.MachineNameOfMachineId(ref this, bstrGuid, pbstrMachineName);
-			}
-			public HRESULT get_MSMQVersionMajor(out int16 psMSMQVersionMajor) mut
-			{
-				return VT.get_MSMQVersionMajor(ref this, out psMSMQVersionMajor);
-			}
-			public HRESULT get_MSMQVersionMinor(out int16 psMSMQVersionMinor) mut
-			{
-				return VT.get_MSMQVersionMinor(ref this, out psMSMQVersionMinor);
-			}
-			public HRESULT get_MSMQVersionBuild(out int16 psMSMQVersionBuild) mut
-			{
-				return VT.get_MSMQVersionBuild(ref this, out psMSMQVersionBuild);
-			}
-			public HRESULT get_IsDsEnabled(out int16 pfIsDsEnabled) mut
-			{
-				return VT.get_IsDsEnabled(ref this, out pfIsDsEnabled);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT RegisterCertificate(ref VARIANT Flags, ref VARIANT ExternalCertificate) mut => VT.RegisterCertificate(ref this, ref Flags, ref ExternalCertificate);
+			public HRESULT MachineNameOfMachineId(BSTR bstrGuid, BSTR* pbstrMachineName) mut => VT.MachineNameOfMachineId(ref this, bstrGuid, pbstrMachineName);
+			public HRESULT get_MSMQVersionMajor(out int16 psMSMQVersionMajor) mut => VT.get_MSMQVersionMajor(ref this, out psMSMQVersionMajor);
+			public HRESULT get_MSMQVersionMinor(out int16 psMSMQVersionMinor) mut => VT.get_MSMQVersionMinor(ref this, out psMSMQVersionMinor);
+			public HRESULT get_MSMQVersionBuild(out int16 psMSMQVersionBuild) mut => VT.get_MSMQVersionBuild(ref this, out psMSMQVersionBuild);
+			public HRESULT get_IsDsEnabled(out int16 pfIsDsEnabled) mut => VT.get_IsDsEnabled(ref this, out pfIsDsEnabled);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IMSMQApplication.VTable
 			{
@@ -4007,46 +2264,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ActiveQueues(out VARIANT pvActiveQueues) mut
-			{
-				return VT.get_ActiveQueues(ref this, out pvActiveQueues);
-			}
-			public HRESULT get_PrivateQueues(out VARIANT pvPrivateQueues) mut
-			{
-				return VT.get_PrivateQueues(ref this, out pvPrivateQueues);
-			}
-			public HRESULT get_DirectoryServiceServer(BSTR* pbstrDirectoryServiceServer) mut
-			{
-				return VT.get_DirectoryServiceServer(ref this, pbstrDirectoryServiceServer);
-			}
-			public HRESULT get_IsConnected(out int16 pfIsConnected) mut
-			{
-				return VT.get_IsConnected(ref this, out pfIsConnected);
-			}
-			public HRESULT get_BytesInAllQueues(out VARIANT pvBytesInAllQueues) mut
-			{
-				return VT.get_BytesInAllQueues(ref this, out pvBytesInAllQueues);
-			}
-			public HRESULT put_Machine(BSTR bstrMachine) mut
-			{
-				return VT.put_Machine(ref this, bstrMachine);
-			}
-			public HRESULT get_Machine(BSTR* pbstrMachine) mut
-			{
-				return VT.get_Machine(ref this, pbstrMachine);
-			}
-			public HRESULT Connect() mut
-			{
-				return VT.Connect(ref this);
-			}
-			public HRESULT Disconnect() mut
-			{
-				return VT.Disconnect(ref this);
-			}
-			public HRESULT Tidy() mut
-			{
-				return VT.Tidy(ref this);
-			}
+			public HRESULT get_ActiveQueues(out VARIANT pvActiveQueues) mut => VT.get_ActiveQueues(ref this, out pvActiveQueues);
+			public HRESULT get_PrivateQueues(out VARIANT pvPrivateQueues) mut => VT.get_PrivateQueues(ref this, out pvPrivateQueues);
+			public HRESULT get_DirectoryServiceServer(BSTR* pbstrDirectoryServiceServer) mut => VT.get_DirectoryServiceServer(ref this, pbstrDirectoryServiceServer);
+			public HRESULT get_IsConnected(out int16 pfIsConnected) mut => VT.get_IsConnected(ref this, out pfIsConnected);
+			public HRESULT get_BytesInAllQueues(out VARIANT pvBytesInAllQueues) mut => VT.get_BytesInAllQueues(ref this, out pvBytesInAllQueues);
+			public HRESULT put_Machine(BSTR bstrMachine) mut => VT.put_Machine(ref this, bstrMachine);
+			public HRESULT get_Machine(BSTR* pbstrMachine) mut => VT.get_Machine(ref this, pbstrMachine);
+			public HRESULT Connect() mut => VT.Connect(ref this);
+			public HRESULT Disconnect() mut => VT.Disconnect(ref this);
+			public HRESULT Tidy() mut => VT.Tidy(ref this);
+
 			[CRepr]
 			public struct VTable : IMSMQApplication2.VTable
 			{
@@ -4069,62 +2297,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open() mut
-			{
-				return VT.Open(ref this);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
-			public HRESULT get_IsOpen(out int16 pfIsOpen) mut
-			{
-				return VT.get_IsOpen(ref this, out pfIsOpen);
-			}
-			public HRESULT get_IADs(IDispatch** ppIADs) mut
-			{
-				return VT.get_IADs(ref this, ppIADs);
-			}
-			public HRESULT putref_IADs(IDispatch* pIADs) mut
-			{
-				return VT.putref_IADs(ref this, pIADs);
-			}
-			public HRESULT get_ADsPath(BSTR* pbstrADsPath) mut
-			{
-				return VT.get_ADsPath(ref this, pbstrADsPath);
-			}
-			public HRESULT put_ADsPath(BSTR bstrADsPath) mut
-			{
-				return VT.put_ADsPath(ref this, bstrADsPath);
-			}
-			public HRESULT get_PathName(BSTR* pbstrPathName) mut
-			{
-				return VT.get_PathName(ref this, pbstrPathName);
-			}
-			public HRESULT put_PathName(BSTR bstrPathName) mut
-			{
-				return VT.put_PathName(ref this, bstrPathName);
-			}
-			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut
-			{
-				return VT.get_FormatName(ref this, pbstrFormatName);
-			}
-			public HRESULT put_FormatName(BSTR bstrFormatName) mut
-			{
-				return VT.put_FormatName(ref this, bstrFormatName);
-			}
-			public HRESULT get_Destinations(IDispatch** ppDestinations) mut
-			{
-				return VT.get_Destinations(ref this, ppDestinations);
-			}
-			public HRESULT putref_Destinations(IDispatch* pDestinations) mut
-			{
-				return VT.putref_Destinations(ref this, pDestinations);
-			}
-			public HRESULT get_Properties(IDispatch** ppcolProperties) mut
-			{
-				return VT.get_Properties(ref this, ppcolProperties);
-			}
+			public HRESULT Open() mut => VT.Open(ref this);
+			public HRESULT Close() mut => VT.Close(ref this);
+			public HRESULT get_IsOpen(out int16 pfIsOpen) mut => VT.get_IsOpen(ref this, out pfIsOpen);
+			public HRESULT get_IADs(IDispatch** ppIADs) mut => VT.get_IADs(ref this, ppIADs);
+			public HRESULT putref_IADs(IDispatch* pIADs) mut => VT.putref_IADs(ref this, pIADs);
+			public HRESULT get_ADsPath(BSTR* pbstrADsPath) mut => VT.get_ADsPath(ref this, pbstrADsPath);
+			public HRESULT put_ADsPath(BSTR bstrADsPath) mut => VT.put_ADsPath(ref this, bstrADsPath);
+			public HRESULT get_PathName(BSTR* pbstrPathName) mut => VT.get_PathName(ref this, pbstrPathName);
+			public HRESULT put_PathName(BSTR bstrPathName) mut => VT.put_PathName(ref this, bstrPathName);
+			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut => VT.get_FormatName(ref this, pbstrFormatName);
+			public HRESULT put_FormatName(BSTR bstrFormatName) mut => VT.put_FormatName(ref this, bstrFormatName);
+			public HRESULT get_Destinations(IDispatch** ppDestinations) mut => VT.get_Destinations(ref this, ppDestinations);
+			public HRESULT putref_Destinations(IDispatch* pDestinations) mut => VT.putref_Destinations(ref this, pDestinations);
+			public HRESULT get_Properties(IDispatch** ppcolProperties) mut => VT.get_Properties(ref this, ppcolProperties);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4151,14 +2338,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Handle(out VARIANT pvarHandle) mut
-			{
-				return VT.get_Handle(ref this, out pvarHandle);
-			}
-			public HRESULT put_Handle(VARIANT varHandle) mut
-			{
-				return VT.put_Handle(ref this, varHandle);
-			}
+			public HRESULT get_Handle(out VARIANT pvarHandle) mut => VT.get_Handle(ref this, out pvarHandle);
+			public HRESULT put_Handle(VARIANT varHandle) mut => VT.put_Handle(ref this, varHandle);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4173,18 +2355,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Item(ref VARIANT Index, out VARIANT pvarRet) mut
-			{
-				return VT.Item(ref this, ref Index, out pvarRet);
-			}
-			public HRESULT get_Count(out int32 pCount) mut
-			{
-				return VT.get_Count(ref this, out pCount);
-			}
-			public HRESULT _NewEnum(IUnknown** ppunk) mut
-			{
-				return VT._NewEnum(ref this, ppunk);
-			}
+			public HRESULT Item(ref VARIANT Index, out VARIANT pvarRet) mut => VT.Item(ref this, ref Index, out pvarRet);
+			public HRESULT get_Count(out int32 pCount) mut => VT.get_Count(ref this, out pCount);
+			public HRESULT _NewEnum(IUnknown** ppunk) mut => VT._NewEnum(ref this, ppunk);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4200,42 +2374,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Init(ref VARIANT Machine, ref VARIANT Pathname, ref VARIANT FormatName) mut
-			{
-				return VT.Init(ref this, ref Machine, ref Pathname, ref FormatName);
-			}
-			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut
-			{
-				return VT.get_FormatName(ref this, pbstrFormatName);
-			}
-			public HRESULT get_Machine(BSTR* pbstrMachine) mut
-			{
-				return VT.get_Machine(ref this, pbstrMachine);
-			}
-			public HRESULT get_MessageCount(out int32 plMessageCount) mut
-			{
-				return VT.get_MessageCount(ref this, out plMessageCount);
-			}
-			public HRESULT get_ForeignStatus(out int32 plForeignStatus) mut
-			{
-				return VT.get_ForeignStatus(ref this, out plForeignStatus);
-			}
-			public HRESULT get_QueueType(out int32 plQueueType) mut
-			{
-				return VT.get_QueueType(ref this, out plQueueType);
-			}
-			public HRESULT get_IsLocal(out int16 pfIsLocal) mut
-			{
-				return VT.get_IsLocal(ref this, out pfIsLocal);
-			}
-			public HRESULT get_TransactionalStatus(out int32 plTransactionalStatus) mut
-			{
-				return VT.get_TransactionalStatus(ref this, out plTransactionalStatus);
-			}
-			public HRESULT get_BytesInQueue(out VARIANT pvBytesInQueue) mut
-			{
-				return VT.get_BytesInQueue(ref this, out pvBytesInQueue);
-			}
+			public HRESULT Init(ref VARIANT Machine, ref VARIANT Pathname, ref VARIANT FormatName) mut => VT.Init(ref this, ref Machine, ref Pathname, ref FormatName);
+			public HRESULT get_FormatName(BSTR* pbstrFormatName) mut => VT.get_FormatName(ref this, pbstrFormatName);
+			public HRESULT get_Machine(BSTR* pbstrMachine) mut => VT.get_Machine(ref this, pbstrMachine);
+			public HRESULT get_MessageCount(out int32 plMessageCount) mut => VT.get_MessageCount(ref this, out plMessageCount);
+			public HRESULT get_ForeignStatus(out int32 plForeignStatus) mut => VT.get_ForeignStatus(ref this, out plForeignStatus);
+			public HRESULT get_QueueType(out int32 plQueueType) mut => VT.get_QueueType(ref this, out plQueueType);
+			public HRESULT get_IsLocal(out int16 pfIsLocal) mut => VT.get_IsLocal(ref this, out pfIsLocal);
+			public HRESULT get_TransactionalStatus(out int32 plTransactionalStatus) mut => VT.get_TransactionalStatus(ref this, out plTransactionalStatus);
+			public HRESULT get_BytesInQueue(out VARIANT pvBytesInQueue) mut => VT.get_BytesInQueue(ref this, out pvBytesInQueue);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -4257,30 +2405,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_State(out int32 plState) mut
-			{
-				return VT.get_State(ref this, out plState);
-			}
-			public HRESULT get_NextHops(out VARIANT pvNextHops) mut
-			{
-				return VT.get_NextHops(ref this, out pvNextHops);
-			}
-			public HRESULT EodGetSendInfo(IMSMQCollection** ppCollection) mut
-			{
-				return VT.EodGetSendInfo(ref this, ppCollection);
-			}
-			public HRESULT Resume() mut
-			{
-				return VT.Resume(ref this);
-			}
-			public HRESULT Pause() mut
-			{
-				return VT.Pause(ref this);
-			}
-			public HRESULT EodResend() mut
-			{
-				return VT.EodResend(ref this);
-			}
+			public HRESULT get_State(out int32 plState) mut => VT.get_State(ref this, out plState);
+			public HRESULT get_NextHops(out VARIANT pvNextHops) mut => VT.get_NextHops(ref this, out pvNextHops);
+			public HRESULT EodGetSendInfo(IMSMQCollection** ppCollection) mut => VT.EodGetSendInfo(ref this, ppCollection);
+			public HRESULT Resume() mut => VT.Resume(ref this);
+			public HRESULT Pause() mut => VT.Pause(ref this);
+			public HRESULT EodResend() mut => VT.EodResend(ref this);
+
 			[CRepr]
 			public struct VTable : IMSMQManagement.VTable
 			{
@@ -4299,18 +2430,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_JournalMessageCount(out int32 plJournalMessageCount) mut
-			{
-				return VT.get_JournalMessageCount(ref this, out plJournalMessageCount);
-			}
-			public HRESULT get_BytesInJournal(out VARIANT pvBytesInJournal) mut
-			{
-				return VT.get_BytesInJournal(ref this, out pvBytesInJournal);
-			}
-			public HRESULT EodGetReceiveInfo(out VARIANT pvCollection) mut
-			{
-				return VT.EodGetReceiveInfo(ref this, out pvCollection);
-			}
+			public HRESULT get_JournalMessageCount(out int32 plJournalMessageCount) mut => VT.get_JournalMessageCount(ref this, out plJournalMessageCount);
+			public HRESULT get_BytesInJournal(out VARIANT pvBytesInJournal) mut => VT.get_BytesInJournal(ref this, out pvBytesInJournal);
+			public HRESULT EodGetReceiveInfo(out VARIANT pvCollection) mut => VT.EodGetReceiveInfo(ref this, out pvCollection);
+
 			[CRepr]
 			public struct VTable : IMSMQManagement.VTable
 			{

@@ -674,18 +674,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitDone() mut
-			{
-				return VT.InitDone(ref this);
-			}
-			public HRESULT SelectionChange() mut
-			{
-				return VT.SelectionChange(ref this);
-			}
-			public HRESULT HandleMessage(HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT pResult) mut
-			{
-				return VT.HandleMessage(ref this, hDlg, uMsg, wParam, lParam, out pResult);
-			}
+			public HRESULT InitDone() mut => VT.InitDone(ref this);
+			public HRESULT SelectionChange() mut => VT.SelectionChange(ref this);
+			public HRESULT HandleMessage(HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT pResult) mut => VT.HandleMessage(ref this, hDlg, uMsg, wParam, lParam, out pResult);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -701,18 +693,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrentDevMode(out DEVMODEA pDevMode, out uint32 pcbSize) mut
-			{
-				return VT.GetCurrentDevMode(ref this, out pDevMode, out pcbSize);
-			}
-			public HRESULT GetCurrentPrinterName(char16* pPrinterName, out uint32 pcchSize) mut
-			{
-				return VT.GetCurrentPrinterName(ref this, pPrinterName, out pcchSize);
-			}
-			public HRESULT GetCurrentPortName(char16* pPortName, out uint32 pcchSize) mut
-			{
-				return VT.GetCurrentPortName(ref this, pPortName, out pcchSize);
-			}
+			public HRESULT GetCurrentDevMode(out DEVMODEA pDevMode, out uint32 pcbSize) mut => VT.GetCurrentDevMode(ref this, out pDevMode, out pcbSize);
+			public HRESULT GetCurrentPrinterName(char16* pPrinterName, out uint32 pcchSize) mut => VT.GetCurrentPrinterName(ref this, pPrinterName, out pcchSize);
+			public HRESULT GetCurrentPortName(char16* pPortName, out uint32 pcchSize) mut => VT.GetCurrentPortName(ref this, pPortName, out pcchSize);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

@@ -1814,62 +1814,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterSoftwareDevice(void* pInitializeFunction) mut
-			{
-				return VT.RegisterSoftwareDevice(ref this, pInitializeFunction);
-			}
-			public uint32 GetAdapterCount() mut
-			{
-				return VT.GetAdapterCount(ref this);
-			}
-			public HRESULT GetAdapterIdentifier(uint32 Adapter, uint32 Flags, out D3DADAPTER_IDENTIFIER9 pIdentifier) mut
-			{
-				return VT.GetAdapterIdentifier(ref this, Adapter, Flags, out pIdentifier);
-			}
-			public uint32 GetAdapterModeCount(uint32 Adapter, D3DFORMAT Format) mut
-			{
-				return VT.GetAdapterModeCount(ref this, Adapter, Format);
-			}
-			public HRESULT EnumAdapterModes(uint32 Adapter, D3DFORMAT Format, uint32 Mode, out D3DDISPLAYMODE pMode) mut
-			{
-				return VT.EnumAdapterModes(ref this, Adapter, Format, Mode, out pMode);
-			}
-			public HRESULT GetAdapterDisplayMode(uint32 Adapter, out D3DDISPLAYMODE pMode) mut
-			{
-				return VT.GetAdapterDisplayMode(ref this, Adapter, out pMode);
-			}
-			public HRESULT CheckDeviceType(uint32 Adapter, D3DDEVTYPE DevType, D3DFORMAT AdapterFormat, D3DFORMAT BackBufferFormat, BOOL bWindowed) mut
-			{
-				return VT.CheckDeviceType(ref this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
-			}
-			public HRESULT CheckDeviceFormat(uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, uint32 Usage, D3DRESOURCETYPE RType, D3DFORMAT CheckFormat) mut
-			{
-				return VT.CheckDeviceFormat(ref this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
-			}
-			public HRESULT CheckDeviceMultiSampleType(uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SurfaceFormat, BOOL Windowed, D3DMULTISAMPLE_TYPE MultiSampleType, out uint32 pQualityLevels) mut
-			{
-				return VT.CheckDeviceMultiSampleType(ref this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, out pQualityLevels);
-			}
-			public HRESULT CheckDepthStencilMatch(uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, D3DFORMAT RenderTargetFormat, D3DFORMAT DepthStencilFormat) mut
-			{
-				return VT.CheckDepthStencilMatch(ref this, Adapter, DeviceType, AdapterFormat, RenderTargetFormat, DepthStencilFormat);
-			}
-			public HRESULT CheckDeviceFormatConversion(uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SourceFormat, D3DFORMAT TargetFormat) mut
-			{
-				return VT.CheckDeviceFormatConversion(ref this, Adapter, DeviceType, SourceFormat, TargetFormat);
-			}
-			public HRESULT GetDeviceCaps(uint32 Adapter, D3DDEVTYPE DeviceType, out D3DCAPS9 pCaps) mut
-			{
-				return VT.GetDeviceCaps(ref this, Adapter, DeviceType, out pCaps);
-			}
-			public HMONITOR GetAdapterMonitor(uint32 Adapter) mut
-			{
-				return VT.GetAdapterMonitor(ref this, Adapter);
-			}
-			public HRESULT CreateDevice(uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, out D3DPRESENT_PARAMETERS pPresentationParameters, out IDirect3DDevice9* ppReturnedDeviceInterface) mut
-			{
-				return VT.CreateDevice(ref this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, out pPresentationParameters, out ppReturnedDeviceInterface);
-			}
+			public HRESULT RegisterSoftwareDevice(void* pInitializeFunction) mut => VT.RegisterSoftwareDevice(ref this, pInitializeFunction);
+			public uint32 GetAdapterCount() mut => VT.GetAdapterCount(ref this);
+			public HRESULT GetAdapterIdentifier(uint32 Adapter, uint32 Flags, out D3DADAPTER_IDENTIFIER9 pIdentifier) mut => VT.GetAdapterIdentifier(ref this, Adapter, Flags, out pIdentifier);
+			public uint32 GetAdapterModeCount(uint32 Adapter, D3DFORMAT Format) mut => VT.GetAdapterModeCount(ref this, Adapter, Format);
+			public HRESULT EnumAdapterModes(uint32 Adapter, D3DFORMAT Format, uint32 Mode, out D3DDISPLAYMODE pMode) mut => VT.EnumAdapterModes(ref this, Adapter, Format, Mode, out pMode);
+			public HRESULT GetAdapterDisplayMode(uint32 Adapter, out D3DDISPLAYMODE pMode) mut => VT.GetAdapterDisplayMode(ref this, Adapter, out pMode);
+			public HRESULT CheckDeviceType(uint32 Adapter, D3DDEVTYPE DevType, D3DFORMAT AdapterFormat, D3DFORMAT BackBufferFormat, BOOL bWindowed) mut => VT.CheckDeviceType(ref this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
+			public HRESULT CheckDeviceFormat(uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, uint32 Usage, D3DRESOURCETYPE RType, D3DFORMAT CheckFormat) mut => VT.CheckDeviceFormat(ref this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
+			public HRESULT CheckDeviceMultiSampleType(uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SurfaceFormat, BOOL Windowed, D3DMULTISAMPLE_TYPE MultiSampleType, out uint32 pQualityLevels) mut => VT.CheckDeviceMultiSampleType(ref this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, out pQualityLevels);
+			public HRESULT CheckDepthStencilMatch(uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, D3DFORMAT RenderTargetFormat, D3DFORMAT DepthStencilFormat) mut => VT.CheckDepthStencilMatch(ref this, Adapter, DeviceType, AdapterFormat, RenderTargetFormat, DepthStencilFormat);
+			public HRESULT CheckDeviceFormatConversion(uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SourceFormat, D3DFORMAT TargetFormat) mut => VT.CheckDeviceFormatConversion(ref this, Adapter, DeviceType, SourceFormat, TargetFormat);
+			public HRESULT GetDeviceCaps(uint32 Adapter, D3DDEVTYPE DeviceType, out D3DCAPS9 pCaps) mut => VT.GetDeviceCaps(ref this, Adapter, DeviceType, out pCaps);
+			public HMONITOR GetAdapterMonitor(uint32 Adapter) mut => VT.GetAdapterMonitor(ref this, Adapter);
+			public HRESULT CreateDevice(uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, out D3DPRESENT_PARAMETERS pPresentationParameters, out IDirect3DDevice9* ppReturnedDeviceInterface) mut => VT.CreateDevice(ref this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, out pPresentationParameters, out ppReturnedDeviceInterface);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1896,470 +1855,123 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TestCooperativeLevel() mut
-			{
-				return VT.TestCooperativeLevel(ref this);
-			}
-			public uint32 GetAvailableTextureMem() mut
-			{
-				return VT.GetAvailableTextureMem(ref this);
-			}
-			public HRESULT EvictManagedResources() mut
-			{
-				return VT.EvictManagedResources(ref this);
-			}
-			public HRESULT GetDirect3D(out IDirect3D9* ppD3D9) mut
-			{
-				return VT.GetDirect3D(ref this, out ppD3D9);
-			}
-			public HRESULT GetDeviceCaps(out D3DCAPS9 pCaps) mut
-			{
-				return VT.GetDeviceCaps(ref this, out pCaps);
-			}
-			public HRESULT GetDisplayMode(uint32 iSwapChain, out D3DDISPLAYMODE pMode) mut
-			{
-				return VT.GetDisplayMode(ref this, iSwapChain, out pMode);
-			}
-			public HRESULT GetCreationParameters(out D3DDEVICE_CREATION_PARAMETERS pParameters) mut
-			{
-				return VT.GetCreationParameters(ref this, out pParameters);
-			}
-			public HRESULT SetCursorProperties(uint32 XHotSpot, uint32 YHotSpot, ref IDirect3DSurface9 pCursorBitmap) mut
-			{
-				return VT.SetCursorProperties(ref this, XHotSpot, YHotSpot, ref pCursorBitmap);
-			}
-			public void SetCursorPosition(int32 X, int32 Y, uint32 Flags) mut
-			{
-				VT.SetCursorPosition(ref this, X, Y, Flags);
-			}
-			public BOOL ShowCursor(BOOL bShow) mut
-			{
-				return VT.ShowCursor(ref this, bShow);
-			}
-			public HRESULT CreateAdditionalSwapChain(out D3DPRESENT_PARAMETERS pPresentationParameters, out IDirect3DSwapChain9* pSwapChain) mut
-			{
-				return VT.CreateAdditionalSwapChain(ref this, out pPresentationParameters, out pSwapChain);
-			}
-			public HRESULT GetSwapChain(uint32 iSwapChain, out IDirect3DSwapChain9* pSwapChain) mut
-			{
-				return VT.GetSwapChain(ref this, iSwapChain, out pSwapChain);
-			}
-			public uint32 GetNumberOfSwapChains() mut
-			{
-				return VT.GetNumberOfSwapChains(ref this);
-			}
-			public HRESULT Reset(out D3DPRESENT_PARAMETERS pPresentationParameters) mut
-			{
-				return VT.Reset(ref this, out pPresentationParameters);
-			}
-			public HRESULT Present(in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion) mut
-			{
-				return VT.Present(ref this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
-			}
-			public HRESULT GetBackBuffer(uint32 iSwapChain, uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9* ppBackBuffer) mut
-			{
-				return VT.GetBackBuffer(ref this, iSwapChain, iBackBuffer, Type, out ppBackBuffer);
-			}
-			public HRESULT GetRasterStatus(uint32 iSwapChain, out D3DRASTER_STATUS pRasterStatus) mut
-			{
-				return VT.GetRasterStatus(ref this, iSwapChain, out pRasterStatus);
-			}
-			public HRESULT SetDialogBoxMode(BOOL bEnableDialogs) mut
-			{
-				return VT.SetDialogBoxMode(ref this, bEnableDialogs);
-			}
-			public void SetGammaRamp(uint32 iSwapChain, uint32 Flags, in D3DGAMMARAMP pRamp) mut
-			{
-				VT.SetGammaRamp(ref this, iSwapChain, Flags, pRamp);
-			}
-			public void GetGammaRamp(uint32 iSwapChain, out D3DGAMMARAMP pRamp) mut
-			{
-				VT.GetGammaRamp(ref this, iSwapChain, out pRamp);
-			}
-			public HRESULT CreateTexture(uint32 Width, uint32 Height, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DTexture9* ppTexture, out HANDLE pSharedHandle) mut
-			{
-				return VT.CreateTexture(ref this, Width, Height, Levels, Usage, Format, Pool, out ppTexture, out pSharedHandle);
-			}
-			public HRESULT CreateVolumeTexture(uint32 Width, uint32 Height, uint32 Depth, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DVolumeTexture9* ppVolumeTexture, out HANDLE pSharedHandle) mut
-			{
-				return VT.CreateVolumeTexture(ref this, Width, Height, Depth, Levels, Usage, Format, Pool, out ppVolumeTexture, out pSharedHandle);
-			}
-			public HRESULT CreateCubeTexture(uint32 EdgeLength, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DCubeTexture9* ppCubeTexture, out HANDLE pSharedHandle) mut
-			{
-				return VT.CreateCubeTexture(ref this, EdgeLength, Levels, Usage, Format, Pool, out ppCubeTexture, out pSharedHandle);
-			}
-			public HRESULT CreateVertexBuffer(uint32 Length, uint32 Usage, uint32 FVF, D3DPOOL Pool, out IDirect3DVertexBuffer9* ppVertexBuffer, out HANDLE pSharedHandle) mut
-			{
-				return VT.CreateVertexBuffer(ref this, Length, Usage, FVF, Pool, out ppVertexBuffer, out pSharedHandle);
-			}
-			public HRESULT CreateIndexBuffer(uint32 Length, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DIndexBuffer9* ppIndexBuffer, out HANDLE pSharedHandle) mut
-			{
-				return VT.CreateIndexBuffer(ref this, Length, Usage, Format, Pool, out ppIndexBuffer, out pSharedHandle);
-			}
-			public HRESULT CreateRenderTarget(uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) mut
-			{
-				return VT.CreateRenderTarget(ref this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, out ppSurface, out pSharedHandle);
-			}
-			public HRESULT CreateDepthStencilSurface(uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) mut
-			{
-				return VT.CreateDepthStencilSurface(ref this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, out ppSurface, out pSharedHandle);
-			}
-			public HRESULT UpdateSurface(ref IDirect3DSurface9 pSourceSurface, in RECT pSourceRect, ref IDirect3DSurface9 pDestinationSurface, in POINT pDestPoint) mut
-			{
-				return VT.UpdateSurface(ref this, ref pSourceSurface, pSourceRect, ref pDestinationSurface, pDestPoint);
-			}
-			public HRESULT UpdateTexture(ref IDirect3DBaseTexture9 pSourceTexture, ref IDirect3DBaseTexture9 pDestinationTexture) mut
-			{
-				return VT.UpdateTexture(ref this, ref pSourceTexture, ref pDestinationTexture);
-			}
-			public HRESULT GetRenderTargetData(ref IDirect3DSurface9 pRenderTarget, ref IDirect3DSurface9 pDestSurface) mut
-			{
-				return VT.GetRenderTargetData(ref this, ref pRenderTarget, ref pDestSurface);
-			}
-			public HRESULT GetFrontBufferData(uint32 iSwapChain, ref IDirect3DSurface9 pDestSurface) mut
-			{
-				return VT.GetFrontBufferData(ref this, iSwapChain, ref pDestSurface);
-			}
-			public HRESULT StretchRect(ref IDirect3DSurface9 pSourceSurface, in RECT pSourceRect, ref IDirect3DSurface9 pDestSurface, in RECT pDestRect, D3DTEXTUREFILTERTYPE Filter) mut
-			{
-				return VT.StretchRect(ref this, ref pSourceSurface, pSourceRect, ref pDestSurface, pDestRect, Filter);
-			}
-			public HRESULT ColorFill(ref IDirect3DSurface9 pSurface, in RECT pRect, uint32 color) mut
-			{
-				return VT.ColorFill(ref this, ref pSurface, pRect, color);
-			}
-			public HRESULT CreateOffscreenPlainSurface(uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) mut
-			{
-				return VT.CreateOffscreenPlainSurface(ref this, Width, Height, Format, Pool, out ppSurface, out pSharedHandle);
-			}
-			public HRESULT SetRenderTarget(uint32 RenderTargetIndex, ref IDirect3DSurface9 pRenderTarget) mut
-			{
-				return VT.SetRenderTarget(ref this, RenderTargetIndex, ref pRenderTarget);
-			}
-			public HRESULT GetRenderTarget(uint32 RenderTargetIndex, out IDirect3DSurface9* ppRenderTarget) mut
-			{
-				return VT.GetRenderTarget(ref this, RenderTargetIndex, out ppRenderTarget);
-			}
-			public HRESULT SetDepthStencilSurface(ref IDirect3DSurface9 pNewZStencil) mut
-			{
-				return VT.SetDepthStencilSurface(ref this, ref pNewZStencil);
-			}
-			public HRESULT GetDepthStencilSurface(out IDirect3DSurface9* ppZStencilSurface) mut
-			{
-				return VT.GetDepthStencilSurface(ref this, out ppZStencilSurface);
-			}
-			public HRESULT BeginScene() mut
-			{
-				return VT.BeginScene(ref this);
-			}
-			public HRESULT EndScene() mut
-			{
-				return VT.EndScene(ref this);
-			}
-			public HRESULT Clear(uint32 Count, in D3DRECT pRects, uint32 Flags, uint32 Color, float Z, uint32 Stencil) mut
-			{
-				return VT.Clear(ref this, Count, pRects, Flags, Color, Z, Stencil);
-			}
-			public HRESULT SetTransform(D3DTRANSFORMSTATETYPE State, in D3DMATRIX pMatrix) mut
-			{
-				return VT.SetTransform(ref this, State, pMatrix);
-			}
-			public HRESULT GetTransform(D3DTRANSFORMSTATETYPE State, out D3DMATRIX pMatrix) mut
-			{
-				return VT.GetTransform(ref this, State, out pMatrix);
-			}
-			public HRESULT MultiplyTransform(D3DTRANSFORMSTATETYPE param0, in D3DMATRIX param1) mut
-			{
-				return VT.MultiplyTransform(ref this, param0, param1);
-			}
-			public HRESULT SetViewport(in D3DVIEWPORT9 pViewport) mut
-			{
-				return VT.SetViewport(ref this, pViewport);
-			}
-			public HRESULT GetViewport(out D3DVIEWPORT9 pViewport) mut
-			{
-				return VT.GetViewport(ref this, out pViewport);
-			}
-			public HRESULT SetMaterial(in D3DMATERIAL9 pMaterial) mut
-			{
-				return VT.SetMaterial(ref this, pMaterial);
-			}
-			public HRESULT GetMaterial(out D3DMATERIAL9 pMaterial) mut
-			{
-				return VT.GetMaterial(ref this, out pMaterial);
-			}
-			public HRESULT SetLight(uint32 Index, in D3DLIGHT9 param1) mut
-			{
-				return VT.SetLight(ref this, Index, param1);
-			}
-			public HRESULT GetLight(uint32 Index, out D3DLIGHT9 param1) mut
-			{
-				return VT.GetLight(ref this, Index, out param1);
-			}
-			public HRESULT LightEnable(uint32 Index, BOOL Enable) mut
-			{
-				return VT.LightEnable(ref this, Index, Enable);
-			}
-			public HRESULT GetLightEnable(uint32 Index, out BOOL pEnable) mut
-			{
-				return VT.GetLightEnable(ref this, Index, out pEnable);
-			}
-			public HRESULT SetClipPlane(uint32 Index, in float pPlane) mut
-			{
-				return VT.SetClipPlane(ref this, Index, pPlane);
-			}
-			public HRESULT GetClipPlane(uint32 Index, out float pPlane) mut
-			{
-				return VT.GetClipPlane(ref this, Index, out pPlane);
-			}
-			public HRESULT SetRenderState(D3DRENDERSTATETYPE State, uint32 Value) mut
-			{
-				return VT.SetRenderState(ref this, State, Value);
-			}
-			public HRESULT GetRenderState(D3DRENDERSTATETYPE State, out uint32 pValue) mut
-			{
-				return VT.GetRenderState(ref this, State, out pValue);
-			}
-			public HRESULT CreateStateBlock(D3DSTATEBLOCKTYPE Type, out IDirect3DStateBlock9* ppSB) mut
-			{
-				return VT.CreateStateBlock(ref this, Type, out ppSB);
-			}
-			public HRESULT BeginStateBlock() mut
-			{
-				return VT.BeginStateBlock(ref this);
-			}
-			public HRESULT EndStateBlock(out IDirect3DStateBlock9* ppSB) mut
-			{
-				return VT.EndStateBlock(ref this, out ppSB);
-			}
-			public HRESULT SetClipStatus(in D3DCLIPSTATUS9 pClipStatus) mut
-			{
-				return VT.SetClipStatus(ref this, pClipStatus);
-			}
-			public HRESULT GetClipStatus(out D3DCLIPSTATUS9 pClipStatus) mut
-			{
-				return VT.GetClipStatus(ref this, out pClipStatus);
-			}
-			public HRESULT GetTexture(uint32 Stage, out IDirect3DBaseTexture9* ppTexture) mut
-			{
-				return VT.GetTexture(ref this, Stage, out ppTexture);
-			}
-			public HRESULT SetTexture(uint32 Stage, ref IDirect3DBaseTexture9 pTexture) mut
-			{
-				return VT.SetTexture(ref this, Stage, ref pTexture);
-			}
-			public HRESULT GetTextureStageState(uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, out uint32 pValue) mut
-			{
-				return VT.GetTextureStageState(ref this, Stage, Type, out pValue);
-			}
-			public HRESULT SetTextureStageState(uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, uint32 Value) mut
-			{
-				return VT.SetTextureStageState(ref this, Stage, Type, Value);
-			}
-			public HRESULT GetSamplerState(uint32 Sampler, D3DSAMPLERSTATETYPE Type, out uint32 pValue) mut
-			{
-				return VT.GetSamplerState(ref this, Sampler, Type, out pValue);
-			}
-			public HRESULT SetSamplerState(uint32 Sampler, D3DSAMPLERSTATETYPE Type, uint32 Value) mut
-			{
-				return VT.SetSamplerState(ref this, Sampler, Type, Value);
-			}
-			public HRESULT ValidateDevice(out uint32 pNumPasses) mut
-			{
-				return VT.ValidateDevice(ref this, out pNumPasses);
-			}
-			public HRESULT SetPaletteEntries(uint32 PaletteNumber, in PALETTEENTRY pEntries) mut
-			{
-				return VT.SetPaletteEntries(ref this, PaletteNumber, pEntries);
-			}
-			public HRESULT GetPaletteEntries(uint32 PaletteNumber, out PALETTEENTRY pEntries) mut
-			{
-				return VT.GetPaletteEntries(ref this, PaletteNumber, out pEntries);
-			}
-			public HRESULT SetCurrentTexturePalette(uint32 PaletteNumber) mut
-			{
-				return VT.SetCurrentTexturePalette(ref this, PaletteNumber);
-			}
-			public HRESULT GetCurrentTexturePalette(out uint32 PaletteNumber) mut
-			{
-				return VT.GetCurrentTexturePalette(ref this, out PaletteNumber);
-			}
-			public HRESULT SetScissorRect(in RECT pRect) mut
-			{
-				return VT.SetScissorRect(ref this, pRect);
-			}
-			public HRESULT GetScissorRect(out RECT pRect) mut
-			{
-				return VT.GetScissorRect(ref this, out pRect);
-			}
-			public HRESULT SetSoftwareVertexProcessing(BOOL bSoftware) mut
-			{
-				return VT.SetSoftwareVertexProcessing(ref this, bSoftware);
-			}
-			public BOOL GetSoftwareVertexProcessing() mut
-			{
-				return VT.GetSoftwareVertexProcessing(ref this);
-			}
-			public HRESULT SetNPatchMode(float nSegments) mut
-			{
-				return VT.SetNPatchMode(ref this, nSegments);
-			}
-			public float GetNPatchMode() mut
-			{
-				return VT.GetNPatchMode(ref this);
-			}
-			public HRESULT DrawPrimitive(D3DPRIMITIVETYPE PrimitiveType, uint32 StartVertex, uint32 PrimitiveCount) mut
-			{
-				return VT.DrawPrimitive(ref this, PrimitiveType, StartVertex, PrimitiveCount);
-			}
-			public HRESULT DrawIndexedPrimitive(D3DPRIMITIVETYPE param0, int32 BaseVertexIndex, uint32 MinVertexIndex, uint32 NumVertices, uint32 startIndex, uint32 primCount) mut
-			{
-				return VT.DrawIndexedPrimitive(ref this, param0, BaseVertexIndex, MinVertexIndex, NumVertices, startIndex, primCount);
-			}
-			public HRESULT DrawPrimitiveUP(D3DPRIMITIVETYPE PrimitiveType, uint32 PrimitiveCount, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) mut
-			{
-				return VT.DrawPrimitiveUP(ref this, PrimitiveType, PrimitiveCount, pVertexStreamZeroData, VertexStreamZeroStride);
-			}
-			public HRESULT DrawIndexedPrimitiveUP(D3DPRIMITIVETYPE PrimitiveType, uint32 MinVertexIndex, uint32 NumVertices, uint32 PrimitiveCount, void* pIndexData, D3DFORMAT IndexDataFormat, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) mut
-			{
-				return VT.DrawIndexedPrimitiveUP(ref this, PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexData, IndexDataFormat, pVertexStreamZeroData, VertexStreamZeroStride);
-			}
-			public HRESULT ProcessVertices(uint32 SrcStartIndex, uint32 DestIndex, uint32 VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, uint32 Flags) mut
-			{
-				return VT.ProcessVertices(ref this, SrcStartIndex, DestIndex, VertexCount, ref pDestBuffer, ref pVertexDecl, Flags);
-			}
-			public HRESULT CreateVertexDeclaration(in D3DVERTEXELEMENT9 pVertexElements, out IDirect3DVertexDeclaration9* ppDecl) mut
-			{
-				return VT.CreateVertexDeclaration(ref this, pVertexElements, out ppDecl);
-			}
-			public HRESULT SetVertexDeclaration(ref IDirect3DVertexDeclaration9 pDecl) mut
-			{
-				return VT.SetVertexDeclaration(ref this, ref pDecl);
-			}
-			public HRESULT GetVertexDeclaration(out IDirect3DVertexDeclaration9* ppDecl) mut
-			{
-				return VT.GetVertexDeclaration(ref this, out ppDecl);
-			}
-			public HRESULT SetFVF(uint32 FVF) mut
-			{
-				return VT.SetFVF(ref this, FVF);
-			}
-			public HRESULT GetFVF(out uint32 pFVF) mut
-			{
-				return VT.GetFVF(ref this, out pFVF);
-			}
-			public HRESULT CreateVertexShader(in uint32 pFunction, out IDirect3DVertexShader9* ppShader) mut
-			{
-				return VT.CreateVertexShader(ref this, pFunction, out ppShader);
-			}
-			public HRESULT SetVertexShader(ref IDirect3DVertexShader9 pShader) mut
-			{
-				return VT.SetVertexShader(ref this, ref pShader);
-			}
-			public HRESULT GetVertexShader(out IDirect3DVertexShader9* ppShader) mut
-			{
-				return VT.GetVertexShader(ref this, out ppShader);
-			}
-			public HRESULT SetVertexShaderConstantF(uint32 StartRegister, in float pConstantData, uint32 Vector4fCount) mut
-			{
-				return VT.SetVertexShaderConstantF(ref this, StartRegister, pConstantData, Vector4fCount);
-			}
-			public HRESULT GetVertexShaderConstantF(uint32 StartRegister, out float pConstantData, uint32 Vector4fCount) mut
-			{
-				return VT.GetVertexShaderConstantF(ref this, StartRegister, out pConstantData, Vector4fCount);
-			}
-			public HRESULT SetVertexShaderConstantI(uint32 StartRegister, in int32 pConstantData, uint32 Vector4iCount) mut
-			{
-				return VT.SetVertexShaderConstantI(ref this, StartRegister, pConstantData, Vector4iCount);
-			}
-			public HRESULT GetVertexShaderConstantI(uint32 StartRegister, out int32 pConstantData, uint32 Vector4iCount) mut
-			{
-				return VT.GetVertexShaderConstantI(ref this, StartRegister, out pConstantData, Vector4iCount);
-			}
-			public HRESULT SetVertexShaderConstantB(uint32 StartRegister, in BOOL pConstantData, uint32 BoolCount) mut
-			{
-				return VT.SetVertexShaderConstantB(ref this, StartRegister, pConstantData, BoolCount);
-			}
-			public HRESULT GetVertexShaderConstantB(uint32 StartRegister, out BOOL pConstantData, uint32 BoolCount) mut
-			{
-				return VT.GetVertexShaderConstantB(ref this, StartRegister, out pConstantData, BoolCount);
-			}
-			public HRESULT SetStreamSource(uint32 StreamNumber, ref IDirect3DVertexBuffer9 pStreamData, uint32 OffsetInBytes, uint32 Stride) mut
-			{
-				return VT.SetStreamSource(ref this, StreamNumber, ref pStreamData, OffsetInBytes, Stride);
-			}
-			public HRESULT GetStreamSource(uint32 StreamNumber, out IDirect3DVertexBuffer9* ppStreamData, out uint32 pOffsetInBytes, out uint32 pStride) mut
-			{
-				return VT.GetStreamSource(ref this, StreamNumber, out ppStreamData, out pOffsetInBytes, out pStride);
-			}
-			public HRESULT SetStreamSourceFreq(uint32 StreamNumber, uint32 Setting) mut
-			{
-				return VT.SetStreamSourceFreq(ref this, StreamNumber, Setting);
-			}
-			public HRESULT GetStreamSourceFreq(uint32 StreamNumber, out uint32 pSetting) mut
-			{
-				return VT.GetStreamSourceFreq(ref this, StreamNumber, out pSetting);
-			}
-			public HRESULT SetIndices(ref IDirect3DIndexBuffer9 pIndexData) mut
-			{
-				return VT.SetIndices(ref this, ref pIndexData);
-			}
-			public HRESULT GetIndices(out IDirect3DIndexBuffer9* ppIndexData) mut
-			{
-				return VT.GetIndices(ref this, out ppIndexData);
-			}
-			public HRESULT CreatePixelShader(in uint32 pFunction, out IDirect3DPixelShader9* ppShader) mut
-			{
-				return VT.CreatePixelShader(ref this, pFunction, out ppShader);
-			}
-			public HRESULT SetPixelShader(ref IDirect3DPixelShader9 pShader) mut
-			{
-				return VT.SetPixelShader(ref this, ref pShader);
-			}
-			public HRESULT GetPixelShader(out IDirect3DPixelShader9* ppShader) mut
-			{
-				return VT.GetPixelShader(ref this, out ppShader);
-			}
-			public HRESULT SetPixelShaderConstantF(uint32 StartRegister, in float pConstantData, uint32 Vector4fCount) mut
-			{
-				return VT.SetPixelShaderConstantF(ref this, StartRegister, pConstantData, Vector4fCount);
-			}
-			public HRESULT GetPixelShaderConstantF(uint32 StartRegister, out float pConstantData, uint32 Vector4fCount) mut
-			{
-				return VT.GetPixelShaderConstantF(ref this, StartRegister, out pConstantData, Vector4fCount);
-			}
-			public HRESULT SetPixelShaderConstantI(uint32 StartRegister, in int32 pConstantData, uint32 Vector4iCount) mut
-			{
-				return VT.SetPixelShaderConstantI(ref this, StartRegister, pConstantData, Vector4iCount);
-			}
-			public HRESULT GetPixelShaderConstantI(uint32 StartRegister, out int32 pConstantData, uint32 Vector4iCount) mut
-			{
-				return VT.GetPixelShaderConstantI(ref this, StartRegister, out pConstantData, Vector4iCount);
-			}
-			public HRESULT SetPixelShaderConstantB(uint32 StartRegister, in BOOL pConstantData, uint32 BoolCount) mut
-			{
-				return VT.SetPixelShaderConstantB(ref this, StartRegister, pConstantData, BoolCount);
-			}
-			public HRESULT GetPixelShaderConstantB(uint32 StartRegister, out BOOL pConstantData, uint32 BoolCount) mut
-			{
-				return VT.GetPixelShaderConstantB(ref this, StartRegister, out pConstantData, BoolCount);
-			}
-			public HRESULT DrawRectPatch(uint32 Handle, in float pNumSegs, in D3DRECTPATCH_INFO pRectPatchInfo) mut
-			{
-				return VT.DrawRectPatch(ref this, Handle, pNumSegs, pRectPatchInfo);
-			}
-			public HRESULT DrawTriPatch(uint32 Handle, in float pNumSegs, in D3DTRIPATCH_INFO pTriPatchInfo) mut
-			{
-				return VT.DrawTriPatch(ref this, Handle, pNumSegs, pTriPatchInfo);
-			}
-			public HRESULT DeletePatch(uint32 Handle) mut
-			{
-				return VT.DeletePatch(ref this, Handle);
-			}
-			public HRESULT CreateQuery(D3DQUERYTYPE Type, out IDirect3DQuery9* ppQuery) mut
-			{
-				return VT.CreateQuery(ref this, Type, out ppQuery);
-			}
+			public HRESULT TestCooperativeLevel() mut => VT.TestCooperativeLevel(ref this);
+			public uint32 GetAvailableTextureMem() mut => VT.GetAvailableTextureMem(ref this);
+			public HRESULT EvictManagedResources() mut => VT.EvictManagedResources(ref this);
+			public HRESULT GetDirect3D(out IDirect3D9* ppD3D9) mut => VT.GetDirect3D(ref this, out ppD3D9);
+			public HRESULT GetDeviceCaps(out D3DCAPS9 pCaps) mut => VT.GetDeviceCaps(ref this, out pCaps);
+			public HRESULT GetDisplayMode(uint32 iSwapChain, out D3DDISPLAYMODE pMode) mut => VT.GetDisplayMode(ref this, iSwapChain, out pMode);
+			public HRESULT GetCreationParameters(out D3DDEVICE_CREATION_PARAMETERS pParameters) mut => VT.GetCreationParameters(ref this, out pParameters);
+			public HRESULT SetCursorProperties(uint32 XHotSpot, uint32 YHotSpot, ref IDirect3DSurface9 pCursorBitmap) mut => VT.SetCursorProperties(ref this, XHotSpot, YHotSpot, ref pCursorBitmap);
+			public void SetCursorPosition(int32 X, int32 Y, uint32 Flags) mut => VT.SetCursorPosition(ref this, X, Y, Flags);
+			public BOOL ShowCursor(BOOL bShow) mut => VT.ShowCursor(ref this, bShow);
+			public HRESULT CreateAdditionalSwapChain(out D3DPRESENT_PARAMETERS pPresentationParameters, out IDirect3DSwapChain9* pSwapChain) mut => VT.CreateAdditionalSwapChain(ref this, out pPresentationParameters, out pSwapChain);
+			public HRESULT GetSwapChain(uint32 iSwapChain, out IDirect3DSwapChain9* pSwapChain) mut => VT.GetSwapChain(ref this, iSwapChain, out pSwapChain);
+			public uint32 GetNumberOfSwapChains() mut => VT.GetNumberOfSwapChains(ref this);
+			public HRESULT Reset(out D3DPRESENT_PARAMETERS pPresentationParameters) mut => VT.Reset(ref this, out pPresentationParameters);
+			public HRESULT Present(in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion) mut => VT.Present(ref this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
+			public HRESULT GetBackBuffer(uint32 iSwapChain, uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9* ppBackBuffer) mut => VT.GetBackBuffer(ref this, iSwapChain, iBackBuffer, Type, out ppBackBuffer);
+			public HRESULT GetRasterStatus(uint32 iSwapChain, out D3DRASTER_STATUS pRasterStatus) mut => VT.GetRasterStatus(ref this, iSwapChain, out pRasterStatus);
+			public HRESULT SetDialogBoxMode(BOOL bEnableDialogs) mut => VT.SetDialogBoxMode(ref this, bEnableDialogs);
+			public void SetGammaRamp(uint32 iSwapChain, uint32 Flags, in D3DGAMMARAMP pRamp) mut => VT.SetGammaRamp(ref this, iSwapChain, Flags, pRamp);
+			public void GetGammaRamp(uint32 iSwapChain, out D3DGAMMARAMP pRamp) mut => VT.GetGammaRamp(ref this, iSwapChain, out pRamp);
+			public HRESULT CreateTexture(uint32 Width, uint32 Height, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DTexture9* ppTexture, out HANDLE pSharedHandle) mut => VT.CreateTexture(ref this, Width, Height, Levels, Usage, Format, Pool, out ppTexture, out pSharedHandle);
+			public HRESULT CreateVolumeTexture(uint32 Width, uint32 Height, uint32 Depth, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DVolumeTexture9* ppVolumeTexture, out HANDLE pSharedHandle) mut => VT.CreateVolumeTexture(ref this, Width, Height, Depth, Levels, Usage, Format, Pool, out ppVolumeTexture, out pSharedHandle);
+			public HRESULT CreateCubeTexture(uint32 EdgeLength, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DCubeTexture9* ppCubeTexture, out HANDLE pSharedHandle) mut => VT.CreateCubeTexture(ref this, EdgeLength, Levels, Usage, Format, Pool, out ppCubeTexture, out pSharedHandle);
+			public HRESULT CreateVertexBuffer(uint32 Length, uint32 Usage, uint32 FVF, D3DPOOL Pool, out IDirect3DVertexBuffer9* ppVertexBuffer, out HANDLE pSharedHandle) mut => VT.CreateVertexBuffer(ref this, Length, Usage, FVF, Pool, out ppVertexBuffer, out pSharedHandle);
+			public HRESULT CreateIndexBuffer(uint32 Length, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DIndexBuffer9* ppIndexBuffer, out HANDLE pSharedHandle) mut => VT.CreateIndexBuffer(ref this, Length, Usage, Format, Pool, out ppIndexBuffer, out pSharedHandle);
+			public HRESULT CreateRenderTarget(uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) mut => VT.CreateRenderTarget(ref this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, out ppSurface, out pSharedHandle);
+			public HRESULT CreateDepthStencilSurface(uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) mut => VT.CreateDepthStencilSurface(ref this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, out ppSurface, out pSharedHandle);
+			public HRESULT UpdateSurface(ref IDirect3DSurface9 pSourceSurface, in RECT pSourceRect, ref IDirect3DSurface9 pDestinationSurface, in POINT pDestPoint) mut => VT.UpdateSurface(ref this, ref pSourceSurface, pSourceRect, ref pDestinationSurface, pDestPoint);
+			public HRESULT UpdateTexture(ref IDirect3DBaseTexture9 pSourceTexture, ref IDirect3DBaseTexture9 pDestinationTexture) mut => VT.UpdateTexture(ref this, ref pSourceTexture, ref pDestinationTexture);
+			public HRESULT GetRenderTargetData(ref IDirect3DSurface9 pRenderTarget, ref IDirect3DSurface9 pDestSurface) mut => VT.GetRenderTargetData(ref this, ref pRenderTarget, ref pDestSurface);
+			public HRESULT GetFrontBufferData(uint32 iSwapChain, ref IDirect3DSurface9 pDestSurface) mut => VT.GetFrontBufferData(ref this, iSwapChain, ref pDestSurface);
+			public HRESULT StretchRect(ref IDirect3DSurface9 pSourceSurface, in RECT pSourceRect, ref IDirect3DSurface9 pDestSurface, in RECT pDestRect, D3DTEXTUREFILTERTYPE Filter) mut => VT.StretchRect(ref this, ref pSourceSurface, pSourceRect, ref pDestSurface, pDestRect, Filter);
+			public HRESULT ColorFill(ref IDirect3DSurface9 pSurface, in RECT pRect, uint32 color) mut => VT.ColorFill(ref this, ref pSurface, pRect, color);
+			public HRESULT CreateOffscreenPlainSurface(uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) mut => VT.CreateOffscreenPlainSurface(ref this, Width, Height, Format, Pool, out ppSurface, out pSharedHandle);
+			public HRESULT SetRenderTarget(uint32 RenderTargetIndex, ref IDirect3DSurface9 pRenderTarget) mut => VT.SetRenderTarget(ref this, RenderTargetIndex, ref pRenderTarget);
+			public HRESULT GetRenderTarget(uint32 RenderTargetIndex, out IDirect3DSurface9* ppRenderTarget) mut => VT.GetRenderTarget(ref this, RenderTargetIndex, out ppRenderTarget);
+			public HRESULT SetDepthStencilSurface(ref IDirect3DSurface9 pNewZStencil) mut => VT.SetDepthStencilSurface(ref this, ref pNewZStencil);
+			public HRESULT GetDepthStencilSurface(out IDirect3DSurface9* ppZStencilSurface) mut => VT.GetDepthStencilSurface(ref this, out ppZStencilSurface);
+			public HRESULT BeginScene() mut => VT.BeginScene(ref this);
+			public HRESULT EndScene() mut => VT.EndScene(ref this);
+			public HRESULT Clear(uint32 Count, in D3DRECT pRects, uint32 Flags, uint32 Color, float Z, uint32 Stencil) mut => VT.Clear(ref this, Count, pRects, Flags, Color, Z, Stencil);
+			public HRESULT SetTransform(D3DTRANSFORMSTATETYPE State, in D3DMATRIX pMatrix) mut => VT.SetTransform(ref this, State, pMatrix);
+			public HRESULT GetTransform(D3DTRANSFORMSTATETYPE State, out D3DMATRIX pMatrix) mut => VT.GetTransform(ref this, State, out pMatrix);
+			public HRESULT MultiplyTransform(D3DTRANSFORMSTATETYPE param0, in D3DMATRIX param1) mut => VT.MultiplyTransform(ref this, param0, param1);
+			public HRESULT SetViewport(in D3DVIEWPORT9 pViewport) mut => VT.SetViewport(ref this, pViewport);
+			public HRESULT GetViewport(out D3DVIEWPORT9 pViewport) mut => VT.GetViewport(ref this, out pViewport);
+			public HRESULT SetMaterial(in D3DMATERIAL9 pMaterial) mut => VT.SetMaterial(ref this, pMaterial);
+			public HRESULT GetMaterial(out D3DMATERIAL9 pMaterial) mut => VT.GetMaterial(ref this, out pMaterial);
+			public HRESULT SetLight(uint32 Index, in D3DLIGHT9 param1) mut => VT.SetLight(ref this, Index, param1);
+			public HRESULT GetLight(uint32 Index, out D3DLIGHT9 param1) mut => VT.GetLight(ref this, Index, out param1);
+			public HRESULT LightEnable(uint32 Index, BOOL Enable) mut => VT.LightEnable(ref this, Index, Enable);
+			public HRESULT GetLightEnable(uint32 Index, out BOOL pEnable) mut => VT.GetLightEnable(ref this, Index, out pEnable);
+			public HRESULT SetClipPlane(uint32 Index, in float pPlane) mut => VT.SetClipPlane(ref this, Index, pPlane);
+			public HRESULT GetClipPlane(uint32 Index, out float pPlane) mut => VT.GetClipPlane(ref this, Index, out pPlane);
+			public HRESULT SetRenderState(D3DRENDERSTATETYPE State, uint32 Value) mut => VT.SetRenderState(ref this, State, Value);
+			public HRESULT GetRenderState(D3DRENDERSTATETYPE State, out uint32 pValue) mut => VT.GetRenderState(ref this, State, out pValue);
+			public HRESULT CreateStateBlock(D3DSTATEBLOCKTYPE Type, out IDirect3DStateBlock9* ppSB) mut => VT.CreateStateBlock(ref this, Type, out ppSB);
+			public HRESULT BeginStateBlock() mut => VT.BeginStateBlock(ref this);
+			public HRESULT EndStateBlock(out IDirect3DStateBlock9* ppSB) mut => VT.EndStateBlock(ref this, out ppSB);
+			public HRESULT SetClipStatus(in D3DCLIPSTATUS9 pClipStatus) mut => VT.SetClipStatus(ref this, pClipStatus);
+			public HRESULT GetClipStatus(out D3DCLIPSTATUS9 pClipStatus) mut => VT.GetClipStatus(ref this, out pClipStatus);
+			public HRESULT GetTexture(uint32 Stage, out IDirect3DBaseTexture9* ppTexture) mut => VT.GetTexture(ref this, Stage, out ppTexture);
+			public HRESULT SetTexture(uint32 Stage, ref IDirect3DBaseTexture9 pTexture) mut => VT.SetTexture(ref this, Stage, ref pTexture);
+			public HRESULT GetTextureStageState(uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, out uint32 pValue) mut => VT.GetTextureStageState(ref this, Stage, Type, out pValue);
+			public HRESULT SetTextureStageState(uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, uint32 Value) mut => VT.SetTextureStageState(ref this, Stage, Type, Value);
+			public HRESULT GetSamplerState(uint32 Sampler, D3DSAMPLERSTATETYPE Type, out uint32 pValue) mut => VT.GetSamplerState(ref this, Sampler, Type, out pValue);
+			public HRESULT SetSamplerState(uint32 Sampler, D3DSAMPLERSTATETYPE Type, uint32 Value) mut => VT.SetSamplerState(ref this, Sampler, Type, Value);
+			public HRESULT ValidateDevice(out uint32 pNumPasses) mut => VT.ValidateDevice(ref this, out pNumPasses);
+			public HRESULT SetPaletteEntries(uint32 PaletteNumber, in PALETTEENTRY pEntries) mut => VT.SetPaletteEntries(ref this, PaletteNumber, pEntries);
+			public HRESULT GetPaletteEntries(uint32 PaletteNumber, out PALETTEENTRY pEntries) mut => VT.GetPaletteEntries(ref this, PaletteNumber, out pEntries);
+			public HRESULT SetCurrentTexturePalette(uint32 PaletteNumber) mut => VT.SetCurrentTexturePalette(ref this, PaletteNumber);
+			public HRESULT GetCurrentTexturePalette(out uint32 PaletteNumber) mut => VT.GetCurrentTexturePalette(ref this, out PaletteNumber);
+			public HRESULT SetScissorRect(in RECT pRect) mut => VT.SetScissorRect(ref this, pRect);
+			public HRESULT GetScissorRect(out RECT pRect) mut => VT.GetScissorRect(ref this, out pRect);
+			public HRESULT SetSoftwareVertexProcessing(BOOL bSoftware) mut => VT.SetSoftwareVertexProcessing(ref this, bSoftware);
+			public BOOL GetSoftwareVertexProcessing() mut => VT.GetSoftwareVertexProcessing(ref this);
+			public HRESULT SetNPatchMode(float nSegments) mut => VT.SetNPatchMode(ref this, nSegments);
+			public float GetNPatchMode() mut => VT.GetNPatchMode(ref this);
+			public HRESULT DrawPrimitive(D3DPRIMITIVETYPE PrimitiveType, uint32 StartVertex, uint32 PrimitiveCount) mut => VT.DrawPrimitive(ref this, PrimitiveType, StartVertex, PrimitiveCount);
+			public HRESULT DrawIndexedPrimitive(D3DPRIMITIVETYPE param0, int32 BaseVertexIndex, uint32 MinVertexIndex, uint32 NumVertices, uint32 startIndex, uint32 primCount) mut => VT.DrawIndexedPrimitive(ref this, param0, BaseVertexIndex, MinVertexIndex, NumVertices, startIndex, primCount);
+			public HRESULT DrawPrimitiveUP(D3DPRIMITIVETYPE PrimitiveType, uint32 PrimitiveCount, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) mut => VT.DrawPrimitiveUP(ref this, PrimitiveType, PrimitiveCount, pVertexStreamZeroData, VertexStreamZeroStride);
+			public HRESULT DrawIndexedPrimitiveUP(D3DPRIMITIVETYPE PrimitiveType, uint32 MinVertexIndex, uint32 NumVertices, uint32 PrimitiveCount, void* pIndexData, D3DFORMAT IndexDataFormat, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) mut => VT.DrawIndexedPrimitiveUP(ref this, PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexData, IndexDataFormat, pVertexStreamZeroData, VertexStreamZeroStride);
+			public HRESULT ProcessVertices(uint32 SrcStartIndex, uint32 DestIndex, uint32 VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, uint32 Flags) mut => VT.ProcessVertices(ref this, SrcStartIndex, DestIndex, VertexCount, ref pDestBuffer, ref pVertexDecl, Flags);
+			public HRESULT CreateVertexDeclaration(in D3DVERTEXELEMENT9 pVertexElements, out IDirect3DVertexDeclaration9* ppDecl) mut => VT.CreateVertexDeclaration(ref this, pVertexElements, out ppDecl);
+			public HRESULT SetVertexDeclaration(ref IDirect3DVertexDeclaration9 pDecl) mut => VT.SetVertexDeclaration(ref this, ref pDecl);
+			public HRESULT GetVertexDeclaration(out IDirect3DVertexDeclaration9* ppDecl) mut => VT.GetVertexDeclaration(ref this, out ppDecl);
+			public HRESULT SetFVF(uint32 FVF) mut => VT.SetFVF(ref this, FVF);
+			public HRESULT GetFVF(out uint32 pFVF) mut => VT.GetFVF(ref this, out pFVF);
+			public HRESULT CreateVertexShader(in uint32 pFunction, out IDirect3DVertexShader9* ppShader) mut => VT.CreateVertexShader(ref this, pFunction, out ppShader);
+			public HRESULT SetVertexShader(ref IDirect3DVertexShader9 pShader) mut => VT.SetVertexShader(ref this, ref pShader);
+			public HRESULT GetVertexShader(out IDirect3DVertexShader9* ppShader) mut => VT.GetVertexShader(ref this, out ppShader);
+			public HRESULT SetVertexShaderConstantF(uint32 StartRegister, in float pConstantData, uint32 Vector4fCount) mut => VT.SetVertexShaderConstantF(ref this, StartRegister, pConstantData, Vector4fCount);
+			public HRESULT GetVertexShaderConstantF(uint32 StartRegister, out float pConstantData, uint32 Vector4fCount) mut => VT.GetVertexShaderConstantF(ref this, StartRegister, out pConstantData, Vector4fCount);
+			public HRESULT SetVertexShaderConstantI(uint32 StartRegister, in int32 pConstantData, uint32 Vector4iCount) mut => VT.SetVertexShaderConstantI(ref this, StartRegister, pConstantData, Vector4iCount);
+			public HRESULT GetVertexShaderConstantI(uint32 StartRegister, out int32 pConstantData, uint32 Vector4iCount) mut => VT.GetVertexShaderConstantI(ref this, StartRegister, out pConstantData, Vector4iCount);
+			public HRESULT SetVertexShaderConstantB(uint32 StartRegister, in BOOL pConstantData, uint32 BoolCount) mut => VT.SetVertexShaderConstantB(ref this, StartRegister, pConstantData, BoolCount);
+			public HRESULT GetVertexShaderConstantB(uint32 StartRegister, out BOOL pConstantData, uint32 BoolCount) mut => VT.GetVertexShaderConstantB(ref this, StartRegister, out pConstantData, BoolCount);
+			public HRESULT SetStreamSource(uint32 StreamNumber, ref IDirect3DVertexBuffer9 pStreamData, uint32 OffsetInBytes, uint32 Stride) mut => VT.SetStreamSource(ref this, StreamNumber, ref pStreamData, OffsetInBytes, Stride);
+			public HRESULT GetStreamSource(uint32 StreamNumber, out IDirect3DVertexBuffer9* ppStreamData, out uint32 pOffsetInBytes, out uint32 pStride) mut => VT.GetStreamSource(ref this, StreamNumber, out ppStreamData, out pOffsetInBytes, out pStride);
+			public HRESULT SetStreamSourceFreq(uint32 StreamNumber, uint32 Setting) mut => VT.SetStreamSourceFreq(ref this, StreamNumber, Setting);
+			public HRESULT GetStreamSourceFreq(uint32 StreamNumber, out uint32 pSetting) mut => VT.GetStreamSourceFreq(ref this, StreamNumber, out pSetting);
+			public HRESULT SetIndices(ref IDirect3DIndexBuffer9 pIndexData) mut => VT.SetIndices(ref this, ref pIndexData);
+			public HRESULT GetIndices(out IDirect3DIndexBuffer9* ppIndexData) mut => VT.GetIndices(ref this, out ppIndexData);
+			public HRESULT CreatePixelShader(in uint32 pFunction, out IDirect3DPixelShader9* ppShader) mut => VT.CreatePixelShader(ref this, pFunction, out ppShader);
+			public HRESULT SetPixelShader(ref IDirect3DPixelShader9 pShader) mut => VT.SetPixelShader(ref this, ref pShader);
+			public HRESULT GetPixelShader(out IDirect3DPixelShader9* ppShader) mut => VT.GetPixelShader(ref this, out ppShader);
+			public HRESULT SetPixelShaderConstantF(uint32 StartRegister, in float pConstantData, uint32 Vector4fCount) mut => VT.SetPixelShaderConstantF(ref this, StartRegister, pConstantData, Vector4fCount);
+			public HRESULT GetPixelShaderConstantF(uint32 StartRegister, out float pConstantData, uint32 Vector4fCount) mut => VT.GetPixelShaderConstantF(ref this, StartRegister, out pConstantData, Vector4fCount);
+			public HRESULT SetPixelShaderConstantI(uint32 StartRegister, in int32 pConstantData, uint32 Vector4iCount) mut => VT.SetPixelShaderConstantI(ref this, StartRegister, pConstantData, Vector4iCount);
+			public HRESULT GetPixelShaderConstantI(uint32 StartRegister, out int32 pConstantData, uint32 Vector4iCount) mut => VT.GetPixelShaderConstantI(ref this, StartRegister, out pConstantData, Vector4iCount);
+			public HRESULT SetPixelShaderConstantB(uint32 StartRegister, in BOOL pConstantData, uint32 BoolCount) mut => VT.SetPixelShaderConstantB(ref this, StartRegister, pConstantData, BoolCount);
+			public HRESULT GetPixelShaderConstantB(uint32 StartRegister, out BOOL pConstantData, uint32 BoolCount) mut => VT.GetPixelShaderConstantB(ref this, StartRegister, out pConstantData, BoolCount);
+			public HRESULT DrawRectPatch(uint32 Handle, in float pNumSegs, in D3DRECTPATCH_INFO pRectPatchInfo) mut => VT.DrawRectPatch(ref this, Handle, pNumSegs, pRectPatchInfo);
+			public HRESULT DrawTriPatch(uint32 Handle, in float pNumSegs, in D3DTRIPATCH_INFO pTriPatchInfo) mut => VT.DrawTriPatch(ref this, Handle, pNumSegs, pTriPatchInfo);
+			public HRESULT DeletePatch(uint32 Handle) mut => VT.DeletePatch(ref this, Handle);
+			public HRESULT CreateQuery(D3DQUERYTYPE Type, out IDirect3DQuery9* ppQuery) mut => VT.CreateQuery(ref this, Type, out ppQuery);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2488,18 +2100,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT Capture() mut
-			{
-				return VT.Capture(ref this);
-			}
-			public HRESULT Apply() mut
-			{
-				return VT.Apply(ref this);
-			}
+			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT Capture() mut => VT.Capture(ref this);
+			public HRESULT Apply() mut => VT.Apply(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2515,34 +2119,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Present(in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion, uint32 dwFlags) mut
-			{
-				return VT.Present(ref this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
-			}
-			public HRESULT GetFrontBufferData(ref IDirect3DSurface9 pDestSurface) mut
-			{
-				return VT.GetFrontBufferData(ref this, ref pDestSurface);
-			}
-			public HRESULT GetBackBuffer(uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9* ppBackBuffer) mut
-			{
-				return VT.GetBackBuffer(ref this, iBackBuffer, Type, out ppBackBuffer);
-			}
-			public HRESULT GetRasterStatus(out D3DRASTER_STATUS pRasterStatus) mut
-			{
-				return VT.GetRasterStatus(ref this, out pRasterStatus);
-			}
-			public HRESULT GetDisplayMode(out D3DDISPLAYMODE pMode) mut
-			{
-				return VT.GetDisplayMode(ref this, out pMode);
-			}
-			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT GetPresentParameters(out D3DPRESENT_PARAMETERS pPresentationParameters) mut
-			{
-				return VT.GetPresentParameters(ref this, out pPresentationParameters);
-			}
+			public HRESULT Present(in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion, uint32 dwFlags) mut => VT.Present(ref this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+			public HRESULT GetFrontBufferData(ref IDirect3DSurface9 pDestSurface) mut => VT.GetFrontBufferData(ref this, ref pDestSurface);
+			public HRESULT GetBackBuffer(uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9* ppBackBuffer) mut => VT.GetBackBuffer(ref this, iBackBuffer, Type, out ppBackBuffer);
+			public HRESULT GetRasterStatus(out D3DRASTER_STATUS pRasterStatus) mut => VT.GetRasterStatus(ref this, out pRasterStatus);
+			public HRESULT GetDisplayMode(out D3DDISPLAYMODE pMode) mut => VT.GetDisplayMode(ref this, out pMode);
+			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT GetPresentParameters(out D3DPRESENT_PARAMETERS pPresentationParameters) mut => VT.GetPresentParameters(ref this, out pPresentationParameters);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2562,38 +2146,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT SetPrivateData(in Guid refguid, void* pData, uint32 SizeOfData, uint32 Flags) mut
-			{
-				return VT.SetPrivateData(ref this, refguid, pData, SizeOfData, Flags);
-			}
-			public HRESULT GetPrivateData(in Guid refguid, void* pData, out uint32 pSizeOfData) mut
-			{
-				return VT.GetPrivateData(ref this, refguid, pData, out pSizeOfData);
-			}
-			public HRESULT FreePrivateData(in Guid refguid) mut
-			{
-				return VT.FreePrivateData(ref this, refguid);
-			}
-			public uint32 SetPriority(uint32 PriorityNew) mut
-			{
-				return VT.SetPriority(ref this, PriorityNew);
-			}
-			public uint32 GetPriority() mut
-			{
-				return VT.GetPriority(ref this);
-			}
-			public void PreLoad() mut
-			{
-				VT.PreLoad(ref this);
-			}
-			public D3DRESOURCETYPE ComGetType() mut
-			{
-				return VT.ComGetType(ref this);
-			}
+			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT SetPrivateData(in Guid refguid, void* pData, uint32 SizeOfData, uint32 Flags) mut => VT.SetPrivateData(ref this, refguid, pData, SizeOfData, Flags);
+			public HRESULT GetPrivateData(in Guid refguid, void* pData, out uint32 pSizeOfData) mut => VT.GetPrivateData(ref this, refguid, pData, out pSizeOfData);
+			public HRESULT FreePrivateData(in Guid refguid) mut => VT.FreePrivateData(ref this, refguid);
+			public uint32 SetPriority(uint32 PriorityNew) mut => VT.SetPriority(ref this, PriorityNew);
+			public uint32 GetPriority() mut => VT.GetPriority(ref this);
+			public void PreLoad() mut => VT.PreLoad(ref this);
+			public D3DRESOURCETYPE ComGetType() mut => VT.ComGetType(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2614,14 +2175,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT GetDeclaration(out D3DVERTEXELEMENT9 pElement, out uint32 pNumElements) mut
-			{
-				return VT.GetDeclaration(ref this, out pElement, out pNumElements);
-			}
+			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT GetDeclaration(out D3DVERTEXELEMENT9 pElement, out uint32 pNumElements) mut => VT.GetDeclaration(ref this, out pElement, out pNumElements);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2636,14 +2192,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT GetFunction(void* param0, out uint32 pSizeOfData) mut
-			{
-				return VT.GetFunction(ref this, param0, out pSizeOfData);
-			}
+			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT GetFunction(void* param0, out uint32 pSizeOfData) mut => VT.GetFunction(ref this, param0, out pSizeOfData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2658,14 +2209,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT GetFunction(void* param0, out uint32 pSizeOfData) mut
-			{
-				return VT.GetFunction(ref this, param0, out pSizeOfData);
-			}
+			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT GetFunction(void* param0, out uint32 pSizeOfData) mut => VT.GetFunction(ref this, param0, out pSizeOfData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2680,30 +2226,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 SetLOD(uint32 LODNew) mut
-			{
-				return VT.SetLOD(ref this, LODNew);
-			}
-			public uint32 GetLOD() mut
-			{
-				return VT.GetLOD(ref this);
-			}
-			public uint32 GetLevelCount() mut
-			{
-				return VT.GetLevelCount(ref this);
-			}
-			public HRESULT SetAutoGenFilterType(D3DTEXTUREFILTERTYPE FilterType) mut
-			{
-				return VT.SetAutoGenFilterType(ref this, FilterType);
-			}
-			public D3DTEXTUREFILTERTYPE GetAutoGenFilterType() mut
-			{
-				return VT.GetAutoGenFilterType(ref this);
-			}
-			public void GenerateMipSubLevels() mut
-			{
-				VT.GenerateMipSubLevels(ref this);
-			}
+			public uint32 SetLOD(uint32 LODNew) mut => VT.SetLOD(ref this, LODNew);
+			public uint32 GetLOD() mut => VT.GetLOD(ref this);
+			public uint32 GetLevelCount() mut => VT.GetLevelCount(ref this);
+			public HRESULT SetAutoGenFilterType(D3DTEXTUREFILTERTYPE FilterType) mut => VT.SetAutoGenFilterType(ref this, FilterType);
+			public D3DTEXTUREFILTERTYPE GetAutoGenFilterType() mut => VT.GetAutoGenFilterType(ref this);
+			public void GenerateMipSubLevels() mut => VT.GenerateMipSubLevels(ref this);
+
 			[CRepr]
 			public struct VTable : IDirect3DResource9.VTable
 			{
@@ -2722,26 +2251,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLevelDesc(uint32 Level, out D3DSURFACE_DESC pDesc) mut
-			{
-				return VT.GetLevelDesc(ref this, Level, out pDesc);
-			}
-			public HRESULT GetSurfaceLevel(uint32 Level, out IDirect3DSurface9* ppSurfaceLevel) mut
-			{
-				return VT.GetSurfaceLevel(ref this, Level, out ppSurfaceLevel);
-			}
-			public HRESULT LockRect(uint32 Level, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) mut
-			{
-				return VT.LockRect(ref this, Level, out pLockedRect, pRect, Flags);
-			}
-			public HRESULT UnlockRect(uint32 Level) mut
-			{
-				return VT.UnlockRect(ref this, Level);
-			}
-			public HRESULT AddDirtyRect(in RECT pDirtyRect) mut
-			{
-				return VT.AddDirtyRect(ref this, pDirtyRect);
-			}
+			public HRESULT GetLevelDesc(uint32 Level, out D3DSURFACE_DESC pDesc) mut => VT.GetLevelDesc(ref this, Level, out pDesc);
+			public HRESULT GetSurfaceLevel(uint32 Level, out IDirect3DSurface9* ppSurfaceLevel) mut => VT.GetSurfaceLevel(ref this, Level, out ppSurfaceLevel);
+			public HRESULT LockRect(uint32 Level, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) mut => VT.LockRect(ref this, Level, out pLockedRect, pRect, Flags);
+			public HRESULT UnlockRect(uint32 Level) mut => VT.UnlockRect(ref this, Level);
+			public HRESULT AddDirtyRect(in RECT pDirtyRect) mut => VT.AddDirtyRect(ref this, pDirtyRect);
+
 			[CRepr]
 			public struct VTable : IDirect3DBaseTexture9.VTable
 			{
@@ -2759,26 +2274,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLevelDesc(uint32 Level, out D3DVOLUME_DESC pDesc) mut
-			{
-				return VT.GetLevelDesc(ref this, Level, out pDesc);
-			}
-			public HRESULT GetVolumeLevel(uint32 Level, out IDirect3DVolume9* ppVolumeLevel) mut
-			{
-				return VT.GetVolumeLevel(ref this, Level, out ppVolumeLevel);
-			}
-			public HRESULT LockBox(uint32 Level, out D3DLOCKED_BOX pLockedVolume, in D3DBOX pBox, uint32 Flags) mut
-			{
-				return VT.LockBox(ref this, Level, out pLockedVolume, pBox, Flags);
-			}
-			public HRESULT UnlockBox(uint32 Level) mut
-			{
-				return VT.UnlockBox(ref this, Level);
-			}
-			public HRESULT AddDirtyBox(in D3DBOX pDirtyBox) mut
-			{
-				return VT.AddDirtyBox(ref this, pDirtyBox);
-			}
+			public HRESULT GetLevelDesc(uint32 Level, out D3DVOLUME_DESC pDesc) mut => VT.GetLevelDesc(ref this, Level, out pDesc);
+			public HRESULT GetVolumeLevel(uint32 Level, out IDirect3DVolume9* ppVolumeLevel) mut => VT.GetVolumeLevel(ref this, Level, out ppVolumeLevel);
+			public HRESULT LockBox(uint32 Level, out D3DLOCKED_BOX pLockedVolume, in D3DBOX pBox, uint32 Flags) mut => VT.LockBox(ref this, Level, out pLockedVolume, pBox, Flags);
+			public HRESULT UnlockBox(uint32 Level) mut => VT.UnlockBox(ref this, Level);
+			public HRESULT AddDirtyBox(in D3DBOX pDirtyBox) mut => VT.AddDirtyBox(ref this, pDirtyBox);
+
 			[CRepr]
 			public struct VTable : IDirect3DBaseTexture9.VTable
 			{
@@ -2796,26 +2297,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLevelDesc(uint32 Level, out D3DSURFACE_DESC pDesc) mut
-			{
-				return VT.GetLevelDesc(ref this, Level, out pDesc);
-			}
-			public HRESULT GetCubeMapSurface(D3DCUBEMAP_FACES FaceType, uint32 Level, out IDirect3DSurface9* ppCubeMapSurface) mut
-			{
-				return VT.GetCubeMapSurface(ref this, FaceType, Level, out ppCubeMapSurface);
-			}
-			public HRESULT LockRect(D3DCUBEMAP_FACES FaceType, uint32 Level, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) mut
-			{
-				return VT.LockRect(ref this, FaceType, Level, out pLockedRect, pRect, Flags);
-			}
-			public HRESULT UnlockRect(D3DCUBEMAP_FACES FaceType, uint32 Level) mut
-			{
-				return VT.UnlockRect(ref this, FaceType, Level);
-			}
-			public HRESULT AddDirtyRect(D3DCUBEMAP_FACES FaceType, in RECT pDirtyRect) mut
-			{
-				return VT.AddDirtyRect(ref this, FaceType, pDirtyRect);
-			}
+			public HRESULT GetLevelDesc(uint32 Level, out D3DSURFACE_DESC pDesc) mut => VT.GetLevelDesc(ref this, Level, out pDesc);
+			public HRESULT GetCubeMapSurface(D3DCUBEMAP_FACES FaceType, uint32 Level, out IDirect3DSurface9* ppCubeMapSurface) mut => VT.GetCubeMapSurface(ref this, FaceType, Level, out ppCubeMapSurface);
+			public HRESULT LockRect(D3DCUBEMAP_FACES FaceType, uint32 Level, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) mut => VT.LockRect(ref this, FaceType, Level, out pLockedRect, pRect, Flags);
+			public HRESULT UnlockRect(D3DCUBEMAP_FACES FaceType, uint32 Level) mut => VT.UnlockRect(ref this, FaceType, Level);
+			public HRESULT AddDirtyRect(D3DCUBEMAP_FACES FaceType, in RECT pDirtyRect) mut => VT.AddDirtyRect(ref this, FaceType, pDirtyRect);
+
 			[CRepr]
 			public struct VTable : IDirect3DBaseTexture9.VTable
 			{
@@ -2833,18 +2320,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Lock(uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) mut
-			{
-				return VT.Lock(ref this, OffsetToLock, SizeToLock, ppbData, Flags);
-			}
-			public HRESULT Unlock() mut
-			{
-				return VT.Unlock(ref this);
-			}
-			public HRESULT GetDesc(out D3DVERTEXBUFFER_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
+			public HRESULT Lock(uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) mut => VT.Lock(ref this, OffsetToLock, SizeToLock, ppbData, Flags);
+			public HRESULT Unlock() mut => VT.Unlock(ref this);
+			public HRESULT GetDesc(out D3DVERTEXBUFFER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : IDirect3DResource9.VTable
 			{
@@ -2860,18 +2339,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Lock(uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) mut
-			{
-				return VT.Lock(ref this, OffsetToLock, SizeToLock, ppbData, Flags);
-			}
-			public HRESULT Unlock() mut
-			{
-				return VT.Unlock(ref this);
-			}
-			public HRESULT GetDesc(out D3DINDEXBUFFER_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
+			public HRESULT Lock(uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) mut => VT.Lock(ref this, OffsetToLock, SizeToLock, ppbData, Flags);
+			public HRESULT Unlock() mut => VT.Unlock(ref this);
+			public HRESULT GetDesc(out D3DINDEXBUFFER_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+
 			[CRepr]
 			public struct VTable : IDirect3DResource9.VTable
 			{
@@ -2887,30 +2358,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContainer(in Guid riid, void** ppContainer) mut
-			{
-				return VT.GetContainer(ref this, riid, ppContainer);
-			}
-			public HRESULT GetDesc(out D3DSURFACE_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public HRESULT LockRect(out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) mut
-			{
-				return VT.LockRect(ref this, out pLockedRect, pRect, Flags);
-			}
-			public HRESULT UnlockRect() mut
-			{
-				return VT.UnlockRect(ref this);
-			}
-			public HRESULT GetDC(out HDC phdc) mut
-			{
-				return VT.GetDC(ref this, out phdc);
-			}
-			public HRESULT ReleaseDC(HDC hdc) mut
-			{
-				return VT.ReleaseDC(ref this, hdc);
-			}
+			public HRESULT GetContainer(in Guid riid, void** ppContainer) mut => VT.GetContainer(ref this, riid, ppContainer);
+			public HRESULT GetDesc(out D3DSURFACE_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public HRESULT LockRect(out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) mut => VT.LockRect(ref this, out pLockedRect, pRect, Flags);
+			public HRESULT UnlockRect() mut => VT.UnlockRect(ref this);
+			public HRESULT GetDC(out HDC phdc) mut => VT.GetDC(ref this, out phdc);
+			public HRESULT ReleaseDC(HDC hdc) mut => VT.ReleaseDC(ref this, hdc);
+
 			[CRepr]
 			public struct VTable : IDirect3DResource9.VTable
 			{
@@ -2929,38 +2383,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public HRESULT SetPrivateData(in Guid refguid, void* pData, uint32 SizeOfData, uint32 Flags) mut
-			{
-				return VT.SetPrivateData(ref this, refguid, pData, SizeOfData, Flags);
-			}
-			public HRESULT GetPrivateData(in Guid refguid, void* pData, out uint32 pSizeOfData) mut
-			{
-				return VT.GetPrivateData(ref this, refguid, pData, out pSizeOfData);
-			}
-			public HRESULT FreePrivateData(in Guid refguid) mut
-			{
-				return VT.FreePrivateData(ref this, refguid);
-			}
-			public HRESULT GetContainer(in Guid riid, void** ppContainer) mut
-			{
-				return VT.GetContainer(ref this, riid, ppContainer);
-			}
-			public HRESULT GetDesc(out D3DVOLUME_DESC pDesc) mut
-			{
-				return VT.GetDesc(ref this, out pDesc);
-			}
-			public HRESULT LockBox(out D3DLOCKED_BOX pLockedVolume, in D3DBOX pBox, uint32 Flags) mut
-			{
-				return VT.LockBox(ref this, out pLockedVolume, pBox, Flags);
-			}
-			public HRESULT UnlockBox() mut
-			{
-				return VT.UnlockBox(ref this);
-			}
+			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public HRESULT SetPrivateData(in Guid refguid, void* pData, uint32 SizeOfData, uint32 Flags) mut => VT.SetPrivateData(ref this, refguid, pData, SizeOfData, Flags);
+			public HRESULT GetPrivateData(in Guid refguid, void* pData, out uint32 pSizeOfData) mut => VT.GetPrivateData(ref this, refguid, pData, out pSizeOfData);
+			public HRESULT FreePrivateData(in Guid refguid) mut => VT.FreePrivateData(ref this, refguid);
+			public HRESULT GetContainer(in Guid riid, void** ppContainer) mut => VT.GetContainer(ref this, riid, ppContainer);
+			public HRESULT GetDesc(out D3DVOLUME_DESC pDesc) mut => VT.GetDesc(ref this, out pDesc);
+			public HRESULT LockBox(out D3DLOCKED_BOX pLockedVolume, in D3DBOX pBox, uint32 Flags) mut => VT.LockBox(ref this, out pLockedVolume, pBox, Flags);
+			public HRESULT UnlockBox() mut => VT.UnlockBox(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2981,26 +2412,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut
-			{
-				return VT.GetDevice(ref this, out ppDevice);
-			}
-			public D3DQUERYTYPE ComGetType() mut
-			{
-				return VT.ComGetType(ref this);
-			}
-			public uint32 GetDataSize() mut
-			{
-				return VT.GetDataSize(ref this);
-			}
-			public HRESULT Issue(uint32 dwIssueFlags) mut
-			{
-				return VT.Issue(ref this, dwIssueFlags);
-			}
-			public HRESULT GetData(void* pData, uint32 dwSize, uint32 dwGetDataFlags) mut
-			{
-				return VT.GetData(ref this, pData, dwSize, dwGetDataFlags);
-			}
+			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
+			public D3DQUERYTYPE ComGetType() mut => VT.ComGetType(ref this);
+			public uint32 GetDataSize() mut => VT.GetDataSize(ref this);
+			public HRESULT Issue(uint32 dwIssueFlags) mut => VT.Issue(ref this, dwIssueFlags);
+			public HRESULT GetData(void* pData, uint32 dwSize, uint32 dwGetDataFlags) mut => VT.GetData(ref this, pData, dwSize, dwGetDataFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3018,26 +2435,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 GetAdapterModeCountEx(uint32 Adapter, in D3DDISPLAYMODEFILTER pFilter) mut
-			{
-				return VT.GetAdapterModeCountEx(ref this, Adapter, pFilter);
-			}
-			public HRESULT EnumAdapterModesEx(uint32 Adapter, in D3DDISPLAYMODEFILTER pFilter, uint32 Mode, out D3DDISPLAYMODEEX pMode) mut
-			{
-				return VT.EnumAdapterModesEx(ref this, Adapter, pFilter, Mode, out pMode);
-			}
-			public HRESULT GetAdapterDisplayModeEx(uint32 Adapter, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) mut
-			{
-				return VT.GetAdapterDisplayModeEx(ref this, Adapter, out pMode, out pRotation);
-			}
-			public HRESULT CreateDeviceEx(uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, out D3DPRESENT_PARAMETERS pPresentationParameters, out D3DDISPLAYMODEEX pFullscreenDisplayMode, out IDirect3DDevice9Ex* ppReturnedDeviceInterface) mut
-			{
-				return VT.CreateDeviceEx(ref this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, out pPresentationParameters, out pFullscreenDisplayMode, out ppReturnedDeviceInterface);
-			}
-			public HRESULT GetAdapterLUID(uint32 Adapter, out LUID pLUID) mut
-			{
-				return VT.GetAdapterLUID(ref this, Adapter, out pLUID);
-			}
+			public uint32 GetAdapterModeCountEx(uint32 Adapter, in D3DDISPLAYMODEFILTER pFilter) mut => VT.GetAdapterModeCountEx(ref this, Adapter, pFilter);
+			public HRESULT EnumAdapterModesEx(uint32 Adapter, in D3DDISPLAYMODEFILTER pFilter, uint32 Mode, out D3DDISPLAYMODEEX pMode) mut => VT.EnumAdapterModesEx(ref this, Adapter, pFilter, Mode, out pMode);
+			public HRESULT GetAdapterDisplayModeEx(uint32 Adapter, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) mut => VT.GetAdapterDisplayModeEx(ref this, Adapter, out pMode, out pRotation);
+			public HRESULT CreateDeviceEx(uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, out D3DPRESENT_PARAMETERS pPresentationParameters, out D3DDISPLAYMODEEX pFullscreenDisplayMode, out IDirect3DDevice9Ex* ppReturnedDeviceInterface) mut => VT.CreateDeviceEx(ref this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, out pPresentationParameters, out pFullscreenDisplayMode, out ppReturnedDeviceInterface);
+			public HRESULT GetAdapterLUID(uint32 Adapter, out LUID pLUID) mut => VT.GetAdapterLUID(ref this, Adapter, out pLUID);
+
 			[CRepr]
 			public struct VTable : IDirect3D9.VTable
 			{
@@ -3055,66 +2458,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetConvolutionMonoKernel(uint32 width, uint32 height, out float rows, out float columns) mut
-			{
-				return VT.SetConvolutionMonoKernel(ref this, width, height, out rows, out columns);
-			}
-			public HRESULT ComposeRects(ref IDirect3DSurface9 pSrc, ref IDirect3DSurface9 pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint32 NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, D3DCOMPOSERECTSOP Operation, int32 Xoffset, int32 Yoffset) mut
-			{
-				return VT.ComposeRects(ref this, ref pSrc, ref pDst, ref pSrcRectDescs, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
-			}
-			public HRESULT PresentEx(in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion, uint32 dwFlags) mut
-			{
-				return VT.PresentEx(ref this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
-			}
-			public HRESULT GetGPUThreadPriority(out int32 pPriority) mut
-			{
-				return VT.GetGPUThreadPriority(ref this, out pPriority);
-			}
-			public HRESULT SetGPUThreadPriority(int32 Priority) mut
-			{
-				return VT.SetGPUThreadPriority(ref this, Priority);
-			}
-			public HRESULT WaitForVBlank(uint32 iSwapChain) mut
-			{
-				return VT.WaitForVBlank(ref this, iSwapChain);
-			}
-			public HRESULT CheckResourceResidency(out IDirect3DResource9* pResourceArray, uint32 NumResources) mut
-			{
-				return VT.CheckResourceResidency(ref this, out pResourceArray, NumResources);
-			}
-			public HRESULT SetMaximumFrameLatency(uint32 MaxLatency) mut
-			{
-				return VT.SetMaximumFrameLatency(ref this, MaxLatency);
-			}
-			public HRESULT GetMaximumFrameLatency(out uint32 pMaxLatency) mut
-			{
-				return VT.GetMaximumFrameLatency(ref this, out pMaxLatency);
-			}
-			public HRESULT CheckDeviceState(HWND hDestinationWindow) mut
-			{
-				return VT.CheckDeviceState(ref this, hDestinationWindow);
-			}
-			public HRESULT CreateRenderTargetEx(uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) mut
-			{
-				return VT.CreateRenderTargetEx(ref this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, out ppSurface, out pSharedHandle, Usage);
-			}
-			public HRESULT CreateOffscreenPlainSurfaceEx(uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) mut
-			{
-				return VT.CreateOffscreenPlainSurfaceEx(ref this, Width, Height, Format, Pool, out ppSurface, out pSharedHandle, Usage);
-			}
-			public HRESULT CreateDepthStencilSurfaceEx(uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) mut
-			{
-				return VT.CreateDepthStencilSurfaceEx(ref this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, out ppSurface, out pSharedHandle, Usage);
-			}
-			public HRESULT ResetEx(out D3DPRESENT_PARAMETERS pPresentationParameters, out D3DDISPLAYMODEEX pFullscreenDisplayMode) mut
-			{
-				return VT.ResetEx(ref this, out pPresentationParameters, out pFullscreenDisplayMode);
-			}
-			public HRESULT GetDisplayModeEx(uint32 iSwapChain, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) mut
-			{
-				return VT.GetDisplayModeEx(ref this, iSwapChain, out pMode, out pRotation);
-			}
+			public HRESULT SetConvolutionMonoKernel(uint32 width, uint32 height, out float rows, out float columns) mut => VT.SetConvolutionMonoKernel(ref this, width, height, out rows, out columns);
+			public HRESULT ComposeRects(ref IDirect3DSurface9 pSrc, ref IDirect3DSurface9 pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint32 NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, D3DCOMPOSERECTSOP Operation, int32 Xoffset, int32 Yoffset) mut => VT.ComposeRects(ref this, ref pSrc, ref pDst, ref pSrcRectDescs, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
+			public HRESULT PresentEx(in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion, uint32 dwFlags) mut => VT.PresentEx(ref this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+			public HRESULT GetGPUThreadPriority(out int32 pPriority) mut => VT.GetGPUThreadPriority(ref this, out pPriority);
+			public HRESULT SetGPUThreadPriority(int32 Priority) mut => VT.SetGPUThreadPriority(ref this, Priority);
+			public HRESULT WaitForVBlank(uint32 iSwapChain) mut => VT.WaitForVBlank(ref this, iSwapChain);
+			public HRESULT CheckResourceResidency(out IDirect3DResource9* pResourceArray, uint32 NumResources) mut => VT.CheckResourceResidency(ref this, out pResourceArray, NumResources);
+			public HRESULT SetMaximumFrameLatency(uint32 MaxLatency) mut => VT.SetMaximumFrameLatency(ref this, MaxLatency);
+			public HRESULT GetMaximumFrameLatency(out uint32 pMaxLatency) mut => VT.GetMaximumFrameLatency(ref this, out pMaxLatency);
+			public HRESULT CheckDeviceState(HWND hDestinationWindow) mut => VT.CheckDeviceState(ref this, hDestinationWindow);
+			public HRESULT CreateRenderTargetEx(uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) mut => VT.CreateRenderTargetEx(ref this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, out ppSurface, out pSharedHandle, Usage);
+			public HRESULT CreateOffscreenPlainSurfaceEx(uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) mut => VT.CreateOffscreenPlainSurfaceEx(ref this, Width, Height, Format, Pool, out ppSurface, out pSharedHandle, Usage);
+			public HRESULT CreateDepthStencilSurfaceEx(uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) mut => VT.CreateDepthStencilSurfaceEx(ref this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, out ppSurface, out pSharedHandle, Usage);
+			public HRESULT ResetEx(out D3DPRESENT_PARAMETERS pPresentationParameters, out D3DDISPLAYMODEEX pFullscreenDisplayMode) mut => VT.ResetEx(ref this, out pPresentationParameters, out pFullscreenDisplayMode);
+			public HRESULT GetDisplayModeEx(uint32 iSwapChain, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) mut => VT.GetDisplayModeEx(ref this, iSwapChain, out pMode, out pRotation);
+
 			[CRepr]
 			public struct VTable : IDirect3DDevice9.VTable
 			{
@@ -3142,18 +2501,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLastPresentCount(out uint32 pLastPresentCount) mut
-			{
-				return VT.GetLastPresentCount(ref this, out pLastPresentCount);
-			}
-			public HRESULT GetPresentStats(out D3DPRESENTSTATS pPresentationStatistics) mut
-			{
-				return VT.GetPresentStats(ref this, out pPresentationStatistics);
-			}
-			public HRESULT GetDisplayModeEx(out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) mut
-			{
-				return VT.GetDisplayModeEx(ref this, out pMode, out pRotation);
-			}
+			public HRESULT GetLastPresentCount(out uint32 pLastPresentCount) mut => VT.GetLastPresentCount(ref this, out pLastPresentCount);
+			public HRESULT GetPresentStats(out D3DPRESENTSTATS pPresentationStatistics) mut => VT.GetPresentStats(ref this, out pPresentationStatistics);
+			public HRESULT GetDisplayModeEx(out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) mut => VT.GetDisplayModeEx(ref this, out pMode, out pRotation);
+
 			[CRepr]
 			public struct VTable : IDirect3DSwapChain9.VTable
 			{

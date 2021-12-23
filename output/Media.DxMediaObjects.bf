@@ -130,18 +130,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetLength(uint32 cbLength) mut
-			{
-				return VT.SetLength(ref this, cbLength);
-			}
-			public HRESULT GetMaxLength(out uint32 pcbMaxLength) mut
-			{
-				return VT.GetMaxLength(ref this, out pcbMaxLength);
-			}
-			public HRESULT GetBufferAndLength(uint8** ppBuffer, uint32* pcbLength) mut
-			{
-				return VT.GetBufferAndLength(ref this, ppBuffer, pcbLength);
-			}
+			public HRESULT SetLength(uint32 cbLength) mut => VT.SetLength(ref this, cbLength);
+			public HRESULT GetMaxLength(out uint32 pcbMaxLength) mut => VT.GetMaxLength(ref this, out pcbMaxLength);
+			public HRESULT GetBufferAndLength(uint8** ppBuffer, uint32* pcbLength) mut => VT.GetBufferAndLength(ref this, ppBuffer, pcbLength);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -157,90 +149,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamCount(out uint32 pcInputStreams, out uint32 pcOutputStreams) mut
-			{
-				return VT.GetStreamCount(ref this, out pcInputStreams, out pcOutputStreams);
-			}
-			public HRESULT GetInputStreamInfo(uint32 dwInputStreamIndex, out uint32 pdwFlags) mut
-			{
-				return VT.GetInputStreamInfo(ref this, dwInputStreamIndex, out pdwFlags);
-			}
-			public HRESULT GetOutputStreamInfo(uint32 dwOutputStreamIndex, out uint32 pdwFlags) mut
-			{
-				return VT.GetOutputStreamInfo(ref this, dwOutputStreamIndex, out pdwFlags);
-			}
-			public HRESULT GetInputType(uint32 dwInputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) mut
-			{
-				return VT.GetInputType(ref this, dwInputStreamIndex, dwTypeIndex, pmt);
-			}
-			public HRESULT GetOutputType(uint32 dwOutputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) mut
-			{
-				return VT.GetOutputType(ref this, dwOutputStreamIndex, dwTypeIndex, pmt);
-			}
-			public HRESULT SetInputType(uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) mut
-			{
-				return VT.SetInputType(ref this, dwInputStreamIndex, pmt, dwFlags);
-			}
-			public HRESULT SetOutputType(uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) mut
-			{
-				return VT.SetOutputType(ref this, dwOutputStreamIndex, pmt, dwFlags);
-			}
-			public HRESULT GetInputCurrentType(uint32 dwInputStreamIndex, out DMO_MEDIA_TYPE pmt) mut
-			{
-				return VT.GetInputCurrentType(ref this, dwInputStreamIndex, out pmt);
-			}
-			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamIndex, out DMO_MEDIA_TYPE pmt) mut
-			{
-				return VT.GetOutputCurrentType(ref this, dwOutputStreamIndex, out pmt);
-			}
-			public HRESULT GetInputSizeInfo(uint32 dwInputStreamIndex, out uint32 pcbSize, out uint32 pcbMaxLookahead, out uint32 pcbAlignment) mut
-			{
-				return VT.GetInputSizeInfo(ref this, dwInputStreamIndex, out pcbSize, out pcbMaxLookahead, out pcbAlignment);
-			}
-			public HRESULT GetOutputSizeInfo(uint32 dwOutputStreamIndex, out uint32 pcbSize, out uint32 pcbAlignment) mut
-			{
-				return VT.GetOutputSizeInfo(ref this, dwOutputStreamIndex, out pcbSize, out pcbAlignment);
-			}
-			public HRESULT GetInputMaxLatency(uint32 dwInputStreamIndex, out int64 prtMaxLatency) mut
-			{
-				return VT.GetInputMaxLatency(ref this, dwInputStreamIndex, out prtMaxLatency);
-			}
-			public HRESULT SetInputMaxLatency(uint32 dwInputStreamIndex, int64 rtMaxLatency) mut
-			{
-				return VT.SetInputMaxLatency(ref this, dwInputStreamIndex, rtMaxLatency);
-			}
-			public HRESULT Flush() mut
-			{
-				return VT.Flush(ref this);
-			}
-			public HRESULT Discontinuity(uint32 dwInputStreamIndex) mut
-			{
-				return VT.Discontinuity(ref this, dwInputStreamIndex);
-			}
-			public HRESULT AllocateStreamingResources() mut
-			{
-				return VT.AllocateStreamingResources(ref this);
-			}
-			public HRESULT FreeStreamingResources() mut
-			{
-				return VT.FreeStreamingResources(ref this);
-			}
-			public HRESULT GetInputStatus(uint32 dwInputStreamIndex, out uint32 dwFlags) mut
-			{
-				return VT.GetInputStatus(ref this, dwInputStreamIndex, out dwFlags);
-			}
-			public HRESULT ProcessInput(uint32 dwInputStreamIndex, ref IMediaBuffer pBuffer, uint32 dwFlags, int64 rtTimestamp, int64 rtTimelength) mut
-			{
-				return VT.ProcessInput(ref this, dwInputStreamIndex, ref pBuffer, dwFlags, rtTimestamp, rtTimelength);
-			}
-			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, out uint32 pdwStatus) mut
-			{
-				return VT.ProcessOutput(ref this, dwFlags, cOutputBufferCount, pOutputBuffers, out pdwStatus);
-			}
-			public HRESULT Lock(int32 bLock) mut
-			{
-				return VT.Lock(ref this, bLock);
-			}
+			public HRESULT GetStreamCount(out uint32 pcInputStreams, out uint32 pcOutputStreams) mut => VT.GetStreamCount(ref this, out pcInputStreams, out pcOutputStreams);
+			public HRESULT GetInputStreamInfo(uint32 dwInputStreamIndex, out uint32 pdwFlags) mut => VT.GetInputStreamInfo(ref this, dwInputStreamIndex, out pdwFlags);
+			public HRESULT GetOutputStreamInfo(uint32 dwOutputStreamIndex, out uint32 pdwFlags) mut => VT.GetOutputStreamInfo(ref this, dwOutputStreamIndex, out pdwFlags);
+			public HRESULT GetInputType(uint32 dwInputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) mut => VT.GetInputType(ref this, dwInputStreamIndex, dwTypeIndex, pmt);
+			public HRESULT GetOutputType(uint32 dwOutputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) mut => VT.GetOutputType(ref this, dwOutputStreamIndex, dwTypeIndex, pmt);
+			public HRESULT SetInputType(uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) mut => VT.SetInputType(ref this, dwInputStreamIndex, pmt, dwFlags);
+			public HRESULT SetOutputType(uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) mut => VT.SetOutputType(ref this, dwOutputStreamIndex, pmt, dwFlags);
+			public HRESULT GetInputCurrentType(uint32 dwInputStreamIndex, out DMO_MEDIA_TYPE pmt) mut => VT.GetInputCurrentType(ref this, dwInputStreamIndex, out pmt);
+			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamIndex, out DMO_MEDIA_TYPE pmt) mut => VT.GetOutputCurrentType(ref this, dwOutputStreamIndex, out pmt);
+			public HRESULT GetInputSizeInfo(uint32 dwInputStreamIndex, out uint32 pcbSize, out uint32 pcbMaxLookahead, out uint32 pcbAlignment) mut => VT.GetInputSizeInfo(ref this, dwInputStreamIndex, out pcbSize, out pcbMaxLookahead, out pcbAlignment);
+			public HRESULT GetOutputSizeInfo(uint32 dwOutputStreamIndex, out uint32 pcbSize, out uint32 pcbAlignment) mut => VT.GetOutputSizeInfo(ref this, dwOutputStreamIndex, out pcbSize, out pcbAlignment);
+			public HRESULT GetInputMaxLatency(uint32 dwInputStreamIndex, out int64 prtMaxLatency) mut => VT.GetInputMaxLatency(ref this, dwInputStreamIndex, out prtMaxLatency);
+			public HRESULT SetInputMaxLatency(uint32 dwInputStreamIndex, int64 rtMaxLatency) mut => VT.SetInputMaxLatency(ref this, dwInputStreamIndex, rtMaxLatency);
+			public HRESULT Flush() mut => VT.Flush(ref this);
+			public HRESULT Discontinuity(uint32 dwInputStreamIndex) mut => VT.Discontinuity(ref this, dwInputStreamIndex);
+			public HRESULT AllocateStreamingResources() mut => VT.AllocateStreamingResources(ref this);
+			public HRESULT FreeStreamingResources() mut => VT.FreeStreamingResources(ref this);
+			public HRESULT GetInputStatus(uint32 dwInputStreamIndex, out uint32 dwFlags) mut => VT.GetInputStatus(ref this, dwInputStreamIndex, out dwFlags);
+			public HRESULT ProcessInput(uint32 dwInputStreamIndex, ref IMediaBuffer pBuffer, uint32 dwFlags, int64 rtTimestamp, int64 rtTimelength) mut => VT.ProcessInput(ref this, dwInputStreamIndex, ref pBuffer, dwFlags, rtTimestamp, rtTimelength);
+			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, out uint32 pdwStatus) mut => VT.ProcessOutput(ref this, dwFlags, cOutputBufferCount, pOutputBuffers, out pdwStatus);
+			public HRESULT Lock(int32 bLock) mut => VT.Lock(ref this, bLock);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -274,22 +204,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cItemsToFetch, Guid* pCLSID, PWSTR* Names, out uint32 pcItemsFetched) mut
-			{
-				return VT.Next(ref this, cItemsToFetch, pCLSID, Names, out pcItemsFetched);
-			}
-			public HRESULT Skip(uint32 cItemsToSkip) mut
-			{
-				return VT.Skip(ref this, cItemsToSkip);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumDMO* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 cItemsToFetch, Guid* pCLSID, PWSTR* Names, out uint32 pcItemsFetched) mut => VT.Next(ref this, cItemsToFetch, pCLSID, Names, out pcItemsFetched);
+			public HRESULT Skip(uint32 cItemsToSkip) mut => VT.Skip(ref this, cItemsToSkip);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumDMO* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -306,18 +225,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Process(uint32 ulSize, out uint8 pData, int64 refTimeStart, uint32 dwFlags) mut
-			{
-				return VT.Process(ref this, ulSize, out pData, refTimeStart, dwFlags);
-			}
-			public HRESULT Clone(out IMediaObjectInPlace* ppMediaObject) mut
-			{
-				return VT.Clone(ref this, out ppMediaObject);
-			}
-			public HRESULT GetLatency(out int64 pLatencyTime) mut
-			{
-				return VT.GetLatency(ref this, out pLatencyTime);
-			}
+			public HRESULT Process(uint32 ulSize, out uint8 pData, int64 refTimeStart, uint32 dwFlags) mut => VT.Process(ref this, ulSize, out pData, refTimeStart, dwFlags);
+			public HRESULT Clone(out IMediaObjectInPlace* ppMediaObject) mut => VT.Clone(ref this, out ppMediaObject);
+			public HRESULT GetLatency(out int64 pLatencyTime) mut => VT.GetLatency(ref this, out pLatencyTime);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -333,18 +244,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetNow(int64 rtNow) mut
-			{
-				return VT.SetNow(ref this, rtNow);
-			}
-			public HRESULT SetStatus(uint32 dwFlags) mut
-			{
-				return VT.SetStatus(ref this, dwFlags);
-			}
-			public HRESULT GetStatus(out uint32 pdwFlags) mut
-			{
-				return VT.GetStatus(ref this, out pdwFlags);
-			}
+			public HRESULT SetNow(int64 rtNow) mut => VT.SetNow(ref this, rtNow);
+			public HRESULT SetStatus(uint32 dwFlags) mut => VT.SetStatus(ref this, dwFlags);
+			public HRESULT GetStatus(out uint32 pdwFlags) mut => VT.GetStatus(ref this, out pdwFlags);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -360,22 +263,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryOperationModePreferences(uint32 ulOutputStreamIndex, out uint32 pdwRequestedCapabilities) mut
-			{
-				return VT.QueryOperationModePreferences(ref this, ulOutputStreamIndex, out pdwRequestedCapabilities);
-			}
-			public HRESULT SetOperationMode(uint32 ulOutputStreamIndex, uint32 dwEnabledFeatures) mut
-			{
-				return VT.SetOperationMode(ref this, ulOutputStreamIndex, dwEnabledFeatures);
-			}
-			public HRESULT GetCurrentOperationMode(uint32 ulOutputStreamIndex, out uint32 pdwEnabledFeatures) mut
-			{
-				return VT.GetCurrentOperationMode(ref this, ulOutputStreamIndex, out pdwEnabledFeatures);
-			}
-			public HRESULT GetCurrentSampleRequirements(uint32 ulOutputStreamIndex, out uint32 pdwRequestedFeatures) mut
-			{
-				return VT.GetCurrentSampleRequirements(ref this, ulOutputStreamIndex, out pdwRequestedFeatures);
-			}
+			public HRESULT QueryOperationModePreferences(uint32 ulOutputStreamIndex, out uint32 pdwRequestedCapabilities) mut => VT.QueryOperationModePreferences(ref this, ulOutputStreamIndex, out pdwRequestedCapabilities);
+			public HRESULT SetOperationMode(uint32 ulOutputStreamIndex, uint32 dwEnabledFeatures) mut => VT.SetOperationMode(ref this, ulOutputStreamIndex, dwEnabledFeatures);
+			public HRESULT GetCurrentOperationMode(uint32 ulOutputStreamIndex, out uint32 pdwEnabledFeatures) mut => VT.GetCurrentOperationMode(ref this, ulOutputStreamIndex, out pdwEnabledFeatures);
+			public HRESULT GetCurrentSampleRequirements(uint32 ulOutputStreamIndex, out uint32 pdwRequestedFeatures) mut => VT.GetCurrentSampleRequirements(ref this, ulOutputStreamIndex, out pdwRequestedFeatures);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

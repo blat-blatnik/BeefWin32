@@ -22,30 +22,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUnmarshalClass(in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, out Guid pCid) mut
-			{
-				return VT.GetUnmarshalClass(ref this, riid, pv, dwDestContext, pvDestContext, mshlflags, out pCid);
-			}
-			public HRESULT GetMarshalSizeMax(in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, out uint32 pSize) mut
-			{
-				return VT.GetMarshalSizeMax(ref this, riid, pv, dwDestContext, pvDestContext, mshlflags, out pSize);
-			}
-			public HRESULT MarshalInterface(ref IStream pStm, in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) mut
-			{
-				return VT.MarshalInterface(ref this, ref pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
-			}
-			public HRESULT UnmarshalInterface(ref IStream pStm, in Guid riid, void** ppv) mut
-			{
-				return VT.UnmarshalInterface(ref this, ref pStm, riid, ppv);
-			}
-			public HRESULT ReleaseMarshalData(ref IStream pStm) mut
-			{
-				return VT.ReleaseMarshalData(ref this, ref pStm);
-			}
-			public HRESULT DisconnectObject(uint32 dwReserved) mut
-			{
-				return VT.DisconnectObject(ref this, dwReserved);
-			}
+			public HRESULT GetUnmarshalClass(in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, out Guid pCid) mut => VT.GetUnmarshalClass(ref this, riid, pv, dwDestContext, pvDestContext, mshlflags, out pCid);
+			public HRESULT GetMarshalSizeMax(in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, out uint32 pSize) mut => VT.GetMarshalSizeMax(ref this, riid, pv, dwDestContext, pvDestContext, mshlflags, out pSize);
+			public HRESULT MarshalInterface(ref IStream pStm, in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) mut => VT.MarshalInterface(ref this, ref pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+			public HRESULT UnmarshalInterface(ref IStream pStm, in Guid riid, void** ppv) mut => VT.UnmarshalInterface(ref this, ref pStm, riid, ppv);
+			public HRESULT ReleaseMarshalData(ref IStream pStm) mut => VT.ReleaseMarshalData(ref this, ref pStm);
+			public HRESULT DisconnectObject(uint32 dwReserved) mut => VT.DisconnectObject(ref this, dwReserved);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -64,6 +47,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IMarshal.VTable
 			{
@@ -76,10 +60,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMarshalingContextAttribute(CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, out uint pAttributeValue) mut
-			{
-				return VT.GetMarshalingContextAttribute(ref this, attribute, out pAttributeValue);
-			}
+			public HRESULT GetMarshalingContextAttribute(CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, out uint pAttributeValue) mut => VT.GetMarshalingContextAttribute(ref this, attribute, out pAttributeValue);
+
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{

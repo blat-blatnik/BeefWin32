@@ -777,22 +777,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IEnumVARIANT** ppunk) mut
-			{
-				return VT.get__NewEnum(ref this, ppunk);
-			}
-			public HRESULT get_Item(int32 index, BSTR* value) mut
-			{
-				return VT.get_Item(ref this, index, value);
-			}
-			public HRESULT get_Count(out int32 value) mut
-			{
-				return VT.get_Count(ref this, out value);
-			}
-			public HRESULT get_IsSupportedEnvironment(out int16 value) mut
-			{
-				return VT.get_IsSupportedEnvironment(ref this, out value);
-			}
+			public HRESULT get__NewEnum(IEnumVARIANT** ppunk) mut => VT.get__NewEnum(ref this, ppunk);
+			public HRESULT get_Item(int32 index, BSTR* value) mut => VT.get_Item(ref this, index, value);
+			public HRESULT get_Count(out int32 value) mut => VT.get_Count(ref this, out value);
+			public HRESULT get_IsSupportedEnvironment(out int16 value) mut => VT.get_IsSupportedEnvironment(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -809,14 +798,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NotifyDeviceAdded(ref IDispatch object, BSTR uniqueId) mut
-			{
-				return VT.NotifyDeviceAdded(ref this, ref object, uniqueId);
-			}
-			public HRESULT NotifyDeviceRemoved(ref IDispatch object, BSTR uniqueId) mut
-			{
-				return VT.NotifyDeviceRemoved(ref this, ref object, uniqueId);
-			}
+			public HRESULT NotifyDeviceAdded(ref IDispatch object, BSTR uniqueId) mut => VT.NotifyDeviceAdded(ref this, ref object, uniqueId);
+			public HRESULT NotifyDeviceRemoved(ref IDispatch object, BSTR uniqueId) mut => VT.NotifyDeviceRemoved(ref this, ref object, uniqueId);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -831,78 +815,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SendCommandNoData(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout) mut
-			{
-				return VT.SendCommandNoData(ref this, Cdb, CdbSize, SenseBuffer, Timeout);
-			}
-			public HRESULT SendCommandSendDataToDevice(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize) mut
-			{
-				return VT.SendCommandSendDataToDevice(ref this, Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize);
-			}
-			public HRESULT SendCommandGetDataFromDevice(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize, out uint32 BufferFetched) mut
-			{
-				return VT.SendCommandGetDataFromDevice(ref this, Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize, out BufferFetched);
-			}
-			public HRESULT ReadDvdStructure(uint32 format, uint32 address, uint32 layer, uint32 agid, uint8** data, out uint32 count) mut
-			{
-				return VT.ReadDvdStructure(ref this, format, address, layer, agid, data, out count);
-			}
-			public HRESULT SendDvdStructure(uint32 format, uint8* data, uint32 count) mut
-			{
-				return VT.SendDvdStructure(ref this, format, data, count);
-			}
-			public HRESULT GetAdapterDescriptor(uint8** data, out uint32 byteSize) mut
-			{
-				return VT.GetAdapterDescriptor(ref this, data, out byteSize);
-			}
-			public HRESULT GetDeviceDescriptor(uint8** data, out uint32 byteSize) mut
-			{
-				return VT.GetDeviceDescriptor(ref this, data, out byteSize);
-			}
-			public HRESULT GetDiscInformation(uint8** discInformation, out uint32 byteSize) mut
-			{
-				return VT.GetDiscInformation(ref this, discInformation, out byteSize);
-			}
-			public HRESULT GetTrackInformation(uint32 address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, uint8** trackInformation, out uint32 byteSize) mut
-			{
-				return VT.GetTrackInformation(ref this, address, addressType, trackInformation, out byteSize);
-			}
-			public HRESULT GetFeaturePage(IMAPI_FEATURE_PAGE_TYPE requestedFeature, BOOLEAN currentFeatureOnly, uint8** featureData, out uint32 byteSize) mut
-			{
-				return VT.GetFeaturePage(ref this, requestedFeature, currentFeatureOnly, featureData, out byteSize);
-			}
-			public HRESULT GetModePage(IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8** modePageData, out uint32 byteSize) mut
-			{
-				return VT.GetModePage(ref this, requestedModePage, requestType, modePageData, out byteSize);
-			}
-			public HRESULT SetModePage(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8* data, uint32 byteSize) mut
-			{
-				return VT.SetModePage(ref this, requestType, data, byteSize);
-			}
-			public HRESULT GetSupportedFeaturePages(BOOLEAN currentFeatureOnly, IMAPI_FEATURE_PAGE_TYPE** featureData, out uint32 byteSize) mut
-			{
-				return VT.GetSupportedFeaturePages(ref this, currentFeatureOnly, featureData, out byteSize);
-			}
-			public HRESULT GetSupportedProfiles(BOOLEAN currentOnly, IMAPI_PROFILE_TYPE** profileTypes, out uint32 validProfiles) mut
-			{
-				return VT.GetSupportedProfiles(ref this, currentOnly, profileTypes, out validProfiles);
-			}
-			public HRESULT GetSupportedModePages(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, IMAPI_MODE_PAGE_TYPE** modePageTypes, out uint32 validPages) mut
-			{
-				return VT.GetSupportedModePages(ref this, requestType, modePageTypes, out validPages);
-			}
-			public HRESULT GetByteAlignmentMask(out uint32 value) mut
-			{
-				return VT.GetByteAlignmentMask(ref this, out value);
-			}
-			public HRESULT GetMaximumNonPageAlignedTransferSize(out uint32 value) mut
-			{
-				return VT.GetMaximumNonPageAlignedTransferSize(ref this, out value);
-			}
-			public HRESULT GetMaximumPageAlignedTransferSize(out uint32 value) mut
-			{
-				return VT.GetMaximumPageAlignedTransferSize(ref this, out value);
-			}
+			public HRESULT SendCommandNoData(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout) mut => VT.SendCommandNoData(ref this, Cdb, CdbSize, SenseBuffer, Timeout);
+			public HRESULT SendCommandSendDataToDevice(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize) mut => VT.SendCommandSendDataToDevice(ref this, Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize);
+			public HRESULT SendCommandGetDataFromDevice(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize, out uint32 BufferFetched) mut => VT.SendCommandGetDataFromDevice(ref this, Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize, out BufferFetched);
+			public HRESULT ReadDvdStructure(uint32 format, uint32 address, uint32 layer, uint32 agid, uint8** data, out uint32 count) mut => VT.ReadDvdStructure(ref this, format, address, layer, agid, data, out count);
+			public HRESULT SendDvdStructure(uint32 format, uint8* data, uint32 count) mut => VT.SendDvdStructure(ref this, format, data, count);
+			public HRESULT GetAdapterDescriptor(uint8** data, out uint32 byteSize) mut => VT.GetAdapterDescriptor(ref this, data, out byteSize);
+			public HRESULT GetDeviceDescriptor(uint8** data, out uint32 byteSize) mut => VT.GetDeviceDescriptor(ref this, data, out byteSize);
+			public HRESULT GetDiscInformation(uint8** discInformation, out uint32 byteSize) mut => VT.GetDiscInformation(ref this, discInformation, out byteSize);
+			public HRESULT GetTrackInformation(uint32 address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, uint8** trackInformation, out uint32 byteSize) mut => VT.GetTrackInformation(ref this, address, addressType, trackInformation, out byteSize);
+			public HRESULT GetFeaturePage(IMAPI_FEATURE_PAGE_TYPE requestedFeature, BOOLEAN currentFeatureOnly, uint8** featureData, out uint32 byteSize) mut => VT.GetFeaturePage(ref this, requestedFeature, currentFeatureOnly, featureData, out byteSize);
+			public HRESULT GetModePage(IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8** modePageData, out uint32 byteSize) mut => VT.GetModePage(ref this, requestedModePage, requestType, modePageData, out byteSize);
+			public HRESULT SetModePage(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8* data, uint32 byteSize) mut => VT.SetModePage(ref this, requestType, data, byteSize);
+			public HRESULT GetSupportedFeaturePages(BOOLEAN currentFeatureOnly, IMAPI_FEATURE_PAGE_TYPE** featureData, out uint32 byteSize) mut => VT.GetSupportedFeaturePages(ref this, currentFeatureOnly, featureData, out byteSize);
+			public HRESULT GetSupportedProfiles(BOOLEAN currentOnly, IMAPI_PROFILE_TYPE** profileTypes, out uint32 validProfiles) mut => VT.GetSupportedProfiles(ref this, currentOnly, profileTypes, out validProfiles);
+			public HRESULT GetSupportedModePages(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, IMAPI_MODE_PAGE_TYPE** modePageTypes, out uint32 validPages) mut => VT.GetSupportedModePages(ref this, requestType, modePageTypes, out validPages);
+			public HRESULT GetByteAlignmentMask(out uint32 value) mut => VT.GetByteAlignmentMask(ref this, out value);
+			public HRESULT GetMaximumNonPageAlignedTransferSize(out uint32 value) mut => VT.GetMaximumNonPageAlignedTransferSize(ref this, out value);
+			public HRESULT GetMaximumPageAlignedTransferSize(out uint32 value) mut => VT.GetMaximumPageAlignedTransferSize(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -933,90 +864,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EjectMedia() mut
-			{
-				return VT.EjectMedia(ref this);
-			}
-			public HRESULT CloseTray() mut
-			{
-				return VT.CloseTray(ref this);
-			}
-			public HRESULT AcquireExclusiveAccess(int16 force, BSTR __MIDL__IDiscRecorder20000) mut
-			{
-				return VT.AcquireExclusiveAccess(ref this, force, __MIDL__IDiscRecorder20000);
-			}
-			public HRESULT ReleaseExclusiveAccess() mut
-			{
-				return VT.ReleaseExclusiveAccess(ref this);
-			}
-			public HRESULT DisableMcn() mut
-			{
-				return VT.DisableMcn(ref this);
-			}
-			public HRESULT EnableMcn() mut
-			{
-				return VT.EnableMcn(ref this);
-			}
-			public HRESULT InitializeDiscRecorder(BSTR recorderUniqueId) mut
-			{
-				return VT.InitializeDiscRecorder(ref this, recorderUniqueId);
-			}
-			public HRESULT get_ActiveDiscRecorder(BSTR* value) mut
-			{
-				return VT.get_ActiveDiscRecorder(ref this, value);
-			}
-			public HRESULT get_VendorId(BSTR* value) mut
-			{
-				return VT.get_VendorId(ref this, value);
-			}
-			public HRESULT get_ProductId(BSTR* value) mut
-			{
-				return VT.get_ProductId(ref this, value);
-			}
-			public HRESULT get_ProductRevision(BSTR* value) mut
-			{
-				return VT.get_ProductRevision(ref this, value);
-			}
-			public HRESULT get_VolumeName(BSTR* value) mut
-			{
-				return VT.get_VolumeName(ref this, value);
-			}
-			public HRESULT get_VolumePathNames(SAFEARRAY** value) mut
-			{
-				return VT.get_VolumePathNames(ref this, value);
-			}
-			public HRESULT get_DeviceCanLoadMedia(out int16 value) mut
-			{
-				return VT.get_DeviceCanLoadMedia(ref this, out value);
-			}
-			public HRESULT get_LegacyDeviceNumber(out int32 legacyDeviceNumber) mut
-			{
-				return VT.get_LegacyDeviceNumber(ref this, out legacyDeviceNumber);
-			}
-			public HRESULT get_SupportedFeaturePages(SAFEARRAY** value) mut
-			{
-				return VT.get_SupportedFeaturePages(ref this, value);
-			}
-			public HRESULT get_CurrentFeaturePages(SAFEARRAY** value) mut
-			{
-				return VT.get_CurrentFeaturePages(ref this, value);
-			}
-			public HRESULT get_SupportedProfiles(SAFEARRAY** value) mut
-			{
-				return VT.get_SupportedProfiles(ref this, value);
-			}
-			public HRESULT get_CurrentProfiles(SAFEARRAY** value) mut
-			{
-				return VT.get_CurrentProfiles(ref this, value);
-			}
-			public HRESULT get_SupportedModePages(SAFEARRAY** value) mut
-			{
-				return VT.get_SupportedModePages(ref this, value);
-			}
-			public HRESULT get_ExclusiveAccessOwner(BSTR* value) mut
-			{
-				return VT.get_ExclusiveAccessOwner(ref this, value);
-			}
+			public HRESULT EjectMedia() mut => VT.EjectMedia(ref this);
+			public HRESULT CloseTray() mut => VT.CloseTray(ref this);
+			public HRESULT AcquireExclusiveAccess(int16 force, BSTR __MIDL__IDiscRecorder20000) mut => VT.AcquireExclusiveAccess(ref this, force, __MIDL__IDiscRecorder20000);
+			public HRESULT ReleaseExclusiveAccess() mut => VT.ReleaseExclusiveAccess(ref this);
+			public HRESULT DisableMcn() mut => VT.DisableMcn(ref this);
+			public HRESULT EnableMcn() mut => VT.EnableMcn(ref this);
+			public HRESULT InitializeDiscRecorder(BSTR recorderUniqueId) mut => VT.InitializeDiscRecorder(ref this, recorderUniqueId);
+			public HRESULT get_ActiveDiscRecorder(BSTR* value) mut => VT.get_ActiveDiscRecorder(ref this, value);
+			public HRESULT get_VendorId(BSTR* value) mut => VT.get_VendorId(ref this, value);
+			public HRESULT get_ProductId(BSTR* value) mut => VT.get_ProductId(ref this, value);
+			public HRESULT get_ProductRevision(BSTR* value) mut => VT.get_ProductRevision(ref this, value);
+			public HRESULT get_VolumeName(BSTR* value) mut => VT.get_VolumeName(ref this, value);
+			public HRESULT get_VolumePathNames(SAFEARRAY** value) mut => VT.get_VolumePathNames(ref this, value);
+			public HRESULT get_DeviceCanLoadMedia(out int16 value) mut => VT.get_DeviceCanLoadMedia(ref this, out value);
+			public HRESULT get_LegacyDeviceNumber(out int32 legacyDeviceNumber) mut => VT.get_LegacyDeviceNumber(ref this, out legacyDeviceNumber);
+			public HRESULT get_SupportedFeaturePages(SAFEARRAY** value) mut => VT.get_SupportedFeaturePages(ref this, value);
+			public HRESULT get_CurrentFeaturePages(SAFEARRAY** value) mut => VT.get_CurrentFeaturePages(ref this, value);
+			public HRESULT get_SupportedProfiles(SAFEARRAY** value) mut => VT.get_SupportedProfiles(ref this, value);
+			public HRESULT get_CurrentProfiles(SAFEARRAY** value) mut => VT.get_CurrentProfiles(ref this, value);
+			public HRESULT get_SupportedModePages(SAFEARRAY** value) mut => VT.get_SupportedModePages(ref this, value);
+			public HRESULT get_ExclusiveAccessOwner(BSTR* value) mut => VT.get_ExclusiveAccessOwner(ref this, value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1050,58 +919,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WriteSection(ref IStream data, int32 startingBlockAddress, int32 numberOfBlocks) mut
-			{
-				return VT.WriteSection(ref this, ref data, startingBlockAddress, numberOfBlocks);
-			}
-			public HRESULT CancelWrite() mut
-			{
-				return VT.CancelWrite(ref this);
-			}
-			public HRESULT put_Recorder(ref IDiscRecorder2Ex value) mut
-			{
-				return VT.put_Recorder(ref this, ref value);
-			}
-			public HRESULT get_Recorder(IDiscRecorder2Ex** value) mut
-			{
-				return VT.get_Recorder(ref this, value);
-			}
-			public HRESULT put_UseStreamingWrite12(int16 value) mut
-			{
-				return VT.put_UseStreamingWrite12(ref this, value);
-			}
-			public HRESULT get_UseStreamingWrite12(out int16 value) mut
-			{
-				return VT.get_UseStreamingWrite12(ref this, out value);
-			}
-			public HRESULT put_StartingSectorsPerSecond(int32 value) mut
-			{
-				return VT.put_StartingSectorsPerSecond(ref this, value);
-			}
-			public HRESULT get_StartingSectorsPerSecond(out int32 value) mut
-			{
-				return VT.get_StartingSectorsPerSecond(ref this, out value);
-			}
-			public HRESULT put_EndingSectorsPerSecond(int32 value) mut
-			{
-				return VT.put_EndingSectorsPerSecond(ref this, value);
-			}
-			public HRESULT get_EndingSectorsPerSecond(out int32 value) mut
-			{
-				return VT.get_EndingSectorsPerSecond(ref this, out value);
-			}
-			public HRESULT put_BytesPerSector(int32 value) mut
-			{
-				return VT.put_BytesPerSector(ref this, value);
-			}
-			public HRESULT get_BytesPerSector(out int32 value) mut
-			{
-				return VT.get_BytesPerSector(ref this, out value);
-			}
-			public HRESULT get_WriteInProgress(out int16 value) mut
-			{
-				return VT.get_WriteInProgress(ref this, out value);
-			}
+			public HRESULT WriteSection(ref IStream data, int32 startingBlockAddress, int32 numberOfBlocks) mut => VT.WriteSection(ref this, ref data, startingBlockAddress, numberOfBlocks);
+			public HRESULT CancelWrite() mut => VT.CancelWrite(ref this);
+			public HRESULT put_Recorder(ref IDiscRecorder2Ex value) mut => VT.put_Recorder(ref this, ref value);
+			public HRESULT get_Recorder(IDiscRecorder2Ex** value) mut => VT.get_Recorder(ref this, value);
+			public HRESULT put_UseStreamingWrite12(int16 value) mut => VT.put_UseStreamingWrite12(ref this, value);
+			public HRESULT get_UseStreamingWrite12(out int16 value) mut => VT.get_UseStreamingWrite12(ref this, out value);
+			public HRESULT put_StartingSectorsPerSecond(int32 value) mut => VT.put_StartingSectorsPerSecond(ref this, value);
+			public HRESULT get_StartingSectorsPerSecond(out int32 value) mut => VT.get_StartingSectorsPerSecond(ref this, out value);
+			public HRESULT put_EndingSectorsPerSecond(int32 value) mut => VT.put_EndingSectorsPerSecond(ref this, value);
+			public HRESULT get_EndingSectorsPerSecond(out int32 value) mut => VT.get_EndingSectorsPerSecond(ref this, out value);
+			public HRESULT put_BytesPerSector(int32 value) mut => VT.put_BytesPerSector(ref this, value);
+			public HRESULT get_BytesPerSector(out int32 value) mut => VT.get_BytesPerSector(ref this, out value);
+			public HRESULT get_WriteInProgress(out int16 value) mut => VT.get_WriteInProgress(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1127,34 +958,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StartLba(out int32 value) mut
-			{
-				return VT.get_StartLba(ref this, out value);
-			}
-			public HRESULT get_SectorCount(out int32 value) mut
-			{
-				return VT.get_SectorCount(ref this, out value);
-			}
-			public HRESULT get_LastReadLba(out int32 value) mut
-			{
-				return VT.get_LastReadLba(ref this, out value);
-			}
-			public HRESULT get_LastWrittenLba(out int32 value) mut
-			{
-				return VT.get_LastWrittenLba(ref this, out value);
-			}
-			public HRESULT get_TotalSystemBuffer(out int32 value) mut
-			{
-				return VT.get_TotalSystemBuffer(ref this, out value);
-			}
-			public HRESULT get_UsedSystemBuffer(out int32 value) mut
-			{
-				return VT.get_UsedSystemBuffer(ref this, out value);
-			}
-			public HRESULT get_FreeSystemBuffer(out int32 value) mut
-			{
-				return VT.get_FreeSystemBuffer(ref this, out value);
-			}
+			public HRESULT get_StartLba(out int32 value) mut => VT.get_StartLba(ref this, out value);
+			public HRESULT get_SectorCount(out int32 value) mut => VT.get_SectorCount(ref this, out value);
+			public HRESULT get_LastReadLba(out int32 value) mut => VT.get_LastReadLba(ref this, out value);
+			public HRESULT get_LastWrittenLba(out int32 value) mut => VT.get_LastWrittenLba(ref this, out value);
+			public HRESULT get_TotalSystemBuffer(out int32 value) mut => VT.get_TotalSystemBuffer(ref this, out value);
+			public HRESULT get_UsedSystemBuffer(out int32 value) mut => VT.get_UsedSystemBuffer(ref this, out value);
+			public HRESULT get_FreeSystemBuffer(out int32 value) mut => VT.get_FreeSystemBuffer(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1174,10 +985,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Update(ref IDispatch object, ref IDispatch progress) mut
-			{
-				return VT.Update(ref this, ref object, ref progress);
-			}
+			public HRESULT Update(ref IDispatch object, ref IDispatch progress) mut => VT.Update(ref this, ref object, ref progress);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1191,26 +1000,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsRecorderSupported(ref IDiscRecorder2 recorder, out int16 value) mut
-			{
-				return VT.IsRecorderSupported(ref this, ref recorder, out value);
-			}
-			public HRESULT IsCurrentMediaSupported(ref IDiscRecorder2 recorder, out int16 value) mut
-			{
-				return VT.IsCurrentMediaSupported(ref this, ref recorder, out value);
-			}
-			public HRESULT get_MediaPhysicallyBlank(out int16 value) mut
-			{
-				return VT.get_MediaPhysicallyBlank(ref this, out value);
-			}
-			public HRESULT get_MediaHeuristicallyBlank(out int16 value) mut
-			{
-				return VT.get_MediaHeuristicallyBlank(ref this, out value);
-			}
-			public HRESULT get_SupportedMediaTypes(SAFEARRAY** value) mut
-			{
-				return VT.get_SupportedMediaTypes(ref this, value);
-			}
+			public HRESULT IsRecorderSupported(ref IDiscRecorder2 recorder, out int16 value) mut => VT.IsRecorderSupported(ref this, ref recorder, out value);
+			public HRESULT IsCurrentMediaSupported(ref IDiscRecorder2 recorder, out int16 value) mut => VT.IsCurrentMediaSupported(ref this, ref recorder, out value);
+			public HRESULT get_MediaPhysicallyBlank(out int16 value) mut => VT.get_MediaPhysicallyBlank(ref this, out value);
+			public HRESULT get_MediaHeuristicallyBlank(out int16 value) mut => VT.get_MediaHeuristicallyBlank(ref this, out value);
+			public HRESULT get_SupportedMediaTypes(SAFEARRAY** value) mut => VT.get_SupportedMediaTypes(ref this, value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1228,38 +1023,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT put_Recorder(ref IDiscRecorder2 value) mut
-			{
-				return VT.put_Recorder(ref this, ref value);
-			}
-			public HRESULT get_Recorder(IDiscRecorder2** value) mut
-			{
-				return VT.get_Recorder(ref this, value);
-			}
-			public HRESULT put_FullErase(int16 value) mut
-			{
-				return VT.put_FullErase(ref this, value);
-			}
-			public HRESULT get_FullErase(out int16 value) mut
-			{
-				return VT.get_FullErase(ref this, out value);
-			}
-			public HRESULT get_CurrentPhysicalMediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut
-			{
-				return VT.get_CurrentPhysicalMediaType(ref this, out value);
-			}
-			public HRESULT put_ClientName(BSTR value) mut
-			{
-				return VT.put_ClientName(ref this, value);
-			}
-			public HRESULT get_ClientName(BSTR* value) mut
-			{
-				return VT.get_ClientName(ref this, value);
-			}
-			public HRESULT EraseMedia() mut
-			{
-				return VT.EraseMedia(ref this);
-			}
+			public HRESULT put_Recorder(ref IDiscRecorder2 value) mut => VT.put_Recorder(ref this, ref value);
+			public HRESULT get_Recorder(IDiscRecorder2** value) mut => VT.get_Recorder(ref this, value);
+			public HRESULT put_FullErase(int16 value) mut => VT.put_FullErase(ref this, value);
+			public HRESULT get_FullErase(out int16 value) mut => VT.get_FullErase(ref this, out value);
+			public HRESULT get_CurrentPhysicalMediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut => VT.get_CurrentPhysicalMediaType(ref this, out value);
+			public HRESULT put_ClientName(BSTR value) mut => VT.put_ClientName(ref this, value);
+			public HRESULT get_ClientName(BSTR* value) mut => VT.get_ClientName(ref this, value);
+			public HRESULT EraseMedia() mut => VT.EraseMedia(ref this);
+
 			[CRepr]
 			public struct VTable : IDiscFormat2.VTable
 			{
@@ -1280,10 +1052,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Update(ref IDispatch object, int32 elapsedSeconds, int32 estimatedTotalSeconds) mut
-			{
-				return VT.Update(ref this, ref object, elapsedSeconds, estimatedTotalSeconds);
-			}
+			public HRESULT Update(ref IDispatch object, int32 elapsedSeconds, int32 estimatedTotalSeconds) mut => VT.Update(ref this, ref object, elapsedSeconds, estimatedTotalSeconds);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1297,134 +1067,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT put_Recorder(ref IDiscRecorder2 value) mut
-			{
-				return VT.put_Recorder(ref this, ref value);
-			}
-			public HRESULT get_Recorder(IDiscRecorder2** value) mut
-			{
-				return VT.get_Recorder(ref this, value);
-			}
-			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut
-			{
-				return VT.put_BufferUnderrunFreeDisabled(ref this, value);
-			}
-			public HRESULT get_BufferUnderrunFreeDisabled(out int16 value) mut
-			{
-				return VT.get_BufferUnderrunFreeDisabled(ref this, out value);
-			}
-			public HRESULT put_PostgapAlreadyInImage(int16 value) mut
-			{
-				return VT.put_PostgapAlreadyInImage(ref this, value);
-			}
-			public HRESULT get_PostgapAlreadyInImage(out int16 value) mut
-			{
-				return VT.get_PostgapAlreadyInImage(ref this, out value);
-			}
-			public HRESULT get_CurrentMediaStatus(out IMAPI_FORMAT2_DATA_MEDIA_STATE value) mut
-			{
-				return VT.get_CurrentMediaStatus(ref this, out value);
-			}
-			public HRESULT get_WriteProtectStatus(out IMAPI_MEDIA_WRITE_PROTECT_STATE value) mut
-			{
-				return VT.get_WriteProtectStatus(ref this, out value);
-			}
-			public HRESULT get_TotalSectorsOnMedia(out int32 value) mut
-			{
-				return VT.get_TotalSectorsOnMedia(ref this, out value);
-			}
-			public HRESULT get_FreeSectorsOnMedia(out int32 value) mut
-			{
-				return VT.get_FreeSectorsOnMedia(ref this, out value);
-			}
-			public HRESULT get_NextWritableAddress(out int32 value) mut
-			{
-				return VT.get_NextWritableAddress(ref this, out value);
-			}
-			public HRESULT get_StartAddressOfPreviousSession(out int32 value) mut
-			{
-				return VT.get_StartAddressOfPreviousSession(ref this, out value);
-			}
-			public HRESULT get_LastWrittenAddressOfPreviousSession(out int32 value) mut
-			{
-				return VT.get_LastWrittenAddressOfPreviousSession(ref this, out value);
-			}
-			public HRESULT put_ForceMediaToBeClosed(int16 value) mut
-			{
-				return VT.put_ForceMediaToBeClosed(ref this, value);
-			}
-			public HRESULT get_ForceMediaToBeClosed(out int16 value) mut
-			{
-				return VT.get_ForceMediaToBeClosed(ref this, out value);
-			}
-			public HRESULT put_DisableConsumerDvdCompatibilityMode(int16 value) mut
-			{
-				return VT.put_DisableConsumerDvdCompatibilityMode(ref this, value);
-			}
-			public HRESULT get_DisableConsumerDvdCompatibilityMode(out int16 value) mut
-			{
-				return VT.get_DisableConsumerDvdCompatibilityMode(ref this, out value);
-			}
-			public HRESULT get_CurrentPhysicalMediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut
-			{
-				return VT.get_CurrentPhysicalMediaType(ref this, out value);
-			}
-			public HRESULT put_ClientName(BSTR value) mut
-			{
-				return VT.put_ClientName(ref this, value);
-			}
-			public HRESULT get_ClientName(BSTR* value) mut
-			{
-				return VT.get_ClientName(ref this, value);
-			}
-			public HRESULT get_RequestedWriteSpeed(out int32 value) mut
-			{
-				return VT.get_RequestedWriteSpeed(ref this, out value);
-			}
-			public HRESULT get_RequestedRotationTypeIsPureCAV(out int16 value) mut
-			{
-				return VT.get_RequestedRotationTypeIsPureCAV(ref this, out value);
-			}
-			public HRESULT get_CurrentWriteSpeed(out int32 value) mut
-			{
-				return VT.get_CurrentWriteSpeed(ref this, out value);
-			}
-			public HRESULT get_CurrentRotationTypeIsPureCAV(out int16 value) mut
-			{
-				return VT.get_CurrentRotationTypeIsPureCAV(ref this, out value);
-			}
-			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut
-			{
-				return VT.get_SupportedWriteSpeeds(ref this, supportedSpeeds);
-			}
-			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut
-			{
-				return VT.get_SupportedWriteSpeedDescriptors(ref this, supportedSpeedDescriptors);
-			}
-			public HRESULT put_ForceOverwrite(int16 value) mut
-			{
-				return VT.put_ForceOverwrite(ref this, value);
-			}
-			public HRESULT get_ForceOverwrite(out int16 value) mut
-			{
-				return VT.get_ForceOverwrite(ref this, out value);
-			}
-			public HRESULT get_MultisessionInterfaces(SAFEARRAY** value) mut
-			{
-				return VT.get_MultisessionInterfaces(ref this, value);
-			}
-			public HRESULT Write(ref IStream data) mut
-			{
-				return VT.Write(ref this, ref data);
-			}
-			public HRESULT CancelWrite() mut
-			{
-				return VT.CancelWrite(ref this);
-			}
-			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut
-			{
-				return VT.SetWriteSpeed(ref this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
-			}
+			public HRESULT put_Recorder(ref IDiscRecorder2 value) mut => VT.put_Recorder(ref this, ref value);
+			public HRESULT get_Recorder(IDiscRecorder2** value) mut => VT.get_Recorder(ref this, value);
+			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut => VT.put_BufferUnderrunFreeDisabled(ref this, value);
+			public HRESULT get_BufferUnderrunFreeDisabled(out int16 value) mut => VT.get_BufferUnderrunFreeDisabled(ref this, out value);
+			public HRESULT put_PostgapAlreadyInImage(int16 value) mut => VT.put_PostgapAlreadyInImage(ref this, value);
+			public HRESULT get_PostgapAlreadyInImage(out int16 value) mut => VT.get_PostgapAlreadyInImage(ref this, out value);
+			public HRESULT get_CurrentMediaStatus(out IMAPI_FORMAT2_DATA_MEDIA_STATE value) mut => VT.get_CurrentMediaStatus(ref this, out value);
+			public HRESULT get_WriteProtectStatus(out IMAPI_MEDIA_WRITE_PROTECT_STATE value) mut => VT.get_WriteProtectStatus(ref this, out value);
+			public HRESULT get_TotalSectorsOnMedia(out int32 value) mut => VT.get_TotalSectorsOnMedia(ref this, out value);
+			public HRESULT get_FreeSectorsOnMedia(out int32 value) mut => VT.get_FreeSectorsOnMedia(ref this, out value);
+			public HRESULT get_NextWritableAddress(out int32 value) mut => VT.get_NextWritableAddress(ref this, out value);
+			public HRESULT get_StartAddressOfPreviousSession(out int32 value) mut => VT.get_StartAddressOfPreviousSession(ref this, out value);
+			public HRESULT get_LastWrittenAddressOfPreviousSession(out int32 value) mut => VT.get_LastWrittenAddressOfPreviousSession(ref this, out value);
+			public HRESULT put_ForceMediaToBeClosed(int16 value) mut => VT.put_ForceMediaToBeClosed(ref this, value);
+			public HRESULT get_ForceMediaToBeClosed(out int16 value) mut => VT.get_ForceMediaToBeClosed(ref this, out value);
+			public HRESULT put_DisableConsumerDvdCompatibilityMode(int16 value) mut => VT.put_DisableConsumerDvdCompatibilityMode(ref this, value);
+			public HRESULT get_DisableConsumerDvdCompatibilityMode(out int16 value) mut => VT.get_DisableConsumerDvdCompatibilityMode(ref this, out value);
+			public HRESULT get_CurrentPhysicalMediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut => VT.get_CurrentPhysicalMediaType(ref this, out value);
+			public HRESULT put_ClientName(BSTR value) mut => VT.put_ClientName(ref this, value);
+			public HRESULT get_ClientName(BSTR* value) mut => VT.get_ClientName(ref this, value);
+			public HRESULT get_RequestedWriteSpeed(out int32 value) mut => VT.get_RequestedWriteSpeed(ref this, out value);
+			public HRESULT get_RequestedRotationTypeIsPureCAV(out int16 value) mut => VT.get_RequestedRotationTypeIsPureCAV(ref this, out value);
+			public HRESULT get_CurrentWriteSpeed(out int32 value) mut => VT.get_CurrentWriteSpeed(ref this, out value);
+			public HRESULT get_CurrentRotationTypeIsPureCAV(out int16 value) mut => VT.get_CurrentRotationTypeIsPureCAV(ref this, out value);
+			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut => VT.get_SupportedWriteSpeeds(ref this, supportedSpeeds);
+			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut => VT.get_SupportedWriteSpeedDescriptors(ref this, supportedSpeedDescriptors);
+			public HRESULT put_ForceOverwrite(int16 value) mut => VT.put_ForceOverwrite(ref this, value);
+			public HRESULT get_ForceOverwrite(out int16 value) mut => VT.get_ForceOverwrite(ref this, out value);
+			public HRESULT get_MultisessionInterfaces(SAFEARRAY** value) mut => VT.get_MultisessionInterfaces(ref this, value);
+			public HRESULT Write(ref IStream data) mut => VT.Write(ref this, ref data);
+			public HRESULT CancelWrite() mut => VT.CancelWrite(ref this);
+			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut => VT.SetWriteSpeed(ref this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
+
 			[CRepr]
 			public struct VTable : IDiscFormat2.VTable
 			{
@@ -1469,10 +1144,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Update(ref IDispatch object, ref IDispatch progress) mut
-			{
-				return VT.Update(ref this, ref object, ref progress);
-			}
+			public HRESULT Update(ref IDispatch object, ref IDispatch progress) mut => VT.Update(ref this, ref object, ref progress);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1486,22 +1159,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ElapsedTime(out int32 value) mut
-			{
-				return VT.get_ElapsedTime(ref this, out value);
-			}
-			public HRESULT get_RemainingTime(out int32 value) mut
-			{
-				return VT.get_RemainingTime(ref this, out value);
-			}
-			public HRESULT get_TotalTime(out int32 value) mut
-			{
-				return VT.get_TotalTime(ref this, out value);
-			}
-			public HRESULT get_CurrentAction(out IMAPI_FORMAT2_DATA_WRITE_ACTION value) mut
-			{
-				return VT.get_CurrentAction(ref this, out value);
-			}
+			public HRESULT get_ElapsedTime(out int32 value) mut => VT.get_ElapsedTime(ref this, out value);
+			public HRESULT get_RemainingTime(out int32 value) mut => VT.get_RemainingTime(ref this, out value);
+			public HRESULT get_TotalTime(out int32 value) mut => VT.get_TotalTime(ref this, out value);
+			public HRESULT get_CurrentAction(out IMAPI_FORMAT2_DATA_WRITE_ACTION value) mut => VT.get_CurrentAction(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IWriteEngine2EventArgs.VTable
 			{
@@ -1518,106 +1180,32 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PrepareMedia() mut
-			{
-				return VT.PrepareMedia(ref this);
-			}
-			public HRESULT AddAudioTrack(ref IStream data) mut
-			{
-				return VT.AddAudioTrack(ref this, ref data);
-			}
-			public HRESULT CancelAddTrack() mut
-			{
-				return VT.CancelAddTrack(ref this);
-			}
-			public HRESULT ReleaseMedia() mut
-			{
-				return VT.ReleaseMedia(ref this);
-			}
-			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut
-			{
-				return VT.SetWriteSpeed(ref this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
-			}
-			public HRESULT put_Recorder(ref IDiscRecorder2 value) mut
-			{
-				return VT.put_Recorder(ref this, ref value);
-			}
-			public HRESULT get_Recorder(IDiscRecorder2** value) mut
-			{
-				return VT.get_Recorder(ref this, value);
-			}
-			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut
-			{
-				return VT.put_BufferUnderrunFreeDisabled(ref this, value);
-			}
-			public HRESULT get_BufferUnderrunFreeDisabled(out int16 value) mut
-			{
-				return VT.get_BufferUnderrunFreeDisabled(ref this, out value);
-			}
-			public HRESULT get_NumberOfExistingTracks(out int32 value) mut
-			{
-				return VT.get_NumberOfExistingTracks(ref this, out value);
-			}
-			public HRESULT get_TotalSectorsOnMedia(out int32 value) mut
-			{
-				return VT.get_TotalSectorsOnMedia(ref this, out value);
-			}
-			public HRESULT get_FreeSectorsOnMedia(out int32 value) mut
-			{
-				return VT.get_FreeSectorsOnMedia(ref this, out value);
-			}
-			public HRESULT get_UsedSectorsOnMedia(out int32 value) mut
-			{
-				return VT.get_UsedSectorsOnMedia(ref this, out value);
-			}
-			public HRESULT put_DoNotFinalizeMedia(int16 value) mut
-			{
-				return VT.put_DoNotFinalizeMedia(ref this, value);
-			}
-			public HRESULT get_DoNotFinalizeMedia(out int16 value) mut
-			{
-				return VT.get_DoNotFinalizeMedia(ref this, out value);
-			}
-			public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value) mut
-			{
-				return VT.get_ExpectedTableOfContents(ref this, value);
-			}
-			public HRESULT get_CurrentPhysicalMediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut
-			{
-				return VT.get_CurrentPhysicalMediaType(ref this, out value);
-			}
-			public HRESULT put_ClientName(BSTR value) mut
-			{
-				return VT.put_ClientName(ref this, value);
-			}
-			public HRESULT get_ClientName(BSTR* value) mut
-			{
-				return VT.get_ClientName(ref this, value);
-			}
-			public HRESULT get_RequestedWriteSpeed(out int32 value) mut
-			{
-				return VT.get_RequestedWriteSpeed(ref this, out value);
-			}
-			public HRESULT get_RequestedRotationTypeIsPureCAV(out int16 value) mut
-			{
-				return VT.get_RequestedRotationTypeIsPureCAV(ref this, out value);
-			}
-			public HRESULT get_CurrentWriteSpeed(out int32 value) mut
-			{
-				return VT.get_CurrentWriteSpeed(ref this, out value);
-			}
-			public HRESULT get_CurrentRotationTypeIsPureCAV(out int16 value) mut
-			{
-				return VT.get_CurrentRotationTypeIsPureCAV(ref this, out value);
-			}
-			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut
-			{
-				return VT.get_SupportedWriteSpeeds(ref this, supportedSpeeds);
-			}
-			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut
-			{
-				return VT.get_SupportedWriteSpeedDescriptors(ref this, supportedSpeedDescriptors);
-			}
+			public HRESULT PrepareMedia() mut => VT.PrepareMedia(ref this);
+			public HRESULT AddAudioTrack(ref IStream data) mut => VT.AddAudioTrack(ref this, ref data);
+			public HRESULT CancelAddTrack() mut => VT.CancelAddTrack(ref this);
+			public HRESULT ReleaseMedia() mut => VT.ReleaseMedia(ref this);
+			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut => VT.SetWriteSpeed(ref this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
+			public HRESULT put_Recorder(ref IDiscRecorder2 value) mut => VT.put_Recorder(ref this, ref value);
+			public HRESULT get_Recorder(IDiscRecorder2** value) mut => VT.get_Recorder(ref this, value);
+			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut => VT.put_BufferUnderrunFreeDisabled(ref this, value);
+			public HRESULT get_BufferUnderrunFreeDisabled(out int16 value) mut => VT.get_BufferUnderrunFreeDisabled(ref this, out value);
+			public HRESULT get_NumberOfExistingTracks(out int32 value) mut => VT.get_NumberOfExistingTracks(ref this, out value);
+			public HRESULT get_TotalSectorsOnMedia(out int32 value) mut => VT.get_TotalSectorsOnMedia(ref this, out value);
+			public HRESULT get_FreeSectorsOnMedia(out int32 value) mut => VT.get_FreeSectorsOnMedia(ref this, out value);
+			public HRESULT get_UsedSectorsOnMedia(out int32 value) mut => VT.get_UsedSectorsOnMedia(ref this, out value);
+			public HRESULT put_DoNotFinalizeMedia(int16 value) mut => VT.put_DoNotFinalizeMedia(ref this, value);
+			public HRESULT get_DoNotFinalizeMedia(out int16 value) mut => VT.get_DoNotFinalizeMedia(ref this, out value);
+			public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value) mut => VT.get_ExpectedTableOfContents(ref this, value);
+			public HRESULT get_CurrentPhysicalMediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut => VT.get_CurrentPhysicalMediaType(ref this, out value);
+			public HRESULT put_ClientName(BSTR value) mut => VT.put_ClientName(ref this, value);
+			public HRESULT get_ClientName(BSTR* value) mut => VT.get_ClientName(ref this, value);
+			public HRESULT get_RequestedWriteSpeed(out int32 value) mut => VT.get_RequestedWriteSpeed(ref this, out value);
+			public HRESULT get_RequestedRotationTypeIsPureCAV(out int16 value) mut => VT.get_RequestedRotationTypeIsPureCAV(ref this, out value);
+			public HRESULT get_CurrentWriteSpeed(out int32 value) mut => VT.get_CurrentWriteSpeed(ref this, out value);
+			public HRESULT get_CurrentRotationTypeIsPureCAV(out int16 value) mut => VT.get_CurrentRotationTypeIsPureCAV(ref this, out value);
+			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut => VT.get_SupportedWriteSpeeds(ref this, supportedSpeeds);
+			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut => VT.get_SupportedWriteSpeedDescriptors(ref this, supportedSpeedDescriptors);
+
 			[CRepr]
 			public struct VTable : IDiscFormat2.VTable
 			{
@@ -1655,10 +1243,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Update(ref IDispatch object, ref IDispatch progress) mut
-			{
-				return VT.Update(ref this, ref object, ref progress);
-			}
+			public HRESULT Update(ref IDispatch object, ref IDispatch progress) mut => VT.Update(ref this, ref object, ref progress);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1672,22 +1258,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentTrackNumber(out int32 value) mut
-			{
-				return VT.get_CurrentTrackNumber(ref this, out value);
-			}
-			public HRESULT get_CurrentAction(out IMAPI_FORMAT2_TAO_WRITE_ACTION value) mut
-			{
-				return VT.get_CurrentAction(ref this, out value);
-			}
-			public HRESULT get_ElapsedTime(out int32 value) mut
-			{
-				return VT.get_ElapsedTime(ref this, out value);
-			}
-			public HRESULT get_RemainingTime(out int32 value) mut
-			{
-				return VT.get_RemainingTime(ref this, out value);
-			}
+			public HRESULT get_CurrentTrackNumber(out int32 value) mut => VT.get_CurrentTrackNumber(ref this, out value);
+			public HRESULT get_CurrentAction(out IMAPI_FORMAT2_TAO_WRITE_ACTION value) mut => VT.get_CurrentAction(ref this, out value);
+			public HRESULT get_ElapsedTime(out int32 value) mut => VT.get_ElapsedTime(ref this, out value);
+			public HRESULT get_RemainingTime(out int32 value) mut => VT.get_RemainingTime(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IWriteEngine2EventArgs.VTable
 			{
@@ -1704,102 +1279,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PrepareMedia() mut
-			{
-				return VT.PrepareMedia(ref this);
-			}
-			public HRESULT WriteMedia(ref IStream data) mut
-			{
-				return VT.WriteMedia(ref this, ref data);
-			}
-			public HRESULT WriteMedia2(ref IStream data, int32 streamLeadInSectors) mut
-			{
-				return VT.WriteMedia2(ref this, ref data, streamLeadInSectors);
-			}
-			public HRESULT CancelWrite() mut
-			{
-				return VT.CancelWrite(ref this);
-			}
-			public HRESULT ReleaseMedia() mut
-			{
-				return VT.ReleaseMedia(ref this);
-			}
-			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut
-			{
-				return VT.SetWriteSpeed(ref this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
-			}
-			public HRESULT put_Recorder(ref IDiscRecorder2 value) mut
-			{
-				return VT.put_Recorder(ref this, ref value);
-			}
-			public HRESULT get_Recorder(IDiscRecorder2** value) mut
-			{
-				return VT.get_Recorder(ref this, value);
-			}
-			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut
-			{
-				return VT.put_BufferUnderrunFreeDisabled(ref this, value);
-			}
-			public HRESULT get_BufferUnderrunFreeDisabled(out int16 value) mut
-			{
-				return VT.get_BufferUnderrunFreeDisabled(ref this, out value);
-			}
-			public HRESULT get_StartOfNextSession(out int32 value) mut
-			{
-				return VT.get_StartOfNextSession(ref this, out value);
-			}
-			public HRESULT get_LastPossibleStartOfLeadout(out int32 value) mut
-			{
-				return VT.get_LastPossibleStartOfLeadout(ref this, out value);
-			}
-			public HRESULT get_CurrentPhysicalMediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut
-			{
-				return VT.get_CurrentPhysicalMediaType(ref this, out value);
-			}
-			public HRESULT get_SupportedSectorTypes(SAFEARRAY** value) mut
-			{
-				return VT.get_SupportedSectorTypes(ref this, value);
-			}
-			public HRESULT put_RequestedSectorType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut
-			{
-				return VT.put_RequestedSectorType(ref this, value);
-			}
-			public HRESULT get_RequestedSectorType(out IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut
-			{
-				return VT.get_RequestedSectorType(ref this, out value);
-			}
-			public HRESULT put_ClientName(BSTR value) mut
-			{
-				return VT.put_ClientName(ref this, value);
-			}
-			public HRESULT get_ClientName(BSTR* value) mut
-			{
-				return VT.get_ClientName(ref this, value);
-			}
-			public HRESULT get_RequestedWriteSpeed(out int32 value) mut
-			{
-				return VT.get_RequestedWriteSpeed(ref this, out value);
-			}
-			public HRESULT get_RequestedRotationTypeIsPureCAV(out int16 value) mut
-			{
-				return VT.get_RequestedRotationTypeIsPureCAV(ref this, out value);
-			}
-			public HRESULT get_CurrentWriteSpeed(out int32 value) mut
-			{
-				return VT.get_CurrentWriteSpeed(ref this, out value);
-			}
-			public HRESULT get_CurrentRotationTypeIsPureCAV(out int16 value) mut
-			{
-				return VT.get_CurrentRotationTypeIsPureCAV(ref this, out value);
-			}
-			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut
-			{
-				return VT.get_SupportedWriteSpeeds(ref this, supportedSpeeds);
-			}
-			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut
-			{
-				return VT.get_SupportedWriteSpeedDescriptors(ref this, supportedSpeedDescriptors);
-			}
+			public HRESULT PrepareMedia() mut => VT.PrepareMedia(ref this);
+			public HRESULT WriteMedia(ref IStream data) mut => VT.WriteMedia(ref this, ref data);
+			public HRESULT WriteMedia2(ref IStream data, int32 streamLeadInSectors) mut => VT.WriteMedia2(ref this, ref data, streamLeadInSectors);
+			public HRESULT CancelWrite() mut => VT.CancelWrite(ref this);
+			public HRESULT ReleaseMedia() mut => VT.ReleaseMedia(ref this);
+			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut => VT.SetWriteSpeed(ref this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
+			public HRESULT put_Recorder(ref IDiscRecorder2 value) mut => VT.put_Recorder(ref this, ref value);
+			public HRESULT get_Recorder(IDiscRecorder2** value) mut => VT.get_Recorder(ref this, value);
+			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut => VT.put_BufferUnderrunFreeDisabled(ref this, value);
+			public HRESULT get_BufferUnderrunFreeDisabled(out int16 value) mut => VT.get_BufferUnderrunFreeDisabled(ref this, out value);
+			public HRESULT get_StartOfNextSession(out int32 value) mut => VT.get_StartOfNextSession(ref this, out value);
+			public HRESULT get_LastPossibleStartOfLeadout(out int32 value) mut => VT.get_LastPossibleStartOfLeadout(ref this, out value);
+			public HRESULT get_CurrentPhysicalMediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut => VT.get_CurrentPhysicalMediaType(ref this, out value);
+			public HRESULT get_SupportedSectorTypes(SAFEARRAY** value) mut => VT.get_SupportedSectorTypes(ref this, value);
+			public HRESULT put_RequestedSectorType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut => VT.put_RequestedSectorType(ref this, value);
+			public HRESULT get_RequestedSectorType(out IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut => VT.get_RequestedSectorType(ref this, out value);
+			public HRESULT put_ClientName(BSTR value) mut => VT.put_ClientName(ref this, value);
+			public HRESULT get_ClientName(BSTR* value) mut => VT.get_ClientName(ref this, value);
+			public HRESULT get_RequestedWriteSpeed(out int32 value) mut => VT.get_RequestedWriteSpeed(ref this, out value);
+			public HRESULT get_RequestedRotationTypeIsPureCAV(out int16 value) mut => VT.get_RequestedRotationTypeIsPureCAV(ref this, out value);
+			public HRESULT get_CurrentWriteSpeed(out int32 value) mut => VT.get_CurrentWriteSpeed(ref this, out value);
+			public HRESULT get_CurrentRotationTypeIsPureCAV(out int16 value) mut => VT.get_CurrentRotationTypeIsPureCAV(ref this, out value);
+			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut => VT.get_SupportedWriteSpeeds(ref this, supportedSpeeds);
+			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut => VT.get_SupportedWriteSpeedDescriptors(ref this, supportedSpeedDescriptors);
+
 			[CRepr]
 			public struct VTable : IDiscFormat2.VTable
 			{
@@ -1836,10 +1340,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Update(ref IDispatch object, ref IDispatch progress) mut
-			{
-				return VT.Update(ref this, ref object, ref progress);
-			}
+			public HRESULT Update(ref IDispatch object, ref IDispatch progress) mut => VT.Update(ref this, ref object, ref progress);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1853,18 +1355,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentAction(out IMAPI_FORMAT2_RAW_CD_WRITE_ACTION value) mut
-			{
-				return VT.get_CurrentAction(ref this, out value);
-			}
-			public HRESULT get_ElapsedTime(out int32 value) mut
-			{
-				return VT.get_ElapsedTime(ref this, out value);
-			}
-			public HRESULT get_RemainingTime(out int32 value) mut
-			{
-				return VT.get_RemainingTime(ref this, out value);
-			}
+			public HRESULT get_CurrentAction(out IMAPI_FORMAT2_RAW_CD_WRITE_ACTION value) mut => VT.get_CurrentAction(ref this, out value);
+			public HRESULT get_ElapsedTime(out int32 value) mut => VT.get_ElapsedTime(ref this, out value);
+			public HRESULT get_RemainingTime(out int32 value) mut => VT.get_RemainingTime(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IWriteEngine2EventArgs.VTable
 			{
@@ -1880,14 +1374,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT put_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL value) mut
-			{
-				return VT.put_BurnVerificationLevel(ref this, value);
-			}
-			public HRESULT get_BurnVerificationLevel(out IMAPI_BURN_VERIFICATION_LEVEL value) mut
-			{
-				return VT.get_BurnVerificationLevel(ref this, out value);
-			}
+			public HRESULT put_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL value) mut => VT.put_BurnVerificationLevel(ref this, value);
+			public HRESULT get_BurnVerificationLevel(out IMAPI_BURN_VERIFICATION_LEVEL value) mut => VT.get_BurnVerificationLevel(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1902,18 +1391,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut
-			{
-				return VT.get_MediaType(ref this, out value);
-			}
-			public HRESULT get_RotationTypeIsPureCAV(out int16 value) mut
-			{
-				return VT.get_RotationTypeIsPureCAV(ref this, out value);
-			}
-			public HRESULT get_WriteSpeed(out int32 value) mut
-			{
-				return VT.get_WriteSpeed(ref this, out value);
-			}
+			public HRESULT get_MediaType(out IMAPI_MEDIA_PHYSICAL_TYPE value) mut => VT.get_MediaType(ref this, out value);
+			public HRESULT get_RotationTypeIsPureCAV(out int16 value) mut => VT.get_RotationTypeIsPureCAV(ref this, out value);
+			public HRESULT get_WriteSpeed(out int32 value) mut => VT.get_WriteSpeed(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1929,22 +1410,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IsSupportedOnCurrentMediaState(out int16 value) mut
-			{
-				return VT.get_IsSupportedOnCurrentMediaState(ref this, out value);
-			}
-			public HRESULT put_InUse(int16 value) mut
-			{
-				return VT.put_InUse(ref this, value);
-			}
-			public HRESULT get_InUse(out int16 value) mut
-			{
-				return VT.get_InUse(ref this, out value);
-			}
-			public HRESULT get_ImportRecorder(IDiscRecorder2** value) mut
-			{
-				return VT.get_ImportRecorder(ref this, value);
-			}
+			public HRESULT get_IsSupportedOnCurrentMediaState(out int16 value) mut => VT.get_IsSupportedOnCurrentMediaState(ref this, out value);
+			public HRESULT put_InUse(int16 value) mut => VT.put_InUse(ref this, value);
+			public HRESULT get_InUse(out int16 value) mut => VT.get_InUse(ref this, out value);
+			public HRESULT get_ImportRecorder(IDiscRecorder2** value) mut => VT.get_ImportRecorder(ref this, value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1961,26 +1431,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IsFirstDataSession(out int16 value) mut
-			{
-				return VT.get_IsFirstDataSession(ref this, out value);
-			}
-			public HRESULT get_StartAddressOfPreviousSession(out int32 value) mut
-			{
-				return VT.get_StartAddressOfPreviousSession(ref this, out value);
-			}
-			public HRESULT get_LastWrittenAddressOfPreviousSession(out int32 value) mut
-			{
-				return VT.get_LastWrittenAddressOfPreviousSession(ref this, out value);
-			}
-			public HRESULT get_NextWritableAddress(out int32 value) mut
-			{
-				return VT.get_NextWritableAddress(ref this, out value);
-			}
-			public HRESULT get_FreeSectorsOnMedia(out int32 value) mut
-			{
-				return VT.get_FreeSectorsOnMedia(ref this, out value);
-			}
+			public HRESULT get_IsFirstDataSession(out int16 value) mut => VT.get_IsFirstDataSession(ref this, out value);
+			public HRESULT get_StartAddressOfPreviousSession(out int32 value) mut => VT.get_StartAddressOfPreviousSession(ref this, out value);
+			public HRESULT get_LastWrittenAddressOfPreviousSession(out int32 value) mut => VT.get_LastWrittenAddressOfPreviousSession(ref this, out value);
+			public HRESULT get_NextWritableAddress(out int32 value) mut => VT.get_NextWritableAddress(ref this, out value);
+			public HRESULT get_FreeSectorsOnMedia(out int32 value) mut => VT.get_FreeSectorsOnMedia(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IMultisession.VTable
 			{
@@ -1998,10 +1454,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_WriteUnitSize(out int32 value) mut
-			{
-				return VT.get_WriteUnitSize(ref this, out value);
-			}
+			public HRESULT get_WriteUnitSize(out int32 value) mut => VT.get_WriteUnitSize(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IMultisessionSequential.VTable
 			{
@@ -2015,18 +1469,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_WriteUnitSize(out int32 value) mut
-			{
-				return VT.get_WriteUnitSize(ref this, out value);
-			}
-			public HRESULT get_LastWrittenAddress(out int32 value) mut
-			{
-				return VT.get_LastWrittenAddress(ref this, out value);
-			}
-			public HRESULT get_TotalSectorsOnMedia(out int32 value) mut
-			{
-				return VT.get_TotalSectorsOnMedia(ref this, out value);
-			}
+			public HRESULT get_WriteUnitSize(out int32 value) mut => VT.get_WriteUnitSize(ref this, out value);
+			public HRESULT get_LastWrittenAddress(out int32 value) mut => VT.get_LastWrittenAddress(ref this, out value);
+			public HRESULT get_TotalSectorsOnMedia(out int32 value) mut => VT.get_TotalSectorsOnMedia(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IMultisession.VTable
 			{
@@ -2042,22 +1488,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT put_Seed(uint32 value) mut
-			{
-				return VT.put_Seed(ref this, value);
-			}
-			public HRESULT get_Seed(out uint32 value) mut
-			{
-				return VT.get_Seed(ref this, out value);
-			}
-			public HRESULT put_ExtendedSeed(uint32* values, uint32 eCount) mut
-			{
-				return VT.put_ExtendedSeed(ref this, values, eCount);
-			}
-			public HRESULT get_ExtendedSeed(uint32** values, out uint32 eCount) mut
-			{
-				return VT.get_ExtendedSeed(ref this, values, out eCount);
-			}
+			public HRESULT put_Seed(uint32 value) mut => VT.put_Seed(ref this, value);
+			public HRESULT get_Seed(out uint32 value) mut => VT.get_Seed(ref this, out value);
+			public HRESULT put_ExtendedSeed(uint32* values, uint32 eCount) mut => VT.put_ExtendedSeed(ref this, values, eCount);
+			public HRESULT get_ExtendedSeed(uint32** values, out uint32 eCount) mut => VT.get_ExtendedSeed(ref this, values, out eCount);
+
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
@@ -2074,22 +1509,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ref IStream stream1, ref IStream stream2) mut
-			{
-				return VT.Initialize(ref this, ref stream1, ref stream2);
-			}
-			public HRESULT Initialize2(IStream** streams, uint32 streamCount) mut
-			{
-				return VT.Initialize2(ref this, streams, streamCount);
-			}
-			public HRESULT Append(ref IStream stream) mut
-			{
-				return VT.Append(ref this, ref stream);
-			}
-			public HRESULT Append2(IStream** streams, uint32 streamCount) mut
-			{
-				return VT.Append2(ref this, streams, streamCount);
-			}
+			public HRESULT Initialize(ref IStream stream1, ref IStream stream2) mut => VT.Initialize(ref this, ref stream1, ref stream2);
+			public HRESULT Initialize2(IStream** streams, uint32 streamCount) mut => VT.Initialize2(ref this, streams, streamCount);
+			public HRESULT Append(ref IStream stream) mut => VT.Append(ref this, ref stream);
+			public HRESULT Append2(IStream** streams, uint32 streamCount) mut => VT.Append2(ref this, streams, streamCount);
+
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
@@ -2106,10 +1530,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IStream** streams, uint32* interleaveSizes, uint32 streamCount) mut
-			{
-				return VT.Initialize(ref this, streams, interleaveSizes, streamCount);
-			}
+			public HRESULT Initialize(IStream** streams, uint32* interleaveSizes, uint32 streamCount) mut => VT.Initialize(ref this, streams, interleaveSizes, streamCount);
+
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
@@ -2123,82 +1545,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateResultImage(out IStream* resultStream) mut
-			{
-				return VT.CreateResultImage(ref this, out resultStream);
-			}
-			public HRESULT AddTrack(IMAPI_CD_SECTOR_TYPE dataType, ref IStream data, out int32 trackIndex) mut
-			{
-				return VT.AddTrack(ref this, dataType, ref data, out trackIndex);
-			}
-			public HRESULT AddSpecialPregap(ref IStream data) mut
-			{
-				return VT.AddSpecialPregap(ref this, ref data);
-			}
-			public HRESULT AddSubcodeRWGenerator(ref IStream subcode) mut
-			{
-				return VT.AddSubcodeRWGenerator(ref this, ref subcode);
-			}
-			public HRESULT put_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut
-			{
-				return VT.put_ResultingImageType(ref this, value);
-			}
-			public HRESULT get_ResultingImageType(out IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut
-			{
-				return VT.get_ResultingImageType(ref this, out value);
-			}
-			public HRESULT get_StartOfLeadout(out int32 value) mut
-			{
-				return VT.get_StartOfLeadout(ref this, out value);
-			}
-			public HRESULT put_StartOfLeadoutLimit(int32 value) mut
-			{
-				return VT.put_StartOfLeadoutLimit(ref this, value);
-			}
-			public HRESULT get_StartOfLeadoutLimit(out int32 value) mut
-			{
-				return VT.get_StartOfLeadoutLimit(ref this, out value);
-			}
-			public HRESULT put_DisableGaplessAudio(int16 value) mut
-			{
-				return VT.put_DisableGaplessAudio(ref this, value);
-			}
-			public HRESULT get_DisableGaplessAudio(out int16 value) mut
-			{
-				return VT.get_DisableGaplessAudio(ref this, out value);
-			}
-			public HRESULT put_MediaCatalogNumber(BSTR value) mut
-			{
-				return VT.put_MediaCatalogNumber(ref this, value);
-			}
-			public HRESULT get_MediaCatalogNumber(BSTR* value) mut
-			{
-				return VT.get_MediaCatalogNumber(ref this, value);
-			}
-			public HRESULT put_StartingTrackNumber(int32 value) mut
-			{
-				return VT.put_StartingTrackNumber(ref this, value);
-			}
-			public HRESULT get_StartingTrackNumber(out int32 value) mut
-			{
-				return VT.get_StartingTrackNumber(ref this, out value);
-			}
-			public HRESULT get_TrackInfo(int32 trackIndex, IRawCDImageTrackInfo** value) mut
-			{
-				return VT.get_TrackInfo(ref this, trackIndex, value);
-			}
-			public HRESULT get_NumberOfExistingTracks(out int32 value) mut
-			{
-				return VT.get_NumberOfExistingTracks(ref this, out value);
-			}
-			public HRESULT get_LastUsedUserSectorInImage(out int32 value) mut
-			{
-				return VT.get_LastUsedUserSectorInImage(ref this, out value);
-			}
-			public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value) mut
-			{
-				return VT.get_ExpectedTableOfContents(ref this, value);
-			}
+			public HRESULT CreateResultImage(out IStream* resultStream) mut => VT.CreateResultImage(ref this, out resultStream);
+			public HRESULT AddTrack(IMAPI_CD_SECTOR_TYPE dataType, ref IStream data, out int32 trackIndex) mut => VT.AddTrack(ref this, dataType, ref data, out trackIndex);
+			public HRESULT AddSpecialPregap(ref IStream data) mut => VT.AddSpecialPregap(ref this, ref data);
+			public HRESULT AddSubcodeRWGenerator(ref IStream subcode) mut => VT.AddSubcodeRWGenerator(ref this, ref subcode);
+			public HRESULT put_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut => VT.put_ResultingImageType(ref this, value);
+			public HRESULT get_ResultingImageType(out IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut => VT.get_ResultingImageType(ref this, out value);
+			public HRESULT get_StartOfLeadout(out int32 value) mut => VT.get_StartOfLeadout(ref this, out value);
+			public HRESULT put_StartOfLeadoutLimit(int32 value) mut => VT.put_StartOfLeadoutLimit(ref this, value);
+			public HRESULT get_StartOfLeadoutLimit(out int32 value) mut => VT.get_StartOfLeadoutLimit(ref this, out value);
+			public HRESULT put_DisableGaplessAudio(int16 value) mut => VT.put_DisableGaplessAudio(ref this, value);
+			public HRESULT get_DisableGaplessAudio(out int16 value) mut => VT.get_DisableGaplessAudio(ref this, out value);
+			public HRESULT put_MediaCatalogNumber(BSTR value) mut => VT.put_MediaCatalogNumber(ref this, value);
+			public HRESULT get_MediaCatalogNumber(BSTR* value) mut => VT.get_MediaCatalogNumber(ref this, value);
+			public HRESULT put_StartingTrackNumber(int32 value) mut => VT.put_StartingTrackNumber(ref this, value);
+			public HRESULT get_StartingTrackNumber(out int32 value) mut => VT.get_StartingTrackNumber(ref this, out value);
+			public HRESULT get_TrackInfo(int32 trackIndex, IRawCDImageTrackInfo** value) mut => VT.get_TrackInfo(ref this, trackIndex, value);
+			public HRESULT get_NumberOfExistingTracks(out int32 value) mut => VT.get_NumberOfExistingTracks(ref this, out value);
+			public HRESULT get_LastUsedUserSectorInImage(out int32 value) mut => VT.get_LastUsedUserSectorInImage(ref this, out value);
+			public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value) mut => VT.get_ExpectedTableOfContents(ref this, value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2230,58 +1596,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StartingLba(out int32 value) mut
-			{
-				return VT.get_StartingLba(ref this, out value);
-			}
-			public HRESULT get_SectorCount(out int32 value) mut
-			{
-				return VT.get_SectorCount(ref this, out value);
-			}
-			public HRESULT get_TrackNumber(out int32 value) mut
-			{
-				return VT.get_TrackNumber(ref this, out value);
-			}
-			public HRESULT get_SectorType(out IMAPI_CD_SECTOR_TYPE value) mut
-			{
-				return VT.get_SectorType(ref this, out value);
-			}
-			public HRESULT get_ISRC(BSTR* value) mut
-			{
-				return VT.get_ISRC(ref this, value);
-			}
-			public HRESULT put_ISRC(BSTR value) mut
-			{
-				return VT.put_ISRC(ref this, value);
-			}
-			public HRESULT get_DigitalAudioCopySetting(out IMAPI_CD_TRACK_DIGITAL_COPY_SETTING value) mut
-			{
-				return VT.get_DigitalAudioCopySetting(ref this, out value);
-			}
-			public HRESULT put_DigitalAudioCopySetting(IMAPI_CD_TRACK_DIGITAL_COPY_SETTING value) mut
-			{
-				return VT.put_DigitalAudioCopySetting(ref this, value);
-			}
-			public HRESULT get_AudioHasPreemphasis(out int16 value) mut
-			{
-				return VT.get_AudioHasPreemphasis(ref this, out value);
-			}
-			public HRESULT put_AudioHasPreemphasis(int16 value) mut
-			{
-				return VT.put_AudioHasPreemphasis(ref this, value);
-			}
-			public HRESULT get_TrackIndexes(SAFEARRAY** value) mut
-			{
-				return VT.get_TrackIndexes(ref this, value);
-			}
-			public HRESULT AddTrackIndex(int32 lbaOffset) mut
-			{
-				return VT.AddTrackIndex(ref this, lbaOffset);
-			}
-			public HRESULT ClearTrackIndex(int32 lbaOffset) mut
-			{
-				return VT.ClearTrackIndex(ref this, lbaOffset);
-			}
+			public HRESULT get_StartingLba(out int32 value) mut => VT.get_StartingLba(ref this, out value);
+			public HRESULT get_SectorCount(out int32 value) mut => VT.get_SectorCount(ref this, out value);
+			public HRESULT get_TrackNumber(out int32 value) mut => VT.get_TrackNumber(ref this, out value);
+			public HRESULT get_SectorType(out IMAPI_CD_SECTOR_TYPE value) mut => VT.get_SectorType(ref this, out value);
+			public HRESULT get_ISRC(BSTR* value) mut => VT.get_ISRC(ref this, value);
+			public HRESULT put_ISRC(BSTR value) mut => VT.put_ISRC(ref this, value);
+			public HRESULT get_DigitalAudioCopySetting(out IMAPI_CD_TRACK_DIGITAL_COPY_SETTING value) mut => VT.get_DigitalAudioCopySetting(ref this, out value);
+			public HRESULT put_DigitalAudioCopySetting(IMAPI_CD_TRACK_DIGITAL_COPY_SETTING value) mut => VT.put_DigitalAudioCopySetting(ref this, value);
+			public HRESULT get_AudioHasPreemphasis(out int16 value) mut => VT.get_AudioHasPreemphasis(ref this, out value);
+			public HRESULT put_AudioHasPreemphasis(int16 value) mut => VT.put_AudioHasPreemphasis(ref this, value);
+			public HRESULT get_TrackIndexes(SAFEARRAY** value) mut => VT.get_TrackIndexes(ref this, value);
+			public HRESULT AddTrackIndex(int32 lbaOffset) mut => VT.AddTrackIndex(ref this, lbaOffset);
+			public HRESULT ClearTrackIndex(int32 lbaOffset) mut => VT.ClearTrackIndex(ref this, lbaOffset);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2307,14 +1635,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StartLba(out int32 value) mut
-			{
-				return VT.get_StartLba(ref this, out value);
-			}
-			public HRESULT get_EndLba(out int32 value) mut
-			{
-				return VT.get_EndLba(ref this, out value);
-			}
+			public HRESULT get_StartLba(out int32 value) mut => VT.get_StartLba(ref this, out value);
+			public HRESULT get_EndLba(out int32 value) mut => VT.get_EndLba(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2329,10 +1652,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BlockRanges(SAFEARRAY** value) mut
-			{
-				return VT.get_BlockRanges(ref this, value);
-			}
+			public HRESULT get_BlockRanges(SAFEARRAY** value) mut => VT.get_BlockRanges(ref this, value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2346,42 +1667,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BootImage(out IStream* pVal) mut
-			{
-				return VT.get_BootImage(ref this, out pVal);
-			}
-			public HRESULT get_Manufacturer(out BSTR pVal) mut
-			{
-				return VT.get_Manufacturer(ref this, out pVal);
-			}
-			public HRESULT put_Manufacturer(BSTR newVal) mut
-			{
-				return VT.put_Manufacturer(ref this, newVal);
-			}
-			public HRESULT get_PlatformId(out PlatformId pVal) mut
-			{
-				return VT.get_PlatformId(ref this, out pVal);
-			}
-			public HRESULT put_PlatformId(PlatformId newVal) mut
-			{
-				return VT.put_PlatformId(ref this, newVal);
-			}
-			public HRESULT get_Emulation(out EmulationType pVal) mut
-			{
-				return VT.get_Emulation(ref this, out pVal);
-			}
-			public HRESULT put_Emulation(EmulationType newVal) mut
-			{
-				return VT.put_Emulation(ref this, newVal);
-			}
-			public HRESULT get_ImageSize(out uint32 pVal) mut
-			{
-				return VT.get_ImageSize(ref this, out pVal);
-			}
-			public HRESULT AssignBootImage(ref IStream newVal) mut
-			{
-				return VT.AssignBootImage(ref this, ref newVal);
-			}
+			public HRESULT get_BootImage(out IStream* pVal) mut => VT.get_BootImage(ref this, out pVal);
+			public HRESULT get_Manufacturer(out BSTR pVal) mut => VT.get_Manufacturer(ref this, out pVal);
+			public HRESULT put_Manufacturer(BSTR newVal) mut => VT.put_Manufacturer(ref this, newVal);
+			public HRESULT get_PlatformId(out PlatformId pVal) mut => VT.get_PlatformId(ref this, out pVal);
+			public HRESULT put_PlatformId(PlatformId newVal) mut => VT.put_PlatformId(ref this, newVal);
+			public HRESULT get_Emulation(out EmulationType pVal) mut => VT.get_Emulation(ref this, out pVal);
+			public HRESULT put_Emulation(EmulationType newVal) mut => VT.put_Emulation(ref this, newVal);
+			public HRESULT get_ImageSize(out uint32 pVal) mut => VT.get_ImageSize(ref this, out pVal);
+			public HRESULT AssignBootImage(ref IStream newVal) mut => VT.AssignBootImage(ref this, ref newVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2403,22 +1698,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Description(out BSTR desc) mut
-			{
-				return VT.get_Description(ref this, out desc);
-			}
-			public HRESULT get_FirstBlock(out uint32 block) mut
-			{
-				return VT.get_FirstBlock(ref this, out block);
-			}
-			public HRESULT get_LastBlock(out uint32 block) mut
-			{
-				return VT.get_LastBlock(ref this, out block);
-			}
-			public HRESULT get_BlockCount(out uint32 blocks) mut
-			{
-				return VT.get_BlockCount(ref this, out blocks);
-			}
+			public HRESULT get_Description(out BSTR desc) mut => VT.get_Description(ref this, out desc);
+			public HRESULT get_FirstBlock(out uint32 block) mut => VT.get_FirstBlock(ref this, out block);
+			public HRESULT get_LastBlock(out uint32 block) mut => VT.get_LastBlock(ref this, out block);
+			public HRESULT get_BlockCount(out uint32 blocks) mut => VT.get_BlockCount(ref this, out blocks);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2435,22 +1719,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IProgressItem** rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumProgressItems* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IProgressItem** rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumProgressItems* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2467,30 +1740,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IEnumVARIANT* NewEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out NewEnum);
-			}
-			public HRESULT get_Item(int32 Index, out IProgressItem* item) mut
-			{
-				return VT.get_Item(ref this, Index, out item);
-			}
-			public HRESULT get_Count(out int32 Count) mut
-			{
-				return VT.get_Count(ref this, out Count);
-			}
-			public HRESULT ProgressItemFromBlock(uint32 block, out IProgressItem* item) mut
-			{
-				return VT.ProgressItemFromBlock(ref this, block, out item);
-			}
-			public HRESULT ProgressItemFromDescription(BSTR description, out IProgressItem* item) mut
-			{
-				return VT.ProgressItemFromDescription(ref this, description, out item);
-			}
-			public HRESULT get_EnumProgressItems(out IEnumProgressItems* NewEnum) mut
-			{
-				return VT.get_EnumProgressItems(ref this, out NewEnum);
-			}
+			public HRESULT get__NewEnum(out IEnumVARIANT* NewEnum) mut => VT.get__NewEnum(ref this, out NewEnum);
+			public HRESULT get_Item(int32 Index, out IProgressItem* item) mut => VT.get_Item(ref this, Index, out item);
+			public HRESULT get_Count(out int32 Count) mut => VT.get_Count(ref this, out Count);
+			public HRESULT ProgressItemFromBlock(uint32 block, out IProgressItem* item) mut => VT.ProgressItemFromBlock(ref this, block, out item);
+			public HRESULT ProgressItemFromDescription(BSTR description, out IProgressItem* item) mut => VT.ProgressItemFromDescription(ref this, description, out item);
+			public HRESULT get_EnumProgressItems(out IEnumProgressItems* NewEnum) mut => VT.get_EnumProgressItems(ref this, out NewEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2509,26 +1765,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ImageStream(out IStream* pVal) mut
-			{
-				return VT.get_ImageStream(ref this, out pVal);
-			}
-			public HRESULT get_ProgressItems(out IProgressItems* pVal) mut
-			{
-				return VT.get_ProgressItems(ref this, out pVal);
-			}
-			public HRESULT get_TotalBlocks(out int32 pVal) mut
-			{
-				return VT.get_TotalBlocks(ref this, out pVal);
-			}
-			public HRESULT get_BlockSize(out int32 pVal) mut
-			{
-				return VT.get_BlockSize(ref this, out pVal);
-			}
-			public HRESULT get_DiscId(out BSTR pVal) mut
-			{
-				return VT.get_DiscId(ref this, out pVal);
-			}
+			public HRESULT get_ImageStream(out IStream* pVal) mut => VT.get_ImageStream(ref this, out pVal);
+			public HRESULT get_ProgressItems(out IProgressItems* pVal) mut => VT.get_ProgressItems(ref this, out pVal);
+			public HRESULT get_TotalBlocks(out int32 pVal) mut => VT.get_TotalBlocks(ref this, out pVal);
+			public HRESULT get_BlockSize(out int32 pVal) mut => VT.get_BlockSize(ref this, out pVal);
+			public HRESULT get_DiscId(out BSTR pVal) mut => VT.get_DiscId(ref this, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2546,10 +1788,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ModifiedBlocks(IBlockRangeList** pVal) mut
-			{
-				return VT.get_ModifiedBlocks(ref this, pVal);
-			}
+			public HRESULT get_ModifiedBlocks(IBlockRangeList** pVal) mut => VT.get_ModifiedBlocks(ref this, pVal);
+
 			[CRepr]
 			public struct VTable : IFileSystemImageResult.VTable
 			{
@@ -2563,54 +1803,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(out BSTR pVal) mut
-			{
-				return VT.get_Name(ref this, out pVal);
-			}
-			public HRESULT get_FullPath(out BSTR pVal) mut
-			{
-				return VT.get_FullPath(ref this, out pVal);
-			}
-			public HRESULT get_CreationTime(out double pVal) mut
-			{
-				return VT.get_CreationTime(ref this, out pVal);
-			}
-			public HRESULT put_CreationTime(double newVal) mut
-			{
-				return VT.put_CreationTime(ref this, newVal);
-			}
-			public HRESULT get_LastAccessedTime(out double pVal) mut
-			{
-				return VT.get_LastAccessedTime(ref this, out pVal);
-			}
-			public HRESULT put_LastAccessedTime(double newVal) mut
-			{
-				return VT.put_LastAccessedTime(ref this, newVal);
-			}
-			public HRESULT get_LastModifiedTime(out double pVal) mut
-			{
-				return VT.get_LastModifiedTime(ref this, out pVal);
-			}
-			public HRESULT put_LastModifiedTime(double newVal) mut
-			{
-				return VT.put_LastModifiedTime(ref this, newVal);
-			}
-			public HRESULT get_IsHidden(out int16 pVal) mut
-			{
-				return VT.get_IsHidden(ref this, out pVal);
-			}
-			public HRESULT put_IsHidden(int16 newVal) mut
-			{
-				return VT.put_IsHidden(ref this, newVal);
-			}
-			public HRESULT FileSystemName(FsiFileSystems fileSystem, out BSTR pVal) mut
-			{
-				return VT.FileSystemName(ref this, fileSystem, out pVal);
-			}
-			public HRESULT FileSystemPath(FsiFileSystems fileSystem, out BSTR pVal) mut
-			{
-				return VT.FileSystemPath(ref this, fileSystem, out pVal);
-			}
+			public HRESULT get_Name(out BSTR pVal) mut => VT.get_Name(ref this, out pVal);
+			public HRESULT get_FullPath(out BSTR pVal) mut => VT.get_FullPath(ref this, out pVal);
+			public HRESULT get_CreationTime(out double pVal) mut => VT.get_CreationTime(ref this, out pVal);
+			public HRESULT put_CreationTime(double newVal) mut => VT.put_CreationTime(ref this, newVal);
+			public HRESULT get_LastAccessedTime(out double pVal) mut => VT.get_LastAccessedTime(ref this, out pVal);
+			public HRESULT put_LastAccessedTime(double newVal) mut => VT.put_LastAccessedTime(ref this, newVal);
+			public HRESULT get_LastModifiedTime(out double pVal) mut => VT.get_LastModifiedTime(ref this, out pVal);
+			public HRESULT put_LastModifiedTime(double newVal) mut => VT.put_LastModifiedTime(ref this, newVal);
+			public HRESULT get_IsHidden(out int16 pVal) mut => VT.get_IsHidden(ref this, out pVal);
+			public HRESULT put_IsHidden(int16 newVal) mut => VT.put_IsHidden(ref this, newVal);
+			public HRESULT FileSystemName(FsiFileSystems fileSystem, out BSTR pVal) mut => VT.FileSystemName(ref this, fileSystem, out pVal);
+			public HRESULT FileSystemPath(FsiFileSystems fileSystem, out BSTR pVal) mut => VT.FileSystemPath(ref this, fileSystem, out pVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2635,22 +1840,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IFsiItem** rgelt, out uint32 pceltFetched) mut
-			{
-				return VT.Next(ref this, celt, rgelt, out pceltFetched);
-			}
-			public HRESULT Skip(uint32 celt) mut
-			{
-				return VT.Skip(ref this, celt);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumFsiItems* ppEnum) mut
-			{
-				return VT.Clone(ref this, out ppEnum);
-			}
+			public HRESULT Next(uint32 celt, IFsiItem** rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, rgelt, out pceltFetched);
+			public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumFsiItems* ppEnum) mut => VT.Clone(ref this, out ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2667,26 +1861,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DataSize(out int64 pVal) mut
-			{
-				return VT.get_DataSize(ref this, out pVal);
-			}
-			public HRESULT get_DataSize32BitLow(out int32 pVal) mut
-			{
-				return VT.get_DataSize32BitLow(ref this, out pVal);
-			}
-			public HRESULT get_DataSize32BitHigh(out int32 pVal) mut
-			{
-				return VT.get_DataSize32BitHigh(ref this, out pVal);
-			}
-			public HRESULT get_Data(out IStream* pVal) mut
-			{
-				return VT.get_Data(ref this, out pVal);
-			}
-			public HRESULT put_Data(ref IStream newVal) mut
-			{
-				return VT.put_Data(ref this, ref newVal);
-			}
+			public HRESULT get_DataSize(out int64 pVal) mut => VT.get_DataSize(ref this, out pVal);
+			public HRESULT get_DataSize32BitLow(out int32 pVal) mut => VT.get_DataSize32BitLow(ref this, out pVal);
+			public HRESULT get_DataSize32BitHigh(out int32 pVal) mut => VT.get_DataSize32BitHigh(ref this, out pVal);
+			public HRESULT get_Data(out IStream* pVal) mut => VT.get_Data(ref this, out pVal);
+			public HRESULT put_Data(ref IStream newVal) mut => VT.put_Data(ref this, ref newVal);
+
 			[CRepr]
 			public struct VTable : IFsiItem.VTable
 			{
@@ -2704,30 +1884,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FsiNamedStreams(IFsiNamedStreams** streams) mut
-			{
-				return VT.get_FsiNamedStreams(ref this, streams);
-			}
-			public HRESULT get_IsNamedStream(out int16 pVal) mut
-			{
-				return VT.get_IsNamedStream(ref this, out pVal);
-			}
-			public HRESULT AddStream(BSTR name, ref IStream streamData) mut
-			{
-				return VT.AddStream(ref this, name, ref streamData);
-			}
-			public HRESULT RemoveStream(BSTR name) mut
-			{
-				return VT.RemoveStream(ref this, name);
-			}
-			public HRESULT get_IsRealTime(out int16 pVal) mut
-			{
-				return VT.get_IsRealTime(ref this, out pVal);
-			}
-			public HRESULT put_IsRealTime(int16 newVal) mut
-			{
-				return VT.put_IsRealTime(ref this, newVal);
-			}
+			public HRESULT get_FsiNamedStreams(IFsiNamedStreams** streams) mut => VT.get_FsiNamedStreams(ref this, streams);
+			public HRESULT get_IsNamedStream(out int16 pVal) mut => VT.get_IsNamedStream(ref this, out pVal);
+			public HRESULT AddStream(BSTR name, ref IStream streamData) mut => VT.AddStream(ref this, name, ref streamData);
+			public HRESULT RemoveStream(BSTR name) mut => VT.RemoveStream(ref this, name);
+			public HRESULT get_IsRealTime(out int16 pVal) mut => VT.get_IsRealTime(ref this, out pVal);
+			public HRESULT put_IsRealTime(int16 newVal) mut => VT.put_IsRealTime(ref this, newVal);
+
 			[CRepr]
 			public struct VTable : IFsiFileItem.VTable
 			{
@@ -2746,22 +1909,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IEnumVARIANT** NewEnum) mut
-			{
-				return VT.get__NewEnum(ref this, NewEnum);
-			}
-			public HRESULT get_Item(int32 index, IFsiFileItem2** item) mut
-			{
-				return VT.get_Item(ref this, index, item);
-			}
-			public HRESULT get_Count(out int32 count) mut
-			{
-				return VT.get_Count(ref this, out count);
-			}
-			public HRESULT get_EnumNamedStreams(IEnumFsiItems** NewEnum) mut
-			{
-				return VT.get_EnumNamedStreams(ref this, NewEnum);
-			}
+			public HRESULT get__NewEnum(IEnumVARIANT** NewEnum) mut => VT.get__NewEnum(ref this, NewEnum);
+			public HRESULT get_Item(int32 index, IFsiFileItem2** item) mut => VT.get_Item(ref this, index, item);
+			public HRESULT get_Count(out int32 count) mut => VT.get_Count(ref this, out count);
+			public HRESULT get_EnumNamedStreams(IEnumFsiItems** NewEnum) mut => VT.get_EnumNamedStreams(ref this, NewEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2778,46 +1930,17 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(out IEnumVARIANT* NewEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out NewEnum);
-			}
-			public HRESULT get_Item(BSTR path, out IFsiItem* item) mut
-			{
-				return VT.get_Item(ref this, path, out item);
-			}
-			public HRESULT get_Count(out int32 Count) mut
-			{
-				return VT.get_Count(ref this, out Count);
-			}
-			public HRESULT get_EnumFsiItems(out IEnumFsiItems* NewEnum) mut
-			{
-				return VT.get_EnumFsiItems(ref this, out NewEnum);
-			}
-			public HRESULT AddDirectory(BSTR path) mut
-			{
-				return VT.AddDirectory(ref this, path);
-			}
-			public HRESULT AddFile(BSTR path, ref IStream fileData) mut
-			{
-				return VT.AddFile(ref this, path, ref fileData);
-			}
-			public HRESULT AddTree(BSTR sourceDirectory, int16 includeBaseDirectory) mut
-			{
-				return VT.AddTree(ref this, sourceDirectory, includeBaseDirectory);
-			}
-			public HRESULT Add(ref IFsiItem item) mut
-			{
-				return VT.Add(ref this, ref item);
-			}
-			public HRESULT Remove(BSTR path) mut
-			{
-				return VT.Remove(ref this, path);
-			}
-			public HRESULT RemoveTree(BSTR path) mut
-			{
-				return VT.RemoveTree(ref this, path);
-			}
+			public HRESULT get__NewEnum(out IEnumVARIANT* NewEnum) mut => VT.get__NewEnum(ref this, out NewEnum);
+			public HRESULT get_Item(BSTR path, out IFsiItem* item) mut => VT.get_Item(ref this, path, out item);
+			public HRESULT get_Count(out int32 Count) mut => VT.get_Count(ref this, out Count);
+			public HRESULT get_EnumFsiItems(out IEnumFsiItems* NewEnum) mut => VT.get_EnumFsiItems(ref this, out NewEnum);
+			public HRESULT AddDirectory(BSTR path) mut => VT.AddDirectory(ref this, path);
+			public HRESULT AddFile(BSTR path, ref IStream fileData) mut => VT.AddFile(ref this, path, ref fileData);
+			public HRESULT AddTree(BSTR sourceDirectory, int16 includeBaseDirectory) mut => VT.AddTree(ref this, sourceDirectory, includeBaseDirectory);
+			public HRESULT Add(ref IFsiItem item) mut => VT.Add(ref this, ref item);
+			public HRESULT Remove(BSTR path) mut => VT.Remove(ref this, path);
+			public HRESULT RemoveTree(BSTR path) mut => VT.RemoveTree(ref this, path);
+
 			[CRepr]
 			public struct VTable : IFsiItem.VTable
 			{
@@ -2840,10 +1963,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddTreeWithNamedStreams(BSTR sourceDirectory, int16 includeBaseDirectory) mut
-			{
-				return VT.AddTreeWithNamedStreams(ref this, sourceDirectory, includeBaseDirectory);
-			}
+			public HRESULT AddTreeWithNamedStreams(BSTR sourceDirectory, int16 includeBaseDirectory) mut => VT.AddTreeWithNamedStreams(ref this, sourceDirectory, includeBaseDirectory);
+
 			[CRepr]
 			public struct VTable : IFsiDirectoryItem.VTable
 			{
@@ -2857,206 +1978,57 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Root(IFsiDirectoryItem** pVal) mut
-			{
-				return VT.get_Root(ref this, pVal);
-			}
-			public HRESULT get_SessionStartBlock(out int32 pVal) mut
-			{
-				return VT.get_SessionStartBlock(ref this, out pVal);
-			}
-			public HRESULT put_SessionStartBlock(int32 newVal) mut
-			{
-				return VT.put_SessionStartBlock(ref this, newVal);
-			}
-			public HRESULT get_FreeMediaBlocks(out int32 pVal) mut
-			{
-				return VT.get_FreeMediaBlocks(ref this, out pVal);
-			}
-			public HRESULT put_FreeMediaBlocks(int32 newVal) mut
-			{
-				return VT.put_FreeMediaBlocks(ref this, newVal);
-			}
-			public HRESULT SetMaxMediaBlocksFromDevice(ref IDiscRecorder2 discRecorder) mut
-			{
-				return VT.SetMaxMediaBlocksFromDevice(ref this, ref discRecorder);
-			}
-			public HRESULT get_UsedBlocks(out int32 pVal) mut
-			{
-				return VT.get_UsedBlocks(ref this, out pVal);
-			}
-			public HRESULT get_VolumeName(BSTR* pVal) mut
-			{
-				return VT.get_VolumeName(ref this, pVal);
-			}
-			public HRESULT put_VolumeName(BSTR newVal) mut
-			{
-				return VT.put_VolumeName(ref this, newVal);
-			}
-			public HRESULT get_ImportedVolumeName(BSTR* pVal) mut
-			{
-				return VT.get_ImportedVolumeName(ref this, pVal);
-			}
-			public HRESULT get_BootImageOptions(IBootOptions** pVal) mut
-			{
-				return VT.get_BootImageOptions(ref this, pVal);
-			}
-			public HRESULT put_BootImageOptions(ref IBootOptions newVal) mut
-			{
-				return VT.put_BootImageOptions(ref this, ref newVal);
-			}
-			public HRESULT get_FileCount(out int32 pVal) mut
-			{
-				return VT.get_FileCount(ref this, out pVal);
-			}
-			public HRESULT get_DirectoryCount(out int32 pVal) mut
-			{
-				return VT.get_DirectoryCount(ref this, out pVal);
-			}
-			public HRESULT get_WorkingDirectory(BSTR* pVal) mut
-			{
-				return VT.get_WorkingDirectory(ref this, pVal);
-			}
-			public HRESULT put_WorkingDirectory(BSTR newVal) mut
-			{
-				return VT.put_WorkingDirectory(ref this, newVal);
-			}
-			public HRESULT get_ChangePoint(out int32 pVal) mut
-			{
-				return VT.get_ChangePoint(ref this, out pVal);
-			}
-			public HRESULT get_StrictFileSystemCompliance(out int16 pVal) mut
-			{
-				return VT.get_StrictFileSystemCompliance(ref this, out pVal);
-			}
-			public HRESULT put_StrictFileSystemCompliance(int16 newVal) mut
-			{
-				return VT.put_StrictFileSystemCompliance(ref this, newVal);
-			}
-			public HRESULT get_UseRestrictedCharacterSet(out int16 pVal) mut
-			{
-				return VT.get_UseRestrictedCharacterSet(ref this, out pVal);
-			}
-			public HRESULT put_UseRestrictedCharacterSet(int16 newVal) mut
-			{
-				return VT.put_UseRestrictedCharacterSet(ref this, newVal);
-			}
-			public HRESULT get_FileSystemsToCreate(out FsiFileSystems pVal) mut
-			{
-				return VT.get_FileSystemsToCreate(ref this, out pVal);
-			}
-			public HRESULT put_FileSystemsToCreate(FsiFileSystems newVal) mut
-			{
-				return VT.put_FileSystemsToCreate(ref this, newVal);
-			}
-			public HRESULT get_FileSystemsSupported(out FsiFileSystems pVal) mut
-			{
-				return VT.get_FileSystemsSupported(ref this, out pVal);
-			}
-			public HRESULT put_UDFRevision(int32 newVal) mut
-			{
-				return VT.put_UDFRevision(ref this, newVal);
-			}
-			public HRESULT get_UDFRevision(out int32 pVal) mut
-			{
-				return VT.get_UDFRevision(ref this, out pVal);
-			}
-			public HRESULT get_UDFRevisionsSupported(SAFEARRAY** pVal) mut
-			{
-				return VT.get_UDFRevisionsSupported(ref this, pVal);
-			}
-			public HRESULT ChooseImageDefaults(ref IDiscRecorder2 discRecorder) mut
-			{
-				return VT.ChooseImageDefaults(ref this, ref discRecorder);
-			}
-			public HRESULT ChooseImageDefaultsForMediaType(IMAPI_MEDIA_PHYSICAL_TYPE value) mut
-			{
-				return VT.ChooseImageDefaultsForMediaType(ref this, value);
-			}
-			public HRESULT put_ISO9660InterchangeLevel(int32 newVal) mut
-			{
-				return VT.put_ISO9660InterchangeLevel(ref this, newVal);
-			}
-			public HRESULT get_ISO9660InterchangeLevel(out int32 pVal) mut
-			{
-				return VT.get_ISO9660InterchangeLevel(ref this, out pVal);
-			}
-			public HRESULT get_ISO9660InterchangeLevelsSupported(SAFEARRAY** pVal) mut
-			{
-				return VT.get_ISO9660InterchangeLevelsSupported(ref this, pVal);
-			}
-			public HRESULT CreateResultImage(IFileSystemImageResult** resultStream) mut
-			{
-				return VT.CreateResultImage(ref this, resultStream);
-			}
-			public HRESULT Exists(BSTR fullPath, out FsiItemType itemType) mut
-			{
-				return VT.Exists(ref this, fullPath, out itemType);
-			}
-			public HRESULT CalculateDiscIdentifier(BSTR* discIdentifier) mut
-			{
-				return VT.CalculateDiscIdentifier(ref this, discIdentifier);
-			}
-			public HRESULT IdentifyFileSystemsOnDisc(ref IDiscRecorder2 discRecorder, out FsiFileSystems fileSystems) mut
-			{
-				return VT.IdentifyFileSystemsOnDisc(ref this, ref discRecorder, out fileSystems);
-			}
-			public HRESULT GetDefaultFileSystemForImport(FsiFileSystems fileSystems, out FsiFileSystems importDefault) mut
-			{
-				return VT.GetDefaultFileSystemForImport(ref this, fileSystems, out importDefault);
-			}
-			public HRESULT ImportFileSystem(out FsiFileSystems importedFileSystem) mut
-			{
-				return VT.ImportFileSystem(ref this, out importedFileSystem);
-			}
-			public HRESULT ImportSpecificFileSystem(FsiFileSystems fileSystemToUse) mut
-			{
-				return VT.ImportSpecificFileSystem(ref this, fileSystemToUse);
-			}
-			public HRESULT RollbackToChangePoint(int32 changePoint) mut
-			{
-				return VT.RollbackToChangePoint(ref this, changePoint);
-			}
-			public HRESULT LockInChangePoint() mut
-			{
-				return VT.LockInChangePoint(ref this);
-			}
-			public HRESULT CreateDirectoryItem(BSTR name, IFsiDirectoryItem** newItem) mut
-			{
-				return VT.CreateDirectoryItem(ref this, name, newItem);
-			}
-			public HRESULT CreateFileItem(BSTR name, IFsiFileItem** newItem) mut
-			{
-				return VT.CreateFileItem(ref this, name, newItem);
-			}
-			public HRESULT get_VolumeNameUDF(BSTR* pVal) mut
-			{
-				return VT.get_VolumeNameUDF(ref this, pVal);
-			}
-			public HRESULT get_VolumeNameJoliet(BSTR* pVal) mut
-			{
-				return VT.get_VolumeNameJoliet(ref this, pVal);
-			}
-			public HRESULT get_VolumeNameISO9660(BSTR* pVal) mut
-			{
-				return VT.get_VolumeNameISO9660(ref this, pVal);
-			}
-			public HRESULT get_StageFiles(out int16 pVal) mut
-			{
-				return VT.get_StageFiles(ref this, out pVal);
-			}
-			public HRESULT put_StageFiles(int16 newVal) mut
-			{
-				return VT.put_StageFiles(ref this, newVal);
-			}
-			public HRESULT get_MultisessionInterfaces(SAFEARRAY** pVal) mut
-			{
-				return VT.get_MultisessionInterfaces(ref this, pVal);
-			}
-			public HRESULT put_MultisessionInterfaces(ref SAFEARRAY newVal) mut
-			{
-				return VT.put_MultisessionInterfaces(ref this, ref newVal);
-			}
+			public HRESULT get_Root(IFsiDirectoryItem** pVal) mut => VT.get_Root(ref this, pVal);
+			public HRESULT get_SessionStartBlock(out int32 pVal) mut => VT.get_SessionStartBlock(ref this, out pVal);
+			public HRESULT put_SessionStartBlock(int32 newVal) mut => VT.put_SessionStartBlock(ref this, newVal);
+			public HRESULT get_FreeMediaBlocks(out int32 pVal) mut => VT.get_FreeMediaBlocks(ref this, out pVal);
+			public HRESULT put_FreeMediaBlocks(int32 newVal) mut => VT.put_FreeMediaBlocks(ref this, newVal);
+			public HRESULT SetMaxMediaBlocksFromDevice(ref IDiscRecorder2 discRecorder) mut => VT.SetMaxMediaBlocksFromDevice(ref this, ref discRecorder);
+			public HRESULT get_UsedBlocks(out int32 pVal) mut => VT.get_UsedBlocks(ref this, out pVal);
+			public HRESULT get_VolumeName(BSTR* pVal) mut => VT.get_VolumeName(ref this, pVal);
+			public HRESULT put_VolumeName(BSTR newVal) mut => VT.put_VolumeName(ref this, newVal);
+			public HRESULT get_ImportedVolumeName(BSTR* pVal) mut => VT.get_ImportedVolumeName(ref this, pVal);
+			public HRESULT get_BootImageOptions(IBootOptions** pVal) mut => VT.get_BootImageOptions(ref this, pVal);
+			public HRESULT put_BootImageOptions(ref IBootOptions newVal) mut => VT.put_BootImageOptions(ref this, ref newVal);
+			public HRESULT get_FileCount(out int32 pVal) mut => VT.get_FileCount(ref this, out pVal);
+			public HRESULT get_DirectoryCount(out int32 pVal) mut => VT.get_DirectoryCount(ref this, out pVal);
+			public HRESULT get_WorkingDirectory(BSTR* pVal) mut => VT.get_WorkingDirectory(ref this, pVal);
+			public HRESULT put_WorkingDirectory(BSTR newVal) mut => VT.put_WorkingDirectory(ref this, newVal);
+			public HRESULT get_ChangePoint(out int32 pVal) mut => VT.get_ChangePoint(ref this, out pVal);
+			public HRESULT get_StrictFileSystemCompliance(out int16 pVal) mut => VT.get_StrictFileSystemCompliance(ref this, out pVal);
+			public HRESULT put_StrictFileSystemCompliance(int16 newVal) mut => VT.put_StrictFileSystemCompliance(ref this, newVal);
+			public HRESULT get_UseRestrictedCharacterSet(out int16 pVal) mut => VT.get_UseRestrictedCharacterSet(ref this, out pVal);
+			public HRESULT put_UseRestrictedCharacterSet(int16 newVal) mut => VT.put_UseRestrictedCharacterSet(ref this, newVal);
+			public HRESULT get_FileSystemsToCreate(out FsiFileSystems pVal) mut => VT.get_FileSystemsToCreate(ref this, out pVal);
+			public HRESULT put_FileSystemsToCreate(FsiFileSystems newVal) mut => VT.put_FileSystemsToCreate(ref this, newVal);
+			public HRESULT get_FileSystemsSupported(out FsiFileSystems pVal) mut => VT.get_FileSystemsSupported(ref this, out pVal);
+			public HRESULT put_UDFRevision(int32 newVal) mut => VT.put_UDFRevision(ref this, newVal);
+			public HRESULT get_UDFRevision(out int32 pVal) mut => VT.get_UDFRevision(ref this, out pVal);
+			public HRESULT get_UDFRevisionsSupported(SAFEARRAY** pVal) mut => VT.get_UDFRevisionsSupported(ref this, pVal);
+			public HRESULT ChooseImageDefaults(ref IDiscRecorder2 discRecorder) mut => VT.ChooseImageDefaults(ref this, ref discRecorder);
+			public HRESULT ChooseImageDefaultsForMediaType(IMAPI_MEDIA_PHYSICAL_TYPE value) mut => VT.ChooseImageDefaultsForMediaType(ref this, value);
+			public HRESULT put_ISO9660InterchangeLevel(int32 newVal) mut => VT.put_ISO9660InterchangeLevel(ref this, newVal);
+			public HRESULT get_ISO9660InterchangeLevel(out int32 pVal) mut => VT.get_ISO9660InterchangeLevel(ref this, out pVal);
+			public HRESULT get_ISO9660InterchangeLevelsSupported(SAFEARRAY** pVal) mut => VT.get_ISO9660InterchangeLevelsSupported(ref this, pVal);
+			public HRESULT CreateResultImage(IFileSystemImageResult** resultStream) mut => VT.CreateResultImage(ref this, resultStream);
+			public HRESULT Exists(BSTR fullPath, out FsiItemType itemType) mut => VT.Exists(ref this, fullPath, out itemType);
+			public HRESULT CalculateDiscIdentifier(BSTR* discIdentifier) mut => VT.CalculateDiscIdentifier(ref this, discIdentifier);
+			public HRESULT IdentifyFileSystemsOnDisc(ref IDiscRecorder2 discRecorder, out FsiFileSystems fileSystems) mut => VT.IdentifyFileSystemsOnDisc(ref this, ref discRecorder, out fileSystems);
+			public HRESULT GetDefaultFileSystemForImport(FsiFileSystems fileSystems, out FsiFileSystems importDefault) mut => VT.GetDefaultFileSystemForImport(ref this, fileSystems, out importDefault);
+			public HRESULT ImportFileSystem(out FsiFileSystems importedFileSystem) mut => VT.ImportFileSystem(ref this, out importedFileSystem);
+			public HRESULT ImportSpecificFileSystem(FsiFileSystems fileSystemToUse) mut => VT.ImportSpecificFileSystem(ref this, fileSystemToUse);
+			public HRESULT RollbackToChangePoint(int32 changePoint) mut => VT.RollbackToChangePoint(ref this, changePoint);
+			public HRESULT LockInChangePoint() mut => VT.LockInChangePoint(ref this);
+			public HRESULT CreateDirectoryItem(BSTR name, IFsiDirectoryItem** newItem) mut => VT.CreateDirectoryItem(ref this, name, newItem);
+			public HRESULT CreateFileItem(BSTR name, IFsiFileItem** newItem) mut => VT.CreateFileItem(ref this, name, newItem);
+			public HRESULT get_VolumeNameUDF(BSTR* pVal) mut => VT.get_VolumeNameUDF(ref this, pVal);
+			public HRESULT get_VolumeNameJoliet(BSTR* pVal) mut => VT.get_VolumeNameJoliet(ref this, pVal);
+			public HRESULT get_VolumeNameISO9660(BSTR* pVal) mut => VT.get_VolumeNameISO9660(ref this, pVal);
+			public HRESULT get_StageFiles(out int16 pVal) mut => VT.get_StageFiles(ref this, out pVal);
+			public HRESULT put_StageFiles(int16 newVal) mut => VT.put_StageFiles(ref this, newVal);
+			public HRESULT get_MultisessionInterfaces(SAFEARRAY** pVal) mut => VT.get_MultisessionInterfaces(ref this, pVal);
+			public HRESULT put_MultisessionInterfaces(ref SAFEARRAY newVal) mut => VT.put_MultisessionInterfaces(ref this, ref newVal);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3119,14 +2091,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BootImageOptionsArray(SAFEARRAY** pVal) mut
-			{
-				return VT.get_BootImageOptionsArray(ref this, pVal);
-			}
-			public HRESULT put_BootImageOptionsArray(ref SAFEARRAY newVal) mut
-			{
-				return VT.put_BootImageOptionsArray(ref this, ref newVal);
-			}
+			public HRESULT get_BootImageOptionsArray(SAFEARRAY** pVal) mut => VT.get_BootImageOptionsArray(ref this, pVal);
+			public HRESULT put_BootImageOptionsArray(ref SAFEARRAY newVal) mut => VT.put_BootImageOptionsArray(ref this, ref newVal);
+
 			[CRepr]
 			public struct VTable : IFileSystemImage.VTable
 			{
@@ -3141,18 +2108,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CreateRedundantUdfMetadataFiles(out int16 pVal) mut
-			{
-				return VT.get_CreateRedundantUdfMetadataFiles(ref this, out pVal);
-			}
-			public HRESULT put_CreateRedundantUdfMetadataFiles(int16 newVal) mut
-			{
-				return VT.put_CreateRedundantUdfMetadataFiles(ref this, newVal);
-			}
-			public HRESULT ProbeSpecificFileSystem(FsiFileSystems fileSystemToProbe, out int16 isAppendable) mut
-			{
-				return VT.ProbeSpecificFileSystem(ref this, fileSystemToProbe, out isAppendable);
-			}
+			public HRESULT get_CreateRedundantUdfMetadataFiles(out int16 pVal) mut => VT.get_CreateRedundantUdfMetadataFiles(ref this, out pVal);
+			public HRESULT put_CreateRedundantUdfMetadataFiles(int16 newVal) mut => VT.put_CreateRedundantUdfMetadataFiles(ref this, newVal);
+			public HRESULT ProbeSpecificFileSystem(FsiFileSystems fileSystemToProbe, out int16 isAppendable) mut => VT.ProbeSpecificFileSystem(ref this, fileSystemToProbe, out isAppendable);
+
 			[CRepr]
 			public struct VTable : IFileSystemImage2.VTable
 			{
@@ -3168,10 +2127,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Update(ref IDispatch object, BSTR currentFile, int32 copiedSectors, int32 totalSectors) mut
-			{
-				return VT.Update(ref this, ref object, currentFile, copiedSectors, totalSectors);
-			}
+			public HRESULT Update(ref IDispatch object, BSTR currentFile, int32 copiedSectors, int32 totalSectors) mut => VT.Update(ref this, ref object, currentFile, copiedSectors, totalSectors);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3185,10 +2142,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateImport(ref IDispatch object, FsiFileSystems fileSystem, BSTR currentItem, int32 importedDirectoryItems, int32 totalDirectoryItems, int32 importedFileItems, int32 totalFileItems) mut
-			{
-				return VT.UpdateImport(ref this, ref object, fileSystem, currentItem, importedDirectoryItems, totalDirectoryItems, importedFileItems, totalFileItems);
-			}
+			public HRESULT UpdateImport(ref IDispatch object, FsiFileSystems fileSystem, BSTR currentItem, int32 importedDirectoryItems, int32 totalDirectoryItems, int32 importedFileItems, int32 totalFileItems) mut => VT.UpdateImport(ref this, ref object, fileSystem, currentItem, importedDirectoryItems, totalDirectoryItems, importedFileItems, totalFileItems);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3202,26 +2157,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Path(BSTR* pVal) mut
-			{
-				return VT.get_Path(ref this, pVal);
-			}
-			public HRESULT get_Stream(out IStream* data) mut
-			{
-				return VT.get_Stream(ref this, out data);
-			}
-			public HRESULT SetPath(BSTR Val) mut
-			{
-				return VT.SetPath(ref this, Val);
-			}
-			public HRESULT SetStream(ref IStream data) mut
-			{
-				return VT.SetStream(ref this, ref data);
-			}
-			public HRESULT Validate() mut
-			{
-				return VT.Validate(ref this);
-			}
+			public HRESULT get_Path(BSTR* pVal) mut => VT.get_Path(ref this, pVal);
+			public HRESULT get_Stream(out IStream* data) mut => VT.get_Stream(ref this, out data);
+			public HRESULT SetPath(BSTR Val) mut => VT.SetPath(ref this, Val);
+			public HRESULT SetStream(ref IStream data) mut => VT.SetStream(ref this, ref data);
+			public HRESULT Validate() mut => VT.Validate(ref this);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -3239,66 +2180,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Init(uint8* pbyUniqueID, uint32 nulIDSize, uint32 nulDriveNumber) mut
-			{
-				return VT.Init(ref this, pbyUniqueID, nulIDSize, nulDriveNumber);
-			}
-			public HRESULT GetRecorderGUID(uint8* pbyUniqueID, uint32 ulBufferSize, out uint32 pulReturnSizeRequired) mut
-			{
-				return VT.GetRecorderGUID(ref this, pbyUniqueID, ulBufferSize, out pulReturnSizeRequired);
-			}
-			public HRESULT GetRecorderType(out RECORDER_TYPES fTypeCode) mut
-			{
-				return VT.GetRecorderType(ref this, out fTypeCode);
-			}
-			public HRESULT GetDisplayNames(BSTR* pbstrVendorID, BSTR* pbstrProductID, BSTR* pbstrRevision) mut
-			{
-				return VT.GetDisplayNames(ref this, pbstrVendorID, pbstrProductID, pbstrRevision);
-			}
-			public HRESULT GetBasePnPID(BSTR* pbstrBasePnPID) mut
-			{
-				return VT.GetBasePnPID(ref this, pbstrBasePnPID);
-			}
-			public HRESULT GetPath(BSTR* pbstrPath) mut
-			{
-				return VT.GetPath(ref this, pbstrPath);
-			}
-			public HRESULT GetRecorderProperties(IPropertyStorage** ppPropStg) mut
-			{
-				return VT.GetRecorderProperties(ref this, ppPropStg);
-			}
-			public HRESULT SetRecorderProperties(IPropertyStorage* pPropStg) mut
-			{
-				return VT.SetRecorderProperties(ref this, pPropStg);
-			}
-			public HRESULT GetRecorderState(out DISC_RECORDER_STATE_FLAGS pulDevStateFlags) mut
-			{
-				return VT.GetRecorderState(ref this, out pulDevStateFlags);
-			}
-			public HRESULT OpenExclusive() mut
-			{
-				return VT.OpenExclusive(ref this);
-			}
-			public HRESULT QueryMediaType(out MEDIA_TYPES fMediaType, out MEDIA_FLAGS fMediaFlags) mut
-			{
-				return VT.QueryMediaType(ref this, out fMediaType, out fMediaFlags);
-			}
-			public HRESULT QueryMediaInfo(out uint8 pbSessions, out uint8 pbLastTrack, out uint32 ulStartAddress, out uint32 ulNextWritable, out uint32 ulFreeBlocks) mut
-			{
-				return VT.QueryMediaInfo(ref this, out pbSessions, out pbLastTrack, out ulStartAddress, out ulNextWritable, out ulFreeBlocks);
-			}
-			public HRESULT Eject() mut
-			{
-				return VT.Eject(ref this);
-			}
-			public HRESULT Erase(uint8 bFullErase) mut
-			{
-				return VT.Erase(ref this, bFullErase);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT Init(uint8* pbyUniqueID, uint32 nulIDSize, uint32 nulDriveNumber) mut => VT.Init(ref this, pbyUniqueID, nulIDSize, nulDriveNumber);
+			public HRESULT GetRecorderGUID(uint8* pbyUniqueID, uint32 ulBufferSize, out uint32 pulReturnSizeRequired) mut => VT.GetRecorderGUID(ref this, pbyUniqueID, ulBufferSize, out pulReturnSizeRequired);
+			public HRESULT GetRecorderType(out RECORDER_TYPES fTypeCode) mut => VT.GetRecorderType(ref this, out fTypeCode);
+			public HRESULT GetDisplayNames(BSTR* pbstrVendorID, BSTR* pbstrProductID, BSTR* pbstrRevision) mut => VT.GetDisplayNames(ref this, pbstrVendorID, pbstrProductID, pbstrRevision);
+			public HRESULT GetBasePnPID(BSTR* pbstrBasePnPID) mut => VT.GetBasePnPID(ref this, pbstrBasePnPID);
+			public HRESULT GetPath(BSTR* pbstrPath) mut => VT.GetPath(ref this, pbstrPath);
+			public HRESULT GetRecorderProperties(IPropertyStorage** ppPropStg) mut => VT.GetRecorderProperties(ref this, ppPropStg);
+			public HRESULT SetRecorderProperties(IPropertyStorage* pPropStg) mut => VT.SetRecorderProperties(ref this, pPropStg);
+			public HRESULT GetRecorderState(out DISC_RECORDER_STATE_FLAGS pulDevStateFlags) mut => VT.GetRecorderState(ref this, out pulDevStateFlags);
+			public HRESULT OpenExclusive() mut => VT.OpenExclusive(ref this);
+			public HRESULT QueryMediaType(out MEDIA_TYPES fMediaType, out MEDIA_FLAGS fMediaFlags) mut => VT.QueryMediaType(ref this, out fMediaType, out fMediaFlags);
+			public HRESULT QueryMediaInfo(out uint8 pbSessions, out uint8 pbLastTrack, out uint32 ulStartAddress, out uint32 ulNextWritable, out uint32 ulFreeBlocks) mut => VT.QueryMediaInfo(ref this, out pbSessions, out pbLastTrack, out ulStartAddress, out ulNextWritable, out ulFreeBlocks);
+			public HRESULT Eject() mut => VT.Eject(ref this);
+			public HRESULT Erase(uint8 bFullErase) mut => VT.Erase(ref this, bFullErase);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3326,22 +2223,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cRecorders, IDiscRecorder** ppRecorder, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cRecorders, ppRecorder, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cRecorders) mut
-			{
-				return VT.Skip(ref this, cRecorders);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(IEnumDiscRecorders** ppEnum) mut
-			{
-				return VT.Clone(ref this, ppEnum);
-			}
+			public HRESULT Next(uint32 cRecorders, IDiscRecorder** ppRecorder, out uint32 pcFetched) mut => VT.Next(ref this, cRecorders, ppRecorder, out pcFetched);
+			public HRESULT Skip(uint32 cRecorders) mut => VT.Skip(ref this, cRecorders);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(IEnumDiscRecorders** ppEnum) mut => VT.Clone(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3358,22 +2244,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cFormats, Guid* lpiidFormatID, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cFormats, lpiidFormatID, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cFormats) mut
-			{
-				return VT.Skip(ref this, cFormats);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(IEnumDiscMasterFormats** ppEnum) mut
-			{
-				return VT.Clone(ref this, ppEnum);
-			}
+			public HRESULT Next(uint32 cFormats, Guid* lpiidFormatID, out uint32 pcFetched) mut => VT.Next(ref this, cFormats, lpiidFormatID, out pcFetched);
+			public HRESULT Skip(uint32 cFormats) mut => VT.Skip(ref this, cFormats);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(IEnumDiscMasterFormats** ppEnum) mut => VT.Clone(ref this, ppEnum);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3390,38 +2265,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTotalAudioTracks(out int32 pnTracks) mut
-			{
-				return VT.GetTotalAudioTracks(ref this, out pnTracks);
-			}
-			public HRESULT GetTotalAudioBlocks(out int32 pnBlocks) mut
-			{
-				return VT.GetTotalAudioBlocks(ref this, out pnBlocks);
-			}
-			public HRESULT GetUsedAudioBlocks(out int32 pnBlocks) mut
-			{
-				return VT.GetUsedAudioBlocks(ref this, out pnBlocks);
-			}
-			public HRESULT GetAvailableAudioTrackBlocks(out int32 pnBlocks) mut
-			{
-				return VT.GetAvailableAudioTrackBlocks(ref this, out pnBlocks);
-			}
-			public HRESULT GetAudioBlockSize(out int32 pnBlockBytes) mut
-			{
-				return VT.GetAudioBlockSize(ref this, out pnBlockBytes);
-			}
-			public HRESULT CreateAudioTrack(int32 nBlocks) mut
-			{
-				return VT.CreateAudioTrack(ref this, nBlocks);
-			}
-			public HRESULT AddAudioTrackBlocks(uint8* pby, int32 cb) mut
-			{
-				return VT.AddAudioTrackBlocks(ref this, pby, cb);
-			}
-			public HRESULT CloseAudioTrack() mut
-			{
-				return VT.CloseAudioTrack(ref this);
-			}
+			public HRESULT GetTotalAudioTracks(out int32 pnTracks) mut => VT.GetTotalAudioTracks(ref this, out pnTracks);
+			public HRESULT GetTotalAudioBlocks(out int32 pnBlocks) mut => VT.GetTotalAudioBlocks(ref this, out pnBlocks);
+			public HRESULT GetUsedAudioBlocks(out int32 pnBlocks) mut => VT.GetUsedAudioBlocks(ref this, out pnBlocks);
+			public HRESULT GetAvailableAudioTrackBlocks(out int32 pnBlocks) mut => VT.GetAvailableAudioTrackBlocks(ref this, out pnBlocks);
+			public HRESULT GetAudioBlockSize(out int32 pnBlockBytes) mut => VT.GetAudioBlockSize(ref this, out pnBlockBytes);
+			public HRESULT CreateAudioTrack(int32 nBlocks) mut => VT.CreateAudioTrack(ref this, nBlocks);
+			public HRESULT AddAudioTrackBlocks(uint8* pby, int32 cb) mut => VT.AddAudioTrackBlocks(ref this, pby, cb);
+			public HRESULT CloseAudioTrack() mut => VT.CloseAudioTrack(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3442,30 +2294,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTotalDataBlocks(out int32 pnBlocks) mut
-			{
-				return VT.GetTotalDataBlocks(ref this, out pnBlocks);
-			}
-			public HRESULT GetUsedDataBlocks(out int32 pnBlocks) mut
-			{
-				return VT.GetUsedDataBlocks(ref this, out pnBlocks);
-			}
-			public HRESULT GetDataBlockSize(out int32 pnBlockBytes) mut
-			{
-				return VT.GetDataBlockSize(ref this, out pnBlockBytes);
-			}
-			public HRESULT AddData(IStorage* pStorage, int32 lFileOverwrite) mut
-			{
-				return VT.AddData(ref this, pStorage, lFileOverwrite);
-			}
-			public HRESULT GetJolietProperties(IPropertyStorage** ppPropStg) mut
-			{
-				return VT.GetJolietProperties(ref this, ppPropStg);
-			}
-			public HRESULT SetJolietProperties(IPropertyStorage* pPropStg) mut
-			{
-				return VT.SetJolietProperties(ref this, pPropStg);
-			}
+			public HRESULT GetTotalDataBlocks(out int32 pnBlocks) mut => VT.GetTotalDataBlocks(ref this, out pnBlocks);
+			public HRESULT GetUsedDataBlocks(out int32 pnBlocks) mut => VT.GetUsedDataBlocks(ref this, out pnBlocks);
+			public HRESULT GetDataBlockSize(out int32 pnBlockBytes) mut => VT.GetDataBlockSize(ref this, out pnBlockBytes);
+			public HRESULT AddData(IStorage* pStorage, int32 lFileOverwrite) mut => VT.AddData(ref this, pStorage, lFileOverwrite);
+			public HRESULT GetJolietProperties(IPropertyStorage** ppPropStg) mut => VT.GetJolietProperties(ref this, ppPropStg);
+			public HRESULT SetJolietProperties(IPropertyStorage* pPropStg) mut => VT.SetJolietProperties(ref this, pPropStg);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3484,42 +2319,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryCancel(out uint8 pbCancel) mut
-			{
-				return VT.QueryCancel(ref this, out pbCancel);
-			}
-			public HRESULT NotifyPnPActivity() mut
-			{
-				return VT.NotifyPnPActivity(ref this);
-			}
-			public HRESULT NotifyAddProgress(int32 nCompletedSteps, int32 nTotalSteps) mut
-			{
-				return VT.NotifyAddProgress(ref this, nCompletedSteps, nTotalSteps);
-			}
-			public HRESULT NotifyBlockProgress(int32 nCompleted, int32 nTotal) mut
-			{
-				return VT.NotifyBlockProgress(ref this, nCompleted, nTotal);
-			}
-			public HRESULT NotifyTrackProgress(int32 nCurrentTrack, int32 nTotalTracks) mut
-			{
-				return VT.NotifyTrackProgress(ref this, nCurrentTrack, nTotalTracks);
-			}
-			public HRESULT NotifyPreparingBurn(int32 nEstimatedSeconds) mut
-			{
-				return VT.NotifyPreparingBurn(ref this, nEstimatedSeconds);
-			}
-			public HRESULT NotifyClosingDisc(int32 nEstimatedSeconds) mut
-			{
-				return VT.NotifyClosingDisc(ref this, nEstimatedSeconds);
-			}
-			public HRESULT NotifyBurnComplete(HRESULT status) mut
-			{
-				return VT.NotifyBurnComplete(ref this, status);
-			}
-			public HRESULT NotifyEraseComplete(HRESULT status) mut
-			{
-				return VT.NotifyEraseComplete(ref this, status);
-			}
+			public HRESULT QueryCancel(out uint8 pbCancel) mut => VT.QueryCancel(ref this, out pbCancel);
+			public HRESULT NotifyPnPActivity() mut => VT.NotifyPnPActivity(ref this);
+			public HRESULT NotifyAddProgress(int32 nCompletedSteps, int32 nTotalSteps) mut => VT.NotifyAddProgress(ref this, nCompletedSteps, nTotalSteps);
+			public HRESULT NotifyBlockProgress(int32 nCompleted, int32 nTotal) mut => VT.NotifyBlockProgress(ref this, nCompleted, nTotal);
+			public HRESULT NotifyTrackProgress(int32 nCurrentTrack, int32 nTotalTracks) mut => VT.NotifyTrackProgress(ref this, nCurrentTrack, nTotalTracks);
+			public HRESULT NotifyPreparingBurn(int32 nEstimatedSeconds) mut => VT.NotifyPreparingBurn(ref this, nEstimatedSeconds);
+			public HRESULT NotifyClosingDisc(int32 nEstimatedSeconds) mut => VT.NotifyClosingDisc(ref this, nEstimatedSeconds);
+			public HRESULT NotifyBurnComplete(HRESULT status) mut => VT.NotifyBurnComplete(ref this, status);
+			public HRESULT NotifyEraseComplete(HRESULT status) mut => VT.NotifyEraseComplete(ref this, status);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3541,54 +2350,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open() mut
-			{
-				return VT.Open(ref this);
-			}
-			public HRESULT EnumDiscMasterFormats(IEnumDiscMasterFormats** ppEnum) mut
-			{
-				return VT.EnumDiscMasterFormats(ref this, ppEnum);
-			}
-			public HRESULT GetActiveDiscMasterFormat(out Guid lpiid) mut
-			{
-				return VT.GetActiveDiscMasterFormat(ref this, out lpiid);
-			}
-			public HRESULT SetActiveDiscMasterFormat(in Guid riid, void** ppUnk) mut
-			{
-				return VT.SetActiveDiscMasterFormat(ref this, riid, ppUnk);
-			}
-			public HRESULT EnumDiscRecorders(IEnumDiscRecorders** ppEnum) mut
-			{
-				return VT.EnumDiscRecorders(ref this, ppEnum);
-			}
-			public HRESULT GetActiveDiscRecorder(IDiscRecorder** ppRecorder) mut
-			{
-				return VT.GetActiveDiscRecorder(ref this, ppRecorder);
-			}
-			public HRESULT SetActiveDiscRecorder(IDiscRecorder* pRecorder) mut
-			{
-				return VT.SetActiveDiscRecorder(ref this, pRecorder);
-			}
-			public HRESULT ClearFormatContent() mut
-			{
-				return VT.ClearFormatContent(ref this);
-			}
-			public HRESULT ProgressAdvise(IDiscMasterProgressEvents* pEvents, out uint pvCookie) mut
-			{
-				return VT.ProgressAdvise(ref this, pEvents, out pvCookie);
-			}
-			public HRESULT ProgressUnadvise(uint vCookie) mut
-			{
-				return VT.ProgressUnadvise(ref this, vCookie);
-			}
-			public HRESULT RecordDisc(uint8 bSimulate, uint8 bEjectAfterBurn) mut
-			{
-				return VT.RecordDisc(ref this, bSimulate, bEjectAfterBurn);
-			}
-			public HRESULT Close() mut
-			{
-				return VT.Close(ref this);
-			}
+			public HRESULT Open() mut => VT.Open(ref this);
+			public HRESULT EnumDiscMasterFormats(IEnumDiscMasterFormats** ppEnum) mut => VT.EnumDiscMasterFormats(ref this, ppEnum);
+			public HRESULT GetActiveDiscMasterFormat(out Guid lpiid) mut => VT.GetActiveDiscMasterFormat(ref this, out lpiid);
+			public HRESULT SetActiveDiscMasterFormat(in Guid riid, void** ppUnk) mut => VT.SetActiveDiscMasterFormat(ref this, riid, ppUnk);
+			public HRESULT EnumDiscRecorders(IEnumDiscRecorders** ppEnum) mut => VT.EnumDiscRecorders(ref this, ppEnum);
+			public HRESULT GetActiveDiscRecorder(IDiscRecorder** ppRecorder) mut => VT.GetActiveDiscRecorder(ref this, ppRecorder);
+			public HRESULT SetActiveDiscRecorder(IDiscRecorder* pRecorder) mut => VT.SetActiveDiscRecorder(ref this, pRecorder);
+			public HRESULT ClearFormatContent() mut => VT.ClearFormatContent(ref this);
+			public HRESULT ProgressAdvise(IDiscMasterProgressEvents* pEvents, out uint pvCookie) mut => VT.ProgressAdvise(ref this, pEvents, out pvCookie);
+			public HRESULT ProgressUnadvise(uint vCookie) mut => VT.ProgressUnadvise(ref this, vCookie);
+			public HRESULT RecordDisc(uint8 bSimulate, uint8 bEjectAfterBurn) mut => VT.RecordDisc(ref this, bSimulate, bEjectAfterBurn);
+			public HRESULT Close() mut => VT.Close(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

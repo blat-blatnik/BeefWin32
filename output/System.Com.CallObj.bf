@@ -81,82 +81,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInfo(out CALLFRAMEINFO pInfo) mut
-			{
-				return VT.GetInfo(ref this, out pInfo);
-			}
-			public HRESULT GetIIDAndMethod(out Guid pIID, out uint32 piMethod) mut
-			{
-				return VT.GetIIDAndMethod(ref this, out pIID, out piMethod);
-			}
-			public HRESULT GetNames(PWSTR* pwszInterface, PWSTR* pwszMethod) mut
-			{
-				return VT.GetNames(ref this, pwszInterface, pwszMethod);
-			}
-			public void* GetStackLocation() mut
-			{
-				return VT.GetStackLocation(ref this);
-			}
-			public void SetStackLocation(void* pvStack) mut
-			{
-				VT.SetStackLocation(ref this, pvStack);
-			}
-			public void SetReturnValue(HRESULT hr) mut
-			{
-				VT.SetReturnValue(ref this, hr);
-			}
-			public HRESULT GetReturnValue() mut
-			{
-				return VT.GetReturnValue(ref this);
-			}
-			public HRESULT GetParamInfo(uint32 iparam, out CALLFRAMEPARAMINFO pInfo) mut
-			{
-				return VT.GetParamInfo(ref this, iparam, out pInfo);
-			}
-			public HRESULT SetParam(uint32 iparam, ref VARIANT pvar) mut
-			{
-				return VT.SetParam(ref this, iparam, ref pvar);
-			}
-			public HRESULT GetParam(uint32 iparam, out VARIANT pvar) mut
-			{
-				return VT.GetParam(ref this, iparam, out pvar);
-			}
-			public HRESULT Copy(CALLFRAME_COPY copyControl, ref ICallFrameWalker pWalker, out ICallFrame* ppFrame) mut
-			{
-				return VT.Copy(ref this, copyControl, ref pWalker, out ppFrame);
-			}
-			public HRESULT Free(ref ICallFrame pframeArgsDest, ref ICallFrameWalker pWalkerDestFree, ref ICallFrameWalker pWalkerCopy, uint32 freeFlags, ref ICallFrameWalker pWalkerFree, uint32 nullFlags) mut
-			{
-				return VT.Free(ref this, ref pframeArgsDest, ref pWalkerDestFree, ref pWalkerCopy, freeFlags, ref pWalkerFree, nullFlags);
-			}
-			public HRESULT FreeParam(uint32 iparam, uint32 freeFlags, ref ICallFrameWalker pWalkerFree, uint32 nullFlags) mut
-			{
-				return VT.FreeParam(ref this, iparam, freeFlags, ref pWalkerFree, nullFlags);
-			}
-			public HRESULT WalkFrame(uint32 walkWhat, ref ICallFrameWalker pWalker) mut
-			{
-				return VT.WalkFrame(ref this, walkWhat, ref pWalker);
-			}
-			public HRESULT GetMarshalSizeMax(ref CALLFRAME_MARSHALCONTEXT pmshlContext, MSHLFLAGS mshlflags, out uint32 pcbBufferNeeded) mut
-			{
-				return VT.GetMarshalSizeMax(ref this, ref pmshlContext, mshlflags, out pcbBufferNeeded);
-			}
-			public HRESULT Marshal(ref CALLFRAME_MARSHALCONTEXT pmshlContext, MSHLFLAGS mshlflags, void* pBuffer, uint32 cbBuffer, out uint32 pcbBufferUsed, out uint32 pdataRep, out uint32 prpcFlags) mut
-			{
-				return VT.Marshal(ref this, ref pmshlContext, mshlflags, pBuffer, cbBuffer, out pcbBufferUsed, out pdataRep, out prpcFlags);
-			}
-			public HRESULT Unmarshal(void* pBuffer, uint32 cbBuffer, uint32 dataRep, ref CALLFRAME_MARSHALCONTEXT pcontext, out uint32 pcbUnmarshalled) mut
-			{
-				return VT.Unmarshal(ref this, pBuffer, cbBuffer, dataRep, ref pcontext, out pcbUnmarshalled);
-			}
-			public HRESULT ReleaseMarshalData(void* pBuffer, uint32 cbBuffer, uint32 ibFirstRelease, uint32 dataRep, ref CALLFRAME_MARSHALCONTEXT pcontext) mut
-			{
-				return VT.ReleaseMarshalData(ref this, pBuffer, cbBuffer, ibFirstRelease, dataRep, ref pcontext);
-			}
-			public HRESULT Invoke(void* pvReceiver) mut
-			{
-				return VT.Invoke(ref this, pvReceiver);
-			}
+			public HRESULT GetInfo(out CALLFRAMEINFO pInfo) mut => VT.GetInfo(ref this, out pInfo);
+			public HRESULT GetIIDAndMethod(out Guid pIID, out uint32 piMethod) mut => VT.GetIIDAndMethod(ref this, out pIID, out piMethod);
+			public HRESULT GetNames(PWSTR* pwszInterface, PWSTR* pwszMethod) mut => VT.GetNames(ref this, pwszInterface, pwszMethod);
+			public void* GetStackLocation() mut => VT.GetStackLocation(ref this);
+			public void SetStackLocation(void* pvStack) mut => VT.SetStackLocation(ref this, pvStack);
+			public void SetReturnValue(HRESULT hr) mut => VT.SetReturnValue(ref this, hr);
+			public HRESULT GetReturnValue() mut => VT.GetReturnValue(ref this);
+			public HRESULT GetParamInfo(uint32 iparam, out CALLFRAMEPARAMINFO pInfo) mut => VT.GetParamInfo(ref this, iparam, out pInfo);
+			public HRESULT SetParam(uint32 iparam, ref VARIANT pvar) mut => VT.SetParam(ref this, iparam, ref pvar);
+			public HRESULT GetParam(uint32 iparam, out VARIANT pvar) mut => VT.GetParam(ref this, iparam, out pvar);
+			public HRESULT Copy(CALLFRAME_COPY copyControl, ref ICallFrameWalker pWalker, out ICallFrame* ppFrame) mut => VT.Copy(ref this, copyControl, ref pWalker, out ppFrame);
+			public HRESULT Free(ref ICallFrame pframeArgsDest, ref ICallFrameWalker pWalkerDestFree, ref ICallFrameWalker pWalkerCopy, uint32 freeFlags, ref ICallFrameWalker pWalkerFree, uint32 nullFlags) mut => VT.Free(ref this, ref pframeArgsDest, ref pWalkerDestFree, ref pWalkerCopy, freeFlags, ref pWalkerFree, nullFlags);
+			public HRESULT FreeParam(uint32 iparam, uint32 freeFlags, ref ICallFrameWalker pWalkerFree, uint32 nullFlags) mut => VT.FreeParam(ref this, iparam, freeFlags, ref pWalkerFree, nullFlags);
+			public HRESULT WalkFrame(uint32 walkWhat, ref ICallFrameWalker pWalker) mut => VT.WalkFrame(ref this, walkWhat, ref pWalker);
+			public HRESULT GetMarshalSizeMax(ref CALLFRAME_MARSHALCONTEXT pmshlContext, MSHLFLAGS mshlflags, out uint32 pcbBufferNeeded) mut => VT.GetMarshalSizeMax(ref this, ref pmshlContext, mshlflags, out pcbBufferNeeded);
+			public HRESULT Marshal(ref CALLFRAME_MARSHALCONTEXT pmshlContext, MSHLFLAGS mshlflags, void* pBuffer, uint32 cbBuffer, out uint32 pcbBufferUsed, out uint32 pdataRep, out uint32 prpcFlags) mut => VT.Marshal(ref this, ref pmshlContext, mshlflags, pBuffer, cbBuffer, out pcbBufferUsed, out pdataRep, out prpcFlags);
+			public HRESULT Unmarshal(void* pBuffer, uint32 cbBuffer, uint32 dataRep, ref CALLFRAME_MARSHALCONTEXT pcontext, out uint32 pcbUnmarshalled) mut => VT.Unmarshal(ref this, pBuffer, cbBuffer, dataRep, ref pcontext, out pcbUnmarshalled);
+			public HRESULT ReleaseMarshalData(void* pBuffer, uint32 cbBuffer, uint32 ibFirstRelease, uint32 dataRep, ref CALLFRAME_MARSHALCONTEXT pcontext) mut => VT.ReleaseMarshalData(ref this, pBuffer, cbBuffer, ibFirstRelease, dataRep, ref pcontext);
+			public HRESULT Invoke(void* pvReceiver) mut => VT.Invoke(ref this, pvReceiver);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -188,22 +132,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CallIndirect(out HRESULT phrReturn, uint32 iMethod, void* pvArgs, out uint32 cbArgs) mut
-			{
-				return VT.CallIndirect(ref this, out phrReturn, iMethod, pvArgs, out cbArgs);
-			}
-			public HRESULT GetMethodInfo(uint32 iMethod, out CALLFRAMEINFO pInfo, PWSTR* pwszMethod) mut
-			{
-				return VT.GetMethodInfo(ref this, iMethod, out pInfo, pwszMethod);
-			}
-			public HRESULT GetStackSize(uint32 iMethod, out uint32 cbArgs) mut
-			{
-				return VT.GetStackSize(ref this, iMethod, out cbArgs);
-			}
-			public HRESULT GetIID(Guid* piid, BOOL* pfDerivesFromIDispatch, uint32* pcMethod, PWSTR* pwszInterface) mut
-			{
-				return VT.GetIID(ref this, piid, pfDerivesFromIDispatch, pcMethod, pwszInterface);
-			}
+			public HRESULT CallIndirect(out HRESULT phrReturn, uint32 iMethod, void* pvArgs, out uint32 cbArgs) mut => VT.CallIndirect(ref this, out phrReturn, iMethod, pvArgs, out cbArgs);
+			public HRESULT GetMethodInfo(uint32 iMethod, out CALLFRAMEINFO pInfo, PWSTR* pwszMethod) mut => VT.GetMethodInfo(ref this, iMethod, out pInfo, pwszMethod);
+			public HRESULT GetStackSize(uint32 iMethod, out uint32 cbArgs) mut => VT.GetStackSize(ref this, iMethod, out cbArgs);
+			public HRESULT GetIID(Guid* piid, BOOL* pfDerivesFromIDispatch, uint32* pcMethod, PWSTR* pwszInterface) mut => VT.GetIID(ref this, piid, pfDerivesFromIDispatch, pcMethod, pwszInterface);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -220,14 +153,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterSink(ref ICallFrameEvents psink) mut
-			{
-				return VT.RegisterSink(ref this, ref psink);
-			}
-			public HRESULT GetRegisteredSink(out ICallFrameEvents* ppsink) mut
-			{
-				return VT.GetRegisteredSink(ref this, out ppsink);
-			}
+			public HRESULT RegisterSink(ref ICallFrameEvents psink) mut => VT.RegisterSink(ref this, ref psink);
+			public HRESULT GetRegisteredSink(out ICallFrameEvents* ppsink) mut => VT.GetRegisteredSink(ref this, out ppsink);
+
 			[CRepr]
 			public struct VTable : ICallIndirect.VTable
 			{
@@ -242,10 +170,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnCall(ref ICallFrame pFrame) mut
-			{
-				return VT.OnCall(ref this, ref pFrame);
-			}
+			public HRESULT OnCall(ref ICallFrame pFrame) mut => VT.OnCall(ref this, ref pFrame);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -259,14 +185,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Unmarshal(uint32 iMethod, void* pBuffer, uint32 cbBuffer, BOOL fForceBufferCopy, uint32 dataRep, ref CALLFRAME_MARSHALCONTEXT pcontext, out uint32 pcbUnmarshalled, out ICallFrame* ppFrame) mut
-			{
-				return VT.Unmarshal(ref this, iMethod, pBuffer, cbBuffer, fForceBufferCopy, dataRep, ref pcontext, out pcbUnmarshalled, out ppFrame);
-			}
-			public HRESULT ReleaseMarshalData(uint32 iMethod, void* pBuffer, uint32 cbBuffer, uint32 ibFirstRelease, uint32 dataRep, ref CALLFRAME_MARSHALCONTEXT pcontext) mut
-			{
-				return VT.ReleaseMarshalData(ref this, iMethod, pBuffer, cbBuffer, ibFirstRelease, dataRep, ref pcontext);
-			}
+			public HRESULT Unmarshal(uint32 iMethod, void* pBuffer, uint32 cbBuffer, BOOL fForceBufferCopy, uint32 dataRep, ref CALLFRAME_MARSHALCONTEXT pcontext, out uint32 pcbUnmarshalled, out ICallFrame* ppFrame) mut => VT.Unmarshal(ref this, iMethod, pBuffer, cbBuffer, fForceBufferCopy, dataRep, ref pcontext, out pcbUnmarshalled, out ppFrame);
+			public HRESULT ReleaseMarshalData(uint32 iMethod, void* pBuffer, uint32 cbBuffer, uint32 ibFirstRelease, uint32 dataRep, ref CALLFRAME_MARSHALCONTEXT pcontext) mut => VT.ReleaseMarshalData(ref this, iMethod, pBuffer, cbBuffer, ibFirstRelease, dataRep, ref pcontext);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -281,10 +202,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnWalkInterface(in Guid iid, void** ppvInterface, BOOL fIn, BOOL fOut) mut
-			{
-				return VT.OnWalkInterface(ref this, iid, ppvInterface, fIn, fOut);
-			}
+			public HRESULT OnWalkInterface(in Guid iid, void** ppvInterface, BOOL fIn, BOOL fOut) mut => VT.OnWalkInterface(ref this, iid, ppvInterface, fIn, fOut);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -298,14 +217,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetIID(in Guid iid) mut
-			{
-				return VT.SetIID(ref this, iid);
-			}
-			public HRESULT GetIID(out Guid piid) mut
-			{
-				return VT.GetIID(ref this, out piid);
-			}
+			public HRESULT SetIID(in Guid iid) mut => VT.SetIID(ref this, iid);
+			public HRESULT GetIID(out Guid piid) mut => VT.GetIID(ref this, out piid);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

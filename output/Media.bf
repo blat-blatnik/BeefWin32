@@ -201,22 +201,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTime(out int64 pTime) mut
-			{
-				return VT.GetTime(ref this, out pTime);
-			}
-			public HRESULT AdviseTime(int64 baseTime, int64 streamTime, HANDLE hEvent, out uint pdwAdviseCookie) mut
-			{
-				return VT.AdviseTime(ref this, baseTime, streamTime, hEvent, out pdwAdviseCookie);
-			}
-			public HRESULT AdvisePeriodic(int64 startTime, int64 periodTime, HANDLE hSemaphore, out uint pdwAdviseCookie) mut
-			{
-				return VT.AdvisePeriodic(ref this, startTime, periodTime, hSemaphore, out pdwAdviseCookie);
-			}
-			public HRESULT Unadvise(uint dwAdviseCookie) mut
-			{
-				return VT.Unadvise(ref this, dwAdviseCookie);
-			}
+			public HRESULT GetTime(out int64 pTime) mut => VT.GetTime(ref this, out pTime);
+			public HRESULT AdviseTime(int64 baseTime, int64 streamTime, HANDLE hEvent, out uint pdwAdviseCookie) mut => VT.AdviseTime(ref this, baseTime, streamTime, hEvent, out pdwAdviseCookie);
+			public HRESULT AdvisePeriodic(int64 startTime, int64 periodTime, HANDLE hSemaphore, out uint pdwAdviseCookie) mut => VT.AdvisePeriodic(ref this, startTime, periodTime, hSemaphore, out pdwAdviseCookie);
+			public HRESULT Unadvise(uint dwAdviseCookie) mut => VT.Unadvise(ref this, dwAdviseCookie);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -233,14 +222,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDefaultTimerResolution(int64 timerResolution) mut
-			{
-				return VT.SetDefaultTimerResolution(ref this, timerResolution);
-			}
-			public HRESULT GetDefaultTimerResolution(out int64 pTimerResolution) mut
-			{
-				return VT.GetDefaultTimerResolution(ref this, out pTimerResolution);
-			}
+			public HRESULT SetDefaultTimerResolution(int64 timerResolution) mut => VT.SetDefaultTimerResolution(ref this, timerResolution);
+			public HRESULT GetDefaultTimerResolution(out int64 pTimerResolution) mut => VT.GetDefaultTimerResolution(ref this, out pTimerResolution);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -255,6 +239,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IReferenceClock.VTable
 			{

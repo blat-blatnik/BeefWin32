@@ -14,10 +14,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInterface(in Guid iid, void** p) mut
-			{
-				return VT.GetInterface(ref this, iid, p);
-			}
+			public HRESULT GetInterface(in Guid iid, void** p) mut => VT.GetInterface(ref this, iid, p);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

@@ -592,38 +592,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSoundBuffer(ref DSBUFFERDESC pcDSBufferDesc, out IDirectSoundBuffer* ppDSBuffer, ref IUnknown pUnkOuter) mut
-			{
-				return VT.CreateSoundBuffer(ref this, ref pcDSBufferDesc, out ppDSBuffer, ref pUnkOuter);
-			}
-			public HRESULT GetCaps(out DSCAPS pDSCaps) mut
-			{
-				return VT.GetCaps(ref this, out pDSCaps);
-			}
-			public HRESULT DuplicateSoundBuffer(ref IDirectSoundBuffer pDSBufferOriginal, out IDirectSoundBuffer* ppDSBufferDuplicate) mut
-			{
-				return VT.DuplicateSoundBuffer(ref this, ref pDSBufferOriginal, out ppDSBufferDuplicate);
-			}
-			public HRESULT SetCooperativeLevel(HWND hwnd, uint32 dwLevel) mut
-			{
-				return VT.SetCooperativeLevel(ref this, hwnd, dwLevel);
-			}
-			public HRESULT Compact() mut
-			{
-				return VT.Compact(ref this);
-			}
-			public HRESULT GetSpeakerConfig(out uint32 pdwSpeakerConfig) mut
-			{
-				return VT.GetSpeakerConfig(ref this, out pdwSpeakerConfig);
-			}
-			public HRESULT SetSpeakerConfig(uint32 dwSpeakerConfig) mut
-			{
-				return VT.SetSpeakerConfig(ref this, dwSpeakerConfig);
-			}
-			public HRESULT Initialize(Guid* pcGuidDevice) mut
-			{
-				return VT.Initialize(ref this, pcGuidDevice);
-			}
+			public HRESULT CreateSoundBuffer(ref DSBUFFERDESC pcDSBufferDesc, out IDirectSoundBuffer* ppDSBuffer, ref IUnknown pUnkOuter) mut => VT.CreateSoundBuffer(ref this, ref pcDSBufferDesc, out ppDSBuffer, ref pUnkOuter);
+			public HRESULT GetCaps(out DSCAPS pDSCaps) mut => VT.GetCaps(ref this, out pDSCaps);
+			public HRESULT DuplicateSoundBuffer(ref IDirectSoundBuffer pDSBufferOriginal, out IDirectSoundBuffer* ppDSBufferDuplicate) mut => VT.DuplicateSoundBuffer(ref this, ref pDSBufferOriginal, out ppDSBufferDuplicate);
+			public HRESULT SetCooperativeLevel(HWND hwnd, uint32 dwLevel) mut => VT.SetCooperativeLevel(ref this, hwnd, dwLevel);
+			public HRESULT Compact() mut => VT.Compact(ref this);
+			public HRESULT GetSpeakerConfig(out uint32 pdwSpeakerConfig) mut => VT.GetSpeakerConfig(ref this, out pdwSpeakerConfig);
+			public HRESULT SetSpeakerConfig(uint32 dwSpeakerConfig) mut => VT.SetSpeakerConfig(ref this, dwSpeakerConfig);
+			public HRESULT Initialize(Guid* pcGuidDevice) mut => VT.Initialize(ref this, pcGuidDevice);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -644,10 +621,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT VerifyCertification(out uint32 pdwCertified) mut
-			{
-				return VT.VerifyCertification(ref this, out pdwCertified);
-			}
+			public HRESULT VerifyCertification(out uint32 pdwCertified) mut => VT.VerifyCertification(ref this, out pdwCertified);
+
 			[CRepr]
 			public struct VTable : IDirectSound.VTable
 			{
@@ -661,78 +636,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCaps(out DSBCAPS pDSBufferCaps) mut
-			{
-				return VT.GetCaps(ref this, out pDSBufferCaps);
-			}
-			public HRESULT GetCurrentPosition(uint32* pdwCurrentPlayCursor, uint32* pdwCurrentWriteCursor) mut
-			{
-				return VT.GetCurrentPosition(ref this, pdwCurrentPlayCursor, pdwCurrentWriteCursor);
-			}
-			public HRESULT GetFormat(WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) mut
-			{
-				return VT.GetFormat(ref this, pwfxFormat, dwSizeAllocated, pdwSizeWritten);
-			}
-			public HRESULT GetVolume(out int32 plVolume) mut
-			{
-				return VT.GetVolume(ref this, out plVolume);
-			}
-			public HRESULT GetPan(out int32 plPan) mut
-			{
-				return VT.GetPan(ref this, out plPan);
-			}
-			public HRESULT GetFrequency(out uint32 pdwFrequency) mut
-			{
-				return VT.GetFrequency(ref this, out pdwFrequency);
-			}
-			public HRESULT GetStatus(out uint32 pdwStatus) mut
-			{
-				return VT.GetStatus(ref this, out pdwStatus);
-			}
-			public HRESULT Initialize(ref IDirectSound pDirectSound, ref DSBUFFERDESC pcDSBufferDesc) mut
-			{
-				return VT.Initialize(ref this, ref pDirectSound, ref pcDSBufferDesc);
-			}
-			public HRESULT Lock(uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, out uint32 pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) mut
-			{
-				return VT.Lock(ref this, dwOffset, dwBytes, ppvAudioPtr1, out pdwAudioBytes1, ppvAudioPtr2, pdwAudioBytes2, dwFlags);
-			}
-			public HRESULT Play(uint32 dwReserved1, uint32 dwPriority, uint32 dwFlags) mut
-			{
-				return VT.Play(ref this, dwReserved1, dwPriority, dwFlags);
-			}
-			public HRESULT SetCurrentPosition(uint32 dwNewPosition) mut
-			{
-				return VT.SetCurrentPosition(ref this, dwNewPosition);
-			}
-			public HRESULT SetFormat(ref WAVEFORMATEX pcfxFormat) mut
-			{
-				return VT.SetFormat(ref this, ref pcfxFormat);
-			}
-			public HRESULT SetVolume(int32 lVolume) mut
-			{
-				return VT.SetVolume(ref this, lVolume);
-			}
-			public HRESULT SetPan(int32 lPan) mut
-			{
-				return VT.SetPan(ref this, lPan);
-			}
-			public HRESULT SetFrequency(uint32 dwFrequency) mut
-			{
-				return VT.SetFrequency(ref this, dwFrequency);
-			}
-			public HRESULT Stop() mut
-			{
-				return VT.Stop(ref this);
-			}
-			public HRESULT Unlock(void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) mut
-			{
-				return VT.Unlock(ref this, pvAudioPtr1, dwAudioBytes1, pvAudioPtr2, dwAudioBytes2);
-			}
-			public HRESULT Restore() mut
-			{
-				return VT.Restore(ref this);
-			}
+			public HRESULT GetCaps(out DSBCAPS pDSBufferCaps) mut => VT.GetCaps(ref this, out pDSBufferCaps);
+			public HRESULT GetCurrentPosition(uint32* pdwCurrentPlayCursor, uint32* pdwCurrentWriteCursor) mut => VT.GetCurrentPosition(ref this, pdwCurrentPlayCursor, pdwCurrentWriteCursor);
+			public HRESULT GetFormat(WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) mut => VT.GetFormat(ref this, pwfxFormat, dwSizeAllocated, pdwSizeWritten);
+			public HRESULT GetVolume(out int32 plVolume) mut => VT.GetVolume(ref this, out plVolume);
+			public HRESULT GetPan(out int32 plPan) mut => VT.GetPan(ref this, out plPan);
+			public HRESULT GetFrequency(out uint32 pdwFrequency) mut => VT.GetFrequency(ref this, out pdwFrequency);
+			public HRESULT GetStatus(out uint32 pdwStatus) mut => VT.GetStatus(ref this, out pdwStatus);
+			public HRESULT Initialize(ref IDirectSound pDirectSound, ref DSBUFFERDESC pcDSBufferDesc) mut => VT.Initialize(ref this, ref pDirectSound, ref pcDSBufferDesc);
+			public HRESULT Lock(uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, out uint32 pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) mut => VT.Lock(ref this, dwOffset, dwBytes, ppvAudioPtr1, out pdwAudioBytes1, ppvAudioPtr2, pdwAudioBytes2, dwFlags);
+			public HRESULT Play(uint32 dwReserved1, uint32 dwPriority, uint32 dwFlags) mut => VT.Play(ref this, dwReserved1, dwPriority, dwFlags);
+			public HRESULT SetCurrentPosition(uint32 dwNewPosition) mut => VT.SetCurrentPosition(ref this, dwNewPosition);
+			public HRESULT SetFormat(ref WAVEFORMATEX pcfxFormat) mut => VT.SetFormat(ref this, ref pcfxFormat);
+			public HRESULT SetVolume(int32 lVolume) mut => VT.SetVolume(ref this, lVolume);
+			public HRESULT SetPan(int32 lPan) mut => VT.SetPan(ref this, lPan);
+			public HRESULT SetFrequency(uint32 dwFrequency) mut => VT.SetFrequency(ref this, dwFrequency);
+			public HRESULT Stop() mut => VT.Stop(ref this);
+			public HRESULT Unlock(void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) mut => VT.Unlock(ref this, pvAudioPtr1, dwAudioBytes1, pvAudioPtr2, dwAudioBytes2);
+			public HRESULT Restore() mut => VT.Restore(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -763,18 +685,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFX(uint32 dwEffectsCount, DSEFFECTDESC* pDSFXDesc, uint32* pdwResultCodes) mut
-			{
-				return VT.SetFX(ref this, dwEffectsCount, pDSFXDesc, pdwResultCodes);
-			}
-			public HRESULT AcquireResources(uint32 dwFlags, uint32 dwEffectsCount, uint32* pdwResultCodes) mut
-			{
-				return VT.AcquireResources(ref this, dwFlags, dwEffectsCount, pdwResultCodes);
-			}
-			public HRESULT GetObjectInPath(in Guid rguidObject, uint32 dwIndex, in Guid rguidInterface, void** ppObject) mut
-			{
-				return VT.GetObjectInPath(ref this, rguidObject, dwIndex, rguidInterface, ppObject);
-			}
+			public HRESULT SetFX(uint32 dwEffectsCount, DSEFFECTDESC* pDSFXDesc, uint32* pdwResultCodes) mut => VT.SetFX(ref this, dwEffectsCount, pDSFXDesc, pdwResultCodes);
+			public HRESULT AcquireResources(uint32 dwFlags, uint32 dwEffectsCount, uint32* pdwResultCodes) mut => VT.AcquireResources(ref this, dwFlags, dwEffectsCount, pdwResultCodes);
+			public HRESULT GetObjectInPath(in Guid rguidObject, uint32 dwIndex, in Guid rguidInterface, void** ppObject) mut => VT.GetObjectInPath(ref this, rguidObject, dwIndex, rguidInterface, ppObject);
+
 			[CRepr]
 			public struct VTable : IDirectSoundBuffer.VTable
 			{
@@ -790,66 +704,22 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAllParameters(out DS3DLISTENER pListener) mut
-			{
-				return VT.GetAllParameters(ref this, out pListener);
-			}
-			public HRESULT GetDistanceFactor(out float pflDistanceFactor) mut
-			{
-				return VT.GetDistanceFactor(ref this, out pflDistanceFactor);
-			}
-			public HRESULT GetDopplerFactor(out float pflDopplerFactor) mut
-			{
-				return VT.GetDopplerFactor(ref this, out pflDopplerFactor);
-			}
-			public HRESULT GetOrientation(out D3DVECTOR pvOrientFront, out D3DVECTOR pvOrientTop) mut
-			{
-				return VT.GetOrientation(ref this, out pvOrientFront, out pvOrientTop);
-			}
-			public HRESULT GetPosition(out D3DVECTOR pvPosition) mut
-			{
-				return VT.GetPosition(ref this, out pvPosition);
-			}
-			public HRESULT GetRolloffFactor(out float pflRolloffFactor) mut
-			{
-				return VT.GetRolloffFactor(ref this, out pflRolloffFactor);
-			}
-			public HRESULT GetVelocity(out D3DVECTOR pvVelocity) mut
-			{
-				return VT.GetVelocity(ref this, out pvVelocity);
-			}
-			public HRESULT SetAllParameters(ref DS3DLISTENER pcListener, uint32 dwApply) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcListener, dwApply);
-			}
-			public HRESULT SetDistanceFactor(float flDistanceFactor, uint32 dwApply) mut
-			{
-				return VT.SetDistanceFactor(ref this, flDistanceFactor, dwApply);
-			}
-			public HRESULT SetDopplerFactor(float flDopplerFactor, uint32 dwApply) mut
-			{
-				return VT.SetDopplerFactor(ref this, flDopplerFactor, dwApply);
-			}
-			public HRESULT SetOrientation(float xFront, float yFront, float zFront, float xTop, float yTop, float zTop, uint32 dwApply) mut
-			{
-				return VT.SetOrientation(ref this, xFront, yFront, zFront, xTop, yTop, zTop, dwApply);
-			}
-			public HRESULT SetPosition(float x, float y, float z, uint32 dwApply) mut
-			{
-				return VT.SetPosition(ref this, x, y, z, dwApply);
-			}
-			public HRESULT SetRolloffFactor(float flRolloffFactor, uint32 dwApply) mut
-			{
-				return VT.SetRolloffFactor(ref this, flRolloffFactor, dwApply);
-			}
-			public HRESULT SetVelocity(float x, float y, float z, uint32 dwApply) mut
-			{
-				return VT.SetVelocity(ref this, x, y, z, dwApply);
-			}
-			public HRESULT CommitDeferredSettings() mut
-			{
-				return VT.CommitDeferredSettings(ref this);
-			}
+			public HRESULT GetAllParameters(out DS3DLISTENER pListener) mut => VT.GetAllParameters(ref this, out pListener);
+			public HRESULT GetDistanceFactor(out float pflDistanceFactor) mut => VT.GetDistanceFactor(ref this, out pflDistanceFactor);
+			public HRESULT GetDopplerFactor(out float pflDopplerFactor) mut => VT.GetDopplerFactor(ref this, out pflDopplerFactor);
+			public HRESULT GetOrientation(out D3DVECTOR pvOrientFront, out D3DVECTOR pvOrientTop) mut => VT.GetOrientation(ref this, out pvOrientFront, out pvOrientTop);
+			public HRESULT GetPosition(out D3DVECTOR pvPosition) mut => VT.GetPosition(ref this, out pvPosition);
+			public HRESULT GetRolloffFactor(out float pflRolloffFactor) mut => VT.GetRolloffFactor(ref this, out pflRolloffFactor);
+			public HRESULT GetVelocity(out D3DVECTOR pvVelocity) mut => VT.GetVelocity(ref this, out pvVelocity);
+			public HRESULT SetAllParameters(ref DS3DLISTENER pcListener, uint32 dwApply) mut => VT.SetAllParameters(ref this, ref pcListener, dwApply);
+			public HRESULT SetDistanceFactor(float flDistanceFactor, uint32 dwApply) mut => VT.SetDistanceFactor(ref this, flDistanceFactor, dwApply);
+			public HRESULT SetDopplerFactor(float flDopplerFactor, uint32 dwApply) mut => VT.SetDopplerFactor(ref this, flDopplerFactor, dwApply);
+			public HRESULT SetOrientation(float xFront, float yFront, float zFront, float xTop, float yTop, float zTop, uint32 dwApply) mut => VT.SetOrientation(ref this, xFront, yFront, zFront, xTop, yTop, zTop, dwApply);
+			public HRESULT SetPosition(float x, float y, float z, uint32 dwApply) mut => VT.SetPosition(ref this, x, y, z, dwApply);
+			public HRESULT SetRolloffFactor(float flRolloffFactor, uint32 dwApply) mut => VT.SetRolloffFactor(ref this, flRolloffFactor, dwApply);
+			public HRESULT SetVelocity(float x, float y, float z, uint32 dwApply) mut => VT.SetVelocity(ref this, x, y, z, dwApply);
+			public HRESULT CommitDeferredSettings() mut => VT.CommitDeferredSettings(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -877,78 +747,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAllParameters(out DS3DBUFFER pDs3dBuffer) mut
-			{
-				return VT.GetAllParameters(ref this, out pDs3dBuffer);
-			}
-			public HRESULT GetConeAngles(out uint32 pdwInsideConeAngle, out uint32 pdwOutsideConeAngle) mut
-			{
-				return VT.GetConeAngles(ref this, out pdwInsideConeAngle, out pdwOutsideConeAngle);
-			}
-			public HRESULT GetConeOrientation(out D3DVECTOR pvOrientation) mut
-			{
-				return VT.GetConeOrientation(ref this, out pvOrientation);
-			}
-			public HRESULT GetConeOutsideVolume(out int32 plConeOutsideVolume) mut
-			{
-				return VT.GetConeOutsideVolume(ref this, out plConeOutsideVolume);
-			}
-			public HRESULT GetMaxDistance(out float pflMaxDistance) mut
-			{
-				return VT.GetMaxDistance(ref this, out pflMaxDistance);
-			}
-			public HRESULT GetMinDistance(out float pflMinDistance) mut
-			{
-				return VT.GetMinDistance(ref this, out pflMinDistance);
-			}
-			public HRESULT GetMode(out uint32 pdwMode) mut
-			{
-				return VT.GetMode(ref this, out pdwMode);
-			}
-			public HRESULT GetPosition(out D3DVECTOR pvPosition) mut
-			{
-				return VT.GetPosition(ref this, out pvPosition);
-			}
-			public HRESULT GetVelocity(out D3DVECTOR pvVelocity) mut
-			{
-				return VT.GetVelocity(ref this, out pvVelocity);
-			}
-			public HRESULT SetAllParameters(ref DS3DBUFFER pcDs3dBuffer, uint32 dwApply) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDs3dBuffer, dwApply);
-			}
-			public HRESULT SetConeAngles(uint32 dwInsideConeAngle, uint32 dwOutsideConeAngle, uint32 dwApply) mut
-			{
-				return VT.SetConeAngles(ref this, dwInsideConeAngle, dwOutsideConeAngle, dwApply);
-			}
-			public HRESULT SetConeOrientation(float x, float y, float z, uint32 dwApply) mut
-			{
-				return VT.SetConeOrientation(ref this, x, y, z, dwApply);
-			}
-			public HRESULT SetConeOutsideVolume(int32 lConeOutsideVolume, uint32 dwApply) mut
-			{
-				return VT.SetConeOutsideVolume(ref this, lConeOutsideVolume, dwApply);
-			}
-			public HRESULT SetMaxDistance(float flMaxDistance, uint32 dwApply) mut
-			{
-				return VT.SetMaxDistance(ref this, flMaxDistance, dwApply);
-			}
-			public HRESULT SetMinDistance(float flMinDistance, uint32 dwApply) mut
-			{
-				return VT.SetMinDistance(ref this, flMinDistance, dwApply);
-			}
-			public HRESULT SetMode(uint32 dwMode, uint32 dwApply) mut
-			{
-				return VT.SetMode(ref this, dwMode, dwApply);
-			}
-			public HRESULT SetPosition(float x, float y, float z, uint32 dwApply) mut
-			{
-				return VT.SetPosition(ref this, x, y, z, dwApply);
-			}
-			public HRESULT SetVelocity(float x, float y, float z, uint32 dwApply) mut
-			{
-				return VT.SetVelocity(ref this, x, y, z, dwApply);
-			}
+			public HRESULT GetAllParameters(out DS3DBUFFER pDs3dBuffer) mut => VT.GetAllParameters(ref this, out pDs3dBuffer);
+			public HRESULT GetConeAngles(out uint32 pdwInsideConeAngle, out uint32 pdwOutsideConeAngle) mut => VT.GetConeAngles(ref this, out pdwInsideConeAngle, out pdwOutsideConeAngle);
+			public HRESULT GetConeOrientation(out D3DVECTOR pvOrientation) mut => VT.GetConeOrientation(ref this, out pvOrientation);
+			public HRESULT GetConeOutsideVolume(out int32 plConeOutsideVolume) mut => VT.GetConeOutsideVolume(ref this, out plConeOutsideVolume);
+			public HRESULT GetMaxDistance(out float pflMaxDistance) mut => VT.GetMaxDistance(ref this, out pflMaxDistance);
+			public HRESULT GetMinDistance(out float pflMinDistance) mut => VT.GetMinDistance(ref this, out pflMinDistance);
+			public HRESULT GetMode(out uint32 pdwMode) mut => VT.GetMode(ref this, out pdwMode);
+			public HRESULT GetPosition(out D3DVECTOR pvPosition) mut => VT.GetPosition(ref this, out pvPosition);
+			public HRESULT GetVelocity(out D3DVECTOR pvVelocity) mut => VT.GetVelocity(ref this, out pvVelocity);
+			public HRESULT SetAllParameters(ref DS3DBUFFER pcDs3dBuffer, uint32 dwApply) mut => VT.SetAllParameters(ref this, ref pcDs3dBuffer, dwApply);
+			public HRESULT SetConeAngles(uint32 dwInsideConeAngle, uint32 dwOutsideConeAngle, uint32 dwApply) mut => VT.SetConeAngles(ref this, dwInsideConeAngle, dwOutsideConeAngle, dwApply);
+			public HRESULT SetConeOrientation(float x, float y, float z, uint32 dwApply) mut => VT.SetConeOrientation(ref this, x, y, z, dwApply);
+			public HRESULT SetConeOutsideVolume(int32 lConeOutsideVolume, uint32 dwApply) mut => VT.SetConeOutsideVolume(ref this, lConeOutsideVolume, dwApply);
+			public HRESULT SetMaxDistance(float flMaxDistance, uint32 dwApply) mut => VT.SetMaxDistance(ref this, flMaxDistance, dwApply);
+			public HRESULT SetMinDistance(float flMinDistance, uint32 dwApply) mut => VT.SetMinDistance(ref this, flMinDistance, dwApply);
+			public HRESULT SetMode(uint32 dwMode, uint32 dwApply) mut => VT.SetMode(ref this, dwMode, dwApply);
+			public HRESULT SetPosition(float x, float y, float z, uint32 dwApply) mut => VT.SetPosition(ref this, x, y, z, dwApply);
+			public HRESULT SetVelocity(float x, float y, float z, uint32 dwApply) mut => VT.SetVelocity(ref this, x, y, z, dwApply);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -979,18 +796,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateCaptureBuffer(ref DSCBUFFERDESC pcDSCBufferDesc, out IDirectSoundCaptureBuffer* ppDSCBuffer, ref IUnknown pUnkOuter) mut
-			{
-				return VT.CreateCaptureBuffer(ref this, ref pcDSCBufferDesc, out ppDSCBuffer, ref pUnkOuter);
-			}
-			public HRESULT GetCaps(out DSCCAPS pDSCCaps) mut
-			{
-				return VT.GetCaps(ref this, out pDSCCaps);
-			}
-			public HRESULT Initialize(Guid* pcGuidDevice) mut
-			{
-				return VT.Initialize(ref this, pcGuidDevice);
-			}
+			public HRESULT CreateCaptureBuffer(ref DSCBUFFERDESC pcDSCBufferDesc, out IDirectSoundCaptureBuffer* ppDSCBuffer, ref IUnknown pUnkOuter) mut => VT.CreateCaptureBuffer(ref this, ref pcDSCBufferDesc, out ppDSCBuffer, ref pUnkOuter);
+			public HRESULT GetCaps(out DSCCAPS pDSCCaps) mut => VT.GetCaps(ref this, out pDSCCaps);
+			public HRESULT Initialize(Guid* pcGuidDevice) mut => VT.Initialize(ref this, pcGuidDevice);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1006,42 +815,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCaps(out DSCBCAPS pDSCBCaps) mut
-			{
-				return VT.GetCaps(ref this, out pDSCBCaps);
-			}
-			public HRESULT GetCurrentPosition(uint32* pdwCapturePosition, uint32* pdwReadPosition) mut
-			{
-				return VT.GetCurrentPosition(ref this, pdwCapturePosition, pdwReadPosition);
-			}
-			public HRESULT GetFormat(WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) mut
-			{
-				return VT.GetFormat(ref this, pwfxFormat, dwSizeAllocated, pdwSizeWritten);
-			}
-			public HRESULT GetStatus(out uint32 pdwStatus) mut
-			{
-				return VT.GetStatus(ref this, out pdwStatus);
-			}
-			public HRESULT Initialize(ref IDirectSoundCapture pDirectSoundCapture, ref DSCBUFFERDESC pcDSCBufferDesc) mut
-			{
-				return VT.Initialize(ref this, ref pDirectSoundCapture, ref pcDSCBufferDesc);
-			}
-			public HRESULT Lock(uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, out uint32 pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) mut
-			{
-				return VT.Lock(ref this, dwOffset, dwBytes, ppvAudioPtr1, out pdwAudioBytes1, ppvAudioPtr2, pdwAudioBytes2, dwFlags);
-			}
-			public HRESULT Start(uint32 dwFlags) mut
-			{
-				return VT.Start(ref this, dwFlags);
-			}
-			public HRESULT Stop() mut
-			{
-				return VT.Stop(ref this);
-			}
-			public HRESULT Unlock(void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) mut
-			{
-				return VT.Unlock(ref this, pvAudioPtr1, dwAudioBytes1, pvAudioPtr2, dwAudioBytes2);
-			}
+			public HRESULT GetCaps(out DSCBCAPS pDSCBCaps) mut => VT.GetCaps(ref this, out pDSCBCaps);
+			public HRESULT GetCurrentPosition(uint32* pdwCapturePosition, uint32* pdwReadPosition) mut => VT.GetCurrentPosition(ref this, pdwCapturePosition, pdwReadPosition);
+			public HRESULT GetFormat(WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) mut => VT.GetFormat(ref this, pwfxFormat, dwSizeAllocated, pdwSizeWritten);
+			public HRESULT GetStatus(out uint32 pdwStatus) mut => VT.GetStatus(ref this, out pdwStatus);
+			public HRESULT Initialize(ref IDirectSoundCapture pDirectSoundCapture, ref DSCBUFFERDESC pcDSCBufferDesc) mut => VT.Initialize(ref this, ref pDirectSoundCapture, ref pcDSCBufferDesc);
+			public HRESULT Lock(uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, out uint32 pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) mut => VT.Lock(ref this, dwOffset, dwBytes, ppvAudioPtr1, out pdwAudioBytes1, ppvAudioPtr2, pdwAudioBytes2, dwFlags);
+			public HRESULT Start(uint32 dwFlags) mut => VT.Start(ref this, dwFlags);
+			public HRESULT Stop() mut => VT.Stop(ref this);
+			public HRESULT Unlock(void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) mut => VT.Unlock(ref this, pvAudioPtr1, dwAudioBytes1, pvAudioPtr2, dwAudioBytes2);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1063,14 +846,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectInPath(in Guid rguidObject, uint32 dwIndex, in Guid rguidInterface, void** ppObject) mut
-			{
-				return VT.GetObjectInPath(ref this, rguidObject, dwIndex, rguidInterface, ppObject);
-			}
-			public HRESULT GetFXStatus(uint32 dwEffectsCount, uint32* pdwFXStatus) mut
-			{
-				return VT.GetFXStatus(ref this, dwEffectsCount, pdwFXStatus);
-			}
+			public HRESULT GetObjectInPath(in Guid rguidObject, uint32 dwIndex, in Guid rguidInterface, void** ppObject) mut => VT.GetObjectInPath(ref this, rguidObject, dwIndex, rguidInterface, ppObject);
+			public HRESULT GetFXStatus(uint32 dwEffectsCount, uint32* pdwFXStatus) mut => VT.GetFXStatus(ref this, dwEffectsCount, pdwFXStatus);
+
 			[CRepr]
 			public struct VTable : IDirectSoundCaptureBuffer.VTable
 			{
@@ -1085,10 +863,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetNotificationPositions(uint32 dwPositionNotifies, DSBPOSITIONNOTIFY* pcPositionNotifies) mut
-			{
-				return VT.SetNotificationPositions(ref this, dwPositionNotifies, pcPositionNotifies);
-			}
+			public HRESULT SetNotificationPositions(uint32 dwPositionNotifies, DSBPOSITIONNOTIFY* pcPositionNotifies) mut => VT.SetNotificationPositions(ref this, dwPositionNotifies, pcPositionNotifies);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1102,14 +878,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXGargle pcDsFxGargle) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxGargle);
-			}
-			public HRESULT GetAllParameters(out DSFXGargle pDsFxGargle) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxGargle);
-			}
+			public HRESULT SetAllParameters(ref DSFXGargle pcDsFxGargle) mut => VT.SetAllParameters(ref this, ref pcDsFxGargle);
+			public HRESULT GetAllParameters(out DSFXGargle pDsFxGargle) mut => VT.GetAllParameters(ref this, out pDsFxGargle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1124,14 +895,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXChorus pcDsFxChorus) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxChorus);
-			}
-			public HRESULT GetAllParameters(out DSFXChorus pDsFxChorus) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxChorus);
-			}
+			public HRESULT SetAllParameters(ref DSFXChorus pcDsFxChorus) mut => VT.SetAllParameters(ref this, ref pcDsFxChorus);
+			public HRESULT GetAllParameters(out DSFXChorus pDsFxChorus) mut => VT.GetAllParameters(ref this, out pDsFxChorus);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1146,14 +912,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXFlanger pcDsFxFlanger) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxFlanger);
-			}
-			public HRESULT GetAllParameters(out DSFXFlanger pDsFxFlanger) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxFlanger);
-			}
+			public HRESULT SetAllParameters(ref DSFXFlanger pcDsFxFlanger) mut => VT.SetAllParameters(ref this, ref pcDsFxFlanger);
+			public HRESULT GetAllParameters(out DSFXFlanger pDsFxFlanger) mut => VT.GetAllParameters(ref this, out pDsFxFlanger);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1168,14 +929,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXEcho pcDsFxEcho) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxEcho);
-			}
-			public HRESULT GetAllParameters(out DSFXEcho pDsFxEcho) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxEcho);
-			}
+			public HRESULT SetAllParameters(ref DSFXEcho pcDsFxEcho) mut => VT.SetAllParameters(ref this, ref pcDsFxEcho);
+			public HRESULT GetAllParameters(out DSFXEcho pDsFxEcho) mut => VT.GetAllParameters(ref this, out pDsFxEcho);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1190,14 +946,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXDistortion pcDsFxDistortion) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxDistortion);
-			}
-			public HRESULT GetAllParameters(out DSFXDistortion pDsFxDistortion) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxDistortion);
-			}
+			public HRESULT SetAllParameters(ref DSFXDistortion pcDsFxDistortion) mut => VT.SetAllParameters(ref this, ref pcDsFxDistortion);
+			public HRESULT GetAllParameters(out DSFXDistortion pDsFxDistortion) mut => VT.GetAllParameters(ref this, out pDsFxDistortion);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1212,14 +963,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXCompressor pcDsFxCompressor) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxCompressor);
-			}
-			public HRESULT GetAllParameters(out DSFXCompressor pDsFxCompressor) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxCompressor);
-			}
+			public HRESULT SetAllParameters(ref DSFXCompressor pcDsFxCompressor) mut => VT.SetAllParameters(ref this, ref pcDsFxCompressor);
+			public HRESULT GetAllParameters(out DSFXCompressor pDsFxCompressor) mut => VT.GetAllParameters(ref this, out pDsFxCompressor);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1234,14 +980,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXParamEq pcDsFxParamEq) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxParamEq);
-			}
-			public HRESULT GetAllParameters(out DSFXParamEq pDsFxParamEq) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxParamEq);
-			}
+			public HRESULT SetAllParameters(ref DSFXParamEq pcDsFxParamEq) mut => VT.SetAllParameters(ref this, ref pcDsFxParamEq);
+			public HRESULT GetAllParameters(out DSFXParamEq pDsFxParamEq) mut => VT.GetAllParameters(ref this, out pDsFxParamEq);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1256,30 +997,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXI3DL2Reverb pcDsFxI3DL2Reverb) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxI3DL2Reverb);
-			}
-			public HRESULT GetAllParameters(out DSFXI3DL2Reverb pDsFxI3DL2Reverb) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxI3DL2Reverb);
-			}
-			public HRESULT SetPreset(uint32 dwPreset) mut
-			{
-				return VT.SetPreset(ref this, dwPreset);
-			}
-			public HRESULT GetPreset(out uint32 pdwPreset) mut
-			{
-				return VT.GetPreset(ref this, out pdwPreset);
-			}
-			public HRESULT SetQuality(int32 lQuality) mut
-			{
-				return VT.SetQuality(ref this, lQuality);
-			}
-			public HRESULT GetQuality(out int32 plQuality) mut
-			{
-				return VT.GetQuality(ref this, out plQuality);
-			}
+			public HRESULT SetAllParameters(ref DSFXI3DL2Reverb pcDsFxI3DL2Reverb) mut => VT.SetAllParameters(ref this, ref pcDsFxI3DL2Reverb);
+			public HRESULT GetAllParameters(out DSFXI3DL2Reverb pDsFxI3DL2Reverb) mut => VT.GetAllParameters(ref this, out pDsFxI3DL2Reverb);
+			public HRESULT SetPreset(uint32 dwPreset) mut => VT.SetPreset(ref this, dwPreset);
+			public HRESULT GetPreset(out uint32 pdwPreset) mut => VT.GetPreset(ref this, out pdwPreset);
+			public HRESULT SetQuality(int32 lQuality) mut => VT.SetQuality(ref this, lQuality);
+			public HRESULT GetQuality(out int32 plQuality) mut => VT.GetQuality(ref this, out plQuality);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1298,14 +1022,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSFXWavesReverb pcDsFxWavesReverb) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDsFxWavesReverb);
-			}
-			public HRESULT GetAllParameters(out DSFXWavesReverb pDsFxWavesReverb) mut
-			{
-				return VT.GetAllParameters(ref this, out pDsFxWavesReverb);
-			}
+			public HRESULT SetAllParameters(ref DSFXWavesReverb pcDsFxWavesReverb) mut => VT.SetAllParameters(ref this, ref pcDsFxWavesReverb);
+			public HRESULT GetAllParameters(out DSFXWavesReverb pDsFxWavesReverb) mut => VT.GetAllParameters(ref this, out pDsFxWavesReverb);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1320,22 +1039,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSCFXAec pDscFxAec) mut
-			{
-				return VT.SetAllParameters(ref this, ref pDscFxAec);
-			}
-			public HRESULT GetAllParameters(out DSCFXAec pDscFxAec) mut
-			{
-				return VT.GetAllParameters(ref this, out pDscFxAec);
-			}
-			public HRESULT GetStatus(out uint32 pdwStatus) mut
-			{
-				return VT.GetStatus(ref this, out pdwStatus);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT SetAllParameters(ref DSCFXAec pDscFxAec) mut => VT.SetAllParameters(ref this, ref pDscFxAec);
+			public HRESULT GetAllParameters(out DSCFXAec pDscFxAec) mut => VT.GetAllParameters(ref this, out pDscFxAec);
+			public HRESULT GetStatus(out uint32 pdwStatus) mut => VT.GetStatus(ref this, out pdwStatus);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1352,18 +1060,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllParameters(ref DSCFXNoiseSuppress pcDscFxNoiseSuppress) mut
-			{
-				return VT.SetAllParameters(ref this, ref pcDscFxNoiseSuppress);
-			}
-			public HRESULT GetAllParameters(out DSCFXNoiseSuppress pDscFxNoiseSuppress) mut
-			{
-				return VT.GetAllParameters(ref this, out pDscFxNoiseSuppress);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
+			public HRESULT SetAllParameters(ref DSCFXNoiseSuppress pcDscFxNoiseSuppress) mut => VT.SetAllParameters(ref this, ref pcDscFxNoiseSuppress);
+			public HRESULT GetAllParameters(out DSCFXNoiseSuppress pDscFxNoiseSuppress) mut => VT.GetAllParameters(ref this, out pDscFxNoiseSuppress);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1379,10 +1079,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(in Guid pCaptureGuid, in Guid pRenderGuid, ref DSCBUFFERDESC lpDscBufferDesc, ref DSBUFFERDESC lpDsBufferDesc, HWND hWnd, uint32 dwLevel, out IDirectSoundCaptureBuffer8* lplpDirectSoundCaptureBuffer8, out IDirectSoundBuffer8* lplpDirectSoundBuffer8) mut
-			{
-				return VT.Initialize(ref this, pCaptureGuid, pRenderGuid, ref lpDscBufferDesc, ref lpDsBufferDesc, hWnd, dwLevel, out lplpDirectSoundCaptureBuffer8, out lplpDirectSoundBuffer8);
-			}
+			public HRESULT Initialize(in Guid pCaptureGuid, in Guid pRenderGuid, ref DSCBUFFERDESC lpDscBufferDesc, ref DSBUFFERDESC lpDsBufferDesc, HWND hWnd, uint32 dwLevel, out IDirectSoundCaptureBuffer8* lplpDirectSoundCaptureBuffer8, out IDirectSoundBuffer8* lplpDirectSoundBuffer8) mut => VT.Initialize(ref this, pCaptureGuid, pRenderGuid, ref lpDscBufferDesc, ref lpDsBufferDesc, hWnd, dwLevel, out lplpDirectSoundCaptureBuffer8, out lplpDirectSoundBuffer8);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

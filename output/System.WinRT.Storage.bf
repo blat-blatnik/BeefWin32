@@ -51,10 +51,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMode(out uint32 fileAccessMode) mut
-			{
-				return VT.GetMode(ref this, out fileAccessMode);
-			}
+			public HRESULT GetMode(out uint32 fileAccessMode) mut => VT.GetMode(ref this, out fileAccessMode);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -68,10 +66,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnBrokenCallback() mut
-			{
-				return VT.OnBrokenCallback(ref this);
-			}
+			public HRESULT OnBrokenCallback() mut => VT.OnBrokenCallback(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -85,14 +81,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenUnbufferedFileHandle(ref IUnbufferedFileHandleOplockCallback oplockBreakCallback, out uint fileHandle) mut
-			{
-				return VT.OpenUnbufferedFileHandle(ref this, ref oplockBreakCallback, out fileHandle);
-			}
-			public HRESULT CloseUnbufferedFileHandle() mut
-			{
-				return VT.CloseUnbufferedFileHandle(ref this);
-			}
+			public HRESULT OpenUnbufferedFileHandle(ref IUnbufferedFileHandleOplockCallback oplockBreakCallback, out uint fileHandle) mut => VT.OpenUnbufferedFileHandle(ref this, ref oplockBreakCallback, out fileHandle);
+			public HRESULT CloseUnbufferedFileHandle() mut => VT.CloseUnbufferedFileHandle(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -107,10 +98,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OplockBreaking() mut
-			{
-				return VT.OplockBreaking(ref this);
-			}
+			public HRESULT OplockBreaking() mut => VT.OplockBreaking(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -124,10 +113,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) mut
-			{
-				return VT.Create(ref this, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
-			}
+			public HRESULT Create(HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) mut => VT.Create(ref this, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -141,10 +128,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Create(PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) mut
-			{
-				return VT.Create(ref this, fileName, creationOptions, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
-			}
+			public HRESULT Create(PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) mut => VT.Create(ref this, fileName, creationOptions, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{

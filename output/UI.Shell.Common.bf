@@ -137,14 +137,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(out uint32 pcObjects) mut
-			{
-				return VT.GetCount(ref this, out pcObjects);
-			}
-			public HRESULT GetAt(uint32 uiIndex, in Guid riid, void** ppv) mut
-			{
-				return VT.GetAt(ref this, uiIndex, riid, ppv);
-			}
+			public HRESULT GetCount(out uint32 pcObjects) mut => VT.GetCount(ref this, out pcObjects);
+			public HRESULT GetAt(uint32 uiIndex, in Guid riid, void** ppv) mut => VT.GetAt(ref this, uiIndex, riid, ppv);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -159,22 +154,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddObject(ref IUnknown punk) mut
-			{
-				return VT.AddObject(ref this, ref punk);
-			}
-			public HRESULT AddFromArray(ref IObjectArray poaSource) mut
-			{
-				return VT.AddFromArray(ref this, ref poaSource);
-			}
-			public HRESULT RemoveObjectAt(uint32 uiIndex) mut
-			{
-				return VT.RemoveObjectAt(ref this, uiIndex);
-			}
-			public HRESULT Clear() mut
-			{
-				return VT.Clear(ref this);
-			}
+			public HRESULT AddObject(ref IUnknown punk) mut => VT.AddObject(ref this, ref punk);
+			public HRESULT AddFromArray(ref IObjectArray poaSource) mut => VT.AddFromArray(ref this, ref poaSource);
+			public HRESULT RemoveObjectAt(uint32 uiIndex) mut => VT.RemoveObjectAt(ref this, uiIndex);
+			public HRESULT Clear() mut => VT.Clear(ref this);
+
 			[CRepr]
 			public struct VTable : IObjectArray.VTable
 			{

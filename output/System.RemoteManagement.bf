@@ -960,22 +960,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSession(BSTR connection, int32 flags, ref IDispatch connectionOptions, out IDispatch* session) mut
-			{
-				return VT.CreateSession(ref this, connection, flags, ref connectionOptions, out session);
-			}
-			public HRESULT CreateConnectionOptions(out IDispatch* connectionOptions) mut
-			{
-				return VT.CreateConnectionOptions(ref this, out connectionOptions);
-			}
-			public HRESULT get_CommandLine(out BSTR value) mut
-			{
-				return VT.get_CommandLine(ref this, out value);
-			}
-			public HRESULT get_Error(out BSTR value) mut
-			{
-				return VT.get_Error(ref this, out value);
-			}
+			public HRESULT CreateSession(BSTR connection, int32 flags, ref IDispatch connectionOptions, out IDispatch* session) mut => VT.CreateSession(ref this, connection, flags, ref connectionOptions, out session);
+			public HRESULT CreateConnectionOptions(out IDispatch* connectionOptions) mut => VT.CreateConnectionOptions(ref this, out connectionOptions);
+			public HRESULT get_CommandLine(out BSTR value) mut => VT.get_CommandLine(ref this, out value);
+			public HRESULT get_Error(out BSTR value) mut => VT.get_Error(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -992,86 +981,27 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateResourceLocator(BSTR strResourceLocator, out IDispatch* newResourceLocator) mut
-			{
-				return VT.CreateResourceLocator(ref this, strResourceLocator, out newResourceLocator);
-			}
-			public HRESULT SessionFlagUTF8(out int32 flags) mut
-			{
-				return VT.SessionFlagUTF8(ref this, out flags);
-			}
-			public HRESULT SessionFlagCredUsernamePassword(out int32 flags) mut
-			{
-				return VT.SessionFlagCredUsernamePassword(ref this, out flags);
-			}
-			public HRESULT SessionFlagSkipCACheck(out int32 flags) mut
-			{
-				return VT.SessionFlagSkipCACheck(ref this, out flags);
-			}
-			public HRESULT SessionFlagSkipCNCheck(out int32 flags) mut
-			{
-				return VT.SessionFlagSkipCNCheck(ref this, out flags);
-			}
-			public HRESULT SessionFlagUseDigest(out int32 flags) mut
-			{
-				return VT.SessionFlagUseDigest(ref this, out flags);
-			}
-			public HRESULT SessionFlagUseNegotiate(out int32 flags) mut
-			{
-				return VT.SessionFlagUseNegotiate(ref this, out flags);
-			}
-			public HRESULT SessionFlagUseBasic(out int32 flags) mut
-			{
-				return VT.SessionFlagUseBasic(ref this, out flags);
-			}
-			public HRESULT SessionFlagUseKerberos(out int32 flags) mut
-			{
-				return VT.SessionFlagUseKerberos(ref this, out flags);
-			}
-			public HRESULT SessionFlagNoEncryption(out int32 flags) mut
-			{
-				return VT.SessionFlagNoEncryption(ref this, out flags);
-			}
-			public HRESULT SessionFlagEnableSPNServerPort(out int32 flags) mut
-			{
-				return VT.SessionFlagEnableSPNServerPort(ref this, out flags);
-			}
-			public HRESULT SessionFlagUseNoAuthentication(out int32 flags) mut
-			{
-				return VT.SessionFlagUseNoAuthentication(ref this, out flags);
-			}
-			public HRESULT EnumerationFlagNonXmlText(out int32 flags) mut
-			{
-				return VT.EnumerationFlagNonXmlText(ref this, out flags);
-			}
-			public HRESULT EnumerationFlagReturnEPR(out int32 flags) mut
-			{
-				return VT.EnumerationFlagReturnEPR(ref this, out flags);
-			}
-			public HRESULT EnumerationFlagReturnObjectAndEPR(out int32 flags) mut
-			{
-				return VT.EnumerationFlagReturnObjectAndEPR(ref this, out flags);
-			}
-			public HRESULT GetErrorMessage(uint32 errorNumber, out BSTR errorMessage) mut
-			{
-				return VT.GetErrorMessage(ref this, errorNumber, out errorMessage);
-			}
-			public HRESULT EnumerationFlagHierarchyDeep(out int32 flags) mut
-			{
-				return VT.EnumerationFlagHierarchyDeep(ref this, out flags);
-			}
-			public HRESULT EnumerationFlagHierarchyShallow(out int32 flags) mut
-			{
-				return VT.EnumerationFlagHierarchyShallow(ref this, out flags);
-			}
-			public HRESULT EnumerationFlagHierarchyDeepBasePropsOnly(out int32 flags) mut
-			{
-				return VT.EnumerationFlagHierarchyDeepBasePropsOnly(ref this, out flags);
-			}
-			public HRESULT EnumerationFlagReturnObject(out int32 flags) mut
-			{
-				return VT.EnumerationFlagReturnObject(ref this, out flags);
-			}
+			public HRESULT CreateResourceLocator(BSTR strResourceLocator, out IDispatch* newResourceLocator) mut => VT.CreateResourceLocator(ref this, strResourceLocator, out newResourceLocator);
+			public HRESULT SessionFlagUTF8(out int32 flags) mut => VT.SessionFlagUTF8(ref this, out flags);
+			public HRESULT SessionFlagCredUsernamePassword(out int32 flags) mut => VT.SessionFlagCredUsernamePassword(ref this, out flags);
+			public HRESULT SessionFlagSkipCACheck(out int32 flags) mut => VT.SessionFlagSkipCACheck(ref this, out flags);
+			public HRESULT SessionFlagSkipCNCheck(out int32 flags) mut => VT.SessionFlagSkipCNCheck(ref this, out flags);
+			public HRESULT SessionFlagUseDigest(out int32 flags) mut => VT.SessionFlagUseDigest(ref this, out flags);
+			public HRESULT SessionFlagUseNegotiate(out int32 flags) mut => VT.SessionFlagUseNegotiate(ref this, out flags);
+			public HRESULT SessionFlagUseBasic(out int32 flags) mut => VT.SessionFlagUseBasic(ref this, out flags);
+			public HRESULT SessionFlagUseKerberos(out int32 flags) mut => VT.SessionFlagUseKerberos(ref this, out flags);
+			public HRESULT SessionFlagNoEncryption(out int32 flags) mut => VT.SessionFlagNoEncryption(ref this, out flags);
+			public HRESULT SessionFlagEnableSPNServerPort(out int32 flags) mut => VT.SessionFlagEnableSPNServerPort(ref this, out flags);
+			public HRESULT SessionFlagUseNoAuthentication(out int32 flags) mut => VT.SessionFlagUseNoAuthentication(ref this, out flags);
+			public HRESULT EnumerationFlagNonXmlText(out int32 flags) mut => VT.EnumerationFlagNonXmlText(ref this, out flags);
+			public HRESULT EnumerationFlagReturnEPR(out int32 flags) mut => VT.EnumerationFlagReturnEPR(ref this, out flags);
+			public HRESULT EnumerationFlagReturnObjectAndEPR(out int32 flags) mut => VT.EnumerationFlagReturnObjectAndEPR(ref this, out flags);
+			public HRESULT GetErrorMessage(uint32 errorNumber, out BSTR errorMessage) mut => VT.GetErrorMessage(ref this, errorNumber, out errorMessage);
+			public HRESULT EnumerationFlagHierarchyDeep(out int32 flags) mut => VT.EnumerationFlagHierarchyDeep(ref this, out flags);
+			public HRESULT EnumerationFlagHierarchyShallow(out int32 flags) mut => VT.EnumerationFlagHierarchyShallow(ref this, out flags);
+			public HRESULT EnumerationFlagHierarchyDeepBasePropsOnly(out int32 flags) mut => VT.EnumerationFlagHierarchyDeepBasePropsOnly(ref this, out flags);
+			public HRESULT EnumerationFlagReturnObject(out int32 flags) mut => VT.EnumerationFlagReturnObject(ref this, out flags);
+
 			[CRepr]
 			public struct VTable : IWSMan.VTable
 			{
@@ -1104,10 +1034,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SessionFlagUseClientCertificate(out int32 flags) mut
-			{
-				return VT.SessionFlagUseClientCertificate(ref this, out flags);
-			}
+			public HRESULT SessionFlagUseClientCertificate(out int32 flags) mut => VT.SessionFlagUseClientCertificate(ref this, out flags);
+
 			[CRepr]
 			public struct VTable : IWSManEx.VTable
 			{
@@ -1121,34 +1049,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SessionFlagUTF16(out int32 flags) mut
-			{
-				return VT.SessionFlagUTF16(ref this, out flags);
-			}
-			public HRESULT SessionFlagUseCredSsp(out int32 flags) mut
-			{
-				return VT.SessionFlagUseCredSsp(ref this, out flags);
-			}
-			public HRESULT EnumerationFlagAssociationInstance(out int32 flags) mut
-			{
-				return VT.EnumerationFlagAssociationInstance(ref this, out flags);
-			}
-			public HRESULT EnumerationFlagAssociatedInstance(out int32 flags) mut
-			{
-				return VT.EnumerationFlagAssociatedInstance(ref this, out flags);
-			}
-			public HRESULT SessionFlagSkipRevocationCheck(out int32 flags) mut
-			{
-				return VT.SessionFlagSkipRevocationCheck(ref this, out flags);
-			}
-			public HRESULT SessionFlagAllowNegotiateImplicitCredentials(out int32 flags) mut
-			{
-				return VT.SessionFlagAllowNegotiateImplicitCredentials(ref this, out flags);
-			}
-			public HRESULT SessionFlagUseSsl(out int32 flags) mut
-			{
-				return VT.SessionFlagUseSsl(ref this, out flags);
-			}
+			public HRESULT SessionFlagUTF16(out int32 flags) mut => VT.SessionFlagUTF16(ref this, out flags);
+			public HRESULT SessionFlagUseCredSsp(out int32 flags) mut => VT.SessionFlagUseCredSsp(ref this, out flags);
+			public HRESULT EnumerationFlagAssociationInstance(out int32 flags) mut => VT.EnumerationFlagAssociationInstance(ref this, out flags);
+			public HRESULT EnumerationFlagAssociatedInstance(out int32 flags) mut => VT.EnumerationFlagAssociatedInstance(ref this, out flags);
+			public HRESULT SessionFlagSkipRevocationCheck(out int32 flags) mut => VT.SessionFlagSkipRevocationCheck(ref this, out flags);
+			public HRESULT SessionFlagAllowNegotiateImplicitCredentials(out int32 flags) mut => VT.SessionFlagAllowNegotiateImplicitCredentials(ref this, out flags);
+			public HRESULT SessionFlagUseSsl(out int32 flags) mut => VT.SessionFlagUseSsl(ref this, out flags);
+
 			[CRepr]
 			public struct VTable : IWSManEx2.VTable
 			{
@@ -1168,18 +1076,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UserName(out BSTR name) mut
-			{
-				return VT.get_UserName(ref this, out name);
-			}
-			public HRESULT put_UserName(BSTR name) mut
-			{
-				return VT.put_UserName(ref this, name);
-			}
-			public HRESULT put_Password(BSTR password) mut
-			{
-				return VT.put_Password(ref this, password);
-			}
+			public HRESULT get_UserName(out BSTR name) mut => VT.get_UserName(ref this, out name);
+			public HRESULT put_UserName(BSTR name) mut => VT.put_UserName(ref this, name);
+			public HRESULT put_Password(BSTR password) mut => VT.put_Password(ref this, password);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1195,14 +1095,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CertificateThumbprint(out BSTR thumbprint) mut
-			{
-				return VT.get_CertificateThumbprint(ref this, out thumbprint);
-			}
-			public HRESULT put_CertificateThumbprint(BSTR thumbprint) mut
-			{
-				return VT.put_CertificateThumbprint(ref this, thumbprint);
-			}
+			public HRESULT get_CertificateThumbprint(out BSTR thumbprint) mut => VT.get_CertificateThumbprint(ref this, out thumbprint);
+			public HRESULT put_CertificateThumbprint(BSTR thumbprint) mut => VT.put_CertificateThumbprint(ref this, thumbprint);
+
 			[CRepr]
 			public struct VTable : IWSManConnectionOptions.VTable
 			{
@@ -1217,38 +1112,15 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProxy(int32 accessType, int32 authenticationMechanism, BSTR userName, BSTR password) mut
-			{
-				return VT.SetProxy(ref this, accessType, authenticationMechanism, userName, password);
-			}
-			public HRESULT ProxyIEConfig(out int32 value) mut
-			{
-				return VT.ProxyIEConfig(ref this, out value);
-			}
-			public HRESULT ProxyWinHttpConfig(out int32 value) mut
-			{
-				return VT.ProxyWinHttpConfig(ref this, out value);
-			}
-			public HRESULT ProxyAutoDetect(out int32 value) mut
-			{
-				return VT.ProxyAutoDetect(ref this, out value);
-			}
-			public HRESULT ProxyNoProxyServer(out int32 value) mut
-			{
-				return VT.ProxyNoProxyServer(ref this, out value);
-			}
-			public HRESULT ProxyAuthenticationUseNegotiate(out int32 value) mut
-			{
-				return VT.ProxyAuthenticationUseNegotiate(ref this, out value);
-			}
-			public HRESULT ProxyAuthenticationUseBasic(out int32 value) mut
-			{
-				return VT.ProxyAuthenticationUseBasic(ref this, out value);
-			}
-			public HRESULT ProxyAuthenticationUseDigest(out int32 value) mut
-			{
-				return VT.ProxyAuthenticationUseDigest(ref this, out value);
-			}
+			public HRESULT SetProxy(int32 accessType, int32 authenticationMechanism, BSTR userName, BSTR password) mut => VT.SetProxy(ref this, accessType, authenticationMechanism, userName, password);
+			public HRESULT ProxyIEConfig(out int32 value) mut => VT.ProxyIEConfig(ref this, out value);
+			public HRESULT ProxyWinHttpConfig(out int32 value) mut => VT.ProxyWinHttpConfig(ref this, out value);
+			public HRESULT ProxyAutoDetect(out int32 value) mut => VT.ProxyAutoDetect(ref this, out value);
+			public HRESULT ProxyNoProxyServer(out int32 value) mut => VT.ProxyNoProxyServer(ref this, out value);
+			public HRESULT ProxyAuthenticationUseNegotiate(out int32 value) mut => VT.ProxyAuthenticationUseNegotiate(ref this, out value);
+			public HRESULT ProxyAuthenticationUseBasic(out int32 value) mut => VT.ProxyAuthenticationUseBasic(ref this, out value);
+			public HRESULT ProxyAuthenticationUseDigest(out int32 value) mut => VT.ProxyAuthenticationUseDigest(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IWSManConnectionOptionsEx.VTable
 			{
@@ -1269,54 +1141,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Get(VARIANT resourceUri, int32 flags, out BSTR resource) mut
-			{
-				return VT.Get(ref this, resourceUri, flags, out resource);
-			}
-			public HRESULT Put(VARIANT resourceUri, BSTR resource, int32 flags, out BSTR resultResource) mut
-			{
-				return VT.Put(ref this, resourceUri, resource, flags, out resultResource);
-			}
-			public HRESULT Create(VARIANT resourceUri, BSTR resource, int32 flags, out BSTR newUri) mut
-			{
-				return VT.Create(ref this, resourceUri, resource, flags, out newUri);
-			}
-			public HRESULT Delete(VARIANT resourceUri, int32 flags) mut
-			{
-				return VT.Delete(ref this, resourceUri, flags);
-			}
-			public HRESULT Invoke(BSTR actionUri, VARIANT resourceUri, BSTR parameters, int32 flags, out BSTR result) mut
-			{
-				return VT.Invoke(ref this, actionUri, resourceUri, parameters, flags, out result);
-			}
-			public HRESULT Enumerate(VARIANT resourceUri, BSTR filter, BSTR dialect, int32 flags, out IDispatch* resultSet) mut
-			{
-				return VT.Enumerate(ref this, resourceUri, filter, dialect, flags, out resultSet);
-			}
-			public HRESULT Identify(int32 flags, out BSTR result) mut
-			{
-				return VT.Identify(ref this, flags, out result);
-			}
-			public HRESULT get_Error(out BSTR value) mut
-			{
-				return VT.get_Error(ref this, out value);
-			}
-			public HRESULT get_BatchItems(out int32 value) mut
-			{
-				return VT.get_BatchItems(ref this, out value);
-			}
-			public HRESULT put_BatchItems(int32 value) mut
-			{
-				return VT.put_BatchItems(ref this, value);
-			}
-			public HRESULT get_Timeout(out int32 value) mut
-			{
-				return VT.get_Timeout(ref this, out value);
-			}
-			public HRESULT put_Timeout(int32 value) mut
-			{
-				return VT.put_Timeout(ref this, value);
-			}
+			public HRESULT Get(VARIANT resourceUri, int32 flags, out BSTR resource) mut => VT.Get(ref this, resourceUri, flags, out resource);
+			public HRESULT Put(VARIANT resourceUri, BSTR resource, int32 flags, out BSTR resultResource) mut => VT.Put(ref this, resourceUri, resource, flags, out resultResource);
+			public HRESULT Create(VARIANT resourceUri, BSTR resource, int32 flags, out BSTR newUri) mut => VT.Create(ref this, resourceUri, resource, flags, out newUri);
+			public HRESULT Delete(VARIANT resourceUri, int32 flags) mut => VT.Delete(ref this, resourceUri, flags);
+			public HRESULT Invoke(BSTR actionUri, VARIANT resourceUri, BSTR parameters, int32 flags, out BSTR result) mut => VT.Invoke(ref this, actionUri, resourceUri, parameters, flags, out result);
+			public HRESULT Enumerate(VARIANT resourceUri, BSTR filter, BSTR dialect, int32 flags, out IDispatch* resultSet) mut => VT.Enumerate(ref this, resourceUri, filter, dialect, flags, out resultSet);
+			public HRESULT Identify(int32 flags, out BSTR result) mut => VT.Identify(ref this, flags, out result);
+			public HRESULT get_Error(out BSTR value) mut => VT.get_Error(ref this, out value);
+			public HRESULT get_BatchItems(out int32 value) mut => VT.get_BatchItems(ref this, out value);
+			public HRESULT put_BatchItems(int32 value) mut => VT.put_BatchItems(ref this, value);
+			public HRESULT get_Timeout(out int32 value) mut => VT.get_Timeout(ref this, out value);
+			public HRESULT put_Timeout(int32 value) mut => VT.put_Timeout(ref this, value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1341,18 +1178,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReadItem(out BSTR resource) mut
-			{
-				return VT.ReadItem(ref this, out resource);
-			}
-			public HRESULT get_AtEndOfStream(out int16 eos) mut
-			{
-				return VT.get_AtEndOfStream(ref this, out eos);
-			}
-			public HRESULT get_Error(out BSTR value) mut
-			{
-				return VT.get_Error(ref this, out value);
-			}
+			public HRESULT ReadItem(out BSTR resource) mut => VT.ReadItem(ref this, out resource);
+			public HRESULT get_AtEndOfStream(out int16 eos) mut => VT.get_AtEndOfStream(ref this, out eos);
+			public HRESULT get_Error(out BSTR value) mut => VT.get_Error(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1368,58 +1197,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT put_ResourceURI(BSTR uri) mut
-			{
-				return VT.put_ResourceURI(ref this, uri);
-			}
-			public HRESULT get_ResourceURI(out BSTR uri) mut
-			{
-				return VT.get_ResourceURI(ref this, out uri);
-			}
-			public HRESULT AddSelector(BSTR resourceSelName, VARIANT selValue) mut
-			{
-				return VT.AddSelector(ref this, resourceSelName, selValue);
-			}
-			public HRESULT ClearSelectors() mut
-			{
-				return VT.ClearSelectors(ref this);
-			}
-			public HRESULT get_FragmentPath(out BSTR text) mut
-			{
-				return VT.get_FragmentPath(ref this, out text);
-			}
-			public HRESULT put_FragmentPath(BSTR text) mut
-			{
-				return VT.put_FragmentPath(ref this, text);
-			}
-			public HRESULT get_FragmentDialect(out BSTR text) mut
-			{
-				return VT.get_FragmentDialect(ref this, out text);
-			}
-			public HRESULT put_FragmentDialect(BSTR text) mut
-			{
-				return VT.put_FragmentDialect(ref this, text);
-			}
-			public HRESULT AddOption(BSTR OptionName, VARIANT OptionValue, BOOL mustComply) mut
-			{
-				return VT.AddOption(ref this, OptionName, OptionValue, mustComply);
-			}
-			public HRESULT put_MustUnderstandOptions(BOOL mustUnderstand) mut
-			{
-				return VT.put_MustUnderstandOptions(ref this, mustUnderstand);
-			}
-			public HRESULT get_MustUnderstandOptions(out BOOL mustUnderstand) mut
-			{
-				return VT.get_MustUnderstandOptions(ref this, out mustUnderstand);
-			}
-			public HRESULT ClearOptions() mut
-			{
-				return VT.ClearOptions(ref this);
-			}
-			public HRESULT get_Error(out BSTR value) mut
-			{
-				return VT.get_Error(ref this, out value);
-			}
+			public HRESULT put_ResourceURI(BSTR uri) mut => VT.put_ResourceURI(ref this, uri);
+			public HRESULT get_ResourceURI(out BSTR uri) mut => VT.get_ResourceURI(ref this, out uri);
+			public HRESULT AddSelector(BSTR resourceSelName, VARIANT selValue) mut => VT.AddSelector(ref this, resourceSelName, selValue);
+			public HRESULT ClearSelectors() mut => VT.ClearSelectors(ref this);
+			public HRESULT get_FragmentPath(out BSTR text) mut => VT.get_FragmentPath(ref this, out text);
+			public HRESULT put_FragmentPath(BSTR text) mut => VT.put_FragmentPath(ref this, text);
+			public HRESULT get_FragmentDialect(out BSTR text) mut => VT.get_FragmentDialect(ref this, out text);
+			public HRESULT put_FragmentDialect(BSTR text) mut => VT.put_FragmentDialect(ref this, text);
+			public HRESULT AddOption(BSTR OptionName, VARIANT OptionValue, BOOL mustComply) mut => VT.AddOption(ref this, OptionName, OptionValue, mustComply);
+			public HRESULT put_MustUnderstandOptions(BOOL mustUnderstand) mut => VT.put_MustUnderstandOptions(ref this, mustUnderstand);
+			public HRESULT get_MustUnderstandOptions(out BOOL mustUnderstand) mut => VT.get_MustUnderstandOptions(ref this, out mustUnderstand);
+			public HRESULT ClearOptions() mut => VT.ClearOptions(ref this);
+			public HRESULT get_Error(out BSTR value) mut => VT.get_Error(ref this, out value);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1445,6 +1236,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1457,10 +1249,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConfigSDDL(ref IDispatch session, VARIANT resourceUri, int32 flags, out BSTR resource) mut
-			{
-				return VT.ConfigSDDL(ref this, ref session, resourceUri, flags, out resource);
-			}
+			public HRESULT ConfigSDDL(ref IDispatch session, VARIANT resourceUri, int32 flags, out BSTR resource) mut => VT.ConfigSDDL(ref this, ref session, resourceUri, flags, out resource);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

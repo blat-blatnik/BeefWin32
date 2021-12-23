@@ -1756,34 +1756,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenDatabase(PWSTR szDatabase) mut
-			{
-				return VT.OpenDatabase(ref this, szDatabase);
-			}
-			public HRESULT OpenCUB(PWSTR szCUBFile) mut
-			{
-				return VT.OpenCUB(ref this, szCUBFile);
-			}
-			public HRESULT CloseDatabase() mut
-			{
-				return VT.CloseDatabase(ref this);
-			}
-			public HRESULT CloseCUB() mut
-			{
-				return VT.CloseCUB(ref this);
-			}
-			public HRESULT SetDisplay(LPDISPLAYVAL pDisplayFunction, void* pContext) mut
-			{
-				return VT.SetDisplay(ref this, pDisplayFunction, pContext);
-			}
-			public HRESULT SetStatus(LPEVALCOMCALLBACK pStatusFunction, void* pContext) mut
-			{
-				return VT.SetStatus(ref this, pStatusFunction, pContext);
-			}
-			public HRESULT Validate(PWSTR wzICEs) mut
-			{
-				return VT.Validate(ref this, wzICEs);
-			}
+			public HRESULT OpenDatabase(PWSTR szDatabase) mut => VT.OpenDatabase(ref this, szDatabase);
+			public HRESULT OpenCUB(PWSTR szCUBFile) mut => VT.OpenCUB(ref this, szCUBFile);
+			public HRESULT CloseDatabase() mut => VT.CloseDatabase(ref this);
+			public HRESULT CloseCUB() mut => VT.CloseCUB(ref this);
+			public HRESULT SetDisplay(LPDISPLAYVAL pDisplayFunction, void* pContext) mut => VT.SetDisplay(ref this, pDisplayFunction, pContext);
+			public HRESULT SetStatus(LPEVALCOMCALLBACK pStatusFunction, void* pContext) mut => VT.SetStatus(ref this, pStatusFunction, pContext);
+			public HRESULT Validate(PWSTR wzICEs) mut => VT.Validate(ref this, wzICEs);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1803,22 +1783,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cFetch, out BSTR rgbstrStrings, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cFetch, out rgbstrStrings, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cSkip) mut
-			{
-				return VT.Skip(ref this, cSkip);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumMsmString* pemsmStrings) mut
-			{
-				return VT.Clone(ref this, out pemsmStrings);
-			}
+			public HRESULT Next(uint32 cFetch, out BSTR rgbstrStrings, out uint32 pcFetched) mut => VT.Next(ref this, cFetch, out rgbstrStrings, out pcFetched);
+			public HRESULT Skip(uint32 cSkip) mut => VT.Skip(ref this, cSkip);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumMsmString* pemsmStrings) mut => VT.Clone(ref this, out pemsmStrings);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1835,18 +1804,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Item(int32 Item, out BSTR Return) mut
-			{
-				return VT.get_Item(ref this, Item, out Return);
-			}
-			public HRESULT get_Count(out int32 Count) mut
-			{
-				return VT.get_Count(ref this, out Count);
-			}
-			public HRESULT get__NewEnum(out IUnknown* NewEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out NewEnum);
-			}
+			public HRESULT get_Item(int32 Item, out BSTR Return) mut => VT.get_Item(ref this, Item, out Return);
+			public HRESULT get_Count(out int32 Count) mut => VT.get_Count(ref this, out Count);
+			public HRESULT get__NewEnum(out IUnknown* NewEnum) mut => VT.get__NewEnum(ref this, out NewEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1862,34 +1823,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(out msmErrorType ErrorType) mut
-			{
-				return VT.get_Type(ref this, out ErrorType);
-			}
-			public HRESULT get_Path(out BSTR ErrorPath) mut
-			{
-				return VT.get_Path(ref this, out ErrorPath);
-			}
-			public HRESULT get_Language(out int16 ErrorLanguage) mut
-			{
-				return VT.get_Language(ref this, out ErrorLanguage);
-			}
-			public HRESULT get_DatabaseTable(out BSTR ErrorTable) mut
-			{
-				return VT.get_DatabaseTable(ref this, out ErrorTable);
-			}
-			public HRESULT get_DatabaseKeys(out IMsmStrings* ErrorKeys) mut
-			{
-				return VT.get_DatabaseKeys(ref this, out ErrorKeys);
-			}
-			public HRESULT get_ModuleTable(out BSTR ErrorTable) mut
-			{
-				return VT.get_ModuleTable(ref this, out ErrorTable);
-			}
-			public HRESULT get_ModuleKeys(out IMsmStrings* ErrorKeys) mut
-			{
-				return VT.get_ModuleKeys(ref this, out ErrorKeys);
-			}
+			public HRESULT get_Type(out msmErrorType ErrorType) mut => VT.get_Type(ref this, out ErrorType);
+			public HRESULT get_Path(out BSTR ErrorPath) mut => VT.get_Path(ref this, out ErrorPath);
+			public HRESULT get_Language(out int16 ErrorLanguage) mut => VT.get_Language(ref this, out ErrorLanguage);
+			public HRESULT get_DatabaseTable(out BSTR ErrorTable) mut => VT.get_DatabaseTable(ref this, out ErrorTable);
+			public HRESULT get_DatabaseKeys(out IMsmStrings* ErrorKeys) mut => VT.get_DatabaseKeys(ref this, out ErrorKeys);
+			public HRESULT get_ModuleTable(out BSTR ErrorTable) mut => VT.get_ModuleTable(ref this, out ErrorTable);
+			public HRESULT get_ModuleKeys(out IMsmStrings* ErrorKeys) mut => VT.get_ModuleKeys(ref this, out ErrorKeys);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1909,22 +1850,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cFetch, out IMsmError* rgmsmErrors, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cFetch, out rgmsmErrors, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cSkip) mut
-			{
-				return VT.Skip(ref this, cSkip);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumMsmError* pemsmErrors) mut
-			{
-				return VT.Clone(ref this, out pemsmErrors);
-			}
+			public HRESULT Next(uint32 cFetch, out IMsmError* rgmsmErrors, out uint32 pcFetched) mut => VT.Next(ref this, cFetch, out rgmsmErrors, out pcFetched);
+			public HRESULT Skip(uint32 cSkip) mut => VT.Skip(ref this, cSkip);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumMsmError* pemsmErrors) mut => VT.Clone(ref this, out pemsmErrors);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -1941,18 +1871,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Item(int32 Item, out IMsmError* Return) mut
-			{
-				return VT.get_Item(ref this, Item, out Return);
-			}
-			public HRESULT get_Count(out int32 Count) mut
-			{
-				return VT.get_Count(ref this, out Count);
-			}
-			public HRESULT get__NewEnum(out IUnknown* NewEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out NewEnum);
-			}
+			public HRESULT get_Item(int32 Item, out IMsmError* Return) mut => VT.get_Item(ref this, Item, out Return);
+			public HRESULT get_Count(out int32 Count) mut => VT.get_Count(ref this, out Count);
+			public HRESULT get__NewEnum(out IUnknown* NewEnum) mut => VT.get__NewEnum(ref this, out NewEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1968,18 +1890,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Module(out BSTR Module) mut
-			{
-				return VT.get_Module(ref this, out Module);
-			}
-			public HRESULT get_Language(out int16 Language) mut
-			{
-				return VT.get_Language(ref this, out Language);
-			}
-			public HRESULT get_Version(out BSTR Version) mut
-			{
-				return VT.get_Version(ref this, out Version);
-			}
+			public HRESULT get_Module(out BSTR Module) mut => VT.get_Module(ref this, out Module);
+			public HRESULT get_Language(out int16 Language) mut => VT.get_Language(ref this, out Language);
+			public HRESULT get_Version(out BSTR Version) mut => VT.get_Version(ref this, out Version);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1995,22 +1909,11 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cFetch, out IMsmDependency* rgmsmDependencies, out uint32 pcFetched) mut
-			{
-				return VT.Next(ref this, cFetch, out rgmsmDependencies, out pcFetched);
-			}
-			public HRESULT Skip(uint32 cSkip) mut
-			{
-				return VT.Skip(ref this, cSkip);
-			}
-			public HRESULT Reset() mut
-			{
-				return VT.Reset(ref this);
-			}
-			public HRESULT Clone(out IEnumMsmDependency* pemsmDependencies) mut
-			{
-				return VT.Clone(ref this, out pemsmDependencies);
-			}
+			public HRESULT Next(uint32 cFetch, out IMsmDependency* rgmsmDependencies, out uint32 pcFetched) mut => VT.Next(ref this, cFetch, out rgmsmDependencies, out pcFetched);
+			public HRESULT Skip(uint32 cSkip) mut => VT.Skip(ref this, cSkip);
+			public HRESULT Reset() mut => VT.Reset(ref this);
+			public HRESULT Clone(out IEnumMsmDependency* pemsmDependencies) mut => VT.Clone(ref this, out pemsmDependencies);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2027,18 +1930,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Item(int32 Item, out IMsmDependency* Return) mut
-			{
-				return VT.get_Item(ref this, Item, out Return);
-			}
-			public HRESULT get_Count(out int32 Count) mut
-			{
-				return VT.get_Count(ref this, out Count);
-			}
-			public HRESULT get__NewEnum(out IUnknown* NewEnum) mut
-			{
-				return VT.get__NewEnum(ref this, out NewEnum);
-			}
+			public HRESULT get_Item(int32 Item, out IMsmDependency* Return) mut => VT.get_Item(ref this, Item, out Return);
+			public HRESULT get_Count(out int32 Count) mut => VT.get_Count(ref this, out Count);
+			public HRESULT get__NewEnum(out IUnknown* NewEnum) mut => VT.get__NewEnum(ref this, out NewEnum);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2054,58 +1949,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenDatabase(BSTR Path) mut
-			{
-				return VT.OpenDatabase(ref this, Path);
-			}
-			public HRESULT OpenModule(BSTR Path, int16 Language) mut
-			{
-				return VT.OpenModule(ref this, Path, Language);
-			}
-			public HRESULT CloseDatabase(int16 Commit) mut
-			{
-				return VT.CloseDatabase(ref this, Commit);
-			}
-			public HRESULT CloseModule() mut
-			{
-				return VT.CloseModule(ref this);
-			}
-			public HRESULT OpenLog(BSTR Path) mut
-			{
-				return VT.OpenLog(ref this, Path);
-			}
-			public HRESULT CloseLog() mut
-			{
-				return VT.CloseLog(ref this);
-			}
-			public HRESULT Log(BSTR Message) mut
-			{
-				return VT.Log(ref this, Message);
-			}
-			public HRESULT get_Errors(out IMsmErrors* Errors) mut
-			{
-				return VT.get_Errors(ref this, out Errors);
-			}
-			public HRESULT get_Dependencies(out IMsmDependencies* Dependencies) mut
-			{
-				return VT.get_Dependencies(ref this, out Dependencies);
-			}
-			public HRESULT Merge(BSTR Feature, BSTR RedirectDir) mut
-			{
-				return VT.Merge(ref this, Feature, RedirectDir);
-			}
-			public HRESULT Connect(BSTR Feature) mut
-			{
-				return VT.Connect(ref this, Feature);
-			}
-			public HRESULT ExtractCAB(BSTR FileName) mut
-			{
-				return VT.ExtractCAB(ref this, FileName);
-			}
-			public HRESULT ExtractFiles(BSTR Path) mut
-			{
-				return VT.ExtractFiles(ref this, Path);
-			}
+			public HRESULT OpenDatabase(BSTR Path) mut => VT.OpenDatabase(ref this, Path);
+			public HRESULT OpenModule(BSTR Path, int16 Language) mut => VT.OpenModule(ref this, Path, Language);
+			public HRESULT CloseDatabase(int16 Commit) mut => VT.CloseDatabase(ref this, Commit);
+			public HRESULT CloseModule() mut => VT.CloseModule(ref this);
+			public HRESULT OpenLog(BSTR Path) mut => VT.OpenLog(ref this, Path);
+			public HRESULT CloseLog() mut => VT.CloseLog(ref this);
+			public HRESULT Log(BSTR Message) mut => VT.Log(ref this, Message);
+			public HRESULT get_Errors(out IMsmErrors* Errors) mut => VT.get_Errors(ref this, out Errors);
+			public HRESULT get_Dependencies(out IMsmDependencies* Dependencies) mut => VT.get_Dependencies(ref this, out Dependencies);
+			public HRESULT Merge(BSTR Feature, BSTR RedirectDir) mut => VT.Merge(ref this, Feature, RedirectDir);
+			public HRESULT Connect(BSTR Feature) mut => VT.Connect(ref this, Feature);
+			public HRESULT ExtractCAB(BSTR FileName) mut => VT.ExtractCAB(ref this, FileName);
+			public HRESULT ExtractFiles(BSTR Path) mut => VT.ExtractFiles(ref this, Path);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2131,10 +1988,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ModuleFiles(out IMsmStrings* Files) mut
-			{
-				return VT.get_ModuleFiles(ref this, out Files);
-			}
+			public HRESULT get_ModuleFiles(out IMsmStrings* Files) mut => VT.get_ModuleFiles(ref this, out Files);
+
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2148,42 +2003,16 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetProperty(uint32 PropertyId, void* pvProperty, uint32 cbProperty) mut
-			{
-				return VT.SetProperty(ref this, PropertyId, pvProperty, cbProperty);
-			}
-			public HRESULT GetProperty(uint32 PropertyId, void* pvProperty, out uint32 pcbProperty) mut
-			{
-				return VT.GetProperty(ref this, PropertyId, pvProperty, out pcbProperty);
-			}
-			public HRESULT Finalize() mut
-			{
-				return VT.Finalize(ref this);
-			}
-			public HRESULT GetDisplayName(char16* szDisplayName, out uint32 pccDisplayName, uint32 dwDisplayFlags) mut
-			{
-				return VT.GetDisplayName(ref this, szDisplayName, out pccDisplayName, dwDisplayFlags);
-			}
-			public HRESULT Reserved(in Guid refIID, ref IUnknown pUnkReserved1, ref IUnknown pUnkReserved2, PWSTR szReserved, int64 llReserved, void* pvReserved, uint32 cbReserved, void** ppReserved) mut
-			{
-				return VT.Reserved(ref this, refIID, ref pUnkReserved1, ref pUnkReserved2, szReserved, llReserved, pvReserved, cbReserved, ppReserved);
-			}
-			public HRESULT GetName(out uint32 lpcwBuffer, char16* pwzName) mut
-			{
-				return VT.GetName(ref this, out lpcwBuffer, pwzName);
-			}
-			public HRESULT GetVersion(out uint32 pdwVersionHi, out uint32 pdwVersionLow) mut
-			{
-				return VT.GetVersion(ref this, out pdwVersionHi, out pdwVersionLow);
-			}
-			public HRESULT IsEqual(ref IAssemblyName pName, uint32 dwCmpFlags) mut
-			{
-				return VT.IsEqual(ref this, ref pName, dwCmpFlags);
-			}
-			public HRESULT Clone(out IAssemblyName* pName) mut
-			{
-				return VT.Clone(ref this, out pName);
-			}
+			public HRESULT SetProperty(uint32 PropertyId, void* pvProperty, uint32 cbProperty) mut => VT.SetProperty(ref this, PropertyId, pvProperty, cbProperty);
+			public HRESULT GetProperty(uint32 PropertyId, void* pvProperty, out uint32 pcbProperty) mut => VT.GetProperty(ref this, PropertyId, pvProperty, out pcbProperty);
+			public HRESULT Finalize() mut => VT.Finalize(ref this);
+			public HRESULT GetDisplayName(char16* szDisplayName, out uint32 pccDisplayName, uint32 dwDisplayFlags) mut => VT.GetDisplayName(ref this, szDisplayName, out pccDisplayName, dwDisplayFlags);
+			public HRESULT Reserved(in Guid refIID, ref IUnknown pUnkReserved1, ref IUnknown pUnkReserved2, PWSTR szReserved, int64 llReserved, void* pvReserved, uint32 cbReserved, void** ppReserved) mut => VT.Reserved(ref this, refIID, ref pUnkReserved1, ref pUnkReserved2, szReserved, llReserved, pvReserved, cbReserved, ppReserved);
+			public HRESULT GetName(out uint32 lpcwBuffer, char16* pwzName) mut => VT.GetName(ref this, out lpcwBuffer, pwzName);
+			public HRESULT GetVersion(out uint32 pdwVersionHi, out uint32 pdwVersionLow) mut => VT.GetVersion(ref this, out pdwVersionHi, out pdwVersionLow);
+			public HRESULT IsEqual(ref IAssemblyName pName, uint32 dwCmpFlags) mut => VT.IsEqual(ref this, ref pName, dwCmpFlags);
+			public HRESULT Clone(out IAssemblyName* pName) mut => VT.Clone(ref this, out pName);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2205,18 +2034,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateStream(uint32 dwFlags, PWSTR pszStreamName, uint32 dwFormat, uint32 dwFormatFlags, out IStream* ppIStream, out ULARGE_INTEGER puliMaxSize) mut
-			{
-				return VT.CreateStream(ref this, dwFlags, pszStreamName, dwFormat, dwFormatFlags, out ppIStream, out puliMaxSize);
-			}
-			public HRESULT Commit(uint32 dwFlags, out uint32 pulDisposition) mut
-			{
-				return VT.Commit(ref this, dwFlags, out pulDisposition);
-			}
-			public HRESULT AbortItem() mut
-			{
-				return VT.AbortItem(ref this);
-			}
+			public HRESULT CreateStream(uint32 dwFlags, PWSTR pszStreamName, uint32 dwFormat, uint32 dwFormatFlags, out IStream* ppIStream, out ULARGE_INTEGER puliMaxSize) mut => VT.CreateStream(ref this, dwFlags, pszStreamName, dwFormat, dwFormatFlags, out ppIStream, out puliMaxSize);
+			public HRESULT Commit(uint32 dwFlags, out uint32 pulDisposition) mut => VT.Commit(ref this, dwFlags, out pulDisposition);
+			public HRESULT AbortItem() mut => VT.AbortItem(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2232,26 +2053,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UninstallAssembly(uint32 dwFlags, PWSTR pszAssemblyName, out FUSION_INSTALL_REFERENCE pRefData, out IASSEMBLYCACHE_UNINSTALL_DISPOSITION pulDisposition) mut
-			{
-				return VT.UninstallAssembly(ref this, dwFlags, pszAssemblyName, out pRefData, out pulDisposition);
-			}
-			public HRESULT QueryAssemblyInfo(QUERYASMINFO_FLAGS dwFlags, PWSTR pszAssemblyName, out ASSEMBLY_INFO pAsmInfo) mut
-			{
-				return VT.QueryAssemblyInfo(ref this, dwFlags, pszAssemblyName, out pAsmInfo);
-			}
-			public HRESULT CreateAssemblyCacheItem(uint32 dwFlags, void* pvReserved, out IAssemblyCacheItem* ppAsmItem, PWSTR pszAssemblyName) mut
-			{
-				return VT.CreateAssemblyCacheItem(ref this, dwFlags, pvReserved, out ppAsmItem, pszAssemblyName);
-			}
-			public HRESULT Reserved(out IUnknown* ppUnk) mut
-			{
-				return VT.Reserved(ref this, out ppUnk);
-			}
-			public HRESULT InstallAssembly(uint32 dwFlags, PWSTR pszManifestFilePath, out FUSION_INSTALL_REFERENCE pRefData) mut
-			{
-				return VT.InstallAssembly(ref this, dwFlags, pszManifestFilePath, out pRefData);
-			}
+			public HRESULT UninstallAssembly(uint32 dwFlags, PWSTR pszAssemblyName, out FUSION_INSTALL_REFERENCE pRefData, out IASSEMBLYCACHE_UNINSTALL_DISPOSITION pulDisposition) mut => VT.UninstallAssembly(ref this, dwFlags, pszAssemblyName, out pRefData, out pulDisposition);
+			public HRESULT QueryAssemblyInfo(QUERYASMINFO_FLAGS dwFlags, PWSTR pszAssemblyName, out ASSEMBLY_INFO pAsmInfo) mut => VT.QueryAssemblyInfo(ref this, dwFlags, pszAssemblyName, out pAsmInfo);
+			public HRESULT CreateAssemblyCacheItem(uint32 dwFlags, void* pvReserved, out IAssemblyCacheItem* ppAsmItem, PWSTR pszAssemblyName) mut => VT.CreateAssemblyCacheItem(ref this, dwFlags, pvReserved, out ppAsmItem, pszAssemblyName);
+			public HRESULT Reserved(out IUnknown* ppUnk) mut => VT.Reserved(ref this, out ppUnk);
+			public HRESULT InstallAssembly(uint32 dwFlags, PWSTR pszManifestFilePath, out FUSION_INSTALL_REFERENCE pRefData) mut => VT.InstallAssembly(ref this, dwFlags, pszManifestFilePath, out pRefData);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2269,226 +2076,62 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProductID(out Guid pProductID) mut
-			{
-				return VT.get_ProductID(ref this, out pProductID);
-			}
-			public HRESULT get_InstanceID(out Guid pInstanceID) mut
-			{
-				return VT.get_InstanceID(ref this, out pInstanceID);
-			}
-			public HRESULT get_OfferID(out Guid pOfferID) mut
-			{
-				return VT.get_OfferID(ref this, out pOfferID);
-			}
-			public HRESULT get_DefaultTask(BSTR* pDefaultTask) mut
-			{
-				return VT.get_DefaultTask(ref this, pDefaultTask);
-			}
-			public HRESULT get_AppTitle(BSTR* pAppTitle) mut
-			{
-				return VT.get_AppTitle(ref this, pAppTitle);
-			}
-			public HRESULT get_IconPath(BSTR* pAppIconPath) mut
-			{
-				return VT.get_IconPath(ref this, pAppIconPath);
-			}
-			public HRESULT get_NotificationState(out BOOL pIsNotified) mut
-			{
-				return VT.get_NotificationState(ref this, out pIsNotified);
-			}
-			public HRESULT get_AppInstallType(out PM_APPLICATION_INSTALL_TYPE pAppInstallType) mut
-			{
-				return VT.get_AppInstallType(ref this, out pAppInstallType);
-			}
-			public HRESULT get_State(out PM_APPLICATION_STATE pState) mut
-			{
-				return VT.get_State(ref this, out pState);
-			}
-			public HRESULT get_IsRevoked(out BOOL pIsRevoked) mut
-			{
-				return VT.get_IsRevoked(ref this, out pIsRevoked);
-			}
-			public HRESULT get_UpdateAvailable(out BOOL pIsUpdateAvailable) mut
-			{
-				return VT.get_UpdateAvailable(ref this, out pIsUpdateAvailable);
-			}
-			public HRESULT get_InstallDate(out FILETIME pInstallDate) mut
-			{
-				return VT.get_InstallDate(ref this, out pInstallDate);
-			}
-			public HRESULT get_IsUninstallable(out BOOL pIsUninstallable) mut
-			{
-				return VT.get_IsUninstallable(ref this, out pIsUninstallable);
-			}
-			public HRESULT get_IsThemable(out BOOL pIsThemable) mut
-			{
-				return VT.get_IsThemable(ref this, out pIsThemable);
-			}
-			public HRESULT get_IsTrial(out BOOL pIsTrial) mut
-			{
-				return VT.get_IsTrial(ref this, out pIsTrial);
-			}
-			public HRESULT get_InstallPath(BSTR* pInstallPath) mut
-			{
-				return VT.get_InstallPath(ref this, pInstallPath);
-			}
-			public HRESULT get_DataRoot(BSTR* pDataRoot) mut
-			{
-				return VT.get_DataRoot(ref this, pDataRoot);
-			}
-			public HRESULT get_Genre(out PM_APP_GENRE pGenre) mut
-			{
-				return VT.get_Genre(ref this, out pGenre);
-			}
-			public HRESULT get_Publisher(BSTR* pPublisher) mut
-			{
-				return VT.get_Publisher(ref this, pPublisher);
-			}
-			public HRESULT get_Author(BSTR* pAuthor) mut
-			{
-				return VT.get_Author(ref this, pAuthor);
-			}
-			public HRESULT get_Description(BSTR* pDescription) mut
-			{
-				return VT.get_Description(ref this, pDescription);
-			}
-			public HRESULT get_Version(BSTR* pVersion) mut
-			{
-				return VT.get_Version(ref this, pVersion);
-			}
-			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
-			{
-				return VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
-			}
-			public HRESULT get_AppPlatMajorVersion(out uint8 pMajorVer) mut
-			{
-				return VT.get_AppPlatMajorVersion(ref this, out pMajorVer);
-			}
-			public HRESULT get_AppPlatMinorVersion(out uint8 pMinorVer) mut
-			{
-				return VT.get_AppPlatMinorVersion(ref this, out pMinorVer);
-			}
-			public HRESULT get_PublisherID(out Guid pPublisherID) mut
-			{
-				return VT.get_PublisherID(ref this, out pPublisherID);
-			}
-			public HRESULT get_IsMultiCore(out BOOL pIsMultiCore) mut
-			{
-				return VT.get_IsMultiCore(ref this, out pIsMultiCore);
-			}
-			public HRESULT get_SID(BSTR* pSID) mut
-			{
-				return VT.get_SID(ref this, pSID);
-			}
-			public HRESULT get_AppPlatMajorVersionLightUp(out uint8 pMajorVer) mut
-			{
-				return VT.get_AppPlatMajorVersionLightUp(ref this, out pMajorVer);
-			}
-			public HRESULT get_AppPlatMinorVersionLightUp(out uint8 pMinorVer) mut
-			{
-				return VT.get_AppPlatMinorVersionLightUp(ref this, out pMinorVer);
-			}
-			public HRESULT set_UpdateAvailable(BOOL IsUpdateAvailable) mut
-			{
-				return VT.set_UpdateAvailable(ref this, IsUpdateAvailable);
-			}
-			public HRESULT set_NotificationState(BOOL IsNotified) mut
-			{
-				return VT.set_NotificationState(ref this, IsNotified);
-			}
-			public HRESULT set_IconPath(BSTR AppIconPath) mut
-			{
-				return VT.set_IconPath(ref this, AppIconPath);
-			}
-			public HRESULT set_UninstallableState(BOOL IsUninstallable) mut
-			{
-				return VT.set_UninstallableState(ref this, IsUninstallable);
-			}
-			public HRESULT get_IsPinableOnKidZone(out BOOL pIsPinable) mut
-			{
-				return VT.get_IsPinableOnKidZone(ref this, out pIsPinable);
-			}
-			public HRESULT get_IsOriginallyPreInstalled(out BOOL pIsPreinstalled) mut
-			{
-				return VT.get_IsOriginallyPreInstalled(ref this, out pIsPreinstalled);
-			}
-			public HRESULT get_IsInstallOnSD(out BOOL pIsInstallOnSD) mut
-			{
-				return VT.get_IsInstallOnSD(ref this, out pIsInstallOnSD);
-			}
-			public HRESULT get_IsOptoutOnSD(out BOOL pIsOptoutOnSD) mut
-			{
-				return VT.get_IsOptoutOnSD(ref this, out pIsOptoutOnSD);
-			}
-			public HRESULT get_IsOptoutBackupRestore(out BOOL pIsOptoutBackupRestore) mut
-			{
-				return VT.get_IsOptoutBackupRestore(ref this, out pIsOptoutBackupRestore);
-			}
-			public HRESULT set_EnterpriseDisabled(BOOL IsDisabled) mut
-			{
-				return VT.set_EnterpriseDisabled(ref this, IsDisabled);
-			}
-			public HRESULT set_EnterpriseUninstallable(BOOL IsUninstallable) mut
-			{
-				return VT.set_EnterpriseUninstallable(ref this, IsUninstallable);
-			}
-			public HRESULT get_EnterpriseDisabled(out BOOL IsDisabled) mut
-			{
-				return VT.get_EnterpriseDisabled(ref this, out IsDisabled);
-			}
-			public HRESULT get_EnterpriseUninstallable(out BOOL IsUninstallable) mut
-			{
-				return VT.get_EnterpriseUninstallable(ref this, out IsUninstallable);
-			}
-			public HRESULT get_IsVisibleOnAppList(out BOOL pIsVisible) mut
-			{
-				return VT.get_IsVisibleOnAppList(ref this, out pIsVisible);
-			}
-			public HRESULT get_IsInboxApp(out BOOL pIsInboxApp) mut
-			{
-				return VT.get_IsInboxApp(ref this, out pIsInboxApp);
-			}
-			public HRESULT get_StorageID(out Guid pStorageID) mut
-			{
-				return VT.get_StorageID(ref this, out pStorageID);
-			}
-			public HRESULT get_StartAppBlob(out PM_STARTAPPBLOB pBlob) mut
-			{
-				return VT.get_StartAppBlob(ref this, out pBlob);
-			}
-			public HRESULT get_IsMovable(out BOOL pIsMovable) mut
-			{
-				return VT.get_IsMovable(ref this, out pIsMovable);
-			}
-			public HRESULT get_DeploymentAppEnumerationHubFilter(out PM_TILE_HUBTYPE HubType) mut
-			{
-				return VT.get_DeploymentAppEnumerationHubFilter(ref this, out HubType);
-			}
-			public HRESULT get_ModifiedDate(out FILETIME pModifiedDate) mut
-			{
-				return VT.get_ModifiedDate(ref this, out pModifiedDate);
-			}
-			public HRESULT get_IsOriginallyRestored(out BOOL pIsRestored) mut
-			{
-				return VT.get_IsOriginallyRestored(ref this, out pIsRestored);
-			}
-			public HRESULT get_ShouldDeferMdilBind(out BOOL pfDeferMdilBind) mut
-			{
-				return VT.get_ShouldDeferMdilBind(ref this, out pfDeferMdilBind);
-			}
-			public HRESULT get_IsFullyPreInstall(out BOOL pfIsFullyPreInstall) mut
-			{
-				return VT.get_IsFullyPreInstall(ref this, out pfIsFullyPreInstall);
-			}
-			public HRESULT set_IsMdilMaintenanceNeeded(BOOL fIsMdilMaintenanceNeeded) mut
-			{
-				return VT.set_IsMdilMaintenanceNeeded(ref this, fIsMdilMaintenanceNeeded);
-			}
-			public HRESULT set_Title(BSTR AppTitle) mut
-			{
-				return VT.set_Title(ref this, AppTitle);
-			}
+			public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
+			public HRESULT get_InstanceID(out Guid pInstanceID) mut => VT.get_InstanceID(ref this, out pInstanceID);
+			public HRESULT get_OfferID(out Guid pOfferID) mut => VT.get_OfferID(ref this, out pOfferID);
+			public HRESULT get_DefaultTask(BSTR* pDefaultTask) mut => VT.get_DefaultTask(ref this, pDefaultTask);
+			public HRESULT get_AppTitle(BSTR* pAppTitle) mut => VT.get_AppTitle(ref this, pAppTitle);
+			public HRESULT get_IconPath(BSTR* pAppIconPath) mut => VT.get_IconPath(ref this, pAppIconPath);
+			public HRESULT get_NotificationState(out BOOL pIsNotified) mut => VT.get_NotificationState(ref this, out pIsNotified);
+			public HRESULT get_AppInstallType(out PM_APPLICATION_INSTALL_TYPE pAppInstallType) mut => VT.get_AppInstallType(ref this, out pAppInstallType);
+			public HRESULT get_State(out PM_APPLICATION_STATE pState) mut => VT.get_State(ref this, out pState);
+			public HRESULT get_IsRevoked(out BOOL pIsRevoked) mut => VT.get_IsRevoked(ref this, out pIsRevoked);
+			public HRESULT get_UpdateAvailable(out BOOL pIsUpdateAvailable) mut => VT.get_UpdateAvailable(ref this, out pIsUpdateAvailable);
+			public HRESULT get_InstallDate(out FILETIME pInstallDate) mut => VT.get_InstallDate(ref this, out pInstallDate);
+			public HRESULT get_IsUninstallable(out BOOL pIsUninstallable) mut => VT.get_IsUninstallable(ref this, out pIsUninstallable);
+			public HRESULT get_IsThemable(out BOOL pIsThemable) mut => VT.get_IsThemable(ref this, out pIsThemable);
+			public HRESULT get_IsTrial(out BOOL pIsTrial) mut => VT.get_IsTrial(ref this, out pIsTrial);
+			public HRESULT get_InstallPath(BSTR* pInstallPath) mut => VT.get_InstallPath(ref this, pInstallPath);
+			public HRESULT get_DataRoot(BSTR* pDataRoot) mut => VT.get_DataRoot(ref this, pDataRoot);
+			public HRESULT get_Genre(out PM_APP_GENRE pGenre) mut => VT.get_Genre(ref this, out pGenre);
+			public HRESULT get_Publisher(BSTR* pPublisher) mut => VT.get_Publisher(ref this, pPublisher);
+			public HRESULT get_Author(BSTR* pAuthor) mut => VT.get_Author(ref this, pAuthor);
+			public HRESULT get_Description(BSTR* pDescription) mut => VT.get_Description(ref this, pDescription);
+			public HRESULT get_Version(BSTR* pVersion) mut => VT.get_Version(ref this, pVersion);
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+			public HRESULT get_AppPlatMajorVersion(out uint8 pMajorVer) mut => VT.get_AppPlatMajorVersion(ref this, out pMajorVer);
+			public HRESULT get_AppPlatMinorVersion(out uint8 pMinorVer) mut => VT.get_AppPlatMinorVersion(ref this, out pMinorVer);
+			public HRESULT get_PublisherID(out Guid pPublisherID) mut => VT.get_PublisherID(ref this, out pPublisherID);
+			public HRESULT get_IsMultiCore(out BOOL pIsMultiCore) mut => VT.get_IsMultiCore(ref this, out pIsMultiCore);
+			public HRESULT get_SID(BSTR* pSID) mut => VT.get_SID(ref this, pSID);
+			public HRESULT get_AppPlatMajorVersionLightUp(out uint8 pMajorVer) mut => VT.get_AppPlatMajorVersionLightUp(ref this, out pMajorVer);
+			public HRESULT get_AppPlatMinorVersionLightUp(out uint8 pMinorVer) mut => VT.get_AppPlatMinorVersionLightUp(ref this, out pMinorVer);
+			public HRESULT set_UpdateAvailable(BOOL IsUpdateAvailable) mut => VT.set_UpdateAvailable(ref this, IsUpdateAvailable);
+			public HRESULT set_NotificationState(BOOL IsNotified) mut => VT.set_NotificationState(ref this, IsNotified);
+			public HRESULT set_IconPath(BSTR AppIconPath) mut => VT.set_IconPath(ref this, AppIconPath);
+			public HRESULT set_UninstallableState(BOOL IsUninstallable) mut => VT.set_UninstallableState(ref this, IsUninstallable);
+			public HRESULT get_IsPinableOnKidZone(out BOOL pIsPinable) mut => VT.get_IsPinableOnKidZone(ref this, out pIsPinable);
+			public HRESULT get_IsOriginallyPreInstalled(out BOOL pIsPreinstalled) mut => VT.get_IsOriginallyPreInstalled(ref this, out pIsPreinstalled);
+			public HRESULT get_IsInstallOnSD(out BOOL pIsInstallOnSD) mut => VT.get_IsInstallOnSD(ref this, out pIsInstallOnSD);
+			public HRESULT get_IsOptoutOnSD(out BOOL pIsOptoutOnSD) mut => VT.get_IsOptoutOnSD(ref this, out pIsOptoutOnSD);
+			public HRESULT get_IsOptoutBackupRestore(out BOOL pIsOptoutBackupRestore) mut => VT.get_IsOptoutBackupRestore(ref this, out pIsOptoutBackupRestore);
+			public HRESULT set_EnterpriseDisabled(BOOL IsDisabled) mut => VT.set_EnterpriseDisabled(ref this, IsDisabled);
+			public HRESULT set_EnterpriseUninstallable(BOOL IsUninstallable) mut => VT.set_EnterpriseUninstallable(ref this, IsUninstallable);
+			public HRESULT get_EnterpriseDisabled(out BOOL IsDisabled) mut => VT.get_EnterpriseDisabled(ref this, out IsDisabled);
+			public HRESULT get_EnterpriseUninstallable(out BOOL IsUninstallable) mut => VT.get_EnterpriseUninstallable(ref this, out IsUninstallable);
+			public HRESULT get_IsVisibleOnAppList(out BOOL pIsVisible) mut => VT.get_IsVisibleOnAppList(ref this, out pIsVisible);
+			public HRESULT get_IsInboxApp(out BOOL pIsInboxApp) mut => VT.get_IsInboxApp(ref this, out pIsInboxApp);
+			public HRESULT get_StorageID(out Guid pStorageID) mut => VT.get_StorageID(ref this, out pStorageID);
+			public HRESULT get_StartAppBlob(out PM_STARTAPPBLOB pBlob) mut => VT.get_StartAppBlob(ref this, out pBlob);
+			public HRESULT get_IsMovable(out BOOL pIsMovable) mut => VT.get_IsMovable(ref this, out pIsMovable);
+			public HRESULT get_DeploymentAppEnumerationHubFilter(out PM_TILE_HUBTYPE HubType) mut => VT.get_DeploymentAppEnumerationHubFilter(ref this, out HubType);
+			public HRESULT get_ModifiedDate(out FILETIME pModifiedDate) mut => VT.get_ModifiedDate(ref this, out pModifiedDate);
+			public HRESULT get_IsOriginallyRestored(out BOOL pIsRestored) mut => VT.get_IsOriginallyRestored(ref this, out pIsRestored);
+			public HRESULT get_ShouldDeferMdilBind(out BOOL pfDeferMdilBind) mut => VT.get_ShouldDeferMdilBind(ref this, out pfDeferMdilBind);
+			public HRESULT get_IsFullyPreInstall(out BOOL pfIsFullyPreInstall) mut => VT.get_IsFullyPreInstall(ref this, out pfIsFullyPreInstall);
+			public HRESULT set_IsMdilMaintenanceNeeded(BOOL fIsMdilMaintenanceNeeded) mut => VT.set_IsMdilMaintenanceNeeded(ref this, fIsMdilMaintenanceNeeded);
+			public HRESULT set_Title(BSTR AppTitle) mut => VT.set_Title(ref this, AppTitle);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2556,18 +2199,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PropertyID(out uint32 pPropID) mut
-			{
-				return VT.get_PropertyID(ref this, out pPropID);
-			}
-			public HRESULT get_PropertyValue(BSTR* pPropValue) mut
-			{
-				return VT.get_PropertyValue(ref this, pPropValue);
-			}
-			public HRESULT set_Property(BSTR PropValue) mut
-			{
-				return VT.set_Property(ref this, PropValue);
-			}
+			public HRESULT get_PropertyID(out uint32 pPropID) mut => VT.get_PropertyID(ref this, out pPropID);
+			public HRESULT get_PropertyValue(BSTR* pPropValue) mut => VT.get_PropertyValue(ref this, pPropValue);
+			public HRESULT set_Property(BSTR PropValue) mut => VT.set_Property(ref this, PropValue);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2583,10 +2218,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Next(IPMTilePropertyInfo** ppPropInfo) mut
-			{
-				return VT.get_Next(ref this, ppPropInfo);
-			}
+			public HRESULT get_Next(IPMTilePropertyInfo** ppPropInfo) mut => VT.get_Next(ref this, ppPropInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2600,102 +2233,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProductID(out Guid pProductID) mut
-			{
-				return VT.get_ProductID(ref this, out pProductID);
-			}
-			public HRESULT get_TileID(BSTR* pTileID) mut
-			{
-				return VT.get_TileID(ref this, pTileID);
-			}
-			public HRESULT get_TemplateType(out TILE_TEMPLATE_TYPE pTemplateType) mut
-			{
-				return VT.get_TemplateType(ref this, out pTemplateType);
-			}
-			public HRESULT get_HubPinnedState(PM_TILE_HUBTYPE HubType, out BOOL pPinned) mut
-			{
-				return VT.get_HubPinnedState(ref this, HubType, out pPinned);
-			}
-			public HRESULT get_HubPosition(PM_TILE_HUBTYPE HubType, out uint32 pPosition) mut
-			{
-				return VT.get_HubPosition(ref this, HubType, out pPosition);
-			}
-			public HRESULT get_IsNotified(out BOOL pIsNotified) mut
-			{
-				return VT.get_IsNotified(ref this, out pIsNotified);
-			}
-			public HRESULT get_IsDefault(out BOOL pIsDefault) mut
-			{
-				return VT.get_IsDefault(ref this, out pIsDefault);
-			}
-			public HRESULT get_TaskID(BSTR* pTaskID) mut
-			{
-				return VT.get_TaskID(ref this, pTaskID);
-			}
-			public HRESULT get_TileType(out PM_STARTTILE_TYPE pStartTileType) mut
-			{
-				return VT.get_TileType(ref this, out pStartTileType);
-			}
-			public HRESULT get_IsThemable(out BOOL pIsThemable) mut
-			{
-				return VT.get_IsThemable(ref this, out pIsThemable);
-			}
-			public HRESULT get_PropertyById(uint32 PropID, IPMTilePropertyInfo** ppPropInfo) mut
-			{
-				return VT.get_PropertyById(ref this, PropID, ppPropInfo);
-			}
-			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
-			{
-				return VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
-			}
-			public HRESULT get_PropertyEnum(IPMTilePropertyEnumerator** ppTilePropEnum) mut
-			{
-				return VT.get_PropertyEnum(ref this, ppTilePropEnum);
-			}
-			public HRESULT get_HubTileSize(PM_TILE_HUBTYPE HubType, out PM_TILE_SIZE pSize) mut
-			{
-				return VT.get_HubTileSize(ref this, HubType, out pSize);
-			}
-			public HRESULT set_HubPosition(PM_TILE_HUBTYPE HubType, uint32 Position) mut
-			{
-				return VT.set_HubPosition(ref this, HubType, Position);
-			}
-			public HRESULT set_NotifiedState(BOOL Notified) mut
-			{
-				return VT.set_NotifiedState(ref this, Notified);
-			}
-			public HRESULT set_HubPinnedState(PM_TILE_HUBTYPE HubType, BOOL Pinned) mut
-			{
-				return VT.set_HubPinnedState(ref this, HubType, Pinned);
-			}
-			public HRESULT set_HubTileSize(PM_TILE_HUBTYPE HubType, PM_TILE_SIZE Size) mut
-			{
-				return VT.set_HubTileSize(ref this, HubType, Size);
-			}
-			public HRESULT set_InvocationInfo(BSTR TaskName, BSTR TaskParameters) mut
-			{
-				return VT.set_InvocationInfo(ref this, TaskName, TaskParameters);
-			}
-			public HRESULT get_StartTileBlob(out PM_STARTTILEBLOB pBlob) mut
-			{
-				return VT.get_StartTileBlob(ref this, out pBlob);
-			}
-			public HRESULT get_IsRestoring(out BOOL pIsRestoring) mut
-			{
-				return VT.get_IsRestoring(ref this, out pIsRestoring);
-			}
-			public HRESULT get_IsAutoRestoreDisabled(out BOOL pIsAutoRestoreDisabled) mut
-			{
-				return VT.get_IsAutoRestoreDisabled(ref this, out pIsAutoRestoreDisabled);
-			}
-			public HRESULT set_IsRestoring(BOOL Restoring) mut
-			{
-				return VT.set_IsRestoring(ref this, Restoring);
-			}
-			public HRESULT set_IsAutoRestoreDisabled(BOOL AutoRestoreDisabled) mut
-			{
-				return VT.set_IsAutoRestoreDisabled(ref this, AutoRestoreDisabled);
-			}
+			public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
+			public HRESULT get_TileID(BSTR* pTileID) mut => VT.get_TileID(ref this, pTileID);
+			public HRESULT get_TemplateType(out TILE_TEMPLATE_TYPE pTemplateType) mut => VT.get_TemplateType(ref this, out pTemplateType);
+			public HRESULT get_HubPinnedState(PM_TILE_HUBTYPE HubType, out BOOL pPinned) mut => VT.get_HubPinnedState(ref this, HubType, out pPinned);
+			public HRESULT get_HubPosition(PM_TILE_HUBTYPE HubType, out uint32 pPosition) mut => VT.get_HubPosition(ref this, HubType, out pPosition);
+			public HRESULT get_IsNotified(out BOOL pIsNotified) mut => VT.get_IsNotified(ref this, out pIsNotified);
+			public HRESULT get_IsDefault(out BOOL pIsDefault) mut => VT.get_IsDefault(ref this, out pIsDefault);
+			public HRESULT get_TaskID(BSTR* pTaskID) mut => VT.get_TaskID(ref this, pTaskID);
+			public HRESULT get_TileType(out PM_STARTTILE_TYPE pStartTileType) mut => VT.get_TileType(ref this, out pStartTileType);
+			public HRESULT get_IsThemable(out BOOL pIsThemable) mut => VT.get_IsThemable(ref this, out pIsThemable);
+			public HRESULT get_PropertyById(uint32 PropID, IPMTilePropertyInfo** ppPropInfo) mut => VT.get_PropertyById(ref this, PropID, ppPropInfo);
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+			public HRESULT get_PropertyEnum(IPMTilePropertyEnumerator** ppTilePropEnum) mut => VT.get_PropertyEnum(ref this, ppTilePropEnum);
+			public HRESULT get_HubTileSize(PM_TILE_HUBTYPE HubType, out PM_TILE_SIZE pSize) mut => VT.get_HubTileSize(ref this, HubType, out pSize);
+			public HRESULT set_HubPosition(PM_TILE_HUBTYPE HubType, uint32 Position) mut => VT.set_HubPosition(ref this, HubType, Position);
+			public HRESULT set_NotifiedState(BOOL Notified) mut => VT.set_NotifiedState(ref this, Notified);
+			public HRESULT set_HubPinnedState(PM_TILE_HUBTYPE HubType, BOOL Pinned) mut => VT.set_HubPinnedState(ref this, HubType, Pinned);
+			public HRESULT set_HubTileSize(PM_TILE_HUBTYPE HubType, PM_TILE_SIZE Size) mut => VT.set_HubTileSize(ref this, HubType, Size);
+			public HRESULT set_InvocationInfo(BSTR TaskName, BSTR TaskParameters) mut => VT.set_InvocationInfo(ref this, TaskName, TaskParameters);
+			public HRESULT get_StartTileBlob(out PM_STARTTILEBLOB pBlob) mut => VT.get_StartTileBlob(ref this, out pBlob);
+			public HRESULT get_IsRestoring(out BOOL pIsRestoring) mut => VT.get_IsRestoring(ref this, out pIsRestoring);
+			public HRESULT get_IsAutoRestoreDisabled(out BOOL pIsAutoRestoreDisabled) mut => VT.get_IsAutoRestoreDisabled(ref this, out pIsAutoRestoreDisabled);
+			public HRESULT set_IsRestoring(BOOL Restoring) mut => VT.set_IsRestoring(ref this, Restoring);
+			public HRESULT set_IsAutoRestoreDisabled(BOOL AutoRestoreDisabled) mut => VT.set_IsAutoRestoreDisabled(ref this, AutoRestoreDisabled);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2732,10 +2294,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Next(IPMTileInfo** ppTileInfo) mut
-			{
-				return VT.get_Next(ref this, ppTileInfo);
-			}
+			public HRESULT get_Next(IPMTileInfo** ppTileInfo) mut => VT.get_Next(ref this, ppTileInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2749,10 +2309,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Next(IPMApplicationInfo** ppAppInfo) mut
-			{
-				return VT.get_Next(ref this, ppAppInfo);
-			}
+			public HRESULT get_Next(IPMApplicationInfo** ppAppInfo) mut => VT.get_Next(ref this, ppAppInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2766,102 +2324,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProductID(out Guid pProductID) mut
-			{
-				return VT.get_ProductID(ref this, out pProductID);
-			}
-			public HRESULT get_TileID(BSTR* pTileID) mut
-			{
-				return VT.get_TileID(ref this, pTileID);
-			}
-			public HRESULT get_NextSchedule(out FILETIME pNextSchedule) mut
-			{
-				return VT.get_NextSchedule(ref this, out pNextSchedule);
-			}
-			public HRESULT set_NextSchedule(FILETIME ftNextSchedule) mut
-			{
-				return VT.set_NextSchedule(ref this, ftNextSchedule);
-			}
-			public HRESULT get_StartSchedule(out FILETIME pStartSchedule) mut
-			{
-				return VT.get_StartSchedule(ref this, out pStartSchedule);
-			}
-			public HRESULT set_StartSchedule(FILETIME ftStartSchedule) mut
-			{
-				return VT.set_StartSchedule(ref this, ftStartSchedule);
-			}
-			public HRESULT get_IntervalDuration(out uint32 pIntervalDuration) mut
-			{
-				return VT.get_IntervalDuration(ref this, out pIntervalDuration);
-			}
-			public HRESULT set_IntervalDuration(uint32 ulIntervalDuration) mut
-			{
-				return VT.set_IntervalDuration(ref this, ulIntervalDuration);
-			}
-			public HRESULT get_RunForever(out BOOL IsRunForever) mut
-			{
-				return VT.get_RunForever(ref this, out IsRunForever);
-			}
-			public HRESULT set_RunForever(BOOL fRunForever) mut
-			{
-				return VT.set_RunForever(ref this, fRunForever);
-			}
-			public HRESULT get_MaxRunCount(out uint32 pMaxRunCount) mut
-			{
-				return VT.get_MaxRunCount(ref this, out pMaxRunCount);
-			}
-			public HRESULT set_MaxRunCount(uint32 ulMaxRunCount) mut
-			{
-				return VT.set_MaxRunCount(ref this, ulMaxRunCount);
-			}
-			public HRESULT get_RunCount(out uint32 pRunCount) mut
-			{
-				return VT.get_RunCount(ref this, out pRunCount);
-			}
-			public HRESULT set_RunCount(uint32 ulRunCount) mut
-			{
-				return VT.set_RunCount(ref this, ulRunCount);
-			}
-			public HRESULT get_RecurrenceType(out uint32 pRecurrenceType) mut
-			{
-				return VT.get_RecurrenceType(ref this, out pRecurrenceType);
-			}
-			public HRESULT set_RecurrenceType(uint32 ulRecurrenceType) mut
-			{
-				return VT.set_RecurrenceType(ref this, ulRecurrenceType);
-			}
-			public HRESULT get_TileXML(uint8** pTileXml, out uint32 pcbTileXml) mut
-			{
-				return VT.get_TileXML(ref this, pTileXml, out pcbTileXml);
-			}
-			public HRESULT set_TileXML(uint8* pTileXml, uint32 cbTileXml) mut
-			{
-				return VT.set_TileXML(ref this, pTileXml, cbTileXml);
-			}
-			public HRESULT get_UrlXML(uint8** pUrlXML, out uint32 pcbUrlXML) mut
-			{
-				return VT.get_UrlXML(ref this, pUrlXML, out pcbUrlXML);
-			}
-			public HRESULT set_UrlXML(uint8* pUrlXML, uint32 cbUrlXML) mut
-			{
-				return VT.set_UrlXML(ref this, pUrlXML, cbUrlXML);
-			}
-			public HRESULT get_AttemptCount(out uint32 pAttemptCount) mut
-			{
-				return VT.get_AttemptCount(ref this, out pAttemptCount);
-			}
-			public HRESULT set_AttemptCount(uint32 ulAttemptCount) mut
-			{
-				return VT.set_AttemptCount(ref this, ulAttemptCount);
-			}
-			public HRESULT get_DownloadState(out uint32 pDownloadState) mut
-			{
-				return VT.get_DownloadState(ref this, out pDownloadState);
-			}
-			public HRESULT set_DownloadState(uint32 ulDownloadState) mut
-			{
-				return VT.set_DownloadState(ref this, ulDownloadState);
-			}
+			public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
+			public HRESULT get_TileID(BSTR* pTileID) mut => VT.get_TileID(ref this, pTileID);
+			public HRESULT get_NextSchedule(out FILETIME pNextSchedule) mut => VT.get_NextSchedule(ref this, out pNextSchedule);
+			public HRESULT set_NextSchedule(FILETIME ftNextSchedule) mut => VT.set_NextSchedule(ref this, ftNextSchedule);
+			public HRESULT get_StartSchedule(out FILETIME pStartSchedule) mut => VT.get_StartSchedule(ref this, out pStartSchedule);
+			public HRESULT set_StartSchedule(FILETIME ftStartSchedule) mut => VT.set_StartSchedule(ref this, ftStartSchedule);
+			public HRESULT get_IntervalDuration(out uint32 pIntervalDuration) mut => VT.get_IntervalDuration(ref this, out pIntervalDuration);
+			public HRESULT set_IntervalDuration(uint32 ulIntervalDuration) mut => VT.set_IntervalDuration(ref this, ulIntervalDuration);
+			public HRESULT get_RunForever(out BOOL IsRunForever) mut => VT.get_RunForever(ref this, out IsRunForever);
+			public HRESULT set_RunForever(BOOL fRunForever) mut => VT.set_RunForever(ref this, fRunForever);
+			public HRESULT get_MaxRunCount(out uint32 pMaxRunCount) mut => VT.get_MaxRunCount(ref this, out pMaxRunCount);
+			public HRESULT set_MaxRunCount(uint32 ulMaxRunCount) mut => VT.set_MaxRunCount(ref this, ulMaxRunCount);
+			public HRESULT get_RunCount(out uint32 pRunCount) mut => VT.get_RunCount(ref this, out pRunCount);
+			public HRESULT set_RunCount(uint32 ulRunCount) mut => VT.set_RunCount(ref this, ulRunCount);
+			public HRESULT get_RecurrenceType(out uint32 pRecurrenceType) mut => VT.get_RecurrenceType(ref this, out pRecurrenceType);
+			public HRESULT set_RecurrenceType(uint32 ulRecurrenceType) mut => VT.set_RecurrenceType(ref this, ulRecurrenceType);
+			public HRESULT get_TileXML(uint8** pTileXml, out uint32 pcbTileXml) mut => VT.get_TileXML(ref this, pTileXml, out pcbTileXml);
+			public HRESULT set_TileXML(uint8* pTileXml, uint32 cbTileXml) mut => VT.set_TileXML(ref this, pTileXml, cbTileXml);
+			public HRESULT get_UrlXML(uint8** pUrlXML, out uint32 pcbUrlXML) mut => VT.get_UrlXML(ref this, pUrlXML, out pcbUrlXML);
+			public HRESULT set_UrlXML(uint8* pUrlXML, uint32 cbUrlXML) mut => VT.set_UrlXML(ref this, pUrlXML, cbUrlXML);
+			public HRESULT get_AttemptCount(out uint32 pAttemptCount) mut => VT.get_AttemptCount(ref this, out pAttemptCount);
+			public HRESULT set_AttemptCount(uint32 ulAttemptCount) mut => VT.set_AttemptCount(ref this, ulAttemptCount);
+			public HRESULT get_DownloadState(out uint32 pDownloadState) mut => VT.get_DownloadState(ref this, out pDownloadState);
+			public HRESULT set_DownloadState(uint32 ulDownloadState) mut => VT.set_DownloadState(ref this, ulDownloadState);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2898,10 +2385,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Next(IPMLiveTileJobInfo** ppLiveTileJobInfo) mut
-			{
-				return VT.get_Next(ref this, ppLiveTileJobInfo);
-			}
+			public HRESULT get_Next(IPMLiveTileJobInfo** ppLiveTileJobInfo) mut => VT.get_Next(ref this, ppLiveTileJobInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2915,146 +2400,42 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReportDownloadBegin(Guid productID) mut
-			{
-				return VT.ReportDownloadBegin(ref this, productID);
-			}
-			public HRESULT ReportDownloadProgress(Guid productID, uint16 usProgress) mut
-			{
-				return VT.ReportDownloadProgress(ref this, productID, usProgress);
-			}
-			public HRESULT ReportDownloadComplete(Guid productID, HRESULT hrResult) mut
-			{
-				return VT.ReportDownloadComplete(ref this, productID, hrResult);
-			}
-			public HRESULT BeginInstall(ref PM_INSTALLINFO pInstallInfo) mut
-			{
-				return VT.BeginInstall(ref this, ref pInstallInfo);
-			}
-			public HRESULT BeginUpdate(ref PM_UPDATEINFO pUpdateInfo) mut
-			{
-				return VT.BeginUpdate(ref this, ref pUpdateInfo);
-			}
-			public HRESULT BeginDeployPackage(ref PM_INSTALLINFO pInstallInfo) mut
-			{
-				return VT.BeginDeployPackage(ref this, ref pInstallInfo);
-			}
-			public HRESULT BeginUpdateDeployedPackageLegacy(ref PM_UPDATEINFO_LEGACY pUpdateInfo) mut
-			{
-				return VT.BeginUpdateDeployedPackageLegacy(ref this, ref pUpdateInfo);
-			}
-			public HRESULT BeginUninstall(Guid productID) mut
-			{
-				return VT.BeginUninstall(ref this, productID);
-			}
-			public HRESULT BeginEnterpriseAppInstall(ref PM_INSTALLINFO pInstallInfo) mut
-			{
-				return VT.BeginEnterpriseAppInstall(ref this, ref pInstallInfo);
-			}
-			public HRESULT BeginEnterpriseAppUpdate(ref PM_UPDATEINFO pUpdateInfo) mut
-			{
-				return VT.BeginEnterpriseAppUpdate(ref this, ref pUpdateInfo);
-			}
-			public HRESULT BeginUpdateLicense(Guid productID, Guid offerID, uint8* pbLicense, uint32 cbLicense) mut
-			{
-				return VT.BeginUpdateLicense(ref this, productID, offerID, pbLicense, cbLicense);
-			}
-			public HRESULT GetLicenseChallenge(BSTR PackagePath, uint8** ppbChallenge, out uint32 pcbChallenge, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) mut
-			{
-				return VT.GetLicenseChallenge(ref this, PackagePath, ppbChallenge, out pcbChallenge, ppbKID, pcbKID, ppbDeviceID, pcbDeviceID, ppbSaltValue, pcbSaltValue, ppbKGVValue, pcbKGVValue);
-			}
-			public HRESULT GetLicenseChallengeByProductID(Guid ProductID, uint8** ppbChallenge, out uint32 pcbLicense) mut
-			{
-				return VT.GetLicenseChallengeByProductID(ref this, ProductID, ppbChallenge, out pcbLicense);
-			}
-			public HRESULT GetLicenseChallengeByProductID2(Guid ProductID, uint8** ppbChallenge, out uint32 pcbLicense, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) mut
-			{
-				return VT.GetLicenseChallengeByProductID2(ref this, ProductID, ppbChallenge, out pcbLicense, ppbKID, pcbKID, ppbDeviceID, pcbDeviceID, ppbSaltValue, pcbSaltValue, ppbKGVValue, pcbKGVValue);
-			}
-			public HRESULT RevokeLicense(Guid productID) mut
-			{
-				return VT.RevokeLicense(ref this, productID);
-			}
-			public HRESULT RebindMdilBinaries(Guid ProductID, ref SAFEARRAY FileNames) mut
-			{
-				return VT.RebindMdilBinaries(ref this, ProductID, ref FileNames);
-			}
-			public HRESULT RebindAllMdilBinaries(Guid ProductID, Guid InstanceID) mut
-			{
-				return VT.RebindAllMdilBinaries(ref this, ProductID, InstanceID);
-			}
-			public HRESULT RegenerateXbf(Guid ProductID, ref SAFEARRAY AssemblyPaths) mut
-			{
-				return VT.RegenerateXbf(ref this, ProductID, ref AssemblyPaths);
-			}
-			public HRESULT GenerateXbfForCurrentLocale(Guid ProductID) mut
-			{
-				return VT.GenerateXbfForCurrentLocale(ref this, ProductID);
-			}
-			public HRESULT BeginProvision(Guid ProductID, BSTR XMLpath) mut
-			{
-				return VT.BeginProvision(ref this, ProductID, XMLpath);
-			}
-			public HRESULT BeginDeprovision(Guid ProductID) mut
-			{
-				return VT.BeginDeprovision(ref this, ProductID);
-			}
-			public HRESULT ReindexSQLCEDatabases(Guid ProductID) mut
-			{
-				return VT.ReindexSQLCEDatabases(ref this, ProductID);
-			}
-			public HRESULT SetApplicationsNeedMaintenance(uint32 RequiredMaintenanceOperations, out uint32 pcApplications) mut
-			{
-				return VT.SetApplicationsNeedMaintenance(ref this, RequiredMaintenanceOperations, out pcApplications);
-			}
-			public HRESULT UpdateChamberProfile(Guid ProductID) mut
-			{
-				return VT.UpdateChamberProfile(ref this, ProductID);
-			}
-			public HRESULT EnterprisePolicyIsApplicationAllowed(Guid productId, PWSTR publisherName, out BOOL pIsAllowed) mut
-			{
-				return VT.EnterprisePolicyIsApplicationAllowed(ref this, productId, publisherName, out pIsAllowed);
-			}
-			public HRESULT BeginUpdateDeployedPackage(ref PM_UPDATEINFO pUpdateInfo) mut
-			{
-				return VT.BeginUpdateDeployedPackage(ref this, ref pUpdateInfo);
-			}
-			public HRESULT ReportRestoreCancelled(Guid productID) mut
-			{
-				return VT.ReportRestoreCancelled(ref this, productID);
-			}
-			public HRESULT ResolveResourceString(PWSTR resourceString, BSTR* pResolvedResourceString) mut
-			{
-				return VT.ResolveResourceString(ref this, resourceString, pResolvedResourceString);
-			}
-			public HRESULT UpdateCapabilitiesForModernApps() mut
-			{
-				return VT.UpdateCapabilitiesForModernApps(ref this);
-			}
-			public HRESULT ReportDownloadStatusUpdate(Guid productId) mut
-			{
-				return VT.ReportDownloadStatusUpdate(ref this, productId);
-			}
-			public HRESULT BeginUninstallWithOptions(Guid productID, uint32 removalOptions) mut
-			{
-				return VT.BeginUninstallWithOptions(ref this, productID, removalOptions);
-			}
-			public HRESULT BindDeferredMdilBinaries() mut
-			{
-				return VT.BindDeferredMdilBinaries(ref this);
-			}
-			public HRESULT GenerateXamlLightupXbfForCurrentLocale(BSTR PackageFamilyName) mut
-			{
-				return VT.GenerateXamlLightupXbfForCurrentLocale(ref this, PackageFamilyName);
-			}
-			public HRESULT AddLicenseForAppx(Guid productID, uint8* pbLicense, uint32 cbLicense, uint8* pbPlayReadyHeader, uint32 cbPlayReadyHeader) mut
-			{
-				return VT.AddLicenseForAppx(ref this, productID, pbLicense, cbLicense, pbPlayReadyHeader, cbPlayReadyHeader);
-			}
-			public HRESULT FixJunctionsForAppsOnSDCard() mut
-			{
-				return VT.FixJunctionsForAppsOnSDCard(ref this);
-			}
+			public HRESULT ReportDownloadBegin(Guid productID) mut => VT.ReportDownloadBegin(ref this, productID);
+			public HRESULT ReportDownloadProgress(Guid productID, uint16 usProgress) mut => VT.ReportDownloadProgress(ref this, productID, usProgress);
+			public HRESULT ReportDownloadComplete(Guid productID, HRESULT hrResult) mut => VT.ReportDownloadComplete(ref this, productID, hrResult);
+			public HRESULT BeginInstall(ref PM_INSTALLINFO pInstallInfo) mut => VT.BeginInstall(ref this, ref pInstallInfo);
+			public HRESULT BeginUpdate(ref PM_UPDATEINFO pUpdateInfo) mut => VT.BeginUpdate(ref this, ref pUpdateInfo);
+			public HRESULT BeginDeployPackage(ref PM_INSTALLINFO pInstallInfo) mut => VT.BeginDeployPackage(ref this, ref pInstallInfo);
+			public HRESULT BeginUpdateDeployedPackageLegacy(ref PM_UPDATEINFO_LEGACY pUpdateInfo) mut => VT.BeginUpdateDeployedPackageLegacy(ref this, ref pUpdateInfo);
+			public HRESULT BeginUninstall(Guid productID) mut => VT.BeginUninstall(ref this, productID);
+			public HRESULT BeginEnterpriseAppInstall(ref PM_INSTALLINFO pInstallInfo) mut => VT.BeginEnterpriseAppInstall(ref this, ref pInstallInfo);
+			public HRESULT BeginEnterpriseAppUpdate(ref PM_UPDATEINFO pUpdateInfo) mut => VT.BeginEnterpriseAppUpdate(ref this, ref pUpdateInfo);
+			public HRESULT BeginUpdateLicense(Guid productID, Guid offerID, uint8* pbLicense, uint32 cbLicense) mut => VT.BeginUpdateLicense(ref this, productID, offerID, pbLicense, cbLicense);
+			public HRESULT GetLicenseChallenge(BSTR PackagePath, uint8** ppbChallenge, out uint32 pcbChallenge, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) mut => VT.GetLicenseChallenge(ref this, PackagePath, ppbChallenge, out pcbChallenge, ppbKID, pcbKID, ppbDeviceID, pcbDeviceID, ppbSaltValue, pcbSaltValue, ppbKGVValue, pcbKGVValue);
+			public HRESULT GetLicenseChallengeByProductID(Guid ProductID, uint8** ppbChallenge, out uint32 pcbLicense) mut => VT.GetLicenseChallengeByProductID(ref this, ProductID, ppbChallenge, out pcbLicense);
+			public HRESULT GetLicenseChallengeByProductID2(Guid ProductID, uint8** ppbChallenge, out uint32 pcbLicense, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) mut => VT.GetLicenseChallengeByProductID2(ref this, ProductID, ppbChallenge, out pcbLicense, ppbKID, pcbKID, ppbDeviceID, pcbDeviceID, ppbSaltValue, pcbSaltValue, ppbKGVValue, pcbKGVValue);
+			public HRESULT RevokeLicense(Guid productID) mut => VT.RevokeLicense(ref this, productID);
+			public HRESULT RebindMdilBinaries(Guid ProductID, ref SAFEARRAY FileNames) mut => VT.RebindMdilBinaries(ref this, ProductID, ref FileNames);
+			public HRESULT RebindAllMdilBinaries(Guid ProductID, Guid InstanceID) mut => VT.RebindAllMdilBinaries(ref this, ProductID, InstanceID);
+			public HRESULT RegenerateXbf(Guid ProductID, ref SAFEARRAY AssemblyPaths) mut => VT.RegenerateXbf(ref this, ProductID, ref AssemblyPaths);
+			public HRESULT GenerateXbfForCurrentLocale(Guid ProductID) mut => VT.GenerateXbfForCurrentLocale(ref this, ProductID);
+			public HRESULT BeginProvision(Guid ProductID, BSTR XMLpath) mut => VT.BeginProvision(ref this, ProductID, XMLpath);
+			public HRESULT BeginDeprovision(Guid ProductID) mut => VT.BeginDeprovision(ref this, ProductID);
+			public HRESULT ReindexSQLCEDatabases(Guid ProductID) mut => VT.ReindexSQLCEDatabases(ref this, ProductID);
+			public HRESULT SetApplicationsNeedMaintenance(uint32 RequiredMaintenanceOperations, out uint32 pcApplications) mut => VT.SetApplicationsNeedMaintenance(ref this, RequiredMaintenanceOperations, out pcApplications);
+			public HRESULT UpdateChamberProfile(Guid ProductID) mut => VT.UpdateChamberProfile(ref this, ProductID);
+			public HRESULT EnterprisePolicyIsApplicationAllowed(Guid productId, PWSTR publisherName, out BOOL pIsAllowed) mut => VT.EnterprisePolicyIsApplicationAllowed(ref this, productId, publisherName, out pIsAllowed);
+			public HRESULT BeginUpdateDeployedPackage(ref PM_UPDATEINFO pUpdateInfo) mut => VT.BeginUpdateDeployedPackage(ref this, ref pUpdateInfo);
+			public HRESULT ReportRestoreCancelled(Guid productID) mut => VT.ReportRestoreCancelled(ref this, productID);
+			public HRESULT ResolveResourceString(PWSTR resourceString, BSTR* pResolvedResourceString) mut => VT.ResolveResourceString(ref this, resourceString, pResolvedResourceString);
+			public HRESULT UpdateCapabilitiesForModernApps() mut => VT.UpdateCapabilitiesForModernApps(ref this);
+			public HRESULT ReportDownloadStatusUpdate(Guid productId) mut => VT.ReportDownloadStatusUpdate(ref this, productId);
+			public HRESULT BeginUninstallWithOptions(Guid productID, uint32 removalOptions) mut => VT.BeginUninstallWithOptions(ref this, productID, removalOptions);
+			public HRESULT BindDeferredMdilBinaries() mut => VT.BindDeferredMdilBinaries(ref this);
+			public HRESULT GenerateXamlLightupXbfForCurrentLocale(BSTR PackageFamilyName) mut => VT.GenerateXamlLightupXbfForCurrentLocale(ref this, PackageFamilyName);
+			public HRESULT AddLicenseForAppx(Guid productID, uint8* pbLicense, uint32 cbLicense, uint8* pbPlayReadyHeader, uint32 cbPlayReadyHeader) mut => VT.AddLicenseForAppx(ref this, productID, pbLicense, cbLicense, pbPlayReadyHeader, cbPlayReadyHeader);
+			public HRESULT FixJunctionsForAppsOnSDCard() mut => VT.FixJunctionsForAppsOnSDCard(ref this);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3102,78 +2483,25 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AllApplications(IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) mut
-			{
-				return VT.get_AllApplications(ref this, ppAppEnum, Filter);
-			}
-			public HRESULT get_AllTiles(IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) mut
-			{
-				return VT.get_AllTiles(ref this, ppTileEnum, Filter);
-			}
-			public HRESULT get_AllTasks(IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) mut
-			{
-				return VT.get_AllTasks(ref this, ppTaskEnum, Filter);
-			}
-			public HRESULT get_AllExtensions(IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) mut
-			{
-				return VT.get_AllExtensions(ref this, ppExtensionEnum, Filter);
-			}
-			public HRESULT get_AllBackgroundServiceAgents(IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) mut
-			{
-				return VT.get_AllBackgroundServiceAgents(ref this, ppBSAEnum, Filter);
-			}
-			public HRESULT get_AllBackgroundWorkers(IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) mut
-			{
-				return VT.get_AllBackgroundWorkers(ref this, ppBSWEnum, Filter);
-			}
-			public HRESULT get_ApplicationInfo(Guid ProductID, IPMApplicationInfo** ppAppInfo) mut
-			{
-				return VT.get_ApplicationInfo(ref this, ProductID, ppAppInfo);
-			}
-			public HRESULT get_TileInfo(Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) mut
-			{
-				return VT.get_TileInfo(ref this, ProductID, TileID, ppTileInfo);
-			}
-			public HRESULT get_TaskInfo(Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) mut
-			{
-				return VT.get_TaskInfo(ref this, ProductID, TaskID, ppTaskInfo);
-			}
-			public HRESULT get_TaskInfoEx(Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) mut
-			{
-				return VT.get_TaskInfoEx(ref this, ProductID, TaskID, ppTaskInfo);
-			}
-			public HRESULT get_BackgroundServiceAgentInfo(uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) mut
-			{
-				return VT.get_BackgroundServiceAgentInfo(ref this, BSAID, ppTaskInfo);
-			}
-			public HRESULT get_AllLiveTileJobs(IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) mut
-			{
-				return VT.get_AllLiveTileJobs(ref this, ppLiveTileJobEnum);
-			}
-			public HRESULT get_LiveTileJob(Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) mut
-			{
-				return VT.get_LiveTileJob(ref this, ProductID, TileID, RecurrenceType, ppLiveTileJobInfo);
-			}
-			public HRESULT get_ApplicationInfoExternal(Guid ProductID, IPMApplicationInfo** ppAppInfo) mut
-			{
-				return VT.get_ApplicationInfoExternal(ref this, ProductID, ppAppInfo);
-			}
-			public HRESULT get_FileHandlerGenericLogo(BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) mut
-			{
-				return VT.get_FileHandlerGenericLogo(ref this, FileType, LogoSize, pLogo);
-			}
-			public HRESULT get_ApplicationInfoFromAccessClaims(BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) mut
-			{
-				return VT.get_ApplicationInfoFromAccessClaims(ref this, SysAppID0, SysAppID1, ppAppInfo);
-			}
-			public HRESULT get_StartTileEnumeratorBlob(PM_ENUM_FILTER Filter, out uint32 pcTiles, PM_STARTTILEBLOB** ppTileBlobs) mut
-			{
-				return VT.get_StartTileEnumeratorBlob(ref this, Filter, out pcTiles, ppTileBlobs);
-			}
-			public HRESULT get_StartAppEnumeratorBlob(PM_ENUM_FILTER Filter, out uint32 pcApps, PM_STARTAPPBLOB** ppAppBlobs) mut
-			{
-				return VT.get_StartAppEnumeratorBlob(ref this, Filter, out pcApps, ppAppBlobs);
-			}
+			public HRESULT get_AllApplications(IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllApplications(ref this, ppAppEnum, Filter);
+			public HRESULT get_AllTiles(IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllTiles(ref this, ppTileEnum, Filter);
+			public HRESULT get_AllTasks(IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllTasks(ref this, ppTaskEnum, Filter);
+			public HRESULT get_AllExtensions(IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllExtensions(ref this, ppExtensionEnum, Filter);
+			public HRESULT get_AllBackgroundServiceAgents(IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllBackgroundServiceAgents(ref this, ppBSAEnum, Filter);
+			public HRESULT get_AllBackgroundWorkers(IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllBackgroundWorkers(ref this, ppBSWEnum, Filter);
+			public HRESULT get_ApplicationInfo(Guid ProductID, IPMApplicationInfo** ppAppInfo) mut => VT.get_ApplicationInfo(ref this, ProductID, ppAppInfo);
+			public HRESULT get_TileInfo(Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) mut => VT.get_TileInfo(ref this, ProductID, TileID, ppTileInfo);
+			public HRESULT get_TaskInfo(Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) mut => VT.get_TaskInfo(ref this, ProductID, TaskID, ppTaskInfo);
+			public HRESULT get_TaskInfoEx(Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) mut => VT.get_TaskInfoEx(ref this, ProductID, TaskID, ppTaskInfo);
+			public HRESULT get_BackgroundServiceAgentInfo(uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) mut => VT.get_BackgroundServiceAgentInfo(ref this, BSAID, ppTaskInfo);
+			public HRESULT get_AllLiveTileJobs(IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) mut => VT.get_AllLiveTileJobs(ref this, ppLiveTileJobEnum);
+			public HRESULT get_LiveTileJob(Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) mut => VT.get_LiveTileJob(ref this, ProductID, TileID, RecurrenceType, ppLiveTileJobInfo);
+			public HRESULT get_ApplicationInfoExternal(Guid ProductID, IPMApplicationInfo** ppAppInfo) mut => VT.get_ApplicationInfoExternal(ref this, ProductID, ppAppInfo);
+			public HRESULT get_FileHandlerGenericLogo(BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) mut => VT.get_FileHandlerGenericLogo(ref this, FileType, LogoSize, pLogo);
+			public HRESULT get_ApplicationInfoFromAccessClaims(BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) mut => VT.get_ApplicationInfoFromAccessClaims(ref this, SysAppID0, SysAppID1, ppAppInfo);
+			public HRESULT get_StartTileEnumeratorBlob(PM_ENUM_FILTER Filter, out uint32 pcTiles, PM_STARTTILEBLOB** ppTileBlobs) mut => VT.get_StartTileEnumeratorBlob(ref this, Filter, out pcTiles, ppTileBlobs);
+			public HRESULT get_StartAppEnumeratorBlob(PM_ENUM_FILTER Filter, out uint32 pcApps, PM_STARTAPPBLOB** ppAppBlobs) mut => VT.get_StartAppEnumeratorBlob(ref this, Filter, out pcApps, ppAppBlobs);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3204,90 +2532,28 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProductID(out Guid pProductID) mut
-			{
-				return VT.get_ProductID(ref this, out pProductID);
-			}
-			public HRESULT get_TaskID(BSTR* pTaskID) mut
-			{
-				return VT.get_TaskID(ref this, pTaskID);
-			}
-			public HRESULT get_NavigationPage(BSTR* pNavigationPage) mut
-			{
-				return VT.get_NavigationPage(ref this, pNavigationPage);
-			}
-			public HRESULT get_TaskTransition(out PM_TASK_TRANSITION pTaskTransition) mut
-			{
-				return VT.get_TaskTransition(ref this, out pTaskTransition);
-			}
-			public HRESULT get_RuntimeType(out PACKMAN_RUNTIME pRuntimetype) mut
-			{
-				return VT.get_RuntimeType(ref this, out pRuntimetype);
-			}
-			public HRESULT get_ActivationPolicy(out PM_ACTIVATION_POLICY pActivationPolicy) mut
-			{
-				return VT.get_ActivationPolicy(ref this, out pActivationPolicy);
-			}
-			public HRESULT get_TaskType(out PM_TASK_TYPE pTaskType) mut
-			{
-				return VT.get_TaskType(ref this, out pTaskType);
-			}
-			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
-			{
-				return VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
-			}
-			public HRESULT get_ImagePath(BSTR* pImagePath) mut
-			{
-				return VT.get_ImagePath(ref this, pImagePath);
-			}
-			public HRESULT get_ImageParams(BSTR* pImageParams) mut
-			{
-				return VT.get_ImageParams(ref this, pImageParams);
-			}
-			public HRESULT get_InstallRootFolder(BSTR* pInstallRootFolder) mut
-			{
-				return VT.get_InstallRootFolder(ref this, pInstallRootFolder);
-			}
-			public HRESULT get_DataRootFolder(BSTR* pDataRootFolder) mut
-			{
-				return VT.get_DataRootFolder(ref this, pDataRootFolder);
-			}
-			public HRESULT get_IsSingleInstanceHost(out BOOL pIsSingleInstanceHost) mut
-			{
-				return VT.get_IsSingleInstanceHost(ref this, out pIsSingleInstanceHost);
-			}
-			public HRESULT get_IsInteropEnabled(out BOOL pIsInteropEnabled) mut
-			{
-				return VT.get_IsInteropEnabled(ref this, out pIsInteropEnabled);
-			}
-			public HRESULT get_ApplicationState(out PM_APPLICATION_STATE pApplicationState) mut
-			{
-				return VT.get_ApplicationState(ref this, out pApplicationState);
-			}
-			public HRESULT get_InstallType(out PM_APPLICATION_INSTALL_TYPE pInstallType) mut
-			{
-				return VT.get_InstallType(ref this, out pInstallType);
-			}
-			public HRESULT get_Version(out uint8 pTargetMajorVersion, out uint8 pTargetMinorVersion) mut
-			{
-				return VT.get_Version(ref this, out pTargetMajorVersion, out pTargetMinorVersion);
-			}
-			public HRESULT get_BitsPerPixel(out uint16 pBitsPerPixel) mut
-			{
-				return VT.get_BitsPerPixel(ref this, out pBitsPerPixel);
-			}
-			public HRESULT get_SuppressesDehydration(out BOOL pSuppressesDehydration) mut
-			{
-				return VT.get_SuppressesDehydration(ref this, out pSuppressesDehydration);
-			}
-			public HRESULT get_BackgroundExecutionAbilities(BSTR* pBackgroundExecutionAbilities) mut
-			{
-				return VT.get_BackgroundExecutionAbilities(ref this, pBackgroundExecutionAbilities);
-			}
-			public HRESULT get_IsOptedForExtendedMem(out BOOL pIsOptedIn) mut
-			{
-				return VT.get_IsOptedForExtendedMem(ref this, out pIsOptedIn);
-			}
+			public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
+			public HRESULT get_TaskID(BSTR* pTaskID) mut => VT.get_TaskID(ref this, pTaskID);
+			public HRESULT get_NavigationPage(BSTR* pNavigationPage) mut => VT.get_NavigationPage(ref this, pNavigationPage);
+			public HRESULT get_TaskTransition(out PM_TASK_TRANSITION pTaskTransition) mut => VT.get_TaskTransition(ref this, out pTaskTransition);
+			public HRESULT get_RuntimeType(out PACKMAN_RUNTIME pRuntimetype) mut => VT.get_RuntimeType(ref this, out pRuntimetype);
+			public HRESULT get_ActivationPolicy(out PM_ACTIVATION_POLICY pActivationPolicy) mut => VT.get_ActivationPolicy(ref this, out pActivationPolicy);
+			public HRESULT get_TaskType(out PM_TASK_TYPE pTaskType) mut => VT.get_TaskType(ref this, out pTaskType);
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+			public HRESULT get_ImagePath(BSTR* pImagePath) mut => VT.get_ImagePath(ref this, pImagePath);
+			public HRESULT get_ImageParams(BSTR* pImageParams) mut => VT.get_ImageParams(ref this, pImageParams);
+			public HRESULT get_InstallRootFolder(BSTR* pInstallRootFolder) mut => VT.get_InstallRootFolder(ref this, pInstallRootFolder);
+			public HRESULT get_DataRootFolder(BSTR* pDataRootFolder) mut => VT.get_DataRootFolder(ref this, pDataRootFolder);
+			public HRESULT get_IsSingleInstanceHost(out BOOL pIsSingleInstanceHost) mut => VT.get_IsSingleInstanceHost(ref this, out pIsSingleInstanceHost);
+			public HRESULT get_IsInteropEnabled(out BOOL pIsInteropEnabled) mut => VT.get_IsInteropEnabled(ref this, out pIsInteropEnabled);
+			public HRESULT get_ApplicationState(out PM_APPLICATION_STATE pApplicationState) mut => VT.get_ApplicationState(ref this, out pApplicationState);
+			public HRESULT get_InstallType(out PM_APPLICATION_INSTALL_TYPE pInstallType) mut => VT.get_InstallType(ref this, out pInstallType);
+			public HRESULT get_Version(out uint8 pTargetMajorVersion, out uint8 pTargetMinorVersion) mut => VT.get_Version(ref this, out pTargetMajorVersion, out pTargetMinorVersion);
+			public HRESULT get_BitsPerPixel(out uint16 pBitsPerPixel) mut => VT.get_BitsPerPixel(ref this, out pBitsPerPixel);
+			public HRESULT get_SuppressesDehydration(out BOOL pSuppressesDehydration) mut => VT.get_SuppressesDehydration(ref this, out pSuppressesDehydration);
+			public HRESULT get_BackgroundExecutionAbilities(BSTR* pBackgroundExecutionAbilities) mut => VT.get_BackgroundExecutionAbilities(ref this, pBackgroundExecutionAbilities);
+			public HRESULT get_IsOptedForExtendedMem(out BOOL pIsOptedIn) mut => VT.get_IsOptedForExtendedMem(ref this, out pIsOptedIn);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3321,10 +2587,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Next(IPMTaskInfo** ppTaskInfo) mut
-			{
-				return VT.get_Next(ref this, ppTaskInfo);
-			}
+			public HRESULT get_Next(IPMTaskInfo** ppTaskInfo) mut => VT.get_Next(ref this, ppTaskInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3338,30 +2602,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SupplierPID(out Guid pSupplierPID) mut
-			{
-				return VT.get_SupplierPID(ref this, out pSupplierPID);
-			}
-			public HRESULT get_SupplierTaskID(BSTR* pSupplierTID) mut
-			{
-				return VT.get_SupplierTaskID(ref this, pSupplierTID);
-			}
-			public HRESULT get_Title(BSTR* pTitle) mut
-			{
-				return VT.get_Title(ref this, pTitle);
-			}
-			public HRESULT get_IconPath(BSTR* pIconPath) mut
-			{
-				return VT.get_IconPath(ref this, pIconPath);
-			}
-			public HRESULT get_ExtraFile(BSTR* pFilePath) mut
-			{
-				return VT.get_ExtraFile(ref this, pFilePath);
-			}
-			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
-			{
-				return VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
-			}
+			public HRESULT get_SupplierPID(out Guid pSupplierPID) mut => VT.get_SupplierPID(ref this, out pSupplierPID);
+			public HRESULT get_SupplierTaskID(BSTR* pSupplierTID) mut => VT.get_SupplierTaskID(ref this, pSupplierTID);
+			public HRESULT get_Title(BSTR* pTitle) mut => VT.get_Title(ref this, pTitle);
+			public HRESULT get_IconPath(BSTR* pIconPath) mut => VT.get_IconPath(ref this, pIconPath);
+			public HRESULT get_ExtraFile(BSTR* pFilePath) mut => VT.get_ExtraFile(ref this, pFilePath);
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3380,34 +2627,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pName) mut
-			{
-				return VT.get_Name(ref this, pName);
-			}
-			public HRESULT get_DisplayName(BSTR* pDisplayName) mut
-			{
-				return VT.get_DisplayName(ref this, pDisplayName);
-			}
-			public HRESULT get_Logo(PM_LOGO_SIZE LogoSize, BSTR* pLogo) mut
-			{
-				return VT.get_Logo(ref this, LogoSize, pLogo);
-			}
-			public HRESULT get_ContentType(BSTR FileType, BSTR* pContentType) mut
-			{
-				return VT.get_ContentType(ref this, FileType, pContentType);
-			}
-			public HRESULT get_FileType(BSTR ContentType, BSTR* pFileType) mut
-			{
-				return VT.get_FileType(ref this, ContentType, pFileType);
-			}
-			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
-			{
-				return VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
-			}
-			public HRESULT get_AllFileTypes(out uint32 pcbTypes, BSTR** ppTypes) mut
-			{
-				return VT.get_AllFileTypes(ref this, out pcbTypes, ppTypes);
-			}
+			public HRESULT get_Name(BSTR* pName) mut => VT.get_Name(ref this, pName);
+			public HRESULT get_DisplayName(BSTR* pDisplayName) mut => VT.get_DisplayName(ref this, pDisplayName);
+			public HRESULT get_Logo(PM_LOGO_SIZE LogoSize, BSTR* pLogo) mut => VT.get_Logo(ref this, LogoSize, pLogo);
+			public HRESULT get_ContentType(BSTR FileType, BSTR* pContentType) mut => VT.get_ContentType(ref this, FileType, pContentType);
+			public HRESULT get_FileType(BSTR ContentType, BSTR* pFileType) mut => VT.get_FileType(ref this, ContentType, pFileType);
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+			public HRESULT get_AllFileTypes(out uint32 pcbTypes, BSTR** ppTypes) mut => VT.get_AllFileTypes(ref this, out pcbTypes, ppTypes);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3427,14 +2654,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Protocol(BSTR* pProtocol) mut
-			{
-				return VT.get_Protocol(ref this, pProtocol);
-			}
-			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
-			{
-				return VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
-			}
+			public HRESULT get_Protocol(BSTR* pProtocol) mut => VT.get_Protocol(ref this, pProtocol);
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3449,18 +2671,10 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AllFileTypes(out uint32 pcTypes, BSTR** ppTypes) mut
-			{
-				return VT.get_AllFileTypes(ref this, out pcTypes, ppTypes);
-			}
-			public HRESULT get_AllDataFormats(out uint32 pcDataFormats, BSTR** ppDataFormats) mut
-			{
-				return VT.get_AllDataFormats(ref this, out pcDataFormats, ppDataFormats);
-			}
-			public HRESULT get_SupportsAllFileTypes(out BOOL pSupportsAllTypes) mut
-			{
-				return VT.get_SupportsAllFileTypes(ref this, out pSupportsAllTypes);
-			}
+			public HRESULT get_AllFileTypes(out uint32 pcTypes, BSTR** ppTypes) mut => VT.get_AllFileTypes(ref this, out pcTypes, ppTypes);
+			public HRESULT get_AllDataFormats(out uint32 pcDataFormats, BSTR** ppDataFormats) mut => VT.get_AllDataFormats(ref this, out pcDataFormats, ppDataFormats);
+			public HRESULT get_SupportsAllFileTypes(out BOOL pSupportsAllTypes) mut => VT.get_SupportsAllFileTypes(ref this, out pSupportsAllTypes);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3476,10 +2690,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_InvocationInfo(BSTR* pAUMID, BSTR* pArgs) mut
-			{
-				return VT.get_InvocationInfo(ref this, pAUMID, pArgs);
-			}
+			public HRESULT get_InvocationInfo(BSTR* pAUMID, BSTR* pArgs) mut => VT.get_InvocationInfo(ref this, pAUMID, pArgs);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3493,14 +2705,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AllFileTypes(out uint32 pcTypes, BSTR** ppTypes) mut
-			{
-				return VT.get_AllFileTypes(ref this, out pcTypes, ppTypes);
-			}
-			public HRESULT get_SupportsAllFileTypes(out BOOL pSupportsAllTypes) mut
-			{
-				return VT.get_SupportsAllFileTypes(ref this, out pSupportsAllTypes);
-			}
+			public HRESULT get_AllFileTypes(out uint32 pcTypes, BSTR** ppTypes) mut => VT.get_AllFileTypes(ref this, out pcTypes, ppTypes);
+			public HRESULT get_SupportsAllFileTypes(out BOOL pSupportsAllTypes) mut => VT.get_SupportsAllFileTypes(ref this, out pSupportsAllTypes);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3515,14 +2722,9 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AllFileTypes(out uint32 pcTypes, BSTR** ppTypes) mut
-			{
-				return VT.get_AllFileTypes(ref this, out pcTypes, ppTypes);
-			}
-			public HRESULT get_SupportsAllFileTypes(out BOOL pSupportsAllTypes) mut
-			{
-				return VT.get_SupportsAllFileTypes(ref this, out pSupportsAllTypes);
-			}
+			public HRESULT get_AllFileTypes(out uint32 pcTypes, BSTR** ppTypes) mut => VT.get_AllFileTypes(ref this, out pcTypes, ppTypes);
+			public HRESULT get_SupportsAllFileTypes(out BOOL pSupportsAllTypes) mut => VT.get_SupportsAllFileTypes(ref this, out pSupportsAllTypes);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3537,10 +2739,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SupportsUpdates(out BOOL pSupportsUpdates) mut
-			{
-				return VT.get_SupportsUpdates(ref this, out pSupportsUpdates);
-			}
+			public HRESULT get_SupportsUpdates(out BOOL pSupportsUpdates) mut => VT.get_SupportsUpdates(ref this, out pSupportsUpdates);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3554,10 +2754,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Next(IPMExtensionInfo** ppExtensionInfo) mut
-			{
-				return VT.get_Next(ref this, ppExtensionInfo);
-			}
+			public HRESULT get_Next(IPMExtensionInfo** ppExtensionInfo) mut => VT.get_Next(ref this, ppExtensionInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3571,62 +2769,21 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProductID(out Guid pProductID) mut
-			{
-				return VT.get_ProductID(ref this, out pProductID);
-			}
-			public HRESULT get_TaskID(BSTR* pTaskID) mut
-			{
-				return VT.get_TaskID(ref this, pTaskID);
-			}
-			public HRESULT get_BSAID(out uint32 pBSAID) mut
-			{
-				return VT.get_BSAID(ref this, out pBSAID);
-			}
-			public HRESULT get_BGSpecifier(BSTR* pBGSpecifier) mut
-			{
-				return VT.get_BGSpecifier(ref this, pBGSpecifier);
-			}
-			public HRESULT get_BGName(BSTR* pBGName) mut
-			{
-				return VT.get_BGName(ref this, pBGName);
-			}
-			public HRESULT get_BGSource(BSTR* pBGSource) mut
-			{
-				return VT.get_BGSource(ref this, pBGSource);
-			}
-			public HRESULT get_BGType(BSTR* pBGType) mut
-			{
-				return VT.get_BGType(ref this, pBGType);
-			}
-			public HRESULT get_IsPeriodic(out BOOL pIsPeriodic) mut
-			{
-				return VT.get_IsPeriodic(ref this, out pIsPeriodic);
-			}
-			public HRESULT get_IsScheduled(out BOOL pIsScheduled) mut
-			{
-				return VT.get_IsScheduled(ref this, out pIsScheduled);
-			}
-			public HRESULT get_IsScheduleAllowed(out BOOL pIsScheduleAllowed) mut
-			{
-				return VT.get_IsScheduleAllowed(ref this, out pIsScheduleAllowed);
-			}
-			public HRESULT get_Description(BSTR* pDescription) mut
-			{
-				return VT.get_Description(ref this, pDescription);
-			}
-			public HRESULT get_IsLaunchOnBoot(out BOOL pLaunchOnBoot) mut
-			{
-				return VT.get_IsLaunchOnBoot(ref this, out pLaunchOnBoot);
-			}
-			public HRESULT set_IsScheduled(BOOL IsScheduled) mut
-			{
-				return VT.set_IsScheduled(ref this, IsScheduled);
-			}
-			public HRESULT set_IsScheduleAllowed(BOOL IsScheduleAllowed) mut
-			{
-				return VT.set_IsScheduleAllowed(ref this, IsScheduleAllowed);
-			}
+			public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
+			public HRESULT get_TaskID(BSTR* pTaskID) mut => VT.get_TaskID(ref this, pTaskID);
+			public HRESULT get_BSAID(out uint32 pBSAID) mut => VT.get_BSAID(ref this, out pBSAID);
+			public HRESULT get_BGSpecifier(BSTR* pBGSpecifier) mut => VT.get_BGSpecifier(ref this, pBGSpecifier);
+			public HRESULT get_BGName(BSTR* pBGName) mut => VT.get_BGName(ref this, pBGName);
+			public HRESULT get_BGSource(BSTR* pBGSource) mut => VT.get_BGSource(ref this, pBGSource);
+			public HRESULT get_BGType(BSTR* pBGType) mut => VT.get_BGType(ref this, pBGType);
+			public HRESULT get_IsPeriodic(out BOOL pIsPeriodic) mut => VT.get_IsPeriodic(ref this, out pIsPeriodic);
+			public HRESULT get_IsScheduled(out BOOL pIsScheduled) mut => VT.get_IsScheduled(ref this, out pIsScheduled);
+			public HRESULT get_IsScheduleAllowed(out BOOL pIsScheduleAllowed) mut => VT.get_IsScheduleAllowed(ref this, out pIsScheduleAllowed);
+			public HRESULT get_Description(BSTR* pDescription) mut => VT.get_Description(ref this, pDescription);
+			public HRESULT get_IsLaunchOnBoot(out BOOL pLaunchOnBoot) mut => VT.get_IsLaunchOnBoot(ref this, out pLaunchOnBoot);
+			public HRESULT set_IsScheduled(BOOL IsScheduled) mut => VT.set_IsScheduled(ref this, IsScheduled);
+			public HRESULT set_IsScheduleAllowed(BOOL IsScheduleAllowed) mut => VT.set_IsScheduleAllowed(ref this, IsScheduleAllowed);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3653,30 +2810,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProductID(out Guid pProductID) mut
-			{
-				return VT.get_ProductID(ref this, out pProductID);
-			}
-			public HRESULT get_TaskID(BSTR* pTaskID) mut
-			{
-				return VT.get_TaskID(ref this, pTaskID);
-			}
-			public HRESULT get_BGName(BSTR* pBGName) mut
-			{
-				return VT.get_BGName(ref this, pBGName);
-			}
-			public HRESULT get_MaxStartupLatency(out uint32 pMaxStartupLatency) mut
-			{
-				return VT.get_MaxStartupLatency(ref this, out pMaxStartupLatency);
-			}
-			public HRESULT get_ExpectedRuntime(out uint32 pExpectedRuntime) mut
-			{
-				return VT.get_ExpectedRuntime(ref this, out pExpectedRuntime);
-			}
-			public HRESULT get_IsBootWorker(out BOOL pIsBootWorker) mut
-			{
-				return VT.get_IsBootWorker(ref this, out pIsBootWorker);
-			}
+			public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
+			public HRESULT get_TaskID(BSTR* pTaskID) mut => VT.get_TaskID(ref this, pTaskID);
+			public HRESULT get_BGName(BSTR* pBGName) mut => VT.get_BGName(ref this, pBGName);
+			public HRESULT get_MaxStartupLatency(out uint32 pMaxStartupLatency) mut => VT.get_MaxStartupLatency(ref this, out pMaxStartupLatency);
+			public HRESULT get_ExpectedRuntime(out uint32 pExpectedRuntime) mut => VT.get_ExpectedRuntime(ref this, out pExpectedRuntime);
+			public HRESULT get_IsBootWorker(out BOOL pIsBootWorker) mut => VT.get_IsBootWorker(ref this, out pIsBootWorker);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3695,10 +2835,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Next(IPMBackgroundServiceAgentInfo** ppBSAInfo) mut
-			{
-				return VT.get_Next(ref this, ppBSAInfo);
-			}
+			public HRESULT get_Next(IPMBackgroundServiceAgentInfo** ppBSAInfo) mut => VT.get_Next(ref this, ppBSAInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -3712,10 +2850,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Next(IPMBackgroundWorkerInfo** ppBWInfo) mut
-			{
-				return VT.get_Next(ref this, ppBWInfo);
-			}
+			public HRESULT get_Next(IPMBackgroundWorkerInfo** ppBWInfo) mut => VT.get_Next(ref this, ppBWInfo);
+
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
