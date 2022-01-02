@@ -1137,7 +1137,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MI_Timestamp		{
+		public struct MI_Timestamp
+		{
 			public uint32 year;
 			public uint32 month;
 			public uint32 day;
@@ -1148,7 +1149,8 @@ namespace Win32
 			public int32 utc;
 		}
 		[CRepr]
-		public struct MI_Interval		{
+		public struct MI_Interval
+		{
 			public uint32 days;
 			public uint32 hours;
 			public uint32 minutes;
@@ -1159,183 +1161,219 @@ namespace Win32
 			public uint32 __padding3;
 		}
 		[CRepr]
-		public struct MI_Datetime		{
+		public struct MI_Datetime
+		{
 			public uint32 isTimestamp;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public MI_Timestamp timestamp;
 				public MI_Interval interval;
 			}
 		}
 		[CRepr]
-		public struct MI_BooleanA		{
+		public struct MI_BooleanA
+		{
 			public uint8* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Uint8A		{
+		public struct MI_Uint8A
+		{
 			public uint8* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Sint8A		{
+		public struct MI_Sint8A
+		{
 			public int8* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Uint16A		{
+		public struct MI_Uint16A
+		{
 			public uint16* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Sint16A		{
+		public struct MI_Sint16A
+		{
 			public int16* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Uint32A		{
+		public struct MI_Uint32A
+		{
 			public uint32* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Sint32A		{
+		public struct MI_Sint32A
+		{
 			public int32* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Uint64A		{
+		public struct MI_Uint64A
+		{
 			public uint64* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Sint64A		{
+		public struct MI_Sint64A
+		{
 			public int64* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Real32A		{
+		public struct MI_Real32A
+		{
 			public float* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Real64A		{
+		public struct MI_Real64A
+		{
 			public double* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Char16A		{
+		public struct MI_Char16A
+		{
 			public uint16* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_DatetimeA		{
+		public struct MI_DatetimeA
+		{
 			public MI_Datetime* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_StringA		{
+		public struct MI_StringA
+		{
 			public uint16** data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ReferenceA		{
+		public struct MI_ReferenceA
+		{
 			public MI_Instance** data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_InstanceA		{
+		public struct MI_InstanceA
+		{
 			public MI_Instance** data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_Array		{
+		public struct MI_Array
+		{
 			public void* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstBooleanA		{
+		public struct MI_ConstBooleanA
+		{
 			public uint8* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstUint8A		{
+		public struct MI_ConstUint8A
+		{
 			public uint8* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstSint8A		{
+		public struct MI_ConstSint8A
+		{
 			public int8* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstUint16A		{
+		public struct MI_ConstUint16A
+		{
 			public uint16* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstSint16A		{
+		public struct MI_ConstSint16A
+		{
 			public int16* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstUint32A		{
+		public struct MI_ConstUint32A
+		{
 			public uint32* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstSint32A		{
+		public struct MI_ConstSint32A
+		{
 			public int32* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstUint64A		{
+		public struct MI_ConstUint64A
+		{
 			public uint64* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstSint64A		{
+		public struct MI_ConstSint64A
+		{
 			public int64* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstReal32A		{
+		public struct MI_ConstReal32A
+		{
 			public float* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstReal64A		{
+		public struct MI_ConstReal64A
+		{
 			public double* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstChar16A		{
+		public struct MI_ConstChar16A
+		{
 			public uint16* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstDatetimeA		{
+		public struct MI_ConstDatetimeA
+		{
 			public MI_Datetime* data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstStringA		{
+		public struct MI_ConstStringA
+		{
 			public uint16** data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstReferenceA		{
+		public struct MI_ConstReferenceA
+		{
 			public MI_Instance** data;
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ConstInstanceA		{
+		public struct MI_ConstInstanceA
+		{
 			public MI_Instance** data;
 			public uint32 size;
 		}
 		[CRepr, Union]
-		public struct MI_Value		{
+		public struct MI_Value
+		{
 			public uint8 boolean;
 			public uint8 uint8;
 			public int8 sint8;
@@ -1371,402 +1409,469 @@ namespace Win32
 			public MI_Array array;
 		}
 		[CRepr]
-		public struct MI_BooleanField		{
+		public struct MI_BooleanField
+		{
 			public uint8 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Sint8Field		{
+		public struct MI_Sint8Field
+		{
 			public int8 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Uint8Field		{
+		public struct MI_Uint8Field
+		{
 			public uint8 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Sint16Field		{
+		public struct MI_Sint16Field
+		{
 			public int16 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Uint16Field		{
+		public struct MI_Uint16Field
+		{
 			public uint16 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Sint32Field		{
+		public struct MI_Sint32Field
+		{
 			public int32 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Uint32Field		{
+		public struct MI_Uint32Field
+		{
 			public uint32 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Sint64Field		{
+		public struct MI_Sint64Field
+		{
 			public int64 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Uint64Field		{
+		public struct MI_Uint64Field
+		{
 			public uint64 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Real32Field		{
+		public struct MI_Real32Field
+		{
 			public float value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Real64Field		{
+		public struct MI_Real64Field
+		{
 			public double value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Char16Field		{
+		public struct MI_Char16Field
+		{
 			public uint16 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_DatetimeField		{
+		public struct MI_DatetimeField
+		{
 			public MI_Datetime value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_StringField		{
+		public struct MI_StringField
+		{
 			public uint16* value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ReferenceField		{
+		public struct MI_ReferenceField
+		{
 			public MI_Instance* value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_InstanceField		{
+		public struct MI_InstanceField
+		{
 			public MI_Instance* value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_BooleanAField		{
+		public struct MI_BooleanAField
+		{
 			public MI_BooleanA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Uint8AField		{
+		public struct MI_Uint8AField
+		{
 			public MI_Uint8A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Sint8AField		{
+		public struct MI_Sint8AField
+		{
 			public MI_Sint8A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Uint16AField		{
+		public struct MI_Uint16AField
+		{
 			public MI_Uint16A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Sint16AField		{
+		public struct MI_Sint16AField
+		{
 			public MI_Sint16A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Uint32AField		{
+		public struct MI_Uint32AField
+		{
 			public MI_Uint32A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Sint32AField		{
+		public struct MI_Sint32AField
+		{
 			public MI_Sint32A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Uint64AField		{
+		public struct MI_Uint64AField
+		{
 			public MI_Uint64A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Sint64AField		{
+		public struct MI_Sint64AField
+		{
 			public MI_Sint64A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Real32AField		{
+		public struct MI_Real32AField
+		{
 			public MI_Real32A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Real64AField		{
+		public struct MI_Real64AField
+		{
 			public MI_Real64A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_Char16AField		{
+		public struct MI_Char16AField
+		{
 			public MI_Char16A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_DatetimeAField		{
+		public struct MI_DatetimeAField
+		{
 			public MI_DatetimeA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_StringAField		{
+		public struct MI_StringAField
+		{
 			public MI_StringA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ReferenceAField		{
+		public struct MI_ReferenceAField
+		{
 			public MI_ReferenceA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_InstanceAField		{
+		public struct MI_InstanceAField
+		{
 			public MI_InstanceA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ArrayField		{
+		public struct MI_ArrayField
+		{
 			public MI_Array value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstBooleanField		{
+		public struct MI_ConstBooleanField
+		{
 			public uint8 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstSint8Field		{
+		public struct MI_ConstSint8Field
+		{
 			public int8 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstUint8Field		{
+		public struct MI_ConstUint8Field
+		{
 			public uint8 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstSint16Field		{
+		public struct MI_ConstSint16Field
+		{
 			public int16 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstUint16Field		{
+		public struct MI_ConstUint16Field
+		{
 			public uint16 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstSint32Field		{
+		public struct MI_ConstSint32Field
+		{
 			public int32 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstUint32Field		{
+		public struct MI_ConstUint32Field
+		{
 			public uint32 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstSint64Field		{
+		public struct MI_ConstSint64Field
+		{
 			public int64 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstUint64Field		{
+		public struct MI_ConstUint64Field
+		{
 			public uint64 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstReal32Field		{
+		public struct MI_ConstReal32Field
+		{
 			public float value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstReal64Field		{
+		public struct MI_ConstReal64Field
+		{
 			public double value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstChar16Field		{
+		public struct MI_ConstChar16Field
+		{
 			public uint16 value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstDatetimeField		{
+		public struct MI_ConstDatetimeField
+		{
 			public MI_Datetime value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstStringField		{
+		public struct MI_ConstStringField
+		{
 			public uint16* value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstReferenceField		{
+		public struct MI_ConstReferenceField
+		{
 			public MI_Instance* value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstInstanceField		{
+		public struct MI_ConstInstanceField
+		{
 			public MI_Instance* value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstBooleanAField		{
+		public struct MI_ConstBooleanAField
+		{
 			public MI_ConstBooleanA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstUint8AField		{
+		public struct MI_ConstUint8AField
+		{
 			public MI_ConstUint8A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstSint8AField		{
+		public struct MI_ConstSint8AField
+		{
 			public MI_ConstSint8A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstUint16AField		{
+		public struct MI_ConstUint16AField
+		{
 			public MI_ConstUint16A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstSint16AField		{
+		public struct MI_ConstSint16AField
+		{
 			public MI_ConstSint16A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstUint32AField		{
+		public struct MI_ConstUint32AField
+		{
 			public MI_ConstUint32A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstSint32AField		{
+		public struct MI_ConstSint32AField
+		{
 			public MI_ConstSint32A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstUint64AField		{
+		public struct MI_ConstUint64AField
+		{
 			public MI_ConstUint64A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstSint64AField		{
+		public struct MI_ConstSint64AField
+		{
 			public MI_ConstSint64A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstReal32AField		{
+		public struct MI_ConstReal32AField
+		{
 			public MI_ConstReal32A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstReal64AField		{
+		public struct MI_ConstReal64AField
+		{
 			public MI_ConstReal64A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstChar16AField		{
+		public struct MI_ConstChar16AField
+		{
 			public MI_ConstChar16A value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstDatetimeAField		{
+		public struct MI_ConstDatetimeAField
+		{
 			public MI_ConstDatetimeA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstStringAField		{
+		public struct MI_ConstStringAField
+		{
 			public MI_ConstStringA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstReferenceAField		{
+		public struct MI_ConstReferenceAField
+		{
 			public MI_ConstReferenceA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ConstInstanceAField		{
+		public struct MI_ConstInstanceAField
+		{
 			public MI_ConstInstanceA value;
 			public uint8 exists;
 			public uint8 flags;
 		}
 		[CRepr]
-		public struct MI_ServerFT		{
+		public struct MI_ServerFT
+		{
 			public int GetVersion;
 			public int GetSystemName;
 		}
 		[CRepr]
-		public struct MI_Server		{
+		public struct MI_Server
+		{
 			public MI_ServerFT* serverFT;
 			public MI_ContextFT* contextFT;
 			public MI_InstanceFT* instanceFT;
@@ -1774,17 +1879,20 @@ namespace Win32
 			public MI_FilterFT* filterFT;
 		}
 		[CRepr]
-		public struct MI_FilterFT		{
+		public struct MI_FilterFT
+		{
 			public int Evaluate;
 			public int GetExpression;
 		}
 		[CRepr]
-		public struct MI_Filter		{
+		public struct MI_Filter
+		{
 			public MI_FilterFT* ft;
 			public int[3] reserved;
 		}
 		[CRepr]
-		public struct MI_PropertySetFT		{
+		public struct MI_PropertySetFT
+		{
 			public int GetElementCount;
 			public int ContainsElement;
 			public int AddElement;
@@ -1795,12 +1903,14 @@ namespace Win32
 			public int Clone;
 		}
 		[CRepr]
-		public struct MI_PropertySet		{
+		public struct MI_PropertySet
+		{
 			public MI_PropertySetFT* ft;
 			public int[3] reserved;
 		}
 		[CRepr]
-		public struct MI_ObjectDecl		{
+		public struct MI_ObjectDecl
+		{
 			public uint32 flags;
 			public uint32 code;
 			public uint16* name;
@@ -1811,7 +1921,8 @@ namespace Win32
 			public uint32 size;
 		}
 		[CRepr]
-		public struct MI_ClassDecl		{
+		public struct MI_ClassDecl
+		{
 			public uint32 flags;
 			public uint32 code;
 			public uint16* name;
@@ -1829,7 +1940,8 @@ namespace Win32
 			public MI_Class* owningClass;
 		}
 		[CRepr]
-		public struct MI_FeatureDecl		{
+		public struct MI_FeatureDecl
+		{
 			public uint32 flags;
 			public uint32 code;
 			public uint16* name;
@@ -1837,7 +1949,8 @@ namespace Win32
 			public uint32 numQualifiers;
 		}
 		[CRepr]
-		public struct MI_ParameterDecl		{
+		public struct MI_ParameterDecl
+		{
 			public uint32 flags;
 			public uint32 code;
 			public uint16* name;
@@ -1849,7 +1962,8 @@ namespace Win32
 			public uint32 offset;
 		}
 		[CRepr]
-		public struct MI_PropertyDecl		{
+		public struct MI_PropertyDecl
+		{
 			public uint32 flags;
 			public uint32 code;
 			public uint16* name;
@@ -1864,7 +1978,8 @@ namespace Win32
 			public void* value;
 		}
 		[CRepr]
-		public struct MI_MethodDecl		{
+		public struct MI_MethodDecl
+		{
 			public uint32 flags;
 			public uint32 code;
 			public uint16* name;
@@ -1880,7 +1995,8 @@ namespace Win32
 			public MI_MethodDecl_Invoke @function;
 		}
 		[CRepr]
-		public struct MI_QualifierDecl		{
+		public struct MI_QualifierDecl
+		{
 			public uint16* name;
 			public uint32 type;
 			public uint32 @scope;
@@ -1889,14 +2005,16 @@ namespace Win32
 			public void* value;
 		}
 		[CRepr]
-		public struct MI_Qualifier		{
+		public struct MI_Qualifier
+		{
 			public uint16* name;
 			public uint32 type;
 			public uint32 flavor;
 			public void* value;
 		}
 		[CRepr]
-		public struct MI_SchemaDecl		{
+		public struct MI_SchemaDecl
+		{
 			public MI_QualifierDecl** qualifierDecls;
 			public uint32 numQualifierDecls;
 			public MI_ClassDecl** classDecls;
@@ -1905,7 +2023,8 @@ namespace Win32
 		[CRepr]
 		public struct MI_Module_Self {}
 		[CRepr]
-		public struct MI_ProviderFT		{
+		public struct MI_ProviderFT
+		{
 			public MI_ProviderFT_Load Load;
 			public MI_ProviderFT_Unload Unload;
 			public MI_ProviderFT_GetInstance GetInstance;
@@ -1922,7 +2041,8 @@ namespace Win32
 			public MI_ProviderFT_Invoke Invoke;
 		}
 		[CRepr]
-		public struct MI_Module		{
+		public struct MI_Module
+		{
 			public uint32 version;
 			public uint32 generatorVersion;
 			public uint32 flags;
@@ -1933,7 +2053,8 @@ namespace Win32
 			public MI_ProviderFT* dynamicProviderFT;
 		}
 		[CRepr]
-		public struct MI_InstanceFT		{
+		public struct MI_InstanceFT
+		{
 			public int Clone;
 			public int Destruct;
 			public int Delete;
@@ -1954,12 +2075,14 @@ namespace Win32
 			public int GetClass;
 		}
 		[CRepr]
-		public struct MI_InstanceExFT		{
+		public struct MI_InstanceExFT
+		{
 			public MI_InstanceFT parent;
 			public int Normalize;
 		}
 		[CRepr]
-		public struct MI_Instance		{
+		public struct MI_Instance
+		{
 			public MI_InstanceFT* ft;
 			public MI_ClassDecl* classDecl;
 			public uint16* serverName;
@@ -1967,7 +2090,8 @@ namespace Win32
 			public int[4] reserved;
 		}
 		[CRepr]
-		public struct MI_ContextFT		{
+		public struct MI_ContextFT
+		{
 			public int PostResult;
 			public int PostInstance;
 			public int PostIndication;
@@ -2000,37 +2124,43 @@ namespace Win32
 			public int WriteError;
 		}
 		[CRepr]
-		public struct MI_Context		{
+		public struct MI_Context
+		{
 			public MI_ContextFT* ft;
 			public int[3] reserved;
 		}
 		[CRepr]
-		public struct MI_QualifierSetFT		{
+		public struct MI_QualifierSetFT
+		{
 			public int GetQualifierCount;
 			public int GetQualifierAt;
 			public int GetQualifier;
 		}
 		[CRepr]
-		public struct MI_QualifierSet		{
+		public struct MI_QualifierSet
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_QualifierSetFT* ft;
 		}
 		[CRepr]
-		public struct MI_ParameterSetFT		{
+		public struct MI_ParameterSetFT
+		{
 			public int GetMethodReturnType;
 			public int GetParameterCount;
 			public int GetParameterAt;
 			public int GetParameter;
 		}
 		[CRepr]
-		public struct MI_ParameterSet		{
+		public struct MI_ParameterSet
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_ParameterSetFT* ft;
 		}
 		[CRepr]
-		public struct MI_ClassFT		{
+		public struct MI_ClassFT
+		{
 			public int GetClassNameA;
 			public int GetNameSpace;
 			public int GetServerName;
@@ -2047,7 +2177,8 @@ namespace Win32
 			public int Clone;
 		}
 		[CRepr]
-		public struct MI_Class		{
+		public struct MI_Class
+		{
 			public MI_ClassFT* ft;
 			public MI_ClassDecl* classDecl;
 			public uint16* namespaceName;
@@ -2055,7 +2186,8 @@ namespace Win32
 			public int[4] reserved;
 		}
 		[CRepr]
-		public struct MI_OperationCallbacks		{
+		public struct MI_OperationCallbacks
+		{
 			public void* callbackContext;
 			public MI_OperationCallback_PromptUser promptUser;
 			public MI_OperationCallback_WriteError writeError;
@@ -2067,30 +2199,35 @@ namespace Win32
 			public MI_OperationCallback_StreamedParameter streamedParameterResult;
 		}
 		[CRepr]
-		public struct MI_SessionCallbacks		{
+		public struct MI_SessionCallbacks
+		{
 			public void* callbackContext;
 			public int writeMessage;
 			public int writeError;
 		}
 		[CRepr]
-		public struct MI_UsernamePasswordCreds		{
+		public struct MI_UsernamePasswordCreds
+		{
 			public uint16* domain;
 			public uint16* username;
 			public uint16* password;
 		}
 		[CRepr]
-		public struct MI_UserCredentials		{
+		public struct MI_UserCredentials
+		{
 			public uint16* authenticationType;
 			public _credentials_e__Union credentials;
 			
 			[CRepr, Union]
-			public struct _credentials_e__Union			{
+			public struct _credentials_e__Union
+			{
 				public MI_UsernamePasswordCreds usernamePassword;
 				public uint16* certificateThumbprint;
 			}
 		}
 		[CRepr]
-		public struct MI_SubscriptionDeliveryOptionsFT		{
+		public struct MI_SubscriptionDeliveryOptionsFT
+		{
 			public int SetString;
 			public int SetNumber;
 			public int SetDateTime;
@@ -2110,29 +2247,34 @@ namespace Win32
 			public int Clone;
 		}
 		[CRepr]
-		public struct MI_SubscriptionDeliveryOptions		{
+		public struct MI_SubscriptionDeliveryOptions
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_SubscriptionDeliveryOptionsFT* ft;
 		}
 		[CRepr]
-		public struct MI_Serializer		{
+		public struct MI_Serializer
+		{
 			public uint64 reserved1;
 			public int reserved2;
 		}
 		[CRepr]
-		public struct MI_Deserializer		{
+		public struct MI_Deserializer
+		{
 			public uint64 reserved1;
 			public int reserved2;
 		}
 		[CRepr]
-		public struct MI_SerializerFT		{
+		public struct MI_SerializerFT
+		{
 			public int Close;
 			public int SerializeClass;
 			public int SerializeInstance;
 		}
 		[CRepr]
-		public struct MI_DeserializerFT		{
+		public struct MI_DeserializerFT
+		{
 			public int Close;
 			public int DeserializeClass;
 			public int Class_GetClassName;
@@ -2141,7 +2283,8 @@ namespace Win32
 			public int Instance_GetClassName;
 		}
 		[CRepr]
-		public struct MI_ApplicationFT		{
+		public struct MI_ApplicationFT
+		{
 			public int Close;
 			public int NewSession;
 			public int NewHostedProvider;
@@ -2155,12 +2298,14 @@ namespace Win32
 			public int NewClass;
 		}
 		[CRepr]
-		public struct MI_HostedProviderFT		{
+		public struct MI_HostedProviderFT
+		{
 			public int Close;
 			public int GetApplication;
 		}
 		[CRepr]
-		public struct MI_SessionFT		{
+		public struct MI_SessionFT
+		{
 			public int Close;
 			public int GetApplication;
 			public int GetInstance;
@@ -2178,7 +2323,8 @@ namespace Win32
 			public int TestConnection;
 		}
 		[CRepr]
-		public struct MI_OperationFT		{
+		public struct MI_OperationFT
+		{
 			public int Close;
 			public int Cancel;
 			public int GetSession;
@@ -2187,7 +2333,8 @@ namespace Win32
 			public int GetClass;
 		}
 		[CRepr]
-		public struct MI_DestinationOptionsFT		{
+		public struct MI_DestinationOptionsFT
+		{
 			public int Delete;
 			public int SetString;
 			public int SetNumber;
@@ -2205,7 +2352,8 @@ namespace Win32
 			public int GetInterval;
 		}
 		[CRepr]
-		public struct MI_OperationOptionsFT		{
+		public struct MI_OperationOptionsFT
+		{
 			public int Delete;
 			public int SetString;
 			public int SetNumber;
@@ -2221,48 +2369,56 @@ namespace Win32
 			public int GetInterval;
 		}
 		[CRepr]
-		public struct MI_Application		{
+		public struct MI_Application
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_ApplicationFT* ft;
 		}
 		[CRepr]
-		public struct MI_Session		{
+		public struct MI_Session
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_SessionFT* ft;
 		}
 		[CRepr]
-		public struct MI_Operation		{
+		public struct MI_Operation
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_OperationFT* ft;
 		}
 		[CRepr]
-		public struct MI_HostedProvider		{
+		public struct MI_HostedProvider
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_HostedProviderFT* ft;
 		}
 		[CRepr]
-		public struct MI_DestinationOptions		{
+		public struct MI_DestinationOptions
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_DestinationOptionsFT* ft;
 		}
 		[CRepr]
-		public struct MI_OperationOptions		{
+		public struct MI_OperationOptions
+		{
 			public uint64 reserved1;
 			public int reserved2;
 			public MI_OperationOptionsFT* ft;
 		}
 		[CRepr]
-		public struct MI_UtilitiesFT		{
+		public struct MI_UtilitiesFT
+		{
 			public int MapErrorToMiErrorCategory;
 			public int CimErrorFromErrorCode;
 		}
 		[CRepr]
-		public struct MI_ClientFT_V1		{
+		public struct MI_ClientFT_V1
+		{
 			public MI_ApplicationFT* applicationFT;
 			public MI_SessionFT* sessionFT;
 			public MI_OperationFT* operationFT;
@@ -2275,7 +2431,8 @@ namespace Win32
 			public MI_UtilitiesFT* utilitiesFT;
 		}
 		[CRepr]
-		public struct SWbemQueryQualifiedName		{
+		public struct SWbemQueryQualifiedName
+		{
 			public uint32 m_uVersion;
 			public uint32 m_uTokenType;
 			public uint32 m_uNameListSize;
@@ -2285,7 +2442,8 @@ namespace Win32
 			public uint32* m_puArrayIndex;
 		}
 		[CRepr, Union]
-		public struct SWbemRpnConst		{
+		public struct SWbemRpnConst
+		{
 			public PWSTR m_pszStrVal;
 			public BOOL m_bBoolVal;
 			public int32 m_lLongVal;
@@ -2295,7 +2453,8 @@ namespace Win32
 			public int64 m_uVal64;
 		}
 		[CRepr]
-		public struct SWbemRpnQueryToken		{
+		public struct SWbemRpnQueryToken
+		{
 			public uint32 m_uVersion;
 			public uint32 m_uTokenType;
 			public uint32 m_uSubexpressionShape;
@@ -2310,13 +2469,15 @@ namespace Win32
 			public PWSTR m_pszLeftFunc;
 		}
 		[CRepr]
-		public struct SWbemRpnTokenList		{
+		public struct SWbemRpnTokenList
+		{
 			public uint32 m_uVersion;
 			public uint32 m_uTokenType;
 			public uint32 m_uNumTokens;
 		}
 		[CRepr]
-		public struct SWbemRpnEncodedQuery		{
+		public struct SWbemRpnEncodedQuery
+		{
 			public uint32 m_uVersion;
 			public uint32 m_uTokenType;
 			public uint64 m_uParsedFeatureMask;
@@ -2337,7 +2498,8 @@ namespace Win32
 			public uint32* m_uOrderDirectionEl;
 		}
 		[CRepr]
-		public struct SWbemAnalysisMatrix		{
+		public struct SWbemAnalysisMatrix
+		{
 			public uint32 m_uVersion;
 			public uint32 m_uMatrixType;
 			public PWSTR m_pszProperty;
@@ -2347,14 +2509,16 @@ namespace Win32
 			public BOOL* m_pbTruthTable;
 		}
 		[CRepr]
-		public struct SWbemAnalysisMatrixList		{
+		public struct SWbemAnalysisMatrixList
+		{
 			public uint32 m_uVersion;
 			public uint32 m_uMatrixType;
 			public uint32 m_uNumMatrices;
 			public SWbemAnalysisMatrix* m_pMatrices;
 		}
 		[CRepr]
-		public struct SWbemAssocQueryInf		{
+		public struct SWbemAssocQueryInf
+		{
 			public uint32 m_uVersion;
 			public uint32 m_uAnalysisType;
 			public uint32 m_uFeatureMask;
@@ -2369,7 +2533,8 @@ namespace Win32
 			public PWSTR m_pszRequiredAssocQualifier;
 		}
 		[CRepr]
-		public struct WBEM_COMPILE_STATUS_INFO		{
+		public struct WBEM_COMPILE_STATUS_INFO
+		{
 			public int32 lPhaseError;
 			public HRESULT hRes;
 			public int32 ObjectNum;

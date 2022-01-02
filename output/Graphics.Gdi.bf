@@ -1887,7 +1887,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct XFORM		{
+		public struct XFORM
+		{
 			public float eM11;
 			public float eM12;
 			public float eM21;
@@ -1896,7 +1897,8 @@ namespace Win32
 			public float eDy;
 		}
 		[CRepr]
-		public struct BITMAP		{
+		public struct BITMAP
+		{
 			public int32 bmType;
 			public int32 bmWidth;
 			public int32 bmHeight;
@@ -1906,32 +1908,37 @@ namespace Win32
 			public void* bmBits;
 		}
 		[CRepr]
-		public struct RGBTRIPLE		{
+		public struct RGBTRIPLE
+		{
 			public uint8 rgbtBlue;
 			public uint8 rgbtGreen;
 			public uint8 rgbtRed;
 		}
 		[CRepr]
-		public struct RGBQUAD		{
+		public struct RGBQUAD
+		{
 			public uint8 rgbBlue;
 			public uint8 rgbGreen;
 			public uint8 rgbRed;
 			public uint8 rgbReserved;
 		}
 		[CRepr]
-		public struct CIEXYZ		{
+		public struct CIEXYZ
+		{
 			public int32 ciexyzX;
 			public int32 ciexyzY;
 			public int32 ciexyzZ;
 		}
 		[CRepr]
-		public struct CIEXYZTRIPLE		{
+		public struct CIEXYZTRIPLE
+		{
 			public CIEXYZ ciexyzRed;
 			public CIEXYZ ciexyzGreen;
 			public CIEXYZ ciexyzBlue;
 		}
 		[CRepr]
-		public struct BITMAPCOREHEADER		{
+		public struct BITMAPCOREHEADER
+		{
 			public uint32 bcSize;
 			public uint16 bcWidth;
 			public uint16 bcHeight;
@@ -1939,7 +1946,8 @@ namespace Win32
 			public uint16 bcBitCount;
 		}
 		[CRepr]
-		public struct BITMAPINFOHEADER		{
+		public struct BITMAPINFOHEADER
+		{
 			public uint32 biSize;
 			public int32 biWidth;
 			public int32 biHeight;
@@ -1953,7 +1961,8 @@ namespace Win32
 			public uint32 biClrImportant;
 		}
 		[CRepr]
-		public struct BITMAPV4HEADER		{
+		public struct BITMAPV4HEADER
+		{
 			public uint32 bV4Size;
 			public int32 bV4Width;
 			public int32 bV4Height;
@@ -1976,7 +1985,8 @@ namespace Win32
 			public uint32 bV4GammaBlue;
 		}
 		[CRepr]
-		public struct BITMAPV5HEADER		{
+		public struct BITMAPV5HEADER
+		{
 			public uint32 bV5Size;
 			public int32 bV5Width;
 			public int32 bV5Height;
@@ -2003,17 +2013,20 @@ namespace Win32
 			public uint32 bV5Reserved;
 		}
 		[CRepr]
-		public struct BITMAPINFO		{
+		public struct BITMAPINFO
+		{
 			public BITMAPINFOHEADER bmiHeader;
 			public RGBQUAD[0] bmiColors;
 		}
 		[CRepr]
-		public struct BITMAPCOREINFO		{
+		public struct BITMAPCOREINFO
+		{
 			public BITMAPCOREHEADER bmciHeader;
 			public RGBTRIPLE[0] bmciColors;
 		}
 		[CRepr]
-		public struct BITMAPFILEHEADER		{
+		public struct BITMAPFILEHEADER
+		{
 			public uint16 bfType;
 			public uint32 bfSize;
 			public uint16 bfReserved1;
@@ -2021,17 +2034,20 @@ namespace Win32
 			public uint32 bfOffBits;
 		}
 		[CRepr]
-		public struct HANDLETABLE		{
+		public struct HANDLETABLE
+		{
 			public HGDIOBJ[0] objectHandle;
 		}
 		[CRepr]
-		public struct METARECORD		{
+		public struct METARECORD
+		{
 			public uint32 rdSize;
 			public uint16 rdFunction;
 			public uint16[0] rdParm;
 		}
 		[CRepr]
-		public struct METAHEADER		{
+		public struct METAHEADER
+		{
 			public uint16 mtType;
 			public uint16 mtHeaderSize;
 			public uint16 mtVersion;
@@ -2041,13 +2057,15 @@ namespace Win32
 			public uint16 mtNoParameters;
 		}
 		[CRepr]
-		public struct ENHMETARECORD		{
+		public struct ENHMETARECORD
+		{
 			public uint32 iType;
 			public uint32 nSize;
 			public uint32[0] dParm;
 		}
 		[CRepr]
-		public struct ENHMETAHEADER		{
+		public struct ENHMETAHEADER
+		{
 			public uint32 iType;
 			public uint32 nSize;
 			public RECTL rclBounds;
@@ -2069,7 +2087,8 @@ namespace Win32
 			public SIZE szlMicrometers;
 		}
 		[CRepr]
-		public struct TEXTMETRICA		{
+		public struct TEXTMETRICA
+		{
 			public int32 tmHeight;
 			public int32 tmAscent;
 			public int32 tmDescent;
@@ -2092,7 +2111,8 @@ namespace Win32
 			public uint8 tmCharSet;
 		}
 		[CRepr]
-		public struct TEXTMETRICW		{
+		public struct TEXTMETRICW
+		{
 			public int32 tmHeight;
 			public int32 tmAscent;
 			public int32 tmDescent;
@@ -2115,7 +2135,8 @@ namespace Win32
 			public uint8 tmCharSet;
 		}
 		[CRepr]
-		public struct NEWTEXTMETRICA		{
+		public struct NEWTEXTMETRICA
+		{
 			public int32 tmHeight;
 			public int32 tmAscent;
 			public int32 tmDescent;
@@ -2142,7 +2163,8 @@ namespace Win32
 			public uint32 ntmAvgWidth;
 		}
 		[CRepr]
-		public struct NEWTEXTMETRICW		{
+		public struct NEWTEXTMETRICW
+		{
 			public int32 tmHeight;
 			public int32 tmAscent;
 			public int32 tmDescent;
@@ -2169,7 +2191,8 @@ namespace Win32
 			public uint32 ntmAvgWidth;
 		}
 		[CRepr]
-		public struct PELARRAY		{
+		public struct PELARRAY
+		{
 			public int32 paXCount;
 			public int32 paYCount;
 			public int32 paXExt;
@@ -2177,25 +2200,29 @@ namespace Win32
 			public uint8 paRGBs;
 		}
 		[CRepr]
-		public struct LOGBRUSH		{
+		public struct LOGBRUSH
+		{
 			public uint32 lbStyle;
 			public uint32 lbColor;
 			public uint lbHatch;
 		}
 		[CRepr]
-		public struct LOGBRUSH32		{
+		public struct LOGBRUSH32
+		{
 			public uint32 lbStyle;
 			public uint32 lbColor;
 			public uint32 lbHatch;
 		}
 		[CRepr]
-		public struct LOGPEN		{
+		public struct LOGPEN
+		{
 			public uint32 lopnStyle;
 			public POINT lopnWidth;
 			public uint32 lopnColor;
 		}
 		[CRepr]
-		public struct EXTLOGPEN		{
+		public struct EXTLOGPEN
+		{
 			public uint32 elpPenStyle;
 			public uint32 elpWidth;
 			public uint32 elpBrushStyle;
@@ -2205,7 +2232,8 @@ namespace Win32
 			public uint32[0] elpStyleEntry;
 		}
 		[CRepr]
-		public struct EXTLOGPEN32		{
+		public struct EXTLOGPEN32
+		{
 			public uint32 elpPenStyle;
 			public uint32 elpWidth;
 			public uint32 elpBrushStyle;
@@ -2215,20 +2243,23 @@ namespace Win32
 			public uint32[0] elpStyleEntry;
 		}
 		[CRepr]
-		public struct PALETTEENTRY		{
+		public struct PALETTEENTRY
+		{
 			public uint8 peRed;
 			public uint8 peGreen;
 			public uint8 peBlue;
 			public uint8 peFlags;
 		}
 		[CRepr]
-		public struct LOGPALETTE		{
+		public struct LOGPALETTE
+		{
 			public uint16 palVersion;
 			public uint16 palNumEntries;
 			public PALETTEENTRY[0] palPalEntry;
 		}
 		[CRepr]
-		public struct LOGFONTA		{
+		public struct LOGFONTA
+		{
 			public int32 lfHeight;
 			public int32 lfWidth;
 			public int32 lfEscapement;
@@ -2245,7 +2276,8 @@ namespace Win32
 			public CHAR[32] lfFaceName;
 		}
 		[CRepr]
-		public struct LOGFONTW		{
+		public struct LOGFONTW
+		{
 			public int32 lfHeight;
 			public int32 lfWidth;
 			public int32 lfEscapement;
@@ -2262,33 +2294,38 @@ namespace Win32
 			public char16[32] lfFaceName;
 		}
 		[CRepr]
-		public struct ENUMLOGFONTA		{
+		public struct ENUMLOGFONTA
+		{
 			public LOGFONTA elfLogFont;
 			public uint8[64] elfFullName;
 			public uint8[32] elfStyle;
 		}
 		[CRepr]
-		public struct ENUMLOGFONTW		{
+		public struct ENUMLOGFONTW
+		{
 			public LOGFONTW elfLogFont;
 			public char16[64] elfFullName;
 			public char16[32] elfStyle;
 		}
 		[CRepr]
-		public struct ENUMLOGFONTEXA		{
+		public struct ENUMLOGFONTEXA
+		{
 			public LOGFONTA elfLogFont;
 			public uint8[64] elfFullName;
 			public uint8[32] elfStyle;
 			public uint8[32] elfScript;
 		}
 		[CRepr]
-		public struct ENUMLOGFONTEXW		{
+		public struct ENUMLOGFONTEXW
+		{
 			public LOGFONTW elfLogFont;
 			public char16[64] elfFullName;
 			public char16[32] elfStyle;
 			public char16[32] elfScript;
 		}
 		[CRepr]
-		public struct PANOSE		{
+		public struct PANOSE
+		{
 			public uint8 bFamilyType;
 			public uint8 bSerifStyle;
 			public uint8 bWeight;
@@ -2301,7 +2338,8 @@ namespace Win32
 			public uint8 bXHeight;
 		}
 		[CRepr]
-		public struct EXTLOGFONTA		{
+		public struct EXTLOGFONTA
+		{
 			public LOGFONTA elfLogFont;
 			public uint8[64] elfFullName;
 			public uint8[32] elfStyle;
@@ -2314,7 +2352,8 @@ namespace Win32
 			public PANOSE elfPanose;
 		}
 		[CRepr]
-		public struct EXTLOGFONTW		{
+		public struct EXTLOGFONTW
+		{
 			public LOGFONTW elfLogFont;
 			public char16[64] elfFullName;
 			public char16[32] elfStyle;
@@ -2327,7 +2366,8 @@ namespace Win32
 			public PANOSE elfPanose;
 		}
 		[CRepr]
-		public struct DEVMODEA		{
+		public struct DEVMODEA
+		{
 			public uint8[32] dmDeviceName;
 			public uint16 dmSpecVersion;
 			public uint16 dmDriverVersion;
@@ -2357,18 +2397,21 @@ namespace Win32
 			public uint32 dmPanningHeight;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				
 				[CRepr]
-				public struct _Anonymous2_e__Struct				{
+				public struct _Anonymous2_e__Struct
+				{
 					public POINTL dmPosition;
 					public uint32 dmDisplayOrientation;
 					public uint32 dmDisplayFixedOutput;
 				}
 				[CRepr]
-				public struct _Anonymous1_e__Struct				{
+				public struct _Anonymous1_e__Struct
+				{
 					public int16 dmOrientation;
 					public int16 dmPaperSize;
 					public int16 dmPaperLength;
@@ -2380,13 +2423,15 @@ namespace Win32
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 dmDisplayFlags;
 				public uint32 dmNup;
 			}
 		}
 		[CRepr]
-		public struct DEVMODEW		{
+		public struct DEVMODEW
+		{
 			public char16[32] dmDeviceName;
 			public uint16 dmSpecVersion;
 			public uint16 dmDriverVersion;
@@ -2416,12 +2461,14 @@ namespace Win32
 			public uint32 dmPanningHeight;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				
 				[CRepr]
-				public struct _Anonymous1_e__Struct				{
+				public struct _Anonymous1_e__Struct
+				{
 					public int16 dmOrientation;
 					public int16 dmPaperSize;
 					public int16 dmPaperLength;
@@ -2432,20 +2479,23 @@ namespace Win32
 					public int16 dmPrintQuality;
 				}
 				[CRepr]
-				public struct _Anonymous2_e__Struct				{
+				public struct _Anonymous2_e__Struct
+				{
 					public POINTL dmPosition;
 					public uint32 dmDisplayOrientation;
 					public uint32 dmDisplayFixedOutput;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 dmDisplayFlags;
 				public uint32 dmNup;
 			}
 		}
 		[CRepr]
-		public struct DISPLAY_DEVICEA		{
+		public struct DISPLAY_DEVICEA
+		{
 			public uint32 cb;
 			public CHAR[32] DeviceName;
 			public CHAR[128] DeviceString;
@@ -2454,7 +2504,8 @@ namespace Win32
 			public CHAR[128] DeviceKey;
 		}
 		[CRepr]
-		public struct DISPLAY_DEVICEW		{
+		public struct DISPLAY_DEVICEW
+		{
 			public uint32 cb;
 			public char16[32] DeviceName;
 			public char16[128] DeviceString;
@@ -2463,7 +2514,8 @@ namespace Win32
 			public char16[128] DeviceKey;
 		}
 		[CRepr]
-		public struct RGNDATAHEADER		{
+		public struct RGNDATAHEADER
+		{
 			public uint32 dwSize;
 			public uint32 iType;
 			public uint32 nCount;
@@ -2471,24 +2523,28 @@ namespace Win32
 			public RECT rcBound;
 		}
 		[CRepr]
-		public struct RGNDATA		{
+		public struct RGNDATA
+		{
 			public RGNDATAHEADER rdh;
 			public CHAR[0] Buffer;
 		}
 		[CRepr]
-		public struct ABC		{
+		public struct ABC
+		{
 			public int32 abcA;
 			public uint32 abcB;
 			public int32 abcC;
 		}
 		[CRepr]
-		public struct ABCFLOAT		{
+		public struct ABCFLOAT
+		{
 			public float abcfA;
 			public float abcfB;
 			public float abcfC;
 		}
 		[CRepr]
-		public struct OUTLINETEXTMETRICA		{
+		public struct OUTLINETEXTMETRICA
+		{
 			public uint32 otmSize;
 			public TEXTMETRICA otmTextMetrics;
 			public uint8 otmFiller;
@@ -2523,7 +2579,8 @@ namespace Win32
 			public PSTR otmpFullName;
 		}
 		[CRepr]
-		public struct OUTLINETEXTMETRICW		{
+		public struct OUTLINETEXTMETRICW
+		{
 			public uint32 otmSize;
 			public TEXTMETRICW otmTextMetrics;
 			public uint8 otmFiller;
@@ -2558,7 +2615,8 @@ namespace Win32
 			public PSTR otmpFullName;
 		}
 		[CRepr]
-		public struct POLYTEXTA		{
+		public struct POLYTEXTA
+		{
 			public int32 x;
 			public int32 y;
 			public uint32 n;
@@ -2568,7 +2626,8 @@ namespace Win32
 			public int32* pdx;
 		}
 		[CRepr]
-		public struct POLYTEXTW		{
+		public struct POLYTEXTW
+		{
 			public int32 x;
 			public int32 y;
 			public uint32 n;
@@ -2578,19 +2637,22 @@ namespace Win32
 			public int32* pdx;
 		}
 		[CRepr]
-		public struct FIXED		{
+		public struct FIXED
+		{
 			public uint16 fract;
 			public int16 value;
 		}
 		[CRepr]
-		public struct MAT2		{
+		public struct MAT2
+		{
 			public FIXED eM11;
 			public FIXED eM12;
 			public FIXED eM21;
 			public FIXED eM22;
 		}
 		[CRepr]
-		public struct GLYPHMETRICS		{
+		public struct GLYPHMETRICS
+		{
 			public uint32 gmBlackBoxX;
 			public uint32 gmBlackBoxY;
 			public POINT gmptGlyphOrigin;
@@ -2598,24 +2660,28 @@ namespace Win32
 			public int16 gmCellIncY;
 		}
 		[CRepr]
-		public struct POINTFX		{
+		public struct POINTFX
+		{
 			public FIXED x;
 			public FIXED y;
 		}
 		[CRepr]
-		public struct TTPOLYCURVE		{
+		public struct TTPOLYCURVE
+		{
 			public uint16 wType;
 			public uint16 cpfx;
 			public POINTFX[0] apfx;
 		}
 		[CRepr]
-		public struct TTPOLYGONHEADER		{
+		public struct TTPOLYGONHEADER
+		{
 			public uint32 cb;
 			public uint32 dwType;
 			public POINTFX pfxStart;
 		}
 		[CRepr]
-		public struct GCP_RESULTSA		{
+		public struct GCP_RESULTSA
+		{
 			public uint32 lStructSize;
 			public PSTR lpOutString;
 			public uint32* lpOrder;
@@ -2627,7 +2693,8 @@ namespace Win32
 			public int32 nMaxFit;
 		}
 		[CRepr]
-		public struct GCP_RESULTSW		{
+		public struct GCP_RESULTSW
+		{
 			public uint32 lStructSize;
 			public PWSTR lpOutString;
 			public uint32* lpOrder;
@@ -2639,18 +2706,21 @@ namespace Win32
 			public int32 nMaxFit;
 		}
 		[CRepr]
-		public struct RASTERIZER_STATUS		{
+		public struct RASTERIZER_STATUS
+		{
 			public int16 nSize;
 			public int16 wFlags;
 			public int16 nLanguageID;
 		}
 		[CRepr]
-		public struct WCRANGE		{
+		public struct WCRANGE
+		{
 			public char16 wcLow;
 			public uint16 cGlyphs;
 		}
 		[CRepr]
-		public struct GLYPHSET		{
+		public struct GLYPHSET
+		{
 			public uint32 cbThis;
 			public uint32 flAccel;
 			public uint32 cGlyphsSupported;
@@ -2658,47 +2728,55 @@ namespace Win32
 			public WCRANGE[0] ranges;
 		}
 		[CRepr]
-		public struct DESIGNVECTOR		{
+		public struct DESIGNVECTOR
+		{
 			public uint32 dvReserved;
 			public uint32 dvNumAxes;
 			public int32[16] dvValues;
 		}
 		[CRepr]
-		public struct AXISINFOA		{
+		public struct AXISINFOA
+		{
 			public int32 axMinValue;
 			public int32 axMaxValue;
 			public uint8[16] axAxisName;
 		}
 		[CRepr]
-		public struct AXISINFOW		{
+		public struct AXISINFOW
+		{
 			public int32 axMinValue;
 			public int32 axMaxValue;
 			public char16[16] axAxisName;
 		}
 		[CRepr]
-		public struct AXESLISTA		{
+		public struct AXESLISTA
+		{
 			public uint32 axlReserved;
 			public uint32 axlNumAxes;
 			public AXISINFOA[16] axlAxisInfo;
 		}
 		[CRepr]
-		public struct AXESLISTW		{
+		public struct AXESLISTW
+		{
 			public uint32 axlReserved;
 			public uint32 axlNumAxes;
 			public AXISINFOW[16] axlAxisInfo;
 		}
 		[CRepr]
-		public struct ENUMLOGFONTEXDVA		{
+		public struct ENUMLOGFONTEXDVA
+		{
 			public ENUMLOGFONTEXA elfEnumLogfontEx;
 			public DESIGNVECTOR elfDesignVector;
 		}
 		[CRepr]
-		public struct ENUMLOGFONTEXDVW		{
+		public struct ENUMLOGFONTEXDVW
+		{
 			public ENUMLOGFONTEXW elfEnumLogfontEx;
 			public DESIGNVECTOR elfDesignVector;
 		}
 		[CRepr]
-		public struct TRIVERTEX		{
+		public struct TRIVERTEX
+		{
 			public int32 x;
 			public int32 y;
 			public uint16 Red;
@@ -2707,25 +2785,29 @@ namespace Win32
 			public uint16 Alpha;
 		}
 		[CRepr]
-		public struct GRADIENT_TRIANGLE		{
+		public struct GRADIENT_TRIANGLE
+		{
 			public uint32 Vertex1;
 			public uint32 Vertex2;
 			public uint32 Vertex3;
 		}
 		[CRepr]
-		public struct GRADIENT_RECT		{
+		public struct GRADIENT_RECT
+		{
 			public uint32 UpperLeft;
 			public uint32 LowerRight;
 		}
 		[CRepr]
-		public struct BLENDFUNCTION		{
+		public struct BLENDFUNCTION
+		{
 			public uint8 BlendOp;
 			public uint8 BlendFlags;
 			public uint8 SourceConstantAlpha;
 			public uint8 AlphaFormat;
 		}
 		[CRepr]
-		public struct DIBSECTION		{
+		public struct DIBSECTION
+		{
 			public BITMAP dsBm;
 			public BITMAPINFOHEADER dsBmih;
 			public uint32[3] dsBitfields;
@@ -2733,7 +2815,8 @@ namespace Win32
 			public uint32 dsOffset;
 		}
 		[CRepr]
-		public struct COLORADJUSTMENT		{
+		public struct COLORADJUSTMENT
+		{
 			public uint16 caSize;
 			public uint16 caFlags;
 			public uint16 caIlluminantIndex;
@@ -2748,18 +2831,21 @@ namespace Win32
 			public int16 caRedGreenTint;
 		}
 		[CRepr]
-		public struct KERNINGPAIR		{
+		public struct KERNINGPAIR
+		{
 			public uint16 wFirst;
 			public uint16 wSecond;
 			public int32 iKernAmount;
 		}
 		[CRepr]
-		public struct EMR		{
+		public struct EMR
+		{
 			public uint32 iType;
 			public uint32 nSize;
 		}
 		[CRepr]
-		public struct EMRTEXT		{
+		public struct EMRTEXT
+		{
 			public POINTL ptlReference;
 			public uint32 nChars;
 			public uint32 offString;
@@ -2768,57 +2854,68 @@ namespace Win32
 			public uint32 offDx;
 		}
 		[CRepr]
-		public struct ABORTPATH		{
+		public struct ABORTPATH
+		{
 			public EMR emr;
 		}
 		[CRepr]
-		public struct EMRSELECTCLIPPATH		{
+		public struct EMRSELECTCLIPPATH
+		{
 			public EMR emr;
 			public uint32 iMode;
 		}
 		[CRepr]
-		public struct EMRSETMITERLIMIT		{
+		public struct EMRSETMITERLIMIT
+		{
 			public EMR emr;
 			public float eMiterLimit;
 		}
 		[CRepr]
-		public struct EMRRESTOREDC		{
+		public struct EMRRESTOREDC
+		{
 			public EMR emr;
 			public int32 iRelative;
 		}
 		[CRepr]
-		public struct EMRSETARCDIRECTION		{
+		public struct EMRSETARCDIRECTION
+		{
 			public EMR emr;
 			public uint32 iArcDirection;
 		}
 		[CRepr]
-		public struct EMRSETMAPPERFLAGS		{
+		public struct EMRSETMAPPERFLAGS
+		{
 			public EMR emr;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct EMRSETTEXTCOLOR		{
+		public struct EMRSETTEXTCOLOR
+		{
 			public EMR emr;
 			public uint32 crColor;
 		}
 		[CRepr]
-		public struct EMRSELECTOBJECT		{
+		public struct EMRSELECTOBJECT
+		{
 			public EMR emr;
 			public uint32 ihObject;
 		}
 		[CRepr]
-		public struct EMRSELECTPALETTE		{
+		public struct EMRSELECTPALETTE
+		{
 			public EMR emr;
 			public uint32 ihPal;
 		}
 		[CRepr]
-		public struct EMRRESIZEPALETTE		{
+		public struct EMRRESIZEPALETTE
+		{
 			public EMR emr;
 			public uint32 ihPal;
 			public uint32 cEntries;
 		}
 		[CRepr]
-		public struct EMRSETPALETTEENTRIES		{
+		public struct EMRSETPALETTEENTRIES
+		{
 			public EMR emr;
 			public uint32 ihPal;
 			public uint32 iStart;
@@ -2826,55 +2923,65 @@ namespace Win32
 			public PALETTEENTRY[0] aPalEntries;
 		}
 		[CRepr]
-		public struct EMRSETCOLORADJUSTMENT		{
+		public struct EMRSETCOLORADJUSTMENT
+		{
 			public EMR emr;
 			public COLORADJUSTMENT ColorAdjustment;
 		}
 		[CRepr]
-		public struct EMRGDICOMMENT		{
+		public struct EMRGDICOMMENT
+		{
 			public EMR emr;
 			public uint32 cbData;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct EMREOF		{
+		public struct EMREOF
+		{
 			public EMR emr;
 			public uint32 nPalEntries;
 			public uint32 offPalEntries;
 			public uint32 nSizeLast;
 		}
 		[CRepr]
-		public struct EMRLINETO		{
+		public struct EMRLINETO
+		{
 			public EMR emr;
 			public POINTL ptl;
 		}
 		[CRepr]
-		public struct EMROFFSETCLIPRGN		{
+		public struct EMROFFSETCLIPRGN
+		{
 			public EMR emr;
 			public POINTL ptlOffset;
 		}
 		[CRepr]
-		public struct EMRFILLPATH		{
+		public struct EMRFILLPATH
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 		}
 		[CRepr]
-		public struct EMREXCLUDECLIPRECT		{
+		public struct EMREXCLUDECLIPRECT
+		{
 			public EMR emr;
 			public RECTL rclClip;
 		}
 		[CRepr]
-		public struct EMRSETVIEWPORTORGEX		{
+		public struct EMRSETVIEWPORTORGEX
+		{
 			public EMR emr;
 			public POINTL ptlOrigin;
 		}
 		[CRepr]
-		public struct EMRSETVIEWPORTEXTEX		{
+		public struct EMRSETVIEWPORTEXTEX
+		{
 			public EMR emr;
 			public SIZE szlExtent;
 		}
 		[CRepr]
-		public struct EMRSCALEVIEWPORTEXTEX		{
+		public struct EMRSCALEVIEWPORTEXTEX
+		{
 			public EMR emr;
 			public int32 xNum;
 			public int32 xDenom;
@@ -2882,49 +2989,57 @@ namespace Win32
 			public int32 yDenom;
 		}
 		[CRepr]
-		public struct EMRSETWORLDTRANSFORM		{
+		public struct EMRSETWORLDTRANSFORM
+		{
 			public EMR emr;
 			public XFORM xform;
 		}
 		[CRepr]
-		public struct EMRMODIFYWORLDTRANSFORM		{
+		public struct EMRMODIFYWORLDTRANSFORM
+		{
 			public EMR emr;
 			public XFORM xform;
 			public uint32 iMode;
 		}
 		[CRepr]
-		public struct EMRSETPIXELV		{
+		public struct EMRSETPIXELV
+		{
 			public EMR emr;
 			public POINTL ptlPixel;
 			public uint32 crColor;
 		}
 		[CRepr]
-		public struct EMREXTFLOODFILL		{
+		public struct EMREXTFLOODFILL
+		{
 			public EMR emr;
 			public POINTL ptlStart;
 			public uint32 crColor;
 			public uint32 iMode;
 		}
 		[CRepr]
-		public struct EMRELLIPSE		{
+		public struct EMRELLIPSE
+		{
 			public EMR emr;
 			public RECTL rclBox;
 		}
 		[CRepr]
-		public struct EMRROUNDRECT		{
+		public struct EMRROUNDRECT
+		{
 			public EMR emr;
 			public RECTL rclBox;
 			public SIZE szlCorner;
 		}
 		[CRepr]
-		public struct EMRARC		{
+		public struct EMRARC
+		{
 			public EMR emr;
 			public RECTL rclBox;
 			public POINTL ptlStart;
 			public POINTL ptlEnd;
 		}
 		[CRepr]
-		public struct EMRANGLEARC		{
+		public struct EMRANGLEARC
+		{
 			public EMR emr;
 			public POINTL ptlCenter;
 			public uint32 nRadius;
@@ -2932,21 +3047,24 @@ namespace Win32
 			public float eSweepAngle;
 		}
 		[CRepr]
-		public struct EMRPOLYLINE		{
+		public struct EMRPOLYLINE
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 cptl;
 			public POINTL[0] aptl;
 		}
 		[CRepr]
-		public struct EMRPOLYLINE16		{
+		public struct EMRPOLYLINE16
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 cpts;
 			public POINTS[0] apts;
 		}
 		[CRepr]
-		public struct EMRPOLYDRAW		{
+		public struct EMRPOLYDRAW
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 cptl;
@@ -2954,7 +3072,8 @@ namespace Win32
 			public uint8[0] abTypes;
 		}
 		[CRepr]
-		public struct EMRPOLYDRAW16		{
+		public struct EMRPOLYDRAW16
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 cpts;
@@ -2962,7 +3081,8 @@ namespace Win32
 			public uint8[0] abTypes;
 		}
 		[CRepr]
-		public struct EMRPOLYPOLYLINE		{
+		public struct EMRPOLYPOLYLINE
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 nPolys;
@@ -2971,7 +3091,8 @@ namespace Win32
 			public POINTL[0] aptl;
 		}
 		[CRepr]
-		public struct EMRPOLYPOLYLINE16		{
+		public struct EMRPOLYPOLYLINE16
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 nPolys;
@@ -2980,14 +3101,16 @@ namespace Win32
 			public POINTS[0] apts;
 		}
 		[CRepr]
-		public struct EMRINVERTRGN		{
+		public struct EMRINVERTRGN
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 cbRgnData;
 			public uint8[0] RgnData;
 		}
 		[CRepr]
-		public struct EMRFILLRGN		{
+		public struct EMRFILLRGN
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 cbRgnData;
@@ -2995,7 +3118,8 @@ namespace Win32
 			public uint8[0] RgnData;
 		}
 		[CRepr]
-		public struct EMRFRAMERGN		{
+		public struct EMRFRAMERGN
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 cbRgnData;
@@ -3004,14 +3128,16 @@ namespace Win32
 			public uint8[0] RgnData;
 		}
 		[CRepr]
-		public struct EMREXTSELECTCLIPRGN		{
+		public struct EMREXTSELECTCLIPRGN
+		{
 			public EMR emr;
 			public uint32 cbRgnData;
 			public uint32 iMode;
 			public uint8[0] RgnData;
 		}
 		[CRepr]
-		public struct EMREXTTEXTOUTA		{
+		public struct EMREXTTEXTOUTA
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 iGraphicsMode;
@@ -3020,7 +3146,8 @@ namespace Win32
 			public EMRTEXT emrtext;
 		}
 		[CRepr]
-		public struct EMRPOLYTEXTOUTA		{
+		public struct EMRPOLYTEXTOUTA
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 iGraphicsMode;
@@ -3030,7 +3157,8 @@ namespace Win32
 			public EMRTEXT[0] aemrtext;
 		}
 		[CRepr]
-		public struct EMRBITBLT		{
+		public struct EMRBITBLT
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public int32 xDest;
@@ -3049,7 +3177,8 @@ namespace Win32
 			public uint32 cbBitsSrc;
 		}
 		[CRepr]
-		public struct EMRSTRETCHBLT		{
+		public struct EMRSTRETCHBLT
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public int32 xDest;
@@ -3070,7 +3199,8 @@ namespace Win32
 			public int32 cySrc;
 		}
 		[CRepr]
-		public struct EMRMASKBLT		{
+		public struct EMRMASKBLT
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public int32 xDest;
@@ -3096,7 +3226,8 @@ namespace Win32
 			public uint32 cbBitsMask;
 		}
 		[CRepr]
-		public struct EMRPLGBLT		{
+		public struct EMRPLGBLT
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public POINTL[3] aptlDest;
@@ -3120,7 +3251,8 @@ namespace Win32
 			public uint32 cbBitsMask;
 		}
 		[CRepr]
-		public struct EMRSETDIBITSTODEVICE		{
+		public struct EMRSETDIBITSTODEVICE
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public int32 xDest;
@@ -3138,7 +3270,8 @@ namespace Win32
 			public uint32 cScans;
 		}
 		[CRepr]
-		public struct EMRSTRETCHDIBITS		{
+		public struct EMRSTRETCHDIBITS
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public int32 xDest;
@@ -3157,25 +3290,29 @@ namespace Win32
 			public int32 cyDest;
 		}
 		[CRepr]
-		public struct EMREXTCREATEFONTINDIRECTW		{
+		public struct EMREXTCREATEFONTINDIRECTW
+		{
 			public EMR emr;
 			public uint32 ihFont;
 			public EXTLOGFONTW elfw;
 		}
 		[CRepr]
-		public struct EMRCREATEPALETTE		{
+		public struct EMRCREATEPALETTE
+		{
 			public EMR emr;
 			public uint32 ihPal;
 			public LOGPALETTE lgpl;
 		}
 		[CRepr]
-		public struct EMRCREATEPEN		{
+		public struct EMRCREATEPEN
+		{
 			public EMR emr;
 			public uint32 ihPen;
 			public LOGPEN lopn;
 		}
 		[CRepr]
-		public struct EMREXTCREATEPEN		{
+		public struct EMREXTCREATEPEN
+		{
 			public EMR emr;
 			public uint32 ihPen;
 			public uint32 offBmi;
@@ -3185,13 +3322,15 @@ namespace Win32
 			public EXTLOGPEN32 elp;
 		}
 		[CRepr]
-		public struct EMRCREATEBRUSHINDIRECT		{
+		public struct EMRCREATEBRUSHINDIRECT
+		{
 			public EMR emr;
 			public uint32 ihBrush;
 			public LOGBRUSH32 lb;
 		}
 		[CRepr]
-		public struct EMRCREATEMONOBRUSH		{
+		public struct EMRCREATEMONOBRUSH
+		{
 			public EMR emr;
 			public uint32 ihBrush;
 			public uint32 iUsage;
@@ -3201,7 +3340,8 @@ namespace Win32
 			public uint32 cbBits;
 		}
 		[CRepr]
-		public struct EMRCREATEDIBPATTERNBRUSHPT		{
+		public struct EMRCREATEDIBPATTERNBRUSHPT
+		{
 			public EMR emr;
 			public uint32 ihBrush;
 			public uint32 iUsage;
@@ -3211,39 +3351,45 @@ namespace Win32
 			public uint32 cbBits;
 		}
 		[CRepr]
-		public struct EMRFORMAT		{
+		public struct EMRFORMAT
+		{
 			public uint32 dSignature;
 			public uint32 nVersion;
 			public uint32 cbData;
 			public uint32 offData;
 		}
 		[CRepr]
-		public struct EMRGLSRECORD		{
+		public struct EMRGLSRECORD
+		{
 			public EMR emr;
 			public uint32 cbData;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct EMRGLSBOUNDEDRECORD		{
+		public struct EMRGLSBOUNDEDRECORD
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 cbData;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct EMRSETCOLORSPACE		{
+		public struct EMRSETCOLORSPACE
+		{
 			public EMR emr;
 			public uint32 ihCS;
 		}
 		[CRepr]
-		public struct EMREXTESCAPE		{
+		public struct EMREXTESCAPE
+		{
 			public EMR emr;
 			public int32 iEscape;
 			public int32 cbEscData;
 			public uint8[0] EscData;
 		}
 		[CRepr]
-		public struct EMRNAMEDESCAPE		{
+		public struct EMRNAMEDESCAPE
+		{
 			public EMR emr;
 			public int32 iEscape;
 			public int32 cbDriver;
@@ -3251,7 +3397,8 @@ namespace Win32
 			public uint8[0] EscData;
 		}
 		[CRepr]
-		public struct EMRSETICMPROFILE		{
+		public struct EMRSETICMPROFILE
+		{
 			public EMR emr;
 			public uint32 dwFlags;
 			public uint32 cbName;
@@ -3259,7 +3406,8 @@ namespace Win32
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct COLORMATCHTOTARGET		{
+		public struct COLORMATCHTOTARGET
+		{
 			public EMR emr;
 			public uint32 dwAction;
 			public uint32 dwFlags;
@@ -3268,7 +3416,8 @@ namespace Win32
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct COLORCORRECTPALETTE		{
+		public struct COLORCORRECTPALETTE
+		{
 			public EMR emr;
 			public uint32 ihPalette;
 			public uint32 nFirstEntry;
@@ -3276,7 +3425,8 @@ namespace Win32
 			public uint32 nReserved;
 		}
 		[CRepr]
-		public struct EMRALPHABLEND		{
+		public struct EMRALPHABLEND
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public int32 xDest;
@@ -3297,7 +3447,8 @@ namespace Win32
 			public int32 cySrc;
 		}
 		[CRepr]
-		public struct EMRGRADIENTFILL		{
+		public struct EMRGRADIENTFILL
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public uint32 nVer;
@@ -3306,7 +3457,8 @@ namespace Win32
 			public TRIVERTEX[0] Ver;
 		}
 		[CRepr]
-		public struct EMRTRANSPARENTBLT		{
+		public struct EMRTRANSPARENTBLT
+		{
 			public EMR emr;
 			public RECTL rclBounds;
 			public int32 xDest;
@@ -3327,24 +3479,28 @@ namespace Win32
 			public int32 cySrc;
 		}
 		[CRepr]
-		public struct WGLSWAP		{
+		public struct WGLSWAP
+		{
 			public HDC hdc;
 			public uint32 uiFlags;
 		}
 		[CRepr]
-		public struct TTLOADINFO		{
+		public struct TTLOADINFO
+		{
 			public uint16 usStructSize;
 			public uint16 usRefStrSize;
 			public uint16* pusRefStr;
 		}
 		[CRepr]
-		public struct TTEMBEDINFO		{
+		public struct TTEMBEDINFO
+		{
 			public uint16 usStructSize;
 			public uint16 usRootStrSize;
 			public uint16* pusRootStr;
 		}
 		[CRepr]
-		public struct TTVALIDATIONTESTSPARAMS		{
+		public struct TTVALIDATIONTESTSPARAMS
+		{
 			public uint32 ulStructSize;
 			public int32 lTestFromSize;
 			public int32 lTestToSize;
@@ -3354,7 +3510,8 @@ namespace Win32
 			public uint16* pusCharCodeSet;
 		}
 		[CRepr]
-		public struct TTVALIDATIONTESTSPARAMSEX		{
+		public struct TTVALIDATIONTESTSPARAMSEX
+		{
 			public uint32 ulStructSize;
 			public int32 lTestFromSize;
 			public int32 lTestToSize;
@@ -3364,7 +3521,8 @@ namespace Win32
 			public uint32* pulCharCodeSet;
 		}
 		[CRepr]
-		public struct PAINTSTRUCT		{
+		public struct PAINTSTRUCT
+		{
 			public HDC hdc;
 			public BOOL fErase;
 			public RECT rcPaint;
@@ -3373,7 +3531,8 @@ namespace Win32
 			public uint8[32] rgbReserved;
 		}
 		[CRepr]
-		public struct DRAWTEXTPARAMS		{
+		public struct DRAWTEXTPARAMS
+		{
 			public uint32 cbSize;
 			public int32 iTabLength;
 			public int32 iLeftMargin;
@@ -3381,19 +3540,22 @@ namespace Win32
 			public uint32 uiLengthDrawn;
 		}
 		[CRepr]
-		public struct MONITORINFO		{
+		public struct MONITORINFO
+		{
 			public uint32 cbSize;
 			public RECT rcMonitor;
 			public RECT rcWork;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct MONITORINFOEXA		{
+		public struct MONITORINFOEXA
+		{
 			public MONITORINFO __AnonymousBase_winuser_L13567_C43;
 			public CHAR[32] szDevice;
 		}
 		[CRepr]
-		public struct MONITORINFOEXW		{
+		public struct MONITORINFOEXW
+		{
 			public MONITORINFO __AnonymousBase_winuser_L13571_C43;
 			public char16[32] szDevice;
 		}

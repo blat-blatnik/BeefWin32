@@ -2696,14 +2696,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct D3D12_COMMAND_QUEUE_DESC		{
+		public struct D3D12_COMMAND_QUEUE_DESC
+		{
 			public D3D12_COMMAND_LIST_TYPE Type;
 			public int32 Priority;
 			public D3D12_COMMAND_QUEUE_FLAGS Flags;
 			public uint32 NodeMask;
 		}
 		[CRepr]
-		public struct D3D12_INPUT_ELEMENT_DESC		{
+		public struct D3D12_INPUT_ELEMENT_DESC
+		{
 			public PSTR SemanticName;
 			public uint32 SemanticIndex;
 			public DXGI_FORMAT Format;
@@ -2713,7 +2715,8 @@ namespace Win32
 			public uint32 InstanceDataStepRate;
 		}
 		[CRepr]
-		public struct D3D12_SO_DECLARATION_ENTRY		{
+		public struct D3D12_SO_DECLARATION_ENTRY
+		{
 			public uint32 Stream;
 			public PSTR SemanticName;
 			public uint32 SemanticIndex;
@@ -2722,7 +2725,8 @@ namespace Win32
 			public uint8 OutputSlot;
 		}
 		[CRepr]
-		public struct D3D12_VIEWPORT		{
+		public struct D3D12_VIEWPORT
+		{
 			public float TopLeftX;
 			public float TopLeftY;
 			public float Width;
@@ -2731,7 +2735,8 @@ namespace Win32
 			public float MaxDepth;
 		}
 		[CRepr]
-		public struct D3D12_BOX		{
+		public struct D3D12_BOX
+		{
 			public uint32 left;
 			public uint32 top;
 			public uint32 front;
@@ -2740,14 +2745,16 @@ namespace Win32
 			public uint32 back;
 		}
 		[CRepr]
-		public struct D3D12_DEPTH_STENCILOP_DESC		{
+		public struct D3D12_DEPTH_STENCILOP_DESC
+		{
 			public D3D12_STENCIL_OP StencilFailOp;
 			public D3D12_STENCIL_OP StencilDepthFailOp;
 			public D3D12_STENCIL_OP StencilPassOp;
 			public D3D12_COMPARISON_FUNC StencilFunc;
 		}
 		[CRepr]
-		public struct D3D12_DEPTH_STENCIL_DESC		{
+		public struct D3D12_DEPTH_STENCIL_DESC
+		{
 			public BOOL DepthEnable;
 			public D3D12_DEPTH_WRITE_MASK DepthWriteMask;
 			public D3D12_COMPARISON_FUNC DepthFunc;
@@ -2758,7 +2765,8 @@ namespace Win32
 			public D3D12_DEPTH_STENCILOP_DESC BackFace;
 		}
 		[CRepr]
-		public struct D3D12_DEPTH_STENCIL_DESC1		{
+		public struct D3D12_DEPTH_STENCIL_DESC1
+		{
 			public BOOL DepthEnable;
 			public D3D12_DEPTH_WRITE_MASK DepthWriteMask;
 			public D3D12_COMPARISON_FUNC DepthFunc;
@@ -2770,7 +2778,8 @@ namespace Win32
 			public BOOL DepthBoundsTestEnable;
 		}
 		[CRepr]
-		public struct D3D12_RENDER_TARGET_BLEND_DESC		{
+		public struct D3D12_RENDER_TARGET_BLEND_DESC
+		{
 			public BOOL BlendEnable;
 			public BOOL LogicOpEnable;
 			public D3D12_BLEND SrcBlend;
@@ -2783,13 +2792,15 @@ namespace Win32
 			public uint8 RenderTargetWriteMask;
 		}
 		[CRepr]
-		public struct D3D12_BLEND_DESC		{
+		public struct D3D12_BLEND_DESC
+		{
 			public BOOL AlphaToCoverageEnable;
 			public BOOL IndependentBlendEnable;
 			public D3D12_RENDER_TARGET_BLEND_DESC[8] RenderTarget;
 		}
 		[CRepr]
-		public struct D3D12_RASTERIZER_DESC		{
+		public struct D3D12_RASTERIZER_DESC
+		{
 			public D3D12_FILL_MODE FillMode;
 			public D3D12_CULL_MODE CullMode;
 			public BOOL FrontCounterClockwise;
@@ -2803,12 +2814,14 @@ namespace Win32
 			public D3D12_CONSERVATIVE_RASTERIZATION_MODE ConservativeRaster;
 		}
 		[CRepr]
-		public struct D3D12_SHADER_BYTECODE		{
+		public struct D3D12_SHADER_BYTECODE
+		{
 			public void* pShaderBytecode;
 			public uint BytecodeLength;
 		}
 		[CRepr]
-		public struct D3D12_STREAM_OUTPUT_DESC		{
+		public struct D3D12_STREAM_OUTPUT_DESC
+		{
 			public D3D12_SO_DECLARATION_ENTRY* pSODeclaration;
 			public uint32 NumEntries;
 			public uint32* pBufferStrides;
@@ -2816,17 +2829,20 @@ namespace Win32
 			public uint32 RasterizedStream;
 		}
 		[CRepr]
-		public struct D3D12_INPUT_LAYOUT_DESC		{
+		public struct D3D12_INPUT_LAYOUT_DESC
+		{
 			public D3D12_INPUT_ELEMENT_DESC* pInputElementDescs;
 			public uint32 NumElements;
 		}
 		[CRepr]
-		public struct D3D12_CACHED_PIPELINE_STATE		{
+		public struct D3D12_CACHED_PIPELINE_STATE
+		{
 			public void* pCachedBlob;
 			public uint CachedBlobSizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_GRAPHICS_PIPELINE_STATE_DESC		{
+		public struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
+		{
 			public ID3D12RootSignature* pRootSignature;
 			public D3D12_SHADER_BYTECODE VS;
 			public D3D12_SHADER_BYTECODE PS;
@@ -2850,7 +2866,8 @@ namespace Win32
 			public D3D12_PIPELINE_STATE_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_COMPUTE_PIPELINE_STATE_DESC		{
+		public struct D3D12_COMPUTE_PIPELINE_STATE_DESC
+		{
 			public ID3D12RootSignature* pRootSignature;
 			public D3D12_SHADER_BYTECODE CS;
 			public uint32 NodeMask;
@@ -2858,17 +2875,20 @@ namespace Win32
 			public D3D12_PIPELINE_STATE_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_RT_FORMAT_ARRAY		{
+		public struct D3D12_RT_FORMAT_ARRAY
+		{
 			public DXGI_FORMAT[8] RTFormats;
 			public uint32 NumRenderTargets;
 		}
 		[CRepr]
-		public struct D3D12_PIPELINE_STATE_STREAM_DESC		{
+		public struct D3D12_PIPELINE_STATE_STREAM_DESC
+		{
 			public uint SizeInBytes;
 			public void* pPipelineStateSubobjectStream;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS
+		{
 			public BOOL DoublePrecisionFloatShaderOps;
 			public BOOL OutputMergerLogicOp;
 			public D3D12_SHADER_MIN_PRECISION_SUPPORT MinPrecisionSupport;
@@ -2886,7 +2906,8 @@ namespace Win32
 			public D3D12_RESOURCE_HEAP_TIER ResourceHeapTier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS1		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS1
+		{
 			public BOOL WaveOps;
 			public uint32 WaveLaneCountMin;
 			public uint32 WaveLaneCountMax;
@@ -2895,23 +2916,27 @@ namespace Win32
 			public BOOL Int64ShaderOps;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS2		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS2
+		{
 			public BOOL DepthBoundsTestSupported;
 			public D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER ProgrammableSamplePositionsTier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_ROOT_SIGNATURE		{
+		public struct D3D12_FEATURE_DATA_ROOT_SIGNATURE
+		{
 			public D3D_ROOT_SIGNATURE_VERSION HighestVersion;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_ARCHITECTURE		{
+		public struct D3D12_FEATURE_DATA_ARCHITECTURE
+		{
 			public uint32 NodeIndex;
 			public BOOL TileBasedRenderer;
 			public BOOL UMA;
 			public BOOL CacheCoherentUMA;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_ARCHITECTURE1		{
+		public struct D3D12_FEATURE_DATA_ARCHITECTURE1
+		{
 			public uint32 NodeIndex;
 			public BOOL TileBasedRenderer;
 			public BOOL UMA;
@@ -2919,50 +2944,59 @@ namespace Win32
 			public BOOL IsolatedMMU;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_FEATURE_LEVELS		{
+		public struct D3D12_FEATURE_DATA_FEATURE_LEVELS
+		{
 			public uint32 NumFeatureLevels;
 			public D3D_FEATURE_LEVEL* pFeatureLevelsRequested;
 			public D3D_FEATURE_LEVEL MaxSupportedFeatureLevel;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_SHADER_MODEL		{
+		public struct D3D12_FEATURE_DATA_SHADER_MODEL
+		{
 			public D3D_SHADER_MODEL HighestShaderModel;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_FORMAT_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_FORMAT_SUPPORT
+		{
 			public DXGI_FORMAT Format;
 			public D3D12_FORMAT_SUPPORT1 Support1;
 			public D3D12_FORMAT_SUPPORT2 Support2;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS		{
+		public struct D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS
+		{
 			public DXGI_FORMAT Format;
 			public uint32 SampleCount;
 			public D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS Flags;
 			public uint32 NumQualityLevels;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_FORMAT_INFO		{
+		public struct D3D12_FEATURE_DATA_FORMAT_INFO
+		{
 			public DXGI_FORMAT Format;
 			public uint8 PlaneCount;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT
+		{
 			public uint32 MaxGPUVirtualAddressBitsPerResource;
 			public uint32 MaxGPUVirtualAddressBitsPerProcess;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_SHADER_CACHE		{
+		public struct D3D12_FEATURE_DATA_SHADER_CACHE
+		{
 			public D3D12_SHADER_CACHE_SUPPORT_FLAGS SupportFlags;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY		{
+		public struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY
+		{
 			public D3D12_COMMAND_LIST_TYPE CommandListType;
 			public uint32 Priority;
 			public BOOL PriorityForTypeIsSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS3		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS3
+		{
 			public BOOL CopyQueueTimestampQueriesSupported;
 			public BOOL CastingFullyTypedFormatSupported;
 			public D3D12_COMMAND_LIST_SUPPORT_FLAGS WriteBufferImmediateSupportFlags;
@@ -2970,38 +3004,45 @@ namespace Win32
 			public BOOL BarycentricsSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_EXISTING_HEAPS		{
+		public struct D3D12_FEATURE_DATA_EXISTING_HEAPS
+		{
 			public BOOL Supported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_DISPLAYABLE		{
+		public struct D3D12_FEATURE_DATA_DISPLAYABLE
+		{
 			public BOOL DisplayableTexture;
 			public D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER SharedResourceCompatibilityTier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS4		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS4
+		{
 			public BOOL MSAA64KBAlignedTextureSupported;
 			public D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER SharedResourceCompatibilityTier;
 			public BOOL Native16BitShaderOpsSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_SERIALIZATION		{
+		public struct D3D12_FEATURE_DATA_SERIALIZATION
+		{
 			public uint32 NodeIndex;
 			public D3D12_HEAP_SERIALIZATION_TIER HeapSerializationTier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_CROSS_NODE		{
+		public struct D3D12_FEATURE_DATA_CROSS_NODE
+		{
 			public D3D12_CROSS_NODE_SHARING_TIER SharingTier;
 			public BOOL AtomicShaderInstructions;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS5		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS5
+		{
 			public BOOL SRVOnlyTiledResourceTier3;
 			public D3D12_RENDER_PASS_TIER RenderPassesTier;
 			public D3D12_RAYTRACING_TIER RaytracingTier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS6		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS6
+		{
 			public BOOL AdditionalShadingRatesSupported;
 			public BOOL PerPrimitiveShadingRateSupportedWithViewportIndexing;
 			public D3D12_VARIABLE_SHADING_RATE_TIER VariableShadingRateTier;
@@ -3009,12 +3050,14 @@ namespace Win32
 			public BOOL BackgroundProcessingSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS7		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS7
+		{
 			public D3D12_MESH_SHADER_TIER MeshShaderTier;
 			public D3D12_SAMPLER_FEEDBACK_TIER SamplerFeedbackTier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_QUERY_META_COMMAND		{
+		public struct D3D12_FEATURE_DATA_QUERY_META_COMMAND
+		{
 			public Guid CommandId;
 			public uint32 NodeMask;
 			public void* pQueryInputData;
@@ -3023,11 +3066,13 @@ namespace Win32
 			public uint QueryOutputDataSizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS8		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS8
+		{
 			public BOOL UnalignedBlockTexturesSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS9		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS9
+		{
 			public BOOL MeshShaderPipelineStatsSupported;
 			public BOOL MeshShaderSupportsFullRangeRenderTargetArrayIndex;
 			public BOOL AtomicInt64OnTypedResourceSupported;
@@ -3036,27 +3081,32 @@ namespace Win32
 			public D3D12_WAVE_MMA_TIER WaveMMATier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS10		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS10
+		{
 			public BOOL VariableRateShadingSumCombinerSupported;
 			public BOOL MeshShaderPerPrimitiveShadingRateSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS11		{
+		public struct D3D12_FEATURE_DATA_D3D12_OPTIONS11
+		{
 			public BOOL AtomicInt64OnDescriptorHeapResourceSupported;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_ALLOCATION_INFO		{
+		public struct D3D12_RESOURCE_ALLOCATION_INFO
+		{
 			public uint64 SizeInBytes;
 			public uint64 Alignment;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_ALLOCATION_INFO1		{
+		public struct D3D12_RESOURCE_ALLOCATION_INFO1
+		{
 			public uint64 Offset;
 			public uint64 Alignment;
 			public uint64 SizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_HEAP_PROPERTIES		{
+		public struct D3D12_HEAP_PROPERTIES
+		{
 			public D3D12_HEAP_TYPE Type;
 			public D3D12_CPU_PAGE_PROPERTY CPUPageProperty;
 			public D3D12_MEMORY_POOL MemoryPoolPreference;
@@ -3064,20 +3114,23 @@ namespace Win32
 			public uint32 VisibleNodeMask;
 		}
 		[CRepr]
-		public struct D3D12_HEAP_DESC		{
+		public struct D3D12_HEAP_DESC
+		{
 			public uint64 SizeInBytes;
 			public D3D12_HEAP_PROPERTIES Properties;
 			public uint64 Alignment;
 			public D3D12_HEAP_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_MIP_REGION		{
+		public struct D3D12_MIP_REGION
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public uint32 Depth;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_DESC		{
+		public struct D3D12_RESOURCE_DESC
+		{
 			public D3D12_RESOURCE_DIMENSION Dimension;
 			public uint64 Alignment;
 			public uint64 Width;
@@ -3090,7 +3143,8 @@ namespace Win32
 			public D3D12_RESOURCE_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_DESC1		{
+		public struct D3D12_RESOURCE_DESC1
+		{
 			public D3D12_RESOURCE_DIMENSION Dimension;
 			public uint64 Alignment;
 			public uint64 Width;
@@ -3104,51 +3158,60 @@ namespace Win32
 			public D3D12_MIP_REGION SamplerFeedbackMipRegion;
 		}
 		[CRepr]
-		public struct D3D12_DEPTH_STENCIL_VALUE		{
+		public struct D3D12_DEPTH_STENCIL_VALUE
+		{
 			public float Depth;
 			public uint8 Stencil;
 		}
 		[CRepr]
-		public struct D3D12_CLEAR_VALUE		{
+		public struct D3D12_CLEAR_VALUE
+		{
 			public DXGI_FORMAT Format;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public float[4] Color;
 				public D3D12_DEPTH_STENCIL_VALUE DepthStencil;
 			}
 		}
 		[CRepr]
-		public struct D3D12_RANGE		{
+		public struct D3D12_RANGE
+		{
 			public uint Begin;
 			public uint End;
 		}
 		[CRepr]
-		public struct D3D12_RANGE_UINT64		{
+		public struct D3D12_RANGE_UINT64
+		{
 			public uint64 Begin;
 			public uint64 End;
 		}
 		[CRepr]
-		public struct D3D12_SUBRESOURCE_RANGE_UINT64		{
+		public struct D3D12_SUBRESOURCE_RANGE_UINT64
+		{
 			public uint32 Subresource;
 			public D3D12_RANGE_UINT64 Range;
 		}
 		[CRepr]
-		public struct D3D12_SUBRESOURCE_INFO		{
+		public struct D3D12_SUBRESOURCE_INFO
+		{
 			public uint64 Offset;
 			public uint32 RowPitch;
 			public uint32 DepthPitch;
 		}
 		[CRepr]
-		public struct D3D12_TILED_RESOURCE_COORDINATE		{
+		public struct D3D12_TILED_RESOURCE_COORDINATE
+		{
 			public uint32 X;
 			public uint32 Y;
 			public uint32 Z;
 			public uint32 Subresource;
 		}
 		[CRepr]
-		public struct D3D12_TILE_REGION_SIZE		{
+		public struct D3D12_TILE_REGION_SIZE
+		{
 			public uint32 NumTiles;
 			public BOOL UseBox;
 			public uint32 Width;
@@ -3156,56 +3219,65 @@ namespace Win32
 			public uint16 Depth;
 		}
 		[CRepr]
-		public struct D3D12_SUBRESOURCE_TILING		{
+		public struct D3D12_SUBRESOURCE_TILING
+		{
 			public uint32 WidthInTiles;
 			public uint16 HeightInTiles;
 			public uint16 DepthInTiles;
 			public uint32 StartTileIndexInOverallResource;
 		}
 		[CRepr]
-		public struct D3D12_TILE_SHAPE		{
+		public struct D3D12_TILE_SHAPE
+		{
 			public uint32 WidthInTexels;
 			public uint32 HeightInTexels;
 			public uint32 DepthInTexels;
 		}
 		[CRepr]
-		public struct D3D12_PACKED_MIP_INFO		{
+		public struct D3D12_PACKED_MIP_INFO
+		{
 			public uint8 NumStandardMips;
 			public uint8 NumPackedMips;
 			public uint32 NumTilesForPackedMips;
 			public uint32 StartTileIndexInOverallResource;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_TRANSITION_BARRIER		{
+		public struct D3D12_RESOURCE_TRANSITION_BARRIER
+		{
 			public ID3D12Resource* pResource;
 			public uint32 Subresource;
 			public D3D12_RESOURCE_STATES StateBefore;
 			public D3D12_RESOURCE_STATES StateAfter;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_ALIASING_BARRIER		{
+		public struct D3D12_RESOURCE_ALIASING_BARRIER
+		{
 			public ID3D12Resource* pResourceBefore;
 			public ID3D12Resource* pResourceAfter;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_UAV_BARRIER		{
+		public struct D3D12_RESOURCE_UAV_BARRIER
+		{
 			public ID3D12Resource* pResource;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_BARRIER		{
+		public struct D3D12_RESOURCE_BARRIER
+		{
 			public D3D12_RESOURCE_BARRIER_TYPE Type;
 			public D3D12_RESOURCE_BARRIER_FLAGS Flags;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_RESOURCE_TRANSITION_BARRIER Transition;
 				public D3D12_RESOURCE_ALIASING_BARRIER Aliasing;
 				public D3D12_RESOURCE_UAV_BARRIER UAV;
 			}
 		}
 		[CRepr]
-		public struct D3D12_SUBRESOURCE_FOOTPRINT		{
+		public struct D3D12_SUBRESOURCE_FOOTPRINT
+		{
 			public DXGI_FORMAT Format;
 			public uint32 Width;
 			public uint32 Height;
@@ -3213,53 +3285,62 @@ namespace Win32
 			public uint32 RowPitch;
 		}
 		[CRepr]
-		public struct D3D12_PLACED_SUBRESOURCE_FOOTPRINT		{
+		public struct D3D12_PLACED_SUBRESOURCE_FOOTPRINT
+		{
 			public uint64 Offset;
 			public D3D12_SUBRESOURCE_FOOTPRINT Footprint;
 		}
 		[CRepr]
-		public struct D3D12_TEXTURE_COPY_LOCATION		{
+		public struct D3D12_TEXTURE_COPY_LOCATION
+		{
 			public ID3D12Resource* pResource;
 			public D3D12_TEXTURE_COPY_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint;
 				public uint32 SubresourceIndex;
 			}
 		}
 		[CRepr]
-		public struct D3D12_SAMPLE_POSITION		{
+		public struct D3D12_SAMPLE_POSITION
+		{
 			public int8 X;
 			public int8 Y;
 		}
 		[CRepr]
-		public struct D3D12_VIEW_INSTANCE_LOCATION		{
+		public struct D3D12_VIEW_INSTANCE_LOCATION
+		{
 			public uint32 ViewportArrayIndex;
 			public uint32 RenderTargetArrayIndex;
 		}
 		[CRepr]
-		public struct D3D12_VIEW_INSTANCING_DESC		{
+		public struct D3D12_VIEW_INSTANCING_DESC
+		{
 			public uint32 ViewInstanceCount;
 			public D3D12_VIEW_INSTANCE_LOCATION* pViewInstanceLocations;
 			public D3D12_VIEW_INSTANCING_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_BUFFER_SRV		{
+		public struct D3D12_BUFFER_SRV
+		{
 			public uint64 FirstElement;
 			public uint32 NumElements;
 			public uint32 StructureByteStride;
 			public D3D12_BUFFER_SRV_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_TEX1D_SRV		{
+		public struct D3D12_TEX1D_SRV
+		{
 			public uint32 MostDetailedMip;
 			public uint32 MipLevels;
 			public float ResourceMinLODClamp;
 		}
 		[CRepr]
-		public struct D3D12_TEX1D_ARRAY_SRV		{
+		public struct D3D12_TEX1D_ARRAY_SRV
+		{
 			public uint32 MostDetailedMip;
 			public uint32 MipLevels;
 			public uint32 FirstArraySlice;
@@ -3267,14 +3348,16 @@ namespace Win32
 			public float ResourceMinLODClamp;
 		}
 		[CRepr]
-		public struct D3D12_TEX2D_SRV		{
+		public struct D3D12_TEX2D_SRV
+		{
 			public uint32 MostDetailedMip;
 			public uint32 MipLevels;
 			public uint32 PlaneSlice;
 			public float ResourceMinLODClamp;
 		}
 		[CRepr]
-		public struct D3D12_TEX2D_ARRAY_SRV		{
+		public struct D3D12_TEX2D_ARRAY_SRV
+		{
 			public uint32 MostDetailedMip;
 			public uint32 MipLevels;
 			public uint32 FirstArraySlice;
@@ -3283,19 +3366,22 @@ namespace Win32
 			public float ResourceMinLODClamp;
 		}
 		[CRepr]
-		public struct D3D12_TEX3D_SRV		{
+		public struct D3D12_TEX3D_SRV
+		{
 			public uint32 MostDetailedMip;
 			public uint32 MipLevels;
 			public float ResourceMinLODClamp;
 		}
 		[CRepr]
-		public struct D3D12_TEXCUBE_SRV		{
+		public struct D3D12_TEXCUBE_SRV
+		{
 			public uint32 MostDetailedMip;
 			public uint32 MipLevels;
 			public float ResourceMinLODClamp;
 		}
 		[CRepr]
-		public struct D3D12_TEXCUBE_ARRAY_SRV		{
+		public struct D3D12_TEXCUBE_ARRAY_SRV
+		{
 			public uint32 MostDetailedMip;
 			public uint32 MipLevels;
 			public uint32 First2DArrayFace;
@@ -3303,27 +3389,32 @@ namespace Win32
 			public float ResourceMinLODClamp;
 		}
 		[CRepr]
-		public struct D3D12_TEX2DMS_SRV		{
+		public struct D3D12_TEX2DMS_SRV
+		{
 			public uint32 UnusedField_NothingToDefine;
 		}
 		[CRepr]
-		public struct D3D12_TEX2DMS_ARRAY_SRV		{
+		public struct D3D12_TEX2DMS_ARRAY_SRV
+		{
 			public uint32 FirstArraySlice;
 			public uint32 ArraySize;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV		{
+		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV
+		{
 			public uint64 Location;
 		}
 		[CRepr]
-		public struct D3D12_SHADER_RESOURCE_VIEW_DESC		{
+		public struct D3D12_SHADER_RESOURCE_VIEW_DESC
+		{
 			public DXGI_FORMAT Format;
 			public D3D12_SRV_DIMENSION ViewDimension;
 			public uint32 Shader4ComponentMapping;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_BUFFER_SRV Buffer;
 				public D3D12_TEX1D_SRV Texture1D;
 				public D3D12_TEX1D_ARRAY_SRV Texture1DArray;
@@ -3338,12 +3429,14 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D3D12_CONSTANT_BUFFER_VIEW_DESC		{
+		public struct D3D12_CONSTANT_BUFFER_VIEW_DESC
+		{
 			public uint64 BufferLocation;
 			public uint32 SizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_SAMPLER_DESC		{
+		public struct D3D12_SAMPLER_DESC
+		{
 			public D3D12_FILTER Filter;
 			public D3D12_TEXTURE_ADDRESS_MODE AddressU;
 			public D3D12_TEXTURE_ADDRESS_MODE AddressV;
@@ -3356,7 +3449,8 @@ namespace Win32
 			public float MaxLOD;
 		}
 		[CRepr]
-		public struct D3D12_BUFFER_UAV		{
+		public struct D3D12_BUFFER_UAV
+		{
 			public uint64 FirstElement;
 			public uint32 NumElements;
 			public uint32 StructureByteStride;
@@ -3364,41 +3458,48 @@ namespace Win32
 			public D3D12_BUFFER_UAV_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_TEX1D_UAV		{
+		public struct D3D12_TEX1D_UAV
+		{
 			public uint32 MipSlice;
 		}
 		[CRepr]
-		public struct D3D12_TEX1D_ARRAY_UAV		{
+		public struct D3D12_TEX1D_ARRAY_UAV
+		{
 			public uint32 MipSlice;
 			public uint32 FirstArraySlice;
 			public uint32 ArraySize;
 		}
 		[CRepr]
-		public struct D3D12_TEX2D_UAV		{
+		public struct D3D12_TEX2D_UAV
+		{
 			public uint32 MipSlice;
 			public uint32 PlaneSlice;
 		}
 		[CRepr]
-		public struct D3D12_TEX2D_ARRAY_UAV		{
+		public struct D3D12_TEX2D_ARRAY_UAV
+		{
 			public uint32 MipSlice;
 			public uint32 FirstArraySlice;
 			public uint32 ArraySize;
 			public uint32 PlaneSlice;
 		}
 		[CRepr]
-		public struct D3D12_TEX3D_UAV		{
+		public struct D3D12_TEX3D_UAV
+		{
 			public uint32 MipSlice;
 			public uint32 FirstWSlice;
 			public uint32 WSize;
 		}
 		[CRepr]
-		public struct D3D12_UNORDERED_ACCESS_VIEW_DESC		{
+		public struct D3D12_UNORDERED_ACCESS_VIEW_DESC
+		{
 			public DXGI_FORMAT Format;
 			public D3D12_UAV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_BUFFER_UAV Buffer;
 				public D3D12_TEX1D_UAV Texture1D;
 				public D3D12_TEX1D_ARRAY_UAV Texture1DArray;
@@ -3408,55 +3509,65 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D3D12_BUFFER_RTV		{
+		public struct D3D12_BUFFER_RTV
+		{
 			public uint64 FirstElement;
 			public uint32 NumElements;
 		}
 		[CRepr]
-		public struct D3D12_TEX1D_RTV		{
+		public struct D3D12_TEX1D_RTV
+		{
 			public uint32 MipSlice;
 		}
 		[CRepr]
-		public struct D3D12_TEX1D_ARRAY_RTV		{
+		public struct D3D12_TEX1D_ARRAY_RTV
+		{
 			public uint32 MipSlice;
 			public uint32 FirstArraySlice;
 			public uint32 ArraySize;
 		}
 		[CRepr]
-		public struct D3D12_TEX2D_RTV		{
+		public struct D3D12_TEX2D_RTV
+		{
 			public uint32 MipSlice;
 			public uint32 PlaneSlice;
 		}
 		[CRepr]
-		public struct D3D12_TEX2DMS_RTV		{
+		public struct D3D12_TEX2DMS_RTV
+		{
 			public uint32 UnusedField_NothingToDefine;
 		}
 		[CRepr]
-		public struct D3D12_TEX2D_ARRAY_RTV		{
+		public struct D3D12_TEX2D_ARRAY_RTV
+		{
 			public uint32 MipSlice;
 			public uint32 FirstArraySlice;
 			public uint32 ArraySize;
 			public uint32 PlaneSlice;
 		}
 		[CRepr]
-		public struct D3D12_TEX2DMS_ARRAY_RTV		{
+		public struct D3D12_TEX2DMS_ARRAY_RTV
+		{
 			public uint32 FirstArraySlice;
 			public uint32 ArraySize;
 		}
 		[CRepr]
-		public struct D3D12_TEX3D_RTV		{
+		public struct D3D12_TEX3D_RTV
+		{
 			public uint32 MipSlice;
 			public uint32 FirstWSlice;
 			public uint32 WSize;
 		}
 		[CRepr]
-		public struct D3D12_RENDER_TARGET_VIEW_DESC		{
+		public struct D3D12_RENDER_TARGET_VIEW_DESC
+		{
 			public DXGI_FORMAT Format;
 			public D3D12_RTV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_BUFFER_RTV Buffer;
 				public D3D12_TEX1D_RTV Texture1D;
 				public D3D12_TEX1D_ARRAY_RTV Texture1DArray;
@@ -3468,43 +3579,51 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D3D12_TEX1D_DSV		{
+		public struct D3D12_TEX1D_DSV
+		{
 			public uint32 MipSlice;
 		}
 		[CRepr]
-		public struct D3D12_TEX1D_ARRAY_DSV		{
-			public uint32 MipSlice;
-			public uint32 FirstArraySlice;
-			public uint32 ArraySize;
-		}
-		[CRepr]
-		public struct D3D12_TEX2D_DSV		{
-			public uint32 MipSlice;
-		}
-		[CRepr]
-		public struct D3D12_TEX2D_ARRAY_DSV		{
+		public struct D3D12_TEX1D_ARRAY_DSV
+		{
 			public uint32 MipSlice;
 			public uint32 FirstArraySlice;
 			public uint32 ArraySize;
 		}
 		[CRepr]
-		public struct D3D12_TEX2DMS_DSV		{
+		public struct D3D12_TEX2D_DSV
+		{
+			public uint32 MipSlice;
+		}
+		[CRepr]
+		public struct D3D12_TEX2D_ARRAY_DSV
+		{
+			public uint32 MipSlice;
+			public uint32 FirstArraySlice;
+			public uint32 ArraySize;
+		}
+		[CRepr]
+		public struct D3D12_TEX2DMS_DSV
+		{
 			public uint32 UnusedField_NothingToDefine;
 		}
 		[CRepr]
-		public struct D3D12_TEX2DMS_ARRAY_DSV		{
+		public struct D3D12_TEX2DMS_ARRAY_DSV
+		{
 			public uint32 FirstArraySlice;
 			public uint32 ArraySize;
 		}
 		[CRepr]
-		public struct D3D12_DEPTH_STENCIL_VIEW_DESC		{
+		public struct D3D12_DEPTH_STENCIL_VIEW_DESC
+		{
 			public DXGI_FORMAT Format;
 			public D3D12_DSV_DIMENSION ViewDimension;
 			public D3D12_DSV_FLAGS Flags;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_TEX1D_DSV Texture1D;
 				public D3D12_TEX1D_ARRAY_DSV Texture1DArray;
 				public D3D12_TEX2D_DSV Texture2D;
@@ -3514,14 +3633,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D3D12_DESCRIPTOR_HEAP_DESC		{
+		public struct D3D12_DESCRIPTOR_HEAP_DESC
+		{
 			public D3D12_DESCRIPTOR_HEAP_TYPE Type;
 			public uint32 NumDescriptors;
 			public D3D12_DESCRIPTOR_HEAP_FLAGS Flags;
 			public uint32 NodeMask;
 		}
 		[CRepr]
-		public struct D3D12_DESCRIPTOR_RANGE		{
+		public struct D3D12_DESCRIPTOR_RANGE
+		{
 			public D3D12_DESCRIPTOR_RANGE_TYPE RangeType;
 			public uint32 NumDescriptors;
 			public uint32 BaseShaderRegister;
@@ -3529,36 +3650,42 @@ namespace Win32
 			public uint32 OffsetInDescriptorsFromTableStart;
 		}
 		[CRepr]
-		public struct D3D12_ROOT_DESCRIPTOR_TABLE		{
+		public struct D3D12_ROOT_DESCRIPTOR_TABLE
+		{
 			public uint32 NumDescriptorRanges;
 			public D3D12_DESCRIPTOR_RANGE* pDescriptorRanges;
 		}
 		[CRepr]
-		public struct D3D12_ROOT_CONSTANTS		{
+		public struct D3D12_ROOT_CONSTANTS
+		{
 			public uint32 ShaderRegister;
 			public uint32 RegisterSpace;
 			public uint32 Num32BitValues;
 		}
 		[CRepr]
-		public struct D3D12_ROOT_DESCRIPTOR		{
+		public struct D3D12_ROOT_DESCRIPTOR
+		{
 			public uint32 ShaderRegister;
 			public uint32 RegisterSpace;
 		}
 		[CRepr]
-		public struct D3D12_ROOT_PARAMETER		{
+		public struct D3D12_ROOT_PARAMETER
+		{
 			public D3D12_ROOT_PARAMETER_TYPE ParameterType;
 			public _Anonymous_e__Union Anonymous;
 			public D3D12_SHADER_VISIBILITY ShaderVisibility;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable;
 				public D3D12_ROOT_CONSTANTS Constants;
 				public D3D12_ROOT_DESCRIPTOR Descriptor;
 			}
 		}
 		[CRepr]
-		public struct D3D12_STATIC_SAMPLER_DESC		{
+		public struct D3D12_STATIC_SAMPLER_DESC
+		{
 			public D3D12_FILTER Filter;
 			public D3D12_TEXTURE_ADDRESS_MODE AddressU;
 			public D3D12_TEXTURE_ADDRESS_MODE AddressV;
@@ -3574,7 +3701,8 @@ namespace Win32
 			public D3D12_SHADER_VISIBILITY ShaderVisibility;
 		}
 		[CRepr]
-		public struct D3D12_ROOT_SIGNATURE_DESC		{
+		public struct D3D12_ROOT_SIGNATURE_DESC
+		{
 			public uint32 NumParameters;
 			public D3D12_ROOT_PARAMETER* pParameters;
 			public uint32 NumStaticSamplers;
@@ -3582,7 +3710,8 @@ namespace Win32
 			public D3D12_ROOT_SIGNATURE_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_DESCRIPTOR_RANGE1		{
+		public struct D3D12_DESCRIPTOR_RANGE1
+		{
 			public D3D12_DESCRIPTOR_RANGE_TYPE RangeType;
 			public uint32 NumDescriptors;
 			public uint32 BaseShaderRegister;
@@ -3591,31 +3720,36 @@ namespace Win32
 			public uint32 OffsetInDescriptorsFromTableStart;
 		}
 		[CRepr]
-		public struct D3D12_ROOT_DESCRIPTOR_TABLE1		{
+		public struct D3D12_ROOT_DESCRIPTOR_TABLE1
+		{
 			public uint32 NumDescriptorRanges;
 			public D3D12_DESCRIPTOR_RANGE1* pDescriptorRanges;
 		}
 		[CRepr]
-		public struct D3D12_ROOT_DESCRIPTOR1		{
+		public struct D3D12_ROOT_DESCRIPTOR1
+		{
 			public uint32 ShaderRegister;
 			public uint32 RegisterSpace;
 			public D3D12_ROOT_DESCRIPTOR_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_ROOT_PARAMETER1		{
+		public struct D3D12_ROOT_PARAMETER1
+		{
 			public D3D12_ROOT_PARAMETER_TYPE ParameterType;
 			public _Anonymous_e__Union Anonymous;
 			public D3D12_SHADER_VISIBILITY ShaderVisibility;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable;
 				public D3D12_ROOT_CONSTANTS Constants;
 				public D3D12_ROOT_DESCRIPTOR1 Descriptor;
 			}
 		}
 		[CRepr]
-		public struct D3D12_ROOT_SIGNATURE_DESC1		{
+		public struct D3D12_ROOT_SIGNATURE_DESC1
+		{
 			public uint32 NumParameters;
 			public D3D12_ROOT_PARAMETER1* pParameters;
 			public uint32 NumStaticSamplers;
@@ -3623,39 +3757,46 @@ namespace Win32
 			public D3D12_ROOT_SIGNATURE_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC		{
+		public struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC
+		{
 			public D3D_ROOT_SIGNATURE_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_ROOT_SIGNATURE_DESC Desc_1_0;
 				public D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1;
 			}
 		}
 		[CRepr]
-		public struct D3D12_CPU_DESCRIPTOR_HANDLE		{
+		public struct D3D12_CPU_DESCRIPTOR_HANDLE
+		{
 			public uint ptr;
 		}
 		[CRepr]
-		public struct D3D12_GPU_DESCRIPTOR_HANDLE		{
+		public struct D3D12_GPU_DESCRIPTOR_HANDLE
+		{
 			public uint64 ptr;
 		}
 		[CRepr]
-		public struct D3D12_DISCARD_REGION		{
+		public struct D3D12_DISCARD_REGION
+		{
 			public uint32 NumRects;
 			public RECT* pRects;
 			public uint32 FirstSubresource;
 			public uint32 NumSubresources;
 		}
 		[CRepr]
-		public struct D3D12_QUERY_HEAP_DESC		{
+		public struct D3D12_QUERY_HEAP_DESC
+		{
 			public D3D12_QUERY_HEAP_TYPE Type;
 			public uint32 Count;
 			public uint32 NodeMask;
 		}
 		[CRepr]
-		public struct D3D12_QUERY_DATA_PIPELINE_STATISTICS		{
+		public struct D3D12_QUERY_DATA_PIPELINE_STATISTICS
+		{
 			public uint64 IAVertices;
 			public uint64 IAPrimitives;
 			public uint64 VSInvocations;
@@ -3669,7 +3810,8 @@ namespace Win32
 			public uint64 CSInvocations;
 		}
 		[CRepr]
-		public struct D3D12_QUERY_DATA_PIPELINE_STATISTICS1		{
+		public struct D3D12_QUERY_DATA_PIPELINE_STATISTICS1
+		{
 			public uint64 IAVertices;
 			public uint64 IAPrimitives;
 			public uint64 VSInvocations;
@@ -3686,25 +3828,29 @@ namespace Win32
 			public uint64 MSPrimitives;
 		}
 		[CRepr]
-		public struct D3D12_QUERY_DATA_SO_STATISTICS		{
+		public struct D3D12_QUERY_DATA_SO_STATISTICS
+		{
 			public uint64 NumPrimitivesWritten;
 			public uint64 PrimitivesStorageNeeded;
 		}
 		[CRepr]
-		public struct D3D12_STREAM_OUTPUT_BUFFER_VIEW		{
+		public struct D3D12_STREAM_OUTPUT_BUFFER_VIEW
+		{
 			public uint64 BufferLocation;
 			public uint64 SizeInBytes;
 			public uint64 BufferFilledSizeLocation;
 		}
 		[CRepr]
-		public struct D3D12_DRAW_ARGUMENTS		{
+		public struct D3D12_DRAW_ARGUMENTS
+		{
 			public uint32 VertexCountPerInstance;
 			public uint32 InstanceCount;
 			public uint32 StartVertexLocation;
 			public uint32 StartInstanceLocation;
 		}
 		[CRepr]
-		public struct D3D12_DRAW_INDEXED_ARGUMENTS		{
+		public struct D3D12_DRAW_INDEXED_ARGUMENTS
+		{
 			public uint32 IndexCountPerInstance;
 			public uint32 InstanceCount;
 			public uint32 StartIndexLocation;
@@ -3712,30 +3858,35 @@ namespace Win32
 			public uint32 StartInstanceLocation;
 		}
 		[CRepr]
-		public struct D3D12_DISPATCH_ARGUMENTS		{
+		public struct D3D12_DISPATCH_ARGUMENTS
+		{
 			public uint32 ThreadGroupCountX;
 			public uint32 ThreadGroupCountY;
 			public uint32 ThreadGroupCountZ;
 		}
 		[CRepr]
-		public struct D3D12_VERTEX_BUFFER_VIEW		{
+		public struct D3D12_VERTEX_BUFFER_VIEW
+		{
 			public uint64 BufferLocation;
 			public uint32 SizeInBytes;
 			public uint32 StrideInBytes;
 		}
 		[CRepr]
-		public struct D3D12_INDEX_BUFFER_VIEW		{
+		public struct D3D12_INDEX_BUFFER_VIEW
+		{
 			public uint64 BufferLocation;
 			public uint32 SizeInBytes;
 			public DXGI_FORMAT Format;
 		}
 		[CRepr]
-		public struct D3D12_INDIRECT_ARGUMENT_DESC		{
+		public struct D3D12_INDIRECT_ARGUMENT_DESC
+		{
 			public D3D12_INDIRECT_ARGUMENT_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _VertexBuffer_e__Struct VertexBuffer;
 				public _Constant_e__Struct Constant;
 				public _ConstantBufferView_e__Struct ConstantBufferView;
@@ -3743,53 +3894,63 @@ namespace Win32
 				public _UnorderedAccessView_e__Struct UnorderedAccessView;
 				
 				[CRepr]
-				public struct _ShaderResourceView_e__Struct				{
+				public struct _ShaderResourceView_e__Struct
+				{
 					public uint32 RootParameterIndex;
 				}
 				[CRepr]
-				public struct _Constant_e__Struct				{
+				public struct _Constant_e__Struct
+				{
 					public uint32 RootParameterIndex;
 					public uint32 DestOffsetIn32BitValues;
 					public uint32 Num32BitValuesToSet;
 				}
 				[CRepr]
-				public struct _UnorderedAccessView_e__Struct				{
+				public struct _UnorderedAccessView_e__Struct
+				{
 					public uint32 RootParameterIndex;
 				}
 				[CRepr]
-				public struct _VertexBuffer_e__Struct				{
+				public struct _VertexBuffer_e__Struct
+				{
 					public uint32 Slot;
 				}
 				[CRepr]
-				public struct _ConstantBufferView_e__Struct				{
+				public struct _ConstantBufferView_e__Struct
+				{
 					public uint32 RootParameterIndex;
 				}
 			}
 		}
 		[CRepr]
-		public struct D3D12_COMMAND_SIGNATURE_DESC		{
+		public struct D3D12_COMMAND_SIGNATURE_DESC
+		{
 			public uint32 ByteStride;
 			public uint32 NumArgumentDescs;
 			public D3D12_INDIRECT_ARGUMENT_DESC* pArgumentDescs;
 			public uint32 NodeMask;
 		}
 		[CRepr]
-		public struct D3D12_WRITEBUFFERIMMEDIATE_PARAMETER		{
+		public struct D3D12_WRITEBUFFERIMMEDIATE_PARAMETER
+		{
 			public uint64 Dest;
 			public uint32 Value;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS Support;
 		}
 		[CRepr]
-		public struct D3D12_PROTECTED_RESOURCE_SESSION_DESC		{
+		public struct D3D12_PROTECTED_RESOURCE_SESSION_DESC
+		{
 			public uint32 NodeMask;
 			public D3D12_PROTECTED_RESOURCE_SESSION_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_META_COMMAND_PARAMETER_DESC		{
+		public struct D3D12_META_COMMAND_PARAMETER_DESC
+		{
 			public PWSTR Name;
 			public D3D12_META_COMMAND_PARAMETER_TYPE Type;
 			public D3D12_META_COMMAND_PARAMETER_FLAGS Flags;
@@ -3797,65 +3958,77 @@ namespace Win32
 			public uint32 StructureOffset;
 		}
 		[CRepr]
-		public struct D3D12_META_COMMAND_DESC		{
+		public struct D3D12_META_COMMAND_DESC
+		{
 			public Guid Id;
 			public PWSTR Name;
 			public D3D12_GRAPHICS_STATES InitializationDirtyState;
 			public D3D12_GRAPHICS_STATES ExecutionDirtyState;
 		}
 		[CRepr]
-		public struct D3D12_STATE_SUBOBJECT		{
+		public struct D3D12_STATE_SUBOBJECT
+		{
 			public D3D12_STATE_SUBOBJECT_TYPE Type;
 			public void* pDesc;
 		}
 		[CRepr]
-		public struct D3D12_STATE_OBJECT_CONFIG		{
+		public struct D3D12_STATE_OBJECT_CONFIG
+		{
 			public D3D12_STATE_OBJECT_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_GLOBAL_ROOT_SIGNATURE		{
+		public struct D3D12_GLOBAL_ROOT_SIGNATURE
+		{
 			public ID3D12RootSignature* pGlobalRootSignature;
 		}
 		[CRepr]
-		public struct D3D12_LOCAL_ROOT_SIGNATURE		{
+		public struct D3D12_LOCAL_ROOT_SIGNATURE
+		{
 			public ID3D12RootSignature* pLocalRootSignature;
 		}
 		[CRepr]
-		public struct D3D12_NODE_MASK		{
+		public struct D3D12_NODE_MASK
+		{
 			public uint32 NodeMask;
 		}
 		[CRepr]
-		public struct D3D12_EXPORT_DESC		{
+		public struct D3D12_EXPORT_DESC
+		{
 			public PWSTR Name;
 			public PWSTR ExportToRename;
 			public D3D12_EXPORT_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_DXIL_LIBRARY_DESC		{
+		public struct D3D12_DXIL_LIBRARY_DESC
+		{
 			public D3D12_SHADER_BYTECODE DXILLibrary;
 			public uint32 NumExports;
 			public D3D12_EXPORT_DESC* pExports;
 		}
 		[CRepr]
-		public struct D3D12_EXISTING_COLLECTION_DESC		{
+		public struct D3D12_EXISTING_COLLECTION_DESC
+		{
 			public ID3D12StateObject* pExistingCollection;
 			public uint32 NumExports;
 			public D3D12_EXPORT_DESC* pExports;
 		}
 		[CRepr]
-		public struct D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION		{
+		public struct D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION
+		{
 			public D3D12_STATE_SUBOBJECT* pSubobjectToAssociate;
 			public uint32 NumExports;
 			public PWSTR* pExports;
 		}
 		[CRepr]
-		public struct D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION		{
+		public struct D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION
+		{
 			public PWSTR SubobjectToAssociate;
 			public uint32 NumExports;
 			public PWSTR* pExports;
 		}
 		[CRepr]
-		public struct D3D12_HIT_GROUP_DESC		{
+		public struct D3D12_HIT_GROUP_DESC
+		{
 			public PWSTR HitGroupExport;
 			public D3D12_HIT_GROUP_TYPE Type;
 			public PWSTR AnyHitShaderImport;
@@ -3863,43 +4036,51 @@ namespace Win32
 			public PWSTR IntersectionShaderImport;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_SHADER_CONFIG		{
+		public struct D3D12_RAYTRACING_SHADER_CONFIG
+		{
 			public uint32 MaxPayloadSizeInBytes;
 			public uint32 MaxAttributeSizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_PIPELINE_CONFIG		{
+		public struct D3D12_RAYTRACING_PIPELINE_CONFIG
+		{
 			public uint32 MaxTraceRecursionDepth;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_PIPELINE_CONFIG1		{
+		public struct D3D12_RAYTRACING_PIPELINE_CONFIG1
+		{
 			public uint32 MaxTraceRecursionDepth;
 			public D3D12_RAYTRACING_PIPELINE_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_STATE_OBJECT_DESC		{
+		public struct D3D12_STATE_OBJECT_DESC
+		{
 			public D3D12_STATE_OBJECT_TYPE Type;
 			public uint32 NumSubobjects;
 			public D3D12_STATE_SUBOBJECT* pSubobjects;
 		}
 		[CRepr]
-		public struct D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE		{
+		public struct D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE
+		{
 			public uint64 StartAddress;
 			public uint64 StrideInBytes;
 		}
 		[CRepr]
-		public struct D3D12_GPU_VIRTUAL_ADDRESS_RANGE		{
+		public struct D3D12_GPU_VIRTUAL_ADDRESS_RANGE
+		{
 			public uint64 StartAddress;
 			public uint64 SizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE		{
+		public struct D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE
+		{
 			public uint64 StartAddress;
 			public uint64 SizeInBytes;
 			public uint64 StrideInBytes;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC		{
+		public struct D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC
+		{
 			public uint64 Transform3x4;
 			public DXGI_FORMAT IndexFormat;
 			public DXGI_FORMAT VertexFormat;
@@ -3909,7 +4090,8 @@ namespace Win32
 			public D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE VertexBuffer;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_AABB		{
+		public struct D3D12_RAYTRACING_AABB
+		{
 			public float MinX;
 			public float MinY;
 			public float MinZ;
@@ -3918,70 +4100,83 @@ namespace Win32
 			public float MaxZ;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_GEOMETRY_AABBS_DESC		{
+		public struct D3D12_RAYTRACING_GEOMETRY_AABBS_DESC
+		{
 			public uint64 AABBCount;
 			public D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE AABBs;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC		{
+		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC
+		{
 			public uint64 DestBuffer;
 			public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TYPE InfoType;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_COMPACTED_SIZE_DESC		{
+		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_COMPACTED_SIZE_DESC
+		{
 			public uint64 CompactedSizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TOOLS_VISUALIZATION_DESC		{
+		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TOOLS_VISUALIZATION_DESC
+		{
 			public uint64 DecodedSizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER		{
+		public struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER
+		{
 			public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE Type;
 			public uint32 NumDescs;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_SERIALIZATION_DESC		{
+		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_SERIALIZATION_DESC
+		{
 			public uint64 SerializedSizeInBytes;
 			public uint64 NumBottomLevelAccelerationStructurePointers;
 		}
 		[CRepr]
-		public struct D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER		{
+		public struct D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER
+		{
 			public Guid DriverOpaqueGUID;
 			public uint8[16] DriverOpaqueVersioningData;
 		}
 		[CRepr]
-		public struct D3D12_SERIALIZED_RAYTRACING_ACCELERATION_STRUCTURE_HEADER		{
+		public struct D3D12_SERIALIZED_RAYTRACING_ACCELERATION_STRUCTURE_HEADER
+		{
 			public D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER DriverMatchingIdentifier;
 			public uint64 SerializedSizeInBytesIncludingHeader;
 			public uint64 DeserializedSizeInBytes;
 			public uint64 NumBottomLevelAccelerationStructurePointersAfterHeader;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_CURRENT_SIZE_DESC		{
+		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_CURRENT_SIZE_DESC
+		{
 			public uint64 CurrentSizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_INSTANCE_DESC		{
+		public struct D3D12_RAYTRACING_INSTANCE_DESC
+		{
 			public float[12] Transform;
 			public uint32 _bitfield1;
 			public uint32 _bitfield2;
 			public uint64 AccelerationStructure;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_GEOMETRY_DESC		{
+		public struct D3D12_RAYTRACING_GEOMETRY_DESC
+		{
 			public D3D12_RAYTRACING_GEOMETRY_TYPE Type;
 			public D3D12_RAYTRACING_GEOMETRY_FLAGS Flags;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC Triangles;
 				public D3D12_RAYTRACING_GEOMETRY_AABBS_DESC AABBs;
 			}
 		}
 		[CRepr]
-		public struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS		{
+		public struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS
+		{
 			public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE Type;
 			public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAGS Flags;
 			public uint32 NumDescs;
@@ -3989,27 +4184,31 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 InstanceDescs;
 				public D3D12_RAYTRACING_GEOMETRY_DESC* pGeometryDescs;
 				public D3D12_RAYTRACING_GEOMETRY_DESC** ppGeometryDescs;
 			}
 		}
 		[CRepr]
-		public struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC		{
+		public struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC
+		{
 			public uint64 DestAccelerationStructureData;
 			public D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS Inputs;
 			public uint64 SourceAccelerationStructureData;
 			public uint64 ScratchAccelerationStructureData;
 		}
 		[CRepr]
-		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO		{
+		public struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO
+		{
 			public uint64 ResultDataMaxSizeInBytes;
 			public uint64 ScratchDataSizeInBytes;
 			public uint64 UpdateScratchDataSizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_AUTO_BREADCRUMB_NODE		{
+		public struct D3D12_AUTO_BREADCRUMB_NODE
+		{
 			public uint8* pCommandListDebugNameA;
 			public PWSTR pCommandListDebugNameW;
 			public uint8* pCommandQueueDebugNameA;
@@ -4022,12 +4221,14 @@ namespace Win32
 			public D3D12_AUTO_BREADCRUMB_NODE* pNext;
 		}
 		[CRepr]
-		public struct D3D12_DRED_BREADCRUMB_CONTEXT		{
+		public struct D3D12_DRED_BREADCRUMB_CONTEXT
+		{
 			public uint32 BreadcrumbIndex;
 			public PWSTR pContextString;
 		}
 		[CRepr]
-		public struct D3D12_AUTO_BREADCRUMB_NODE1		{
+		public struct D3D12_AUTO_BREADCRUMB_NODE1
+		{
 			public uint8* pCommandListDebugNameA;
 			public PWSTR pCommandListDebugNameW;
 			public uint8* pCommandQueueDebugNameA;
@@ -4042,19 +4243,22 @@ namespace Win32
 			public D3D12_DRED_BREADCRUMB_CONTEXT* pBreadcrumbContexts;
 		}
 		[CRepr]
-		public struct D3D12_DEVICE_REMOVED_EXTENDED_DATA		{
+		public struct D3D12_DEVICE_REMOVED_EXTENDED_DATA
+		{
 			public D3D12_DRED_FLAGS Flags;
 			public D3D12_AUTO_BREADCRUMB_NODE* pHeadAutoBreadcrumbNode;
 		}
 		[CRepr]
-		public struct D3D12_DRED_ALLOCATION_NODE		{
+		public struct D3D12_DRED_ALLOCATION_NODE
+		{
 			public uint8* ObjectNameA;
 			public PWSTR ObjectNameW;
 			public D3D12_DRED_ALLOCATION_TYPE AllocationType;
 			public D3D12_DRED_ALLOCATION_NODE* pNext;
 		}
 		[CRepr]
-		public struct D3D12_DRED_ALLOCATION_NODE1		{
+		public struct D3D12_DRED_ALLOCATION_NODE1
+		{
 			public uint8* ObjectNameA;
 			public PWSTR ObjectNameW;
 			public D3D12_DRED_ALLOCATION_TYPE AllocationType;
@@ -4062,58 +4266,68 @@ namespace Win32
 			public IUnknown* pObject;
 		}
 		[CRepr]
-		public struct D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT		{
+		public struct D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT
+		{
 			public D3D12_AUTO_BREADCRUMB_NODE* pHeadAutoBreadcrumbNode;
 		}
 		[CRepr]
-		public struct D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1		{
+		public struct D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1
+		{
 			public D3D12_AUTO_BREADCRUMB_NODE1* pHeadAutoBreadcrumbNode;
 		}
 		[CRepr]
-		public struct D3D12_DRED_PAGE_FAULT_OUTPUT		{
+		public struct D3D12_DRED_PAGE_FAULT_OUTPUT
+		{
 			public uint64 PageFaultVA;
 			public D3D12_DRED_ALLOCATION_NODE* pHeadExistingAllocationNode;
 			public D3D12_DRED_ALLOCATION_NODE* pHeadRecentFreedAllocationNode;
 		}
 		[CRepr]
-		public struct D3D12_DRED_PAGE_FAULT_OUTPUT1		{
+		public struct D3D12_DRED_PAGE_FAULT_OUTPUT1
+		{
 			public uint64 PageFaultVA;
 			public D3D12_DRED_ALLOCATION_NODE1* pHeadExistingAllocationNode;
 			public D3D12_DRED_ALLOCATION_NODE1* pHeadRecentFreedAllocationNode;
 		}
 		[CRepr]
-		public struct D3D12_DRED_PAGE_FAULT_OUTPUT2		{
+		public struct D3D12_DRED_PAGE_FAULT_OUTPUT2
+		{
 			public uint64 PageFaultVA;
 			public D3D12_DRED_ALLOCATION_NODE1* pHeadExistingAllocationNode;
 			public D3D12_DRED_ALLOCATION_NODE1* pHeadRecentFreedAllocationNode;
 			public D3D12_DRED_PAGE_FAULT_FLAGS PageFaultFlags;
 		}
 		[CRepr]
-		public struct D3D12_DEVICE_REMOVED_EXTENDED_DATA1		{
+		public struct D3D12_DEVICE_REMOVED_EXTENDED_DATA1
+		{
 			public HRESULT DeviceRemovedReason;
 			public D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT AutoBreadcrumbsOutput;
 			public D3D12_DRED_PAGE_FAULT_OUTPUT PageFaultOutput;
 		}
 		[CRepr]
-		public struct D3D12_DEVICE_REMOVED_EXTENDED_DATA2		{
+		public struct D3D12_DEVICE_REMOVED_EXTENDED_DATA2
+		{
 			public HRESULT DeviceRemovedReason;
 			public D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1 AutoBreadcrumbsOutput;
 			public D3D12_DRED_PAGE_FAULT_OUTPUT1 PageFaultOutput;
 		}
 		[CRepr]
-		public struct D3D12_DEVICE_REMOVED_EXTENDED_DATA3		{
+		public struct D3D12_DEVICE_REMOVED_EXTENDED_DATA3
+		{
 			public HRESULT DeviceRemovedReason;
 			public D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1 AutoBreadcrumbsOutput;
 			public D3D12_DRED_PAGE_FAULT_OUTPUT2 PageFaultOutput;
 			public D3D12_DRED_DEVICE_STATE DeviceState;
 		}
 		[CRepr]
-		public struct D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA		{
+		public struct D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA
+		{
 			public D3D12_DRED_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_DEVICE_REMOVED_EXTENDED_DATA Dred_1_0;
 				public D3D12_DEVICE_REMOVED_EXTENDED_DATA1 Dred_1_1;
 				public D3D12_DEVICE_REMOVED_EXTENDED_DATA2 Dred_1_2;
@@ -4121,38 +4335,45 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPE_COUNT		{
+		public struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPE_COUNT
+		{
 			public uint32 NodeIndex;
 			public uint32 Count;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES		{
+		public struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES
+		{
 			public uint32 NodeIndex;
 			public uint32 Count;
 			public Guid* pTypes;
 		}
 		[CRepr]
-		public struct D3D12_PROTECTED_RESOURCE_SESSION_DESC1		{
+		public struct D3D12_PROTECTED_RESOURCE_SESSION_DESC1
+		{
 			public uint32 NodeMask;
 			public D3D12_PROTECTED_RESOURCE_SESSION_FLAGS Flags;
 			public Guid ProtectionType;
 		}
 		[CRepr]
-		public struct D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS		{
+		public struct D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS
+		{
 			public D3D12_CLEAR_VALUE ClearValue;
 		}
 		[CRepr]
-		public struct D3D12_RENDER_PASS_BEGINNING_ACCESS		{
+		public struct D3D12_RENDER_PASS_BEGINNING_ACCESS
+		{
 			public D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS Clear;
 			}
 		}
 		[CRepr]
-		public struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS		{
+		public struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS
+		{
 			public uint32 SrcSubresource;
 			public uint32 DstSubresource;
 			public uint32 DstX;
@@ -4160,7 +4381,8 @@ namespace Win32
 			public RECT SrcRect;
 		}
 		[CRepr]
-		public struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS		{
+		public struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS
+		{
 			public ID3D12Resource* pSrcResource;
 			public ID3D12Resource* pDstResource;
 			public uint32 SubresourceCount;
@@ -4170,23 +4392,27 @@ namespace Win32
 			public BOOL PreserveResolveSource;
 		}
 		[CRepr]
-		public struct D3D12_RENDER_PASS_ENDING_ACCESS		{
+		public struct D3D12_RENDER_PASS_ENDING_ACCESS
+		{
 			public D3D12_RENDER_PASS_ENDING_ACCESS_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS Resolve;
 			}
 		}
 		[CRepr]
-		public struct D3D12_RENDER_PASS_RENDER_TARGET_DESC		{
+		public struct D3D12_RENDER_PASS_RENDER_TARGET_DESC
+		{
 			public D3D12_CPU_DESCRIPTOR_HANDLE cpuDescriptor;
 			public D3D12_RENDER_PASS_BEGINNING_ACCESS BeginningAccess;
 			public D3D12_RENDER_PASS_ENDING_ACCESS EndingAccess;
 		}
 		[CRepr]
-		public struct D3D12_RENDER_PASS_DEPTH_STENCIL_DESC		{
+		public struct D3D12_RENDER_PASS_DEPTH_STENCIL_DESC
+		{
 			public D3D12_CPU_DESCRIPTOR_HANDLE cpuDescriptor;
 			public D3D12_RENDER_PASS_BEGINNING_ACCESS DepthBeginningAccess;
 			public D3D12_RENDER_PASS_BEGINNING_ACCESS StencilBeginningAccess;
@@ -4194,7 +4420,8 @@ namespace Win32
 			public D3D12_RENDER_PASS_ENDING_ACCESS StencilEndingAccess;
 		}
 		[CRepr]
-		public struct D3D12_DISPATCH_RAYS_DESC		{
+		public struct D3D12_DISPATCH_RAYS_DESC
+		{
 			public D3D12_GPU_VIRTUAL_ADDRESS_RANGE RayGenerationShaderRecord;
 			public D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE MissShaderTable;
 			public D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE HitGroupTable;
@@ -4204,7 +4431,8 @@ namespace Win32
 			public uint32 Depth;
 		}
 		[CRepr]
-		public struct D3D12_SHADER_CACHE_SESSION_DESC		{
+		public struct D3D12_SHADER_CACHE_SESSION_DESC
+		{
 			public Guid Identifier;
 			public D3D12_SHADER_CACHE_MODE Mode;
 			public D3D12_SHADER_CACHE_FLAGS Flags;
@@ -4214,33 +4442,39 @@ namespace Win32
 			public uint64 Version;
 		}
 		[CRepr]
-		public struct D3D12_SUBRESOURCE_DATA		{
+		public struct D3D12_SUBRESOURCE_DATA
+		{
 			public void* pData;
 			public int RowPitch;
 			public int SlicePitch;
 		}
 		[CRepr]
-		public struct D3D12_MEMCPY_DEST		{
+		public struct D3D12_MEMCPY_DEST
+		{
 			public void* pData;
 			public uint RowPitch;
 			public uint SlicePitch;
 		}
 		[CRepr]
-		public struct D3D12_DEBUG_DEVICE_GPU_BASED_VALIDATION_SETTINGS		{
+		public struct D3D12_DEBUG_DEVICE_GPU_BASED_VALIDATION_SETTINGS
+		{
 			public uint32 MaxMessagesPerCommandList;
 			public D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE DefaultShaderPatchMode;
 			public D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS PipelineStateCreateFlags;
 		}
 		[CRepr]
-		public struct D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR		{
+		public struct D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR
+		{
 			public float SlowdownFactor;
 		}
 		[CRepr]
-		public struct D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS		{
+		public struct D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS
+		{
 			public D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE ShaderPatchMode;
 		}
 		[CRepr]
-		public struct D3D12_MESSAGE		{
+		public struct D3D12_MESSAGE
+		{
 			public D3D12_MESSAGE_CATEGORY Category;
 			public D3D12_MESSAGE_SEVERITY Severity;
 			public D3D12_MESSAGE_ID ID;
@@ -4248,7 +4482,8 @@ namespace Win32
 			public uint DescriptionByteLength;
 		}
 		[CRepr]
-		public struct D3D12_INFO_QUEUE_FILTER_DESC		{
+		public struct D3D12_INFO_QUEUE_FILTER_DESC
+		{
 			public uint32 NumCategories;
 			public D3D12_MESSAGE_CATEGORY* pCategoryList;
 			public uint32 NumSeverities;
@@ -4257,18 +4492,21 @@ namespace Win32
 			public D3D12_MESSAGE_ID* pIDList;
 		}
 		[CRepr]
-		public struct D3D12_INFO_QUEUE_FILTER		{
+		public struct D3D12_INFO_QUEUE_FILTER
+		{
 			public D3D12_INFO_QUEUE_FILTER_DESC AllowList;
 			public D3D12_INFO_QUEUE_FILTER_DESC DenyList;
 		}
 		[CRepr]
-		public struct D3D12_DISPATCH_MESH_ARGUMENTS		{
+		public struct D3D12_DISPATCH_MESH_ARGUMENTS
+		{
 			public uint32 ThreadGroupCountX;
 			public uint32 ThreadGroupCountY;
 			public uint32 ThreadGroupCountZ;
 		}
 		[CRepr]
-		public struct D3D12_SIGNATURE_PARAMETER_DESC		{
+		public struct D3D12_SIGNATURE_PARAMETER_DESC
+		{
 			public PSTR SemanticName;
 			public uint32 SemanticIndex;
 			public uint32 Register;
@@ -4280,7 +4518,8 @@ namespace Win32
 			public D3D_MIN_PRECISION MinPrecision;
 		}
 		[CRepr]
-		public struct D3D12_SHADER_BUFFER_DESC		{
+		public struct D3D12_SHADER_BUFFER_DESC
+		{
 			public PSTR Name;
 			public D3D_CBUFFER_TYPE Type;
 			public uint32 Variables;
@@ -4288,7 +4527,8 @@ namespace Win32
 			public uint32 uFlags;
 		}
 		[CRepr]
-		public struct D3D12_SHADER_VARIABLE_DESC		{
+		public struct D3D12_SHADER_VARIABLE_DESC
+		{
 			public PSTR Name;
 			public uint32 StartOffset;
 			public uint32 Size;
@@ -4300,7 +4540,8 @@ namespace Win32
 			public uint32 SamplerSize;
 		}
 		[CRepr]
-		public struct D3D12_SHADER_TYPE_DESC		{
+		public struct D3D12_SHADER_TYPE_DESC
+		{
 			public D3D_SHADER_VARIABLE_CLASS Class;
 			public D3D_SHADER_VARIABLE_TYPE Type;
 			public uint32 Rows;
@@ -4311,7 +4552,8 @@ namespace Win32
 			public PSTR Name;
 		}
 		[CRepr]
-		public struct D3D12_SHADER_DESC		{
+		public struct D3D12_SHADER_DESC
+		{
 			public uint32 Version;
 			public PSTR Creator;
 			public uint32 Flags;
@@ -4352,7 +4594,8 @@ namespace Win32
 			public uint32 cTextureStoreInstructions;
 		}
 		[CRepr]
-		public struct D3D12_SHADER_INPUT_BIND_DESC		{
+		public struct D3D12_SHADER_INPUT_BIND_DESC
+		{
 			public PSTR Name;
 			public D3D_SHADER_INPUT_TYPE Type;
 			public uint32 BindPoint;
@@ -4365,13 +4608,15 @@ namespace Win32
 			public uint32 uID;
 		}
 		[CRepr]
-		public struct D3D12_LIBRARY_DESC		{
+		public struct D3D12_LIBRARY_DESC
+		{
 			public PSTR Creator;
 			public uint32 Flags;
 			public uint32 FunctionCount;
 		}
 		[CRepr]
-		public struct D3D12_FUNCTION_DESC		{
+		public struct D3D12_FUNCTION_DESC
+		{
 			public uint32 Version;
 			public PSTR Creator;
 			public uint32 Flags;
@@ -4407,7 +4652,8 @@ namespace Win32
 			public BOOL Has10Level9PixelShader;
 		}
 		[CRepr]
-		public struct D3D12_PARAMETER_DESC		{
+		public struct D3D12_PARAMETER_DESC
+		{
 			public PSTR Name;
 			public PSTR SemanticName;
 			public D3D_SHADER_VARIABLE_TYPE Type;

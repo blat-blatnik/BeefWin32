@@ -126,13 +126,15 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WSD_CONFIG_PARAM		{
+		public struct WSD_CONFIG_PARAM
+		{
 			public WSD_CONFIG_PARAM_TYPE configParamType;
 			public void* pConfigData;
 			public uint32 dwConfigDataSize;
 		}
 		[CRepr]
-		public struct WSD_SECURITY_CERT_VALIDATION_V1		{
+		public struct WSD_SECURITY_CERT_VALIDATION_V1
+		{
 			public CERT_CONTEXT** certMatchArray;
 			public uint32 dwCertMatchArrayCount;
 			public void* hCertMatchStore;
@@ -140,7 +142,8 @@ namespace Win32
 			public uint32 dwCertCheckOptions;
 		}
 		[CRepr]
-		public struct WSD_SECURITY_CERT_VALIDATION		{
+		public struct WSD_SECURITY_CERT_VALIDATION
+		{
 			public CERT_CONTEXT** certMatchArray;
 			public uint32 dwCertMatchArrayCount;
 			public void* hCertMatchStore;
@@ -151,19 +154,22 @@ namespace Win32
 			public uint32 dwCertHashSize;
 		}
 		[CRepr]
-		public struct WSD_SECURITY_SIGNATURE_VALIDATION		{
+		public struct WSD_SECURITY_SIGNATURE_VALIDATION
+		{
 			public CERT_CONTEXT** signingCertArray;
 			public uint32 dwSigningCertArrayCount;
 			public void* hSigningCertStore;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct WSD_CONFIG_ADDRESSES		{
+		public struct WSD_CONFIG_ADDRESSES
+		{
 			public IWSDAddress** addresses;
 			public uint32 dwAddressCount;
 		}
 		[CRepr]
-		public struct WSDUdpRetransmitParams		{
+		public struct WSDUdpRetransmitParams
+		{
 			public uint32 ulSendDelay;
 			public uint32 ulRepeat;
 			public uint32 ulRepeatMinDelay;
@@ -171,7 +177,8 @@ namespace Win32
 			public uint32 ulRepeatUpperDelay;
 		}
 		[CRepr]
-		public struct WSD_DATETIME		{
+		public struct WSD_DATETIME
+		{
 			public BOOL isPositive;
 			public uint32 year;
 			public uint8 month;
@@ -186,7 +193,8 @@ namespace Win32
 			public uint8 TZMinute;
 		}
 		[CRepr]
-		public struct WSD_DURATION		{
+		public struct WSD_DURATION
+		{
 			public BOOL isPositive;
 			public uint32 year;
 			public uint32 month;
@@ -197,7 +205,8 @@ namespace Win32
 			public uint32 millisecond;
 		}
 		[CRepr]
-		public struct WSDXML_NAMESPACE		{
+		public struct WSDXML_NAMESPACE
+		{
 			public PWSTR Uri;
 			public PWSTR PreferredPrefix;
 			public WSDXML_NAME* Names;
@@ -205,37 +214,43 @@ namespace Win32
 			public uint16 Encoding;
 		}
 		[CRepr]
-		public struct WSDXML_NAME		{
+		public struct WSDXML_NAME
+		{
 			public WSDXML_NAMESPACE* Space;
 			public PWSTR LocalName;
 		}
 		[CRepr]
-		public struct WSDXML_TYPE		{
+		public struct WSDXML_TYPE
+		{
 			public PWSTR Uri;
 			public uint8* Table;
 		}
 		[CRepr]
-		public struct WSDXML_PREFIX_MAPPING		{
+		public struct WSDXML_PREFIX_MAPPING
+		{
 			public uint32 Refs;
 			public WSDXML_PREFIX_MAPPING* Next;
 			public WSDXML_NAMESPACE* Space;
 			public PWSTR Prefix;
 		}
 		[CRepr]
-		public struct WSDXML_ATTRIBUTE		{
+		public struct WSDXML_ATTRIBUTE
+		{
 			public WSDXML_ELEMENT* Element;
 			public WSDXML_ATTRIBUTE* Next;
 			public WSDXML_NAME* Name;
 			public PWSTR Value;
 		}
 		[CRepr]
-		public struct WSDXML_NODE		{
+		public struct WSDXML_NODE
+		{
 			public int32 Type;
 			public WSDXML_ELEMENT* Parent;
 			public WSDXML_NODE* Next;
 		}
 		[CRepr]
-		public struct WSDXML_ELEMENT		{
+		public struct WSDXML_ELEMENT
+		{
 			public WSDXML_NODE Node;
 			public WSDXML_NAME* Name;
 			public WSDXML_ATTRIBUTE* FirstAttribute;
@@ -243,78 +258,91 @@ namespace Win32
 			public WSDXML_PREFIX_MAPPING* PrefixMappings;
 		}
 		[CRepr]
-		public struct WSDXML_TEXT		{
+		public struct WSDXML_TEXT
+		{
 			public WSDXML_NODE Node;
 			public PWSTR Text;
 		}
 		[CRepr]
-		public struct WSDXML_ELEMENT_LIST		{
+		public struct WSDXML_ELEMENT_LIST
+		{
 			public WSDXML_ELEMENT_LIST* Next;
 			public WSDXML_ELEMENT* Element;
 		}
 		[CRepr]
-		public struct WSD_OPERATION		{
+		public struct WSD_OPERATION
+		{
 			public WSDXML_TYPE* RequestType;
 			public WSDXML_TYPE* ResponseType;
 			public WSD_STUB_FUNCTION RequestStubFunction;
 		}
 		[CRepr]
-		public struct WSD_HANDLER_CONTEXT		{
+		public struct WSD_HANDLER_CONTEXT
+		{
 			public PWSD_SOAP_MESSAGE_HANDLER Handler;
 			public void* PVoid;
 			public IUnknown* Unknown;
 		}
 		[CRepr]
-		public struct WSD_SYNCHRONOUS_RESPONSE_CONTEXT		{
+		public struct WSD_SYNCHRONOUS_RESPONSE_CONTEXT
+		{
 			public HRESULT hr;
 			public HANDLE eventHandle;
 			public IWSDMessageParameters* messageParameters;
 			public void* results;
 		}
 		[CRepr]
-		public struct WSD_PORT_TYPE		{
+		public struct WSD_PORT_TYPE
+		{
 			public uint32 EncodedName;
 			public uint32 OperationCount;
 			public WSD_OPERATION* Operations;
 			public WSD_PROTOCOL_TYPE ProtocolType;
 		}
 		[CRepr]
-		public struct WSD_RELATIONSHIP_METADATA		{
+		public struct WSD_RELATIONSHIP_METADATA
+		{
 			public PWSTR Type;
 			public WSD_HOST_METADATA* Data;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_SERVICE_METADATA_LIST		{
+		public struct WSD_SERVICE_METADATA_LIST
+		{
 			public WSD_SERVICE_METADATA_LIST* Next;
 			public WSD_SERVICE_METADATA* Element;
 		}
 		[CRepr]
-		public struct WSD_HOST_METADATA		{
+		public struct WSD_HOST_METADATA
+		{
 			public WSD_SERVICE_METADATA* Host;
 			public WSD_SERVICE_METADATA_LIST* Hosted;
 		}
 		[CRepr]
-		public struct WSD_ENDPOINT_REFERENCE_LIST		{
+		public struct WSD_ENDPOINT_REFERENCE_LIST
+		{
 			public WSD_ENDPOINT_REFERENCE_LIST* Next;
 			public WSD_ENDPOINT_REFERENCE* Element;
 		}
 		[CRepr]
-		public struct WSD_SERVICE_METADATA		{
+		public struct WSD_SERVICE_METADATA
+		{
 			public WSD_ENDPOINT_REFERENCE_LIST* EndpointReference;
 			public WSD_NAME_LIST* Types;
 			public PWSTR ServiceId;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_THIS_DEVICE_METADATA		{
+		public struct WSD_THIS_DEVICE_METADATA
+		{
 			public WSD_LOCALIZED_STRING_LIST* FriendlyName;
 			public PWSTR FirmwareVersion;
 			public PWSTR SerialNumber;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_THIS_MODEL_METADATA		{
+		public struct WSD_THIS_MODEL_METADATA
+		{
 			public WSD_LOCALIZED_STRING_LIST* Manufacturer;
 			public PWSTR ManufacturerUrl;
 			public WSD_LOCALIZED_STRING_LIST* ModelName;
@@ -324,26 +352,31 @@ namespace Win32
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_LOCALIZED_STRING_LIST		{
+		public struct WSD_LOCALIZED_STRING_LIST
+		{
 			public WSD_LOCALIZED_STRING_LIST* Next;
 			public WSD_LOCALIZED_STRING* Element;
 		}
 		[CRepr]
-		public struct WSD_SOAP_FAULT_REASON		{
+		public struct WSD_SOAP_FAULT_REASON
+		{
 			public WSD_LOCALIZED_STRING_LIST* Text;
 		}
 		[CRepr]
-		public struct WSD_SOAP_FAULT_SUBCODE		{
+		public struct WSD_SOAP_FAULT_SUBCODE
+		{
 			public WSDXML_NAME* Value;
 			public WSD_SOAP_FAULT_SUBCODE* Subcode;
 		}
 		[CRepr]
-		public struct WSD_SOAP_FAULT_CODE		{
+		public struct WSD_SOAP_FAULT_CODE
+		{
 			public WSDXML_NAME* Value;
 			public WSD_SOAP_FAULT_SUBCODE* Subcode;
 		}
 		[CRepr]
-		public struct WSD_SOAP_FAULT		{
+		public struct WSD_SOAP_FAULT
+		{
 			public WSD_SOAP_FAULT_CODE* Code;
 			public WSD_SOAP_FAULT_REASON* Reason;
 			public PWSTR Node;
@@ -351,18 +384,21 @@ namespace Win32
 			public WSDXML_ELEMENT* Detail;
 		}
 		[CRepr]
-		public struct WSD_APP_SEQUENCE		{
+		public struct WSD_APP_SEQUENCE
+		{
 			public uint64 InstanceId;
 			public PWSTR SequenceId;
 			public uint64 MessageNumber;
 		}
 		[CRepr]
-		public struct WSD_HEADER_RELATESTO		{
+		public struct WSD_HEADER_RELATESTO
+		{
 			public WSDXML_NAME* RelationshipType;
 			public PWSTR MessageID;
 		}
 		[CRepr]
-		public struct WSD_SOAP_HEADER		{
+		public struct WSD_SOAP_HEADER
+		{
 			public PWSTR To;
 			public PWSTR Action;
 			public PWSTR MessageID;
@@ -374,18 +410,21 @@ namespace Win32
 			public WSDXML_ELEMENT* AnyHeaders;
 		}
 		[CRepr]
-		public struct WSD_SOAP_MESSAGE		{
+		public struct WSD_SOAP_MESSAGE
+		{
 			public WSD_SOAP_HEADER Header;
 			public void* Body;
 			public WSDXML_TYPE* BodyType;
 		}
 		[CRepr]
-		public struct WSD_RESOLVE_MATCHES		{
+		public struct WSD_RESOLVE_MATCHES
+		{
 			public WSD_RESOLVE_MATCH* ResolveMatch;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_RESOLVE_MATCH		{
+		public struct WSD_RESOLVE_MATCH
+		{
 			public WSD_ENDPOINT_REFERENCE* EndpointReference;
 			public WSD_NAME_LIST* Types;
 			public WSD_SCOPES* Scopes;
@@ -394,12 +433,14 @@ namespace Win32
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_RESOLVE		{
+		public struct WSD_RESOLVE
+		{
 			public WSD_ENDPOINT_REFERENCE* EndpointReference;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_PROBE_MATCH		{
+		public struct WSD_PROBE_MATCH
+		{
 			public WSD_ENDPOINT_REFERENCE* EndpointReference;
 			public WSD_NAME_LIST* Types;
 			public WSD_SCOPES* Scopes;
@@ -408,38 +449,45 @@ namespace Win32
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_PROBE_MATCH_LIST		{
+		public struct WSD_PROBE_MATCH_LIST
+		{
 			public WSD_PROBE_MATCH_LIST* Next;
 			public WSD_PROBE_MATCH* Element;
 		}
 		[CRepr]
-		public struct WSD_PROBE_MATCHES		{
+		public struct WSD_PROBE_MATCHES
+		{
 			public WSD_PROBE_MATCH_LIST* ProbeMatch;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_PROBE		{
+		public struct WSD_PROBE
+		{
 			public WSD_NAME_LIST* Types;
 			public WSD_SCOPES* Scopes;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_BYE		{
+		public struct WSD_BYE
+		{
 			public WSD_ENDPOINT_REFERENCE* EndpointReference;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_SCOPES		{
+		public struct WSD_SCOPES
+		{
 			public PWSTR MatchBy;
 			public WSD_URI_LIST* Scopes;
 		}
 		[CRepr]
-		public struct WSD_NAME_LIST		{
+		public struct WSD_NAME_LIST
+		{
 			public WSD_NAME_LIST* Next;
 			public WSDXML_NAME* Element;
 		}
 		[CRepr]
-		public struct WSD_HELLO		{
+		public struct WSD_HELLO
+		{
 			public WSD_ENDPOINT_REFERENCE* EndpointReference;
 			public WSD_NAME_LIST* Types;
 			public WSD_SCOPES* Scopes;
@@ -448,15 +496,18 @@ namespace Win32
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_REFERENCE_PARAMETERS		{
+		public struct WSD_REFERENCE_PARAMETERS
+		{
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_REFERENCE_PROPERTIES		{
+		public struct WSD_REFERENCE_PROPERTIES
+		{
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_ENDPOINT_REFERENCE		{
+		public struct WSD_ENDPOINT_REFERENCE
+		{
 			public PWSTR Address;
 			public WSD_REFERENCE_PROPERTIES ReferenceProperties;
 			public WSD_REFERENCE_PARAMETERS ReferenceParameters;
@@ -465,7 +516,8 @@ namespace Win32
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_METADATA_SECTION		{
+		public struct WSD_METADATA_SECTION
+		{
 			public PWSTR Dialect;
 			public PWSTR Identifier;
 			public void* Data;
@@ -474,51 +526,61 @@ namespace Win32
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_METADATA_SECTION_LIST		{
+		public struct WSD_METADATA_SECTION_LIST
+		{
 			public WSD_METADATA_SECTION_LIST* Next;
 			public WSD_METADATA_SECTION* Element;
 		}
 		[CRepr]
-		public struct WSD_URI_LIST		{
+		public struct WSD_URI_LIST
+		{
 			public WSD_URI_LIST* Next;
 			public PWSTR Element;
 		}
 		[CRepr]
-		public struct WSD_EVENTING_FILTER_ACTION		{
+		public struct WSD_EVENTING_FILTER_ACTION
+		{
 			public WSD_URI_LIST* Actions;
 		}
 		[CRepr]
-		public struct WSD_EVENTING_FILTER		{
+		public struct WSD_EVENTING_FILTER
+		{
 			public PWSTR Dialect;
 			public WSD_EVENTING_FILTER_ACTION* FilterAction;
 			public void* Data;
 		}
 		[CRepr]
-		public struct WSD_EVENTING_EXPIRES		{
+		public struct WSD_EVENTING_EXPIRES
+		{
 			public WSD_DURATION* Duration;
 			public WSD_DATETIME* DateTime;
 		}
 		[CRepr]
-		public struct WSD_EVENTING_DELIVERY_MODE_PUSH		{
+		public struct WSD_EVENTING_DELIVERY_MODE_PUSH
+		{
 			public WSD_ENDPOINT_REFERENCE* NotifyTo;
 		}
 		[CRepr]
-		public struct WSD_EVENTING_DELIVERY_MODE		{
+		public struct WSD_EVENTING_DELIVERY_MODE
+		{
 			public PWSTR Mode;
 			public WSD_EVENTING_DELIVERY_MODE_PUSH* Push;
 			public void* Data;
 		}
 		[CRepr]
-		public struct WSD_LOCALIZED_STRING		{
+		public struct WSD_LOCALIZED_STRING
+		{
 			public PWSTR lang;
 			public PWSTR String;
 		}
 		[CRepr]
-		public struct RESPONSEBODY_GetMetadata		{
+		public struct RESPONSEBODY_GetMetadata
+		{
 			public WSD_METADATA_SECTION_LIST* Metadata;
 		}
 		[CRepr]
-		public struct REQUESTBODY_Subscribe		{
+		public struct REQUESTBODY_Subscribe
+		{
 			public WSD_ENDPOINT_REFERENCE* EndTo;
 			public WSD_EVENTING_DELIVERY_MODE* Delivery;
 			public WSD_EVENTING_EXPIRES* Expires;
@@ -526,47 +588,56 @@ namespace Win32
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct RESPONSEBODY_Subscribe		{
+		public struct RESPONSEBODY_Subscribe
+		{
 			public WSD_ENDPOINT_REFERENCE* SubscriptionManager;
 			public WSD_EVENTING_EXPIRES* expires;
 			public WSDXML_ELEMENT* any;
 		}
 		[CRepr]
-		public struct REQUESTBODY_Renew		{
+		public struct REQUESTBODY_Renew
+		{
 			public WSD_EVENTING_EXPIRES* Expires;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct RESPONSEBODY_Renew		{
+		public struct RESPONSEBODY_Renew
+		{
 			public WSD_EVENTING_EXPIRES* expires;
 			public WSDXML_ELEMENT* any;
 		}
 		[CRepr]
-		public struct REQUESTBODY_GetStatus		{
+		public struct REQUESTBODY_GetStatus
+		{
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct RESPONSEBODY_GetStatus		{
+		public struct RESPONSEBODY_GetStatus
+		{
 			public WSD_EVENTING_EXPIRES* expires;
 			public WSDXML_ELEMENT* any;
 		}
 		[CRepr]
-		public struct REQUESTBODY_Unsubscribe		{
+		public struct REQUESTBODY_Unsubscribe
+		{
 			public WSDXML_ELEMENT* any;
 		}
 		[CRepr]
-		public struct RESPONSEBODY_SubscriptionEnd		{
+		public struct RESPONSEBODY_SubscriptionEnd
+		{
 			public WSD_ENDPOINT_REFERENCE* SubscriptionManager;
 			public PWSTR Status;
 			public WSD_LOCALIZED_STRING* Reason;
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_UNKNOWN_LOOKUP		{
+		public struct WSD_UNKNOWN_LOOKUP
+		{
 			public WSDXML_ELEMENT* Any;
 		}
 		[CRepr]
-		public struct WSD_EVENT		{
+		public struct WSD_EVENT
+		{
 			public HRESULT Hr;
 			public uint32 EventType;
 			public PWSTR DispatchTag;

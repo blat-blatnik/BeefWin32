@@ -283,19 +283,22 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DLSID		{
+		public struct DLSID
+		{
 			public uint32 ulData1;
 			public uint16 usData2;
 			public uint16 usData3;
 			public uint8[8] abData4;
 		}
 		[CRepr]
-		public struct DLSVERSION		{
+		public struct DLSVERSION
+		{
 			public uint32 dwVersionMS;
 			public uint32 dwVersionLS;
 		}
 		[CRepr]
-		public struct CONNECTION		{
+		public struct CONNECTION
+		{
 			public uint16 usSource;
 			public uint16 usControl;
 			public uint16 usDestination;
@@ -303,54 +306,64 @@ namespace Win32
 			public int32 lScale;
 		}
 		[CRepr]
-		public struct CONNECTIONLIST		{
+		public struct CONNECTIONLIST
+		{
 			public uint32 cbSize;
 			public uint32 cConnections;
 		}
 		[CRepr]
-		public struct RGNRANGE		{
+		public struct RGNRANGE
+		{
 			public uint16 usLow;
 			public uint16 usHigh;
 		}
 		[CRepr]
-		public struct MIDILOCALE		{
+		public struct MIDILOCALE
+		{
 			public uint32 ulBank;
 			public uint32 ulInstrument;
 		}
 		[CRepr]
-		public struct RGNHEADER		{
+		public struct RGNHEADER
+		{
 			public RGNRANGE RangeKey;
 			public RGNRANGE RangeVelocity;
 			public uint16 fusOptions;
 			public uint16 usKeyGroup;
 		}
 		[CRepr]
-		public struct INSTHEADER		{
+		public struct INSTHEADER
+		{
 			public uint32 cRegions;
 			public MIDILOCALE Locale;
 		}
 		[CRepr]
-		public struct DLSHEADER		{
+		public struct DLSHEADER
+		{
 			public uint32 cInstruments;
 		}
 		[CRepr]
-		public struct WAVELINK		{
+		public struct WAVELINK
+		{
 			public uint16 fusOptions;
 			public uint16 usPhaseGroup;
 			public uint32 ulChannel;
 			public uint32 ulTableIndex;
 		}
 		[CRepr]
-		public struct POOLCUE		{
+		public struct POOLCUE
+		{
 			public uint32 ulOffset;
 		}
 		[CRepr]
-		public struct POOLTABLE		{
+		public struct POOLTABLE
+		{
 			public uint32 cbSize;
 			public uint32 cCues;
 		}
 		[CRepr]
-		public struct _rwsmp		{
+		public struct _rwsmp
+		{
 			public uint32 cbSize;
 			public uint16 usUnityNote;
 			public int16 sFineTune;
@@ -359,25 +372,29 @@ namespace Win32
 			public uint32 cSampleLoops;
 		}
 		[CRepr]
-		public struct _rloop		{
+		public struct _rloop
+		{
 			public uint32 cbSize;
 			public uint32 ulType;
 			public uint32 ulStart;
 			public uint32 ulLength;
 		}
 		[CRepr]
-		public struct DMUS_DOWNLOADINFO		{
+		public struct DMUS_DOWNLOADINFO
+		{
 			public uint32 dwDLType;
 			public uint32 dwDLId;
 			public uint32 dwNumOffsetTableEntries;
 			public uint32 cbSize;
 		}
 		[CRepr]
-		public struct DMUS_OFFSETTABLE		{
+		public struct DMUS_OFFSETTABLE
+		{
 			public uint32[0] ulOffsetTable;
 		}
 		[CRepr]
-		public struct DMUS_INSTRUMENT		{
+		public struct DMUS_INSTRUMENT
+		{
 			public uint32 ulPatch;
 			public uint32 ulFirstRegionIdx;
 			public uint32 ulGlobalArtIdx;
@@ -386,7 +403,8 @@ namespace Win32
 			public uint32 ulFlags;
 		}
 		[CRepr]
-		public struct DMUS_REGION		{
+		public struct DMUS_REGION
+		{
 			public RGNRANGE RangeKey;
 			public RGNRANGE RangeVelocity;
 			public uint16 fusOptions;
@@ -399,7 +417,8 @@ namespace Win32
 			public _rloop[0] WLOOP;
 		}
 		[CRepr]
-		public struct DMUS_LFOPARAMS		{
+		public struct DMUS_LFOPARAMS
+		{
 			public int32 pcFrequency;
 			public int32 tcDelay;
 			public int32 gcVolumeScale;
@@ -408,7 +427,8 @@ namespace Win32
 			public int32 pcMWToPitch;
 		}
 		[CRepr]
-		public struct DMUS_VEGPARAMS		{
+		public struct DMUS_VEGPARAMS
+		{
 			public int32 tcAttack;
 			public int32 tcDecay;
 			public int32 ptSustain;
@@ -417,7 +437,8 @@ namespace Win32
 			public int32 tcKey2Decay;
 		}
 		[CRepr]
-		public struct DMUS_PEGPARAMS		{
+		public struct DMUS_PEGPARAMS
+		{
 			public int32 tcAttack;
 			public int32 tcDecay;
 			public int32 ptSustain;
@@ -427,58 +448,68 @@ namespace Win32
 			public int32 pcRange;
 		}
 		[CRepr]
-		public struct DMUS_MSCPARAMS		{
+		public struct DMUS_MSCPARAMS
+		{
 			public int32 ptDefaultPan;
 		}
 		[CRepr]
-		public struct DMUS_ARTICPARAMS		{
+		public struct DMUS_ARTICPARAMS
+		{
 			public DMUS_LFOPARAMS LFO;
 			public DMUS_VEGPARAMS VolEG;
 			public DMUS_PEGPARAMS PitchEG;
 			public DMUS_MSCPARAMS Misc;
 		}
 		[CRepr]
-		public struct DMUS_ARTICULATION		{
+		public struct DMUS_ARTICULATION
+		{
 			public uint32 ulArt1Idx;
 			public uint32 ulFirstExtCkIdx;
 		}
 		[CRepr]
-		public struct DMUS_ARTICULATION2		{
+		public struct DMUS_ARTICULATION2
+		{
 			public uint32 ulArtIdx;
 			public uint32 ulFirstExtCkIdx;
 			public uint32 ulNextArtIdx;
 		}
 		[CRepr]
-		public struct DMUS_EXTENSIONCHUNK		{
+		public struct DMUS_EXTENSIONCHUNK
+		{
 			public uint32 cbSize;
 			public uint32 ulNextExtCkIdx;
 			public uint32 ExtCkID;
 			public uint8[4] byExtCk;
 		}
 		[CRepr]
-		public struct DMUS_COPYRIGHT		{
+		public struct DMUS_COPYRIGHT
+		{
 			public uint32 cbSize;
 			public uint8[4] byCopyright;
 		}
 		[CRepr]
-		public struct DMUS_WAVEDATA		{
+		public struct DMUS_WAVEDATA
+		{
 			public uint32 cbSize;
 			public uint8[4] byData;
 		}
 		[CRepr]
-		public struct DMUS_WAVE		{
+		public struct DMUS_WAVE
+		{
 			public uint32 ulFirstExtCkIdx;
 			public uint32 ulCopyrightIdx;
 			public uint32 ulWaveDataIdx;
 			public WAVEFORMATEX WaveformatEx;
 		}
 		[CRepr]
-		public struct DMUS_NOTERANGE		{
+		public struct DMUS_NOTERANGE
+		{
 			public uint32 dwLowNote;
 			public uint32 dwHighNote;
 		}
 		[CRepr]
-		public struct DMUS_WAVEARTDL		{
+		public struct DMUS_WAVEARTDL
+		{
 			public uint32 ulDownloadIdIdx;
 			public uint32 ulBus;
 			public uint32 ulBuffers;
@@ -486,25 +517,29 @@ namespace Win32
 			public uint16 usOptions;
 		}
 		[CRepr]
-		public struct DMUS_WAVEDL		{
+		public struct DMUS_WAVEDL
+		{
 			public uint32 cbWaveData;
 		}
 		[CRepr]
-		public struct DMUS_EVENTHEADER		{
+		public struct DMUS_EVENTHEADER
+		{
 			public uint32 cbEvent;
 			public uint32 dwChannelGroup;
 			public int64 rtDelta;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DMUS_BUFFERDESC		{
+		public struct DMUS_BUFFERDESC
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public Guid guidBufferFormat;
 			public uint32 cbBuffer;
 		}
 		[CRepr]
-		public struct DMUS_PORTCAPS		{
+		public struct DMUS_PORTCAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public Guid guidPort;
@@ -518,7 +553,8 @@ namespace Win32
 			public char16[128] wszDescription;
 		}
 		[CRepr]
-		public struct _DMUS_PORTPARAMS		{
+		public struct _DMUS_PORTPARAMS
+		{
 			public uint32 dwSize;
 			public uint32 dwValidParams;
 			public uint32 dwVoices;
@@ -529,7 +565,8 @@ namespace Win32
 			public BOOL fShare;
 		}
 		[CRepr]
-		public struct DMUS_PORTPARAMS8		{
+		public struct DMUS_PORTPARAMS8
+		{
 			public uint32 dwSize;
 			public uint32 dwValidParams;
 			public uint32 dwVoices;
@@ -541,7 +578,8 @@ namespace Win32
 			public uint32 dwFeatures;
 		}
 		[CRepr]
-		public struct DMUS_SYNTHSTATS		{
+		public struct DMUS_SYNTHSTATS
+		{
 			public uint32 dwSize;
 			public uint32 dwValidStats;
 			public uint32 dwVoices;
@@ -552,7 +590,8 @@ namespace Win32
 			public int32 lPeakVolume;
 		}
 		[CRepr]
-		public struct DMUS_SYNTHSTATS8		{
+		public struct DMUS_SYNTHSTATS8
+		{
 			public uint32 dwSize;
 			public uint32 dwValidStats;
 			public uint32 dwVoices;
@@ -564,21 +603,24 @@ namespace Win32
 			public uint32 dwSynthMemUse;
 		}
 		[CRepr]
-		public struct DMUS_WAVES_REVERB_PARAMS		{
+		public struct DMUS_WAVES_REVERB_PARAMS
+		{
 			public float fInGain;
 			public float fReverbMix;
 			public float fReverbTime;
 			public float fHighFreqRTRatio;
 		}
 		[CRepr]
-		public struct DMUS_CLOCKINFO7		{
+		public struct DMUS_CLOCKINFO7
+		{
 			public uint32 dwSize;
 			public DMUS_CLOCKTYPE ctType;
 			public Guid guidClock;
 			public char16[128] wszDescription;
 		}
 		[CRepr]
-		public struct DMUS_CLOCKINFO8		{
+		public struct DMUS_CLOCKINFO8
+		{
 			public uint32 dwSize;
 			public DMUS_CLOCKTYPE ctType;
 			public Guid guidClock;
@@ -586,24 +628,28 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DMUS_VOICE_STATE		{
+		public struct DMUS_VOICE_STATE
+		{
 			public BOOL bExists;
 			public uint64 spPosition;
 		}
 		[CRepr]
-		public struct DSPROPERTY_DIRECTSOUNDDEVICE_WAVEDEVICEMAPPING_A_DATA		{
+		public struct DSPROPERTY_DIRECTSOUNDDEVICE_WAVEDEVICEMAPPING_A_DATA
+		{
 			public PSTR DeviceName;
 			public DIRECTSOUNDDEVICE_DATAFLOW DataFlow;
 			public Guid DeviceId;
 		}
 		[CRepr]
-		public struct DSPROPERTY_DIRECTSOUNDDEVICE_WAVEDEVICEMAPPING_W_DATA		{
+		public struct DSPROPERTY_DIRECTSOUNDDEVICE_WAVEDEVICEMAPPING_W_DATA
+		{
 			public PWSTR DeviceName;
 			public DIRECTSOUNDDEVICE_DATAFLOW DataFlow;
 			public Guid DeviceId;
 		}
 		[CRepr]
-		public struct DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_1_DATA		{
+		public struct DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_1_DATA
+		{
 			public Guid DeviceId;
 			public CHAR[256] DescriptionA;
 			public char16[256] DescriptionW;
@@ -615,7 +661,8 @@ namespace Win32
 			public uint32 Devnode;
 		}
 		[CRepr]
-		public struct DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_A_DATA		{
+		public struct DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_A_DATA
+		{
 			public DIRECTSOUNDDEVICE_TYPE Type;
 			public DIRECTSOUNDDEVICE_DATAFLOW DataFlow;
 			public Guid DeviceId;
@@ -625,7 +672,8 @@ namespace Win32
 			public uint32 WaveDeviceId;
 		}
 		[CRepr]
-		public struct DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_W_DATA		{
+		public struct DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_W_DATA
+		{
 			public DIRECTSOUNDDEVICE_TYPE Type;
 			public DIRECTSOUNDDEVICE_DATAFLOW DataFlow;
 			public Guid DeviceId;
@@ -635,22 +683,26 @@ namespace Win32
 			public uint32 WaveDeviceId;
 		}
 		[CRepr]
-		public struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_1_DATA		{
+		public struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_1_DATA
+		{
 			public LPFNDIRECTSOUNDDEVICEENUMERATECALLBACK1 Callback;
 			public void* Context;
 		}
 		[CRepr]
-		public struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_A_DATA		{
+		public struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_A_DATA
+		{
 			public LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKA Callback;
 			public void* Context;
 		}
 		[CRepr]
-		public struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_W_DATA		{
+		public struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_W_DATA
+		{
 			public LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKW Callback;
 			public void* Context;
 		}
 		[CRepr]
-		public struct Tag_DVAudInfo		{
+		public struct Tag_DVAudInfo
+		{
 			public uint8[2] bAudStyle;
 			public uint8[2] bAudQu;
 			public uint8 bNumAudPin;
@@ -660,12 +712,14 @@ namespace Win32
 			public uint16 wBlkDiv;
 		}
 		[CRepr]
-		public struct MDEVICECAPSEX		{
+		public struct MDEVICECAPSEX
+		{
 			public uint32 cbSize;
 			public void* pCaps;
 		}
 		[CRepr]
-		public struct MIDIOPENDESC		{
+		public struct MIDIOPENDESC
+		{
 			public HMIDI hMidi;
 			public uint dwCallback;
 			public uint dwInstance;

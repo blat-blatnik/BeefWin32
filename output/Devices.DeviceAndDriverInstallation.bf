@@ -1375,20 +1375,23 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct INFCONTEXT		{
+		public struct INFCONTEXT
+		{
 			public void* Inf;
 			public void* CurrentInf;
 			public uint32 Section;
 			public uint32 Line;
 		}
 		[CRepr]
-		public struct SP_INF_INFORMATION		{
+		public struct SP_INF_INFORMATION
+		{
 			public SP_INF_STYLE InfStyle;
 			public uint32 InfCount;
 			public uint8[0] VersionData;
 		}
 		[CRepr]
-		public struct SP_ALTPLATFORM_INFO_V3		{
+		public struct SP_ALTPLATFORM_INFO_V3
+		{
 			public uint32 cbSize;
 			public uint32 Platform;
 			public uint32 MajorVersion;
@@ -1402,13 +1405,15 @@ namespace Win32
 			public uint32 BuildNumber;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint16 Reserved;
 				public uint16 Flags;
 			}
 		}
 		[CRepr]
-		public struct SP_ALTPLATFORM_INFO_V2		{
+		public struct SP_ALTPLATFORM_INFO_V2
+		{
 			public uint32 cbSize;
 			public VER_PLATFORM Platform;
 			public uint32 MajorVersion;
@@ -1419,13 +1424,15 @@ namespace Win32
 			public uint32 FirstValidatedMinorVersion;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint16 Reserved;
 				public uint16 Flags;
 			}
 		}
 		[CRepr]
-		public struct SP_ALTPLATFORM_INFO_V1		{
+		public struct SP_ALTPLATFORM_INFO_V1
+		{
 			public uint32 cbSize;
 			public VER_PLATFORM Platform;
 			public uint32 MajorVersion;
@@ -1434,33 +1441,38 @@ namespace Win32
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct SP_ORIGINAL_FILE_INFO_A		{
+		public struct SP_ORIGINAL_FILE_INFO_A
+		{
 			public uint32 cbSize;
 			public CHAR[260] OriginalInfName;
 			public CHAR[260] OriginalCatalogName;
 		}
 		[CRepr]
-		public struct SP_ORIGINAL_FILE_INFO_W		{
+		public struct SP_ORIGINAL_FILE_INFO_W
+		{
 			public uint32 cbSize;
 			public char16[260] OriginalInfName;
 			public char16[260] OriginalCatalogName;
 		}
 		[CRepr]
-		public struct FILEPATHS_A		{
+		public struct FILEPATHS_A
+		{
 			public PSTR Target;
 			public PSTR Source;
 			public uint32 Win32Error;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct FILEPATHS_W		{
+		public struct FILEPATHS_W
+		{
 			public PWSTR Target;
 			public PWSTR Source;
 			public uint32 Win32Error;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct FILEPATHS_SIGNERINFO_A		{
+		public struct FILEPATHS_SIGNERINFO_A
+		{
 			public PSTR Target;
 			public PSTR Source;
 			public uint32 Win32Error;
@@ -1470,7 +1482,8 @@ namespace Win32
 			public PSTR CatalogFile;
 		}
 		[CRepr]
-		public struct FILEPATHS_SIGNERINFO_W		{
+		public struct FILEPATHS_SIGNERINFO_W
+		{
 			public PWSTR Target;
 			public PWSTR Source;
 			public uint32 Win32Error;
@@ -1480,7 +1493,8 @@ namespace Win32
 			public PWSTR CatalogFile;
 		}
 		[CRepr]
-		public struct SOURCE_MEDIA_A		{
+		public struct SOURCE_MEDIA_A
+		{
 			public PSTR Reserved;
 			public PSTR Tagfile;
 			public PSTR Description;
@@ -1489,7 +1503,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct SOURCE_MEDIA_W		{
+		public struct SOURCE_MEDIA_W
+		{
 			public PWSTR Reserved;
 			public PWSTR Tagfile;
 			public PWSTR Description;
@@ -1498,7 +1513,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct CABINET_INFO_A		{
+		public struct CABINET_INFO_A
+		{
 			public PSTR CabinetPath;
 			public PSTR CabinetFile;
 			public PSTR DiskName;
@@ -1506,7 +1522,8 @@ namespace Win32
 			public uint16 CabinetNumber;
 		}
 		[CRepr]
-		public struct CABINET_INFO_W		{
+		public struct CABINET_INFO_W
+		{
 			public PWSTR CabinetPath;
 			public PWSTR CabinetFile;
 			public PWSTR DiskName;
@@ -1514,7 +1531,8 @@ namespace Win32
 			public uint16 CabinetNumber;
 		}
 		[CRepr]
-		public struct FILE_IN_CABINET_INFO_A		{
+		public struct FILE_IN_CABINET_INFO_A
+		{
 			public PSTR NameInCabinet;
 			public uint32 FileSize;
 			public uint32 Win32Error;
@@ -1524,7 +1542,8 @@ namespace Win32
 			public CHAR[260] FullTargetName;
 		}
 		[CRepr]
-		public struct FILE_IN_CABINET_INFO_W		{
+		public struct FILE_IN_CABINET_INFO_W
+		{
 			public PWSTR NameInCabinet;
 			public uint32 FileSize;
 			public uint32 Win32Error;
@@ -1534,21 +1553,24 @@ namespace Win32
 			public char16[260] FullTargetName;
 		}
 		[CRepr]
-		public struct SP_REGISTER_CONTROL_STATUSA		{
+		public struct SP_REGISTER_CONTROL_STATUSA
+		{
 			public uint32 cbSize;
 			public PSTR FileName;
 			public uint32 Win32Error;
 			public uint32 FailureCode;
 		}
 		[CRepr]
-		public struct SP_REGISTER_CONTROL_STATUSW		{
+		public struct SP_REGISTER_CONTROL_STATUSW
+		{
 			public uint32 cbSize;
 			public PWSTR FileName;
 			public uint32 Win32Error;
 			public uint32 FailureCode;
 		}
 		[CRepr]
-		public struct SP_FILE_COPY_PARAMS_A		{
+		public struct SP_FILE_COPY_PARAMS_A
+		{
 			public uint32 cbSize;
 			public void* QueueHandle;
 			public PSTR SourceRootPath;
@@ -1563,7 +1585,8 @@ namespace Win32
 			public PSTR SecurityDescriptor;
 		}
 		[CRepr]
-		public struct SP_FILE_COPY_PARAMS_W		{
+		public struct SP_FILE_COPY_PARAMS_W
+		{
 			public uint32 cbSize;
 			public void* QueueHandle;
 			public PWSTR SourceRootPath;
@@ -1578,45 +1601,52 @@ namespace Win32
 			public PWSTR SecurityDescriptor;
 		}
 		[CRepr]
-		public struct SP_DEVINFO_DATA		{
+		public struct SP_DEVINFO_DATA
+		{
 			public uint32 cbSize;
 			public Guid ClassGuid;
 			public uint32 DevInst;
 			public uint Reserved;
 		}
 		[CRepr]
-		public struct SP_DEVICE_INTERFACE_DATA		{
+		public struct SP_DEVICE_INTERFACE_DATA
+		{
 			public uint32 cbSize;
 			public Guid InterfaceClassGuid;
 			public uint32 Flags;
 			public uint Reserved;
 		}
 		[CRepr]
-		public struct SP_DEVICE_INTERFACE_DETAIL_DATA_A		{
+		public struct SP_DEVICE_INTERFACE_DETAIL_DATA_A
+		{
 			public uint32 cbSize;
 			public CHAR[0] DevicePath;
 		}
 		[CRepr]
-		public struct SP_DEVICE_INTERFACE_DETAIL_DATA_W		{
+		public struct SP_DEVICE_INTERFACE_DETAIL_DATA_W
+		{
 			public uint32 cbSize;
 			public char16[0] DevicePath;
 		}
 		[CRepr]
-		public struct SP_DEVINFO_LIST_DETAIL_DATA_A		{
+		public struct SP_DEVINFO_LIST_DETAIL_DATA_A
+		{
 			public uint32 cbSize;
 			public Guid ClassGuid;
 			public HANDLE RemoteMachineHandle;
 			public CHAR[263] RemoteMachineName;
 		}
 		[CRepr]
-		public struct SP_DEVINFO_LIST_DETAIL_DATA_W		{
+		public struct SP_DEVINFO_LIST_DETAIL_DATA_W
+		{
 			public uint32 cbSize;
 			public Guid ClassGuid;
 			public HANDLE RemoteMachineHandle;
 			public char16[263] RemoteMachineName;
 		}
 		[CRepr]
-		public struct SP_DEVINSTALL_PARAMS_A		{
+		public struct SP_DEVINSTALL_PARAMS_A
+		{
 			public uint32 cbSize;
 			public uint32 Flags;
 			public uint32 FlagsEx;
@@ -1629,7 +1659,8 @@ namespace Win32
 			public CHAR[260] DriverPath;
 		}
 		[CRepr]
-		public struct SP_DEVINSTALL_PARAMS_W		{
+		public struct SP_DEVINSTALL_PARAMS_W
+		{
 			public uint32 cbSize;
 			public uint32 Flags;
 			public uint32 FlagsEx;
@@ -1642,37 +1673,43 @@ namespace Win32
 			public char16[260] DriverPath;
 		}
 		[CRepr]
-		public struct SP_CLASSINSTALL_HEADER		{
+		public struct SP_CLASSINSTALL_HEADER
+		{
 			public uint32 cbSize;
 			public uint32 InstallFunction;
 		}
 		[CRepr]
-		public struct SP_ENABLECLASS_PARAMS		{
+		public struct SP_ENABLECLASS_PARAMS
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public Guid ClassGuid;
 			public uint32 EnableMessage;
 		}
 		[CRepr]
-		public struct SP_PROPCHANGE_PARAMS		{
+		public struct SP_PROPCHANGE_PARAMS
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public uint32 StateChange;
 			public uint32 Scope;
 			public uint32 HwProfile;
 		}
 		[CRepr]
-		public struct SP_REMOVEDEVICE_PARAMS		{
+		public struct SP_REMOVEDEVICE_PARAMS
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public uint32 Scope;
 			public uint32 HwProfile;
 		}
 		[CRepr]
-		public struct SP_UNREMOVEDEVICE_PARAMS		{
+		public struct SP_UNREMOVEDEVICE_PARAMS
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public uint32 Scope;
 			public uint32 HwProfile;
 		}
 		[CRepr]
-		public struct SP_SELECTDEVICE_PARAMS_A		{
+		public struct SP_SELECTDEVICE_PARAMS_A
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public CHAR[60] Title;
 			public CHAR[256] Instructions;
@@ -1681,7 +1718,8 @@ namespace Win32
 			public uint8[2] Reserved;
 		}
 		[CRepr]
-		public struct SP_SELECTDEVICE_PARAMS_W		{
+		public struct SP_SELECTDEVICE_PARAMS_W
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public char16[60] Title;
 			public char16[256] Instructions;
@@ -1689,13 +1727,15 @@ namespace Win32
 			public char16[256] SubTitle;
 		}
 		[CRepr]
-		public struct SP_DETECTDEVICE_PARAMS		{
+		public struct SP_DETECTDEVICE_PARAMS
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public PDETECT_PROGRESS_NOTIFY DetectProgressNotify;
 			public void* ProgressNotifyParam;
 		}
 		[CRepr]
-		public struct SP_INSTALLWIZARD_DATA		{
+		public struct SP_INSTALLWIZARD_DATA
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public uint32 Flags;
 			public HPROPSHEETPAGE[20] DynamicPages;
@@ -1706,7 +1746,8 @@ namespace Win32
 			public HWND hwndWizardDlg;
 		}
 		[CRepr]
-		public struct SP_NEWDEVICEWIZARD_DATA		{
+		public struct SP_NEWDEVICEWIZARD_DATA
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public uint32 Flags;
 			public HPROPSHEETPAGE[20] DynamicPages;
@@ -1714,29 +1755,34 @@ namespace Win32
 			public HWND hwndWizardDlg;
 		}
 		[CRepr]
-		public struct SP_TROUBLESHOOTER_PARAMS_A		{
+		public struct SP_TROUBLESHOOTER_PARAMS_A
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public CHAR[260] ChmFile;
 			public CHAR[260] HtmlTroubleShooter;
 		}
 		[CRepr]
-		public struct SP_TROUBLESHOOTER_PARAMS_W		{
+		public struct SP_TROUBLESHOOTER_PARAMS_W
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public char16[260] ChmFile;
 			public char16[260] HtmlTroubleShooter;
 		}
 		[CRepr]
-		public struct SP_POWERMESSAGEWAKE_PARAMS_A		{
+		public struct SP_POWERMESSAGEWAKE_PARAMS_A
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public CHAR[512] PowerMessageWake;
 		}
 		[CRepr]
-		public struct SP_POWERMESSAGEWAKE_PARAMS_W		{
+		public struct SP_POWERMESSAGEWAKE_PARAMS_W
+		{
 			public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 			public char16[512] PowerMessageWake;
 		}
 		[CRepr]
-		public struct SP_DRVINFO_DATA_V2_A		{
+		public struct SP_DRVINFO_DATA_V2_A
+		{
 			public uint32 cbSize;
 			public uint32 DriverType;
 			public uint Reserved;
@@ -1747,7 +1793,8 @@ namespace Win32
 			public uint64 DriverVersion;
 		}
 		[CRepr]
-		public struct SP_DRVINFO_DATA_V2_W		{
+		public struct SP_DRVINFO_DATA_V2_W
+		{
 			public uint32 cbSize;
 			public uint32 DriverType;
 			public uint Reserved;
@@ -1758,7 +1805,8 @@ namespace Win32
 			public uint64 DriverVersion;
 		}
 		[CRepr]
-		public struct SP_DRVINFO_DATA_V1_A		{
+		public struct SP_DRVINFO_DATA_V1_A
+		{
 			public uint32 cbSize;
 			public uint32 DriverType;
 			public uint Reserved;
@@ -1767,7 +1815,8 @@ namespace Win32
 			public CHAR[256] ProviderName;
 		}
 		[CRepr]
-		public struct SP_DRVINFO_DATA_V1_W		{
+		public struct SP_DRVINFO_DATA_V1_W
+		{
 			public uint32 cbSize;
 			public uint32 DriverType;
 			public uint Reserved;
@@ -1776,7 +1825,8 @@ namespace Win32
 			public char16[256] ProviderName;
 		}
 		[CRepr]
-		public struct SP_DRVINFO_DETAIL_DATA_A		{
+		public struct SP_DRVINFO_DETAIL_DATA_A
+		{
 			public uint32 cbSize;
 			public FILETIME InfDate;
 			public uint32 CompatIDsOffset;
@@ -1788,7 +1838,8 @@ namespace Win32
 			public CHAR[0] HardwareID;
 		}
 		[CRepr]
-		public struct SP_DRVINFO_DETAIL_DATA_W		{
+		public struct SP_DRVINFO_DETAIL_DATA_W
+		{
 			public uint32 cbSize;
 			public FILETIME InfDate;
 			public uint32 CompatIDsOffset;
@@ -1800,7 +1851,8 @@ namespace Win32
 			public char16[0] HardwareID;
 		}
 		[CRepr]
-		public struct SP_DRVINSTALL_PARAMS		{
+		public struct SP_DRVINSTALL_PARAMS
+		{
 			public uint32 cbSize;
 			public uint32 Rank;
 			public uint32 Flags;
@@ -1808,66 +1860,76 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct COINSTALLER_CONTEXT_DATA		{
+		public struct COINSTALLER_CONTEXT_DATA
+		{
 			public BOOL PostProcessing;
 			public uint32 InstallResult;
 			public void* PrivateData;
 		}
 		[CRepr]
-		public struct SP_CLASSIMAGELIST_DATA		{
+		public struct SP_CLASSIMAGELIST_DATA
+		{
 			public uint32 cbSize;
 			public HIMAGELIST ImageList;
 			public uint Reserved;
 		}
 		[CRepr]
-		public struct SP_PROPSHEETPAGE_REQUEST		{
+		public struct SP_PROPSHEETPAGE_REQUEST
+		{
 			public uint32 cbSize;
 			public uint32 PageRequested;
 			public void* DeviceInfoSet;
 			public SP_DEVINFO_DATA* DeviceInfoData;
 		}
 		[CRepr]
-		public struct SP_BACKUP_QUEUE_PARAMS_V2_A		{
+		public struct SP_BACKUP_QUEUE_PARAMS_V2_A
+		{
 			public uint32 cbSize;
 			public CHAR[260] FullInfPath;
 			public int32 FilenameOffset;
 			public CHAR[260] ReinstallInstance;
 		}
 		[CRepr]
-		public struct SP_BACKUP_QUEUE_PARAMS_V2_W		{
+		public struct SP_BACKUP_QUEUE_PARAMS_V2_W
+		{
 			public uint32 cbSize;
 			public char16[260] FullInfPath;
 			public int32 FilenameOffset;
 			public char16[260] ReinstallInstance;
 		}
 		[CRepr]
-		public struct SP_BACKUP_QUEUE_PARAMS_V1_A		{
+		public struct SP_BACKUP_QUEUE_PARAMS_V1_A
+		{
 			public uint32 cbSize;
 			public CHAR[260] FullInfPath;
 			public int32 FilenameOffset;
 		}
 		[CRepr]
-		public struct SP_BACKUP_QUEUE_PARAMS_V1_W		{
+		public struct SP_BACKUP_QUEUE_PARAMS_V1_W
+		{
 			public uint32 cbSize;
 			public char16[260] FullInfPath;
 			public int32 FilenameOffset;
 		}
 		[CRepr]
-		public struct SP_INF_SIGNER_INFO_V1_A		{
+		public struct SP_INF_SIGNER_INFO_V1_A
+		{
 			public uint32 cbSize;
 			public CHAR[260] CatalogFile;
 			public CHAR[260] DigitalSigner;
 			public CHAR[260] DigitalSignerVersion;
 		}
 		[CRepr]
-		public struct SP_INF_SIGNER_INFO_V1_W		{
+		public struct SP_INF_SIGNER_INFO_V1_W
+		{
 			public uint32 cbSize;
 			public char16[260] CatalogFile;
 			public char16[260] DigitalSigner;
 			public char16[260] DigitalSignerVersion;
 		}
 		[CRepr]
-		public struct SP_INF_SIGNER_INFO_V2_A		{
+		public struct SP_INF_SIGNER_INFO_V2_A
+		{
 			public uint32 cbSize;
 			public CHAR[260] CatalogFile;
 			public CHAR[260] DigitalSigner;
@@ -1875,7 +1937,8 @@ namespace Win32
 			public uint32 SignerScore;
 		}
 		[CRepr]
-		public struct SP_INF_SIGNER_INFO_V2_W		{
+		public struct SP_INF_SIGNER_INFO_V2_W
+		{
 			public uint32 cbSize;
 			public char16[260] CatalogFile;
 			public char16[260] DigitalSigner;
@@ -1883,7 +1946,8 @@ namespace Win32
 			public uint32 SignerScore;
 		}
 		[CRepr]
-		public struct CONFLICT_DETAILS_A		{
+		public struct CONFLICT_DETAILS_A
+		{
 			public uint32 CD_ulSize;
 			public uint32 CD_ulMask;
 			public uint32 CD_dnDevInst;
@@ -1892,7 +1956,8 @@ namespace Win32
 			public CHAR[260] CD_szDescription;
 		}
 		[CRepr]
-		public struct CONFLICT_DETAILS_W		{
+		public struct CONFLICT_DETAILS_W
+		{
 			public uint32 CD_ulSize;
 			public uint32 CD_ulMask;
 			public uint32 CD_dnDevInst;
@@ -1901,7 +1966,8 @@ namespace Win32
 			public char16[260] CD_szDescription;
 		}
 		[CRepr]
-		public struct MEM_RANGE		{
+		public struct MEM_RANGE
+		{
 			public uint64 MR_Align;
 			public uint32 MR_nBytes;
 			public uint64 MR_Min;
@@ -1910,7 +1976,8 @@ namespace Win32
 			public uint32 MR_Reserved;
 		}
 		[CRepr]
-		public struct MEM_DES		{
+		public struct MEM_DES
+		{
 			public uint32 MD_Count;
 			public uint32 MD_Type;
 			public uint64 MD_Alloc_Base;
@@ -1919,12 +1986,14 @@ namespace Win32
 			public uint32 MD_Reserved;
 		}
 		[CRepr]
-		public struct MEM_RESOURCE		{
+		public struct MEM_RESOURCE
+		{
 			public MEM_DES MEM_Header;
 			public MEM_RANGE[0] MEM_Data;
 		}
 		[CRepr]
-		public struct Mem_Large_Range_s		{
+		public struct Mem_Large_Range_s
+		{
 			public uint64 MLR_Align;
 			public uint64 MLR_nBytes;
 			public uint64 MLR_Min;
@@ -1933,7 +2002,8 @@ namespace Win32
 			public uint32 MLR_Reserved;
 		}
 		[CRepr]
-		public struct Mem_Large_Des_s		{
+		public struct Mem_Large_Des_s
+		{
 			public uint32 MLD_Count;
 			public uint32 MLD_Type;
 			public uint64 MLD_Alloc_Base;
@@ -1942,12 +2012,14 @@ namespace Win32
 			public uint32 MLD_Reserved;
 		}
 		[CRepr]
-		public struct Mem_Large_Resource_s		{
+		public struct Mem_Large_Resource_s
+		{
 			public Mem_Large_Des_s MEM_LARGE_Header;
 			public Mem_Large_Range_s[0] MEM_LARGE_Data;
 		}
 		[CRepr]
-		public struct IO_RANGE		{
+		public struct IO_RANGE
+		{
 			public uint64 IOR_Align;
 			public uint32 IOR_nPorts;
 			public uint64 IOR_Min;
@@ -1956,7 +2028,8 @@ namespace Win32
 			public uint64 IOR_Alias;
 		}
 		[CRepr]
-		public struct IO_DES		{
+		public struct IO_DES
+		{
 			public uint32 IOD_Count;
 			public uint32 IOD_Type;
 			public uint64 IOD_Alloc_Base;
@@ -1964,36 +2037,42 @@ namespace Win32
 			public uint32 IOD_DesFlags;
 		}
 		[CRepr]
-		public struct IO_RESOURCE		{
+		public struct IO_RESOURCE
+		{
 			public IO_DES IO_Header;
 			public IO_RANGE[0] IO_Data;
 		}
 		[CRepr]
-		public struct DMA_RANGE		{
+		public struct DMA_RANGE
+		{
 			public uint32 DR_Min;
 			public uint32 DR_Max;
 			public uint32 DR_Flags;
 		}
 		[CRepr]
-		public struct DMA_DES		{
+		public struct DMA_DES
+		{
 			public uint32 DD_Count;
 			public uint32 DD_Type;
 			public uint32 DD_Flags;
 			public uint32 DD_Alloc_Chan;
 		}
 		[CRepr]
-		public struct DMA_RESOURCE		{
+		public struct DMA_RESOURCE
+		{
 			public DMA_DES DMA_Header;
 			public DMA_RANGE[0] DMA_Data;
 		}
 		[CRepr]
-		public struct IRQ_RANGE		{
+		public struct IRQ_RANGE
+		{
 			public uint32 IRQR_Min;
 			public uint32 IRQR_Max;
 			public uint32 IRQR_Flags;
 		}
 		[CRepr]
-		public struct IRQ_DES_32		{
+		public struct IRQ_DES_32
+		{
 			public uint32 IRQD_Count;
 			public uint32 IRQD_Type;
 			public uint32 IRQD_Flags;
@@ -2001,7 +2080,8 @@ namespace Win32
 			public uint32 IRQD_Affinity;
 		}
 		[CRepr]
-		public struct IRQ_DES_64		{
+		public struct IRQ_DES_64
+		{
 			public uint32 IRQD_Count;
 			public uint32 IRQD_Type;
 			public uint32 IRQD_Flags;
@@ -2009,23 +2089,27 @@ namespace Win32
 			public uint64 IRQD_Affinity;
 		}
 		[CRepr]
-		public struct IRQ_RESOURCE_32		{
+		public struct IRQ_RESOURCE_32
+		{
 			public IRQ_DES_32 IRQ_Header;
 			public IRQ_RANGE[0] IRQ_Data;
 		}
 		[CRepr]
-		public struct IRQ_RESOURCE_64		{
+		public struct IRQ_RESOURCE_64
+		{
 			public IRQ_DES_64 IRQ_Header;
 			public IRQ_RANGE[0] IRQ_Data;
 		}
 		[CRepr]
-		public struct DevPrivate_Range_s		{
+		public struct DevPrivate_Range_s
+		{
 			public uint32 PR_Data1;
 			public uint32 PR_Data2;
 			public uint32 PR_Data3;
 		}
 		[CRepr]
-		public struct DevPrivate_Des_s		{
+		public struct DevPrivate_Des_s
+		{
 			public uint32 PD_Count;
 			public uint32 PD_Type;
 			public uint32 PD_Data1;
@@ -2034,12 +2118,14 @@ namespace Win32
 			public uint32 PD_Flags;
 		}
 		[CRepr]
-		public struct DevPrivate_Resource_s		{
+		public struct DevPrivate_Resource_s
+		{
 			public DevPrivate_Des_s PRV_Header;
 			public DevPrivate_Range_s[0] PRV_Data;
 		}
 		[CRepr]
-		public struct CS_DES		{
+		public struct CS_DES
+		{
 			public uint32 CSD_SignatureLength;
 			public uint32 CSD_LegacyDataOffset;
 			public uint32 CSD_LegacyDataSize;
@@ -2048,11 +2134,13 @@ namespace Win32
 			public uint8[0] CSD_Signature;
 		}
 		[CRepr]
-		public struct CS_RESOURCE		{
+		public struct CS_RESOURCE
+		{
 			public CS_DES CS_Header;
 		}
 		[CRepr]
-		public struct PCCARD_DES		{
+		public struct PCCARD_DES
+		{
 			public uint32 PCD_Count;
 			public uint32 PCD_Type;
 			public uint32 PCD_Flags;
@@ -2065,11 +2153,13 @@ namespace Win32
 			public uint8[2] PCD_IoFlags;
 		}
 		[CRepr]
-		public struct PCCARD_RESOURCE		{
+		public struct PCCARD_RESOURCE
+		{
 			public PCCARD_DES PcCard_Header;
 		}
 		[CRepr]
-		public struct MFCARD_DES		{
+		public struct MFCARD_DES
+		{
 			public uint32 PMF_Count;
 			public uint32 PMF_Type;
 			public uint32 PMF_Flags;
@@ -2079,18 +2169,21 @@ namespace Win32
 			public uint32 PMF_ConfigRegisterBase;
 		}
 		[CRepr]
-		public struct MFCARD_RESOURCE		{
+		public struct MFCARD_RESOURCE
+		{
 			public MFCARD_DES MfCard_Header;
 		}
 		[CRepr]
-		public struct BUSNUMBER_RANGE		{
+		public struct BUSNUMBER_RANGE
+		{
 			public uint32 BUSR_Min;
 			public uint32 BUSR_Max;
 			public uint32 BUSR_nBusNumbers;
 			public uint32 BUSR_Flags;
 		}
 		[CRepr]
-		public struct BUSNUMBER_DES		{
+		public struct BUSNUMBER_DES
+		{
 			public uint32 BUSD_Count;
 			public uint32 BUSD_Type;
 			public uint32 BUSD_Flags;
@@ -2098,12 +2191,14 @@ namespace Win32
 			public uint32 BUSD_Alloc_End;
 		}
 		[CRepr]
-		public struct BUSNUMBER_RESOURCE		{
+		public struct BUSNUMBER_RESOURCE
+		{
 			public BUSNUMBER_DES BusNumber_Header;
 			public BUSNUMBER_RANGE[0] BusNumber_Data;
 		}
 		[CRepr]
-		public struct Connection_Des_s		{
+		public struct Connection_Des_s
+		{
 			public uint32 COND_Type;
 			public uint32 COND_Flags;
 			public uint8 COND_Class;
@@ -2113,23 +2208,27 @@ namespace Win32
 			public LARGE_INTEGER COND_Id;
 		}
 		[CRepr]
-		public struct Connection_Resource_s		{
+		public struct Connection_Resource_s
+		{
 			public Connection_Des_s Connection_Header;
 		}
 		[CRepr]
-		public struct HWProfileInfo_sA		{
+		public struct HWProfileInfo_sA
+		{
 			public uint32 HWPI_ulHWProfile;
 			public CHAR[80] HWPI_szFriendlyName;
 			public uint32 HWPI_dwFlags;
 		}
 		[CRepr]
-		public struct HWProfileInfo_sW		{
+		public struct HWProfileInfo_sW
+		{
 			public uint32 HWPI_ulHWProfile;
 			public char16[80] HWPI_szFriendlyName;
 			public uint32 HWPI_dwFlags;
 		}
 		[CRepr]
-		public struct CM_NOTIFY_FILTER		{
+		public struct CM_NOTIFY_FILTER
+		{
 			public uint32 cbSize;
 			public uint32 Flags;
 			public CM_NOTIFY_FILTER_TYPE FilterType;
@@ -2137,48 +2236,57 @@ namespace Win32
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public _DeviceInterface_e__Struct DeviceInterface;
 				public _DeviceHandle_e__Struct DeviceHandle;
 				public _DeviceInstance_e__Struct DeviceInstance;
 				
 				[CRepr]
-				public struct _DeviceHandle_e__Struct				{
+				public struct _DeviceHandle_e__Struct
+				{
 					public HANDLE hTarget;
 				}
 				[CRepr]
-				public struct _DeviceInstance_e__Struct				{
+				public struct _DeviceInstance_e__Struct
+				{
 					public char16[200] InstanceId;
 				}
 				[CRepr]
-				public struct _DeviceInterface_e__Struct				{
+				public struct _DeviceInterface_e__Struct
+				{
 					public Guid ClassGuid;
 				}
 			}
 		}
 		[CRepr]
-		public struct CM_NOTIFY_EVENT_DATA		{
+		public struct CM_NOTIFY_EVENT_DATA
+		{
 			public CM_NOTIFY_FILTER_TYPE FilterType;
 			public uint32 Reserved;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public _DeviceInterface_e__Struct DeviceInterface;
 				public _DeviceHandle_e__Struct DeviceHandle;
 				public _DeviceInstance_e__Struct DeviceInstance;
 				
 				[CRepr]
-				public struct _DeviceInstance_e__Struct				{
+				public struct _DeviceInstance_e__Struct
+				{
 					public char16[0] InstanceId;
 				}
 				[CRepr]
-				public struct _DeviceInterface_e__Struct				{
+				public struct _DeviceInterface_e__Struct
+				{
 					public Guid ClassGuid;
 					public char16[0] SymbolicLink;
 				}
 				[CRepr]
-				public struct _DeviceHandle_e__Struct				{
+				public struct _DeviceHandle_e__Struct
+				{
 					public Guid EventGuid;
 					public int32 NameOffset;
 					public uint32 DataSize;

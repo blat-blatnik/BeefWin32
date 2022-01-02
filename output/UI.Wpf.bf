@@ -18,19 +18,22 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MilRectD		{
+		public struct MilRectD
+		{
 			public double left;
 			public double top;
 			public double right;
 			public double bottom;
 		}
 		[CRepr]
-		public struct MilPoint2D		{
+		public struct MilPoint2D
+		{
 			public double X;
 			public double Y;
 		}
 		[CRepr]
-		public struct MILMatrixF		{
+		public struct MILMatrixF
+		{
 			public double _11;
 			public double _12;
 			public double _13;

@@ -792,20 +792,23 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct COMPOSITIONFORM		{
+		public struct COMPOSITIONFORM
+		{
 			public uint32 dwStyle;
 			public POINT ptCurrentPos;
 			public RECT rcArea;
 		}
 		[CRepr]
-		public struct CANDIDATEFORM		{
+		public struct CANDIDATEFORM
+		{
 			public uint32 dwIndex;
 			public uint32 dwStyle;
 			public POINT ptCurrentPos;
 			public RECT rcArea;
 		}
 		[CRepr]
-		public struct CANDIDATELIST		{
+		public struct CANDIDATELIST
+		{
 			public uint32 dwSize;
 			public uint32 dwStyle;
 			public uint32 dwCount;
@@ -815,17 +818,20 @@ namespace Win32
 			public uint32[0] dwOffset;
 		}
 		[CRepr]
-		public struct REGISTERWORDA		{
+		public struct REGISTERWORDA
+		{
 			public PSTR lpReading;
 			public PSTR lpWord;
 		}
 		[CRepr]
-		public struct REGISTERWORDW		{
+		public struct REGISTERWORDW
+		{
 			public PWSTR lpReading;
 			public PWSTR lpWord;
 		}
 		[CRepr]
-		public struct RECONVERTSTRING		{
+		public struct RECONVERTSTRING
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public uint32 dwStrLen;
@@ -836,17 +842,20 @@ namespace Win32
 			public uint32 dwTargetStrOffset;
 		}
 		[CRepr]
-		public struct STYLEBUFA		{
+		public struct STYLEBUFA
+		{
 			public uint32 dwStyle;
 			public CHAR[32] szDescription;
 		}
 		[CRepr]
-		public struct STYLEBUFW		{
+		public struct STYLEBUFW
+		{
 			public uint32 dwStyle;
 			public char16[32] szDescription;
 		}
 		[CRepr]
-		public struct IMEMENUITEMINFOA		{
+		public struct IMEMENUITEMINFOA
+		{
 			public uint32 cbSize;
 			public uint32 fType;
 			public uint32 fState;
@@ -858,7 +867,8 @@ namespace Win32
 			public HBITMAP hbmpItem;
 		}
 		[CRepr]
-		public struct IMEMENUITEMINFOW		{
+		public struct IMEMENUITEMINFOW
+		{
 			public uint32 cbSize;
 			public uint32 fType;
 			public uint32 fState;
@@ -870,7 +880,8 @@ namespace Win32
 			public HBITMAP hbmpItem;
 		}
 		[CRepr]
-		public struct IMECHARPOSITION		{
+		public struct IMECHARPOSITION
+		{
 			public uint32 dwSize;
 			public uint32 dwCharPos;
 			public POINT pt;
@@ -878,14 +889,16 @@ namespace Win32
 			public RECT rcDocument;
 		}
 		[CRepr]
-		public struct IMEDLG		{
+		public struct IMEDLG
+		{
 			public int32 cbIMEDLG;
 			public HWND hwnd;
 			public PWSTR lpwstrWord;
 			public int32 nTabId;
 		}
 		[CRepr]
-		public struct WDD		{
+		public struct WDD
+		{
 			public uint16 wDispPos;
 			public _Anonymous1_e__Union Anonymous1;
 			public uint16 cchDisp;
@@ -896,18 +909,21 @@ namespace Win32
 			public void* pReserved;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint16 cchRead;
 				public uint16 cchComp;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint16 wReadPos;
 				public uint16 wCompPos;
 			}
 		}
 		[CRepr]
-		public struct MORRSLT		{
+		public struct MORRSLT
+		{
 			public uint32 dwSize;
 			public PWSTR pwchOutput;
 			public uint16 cchOutput;
@@ -923,23 +939,27 @@ namespace Win32
 			public char16[0] BLKBuff;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint16 cchRead;
 				public uint16 cchComp;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public uint16* pchReadIdxWDD;
 				public uint16* pchCompIdxWDD;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public PWSTR pwchRead;
 				public PWSTR pwchComp;
 			}
 		}
 		[CRepr]
-		public struct IMEWRD		{
+		public struct IMEWRD
+		{
 			public PWSTR pwchReading;
 			public PWSTR pwchDisplay;
 			public _Anonymous_e__Union Anonymous;
@@ -949,19 +969,22 @@ namespace Win32
 			public void* pvComment;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 ulPos;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 nPos1;
 					public uint16 nPos2;
 				}
 			}
 		}
 		[CRepr]
-		public struct IMESHF		{
+		public struct IMESHF
+		{
 			public uint16 cbShf;
 			public uint16 verDic;
 			public CHAR[48] szTitle;
@@ -969,23 +992,27 @@ namespace Win32
 			public CHAR[128] szCopyright;
 		}
 		[CRepr]
-		public struct POSTBL		{
+		public struct POSTBL
+		{
 			public uint16 nPos;
 			public uint8* szName;
 		}
 		[CRepr]
-		public struct IMEDP		{
+		public struct IMEDP
+		{
 			public IMEWRD wrdModifier;
 			public IMEWRD wrdModifiee;
 			public IMEREL relID;
 		}
 		[CRepr]
-		public struct IMEKMSINIT		{
+		public struct IMEKMSINIT
+		{
 			public int32 cbSize;
 			public HWND hWnd;
 		}
 		[CRepr]
-		public struct IMEKMSKEY		{
+		public struct IMEKMSKEY
+		{
 			public uint32 dwStatus;
 			public uint32 dwCompStatus;
 			public uint32 dwVKEY;
@@ -993,31 +1020,36 @@ namespace Win32
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 dwControl;
 				public uint32 dwNotUsed;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public char16[31] pwszDscr;
 				public char16[31] pwszNoUse;
 			}
 		}
 		[CRepr]
-		public struct IMEKMS		{
+		public struct IMEKMS
+		{
 			public int32 cbSize;
 			public HIMC hIMC;
 			public uint32 cKeyList;
 			public IMEKMSKEY* pKeyList;
 		}
 		[CRepr]
-		public struct IMEKMSNTFY		{
+		public struct IMEKMSNTFY
+		{
 			public int32 cbSize;
 			public HIMC hIMC;
 			public BOOL fSelect;
 		}
 		[CRepr]
-		public struct IMEKMSKMP		{
+		public struct IMEKMSKMP
+		{
 			public int32 cbSize;
 			public HIMC hIMC;
 			public uint16 idLang;
@@ -1027,20 +1059,23 @@ namespace Win32
 			public IMEKMSKEY* pKeyList;
 		}
 		[CRepr]
-		public struct IMEKMSINVK		{
+		public struct IMEKMSINVK
+		{
 			public int32 cbSize;
 			public HIMC hIMC;
 			public uint32 dwControl;
 		}
 		[CRepr]
-		public struct IMEKMSFUNCDESC		{
+		public struct IMEKMSFUNCDESC
+		{
 			public int32 cbSize;
 			public uint16 idLang;
 			public uint32 dwControl;
 			public char16[128] pwszDescription;
 		}
 		[CRepr]
-		public struct COMPOSITIONSTRING		{
+		public struct COMPOSITIONSTRING
+		{
 			public uint32 dwSize;
 			public uint32 dwCompReadAttrLen;
 			public uint32 dwCompReadAttrOffset;
@@ -1068,7 +1103,8 @@ namespace Win32
 			public uint32 dwPrivateOffset;
 		}
 		[CRepr]
-		public struct GUIDELINE		{
+		public struct GUIDELINE
+		{
 			public uint32 dwSize;
 			public uint32 dwLevel;
 			public uint32 dwIndex;
@@ -1078,18 +1114,21 @@ namespace Win32
 			public uint32 dwPrivateOffset;
 		}
 		[CRepr]
-		public struct TRANSMSG		{
+		public struct TRANSMSG
+		{
 			public uint32 message;
 			public WPARAM wParam;
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct TRANSMSGLIST		{
+		public struct TRANSMSGLIST
+		{
 			public uint32 uMsgCount;
 			public TRANSMSG[0] TransMsg;
 		}
 		[CRepr]
-		public struct CANDIDATEINFO		{
+		public struct CANDIDATEINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwCount;
 			public uint32[32] dwOffset;
@@ -1097,7 +1136,8 @@ namespace Win32
 			public uint32 dwPrivateOffset;
 		}
 		[CRepr]
-		public struct INPUTCONTEXT		{
+		public struct INPUTCONTEXT
+		{
 			public HWND hWnd;
 			public BOOL fOpen;
 			public POINT ptStatusWndPos;
@@ -1117,13 +1157,15 @@ namespace Win32
 			public uint32[3] dwReserve;
 			
 			[CRepr, Union]
-			public struct _lfFont_e__Union			{
+			public struct _lfFont_e__Union
+			{
 				public LOGFONTA A;
 				public LOGFONTW W;
 			}
 		}
 		[CRepr]
-		public struct IMEINFO		{
+		public struct IMEINFO
+		{
 			public uint32 dwPrivateDataSize;
 			public uint32 fdwProperty;
 			public uint32 fdwConversionCaps;
@@ -1133,44 +1175,52 @@ namespace Win32
 			public uint32 fdwSelectCaps;
 		}
 		[CRepr]
-		public struct SOFTKBDDATA		{
+		public struct SOFTKBDDATA
+		{
 			public uint32 uCount;
 			public uint16[256] wCode;
 		}
 		[CRepr]
-		public struct APPLETIDLIST		{
+		public struct APPLETIDLIST
+		{
 			public int32 count;
 			public Guid* pIIDList;
 		}
 		[CRepr]
-		public struct IMESTRINGCANDIDATE		{
+		public struct IMESTRINGCANDIDATE
+		{
 			public uint32 uCount;
 			public PWSTR[0] lpwstr;
 		}
 		[CRepr]
-		public struct IMEITEM		{
+		public struct IMEITEM
+		{
 			public int32 cbSize;
 			public int32 iType;
 			public void* lpItemData;
 		}
 		[CRepr]
-		public struct IMEITEMCANDIDATE		{
+		public struct IMEITEMCANDIDATE
+		{
 			public uint32 uCount;
 			public IMEITEM[0] imeItem;
 		}
 		[CRepr]
-		public struct tabIMESTRINGINFO		{
+		public struct tabIMESTRINGINFO
+		{
 			public uint32 dwFarEastId;
 			public PWSTR lpwstr;
 		}
 		[CRepr]
-		public struct tabIMEFAREASTINFO		{
+		public struct tabIMEFAREASTINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwType;
 			public uint32[0] dwData;
 		}
 		[CRepr]
-		public struct IMESTRINGCANDIDATEINFO		{
+		public struct IMESTRINGCANDIDATEINFO
+		{
 			public uint32 dwFarEastId;
 			public tabIMEFAREASTINFO* lpFarEastInfo;
 			public uint32 fInfoMask;
@@ -1179,7 +1229,8 @@ namespace Win32
 			public PWSTR[0] lpwstr;
 		}
 		[CRepr]
-		public struct IMECOMPOSITIONSTRINGINFO		{
+		public struct IMECOMPOSITIONSTRINGINFO
+		{
 			public int32 iCompStrLen;
 			public int32 iCaretPos;
 			public int32 iEditStart;
@@ -1188,12 +1239,14 @@ namespace Win32
 			public int32 iTargetLen;
 		}
 		[CRepr]
-		public struct IMECHARINFO		{
+		public struct IMECHARINFO
+		{
 			public char16 wch;
 			public uint32 dwCharInfo;
 		}
 		[CRepr]
-		public struct IMEAPPLETCFG		{
+		public struct IMEAPPLETCFG
+		{
 			public uint32 dwConfig;
 			public char16[64] wchTitle;
 			public char16[32] wchTitleFontFace;
@@ -1205,7 +1258,8 @@ namespace Win32
 			public LPARAM lReserved1;
 		}
 		[CRepr]
-		public struct IMEAPPLETUI		{
+		public struct IMEAPPLETUI
+		{
 			public HWND hwnd;
 			public uint32 dwStyle;
 			public int32 width;
@@ -1218,7 +1272,8 @@ namespace Win32
 			public LPARAM lReserved2;
 		}
 		[CRepr]
-		public struct APPLYCANDEXPARAM		{
+		public struct APPLYCANDEXPARAM
+		{
 			public uint32 dwSize;
 			public PWSTR lpwstrDisplay;
 			public PWSTR lpwstrReading;

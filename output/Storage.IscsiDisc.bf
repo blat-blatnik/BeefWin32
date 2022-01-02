@@ -253,7 +253,8 @@ namespace Win32
 		[CRepr]
 		public struct _ADAPTER_OBJECT {}
 		[CRepr]
-		public struct SCSI_PASS_THROUGH		{
+		public struct SCSI_PASS_THROUGH
+		{
 			public uint16 Length;
 			public uint8 ScsiStatus;
 			public uint8 PathId;
@@ -269,7 +270,8 @@ namespace Win32
 			public uint8[16] Cdb;
 		}
 		[CRepr]
-		public struct SCSI_PASS_THROUGH_DIRECT		{
+		public struct SCSI_PASS_THROUGH_DIRECT
+		{
 			public uint16 Length;
 			public uint8 ScsiStatus;
 			public uint8 PathId;
@@ -285,7 +287,8 @@ namespace Win32
 			public uint8[16] Cdb;
 		}
 		[CRepr]
-		public struct SCSI_PASS_THROUGH32		{
+		public struct SCSI_PASS_THROUGH32
+		{
 			public uint16 Length;
 			public uint8 ScsiStatus;
 			public uint8 PathId;
@@ -301,7 +304,8 @@ namespace Win32
 			public uint8[16] Cdb;
 		}
 		[CRepr]
-		public struct SCSI_PASS_THROUGH_DIRECT32		{
+		public struct SCSI_PASS_THROUGH_DIRECT32
+		{
 			public uint16 Length;
 			public uint8 ScsiStatus;
 			public uint8 PathId;
@@ -317,7 +321,8 @@ namespace Win32
 			public uint8[16] Cdb;
 		}
 		[CRepr]
-		public struct SCSI_PASS_THROUGH_EX		{
+		public struct SCSI_PASS_THROUGH_EX
+		{
 			public uint32 Version;
 			public uint32 Length;
 			public uint32 CdbLength;
@@ -336,7 +341,8 @@ namespace Win32
 			public uint8[0] Cdb;
 		}
 		[CRepr]
-		public struct SCSI_PASS_THROUGH_DIRECT_EX		{
+		public struct SCSI_PASS_THROUGH_DIRECT_EX
+		{
 			public uint32 Version;
 			public uint32 Length;
 			public uint32 CdbLength;
@@ -355,7 +361,8 @@ namespace Win32
 			public uint8[0] Cdb;
 		}
 		[CRepr]
-		public struct SCSI_PASS_THROUGH32_EX		{
+		public struct SCSI_PASS_THROUGH32_EX
+		{
 			public uint32 Version;
 			public uint32 Length;
 			public uint32 CdbLength;
@@ -374,7 +381,8 @@ namespace Win32
 			public uint8[0] Cdb;
 		}
 		[CRepr]
-		public struct SCSI_PASS_THROUGH_DIRECT32_EX		{
+		public struct SCSI_PASS_THROUGH_DIRECT32_EX
+		{
 			public uint32 Version;
 			public uint32 Length;
 			public uint32 CdbLength;
@@ -393,7 +401,8 @@ namespace Win32
 			public uint8[0] Cdb;
 		}
 		[CRepr]
-		public struct ATA_PASS_THROUGH_EX		{
+		public struct ATA_PASS_THROUGH_EX
+		{
 			public uint16 Length;
 			public uint16 AtaFlags;
 			public uint8 PathId;
@@ -408,7 +417,8 @@ namespace Win32
 			public uint8[8] CurrentTaskFile;
 		}
 		[CRepr]
-		public struct ATA_PASS_THROUGH_DIRECT		{
+		public struct ATA_PASS_THROUGH_DIRECT
+		{
 			public uint16 Length;
 			public uint16 AtaFlags;
 			public uint8 PathId;
@@ -423,7 +433,8 @@ namespace Win32
 			public uint8[8] CurrentTaskFile;
 		}
 		[CRepr]
-		public struct ATA_PASS_THROUGH_EX32		{
+		public struct ATA_PASS_THROUGH_EX32
+		{
 			public uint16 Length;
 			public uint16 AtaFlags;
 			public uint8 PathId;
@@ -438,7 +449,8 @@ namespace Win32
 			public uint8[8] CurrentTaskFile;
 		}
 		[CRepr]
-		public struct ATA_PASS_THROUGH_DIRECT32		{
+		public struct ATA_PASS_THROUGH_DIRECT32
+		{
 			public uint16 Length;
 			public uint16 AtaFlags;
 			public uint8 PathId;
@@ -453,7 +465,8 @@ namespace Win32
 			public uint8[8] CurrentTaskFile;
 		}
 		[CRepr]
-		public struct IDE_IO_CONTROL		{
+		public struct IDE_IO_CONTROL
+		{
 			public uint32 HeaderLength;
 			public uint8[8] Signature;
 			public uint32 Timeout;
@@ -462,7 +475,8 @@ namespace Win32
 			public uint32 DataLength;
 		}
 		[CRepr]
-		public struct MPIO_PASS_THROUGH_PATH		{
+		public struct MPIO_PASS_THROUGH_PATH
+		{
 			public SCSI_PASS_THROUGH PassThrough;
 			public uint32 Version;
 			public uint16 Length;
@@ -471,7 +485,8 @@ namespace Win32
 			public uint64 MpioPathId;
 		}
 		[CRepr]
-		public struct MPIO_PASS_THROUGH_PATH_DIRECT		{
+		public struct MPIO_PASS_THROUGH_PATH_DIRECT
+		{
 			public SCSI_PASS_THROUGH_DIRECT PassThrough;
 			public uint32 Version;
 			public uint16 Length;
@@ -480,7 +495,8 @@ namespace Win32
 			public uint64 MpioPathId;
 		}
 		[CRepr]
-		public struct MPIO_PASS_THROUGH_PATH_EX		{
+		public struct MPIO_PASS_THROUGH_PATH_EX
+		{
 			public uint32 PassThroughOffset;
 			public uint32 Version;
 			public uint16 Length;
@@ -489,7 +505,8 @@ namespace Win32
 			public uint64 MpioPathId;
 		}
 		[CRepr]
-		public struct MPIO_PASS_THROUGH_PATH_DIRECT_EX		{
+		public struct MPIO_PASS_THROUGH_PATH_DIRECT_EX
+		{
 			public uint32 PassThroughOffset;
 			public uint32 Version;
 			public uint16 Length;
@@ -498,7 +515,8 @@ namespace Win32
 			public uint64 MpioPathId;
 		}
 		[CRepr]
-		public struct MPIO_PASS_THROUGH_PATH32		{
+		public struct MPIO_PASS_THROUGH_PATH32
+		{
 			public SCSI_PASS_THROUGH32 PassThrough;
 			public uint32 Version;
 			public uint16 Length;
@@ -507,7 +525,8 @@ namespace Win32
 			public uint64 MpioPathId;
 		}
 		[CRepr]
-		public struct MPIO_PASS_THROUGH_PATH_DIRECT32		{
+		public struct MPIO_PASS_THROUGH_PATH_DIRECT32
+		{
 			public SCSI_PASS_THROUGH_DIRECT32 PassThrough;
 			public uint32 Version;
 			public uint16 Length;
@@ -516,7 +535,8 @@ namespace Win32
 			public uint64 MpioPathId;
 		}
 		[CRepr]
-		public struct MPIO_PASS_THROUGH_PATH32_EX		{
+		public struct MPIO_PASS_THROUGH_PATH32_EX
+		{
 			public uint32 PassThroughOffset;
 			public uint32 Version;
 			public uint16 Length;
@@ -525,7 +545,8 @@ namespace Win32
 			public uint64 MpioPathId;
 		}
 		[CRepr]
-		public struct MPIO_PASS_THROUGH_PATH_DIRECT32_EX		{
+		public struct MPIO_PASS_THROUGH_PATH_DIRECT32_EX
+		{
 			public uint32 PassThroughOffset;
 			public uint32 Version;
 			public uint16 Length;
@@ -534,18 +555,21 @@ namespace Win32
 			public uint64 MpioPathId;
 		}
 		[CRepr]
-		public struct SCSI_BUS_DATA		{
+		public struct SCSI_BUS_DATA
+		{
 			public uint8 NumberOfLogicalUnits;
 			public uint8 InitiatorBusId;
 			public uint32 InquiryDataOffset;
 		}
 		[CRepr]
-		public struct SCSI_ADAPTER_BUS_INFO		{
+		public struct SCSI_ADAPTER_BUS_INFO
+		{
 			public uint8 NumberOfBuses;
 			public SCSI_BUS_DATA[0] BusData;
 		}
 		[CRepr]
-		public struct SCSI_INQUIRY_DATA		{
+		public struct SCSI_INQUIRY_DATA
+		{
 			public uint8 PathId;
 			public uint8 TargetId;
 			public uint8 Lun;
@@ -555,7 +579,8 @@ namespace Win32
 			public uint8[0] InquiryData;
 		}
 		[CRepr]
-		public struct SRB_IO_CONTROL		{
+		public struct SRB_IO_CONTROL
+		{
 			public uint32 HeaderLength;
 			public uint8[8] Signature;
 			public uint32 Timeout;
@@ -564,7 +589,8 @@ namespace Win32
 			public uint32 Length;
 		}
 		[CRepr]
-		public struct NVCACHE_REQUEST_BLOCK		{
+		public struct NVCACHE_REQUEST_BLOCK
+		{
 			public uint32 NRBSize;
 			public uint16 Function;
 			public uint32 NRBFlags;
@@ -576,7 +602,8 @@ namespace Win32
 			public uint32 NVCacheSubStatus;
 		}
 		[CRepr]
-		public struct NV_FEATURE_PARAMETER		{
+		public struct NV_FEATURE_PARAMETER
+		{
 			public uint16 NVPowerModeEnabled;
 			public uint16 NVParameterReserv1;
 			public uint16 NVCmdEnabled;
@@ -589,7 +616,8 @@ namespace Win32
 			public uint32 DeviceSpinUpTime;
 		}
 		[CRepr]
-		public struct NVCACHE_HINT_PAYLOAD		{
+		public struct NVCACHE_HINT_PAYLOAD
+		{
 			public uint8 Command;
 			public uint8 Feature7_0;
 			public uint8 Feature15_8;
@@ -605,7 +633,8 @@ namespace Win32
 			public uint8[4] Reserved;
 		}
 		[CRepr]
-		public struct NV_SEP_CACHE_PARAMETER		{
+		public struct NV_SEP_CACHE_PARAMETER
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public _Flags_e__Union Flags;
@@ -614,18 +643,21 @@ namespace Win32
 			public uint8[3] ParameterReserve1;
 			
 			[CRepr, Union]
-			public struct _Flags_e__Union			{
+			public struct _Flags_e__Union
+			{
 				public _CacheFlags_e__Struct CacheFlags;
 				public uint8 CacheFlagsSet;
 				
 				[CRepr]
-				public struct _CacheFlags_e__Struct				{
+				public struct _CacheFlags_e__Struct
+				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct STORAGE_DIAGNOSTIC_MP_REQUEST		{
+		public struct STORAGE_DIAGNOSTIC_MP_REQUEST
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public MP_STORAGE_DIAGNOSTIC_TARGET_TYPE TargetType;
@@ -636,12 +668,14 @@ namespace Win32
 			public uint8[0] DataBuffer;
 		}
 		[CRepr]
-		public struct MP_DEVICE_DATA_SET_RANGE		{
+		public struct MP_DEVICE_DATA_SET_RANGE
+		{
 			public int64 StartingOffset;
 			public uint64 LengthInBytes;
 		}
 		[CRepr]
-		public struct DSM_NOTIFICATION_REQUEST_BLOCK		{
+		public struct DSM_NOTIFICATION_REQUEST_BLOCK
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 NotifyFlags;
@@ -651,7 +685,8 @@ namespace Win32
 			public MP_DEVICE_DATA_SET_RANGE[0] DataSetRanges;
 		}
 		[CRepr]
-		public struct HYBRID_REQUEST_BLOCK		{
+		public struct HYBRID_REQUEST_BLOCK
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint32 Function;
@@ -660,7 +695,8 @@ namespace Win32
 			public uint32 DataBufferLength;
 		}
 		[CRepr]
-		public struct NVCACHE_PRIORITY_LEVEL_DESCRIPTOR		{
+		public struct NVCACHE_PRIORITY_LEVEL_DESCRIPTOR
+		{
 			public uint8 PriorityLevel;
 			public uint8[3] Reserved0;
 			public uint32 ConsumedNVMSizeFraction;
@@ -670,7 +706,8 @@ namespace Win32
 			public uint32 Reserved1;
 		}
 		[CRepr]
-		public struct HYBRID_INFORMATION		{
+		public struct HYBRID_INFORMATION
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public BOOLEAN HybridSupported;
@@ -683,7 +720,8 @@ namespace Win32
 			public _Priorities_e__Struct Priorities;
 			
 			[CRepr]
-			public struct _Priorities_e__Struct			{
+			public struct _Priorities_e__Struct
+			{
 				public uint8 PriorityLevelCount;
 				public BOOLEAN MaxPriorityBehavior;
 				public uint8 OptimalWriteGranularity;
@@ -694,7 +732,8 @@ namespace Win32
 				public NVCACHE_PRIORITY_LEVEL_DESCRIPTOR[0] Priority;
 				
 				[CRepr]
-				public struct _SupportedCommands_e__Struct				{
+				public struct _SupportedCommands_e__Struct
+				{
 					public uint32 _bitfield;
 					public uint32 MaxEvictCommands;
 					public uint32 MaxLbaRangeCountForEvict;
@@ -702,19 +741,22 @@ namespace Win32
 				}
 			}
 			[CRepr]
-			public struct _Attributes_e__Struct			{
+			public struct _Attributes_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct HYBRID_DIRTY_THRESHOLDS		{
+		public struct HYBRID_DIRTY_THRESHOLDS
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint32 DirtyLowThreshold;
 			public uint32 DirtyHighThreshold;
 		}
 		[CRepr]
-		public struct HYBRID_DEMOTE_BY_SIZE		{
+		public struct HYBRID_DEMOTE_BY_SIZE
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint8 SourcePriority;
@@ -724,7 +766,8 @@ namespace Win32
 			public uint64 LbaCount;
 		}
 		[CRepr]
-		public struct FIRMWARE_REQUEST_BLOCK		{
+		public struct FIRMWARE_REQUEST_BLOCK
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint32 Function;
@@ -733,27 +776,31 @@ namespace Win32
 			public uint32 DataBufferLength;
 		}
 		[CRepr]
-		public struct STORAGE_FIRMWARE_SLOT_INFO		{
+		public struct STORAGE_FIRMWARE_SLOT_INFO
+		{
 			public uint8 SlotNumber;
 			public BOOLEAN ReadOnly;
 			public uint8[6] Reserved;
 			public _Revision_e__Union Revision;
 			
 			[CRepr, Union]
-			public struct _Revision_e__Union			{
+			public struct _Revision_e__Union
+			{
 				public uint8[8] Info;
 				public uint64 AsUlonglong;
 			}
 		}
 		[CRepr]
-		public struct STORAGE_FIRMWARE_SLOT_INFO_V2		{
+		public struct STORAGE_FIRMWARE_SLOT_INFO_V2
+		{
 			public uint8 SlotNumber;
 			public BOOLEAN ReadOnly;
 			public uint8[6] Reserved;
 			public uint8[16] Revision;
 		}
 		[CRepr]
-		public struct STORAGE_FIRMWARE_INFO		{
+		public struct STORAGE_FIRMWARE_INFO
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public BOOLEAN UpgradeSupport;
@@ -764,7 +811,8 @@ namespace Win32
 			public STORAGE_FIRMWARE_SLOT_INFO[0] Slot;
 		}
 		[CRepr]
-		public struct STORAGE_FIRMWARE_INFO_V2		{
+		public struct STORAGE_FIRMWARE_INFO_V2
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public BOOLEAN UpgradeSupport;
@@ -778,7 +826,8 @@ namespace Win32
 			public STORAGE_FIRMWARE_SLOT_INFO_V2[0] Slot;
 		}
 		[CRepr]
-		public struct STORAGE_FIRMWARE_DOWNLOAD		{
+		public struct STORAGE_FIRMWARE_DOWNLOAD
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint64 Offset;
@@ -786,7 +835,8 @@ namespace Win32
 			public uint8[0] ImageBuffer;
 		}
 		[CRepr]
-		public struct STORAGE_FIRMWARE_DOWNLOAD_V2		{
+		public struct STORAGE_FIRMWARE_DOWNLOAD_V2
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint64 Offset;
@@ -797,14 +847,16 @@ namespace Win32
 			public uint8[0] ImageBuffer;
 		}
 		[CRepr]
-		public struct STORAGE_FIRMWARE_ACTIVATE		{
+		public struct STORAGE_FIRMWARE_ACTIVATE
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint8 SlotToActivate;
 			public uint8[3] Reserved0;
 		}
 		[CRepr]
-		public struct IO_SCSI_CAPABILITIES		{
+		public struct IO_SCSI_CAPABILITIES
+		{
 			public uint32 Length;
 			public uint32 MaximumTransferLength;
 			public uint32 MaximumPhysicalPages;
@@ -815,7 +867,8 @@ namespace Win32
 			public BOOLEAN AdapterUsesPio;
 		}
 		[CRepr]
-		public struct SCSI_ADDRESS		{
+		public struct SCSI_ADDRESS
+		{
 			public uint32 Length;
 			public uint8 PortNumber;
 			public uint8 PathId;
@@ -823,12 +876,14 @@ namespace Win32
 			public uint8 Lun;
 		}
 		[CRepr]
-		public struct DUMP_POINTERS_VERSION		{
+		public struct DUMP_POINTERS_VERSION
+		{
 			public uint32 Version;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct DUMP_POINTERS		{
+		public struct DUMP_POINTERS
+		{
 			public _ADAPTER_OBJECT* AdapterObject;
 			public void* MappedRegisterBase;
 			public void* DumpData;
@@ -841,7 +896,8 @@ namespace Win32
 			public void* DeviceObject;
 		}
 		[CRepr]
-		public struct DUMP_POINTERS_EX		{
+		public struct DUMP_POINTERS_EX
+		{
 			public DUMP_POINTERS_VERSION Header;
 			public void* DumpData;
 			public void* CommonBufferVa;
@@ -860,26 +916,30 @@ namespace Win32
 			public void* DumpDevicePowerOnContext;
 		}
 		[CRepr]
-		public struct DUMP_DRIVER		{
+		public struct DUMP_DRIVER
+		{
 			public void* DumpDriverList;
 			public char16[15] DriverName;
 			public char16[15] BaseName;
 		}
 		[CRepr]
-		public struct NTSCSI_UNICODE_STRING		{
+		public struct NTSCSI_UNICODE_STRING
+		{
 			public uint16 Length;
 			public uint16 MaximumLength;
 			public PWSTR Buffer;
 		}
 		[CRepr]
-		public struct DUMP_DRIVER_EX		{
+		public struct DUMP_DRIVER_EX
+		{
 			public void* DumpDriverList;
 			public char16[15] DriverName;
 			public char16[15] BaseName;
 			public NTSCSI_UNICODE_STRING DriverFullPath;
 		}
 		[CRepr]
-		public struct STORAGE_ENDURANCE_INFO		{
+		public struct STORAGE_ENDURANCE_INFO
+		{
 			public uint32 ValidFields;
 			public uint32 GroupId;
 			public _Flags_e__Struct Flags;
@@ -888,18 +948,21 @@ namespace Win32
 			public uint8[16] ByteWriteCount;
 			
 			[CRepr]
-			public struct _Flags_e__Struct			{
+			public struct _Flags_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct STORAGE_ENDURANCE_DATA_DESCRIPTOR		{
+		public struct STORAGE_ENDURANCE_DATA_DESCRIPTOR
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public STORAGE_ENDURANCE_INFO EnduranceInfo;
 		}
 		[CRepr]
-		public struct ISCSI_LOGIN_OPTIONS		{
+		public struct ISCSI_LOGIN_OPTIONS
+		{
 			public uint32 Version;
 			public uint32 InformationSpecified;
 			public uint32 LoginFlags;
@@ -915,7 +978,8 @@ namespace Win32
 			public uint8* Password;
 		}
 		[CRepr]
-		public struct IKE_AUTHENTICATION_PRESHARED_KEY		{
+		public struct IKE_AUTHENTICATION_PRESHARED_KEY
+		{
 			public uint64 SecurityFlags;
 			public uint8 IdType;
 			public uint32 IdLengthInBytes;
@@ -924,27 +988,32 @@ namespace Win32
 			public uint8* Key;
 		}
 		[CRepr]
-		public struct IKE_AUTHENTICATION_INFORMATION		{
+		public struct IKE_AUTHENTICATION_INFORMATION
+		{
 			public IKE_AUTHENTICATION_METHOD AuthMethod;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public IKE_AUTHENTICATION_PRESHARED_KEY PsKey;
 			}
 		}
 		[CRepr]
-		public struct ISCSI_UNIQUE_SESSION_ID		{
+		public struct ISCSI_UNIQUE_SESSION_ID
+		{
 			public uint64 AdapterUnique;
 			public uint64 AdapterSpecific;
 		}
 		[CRepr]
-		public struct SCSI_LUN_LIST		{
+		public struct SCSI_LUN_LIST
+		{
 			public uint32 OSLUN;
 			public uint64 TargetLUN;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_MAPPINGW		{
+		public struct ISCSI_TARGET_MAPPINGW
+		{
 			public char16[256] InitiatorName;
 			public char16[224] TargetName;
 			public char16[260] OSDeviceName;
@@ -955,7 +1024,8 @@ namespace Win32
 			public SCSI_LUN_LIST* LUNList;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_MAPPINGA		{
+		public struct ISCSI_TARGET_MAPPINGA
+		{
 			public CHAR[256] InitiatorName;
 			public CHAR[224] TargetName;
 			public CHAR[260] OSDeviceName;
@@ -966,19 +1036,22 @@ namespace Win32
 			public SCSI_LUN_LIST* LUNList;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_PORTALW		{
+		public struct ISCSI_TARGET_PORTALW
+		{
 			public char16[256] SymbolicName;
 			public char16[256] Address;
 			public uint16 Socket;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_PORTALA		{
+		public struct ISCSI_TARGET_PORTALA
+		{
 			public CHAR[256] SymbolicName;
 			public CHAR[256] Address;
 			public uint16 Socket;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_PORTAL_INFOW		{
+		public struct ISCSI_TARGET_PORTAL_INFOW
+		{
 			public char16[256] InitiatorName;
 			public uint32 InitiatorPortNumber;
 			public char16[256] SymbolicName;
@@ -986,7 +1059,8 @@ namespace Win32
 			public uint16 Socket;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_PORTAL_INFOA		{
+		public struct ISCSI_TARGET_PORTAL_INFOA
+		{
 			public CHAR[256] InitiatorName;
 			public uint32 InitiatorPortNumber;
 			public CHAR[256] SymbolicName;
@@ -994,7 +1068,8 @@ namespace Win32
 			public uint16 Socket;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_PORTAL_INFO_EXW		{
+		public struct ISCSI_TARGET_PORTAL_INFO_EXW
+		{
 			public char16[256] InitiatorName;
 			public uint32 InitiatorPortNumber;
 			public char16[256] SymbolicName;
@@ -1004,7 +1079,8 @@ namespace Win32
 			public ISCSI_LOGIN_OPTIONS LoginOptions;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_PORTAL_INFO_EXA		{
+		public struct ISCSI_TARGET_PORTAL_INFO_EXA
+		{
 			public CHAR[256] InitiatorName;
 			public uint32 InitiatorPortNumber;
 			public CHAR[256] SymbolicName;
@@ -1014,17 +1090,20 @@ namespace Win32
 			public ISCSI_LOGIN_OPTIONS LoginOptions;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_PORTAL_GROUPW		{
+		public struct ISCSI_TARGET_PORTAL_GROUPW
+		{
 			public uint32 Count;
 			public ISCSI_TARGET_PORTALW[0] Portals;
 		}
 		[CRepr]
-		public struct ISCSI_TARGET_PORTAL_GROUPA		{
+		public struct ISCSI_TARGET_PORTAL_GROUPA
+		{
 			public uint32 Count;
 			public ISCSI_TARGET_PORTALA[0] Portals;
 		}
 		[CRepr]
-		public struct ISCSI_CONNECTION_INFOW		{
+		public struct ISCSI_CONNECTION_INFOW
+		{
 			public ISCSI_UNIQUE_SESSION_ID ConnectionId;
 			public PWSTR InitiatorAddress;
 			public PWSTR TargetAddress;
@@ -1033,7 +1112,8 @@ namespace Win32
 			public uint8[2] CID;
 		}
 		[CRepr]
-		public struct ISCSI_SESSION_INFOW		{
+		public struct ISCSI_SESSION_INFOW
+		{
 			public ISCSI_UNIQUE_SESSION_ID SessionId;
 			public PWSTR InitiatorName;
 			public PWSTR TargetNodeName;
@@ -1044,7 +1124,8 @@ namespace Win32
 			public ISCSI_CONNECTION_INFOW* Connections;
 		}
 		[CRepr]
-		public struct ISCSI_CONNECTION_INFOA		{
+		public struct ISCSI_CONNECTION_INFOA
+		{
 			public ISCSI_UNIQUE_SESSION_ID ConnectionId;
 			public PSTR InitiatorAddress;
 			public PSTR TargetAddress;
@@ -1053,7 +1134,8 @@ namespace Win32
 			public uint8[2] CID;
 		}
 		[CRepr]
-		public struct ISCSI_SESSION_INFOA		{
+		public struct ISCSI_SESSION_INFOA
+		{
 			public ISCSI_UNIQUE_SESSION_ID SessionId;
 			public PSTR InitiatorName;
 			public PSTR TargetNodeName;
@@ -1064,7 +1146,8 @@ namespace Win32
 			public ISCSI_CONNECTION_INFOA* Connections;
 		}
 		[CRepr]
-		public struct ISCSI_CONNECTION_INFO_EX		{
+		public struct ISCSI_CONNECTION_INFO_EX
+		{
 			public ISCSI_UNIQUE_SESSION_ID ConnectionId;
 			public uint8 State;
 			public uint8 Protocol;
@@ -1076,7 +1159,8 @@ namespace Win32
 			public uint32 MaxDatagramSize;
 		}
 		[CRepr]
-		public struct ISCSI_SESSION_INFO_EX		{
+		public struct ISCSI_SESSION_INFO_EX
+		{
 			public ISCSI_UNIQUE_SESSION_ID SessionId;
 			public BOOLEAN InitialR2t;
 			public BOOLEAN ImmediateData;
@@ -1092,7 +1176,8 @@ namespace Win32
 			public ISCSI_CONNECTION_INFO_EX* Connections;
 		}
 		[CRepr]
-		public struct ISCSI_DEVICE_ON_SESSIONW		{
+		public struct ISCSI_DEVICE_ON_SESSIONW
+		{
 			public char16[256] InitiatorName;
 			public char16[224] TargetName;
 			public SCSI_ADDRESS ScsiAddress;
@@ -1103,7 +1188,8 @@ namespace Win32
 			public uint32 DeviceInstance;
 		}
 		[CRepr]
-		public struct ISCSI_DEVICE_ON_SESSIONA		{
+		public struct ISCSI_DEVICE_ON_SESSIONA
+		{
 			public CHAR[256] InitiatorName;
 			public CHAR[224] TargetName;
 			public SCSI_ADDRESS ScsiAddress;
@@ -1114,7 +1200,8 @@ namespace Win32
 			public uint32 DeviceInstance;
 		}
 		[CRepr]
-		public struct PERSISTENT_ISCSI_LOGIN_INFOW		{
+		public struct PERSISTENT_ISCSI_LOGIN_INFOW
+		{
 			public char16[224] TargetName;
 			public BOOLEAN IsInformationalSession;
 			public char16[256] InitiatorInstance;
@@ -1125,7 +1212,8 @@ namespace Win32
 			public ISCSI_LOGIN_OPTIONS LoginOptions;
 		}
 		[CRepr]
-		public struct PERSISTENT_ISCSI_LOGIN_INFOA		{
+		public struct PERSISTENT_ISCSI_LOGIN_INFOA
+		{
 			public CHAR[224] TargetName;
 			public BOOLEAN IsInformationalSession;
 			public CHAR[256] InitiatorInstance;
@@ -1136,7 +1224,8 @@ namespace Win32
 			public ISCSI_LOGIN_OPTIONS LoginOptions;
 		}
 		[CRepr]
-		public struct ISCSI_VERSION_INFO		{
+		public struct ISCSI_VERSION_INFO
+		{
 			public uint32 MajorVersion;
 			public uint32 MinorVersion;
 			public uint32 BuildNumber;

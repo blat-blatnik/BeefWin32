@@ -131,14 +131,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DWM_BLURBEHIND		{
+		public struct DWM_BLURBEHIND
+		{
 			public uint32 dwFlags;
 			public BOOL fEnable;
 			public HRGN hRgnBlur;
 			public BOOL fTransitionOnMaximized;
 		}
 		[CRepr]
-		public struct DWM_THUMBNAIL_PROPERTIES		{
+		public struct DWM_THUMBNAIL_PROPERTIES
+		{
 			public uint32 dwFlags;
 			public RECT rcDestination;
 			public RECT rcSource;
@@ -147,12 +149,14 @@ namespace Win32
 			public BOOL fSourceClientAreaOnly;
 		}
 		[CRepr]
-		public struct UNSIGNED_RATIO		{
+		public struct UNSIGNED_RATIO
+		{
 			public uint32 uiNumerator;
 			public uint32 uiDenominator;
 		}
 		[CRepr]
-		public struct DWM_TIMING_INFO		{
+		public struct DWM_TIMING_INFO
+		{
 			public uint32 cbSize;
 			public UNSIGNED_RATIO rateRefresh;
 			public uint64 qpcRefreshPeriod;
@@ -195,7 +199,8 @@ namespace Win32
 			public uint64 cBuffersEmpty;
 		}
 		[CRepr]
-		public struct DWM_PRESENT_PARAMETERS		{
+		public struct DWM_PRESENT_PARAMETERS
+		{
 			public uint32 cbSize;
 			public BOOL fQueue;
 			public uint64 cRefreshStart;
@@ -206,7 +211,8 @@ namespace Win32
 			public DWM_SOURCE_FRAME_SAMPLING eSampling;
 		}
 		[CRepr]
-		public struct MilMatrix3x2D		{
+		public struct MilMatrix3x2D
+		{
 			public double S_11;
 			public double S_12;
 			public double S_21;

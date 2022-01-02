@@ -267,27 +267,31 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct val_context		{
+		public struct val_context
+		{
 			public int32 valuelen;
 			public void* value_context;
 			public void* val_buff_ptr;
 		}
 		[CRepr]
-		public struct pvalueA		{
+		public struct pvalueA
+		{
 			public PSTR pv_valuename;
 			public int32 pv_valuelen;
 			public void* pv_value_context;
 			public uint32 pv_type;
 		}
 		[CRepr]
-		public struct pvalueW		{
+		public struct pvalueW
+		{
 			public PWSTR pv_valuename;
 			public int32 pv_valuelen;
 			public void* pv_value_context;
 			public uint32 pv_type;
 		}
 		[CRepr]
-		public struct provider_info		{
+		public struct provider_info
+		{
 			public PQUERYHANDLER pi_R0_1val;
 			public PQUERYHANDLER pi_R0_allvals;
 			public PQUERYHANDLER pi_R3_1val;
@@ -296,21 +300,24 @@ namespace Win32
 			public void* pi_key_context;
 		}
 		[CRepr]
-		public struct VALENTA		{
+		public struct VALENTA
+		{
 			public PSTR ve_valuename;
 			public uint32 ve_valuelen;
 			public uint ve_valueptr;
 			public REG_VALUE_TYPE ve_type;
 		}
 		[CRepr]
-		public struct VALENTW		{
+		public struct VALENTW
+		{
 			public PWSTR ve_valuename;
 			public uint32 ve_valuelen;
 			public uint ve_valueptr;
 			public REG_VALUE_TYPE ve_type;
 		}
 		[CRepr]
-		public struct DSKTLSYSTEMTIME		{
+		public struct DSKTLSYSTEMTIME
+		{
 			public uint16 wYear;
 			public uint16 wMonth;
 			public uint16 wDayOfWeek;

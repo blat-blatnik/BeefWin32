@@ -3730,13 +3730,15 @@ namespace Win32
 		[CRepr]
 		public struct TEB {}
 		[CRepr]
-		public struct RemHGLOBAL		{
+		public struct RemHGLOBAL
+		{
 			public int32 fNullHGlobal;
 			public uint32 cbData;
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct RemHMETAFILEPICT		{
+		public struct RemHMETAFILEPICT
+		{
 			public int32 mm;
 			public int32 xExt;
 			public int32 yExt;
@@ -3744,104 +3746,122 @@ namespace Win32
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct RemHENHMETAFILE		{
+		public struct RemHENHMETAFILE
+		{
 			public uint32 cbData;
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct RemHBITMAP		{
+		public struct RemHBITMAP
+		{
 			public uint32 cbData;
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct RemHPALETTE		{
+		public struct RemHPALETTE
+		{
 			public uint32 cbData;
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct RemBRUSH		{
+		public struct RemBRUSH
+		{
 			public uint32 cbData;
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct userCLIPFORMAT		{
+		public struct userCLIPFORMAT
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public uint32 dwValue;
 				public PWSTR pwszName;
 			}
 		}
 		[CRepr]
-		public struct GDI_NONREMOTE		{
+		public struct GDI_NONREMOTE
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public int32 hInproc;
 				public DWORD_BLOB* hRemote;
 			}
 		}
 		[CRepr]
-		public struct userHGLOBAL		{
+		public struct userHGLOBAL
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public int32 hInproc;
 				public FLAGGED_BYTE_BLOB* hRemote;
 				public int64 hInproc64;
 			}
 		}
 		[CRepr]
-		public struct userHMETAFILE		{
+		public struct userHMETAFILE
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public int32 hInproc;
 				public BYTE_BLOB* hRemote;
 				public int64 hInproc64;
 			}
 		}
 		[CRepr]
-		public struct remoteMETAFILEPICT		{
+		public struct remoteMETAFILEPICT
+		{
 			public int32 mm;
 			public int32 xExt;
 			public int32 yExt;
 			public userHMETAFILE* hMF;
 		}
 		[CRepr]
-		public struct userHMETAFILEPICT		{
+		public struct userHMETAFILEPICT
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public int32 hInproc;
 				public remoteMETAFILEPICT* hRemote;
 				public int64 hInproc64;
 			}
 		}
 		[CRepr]
-		public struct userHENHMETAFILE		{
+		public struct userHENHMETAFILE
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public int32 hInproc;
 				public BYTE_BLOB* hRemote;
 				public int64 hInproc64;
 			}
 		}
 		[CRepr]
-		public struct userBITMAP		{
+		public struct userBITMAP
+		{
 			public int32 bmType;
 			public int32 bmWidth;
 			public int32 bmHeight;
@@ -3852,55 +3872,64 @@ namespace Win32
 			public uint8[0] pBuffer;
 		}
 		[CRepr]
-		public struct userHBITMAP		{
+		public struct userHBITMAP
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public int32 hInproc;
 				public userBITMAP* hRemote;
 				public int64 hInproc64;
 			}
 		}
 		[CRepr]
-		public struct userHPALETTE		{
+		public struct userHPALETTE
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public int32 hInproc;
 				public LOGPALETTE* hRemote;
 				public int64 hInproc64;
 			}
 		}
 		[CRepr]
-		public struct RemotableHandle		{
+		public struct RemotableHandle
+		{
 			public int32 fContext;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public int32 hInproc;
 				public int32 hRemote;
 			}
 		}
 		[CRepr]
-		public struct DEVICE_EVENT_MOUNT		{
+		public struct DEVICE_EVENT_MOUNT
+		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 FileSystemNameLength;
 			public uint32 FileSystemNameOffset;
 		}
 		[CRepr]
-		public struct DEVICE_EVENT_BECOMING_READY		{
+		public struct DEVICE_EVENT_BECOMING_READY
+		{
 			public uint32 Version;
 			public uint32 Reason;
 			public uint32 Estimated100msToReady;
 		}
 		[CRepr]
-		public struct DEVICE_EVENT_EXTERNAL_REQUEST		{
+		public struct DEVICE_EVENT_EXTERNAL_REQUEST
+		{
 			public uint32 Version;
 			public uint32 DeviceClass;
 			public uint16 ButtonStatus;
@@ -3908,11 +3937,13 @@ namespace Win32
 			public LARGE_INTEGER SystemTime;
 		}
 		[CRepr]
-		public struct DEVICE_EVENT_GENERIC_DATA		{
+		public struct DEVICE_EVENT_GENERIC_DATA
+		{
 			public uint32 EventNumber;
 		}
 		[CRepr]
-		public struct DEVICE_EVENT_RBC_DATA		{
+		public struct DEVICE_EVENT_RBC_DATA
+		{
 			public uint32 EventNumber;
 			public uint8 SenseQualifier;
 			public uint8 SenseCode;
@@ -3921,28 +3952,33 @@ namespace Win32
 			public uint32 Information;
 		}
 		[CRepr]
-		public struct GUID_IO_DISK_CLONE_ARRIVAL_INFORMATION		{
+		public struct GUID_IO_DISK_CLONE_ARRIVAL_INFORMATION
+		{
 			public uint32 DiskNumber;
 		}
 		[CRepr]
-		public struct DISK_HEALTH_NOTIFICATION_DATA		{
+		public struct DISK_HEALTH_NOTIFICATION_DATA
+		{
 			public Guid DeviceGuid;
 		}
 		[CRepr]
-		public struct REDBOOK_DIGITAL_AUDIO_EXTRACTION_INFO		{
+		public struct REDBOOK_DIGITAL_AUDIO_EXTRACTION_INFO
+		{
 			public uint32 Version;
 			public uint32 Accurate;
 			public uint32 Supported;
 			public uint32 AccurateMask0;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_HDR		{
+		public struct DEV_BROADCAST_HDR
+		{
 			public uint32 dbch_size;
 			public DEV_BROADCAST_HDR_DEVICE_TYPE dbch_devicetype;
 			public uint32 dbch_reserved;
 		}
 		[CRepr]
-		public struct VolLockBroadcast		{
+		public struct VolLockBroadcast
+		{
 			public DEV_BROADCAST_HDR vlb_dbh;
 			public uint32 vlb_owner;
 			public uint8 vlb_perms;
@@ -3951,13 +3987,15 @@ namespace Win32
 			public uint8 vlb_flags;
 		}
 		[CRepr]
-		public struct _DEV_BROADCAST_HEADER		{
+		public struct _DEV_BROADCAST_HEADER
+		{
 			public uint32 dbcd_size;
 			public uint32 dbcd_devicetype;
 			public uint32 dbcd_reserved;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_OEM		{
+		public struct DEV_BROADCAST_OEM
+		{
 			public uint32 dbco_size;
 			public uint32 dbco_devicetype;
 			public uint32 dbco_reserved;
@@ -3965,14 +4003,16 @@ namespace Win32
 			public uint32 dbco_suppfunc;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_DEVNODE		{
+		public struct DEV_BROADCAST_DEVNODE
+		{
 			public uint32 dbcd_size;
 			public uint32 dbcd_devicetype;
 			public uint32 dbcd_reserved;
 			public uint32 dbcd_devnode;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_VOLUME		{
+		public struct DEV_BROADCAST_VOLUME
+		{
 			public uint32 dbcv_size;
 			public uint32 dbcv_devicetype;
 			public uint32 dbcv_reserved;
@@ -3980,21 +4020,24 @@ namespace Win32
 			public DEV_BROADCAST_VOLUME_FLAGS dbcv_flags;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_PORT_A		{
+		public struct DEV_BROADCAST_PORT_A
+		{
 			public uint32 dbcp_size;
 			public uint32 dbcp_devicetype;
 			public uint32 dbcp_reserved;
 			public CHAR[0] dbcp_name;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_PORT_W		{
+		public struct DEV_BROADCAST_PORT_W
+		{
 			public uint32 dbcp_size;
 			public uint32 dbcp_devicetype;
 			public uint32 dbcp_reserved;
 			public char16[0] dbcp_name;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_NET		{
+		public struct DEV_BROADCAST_NET
+		{
 			public uint32 dbcn_size;
 			public uint32 dbcn_devicetype;
 			public uint32 dbcn_reserved;
@@ -4002,7 +4045,8 @@ namespace Win32
 			public uint32 dbcn_flags;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_DEVICEINTERFACE_A		{
+		public struct DEV_BROADCAST_DEVICEINTERFACE_A
+		{
 			public uint32 dbcc_size;
 			public uint32 dbcc_devicetype;
 			public uint32 dbcc_reserved;
@@ -4010,7 +4054,8 @@ namespace Win32
 			public CHAR[0] dbcc_name;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_DEVICEINTERFACE_W		{
+		public struct DEV_BROADCAST_DEVICEINTERFACE_W
+		{
 			public uint32 dbcc_size;
 			public uint32 dbcc_devicetype;
 			public uint32 dbcc_reserved;
@@ -4018,7 +4063,8 @@ namespace Win32
 			public char16[0] dbcc_name;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_HANDLE		{
+		public struct DEV_BROADCAST_HANDLE
+		{
 			public uint32 dbch_size;
 			public uint32 dbch_devicetype;
 			public uint32 dbch_reserved;
@@ -4029,7 +4075,8 @@ namespace Win32
 			public uint8[0] dbch_data;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_HANDLE32		{
+		public struct DEV_BROADCAST_HANDLE32
+		{
 			public uint32 dbch_size;
 			public uint32 dbch_devicetype;
 			public uint32 dbch_reserved;
@@ -4040,7 +4087,8 @@ namespace Win32
 			public uint8[0] dbch_data;
 		}
 		[CRepr]
-		public struct DEV_BROADCAST_HANDLE64		{
+		public struct DEV_BROADCAST_HANDLE64
+		{
 			public uint32 dbch_size;
 			public uint32 dbch_devicetype;
 			public uint32 dbch_reserved;
@@ -4051,19 +4099,22 @@ namespace Win32
 			public uint8[0] dbch_data;
 		}
 		[CRepr]
-		public struct _DEV_BROADCAST_USERDEFINED		{
+		public struct _DEV_BROADCAST_USERDEFINED
+		{
 			public DEV_BROADCAST_HDR dbud_dbh;
 			public CHAR[0] dbud_szName;
 		}
 		[CRepr]
 		public struct AtlThunkData_t {}
 		[CRepr]
-		public struct XSAVE_CET_U_FORMAT		{
+		public struct XSAVE_CET_U_FORMAT
+		{
 			public uint64 Ia32CetUMsr;
 			public uint64 Ia32Pl3SspMsr;
 		}
 		[CRepr]
-		public struct KERNEL_CET_CONTEXT		{
+		public struct KERNEL_CET_CONTEXT
+		{
 			public uint64 Ssp;
 			public uint64 Rip;
 			public uint16 SegCs;
@@ -4071,23 +4122,27 @@ namespace Win32
 			public uint16[2] Fill;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint16 AllFlags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct SCOPE_TABLE_AMD64		{
+		public struct SCOPE_TABLE_AMD64
+		{
 			public uint32 Count;
 			public _Anonymous_e__Struct[0] ScopeRecord;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 BeginAddress;
 				public uint32 EndAddress;
 				public uint32 HandlerAddress;
@@ -4095,12 +4150,14 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SCOPE_TABLE_ARM		{
+		public struct SCOPE_TABLE_ARM
+		{
 			public uint32 Count;
 			public _Anonymous_e__Struct[0] ScopeRecord;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 BeginAddress;
 				public uint32 EndAddress;
 				public uint32 HandlerAddress;
@@ -4108,12 +4165,14 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SCOPE_TABLE_ARM64		{
+		public struct SCOPE_TABLE_ARM64
+		{
 			public uint32 Count;
 			public _Anonymous_e__Struct[0] ScopeRecord;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 BeginAddress;
 				public uint32 EndAddress;
 				public uint32 HandlerAddress;
@@ -4121,18 +4180,21 @@ namespace Win32
 			}
 		}
 		[CRepr, Union]
-		public struct DISPATCHER_CONTEXT_NONVOLREG_ARM64		{
+		public struct DISPATCHER_CONTEXT_NONVOLREG_ARM64
+		{
 			public uint8[152] Buffer;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64[11] GpNvRegs;
 				public double[8] FpNvRegs;
 			}
 		}
 		[CRepr]
-		public struct SECURITY_DESCRIPTOR_RELATIVE		{
+		public struct SECURITY_DESCRIPTOR_RELATIVE
+		{
 			public uint8 Revision;
 			public uint8 Sbz1;
 			public uint16 Control;
@@ -4142,37 +4204,44 @@ namespace Win32
 			public uint32 Dacl;
 		}
 		[CRepr]
-		public struct SECURITY_OBJECT_AI_PARAMS		{
+		public struct SECURITY_OBJECT_AI_PARAMS
+		{
 			public uint32 Size;
 			public uint32 ConstraintMask;
 		}
 		[CRepr]
-		public struct SE_TOKEN_USER		{
+		public struct SE_TOKEN_USER
+		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public SID Sid;
 				public uint8[68] Buffer;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public TOKEN_USER TokenUser;
 				public SID_AND_ATTRIBUTES User;
 			}
 		}
 		[CRepr]
-		public struct TOKEN_SID_INFORMATION		{
+		public struct TOKEN_SID_INFORMATION
+		{
 			public PSID Sid;
 		}
 		[CRepr]
-		public struct TOKEN_BNO_ISOLATION_INFORMATION		{
+		public struct TOKEN_BNO_ISOLATION_INFORMATION
+		{
 			public PWSTR IsolationPrefix;
 			public BOOLEAN IsolationEnabled;
 		}
 		[CRepr]
-		public struct NT_TIB32		{
+		public struct NT_TIB32
+		{
 			public uint32 ExceptionList;
 			public uint32 StackBase;
 			public uint32 StackLimit;
@@ -4182,13 +4251,15 @@ namespace Win32
 			public uint32 Self;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 FiberData;
 				public uint32 Version;
 			}
 		}
 		[CRepr]
-		public struct NT_TIB64		{
+		public struct NT_TIB64
+		{
 			public uint64 ExceptionList;
 			public uint64 StackBase;
 			public uint64 StackLimit;
@@ -4198,33 +4269,39 @@ namespace Win32
 			public uint64 Self;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 FiberData;
 				public uint32 Version;
 			}
 		}
 		[CRepr]
-		public struct UMS_CREATE_THREAD_ATTRIBUTES		{
+		public struct UMS_CREATE_THREAD_ATTRIBUTES
+		{
 			public uint32 UmsVersion;
 			public void* UmsContext;
 			public void* UmsCompletionList;
 		}
 		[CRepr]
-		public struct COMPONENT_FILTER		{
+		public struct COMPONENT_FILTER
+		{
 			public uint32 ComponentFlags;
 		}
 		[CRepr, Union]
-		public struct RATE_QUOTA_LIMIT		{
+		public struct RATE_QUOTA_LIMIT
+		{
 			public uint32 RateData;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct QUOTA_LIMITS_EX		{
+		public struct QUOTA_LIMITS_EX
+		{
 			public uint PagedPoolLimit;
 			public uint NonPagedPoolLimit;
 			public uint MinimumWorkingSetSize;
@@ -4239,248 +4316,297 @@ namespace Win32
 			public RATE_QUOTA_LIMIT CpuRateLimit;
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_ASLR_POLICY		{
+		public struct PROCESS_MITIGATION_ASLR_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_DEP_POLICY		{
+		public struct PROCESS_MITIGATION_DEP_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			public BOOLEAN Permanent;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY		{
+		public struct PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY		{
+		public struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY		{
+		public struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY		{
+		public struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY		{
+		public struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY		{
+		public struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_FONT_DISABLE_POLICY		{
+		public struct PROCESS_MITIGATION_FONT_DISABLE_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY		{
+		public struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY		{
+		public struct PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY		{
+		public struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY		{
+		public struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY		{
+		public struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY		{
+		public struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY		{
+		public struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct SILOOBJECT_BASIC_INFORMATION		{
+		public struct SILOOBJECT_BASIC_INFORMATION
+		{
 			public uint32 SiloId;
 			public uint32 SiloParentId;
 			public uint32 NumberOfProcesses;
@@ -4488,7 +4614,8 @@ namespace Win32
 			public uint8[3] Reserved;
 		}
 		[CRepr]
-		public struct SERVERSILO_BASIC_INFORMATION		{
+		public struct SERVERSILO_BASIC_INFORMATION
+		{
 			public uint32 ServiceSessionId;
 			public SERVERSILO_STATE State;
 			public uint32 ExitStatus;
@@ -4497,19 +4624,22 @@ namespace Win32
 			public void* HostApiSetSchema;
 		}
 		[CRepr]
-		public struct MEM_ADDRESS_REQUIREMENTS		{
+		public struct MEM_ADDRESS_REQUIREMENTS
+		{
 			public void* LowestStartingAddress;
 			public void* HighestEndingAddress;
 			public uint Alignment;
 		}
 		[CRepr]
-		public struct MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE		{
+		public struct MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE
+		{
 			public MEM_DEDICATED_ATTRIBUTE_TYPE Type;
 			public uint32 Reserved;
 			public uint64 Value;
 		}
 		[CRepr]
-		public struct MEMORY_PARTITION_DEDICATED_MEMORY_INFORMATION		{
+		public struct MEMORY_PARTITION_DEDICATED_MEMORY_INFORMATION
+		{
 			public uint32 NextEntryOffset;
 			public uint32 SizeOfInformation;
 			public uint32 Flags;
@@ -4519,7 +4649,8 @@ namespace Win32
 			public uint64 TypeId;
 		}
 		[CRepr]
-		public struct SCRUB_DATA_INPUT		{
+		public struct SCRUB_DATA_INPUT
+		{
 			public uint32 Size;
 			public uint32 Flags;
 			public uint32 MaximumIos;
@@ -4528,12 +4659,14 @@ namespace Win32
 			public uint8[1040] ResumeContext;
 		}
 		[CRepr]
-		public struct SCRUB_PARITY_EXTENT		{
+		public struct SCRUB_PARITY_EXTENT
+		{
 			public int64 Offset;
 			public uint64 Length;
 		}
 		[CRepr]
-		public struct SCRUB_PARITY_EXTENT_DATA		{
+		public struct SCRUB_PARITY_EXTENT_DATA
+		{
 			public uint16 Size;
 			public uint16 Flags;
 			public uint16 NumberOfParityExtents;
@@ -4541,7 +4674,8 @@ namespace Win32
 			public SCRUB_PARITY_EXTENT[0] ParityExtents;
 		}
 		[CRepr]
-		public struct SCRUB_DATA_OUTPUT		{
+		public struct SCRUB_DATA_OUTPUT
+		{
 			public uint32 Size;
 			public uint32 Flags;
 			public uint32 Status;
@@ -4568,12 +4702,14 @@ namespace Win32
 			public uint8[1040] ResumeContext;
 		}
 		[CRepr]
-		public struct SHARED_VIRTUAL_DISK_SUPPORT		{
+		public struct SHARED_VIRTUAL_DISK_SUPPORT
+		{
 			public SharedVirtualDiskSupportType SharedVirtualDiskSupport;
 			public SharedVirtualDiskHandleState HandleState;
 		}
 		[CRepr]
-		public struct REARRANGE_FILE_DATA		{
+		public struct REARRANGE_FILE_DATA
+		{
 			public uint64 SourceStartingOffset;
 			public uint64 TargetOffset;
 			public HANDLE SourceFileHandle;
@@ -4581,7 +4717,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct REARRANGE_FILE_DATA32		{
+		public struct REARRANGE_FILE_DATA32
+		{
 			public uint64 SourceStartingOffset;
 			public uint64 TargetOffset;
 			public uint32 SourceFileHandle;
@@ -4589,83 +4726,99 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct SHUFFLE_FILE_DATA		{
+		public struct SHUFFLE_FILE_DATA
+		{
 			public int64 StartingOffset;
 			public int64 Length;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct NETWORK_APP_INSTANCE_EA		{
+		public struct NETWORK_APP_INSTANCE_EA
+		{
 			public Guid AppInstanceID;
 			public uint32 CsvFlags;
 		}
 		[CRepr]
-		public struct POWER_USER_PRESENCE		{
+		public struct POWER_USER_PRESENCE
+		{
 			public POWER_USER_PRESENCE_TYPE UserPresence;
 		}
 		[CRepr]
-		public struct POWER_SESSION_CONNECT		{
+		public struct POWER_SESSION_CONNECT
+		{
 			public BOOLEAN Connected;
 			public BOOLEAN Console;
 		}
 		[CRepr]
-		public struct POWER_SESSION_TIMEOUTS		{
+		public struct POWER_SESSION_TIMEOUTS
+		{
 			public uint32 InputTimeout;
 			public uint32 DisplayTimeout;
 		}
 		[CRepr]
-		public struct POWER_SESSION_RIT_STATE		{
+		public struct POWER_SESSION_RIT_STATE
+		{
 			public BOOLEAN Active;
 			public uint64 LastInputTime;
 		}
 		[CRepr]
-		public struct POWER_SESSION_WINLOGON		{
+		public struct POWER_SESSION_WINLOGON
+		{
 			public uint32 SessionId;
 			public BOOLEAN Console;
 			public BOOLEAN Locked;
 		}
 		[CRepr]
-		public struct POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES		{
+		public struct POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES
+		{
 			public BOOLEAN IsAllowed;
 		}
 		[CRepr]
-		public struct POWER_IDLE_RESILIENCY		{
+		public struct POWER_IDLE_RESILIENCY
+		{
 			public uint32 CoalescingTimeout;
 			public uint32 IdleResiliencyPeriod;
 		}
 		[CRepr]
-		public struct POWER_MONITOR_INVOCATION		{
+		public struct POWER_MONITOR_INVOCATION
+		{
 			public BOOLEAN Console;
 			public POWER_MONITOR_REQUEST_REASON RequestReason;
 		}
 		[CRepr]
-		public struct RESUME_PERFORMANCE		{
+		public struct RESUME_PERFORMANCE
+		{
 			public uint32 PostTimeMs;
 			public uint64 TotalResumeTimeMs;
 			public uint64 ResumeCompleteTimestamp;
 		}
 		[CRepr]
-		public struct NOTIFY_USER_POWER_SETTING		{
+		public struct NOTIFY_USER_POWER_SETTING
+		{
 			public Guid Guid;
 		}
 		[CRepr]
-		public struct APPLICATIONLAUNCH_SETTING_VALUE		{
+		public struct APPLICATIONLAUNCH_SETTING_VALUE
+		{
 			public LARGE_INTEGER ActivationTime;
 			public uint32 Flags;
 			public uint32 ButtonInstanceID;
 		}
 		[CRepr]
-		public struct POWER_PLATFORM_INFORMATION		{
+		public struct POWER_PLATFORM_INFORMATION
+		{
 			public BOOLEAN AoAc;
 		}
 		[CRepr]
-		public struct PPM_WMI_LEGACY_PERFSTATE		{
+		public struct PPM_WMI_LEGACY_PERFSTATE
+		{
 			public uint32 Frequency;
 			public uint32 Flags;
 			public uint32 PercentFrequency;
 		}
 		[CRepr]
-		public struct PPM_WMI_IDLE_STATE		{
+		public struct PPM_WMI_IDLE_STATE
+		{
 			public uint32 Latency;
 			public uint32 Power;
 			public uint32 TimeCheck;
@@ -4679,7 +4832,8 @@ namespace Win32
 			public uint32 Reserved1;
 		}
 		[CRepr]
-		public struct PPM_WMI_IDLE_STATES		{
+		public struct PPM_WMI_IDLE_STATES
+		{
 			public uint32 Type;
 			public uint32 Count;
 			public uint32 TargetState;
@@ -4688,7 +4842,8 @@ namespace Win32
 			public PPM_WMI_IDLE_STATE[0] State;
 		}
 		[CRepr]
-		public struct PPM_WMI_IDLE_STATES_EX		{
+		public struct PPM_WMI_IDLE_STATES_EX
+		{
 			public uint32 Type;
 			public uint32 Count;
 			public uint32 TargetState;
@@ -4697,7 +4852,8 @@ namespace Win32
 			public PPM_WMI_IDLE_STATE[0] State;
 		}
 		[CRepr]
-		public struct PPM_WMI_PERF_STATE		{
+		public struct PPM_WMI_PERF_STATE
+		{
 			public uint32 Frequency;
 			public uint32 Power;
 			public uint8 PercentFrequency;
@@ -4714,7 +4870,8 @@ namespace Win32
 			public uint64 Reserved3;
 		}
 		[CRepr]
-		public struct PPM_WMI_PERF_STATES		{
+		public struct PPM_WMI_PERF_STATES
+		{
 			public uint32 Count;
 			public uint32 MaxFrequency;
 			public uint32 CurrentState;
@@ -4738,7 +4895,8 @@ namespace Win32
 			public PPM_WMI_PERF_STATE[0] State;
 		}
 		[CRepr]
-		public struct PPM_WMI_PERF_STATES_EX		{
+		public struct PPM_WMI_PERF_STATES_EX
+		{
 			public uint32 Count;
 			public uint32 MaxFrequency;
 			public uint32 CurrentState;
@@ -4762,7 +4920,8 @@ namespace Win32
 			public PPM_WMI_PERF_STATE[0] State;
 		}
 		[CRepr]
-		public struct PPM_IDLE_STATE_ACCOUNTING		{
+		public struct PPM_IDLE_STATE_ACCOUNTING
+		{
 			public uint32 IdleTransitions;
 			public uint32 FailedTransitions;
 			public uint32 InvalidBucketIndex;
@@ -4770,7 +4929,8 @@ namespace Win32
 			public uint32[6] IdleTimeBuckets;
 		}
 		[CRepr]
-		public struct PPM_IDLE_ACCOUNTING		{
+		public struct PPM_IDLE_ACCOUNTING
+		{
 			public uint32 StateCount;
 			public uint32 TotalTransitions;
 			public uint32 ResetCount;
@@ -4778,14 +4938,16 @@ namespace Win32
 			public PPM_IDLE_STATE_ACCOUNTING[0] State;
 		}
 		[CRepr]
-		public struct PPM_IDLE_STATE_BUCKET_EX		{
+		public struct PPM_IDLE_STATE_BUCKET_EX
+		{
 			public uint64 TotalTimeUs;
 			public uint32 MinTimeUs;
 			public uint32 MaxTimeUs;
 			public uint32 Count;
 		}
 		[CRepr]
-		public struct PPM_IDLE_STATE_ACCOUNTING_EX		{
+		public struct PPM_IDLE_STATE_ACCOUNTING_EX
+		{
 			public uint64 TotalTime;
 			public uint32 IdleTransitions;
 			public uint32 FailedTransitions;
@@ -4796,7 +4958,8 @@ namespace Win32
 			public PPM_IDLE_STATE_BUCKET_EX[16] IdleTimeBuckets;
 		}
 		[CRepr]
-		public struct PPM_IDLE_ACCOUNTING_EX		{
+		public struct PPM_IDLE_ACCOUNTING_EX
+		{
 			public uint32 StateCount;
 			public uint32 TotalTransitions;
 			public uint32 ResetCount;
@@ -4805,7 +4968,8 @@ namespace Win32
 			public PPM_IDLE_STATE_ACCOUNTING_EX[0] State;
 		}
 		[CRepr]
-		public struct PPM_PERFSTATE_EVENT		{
+		public struct PPM_PERFSTATE_EVENT
+		{
 			public uint32 State;
 			public uint32 Status;
 			public uint32 Latency;
@@ -4813,55 +4977,64 @@ namespace Win32
 			public uint32 Processor;
 		}
 		[CRepr]
-		public struct PPM_PERFSTATE_DOMAIN_EVENT		{
+		public struct PPM_PERFSTATE_DOMAIN_EVENT
+		{
 			public uint32 State;
 			public uint32 Latency;
 			public uint32 Speed;
 			public uint64 Processors;
 		}
 		[CRepr]
-		public struct PPM_IDLESTATE_EVENT		{
+		public struct PPM_IDLESTATE_EVENT
+		{
 			public uint32 NewState;
 			public uint32 OldState;
 			public uint64 Processors;
 		}
 		[CRepr]
-		public struct PPM_THERMALCHANGE_EVENT		{
+		public struct PPM_THERMALCHANGE_EVENT
+		{
 			public uint32 ThermalConstraint;
 			public uint64 Processors;
 		}
 		[CRepr]
-		public struct PPM_THERMAL_POLICY_EVENT		{
+		public struct PPM_THERMAL_POLICY_EVENT
+		{
 			public uint8 Mode;
 			public uint64 Processors;
 		}
 		[CRepr]
-		public struct PROCESSOR_IDLESTATE_INFO		{
+		public struct PROCESSOR_IDLESTATE_INFO
+		{
 			public uint32 TimeCheck;
 			public uint8 DemotePercent;
 			public uint8 PromotePercent;
 			public uint8[2] Spare;
 		}
 		[CRepr]
-		public struct PROCESSOR_IDLESTATE_POLICY		{
+		public struct PROCESSOR_IDLESTATE_POLICY
+		{
 			public uint16 Revision;
 			public _Flags_e__Union Flags;
 			public uint32 PolicyCount;
 			public PROCESSOR_IDLESTATE_INFO[3] Policy;
 			
 			[CRepr, Union]
-			public struct _Flags_e__Union			{
+			public struct _Flags_e__Union
+			{
 				public uint16 AsWORD;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESSOR_PERFSTATE_POLICY		{
+		public struct PROCESSOR_PERFSTATE_POLICY
+		{
 			public uint32 Revision;
 			public uint8 MaxThrottle;
 			public uint8 MinThrottle;
@@ -4874,29 +5047,34 @@ namespace Win32
 			public uint32 DecreasePercent;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint8 Spare;
 				public _Flags_e__Union Flags;
 				
 				[CRepr, Union]
-				public struct _Flags_e__Union				{
+				public struct _Flags_e__Union
+				{
 					public uint8 AsBYTE;
 					public _Anonymous_e__Struct Anonymous;
 					
 					[CRepr]
-					public struct _Anonymous_e__Struct					{
+					public struct _Anonymous_e__Struct
+					{
 						public uint8 _bitfield;
 					}
 				}
 			}
 		}
 		[CRepr]
-		public struct HIBERFILE_BUCKET		{
+		public struct HIBERFILE_BUCKET
+		{
 			public uint64 MaxPhysicalMemory;
 			public uint32[3] PhysicalMemoryPercent;
 		}
 		[CRepr]
-		public struct IMAGE_DOS_HEADER		{
+		public struct IMAGE_DOS_HEADER
+		{
 			public uint16 e_magic;
 			public uint16 e_cblp;
 			public uint16 e_cp;
@@ -4918,7 +5096,8 @@ namespace Win32
 			public int32 e_lfanew;
 		}
 		[CRepr]
-		public struct IMAGE_OS2_HEADER		{
+		public struct IMAGE_OS2_HEADER
+		{
 			public uint16 ne_magic;
 			public CHAR ne_ver;
 			public CHAR ne_rev;
@@ -4951,7 +5130,8 @@ namespace Win32
 			public uint16 ne_expver;
 		}
 		[CRepr]
-		public struct IMAGE_VXD_HEADER		{
+		public struct IMAGE_VXD_HEADER
+		{
 			public uint16 e32_magic;
 			public uint8 e32_border;
 			public uint8 e32_worder;
@@ -5005,7 +5185,8 @@ namespace Win32
 			public uint16 e32_ddkver;
 		}
 		[CRepr]
-		public struct ANON_OBJECT_HEADER		{
+		public struct ANON_OBJECT_HEADER
+		{
 			public uint16 Sig1;
 			public uint16 Sig2;
 			public uint16 Version;
@@ -5015,7 +5196,8 @@ namespace Win32
 			public uint32 SizeOfData;
 		}
 		[CRepr]
-		public struct ANON_OBJECT_HEADER_V2		{
+		public struct ANON_OBJECT_HEADER_V2
+		{
 			public uint16 Sig1;
 			public uint16 Sig2;
 			public uint16 Version;
@@ -5028,7 +5210,8 @@ namespace Win32
 			public uint32 MetaDataOffset;
 		}
 		[CRepr]
-		public struct ANON_OBJECT_HEADER_BIGOBJ		{
+		public struct ANON_OBJECT_HEADER_BIGOBJ
+		{
 			public uint16 Sig1;
 			public uint16 Sig2;
 			public uint16 Version;
@@ -5044,7 +5227,8 @@ namespace Win32
 			public uint32 NumberOfSymbols;
 		}
 		[CRepr]
-		public struct IMAGE_SYMBOL		{
+		public struct IMAGE_SYMBOL
+		{
 			public _N_e__Union N;
 			public uint32 Value;
 			public int16 SectionNumber;
@@ -5053,20 +5237,23 @@ namespace Win32
 			public uint8 NumberOfAuxSymbols;
 			
 			[CRepr, Union]
-			public struct _N_e__Union			{
+			public struct _N_e__Union
+			{
 				public uint8[8] ShortName;
 				public _Name_e__Struct Name;
 				public uint32[2] LongName;
 				
 				[CRepr]
-				public struct _Name_e__Struct				{
+				public struct _Name_e__Struct
+				{
 					public uint32 Short;
 					public uint32 Long;
 				}
 			}
 		}
 		[CRepr]
-		public struct IMAGE_SYMBOL_EX		{
+		public struct IMAGE_SYMBOL_EX
+		{
 			public _N_e__Union N;
 			public uint32 Value;
 			public int32 SectionNumber;
@@ -5075,27 +5262,31 @@ namespace Win32
 			public uint8 NumberOfAuxSymbols;
 			
 			[CRepr, Union]
-			public struct _N_e__Union			{
+			public struct _N_e__Union
+			{
 				public uint8[8] ShortName;
 				public _Name_e__Struct Name;
 				public uint32[2] LongName;
 				
 				[CRepr]
-				public struct _Name_e__Struct				{
+				public struct _Name_e__Struct
+				{
 					public uint32 Short;
 					public uint32 Long;
 				}
 			}
 		}
 		[CRepr]
-		public struct IMAGE_AUX_SYMBOL_TOKEN_DEF		{
+		public struct IMAGE_AUX_SYMBOL_TOKEN_DEF
+		{
 			public uint8 bAuxType;
 			public uint8 bReserved;
 			public uint32 SymbolTableIndex;
 			public uint8[12] rgbReserved;
 		}
 		[CRepr, Union]
-		public struct IMAGE_AUX_SYMBOL		{
+		public struct IMAGE_AUX_SYMBOL
+		{
 			public _Sym_e__Struct Sym;
 			public _File_e__Struct File;
 			public _Section_e__Struct Section;
@@ -5103,50 +5294,59 @@ namespace Win32
 			public _CRC_e__Struct CRC;
 			
 			[CRepr]
-			public struct _CRC_e__Struct			{
+			public struct _CRC_e__Struct
+			{
 				public uint32 crc;
 				public uint8[14] rgbReserved;
 			}
 			[CRepr]
-			public struct _File_e__Struct			{
+			public struct _File_e__Struct
+			{
 				public uint8[18] Name;
 			}
 			[CRepr]
-			public struct _Sym_e__Struct			{
+			public struct _Sym_e__Struct
+			{
 				public uint32 TagIndex;
 				public _Misc_e__Union Misc;
 				public _FcnAry_e__Union FcnAry;
 				public uint16 TvIndex;
 				
 				[CRepr, Union]
-				public struct _FcnAry_e__Union				{
+				public struct _FcnAry_e__Union
+				{
 					public _Function_e__Struct Function;
 					public _Array_e__Struct Array;
 					
 					[CRepr]
-					public struct _Array_e__Struct					{
+					public struct _Array_e__Struct
+					{
 						public uint16[4] Dimension;
 					}
 					[CRepr]
-					public struct _Function_e__Struct					{
+					public struct _Function_e__Struct
+					{
 						public uint32 PointerToLinenumber;
 						public uint32 PointerToNextFunction;
 					}
 				}
 				[CRepr, Union]
-				public struct _Misc_e__Union				{
+				public struct _Misc_e__Union
+				{
 					public _LnSz_e__Struct LnSz;
 					public uint32 TotalSize;
 					
 					[CRepr]
-					public struct _LnSz_e__Struct					{
+					public struct _LnSz_e__Struct
+					{
 						public uint16 Linenumber;
 						public uint16 Size;
 					}
 				}
 			}
 			[CRepr]
-			public struct _Section_e__Struct			{
+			public struct _Section_e__Struct
+			{
 				public uint32 Length;
 				public uint16 NumberOfRelocations;
 				public uint16 NumberOfLinenumbers;
@@ -5158,7 +5358,8 @@ namespace Win32
 			}
 		}
 		[CRepr, Union]
-		public struct IMAGE_AUX_SYMBOL_EX		{
+		public struct IMAGE_AUX_SYMBOL_EX
+		{
 			public _Sym_e__Struct Sym;
 			public _File_e__Struct File;
 			public _Section_e__Struct Section;
@@ -5166,27 +5367,32 @@ namespace Win32
 			public _CRC_e__Struct CRC;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef;
 				public uint8[2] rgbReserved;
 			}
 			[CRepr]
-			public struct _File_e__Struct			{
+			public struct _File_e__Struct
+			{
 				public uint8[20] Name;
 			}
 			[CRepr]
-			public struct _CRC_e__Struct			{
+			public struct _CRC_e__Struct
+			{
 				public uint32 crc;
 				public uint8[16] rgbReserved;
 			}
 			[CRepr]
-			public struct _Sym_e__Struct			{
+			public struct _Sym_e__Struct
+			{
 				public uint32 WeakDefaultSymIndex;
 				public uint32 WeakSearchType;
 				public uint8[12] rgbReserved;
 			}
 			[CRepr]
-			public struct _Section_e__Struct			{
+			public struct _Section_e__Struct
+			{
 				public uint32 Length;
 				public uint16 NumberOfRelocations;
 				public uint16 NumberOfLinenumbers;
@@ -5199,35 +5405,41 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IMAGE_RELOCATION		{
+		public struct IMAGE_RELOCATION
+		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 SymbolTableIndex;
 			public uint16 Type;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 VirtualAddress;
 				public uint32 RelocCount;
 			}
 		}
 		[CRepr]
-		public struct IMAGE_LINENUMBER		{
+		public struct IMAGE_LINENUMBER
+		{
 			public _Type_e__Union Type;
 			public uint16 Linenumber;
 			
 			[CRepr, Union]
-			public struct _Type_e__Union			{
+			public struct _Type_e__Union
+			{
 				public uint32 SymbolTableIndex;
 				public uint32 VirtualAddress;
 			}
 		}
 		[CRepr]
-		public struct IMAGE_BASE_RELOCATION		{
+		public struct IMAGE_BASE_RELOCATION
+		{
 			public uint32 VirtualAddress;
 			public uint32 SizeOfBlock;
 		}
 		[CRepr]
-		public struct IMAGE_ARCHIVE_MEMBER_HEADER		{
+		public struct IMAGE_ARCHIVE_MEMBER_HEADER
+		{
 			public uint8[16] Name;
 			public uint8[12] Date;
 			public uint8[6] UserID;
@@ -5237,7 +5449,8 @@ namespace Win32
 			public uint8[2] EndHeader;
 		}
 		[CRepr]
-		public struct IMAGE_EXPORT_DIRECTORY		{
+		public struct IMAGE_EXPORT_DIRECTORY
+		{
 			public uint32 Characteristics;
 			public uint32 TimeDateStamp;
 			public uint16 MajorVersion;
@@ -5251,12 +5464,14 @@ namespace Win32
 			public uint32 AddressOfNameOrdinals;
 		}
 		[CRepr]
-		public struct IMAGE_IMPORT_BY_NAME		{
+		public struct IMAGE_IMPORT_BY_NAME
+		{
 			public uint16 Hint;
 			public CHAR[0] Name;
 		}
 		[CRepr]
-		public struct IMAGE_TLS_DIRECTORY64		{
+		public struct IMAGE_TLS_DIRECTORY64
+		{
 			public uint64 StartAddressOfRawData;
 			public uint64 EndAddressOfRawData;
 			public uint64 AddressOfIndex;
@@ -5265,18 +5480,21 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Characteristics;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IMAGE_TLS_DIRECTORY32		{
+		public struct IMAGE_TLS_DIRECTORY32
+		{
 			public uint32 StartAddressOfRawData;
 			public uint32 EndAddressOfRawData;
 			public uint32 AddressOfIndex;
@@ -5285,18 +5503,21 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Characteristics;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IMAGE_IMPORT_DESCRIPTOR		{
+		public struct IMAGE_IMPORT_DESCRIPTOR
+		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 TimeDateStamp;
 			public uint32 ForwarderChain;
@@ -5304,25 +5525,29 @@ namespace Win32
 			public uint32 FirstThunk;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Characteristics;
 				public uint32 OriginalFirstThunk;
 			}
 		}
 		[CRepr]
-		public struct IMAGE_BOUND_IMPORT_DESCRIPTOR		{
+		public struct IMAGE_BOUND_IMPORT_DESCRIPTOR
+		{
 			public uint32 TimeDateStamp;
 			public uint16 OffsetModuleName;
 			public uint16 NumberOfModuleForwarderRefs;
 		}
 		[CRepr]
-		public struct IMAGE_BOUND_FORWARDER_REF		{
+		public struct IMAGE_BOUND_FORWARDER_REF
+		{
 			public uint32 TimeDateStamp;
 			public uint16 OffsetModuleName;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct IMAGE_RESOURCE_DIRECTORY		{
+		public struct IMAGE_RESOURCE_DIRECTORY
+		{
 			public uint32 Characteristics;
 			public uint32 TimeDateStamp;
 			public uint16 MajorVersion;
@@ -5331,66 +5556,78 @@ namespace Win32
 			public uint16 NumberOfIdEntries;
 		}
 		[CRepr]
-		public struct IMAGE_RESOURCE_DIRECTORY_ENTRY		{
+		public struct IMAGE_RESOURCE_DIRECTORY_ENTRY
+		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 OffsetToData;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Name;
 				public uint16 Id;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IMAGE_RESOURCE_DIRECTORY_STRING		{
+		public struct IMAGE_RESOURCE_DIRECTORY_STRING
+		{
 			public uint16 Length;
 			public CHAR[0] NameString;
 		}
 		[CRepr]
-		public struct IMAGE_RESOURCE_DIR_STRING_U		{
+		public struct IMAGE_RESOURCE_DIR_STRING_U
+		{
 			public uint16 Length;
 			public char16[0] NameString;
 		}
 		[CRepr]
-		public struct IMAGE_RESOURCE_DATA_ENTRY		{
+		public struct IMAGE_RESOURCE_DATA_ENTRY
+		{
 			public uint32 OffsetToData;
 			public uint32 Size;
 			public uint32 CodePage;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct IMAGE_DYNAMIC_RELOCATION_TABLE		{
+		public struct IMAGE_DYNAMIC_RELOCATION_TABLE
+		{
 			public uint32 Version;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct IMAGE_DYNAMIC_RELOCATION32		{
+		public struct IMAGE_DYNAMIC_RELOCATION32
+		{
 			public uint32 Symbol;
 			public uint32 BaseRelocSize;
 		}
 		[CRepr]
-		public struct IMAGE_DYNAMIC_RELOCATION64		{
+		public struct IMAGE_DYNAMIC_RELOCATION64
+		{
 			public uint64 Symbol;
 			public uint32 BaseRelocSize;
 		}
 		[CRepr]
-		public struct IMAGE_DYNAMIC_RELOCATION32_V2		{
+		public struct IMAGE_DYNAMIC_RELOCATION32_V2
+		{
 			public uint32 HeaderSize;
 			public uint32 FixupInfoSize;
 			public uint32 Symbol;
@@ -5398,7 +5635,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct IMAGE_DYNAMIC_RELOCATION64_V2		{
+		public struct IMAGE_DYNAMIC_RELOCATION64_V2
+		{
 			public uint32 HeaderSize;
 			public uint32 FixupInfoSize;
 			public uint64 Symbol;
@@ -5406,30 +5644,36 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER		{
+		public struct IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER
+		{
 			public uint8 PrologueByteCount;
 		}
 		[CRepr]
-		public struct IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER		{
+		public struct IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER
+		{
 			public uint32 EpilogueCount;
 			public uint8 EpilogueByteCount;
 			public uint8 BranchDescriptorElementSize;
 			public uint16 BranchDescriptorCount;
 		}
 		[CRepr]
-		public struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION		{
+		public struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION
+		{
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION		{
+		public struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
+		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION		{
+		public struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
+		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct IMAGE_HOT_PATCH_INFO		{
+		public struct IMAGE_HOT_PATCH_INFO
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint32 SequenceNumber;
@@ -5439,7 +5683,8 @@ namespace Win32
 			public uint32 ExtraPatchSize;
 		}
 		[CRepr]
-		public struct IMAGE_HOT_PATCH_BASE		{
+		public struct IMAGE_HOT_PATCH_BASE
+		{
 			public uint32 SequenceNumber;
 			public uint32 Flags;
 			public uint32 OriginalTimeDateStamp;
@@ -5450,43 +5695,51 @@ namespace Win32
 			public uint32 BufferOffset;
 		}
 		[CRepr]
-		public struct IMAGE_HOT_PATCH_HASHES		{
+		public struct IMAGE_HOT_PATCH_HASHES
+		{
 			public uint8[32] SHA256;
 			public uint8[20] SHA1;
 		}
 		[CRepr]
-		public struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY		{
+		public struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
+		{
 			public uint32 FuncStart;
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY		{
+		public struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
+		{
 			public uint32 BeginAddress;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 UnwindData;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr, Union]
-		public struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA		{
+		public struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
+		{
 			public uint32 HeaderData;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY		{
+		public struct IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY
+		{
 			public uint64 BeginAddress;
 			public uint64 EndAddress;
 			public uint64 ExceptionHandler;
@@ -5494,7 +5747,8 @@ namespace Win32
 			public uint64 PrologEndAddress;
 		}
 		[CRepr]
-		public struct IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY		{
+		public struct IMAGE_ALPHA_RUNTIME_FUNCTION_ENTRY
+		{
 			public uint32 BeginAddress;
 			public uint32 EndAddress;
 			public uint32 ExceptionHandler;
@@ -5502,7 +5756,8 @@ namespace Win32
 			public uint32 PrologEndAddress;
 		}
 		[CRepr]
-		public struct IMAGE_DEBUG_MISC		{
+		public struct IMAGE_DEBUG_MISC
+		{
 			public uint32 DataType;
 			public uint32 Length;
 			public BOOLEAN Unicode;
@@ -5510,7 +5765,8 @@ namespace Win32
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct IMAGE_SEPARATE_DEBUG_HEADER		{
+		public struct IMAGE_SEPARATE_DEBUG_HEADER
+		{
 			public uint16 Signature;
 			public uint16 Flags;
 			public uint16 Machine;
@@ -5526,7 +5782,8 @@ namespace Win32
 			public uint32[2] Reserved;
 		}
 		[CRepr]
-		public struct NON_PAGED_DEBUG_INFO		{
+		public struct NON_PAGED_DEBUG_INFO
+		{
 			public uint16 Signature;
 			public uint16 Flags;
 			public uint32 Size;
@@ -5538,17 +5795,20 @@ namespace Win32
 			public uint64 ImageBase;
 		}
 		[CRepr]
-		public struct IMAGE_ARCHITECTURE_HEADER		{
+		public struct IMAGE_ARCHITECTURE_HEADER
+		{
 			public uint32 _bitfield;
 			public uint32 FirstEntryRVA;
 		}
 		[CRepr]
-		public struct IMAGE_ARCHITECTURE_ENTRY		{
+		public struct IMAGE_ARCHITECTURE_ENTRY
+		{
 			public uint32 FixupInstRVA;
 			public uint32 NewInst;
 		}
 		[CRepr]
-		public struct IMPORT_OBJECT_HEADER		{
+		public struct IMPORT_OBJECT_HEADER
+		{
 			public uint16 Sig1;
 			public uint16 Sig2;
 			public uint16 Version;
@@ -5559,19 +5819,22 @@ namespace Win32
 			public uint16 _bitfield;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint16 Ordinal;
 				public uint16 Hint;
 			}
 		}
 		[CRepr]
-		public struct IMAGE_POLICY_ENTRY		{
+		public struct IMAGE_POLICY_ENTRY
+		{
 			public IMAGE_POLICY_ENTRY_TYPE Type;
 			public IMAGE_POLICY_ID PolicyId;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public void* None;
 				public BOOLEAN BoolValue;
 				public int8 Int8Value;
@@ -5587,34 +5850,40 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IMAGE_POLICY_METADATA		{
+		public struct IMAGE_POLICY_METADATA
+		{
 			public uint8 Version;
 			public uint8[7] Reserved0;
 			public uint64 ApplicationId;
 			public IMAGE_POLICY_ENTRY[0] Policies;
 		}
 		[CRepr]
-		public struct HEAP_OPTIMIZE_RESOURCES_INFORMATION		{
+		public struct HEAP_OPTIMIZE_RESOURCES_INFORMATION
+		{
 			public uint32 Version;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct SUPPORTED_OS_INFO		{
+		public struct SUPPORTED_OS_INFO
+		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 		}
 		[CRepr]
-		public struct MAXVERSIONTESTED_INFO		{
+		public struct MAXVERSIONTESTED_INFO
+		{
 			public uint64 MaxVersionTested;
 		}
 		[CRepr]
-		public struct PACKEDEVENTINFO		{
+		public struct PACKEDEVENTINFO
+		{
 			public uint32 ulSize;
 			public uint32 ulNumEventsForLogFile;
 			public uint32[0] ulOffsets;
 		}
 		[CRepr]
-		public struct TAPE_GET_DRIVE_PARAMETERS		{
+		public struct TAPE_GET_DRIVE_PARAMETERS
+		{
 			public BOOLEAN ECC;
 			public BOOLEAN Compression;
 			public BOOLEAN DataPadding;
@@ -5628,7 +5897,8 @@ namespace Win32
 			public uint32 EOTWarningZoneSize;
 		}
 		[CRepr]
-		public struct TAPE_SET_DRIVE_PARAMETERS		{
+		public struct TAPE_SET_DRIVE_PARAMETERS
+		{
 			public BOOLEAN ECC;
 			public BOOLEAN Compression;
 			public BOOLEAN DataPadding;
@@ -5636,7 +5906,8 @@ namespace Win32
 			public uint32 EOTWarningZoneSize;
 		}
 		[CRepr]
-		public struct TAPE_GET_MEDIA_PARAMETERS		{
+		public struct TAPE_GET_MEDIA_PARAMETERS
+		{
 			public LARGE_INTEGER Capacity;
 			public LARGE_INTEGER Remaining;
 			public uint32 BlockSize;
@@ -5644,51 +5915,61 @@ namespace Win32
 			public BOOLEAN WriteProtected;
 		}
 		[CRepr]
-		public struct TAPE_SET_MEDIA_PARAMETERS		{
+		public struct TAPE_SET_MEDIA_PARAMETERS
+		{
 			public uint32 BlockSize;
 		}
 		[CRepr]
-		public struct TAPE_CREATE_PARTITION		{
+		public struct TAPE_CREATE_PARTITION
+		{
 			public uint32 Method;
 			public uint32 Count;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct TAPE_WMI_OPERATIONS		{
+		public struct TAPE_WMI_OPERATIONS
+		{
 			public uint32 Method;
 			public uint32 DataBufferSize;
 			public void* DataBuffer;
 		}
 		[CRepr]
-		public struct TRANSACTION_BASIC_INFORMATION		{
+		public struct TRANSACTION_BASIC_INFORMATION
+		{
 			public Guid TransactionId;
 			public uint32 State;
 			public uint32 Outcome;
 		}
 		[CRepr]
-		public struct TRANSACTIONMANAGER_BASIC_INFORMATION		{
+		public struct TRANSACTIONMANAGER_BASIC_INFORMATION
+		{
 			public Guid TmIdentity;
 			public LARGE_INTEGER VirtualClock;
 		}
 		[CRepr]
-		public struct TRANSACTIONMANAGER_LOG_INFORMATION		{
+		public struct TRANSACTIONMANAGER_LOG_INFORMATION
+		{
 			public Guid LogIdentity;
 		}
 		[CRepr]
-		public struct TRANSACTIONMANAGER_LOGPATH_INFORMATION		{
+		public struct TRANSACTIONMANAGER_LOGPATH_INFORMATION
+		{
 			public uint32 LogPathLength;
 			public char16[0] LogPath;
 		}
 		[CRepr]
-		public struct TRANSACTIONMANAGER_RECOVERY_INFORMATION		{
+		public struct TRANSACTIONMANAGER_RECOVERY_INFORMATION
+		{
 			public uint64 LastRecoveredLsn;
 		}
 		[CRepr]
-		public struct TRANSACTIONMANAGER_OLDEST_INFORMATION		{
+		public struct TRANSACTIONMANAGER_OLDEST_INFORMATION
+		{
 			public Guid OldestTransactionGuid;
 		}
 		[CRepr]
-		public struct TRANSACTION_PROPERTIES_INFORMATION		{
+		public struct TRANSACTION_PROPERTIES_INFORMATION
+		{
 			public uint32 IsolationLevel;
 			public uint32 IsolationFlags;
 			public LARGE_INTEGER Timeout;
@@ -5697,57 +5978,68 @@ namespace Win32
 			public char16[0] Description;
 		}
 		[CRepr]
-		public struct TRANSACTION_BIND_INFORMATION		{
+		public struct TRANSACTION_BIND_INFORMATION
+		{
 			public HANDLE TmHandle;
 		}
 		[CRepr]
-		public struct TRANSACTION_ENLISTMENT_PAIR		{
+		public struct TRANSACTION_ENLISTMENT_PAIR
+		{
 			public Guid EnlistmentId;
 			public Guid ResourceManagerId;
 		}
 		[CRepr]
-		public struct TRANSACTION_ENLISTMENTS_INFORMATION		{
+		public struct TRANSACTION_ENLISTMENTS_INFORMATION
+		{
 			public uint32 NumberOfEnlistments;
 			public TRANSACTION_ENLISTMENT_PAIR[0] EnlistmentPair;
 		}
 		[CRepr]
-		public struct TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION		{
+		public struct TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION
+		{
 			public TRANSACTION_ENLISTMENT_PAIR SuperiorEnlistmentPair;
 		}
 		[CRepr]
-		public struct RESOURCEMANAGER_BASIC_INFORMATION		{
+		public struct RESOURCEMANAGER_BASIC_INFORMATION
+		{
 			public Guid ResourceManagerId;
 			public uint32 DescriptionLength;
 			public char16[0] Description;
 		}
 		[CRepr]
-		public struct RESOURCEMANAGER_COMPLETION_INFORMATION		{
+		public struct RESOURCEMANAGER_COMPLETION_INFORMATION
+		{
 			public HANDLE IoCompletionPortHandle;
 			public uint CompletionKey;
 		}
 		[CRepr]
-		public struct ENLISTMENT_BASIC_INFORMATION		{
+		public struct ENLISTMENT_BASIC_INFORMATION
+		{
 			public Guid EnlistmentId;
 			public Guid TransactionId;
 			public Guid ResourceManagerId;
 		}
 		[CRepr]
-		public struct ENLISTMENT_CRM_INFORMATION		{
+		public struct ENLISTMENT_CRM_INFORMATION
+		{
 			public Guid CrmTransactionManagerId;
 			public Guid CrmResourceManagerId;
 			public Guid CrmEnlistmentId;
 		}
 		[CRepr]
-		public struct TRANSACTION_LIST_ENTRY		{
+		public struct TRANSACTION_LIST_ENTRY
+		{
 			public Guid UOW;
 		}
 		[CRepr]
-		public struct TRANSACTION_LIST_INFORMATION		{
+		public struct TRANSACTION_LIST_INFORMATION
+		{
 			public uint32 NumberOfTransactions;
 			public TRANSACTION_LIST_ENTRY[0] TransactionInformation;
 		}
 		[CRepr]
-		public struct KTMOBJECT_CURSOR		{
+		public struct KTMOBJECT_CURSOR
+		{
 			public Guid LastQuery;
 			public uint32 ObjectIdCount;
 			public Guid[0] ObjectIds;

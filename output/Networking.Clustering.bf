@@ -2068,7 +2068,8 @@ namespace Win32
 		[CRepr]
 		public struct _HGROUPSETENUM {}
 		[CRepr]
-		public struct CLUSTERVERSIONINFO_NT4		{
+		public struct CLUSTERVERSIONINFO_NT4
+		{
 			public uint32 dwVersionInfoSize;
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
@@ -2077,7 +2078,8 @@ namespace Win32
 			public char16[64] szCSDVersion;
 		}
 		[CRepr]
-		public struct CLUSTERVERSIONINFO		{
+		public struct CLUSTERVERSIONINFO
+		{
 			public uint32 dwVersionInfoSize;
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
@@ -2090,19 +2092,22 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct CLUS_STARTING_PARAMS		{
+		public struct CLUS_STARTING_PARAMS
+		{
 			public uint32 dwSize;
 			public BOOL bForm;
 			public BOOL bFirst;
 		}
 		[CRepr]
-		public struct CLUSCTL_RESOURCE_STATE_CHANGE_REASON_STRUCT		{
+		public struct CLUSCTL_RESOURCE_STATE_CHANGE_REASON_STRUCT
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public CLUSTER_RESOURCE_STATE_CHANGE_REASON eReason;
 		}
 		[CRepr]
-		public struct CLUSTER_BATCH_COMMAND		{
+		public struct CLUSTER_BATCH_COMMAND
+		{
 			public CLUSTER_REG_COMMAND Command;
 			public uint32 dwOptions;
 			public PWSTR wzName;
@@ -2110,7 +2115,8 @@ namespace Win32
 			public uint32 cbData;
 		}
 		[CRepr]
-		public struct CLUSTER_READ_BATCH_COMMAND		{
+		public struct CLUSTER_READ_BATCH_COMMAND
+		{
 			public CLUSTER_REG_COMMAND Command;
 			public uint32 dwOptions;
 			public PWSTR wzSubkeyName;
@@ -2119,7 +2125,8 @@ namespace Win32
 			public uint32 cbData;
 		}
 		[CRepr]
-		public struct CLUSTER_ENUM_ITEM		{
+		public struct CLUSTER_ENUM_ITEM
+		{
 			public uint32 dwVersion;
 			public uint32 dwType;
 			public uint32 cbId;
@@ -2128,39 +2135,47 @@ namespace Win32
 			public PWSTR lpszName;
 		}
 		[CRepr]
-		public struct CLUSTER_CREATE_GROUP_INFO		{
+		public struct CLUSTER_CREATE_GROUP_INFO
+		{
 			public uint32 dwVersion;
 			public CLUSGROUP_TYPE groupType;
 		}
 		[CRepr]
-		public struct CLUSTER_VALIDATE_PATH		{
+		public struct CLUSTER_VALIDATE_PATH
+		{
 			public char16[0] szPath;
 		}
 		[CRepr]
-		public struct CLUSTER_VALIDATE_DIRECTORY		{
+		public struct CLUSTER_VALIDATE_DIRECTORY
+		{
 			public char16[0] szPath;
 		}
 		[CRepr]
-		public struct CLUSTER_VALIDATE_NETNAME		{
+		public struct CLUSTER_VALIDATE_NETNAME
+		{
 			public char16[0] szNetworkName;
 		}
 		[CRepr]
-		public struct CLUSTER_VALIDATE_CSV_FILENAME		{
+		public struct CLUSTER_VALIDATE_CSV_FILENAME
+		{
 			public char16[0] szFileName;
 		}
 		[CRepr]
-		public struct CLUSTER_SET_PASSWORD_STATUS		{
+		public struct CLUSTER_SET_PASSWORD_STATUS
+		{
 			public uint32 NodeId;
 			public BOOLEAN SetAttempted;
 			public uint32 ReturnStatus;
 		}
 		[CRepr]
-		public struct CLUSTER_IP_ENTRY		{
+		public struct CLUSTER_IP_ENTRY
+		{
 			public PWSTR lpszIpAddress;
 			public uint32 dwPrefixLength;
 		}
 		[CRepr]
-		public struct CREATE_CLUSTER_CONFIG		{
+		public struct CREATE_CLUSTER_CONFIG
+		{
 			public uint32 dwVersion;
 			public PWSTR lpszClusterName;
 			public uint32 cNodes;
@@ -2172,7 +2187,8 @@ namespace Win32
 			public CLUSTER_MGMT_POINT_RESTYPE managementPointResType;
 		}
 		[CRepr]
-		public struct CREATE_CLUSTER_NAME_ACCOUNT		{
+		public struct CREATE_CLUSTER_NAME_ACCOUNT
+		{
 			public uint32 dwVersion;
 			public PWSTR lpszClusterName;
 			public uint32 dwFlags;
@@ -2184,25 +2200,29 @@ namespace Win32
 			public BOOLEAN bUpgradeVCOs;
 		}
 		[CRepr]
-		public struct NOTIFY_FILTER_AND_TYPE		{
+		public struct NOTIFY_FILTER_AND_TYPE
+		{
 			public uint32 dwObjectType;
 			public int64 FilterFlags;
 		}
 		[CRepr]
-		public struct CLUSTER_MEMBERSHIP_INFO		{
+		public struct CLUSTER_MEMBERSHIP_INFO
+		{
 			public BOOL HasQuorum;
 			public uint32 UpnodesSize;
 			public uint8[0] Upnodes;
 		}
 		[CRepr]
-		public struct CLUSTER_AVAILABILITY_SET_CONFIG		{
+		public struct CLUSTER_AVAILABILITY_SET_CONFIG
+		{
 			public uint32 dwVersion;
 			public uint32 dwUpdateDomains;
 			public uint32 dwFaultDomains;
 			public BOOL bReserveSpareNode;
 		}
 		[CRepr]
-		public struct CLUSTER_GROUP_ENUM_ITEM		{
+		public struct CLUSTER_GROUP_ENUM_ITEM
+		{
 			public uint32 dwVersion;
 			public uint32 cbId;
 			public PWSTR lpszId;
@@ -2218,7 +2238,8 @@ namespace Win32
 			public void* pRoProperties;
 		}
 		[CRepr]
-		public struct CLUSTER_RESOURCE_ENUM_ITEM		{
+		public struct CLUSTER_RESOURCE_ENUM_ITEM
+		{
 			public uint32 dwVersion;
 			public uint32 cbId;
 			public PWSTR lpszId;
@@ -2234,113 +2255,135 @@ namespace Win32
 			public void* pRoProperties;
 		}
 		[CRepr]
-		public struct GROUP_FAILURE_INFO		{
+		public struct GROUP_FAILURE_INFO
+		{
 			public uint32 dwFailoverAttemptsRemaining;
 			public uint32 dwFailoverPeriodRemaining;
 		}
 		[CRepr]
-		public struct GROUP_FAILURE_INFO_BUFFER		{
+		public struct GROUP_FAILURE_INFO_BUFFER
+		{
 			public uint32 dwVersion;
 			public GROUP_FAILURE_INFO Info;
 		}
 		[CRepr]
-		public struct RESOURCE_FAILURE_INFO		{
+		public struct RESOURCE_FAILURE_INFO
+		{
 			public uint32 dwRestartAttemptsRemaining;
 			public uint32 dwRestartPeriodRemaining;
 		}
 		[CRepr]
-		public struct RESOURCE_FAILURE_INFO_BUFFER		{
+		public struct RESOURCE_FAILURE_INFO_BUFFER
+		{
 			public uint32 dwVersion;
 			public RESOURCE_FAILURE_INFO Info;
 		}
 		[CRepr]
-		public struct RESOURCE_TERMINAL_FAILURE_INFO_BUFFER		{
+		public struct RESOURCE_TERMINAL_FAILURE_INFO_BUFFER
+		{
 			public BOOL isTerminalFailure;
 			public uint32 restartPeriodRemaining;
 		}
 		[CRepr, Union]
-		public struct CLUSPROP_SYNTAX		{
+		public struct CLUSPROP_SYNTAX
+		{
 			public uint32 dw;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint16 wFormat;
 				public uint16 wType;
 			}
 		}
 		[CRepr]
-		public struct CLUSPROP_VALUE		{
+		public struct CLUSPROP_VALUE
+		{
 			public CLUSPROP_SYNTAX Syntax;
 			public uint32 cbLength;
 		}
 		[CRepr]
-		public struct CLUSPROP_BINARY		{
+		public struct CLUSPROP_BINARY
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5129_C41;
 			public uint8[0] rgb;
 		}
 		[CRepr]
-		public struct CLUSPROP_WORD		{
+		public struct CLUSPROP_WORD
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5139_C39;
 			public uint16 w;
 		}
 		[CRepr]
-		public struct CLUSPROP_DWORD		{
+		public struct CLUSPROP_DWORD
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5149_C40;
 			public uint32 dw;
 		}
 		[CRepr]
-		public struct CLUSPROP_LONG		{
+		public struct CLUSPROP_LONG
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5159_C39;
 			public int32 l;
 		}
 		[CRepr]
-		public struct CLUSPROP_SZ		{
+		public struct CLUSPROP_SZ
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5169_C37;
 			public char16[0] sz;
 		}
 		[CRepr]
-		public struct CLUSPROP_ULARGE_INTEGER		{
+		public struct CLUSPROP_ULARGE_INTEGER
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5186_C14;
 			public ULARGE_INTEGER li;
 		}
 		[CRepr]
-		public struct CLUSPROP_LARGE_INTEGER		{
+		public struct CLUSPROP_LARGE_INTEGER
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5199_C14;
 			public LARGE_INTEGER li;
 		}
 		[CRepr]
-		public struct CLUSPROP_SECURITY_DESCRIPTOR		{
+		public struct CLUSPROP_SECURITY_DESCRIPTOR
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5211_C54;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public SECURITY_DESCRIPTOR_RELATIVE sd;
 				public uint8[0] rgbSecurityDescriptor;
 			}
 		}
 		[CRepr]
-		public struct CLUSPROP_FILETIME		{
+		public struct CLUSPROP_FILETIME
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5225_C14;
 			public FILETIME ft;
 		}
 		[CRepr]
-		public struct CLUS_RESOURCE_CLASS_INFO		{
+		public struct CLUS_RESOURCE_CLASS_INFO
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public ULARGE_INTEGER li;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public _Anonymous_e__Union Anonymous;
 					public uint32 SubClass;
 					
 					[CRepr, Union]
-					public struct _Anonymous_e__Union					{
+					public struct _Anonymous_e__Union
+					{
 						public uint32 dw;
 						public CLUSTER_RESOURCE_CLASS rc;
 					}
@@ -2348,30 +2391,35 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CLUSPROP_RESOURCE_CLASS		{
+		public struct CLUSPROP_RESOURCE_CLASS
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5250_C14;
 			public CLUSTER_RESOURCE_CLASS rc;
 		}
 		[CRepr]
-		public struct CLUSPROP_RESOURCE_CLASS_INFO		{
+		public struct CLUSPROP_RESOURCE_CLASS_INFO
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5261_C14;
 			public CLUS_RESOURCE_CLASS_INFO __AnonymousBase_clusapi_L5262_C14;
 		}
 		[CRepr, Union]
-		public struct CLUSPROP_REQUIRED_DEPENDENCY		{
+		public struct CLUSPROP_REQUIRED_DEPENDENCY
+		{
 			public CLUSPROP_VALUE Value;
 			public CLUSPROP_RESOURCE_CLASS ResClass;
 			public CLUSPROP_SZ ResTypeName;
 		}
 		[CRepr]
-		public struct CLUS_FORCE_QUORUM_INFO		{
+		public struct CLUS_FORCE_QUORUM_INFO
+		{
 			public uint32 dwSize;
 			public uint32 dwNodeBitMask;
 			public uint32 dwMaxNumberofNodes;
 			public char16[0] multiszNodeList;
 		}
 		[CRepr]
-		public struct CLUS_PARTITION_INFO		{
+		public struct CLUS_PARTITION_INFO
+		{
 			public uint32 dwFlags;
 			public char16[260] szDeviceName;
 			public char16[260] szVolumeLabel;
@@ -2381,7 +2429,8 @@ namespace Win32
 			public char16[32] szFileSystem;
 		}
 		[CRepr]
-		public struct CLUS_PARTITION_INFO_EX		{
+		public struct CLUS_PARTITION_INFO_EX
+		{
 			public uint32 dwFlags;
 			public char16[260] szDeviceName;
 			public char16[260] szVolumeLabel;
@@ -2396,13 +2445,15 @@ namespace Win32
 			public Guid VolumeGuid;
 		}
 		[CRepr]
-		public struct CLUS_PARTITION_INFO_EX2		{
+		public struct CLUS_PARTITION_INFO_EX2
+		{
 			public Guid GptPartitionId;
 			public char16[260] szPartitionName;
 			public uint32 EncryptionFlags;
 		}
 		[CRepr]
-		public struct CLUS_CSV_VOLUME_INFO		{
+		public struct CLUS_CSV_VOLUME_INFO
+		{
 			public ULARGE_INTEGER VolumeOffset;
 			public uint32 PartitionNumber;
 			public CLUSTER_CSV_VOLUME_FAULT_STATE FaultState;
@@ -2411,19 +2462,22 @@ namespace Win32
 			public char16[50] szVolumeName;
 		}
 		[CRepr]
-		public struct CLUS_CSV_VOLUME_NAME		{
+		public struct CLUS_CSV_VOLUME_NAME
+		{
 			public LARGE_INTEGER VolumeOffset;
 			public char16[260] szVolumeName;
 			public char16[263] szRootPath;
 		}
 		[CRepr]
-		public struct CLUSTER_SHARED_VOLUME_STATE_INFO		{
+		public struct CLUSTER_SHARED_VOLUME_STATE_INFO
+		{
 			public char16[260] szVolumeName;
 			public char16[260] szNodeName;
 			public CLUSTER_SHARED_VOLUME_STATE VolumeState;
 		}
 		[CRepr]
-		public struct CLUSTER_SHARED_VOLUME_STATE_INFO_EX		{
+		public struct CLUSTER_SHARED_VOLUME_STATE_INFO_EX
+		{
 			public char16[260] szVolumeName;
 			public char16[260] szNodeName;
 			public CLUSTER_SHARED_VOLUME_STATE VolumeState;
@@ -2432,12 +2486,14 @@ namespace Win32
 			public uint64 VolumeRedirectedIOReason;
 		}
 		[CRepr]
-		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT_VOLUME		{
+		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT_VOLUME
+		{
 			public CLUSTER_SHARED_VOLUME_RENAME_INPUT_TYPE InputType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 VolumeOffset;
 				public char16[260] VolumeId;
 				public char16[260] VolumeName;
@@ -2445,78 +2501,93 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT_NAME		{
+		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT_NAME
+		{
 			public char16[260] NewVolumeName;
 		}
 		[CRepr]
-		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT_GUID_NAME		{
+		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT_GUID_NAME
+		{
 			public char16[260] NewVolumeName;
 			public char16[50] NewVolumeGuid;
 		}
 		[CRepr]
-		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT		{
+		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT
+		{
 			public CLUSTER_SHARED_VOLUME_RENAME_INPUT_VOLUME __AnonymousBase_clusapi_L5464_C14;
 			public CLUSTER_SHARED_VOLUME_RENAME_INPUT_NAME __AnonymousBase_clusapi_L5465_C14;
 		}
 		[CRepr]
-		public struct CLUSTER_SHARED_VOLUME_RENAME_GUID_INPUT		{
+		public struct CLUSTER_SHARED_VOLUME_RENAME_GUID_INPUT
+		{
 			public CLUSTER_SHARED_VOLUME_RENAME_INPUT_VOLUME __AnonymousBase_clusapi_L5475_C14;
 			public CLUSTER_SHARED_VOLUME_RENAME_INPUT_GUID_NAME __AnonymousBase_clusapi_L5476_C14;
 		}
 		[CRepr]
-		public struct CLUS_CHKDSK_INFO		{
+		public struct CLUS_CHKDSK_INFO
+		{
 			public uint32 PartitionNumber;
 			public uint32 ChkdskState;
 			public uint32 FileIdCount;
 			public uint64[0] FileIdList;
 		}
 		[CRepr]
-		public struct CLUS_DISK_NUMBER_INFO		{
+		public struct CLUS_DISK_NUMBER_INFO
+		{
 			public uint32 DiskNumber;
 			public uint32 BytesPerSector;
 		}
 		[CRepr]
-		public struct CLUS_SHARED_VOLUME_BACKUP_MODE		{
+		public struct CLUS_SHARED_VOLUME_BACKUP_MODE
+		{
 			public CLUSTER_SHARED_VOLUME_BACKUP_STATE BackupState;
 			public uint32 DelayTimerInSecs;
 			public char16[260] VolumeName;
 		}
 		[CRepr]
-		public struct CLUSPROP_PARTITION_INFO		{
+		public struct CLUSPROP_PARTITION_INFO
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5507_C14;
 			public CLUS_PARTITION_INFO __AnonymousBase_clusapi_L5508_C14;
 		}
 		[CRepr]
-		public struct CLUSPROP_PARTITION_INFO_EX		{
+		public struct CLUSPROP_PARTITION_INFO_EX
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5519_C14;
 			public CLUS_PARTITION_INFO_EX __AnonymousBase_clusapi_L5520_C14;
 		}
 		[CRepr]
-		public struct CLUSPROP_PARTITION_INFO_EX2		{
+		public struct CLUSPROP_PARTITION_INFO_EX2
+		{
 			public CLUSPROP_PARTITION_INFO_EX __AnonymousBase_clusapi_L5533_C14;
 			public CLUS_PARTITION_INFO_EX2 __AnonymousBase_clusapi_L5534_C14;
 		}
 		[CRepr]
-		public struct CLUS_FTSET_INFO		{
+		public struct CLUS_FTSET_INFO
+		{
 			public uint32 dwRootSignature;
 			public uint32 dwFtType;
 		}
 		[CRepr]
-		public struct CLUSPROP_FTSET_INFO		{
+		public struct CLUSPROP_FTSET_INFO
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5555_C14;
 			public CLUS_FTSET_INFO __AnonymousBase_clusapi_L5556_C14;
 		}
 		[CRepr]
-		public struct CLUS_SCSI_ADDRESS		{
+		public struct CLUS_SCSI_ADDRESS
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 dw;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint8 PortNumber;
 					public uint8 PathId;
 					public uint8 TargetId;
@@ -2525,125 +2596,148 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CLUSPROP_SCSI_ADDRESS		{
+		public struct CLUSPROP_SCSI_ADDRESS
+		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5583_C14;
 			public CLUS_SCSI_ADDRESS __AnonymousBase_clusapi_L5584_C14;
 		}
 		[CRepr]
-		public struct CLUS_NETNAME_VS_TOKEN_INFO		{
+		public struct CLUS_NETNAME_VS_TOKEN_INFO
+		{
 			public uint32 ProcessID;
 			public uint32 DesiredAccess;
 			public BOOL InheritHandle;
 		}
 		[CRepr]
-		public struct CLUS_NETNAME_PWD_INFO		{
+		public struct CLUS_NETNAME_PWD_INFO
+		{
 			public uint32 Flags;
 			public char16[16] Password;
 			public char16[258] CreatingDC;
 			public char16[64] ObjectGuid;
 		}
 		[CRepr]
-		public struct CLUS_NETNAME_PWD_INFOEX		{
+		public struct CLUS_NETNAME_PWD_INFOEX
+		{
 			public uint32 Flags;
 			public char16[128] Password;
 			public char16[258] CreatingDC;
 			public char16[64] ObjectGuid;
 		}
 		[CRepr]
-		public struct CLUS_DNN_LEADER_STATUS		{
+		public struct CLUS_DNN_LEADER_STATUS
+		{
 			public BOOL IsOnline;
 			public BOOL IsFileServerPresent;
 		}
 		[CRepr]
-		public struct CLUS_DNN_SODAFS_CLONE_STATUS		{
+		public struct CLUS_DNN_SODAFS_CLONE_STATUS
+		{
 			public uint32 NodeId;
 			public CLUSTER_RESOURCE_STATE Status;
 		}
 		[CRepr]
-		public struct CLUS_NETNAME_IP_INFO_ENTRY		{
+		public struct CLUS_NETNAME_IP_INFO_ENTRY
+		{
 			public uint32 NodeId;
 			public uint32 AddressSize;
 			public uint8[0] Address;
 		}
 		[CRepr]
-		public struct CLUS_NETNAME_IP_INFO_FOR_MULTICHANNEL		{
+		public struct CLUS_NETNAME_IP_INFO_FOR_MULTICHANNEL
+		{
 			public char16[64] szName;
 			public uint32 NumEntries;
 			public CLUS_NETNAME_IP_INFO_ENTRY[0] IpInfo;
 		}
 		[CRepr]
-		public struct CLUS_MAINTENANCE_MODE_INFO		{
+		public struct CLUS_MAINTENANCE_MODE_INFO
+		{
 			public BOOL InMaintenance;
 		}
 		[CRepr]
-		public struct CLUS_CSV_MAINTENANCE_MODE_INFO		{
+		public struct CLUS_CSV_MAINTENANCE_MODE_INFO
+		{
 			public BOOL InMaintenance;
 			public char16[260] VolumeName;
 		}
 		[CRepr]
-		public struct CLUS_MAINTENANCE_MODE_INFOEX		{
+		public struct CLUS_MAINTENANCE_MODE_INFOEX
+		{
 			public BOOL InMaintenance;
 			public MAINTENANCE_MODE_TYPE_ENUM MaintainenceModeType;
 			public CLUSTER_RESOURCE_STATE InternalState;
 			public uint32 Signature;
 		}
 		[CRepr]
-		public struct CLUS_SET_MAINTENANCE_MODE_INPUT		{
+		public struct CLUS_SET_MAINTENANCE_MODE_INPUT
+		{
 			public BOOL InMaintenance;
 			public uint32 ExtraParameterSize;
 			public uint8[0] ExtraParameter;
 		}
 		[CRepr]
-		public struct CLUS_STORAGE_SET_DRIVELETTER		{
+		public struct CLUS_STORAGE_SET_DRIVELETTER
+		{
 			public uint32 PartitionNumber;
 			public uint32 DriveLetterMask;
 		}
 		[CRepr]
-		public struct CLUS_STORAGE_GET_AVAILABLE_DRIVELETTERS		{
+		public struct CLUS_STORAGE_GET_AVAILABLE_DRIVELETTERS
+		{
 			public uint32 AvailDrivelettersMask;
 		}
 		[CRepr]
-		public struct CLUS_STORAGE_REMAP_DRIVELETTER		{
+		public struct CLUS_STORAGE_REMAP_DRIVELETTER
+		{
 			public uint32 CurrentDriveLetterMask;
 			public uint32 TargetDriveLetterMask;
 		}
 		[CRepr]
-		public struct CLUS_PROVIDER_STATE_CHANGE_INFO		{
+		public struct CLUS_PROVIDER_STATE_CHANGE_INFO
+		{
 			public uint32 dwSize;
 			public CLUSTER_RESOURCE_STATE resourceState;
 			public char16[0] szProviderId;
 		}
 		[CRepr]
-		public struct CLUS_CREATE_INFRASTRUCTURE_FILESERVER_INPUT		{
+		public struct CLUS_CREATE_INFRASTRUCTURE_FILESERVER_INPUT
+		{
 			public char16[16] FileServerName;
 		}
 		[CRepr]
-		public struct CLUS_CREATE_INFRASTRUCTURE_FILESERVER_OUTPUT		{
+		public struct CLUS_CREATE_INFRASTRUCTURE_FILESERVER_OUTPUT
+		{
 			public char16[260] FileServerName;
 		}
 		[CRepr]
-		public struct CLUSPROP_LIST		{
+		public struct CLUSPROP_LIST
+		{
 			public uint32 nPropertyCount;
 			public CLUSPROP_SZ PropertyName;
 		}
 		[CRepr]
-		public struct FILESHARE_CHANGE		{
+		public struct FILESHARE_CHANGE
+		{
 			public FILESHARE_CHANGE_ENUM Change;
 			public char16[84] ShareName;
 		}
 		[CRepr]
-		public struct FILESHARE_CHANGE_LIST		{
+		public struct FILESHARE_CHANGE_LIST
+		{
 			public uint32 NumEntries;
 			public FILESHARE_CHANGE[0] ChangeEntry;
 		}
 		[CRepr]
-		public struct CLUSCTL_GROUP_GET_LAST_MOVE_TIME_OUTPUT		{
+		public struct CLUSCTL_GROUP_GET_LAST_MOVE_TIME_OUTPUT
+		{
 			public uint64 GetTickCount64;
 			public SYSTEMTIME GetSystemTime;
 			public uint32 NodeId;
 		}
 		[CRepr, Union]
-		public struct CLUSPROP_BUFFER_HELPER		{
+		public struct CLUSPROP_BUFFER_HELPER
+		{
 			public uint8* pb;
 			public uint16* pw;
 			public uint32* pdw;
@@ -2674,56 +2768,66 @@ namespace Win32
 			public CLUSPROP_FILETIME* pFileTimeValue;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_REPLICATED_PARTITION_INFO		{
+		public struct SR_RESOURCE_TYPE_REPLICATED_PARTITION_INFO
+		{
 			public uint64 PartitionOffset;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_REPLICATED_PARTITION_ARRAY		{
+		public struct SR_RESOURCE_TYPE_REPLICATED_PARTITION_ARRAY
+		{
 			public uint32 Count;
 			public SR_RESOURCE_TYPE_REPLICATED_PARTITION_INFO[0] PartitionArray;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_LOGDISKS		{
+		public struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_LOGDISKS
+		{
 			public Guid DataDiskGuid;
 			public BOOLEAN IncludeOfflineDisks;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_TARGET_DATADISKS		{
+		public struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_TARGET_DATADISKS
+		{
 			public Guid SourceDataDiskGuid;
 			public Guid TargetReplicationGroupGuid;
 			public BOOLEAN SkipConnectivityCheck;
 			public BOOLEAN IncludeOfflineDisks;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_SOURCE_DATADISKS		{
+		public struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_SOURCE_DATADISKS
+		{
 			public Guid DataDiskGuid;
 			public BOOLEAN IncludeAvailableStoargeDisks;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_DISK_INFO		{
+		public struct SR_RESOURCE_TYPE_DISK_INFO
+		{
 			public SR_DISK_REPLICATION_ELIGIBLE Reason;
 			public Guid DiskGuid;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_ELIGIBLE_DISKS_RESULT		{
+		public struct SR_RESOURCE_TYPE_ELIGIBLE_DISKS_RESULT
+		{
 			public uint16 Count;
 			public SR_RESOURCE_TYPE_DISK_INFO[0] DiskInfo;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_REPLICATED_DISK		{
+		public struct SR_RESOURCE_TYPE_REPLICATED_DISK
+		{
 			public SR_REPLICATED_DISK_TYPE Type;
 			public Guid ClusterDiskResourceGuid;
 			public Guid ReplicationGroupId;
 			public char16[260] ReplicationGroupName;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_REPLICATED_DISKS_RESULT		{
+		public struct SR_RESOURCE_TYPE_REPLICATED_DISKS_RESULT
+		{
 			public uint16 Count;
 			public SR_RESOURCE_TYPE_REPLICATED_DISK[0] ReplicatedDisks;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP		{
+		public struct SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP
+		{
 			public char16[260] ReplicationGroupName;
 			public char16[260] Description;
 			public char16[260] LogPath;
@@ -2738,42 +2842,49 @@ namespace Win32
 			public char16[260] VolumeNames;
 		}
 		[CRepr]
-		public struct SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP_RESULT		{
+		public struct SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP_RESULT
+		{
 			public uint32 Result;
 			public char16[260] ErrorString;
 		}
 		[CRepr]
-		public struct CLUSCTL_RESOURCE_TYPE_STORAGE_GET_AVAILABLE_DISKS_EX2_INPUT		{
+		public struct CLUSCTL_RESOURCE_TYPE_STORAGE_GET_AVAILABLE_DISKS_EX2_INPUT
+		{
 			public uint32 dwFlags;
 			public Guid guidPoolFilter;
 		}
 		[CRepr]
-		public struct RESOURCE_STATUS		{
+		public struct RESOURCE_STATUS
+		{
 			public CLUSTER_RESOURCE_STATE ResourceState;
 			public uint32 CheckPoint;
 			public uint32 WaitHint;
 			public HANDLE EventHandle;
 		}
 		[CRepr]
-		public struct NodeUtilizationInfoElement		{
+		public struct NodeUtilizationInfoElement
+		{
 			public uint64 Id;
 			public uint64 AvailableMemory;
 			public uint64 AvailableMemoryAfterReclamation;
 		}
 		[CRepr]
-		public struct ResourceUtilizationInfoElement		{
+		public struct ResourceUtilizationInfoElement
+		{
 			public uint64 PhysicalNumaId;
 			public uint64 CurrentMemory;
 		}
 		[CRepr]
-		public struct GET_OPERATION_CONTEXT_PARAMS		{
+		public struct GET_OPERATION_CONTEXT_PARAMS
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public RESDLL_CONTEXT_OPERATION_TYPE Type;
 			public uint32 Priority;
 		}
 		[CRepr]
-		public struct RESOURCE_STATUS_EX		{
+		public struct RESOURCE_STATUS_EX
+		{
 			public CLUSTER_RESOURCE_STATE ResourceState;
 			public uint32 CheckPoint;
 			public HANDLE EventHandle;
@@ -2782,7 +2893,8 @@ namespace Win32
 			public uint32 WaitHint;
 		}
 		[CRepr]
-		public struct CLRES_V1_FUNCTIONS		{
+		public struct CLRES_V1_FUNCTIONS
+		{
 			public POPEN_ROUTINE Open;
 			public PCLOSE_ROUTINE Close;
 			public PONLINE_ROUTINE Online;
@@ -2796,7 +2908,8 @@ namespace Win32
 			public PRESOURCE_TYPE_CONTROL_ROUTINE ResourceTypeControl;
 		}
 		[CRepr]
-		public struct CLRES_V2_FUNCTIONS		{
+		public struct CLRES_V2_FUNCTIONS
+		{
 			public POPEN_V2_ROUTINE Open;
 			public PCLOSE_ROUTINE Close;
 			public PONLINE_V2_ROUTINE Online;
@@ -2811,7 +2924,8 @@ namespace Win32
 			public PCANCEL_ROUTINE Cancel;
 		}
 		[CRepr]
-		public struct CLRES_V3_FUNCTIONS		{
+		public struct CLRES_V3_FUNCTIONS
+		{
 			public POPEN_V2_ROUTINE Open;
 			public PCLOSE_ROUTINE Close;
 			public PONLINE_V2_ROUTINE Online;
@@ -2826,7 +2940,8 @@ namespace Win32
 			public PCANCEL_ROUTINE Cancel;
 		}
 		[CRepr]
-		public struct CLRES_V4_FUNCTIONS		{
+		public struct CLRES_V4_FUNCTIONS
+		{
 			public POPEN_V2_ROUTINE Open;
 			public PCLOSE_ROUTINE Close;
 			public PONLINE_V2_ROUTINE Online;
@@ -2843,13 +2958,15 @@ namespace Win32
 			public PBEGIN_RESTYPECALL_AS_USER_ROUTINE BeginResourceTypeControlAsUser;
 		}
 		[CRepr]
-		public struct CLRES_FUNCTION_TABLE		{
+		public struct CLRES_FUNCTION_TABLE
+		{
 			public uint32 TableSize;
 			public uint32 Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public CLRES_V1_FUNCTIONS V1Functions;
 				public CLRES_V2_FUNCTIONS V2Functions;
 				public CLRES_V3_FUNCTIONS V3Functions;
@@ -2857,25 +2974,29 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct RESUTIL_LARGEINT_DATA		{
+		public struct RESUTIL_LARGEINT_DATA
+		{
 			public LARGE_INTEGER Default;
 			public LARGE_INTEGER Minimum;
 			public LARGE_INTEGER Maximum;
 		}
 		[CRepr]
-		public struct RESUTIL_ULARGEINT_DATA		{
+		public struct RESUTIL_ULARGEINT_DATA
+		{
 			public ULARGE_INTEGER Default;
 			public ULARGE_INTEGER Minimum;
 			public ULARGE_INTEGER Maximum;
 		}
 		[CRepr]
-		public struct RESUTIL_FILETIME_DATA		{
+		public struct RESUTIL_FILETIME_DATA
+		{
 			public FILETIME Default;
 			public FILETIME Minimum;
 			public FILETIME Maximum;
 		}
 		[CRepr]
-		public struct RESUTIL_PROPERTY_ITEM		{
+		public struct RESUTIL_PROPERTY_ITEM
+		{
 			public PWSTR Name;
 			public PWSTR KeyName;
 			public uint32 Format;
@@ -2886,7 +3007,8 @@ namespace Win32
 			public uint32 Offset;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint DefaultPtr;
 				public uint32 Default;
 				public void* lpDefault;
@@ -2896,7 +3018,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CLRES_CALLBACK_FUNCTION_TABLE		{
+		public struct CLRES_CALLBACK_FUNCTION_TABLE
+		{
 			public PLOG_EVENT_ROUTINE LogEvent;
 			public PSET_RESOURCE_STATUS_ROUTINE_EX SetResourceStatusEx;
 			public PSET_RESOURCE_LOCKED_MODE_ROUTINE SetResourceLockedMode;
@@ -2914,14 +3037,16 @@ namespace Win32
 			public PREQUEST_DUMP_ROUTINE RequestDump;
 		}
 		[CRepr]
-		public struct MONITOR_STATE		{
+		public struct MONITOR_STATE
+		{
 			public LARGE_INTEGER LastUpdate;
 			public RESOURCE_MONITOR_STATE State;
 			public HANDLE ActiveResource;
 			public BOOL ResmonStop;
 		}
 		[CRepr]
-		public struct POST_UPGRADE_VERSION_INFO		{
+		public struct POST_UPGRADE_VERSION_INFO
+		{
 			public uint32 newMajorVersion;
 			public uint32 newUpgradeVersion;
 			public uint32 oldMajorVersion;
@@ -2929,7 +3054,8 @@ namespace Win32
 			public uint32 reserved;
 		}
 		[CRepr]
-		public struct CLUSTER_HEALTH_FAULT		{
+		public struct CLUSTER_HEALTH_FAULT
+		{
 			public PWSTR Id;
 			public uint32 ErrorType;
 			public uint32 ErrorCode;
@@ -2939,19 +3065,22 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct CLUSTER_HEALTH_FAULT_ARRAY		{
+		public struct CLUSTER_HEALTH_FAULT_ARRAY
+		{
 			public uint32 numFaults;
 			public CLUSTER_HEALTH_FAULT* faults;
 		}
 		[CRepr]
-		public struct CLUS_WORKER		{
+		public struct CLUS_WORKER
+		{
 			public HANDLE hThread;
 			public BOOL Terminate;
 		}
 		[CRepr]
 		public struct _HCLUSCRYPTPROVIDER {}
 		[CRepr]
-		public struct PaxosTagCStruct		{
+		public struct PaxosTagCStruct
+		{
 			public uint64 __padding__PaxosTagVtable;
 			public uint64 __padding__NextEpochVtable;
 			public uint64 __padding__NextEpoch_DateTimeVtable;
@@ -2967,13 +3096,15 @@ namespace Win32
 			public uint32 __padding__BoundrySequence;
 		}
 		[CRepr]
-		public struct WitnessTagUpdateHelper		{
+		public struct WitnessTagUpdateHelper
+		{
 			public int32 Version;
 			public PaxosTagCStruct paxosToSet;
 			public PaxosTagCStruct paxosToValidate;
 		}
 		[CRepr]
-		public struct WitnessTagHelper		{
+		public struct WitnessTagHelper
+		{
 			public int32 Version;
 			public PaxosTagCStruct paxosToValidate;
 		}

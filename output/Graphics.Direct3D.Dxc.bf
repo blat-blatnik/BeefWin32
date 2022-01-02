@@ -60,23 +60,27 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DxcShaderHash		{
+		public struct DxcShaderHash
+		{
 			public uint32 Flags;
 			public uint8[16] HashDigest;
 		}
 		[CRepr]
-		public struct DxcBuffer		{
+		public struct DxcBuffer
+		{
 			public void* Ptr;
 			public uint Size;
 			public uint32 Encoding;
 		}
 		[CRepr]
-		public struct DxcDefine		{
+		public struct DxcDefine
+		{
 			public PWSTR Name;
 			public PWSTR Value;
 		}
 		[CRepr]
-		public struct DxcArgPair		{
+		public struct DxcArgPair
+		{
 			public PWSTR pName;
 			public PWSTR pValue;
 		}

@@ -273,40 +273,47 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SENSOR_VALUE_PAIR		{
+		public struct SENSOR_VALUE_PAIR
+		{
 			public PROPERTYKEY Key;
 			public PROPVARIANT Value;
 		}
 		[CRepr]
-		public struct SENSOR_COLLECTION_LIST		{
+		public struct SENSOR_COLLECTION_LIST
+		{
 			public uint32 AllocatedSizeInBytes;
 			public uint32 Count;
 			public SENSOR_VALUE_PAIR[0] List;
 		}
 		[CRepr]
-		public struct SENSOR_PROPERTY_LIST		{
+		public struct SENSOR_PROPERTY_LIST
+		{
 			public uint32 AllocatedSizeInBytes;
 			public uint32 Count;
 			public PROPERTYKEY[0] List;
 		}
 		[CRepr]
-		public struct VEC3D		{
+		public struct VEC3D
+		{
 			public float X;
 			public float Y;
 			public float Z;
 		}
 		[CRepr]
-		public struct MATRIX3X3		{
+		public struct MATRIX3X3
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				public float[9] M;
 				
 				[CRepr]
-				public struct _Anonymous1_e__Struct				{
+				public struct _Anonymous1_e__Struct
+				{
 					public float A11;
 					public float A12;
 					public float A13;
@@ -318,7 +325,8 @@ namespace Win32
 					public float A33;
 				}
 				[CRepr]
-				public struct _Anonymous2_e__Struct				{
+				public struct _Anonymous2_e__Struct
+				{
 					public VEC3D V1;
 					public VEC3D V2;
 					public VEC3D V3;
@@ -326,7 +334,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct QUATERNION		{
+		public struct QUATERNION
+		{
 			public float X;
 			public float Y;
 			public float Z;

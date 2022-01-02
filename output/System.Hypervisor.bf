@@ -834,142 +834,169 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr, Union]
-		public struct WHV_CAPABILITY_FEATURES		{
+		public struct WHV_CAPABILITY_FEATURES
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_EXTENDED_VM_EXITS		{
+		public struct WHV_EXTENDED_VM_EXITS
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_PROCESSOR_FEATURES		{
+		public struct WHV_PROCESSOR_FEATURES
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_PROCESSOR_FEATURES1		{
+		public struct WHV_PROCESSOR_FEATURES1
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_PROCESSOR_FEATURES_BANKS		{
+		public struct WHV_PROCESSOR_FEATURES_BANKS
+		{
 			public uint32 BanksCount;
 			public uint32 Reserved0;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64[2] AsUINT64;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public WHV_PROCESSOR_FEATURES Bank0;
 					public WHV_PROCESSOR_FEATURES1 Bank1;
 				}
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_SYNTHETIC_PROCESSOR_FEATURES		{
+		public struct WHV_SYNTHETIC_PROCESSOR_FEATURES
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS		{
+		public struct WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS
+		{
 			public uint32 BanksCount;
 			public uint32 Reserved0;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64[0] AsUINT64;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public WHV_SYNTHETIC_PROCESSOR_FEATURES Bank0;
 				}
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_PROCESSOR_XSAVE_FEATURES		{
+		public struct WHV_PROCESSOR_XSAVE_FEATURES
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_PROCESSOR_PERFMON_FEATURES		{
+		public struct WHV_PROCESSOR_PERFMON_FEATURES
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_MSR_EXIT_BITMAP		{
+		public struct WHV_X64_MSR_EXIT_BITMAP
+		{
 			public uint64 AsUINT64;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_MEMORY_RANGE_ENTRY		{
+		public struct WHV_MEMORY_RANGE_ENTRY
+		{
 			public uint64 GuestAddress;
 			public uint64 SizeInBytes;
 		}
 		[CRepr, Union]
-		public struct WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS		{
+		public struct WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS
+		{
 			public uint32 AsUINT32;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_ADVISE_GPA_RANGE_POPULATE		{
+		public struct WHV_ADVISE_GPA_RANGE_POPULATE
+		{
 			public WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS Flags;
 			public WHV_MEMORY_ACCESS_TYPE AccessType;
 		}
 		[CRepr]
-		public struct WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP		{
+		public struct WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP
+		{
 			public uint32 _bitfield;
 			public uint32 HighestFrequencyMhz;
 			public uint32 NominalFrequencyMhz;
@@ -977,17 +1004,20 @@ namespace Win32
 			public uint32 FrequencyStepMhz;
 		}
 		[CRepr, Union]
-		public struct WHV_SCHEDULER_FEATURES		{
+		public struct WHV_SCHEDULER_FEATURES
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_CAPABILITY		{
+		public struct WHV_CAPABILITY
+		{
 			public BOOL HypervisorPresent;
 			public WHV_CAPABILITY_FEATURES Features;
 			public WHV_EXTENDED_VM_EXITS ExtendedVmExits;
@@ -1007,7 +1037,8 @@ namespace Win32
 			public WHV_SCHEDULER_FEATURES SchedulerFeatures;
 		}
 		[CRepr]
-		public struct WHV_X64_CPUID_RESULT		{
+		public struct WHV_X64_CPUID_RESULT
+		{
 			public uint32 Function;
 			public uint32[3] Reserved;
 			public uint32 Eax;
@@ -1016,14 +1047,16 @@ namespace Win32
 			public uint32 Edx;
 		}
 		[CRepr]
-		public struct WHV_CPUID_OUTPUT		{
+		public struct WHV_CPUID_OUTPUT
+		{
 			public uint32 Eax;
 			public uint32 Ebx;
 			public uint32 Ecx;
 			public uint32 Edx;
 		}
 		[CRepr]
-		public struct WHV_X64_CPUID_RESULT2		{
+		public struct WHV_X64_CPUID_RESULT2
+		{
 			public uint32 Function;
 			public uint32 Index;
 			public uint32 VpIndex;
@@ -1032,14 +1065,16 @@ namespace Win32
 			public WHV_CPUID_OUTPUT Mask;
 		}
 		[CRepr]
-		public struct WHV_MSR_ACTION_ENTRY		{
+		public struct WHV_MSR_ACTION_ENTRY
+		{
 			public uint32 Index;
 			public uint8 ReadAction;
 			public uint8 WriteAction;
 			public uint16 Reserved;
 		}
 		[CRepr, Union]
-		public struct WHV_PARTITION_PROPERTY		{
+		public struct WHV_PARTITION_PROPERTY
+		{
 			public WHV_EXTENDED_VM_EXITS ExtendedVmExits;
 			public WHV_PROCESSOR_FEATURES ProcessorFeatures;
 			public WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS SyntheticProcessorFeaturesBanks;
@@ -1072,54 +1107,64 @@ namespace Win32
 			public BOOL DisableSmt;
 		}
 		[CRepr]
-		public struct WHV_TRANSLATE_GVA_RESULT		{
+		public struct WHV_TRANSLATE_GVA_RESULT
+		{
 			public WHV_TRANSLATE_GVA_RESULT_CODE ResultCode;
 			public uint32 Reserved;
 		}
 		[CRepr, Union]
-		public struct WHV_ADVISE_GPA_RANGE		{
+		public struct WHV_ADVISE_GPA_RANGE
+		{
 			public WHV_ADVISE_GPA_RANGE_POPULATE Populate;
 		}
 		[CRepr, Union]
-		public struct WHV_ACCESS_GPA_CONTROLS		{
+		public struct WHV_ACCESS_GPA_CONTROLS
+		{
 			public uint64 AsUINT64;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public WHV_CACHE_TYPE CacheType;
 				public uint32 Reserved;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_UINT128		{
+		public struct WHV_UINT128
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32[4] Dword;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 Low64;
 				public uint64 High64;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_FP_REGISTER		{
+		public struct WHV_X64_FP_REGISTER
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public WHV_UINT128 AsUINT128;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 Mantissa;
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_FP_CONTROL_STATUS_REGISTER		{
+		public struct WHV_X64_FP_CONTROL_STATUS_REGISTER
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public WHV_UINT128 AsUINT128;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint16 FpControl;
 				public uint16 FpStatus;
 				public uint8 FpTag;
@@ -1128,12 +1173,14 @@ namespace Win32
 				public _Anonymous_e__Union Anonymous;
 				
 				[CRepr, Union]
-				public struct _Anonymous_e__Union				{
+				public struct _Anonymous_e__Union
+				{
 					public uint64 LastFpRip;
 					public _Anonymous_e__Struct Anonymous;
 					
 					[CRepr]
-					public struct _Anonymous_e__Struct					{
+					public struct _Anonymous_e__Struct
+					{
 						public uint32 LastFpEip;
 						public uint16 LastFpCs;
 						public uint16 Reserved2;
@@ -1142,23 +1189,27 @@ namespace Win32
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_XMM_CONTROL_STATUS_REGISTER		{
+		public struct WHV_X64_XMM_CONTROL_STATUS_REGISTER
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public WHV_UINT128 AsUINT128;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public _Anonymous_e__Union Anonymous;
 				public uint32 XmmStatusControl;
 				public uint32 XmmStatusControlMask;
 				
 				[CRepr, Union]
-				public struct _Anonymous_e__Union				{
+				public struct _Anonymous_e__Union
+				{
 					public uint64 LastFpRdp;
 					public _Anonymous_e__Struct Anonymous;
 					
 					[CRepr]
-					public struct _Anonymous_e__Struct					{
+					public struct _Anonymous_e__Struct
+					{
 						public uint32 LastFpDp;
 						public uint16 LastFpDs;
 						public uint16 Reserved;
@@ -1167,111 +1218,131 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WHV_X64_SEGMENT_REGISTER		{
+		public struct WHV_X64_SEGMENT_REGISTER
+		{
 			public uint64 Base;
 			public uint32 Limit;
 			public uint16 Selector;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint16 Attributes;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct WHV_X64_TABLE_REGISTER		{
+		public struct WHV_X64_TABLE_REGISTER
+		{
 			public uint16[3] Pad;
 			public uint16 Limit;
 			public uint64 Base;
 		}
 		[CRepr, Union]
-		public struct WHV_X64_INTERRUPT_STATE_REGISTER		{
+		public struct WHV_X64_INTERRUPT_STATE_REGISTER
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_PENDING_INTERRUPTION_REGISTER		{
+		public struct WHV_X64_PENDING_INTERRUPTION_REGISTER
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 				public uint32 ErrorCode;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER		{
+		public struct WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_PENDING_EXCEPTION_EVENT		{
+		public struct WHV_X64_PENDING_EXCEPTION_EVENT
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public WHV_UINT128 AsUINT128;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 				public uint32 ErrorCode;
 				public uint64 ExceptionParameter;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_PENDING_EXT_INT_EVENT		{
+		public struct WHV_X64_PENDING_EXT_INT_EVENT
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public WHV_UINT128 AsUINT128;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 				public uint64 Reserved2;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_INTERNAL_ACTIVITY_REGISTER		{
+		public struct WHV_INTERNAL_ACTIVITY_REGISTER
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_X64_PENDING_DEBUG_EXCEPTION		{
+		public struct WHV_X64_PENDING_DEBUG_EXCEPTION
+		{
 			public uint64 AsUINT64;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_SYNIC_SINT_DELIVERABLE_CONTEXT		{
+		public struct WHV_SYNIC_SINT_DELIVERABLE_CONTEXT
+		{
 			public uint16 DeliverableSints;
 			public uint16 Reserved1;
 			public uint32 Reserved2;
 		}
 		[CRepr, Union]
-		public struct WHV_REGISTER_VALUE		{
+		public struct WHV_REGISTER_VALUE
+		{
 			public WHV_UINT128 Reg128;
 			public uint64 Reg64;
 			public uint32 Reg32;
@@ -1291,17 +1362,20 @@ namespace Win32
 			public WHV_X64_PENDING_DEBUG_EXCEPTION PendingDebugException;
 		}
 		[CRepr, Union]
-		public struct WHV_X64_VP_EXECUTION_STATE		{
+		public struct WHV_X64_VP_EXECUTION_STATE
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUINT16;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint16 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_VP_EXIT_CONTEXT		{
+		public struct WHV_VP_EXIT_CONTEXT
+		{
 			public WHV_X64_VP_EXECUTION_STATE ExecutionState;
 			public uint8 _bitfield;
 			public uint8 Reserved;
@@ -1311,17 +1385,20 @@ namespace Win32
 			public uint64 Rflags;
 		}
 		[CRepr, Union]
-		public struct WHV_MEMORY_ACCESS_INFO		{
+		public struct WHV_MEMORY_ACCESS_INFO
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 AsUINT32;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_MEMORY_ACCESS_CONTEXT		{
+		public struct WHV_MEMORY_ACCESS_CONTEXT
+		{
 			public uint8 InstructionByteCount;
 			public uint8[3] Reserved;
 			public uint8[16] InstructionBytes;
@@ -1330,17 +1407,20 @@ namespace Win32
 			public uint64 Gva;
 		}
 		[CRepr, Union]
-		public struct WHV_X64_IO_PORT_ACCESS_INFO		{
+		public struct WHV_X64_IO_PORT_ACCESS_INFO
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 AsUINT32;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_X64_IO_PORT_ACCESS_CONTEXT		{
+		public struct WHV_X64_IO_PORT_ACCESS_CONTEXT
+		{
 			public uint8 InstructionByteCount;
 			public uint8[3] Reserved;
 			public uint8[16] InstructionBytes;
@@ -1355,24 +1435,28 @@ namespace Win32
 			public WHV_X64_SEGMENT_REGISTER Es;
 		}
 		[CRepr, Union]
-		public struct WHV_X64_MSR_ACCESS_INFO		{
+		public struct WHV_X64_MSR_ACCESS_INFO
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 AsUINT32;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_X64_MSR_ACCESS_CONTEXT		{
+		public struct WHV_X64_MSR_ACCESS_CONTEXT
+		{
 			public WHV_X64_MSR_ACCESS_INFO AccessInfo;
 			public uint32 MsrNumber;
 			public uint64 Rax;
 			public uint64 Rdx;
 		}
 		[CRepr]
-		public struct WHV_X64_CPUID_ACCESS_CONTEXT		{
+		public struct WHV_X64_CPUID_ACCESS_CONTEXT
+		{
 			public uint64 Rax;
 			public uint64 Rcx;
 			public uint64 Rdx;
@@ -1383,17 +1467,20 @@ namespace Win32
 			public uint64 DefaultResultRbx;
 		}
 		[CRepr, Union]
-		public struct WHV_VP_EXCEPTION_INFO		{
+		public struct WHV_VP_EXCEPTION_INFO
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 AsUINT32;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_VP_EXCEPTION_CONTEXT		{
+		public struct WHV_VP_EXCEPTION_CONTEXT
+		{
 			public uint8 InstructionByteCount;
 			public uint8[3] Reserved;
 			public uint8[16] InstructionBytes;
@@ -1404,35 +1491,42 @@ namespace Win32
 			public uint64 ExceptionParameter;
 		}
 		[CRepr]
-		public struct WHV_X64_UNSUPPORTED_FEATURE_CONTEXT		{
+		public struct WHV_X64_UNSUPPORTED_FEATURE_CONTEXT
+		{
 			public WHV_X64_UNSUPPORTED_FEATURE_CODE FeatureCode;
 			public uint32 Reserved;
 			public uint64 FeatureParameter;
 		}
 		[CRepr]
-		public struct WHV_RUN_VP_CANCELED_CONTEXT		{
+		public struct WHV_RUN_VP_CANCELED_CONTEXT
+		{
 			public WHV_RUN_VP_CANCEL_REASON CancelReason;
 		}
 		[CRepr]
-		public struct WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT		{
+		public struct WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT
+		{
 			public WHV_X64_PENDING_INTERRUPTION_TYPE DeliverableType;
 		}
 		[CRepr]
-		public struct WHV_X64_APIC_EOI_CONTEXT		{
+		public struct WHV_X64_APIC_EOI_CONTEXT
+		{
 			public uint32 InterruptVector;
 		}
 		[CRepr, Union]
-		public struct WHV_X64_RDTSC_INFO		{
+		public struct WHV_X64_RDTSC_INFO
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 AsUINT64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_X64_RDTSC_CONTEXT		{
+		public struct WHV_X64_RDTSC_CONTEXT
+		{
 			public uint64 TscAux;
 			public uint64 VirtualOffset;
 			public uint64 Tsc;
@@ -1440,11 +1534,13 @@ namespace Win32
 			public WHV_X64_RDTSC_INFO RdtscInfo;
 		}
 		[CRepr]
-		public struct WHV_X64_APIC_SMI_CONTEXT		{
+		public struct WHV_X64_APIC_SMI_CONTEXT
+		{
 			public uint64 ApicIcr;
 		}
 		[CRepr]
-		public struct WHV_HYPERCALL_CONTEXT		{
+		public struct WHV_HYPERCALL_CONTEXT
+		{
 			public uint64 Rax;
 			public uint64 Rbx;
 			public uint64 Rcx;
@@ -1457,24 +1553,28 @@ namespace Win32
 			public uint64[2] Reserved1;
 		}
 		[CRepr]
-		public struct WHV_X64_APIC_INIT_SIPI_CONTEXT		{
+		public struct WHV_X64_APIC_INIT_SIPI_CONTEXT
+		{
 			public uint64 ApicIcr;
 		}
 		[CRepr]
-		public struct WHV_X64_APIC_WRITE_CONTEXT		{
+		public struct WHV_X64_APIC_WRITE_CONTEXT
+		{
 			public WHV_X64_APIC_WRITE_TYPE Type;
 			public uint32 Reserved;
 			public uint64 WriteValue;
 		}
 		[CRepr]
-		public struct WHV_RUN_VP_EXIT_CONTEXT		{
+		public struct WHV_RUN_VP_EXIT_CONTEXT
+		{
 			public WHV_RUN_VP_EXIT_REASON ExitReason;
 			public uint32 Reserved;
 			public WHV_VP_EXIT_CONTEXT VpContext;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public WHV_MEMORY_ACCESS_CONTEXT MemoryAccess;
 				public WHV_X64_IO_PORT_ACCESS_CONTEXT IoPortAccess;
 				public WHV_X64_MSR_ACCESS_CONTEXT MsrAccess;
@@ -1493,36 +1593,42 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WHV_INTERRUPT_CONTROL		{
+		public struct WHV_INTERRUPT_CONTROL
+		{
 			public uint64 _bitfield;
 			public uint32 Destination;
 			public uint32 Vector;
 		}
 		[CRepr]
-		public struct WHV_DOORBELL_MATCH_DATA		{
+		public struct WHV_DOORBELL_MATCH_DATA
+		{
 			public uint64 GuestAddress;
 			public uint64 Value;
 			public uint32 Length;
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct WHV_PARTITION_MEMORY_COUNTERS		{
+		public struct WHV_PARTITION_MEMORY_COUNTERS
+		{
 			public uint64 Mapped4KPageCount;
 			public uint64 Mapped2MPageCount;
 			public uint64 Mapped1GPageCount;
 		}
 		[CRepr]
-		public struct WHV_PROCESSOR_RUNTIME_COUNTERS		{
+		public struct WHV_PROCESSOR_RUNTIME_COUNTERS
+		{
 			public uint64 TotalRuntime100ns;
 			public uint64 HypervisorRuntime100ns;
 		}
 		[CRepr]
-		public struct WHV_PROCESSOR_INTERCEPT_COUNTER		{
+		public struct WHV_PROCESSOR_INTERCEPT_COUNTER
+		{
 			public uint64 Count;
 			public uint64 Time100ns;
 		}
 		[CRepr]
-		public struct WHV_PROCESSOR_INTERCEPT_COUNTERS		{
+		public struct WHV_PROCESSOR_INTERCEPT_COUNTERS
+		{
 			public WHV_PROCESSOR_INTERCEPT_COUNTER PageInvalidations;
 			public WHV_PROCESSOR_INTERCEPT_COUNTER ControlRegisterAccesses;
 			public WHV_PROCESSOR_INTERCEPT_COUNTER IoInstructions;
@@ -1539,13 +1645,15 @@ namespace Win32
 			public WHV_PROCESSOR_INTERCEPT_COUNTER RdpmcInstructions;
 		}
 		[CRepr]
-		public struct WHV_PROCESSOR_EVENT_COUNTERS		{
+		public struct WHV_PROCESSOR_EVENT_COUNTERS
+		{
 			public uint64 PageFaultCount;
 			public uint64 ExceptionCount;
 			public uint64 InterruptCount;
 		}
 		[CRepr]
-		public struct WHV_PROCESSOR_APIC_COUNTERS		{
+		public struct WHV_PROCESSOR_APIC_COUNTERS
+		{
 			public uint64 MmioAccessCount;
 			public uint64 EoiAccessCount;
 			public uint64 TprAccessCount;
@@ -1553,7 +1661,8 @@ namespace Win32
 			public uint64 SelfIpiCount;
 		}
 		[CRepr]
-		public struct WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS		{
+		public struct WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS
+		{
 			public uint64 SyntheticInterruptsCount;
 			public uint64 LongSpinWaitHypercallsCount;
 			public uint64 OtherHypercallsCount;
@@ -1562,32 +1671,37 @@ namespace Win32
 			public uint64 VirtualMmuHypercallsCount;
 		}
 		[CRepr]
-		public struct WHV_SYNIC_EVENT_PARAMETERS		{
+		public struct WHV_SYNIC_EVENT_PARAMETERS
+		{
 			public uint32 VpIndex;
 			public uint8 TargetSint;
 			public uint8 Reserved;
 			public uint16 FlagNumber;
 		}
 		[CRepr]
-		public struct WHV_SRIOV_RESOURCE_DESCRIPTOR		{
+		public struct WHV_SRIOV_RESOURCE_DESCRIPTOR
+		{
 			public char16[200] PnpInstanceId;
 			public LUID VirtualFunctionId;
 			public uint16 VirtualFunctionIndex;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct WHV_VPCI_DEVICE_NOTIFICATION		{
+		public struct WHV_VPCI_DEVICE_NOTIFICATION
+		{
 			public WHV_VPCI_DEVICE_NOTIFICATION_TYPE NotificationType;
 			public uint32 Reserved1;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Reserved2;
 			}
 		}
 		[CRepr]
-		public struct WHV_VPCI_HARDWARE_IDS		{
+		public struct WHV_VPCI_HARDWARE_IDS
+		{
 			public uint16 VendorID;
 			public uint16 DeviceID;
 			public uint8 RevisionID;
@@ -1598,11 +1712,13 @@ namespace Win32
 			public uint16 SubSystemID;
 		}
 		[CRepr]
-		public struct WHV_VPCI_PROBED_BARS		{
+		public struct WHV_VPCI_PROBED_BARS
+		{
 			public uint32[6] Value;
 		}
 		[CRepr]
-		public struct WHV_VPCI_MMIO_MAPPING		{
+		public struct WHV_VPCI_MMIO_MAPPING
+		{
 			public WHV_VPCI_DEVICE_REGISTER_SPACE Location;
 			public WHV_VPCI_MMIO_RANGE_FLAGS Flags;
 			public uint64 SizeInBytes;
@@ -1610,32 +1726,37 @@ namespace Win32
 			public void* VirtualAddress;
 		}
 		[CRepr]
-		public struct WHV_VPCI_DEVICE_REGISTER		{
+		public struct WHV_VPCI_DEVICE_REGISTER
+		{
 			public WHV_VPCI_DEVICE_REGISTER_SPACE Location;
 			public uint32 SizeInBytes;
 			public uint64 OffsetInBytes;
 		}
 		[CRepr]
-		public struct WHV_VPCI_INTERRUPT_TARGET		{
+		public struct WHV_VPCI_INTERRUPT_TARGET
+		{
 			public uint32 Vector;
 			public WHV_VPCI_INTERRUPT_TARGET_FLAGS Flags;
 			public uint32 ProcessorCount;
 			public uint32[0] Processors;
 		}
 		[CRepr]
-		public struct WHV_TRIGGER_PARAMETERS		{
+		public struct WHV_TRIGGER_PARAMETERS
+		{
 			public WHV_TRIGGER_TYPE TriggerType;
 			public uint32 Reserved;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public WHV_INTERRUPT_CONTROL Interrupt;
 				public WHV_SYNIC_EVENT_PARAMETERS SynicEvent;
 				public _DeviceInterrupt_e__Struct DeviceInterrupt;
 				
 				[CRepr]
-				public struct _DeviceInterrupt_e__Struct				{
+				public struct _DeviceInterrupt_e__Struct
+				{
 					public uint64 LogicalDeviceId;
 					public uint64 MsiAddress;
 					public uint32 MsiData;
@@ -1644,60 +1765,70 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WHV_VIRTUAL_PROCESSOR_PROPERTY		{
+		public struct WHV_VIRTUAL_PROCESSOR_PROPERTY
+		{
 			public WHV_VIRTUAL_PROCESSOR_PROPERTY_CODE PropertyCode;
 			public uint32 Reserved;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint16 NumaNode;
 				public uint64 Padding;
 			}
 		}
 		[CRepr]
-		public struct WHV_NOTIFICATION_PORT_PARAMETERS		{
+		public struct WHV_NOTIFICATION_PORT_PARAMETERS
+		{
 			public WHV_NOTIFICATION_PORT_TYPE NotificationPortType;
 			public uint32 Reserved;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public WHV_DOORBELL_MATCH_DATA Doorbell;
 				public _Event_e__Struct Event;
 				
 				[CRepr]
-				public struct _Event_e__Struct				{
+				public struct _Event_e__Struct
+				{
 					public uint32 ConnectionId;
 				}
 			}
 		}
 		[CRepr, Union]
-		public struct WHV_EMULATOR_STATUS		{
+		public struct WHV_EMULATOR_STATUS
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 AsUINT32;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHV_EMULATOR_MEMORY_ACCESS_INFO		{
+		public struct WHV_EMULATOR_MEMORY_ACCESS_INFO
+		{
 			public uint64 GpaAddress;
 			public uint8 Direction;
 			public uint8 AccessSize;
 			public uint8[8] Data;
 		}
 		[CRepr]
-		public struct WHV_EMULATOR_IO_ACCESS_INFO		{
+		public struct WHV_EMULATOR_IO_ACCESS_INFO
+		{
 			public uint8 Direction;
 			public uint16 Port;
 			public uint16 AccessSize;
 			public uint32 Data;
 		}
 		[CRepr]
-		public struct WHV_EMULATOR_CALLBACKS		{
+		public struct WHV_EMULATOR_CALLBACKS
+		{
 			public uint32 Size;
 			public uint32 Reserved;
 			public WHV_EMULATOR_IO_PORT_CALLBACK WHvEmulatorIoPortCallback;
@@ -1707,26 +1838,30 @@ namespace Win32
 			public WHV_EMULATOR_TRANSLATE_GVA_PAGE_CALLBACK WHvEmulatorTranslateGvaPage;
 		}
 		[CRepr]
-		public struct SOCKADDR_HV		{
+		public struct SOCKADDR_HV
+		{
 			public uint16 Family;
 			public uint16 Reserved;
 			public Guid VmId;
 			public Guid ServiceId;
 		}
 		[CRepr]
-		public struct HVSOCKET_ADDRESS_INFO		{
+		public struct HVSOCKET_ADDRESS_INFO
+		{
 			public Guid SystemId;
 			public Guid VirtualMachineId;
 			public Guid SiloId;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct VM_GENCOUNTER		{
+		public struct VM_GENCOUNTER
+		{
 			public uint64 GenerationCount;
 			public uint64 GenerationCountHigh;
 		}
 		[CRepr]
-		public struct HDV_PCI_PNP_ID		{
+		public struct HDV_PCI_PNP_ID
+		{
 			public uint16 VendorID;
 			public uint16 DeviceID;
 			public uint8 RevisionID;
@@ -1737,7 +1872,8 @@ namespace Win32
 			public uint16 SubSystemID;
 		}
 		[CRepr]
-		public struct HDV_PCI_DEVICE_INTERFACE		{
+		public struct HDV_PCI_DEVICE_INTERFACE
+		{
 			public HDV_PCI_INTERFACE_VERSION Version;
 			public HDV_PCI_DEVICE_INITIALIZE Initialize;
 			public HDV_PCI_DEVICE_TEARDOWN Teardown;
@@ -1751,27 +1887,32 @@ namespace Win32
 			public HDV_PCI_WRITE_INTERCEPTED_MEMORY WriteInterceptedMemory;
 		}
 		[CRepr]
-		public struct GPA_MEMORY_CHUNK		{
+		public struct GPA_MEMORY_CHUNK
+		{
 			public uint64 GuestPhysicalStartPageIndex;
 			public uint64 PageCount;
 		}
 		[CRepr, Union]
-		public struct GUEST_OS_INFO		{
+		public struct GUEST_OS_INFO
+		{
 			public uint64 AsUINT64;
 			public _ClosedSource_e__Struct ClosedSource;
 			public _OpenSource_e__Struct OpenSource;
 			
 			[CRepr]
-			public struct _OpenSource_e__Struct			{
+			public struct _OpenSource_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 			[CRepr]
-			public struct _ClosedSource_e__Struct			{
+			public struct _ClosedSource_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct VIRTUAL_PROCESSOR_REGISTER		{
+		public struct VIRTUAL_PROCESSOR_REGISTER
+		{
 			public uint64 Reg64;
 			public uint32 Reg32;
 			public uint16 Reg16;
@@ -1780,32 +1921,37 @@ namespace Win32
 			public _X64_e__Union X64;
 			
 			[CRepr, Union]
-			public struct _X64_e__Union			{
+			public struct _X64_e__Union
+			{
 				public _Segment_e__Struct Segment;
 				public _Table_e__Struct Table;
 				public _FpControlStatus_e__Struct FpControlStatus;
 				public _XmmControlStatus_e__Struct XmmControlStatus;
 				
 				[CRepr]
-				public struct _XmmControlStatus_e__Struct				{
+				public struct _XmmControlStatus_e__Struct
+				{
 					public _Anonymous_e__Union Anonymous;
 					public uint32 XmmStatusControl;
 					public uint32 XmmStatusControlMask;
 					
 					[CRepr, Union]
-					public struct _Anonymous_e__Union					{
+					public struct _Anonymous_e__Union
+					{
 						public uint64 LastFpRdp;
 						public _Anonymous_e__Struct Anonymous;
 						
 						[CRepr]
-						public struct _Anonymous_e__Struct						{
+						public struct _Anonymous_e__Struct
+						{
 							public uint32 LastFpDp;
 							public uint16 LastFpDs;
 						}
 					}
 				}
 				[CRepr]
-				public struct _FpControlStatus_e__Struct				{
+				public struct _FpControlStatus_e__Struct
+				{
 					public uint16 FpControl;
 					public uint16 FpStatus;
 					public uint8 FpTag;
@@ -1814,56 +1960,65 @@ namespace Win32
 					public _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
-					public struct _Anonymous_e__Union					{
+					public struct _Anonymous_e__Union
+					{
 						public uint64 LastFpRip;
 						public _Anonymous_e__Struct Anonymous;
 						
 						[CRepr]
-						public struct _Anonymous_e__Struct						{
+						public struct _Anonymous_e__Struct
+						{
 							public uint32 LastFpEip;
 							public uint16 LastFpCs;
 						}
 					}
 				}
 				[CRepr]
-				public struct _Segment_e__Struct				{
+				public struct _Segment_e__Struct
+				{
 					public uint64 Base;
 					public uint32 Limit;
 					public uint16 Selector;
 					public _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
-					public struct _Anonymous_e__Union					{
+					public struct _Anonymous_e__Union
+					{
 						public uint16 Attributes;
 						public _Anonymous_e__Struct Anonymous;
 						
 						[CRepr]
-						public struct _Anonymous_e__Struct						{
+						public struct _Anonymous_e__Struct
+						{
 							public uint16 _bitfield;
 						}
 					}
 				}
 				[CRepr]
-				public struct _Table_e__Struct				{
+				public struct _Table_e__Struct
+				{
 					public uint16 Limit;
 					public uint64 Base;
 				}
 			}
 			[CRepr]
-			public struct _Reg128_e__Struct			{
+			public struct _Reg128_e__Struct
+			{
 				public uint64 Low64;
 				public uint64 High64;
 			}
 		}
 		[CRepr]
-		public struct DOS_IMAGE_INFO		{
+		public struct DOS_IMAGE_INFO
+		{
 			public PSTR PdbName;
 			public uint64 ImageBaseAddress;
 			public uint32 ImageSize;
 			public uint32 Timestamp;
 		}
 		[CRepr]
-		public struct MODULE_INFO		{
+		public struct MODULE_INFO
+		{
 			public PSTR ProcessImageName;
 			public DOS_IMAGE_INFO Image;
 		}

@@ -216,7 +216,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NETRESOURCEA		{
+		public struct NETRESOURCEA
+		{
 			public NET_RESOURCE_SCOPE dwScope;
 			public NET_RESOURCE_TYPE dwType;
 			public uint32 dwDisplayType;
@@ -227,7 +228,8 @@ namespace Win32
 			public PSTR lpProvider;
 		}
 		[CRepr]
-		public struct NETRESOURCEW		{
+		public struct NETRESOURCEW
+		{
 			public NET_RESOURCE_SCOPE dwScope;
 			public NET_RESOURCE_TYPE dwType;
 			public uint32 dwDisplayType;
@@ -238,7 +240,8 @@ namespace Win32
 			public PWSTR lpProvider;
 		}
 		[CRepr]
-		public struct CONNECTDLGSTRUCTA		{
+		public struct CONNECTDLGSTRUCTA
+		{
 			public uint32 cbStructure;
 			public HWND hwndOwner;
 			public NETRESOURCEA* lpConnRes;
@@ -246,7 +249,8 @@ namespace Win32
 			public uint32 dwDevNum;
 		}
 		[CRepr]
-		public struct CONNECTDLGSTRUCTW		{
+		public struct CONNECTDLGSTRUCTW
+		{
 			public uint32 cbStructure;
 			public HWND hwndOwner;
 			public NETRESOURCEW* lpConnRes;
@@ -254,7 +258,8 @@ namespace Win32
 			public uint32 dwDevNum;
 		}
 		[CRepr]
-		public struct DISCDLGSTRUCTA		{
+		public struct DISCDLGSTRUCTA
+		{
 			public uint32 cbStructure;
 			public HWND hwndOwner;
 			public PSTR lpLocalName;
@@ -262,7 +267,8 @@ namespace Win32
 			public DISCDLGSTRUCT_FLAGS dwFlags;
 		}
 		[CRepr]
-		public struct DISCDLGSTRUCTW		{
+		public struct DISCDLGSTRUCTW
+		{
 			public uint32 cbStructure;
 			public HWND hwndOwner;
 			public PWSTR lpLocalName;
@@ -270,27 +276,32 @@ namespace Win32
 			public DISCDLGSTRUCT_FLAGS dwFlags;
 		}
 		[CRepr]
-		public struct UNIVERSAL_NAME_INFOA		{
+		public struct UNIVERSAL_NAME_INFOA
+		{
 			public PSTR lpUniversalName;
 		}
 		[CRepr]
-		public struct UNIVERSAL_NAME_INFOW		{
+		public struct UNIVERSAL_NAME_INFOW
+		{
 			public PWSTR lpUniversalName;
 		}
 		[CRepr]
-		public struct REMOTE_NAME_INFOA		{
+		public struct REMOTE_NAME_INFOA
+		{
 			public PSTR lpUniversalName;
 			public PSTR lpConnectionName;
 			public PSTR lpRemainingPath;
 		}
 		[CRepr]
-		public struct REMOTE_NAME_INFOW		{
+		public struct REMOTE_NAME_INFOW
+		{
 			public PWSTR lpUniversalName;
 			public PWSTR lpConnectionName;
 			public PWSTR lpRemainingPath;
 		}
 		[CRepr]
-		public struct NETINFOSTRUCT		{
+		public struct NETINFOSTRUCT
+		{
 			public uint32 cbStructure;
 			public uint32 dwProviderVersion;
 			public WIN32_ERROR dwStatus;
@@ -301,7 +312,8 @@ namespace Win32
 			public uint32 dwDrives;
 		}
 		[CRepr]
-		public struct NETCONNECTINFOSTRUCT		{
+		public struct NETCONNECTINFOSTRUCT
+		{
 			public uint32 cbStructure;
 			public uint32 dwFlags;
 			public uint32 dwSpeed;
@@ -309,19 +321,22 @@ namespace Win32
 			public uint32 dwOptDataSize;
 		}
 		[CRepr]
-		public struct NOTIFYINFO		{
+		public struct NOTIFYINFO
+		{
 			public uint32 dwNotifyStatus;
 			public uint32 dwOperationStatus;
 			public void* lpContext;
 		}
 		[CRepr]
-		public struct NOTIFYADD		{
+		public struct NOTIFYADD
+		{
 			public HWND hwndOwner;
 			public NETRESOURCEA NetResource;
 			public NET_USE_CONNECT_FLAGS dwAddFlags;
 		}
 		[CRepr]
-		public struct NOTIFYCANCEL		{
+		public struct NOTIFYCANCEL
+		{
 			public PWSTR lpName;
 			public PWSTR lpProvider;
 			public uint32 dwFlags;

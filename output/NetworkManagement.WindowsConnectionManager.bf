@@ -61,28 +61,33 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WCM_POLICY_VALUE		{
+		public struct WCM_POLICY_VALUE
+		{
 			public BOOL fValue;
 			public BOOL fIsGroupPolicy;
 		}
 		[CRepr]
-		public struct WCM_PROFILE_INFO		{
+		public struct WCM_PROFILE_INFO
+		{
 			public char16[256] strProfileName;
 			public Guid AdapterGUID;
 			public WCM_MEDIA_TYPE Media;
 		}
 		[CRepr]
-		public struct WCM_PROFILE_INFO_LIST		{
+		public struct WCM_PROFILE_INFO_LIST
+		{
 			public uint32 dwNumberOfItems;
 			public WCM_PROFILE_INFO[0] ProfileInfo;
 		}
 		[CRepr]
-		public struct WCM_CONNECTION_COST_DATA		{
+		public struct WCM_CONNECTION_COST_DATA
+		{
 			public uint32 ConnectionCost;
 			public WCM_CONNECTION_COST_SOURCE CostSource;
 		}
 		[CRepr]
-		public struct WCM_TIME_INTERVAL		{
+		public struct WCM_TIME_INTERVAL
+		{
 			public uint16 wYear;
 			public uint16 wMonth;
 			public uint16 wDay;
@@ -92,18 +97,21 @@ namespace Win32
 			public uint16 wMilliseconds;
 		}
 		[CRepr]
-		public struct WCM_USAGE_DATA		{
+		public struct WCM_USAGE_DATA
+		{
 			public uint32 UsageInMegabytes;
 			public FILETIME LastSyncTime;
 		}
 		[CRepr]
-		public struct WCM_BILLING_CYCLE_INFO		{
+		public struct WCM_BILLING_CYCLE_INFO
+		{
 			public FILETIME StartDate;
 			public WCM_TIME_INTERVAL Duration;
 			public BOOL Reset;
 		}
 		[CRepr]
-		public struct WCM_DATAPLAN_STATUS		{
+		public struct WCM_DATAPLAN_STATUS
+		{
 			public WCM_USAGE_DATA UsageData;
 			public uint32 DataLimitInMegabytes;
 			public uint32 InboundBandwidthInKbps;
@@ -113,12 +121,14 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NET_INTERFACE_CONTEXT		{
+		public struct NET_INTERFACE_CONTEXT
+		{
 			public uint32 InterfaceIndex;
 			public PWSTR ConfigurationName;
 		}
 		[CRepr]
-		public struct NET_INTERFACE_CONTEXT_TABLE		{
+		public struct NET_INTERFACE_CONTEXT_TABLE
+		{
 			public HANDLE InterfaceContextHandle;
 			public uint32 NumberOfEntries;
 			public NET_INTERFACE_CONTEXT* InterfaceContextArray;

@@ -31,14 +31,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct QOCINFO		{
+		public struct QOCINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwInSpeed;
 			public uint32 dwOutSpeed;
 		}
 		[CRepr]
-		public struct SENS_QOCINFO		{
+		public struct SENS_QOCINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwOutSpeed;

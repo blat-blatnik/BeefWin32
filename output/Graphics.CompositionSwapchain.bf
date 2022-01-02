@@ -29,11 +29,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SystemInterruptTime		{
+		public struct SystemInterruptTime
+		{
 			public uint64 value;
 		}
 		[CRepr]
-		public struct PresentationTransform		{
+		public struct PresentationTransform
+		{
 			public float M11;
 			public float M12;
 			public float M21;
@@ -42,7 +44,8 @@ namespace Win32
 			public float M32;
 		}
 		[CRepr]
-		public struct CompositionFrameDisplayInstance		{
+		public struct CompositionFrameDisplayInstance
+		{
 			public LUID displayAdapterLUID;
 			public uint32 displayVidPnSourceId;
 			public uint32 displayUniqueId;

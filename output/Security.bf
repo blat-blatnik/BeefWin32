@@ -401,62 +401,73 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SECURITY_ATTRIBUTES		{
+		public struct SECURITY_ATTRIBUTES
+		{
 			public uint32 nLength;
 			public void* lpSecurityDescriptor;
 			public BOOL bInheritHandle;
 		}
 		[CRepr]
-		public struct LLFILETIME		{
+		public struct LLFILETIME
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public int64 ll;
 				public FILETIME ft;
 			}
 		}
 		[CRepr]
-		public struct GENERIC_MAPPING		{
+		public struct GENERIC_MAPPING
+		{
 			public uint32 GenericRead;
 			public uint32 GenericWrite;
 			public uint32 GenericExecute;
 			public uint32 GenericAll;
 		}
 		[CRepr]
-		public struct LUID_AND_ATTRIBUTES		{
+		public struct LUID_AND_ATTRIBUTES
+		{
 			public LUID Luid;
 			public TOKEN_PRIVILEGES_ATTRIBUTES Attributes;
 		}
 		[CRepr]
-		public struct SID_IDENTIFIER_AUTHORITY		{
+		public struct SID_IDENTIFIER_AUTHORITY
+		{
 			public uint8[6] Value;
 		}
 		[CRepr]
-		public struct SID		{
+		public struct SID
+		{
 			public uint8 Revision;
 			public uint8 SubAuthorityCount;
 			public SID_IDENTIFIER_AUTHORITY IdentifierAuthority;
 			public uint32[0] SubAuthority;
 		}
 		[CRepr, Union]
-		public struct SE_SID		{
+		public struct SE_SID
+		{
 			public SID Sid;
 			public uint8[68] Buffer;
 		}
 		[CRepr]
-		public struct SID_AND_ATTRIBUTES		{
+		public struct SID_AND_ATTRIBUTES
+		{
 			public PSID Sid;
 			public uint32 Attributes;
 		}
 		[CRepr]
-		public struct SID_AND_ATTRIBUTES_HASH		{
+		public struct SID_AND_ATTRIBUTES_HASH
+		{
 			public uint32 SidCount;
 			public SID_AND_ATTRIBUTES* SidAttr;
 			public uint[32] Hash;
 		}
 		[CRepr]
-		public struct ACL		{
+		public struct ACL
+		{
 			public uint8 AclRevision;
 			public uint8 Sbz1;
 			public uint16 AclSize;
@@ -464,85 +475,78 @@ namespace Win32
 			public uint16 Sbz2;
 		}
 		[CRepr]
-		public struct ACE_HEADER		{
+		public struct ACE_HEADER
+		{
 			public uint8 AceType;
 			public uint8 AceFlags;
 			public uint16 AceSize;
 		}
 		[CRepr]
-		public struct ACCESS_ALLOWED_ACE		{
+		public struct ACCESS_ALLOWED_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct ACCESS_DENIED_ACE		{
+		public struct ACCESS_DENIED_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_AUDIT_ACE		{
+		public struct SYSTEM_AUDIT_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_ALARM_ACE		{
+		public struct SYSTEM_ALARM_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_RESOURCE_ATTRIBUTE_ACE		{
+		public struct SYSTEM_RESOURCE_ATTRIBUTE_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_SCOPED_POLICY_ID_ACE		{
+		public struct SYSTEM_SCOPED_POLICY_ID_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_MANDATORY_LABEL_ACE		{
+		public struct SYSTEM_MANDATORY_LABEL_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_PROCESS_TRUST_LABEL_ACE		{
+		public struct SYSTEM_PROCESS_TRUST_LABEL_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_ACCESS_FILTER_ACE		{
+		public struct SYSTEM_ACCESS_FILTER_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct ACCESS_ALLOWED_OBJECT_ACE		{
-			public ACE_HEADER Header;
-			public uint32 Mask;
-			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
-			public Guid ObjectType;
-			public Guid InheritedObjectType;
-			public uint32 SidStart;
-		}
-		[CRepr]
-		public struct ACCESS_DENIED_OBJECT_ACE		{
-			public ACE_HEADER Header;
-			public uint32 Mask;
-			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
-			public Guid ObjectType;
-			public Guid InheritedObjectType;
-			public uint32 SidStart;
-		}
-		[CRepr]
-		public struct SYSTEM_AUDIT_OBJECT_ACE		{
+		public struct ACCESS_ALLOWED_OBJECT_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
@@ -551,7 +555,28 @@ namespace Win32
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_ALARM_OBJECT_ACE		{
+		public struct ACCESS_DENIED_OBJECT_ACE
+		{
+			public ACE_HEADER Header;
+			public uint32 Mask;
+			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
+			public Guid ObjectType;
+			public Guid InheritedObjectType;
+			public uint32 SidStart;
+		}
+		[CRepr]
+		public struct SYSTEM_AUDIT_OBJECT_ACE
+		{
+			public ACE_HEADER Header;
+			public uint32 Mask;
+			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
+			public Guid ObjectType;
+			public Guid InheritedObjectType;
+			public uint32 SidStart;
+		}
+		[CRepr]
+		public struct SYSTEM_ALARM_OBJECT_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 Flags;
@@ -560,40 +585,36 @@ namespace Win32
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct ACCESS_ALLOWED_CALLBACK_ACE		{
+		public struct ACCESS_ALLOWED_CALLBACK_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct ACCESS_DENIED_CALLBACK_ACE		{
+		public struct ACCESS_DENIED_CALLBACK_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_AUDIT_CALLBACK_ACE		{
+		public struct SYSTEM_AUDIT_CALLBACK_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_ALARM_CALLBACK_ACE		{
+		public struct SYSTEM_ALARM_CALLBACK_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct ACCESS_ALLOWED_CALLBACK_OBJECT_ACE		{
-			public ACE_HEADER Header;
-			public uint32 Mask;
-			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
-			public Guid ObjectType;
-			public Guid InheritedObjectType;
-			public uint32 SidStart;
-		}
-		[CRepr]
-		public struct ACCESS_DENIED_CALLBACK_OBJECT_ACE		{
+		public struct ACCESS_ALLOWED_CALLBACK_OBJECT_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
@@ -602,7 +623,8 @@ namespace Win32
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_AUDIT_CALLBACK_OBJECT_ACE		{
+		public struct ACCESS_DENIED_CALLBACK_OBJECT_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
@@ -611,7 +633,8 @@ namespace Win32
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct SYSTEM_ALARM_CALLBACK_OBJECT_ACE		{
+		public struct SYSTEM_AUDIT_CALLBACK_OBJECT_ACE
+		{
 			public ACE_HEADER Header;
 			public uint32 Mask;
 			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
@@ -620,17 +643,30 @@ namespace Win32
 			public uint32 SidStart;
 		}
 		[CRepr]
-		public struct ACL_REVISION_INFORMATION		{
+		public struct SYSTEM_ALARM_CALLBACK_OBJECT_ACE
+		{
+			public ACE_HEADER Header;
+			public uint32 Mask;
+			public SYSTEM_AUDIT_OBJECT_ACE_FLAGS Flags;
+			public Guid ObjectType;
+			public Guid InheritedObjectType;
+			public uint32 SidStart;
+		}
+		[CRepr]
+		public struct ACL_REVISION_INFORMATION
+		{
 			public uint32 AclRevision;
 		}
 		[CRepr]
-		public struct ACL_SIZE_INFORMATION		{
+		public struct ACL_SIZE_INFORMATION
+		{
 			public uint32 AceCount;
 			public uint32 AclBytesInUse;
 			public uint32 AclBytesFree;
 		}
 		[CRepr]
-		public struct SECURITY_DESCRIPTOR		{
+		public struct SECURITY_DESCRIPTOR
+		{
 			public uint8 Revision;
 			public uint8 Sbz1;
 			public uint16 Control;
@@ -640,29 +676,34 @@ namespace Win32
 			public ACL* Dacl;
 		}
 		[CRepr]
-		public struct OBJECT_TYPE_LIST		{
+		public struct OBJECT_TYPE_LIST
+		{
 			public uint16 Level;
 			public uint16 Sbz;
 			public Guid* ObjectType;
 		}
 		[CRepr]
-		public struct PRIVILEGE_SET		{
+		public struct PRIVILEGE_SET
+		{
 			public uint32 PrivilegeCount;
 			public uint32 Control;
 			public LUID_AND_ATTRIBUTES[0] Privilege;
 		}
 		[CRepr]
-		public struct ACCESS_REASONS		{
+		public struct ACCESS_REASONS
+		{
 			public uint32[32] Data;
 		}
 		[CRepr]
-		public struct SE_SECURITY_DESCRIPTOR		{
+		public struct SE_SECURITY_DESCRIPTOR
+		{
 			public uint32 Size;
 			public uint32 Flags;
 			public SECURITY_DESCRIPTOR* SecurityDescriptor;
 		}
 		[CRepr]
-		public struct SE_ACCESS_REQUEST		{
+		public struct SE_ACCESS_REQUEST
+		{
 			public uint32 Size;
 			public SE_SECURITY_DESCRIPTOR* SeSecurityDescriptor;
 			public uint32 DesiredAccess;
@@ -673,7 +714,8 @@ namespace Win32
 			public OBJECT_TYPE_LIST* ObjectTypeList;
 		}
 		[CRepr]
-		public struct SE_ACCESS_REPLY		{
+		public struct SE_ACCESS_REPLY
+		{
 			public uint32 Size;
 			public uint32 ResultListCount;
 			public uint32* GrantedAccess;
@@ -682,41 +724,50 @@ namespace Win32
 			public PRIVILEGE_SET** Privileges;
 		}
 		[CRepr]
-		public struct TOKEN_USER		{
+		public struct TOKEN_USER
+		{
 			public SID_AND_ATTRIBUTES User;
 		}
 		[CRepr]
-		public struct TOKEN_GROUPS		{
+		public struct TOKEN_GROUPS
+		{
 			public uint32 GroupCount;
 			public SID_AND_ATTRIBUTES[0] Groups;
 		}
 		[CRepr]
-		public struct TOKEN_PRIVILEGES		{
+		public struct TOKEN_PRIVILEGES
+		{
 			public uint32 PrivilegeCount;
 			public LUID_AND_ATTRIBUTES[0] Privileges;
 		}
 		[CRepr]
-		public struct TOKEN_OWNER		{
+		public struct TOKEN_OWNER
+		{
 			public PSID Owner;
 		}
 		[CRepr]
-		public struct TOKEN_PRIMARY_GROUP		{
+		public struct TOKEN_PRIMARY_GROUP
+		{
 			public PSID PrimaryGroup;
 		}
 		[CRepr]
-		public struct TOKEN_DEFAULT_DACL		{
+		public struct TOKEN_DEFAULT_DACL
+		{
 			public ACL* DefaultDacl;
 		}
 		[CRepr]
-		public struct TOKEN_USER_CLAIMS		{
+		public struct TOKEN_USER_CLAIMS
+		{
 			public void* UserClaims;
 		}
 		[CRepr]
-		public struct TOKEN_DEVICE_CLAIMS		{
+		public struct TOKEN_DEVICE_CLAIMS
+		{
 			public void* DeviceClaims;
 		}
 		[CRepr]
-		public struct TOKEN_GROUPS_AND_PRIVILEGES		{
+		public struct TOKEN_GROUPS_AND_PRIVILEGES
+		{
 			public uint32 SidCount;
 			public uint32 SidLength;
 			public SID_AND_ATTRIBUTES* Sids;
@@ -729,23 +780,28 @@ namespace Win32
 			public LUID AuthenticationId;
 		}
 		[CRepr]
-		public struct TOKEN_LINKED_TOKEN		{
+		public struct TOKEN_LINKED_TOKEN
+		{
 			public HANDLE LinkedToken;
 		}
 		[CRepr]
-		public struct TOKEN_ELEVATION		{
+		public struct TOKEN_ELEVATION
+		{
 			public uint32 TokenIsElevated;
 		}
 		[CRepr]
-		public struct TOKEN_MANDATORY_LABEL		{
+		public struct TOKEN_MANDATORY_LABEL
+		{
 			public SID_AND_ATTRIBUTES Label;
 		}
 		[CRepr]
-		public struct TOKEN_MANDATORY_POLICY		{
+		public struct TOKEN_MANDATORY_POLICY
+		{
 			public TOKEN_MANDATORY_POLICY_ID Policy;
 		}
 		[CRepr]
-		public struct TOKEN_ACCESS_INFORMATION		{
+		public struct TOKEN_ACCESS_INFORMATION
+		{
 			public SID_AND_ATTRIBUTES_HASH* SidHash;
 			public SID_AND_ATTRIBUTES_HASH* RestrictedSidHash;
 			public TOKEN_PRIVILEGES* Privileges;
@@ -761,16 +817,19 @@ namespace Win32
 			public void* SecurityAttributes;
 		}
 		[CRepr]
-		public struct TOKEN_AUDIT_POLICY		{
+		public struct TOKEN_AUDIT_POLICY
+		{
 			public uint8[30] PerUserPolicy;
 		}
 		[CRepr]
-		public struct TOKEN_SOURCE		{
+		public struct TOKEN_SOURCE
+		{
 			public CHAR[8] SourceName;
 			public LUID SourceIdentifier;
 		}
 		[CRepr]
-		public struct TOKEN_STATISTICS		{
+		public struct TOKEN_STATISTICS
+		{
 			public LUID TokenId;
 			public LUID AuthenticationId;
 			public LARGE_INTEGER ExpirationTime;
@@ -783,32 +842,38 @@ namespace Win32
 			public LUID ModifiedId;
 		}
 		[CRepr]
-		public struct TOKEN_CONTROL		{
+		public struct TOKEN_CONTROL
+		{
 			public LUID TokenId;
 			public LUID AuthenticationId;
 			public LUID ModifiedId;
 			public TOKEN_SOURCE TokenSource;
 		}
 		[CRepr]
-		public struct TOKEN_ORIGIN		{
+		public struct TOKEN_ORIGIN
+		{
 			public LUID OriginatingLogonSession;
 		}
 		[CRepr]
-		public struct TOKEN_APPCONTAINER_INFORMATION		{
+		public struct TOKEN_APPCONTAINER_INFORMATION
+		{
 			public PSID TokenAppContainer;
 		}
 		[CRepr]
-		public struct CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE		{
+		public struct CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE
+		{
 			public uint64 Version;
 			public PWSTR Name;
 		}
 		[CRepr]
-		public struct CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE		{
+		public struct CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE
+		{
 			public void* pValue;
 			public uint32 ValueLength;
 		}
 		[CRepr]
-		public struct CLAIM_SECURITY_ATTRIBUTE_V1		{
+		public struct CLAIM_SECURITY_ATTRIBUTE_V1
+		{
 			public PWSTR Name;
 			public CLAIM_SECURITY_ATTRIBUTE_VALUE_TYPE ValueType;
 			public uint16 Reserved;
@@ -817,7 +882,8 @@ namespace Win32
 			public _Values_e__Union Values;
 			
 			[CRepr, Union]
-			public struct _Values_e__Union			{
+			public struct _Values_e__Union
+			{
 				public int64* pInt64;
 				public uint64* pUint64;
 				public PWSTR* ppString;
@@ -826,7 +892,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1		{
+		public struct CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1
+		{
 			public uint32 Name;
 			public CLAIM_SECURITY_ATTRIBUTE_VALUE_TYPE ValueType;
 			public uint16 Reserved;
@@ -835,7 +902,8 @@ namespace Win32
 			public _Values_e__Union Values;
 			
 			[CRepr, Union]
-			public struct _Values_e__Union			{
+			public struct _Values_e__Union
+			{
 				public uint32[0] pInt64;
 				public uint32[0] pUint64;
 				public uint32[0] ppString;
@@ -844,40 +912,46 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CLAIM_SECURITY_ATTRIBUTES_INFORMATION		{
+		public struct CLAIM_SECURITY_ATTRIBUTES_INFORMATION
+		{
 			public uint16 Version;
 			public uint16 Reserved;
 			public uint32 AttributeCount;
 			public _Attribute_e__Union Attribute;
 			
 			[CRepr, Union]
-			public struct _Attribute_e__Union			{
+			public struct _Attribute_e__Union
+			{
 				public CLAIM_SECURITY_ATTRIBUTE_V1* pAttributeV1;
 			}
 		}
 		[CRepr]
-		public struct SECURITY_QUALITY_OF_SERVICE		{
+		public struct SECURITY_QUALITY_OF_SERVICE
+		{
 			public uint32 Length;
 			public SECURITY_IMPERSONATION_LEVEL ImpersonationLevel;
 			public uint8 ContextTrackingMode;
 			public BOOLEAN EffectiveOnly;
 		}
 		[CRepr]
-		public struct SE_IMPERSONATION_STATE		{
+		public struct SE_IMPERSONATION_STATE
+		{
 			public void* Token;
 			public BOOLEAN CopyOnOpen;
 			public BOOLEAN EffectiveOnly;
 			public SECURITY_IMPERSONATION_LEVEL Level;
 		}
 		[CRepr]
-		public struct SECURITY_CAPABILITIES		{
+		public struct SECURITY_CAPABILITIES
+		{
 			public PSID AppContainerSid;
 			public SID_AND_ATTRIBUTES* Capabilities;
 			public uint32 CapabilityCount;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct QUOTA_LIMITS		{
+		public struct QUOTA_LIMITS
+		{
 			public uint PagedPoolLimit;
 			public uint NonPagedPoolLimit;
 			public uint MinimumWorkingSetSize;

@@ -68,30 +68,35 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WEB_SOCKET_PROPERTY		{
+		public struct WEB_SOCKET_PROPERTY
+		{
 			public WEB_SOCKET_PROPERTY_TYPE Type;
 			public void* pvValue;
 			public uint32 ulValueSize;
 		}
 		[CRepr]
-		public struct WEB_SOCKET_HTTP_HEADER		{
+		public struct WEB_SOCKET_HTTP_HEADER
+		{
 			public PSTR pcName;
 			public uint32 ulNameLength;
 			public PSTR pcValue;
 			public uint32 ulValueLength;
 		}
 		[CRepr, Union]
-		public struct WEB_SOCKET_BUFFER		{
+		public struct WEB_SOCKET_BUFFER
+		{
 			public _Data_e__Struct Data;
 			public _CloseStatus_e__Struct CloseStatus;
 			
 			[CRepr]
-			public struct _Data_e__Struct			{
+			public struct _Data_e__Struct
+			{
 				public uint8* pbBuffer;
 				public uint32 ulBufferLength;
 			}
 			[CRepr]
-			public struct _CloseStatus_e__Struct			{
+			public struct _CloseStatus_e__Struct
+			{
 				public uint8* pbReason;
 				public uint32 ulReasonLength;
 				public uint16 usStatus;

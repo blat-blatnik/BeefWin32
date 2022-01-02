@@ -265,86 +265,103 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct ENTRYID		{
+		public struct ENTRYID
+		{
 			public uint8[4] abFlags;
 			public uint8[0] ab;
 		}
 		[CRepr]
-		public struct MAPIUID		{
+		public struct MAPIUID
+		{
 			public uint8[16] ab;
 		}
 		[CRepr]
-		public struct SPropTagArray		{
+		public struct SPropTagArray
+		{
 			public uint32 cValues;
 			public uint32[0] aulPropTag;
 		}
 		[CRepr]
-		public struct SBinary		{
+		public struct SBinary
+		{
 			public uint32 cb;
 			public uint8* lpb;
 		}
 		[CRepr]
-		public struct SShortArray		{
+		public struct SShortArray
+		{
 			public uint32 cValues;
 			public int16* lpi;
 		}
 		[CRepr]
-		public struct SGuidArray		{
+		public struct SGuidArray
+		{
 			public uint32 cValues;
 			public Guid* lpguid;
 		}
 		[CRepr]
-		public struct SRealArray		{
+		public struct SRealArray
+		{
 			public uint32 cValues;
 			public float* lpflt;
 		}
 		[CRepr]
-		public struct SLongArray		{
+		public struct SLongArray
+		{
 			public uint32 cValues;
 			public int32* lpl;
 		}
 		[CRepr]
-		public struct SLargeIntegerArray		{
+		public struct SLargeIntegerArray
+		{
 			public uint32 cValues;
 			public LARGE_INTEGER* lpli;
 		}
 		[CRepr]
-		public struct SDateTimeArray		{
+		public struct SDateTimeArray
+		{
 			public uint32 cValues;
 			public FILETIME* lpft;
 		}
 		[CRepr]
-		public struct SAppTimeArray		{
+		public struct SAppTimeArray
+		{
 			public uint32 cValues;
 			public double* lpat;
 		}
 		[CRepr]
-		public struct SCurrencyArray		{
+		public struct SCurrencyArray
+		{
 			public uint32 cValues;
 			public CY* lpcur;
 		}
 		[CRepr]
-		public struct SBinaryArray		{
+		public struct SBinaryArray
+		{
 			public uint32 cValues;
 			public SBinary* lpbin;
 		}
 		[CRepr]
-		public struct SDoubleArray		{
+		public struct SDoubleArray
+		{
 			public uint32 cValues;
 			public double* lpdbl;
 		}
 		[CRepr]
-		public struct SWStringArray		{
+		public struct SWStringArray
+		{
 			public uint32 cValues;
 			public PWSTR* lppszW;
 		}
 		[CRepr]
-		public struct SLPSTRArray		{
+		public struct SLPSTRArray
+		{
 			public uint32 cValues;
 			public PSTR* lppszA;
 		}
 		[CRepr, Union]
-		public struct _PV		{
+		public struct _PV
+		{
 			public int16 i;
 			public int32 l;
 			public uint32 ul;
@@ -375,68 +392,80 @@ namespace Win32
 			public int32 x;
 		}
 		[CRepr]
-		public struct SPropValue		{
+		public struct SPropValue
+		{
 			public uint32 ulPropTag;
 			public uint32 dwAlignPad;
 			public _PV Value;
 		}
 		[CRepr]
-		public struct SPropProblem		{
+		public struct SPropProblem
+		{
 			public uint32 ulIndex;
 			public uint32 ulPropTag;
 			public int32 scode;
 		}
 		[CRepr]
-		public struct SPropProblemArray		{
+		public struct SPropProblemArray
+		{
 			public uint32 cProblem;
 			public SPropProblem[0] aProblem;
 		}
 		[CRepr]
-		public struct FLATENTRY		{
+		public struct FLATENTRY
+		{
 			public uint32 cb;
 			public uint8[0] abEntry;
 		}
 		[CRepr]
-		public struct FLATENTRYLIST		{
+		public struct FLATENTRYLIST
+		{
 			public uint32 cEntries;
 			public uint32 cbEntries;
 			public uint8[0] abEntries;
 		}
 		[CRepr]
-		public struct MTSID		{
+		public struct MTSID
+		{
 			public uint32 cb;
 			public uint8[0] ab;
 		}
 		[CRepr]
-		public struct FLATMTSIDLIST		{
+		public struct FLATMTSIDLIST
+		{
 			public uint32 cMTSIDs;
 			public uint32 cbMTSIDs;
 			public uint8[0] abMTSIDs;
 		}
 		[CRepr]
-		public struct ADRENTRY		{
+		public struct ADRENTRY
+		{
 			public uint32 ulReserved1;
 			public uint32 cValues;
 			public SPropValue* rgPropVals;
 		}
 		[CRepr]
-		public struct ADRLIST		{
+		public struct ADRLIST
+		{
 			public uint32 cEntries;
 			public ADRENTRY[0] aEntries;
 		}
 		[CRepr]
-		public struct SRow		{
+		public struct SRow
+		{
 			public uint32 ulAdrEntryPad;
 			public uint32 cValues;
 			public SPropValue* lpProps;
 		}
 		[CRepr]
-		public struct SRowSet		{
+		public struct SRowSet
+		{
 			public uint32 cRows;
 			public SRow[0] aRow;
 		}
 		[CRepr]
-		public struct MAPIERROR		{
+		public struct MAPIERROR
+		{
 			public uint32 ulVersion;
 			public int8* lpszError;
 			public int8* lpszComponent;
@@ -444,7 +473,8 @@ namespace Win32
 			public uint32 ulContext;
 		}
 		[CRepr]
-		public struct ERROR_NOTIFICATION		{
+		public struct ERROR_NOTIFICATION
+		{
 			public uint32 cbEntryID;
 			public ENTRYID* lpEntryID;
 			public int32 scode;
@@ -452,7 +482,8 @@ namespace Win32
 			public MAPIERROR* lpMAPIError;
 		}
 		[CRepr]
-		public struct NEWMAIL_NOTIFICATION		{
+		public struct NEWMAIL_NOTIFICATION
+		{
 			public uint32 cbEntryID;
 			public ENTRYID* lpEntryID;
 			public uint32 cbParentID;
@@ -462,7 +493,8 @@ namespace Win32
 			public uint32 ulMessageFlags;
 		}
 		[CRepr]
-		public struct OBJECT_NOTIFICATION		{
+		public struct OBJECT_NOTIFICATION
+		{
 			public uint32 cbEntryID;
 			public ENTRYID* lpEntryID;
 			public uint32 ulObjType;
@@ -475,7 +507,8 @@ namespace Win32
 			public SPropTagArray* lpPropTagArray;
 		}
 		[CRepr]
-		public struct TABLE_NOTIFICATION		{
+		public struct TABLE_NOTIFICATION
+		{
 			public uint32 ulTableEvent;
 			public HRESULT hResult;
 			public SPropValue propIndex;
@@ -484,26 +517,30 @@ namespace Win32
 			public uint32 ulPad;
 		}
 		[CRepr]
-		public struct EXTENDED_NOTIFICATION		{
+		public struct EXTENDED_NOTIFICATION
+		{
 			public uint32 ulEvent;
 			public uint32 cb;
 			public uint8* pbEventParameters;
 		}
 		[CRepr]
-		public struct STATUS_OBJECT_NOTIFICATION		{
+		public struct STATUS_OBJECT_NOTIFICATION
+		{
 			public uint32 cbEntryID;
 			public ENTRYID* lpEntryID;
 			public uint32 cValues;
 			public SPropValue* lpPropVals;
 		}
 		[CRepr]
-		public struct NOTIFICATION		{
+		public struct NOTIFICATION
+		{
 			public uint32 ulEventType;
 			public uint32 ulAlignPad;
 			public _info_e__Union info;
 			
 			[CRepr, Union]
-			public struct _info_e__Union			{
+			public struct _info_e__Union
+			{
 				public ERROR_NOTIFICATION err;
 				public NEWMAIL_NOTIFICATION newmail;
 				public OBJECT_NOTIFICATION obj;
@@ -513,98 +550,115 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct MAPINAMEID		{
+		public struct MAPINAMEID
+		{
 			public Guid* lpguid;
 			public uint32 ulKind;
 			public _Kind_e__Union Kind;
 			
 			[CRepr, Union]
-			public struct _Kind_e__Union			{
+			public struct _Kind_e__Union
+			{
 				public int32 lID;
 				public PWSTR lpwstrName;
 			}
 		}
 		[CRepr]
-		public struct SSortOrder		{
+		public struct SSortOrder
+		{
 			public uint32 ulPropTag;
 			public uint32 ulOrder;
 		}
 		[CRepr]
-		public struct SSortOrderSet		{
+		public struct SSortOrderSet
+		{
 			public uint32 cSorts;
 			public uint32 cCategories;
 			public uint32 cExpanded;
 			public SSortOrder[0] aSort;
 		}
 		[CRepr]
-		public struct SAndRestriction		{
+		public struct SAndRestriction
+		{
 			public uint32 cRes;
 			public SRestriction* lpRes;
 		}
 		[CRepr]
-		public struct SOrRestriction		{
+		public struct SOrRestriction
+		{
 			public uint32 cRes;
 			public SRestriction* lpRes;
 		}
 		[CRepr]
-		public struct SNotRestriction		{
+		public struct SNotRestriction
+		{
 			public uint32 ulReserved;
 			public SRestriction* lpRes;
 		}
 		[CRepr]
-		public struct SContentRestriction		{
+		public struct SContentRestriction
+		{
 			public uint32 ulFuzzyLevel;
 			public uint32 ulPropTag;
 			public SPropValue* lpProp;
 		}
 		[CRepr]
-		public struct SBitMaskRestriction		{
+		public struct SBitMaskRestriction
+		{
 			public uint32 relBMR;
 			public uint32 ulPropTag;
 			public uint32 ulMask;
 		}
 		[CRepr]
-		public struct SPropertyRestriction		{
+		public struct SPropertyRestriction
+		{
 			public uint32 relop;
 			public uint32 ulPropTag;
 			public SPropValue* lpProp;
 		}
 		[CRepr]
-		public struct SComparePropsRestriction		{
+		public struct SComparePropsRestriction
+		{
 			public uint32 relop;
 			public uint32 ulPropTag1;
 			public uint32 ulPropTag2;
 		}
 		[CRepr]
-		public struct SSizeRestriction		{
+		public struct SSizeRestriction
+		{
 			public uint32 relop;
 			public uint32 ulPropTag;
 			public uint32 cb;
 		}
 		[CRepr]
-		public struct SExistRestriction		{
+		public struct SExistRestriction
+		{
 			public uint32 ulReserved1;
 			public uint32 ulPropTag;
 			public uint32 ulReserved2;
 		}
 		[CRepr]
-		public struct SSubRestriction		{
+		public struct SSubRestriction
+		{
 			public uint32 ulSubObject;
 			public SRestriction* lpRes;
 		}
 		[CRepr]
-		public struct SCommentRestriction		{
+		public struct SCommentRestriction
+		{
 			public uint32 cValues;
 			public SRestriction* lpRes;
 			public SPropValue* lpProp;
 		}
 		[CRepr]
-		public struct SRestriction		{
+		public struct SRestriction
+		{
 			public uint32 rt;
 			public _res_e__Union res;
 			
 			[CRepr, Union]
-			public struct _res_e__Union			{
+			public struct _res_e__Union
+			{
 				public SComparePropsRestriction resCompareProps;
 				public SAndRestriction resAnd;
 				public SOrRestriction resOr;
@@ -619,12 +673,14 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct _flaglist		{
+		public struct _flaglist
+		{
 			public uint32 cFlags;
 			public uint32[0] ulFlag;
 		}
 		[CRepr]
-		public struct ADRPARM		{
+		public struct ADRPARM
+		{
 			public uint32 cbABContEntryID;
 			public ENTRYID* lpABContEntryID;
 			public uint32 ulFlags;
@@ -645,25 +701,29 @@ namespace Win32
 			public SRestriction* lpHierRestriction;
 		}
 		[CRepr]
-		public struct DTBLLABEL		{
+		public struct DTBLLABEL
+		{
 			public uint32 ulbLpszLabelName;
 			public uint32 ulFlags;
 		}
 		[CRepr]
-		public struct DTBLEDIT		{
+		public struct DTBLEDIT
+		{
 			public uint32 ulbLpszCharsAllowed;
 			public uint32 ulFlags;
 			public uint32 ulNumCharsAllowed;
 			public uint32 ulPropTag;
 		}
 		[CRepr]
-		public struct DTBLLBX		{
+		public struct DTBLLBX
+		{
 			public uint32 ulFlags;
 			public uint32 ulPRSetProperty;
 			public uint32 ulPRTableName;
 		}
 		[CRepr]
-		public struct DTBLCOMBOBOX		{
+		public struct DTBLCOMBOBOX
+		{
 			public uint32 ulbLpszCharsAllowed;
 			public uint32 ulFlags;
 			public uint32 ulNumCharsAllowed;
@@ -671,38 +731,44 @@ namespace Win32
 			public uint32 ulPRTableName;
 		}
 		[CRepr]
-		public struct DTBLDDLBX		{
+		public struct DTBLDDLBX
+		{
 			public uint32 ulFlags;
 			public uint32 ulPRDisplayProperty;
 			public uint32 ulPRSetProperty;
 			public uint32 ulPRTableName;
 		}
 		[CRepr]
-		public struct DTBLCHECKBOX		{
+		public struct DTBLCHECKBOX
+		{
 			public uint32 ulbLpszLabel;
 			public uint32 ulFlags;
 			public uint32 ulPRPropertyName;
 		}
 		[CRepr]
-		public struct DTBLGROUPBOX		{
+		public struct DTBLGROUPBOX
+		{
 			public uint32 ulbLpszLabel;
 			public uint32 ulFlags;
 		}
 		[CRepr]
-		public struct DTBLBUTTON		{
+		public struct DTBLBUTTON
+		{
 			public uint32 ulbLpszLabel;
 			public uint32 ulFlags;
 			public uint32 ulPRControl;
 		}
 		[CRepr]
-		public struct DTBLPAGE		{
+		public struct DTBLPAGE
+		{
 			public uint32 ulbLpszLabel;
 			public uint32 ulFlags;
 			public uint32 ulbLpszComponent;
 			public uint32 ulContext;
 		}
 		[CRepr]
-		public struct DTBLRADIOBUTTON		{
+		public struct DTBLRADIOBUTTON
+		{
 			public uint32 ulbLpszLabel;
 			public uint32 ulFlags;
 			public uint32 ulcButtons;
@@ -710,17 +776,20 @@ namespace Win32
 			public int32 lReturnValue;
 		}
 		[CRepr]
-		public struct DTBLMVLISTBOX		{
+		public struct DTBLMVLISTBOX
+		{
 			public uint32 ulFlags;
 			public uint32 ulMVPropTag;
 		}
 		[CRepr]
-		public struct DTBLMVDDLBX		{
+		public struct DTBLMVDDLBX
+		{
 			public uint32 ulFlags;
 			public uint32 ulMVPropTag;
 		}
 		[CRepr]
-		public struct DTCTL		{
+		public struct DTCTL
+		{
 			public uint32 ulCtlType;
 			public uint32 ulCtlFlags;
 			public uint8* lpbNotif;
@@ -730,7 +799,8 @@ namespace Win32
 			public _ctl_e__Union ctl;
 			
 			[CRepr, Union]
-			public struct _ctl_e__Union			{
+			public struct _ctl_e__Union
+			{
 				public void* lpv;
 				public DTBLLABEL* lplabel;
 				public DTBLEDIT* lpedit;
@@ -747,14 +817,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DTPAGE		{
+		public struct DTPAGE
+		{
 			public uint32 cctl;
 			public int8* lpszResourceName;
 			public _Anonymous_e__Union Anonymous;
 			public DTCTL* lpctl;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public int8* lpszComponent;
 				public uint32 ulItemID;
 			}
@@ -762,7 +834,8 @@ namespace Win32
 		[CRepr]
 		public struct _WABACTIONITEM {}
 		[CRepr]
-		public struct WAB_PARAM		{
+		public struct WAB_PARAM
+		{
 			public uint32 cbSize;
 			public HWND hwnd;
 			public PSTR szFileName;
@@ -770,7 +843,8 @@ namespace Win32
 			public Guid guidPSExt;
 		}
 		[CRepr]
-		public struct WABIMPORTPARAM		{
+		public struct WABIMPORTPARAM
+		{
 			public uint32 cbSize;
 			public IAddrBook* lpAdrBook;
 			public HWND hWnd;
@@ -778,7 +852,8 @@ namespace Win32
 			public PSTR lpszFileName;
 		}
 		[CRepr]
-		public struct WABEXTDISPLAY		{
+		public struct WABEXTDISPLAY
+		{
 			public uint32 cbSize;
 			public IWABObject* lpWABObject;
 			public IAddrBook* lpAdrBook;
@@ -790,7 +865,8 @@ namespace Win32
 			public int8* lpsz;
 		}
 		[CRepr]
-		public struct NOTIFKEY		{
+		public struct NOTIFKEY
+		{
 			public uint32 cb;
 			public uint8[0] ab;
 		}

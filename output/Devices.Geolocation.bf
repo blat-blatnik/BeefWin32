@@ -178,18 +178,21 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct GNSS_SUPL_VERSION		{
+		public struct GNSS_SUPL_VERSION
+		{
 			public uint32 MajorVersion;
 			public uint32 MinorVersion;
 		}
 		[CRepr]
-		public struct GNSS_SUPL_VERSION_2		{
+		public struct GNSS_SUPL_VERSION_2
+		{
 			public uint32 MajorVersion;
 			public uint32 MinorVersion;
 			public uint32 ServiceIndicator;
 		}
 		[CRepr]
-		public struct GNSS_DEVICE_CAPABILITY		{
+		public struct GNSS_DEVICE_CAPABILITY
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public BOOL SupportMultipleFixSessions;
@@ -219,7 +222,8 @@ namespace Win32
 			public uint8[496] Unused;
 		}
 		[CRepr]
-		public struct GNSS_PLATFORM_CAPABILITY		{
+		public struct GNSS_PLATFORM_CAPABILITY
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public BOOL SupportAgnssInjection;
@@ -227,7 +231,8 @@ namespace Win32
 			public uint8[516] Unused;
 		}
 		[CRepr]
-		public struct GNSS_DRIVERCOMMAND_PARAM		{
+		public struct GNSS_DRIVERCOMMAND_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_DRIVERCOMMAND_TYPE CommandType;
@@ -237,30 +242,35 @@ namespace Win32
 			public uint8[0] CommandData;
 		}
 		[CRepr]
-		public struct GNSS_SINGLESHOT_PARAM		{
+		public struct GNSS_SINGLESHOT_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 ResponseTime;
 		}
 		[CRepr]
-		public struct GNSS_DISTANCETRACKING_PARAM		{
+		public struct GNSS_DISTANCETRACKING_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 MovementThreshold;
 		}
 		[CRepr]
-		public struct GNSS_CONTINUOUSTRACKING_PARAM		{
+		public struct GNSS_CONTINUOUSTRACKING_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 PreferredInterval;
 		}
 		[CRepr]
-		public struct GNSS_LKGFIX_PARAM		{
+		public struct GNSS_LKGFIX_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 		}
 		[CRepr]
-		public struct GNSS_FIXSESSION_PARAM		{
+		public struct GNSS_FIXSESSION_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 FixSessionID;
@@ -273,7 +283,8 @@ namespace Win32
 			public uint8[256] Unused;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public GNSS_SINGLESHOT_PARAM SingleShotParam;
 				public GNSS_DISTANCETRACKING_PARAM DistanceParam;
 				public GNSS_CONTINUOUSTRACKING_PARAM ContinuousParam;
@@ -282,14 +293,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct GNSS_STOPFIXSESSION_PARAM		{
+		public struct GNSS_STOPFIXSESSION_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 FixSessionID;
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_FIXDATA_BASIC		{
+		public struct GNSS_FIXDATA_BASIC
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public double Latitude;
@@ -299,7 +312,8 @@ namespace Win32
 			public double Heading;
 		}
 		[CRepr]
-		public struct GNSS_FIXDATA_BASIC_2		{
+		public struct GNSS_FIXDATA_BASIC_2
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public double Latitude;
@@ -310,7 +324,8 @@ namespace Win32
 			public double AltitudeEllipsoid;
 		}
 		[CRepr]
-		public struct GNSS_FIXDATA_ACCURACY		{
+		public struct GNSS_FIXDATA_ACCURACY
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 HorizontalAccuracy;
@@ -329,7 +344,8 @@ namespace Win32
 			public float VerticalDilutionOfPrecision;
 		}
 		[CRepr]
-		public struct GNSS_FIXDATA_ACCURACY_2		{
+		public struct GNSS_FIXDATA_ACCURACY_2
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public double HorizontalAccuracy;
@@ -350,7 +366,8 @@ namespace Win32
 			public double TimeDilutionOfPrecision;
 		}
 		[CRepr]
-		public struct GNSS_SATELLITEINFO		{
+		public struct GNSS_SATELLITEINFO
+		{
 			public uint32 SatelliteId;
 			public BOOL UsedInPositiong;
 			public double Elevation;
@@ -358,14 +375,16 @@ namespace Win32
 			public double SignalToNoiseRatio;
 		}
 		[CRepr]
-		public struct GNSS_FIXDATA_SATELLITE		{
+		public struct GNSS_FIXDATA_SATELLITE
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 SatelliteCount;
 			public GNSS_SATELLITEINFO[64] SatelliteArray;
 		}
 		[CRepr]
-		public struct GNSS_FIXDATA		{
+		public struct GNSS_FIXDATA
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 FixSessionID;
@@ -378,7 +397,8 @@ namespace Win32
 			public GNSS_FIXDATA_SATELLITE SatelliteData;
 		}
 		[CRepr]
-		public struct GNSS_FIXDATA_2		{
+		public struct GNSS_FIXDATA_2
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 FixSessionID;
@@ -391,7 +411,8 @@ namespace Win32
 			public GNSS_FIXDATA_SATELLITE SatelliteData;
 		}
 		[CRepr]
-		public struct GNSS_BREADCRUMBING_PARAM		{
+		public struct GNSS_BREADCRUMBING_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 MaximumHorizontalUncertainty;
@@ -400,13 +421,15 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_BREADCRUMBING_ALERT_DATA		{
+		public struct GNSS_BREADCRUMBING_ALERT_DATA
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_BREADCRUMB_V1		{
+		public struct GNSS_BREADCRUMB_V1
+		{
 			public FILETIME FixTimeStamp;
 			public double Latitude;
 			public double Longitude;
@@ -420,38 +443,44 @@ namespace Win32
 			public uint8 FixSuccess;
 		}
 		[CRepr]
-		public struct GNSS_BREADCRUMB_LIST		{
+		public struct GNSS_BREADCRUMB_LIST
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 NumCrumbs;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public GNSS_BREADCRUMB_V1[50] v1;
 			}
 		}
 		[CRepr]
-		public struct GNSS_GEOREGION_CIRCLE		{
+		public struct GNSS_GEOREGION_CIRCLE
+		{
 			public double Latitude;
 			public double Longitude;
 			public double RadiusInMeters;
 		}
 		[CRepr]
-		public struct GNSS_GEOREGION		{
+		public struct GNSS_GEOREGION
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_GEOREGIONTYPE GeoRegionType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public GNSS_GEOREGION_CIRCLE Circle;
 				public uint8[512] Unused;
 			}
 		}
 		[CRepr]
-		public struct GNSS_GEOFENCE_CREATE_PARAM		{
+		public struct GNSS_GEOFENCE_CREATE_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 AlertTypes;
@@ -460,7 +489,8 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_GEOFENCE_CREATE_RESPONSE		{
+		public struct GNSS_GEOFENCE_CREATE_RESPONSE
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public NTSTATUS CreationStatus;
@@ -468,14 +498,16 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_GEOFENCE_DELETE_PARAM		{
+		public struct GNSS_GEOFENCE_DELETE_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 GeofenceID;
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_GEOFENCE_ALERT_DATA		{
+		public struct GNSS_GEOFENCE_ALERT_DATA
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 GeofenceID;
@@ -485,7 +517,8 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_GEOFENCES_TRACKINGSTATUS_DATA		{
+		public struct GNSS_GEOFENCES_TRACKINGSTATUS_DATA
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public NTSTATUS Status;
@@ -493,7 +526,8 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_ERRORINFO		{
+		public struct GNSS_ERRORINFO
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 ErrorCode;
@@ -502,20 +536,23 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_NMEA_DATA		{
+		public struct GNSS_NMEA_DATA
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public CHAR[256] NmeaSentences;
 		}
 		[CRepr]
-		public struct GNSS_AGNSS_REQUEST_PARAM		{
+		public struct GNSS_AGNSS_REQUEST_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_AGNSS_REQUEST_TYPE RequestType;
 			public uint32 BlobFormat;
 		}
 		[CRepr]
-		public struct GNSS_SUPL_NI_INFO		{
+		public struct GNSS_SUPL_NI_INFO
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public char16[260] RequestorId;
@@ -523,20 +560,23 @@ namespace Win32
 			public CHAR[260] SuplNiUrl;
 		}
 		[CRepr]
-		public struct GNSS_CP_NI_INFO		{
+		public struct GNSS_CP_NI_INFO
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public char16[260] RequestorId;
 			public char16[260] NotificationText;
 		}
 		[CRepr]
-		public struct GNSS_V2UPL_NI_INFO		{
+		public struct GNSS_V2UPL_NI_INFO
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public char16[260] RequestorId;
 		}
 		[CRepr]
-		public struct GNSS_NI_REQUEST_PARAM		{
+		public struct GNSS_NI_REQUEST_PARAM
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 RequestId;
@@ -548,21 +588,24 @@ namespace Win32
 			public BOOL EmergencyLocation;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public GNSS_SUPL_NI_INFO SuplNiInfo;
 				public GNSS_CP_NI_INFO CpNiInfo;
 				public GNSS_V2UPL_NI_INFO V2UplNiInfo;
 			}
 		}
 		[CRepr]
-		public struct GNSS_DRIVER_REQUEST_DATA		{
+		public struct GNSS_DRIVER_REQUEST_DATA
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_DRIVER_REQUEST Request;
 			public uint32 RequestFlag;
 		}
 		[CRepr]
-		public struct GNSS_EVENT		{
+		public struct GNSS_EVENT
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_EVENT_TYPE EventType;
@@ -571,7 +614,8 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public GNSS_FIXDATA FixData;
 				public GNSS_AGNSS_REQUEST_PARAM AgnssRequest;
 				public GNSS_NI_REQUEST_PARAM NiRequest;
@@ -585,7 +629,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct GNSS_EVENT_2		{
+		public struct GNSS_EVENT_2
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_EVENT_TYPE EventType;
@@ -594,7 +639,8 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public GNSS_FIXDATA FixData;
 				public GNSS_FIXDATA_2 FixData2;
 				public GNSS_AGNSS_REQUEST_PARAM AgnssRequest;
@@ -609,14 +655,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct GNSS_AGNSS_INJECTTIME		{
+		public struct GNSS_AGNSS_INJECTTIME
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public FILETIME UtcTime;
 			public uint32 TimeUncertainty;
 		}
 		[CRepr]
-		public struct GNSS_AGNSS_INJECTPOSITION		{
+		public struct GNSS_AGNSS_INJECTPOSITION
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 Age;
@@ -624,7 +672,8 @@ namespace Win32
 			public GNSS_FIXDATA_ACCURACY AccuracyData;
 		}
 		[CRepr]
-		public struct GNSS_AGNSS_INJECTBLOB		{
+		public struct GNSS_AGNSS_INJECTBLOB
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 BlobOui;
@@ -634,7 +683,8 @@ namespace Win32
 			public uint8[0] BlobData;
 		}
 		[CRepr]
-		public struct GNSS_AGNSS_INJECT		{
+		public struct GNSS_AGNSS_INJECT
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_AGNSS_REQUEST_TYPE InjectionType;
@@ -644,14 +694,16 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public GNSS_AGNSS_INJECTTIME Time;
 				public GNSS_AGNSS_INJECTPOSITION Position;
 				public GNSS_AGNSS_INJECTBLOB BlobData;
 			}
 		}
 		[CRepr]
-		public struct GNSS_SUPL_HSLP_CONFIG		{
+		public struct GNSS_SUPL_HSLP_CONFIG
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public CHAR[260] SuplHslp;
@@ -660,7 +712,8 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_SUPL_CERT_CONFIG		{
+		public struct GNSS_SUPL_CERT_CONFIG
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_SUPL_CERT_ACTION CertAction;
@@ -670,7 +723,8 @@ namespace Win32
 			public uint8[0] CertData;
 		}
 		[CRepr]
-		public struct GNSS_V2UPL_CONFIG		{
+		public struct GNSS_V2UPL_CONFIG
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public CHAR[260] MPC;
@@ -679,14 +733,16 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_NI_RESPONSE		{
+		public struct GNSS_NI_RESPONSE
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 RequestId;
 			public GNSS_NI_USER_RESPONSE UserResponse;
 		}
 		[CRepr]
-		public struct GNSS_CWTESTDATA		{
+		public struct GNSS_CWTESTDATA
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public NTSTATUS TestResultStatus;
@@ -695,7 +751,8 @@ namespace Win32
 			public uint8[512] Unused;
 		}
 		[CRepr]
-		public struct GNSS_SELFTESTCONFIG		{
+		public struct GNSS_SELFTESTCONFIG
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 TestType;
@@ -704,7 +761,8 @@ namespace Win32
 			public uint8[0] InBuffer;
 		}
 		[CRepr]
-		public struct GNSS_SELFTESTRESULT		{
+		public struct GNSS_SELFTESTRESULT
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public NTSTATUS TestResultStatus;
@@ -715,7 +773,8 @@ namespace Win32
 			public uint8[0] OutBuffer;
 		}
 		[CRepr]
-		public struct GNSS_CHIPSETINFO		{
+		public struct GNSS_CHIPSETINFO
+		{
 			public uint32 Size;
 			public uint32 Version;
 			public char16[25] ManufacturerID;

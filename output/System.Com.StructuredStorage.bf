@@ -148,148 +148,177 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct BSTRBLOB		{
+		public struct BSTRBLOB
+		{
 			public uint32 cbSize;
 			public uint8* pData;
 		}
 		[CRepr]
-		public struct CLIPDATA		{
+		public struct CLIPDATA
+		{
 			public uint32 cbSize;
 			public int32 ulClipFmt;
 			public uint8* pClipData;
 		}
 		[CRepr]
-		public struct RemSNB		{
+		public struct RemSNB
+		{
 			public uint32 ulCntStr;
 			public uint32 ulCntChar;
 			public char16[0] rgString;
 		}
 		[CRepr]
-		public struct VERSIONEDSTREAM		{
+		public struct VERSIONEDSTREAM
+		{
 			public Guid guidVersion;
 			public IStream* pStream;
 		}
 		[CRepr]
-		public struct CAC		{
+		public struct CAC
+		{
 			public uint32 cElems;
 			public PSTR pElems;
 		}
 		[CRepr]
-		public struct CAUB		{
+		public struct CAUB
+		{
 			public uint32 cElems;
 			public uint8* pElems;
 		}
 		[CRepr]
-		public struct CAI		{
+		public struct CAI
+		{
 			public uint32 cElems;
 			public int16* pElems;
 		}
 		[CRepr]
-		public struct CAUI		{
+		public struct CAUI
+		{
 			public uint32 cElems;
 			public uint16* pElems;
 		}
 		[CRepr]
-		public struct CAL		{
+		public struct CAL
+		{
 			public uint32 cElems;
 			public int32* pElems;
 		}
 		[CRepr]
-		public struct CAUL		{
+		public struct CAUL
+		{
 			public uint32 cElems;
 			public uint32* pElems;
 		}
 		[CRepr]
-		public struct CAFLT		{
+		public struct CAFLT
+		{
 			public uint32 cElems;
 			public float* pElems;
 		}
 		[CRepr]
-		public struct CADBL		{
+		public struct CADBL
+		{
 			public uint32 cElems;
 			public double* pElems;
 		}
 		[CRepr]
-		public struct CACY		{
+		public struct CACY
+		{
 			public uint32 cElems;
 			public CY* pElems;
 		}
 		[CRepr]
-		public struct CADATE		{
+		public struct CADATE
+		{
 			public uint32 cElems;
 			public double* pElems;
 		}
 		[CRepr]
-		public struct CABSTR		{
+		public struct CABSTR
+		{
 			public uint32 cElems;
 			public BSTR* pElems;
 		}
 		[CRepr]
-		public struct CABSTRBLOB		{
+		public struct CABSTRBLOB
+		{
 			public uint32 cElems;
 			public BSTRBLOB* pElems;
 		}
 		[CRepr]
-		public struct CABOOL		{
+		public struct CABOOL
+		{
 			public uint32 cElems;
 			public int16* pElems;
 		}
 		[CRepr]
-		public struct CASCODE		{
+		public struct CASCODE
+		{
 			public uint32 cElems;
 			public int32* pElems;
 		}
 		[CRepr]
-		public struct CAPROPVARIANT		{
+		public struct CAPROPVARIANT
+		{
 			public uint32 cElems;
 			public PROPVARIANT* pElems;
 		}
 		[CRepr]
-		public struct CAH		{
+		public struct CAH
+		{
 			public uint32 cElems;
 			public LARGE_INTEGER* pElems;
 		}
 		[CRepr]
-		public struct CAUH		{
+		public struct CAUH
+		{
 			public uint32 cElems;
 			public ULARGE_INTEGER* pElems;
 		}
 		[CRepr]
-		public struct CALPSTR		{
+		public struct CALPSTR
+		{
 			public uint32 cElems;
 			public PSTR* pElems;
 		}
 		[CRepr]
-		public struct CALPWSTR		{
+		public struct CALPWSTR
+		{
 			public uint32 cElems;
 			public PWSTR* pElems;
 		}
 		[CRepr]
-		public struct CAFILETIME		{
+		public struct CAFILETIME
+		{
 			public uint32 cElems;
 			public FILETIME* pElems;
 		}
 		[CRepr]
-		public struct CACLIPDATA		{
+		public struct CACLIPDATA
+		{
 			public uint32 cElems;
 			public CLIPDATA* pElems;
 		}
 		[CRepr]
-		public struct CACLSID		{
+		public struct CACLSID
+		{
 			public uint32 cElems;
 			public Guid* pElems;
 		}
 		[CRepr]
-		public struct PROPVARIANT		{
+		public struct PROPVARIANT
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public DECIMAL decVal;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 vt;
 					public uint16 wReserved1;
 					public uint16 wReserved2;
@@ -297,7 +326,8 @@ namespace Win32
 					public _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
-					public struct _Anonymous_e__Union					{
+					public struct _Anonymous_e__Union
+					{
 						public CHAR cVal;
 						public uint8 bVal;
 						public int16 iVal;
@@ -376,24 +406,28 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PROPSPEC		{
+		public struct PROPSPEC
+		{
 			public PROPSPEC_KIND ulKind;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 propid;
 				public PWSTR lpwstr;
 			}
 		}
 		[CRepr]
-		public struct STATPROPSTG		{
+		public struct STATPROPSTG
+		{
 			public PWSTR lpwstrName;
 			public uint32 propid;
 			public uint16 vt;
 		}
 		[CRepr]
-		public struct STATPROPSETSTG		{
+		public struct STATPROPSETSTG
+		{
 			public Guid fmtid;
 			public Guid clsid;
 			public uint32 grfFlags;
@@ -403,30 +437,35 @@ namespace Win32
 			public uint32 dwOSVersion;
 		}
 		[CRepr]
-		public struct STGOPTIONS		{
+		public struct STGOPTIONS
+		{
 			public uint16 usVersion;
 			public uint16 reserved;
 			public uint32 ulSectorSize;
 			public PWSTR pwcsTemplateFile;
 		}
 		[CRepr]
-		public struct SERIALIZEDPROPERTYVALUE		{
+		public struct SERIALIZEDPROPERTYVALUE
+		{
 			public uint32 dwType;
 			public uint8[0] rgb;
 		}
 		[CRepr]
 		public struct PMemoryAllocator {}
 		[CRepr]
-		public struct OLESTREAMVTBL		{
+		public struct OLESTREAMVTBL
+		{
 			public int Get;
 			public int Put;
 		}
 		[CRepr]
-		public struct OLESTREAM		{
+		public struct OLESTREAM
+		{
 			public OLESTREAMVTBL* lpstbl;
 		}
 		[CRepr]
-		public struct PROPBAG2		{
+		public struct PROPBAG2
+		{
 			public uint32 dwType;
 			public uint16 vt;
 			public uint16 cfType;

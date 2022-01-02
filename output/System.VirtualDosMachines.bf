@@ -137,7 +137,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct VDMCONTEXT		{
+		public struct VDMCONTEXT
+		{
 			public uint32 ContextFlags;
 			public uint32 Dr0;
 			public uint32 Dr1;
@@ -165,22 +166,26 @@ namespace Win32
 			public uint8[512] ExtendedRegisters;
 		}
 		[CRepr]
-		public struct VDMLDT_ENTRY		{
+		public struct VDMLDT_ENTRY
+		{
 			public uint16 LimitLow;
 			public uint16 BaseLow;
 			public _HighWord_e__Union HighWord;
 			
 			[CRepr, Union]
-			public struct _HighWord_e__Union			{
+			public struct _HighWord_e__Union
+			{
 				public _Bytes_e__Struct Bytes;
 				public _Bits_e__Struct Bits;
 				
 				[CRepr]
-				public struct _Bits_e__Struct				{
+				public struct _Bits_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 				[CRepr]
-				public struct _Bytes_e__Struct				{
+				public struct _Bytes_e__Struct
+				{
 					public uint8 BaseMid;
 					public uint8 Flags1;
 					public uint8 Flags2;
@@ -189,7 +194,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct VDMCONTEXT_WITHOUT_XSAVE		{
+		public struct VDMCONTEXT_WITHOUT_XSAVE
+		{
 			public uint32 ContextFlags;
 			public uint32 Dr0;
 			public uint32 Dr1;
@@ -216,7 +222,8 @@ namespace Win32
 			public uint32 SegSs;
 		}
 		[CRepr]
-		public struct SEGMENT_NOTE		{
+		public struct SEGMENT_NOTE
+		{
 			public uint16 Selector1;
 			public uint16 Selector2;
 			public uint16 Segment;
@@ -226,14 +233,16 @@ namespace Win32
 			public uint32 Length;
 		}
 		[CRepr]
-		public struct IMAGE_NOTE		{
+		public struct IMAGE_NOTE
+		{
 			public CHAR[10] Module;
 			public CHAR[256] FileName;
 			public uint16 hModule;
 			public uint16 hTask;
 		}
 		[CRepr]
-		public struct MODULEENTRY		{
+		public struct MODULEENTRY
+		{
 			public uint32 dwSize;
 			public CHAR[10] szModule;
 			public HANDLE hModule;
@@ -242,13 +251,15 @@ namespace Win32
 			public uint16 wNext;
 		}
 		[CRepr]
-		public struct TEMP_BP_NOTE		{
+		public struct TEMP_BP_NOTE
+		{
 			public uint16 Seg;
 			public uint32 Offset;
 			public BOOL bPM;
 		}
 		[CRepr]
-		public struct VDM_SEGINFO		{
+		public struct VDM_SEGINFO
+		{
 			public uint16 Selector;
 			public uint16 SegNumber;
 			public uint32 Length;
@@ -257,7 +268,8 @@ namespace Win32
 			public CHAR[255] FileName;
 		}
 		[CRepr]
-		public struct GLOBALENTRY		{
+		public struct GLOBALENTRY
+		{
 			public uint32 dwSize;
 			public uint32 dwAddress;
 			public uint32 dwBlockSize;

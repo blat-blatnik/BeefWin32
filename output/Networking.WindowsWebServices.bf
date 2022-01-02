@@ -1359,162 +1359,192 @@ namespace Win32
 		[CRepr]
 		public struct WS_POLICY {}
 		[CRepr]
-		public struct WS_XML_DICTIONARY		{
+		public struct WS_XML_DICTIONARY
+		{
 			public Guid guid;
 			public WS_XML_STRING* strings;
 			public uint32 stringCount;
 			public BOOL isConst;
 		}
 		[CRepr]
-		public struct WS_XML_STRING		{
+		public struct WS_XML_STRING
+		{
 			public uint32 length;
 			public uint8* bytes;
 			public WS_XML_DICTIONARY* dictionary;
 			public uint32 id;
 		}
 		[CRepr]
-		public struct WS_XML_QNAME		{
+		public struct WS_XML_QNAME
+		{
 			public WS_XML_STRING localName;
 			public WS_XML_STRING ns;
 		}
 		[CRepr]
-		public struct WS_XML_NODE_POSITION		{
+		public struct WS_XML_NODE_POSITION
+		{
 			public WS_XML_BUFFER* buffer;
 			public void* node;
 		}
 		[CRepr]
-		public struct WS_XML_READER_PROPERTY		{
+		public struct WS_XML_READER_PROPERTY
+		{
 			public WS_XML_READER_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES		{
+		public struct WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES
+		{
 			public uint32 prefixCount;
 			public WS_XML_STRING* prefixes;
 		}
 		[CRepr]
-		public struct WS_XML_CANONICALIZATION_PROPERTY		{
+		public struct WS_XML_CANONICALIZATION_PROPERTY
+		{
 			public WS_XML_CANONICALIZATION_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_PROPERTY		{
+		public struct WS_XML_WRITER_PROPERTY
+		{
 			public WS_XML_WRITER_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_XML_BUFFER_PROPERTY		{
+		public struct WS_XML_BUFFER_PROPERTY
+		{
 			public WS_XML_BUFFER_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_XML_TEXT		{
+		public struct WS_XML_TEXT
+		{
 			public WS_XML_TEXT_TYPE textType;
 		}
 		[CRepr]
-		public struct WS_XML_UTF8_TEXT		{
+		public struct WS_XML_UTF8_TEXT
+		{
 			public WS_XML_TEXT text;
 			public WS_XML_STRING value;
 		}
 		[CRepr]
-		public struct WS_XML_UTF16_TEXT		{
+		public struct WS_XML_UTF16_TEXT
+		{
 			public WS_XML_TEXT text;
 			public uint8* bytes;
 			public uint32 byteCount;
 		}
 		[CRepr]
-		public struct WS_XML_BASE64_TEXT		{
+		public struct WS_XML_BASE64_TEXT
+		{
 			public WS_XML_TEXT text;
 			public uint8* bytes;
 			public uint32 length;
 		}
 		[CRepr]
-		public struct WS_XML_BOOL_TEXT		{
+		public struct WS_XML_BOOL_TEXT
+		{
 			public WS_XML_TEXT text;
 			public BOOL value;
 		}
 		[CRepr]
-		public struct WS_XML_INT32_TEXT		{
+		public struct WS_XML_INT32_TEXT
+		{
 			public WS_XML_TEXT text;
 			public int32 value;
 		}
 		[CRepr]
-		public struct WS_XML_INT64_TEXT		{
+		public struct WS_XML_INT64_TEXT
+		{
 			public WS_XML_TEXT text;
 			public int64 value;
 		}
 		[CRepr]
-		public struct WS_XML_UINT64_TEXT		{
+		public struct WS_XML_UINT64_TEXT
+		{
 			public WS_XML_TEXT text;
 			public uint64 value;
 		}
 		[CRepr]
-		public struct WS_XML_FLOAT_TEXT		{
+		public struct WS_XML_FLOAT_TEXT
+		{
 			public WS_XML_TEXT text;
 			public float value;
 		}
 		[CRepr]
-		public struct WS_XML_DOUBLE_TEXT		{
+		public struct WS_XML_DOUBLE_TEXT
+		{
 			public WS_XML_TEXT text;
 			public double value;
 		}
 		[CRepr]
-		public struct WS_XML_DECIMAL_TEXT		{
+		public struct WS_XML_DECIMAL_TEXT
+		{
 			public WS_XML_TEXT text;
 			public DECIMAL value;
 		}
 		[CRepr]
-		public struct WS_XML_GUID_TEXT		{
+		public struct WS_XML_GUID_TEXT
+		{
 			public WS_XML_TEXT text;
 			public Guid value;
 		}
 		[CRepr]
-		public struct WS_XML_UNIQUE_ID_TEXT		{
+		public struct WS_XML_UNIQUE_ID_TEXT
+		{
 			public WS_XML_TEXT text;
 			public Guid value;
 		}
 		[CRepr]
-		public struct WS_DATETIME		{
+		public struct WS_DATETIME
+		{
 			public uint64 ticks;
 			public WS_DATETIME_FORMAT format;
 		}
 		[CRepr]
-		public struct WS_XML_DATETIME_TEXT		{
+		public struct WS_XML_DATETIME_TEXT
+		{
 			public WS_XML_TEXT text;
 			public WS_DATETIME value;
 		}
 		[CRepr]
-		public struct WS_TIMESPAN		{
+		public struct WS_TIMESPAN
+		{
 			public int64 ticks;
 		}
 		[CRepr]
-		public struct WS_XML_TIMESPAN_TEXT		{
+		public struct WS_XML_TIMESPAN_TEXT
+		{
 			public WS_XML_TEXT text;
 			public WS_TIMESPAN value;
 		}
 		[CRepr]
-		public struct WS_XML_QNAME_TEXT		{
+		public struct WS_XML_QNAME_TEXT
+		{
 			public WS_XML_TEXT text;
 			public WS_XML_STRING* prefix;
 			public WS_XML_STRING* localName;
 			public WS_XML_STRING* ns;
 		}
 		[CRepr]
-		public struct WS_XML_LIST_TEXT		{
+		public struct WS_XML_LIST_TEXT
+		{
 			public WS_XML_TEXT text;
 			public uint32 itemCount;
 			public WS_XML_TEXT** items;
 		}
 		[CRepr]
-		public struct WS_XML_NODE		{
+		public struct WS_XML_NODE
+		{
 			public WS_XML_NODE_TYPE nodeType;
 		}
 		[CRepr]
-		public struct WS_XML_ATTRIBUTE		{
+		public struct WS_XML_ATTRIBUTE
+		{
 			public uint8 singleQuote;
 			public uint8 isXmlNs;
 			public WS_XML_STRING* prefix;
@@ -1523,7 +1553,8 @@ namespace Win32
 			public WS_XML_TEXT* value;
 		}
 		[CRepr]
-		public struct WS_XML_ELEMENT_NODE		{
+		public struct WS_XML_ELEMENT_NODE
+		{
 			public WS_XML_NODE node;
 			public WS_XML_STRING* prefix;
 			public WS_XML_STRING* localName;
@@ -1533,53 +1564,63 @@ namespace Win32
 			public BOOL isEmpty;
 		}
 		[CRepr]
-		public struct WS_XML_TEXT_NODE		{
+		public struct WS_XML_TEXT_NODE
+		{
 			public WS_XML_NODE node;
 			public WS_XML_TEXT* text;
 		}
 		[CRepr]
-		public struct WS_XML_COMMENT_NODE		{
+		public struct WS_XML_COMMENT_NODE
+		{
 			public WS_XML_NODE node;
 			public WS_XML_STRING value;
 		}
 		[CRepr]
-		public struct WS_XML_READER_INPUT		{
+		public struct WS_XML_READER_INPUT
+		{
 			public WS_XML_READER_INPUT_TYPE inputType;
 		}
 		[CRepr]
-		public struct WS_XML_READER_BUFFER_INPUT		{
+		public struct WS_XML_READER_BUFFER_INPUT
+		{
 			public WS_XML_READER_INPUT input;
 			public void* encodedData;
 			public uint32 encodedDataSize;
 		}
 		[CRepr]
-		public struct WS_XML_READER_STREAM_INPUT		{
+		public struct WS_XML_READER_STREAM_INPUT
+		{
 			public WS_XML_READER_INPUT input;
 			public WS_READ_CALLBACK readCallback;
 			public void* readCallbackState;
 		}
 		[CRepr]
-		public struct WS_XML_READER_ENCODING		{
+		public struct WS_XML_READER_ENCODING
+		{
 			public WS_XML_READER_ENCODING_TYPE encodingType;
 		}
 		[CRepr]
-		public struct WS_XML_READER_TEXT_ENCODING		{
+		public struct WS_XML_READER_TEXT_ENCODING
+		{
 			public WS_XML_READER_ENCODING encoding;
 			public WS_CHARSET charSet;
 		}
 		[CRepr]
-		public struct WS_XML_READER_BINARY_ENCODING		{
+		public struct WS_XML_READER_BINARY_ENCODING
+		{
 			public WS_XML_READER_ENCODING encoding;
 			public WS_XML_DICTIONARY* staticDictionary;
 			public WS_XML_DICTIONARY* dynamicDictionary;
 		}
 		[CRepr]
-		public struct WS_STRING		{
+		public struct WS_STRING
+		{
 			public uint32 length;
 			public PWSTR chars;
 		}
 		[CRepr]
-		public struct WS_XML_READER_MTOM_ENCODING		{
+		public struct WS_XML_READER_MTOM_ENCODING
+		{
 			public WS_XML_READER_ENCODING encoding;
 			public WS_XML_READER_ENCODING* textEncoding;
 			public BOOL readMimeHeader;
@@ -1588,27 +1629,32 @@ namespace Win32
 			public WS_STRING startUri;
 		}
 		[CRepr]
-		public struct WS_XML_READER_RAW_ENCODING		{
+		public struct WS_XML_READER_RAW_ENCODING
+		{
 			public WS_XML_READER_ENCODING encoding;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_ENCODING		{
+		public struct WS_XML_WRITER_ENCODING
+		{
 			public WS_XML_WRITER_ENCODING_TYPE encodingType;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_TEXT_ENCODING		{
+		public struct WS_XML_WRITER_TEXT_ENCODING
+		{
 			public WS_XML_WRITER_ENCODING encoding;
 			public WS_CHARSET charSet;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_BINARY_ENCODING		{
+		public struct WS_XML_WRITER_BINARY_ENCODING
+		{
 			public WS_XML_WRITER_ENCODING encoding;
 			public WS_XML_DICTIONARY* staticDictionary;
 			public WS_DYNAMIC_STRING_CALLBACK dynamicStringCallback;
 			public void* dynamicStringCallbackState;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_MTOM_ENCODING		{
+		public struct WS_XML_WRITER_MTOM_ENCODING
+		{
 			public WS_XML_WRITER_ENCODING encoding;
 			public WS_XML_WRITER_ENCODING* textEncoding;
 			public BOOL writeMimeHeader;
@@ -1618,40 +1664,48 @@ namespace Win32
 			public uint32 maxInlineByteCount;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_RAW_ENCODING		{
+		public struct WS_XML_WRITER_RAW_ENCODING
+		{
 			public WS_XML_WRITER_ENCODING encoding;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_OUTPUT		{
+		public struct WS_XML_WRITER_OUTPUT
+		{
 			public WS_XML_WRITER_OUTPUT_TYPE outputType;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_BUFFER_OUTPUT		{
+		public struct WS_XML_WRITER_BUFFER_OUTPUT
+		{
 			public WS_XML_WRITER_OUTPUT output;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_STREAM_OUTPUT		{
+		public struct WS_XML_WRITER_STREAM_OUTPUT
+		{
 			public WS_XML_WRITER_OUTPUT output;
 			public WS_WRITE_CALLBACK writeCallback;
 			public void* writeCallbackState;
 		}
 		[CRepr]
-		public struct WS_XML_WRITER_PROPERTIES		{
+		public struct WS_XML_WRITER_PROPERTIES
+		{
 			public WS_XML_WRITER_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_XML_READER_PROPERTIES		{
+		public struct WS_XML_READER_PROPERTIES
+		{
 			public WS_XML_READER_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_ASYNC_CONTEXT		{
+		public struct WS_ASYNC_CONTEXT
+		{
 			public WS_ASYNC_CALLBACK callback;
 			public void* callbackState;
 		}
 		[CRepr]
-		public struct WS_ASYNC_STATE		{
+		public struct WS_ASYNC_STATE
+		{
 			public void* internal0;
 			public void* internal1;
 			public void* internal2;
@@ -1659,27 +1713,32 @@ namespace Win32
 			public void* internal4;
 		}
 		[CRepr]
-		public struct WS_ASYNC_OPERATION		{
+		public struct WS_ASYNC_OPERATION
+		{
 			public WS_ASYNC_FUNCTION @function;
 		}
 		[CRepr]
-		public struct WS_CHANNEL_PROPERTY		{
+		public struct WS_CHANNEL_PROPERTY
+		{
 			public WS_CHANNEL_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_CUSTOM_HTTP_PROXY		{
+		public struct WS_CUSTOM_HTTP_PROXY
+		{
 			public WS_STRING servers;
 			public WS_STRING bypass;
 		}
 		[CRepr]
-		public struct WS_CHANNEL_PROPERTIES		{
+		public struct WS_CHANNEL_PROPERTIES
+		{
 			public WS_CHANNEL_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_CUSTOM_CHANNEL_CALLBACKS		{
+		public struct WS_CUSTOM_CHANNEL_CALLBACKS
+		{
 			public WS_CREATE_CHANNEL_CALLBACK createChannelCallback;
 			public WS_FREE_CHANNEL_CALLBACK freeChannelCallback;
 			public WS_RESET_CHANNEL_CALLBACK resetChannelCallback;
@@ -1696,12 +1755,14 @@ namespace Win32
 			public WS_SHUTDOWN_SESSION_CHANNEL_CALLBACK shutdownSessionChannelCallback;
 		}
 		[CRepr]
-		public struct WS_HTTP_HEADER_MAPPING		{
+		public struct WS_HTTP_HEADER_MAPPING
+		{
 			public WS_XML_STRING headerName;
 			public uint32 headerMappingOptions;
 		}
 		[CRepr]
-		public struct WS_HTTP_MESSAGE_MAPPING		{
+		public struct WS_HTTP_MESSAGE_MAPPING
+		{
 			public uint32 requestMappingOptions;
 			public uint32 responseMappingOptions;
 			public WS_HTTP_HEADER_MAPPING** requestHeaderMappings;
@@ -1710,19 +1771,22 @@ namespace Win32
 			public uint32 responseHeaderMappingCount;
 		}
 		[CRepr]
-		public struct WS_ELEMENT_DESCRIPTION		{
+		public struct WS_ELEMENT_DESCRIPTION
+		{
 			public WS_XML_STRING* elementLocalName;
 			public WS_XML_STRING* elementNs;
 			public WS_TYPE type;
 			public void* typeDescription;
 		}
 		[CRepr]
-		public struct WS_MESSAGE_DESCRIPTION		{
+		public struct WS_MESSAGE_DESCRIPTION
+		{
 			public WS_XML_STRING* action;
 			public WS_ELEMENT_DESCRIPTION* bodyElementDescription;
 		}
 		[CRepr]
-		public struct WS_CHANNEL_ENCODER		{
+		public struct WS_CHANNEL_ENCODER
+		{
 			public void* createContext;
 			public WS_CREATE_ENCODER_CALLBACK createEncoderCallback;
 			public WS_ENCODER_GET_CONTENT_TYPE_CALLBACK encoderGetContentTypeCallback;
@@ -1732,7 +1796,8 @@ namespace Win32
 			public WS_FREE_ENCODER_CALLBACK freeEncoderCallback;
 		}
 		[CRepr]
-		public struct WS_CHANNEL_DECODER		{
+		public struct WS_CHANNEL_DECODER
+		{
 			public void* createContext;
 			public WS_CREATE_DECODER_CALLBACK createDecoderCallback;
 			public WS_DECODER_GET_CONTENT_TYPE_CALLBACK decoderGetContentTypeCallback;
@@ -1742,75 +1807,89 @@ namespace Win32
 			public WS_FREE_DECODER_CALLBACK freeDecoderCallback;
 		}
 		[CRepr]
-		public struct WS_HTTP_REDIRECT_CALLBACK_CONTEXT		{
+		public struct WS_HTTP_REDIRECT_CALLBACK_CONTEXT
+		{
 			public WS_HTTP_REDIRECT_CALLBACK callback;
 			public void* state;
 		}
 		[CRepr]
-		public struct WS_ENDPOINT_IDENTITY		{
+		public struct WS_ENDPOINT_IDENTITY
+		{
 			public WS_ENDPOINT_IDENTITY_TYPE identityType;
 		}
 		[CRepr]
-		public struct WS_ENDPOINT_ADDRESS		{
+		public struct WS_ENDPOINT_ADDRESS
+		{
 			public WS_STRING url;
 			public WS_XML_BUFFER* headers;
 			public WS_XML_BUFFER* extensions;
 			public WS_ENDPOINT_IDENTITY* identity;
 		}
 		[CRepr]
-		public struct WS_DNS_ENDPOINT_IDENTITY		{
+		public struct WS_DNS_ENDPOINT_IDENTITY
+		{
 			public WS_ENDPOINT_IDENTITY identity;
 			public WS_STRING dns;
 		}
 		[CRepr]
-		public struct WS_UPN_ENDPOINT_IDENTITY		{
+		public struct WS_UPN_ENDPOINT_IDENTITY
+		{
 			public WS_ENDPOINT_IDENTITY identity;
 			public WS_STRING upn;
 		}
 		[CRepr]
-		public struct WS_SPN_ENDPOINT_IDENTITY		{
+		public struct WS_SPN_ENDPOINT_IDENTITY
+		{
 			public WS_ENDPOINT_IDENTITY identity;
 			public WS_STRING spn;
 		}
 		[CRepr]
-		public struct WS_BYTES		{
+		public struct WS_BYTES
+		{
 			public uint32 length;
 			public uint8* bytes;
 		}
 		[CRepr]
-		public struct WS_RSA_ENDPOINT_IDENTITY		{
+		public struct WS_RSA_ENDPOINT_IDENTITY
+		{
 			public WS_ENDPOINT_IDENTITY identity;
 			public WS_BYTES modulus;
 			public WS_BYTES exponent;
 		}
 		[CRepr]
-		public struct WS_CERT_ENDPOINT_IDENTITY		{
+		public struct WS_CERT_ENDPOINT_IDENTITY
+		{
 			public WS_ENDPOINT_IDENTITY identity;
 			public WS_BYTES rawCertificateData;
 		}
 		[CRepr]
-		public struct WS_UNKNOWN_ENDPOINT_IDENTITY		{
+		public struct WS_UNKNOWN_ENDPOINT_IDENTITY
+		{
 			public WS_ENDPOINT_IDENTITY identity;
 			public WS_XML_BUFFER* element;
 		}
 		[CRepr]
-		public struct WS_ERROR_PROPERTY		{
+		public struct WS_ERROR_PROPERTY
+		{
 			public WS_ERROR_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_FAULT_REASON		{
+		public struct WS_FAULT_REASON
+		{
 			public WS_STRING text;
 			public WS_STRING lang;
 		}
 		[CRepr]
-		public struct WS_FAULT_CODE		{
+		public struct WS_FAULT_CODE
+		{
 			public WS_XML_QNAME value;
 			public WS_FAULT_CODE* subCode;
 		}
 		[CRepr]
-		public struct WS_FAULT		{
+		public struct WS_FAULT
+		{
 			public WS_FAULT_CODE* code;
 			public WS_FAULT_REASON* reasons;
 			public uint32 reasonCount;
@@ -1819,44 +1898,52 @@ namespace Win32
 			public WS_XML_BUFFER* detail;
 		}
 		[CRepr]
-		public struct WS_FAULT_DETAIL_DESCRIPTION		{
+		public struct WS_FAULT_DETAIL_DESCRIPTION
+		{
 			public WS_XML_STRING* action;
 			public WS_ELEMENT_DESCRIPTION* detailElementDescription;
 		}
 		[CRepr]
-		public struct WS_HEAP_PROPERTY		{
+		public struct WS_HEAP_PROPERTY
+		{
 			public WS_HEAP_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_HEAP_PROPERTIES		{
+		public struct WS_HEAP_PROPERTIES
+		{
 			public WS_HEAP_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_LISTENER_PROPERTY		{
+		public struct WS_LISTENER_PROPERTY
+		{
 			public WS_LISTENER_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_DISALLOWED_USER_AGENT_SUBSTRINGS		{
+		public struct WS_DISALLOWED_USER_AGENT_SUBSTRINGS
+		{
 			public uint32 subStringCount;
 			public WS_STRING** subStrings;
 		}
 		[CRepr]
-		public struct WS_LISTENER_PROPERTIES		{
+		public struct WS_LISTENER_PROPERTIES
+		{
 			public WS_LISTENER_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_HOST_NAMES		{
+		public struct WS_HOST_NAMES
+		{
 			public WS_STRING* hostNames;
 			public uint32 hostNameCount;
 		}
 		[CRepr]
-		public struct WS_CUSTOM_LISTENER_CALLBACKS		{
+		public struct WS_CUSTOM_LISTENER_CALLBACKS
+		{
 			public WS_CREATE_LISTENER_CALLBACK createListenerCallback;
 			public WS_FREE_LISTENER_CALLBACK freeListenerCallback;
 			public WS_RESET_LISTENER_CALLBACK resetListenerCallback;
@@ -1869,24 +1956,28 @@ namespace Win32
 			public WS_ACCEPT_CHANNEL_CALLBACK acceptChannelCallback;
 		}
 		[CRepr]
-		public struct WS_MESSAGE_PROPERTY		{
+		public struct WS_MESSAGE_PROPERTY
+		{
 			public WS_MESSAGE_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_MESSAGE_PROPERTIES		{
+		public struct WS_MESSAGE_PROPERTIES
+		{
 			public WS_MESSAGE_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_SECURITY_ALGORITHM_PROPERTY		{
+		public struct WS_SECURITY_ALGORITHM_PROPERTY
+		{
 			public WS_SECURITY_ALGORITHM_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_SECURITY_ALGORITHM_SUITE		{
+		public struct WS_SECURITY_ALGORITHM_SUITE
+		{
 			public WS_SECURITY_ALGORITHM_ID canonicalizationAlgorithm;
 			public WS_SECURITY_ALGORITHM_ID digestAlgorithm;
 			public WS_SECURITY_ALGORITHM_ID symmetricSignatureAlgorithm;
@@ -1903,57 +1994,67 @@ namespace Win32
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_SECURITY_PROPERTY		{
+		public struct WS_SECURITY_PROPERTY
+		{
 			public WS_SECURITY_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_SECURITY_PROPERTIES		{
+		public struct WS_SECURITY_PROPERTIES
+		{
 			public WS_SECURITY_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_SECURITY_BINDING_PROPERTY		{
+		public struct WS_SECURITY_BINDING_PROPERTY
+		{
 			public WS_SECURITY_BINDING_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_SECURITY_BINDING_PROPERTIES		{
+		public struct WS_SECURITY_BINDING_PROPERTIES
+		{
 			public WS_SECURITY_BINDING_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_SERVICE_SECURITY_IDENTITIES		{
+		public struct WS_SERVICE_SECURITY_IDENTITIES
+		{
 			public WS_STRING* serviceIdentities;
 			public uint32 serviceIdentityCount;
 		}
 		[CRepr]
-		public struct WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT		{
+		public struct WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT
+		{
 			public WS_CERTIFICATE_VALIDATION_CALLBACK callback;
 			public void* state;
 		}
 		[CRepr]
-		public struct WS_CERT_CREDENTIAL		{
+		public struct WS_CERT_CREDENTIAL
+		{
 			public WS_CERT_CREDENTIAL_TYPE credentialType;
 		}
 		[CRepr]
-		public struct WS_SUBJECT_NAME_CERT_CREDENTIAL		{
+		public struct WS_SUBJECT_NAME_CERT_CREDENTIAL
+		{
 			public WS_CERT_CREDENTIAL credential;
 			public uint32 storeLocation;
 			public WS_STRING storeName;
 			public WS_STRING subjectName;
 		}
 		[CRepr]
-		public struct WS_THUMBPRINT_CERT_CREDENTIAL		{
+		public struct WS_THUMBPRINT_CERT_CREDENTIAL
+		{
 			public WS_CERT_CREDENTIAL credential;
 			public uint32 storeLocation;
 			public WS_STRING storeName;
 			public WS_STRING thumbprint;
 		}
 		[CRepr]
-		public struct WS_CUSTOM_CERT_CREDENTIAL		{
+		public struct WS_CUSTOM_CERT_CREDENTIAL
+		{
 			public WS_CERT_CREDENTIAL credential;
 			public WS_GET_CERT_CALLBACK getCertCallback;
 			public void* getCertCallbackState;
@@ -1961,89 +2062,106 @@ namespace Win32
 			public void* certIssuerListNotificationCallbackState;
 		}
 		[CRepr]
-		public struct WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL		{
+		public struct WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL
+		{
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL_TYPE credentialType;
 		}
 		[CRepr]
-		public struct WS_STRING_WINDOWS_INTEGRATED_AUTH_CREDENTIAL		{
+		public struct WS_STRING_WINDOWS_INTEGRATED_AUTH_CREDENTIAL
+		{
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL credential;
 			public WS_STRING username;
 			public WS_STRING password;
 			public WS_STRING domain;
 		}
 		[CRepr]
-		public struct WS_DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL		{
+		public struct WS_DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL
+		{
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL credential;
 		}
 		[CRepr]
-		public struct WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL		{
+		public struct WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL
+		{
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL credential;
 			public void* opaqueAuthIdentity;
 		}
 		[CRepr]
-		public struct WS_USERNAME_CREDENTIAL		{
+		public struct WS_USERNAME_CREDENTIAL
+		{
 			public WS_USERNAME_CREDENTIAL_TYPE credentialType;
 		}
 		[CRepr]
-		public struct WS_STRING_USERNAME_CREDENTIAL		{
+		public struct WS_STRING_USERNAME_CREDENTIAL
+		{
 			public WS_USERNAME_CREDENTIAL credential;
 			public WS_STRING username;
 			public WS_STRING password;
 		}
 		[CRepr]
-		public struct WS_SECURITY_KEY_HANDLE		{
+		public struct WS_SECURITY_KEY_HANDLE
+		{
 			public WS_SECURITY_KEY_HANDLE_TYPE keyHandleType;
 		}
 		[CRepr]
-		public struct WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE		{
+		public struct WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE
+		{
 			public WS_SECURITY_KEY_HANDLE keyHandle;
 			public WS_BYTES rawKeyBytes;
 		}
 		[CRepr]
-		public struct WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE		{
+		public struct WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE
+		{
 			public WS_SECURITY_KEY_HANDLE keyHandle;
 			public uint asymmetricKey;
 		}
 		[CRepr]
-		public struct WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE		{
+		public struct WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE
+		{
 			public WS_SECURITY_KEY_HANDLE keyHandle;
 			public uint provider;
 			public uint32 keySpec;
 		}
 		[CRepr]
-		public struct WS_SECURITY_BINDING		{
+		public struct WS_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING_TYPE bindingType;
 			public WS_SECURITY_BINDING_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_SSL_TRANSPORT_SECURITY_BINDING		{
+		public struct WS_SSL_TRANSPORT_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_CERT_CREDENTIAL* localCertCredential;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING		{
+		public struct WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
 		}
 		[CRepr]
-		public struct WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING		{
+		public struct WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
 		}
 		[CRepr]
-		public struct WS_HTTP_HEADER_AUTH_SECURITY_BINDING		{
+		public struct WS_HTTP_HEADER_AUTH_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
 		}
 		[CRepr]
-		public struct WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING		{
+		public struct WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
 		}
 		[CRepr]
-		public struct WS_USERNAME_MESSAGE_SECURITY_BINDING		{
+		public struct WS_USERNAME_MESSAGE_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 			public WS_USERNAME_CREDENTIAL* clientCredential;
@@ -2051,42 +2169,49 @@ namespace Win32
 			public void* passwordValidatorCallbackState;
 		}
 		[CRepr]
-		public struct WS_SECURITY_DESCRIPTION		{
+		public struct WS_SECURITY_DESCRIPTION
+		{
 			public WS_SECURITY_BINDING** securityBindings;
 			public uint32 securityBindingCount;
 			public WS_SECURITY_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING		{
+		public struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 			public WS_SECURITY_DESCRIPTION* bootstrapSecurityDescription;
 		}
 		[CRepr]
-		public struct WS_SECURITY_CONTEXT_PROPERTY		{
+		public struct WS_SECURITY_CONTEXT_PROPERTY
+		{
 			public WS_SECURITY_CONTEXT_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_XML_SECURITY_TOKEN_PROPERTY		{
+		public struct WS_XML_SECURITY_TOKEN_PROPERTY
+		{
 			public WS_XML_SECURITY_TOKEN_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_XML_TOKEN_MESSAGE_SECURITY_BINDING		{
+		public struct WS_XML_TOKEN_MESSAGE_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 			public WS_SECURITY_TOKEN* xmlToken;
 		}
 		[CRepr]
-		public struct WS_SAML_AUTHENTICATOR		{
+		public struct WS_SAML_AUTHENTICATOR
+		{
 			public WS_SAML_AUTHENTICATOR_TYPE authenticatorType;
 		}
 		[CRepr]
-		public struct WS_CERT_SIGNED_SAML_AUTHENTICATOR		{
+		public struct WS_CERT_SIGNED_SAML_AUTHENTICATOR
+		{
 			public WS_SAML_AUTHENTICATOR authenticator;
 			public CERT_CONTEXT** trustedIssuerCerts;
 			public uint32 trustedIssuerCertCount;
@@ -2095,43 +2220,51 @@ namespace Win32
 			public void* samlValidatorCallbackState;
 		}
 		[CRepr]
-		public struct WS_SAML_MESSAGE_SECURITY_BINDING		{
+		public struct WS_SAML_MESSAGE_SECURITY_BINDING
+		{
 			public WS_SECURITY_BINDING binding;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 			public WS_SAML_AUTHENTICATOR* authenticator;
 		}
 		[CRepr]
-		public struct WS_REQUEST_SECURITY_TOKEN_PROPERTY		{
+		public struct WS_REQUEST_SECURITY_TOKEN_PROPERTY
+		{
 			public WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_ANY_ATTRIBUTE		{
+		public struct WS_ANY_ATTRIBUTE
+		{
 			public WS_XML_STRING localName;
 			public WS_XML_STRING ns;
 			public WS_XML_TEXT* value;
 		}
 		[CRepr]
-		public struct WS_ANY_ATTRIBUTES		{
+		public struct WS_ANY_ATTRIBUTES
+		{
 			public WS_ANY_ATTRIBUTE* attributes;
 			public uint32 attributeCount;
 		}
 		[CRepr]
-		public struct WS_BOOL_DESCRIPTION		{
+		public struct WS_BOOL_DESCRIPTION
+		{
 			public BOOL value;
 		}
 		[CRepr]
-		public struct WS_GUID_DESCRIPTION		{
+		public struct WS_GUID_DESCRIPTION
+		{
 			public Guid value;
 		}
 		[CRepr]
-		public struct WS_DATETIME_DESCRIPTION		{
+		public struct WS_DATETIME_DESCRIPTION
+		{
 			public WS_DATETIME minValue;
 			public WS_DATETIME maxValue;
 		}
 		[CRepr]
-		public struct WS_DURATION		{
+		public struct WS_DURATION
+		{
 			public BOOL negative;
 			public uint32 years;
 			public uint32 months;
@@ -2143,142 +2276,169 @@ namespace Win32
 			public uint32 ticks;
 		}
 		[CRepr]
-		public struct WS_DURATION_DESCRIPTION		{
+		public struct WS_DURATION_DESCRIPTION
+		{
 			public WS_DURATION minValue;
 			public WS_DURATION maxValue;
 			public WS_DURATION_COMPARISON_CALLBACK comparer;
 		}
 		[CRepr]
-		public struct WS_TIMESPAN_DESCRIPTION		{
+		public struct WS_TIMESPAN_DESCRIPTION
+		{
 			public WS_TIMESPAN minValue;
 			public WS_TIMESPAN maxValue;
 		}
 		[CRepr]
-		public struct WS_UNIQUE_ID_DESCRIPTION		{
+		public struct WS_UNIQUE_ID_DESCRIPTION
+		{
 			public uint32 minCharCount;
 			public uint32 maxCharCount;
 		}
 		[CRepr]
-		public struct WS_STRING_DESCRIPTION		{
+		public struct WS_STRING_DESCRIPTION
+		{
 			public uint32 minCharCount;
 			public uint32 maxCharCount;
 		}
 		[CRepr]
-		public struct WS_XML_STRING_DESCRIPTION		{
+		public struct WS_XML_STRING_DESCRIPTION
+		{
 			public uint32 minByteCount;
 			public uint32 maxByteCount;
 		}
 		[CRepr]
-		public struct WS_XML_QNAME_DESCRIPTION		{
+		public struct WS_XML_QNAME_DESCRIPTION
+		{
 			public uint32 minLocalNameByteCount;
 			public uint32 maxLocalNameByteCount;
 			public uint32 minNsByteCount;
 			public uint32 maxNsByteCount;
 		}
 		[CRepr]
-		public struct WS_CHAR_ARRAY_DESCRIPTION		{
+		public struct WS_CHAR_ARRAY_DESCRIPTION
+		{
 			public uint32 minCharCount;
 			public uint32 maxCharCount;
 		}
 		[CRepr]
-		public struct WS_BYTE_ARRAY_DESCRIPTION		{
+		public struct WS_BYTE_ARRAY_DESCRIPTION
+		{
 			public uint32 minByteCount;
 			public uint32 maxByteCount;
 		}
 		[CRepr]
-		public struct WS_UTF8_ARRAY_DESCRIPTION		{
+		public struct WS_UTF8_ARRAY_DESCRIPTION
+		{
 			public uint32 minByteCount;
 			public uint32 maxByteCount;
 		}
 		[CRepr]
-		public struct WS_WSZ_DESCRIPTION		{
+		public struct WS_WSZ_DESCRIPTION
+		{
 			public uint32 minCharCount;
 			public uint32 maxCharCount;
 		}
 		[CRepr]
-		public struct WS_INT8_DESCRIPTION		{
+		public struct WS_INT8_DESCRIPTION
+		{
 			public CHAR minValue;
 			public CHAR maxValue;
 		}
 		[CRepr]
-		public struct WS_UINT8_DESCRIPTION		{
+		public struct WS_UINT8_DESCRIPTION
+		{
 			public uint8 minValue;
 			public uint8 maxValue;
 		}
 		[CRepr]
-		public struct WS_INT16_DESCRIPTION		{
+		public struct WS_INT16_DESCRIPTION
+		{
 			public int16 minValue;
 			public int16 maxValue;
 		}
 		[CRepr]
-		public struct WS_UINT16_DESCRIPTION		{
+		public struct WS_UINT16_DESCRIPTION
+		{
 			public uint16 minValue;
 			public uint16 maxValue;
 		}
 		[CRepr]
-		public struct WS_INT32_DESCRIPTION		{
+		public struct WS_INT32_DESCRIPTION
+		{
 			public int32 minValue;
 			public int32 maxValue;
 		}
 		[CRepr]
-		public struct WS_UINT32_DESCRIPTION		{
+		public struct WS_UINT32_DESCRIPTION
+		{
 			public uint32 minValue;
 			public uint32 maxValue;
 		}
 		[CRepr]
-		public struct WS_INT64_DESCRIPTION		{
+		public struct WS_INT64_DESCRIPTION
+		{
 			public int64 minValue;
 			public int64 maxValue;
 		}
 		[CRepr]
-		public struct WS_UINT64_DESCRIPTION		{
+		public struct WS_UINT64_DESCRIPTION
+		{
 			public uint64 minValue;
 			public uint64 maxValue;
 		}
 		[CRepr]
-		public struct WS_FLOAT_DESCRIPTION		{
+		public struct WS_FLOAT_DESCRIPTION
+		{
 			public float minValue;
 			public float maxValue;
 		}
 		[CRepr]
-		public struct WS_DOUBLE_DESCRIPTION		{
+		public struct WS_DOUBLE_DESCRIPTION
+		{
 			public double minValue;
 			public double maxValue;
 		}
 		[CRepr]
-		public struct WS_DECIMAL_DESCRIPTION		{
+		public struct WS_DECIMAL_DESCRIPTION
+		{
 			public DECIMAL minValue;
 			public DECIMAL maxValue;
 		}
 		[CRepr]
-		public struct WS_BYTES_DESCRIPTION		{
+		public struct WS_BYTES_DESCRIPTION
+		{
 			public uint32 minByteCount;
 			public uint32 maxByteCount;
 		}
 		[CRepr]
-		public struct WS_ENUM_VALUE		{
+		public struct WS_ENUM_VALUE
+		{
 			public int32 value;
 			public WS_XML_STRING* name;
 		}
 		[CRepr]
-		public struct WS_ENUM_DESCRIPTION		{
+		public struct WS_ENUM_DESCRIPTION
+		{
 			public WS_ENUM_VALUE* values;
 			public uint32 valueCount;
 			public uint32 maxByteCount;
 			public uint32* nameIndices;
 		}
 		[CRepr]
-		public struct WS_ITEM_RANGE		{
+		public struct WS_ITEM_RANGE
+		{
 			public uint32 minItemCount;
 			public uint32 maxItemCount;
 		}
 		[CRepr]
-		public struct WS_DEFAULT_VALUE		{
+		public struct WS_DEFAULT_VALUE
+		{
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_FIELD_DESCRIPTION		{
+		public struct WS_FIELD_DESCRIPTION
+		{
 			public WS_FIELD_MAPPING mapping;
 			public WS_XML_STRING* localName;
 			public WS_XML_STRING* ns;
@@ -2293,12 +2453,14 @@ namespace Win32
 			public WS_ITEM_RANGE* itemRange;
 		}
 		[CRepr]
-		public struct WS_UNION_FIELD_DESCRIPTION		{
+		public struct WS_UNION_FIELD_DESCRIPTION
+		{
 			public int32 value;
 			public WS_FIELD_DESCRIPTION field;
 		}
 		[CRepr]
-		public struct WS_STRUCT_DESCRIPTION		{
+		public struct WS_STRUCT_DESCRIPTION
+		{
 			public uint32 size;
 			public uint32 alignment;
 			public WS_FIELD_DESCRIPTION** fields;
@@ -2311,7 +2473,8 @@ namespace Win32
 			public uint32 structOptions;
 		}
 		[CRepr]
-		public struct WS_UNION_DESCRIPTION		{
+		public struct WS_UNION_DESCRIPTION
+		{
 			public uint32 size;
 			public uint32 alignment;
 			public WS_UNION_FIELD_DESCRIPTION** fields;
@@ -2321,19 +2484,23 @@ namespace Win32
 			public uint32* valueIndices;
 		}
 		[CRepr]
-		public struct WS_ENDPOINT_ADDRESS_DESCRIPTION		{
+		public struct WS_ENDPOINT_ADDRESS_DESCRIPTION
+		{
 			public WS_ADDRESSING_VERSION addressingVersion;
 		}
 		[CRepr]
-		public struct WS_FAULT_DESCRIPTION		{
+		public struct WS_FAULT_DESCRIPTION
+		{
 			public WS_ENVELOPE_VERSION envelopeVersion;
 		}
 		[CRepr]
-		public struct WS_VOID_DESCRIPTION		{
+		public struct WS_VOID_DESCRIPTION
+		{
 			public uint32 size;
 		}
 		[CRepr]
-		public struct WS_CUSTOM_TYPE_DESCRIPTION		{
+		public struct WS_CUSTOM_TYPE_DESCRIPTION
+		{
 			public uint32 size;
 			public uint32 alignment;
 			public WS_READ_TYPE_CALLBACK readCallback;
@@ -2342,20 +2509,23 @@ namespace Win32
 			public WS_IS_DEFAULT_VALUE_CALLBACK isDefaultValueCallback;
 		}
 		[CRepr]
-		public struct WS_ATTRIBUTE_DESCRIPTION		{
+		public struct WS_ATTRIBUTE_DESCRIPTION
+		{
 			public WS_XML_STRING* attributeLocalName;
 			public WS_XML_STRING* attributeNs;
 			public WS_TYPE type;
 			public void* typeDescription;
 		}
 		[CRepr]
-		public struct WS_PARAMETER_DESCRIPTION		{
+		public struct WS_PARAMETER_DESCRIPTION
+		{
 			public WS_PARAMETER_TYPE parameterType;
 			public uint16 inputMessageIndex;
 			public uint16 outputMessageIndex;
 		}
 		[CRepr]
-		public struct WS_OPERATION_DESCRIPTION		{
+		public struct WS_OPERATION_DESCRIPTION
+		{
 			public uint32 versionInfo;
 			public WS_MESSAGE_DESCRIPTION* inputMessageDescription;
 			public WS_MESSAGE_DESCRIPTION* outputMessageDescription;
@@ -2367,56 +2537,66 @@ namespace Win32
 			public WS_OPERATION_STYLE style;
 		}
 		[CRepr]
-		public struct WS_CONTRACT_DESCRIPTION		{
+		public struct WS_CONTRACT_DESCRIPTION
+		{
 			public uint32 operationCount;
 			public WS_OPERATION_DESCRIPTION** operations;
 		}
 		[CRepr]
-		public struct WS_SERVICE_CONTRACT		{
+		public struct WS_SERVICE_CONTRACT
+		{
 			public WS_CONTRACT_DESCRIPTION* contractDescription;
 			public WS_SERVICE_MESSAGE_RECEIVE_CALLBACK defaultMessageHandlerCallback;
 			public void* methodTable;
 		}
 		[CRepr]
-		public struct WS_SERVICE_PROPERTY		{
+		public struct WS_SERVICE_PROPERTY
+		{
 			public WS_SERVICE_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_SERVICE_ENDPOINT_PROPERTY		{
+		public struct WS_SERVICE_ENDPOINT_PROPERTY
+		{
 			public WS_SERVICE_ENDPOINT_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_SERVICE_PROPERTY_ACCEPT_CALLBACK		{
+		public struct WS_SERVICE_PROPERTY_ACCEPT_CALLBACK
+		{
 			public WS_SERVICE_ACCEPT_CHANNEL_CALLBACK callback;
 		}
 		[CRepr]
-		public struct WS_SERVICE_METADATA_DOCUMENT		{
+		public struct WS_SERVICE_METADATA_DOCUMENT
+		{
 			public WS_XML_STRING* content;
 			public WS_STRING* name;
 		}
 		[CRepr]
-		public struct WS_SERVICE_METADATA		{
+		public struct WS_SERVICE_METADATA
+		{
 			public uint32 documentCount;
 			public WS_SERVICE_METADATA_DOCUMENT** documents;
 			public WS_XML_STRING* serviceName;
 			public WS_XML_STRING* serviceNs;
 		}
 		[CRepr]
-		public struct WS_SERVICE_PROPERTY_CLOSE_CALLBACK		{
+		public struct WS_SERVICE_PROPERTY_CLOSE_CALLBACK
+		{
 			public WS_SERVICE_CLOSE_CHANNEL_CALLBACK callback;
 		}
 		[CRepr]
-		public struct WS_SERVICE_ENDPOINT_METADATA		{
+		public struct WS_SERVICE_ENDPOINT_METADATA
+		{
 			public WS_XML_STRING* portName;
 			public WS_XML_STRING* bindingName;
 			public WS_XML_STRING* bindingNs;
 		}
 		[CRepr]
-		public struct WS_SERVICE_ENDPOINT		{
+		public struct WS_SERVICE_ENDPOINT
+		{
 			public WS_ENDPOINT_ADDRESS address;
 			public WS_CHANNEL_BINDING channelBinding;
 			public WS_CHANNEL_TYPE channelType;
@@ -2428,28 +2608,33 @@ namespace Win32
 			public WS_CHANNEL_PROPERTIES channelProperties;
 		}
 		[CRepr]
-		public struct WS_PROXY_PROPERTY		{
+		public struct WS_PROXY_PROPERTY
+		{
 			public WS_PROXY_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_PROXY_MESSAGE_CALLBACK_CONTEXT		{
+		public struct WS_PROXY_MESSAGE_CALLBACK_CONTEXT
+		{
 			public WS_PROXY_MESSAGE_CALLBACK callback;
 			public void* state;
 		}
 		[CRepr]
-		public struct WS_CALL_PROPERTY		{
+		public struct WS_CALL_PROPERTY
+		{
 			public WS_CALL_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_URL		{
+		public struct WS_URL
+		{
 			public WS_URL_SCHEME_TYPE scheme;
 		}
 		[CRepr]
-		public struct WS_HTTP_URL		{
+		public struct WS_HTTP_URL
+		{
 			public WS_URL url;
 			public WS_STRING host;
 			public uint16 port;
@@ -2459,7 +2644,8 @@ namespace Win32
 			public WS_STRING fragment;
 		}
 		[CRepr]
-		public struct WS_HTTPS_URL		{
+		public struct WS_HTTPS_URL
+		{
 			public WS_URL url;
 			public WS_STRING host;
 			public uint16 port;
@@ -2469,7 +2655,8 @@ namespace Win32
 			public WS_STRING fragment;
 		}
 		[CRepr]
-		public struct WS_NETTCP_URL		{
+		public struct WS_NETTCP_URL
+		{
 			public WS_URL url;
 			public WS_STRING host;
 			public uint16 port;
@@ -2479,7 +2666,8 @@ namespace Win32
 			public WS_STRING fragment;
 		}
 		[CRepr]
-		public struct WS_SOAPUDP_URL		{
+		public struct WS_SOAPUDP_URL
+		{
 			public WS_URL url;
 			public WS_STRING host;
 			public uint16 port;
@@ -2489,7 +2677,8 @@ namespace Win32
 			public WS_STRING fragment;
 		}
 		[CRepr]
-		public struct WS_NETPIPE_URL		{
+		public struct WS_NETPIPE_URL
+		{
 			public WS_URL url;
 			public WS_STRING host;
 			public uint16 port;
@@ -2499,17 +2688,20 @@ namespace Win32
 			public WS_STRING fragment;
 		}
 		[CRepr]
-		public struct WS_UNIQUE_ID		{
+		public struct WS_UNIQUE_ID
+		{
 			public WS_STRING uri;
 			public Guid guid;
 		}
 		[CRepr]
-		public struct WS_BUFFERS		{
+		public struct WS_BUFFERS
+		{
 			public uint32 bufferCount;
 			public WS_BYTES* buffers;
 		}
 		[CRepr]
-		public struct WS_METADATA_ENDPOINT		{
+		public struct WS_METADATA_ENDPOINT
+		{
 			public WS_ENDPOINT_ADDRESS endpointAddress;
 			public WS_POLICY* endpointPolicy;
 			public WS_XML_STRING* portName;
@@ -2521,92 +2713,109 @@ namespace Win32
 			public WS_XML_STRING* portTypeNs;
 		}
 		[CRepr]
-		public struct WS_METADATA_ENDPOINTS		{
+		public struct WS_METADATA_ENDPOINTS
+		{
 			public WS_METADATA_ENDPOINT* endpoints;
 			public uint32 endpointCount;
 		}
 		[CRepr]
-		public struct WS_METADATA_PROPERTY		{
+		public struct WS_METADATA_PROPERTY
+		{
 			public WS_METADATA_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_POLICY_PROPERTY		{
+		public struct WS_POLICY_PROPERTY
+		{
 			public WS_POLICY_PROPERTY_ID id;
 			public void* value;
 			public uint32 valueSize;
 		}
 		[CRepr]
-		public struct WS_POLICY_PROPERTIES		{
+		public struct WS_POLICY_PROPERTIES
+		{
 			public WS_POLICY_PROPERTY* properties;
 			public uint32 propertyCount;
 		}
 		[CRepr]
-		public struct WS_SECURITY_BINDING_PROPERTY_CONSTRAINT		{
+		public struct WS_SECURITY_BINDING_PROPERTY_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_PROPERTY_ID id;
 			public void* allowedValues;
 			public uint32 allowedValuesSize;
 			public _out_e__Struct @out;
 			
 			[CRepr]
-			public struct _out_e__Struct			{
+			public struct _out_e__Struct
+			{
 				public WS_SECURITY_BINDING_PROPERTY securityBindingProperty;
 			}
 		}
 		[CRepr]
-		public struct WS_SECURITY_BINDING_CONSTRAINT		{
+		public struct WS_SECURITY_BINDING_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_CONSTRAINT_TYPE type;
 			public WS_SECURITY_BINDING_PROPERTY_CONSTRAINT* propertyConstraints;
 			public uint32 propertyConstraintCount;
 		}
 		[CRepr]
-		public struct WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT		{
+		public struct WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 			public _out_e__Struct @out;
 			
 			[CRepr]
-			public struct _out_e__Struct			{
+			public struct _out_e__Struct
+			{
 				public BOOL clientCertCredentialRequired;
 			}
 		}
 		[CRepr]
-		public struct WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT		{
+		public struct WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 		}
 		[CRepr]
-		public struct WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT		{
+		public struct WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT		{
+		public struct WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 		}
 		[CRepr]
-		public struct WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT		{
-			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
-			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
-		}
-		[CRepr]
-		public struct WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT		{
+		public struct WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 		}
 		[CRepr]
-		public struct WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT		{
+		public struct WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT
+		{
+			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
+			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
+		}
+		[CRepr]
+		public struct WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT
+		{
 			public WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID id;
 			public void* allowedValues;
 			public uint32 allowedValuesSize;
 			public _out_e__Struct @out;
 			
 			[CRepr]
-			public struct _out_e__Struct			{
+			public struct _out_e__Struct
+			{
 				public WS_REQUEST_SECURITY_TOKEN_PROPERTY requestSecurityTokenProperty;
 			}
 		}
 		[CRepr]
-		public struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT		{
+		public struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 			public WS_XML_STRING* claimConstraints;
@@ -2616,66 +2825,77 @@ namespace Win32
 			public _out_e__Struct @out;
 			
 			[CRepr]
-			public struct _out_e__Struct			{
+			public struct _out_e__Struct
+			{
 				public WS_ENDPOINT_ADDRESS* issuerAddress;
 				public WS_XML_BUFFER* requestSecurityTokenTemplate;
 			}
 		}
 		[CRepr]
-		public struct WS_SECURITY_PROPERTY_CONSTRAINT		{
+		public struct WS_SECURITY_PROPERTY_CONSTRAINT
+		{
 			public WS_SECURITY_PROPERTY_ID id;
 			public void* allowedValues;
 			public uint32 allowedValuesSize;
 			public _out_e__Struct @out;
 			
 			[CRepr]
-			public struct _out_e__Struct			{
+			public struct _out_e__Struct
+			{
 				public WS_SECURITY_PROPERTY securityProperty;
 			}
 		}
 		[CRepr]
-		public struct WS_SECURITY_CONSTRAINTS		{
+		public struct WS_SECURITY_CONSTRAINTS
+		{
 			public WS_SECURITY_PROPERTY_CONSTRAINT* securityPropertyConstraints;
 			public uint32 securityPropertyConstraintCount;
 			public WS_SECURITY_BINDING_CONSTRAINT** securityBindingConstraints;
 			public uint32 securityBindingConstraintCount;
 		}
 		[CRepr]
-		public struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT		{
+		public struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT
+		{
 			public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 			public WS_SECURITY_CONSTRAINTS* bootstrapSecurityConstraint;
 		}
 		[CRepr]
-		public struct WS_CHANNEL_PROPERTY_CONSTRAINT		{
+		public struct WS_CHANNEL_PROPERTY_CONSTRAINT
+		{
 			public WS_CHANNEL_PROPERTY_ID id;
 			public void* allowedValues;
 			public uint32 allowedValuesSize;
 			public _out_e__Struct @out;
 			
 			[CRepr]
-			public struct _out_e__Struct			{
+			public struct _out_e__Struct
+			{
 				public WS_CHANNEL_PROPERTY channelProperty;
 			}
 		}
 		[CRepr]
-		public struct WS_POLICY_EXTENSION		{
+		public struct WS_POLICY_EXTENSION
+		{
 			public WS_POLICY_EXTENSION_TYPE type;
 		}
 		[CRepr]
-		public struct WS_ENDPOINT_POLICY_EXTENSION		{
+		public struct WS_ENDPOINT_POLICY_EXTENSION
+		{
 			public WS_POLICY_EXTENSION policyExtension;
 			public WS_XML_STRING* assertionName;
 			public WS_XML_STRING* assertionNs;
 			public _out_e__Struct @out;
 			
 			[CRepr]
-			public struct _out_e__Struct			{
+			public struct _out_e__Struct
+			{
 				public WS_XML_BUFFER* assertionValue;
 			}
 		}
 		[CRepr]
-		public struct WS_POLICY_CONSTRAINTS		{
+		public struct WS_POLICY_CONSTRAINTS
+		{
 			public WS_CHANNEL_BINDING channelBinding;
 			public WS_CHANNEL_PROPERTY_CONSTRAINT* channelPropertyConstraints;
 			public uint32 channelPropertyConstraintCount;
@@ -2684,100 +2904,118 @@ namespace Win32
 			public uint32 policyExtensionCount;
 		}
 		[CRepr]
-		public struct WS_HTTP_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 		}
 		[CRepr]
-		public struct WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION		{
+		public struct WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_SSL_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sslTransportSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_HTTP_HEADER_AUTH_SECURITY_BINDING_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_HEADER_AUTH_SECURITY_BINDING_POLICY_DESCRIPTION
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 		}
 		[CRepr]
-		public struct WS_HTTP_HEADER_AUTH_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_HEADER_AUTH_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_HTTP_HEADER_AUTH_SECURITY_BINDING_POLICY_DESCRIPTION httpHeaderAuthSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_HEADER_AUTH_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_SSL_HEADER_AUTH_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sslTransportSecurityBinding;
 			public WS_HTTP_HEADER_AUTH_SECURITY_BINDING_POLICY_DESCRIPTION httpHeaderAuthSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_USERNAME_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION		{
+		public struct WS_USERNAME_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_USERNAME_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_SSL_USERNAME_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sslTransportSecurityBinding;
 			public WS_USERNAME_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION usernameMessageSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION		{
+		public struct WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_KERBEROS_APREQ_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_SSL_KERBEROS_APREQ_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sslTransportSecurityBinding;
 			public WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION kerberosApreqMessageSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_POLICY_DESCRIPTION		{
+		public struct WS_TCP_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 		}
 		[CRepr]
-		public struct WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION		{
+		public struct WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_POLICY_DESCRIPTION		{
+		public struct WS_TCP_SSPI_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sspiTransportSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_USERNAME_POLICY_DESCRIPTION		{
+		public struct WS_TCP_SSPI_USERNAME_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sspiTransportSecurityBinding;
 			public WS_USERNAME_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION usernameMessageSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_KERBEROS_APREQ_POLICY_DESCRIPTION		{
+		public struct WS_TCP_SSPI_KERBEROS_APREQ_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sspiTransportSecurityBinding;
 			public WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION kerberosApreqMessageSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION		{
+		public struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 			public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 		}
 		[CRepr]
-		public struct WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION		{
+		public struct WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION
+		{
 			public WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION securityContextMessageSecurityBinding;
 			public WS_SECURITY_PROPERTIES securityProperties;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_KERBEROS_APREQ_SECURITY_CONTEXT_POLICY_DESCRIPTION		{
+		public struct WS_TCP_SSPI_KERBEROS_APREQ_SECURITY_CONTEXT_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sspiTransportSecurityBinding;
@@ -2785,7 +3023,8 @@ namespace Win32
 			public WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION securityContextSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_USERNAME_SECURITY_CONTEXT_POLICY_DESCRIPTION		{
+		public struct WS_TCP_SSPI_USERNAME_SECURITY_CONTEXT_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSPI_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sspiTransportSecurityBinding;
@@ -2793,7 +3032,8 @@ namespace Win32
 			public WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION securityContextSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sslTransportSecurityBinding;
@@ -2801,7 +3041,8 @@ namespace Win32
 			public WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION securityContextSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_POLICY_DESCRIPTION		{
+		public struct WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_POLICY_DESCRIPTION
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sslTransportSecurityBinding;
@@ -2809,104 +3050,122 @@ namespace Win32
 			public WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION securityContextSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_HTTP_BINDING_TEMPLATE		{
+		public struct WS_HTTP_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 		}
 		[CRepr]
-		public struct WS_TCP_BINDING_TEMPLATE		{
+		public struct WS_TCP_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 		}
 		[CRepr]
-		public struct WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE		{
+		public struct WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 			public WS_CERT_CREDENTIAL* localCertCredential;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_BINDING_TEMPLATE		{
+		public struct WS_HTTP_SSL_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE sslTransportSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_HTTP_HEADER_AUTH_SECURITY_BINDING_TEMPLATE		{
+		public struct WS_HTTP_HEADER_AUTH_SECURITY_BINDING_TEMPLATE
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
 		}
 		[CRepr]
-		public struct WS_HTTP_HEADER_AUTH_BINDING_TEMPLATE		{
+		public struct WS_HTTP_HEADER_AUTH_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_HTTP_HEADER_AUTH_SECURITY_BINDING_TEMPLATE httpHeaderAuthSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE		{
+		public struct WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_BINDING_TEMPLATE		{
+		public struct WS_TCP_SSPI_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE sspiTransportSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_HEADER_AUTH_BINDING_TEMPLATE		{
+		public struct WS_HTTP_SSL_HEADER_AUTH_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE sslTransportSecurityBinding;
 			public WS_HTTP_HEADER_AUTH_SECURITY_BINDING_TEMPLATE httpHeaderAuthSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE		{
+		public struct WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 			public WS_USERNAME_CREDENTIAL* clientCredential;
 			public WS_VALIDATE_PASSWORD_CALLBACK passwordValidator;
 			public void* passwordValidatorCallbackState;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_USERNAME_BINDING_TEMPLATE		{
+		public struct WS_HTTP_SSL_USERNAME_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE sslTransportSecurityBinding;
 			public WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE usernameMessageSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE		{
+		public struct WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 			public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE		{
+		public struct WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE sslTransportSecurityBinding;
 			public WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE kerberosApreqMessageSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_USERNAME_BINDING_TEMPLATE		{
+		public struct WS_TCP_SSPI_USERNAME_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE sspiTransportSecurityBinding;
 			public WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE usernameMessageSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE		{
+		public struct WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE sspiTransportSecurityBinding;
 			public WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE kerberosApreqMessageSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_TEMPLATE		{
+		public struct WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_TEMPLATE
+		{
 			public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 		}
 		[CRepr]
-		public struct WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE		{
+		public struct WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE
+		{
 			public WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_TEMPLATE securityContextMessageSecurityBinding;
 			public WS_SECURITY_PROPERTIES securityProperties;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE		{
+		public struct WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE sslTransportSecurityBinding;
@@ -2914,7 +3173,8 @@ namespace Win32
 			public WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE securityContextSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE		{
+		public struct WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE sslTransportSecurityBinding;
@@ -2922,7 +3182,8 @@ namespace Win32
 			public WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE securityContextSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE		{
+		public struct WS_TCP_SSPI_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE sspiTransportSecurityBinding;
@@ -2930,7 +3191,8 @@ namespace Win32
 			public WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE securityContextSecurityBinding;
 		}
 		[CRepr]
-		public struct WS_TCP_SSPI_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE		{
+		public struct WS_TCP_SSPI_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE
+		{
 			public WS_CHANNEL_PROPERTIES channelProperties;
 			public WS_SECURITY_PROPERTIES securityProperties;
 			public WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE sspiTransportSecurityBinding;
@@ -2938,14 +3200,16 @@ namespace Win32
 			public WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE securityContextSecurityBinding;
 		}
 		[CRepr]
-		public struct WEBAUTHN_RP_ENTITY_INFORMATION		{
+		public struct WEBAUTHN_RP_ENTITY_INFORMATION
+		{
 			public uint32 dwVersion;
 			public PWSTR pwszId;
 			public PWSTR pwszName;
 			public PWSTR pwszIcon;
 		}
 		[CRepr]
-		public struct WEBAUTHN_USER_ENTITY_INFORMATION		{
+		public struct WEBAUTHN_USER_ENTITY_INFORMATION
+		{
 			public uint32 dwVersion;
 			public uint32 cbId;
 			public uint8* pbId;
@@ -2954,37 +3218,43 @@ namespace Win32
 			public PWSTR pwszDisplayName;
 		}
 		[CRepr]
-		public struct WEBAUTHN_CLIENT_DATA		{
+		public struct WEBAUTHN_CLIENT_DATA
+		{
 			public uint32 dwVersion;
 			public uint32 cbClientDataJSON;
 			public uint8* pbClientDataJSON;
 			public PWSTR pwszHashAlgId;
 		}
 		[CRepr]
-		public struct WEBAUTHN_COSE_CREDENTIAL_PARAMETER		{
+		public struct WEBAUTHN_COSE_CREDENTIAL_PARAMETER
+		{
 			public uint32 dwVersion;
 			public PWSTR pwszCredentialType;
 			public int32 lAlg;
 		}
 		[CRepr]
-		public struct WEBAUTHN_COSE_CREDENTIAL_PARAMETERS		{
+		public struct WEBAUTHN_COSE_CREDENTIAL_PARAMETERS
+		{
 			public uint32 cCredentialParameters;
 			public WEBAUTHN_COSE_CREDENTIAL_PARAMETER* pCredentialParameters;
 		}
 		[CRepr]
-		public struct WEBAUTHN_CREDENTIAL		{
+		public struct WEBAUTHN_CREDENTIAL
+		{
 			public uint32 dwVersion;
 			public uint32 cbId;
 			public uint8* pbId;
 			public PWSTR pwszCredentialType;
 		}
 		[CRepr]
-		public struct WEBAUTHN_CREDENTIALS		{
+		public struct WEBAUTHN_CREDENTIALS
+		{
 			public uint32 cCredentials;
 			public WEBAUTHN_CREDENTIAL* pCredentials;
 		}
 		[CRepr]
-		public struct WEBAUTHN_CREDENTIAL_EX		{
+		public struct WEBAUTHN_CREDENTIAL_EX
+		{
 			public uint32 dwVersion;
 			public uint32 cbId;
 			public uint8* pbId;
@@ -2992,33 +3262,39 @@ namespace Win32
 			public uint32 dwTransports;
 		}
 		[CRepr]
-		public struct WEBAUTHN_CREDENTIAL_LIST		{
+		public struct WEBAUTHN_CREDENTIAL_LIST
+		{
 			public uint32 cCredentials;
 			public WEBAUTHN_CREDENTIAL_EX** ppCredentials;
 		}
 		[CRepr]
-		public struct WEBAUTHN_CRED_PROTECT_EXTENSION_IN		{
+		public struct WEBAUTHN_CRED_PROTECT_EXTENSION_IN
+		{
 			public uint32 dwCredProtect;
 			public BOOL bRequireCredProtect;
 		}
 		[CRepr]
-		public struct WEBAUTHN_CRED_BLOB_EXTENSION		{
+		public struct WEBAUTHN_CRED_BLOB_EXTENSION
+		{
 			public uint32 cbCredBlob;
 			public uint8* pbCredBlob;
 		}
 		[CRepr]
-		public struct WEBAUTHN_EXTENSION		{
+		public struct WEBAUTHN_EXTENSION
+		{
 			public PWSTR pwszExtensionIdentifier;
 			public uint32 cbExtension;
 			public void* pvExtension;
 		}
 		[CRepr]
-		public struct WEBAUTHN_EXTENSIONS		{
+		public struct WEBAUTHN_EXTENSIONS
+		{
 			public uint32 cExtensions;
 			public WEBAUTHN_EXTENSION* pExtensions;
 		}
 		[CRepr]
-		public struct WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS		{
+		public struct WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS
+		{
 			public uint32 dwVersion;
 			public uint32 dwTimeoutMilliseconds;
 			public WEBAUTHN_CREDENTIALS CredentialList;
@@ -3035,7 +3311,8 @@ namespace Win32
 			public BOOL bPreferResidentKey;
 		}
 		[CRepr]
-		public struct WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS		{
+		public struct WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS
+		{
 			public uint32 dwVersion;
 			public uint32 dwTimeoutMilliseconds;
 			public WEBAUTHN_CREDENTIALS CredentialList;
@@ -3052,12 +3329,14 @@ namespace Win32
 			public uint8* pbCredLargeBlob;
 		}
 		[CRepr]
-		public struct WEBAUTHN_X5C		{
+		public struct WEBAUTHN_X5C
+		{
 			public uint32 cbData;
 			public uint8* pbData;
 		}
 		[CRepr]
-		public struct WEBAUTHN_COMMON_ATTESTATION		{
+		public struct WEBAUTHN_COMMON_ATTESTATION
+		{
 			public uint32 dwVersion;
 			public PWSTR pwszAlg;
 			public int32 lAlg;
@@ -3072,7 +3351,8 @@ namespace Win32
 			public uint8* pbPubArea;
 		}
 		[CRepr]
-		public struct WEBAUTHN_CREDENTIAL_ATTESTATION		{
+		public struct WEBAUTHN_CREDENTIAL_ATTESTATION
+		{
 			public uint32 dwVersion;
 			public PWSTR pwszFormatType;
 			public uint32 cbAuthenticatorData;
@@ -3092,7 +3372,8 @@ namespace Win32
 			public BOOL bResidentKey;
 		}
 		[CRepr]
-		public struct WEBAUTHN_ASSERTION		{
+		public struct WEBAUTHN_ASSERTION
+		{
 			public uint32 dwVersion;
 			public uint32 cbAuthenticatorData;
 			public uint8* pbAuthenticatorData;

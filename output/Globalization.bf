@@ -3514,50 +3514,59 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct FONTSIGNATURE		{
+		public struct FONTSIGNATURE
+		{
 			public uint32[4] fsUsb;
 			public uint32[2] fsCsb;
 		}
 		[CRepr]
-		public struct CHARSETINFO		{
+		public struct CHARSETINFO
+		{
 			public uint32 ciCharset;
 			public uint32 ciACP;
 			public FONTSIGNATURE fs;
 		}
 		[CRepr]
-		public struct LOCALESIGNATURE		{
+		public struct LOCALESIGNATURE
+		{
 			public uint32[4] lsUsb;
 			public uint32[2] lsCsbDefault;
 			public uint32[2] lsCsbSupported;
 		}
 		[CRepr]
-		public struct NEWTEXTMETRICEXA		{
+		public struct NEWTEXTMETRICEXA
+		{
 			public NEWTEXTMETRICA ntmTm;
 			public FONTSIGNATURE ntmFontSig;
 		}
 		[CRepr]
-		public struct NEWTEXTMETRICEXW		{
+		public struct NEWTEXTMETRICEXW
+		{
 			public NEWTEXTMETRICW ntmTm;
 			public FONTSIGNATURE ntmFontSig;
 		}
 		[CRepr]
-		public struct ENUMTEXTMETRICA		{
+		public struct ENUMTEXTMETRICA
+		{
 			public NEWTEXTMETRICEXA etmNewTextMetricEx;
 			public AXESLISTA etmAxesList;
 		}
 		[CRepr]
-		public struct ENUMTEXTMETRICW		{
+		public struct ENUMTEXTMETRICW
+		{
 			public NEWTEXTMETRICEXW etmNewTextMetricEx;
 			public AXESLISTW etmAxesList;
 		}
 		[CRepr]
-		public struct CPINFO		{
+		public struct CPINFO
+		{
 			public uint32 MaxCharSize;
 			public uint8[2] DefaultChar;
 			public uint8[12] LeadByte;
 		}
 		[CRepr]
-		public struct CPINFOEXA		{
+		public struct CPINFOEXA
+		{
 			public uint32 MaxCharSize;
 			public uint8[2] DefaultChar;
 			public uint8[12] LeadByte;
@@ -3566,7 +3575,8 @@ namespace Win32
 			public CHAR[260] CodePageName;
 		}
 		[CRepr]
-		public struct CPINFOEXW		{
+		public struct CPINFOEXW
+		{
 			public uint32 MaxCharSize;
 			public uint8[2] DefaultChar;
 			public uint8[12] LeadByte;
@@ -3575,7 +3585,8 @@ namespace Win32
 			public char16[260] CodePageName;
 		}
 		[CRepr]
-		public struct NUMBERFMTA		{
+		public struct NUMBERFMTA
+		{
 			public uint32 NumDigits;
 			public uint32 LeadingZero;
 			public uint32 Grouping;
@@ -3584,7 +3595,8 @@ namespace Win32
 			public uint32 NegativeOrder;
 		}
 		[CRepr]
-		public struct NUMBERFMTW		{
+		public struct NUMBERFMTW
+		{
 			public uint32 NumDigits;
 			public uint32 LeadingZero;
 			public uint32 Grouping;
@@ -3593,7 +3605,8 @@ namespace Win32
 			public uint32 NegativeOrder;
 		}
 		[CRepr]
-		public struct CURRENCYFMTA		{
+		public struct CURRENCYFMTA
+		{
 			public uint32 NumDigits;
 			public uint32 LeadingZero;
 			public uint32 Grouping;
@@ -3604,7 +3617,8 @@ namespace Win32
 			public PSTR lpCurrencySymbol;
 		}
 		[CRepr]
-		public struct CURRENCYFMTW		{
+		public struct CURRENCYFMTW
+		{
 			public uint32 NumDigits;
 			public uint32 LeadingZero;
 			public uint32 Grouping;
@@ -3615,7 +3629,8 @@ namespace Win32
 			public PWSTR lpCurrencySymbol;
 		}
 		[CRepr]
-		public struct NLSVERSIONINFO		{
+		public struct NLSVERSIONINFO
+		{
 			public uint32 dwNLSVersionInfoSize;
 			public uint32 dwNLSVersion;
 			public uint32 dwDefinedVersion;
@@ -3623,7 +3638,8 @@ namespace Win32
 			public Guid guidCustomVersion;
 		}
 		[CRepr]
-		public struct NLSVERSIONINFOEX		{
+		public struct NLSVERSIONINFOEX
+		{
 			public uint32 dwNLSVersionInfoSize;
 			public uint32 dwNLSVersion;
 			public uint32 dwDefinedVersion;
@@ -3631,7 +3647,8 @@ namespace Win32
 			public Guid guidCustomVersion;
 		}
 		[CRepr]
-		public struct FILEMUIINFO		{
+		public struct FILEMUIINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public uint32 dwFileType;
@@ -3647,7 +3664,8 @@ namespace Win32
 			public uint8[8] abBuffer;
 		}
 		[CRepr]
-		public struct MAPPING_SERVICE_INFO		{
+		public struct MAPPING_SERVICE_INFO
+		{
 			public uint Size;
 			public PWSTR pszCopyright;
 			public uint16 wMajorVersion;
@@ -3675,7 +3693,8 @@ namespace Win32
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct MAPPING_ENUM_OPTIONS		{
+		public struct MAPPING_ENUM_OPTIONS
+		{
 			public uint Size;
 			public PWSTR pszCategory;
 			public PWSTR pszInputLanguage;
@@ -3688,7 +3707,8 @@ namespace Win32
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct MAPPING_OPTIONS		{
+		public struct MAPPING_OPTIONS
+		{
 			public uint Size;
 			public PWSTR pszInputLanguage;
 			public PWSTR pszOutputLanguage;
@@ -3707,7 +3727,8 @@ namespace Win32
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct MAPPING_DATA_RANGE		{
+		public struct MAPPING_DATA_RANGE
+		{
 			public uint32 dwStartIndex;
 			public uint32 dwEndIndex;
 			public PWSTR pszDescription;
@@ -3720,7 +3741,8 @@ namespace Win32
 			public PWSTR* prgActionDisplayNames;
 		}
 		[CRepr]
-		public struct MAPPING_PROPERTY_BAG		{
+		public struct MAPPING_PROPERTY_BAG
+		{
 			public uint Size;
 			public MAPPING_DATA_RANGE* prgResultRanges;
 			public uint32 dwRangesCount;
@@ -3731,43 +3753,52 @@ namespace Win32
 			public void* pContext;
 		}
 		[CRepr]
-		public struct SCRIPT_CONTROL		{
+		public struct SCRIPT_CONTROL
+		{
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct SCRIPT_STATE		{
+		public struct SCRIPT_STATE
+		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct SCRIPT_ANALYSIS		{
+		public struct SCRIPT_ANALYSIS
+		{
 			public uint16 _bitfield;
 			public SCRIPT_STATE s;
 		}
 		[CRepr]
-		public struct SCRIPT_ITEM		{
+		public struct SCRIPT_ITEM
+		{
 			public int32 iCharPos;
 			public SCRIPT_ANALYSIS a;
 		}
 		[CRepr]
-		public struct SCRIPT_VISATTR		{
+		public struct SCRIPT_VISATTR
+		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct GOFFSET		{
+		public struct GOFFSET
+		{
 			public int32 du;
 			public int32 dv;
 		}
 		[CRepr]
-		public struct SCRIPT_LOGATTR		{
+		public struct SCRIPT_LOGATTR
+		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct SCRIPT_PROPERTIES		{
+		public struct SCRIPT_PROPERTIES
+		{
 			public uint32 _bitfield1;
 			public uint32 _bitfield2;
 		}
 		[CRepr]
-		public struct SCRIPT_FONTPROPERTIES		{
+		public struct SCRIPT_FONTPROPERTIES
+		{
 			public int32 cBytes;
 			public uint16 wgBlank;
 			public uint16 wgDefault;
@@ -3776,39 +3807,46 @@ namespace Win32
 			public int32 iKashidaWidth;
 		}
 		[CRepr]
-		public struct SCRIPT_TABDEF		{
+		public struct SCRIPT_TABDEF
+		{
 			public int32 cTabStops;
 			public int32 iScale;
 			public int32* pTabStops;
 			public int32 iTabOrigin;
 		}
 		[CRepr]
-		public struct SCRIPT_DIGITSUBSTITUTE		{
+		public struct SCRIPT_DIGITSUBSTITUTE
+		{
 			public uint32 _bitfield1;
 			public uint32 _bitfield2;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct opentype_feature_record		{
+		public struct opentype_feature_record
+		{
 			public uint32 tagFeature;
 			public int32 lParameter;
 		}
 		[CRepr]
-		public struct textrange_properties		{
+		public struct textrange_properties
+		{
 			public opentype_feature_record* potfRecords;
 			public int32 cotfRecords;
 		}
 		[CRepr]
-		public struct script_charprop		{
+		public struct script_charprop
+		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct script_glyphprop		{
+		public struct script_glyphprop
+		{
 			public SCRIPT_VISATTR sva;
 			public uint16 reserved;
 		}
 		[CRepr]
-		public struct UReplaceableCallbacks		{
+		public struct UReplaceableCallbacks
+		{
 			public int length;
 			public int charAt;
 			public int char32At;
@@ -3817,13 +3855,15 @@ namespace Win32
 			public int copy;
 		}
 		[CRepr]
-		public struct UFieldPosition		{
+		public struct UFieldPosition
+		{
 			public int32 field;
 			public int32 beginIndex;
 			public int32 endIndex;
 		}
 		[CRepr]
-		public struct UCharIterator		{
+		public struct UCharIterator
+		{
 			public void* context;
 			public int32 length;
 			public int32 start;
@@ -3850,14 +3890,16 @@ namespace Win32
 		[CRepr]
 		public struct UCPMap {}
 		[CRepr, Union]
-		public struct UCPTrieData		{
+		public struct UCPTrieData
+		{
 			public void* ptr0;
 			public uint16* ptr16;
 			public uint32* ptr32;
 			public uint8* ptr8;
 		}
 		[CRepr]
-		public struct UCPTrie		{
+		public struct UCPTrie
+		{
 			public uint16* index;
 			public UCPTrieData data;
 			public int32 indexLength;
@@ -3877,7 +3919,8 @@ namespace Win32
 		[CRepr]
 		public struct UConverter {}
 		[CRepr]
-		public struct UConverterFromUnicodeArgs		{
+		public struct UConverterFromUnicodeArgs
+		{
 			public uint16 size;
 			public int8 flush;
 			public UConverter* converter;
@@ -3888,7 +3931,8 @@ namespace Win32
 			public int32* offsets;
 		}
 		[CRepr]
-		public struct UConverterToUnicodeArgs		{
+		public struct UConverterToUnicodeArgs
+		{
 			public uint16 size;
 			public int8 flush;
 			public UConverter* converter;
@@ -3905,7 +3949,8 @@ namespace Win32
 		[CRepr]
 		public struct UBiDiTransform {}
 		[CRepr]
-		public struct UTextFuncs		{
+		public struct UTextFuncs
+		{
 			public int32 tableSize;
 			public int32 reserved1;
 			public int32 reserved2;
@@ -3924,7 +3969,8 @@ namespace Win32
 			public UTextClose spare3;
 		}
 		[CRepr]
-		public struct UText		{
+		public struct UText
+		{
 			public uint32 magic;
 			public int32 flags;
 			public int32 providerProperties;
@@ -3951,7 +3997,8 @@ namespace Win32
 			public int32 privC;
 		}
 		[CRepr]
-		public struct USerializedSet		{
+		public struct USerializedSet
+		{
 			public uint16* array;
 			public int32 bmpLength;
 			public int32 length;
@@ -3966,7 +4013,8 @@ namespace Win32
 		[CRepr]
 		public struct UCaseMap {}
 		[CRepr]
-		public struct UParseError		{
+		public struct UParseError
+		{
 			public int32 line;
 			public int32 offset;
 			public uint16[16] preContext;
@@ -3977,7 +4025,8 @@ namespace Win32
 		[CRepr]
 		public struct UIDNA {}
 		[CRepr]
-		public struct UIDNAInfo		{
+		public struct UIDNAInfo
+		{
 			public int16 size;
 			public int8 isTransitionalDifferent;
 			public int8 reservedB3;
@@ -4038,7 +4087,8 @@ namespace Win32
 		[CRepr]
 		public struct USpoofCheckResult {}
 		[CRepr]
-		public struct UTransPosition		{
+		public struct UTransPosition
+		{
 			public int32 contextStart;
 			public int32 contextLimit;
 			public int32 start;
@@ -4049,7 +4099,8 @@ namespace Win32
 		[CRepr]
 		public struct USearch {}
 		[CRepr]
-		public struct MIMECPINFO		{
+		public struct MIMECPINFO
+		{
 			public uint32 dwFlags;
 			public uint32 uiCodePage;
 			public uint32 uiFamilyCodePage;
@@ -4062,19 +4113,22 @@ namespace Win32
 			public uint8 bGDICharset;
 		}
 		[CRepr]
-		public struct MIMECSETINFO		{
+		public struct MIMECSETINFO
+		{
 			public uint32 uiCodePage;
 			public uint32 uiInternetEncoding;
 			public char16[50] wszCharset;
 		}
 		[CRepr]
-		public struct RFC1766INFO		{
+		public struct RFC1766INFO
+		{
 			public uint32 lcid;
 			public char16[6] wszRfc1766;
 			public char16[32] wszLocaleName;
 		}
 		[CRepr]
-		public struct SCRIPTINFO		{
+		public struct SCRIPTINFO
+		{
 			public uint8 ScriptId;
 			public uint32 uiCodePage;
 			public char16[48] wszDescription;
@@ -4082,19 +4136,22 @@ namespace Win32
 			public char16[32] wszProportionalFont;
 		}
 		[CRepr]
-		public struct DetectEncodingInfo		{
+		public struct DetectEncodingInfo
+		{
 			public uint32 nLangID;
 			public uint32 nCodePage;
 			public int32 nDocPercent;
 			public int32 nConfidence;
 		}
 		[CRepr]
-		public struct tagSCRIPFONTINFO		{
+		public struct tagSCRIPFONTINFO
+		{
 			public int64 scripts;
 			public char16[32] wszFont;
 		}
 		[CRepr]
-		public struct UNICODERANGE		{
+		public struct UNICODERANGE
+		{
 			public char16 wcFrom;
 			public char16 wcTo;
 		}

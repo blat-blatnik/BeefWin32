@@ -65,7 +65,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SourceInfo		{
+		public struct SourceInfo
+		{
 			public BSTR FileName;
 			public uint32 LineNumber;
 			public uint32 ColumnNumber;
@@ -73,13 +74,15 @@ namespace Win32
 			public BSTR Hash;
 		}
 		[CRepr]
-		public struct ParentChildRelation		{
+		public struct ParentChildRelation
+		{
 			public uint64 Parent;
 			public uint64 Child;
 			public uint32 ChildIndex;
 		}
 		[CRepr]
-		public struct VisualElement		{
+		public struct VisualElement
+		{
 			public uint64 Handle;
 			public SourceInfo SrcInfo;
 			public BSTR Type;
@@ -87,7 +90,8 @@ namespace Win32
 			public uint32 NumChildren;
 		}
 		[CRepr]
-		public struct PropertyChainSource		{
+		public struct PropertyChainSource
+		{
 			public uint64 Handle;
 			public BSTR TargetType;
 			public BSTR Name;
@@ -95,7 +99,8 @@ namespace Win32
 			public SourceInfo SrcInfo;
 		}
 		[CRepr]
-		public struct PropertyChainValue		{
+		public struct PropertyChainValue
+		{
 			public uint32 Index;
 			public BSTR Type;
 			public BSTR DeclaringType;
@@ -108,20 +113,23 @@ namespace Win32
 			public uint32 PropertyChainIndex;
 		}
 		[CRepr]
-		public struct EnumType		{
+		public struct EnumType
+		{
 			public BSTR Name;
 			public SAFEARRAY* ValueInts;
 			public SAFEARRAY* ValueStrings;
 		}
 		[CRepr]
-		public struct CollectionElementValue		{
+		public struct CollectionElementValue
+		{
 			public uint32 Index;
 			public BSTR ValueType;
 			public BSTR Value;
 			public int64 MetadataBits;
 		}
 		[CRepr]
-		public struct BitmapDescription		{
+		public struct BitmapDescription
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public DXGI_FORMAT Format;

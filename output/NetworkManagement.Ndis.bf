@@ -2252,32 +2252,37 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NDIS_STATISTICS_VALUE		{
+		public struct NDIS_STATISTICS_VALUE
+		{
 			public uint32 Oid;
 			public uint32 DataLength;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct NDIS_STATISTICS_VALUE_EX		{
+		public struct NDIS_STATISTICS_VALUE_EX
+		{
 			public uint32 Oid;
 			public uint32 DataLength;
 			public uint32 Length;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct NDIS_VAR_DATA_DESC		{
+		public struct NDIS_VAR_DATA_DESC
+		{
 			public uint16 Length;
 			public uint16 MaximumLength;
 			public uint Offset;
 		}
 		[CRepr]
-		public struct NDIS_OBJECT_HEADER		{
+		public struct NDIS_OBJECT_HEADER
+		{
 			public uint8 Type;
 			public uint8 Revision;
 			public uint16 Size;
 		}
 		[CRepr]
-		public struct NDIS_STATISTICS_INFO		{
+		public struct NDIS_STATISTICS_INFO
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 SupportedStatistics;
 			public uint64 ifInDiscards;
@@ -2300,20 +2305,23 @@ namespace Win32
 			public uint64 ifHCOutBroadcastOctets;
 		}
 		[CRepr]
-		public struct NDIS_INTERRUPT_MODERATION_PARAMETERS		{
+		public struct NDIS_INTERRUPT_MODERATION_PARAMETERS
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Flags;
 			public NDIS_INTERRUPT_MODERATION InterruptModeration;
 		}
 		[CRepr]
-		public struct NDIS_TIMEOUT_DPC_REQUEST_CAPABILITIES		{
+		public struct NDIS_TIMEOUT_DPC_REQUEST_CAPABILITIES
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Flags;
 			public uint32 TimeoutArrayLength;
 			public uint32[0] TimeoutArray;
 		}
 		[CRepr]
-		public struct NDIS_PCI_DEVICE_CUSTOM_PROPERTIES		{
+		public struct NDIS_PCI_DEVICE_CUSTOM_PROPERTIES
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 DeviceType;
 			public uint32 CurrentSpeedAndMode;
@@ -2329,40 +2337,47 @@ namespace Win32
 			public uint32 MaxInterruptMessages;
 		}
 		[CRepr]
-		public struct NDIS_802_11_STATUS_INDICATION		{
+		public struct NDIS_802_11_STATUS_INDICATION
+		{
 			public NDIS_802_11_STATUS_TYPE StatusType;
 		}
 		[CRepr]
-		public struct NDIS_802_11_AUTHENTICATION_REQUEST		{
+		public struct NDIS_802_11_AUTHENTICATION_REQUEST
+		{
 			public uint32 Length;
 			public uint8[6] Bssid;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct PMKID_CANDIDATE		{
+		public struct PMKID_CANDIDATE
+		{
 			public uint8[6] BSSID;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct NDIS_802_11_PMKID_CANDIDATE_LIST		{
+		public struct NDIS_802_11_PMKID_CANDIDATE_LIST
+		{
 			public uint32 Version;
 			public uint32 NumCandidates;
 			public PMKID_CANDIDATE[0] CandidateList;
 		}
 		[CRepr]
-		public struct NDIS_802_11_NETWORK_TYPE_LIST		{
+		public struct NDIS_802_11_NETWORK_TYPE_LIST
+		{
 			public uint32 NumberOfItems;
 			public NDIS_802_11_NETWORK_TYPE[0] NetworkType;
 		}
 		[CRepr]
-		public struct NDIS_802_11_CONFIGURATION_FH		{
+		public struct NDIS_802_11_CONFIGURATION_FH
+		{
 			public uint32 Length;
 			public uint32 HopPattern;
 			public uint32 HopSet;
 			public uint32 DwellTime;
 		}
 		[CRepr]
-		public struct NDIS_802_11_CONFIGURATION		{
+		public struct NDIS_802_11_CONFIGURATION
+		{
 			public uint32 Length;
 			public uint32 BeaconPeriod;
 			public uint32 ATIMWindow;
@@ -2370,7 +2385,8 @@ namespace Win32
 			public NDIS_802_11_CONFIGURATION_FH FHConfig;
 		}
 		[CRepr]
-		public struct NDIS_802_11_STATISTICS		{
+		public struct NDIS_802_11_STATISTICS
+		{
 			public uint32 Length;
 			public LARGE_INTEGER TransmittedFragmentCount;
 			public LARGE_INTEGER MulticastTransmittedFrameCount;
@@ -2398,7 +2414,8 @@ namespace Win32
 			public LARGE_INTEGER DecryptFailureCount;
 		}
 		[CRepr]
-		public struct NDIS_802_11_KEY		{
+		public struct NDIS_802_11_KEY
+		{
 			public uint32 Length;
 			public uint32 KeyIndex;
 			public uint32 KeyLength;
@@ -2407,25 +2424,29 @@ namespace Win32
 			public uint8[0] KeyMaterial;
 		}
 		[CRepr]
-		public struct NDIS_802_11_REMOVE_KEY		{
+		public struct NDIS_802_11_REMOVE_KEY
+		{
 			public uint32 Length;
 			public uint32 KeyIndex;
 			public uint8[6] BSSID;
 		}
 		[CRepr]
-		public struct NDIS_802_11_WEP		{
+		public struct NDIS_802_11_WEP
+		{
 			public uint32 Length;
 			public uint32 KeyIndex;
 			public uint32 KeyLength;
 			public uint8[0] KeyMaterial;
 		}
 		[CRepr]
-		public struct NDIS_802_11_SSID		{
+		public struct NDIS_802_11_SSID
+		{
 			public uint32 SsidLength;
 			public uint8[32] Ssid;
 		}
 		[CRepr]
-		public struct NDIS_WLAN_BSSID		{
+		public struct NDIS_WLAN_BSSID
+		{
 			public uint32 Length;
 			public uint8[6] MacAddress;
 			public uint8[2] Reserved;
@@ -2438,12 +2459,14 @@ namespace Win32
 			public uint8[8] SupportedRates;
 		}
 		[CRepr]
-		public struct NDIS_802_11_BSSID_LIST		{
+		public struct NDIS_802_11_BSSID_LIST
+		{
 			public uint32 NumberOfItems;
 			public NDIS_WLAN_BSSID[0] Bssid;
 		}
 		[CRepr]
-		public struct NDIS_WLAN_BSSID_EX		{
+		public struct NDIS_WLAN_BSSID_EX
+		{
 			public uint32 Length;
 			public uint8[6] MacAddress;
 			public uint8[2] Reserved;
@@ -2458,36 +2481,42 @@ namespace Win32
 			public uint8[0] IEs;
 		}
 		[CRepr]
-		public struct NDIS_802_11_BSSID_LIST_EX		{
+		public struct NDIS_802_11_BSSID_LIST_EX
+		{
 			public uint32 NumberOfItems;
 			public NDIS_WLAN_BSSID_EX[0] Bssid;
 		}
 		[CRepr]
-		public struct NDIS_802_11_FIXED_IEs		{
+		public struct NDIS_802_11_FIXED_IEs
+		{
 			public uint8[8] Timestamp;
 			public uint16 BeaconInterval;
 			public uint16 Capabilities;
 		}
 		[CRepr]
-		public struct NDIS_802_11_VARIABLE_IEs		{
+		public struct NDIS_802_11_VARIABLE_IEs
+		{
 			public uint8 ElementID;
 			public uint8 Length;
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct NDIS_802_11_AI_REQFI		{
+		public struct NDIS_802_11_AI_REQFI
+		{
 			public uint16 Capabilities;
 			public uint16 ListenInterval;
 			public uint8[6] CurrentAPAddress;
 		}
 		[CRepr]
-		public struct NDIS_802_11_AI_RESFI		{
+		public struct NDIS_802_11_AI_RESFI
+		{
 			public uint16 Capabilities;
 			public uint16 StatusCode;
 			public uint16 AssociationId;
 		}
 		[CRepr]
-		public struct NDIS_802_11_ASSOCIATION_INFORMATION		{
+		public struct NDIS_802_11_ASSOCIATION_INFORMATION
+		{
 			public uint32 Length;
 			public uint16 AvailableRequestFixedIEs;
 			public NDIS_802_11_AI_REQFI RequestFixedIEs;
@@ -2499,40 +2528,47 @@ namespace Win32
 			public uint32 OffsetResponseIEs;
 		}
 		[CRepr]
-		public struct NDIS_802_11_AUTHENTICATION_EVENT		{
+		public struct NDIS_802_11_AUTHENTICATION_EVENT
+		{
 			public NDIS_802_11_STATUS_INDICATION Status;
 			public NDIS_802_11_AUTHENTICATION_REQUEST[0] Request;
 		}
 		[CRepr]
-		public struct NDIS_802_11_TEST		{
+		public struct NDIS_802_11_TEST
+		{
 			public uint32 Length;
 			public uint32 Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public NDIS_802_11_AUTHENTICATION_EVENT AuthenticationEvent;
 				public int32 RssiTrigger;
 			}
 		}
 		[CRepr]
-		public struct BSSID_INFO		{
+		public struct BSSID_INFO
+		{
 			public uint8[6] BSSID;
 			public uint8[16] PMKID;
 		}
 		[CRepr]
-		public struct NDIS_802_11_PMKID		{
+		public struct NDIS_802_11_PMKID
+		{
 			public uint32 Length;
 			public uint32 BSSIDInfoCount;
 			public BSSID_INFO[0] BSSIDInfo;
 		}
 		[CRepr]
-		public struct NDIS_802_11_AUTHENTICATION_ENCRYPTION		{
+		public struct NDIS_802_11_AUTHENTICATION_ENCRYPTION
+		{
 			public NDIS_802_11_AUTHENTICATION_MODE AuthModeSupported;
 			public NDIS_802_11_WEP_STATUS EncryptStatusSupported;
 		}
 		[CRepr]
-		public struct NDIS_802_11_CAPABILITY		{
+		public struct NDIS_802_11_CAPABILITY
+		{
 			public uint32 Length;
 			public uint32 Version;
 			public uint32 NoOfPMKIDs;
@@ -2540,12 +2576,14 @@ namespace Win32
 			public NDIS_802_11_AUTHENTICATION_ENCRYPTION[0] AuthenticationEncryptionSupported;
 		}
 		[CRepr]
-		public struct NDIS_802_11_NON_BCAST_SSID_LIST		{
+		public struct NDIS_802_11_NON_BCAST_SSID_LIST
+		{
 			public uint32 NumberOfItems;
 			public NDIS_802_11_SSID[0] Non_Bcast_Ssid;
 		}
 		[CRepr]
-		public struct NDIS_CO_DEVICE_PROFILE		{
+		public struct NDIS_CO_DEVICE_PROFILE
+		{
 			public NDIS_VAR_DATA_DESC DeviceDescription;
 			public NDIS_VAR_DATA_DESC DevSpecificInfo;
 			public uint32 ulTAPISupplementaryPassThru;
@@ -2576,13 +2614,15 @@ namespace Win32
 			public uint32 ulUUICallInfoSize;
 		}
 		[CRepr]
-		public struct OFFLOAD_ALGO_INFO		{
+		public struct OFFLOAD_ALGO_INFO
+		{
 			public uint32 algoIdentifier;
 			public uint32 algoKeylen;
 			public uint32 algoRounds;
 		}
 		[CRepr]
-		public struct OFFLOAD_SECURITY_ASSOCIATION		{
+		public struct OFFLOAD_SECURITY_ASSOCIATION
+		{
 			public OFFLOAD_OPERATION_E Operation;
 			public uint32 SPI;
 			public OFFLOAD_ALGO_INFO IntegrityAlgo;
@@ -2590,7 +2630,8 @@ namespace Win32
 			public OFFLOAD_ALGO_INFO Reserved;
 		}
 		[CRepr]
-		public struct OFFLOAD_IPSEC_ADD_SA		{
+		public struct OFFLOAD_IPSEC_ADD_SA
+		{
 			public uint32 SrcAddr;
 			public uint32 SrcMask;
 			public uint32 DestAddr;
@@ -2608,16 +2649,19 @@ namespace Win32
 			public uint8[0] KeyMat;
 		}
 		[CRepr]
-		public struct OFFLOAD_IPSEC_DELETE_SA		{
+		public struct OFFLOAD_IPSEC_DELETE_SA
+		{
 			public HANDLE OffloadHandle;
 		}
 		[CRepr]
-		public struct OFFLOAD_IPSEC_UDPESP_ENCAPTYPE_ENTRY		{
+		public struct OFFLOAD_IPSEC_UDPESP_ENCAPTYPE_ENTRY
+		{
 			public UDP_ENCAP_TYPE UdpEncapType;
 			public uint16 DstEncapPort;
 		}
 		[CRepr]
-		public struct OFFLOAD_IPSEC_ADD_UDPESP_SA		{
+		public struct OFFLOAD_IPSEC_ADD_UDPESP_SA
+		{
 			public uint32 SrcAddr;
 			public uint32 SrcMask;
 			public uint32 DstAddr;
@@ -2637,57 +2681,67 @@ namespace Win32
 			public uint8[0] KeyMat;
 		}
 		[CRepr]
-		public struct OFFLOAD_IPSEC_DELETE_UDPESP_SA		{
+		public struct OFFLOAD_IPSEC_DELETE_UDPESP_SA
+		{
 			public HANDLE OffloadHandle;
 			public HANDLE EncapTypeEntryOffldHandle;
 		}
 		[CRepr]
-		public struct TRANSPORT_HEADER_OFFSET		{
+		public struct TRANSPORT_HEADER_OFFSET
+		{
 			public uint16 ProtocolType;
 			public uint16 HeaderOffset;
 		}
 		[CRepr]
-		public struct NETWORK_ADDRESS		{
+		public struct NETWORK_ADDRESS
+		{
 			public uint16 AddressLength;
 			public uint16 AddressType;
 			public uint8[0] Address;
 		}
 		[CRepr]
-		public struct NETWORK_ADDRESS_LIST		{
+		public struct NETWORK_ADDRESS_LIST
+		{
 			public int32 AddressCount;
 			public uint16 AddressType;
 			public NETWORK_ADDRESS[0] Address;
 		}
 		[CRepr]
-		public struct NETWORK_ADDRESS_IP		{
+		public struct NETWORK_ADDRESS_IP
+		{
 			public uint16 sin_port;
 			public uint32 IN_ADDR;
 			public uint8[8] sin_zero;
 		}
 		[CRepr]
-		public struct NETWORK_ADDRESS_IP6		{
+		public struct NETWORK_ADDRESS_IP6
+		{
 			public uint16 sin6_port;
 			public uint32 sin6_flowinfo;
 			public uint16[8] sin6_addr;
 			public uint32 sin6_scope_id;
 		}
 		[CRepr]
-		public struct NETWORK_ADDRESS_IPX		{
+		public struct NETWORK_ADDRESS_IPX
+		{
 			public uint32 NetworkAddress;
 			public uint8[6] NodeAddress;
 			public uint16 Socket;
 		}
 		[CRepr]
-		public struct GEN_GET_TIME_CAPS		{
+		public struct GEN_GET_TIME_CAPS
+		{
 			public uint32 Flags;
 			public uint32 ClockPrecision;
 		}
 		[CRepr]
-		public struct GEN_GET_NETCARD_TIME		{
+		public struct GEN_GET_NETCARD_TIME
+		{
 			public uint64 ReadTime;
 		}
 		[CRepr]
-		public struct NDIS_PM_PACKET_PATTERN		{
+		public struct NDIS_PM_PACKET_PATTERN
+		{
 			public uint32 Priority;
 			public uint32 Reserved;
 			public uint32 MaskSize;
@@ -2696,51 +2750,60 @@ namespace Win32
 			public uint32 PatternFlags;
 		}
 		[CRepr]
-		public struct NDIS_PM_WAKE_UP_CAPABILITIES		{
+		public struct NDIS_PM_WAKE_UP_CAPABILITIES
+		{
 			public NDIS_DEVICE_POWER_STATE MinMagicPacketWakeUp;
 			public NDIS_DEVICE_POWER_STATE MinPatternWakeUp;
 			public NDIS_DEVICE_POWER_STATE MinLinkChangeWakeUp;
 		}
 		[CRepr]
-		public struct NDIS_PNP_CAPABILITIES		{
+		public struct NDIS_PNP_CAPABILITIES
+		{
 			public uint32 Flags;
 			public NDIS_PM_WAKE_UP_CAPABILITIES WakeUpCapabilities;
 		}
 		[CRepr]
-		public struct NDIS_WAN_PROTOCOL_CAPS		{
+		public struct NDIS_WAN_PROTOCOL_CAPS
+		{
 			public uint32 Flags;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NDIS_CO_LINK_SPEED		{
+		public struct NDIS_CO_LINK_SPEED
+		{
 			public uint32 Outbound;
 			public uint32 Inbound;
 		}
 		[CRepr]
-		public struct NDIS_LINK_SPEED		{
+		public struct NDIS_LINK_SPEED
+		{
 			public uint64 XmitLinkSpeed;
 			public uint64 RcvLinkSpeed;
 		}
 		[CRepr]
-		public struct NDIS_GUID		{
+		public struct NDIS_GUID
+		{
 			public Guid Guid;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 Size;
 			public uint32 Flags;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Oid;
 				public int32 Status;
 			}
 		}
 		[CRepr]
-		public struct NDIS_IRDA_PACKET_INFO		{
+		public struct NDIS_IRDA_PACKET_INFO
+		{
 			public uint32 ExtraBOFs;
 			public uint32 MinTurnAroundTime;
 		}
 		[CRepr]
-		public struct NDIS_LINK_STATE		{
+		public struct NDIS_LINK_STATE
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public NET_IF_MEDIA_CONNECT_STATE MediaConnectState;
 			public NET_IF_MEDIA_DUPLEX_STATE MediaDuplexState;
@@ -2750,7 +2813,8 @@ namespace Win32
 			public uint32 AutoNegotiationFlags;
 		}
 		[CRepr]
-		public struct NDIS_LINK_PARAMETERS		{
+		public struct NDIS_LINK_PARAMETERS
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public NET_IF_MEDIA_DUPLEX_STATE MediaDuplexState;
 			public uint64 XmitLinkSpeed;
@@ -2759,32 +2823,37 @@ namespace Win32
 			public uint32 AutoNegotiationFlags;
 		}
 		[CRepr]
-		public struct NDIS_OPER_STATE		{
+		public struct NDIS_OPER_STATE
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public NET_IF_OPER_STATUS OperationalStatus;
 			public uint32 OperationalStatusFlags;
 		}
 		[CRepr]
-		public struct NDIS_IP_OPER_STATUS		{
+		public struct NDIS_IP_OPER_STATUS
+		{
 			public uint32 AddressFamily;
 			public NET_IF_OPER_STATUS OperationalStatus;
 			public uint32 OperationalStatusFlags;
 		}
 		[CRepr]
-		public struct NDIS_IP_OPER_STATUS_INFO		{
+		public struct NDIS_IP_OPER_STATUS_INFO
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Flags;
 			public uint32 NumberofAddressFamiliesReturned;
 			public NDIS_IP_OPER_STATUS[32] IpOperationalStatus;
 		}
 		[CRepr]
-		public struct NDIS_IP_OPER_STATE		{
+		public struct NDIS_IP_OPER_STATE
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Flags;
 			public NDIS_IP_OPER_STATUS IpOperationalStatus;
 		}
 		[CRepr]
-		public struct NDIS_OFFLOAD_PARAMETERS		{
+		public struct NDIS_OFFLOAD_PARAMETERS
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8 IPv4Checksum;
 			public uint8 TCPIPv4Checksum;
@@ -2800,11 +2869,13 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct NDIS_TCP_LARGE_SEND_OFFLOAD_V1		{
+		public struct NDIS_TCP_LARGE_SEND_OFFLOAD_V1
+		{
 			public _IPv4_e__Struct IPv4;
 			
 			[CRepr]
-			public struct _IPv4_e__Struct			{
+			public struct _IPv4_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 MaxOffLoadSize;
 				public uint32 MinSegmentCount;
@@ -2812,49 +2883,58 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NDIS_TCP_IP_CHECKSUM_OFFLOAD		{
+		public struct NDIS_TCP_IP_CHECKSUM_OFFLOAD
+		{
 			public _IPv4Transmit_e__Struct IPv4Transmit;
 			public _IPv4Receive_e__Struct IPv4Receive;
 			public _IPv6Transmit_e__Struct IPv6Transmit;
 			public _IPv6Receive_e__Struct IPv6Receive;
 			
 			[CRepr]
-			public struct _IPv6Receive_e__Struct			{
+			public struct _IPv6Receive_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 _bitfield;
 			}
 			[CRepr]
-			public struct _IPv4Receive_e__Struct			{
+			public struct _IPv4Receive_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 _bitfield;
 			}
 			[CRepr]
-			public struct _IPv6Transmit_e__Struct			{
+			public struct _IPv6Transmit_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 _bitfield;
 			}
 			[CRepr]
-			public struct _IPv4Transmit_e__Struct			{
+			public struct _IPv4Transmit_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct NDIS_IPSEC_OFFLOAD_V1		{
+		public struct NDIS_IPSEC_OFFLOAD_V1
+		{
 			public _Supported_e__Struct Supported;
 			public _IPv4AH_e__Struct IPv4AH;
 			public _IPv4ESP_e__Struct IPv4ESP;
 			
 			[CRepr]
-			public struct _IPv4AH_e__Struct			{
+			public struct _IPv4AH_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 			[CRepr]
-			public struct _IPv4ESP_e__Struct			{
+			public struct _IPv4ESP_e__Struct
+			{
 				public uint32 _bitfield;
 			}
 			[CRepr]
-			public struct _Supported_e__Struct			{
+			public struct _Supported_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 AhEspCombined;
 				public uint32 TransportTunnelCombined;
@@ -2863,18 +2943,21 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NDIS_TCP_LARGE_SEND_OFFLOAD_V2		{
+		public struct NDIS_TCP_LARGE_SEND_OFFLOAD_V2
+		{
 			public _IPv4_e__Struct IPv4;
 			public _IPv6_e__Struct IPv6;
 			
 			[CRepr]
-			public struct _IPv4_e__Struct			{
+			public struct _IPv4_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 MaxOffLoadSize;
 				public uint32 MinSegmentCount;
 			}
 			[CRepr]
-			public struct _IPv6_e__Struct			{
+			public struct _IPv6_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 MaxOffLoadSize;
 				public uint32 MinSegmentCount;
@@ -2882,7 +2965,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NDIS_OFFLOAD		{
+		public struct NDIS_OFFLOAD
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public NDIS_TCP_IP_CHECKSUM_OFFLOAD Checksum;
 			public NDIS_TCP_LARGE_SEND_OFFLOAD_V1 LsoV1;
@@ -2891,11 +2975,13 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V1		{
+		public struct NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V1
+		{
 			public _IPv4_e__Struct IPv4;
 			
 			[CRepr]
-			public struct _IPv4_e__Struct			{
+			public struct _IPv4_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 MaxOffLoadSize;
 				public uint32 MinSegmentCount;
@@ -2904,14 +2990,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NDIS_WMI_TCP_IP_CHECKSUM_OFFLOAD		{
+		public struct NDIS_WMI_TCP_IP_CHECKSUM_OFFLOAD
+		{
 			public _IPv4Transmit_e__Struct IPv4Transmit;
 			public _IPv4Receive_e__Struct IPv4Receive;
 			public _IPv6Transmit_e__Struct IPv6Transmit;
 			public _IPv6Receive_e__Struct IPv6Receive;
 			
 			[CRepr]
-			public struct _IPv6Receive_e__Struct			{
+			public struct _IPv6Receive_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 IpExtensionHeadersSupported;
 				public uint32 TcpOptionsSupported;
@@ -2919,7 +3007,8 @@ namespace Win32
 				public uint32 UdpChecksum;
 			}
 			[CRepr]
-			public struct _IPv4Receive_e__Struct			{
+			public struct _IPv4Receive_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 IpOptionsSupported;
 				public uint32 TcpOptionsSupported;
@@ -2928,7 +3017,8 @@ namespace Win32
 				public uint32 IpChecksum;
 			}
 			[CRepr]
-			public struct _IPv4Transmit_e__Struct			{
+			public struct _IPv4Transmit_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 IpOptionsSupported;
 				public uint32 TcpOptionsSupported;
@@ -2937,7 +3027,8 @@ namespace Win32
 				public uint32 IpChecksum;
 			}
 			[CRepr]
-			public struct _IPv6Transmit_e__Struct			{
+			public struct _IPv6Transmit_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 IpExtensionHeadersSupported;
 				public uint32 TcpOptionsSupported;
@@ -2946,13 +3037,15 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NDIS_WMI_IPSEC_OFFLOAD_V1		{
+		public struct NDIS_WMI_IPSEC_OFFLOAD_V1
+		{
 			public _Supported_e__Struct Supported;
 			public _IPv4AH_e__Struct IPv4AH;
 			public _IPv4ESP_e__Struct IPv4ESP;
 			
 			[CRepr]
-			public struct _IPv4AH_e__Struct			{
+			public struct _IPv4AH_e__Struct
+			{
 				public uint32 Md5;
 				public uint32 Sha_1;
 				public uint32 Transport;
@@ -2961,7 +3054,8 @@ namespace Win32
 				public uint32 Receive;
 			}
 			[CRepr]
-			public struct _Supported_e__Struct			{
+			public struct _Supported_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 AhEspCombined;
 				public uint32 TransportTunnelCombined;
@@ -2969,7 +3063,8 @@ namespace Win32
 				public uint32 Flags;
 			}
 			[CRepr]
-			public struct _IPv4ESP_e__Struct			{
+			public struct _IPv4ESP_e__Struct
+			{
 				public uint32 Des;
 				public uint32 Reserved;
 				public uint32 TripleDes;
@@ -2981,18 +3076,21 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V2		{
+		public struct NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V2
+		{
 			public _IPv4_e__Struct IPv4;
 			public _IPv6_e__Struct IPv6;
 			
 			[CRepr]
-			public struct _IPv4_e__Struct			{
+			public struct _IPv4_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 MaxOffLoadSize;
 				public uint32 MinSegmentCount;
 			}
 			[CRepr]
-			public struct _IPv6_e__Struct			{
+			public struct _IPv6_e__Struct
+			{
 				public uint32 Encapsulation;
 				public uint32 MaxOffLoadSize;
 				public uint32 MinSegmentCount;
@@ -3001,7 +3099,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NDIS_WMI_OFFLOAD		{
+		public struct NDIS_WMI_OFFLOAD
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public NDIS_WMI_TCP_IP_CHECKSUM_OFFLOAD Checksum;
 			public NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V1 LsoV1;
@@ -3010,7 +3109,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct NDIS_TCP_CONNECTION_OFFLOAD		{
+		public struct NDIS_TCP_CONNECTION_OFFLOAD
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Encapsulation;
 			public uint32 _bitfield;
@@ -3018,7 +3118,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct NDIS_WMI_TCP_CONNECTION_OFFLOAD		{
+		public struct NDIS_WMI_TCP_CONNECTION_OFFLOAD
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Encapsulation;
 			public uint32 SupportIPv4;
@@ -3029,7 +3130,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct NDIS_PORT_AUTHENTICATION_PARAMETERS		{
+		public struct NDIS_PORT_AUTHENTICATION_PARAMETERS
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public NDIS_PORT_CONTROL_STATE SendControlState;
 			public NDIS_PORT_CONTROL_STATE RcvControlState;
@@ -3037,7 +3139,8 @@ namespace Win32
 			public NDIS_PORT_AUTHORIZATION_STATE RcvAuthorizationState;
 		}
 		[CRepr]
-		public struct NDIS_WMI_METHOD_HEADER		{
+		public struct NDIS_WMI_METHOD_HEADER
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 PortNumber;
 			public NET_LUID_LH NetLuid;
@@ -3046,7 +3149,8 @@ namespace Win32
 			public uint8[4] Padding;
 		}
 		[CRepr]
-		public struct NDIS_WMI_SET_HEADER		{
+		public struct NDIS_WMI_SET_HEADER
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 PortNumber;
 			public NET_LUID_LH NetLuid;
@@ -3055,7 +3159,8 @@ namespace Win32
 			public uint8[4] Padding;
 		}
 		[CRepr]
-		public struct NDIS_WMI_EVENT_HEADER		{
+		public struct NDIS_WMI_EVENT_HEADER
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 IfIndex;
 			public NET_LUID_LH NetLuid;
@@ -3066,7 +3171,8 @@ namespace Win32
 			public uint8[4] Padding;
 		}
 		[CRepr]
-		public struct NDIS_WMI_ENUM_ADAPTER		{
+		public struct NDIS_WMI_ENUM_ADAPTER
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 IfIndex;
 			public NET_LUID_LH NetLuid;
@@ -3074,21 +3180,24 @@ namespace Win32
 			public CHAR[0] DeviceName;
 		}
 		[CRepr]
-		public struct NDIS_WMI_OUTPUT_INFO		{
+		public struct NDIS_WMI_OUTPUT_INFO
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Flags;
 			public uint8 SupportedRevision;
 			public uint32 DataOffset;
 		}
 		[CRepr]
-		public struct NDIS_RECEIVE_SCALE_CAPABILITIES		{
+		public struct NDIS_RECEIVE_SCALE_CAPABILITIES
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 CapabilitiesFlags;
 			public uint32 NumberOfInterruptMessages;
 			public uint32 NumberOfReceiveQueues;
 		}
 		[CRepr]
-		public struct NDIS_RECEIVE_SCALE_PARAMETERS		{
+		public struct NDIS_RECEIVE_SCALE_PARAMETERS
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint16 Flags;
 			public uint16 BaseCpuNumber;
@@ -3099,7 +3208,8 @@ namespace Win32
 			public uint32 HashSecretKeyOffset;
 		}
 		[CRepr]
-		public struct NDIS_RECEIVE_HASH_PARAMETERS		{
+		public struct NDIS_RECEIVE_HASH_PARAMETERS
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Flags;
 			public uint32 HashInformation;
@@ -3107,7 +3217,8 @@ namespace Win32
 			public uint32 HashSecretKeyOffset;
 		}
 		[CRepr]
-		public struct NDIS_PORT_STATE		{
+		public struct NDIS_PORT_STATE
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public NET_IF_MEDIA_CONNECT_STATE MediaConnectState;
 			public uint64 XmitLinkSpeed;
@@ -3120,7 +3231,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct NDIS_PORT_CHARACTERISTICS		{
+		public struct NDIS_PORT_CHARACTERISTICS
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 PortNumber;
 			public uint32 Flags;
@@ -3135,7 +3247,8 @@ namespace Win32
 			public NDIS_PORT_AUTHORIZATION_STATE RcvAuthorizationState;
 		}
 		[CRepr]
-		public struct NDIS_PORT		{
+		public struct NDIS_PORT
+		{
 			public NDIS_PORT* Next;
 			public void* NdisReserved;
 			public void* MiniportReserved;
@@ -3143,7 +3256,8 @@ namespace Win32
 			public NDIS_PORT_CHARACTERISTICS PortCharacteristics;
 		}
 		[CRepr]
-		public struct NDIS_PORT_ARRAY		{
+		public struct NDIS_PORT_ARRAY
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 NumberOfPorts;
 			public uint32 OffsetFirstPort;
@@ -3151,7 +3265,8 @@ namespace Win32
 			public NDIS_PORT_CHARACTERISTICS[0] Ports;
 		}
 		[CRepr]
-		public struct NDIS_TIMESTAMP_CAPABILITY_FLAGS		{
+		public struct NDIS_TIMESTAMP_CAPABILITY_FLAGS
+		{
 			public BOOLEAN PtpV2OverUdpIPv4EventMsgReceiveHw;
 			public BOOLEAN PtpV2OverUdpIPv4AllMsgReceiveHw;
 			public BOOLEAN PtpV2OverUdpIPv4EventMsgTransmitHw;
@@ -3168,7 +3283,8 @@ namespace Win32
 			public BOOLEAN TaggedTransmitSw;
 		}
 		[CRepr]
-		public struct NDIS_TIMESTAMP_CAPABILITIES		{
+		public struct NDIS_TIMESTAMP_CAPABILITIES
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint64 HardwareClockFrequencyHz;
 			public BOOLEAN CrossTimestamp;
@@ -3177,7 +3293,8 @@ namespace Win32
 			public NDIS_TIMESTAMP_CAPABILITY_FLAGS TimestampFlags;
 		}
 		[CRepr]
-		public struct NDIS_HARDWARE_CROSSTIMESTAMP		{
+		public struct NDIS_HARDWARE_CROSSTIMESTAMP
+		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 Flags;
 			public uint64 SystemTimestamp1;
@@ -3185,12 +3302,14 @@ namespace Win32
 			public uint64 SystemTimestamp2;
 		}
 		[CRepr]
-		public struct NDK_VERSION		{
+		public struct NDK_VERSION
+		{
 			public uint16 Major;
 			public uint16 Minor;
 		}
 		[CRepr]
-		public struct NDK_ADAPTER_INFO		{
+		public struct NDK_ADAPTER_INFO
+		{
 			public NDK_VERSION Version;
 			public uint32 VendorId;
 			public uint32 DeviceId;
@@ -3215,31 +3334,36 @@ namespace Win32
 			public NDK_RDMA_TECHNOLOGY RdmaTechnology;
 		}
 		[CRepr]
-		public struct DOT11_ADAPTER		{
+		public struct DOT11_ADAPTER
+		{
 			public Guid gAdapterId;
 			public PWSTR pszDescription;
 			public DOT11_CURRENT_OPERATION_MODE Dot11CurrentOpMode;
 		}
 		[CRepr]
-		public struct DOT11_BSS_LIST		{
+		public struct DOT11_BSS_LIST
+		{
 			public uint32 uNumOfBytes;
 			public uint8* pucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_PORT_STATE		{
+		public struct DOT11_PORT_STATE
+		{
 			public uint8[6] PeerMacAddress;
 			public uint32 uSessionId;
 			public BOOL bPortControlled;
 			public BOOL bPortAuthorized;
 		}
 		[CRepr]
-		public struct DOT11_SECURITY_PACKET_HEADER		{
+		public struct DOT11_SECURITY_PACKET_HEADER
+		{
 			public uint8[6] PeerMac;
 			public uint16 usEtherType;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct DOT11_MSSECURITY_SETTINGS		{
+		public struct DOT11_MSSECURITY_SETTINGS
+		{
 			public DOT11_AUTH_ALGORITHM dot11AuthAlgorithm;
 			public DOT11_CIPHER_ALGORITHM dot11CipherAlgorithm;
 			public BOOL fOneXEnabled;
@@ -3248,30 +3372,35 @@ namespace Win32
 			public uint8* pEapConnectionData;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_SSID_LIST		{
+		public struct DOT11EXT_IHV_SSID_LIST
+		{
 			public uint32 ulCount;
 			public DOT11_SSID[0] SSIDs;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_PROFILE_PARAMS		{
+		public struct DOT11EXT_IHV_PROFILE_PARAMS
+		{
 			public DOT11EXT_IHV_SSID_LIST* pSsidList;
 			public DOT11_BSS_TYPE BssType;
 			public DOT11_MSSECURITY_SETTINGS* pMSSecuritySettings;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_PARAMS		{
+		public struct DOT11EXT_IHV_PARAMS
+		{
 			public DOT11EXT_IHV_PROFILE_PARAMS dot11ExtIhvProfileParams;
 			public char16[256] wstrProfileName;
 			public uint32 dwProfileTypeFlags;
 			public Guid interfaceGuid;
 		}
 		[CRepr]
-		public struct DOT11_IHV_VERSION_INFO		{
+		public struct DOT11_IHV_VERSION_INFO
+		{
 			public uint32 dwVerMin;
 			public uint32 dwVerMax;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_UI_REQUEST		{
+		public struct DOT11EXT_IHV_UI_REQUEST
+		{
 			public uint32 dwSessionId;
 			public Guid guidUIRequest;
 			public Guid UIPageClsid;
@@ -3279,12 +3408,14 @@ namespace Win32
 			public uint8* pvUIRequest;
 		}
 		[CRepr]
-		public struct DOT11_EAP_RESULT		{
+		public struct DOT11_EAP_RESULT
+		{
 			public uint32 dwFailureReasonCode;
 			public EAP_ATTRIBUTES* pAttribArray;
 		}
 		[CRepr]
-		public struct DOT11_MSONEX_RESULT_PARAMS		{
+		public struct DOT11_MSONEX_RESULT_PARAMS
+		{
 			public ONEX_AUTH_STATUS Dot11OnexAuthStatus;
 			public ONEX_REASON_CODE Dot11OneXReasonCode;
 			public uint8* pbMPPESendKey;
@@ -3294,26 +3425,31 @@ namespace Win32
 			public DOT11_EAP_RESULT* pDot11EapResult;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_CONNECTIVITY_PROFILE		{
+		public struct DOT11EXT_IHV_CONNECTIVITY_PROFILE
+		{
 			public PWSTR pszXmlFragmentIhvConnectivity;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_SECURITY_PROFILE		{
+		public struct DOT11EXT_IHV_SECURITY_PROFILE
+		{
 			public PWSTR pszXmlFragmentIhvSecurity;
 			public BOOL bUseMSOnex;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_DISCOVERY_PROFILE		{
+		public struct DOT11EXT_IHV_DISCOVERY_PROFILE
+		{
 			public DOT11EXT_IHV_CONNECTIVITY_PROFILE IhvConnectivityProfile;
 			public DOT11EXT_IHV_SECURITY_PROFILE IhvSecurityProfile;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_DISCOVERY_PROFILE_LIST		{
+		public struct DOT11EXT_IHV_DISCOVERY_PROFILE_LIST
+		{
 			public uint32 dwCount;
 			public DOT11EXT_IHV_DISCOVERY_PROFILE* pIhvDiscoveryProfiles;
 		}
 		[CRepr]
-		public struct DOT11EXT_VIRTUAL_STATION_AP_PROPERTY		{
+		public struct DOT11EXT_VIRTUAL_STATION_AP_PROPERTY
+		{
 			public DOT11_SSID dot11SSID;
 			public DOT11_AUTH_ALGORITHM dot11AuthAlgo;
 			public DOT11_CIPHER_ALGORITHM dot11CipherAlgo;
@@ -3322,7 +3458,8 @@ namespace Win32
 			public uint8[64] ucKeyData;
 		}
 		[CRepr]
-		public struct WDIAG_IHV_WLAN_ID		{
+		public struct WDIAG_IHV_WLAN_ID
+		{
 			public char16[256] strProfileName;
 			public DOT11_SSID Ssid;
 			public DOT11_BSS_TYPE BssType;
@@ -3330,7 +3467,8 @@ namespace Win32
 			public uint32 dwReasonCode;
 		}
 		[CRepr]
-		public struct DOT11EXT_APIS		{
+		public struct DOT11EXT_APIS
+		{
 			public DOT11EXT_ALLOCATE_BUFFER Dot11ExtAllocateBuffer;
 			public DOT11EXT_FREE_BUFFER Dot11ExtFreeBuffer;
 			public DOT11EXT_SET_PROFILE_CUSTOM_USER_DATA Dot11ExtSetProfileCustomUserData;
@@ -3355,7 +3493,8 @@ namespace Win32
 			public DOT11EXT_PROCESS_ONEX_PACKET Dot11ExtProcessSecurityPacket;
 		}
 		[CRepr]
-		public struct DOT11EXT_IHV_HANDLERS		{
+		public struct DOT11EXT_IHV_HANDLERS
+		{
 			public DOT11EXTIHV_DEINIT_SERVICE Dot11ExtIhvDeinitService;
 			public DOT11EXTIHV_INIT_ADAPTER Dot11ExtIhvInitAdapter;
 			public DOT11EXTIHV_DEINIT_ADAPTER Dot11ExtIhvDeinitAdapter;
@@ -3377,7 +3516,8 @@ namespace Win32
 			public DOT11EXTIHV_CONTROL Dot11ExtIhvControl;
 		}
 		[CRepr]
-		public struct DOT11EXT_VIRTUAL_STATION_APIS		{
+		public struct DOT11EXT_VIRTUAL_STATION_APIS
+		{
 			public DOT11EXT_REQUEST_VIRTUAL_STATION Dot11ExtRequestVirtualStation;
 			public DOT11EXT_RELEASE_VIRTUAL_STATION Dot11ExtReleaseVirtualStation;
 			public DOT11EXT_QUERY_VIRTUAL_STATION_PROPERTIES Dot11ExtQueryVirtualStationProperties;

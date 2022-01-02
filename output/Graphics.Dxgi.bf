@@ -603,14 +603,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DXGI_RGBA		{
+		public struct DXGI_RGBA
+		{
 			public float r;
 			public float g;
 			public float b;
 			public float a;
 		}
 		[CRepr]
-		public struct DXGI_FRAME_STATISTICS		{
+		public struct DXGI_FRAME_STATISTICS
+		{
 			public uint32 PresentCount;
 			public uint32 PresentRefreshCount;
 			public uint32 SyncRefreshCount;
@@ -618,12 +620,14 @@ namespace Win32
 			public LARGE_INTEGER SyncGPUTime;
 		}
 		[CRepr]
-		public struct DXGI_MAPPED_RECT		{
+		public struct DXGI_MAPPED_RECT
+		{
 			public int32 Pitch;
 			public uint8* pBits;
 		}
 		[CRepr]
-		public struct DXGI_ADAPTER_DESC		{
+		public struct DXGI_ADAPTER_DESC
+		{
 			public char16[128] Description;
 			public uint32 VendorId;
 			public uint32 DeviceId;
@@ -635,7 +639,8 @@ namespace Win32
 			public LUID AdapterLuid;
 		}
 		[CRepr]
-		public struct DXGI_OUTPUT_DESC		{
+		public struct DXGI_OUTPUT_DESC
+		{
 			public char16[32] DeviceName;
 			public RECT DesktopCoordinates;
 			public BOOL AttachedToDesktop;
@@ -643,18 +648,21 @@ namespace Win32
 			public HMONITOR Monitor;
 		}
 		[CRepr]
-		public struct DXGI_SHARED_RESOURCE		{
+		public struct DXGI_SHARED_RESOURCE
+		{
 			public HANDLE Handle;
 		}
 		[CRepr]
-		public struct DXGI_SURFACE_DESC		{
+		public struct DXGI_SURFACE_DESC
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public DXGI_FORMAT Format;
 			public DXGI_SAMPLE_DESC SampleDesc;
 		}
 		[CRepr]
-		public struct DXGI_SWAP_CHAIN_DESC		{
+		public struct DXGI_SWAP_CHAIN_DESC
+		{
 			public DXGI_MODE_DESC BufferDesc;
 			public DXGI_SAMPLE_DESC SampleDesc;
 			public uint32 BufferUsage;
@@ -665,7 +673,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct DXGI_ADAPTER_DESC1		{
+		public struct DXGI_ADAPTER_DESC1
+		{
 			public char16[128] Description;
 			public uint32 VendorId;
 			public uint32 DeviceId;
@@ -678,28 +687,33 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct DXGI_DISPLAY_COLOR_SPACE		{
+		public struct DXGI_DISPLAY_COLOR_SPACE
+		{
 			public float[16] PrimaryCoordinates;
 			public float[32] WhitePoints;
 		}
 		[CRepr]
-		public struct DXGI_OUTDUPL_MOVE_RECT		{
+		public struct DXGI_OUTDUPL_MOVE_RECT
+		{
 			public POINT SourcePoint;
 			public RECT DestinationRect;
 		}
 		[CRepr]
-		public struct DXGI_OUTDUPL_DESC		{
+		public struct DXGI_OUTDUPL_DESC
+		{
 			public DXGI_MODE_DESC ModeDesc;
 			public DXGI_MODE_ROTATION Rotation;
 			public BOOL DesktopImageInSystemMemory;
 		}
 		[CRepr]
-		public struct DXGI_OUTDUPL_POINTER_POSITION		{
+		public struct DXGI_OUTDUPL_POINTER_POSITION
+		{
 			public POINT Position;
 			public BOOL Visible;
 		}
 		[CRepr]
-		public struct DXGI_OUTDUPL_POINTER_SHAPE_INFO		{
+		public struct DXGI_OUTDUPL_POINTER_SHAPE_INFO
+		{
 			public uint32 Type;
 			public uint32 Width;
 			public uint32 Height;
@@ -707,7 +721,8 @@ namespace Win32
 			public POINT HotSpot;
 		}
 		[CRepr]
-		public struct DXGI_OUTDUPL_FRAME_INFO		{
+		public struct DXGI_OUTDUPL_FRAME_INFO
+		{
 			public LARGE_INTEGER LastPresentTime;
 			public LARGE_INTEGER LastMouseUpdateTime;
 			public uint32 AccumulatedFrames;
@@ -718,7 +733,8 @@ namespace Win32
 			public uint32 PointerShapeBufferSize;
 		}
 		[CRepr]
-		public struct DXGI_MODE_DESC1		{
+		public struct DXGI_MODE_DESC1
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public DXGI_RATIONAL RefreshRate;
@@ -728,7 +744,8 @@ namespace Win32
 			public BOOL Stereo;
 		}
 		[CRepr]
-		public struct DXGI_SWAP_CHAIN_DESC1		{
+		public struct DXGI_SWAP_CHAIN_DESC1
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public DXGI_FORMAT Format;
@@ -742,21 +759,24 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct DXGI_SWAP_CHAIN_FULLSCREEN_DESC		{
+		public struct DXGI_SWAP_CHAIN_FULLSCREEN_DESC
+		{
 			public DXGI_RATIONAL RefreshRate;
 			public DXGI_MODE_SCANLINE_ORDER ScanlineOrdering;
 			public DXGI_MODE_SCALING Scaling;
 			public BOOL Windowed;
 		}
 		[CRepr]
-		public struct DXGI_PRESENT_PARAMETERS		{
+		public struct DXGI_PRESENT_PARAMETERS
+		{
 			public uint32 DirtyRectsCount;
 			public RECT* pDirtyRects;
 			public RECT* pScrollRect;
 			public POINT* pScrollOffset;
 		}
 		[CRepr]
-		public struct DXGI_ADAPTER_DESC2		{
+		public struct DXGI_ADAPTER_DESC2
+		{
 			public char16[128] Description;
 			public uint32 VendorId;
 			public uint32 DeviceId;
@@ -771,7 +791,8 @@ namespace Win32
 			public DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity;
 		}
 		[CRepr]
-		public struct DXGI_MATRIX_3X2_F		{
+		public struct DXGI_MATRIX_3X2_F
+		{
 			public float _11;
 			public float _12;
 			public float _21;
@@ -780,11 +801,13 @@ namespace Win32
 			public float _32;
 		}
 		[CRepr]
-		public struct DXGI_DECODE_SWAP_CHAIN_DESC		{
+		public struct DXGI_DECODE_SWAP_CHAIN_DESC
+		{
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct DXGI_FRAME_STATISTICS_MEDIA		{
+		public struct DXGI_FRAME_STATISTICS_MEDIA
+		{
 			public uint32 PresentCount;
 			public uint32 PresentRefreshCount;
 			public uint32 SyncRefreshCount;
@@ -794,14 +817,16 @@ namespace Win32
 			public uint32 ApprovedPresentDuration;
 		}
 		[CRepr]
-		public struct DXGI_QUERY_VIDEO_MEMORY_INFO		{
+		public struct DXGI_QUERY_VIDEO_MEMORY_INFO
+		{
 			public uint64 Budget;
 			public uint64 CurrentUsage;
 			public uint64 AvailableForReservation;
 			public uint64 CurrentReservation;
 		}
 		[CRepr]
-		public struct DXGI_HDR_METADATA_HDR10		{
+		public struct DXGI_HDR_METADATA_HDR10
+		{
 			public uint16[2] RedPrimary;
 			public uint16[2] GreenPrimary;
 			public uint16[2] BluePrimary;
@@ -812,11 +837,13 @@ namespace Win32
 			public uint16 MaxFrameAverageLightLevel;
 		}
 		[CRepr]
-		public struct DXGI_HDR_METADATA_HDR10PLUS		{
+		public struct DXGI_HDR_METADATA_HDR10PLUS
+		{
 			public uint8[72] Data;
 		}
 		[CRepr]
-		public struct DXGI_ADAPTER_DESC3		{
+		public struct DXGI_ADAPTER_DESC3
+		{
 			public char16[128] Description;
 			public uint32 VendorId;
 			public uint32 DeviceId;
@@ -831,7 +858,8 @@ namespace Win32
 			public DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity;
 		}
 		[CRepr]
-		public struct DXGI_OUTPUT_DESC1		{
+		public struct DXGI_OUTPUT_DESC1
+		{
 			public char16[32] DeviceName;
 			public RECT DesktopCoordinates;
 			public BOOL AttachedToDesktop;
@@ -848,7 +876,8 @@ namespace Win32
 			public float MaxFullFrameLuminance;
 		}
 		[CRepr]
-		public struct DXGI_INFO_QUEUE_MESSAGE		{
+		public struct DXGI_INFO_QUEUE_MESSAGE
+		{
 			public Guid Producer;
 			public DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category;
 			public DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity;
@@ -857,7 +886,8 @@ namespace Win32
 			public uint DescriptionByteLength;
 		}
 		[CRepr]
-		public struct DXGI_INFO_QUEUE_FILTER_DESC		{
+		public struct DXGI_INFO_QUEUE_FILTER_DESC
+		{
 			public uint32 NumCategories;
 			public DXGI_INFO_QUEUE_MESSAGE_CATEGORY* pCategoryList;
 			public uint32 NumSeverities;
@@ -866,7 +896,8 @@ namespace Win32
 			public int32* pIDList;
 		}
 		[CRepr]
-		public struct DXGI_INFO_QUEUE_FILTER		{
+		public struct DXGI_INFO_QUEUE_FILTER
+		{
 			public DXGI_INFO_QUEUE_FILTER_DESC AllowList;
 			public DXGI_INFO_QUEUE_FILTER_DESC DenyList;
 		}

@@ -110,28 +110,33 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct OCTET_STRING		{
+		public struct OCTET_STRING
+		{
 			public uint32 dwLength;
 			public uint8* lpValue;
 		}
 		[CRepr]
-		public struct LIFE_TIME		{
+		public struct LIFE_TIME
+		{
 			public FILETIME startTime;
 			public FILETIME endTime;
 		}
 		[CRepr]
-		public struct DIAG_SOCKADDR		{
+		public struct DIAG_SOCKADDR
+		{
 			public uint16 family;
 			public CHAR[126] data;
 		}
 		[CRepr]
-		public struct HELPER_ATTRIBUTE		{
+		public struct HELPER_ATTRIBUTE
+		{
 			public PWSTR pwszName;
 			public ATTRIBUTE_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public BOOL Boolean;
 				public uint8 Char;
 				public uint8 Byte;
@@ -149,7 +154,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct ShellCommandInfo		{
+		public struct ShellCommandInfo
+		{
 			public PWSTR pwszOperation;
 			public PWSTR pwszFile;
 			public PWSTR pwszParameters;
@@ -157,12 +163,14 @@ namespace Win32
 			public uint32 nShowCmd;
 		}
 		[CRepr]
-		public struct UiInfo		{
+		public struct UiInfo
+		{
 			public UI_INFO_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public PWSTR pwzNull;
 				public ShellCommandInfo ShellInfo;
 				public PWSTR pwzHelpUrl;
@@ -170,7 +178,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct RepairInfo		{
+		public struct RepairInfo
+		{
 			public Guid guid;
 			public PWSTR pwszClassName;
 			public PWSTR pwszDescription;
@@ -183,12 +192,14 @@ namespace Win32
 			public int32 rootCauseIndex;
 		}
 		[CRepr]
-		public struct RepairInfoEx		{
+		public struct RepairInfoEx
+		{
 			public RepairInfo repair;
 			public uint16 repairRank;
 		}
 		[CRepr]
-		public struct RootCauseInfo		{
+		public struct RootCauseInfo
+		{
 			public PWSTR pwszDescription;
 			public Guid rootCauseID;
 			public uint32 rootCauseFlags;
@@ -197,24 +208,28 @@ namespace Win32
 			public uint16 repairCount;
 		}
 		[CRepr]
-		public struct HYPOTHESIS		{
+		public struct HYPOTHESIS
+		{
 			public PWSTR pwszClassName;
 			public PWSTR pwszDescription;
 			public uint32 celt;
 			public HELPER_ATTRIBUTE* rgAttributes;
 		}
 		[CRepr]
-		public struct HelperAttributeInfo		{
+		public struct HelperAttributeInfo
+		{
 			public PWSTR pwszName;
 			public ATTRIBUTE_TYPE type;
 		}
 		[CRepr]
-		public struct DiagnosticsInfo		{
+		public struct DiagnosticsInfo
+		{
 			public int32 cost;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct HypothesisResult		{
+		public struct HypothesisResult
+		{
 			public HYPOTHESIS hypothesis;
 			public DIAGNOSIS_STATUS pathStatus;
 		}

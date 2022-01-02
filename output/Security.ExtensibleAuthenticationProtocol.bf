@@ -557,26 +557,30 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NgcTicketContext		{
+		public struct NgcTicketContext
+		{
 			public char16[45] wszTicket;
 			public uint hKey;
 			public HANDLE hImpersonateToken;
 		}
 		[CRepr]
-		public struct RAS_AUTH_ATTRIBUTE		{
+		public struct RAS_AUTH_ATTRIBUTE
+		{
 			public RAS_AUTH_ATTRIBUTE_TYPE raaType;
 			public uint32 dwLength;
 			public void* Value;
 		}
 		[CRepr]
-		public struct PPP_EAP_PACKET		{
+		public struct PPP_EAP_PACKET
+		{
 			public uint8 Code;
 			public uint8 Id;
 			public uint8[2] Length;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct PPP_EAP_INPUT		{
+		public struct PPP_EAP_INPUT
+		{
 			public uint32 dwSizeInBytes;
 			public uint32 fFlags;
 			public BOOL fAuthenticator;
@@ -600,7 +604,8 @@ namespace Win32
 			public BOOL isVpn;
 		}
 		[CRepr]
-		public struct PPP_EAP_OUTPUT		{
+		public struct PPP_EAP_OUTPUT
+		{
 			public uint32 dwSizeInBytes;
 			public PPP_EAP_ACTION Action;
 			public uint32 dwAuthResultCode;
@@ -618,7 +623,8 @@ namespace Win32
 			public BOOL fSaveToCredMan;
 		}
 		[CRepr]
-		public struct PPP_EAP_INFO		{
+		public struct PPP_EAP_INFO
+		{
 			public uint32 dwSizeInBytes;
 			public uint32 dwEapTypeId;
 			public int RasEapInitialize;
@@ -627,7 +633,8 @@ namespace Win32
 			public int RasEapMakeMessage;
 		}
 		[CRepr]
-		public struct LEGACY_IDENTITY_UI_PARAMS		{
+		public struct LEGACY_IDENTITY_UI_PARAMS
+		{
 			public uint32 eapType;
 			public uint32 dwFlags;
 			public uint32 dwSizeofConnectionData;
@@ -640,7 +647,8 @@ namespace Win32
 			public uint32 dwError;
 		}
 		[CRepr]
-		public struct LEGACY_INTERACTIVE_UI_PARAMS		{
+		public struct LEGACY_INTERACTIVE_UI_PARAMS
+		{
 			public uint32 eapType;
 			public uint32 dwSizeofContextData;
 			public uint8* pContextData;
@@ -649,18 +657,21 @@ namespace Win32
 			public uint32 dwError;
 		}
 		[CRepr]
-		public struct EAP_TYPE		{
+		public struct EAP_TYPE
+		{
 			public uint8 type;
 			public uint32 dwVendorId;
 			public uint32 dwVendorType;
 		}
 		[CRepr]
-		public struct EAP_METHOD_TYPE		{
+		public struct EAP_METHOD_TYPE
+		{
 			public EAP_TYPE eapType;
 			public uint32 dwAuthorId;
 		}
 		[CRepr]
-		public struct EAP_METHOD_INFO		{
+		public struct EAP_METHOD_INFO
+		{
 			public EAP_METHOD_TYPE eaptype;
 			public PWSTR pwszAuthorName;
 			public PWSTR pwszFriendlyName;
@@ -668,7 +679,8 @@ namespace Win32
 			public EAP_METHOD_INFO* pInnerMethodInfo;
 		}
 		[CRepr]
-		public struct EAP_METHOD_INFO_EX		{
+		public struct EAP_METHOD_INFO_EX
+		{
 			public EAP_METHOD_TYPE eaptype;
 			public PWSTR pwszAuthorName;
 			public PWSTR pwszFriendlyName;
@@ -676,17 +688,20 @@ namespace Win32
 			public EAP_METHOD_INFO_ARRAY_EX* pInnerMethodInfoArray;
 		}
 		[CRepr]
-		public struct EAP_METHOD_INFO_ARRAY		{
+		public struct EAP_METHOD_INFO_ARRAY
+		{
 			public uint32 dwNumberOfMethods;
 			public EAP_METHOD_INFO* pEapMethods;
 		}
 		[CRepr]
-		public struct EAP_METHOD_INFO_ARRAY_EX		{
+		public struct EAP_METHOD_INFO_ARRAY_EX
+		{
 			public uint32 dwNumberOfMethods;
 			public EAP_METHOD_INFO_EX* pEapMethods;
 		}
 		[CRepr]
-		public struct EAP_ERROR		{
+		public struct EAP_ERROR
+		{
 			public uint32 dwWinError;
 			public EAP_METHOD_TYPE type;
 			public uint32 dwReasonCode;
@@ -697,18 +712,21 @@ namespace Win32
 			public PWSTR pRepairString;
 		}
 		[CRepr]
-		public struct EAP_ATTRIBUTE		{
+		public struct EAP_ATTRIBUTE
+		{
 			public EAP_ATTRIBUTE_TYPE eaType;
 			public uint32 dwLength;
 			public uint8* pValue;
 		}
 		[CRepr]
-		public struct EAP_ATTRIBUTES		{
+		public struct EAP_ATTRIBUTES
+		{
 			public uint32 dwNumberOfAttributes;
 			public EAP_ATTRIBUTE* pAttribs;
 		}
 		[CRepr]
-		public struct EAP_CONFIG_INPUT_FIELD_DATA		{
+		public struct EAP_CONFIG_INPUT_FIELD_DATA
+		{
 			public uint32 dwSize;
 			public EAP_CONFIG_INPUT_FIELD_TYPE Type;
 			public uint32 dwFlagProps;
@@ -718,24 +736,28 @@ namespace Win32
 			public uint32 dwMaxDataLength;
 		}
 		[CRepr]
-		public struct EAP_CONFIG_INPUT_FIELD_ARRAY		{
+		public struct EAP_CONFIG_INPUT_FIELD_ARRAY
+		{
 			public uint32 dwVersion;
 			public uint32 dwNumberOfFields;
 			public EAP_CONFIG_INPUT_FIELD_DATA* pFields;
 		}
 		[CRepr]
-		public struct EAP_CRED_EXPIRY_REQ		{
+		public struct EAP_CRED_EXPIRY_REQ
+		{
 			public EAP_CONFIG_INPUT_FIELD_ARRAY curCreds;
 			public EAP_CONFIG_INPUT_FIELD_ARRAY newCreds;
 		}
 		[CRepr, Union]
-		public struct EAP_UI_DATA_FORMAT		{
+		public struct EAP_UI_DATA_FORMAT
+		{
 			public EAP_CONFIG_INPUT_FIELD_ARRAY* credData;
 			public EAP_CRED_EXPIRY_REQ* credExpiryData;
 			public EAP_CONFIG_INPUT_FIELD_ARRAY* credLogonData;
 		}
 		[CRepr]
-		public struct EAP_INTERACTIVE_UI_DATA		{
+		public struct EAP_INTERACTIVE_UI_DATA
+		{
 			public uint32 dwVersion;
 			public uint32 dwSize;
 			public EAP_INTERACTIVE_UI_DATA_TYPE dwDataType;
@@ -743,39 +765,46 @@ namespace Win32
 			public EAP_UI_DATA_FORMAT pbUiData;
 		}
 		[CRepr]
-		public struct EAP_METHOD_PROPERTY_VALUE_BOOL		{
+		public struct EAP_METHOD_PROPERTY_VALUE_BOOL
+		{
 			public uint32 length;
 			public BOOL value;
 		}
 		[CRepr]
-		public struct EAP_METHOD_PROPERTY_VALUE_DWORD		{
+		public struct EAP_METHOD_PROPERTY_VALUE_DWORD
+		{
 			public uint32 length;
 			public uint32 value;
 		}
 		[CRepr]
-		public struct EAP_METHOD_PROPERTY_VALUE_STRING		{
+		public struct EAP_METHOD_PROPERTY_VALUE_STRING
+		{
 			public uint32 length;
 			public uint8* value;
 		}
 		[CRepr, Union]
-		public struct EAP_METHOD_PROPERTY_VALUE		{
+		public struct EAP_METHOD_PROPERTY_VALUE
+		{
 			public EAP_METHOD_PROPERTY_VALUE_BOOL empvBool;
 			public EAP_METHOD_PROPERTY_VALUE_DWORD empvDword;
 			public EAP_METHOD_PROPERTY_VALUE_STRING empvString;
 		}
 		[CRepr]
-		public struct EAP_METHOD_PROPERTY		{
+		public struct EAP_METHOD_PROPERTY
+		{
 			public EAP_METHOD_PROPERTY_TYPE eapMethodPropertyType;
 			public EAP_METHOD_PROPERTY_VALUE_TYPE eapMethodPropertyValueType;
 			public EAP_METHOD_PROPERTY_VALUE eapMethodPropertyValue;
 		}
 		[CRepr]
-		public struct EAP_METHOD_PROPERTY_ARRAY		{
+		public struct EAP_METHOD_PROPERTY_ARRAY
+		{
 			public uint32 dwNumberOfProperties;
 			public EAP_METHOD_PROPERTY* pMethodProperty;
 		}
 		[CRepr]
-		public struct EAPHOST_IDENTITY_UI_PARAMS		{
+		public struct EAPHOST_IDENTITY_UI_PARAMS
+		{
 			public EAP_METHOD_TYPE eapMethodType;
 			public uint32 dwFlags;
 			public uint32 dwSizeofConnectionData;
@@ -789,7 +818,8 @@ namespace Win32
 			public EAP_ERROR* pEapError;
 		}
 		[CRepr]
-		public struct EAPHOST_INTERACTIVE_UI_PARAMS		{
+		public struct EAPHOST_INTERACTIVE_UI_PARAMS
+		{
 			public uint32 dwSizeofContextData;
 			public uint8* pContextData;
 			public uint32 dwSizeofInteractiveUIData;
@@ -798,38 +828,45 @@ namespace Win32
 			public EAP_ERROR* pEapError;
 		}
 		[CRepr]
-		public struct EapUsernamePasswordCredential		{
+		public struct EapUsernamePasswordCredential
+		{
 			public PWSTR username;
 			public PWSTR password;
 		}
 		[CRepr]
-		public struct EapCertificateCredential		{
+		public struct EapCertificateCredential
+		{
 			public uint8[20] certHash;
 			public PWSTR password;
 		}
 		[CRepr]
-		public struct EapSimCredential		{
+		public struct EapSimCredential
+		{
 			public PWSTR iccID;
 		}
 		[CRepr, Union]
-		public struct EapCredentialTypeData		{
+		public struct EapCredentialTypeData
+		{
 			public EapUsernamePasswordCredential username_password;
 			public EapCertificateCredential certificate;
 			public EapSimCredential sim;
 		}
 		[CRepr]
-		public struct EapCredential		{
+		public struct EapCredential
+		{
 			public EapCredentialType credType;
 			public EapCredentialTypeData credData;
 		}
 		[CRepr]
-		public struct EAPHOST_AUTH_INFO		{
+		public struct EAPHOST_AUTH_INFO
+		{
 			public EAPHOST_AUTH_STATUS status;
 			public uint32 dwErrorCode;
 			public uint32 dwReasonCode;
 		}
 		[CRepr]
-		public struct EapHostPeerMethodResult		{
+		public struct EapHostPeerMethodResult
+		{
 			public BOOL fIsSuccess;
 			public uint32 dwFailureReasonCode;
 			public BOOL fSaveConnectionData;
@@ -844,25 +881,29 @@ namespace Win32
 			public EAP_ERROR* pEapError;
 		}
 		[CRepr]
-		public struct EapPacket		{
+		public struct EapPacket
+		{
 			public uint8 Code;
 			public uint8 Id;
 			public uint8[2] Length;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct EAP_METHOD_AUTHENTICATOR_RESULT		{
+		public struct EAP_METHOD_AUTHENTICATOR_RESULT
+		{
 			public BOOL fIsSuccess;
 			public uint32 dwFailureReason;
 			public EAP_ATTRIBUTES* pAuthAttribs;
 		}
 		[CRepr]
-		public struct EapPeerMethodOutput		{
+		public struct EapPeerMethodOutput
+		{
 			public EapPeerMethodResponseAction action;
 			public BOOL fAllowNotifications;
 		}
 		[CRepr]
-		public struct EapPeerMethodResult		{
+		public struct EapPeerMethodResult
+		{
 			public BOOL fIsSuccess;
 			public uint32 dwFailureReasonCode;
 			public BOOL fSaveConnectionData;
@@ -877,7 +918,8 @@ namespace Win32
 			public BOOL fSaveToCredMan;
 		}
 		[CRepr]
-		public struct EAP_PEER_METHOD_ROUTINES		{
+		public struct EAP_PEER_METHOD_ROUTINES
+		{
 			public uint32 dwVersion;
 			public EAP_TYPE* pEapType;
 			public int EapPeerInitialize;
@@ -895,7 +937,8 @@ namespace Win32
 			public int EapPeerShutdown;
 		}
 		[CRepr]
-		public struct EAP_AUTHENTICATOR_METHOD_ROUTINES		{
+		public struct EAP_AUTHENTICATOR_METHOD_ROUTINES
+		{
 			public uint32 dwSizeInBytes;
 			public EAP_METHOD_TYPE* pEapType;
 			public int EapMethodAuthenticatorInitialize;

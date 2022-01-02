@@ -19,13 +19,15 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct OPERATION_START_PARAMETERS		{
+		public struct OPERATION_START_PARAMETERS
+		{
 			public uint32 Version;
 			public uint32 OperationId;
 			public OPERATION_START_FLAGS Flags;
 		}
 		[CRepr]
-		public struct OPERATION_END_PARAMETERS		{
+		public struct OPERATION_END_PARAMETERS
+		{
 			public uint32 Version;
 			public uint32 OperationId;
 			public OPERATION_END_PARAMETERS_FLAGS Flags;

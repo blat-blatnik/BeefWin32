@@ -62,7 +62,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DCOMPOSITION_FRAME_STATISTICS		{
+		public struct DCOMPOSITION_FRAME_STATISTICS
+		{
 			public LARGE_INTEGER lastFrameTime;
 			public DXGI_RATIONAL currentCompositionRate;
 			public LARGE_INTEGER currentTime;
@@ -70,13 +71,15 @@ namespace Win32
 			public LARGE_INTEGER nextEstimatedFrameTime;
 		}
 		[CRepr]
-		public struct COMPOSITION_FRAME_STATS		{
+		public struct COMPOSITION_FRAME_STATS
+		{
 			public uint64 startTime;
 			public uint64 targetTime;
 			public uint64 framePeriod;
 		}
 		[CRepr]
-		public struct COMPOSITION_TARGET_ID		{
+		public struct COMPOSITION_TARGET_ID
+		{
 			public LUID displayAdapterLuid;
 			public LUID renderAdapterLuid;
 			public uint32 vidPnSourceId;
@@ -84,14 +87,16 @@ namespace Win32
 			public uint32 uniqueId;
 		}
 		[CRepr]
-		public struct COMPOSITION_STATS		{
+		public struct COMPOSITION_STATS
+		{
 			public uint32 presentCount;
 			public uint32 refreshCount;
 			public uint32 virtualRefreshCount;
 			public uint64 time;
 		}
 		[CRepr]
-		public struct COMPOSITION_TARGET_STATS		{
+		public struct COMPOSITION_TARGET_STATS
+		{
 			public uint32 outstandingPresents;
 			public uint64 presentTime;
 			public uint64 vblankDuration;
@@ -99,7 +104,8 @@ namespace Win32
 			public COMPOSITION_STATS completedStats;
 		}
 		[CRepr]
-		public struct DCompositionInkTrailPoint		{
+		public struct DCompositionInkTrailPoint
+		{
 			public float x;
 			public float y;
 			public float radius;

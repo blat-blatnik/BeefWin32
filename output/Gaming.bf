@@ -82,7 +82,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct GAMING_DEVICE_MODEL_INFORMATION		{
+		public struct GAMING_DEVICE_MODEL_INFORMATION
+		{
 			public GAMING_DEVICE_VENDOR_ID vendorId;
 			public GAMING_DEVICE_DEVICE_ID deviceId;
 		}

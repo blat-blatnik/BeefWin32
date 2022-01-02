@@ -19,7 +19,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct AUDIO_ENDPOINT_SHARED_CREATE_PARAMS		{
+		public struct AUDIO_ENDPOINT_SHARED_CREATE_PARAMS
+		{
 			public uint32 u32Size;
 			public uint32 u32TSSessionId;
 			public EndpointConnectorType targetEndpointConnectorType;

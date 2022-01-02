@@ -206,29 +206,34 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DXGI_RATIONAL		{
+		public struct DXGI_RATIONAL
+		{
 			public uint32 Numerator;
 			public uint32 Denominator;
 		}
 		[CRepr]
-		public struct DXGI_SAMPLE_DESC		{
+		public struct DXGI_SAMPLE_DESC
+		{
 			public uint32 Count;
 			public uint32 Quality;
 		}
 		[CRepr]
-		public struct DXGI_RGB		{
+		public struct DXGI_RGB
+		{
 			public float Red;
 			public float Green;
 			public float Blue;
 		}
 		[CRepr]
-		public struct DXGI_GAMMA_CONTROL		{
+		public struct DXGI_GAMMA_CONTROL
+		{
 			public DXGI_RGB Scale;
 			public DXGI_RGB Offset;
 			public DXGI_RGB[1025] GammaCurve;
 		}
 		[CRepr]
-		public struct DXGI_GAMMA_CONTROL_CAPABILITIES		{
+		public struct DXGI_GAMMA_CONTROL_CAPABILITIES
+		{
 			public BOOL ScaleAndOffsetSupported;
 			public float MaxConvertedValue;
 			public float MinConvertedValue;
@@ -236,7 +241,8 @@ namespace Win32
 			public float[1025] ControlPointPositions;
 		}
 		[CRepr]
-		public struct DXGI_MODE_DESC		{
+		public struct DXGI_MODE_DESC
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public DXGI_RATIONAL RefreshRate;
@@ -245,17 +251,20 @@ namespace Win32
 			public DXGI_MODE_SCALING Scaling;
 		}
 		[CRepr]
-		public struct DXGI_JPEG_DC_HUFFMAN_TABLE		{
+		public struct DXGI_JPEG_DC_HUFFMAN_TABLE
+		{
 			public uint8[12] CodeCounts;
 			public uint8[12] CodeValues;
 		}
 		[CRepr]
-		public struct DXGI_JPEG_AC_HUFFMAN_TABLE		{
+		public struct DXGI_JPEG_AC_HUFFMAN_TABLE
+		{
 			public uint8[16] CodeCounts;
 			public uint8[162] CodeValues;
 		}
 		[CRepr]
-		public struct DXGI_JPEG_QUANTIZATION_TABLE		{
+		public struct DXGI_JPEG_QUANTIZATION_TABLE
+		{
 			public uint8[64] Elements;
 		}
 		

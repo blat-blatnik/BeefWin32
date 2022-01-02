@@ -90,34 +90,40 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SHITEMID		{
+		public struct SHITEMID
+		{
 			public uint16 cb;
 			public uint8[0] abID;
 		}
 		[CRepr]
-		public struct ITEMIDLIST		{
+		public struct ITEMIDLIST
+		{
 			public SHITEMID mkid;
 		}
 		[CRepr]
-		public struct STRRET		{
+		public struct STRRET
+		{
 			public uint32 uType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public PWSTR pOleStr;
 				public uint32 uOffset;
 				public uint8[260] cStr;
 			}
 		}
 		[CRepr]
-		public struct SHELLDETAILS		{
+		public struct SHELLDETAILS
+		{
 			public int32 fmt;
 			public int32 cxChar;
 			public STRRET str;
 		}
 		[CRepr]
-		public struct COMDLG_FILTERSPEC		{
+		public struct COMDLG_FILTERSPEC
+		{
 			public PWSTR pszName;
 			public PWSTR pszSpec;
 		}

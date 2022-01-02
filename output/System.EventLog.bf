@@ -292,13 +292,15 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct EVT_VARIANT		{
+		public struct EVT_VARIANT
+		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 Count;
 			public uint32 Type;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public BOOL BooleanVal;
 				public int8 SByteVal;
 				public int16 Int16Val;
@@ -342,7 +344,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct EVT_RPC_LOGIN		{
+		public struct EVT_RPC_LOGIN
+		{
 			public PWSTR Server;
 			public PWSTR User;
 			public PWSTR Domain;
@@ -350,7 +353,8 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct EVENTLOGRECORD		{
+		public struct EVENTLOGRECORD
+		{
 			public uint32 Length;
 			public uint32 Reserved;
 			public uint32 RecordNumber;
@@ -369,14 +373,16 @@ namespace Win32
 			public uint32 DataOffset;
 		}
 		[CRepr]
-		public struct EVENTSFORLOGFILE		{
+		public struct EVENTSFORLOGFILE
+		{
 			public uint32 ulSize;
 			public char16[256] szLogicalLogFile;
 			public uint32 ulNumRecords;
 			public EVENTLOGRECORD[0] pEventLogRecords;
 		}
 		[CRepr]
-		public struct EVENTLOG_FULL_INFORMATION		{
+		public struct EVENTLOG_FULL_INFORMATION
+		{
 			public uint32 dwFull;
 		}
 		

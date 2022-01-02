@@ -574,7 +574,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct FLOWSPEC		{
+		public struct FLOWSPEC
+		{
 			public uint32 TokenRate;
 			public uint32 TokenBucketSize;
 			public uint32 PeakBandwidth;
@@ -585,148 +586,175 @@ namespace Win32
 			public uint32 MinimumPolicedSize;
 		}
 		[CRepr]
-		public struct QOS_OBJECT_HDR		{
+		public struct QOS_OBJECT_HDR
+		{
 			public uint32 ObjectType;
 			public uint32 ObjectLength;
 		}
 		[CRepr]
-		public struct QOS_SD_MODE		{
+		public struct QOS_SD_MODE
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public uint32 ShapeDiscardMode;
 		}
 		[CRepr]
-		public struct QOS_SHAPING_RATE		{
+		public struct QOS_SHAPING_RATE
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public uint32 ShapingRate;
 		}
 		[CRepr]
-		public struct RsvpObjHdr		{
+		public struct RsvpObjHdr
+		{
 			public uint16 obj_length;
 			public uint8 obj_class;
 			public uint8 obj_ctype;
 		}
 		[CRepr]
-		public struct Session_IPv4		{
+		public struct Session_IPv4
+		{
 			public IN_ADDR sess_destaddr;
 			public uint8 sess_protid;
 			public uint8 sess_flags;
 			public uint16 sess_destport;
 		}
 		[CRepr]
-		public struct RSVP_SESSION		{
+		public struct RSVP_SESSION
+		{
 			public RsvpObjHdr sess_header;
 			public _sess_u_e__Union sess_u;
 			
 			[CRepr, Union]
-			public struct _sess_u_e__Union			{
+			public struct _sess_u_e__Union
+			{
 				public Session_IPv4 sess_ipv4;
 			}
 		}
 		[CRepr]
-		public struct Rsvp_Hop_IPv4		{
+		public struct Rsvp_Hop_IPv4
+		{
 			public IN_ADDR hop_ipaddr;
 			public uint32 hop_LIH;
 		}
 		[CRepr]
-		public struct RSVP_HOP		{
+		public struct RSVP_HOP
+		{
 			public RsvpObjHdr hop_header;
 			public _hop_u_e__Union hop_u;
 			
 			[CRepr, Union]
-			public struct _hop_u_e__Union			{
+			public struct _hop_u_e__Union
+			{
 				public Rsvp_Hop_IPv4 hop_ipv4;
 			}
 		}
 		[CRepr]
-		public struct RESV_STYLE		{
+		public struct RESV_STYLE
+		{
 			public RsvpObjHdr style_header;
 			public uint32 style_word;
 		}
 		[CRepr]
-		public struct Filter_Spec_IPv4		{
+		public struct Filter_Spec_IPv4
+		{
 			public IN_ADDR filt_ipaddr;
 			public uint16 filt_unused;
 			public uint16 filt_port;
 		}
 		[CRepr]
-		public struct Filter_Spec_IPv4GPI		{
+		public struct Filter_Spec_IPv4GPI
+		{
 			public IN_ADDR filt_ipaddr;
 			public uint32 filt_gpi;
 		}
 		[CRepr]
-		public struct FILTER_SPEC		{
+		public struct FILTER_SPEC
+		{
 			public RsvpObjHdr filt_header;
 			public _filt_u_e__Union filt_u;
 			
 			[CRepr, Union]
-			public struct _filt_u_e__Union			{
+			public struct _filt_u_e__Union
+			{
 				public Filter_Spec_IPv4 filt_ipv4;
 				public Filter_Spec_IPv4GPI filt_ipv4gpi;
 			}
 		}
 		[CRepr]
-		public struct Scope_list_ipv4		{
+		public struct Scope_list_ipv4
+		{
 			public IN_ADDR[0] scopl_ipaddr;
 		}
 		[CRepr]
-		public struct RSVP_SCOPE		{
+		public struct RSVP_SCOPE
+		{
 			public RsvpObjHdr scopl_header;
 			public _scope_u_e__Union scope_u;
 			
 			[CRepr, Union]
-			public struct _scope_u_e__Union			{
+			public struct _scope_u_e__Union
+			{
 				public Scope_list_ipv4 scopl_ipv4;
 			}
 		}
 		[CRepr]
-		public struct Error_Spec_IPv4		{
+		public struct Error_Spec_IPv4
+		{
 			public IN_ADDR errs_errnode;
 			public uint8 errs_flags;
 			public uint8 errs_code;
 			public uint16 errs_value;
 		}
 		[CRepr]
-		public struct ERROR_SPEC		{
+		public struct ERROR_SPEC
+		{
 			public RsvpObjHdr errs_header;
 			public _errs_u_e__Union errs_u;
 			
 			[CRepr, Union]
-			public struct _errs_u_e__Union			{
+			public struct _errs_u_e__Union
+			{
 				public Error_Spec_IPv4 errs_ipv4;
 			}
 		}
 		[CRepr]
-		public struct POLICY_DATA		{
+		public struct POLICY_DATA
+		{
 			public RsvpObjHdr PolicyObjHdr;
 			public uint16 usPeOffset;
 			public uint16 usReserved;
 		}
 		[CRepr]
-		public struct POLICY_ELEMENT_ALT		{
+		public struct POLICY_ELEMENT_ALT
+		{
 			public uint16 usPeLength;
 			public uint16 usPeType;
 			public uint8[4] ucPeData;
 		}
 		[CRepr]
-		public struct IntServMainHdr		{
+		public struct IntServMainHdr
+		{
 			public uint8 ismh_version;
 			public uint8 ismh_unused;
 			public uint16 ismh_len32b;
 		}
 		[CRepr]
-		public struct IntServServiceHdr		{
+		public struct IntServServiceHdr
+		{
 			public uint8 issh_service;
 			public uint8 issh_flags;
 			public uint16 issh_len32b;
 		}
 		[CRepr]
-		public struct IntServParmHdr		{
+		public struct IntServParmHdr
+		{
 			public uint8 isph_parm_num;
 			public uint8 isph_flags;
 			public uint16 isph_len32b;
 		}
 		[CRepr]
-		public struct GenTspecParms		{
+		public struct GenTspecParms
+		{
 			public float TB_Tspec_r;
 			public float TB_Tspec_b;
 			public float TB_Tspec_p;
@@ -734,56 +762,66 @@ namespace Win32
 			public uint32 TB_Tspec_M;
 		}
 		[CRepr]
-		public struct GenTspec		{
+		public struct GenTspec
+		{
 			public IntServServiceHdr gen_Tspec_serv_hdr;
 			public IntServParmHdr gen_Tspec_parm_hdr;
 			public GenTspecParms gen_Tspec_parms;
 		}
 		[CRepr]
-		public struct QualTspecParms		{
+		public struct QualTspecParms
+		{
 			public uint32 TB_Tspec_M;
 		}
 		[CRepr]
-		public struct QualTspec		{
+		public struct QualTspec
+		{
 			public IntServServiceHdr qual_Tspec_serv_hdr;
 			public IntServParmHdr qual_Tspec_parm_hdr;
 			public QualTspecParms qual_Tspec_parms;
 		}
 		[CRepr]
-		public struct QualAppFlowSpec		{
+		public struct QualAppFlowSpec
+		{
 			public IntServServiceHdr Q_spec_serv_hdr;
 			public IntServParmHdr Q_spec_parm_hdr;
 			public QualTspecParms Q_spec_parms;
 		}
 		[CRepr]
-		public struct IntServTspecBody		{
+		public struct IntServTspecBody
+		{
 			public IntServMainHdr st_mh;
 			public _tspec_u_e__Union tspec_u;
 			
 			[CRepr, Union]
-			public struct _tspec_u_e__Union			{
+			public struct _tspec_u_e__Union
+			{
 				public GenTspec gen_stspec;
 				public QualTspec qual_stspec;
 			}
 		}
 		[CRepr]
-		public struct SENDER_TSPEC		{
+		public struct SENDER_TSPEC
+		{
 			public RsvpObjHdr stspec_header;
 			public IntServTspecBody stspec_body;
 		}
 		[CRepr]
-		public struct CtrlLoadFlowspec		{
+		public struct CtrlLoadFlowspec
+		{
 			public IntServServiceHdr CL_spec_serv_hdr;
 			public IntServParmHdr CL_spec_parm_hdr;
 			public GenTspecParms CL_spec_parms;
 		}
 		[CRepr]
-		public struct GuarRspec		{
+		public struct GuarRspec
+		{
 			public float Guar_R;
 			public uint32 Guar_S;
 		}
 		[CRepr]
-		public struct GuarFlowSpec		{
+		public struct GuarFlowSpec
+		{
 			public IntServServiceHdr Guar_serv_hdr;
 			public IntServParmHdr Guar_Tspec_hdr;
 			public GenTspecParms Guar_Tspec_parms;
@@ -791,40 +829,47 @@ namespace Win32
 			public GuarRspec Guar_Rspec;
 		}
 		[CRepr]
-		public struct IntServFlowSpec		{
+		public struct IntServFlowSpec
+		{
 			public IntServMainHdr spec_mh;
 			public _spec_u_e__Union spec_u;
 			
 			[CRepr, Union]
-			public struct _spec_u_e__Union			{
+			public struct _spec_u_e__Union
+			{
 				public CtrlLoadFlowspec CL_spec;
 				public GuarFlowSpec G_spec;
 				public QualAppFlowSpec Q_spec;
 			}
 		}
 		[CRepr]
-		public struct IS_FLOWSPEC		{
+		public struct IS_FLOWSPEC
+		{
 			public RsvpObjHdr flow_header;
 			public IntServFlowSpec flow_body;
 		}
 		[CRepr]
-		public struct flow_desc		{
+		public struct flow_desc
+		{
 			public _u1_e__Union u1;
 			public _u2_e__Union u2;
 			
 			[CRepr, Union]
-			public struct _u1_e__Union			{
+			public struct _u1_e__Union
+			{
 				public SENDER_TSPEC* stspec;
 				public IS_FLOWSPEC* isflow;
 			}
 			[CRepr, Union]
-			public struct _u2_e__Union			{
+			public struct _u2_e__Union
+			{
 				public FILTER_SPEC* stemp;
 				public FILTER_SPEC* fspec;
 			}
 		}
 		[CRepr]
-		public struct Gads_parms_t		{
+		public struct Gads_parms_t
+		{
 			public IntServServiceHdr Gads_serv_hdr;
 			public IntServParmHdr Gads_Ctot_hdr;
 			public uint32 Gads_Ctot;
@@ -836,7 +881,8 @@ namespace Win32
 			public uint32 Gads_Dsum;
 		}
 		[CRepr]
-		public struct GenAdspecParams		{
+		public struct GenAdspecParams
+		{
 			public IntServServiceHdr gen_parm_hdr;
 			public IntServParmHdr gen_parm_hopcnt_hdr;
 			public uint32 gen_parm_hopcnt;
@@ -848,17 +894,20 @@ namespace Win32
 			public uint32 gen_parm_composed_MTU;
 		}
 		[CRepr]
-		public struct IS_ADSPEC_BODY		{
+		public struct IS_ADSPEC_BODY
+		{
 			public IntServMainHdr adspec_mh;
 			public GenAdspecParams adspec_genparms;
 		}
 		[CRepr]
-		public struct ADSPEC		{
+		public struct ADSPEC
+		{
 			public RsvpObjHdr adspec_header;
 			public IS_ADSPEC_BODY adspec_body;
 		}
 		[CRepr]
-		public struct ID_ERROR_OBJECT		{
+		public struct ID_ERROR_OBJECT
+		{
 			public uint16 usIdErrLength;
 			public uint8 ucAType;
 			public uint8 ucSubType;
@@ -867,7 +916,8 @@ namespace Win32
 			public uint8[4] ucIdErrData;
 		}
 		[CRepr]
-		public struct RSVP_MSG_OBJS		{
+		public struct RSVP_MSG_OBJS
+		{
 			public int32 RsvpMsgType;
 			public RSVP_SESSION* pRsvpSession;
 			public RSVP_HOP* pRsvpFromHop;
@@ -882,13 +932,15 @@ namespace Win32
 			public ADSPEC* pAdspec;
 		}
 		[CRepr]
-		public struct policy_decision		{
+		public struct policy_decision
+		{
 			public uint32 lpvResult;
 			public uint16 wPolicyErrCode;
 			public uint16 wPolicyErrValue;
 		}
 		[CRepr]
-		public struct LPM_INIT_INFO		{
+		public struct LPM_INIT_INFO
+		{
 			public uint32 PcmVersionNumber;
 			public uint32 ResultTimeLimit;
 			public int32 ConfiguredLpmCount;
@@ -898,21 +950,24 @@ namespace Win32
 			public CBGETRSVPOBJECTS GetRsvpObjectsCallback;
 		}
 		[CRepr]
-		public struct lpmiptable		{
+		public struct lpmiptable
+		{
 			public uint32 ulIfIndex;
 			public uint32 MediaType;
 			public IN_ADDR IfIpAddr;
 			public IN_ADDR IfNetMask;
 		}
 		[CRepr]
-		public struct QOS_PACKET_PRIORITY		{
+		public struct QOS_PACKET_PRIORITY
+		{
 			public uint32 ConformantDSCPValue;
 			public uint32 NonConformantDSCPValue;
 			public uint32 ConformantL2Value;
 			public uint32 NonConformantL2Value;
 		}
 		[CRepr]
-		public struct QOS_FLOW_FUNDAMENTALS		{
+		public struct QOS_FLOW_FUNDAMENTALS
+		{
 			public BOOL BottleneckBandwidthSet;
 			public uint64 BottleneckBandwidth;
 			public BOOL AvailableBandwidthSet;
@@ -921,39 +976,46 @@ namespace Win32
 			public uint32 RTT;
 		}
 		[CRepr]
-		public struct QOS_FLOWRATE_OUTGOING		{
+		public struct QOS_FLOWRATE_OUTGOING
+		{
 			public uint64 Bandwidth;
 			public QOS_SHAPING ShapingBehavior;
 			public QOS_FLOWRATE_REASON Reason;
 		}
 		[CRepr]
-		public struct QOS_VERSION		{
+		public struct QOS_VERSION
+		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 		}
 		[CRepr]
-		public struct QOS_FRIENDLY_NAME		{
+		public struct QOS_FRIENDLY_NAME
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public char16[256] FriendlyName;
 		}
 		[CRepr]
-		public struct QOS_TRAFFIC_CLASS		{
+		public struct QOS_TRAFFIC_CLASS
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public uint32 TrafficClass;
 		}
 		[CRepr]
-		public struct QOS_DS_CLASS		{
+		public struct QOS_DS_CLASS
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public uint32 DSField;
 		}
 		[CRepr]
-		public struct QOS_DIFFSERV		{
+		public struct QOS_DIFFSERV
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public uint32 DSFieldCount;
 			public uint8[0] DiffservRule;
 		}
 		[CRepr]
-		public struct QOS_DIFFSERV_RULE		{
+		public struct QOS_DIFFSERV_RULE
+		{
 			public uint8 InboundDSField;
 			public uint8 ConformingOutboundDSField;
 			public uint8 NonConformingOutboundDSField;
@@ -961,51 +1023,59 @@ namespace Win32
 			public uint8 NonConformingUserPriority;
 		}
 		[CRepr]
-		public struct QOS_TCP_TRAFFIC		{
+		public struct QOS_TCP_TRAFFIC
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 		}
 		[CRepr]
-		public struct TCI_CLIENT_FUNC_LIST		{
+		public struct TCI_CLIENT_FUNC_LIST
+		{
 			public TCI_NOTIFY_HANDLER ClNotifyHandler;
 			public TCI_ADD_FLOW_COMPLETE_HANDLER ClAddFlowCompleteHandler;
 			public TCI_MOD_FLOW_COMPLETE_HANDLER ClModifyFlowCompleteHandler;
 			public TCI_DEL_FLOW_COMPLETE_HANDLER ClDeleteFlowCompleteHandler;
 		}
 		[CRepr]
-		public struct ADDRESS_LIST_DESCRIPTOR		{
+		public struct ADDRESS_LIST_DESCRIPTOR
+		{
 			public uint32 MediaType;
 			public NETWORK_ADDRESS_LIST AddressList;
 		}
 		[CRepr]
-		public struct TC_IFC_DESCRIPTOR		{
+		public struct TC_IFC_DESCRIPTOR
+		{
 			public uint32 Length;
 			public PWSTR pInterfaceName;
 			public PWSTR pInterfaceID;
 			public ADDRESS_LIST_DESCRIPTOR AddressListDesc;
 		}
 		[CRepr]
-		public struct TC_SUPPORTED_INFO_BUFFER		{
+		public struct TC_SUPPORTED_INFO_BUFFER
+		{
 			public uint16 InstanceIDLength;
 			public char16[256] InstanceID;
 			public uint64 InterfaceLuid;
 			public ADDRESS_LIST_DESCRIPTOR AddrListDesc;
 		}
 		[CRepr]
-		public struct TC_GEN_FILTER		{
+		public struct TC_GEN_FILTER
+		{
 			public uint16 AddressType;
 			public uint32 PatternSize;
 			public void* Pattern;
 			public void* Mask;
 		}
 		[CRepr]
-		public struct TC_GEN_FLOW		{
+		public struct TC_GEN_FLOW
+		{
 			public FLOWSPEC SendingFlowspec;
 			public FLOWSPEC ReceivingFlowspec;
 			public uint32 TcObjectsLength;
 			public QOS_OBJECT_HDR[0] TcObjects;
 		}
 		[CRepr]
-		public struct IP_PATTERN		{
+		public struct IP_PATTERN
+		{
 			public uint32 Reserved1;
 			public uint32 Reserved2;
 			public uint32 SrcAddr;
@@ -1015,38 +1085,44 @@ namespace Win32
 			public uint8[3] Reserved3;
 			
 			[CRepr, Union]
-			public struct _S_un_e__Union			{
+			public struct _S_un_e__Union
+			{
 				public _S_un_ports_e__Struct S_un_ports;
 				public _S_un_icmp_e__Struct S_un_icmp;
 				public uint32 S_Spi;
 				
 				[CRepr]
-				public struct _S_un_icmp_e__Struct				{
+				public struct _S_un_icmp_e__Struct
+				{
 					public uint8 s_type;
 					public uint8 s_code;
 					public uint16 filler;
 				}
 				[CRepr]
-				public struct _S_un_ports_e__Struct				{
+				public struct _S_un_ports_e__Struct
+				{
 					public uint16 s_srcport;
 					public uint16 s_dstport;
 				}
 			}
 		}
 		[CRepr]
-		public struct IPX_PATTERN		{
+		public struct IPX_PATTERN
+		{
 			public _Src_e__Struct Src;
 			public _Src_e__Struct Dest;
 			
 			[CRepr]
-			public struct _Src_e__Struct			{
+			public struct _Src_e__Struct
+			{
 				public uint32 NetworkAddress;
 				public uint8[6] NodeAddress;
 				public uint16 Socket;
 			}
 		}
 		[CRepr]
-		public struct ENUMERATION_BUFFER		{
+		public struct ENUMERATION_BUFFER
+		{
 			public uint32 Length;
 			public uint32 OwnerProcessId;
 			public uint16 FlowNameLength;
@@ -1056,49 +1132,58 @@ namespace Win32
 			public TC_GEN_FILTER[0] GenericFilter;
 		}
 		[CRepr, Union]
-		public struct IN_ADDR_IPV4		{
+		public struct IN_ADDR_IPV4
+		{
 			public uint32 Addr;
 			public uint8[4] AddrBytes;
 		}
 		[CRepr]
-		public struct IN_ADDR_IPV6		{
+		public struct IN_ADDR_IPV6
+		{
 			public uint8[16] Addr;
 		}
 		[CRepr]
-		public struct RSVP_FILTERSPEC_V4		{
+		public struct RSVP_FILTERSPEC_V4
+		{
 			public IN_ADDR_IPV4 Address;
 			public uint16 Unused;
 			public uint16 Port;
 		}
 		[CRepr]
-		public struct RSVP_FILTERSPEC_V6		{
+		public struct RSVP_FILTERSPEC_V6
+		{
 			public IN_ADDR_IPV6 Address;
 			public uint16 UnUsed;
 			public uint16 Port;
 		}
 		[CRepr]
-		public struct RSVP_FILTERSPEC_V6_FLOW		{
+		public struct RSVP_FILTERSPEC_V6_FLOW
+		{
 			public IN_ADDR_IPV6 Address;
 			public uint8 UnUsed;
 			public uint8[3] FlowLabel;
 		}
 		[CRepr]
-		public struct RSVP_FILTERSPEC_V4_GPI		{
+		public struct RSVP_FILTERSPEC_V4_GPI
+		{
 			public IN_ADDR_IPV4 Address;
 			public uint32 GeneralPortId;
 		}
 		[CRepr]
-		public struct RSVP_FILTERSPEC_V6_GPI		{
+		public struct RSVP_FILTERSPEC_V6_GPI
+		{
 			public IN_ADDR_IPV6 Address;
 			public uint32 GeneralPortId;
 		}
 		[CRepr]
-		public struct RSVP_FILTERSPEC		{
+		public struct RSVP_FILTERSPEC
+		{
 			public FilterType Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public RSVP_FILTERSPEC_V4 FilterSpecV4;
 				public RSVP_FILTERSPEC_V6 FilterSpecV6;
 				public RSVP_FILTERSPEC_V6_FLOW FilterSpecV6Flow;
@@ -1107,25 +1192,29 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FLOWDESCRIPTOR		{
+		public struct FLOWDESCRIPTOR
+		{
 			public FLOWSPEC FlowSpec;
 			public uint32 NumFilters;
 			public RSVP_FILTERSPEC* FilterList;
 		}
 		[CRepr]
-		public struct RSVP_POLICY		{
+		public struct RSVP_POLICY
+		{
 			public uint16 Len;
 			public uint16 Type;
 			public uint8[4] Info;
 		}
 		[CRepr]
-		public struct RSVP_POLICY_INFO		{
+		public struct RSVP_POLICY_INFO
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public uint32 NumPolicyElement;
 			public RSVP_POLICY[0] PolicyElement;
 		}
 		[CRepr]
-		public struct RSVP_RESERVE_INFO		{
+		public struct RSVP_RESERVE_INFO
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public uint32 Style;
 			public uint32 ConfirmRequest;
@@ -1134,20 +1223,23 @@ namespace Win32
 			public FLOWDESCRIPTOR* FlowDescList;
 		}
 		[CRepr]
-		public struct RSVP_STATUS_INFO		{
+		public struct RSVP_STATUS_INFO
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public uint32 StatusCode;
 			public uint32 ExtendedStatus1;
 			public uint32 ExtendedStatus2;
 		}
 		[CRepr]
-		public struct QOS_DESTADDR		{
+		public struct QOS_DESTADDR
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public SOCKADDR* SocketAddress;
 			public uint32 SocketAddressLength;
 		}
 		[CRepr]
-		public struct AD_GENERAL_PARAMS		{
+		public struct AD_GENERAL_PARAMS
+		{
 			public uint32 IntServAwareHopCount;
 			public uint32 PathBandwidthEstimate;
 			public uint32 MinimumLatency;
@@ -1155,47 +1247,54 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct AD_GUARANTEED		{
+		public struct AD_GUARANTEED
+		{
 			public uint32 CTotal;
 			public uint32 DTotal;
 			public uint32 CSum;
 			public uint32 DSum;
 		}
 		[CRepr]
-		public struct PARAM_BUFFER		{
+		public struct PARAM_BUFFER
+		{
 			public uint32 ParameterId;
 			public uint32 Length;
 			public uint8[0] Buffer;
 		}
 		[CRepr]
-		public struct CONTROL_SERVICE		{
+		public struct CONTROL_SERVICE
+		{
 			public uint32 Length;
 			public uint32 Service;
 			public AD_GENERAL_PARAMS Overrides;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public AD_GUARANTEED Guaranteed;
 				public PARAM_BUFFER[0] ParamBuffer;
 			}
 		}
 		[CRepr]
-		public struct RSVP_ADSPEC		{
+		public struct RSVP_ADSPEC
+		{
 			public QOS_OBJECT_HDR ObjectHdr;
 			public AD_GENERAL_PARAMS GeneralParams;
 			public uint32 NumberOfServices;
 			public CONTROL_SERVICE[0] Services;
 		}
 		[CRepr]
-		public struct IDPE_ATTR		{
+		public struct IDPE_ATTR
+		{
 			public uint16 PeAttribLength;
 			public uint8 PeAttribType;
 			public uint8 PeAttribSubType;
 			public uint8[4] PeAttribValue;
 		}
 		[CRepr]
-		public struct WBCL_Iterator		{
+		public struct WBCL_Iterator
+		{
 			public void* firstElementPtr;
 			public uint32 logSize;
 			public void* currentElementPtr;
@@ -1208,7 +1307,8 @@ namespace Win32
 			public uint16 hashAlgorithm;
 		}
 		[CRepr]
-		public struct TCG_PCClientPCREventStruct		{
+		public struct TCG_PCClientPCREventStruct
+		{
 			public uint32 pcrIndex;
 			public uint32 eventType;
 			public uint8[20] digest;
@@ -1216,37 +1316,43 @@ namespace Win32
 			public uint8[0] event;
 		}
 		[CRepr]
-		public struct TCG_PCClientTaggedEventStruct		{
+		public struct TCG_PCClientTaggedEventStruct
+		{
 			public uint32 EventID;
 			public uint32 EventDataSize;
 			public uint8[0] EventData;
 		}
 		[CRepr]
-		public struct WBCL_LogHdr		{
+		public struct WBCL_LogHdr
+		{
 			public uint32 signature;
 			public uint32 version;
 			public uint32 entries;
 			public uint32 length;
 		}
 		[CRepr]
-		public struct tag_SIPAEVENT_VSM_IDK_RSA_INFO		{
+		public struct tag_SIPAEVENT_VSM_IDK_RSA_INFO
+		{
 			public uint32 KeyBitLength;
 			public uint32 PublicExpLengthBytes;
 			public uint32 ModulusSizeBytes;
 			public uint8[0] PublicKeyData;
 		}
 		[CRepr]
-		public struct tag_SIPAEVENT_VSM_IDK_INFO_PAYLOAD		{
+		public struct tag_SIPAEVENT_VSM_IDK_INFO_PAYLOAD
+		{
 			public uint32 KeyAlgID;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public tag_SIPAEVENT_VSM_IDK_RSA_INFO RsaKeyInfo;
 			}
 		}
 		[CRepr]
-		public struct tag_SIPAEVENT_SI_POLICY_PAYLOAD		{
+		public struct tag_SIPAEVENT_SI_POLICY_PAYLOAD
+		{
 			public uint64 PolicyVersion;
 			public uint16 PolicyNameLength;
 			public uint16 HashAlgID;
@@ -1254,20 +1360,23 @@ namespace Win32
 			public uint8[0] VarLengthData;
 		}
 		[CRepr]
-		public struct tag_SIPAEVENT_REVOCATION_LIST_PAYLOAD		{
+		public struct tag_SIPAEVENT_REVOCATION_LIST_PAYLOAD
+		{
 			public int64 CreationTime;
 			public uint32 DigestLength;
 			public uint16 HashAlgID;
 			public uint8[0] Digest;
 		}
 		[CRepr]
-		public struct tag_SIPAEVENT_KSR_SIGNATURE_PAYLOAD		{
+		public struct tag_SIPAEVENT_KSR_SIGNATURE_PAYLOAD
+		{
 			public uint32 SignAlgID;
 			public uint32 SignatureLength;
 			public uint8[0] Signature;
 		}
 		[CRepr]
-		public struct tag_SIPAEVENT_SBCP_INFO_PAYLOAD_V1		{
+		public struct tag_SIPAEVENT_SBCP_INFO_PAYLOAD_V1
+		{
 			public uint32 PayloadVersion;
 			public uint32 VarDataOffset;
 			public uint16 HashAlgID;
@@ -1277,7 +1386,8 @@ namespace Win32
 			public uint8[0] VarData;
 		}
 		[CRepr]
-		public struct QOS		{
+		public struct QOS
+		{
 			public FLOWSPEC SendingFlowspec;
 			public FLOWSPEC ReceivingFlowspec;
 			public WSABUF ProviderSpecific;

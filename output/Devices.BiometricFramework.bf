@@ -305,17 +305,20 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WINBIO_VERSION		{
+		public struct WINBIO_VERSION
+		{
 			public uint32 MajorVersion;
 			public uint32 MinorVersion;
 		}
 		[CRepr]
-		public struct WINBIO_IDENTITY		{
+		public struct WINBIO_IDENTITY
+		{
 			public uint32 Type;
 			public _Value_e__Union Value;
 			
 			[CRepr, Union]
-			public struct _Value_e__Union			{
+			public struct _Value_e__Union
+			{
 				public uint32 Null;
 				public uint32 Wildcard;
 				public Guid TemplateGuid;
@@ -323,20 +326,23 @@ namespace Win32
 				public uint8[32] SecureId;
 				
 				[CRepr]
-				public struct _AccountSid_e__Struct				{
+				public struct _AccountSid_e__Struct
+				{
 					public uint32 Size;
 					public uint8[68] Data;
 				}
 			}
 		}
 		[CRepr]
-		public struct WINBIO_SECURE_CONNECTION_PARAMS		{
+		public struct WINBIO_SECURE_CONNECTION_PARAMS
+		{
 			public uint32 PayloadSize;
 			public uint16 Version;
 			public uint16 Flags;
 		}
 		[CRepr]
-		public struct WINBIO_SECURE_CONNECTION_DATA		{
+		public struct WINBIO_SECURE_CONNECTION_DATA
+		{
 			public uint32 Size;
 			public uint16 Version;
 			public uint16 Flags;
@@ -345,24 +351,28 @@ namespace Win32
 			public uint32 IntermediateCA2Size;
 		}
 		[CRepr]
-		public struct WINBIO_BIR_DATA		{
+		public struct WINBIO_BIR_DATA
+		{
 			public uint32 Size;
 			public uint32 Offset;
 		}
 		[CRepr]
-		public struct WINBIO_BIR		{
+		public struct WINBIO_BIR
+		{
 			public WINBIO_BIR_DATA HeaderBlock;
 			public WINBIO_BIR_DATA StandardDataBlock;
 			public WINBIO_BIR_DATA VendorDataBlock;
 			public WINBIO_BIR_DATA SignatureBlock;
 		}
 		[CRepr]
-		public struct WINBIO_REGISTERED_FORMAT		{
+		public struct WINBIO_REGISTERED_FORMAT
+		{
 			public uint16 Owner;
 			public uint16 Type;
 		}
 		[CRepr]
-		public struct WINBIO_BIR_HEADER		{
+		public struct WINBIO_BIR_HEADER
+		{
 			public uint16 ValidFields;
 			public uint8 HeaderVersion;
 			public uint8 PatronHeaderVersion;
@@ -377,13 +387,15 @@ namespace Win32
 			public WINBIO_REGISTERED_FORMAT ProductId;
 			
 			[CRepr]
-			public struct _ValidityPeriod_e__Struct			{
+			public struct _ValidityPeriod_e__Struct
+			{
 				public LARGE_INTEGER BeginDate;
 				public LARGE_INTEGER EndDate;
 			}
 		}
 		[CRepr]
-		public struct WINBIO_BDB_ANSI_381_HEADER		{
+		public struct WINBIO_BDB_ANSI_381_HEADER
+		{
 			public uint64 RecordLength;
 			public uint32 FormatIdentifier;
 			public uint32 VersionNumber;
@@ -401,7 +413,8 @@ namespace Win32
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct WINBIO_BDB_ANSI_381_RECORD		{
+		public struct WINBIO_BDB_ANSI_381_RECORD
+		{
 			public uint32 BlockLength;
 			public uint16 HorizontalLineLength;
 			public uint16 VerticalLineLength;
@@ -413,48 +426,56 @@ namespace Win32
 			public uint8 Reserved;
 		}
 		[CRepr]
-		public struct WINBIO_SECURE_BUFFER_HEADER_V1		{
+		public struct WINBIO_SECURE_BUFFER_HEADER_V1
+		{
 			public uint32 Type;
 			public uint32 Size;
 			public uint32 Flags;
 			public uint64 ValidationTag;
 		}
 		[CRepr]
-		public struct WINBIO_EVENT		{
+		public struct WINBIO_EVENT
+		{
 			public uint32 Type;
 			public _Parameters_e__Union Parameters;
 			
 			[CRepr, Union]
-			public struct _Parameters_e__Union			{
+			public struct _Parameters_e__Union
+			{
 				public _Unclaimed_e__Struct Unclaimed;
 				public _UnclaimedIdentify_e__Struct UnclaimedIdentify;
 				public _Error_e__Struct Error;
 				
 				[CRepr]
-				public struct _UnclaimedIdentify_e__Struct				{
+				public struct _UnclaimedIdentify_e__Struct
+				{
 					public uint32 UnitId;
 					public WINBIO_IDENTITY Identity;
 					public uint8 SubFactor;
 					public uint32 RejectDetail;
 				}
 				[CRepr]
-				public struct _Unclaimed_e__Struct				{
+				public struct _Unclaimed_e__Struct
+				{
 					public uint32 UnitId;
 					public uint32 RejectDetail;
 				}
 				[CRepr]
-				public struct _Error_e__Struct				{
+				public struct _Error_e__Struct
+				{
 					public HRESULT ErrorCode;
 				}
 			}
 		}
 		[CRepr, Union]
-		public struct WINBIO_PRESENCE_PROPERTIES		{
+		public struct WINBIO_PRESENCE_PROPERTIES
+		{
 			public _FacialFeatures_e__Struct FacialFeatures;
 			public _Iris_e__Struct Iris;
 			
 			[CRepr]
-			public struct _Iris_e__Struct			{
+			public struct _Iris_e__Struct
+			{
 				public RECT EyeBoundingBox_1;
 				public RECT EyeBoundingBox_2;
 				public POINT PupilCenter_1;
@@ -462,20 +483,23 @@ namespace Win32
 				public int32 Distance;
 			}
 			[CRepr]
-			public struct _FacialFeatures_e__Struct			{
+			public struct _FacialFeatures_e__Struct
+			{
 				public RECT BoundingBox;
 				public int32 Distance;
 				public _OpaqueEngineData_e__Struct OpaqueEngineData;
 				
 				[CRepr]
-				public struct _OpaqueEngineData_e__Struct				{
+				public struct _OpaqueEngineData_e__Struct
+				{
 					public Guid AdapterId;
 					public uint32[78] Data;
 				}
 			}
 		}
 		[CRepr]
-		public struct WINBIO_PRESENCE		{
+		public struct WINBIO_PRESENCE
+		{
 			public uint32 Factor;
 			public uint8 SubFactor;
 			public HRESULT Status;
@@ -487,13 +511,15 @@ namespace Win32
 			public _Authorization_e__Struct Authorization;
 			
 			[CRepr]
-			public struct _Authorization_e__Struct			{
+			public struct _Authorization_e__Struct
+			{
 				public uint32 Size;
 				public uint8[32] Data;
 			}
 		}
 		[CRepr]
-		public struct WINBIO_BSP_SCHEMA		{
+		public struct WINBIO_BSP_SCHEMA
+		{
 			public uint32 BiometricFactor;
 			public Guid BspId;
 			public uint16[256] Description;
@@ -501,7 +527,8 @@ namespace Win32
 			public WINBIO_VERSION Version;
 		}
 		[CRepr]
-		public struct WINBIO_UNIT_SCHEMA		{
+		public struct WINBIO_UNIT_SCHEMA
+		{
 			public uint32 UnitId;
 			public uint32 PoolType;
 			public uint32 BiometricFactor;
@@ -515,7 +542,8 @@ namespace Win32
 			public WINBIO_VERSION FirmwareVersion;
 		}
 		[CRepr]
-		public struct WINBIO_STORAGE_SCHEMA		{
+		public struct WINBIO_STORAGE_SCHEMA
+		{
 			public uint32 BiometricFactor;
 			public Guid DatabaseId;
 			public Guid DataFormat;
@@ -524,13 +552,15 @@ namespace Win32
 			public uint16[256] ConnectionString;
 		}
 		[CRepr]
-		public struct WINBIO_EXTENDED_SENSOR_INFO		{
+		public struct WINBIO_EXTENDED_SENSOR_INFO
+		{
 			public uint32 GenericSensorCapabilities;
 			public uint32 Factor;
 			public _Specific_e__Union Specific;
 			
 			[CRepr, Union]
-			public struct _Specific_e__Union			{
+			public struct _Specific_e__Union
+			{
 				public uint32 Null;
 				public _FacialFeatures_e__Struct FacialFeatures;
 				public _Fingerprint_e__Struct Fingerprint;
@@ -538,43 +568,50 @@ namespace Win32
 				public _Voice_e__Struct Voice;
 				
 				[CRepr]
-				public struct _Iris_e__Struct				{
+				public struct _Iris_e__Struct
+				{
 					public RECT FrameSize;
 					public POINT FrameOffset;
 					public uint32 MandatoryOrientation;
 				}
 				[CRepr]
-				public struct _FacialFeatures_e__Struct				{
+				public struct _FacialFeatures_e__Struct
+				{
 					public RECT FrameSize;
 					public POINT FrameOffset;
 					public uint32 MandatoryOrientation;
 					public _HardwareInfo_e__Struct HardwareInfo;
 					
 					[CRepr]
-					public struct _HardwareInfo_e__Struct					{
+					public struct _HardwareInfo_e__Struct
+					{
 						public char16[260] ColorSensorId;
 						public char16[260] InfraredSensorId;
 						public uint32 InfraredSensorRotationAngle;
 					}
 				}
 				[CRepr]
-				public struct _Fingerprint_e__Struct				{
+				public struct _Fingerprint_e__Struct
+				{
 					public uint32 Reserved;
 				}
 				[CRepr]
-				public struct _Voice_e__Struct				{
+				public struct _Voice_e__Struct
+				{
 					public uint32 Reserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct WINBIO_EXTENDED_ENGINE_INFO		{
+		public struct WINBIO_EXTENDED_ENGINE_INFO
+		{
 			public uint32 GenericEngineCapabilities;
 			public uint32 Factor;
 			public _Specific_e__Union Specific;
 			
 			[CRepr, Union]
-			public struct _Specific_e__Union			{
+			public struct _Specific_e__Union
+			{
 				public uint32 Null;
 				public _FacialFeatures_e__Struct FacialFeatures;
 				public _Fingerprint_e__Struct Fingerprint;
@@ -582,32 +619,38 @@ namespace Win32
 				public _Voice_e__Struct Voice;
 				
 				[CRepr]
-				public struct _Voice_e__Struct				{
+				public struct _Voice_e__Struct
+				{
 					public uint32 Capabilities;
 					public _EnrollmentRequirements_e__Struct EnrollmentRequirements;
 					
 					[CRepr]
-					public struct _EnrollmentRequirements_e__Struct					{
+					public struct _EnrollmentRequirements_e__Struct
+					{
 						public uint32 Null;
 					}
 				}
 				[CRepr]
-				public struct _Iris_e__Struct				{
+				public struct _Iris_e__Struct
+				{
 					public uint32 Capabilities;
 					public _EnrollmentRequirements_e__Struct EnrollmentRequirements;
 					
 					[CRepr]
-					public struct _EnrollmentRequirements_e__Struct					{
+					public struct _EnrollmentRequirements_e__Struct
+					{
 						public uint32 Null;
 					}
 				}
 				[CRepr]
-				public struct _Fingerprint_e__Struct				{
+				public struct _Fingerprint_e__Struct
+				{
 					public uint32 Capabilities;
 					public _EnrollmentRequirements_e__Struct EnrollmentRequirements;
 					
 					[CRepr]
-					public struct _EnrollmentRequirements_e__Struct					{
+					public struct _EnrollmentRequirements_e__Struct
+					{
 						public uint32 GeneralSamples;
 						public uint32 Center;
 						public uint32 TopEdge;
@@ -617,25 +660,29 @@ namespace Win32
 					}
 				}
 				[CRepr]
-				public struct _FacialFeatures_e__Struct				{
+				public struct _FacialFeatures_e__Struct
+				{
 					public uint32 Capabilities;
 					public _EnrollmentRequirements_e__Struct EnrollmentRequirements;
 					
 					[CRepr]
-					public struct _EnrollmentRequirements_e__Struct					{
+					public struct _EnrollmentRequirements_e__Struct
+					{
 						public uint32 Null;
 					}
 				}
 			}
 		}
 		[CRepr]
-		public struct WINBIO_EXTENDED_STORAGE_INFO		{
+		public struct WINBIO_EXTENDED_STORAGE_INFO
+		{
 			public uint32 GenericStorageCapabilities;
 			public uint32 Factor;
 			public _Specific_e__Union Specific;
 			
 			[CRepr, Union]
-			public struct _Specific_e__Union			{
+			public struct _Specific_e__Union
+			{
 				public uint32 Null;
 				public _FacialFeatures_e__Struct FacialFeatures;
 				public _Fingerprint_e__Struct Fingerprint;
@@ -643,25 +690,30 @@ namespace Win32
 				public _Voice_e__Struct Voice;
 				
 				[CRepr]
-				public struct _Iris_e__Struct				{
+				public struct _Iris_e__Struct
+				{
 					public uint32 Capabilities;
 				}
 				[CRepr]
-				public struct _FacialFeatures_e__Struct				{
+				public struct _FacialFeatures_e__Struct
+				{
 					public uint32 Capabilities;
 				}
 				[CRepr]
-				public struct _Fingerprint_e__Struct				{
+				public struct _Fingerprint_e__Struct
+				{
 					public uint32 Capabilities;
 				}
 				[CRepr]
-				public struct _Voice_e__Struct				{
+				public struct _Voice_e__Struct
+				{
 					public uint32 Capabilities;
 				}
 			}
 		}
 		[CRepr]
-		public struct WINBIO_EXTENDED_ENROLLMENT_STATUS		{
+		public struct WINBIO_EXTENDED_ENROLLMENT_STATUS
+		{
 			public HRESULT TemplateStatus;
 			public uint32 RejectDetail;
 			public uint32 PercentComplete;
@@ -670,7 +722,8 @@ namespace Win32
 			public _Specific_e__Union Specific;
 			
 			[CRepr, Union]
-			public struct _Specific_e__Union			{
+			public struct _Specific_e__Union
+			{
 				public uint32 Null;
 				public _FacialFeatures_e__Struct FacialFeatures;
 				public _Fingerprint_e__Struct Fingerprint;
@@ -678,11 +731,13 @@ namespace Win32
 				public _Voice_e__Struct Voice;
 				
 				[CRepr]
-				public struct _Voice_e__Struct				{
+				public struct _Voice_e__Struct
+				{
 					public uint32 Reserved;
 				}
 				[CRepr]
-				public struct _Iris_e__Struct				{
+				public struct _Iris_e__Struct
+				{
 					public RECT EyeBoundingBox_1;
 					public RECT EyeBoundingBox_2;
 					public POINT PupilCenter_1;
@@ -694,26 +749,30 @@ namespace Win32
 					public BOOL StopCaptureAndShowCriticalFeedback;
 					
 					[CRepr]
-					public struct _Point3D_e__Struct					{
+					public struct _Point3D_e__Struct
+					{
 						public double X;
 						public double Y;
 						public double Z;
 					}
 				}
 				[CRepr]
-				public struct _FacialFeatures_e__Struct				{
+				public struct _FacialFeatures_e__Struct
+				{
 					public RECT BoundingBox;
 					public int32 Distance;
 					public _OpaqueEngineData_e__Struct OpaqueEngineData;
 					
 					[CRepr]
-					public struct _OpaqueEngineData_e__Struct					{
+					public struct _OpaqueEngineData_e__Struct
+					{
 						public Guid AdapterId;
 						public uint32[78] Data;
 					}
 				}
 				[CRepr]
-				public struct _Fingerprint_e__Struct				{
+				public struct _Fingerprint_e__Struct
+				{
 					public uint32 GeneralSamples;
 					public uint32 Center;
 					public uint32 TopEdge;
@@ -724,32 +783,38 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WINBIO_EXTENDED_UNIT_STATUS		{
+		public struct WINBIO_EXTENDED_UNIT_STATUS
+		{
 			public uint32 Availability;
 			public uint32 ReasonCode;
 		}
 		[CRepr]
-		public struct WINBIO_FP_BU_STATE		{
+		public struct WINBIO_FP_BU_STATE
+		{
 			public BOOL SensorAttached;
 			public HRESULT CreationResult;
 		}
 		[CRepr]
-		public struct WINBIO_ANTI_SPOOF_POLICY		{
+		public struct WINBIO_ANTI_SPOOF_POLICY
+		{
 			public WINBIO_ANTI_SPOOF_POLICY_ACTION Action;
 			public WINBIO_POLICY_SOURCE Source;
 		}
 		[CRepr]
-		public struct WINBIO_EXTENDED_ENROLLMENT_PARAMETERS		{
+		public struct WINBIO_EXTENDED_ENROLLMENT_PARAMETERS
+		{
 			public uint Size;
 			public uint8 SubFactor;
 		}
 		[CRepr]
-		public struct WINBIO_ACCOUNT_POLICY		{
+		public struct WINBIO_ACCOUNT_POLICY
+		{
 			public WINBIO_IDENTITY Identity;
 			public WINBIO_ANTI_SPOOF_POLICY_ACTION AntiSpoofBehavior;
 		}
 		[CRepr]
-		public struct WINBIO_PROTECTION_POLICY		{
+		public struct WINBIO_PROTECTION_POLICY
+		{
 			public uint32 Version;
 			public WINBIO_IDENTITY Identity;
 			public Guid DatabaseId;
@@ -758,14 +823,16 @@ namespace Win32
 			public uint8[128] Policy;
 		}
 		[CRepr]
-		public struct WINBIO_GESTURE_METADATA		{
+		public struct WINBIO_GESTURE_METADATA
+		{
 			public uint Size;
 			public uint32 BiometricType;
 			public uint32 MatchType;
 			public uint32 ProtectionType;
 		}
 		[CRepr]
-		public struct WINBIO_ASYNC_RESULT		{
+		public struct WINBIO_ASYNC_RESULT
+		{
 			public uint32 SessionHandle;
 			public uint32 Operation;
 			public uint64 SequenceNumber;
@@ -776,7 +843,8 @@ namespace Win32
 			public _Parameters_e__Union Parameters;
 			
 			[CRepr, Union]
-			public struct _Parameters_e__Union			{
+			public struct _Parameters_e__Union
+			{
 				public _Verify_e__Struct Verify;
 				public _Identify_e__Struct Identify;
 				public _EnrollBegin_e__Struct EnrollBegin;
@@ -800,27 +868,32 @@ namespace Win32
 				public _NotifyUnitStatusChange_e__Struct NotifyUnitStatusChange;
 				
 				[CRepr]
-				public struct _GetProtectionPolicy_e__Struct				{
+				public struct _GetProtectionPolicy_e__Struct
+				{
 					public WINBIO_IDENTITY Identity;
 					public WINBIO_PROTECTION_POLICY Policy;
 				}
 				[CRepr]
-				public struct _EnrollSelect_e__Struct				{
+				public struct _EnrollSelect_e__Struct
+				{
 					public uint64 SelectorValue;
 				}
 				[CRepr]
-				public struct _VerifyAndReleaseTicket_e__Struct				{
+				public struct _VerifyAndReleaseTicket_e__Struct
+				{
 					public BOOLEAN Match;
 					public uint32 RejectDetail;
 					public uint64 Ticket;
 				}
 				[CRepr]
-				public struct _EnumBiometricUnits_e__Struct				{
+				public struct _EnumBiometricUnits_e__Struct
+				{
 					public uint UnitCount;
 					public WINBIO_UNIT_SCHEMA* UnitSchemaArray;
 				}
 				[CRepr]
-				public struct _ControlUnit_e__Struct				{
+				public struct _ControlUnit_e__Struct
+				{
 					public WINBIO_COMPONENT Component;
 					public uint32 ControlCode;
 					public uint32 OperationStatus;
@@ -831,7 +904,8 @@ namespace Win32
 					public uint ReceiveDataSize;
 				}
 				[CRepr]
-				public struct _SetProperty_e__Struct				{
+				public struct _SetProperty_e__Struct
+				{
 					public uint32 PropertyType;
 					public uint32 PropertyId;
 					public WINBIO_IDENTITY Identity;
@@ -840,67 +914,80 @@ namespace Win32
 					public void* PropertyBuffer;
 				}
 				[CRepr]
-				public struct _DeleteTemplate_e__Struct				{
+				public struct _DeleteTemplate_e__Struct
+				{
 					public WINBIO_IDENTITY Identity;
 					public uint8 SubFactor;
 				}
 				[CRepr]
-				public struct _EnumEnrollments_e__Struct				{
+				public struct _EnumEnrollments_e__Struct
+				{
 					public WINBIO_IDENTITY Identity;
 					public uint SubFactorCount;
 					public uint8* SubFactorArray;
 				}
 				[CRepr]
-				public struct _EnrollCapture_e__Struct				{
+				public struct _EnrollCapture_e__Struct
+				{
 					public uint32 RejectDetail;
 				}
 				[CRepr]
-				public struct _Identify_e__Struct				{
+				public struct _Identify_e__Struct
+				{
 					public WINBIO_IDENTITY Identity;
 					public uint8 SubFactor;
 					public uint32 RejectDetail;
 				}
 				[CRepr]
-				public struct _MonitorPresence_e__Struct				{
+				public struct _MonitorPresence_e__Struct
+				{
 					public uint32 ChangeType;
 					public uint PresenceCount;
 					public WINBIO_PRESENCE* PresenceArray;
 				}
 				[CRepr]
-				public struct _EnumDatabases_e__Struct				{
+				public struct _EnumDatabases_e__Struct
+				{
 					public uint StorageCount;
 					public WINBIO_STORAGE_SCHEMA* StorageSchemaArray;
 				}
 				[CRepr]
-				public struct _GetEvent_e__Struct				{
+				public struct _GetEvent_e__Struct
+				{
 					public WINBIO_EVENT Event;
 				}
 				[CRepr]
-				public struct _CaptureSample_e__Struct				{
+				public struct _CaptureSample_e__Struct
+				{
 					public WINBIO_BIR* Sample;
 					public uint SampleSize;
 					public uint32 RejectDetail;
 				}
 				[CRepr]
-				public struct _EnrollBegin_e__Struct				{
+				public struct _EnrollBegin_e__Struct
+				{
 					public uint8 SubFactor;
 				}
 				[CRepr]
-				public struct _NotifyUnitStatusChange_e__Struct				{
+				public struct _NotifyUnitStatusChange_e__Struct
+				{
 					public WINBIO_EXTENDED_UNIT_STATUS ExtendedStatus;
 				}
 				[CRepr]
-				public struct _EnumServiceProviders_e__Struct				{
+				public struct _EnumServiceProviders_e__Struct
+				{
 					public uint BspCount;
 					public WINBIO_BSP_SCHEMA* BspSchemaArray;
 				}
 				[CRepr]
-				public struct _EnrollCommit_e__Struct				{
+				public struct _EnrollCommit_e__Struct
+				{
 					public WINBIO_IDENTITY Identity;
 					public BOOLEAN IsNewTemplate;
 				}
 				[CRepr]
-				public struct _GetProperty_e__Struct				{
+				public struct _GetProperty_e__Struct
+				{
 					public uint32 PropertyType;
 					public uint32 PropertyId;
 					public WINBIO_IDENTITY Identity;
@@ -909,14 +996,16 @@ namespace Win32
 					public void* PropertyBuffer;
 				}
 				[CRepr]
-				public struct _IdentifyAndReleaseTicket_e__Struct				{
+				public struct _IdentifyAndReleaseTicket_e__Struct
+				{
 					public WINBIO_IDENTITY Identity;
 					public uint8 SubFactor;
 					public uint32 RejectDetail;
 					public uint64 Ticket;
 				}
 				[CRepr]
-				public struct _Verify_e__Struct				{
+				public struct _Verify_e__Struct
+				{
 					public BOOLEAN Match;
 					public uint32 RejectDetail;
 				}
@@ -929,7 +1018,8 @@ namespace Win32
 		[CRepr]
 		public struct _WINIBIO_STORAGE_CONTEXT {}
 		[CRepr]
-		public struct WINBIO_STORAGE_RECORD		{
+		public struct WINBIO_STORAGE_RECORD
+		{
 			public WINBIO_IDENTITY* Identity;
 			public uint8 SubFactor;
 			public uint32* IndexVector;
@@ -940,7 +1030,8 @@ namespace Win32
 			public uint PayloadBlobSize;
 		}
 		[CRepr]
-		public struct WINBIO_PIPELINE		{
+		public struct WINBIO_PIPELINE
+		{
 			public HANDLE SensorHandle;
 			public HANDLE EngineHandle;
 			public HANDLE StorageHandle;
@@ -953,12 +1044,14 @@ namespace Win32
 			public WINBIO_FRAMEWORK_INTERFACE* FrameworkInterface;
 		}
 		[CRepr]
-		public struct WINBIO_ADAPTER_INTERFACE_VERSION		{
+		public struct WINBIO_ADAPTER_INTERFACE_VERSION
+		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 		}
 		[CRepr]
-		public struct WINBIO_SENSOR_INTERFACE		{
+		public struct WINBIO_SENSOR_INTERFACE
+		{
 			public WINBIO_ADAPTER_INTERFACE_VERSION Version;
 			public uint32 Type;
 			public uint Size;
@@ -996,7 +1089,8 @@ namespace Win32
 			public PIBIO_SENSOR_FINISH_NOTIFY_WAKE_FN FinishNotifyWake;
 		}
 		[CRepr]
-		public struct WINBIO_ENGINE_INTERFACE		{
+		public struct WINBIO_ENGINE_INTERFACE
+		{
 			public WINBIO_ADAPTER_INTERFACE_VERSION Version;
 			public uint32 Type;
 			public uint Size;
@@ -1044,7 +1138,8 @@ namespace Win32
 			public PIBIO_ENGINE_IDENTIFY_FEATURE_SET_AUTHENTICATED_FN IdentifyFeatureSetAuthenticated;
 		}
 		[CRepr]
-		public struct WINBIO_STORAGE_INTERFACE		{
+		public struct WINBIO_STORAGE_INTERFACE
+		{
 			public WINBIO_ADAPTER_INTERFACE_VERSION Version;
 			public uint32 Type;
 			public uint Size;
@@ -1081,7 +1176,8 @@ namespace Win32
 			public PIBIO_STORAGE_UPDATE_RECORD_COMMIT_FN UpdateRecordCommit;
 		}
 		[CRepr]
-		public struct WINBIO_FRAMEWORK_INTERFACE		{
+		public struct WINBIO_FRAMEWORK_INTERFACE
+		{
 			public WINBIO_ADAPTER_INTERFACE_VERSION Version;
 			public uint32 Type;
 			public uint Size;
@@ -1132,7 +1228,8 @@ namespace Win32
 			public PIBIO_FRAMEWORK_VSM_DECRYPT_SAMPLE_FN DecryptSample;
 		}
 		[CRepr]
-		public struct WINBIO_SENSOR_ATTRIBUTES		{
+		public struct WINBIO_SENSOR_ATTRIBUTES
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 			public WINBIO_VERSION WinBioVersion;
@@ -1147,35 +1244,41 @@ namespace Win32
 			public WINBIO_REGISTERED_FORMAT[0] SupportedFormat;
 		}
 		[CRepr]
-		public struct WINBIO_DATA		{
+		public struct WINBIO_DATA
+		{
 			public uint32 Size;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct WINBIO_UPDATE_FIRMWARE		{
+		public struct WINBIO_UPDATE_FIRMWARE
+		{
 			public uint32 PayloadSize;
 			public WINBIO_DATA FirmwareData;
 		}
 		[CRepr]
-		public struct WINBIO_CALIBRATION_INFO		{
+		public struct WINBIO_CALIBRATION_INFO
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 			public WINBIO_DATA CalibrationData;
 		}
 		[CRepr]
-		public struct WINBIO_DIAGNOSTICS		{
+		public struct WINBIO_DIAGNOSTICS
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 			public uint32 SensorStatus;
 			public WINBIO_DATA VendorDiagnostics;
 		}
 		[CRepr]
-		public struct WINBIO_BLANK_PAYLOAD		{
+		public struct WINBIO_BLANK_PAYLOAD
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 		}
 		[CRepr]
-		public struct WINBIO_CAPTURE_PARAMETERS		{
+		public struct WINBIO_CAPTURE_PARAMETERS
+		{
 			public uint32 PayloadSize;
 			public uint8 Purpose;
 			public WINBIO_REGISTERED_FORMAT Format;
@@ -1183,7 +1286,8 @@ namespace Win32
 			public uint8 Flags;
 		}
 		[CRepr]
-		public struct WINBIO_CAPTURE_DATA		{
+		public struct WINBIO_CAPTURE_DATA
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 			public uint32 SensorStatus;
@@ -1191,31 +1295,36 @@ namespace Win32
 			public WINBIO_DATA CaptureData;
 		}
 		[CRepr]
-		public struct WINBIO_SUPPORTED_ALGORITHMS		{
+		public struct WINBIO_SUPPORTED_ALGORITHMS
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 			public uint32 NumberOfAlgorithms;
 			public WINBIO_DATA AlgorithmData;
 		}
 		[CRepr]
-		public struct WINBIO_GET_INDICATOR		{
+		public struct WINBIO_GET_INDICATOR
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 			public uint32 IndicatorStatus;
 		}
 		[CRepr]
-		public struct WINBIO_SET_INDICATOR		{
+		public struct WINBIO_SET_INDICATOR
+		{
 			public uint32 PayloadSize;
 			public uint32 IndicatorStatus;
 		}
 		[CRepr]
-		public struct WINBIO_PRIVATE_SENSOR_TYPE_INFO		{
+		public struct WINBIO_PRIVATE_SENSOR_TYPE_INFO
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 			public WINBIO_DATA PrivateSensorTypeInfo;
 		}
 		[CRepr]
-		public struct WINBIO_ENCRYPTED_CAPTURE_PARAMS		{
+		public struct WINBIO_ENCRYPTED_CAPTURE_PARAMS
+		{
 			public uint32 PayloadSize;
 			public uint8 Purpose;
 			public WINBIO_REGISTERED_FORMAT Format;
@@ -1224,7 +1333,8 @@ namespace Win32
 			public uint32 NonceSize;
 		}
 		[CRepr]
-		public struct WINBIO_NOTIFY_WAKE		{
+		public struct WINBIO_NOTIFY_WAKE
+		{
 			public uint32 PayloadSize;
 			public HRESULT WinBioHresult;
 			public uint32 Reason;

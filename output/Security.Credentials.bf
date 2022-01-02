@@ -284,30 +284,35 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct KeyCredentialManagerInfo		{
+		public struct KeyCredentialManagerInfo
+		{
 			public Guid containerId;
 		}
 		[CRepr]
-		public struct SecHandle		{
+		public struct SecHandle
+		{
 			public uint dwLower;
 			public uint dwUpper;
 		}
 		[CRepr]
-		public struct CREDENTIAL_ATTRIBUTEA		{
+		public struct CREDENTIAL_ATTRIBUTEA
+		{
 			public PSTR Keyword;
 			public uint32 Flags;
 			public uint32 ValueSize;
 			public uint8* Value;
 		}
 		[CRepr]
-		public struct CREDENTIAL_ATTRIBUTEW		{
+		public struct CREDENTIAL_ATTRIBUTEW
+		{
 			public PWSTR Keyword;
 			public uint32 Flags;
 			public uint32 ValueSize;
 			public uint8* Value;
 		}
 		[CRepr]
-		public struct CREDENTIALA		{
+		public struct CREDENTIALA
+		{
 			public CRED_FLAGS Flags;
 			public CRED_TYPE Type;
 			public PSTR TargetName;
@@ -322,7 +327,8 @@ namespace Win32
 			public PSTR UserName;
 		}
 		[CRepr]
-		public struct CREDENTIALW		{
+		public struct CREDENTIALW
+		{
 			public CRED_FLAGS Flags;
 			public CRED_TYPE Type;
 			public PWSTR TargetName;
@@ -337,7 +343,8 @@ namespace Win32
 			public PWSTR UserName;
 		}
 		[CRepr]
-		public struct CREDENTIAL_TARGET_INFORMATIONA		{
+		public struct CREDENTIAL_TARGET_INFORMATIONA
+		{
 			public PSTR TargetName;
 			public PSTR NetbiosServerName;
 			public PSTR DnsServerName;
@@ -350,7 +357,8 @@ namespace Win32
 			public uint32* CredTypes;
 		}
 		[CRepr]
-		public struct CREDENTIAL_TARGET_INFORMATIONW		{
+		public struct CREDENTIAL_TARGET_INFORMATIONW
+		{
 			public PWSTR TargetName;
 			public PWSTR NetbiosServerName;
 			public PWSTR DnsServerName;
@@ -363,21 +371,25 @@ namespace Win32
 			public uint32* CredTypes;
 		}
 		[CRepr]
-		public struct CERT_CREDENTIAL_INFO		{
+		public struct CERT_CREDENTIAL_INFO
+		{
 			public uint32 cbSize;
 			public uint8[20] rgbHashOfCert;
 		}
 		[CRepr]
-		public struct USERNAME_TARGET_CREDENTIAL_INFO		{
+		public struct USERNAME_TARGET_CREDENTIAL_INFO
+		{
 			public PWSTR UserName;
 		}
 		[CRepr]
-		public struct BINARY_BLOB_CREDENTIAL_INFO		{
+		public struct BINARY_BLOB_CREDENTIAL_INFO
+		{
 			public uint32 cbBlob;
 			public uint8* pbBlob;
 		}
 		[CRepr]
-		public struct CREDUI_INFOA		{
+		public struct CREDUI_INFOA
+		{
 			public uint32 cbSize;
 			public HWND hwndParent;
 			public PSTR pszMessageText;
@@ -385,7 +397,8 @@ namespace Win32
 			public HBITMAP hbmBanner;
 		}
 		[CRepr]
-		public struct CREDUI_INFOW		{
+		public struct CREDUI_INFOW
+		{
 			public uint32 cbSize;
 			public HWND hwndParent;
 			public PWSTR pszMessageText;
@@ -393,12 +406,14 @@ namespace Win32
 			public HBITMAP hbmBanner;
 		}
 		[CRepr]
-		public struct SCARD_IO_REQUEST		{
+		public struct SCARD_IO_REQUEST
+		{
 			public uint32 dwProtocol;
 			public uint32 cbPciLength;
 		}
 		[CRepr]
-		public struct SCARD_T0_COMMAND		{
+		public struct SCARD_T0_COMMAND
+		{
 			public uint8 bCla;
 			public uint8 bIns;
 			public uint8 bP1;
@@ -406,24 +421,28 @@ namespace Win32
 			public uint8 bP3;
 		}
 		[CRepr]
-		public struct SCARD_T0_REQUEST		{
+		public struct SCARD_T0_REQUEST
+		{
 			public SCARD_IO_REQUEST ioRequest;
 			public uint8 bSw1;
 			public uint8 bSw2;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public SCARD_T0_COMMAND CmdBytes;
 				public uint8[5] rgbHeader;
 			}
 		}
 		[CRepr]
-		public struct SCARD_T1_REQUEST		{
+		public struct SCARD_T1_REQUEST
+		{
 			public SCARD_IO_REQUEST ioRequest;
 		}
 		[CRepr]
-		public struct SCARD_READERSTATEA		{
+		public struct SCARD_READERSTATEA
+		{
 			public PSTR szReader;
 			public void* pvUserData;
 			public SCARD_STATE dwCurrentState;
@@ -432,7 +451,8 @@ namespace Win32
 			public uint8[36] rgbAtr;
 		}
 		[CRepr]
-		public struct SCARD_READERSTATEW		{
+		public struct SCARD_READERSTATEW
+		{
 			public PWSTR szReader;
 			public void* pvUserData;
 			public SCARD_STATE dwCurrentState;
@@ -441,13 +461,15 @@ namespace Win32
 			public uint8[36] rgbAtr;
 		}
 		[CRepr]
-		public struct SCARD_ATRMASK		{
+		public struct SCARD_ATRMASK
+		{
 			public uint32 cbAtr;
 			public uint8[36] rgbAtr;
 			public uint8[36] rgbMask;
 		}
 		[CRepr]
-		public struct OPENCARD_SEARCH_CRITERIAA		{
+		public struct OPENCARD_SEARCH_CRITERIAA
+		{
 			public uint32 dwStructSize;
 			public PSTR lpstrGroupNames;
 			public uint32 nMaxGroupNames;
@@ -463,7 +485,8 @@ namespace Win32
 			public uint32 dwPreferredProtocols;
 		}
 		[CRepr]
-		public struct OPENCARD_SEARCH_CRITERIAW		{
+		public struct OPENCARD_SEARCH_CRITERIAW
+		{
 			public uint32 dwStructSize;
 			public PWSTR lpstrGroupNames;
 			public uint32 nMaxGroupNames;
@@ -479,7 +502,8 @@ namespace Win32
 			public uint32 dwPreferredProtocols;
 		}
 		[CRepr]
-		public struct OPENCARDNAME_EXA		{
+		public struct OPENCARDNAME_EXA
+		{
 			public uint32 dwStructSize;
 			public uint hSCardContext;
 			public HWND hwndOwner;
@@ -500,7 +524,8 @@ namespace Win32
 			public uint hCardHandle;
 		}
 		[CRepr]
-		public struct OPENCARDNAME_EXW		{
+		public struct OPENCARDNAME_EXW
+		{
 			public uint32 dwStructSize;
 			public uint hSCardContext;
 			public HWND hwndOwner;
@@ -521,19 +546,22 @@ namespace Win32
 			public uint hCardHandle;
 		}
 		[CRepr]
-		public struct READER_SEL_REQUEST		{
+		public struct READER_SEL_REQUEST
+		{
 			public uint32 dwShareMode;
 			public uint32 dwPreferredProtocols;
 			public READER_SEL_REQUEST_MATCH_TYPE MatchType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _ReaderAndContainerParameter_e__Struct ReaderAndContainerParameter;
 				public _SerialNumberParameter_e__Struct SerialNumberParameter;
 				
 				[CRepr]
-				public struct _ReaderAndContainerParameter_e__Struct				{
+				public struct _ReaderAndContainerParameter_e__Struct
+				{
 					public uint32 cbReaderNameOffset;
 					public uint32 cchReaderNameLength;
 					public uint32 cbContainerNameOffset;
@@ -542,7 +570,8 @@ namespace Win32
 					public uint32 dwCspFlags;
 				}
 				[CRepr]
-				public struct _SerialNumberParameter_e__Struct				{
+				public struct _SerialNumberParameter_e__Struct
+				{
 					public uint32 cbSerialNumberOffset;
 					public uint32 cbSerialNumberLength;
 					public uint32 dwDesiredCardModuleVersion;
@@ -550,14 +579,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct READER_SEL_RESPONSE		{
+		public struct READER_SEL_RESPONSE
+		{
 			public uint32 cbReaderNameOffset;
 			public uint32 cchReaderNameLength;
 			public uint32 cbCardNameOffset;
 			public uint32 cchCardNameLength;
 		}
 		[CRepr]
-		public struct OPENCARDNAMEA		{
+		public struct OPENCARDNAMEA
+		{
 			public uint32 dwStructSize;
 			public HWND hwndOwner;
 			public uint hSCardContext;
@@ -583,7 +614,8 @@ namespace Win32
 			public uint hCardHandle;
 		}
 		[CRepr]
-		public struct OPENCARDNAMEW		{
+		public struct OPENCARDNAMEW
+		{
 			public uint32 dwStructSize;
 			public HWND hwndOwner;
 			public uint hSCardContext;
@@ -609,18 +641,21 @@ namespace Win32
 			public uint hCardHandle;
 		}
 		[CRepr]
-		public struct SecPkgContext_ClientCreds		{
+		public struct SecPkgContext_ClientCreds
+		{
 			public uint32 AuthBufferLen;
 			public uint8* AuthBuffer;
 		}
 		[CRepr]
-		public struct CREDSSP_CRED		{
+		public struct CREDSSP_CRED
+		{
 			public CREDSPP_SUBMIT_TYPE Type;
 			public void* pSchannelCred;
 			public void* pSpnegoCred;
 		}
 		[CRepr]
-		public struct CREDSSP_CRED_EX		{
+		public struct CREDSSP_CRED_EX
+		{
 			public CREDSPP_SUBMIT_TYPE Type;
 			public uint32 Version;
 			public uint32 Flags;

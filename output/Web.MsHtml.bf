@@ -9481,14 +9481,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct HTML_PAINTER_INFO		{
+		public struct HTML_PAINTER_INFO
+		{
 			public int32 lFlags;
 			public int32 lZOrder;
 			public Guid iidDrawObject;
 			public RECT rcExpand;
 		}
 		[CRepr]
-		public struct HTML_PAINT_XFORM		{
+		public struct HTML_PAINT_XFORM
+		{
 			public float eM11;
 			public float eM12;
 			public float eM21;
@@ -9497,13 +9499,15 @@ namespace Win32
 			public float eDy;
 		}
 		[CRepr]
-		public struct HTML_PAINT_DRAW_INFO		{
+		public struct HTML_PAINT_DRAW_INFO
+		{
 			public RECT rcViewport;
 			public HRGN hrgnUpdate;
 			public HTML_PAINT_XFORM xform;
 		}
 		[CRepr]
-		public struct tagNavigateData		{
+		public struct tagNavigateData
+		{
 			public uint32 ulTarget;
 			public uint32 ulURL;
 			public uint32 ulRefURL;
@@ -9511,7 +9515,8 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct IELAUNCHURLINFO		{
+		public struct IELAUNCHURLINFO
+		{
 			public uint32 cbSize;
 			public uint32 dwCreationFlags;
 			public uint32 dwLaunchOptionFlags;
@@ -9523,7 +9528,8 @@ namespace Win32
 		[CRepr]
 		public struct HostDialogHelper {}
 		[CRepr]
-		public struct DOCHOSTUIINFO		{
+		public struct DOCHOSTUIINFO
+		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public uint32 dwDoubleClick;
@@ -9531,7 +9537,8 @@ namespace Win32
 			public PWSTR pchHostNS;
 		}
 		[CRepr]
-		public struct STATURL		{
+		public struct STATURL
+		{
 			public uint32 cbSize;
 			public PWSTR pwcsUrl;
 			public PWSTR pwcsTitle;

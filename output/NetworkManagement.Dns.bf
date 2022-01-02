@@ -431,29 +431,34 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct IP4_ARRAY		{
+		public struct IP4_ARRAY
+		{
 			public uint32 AddrCount;
 			public uint32[0] AddrArray;
 		}
 		[CRepr, Union]
-		public struct IP6_ADDRESS		{
+		public struct IP6_ADDRESS
+		{
 			public uint64[2] IP6Qword;
 			public uint32[4] IP6Dword;
 			public uint16[8] IP6Word;
 			public uint8[16] IP6Byte;
 		}
 		[CRepr]
-		public struct DNS_ADDR		{
+		public struct DNS_ADDR
+		{
 			public CHAR[32] MaxSa;
 			public _Data_e__Union Data;
 			
 			[CRepr, Union]
-			public struct _Data_e__Union			{
+			public struct _Data_e__Union
+			{
 				public uint32[8] DnsAddrUserDword;
 			}
 		}
 		[CRepr]
-		public struct DNS_ADDR_ARRAY		{
+		public struct DNS_ADDR_ARRAY
+		{
 			public uint32 MaxCount;
 			public uint32 AddrCount;
 			public uint32 Tag;
@@ -466,7 +471,8 @@ namespace Win32
 			public DNS_ADDR[0] AddrArray;
 		}
 		[CRepr]
-		public struct DNS_HEADER		{
+		public struct DNS_HEADER
+		{
 			public uint16 Xid;
 			public uint8 _bitfield1;
 			public uint8 _bitfield2;
@@ -476,37 +482,44 @@ namespace Win32
 			public uint16 AdditionalCount;
 		}
 		[CRepr]
-		public struct DNS_HEADER_EXT		{
+		public struct DNS_HEADER_EXT
+		{
 			public uint16 _bitfield;
 			public uint8 chRcode;
 			public uint8 chVersion;
 		}
 		[CRepr]
-		public struct DNS_WIRE_QUESTION		{
+		public struct DNS_WIRE_QUESTION
+		{
 			public uint16 QuestionType;
 			public uint16 QuestionClass;
 		}
 		[CRepr]
-		public struct DNS_WIRE_RECORD		{
+		public struct DNS_WIRE_RECORD
+		{
 			public uint16 RecordType;
 			public uint16 RecordClass;
 			public uint32 TimeToLive;
 			public uint16 DataLength;
 		}
 		[CRepr]
-		public struct DNS_A_DATA		{
+		public struct DNS_A_DATA
+		{
 			public uint32 IpAddress;
 		}
 		[CRepr]
-		public struct DNS_PTR_DATAW		{
+		public struct DNS_PTR_DATAW
+		{
 			public PWSTR pNameHost;
 		}
 		[CRepr]
-		public struct DNS_PTR_DATAA		{
+		public struct DNS_PTR_DATAA
+		{
 			public PSTR pNameHost;
 		}
 		[CRepr]
-		public struct DNS_SOA_DATAW		{
+		public struct DNS_SOA_DATAW
+		{
 			public PWSTR pNamePrimaryServer;
 			public PWSTR pNameAdministrator;
 			public uint32 dwSerialNo;
@@ -516,7 +529,8 @@ namespace Win32
 			public uint32 dwDefaultTtl;
 		}
 		[CRepr]
-		public struct DNS_SOA_DATAA		{
+		public struct DNS_SOA_DATAA
+		{
 			public PSTR pNamePrimaryServer;
 			public PSTR pNameAdministrator;
 			public uint32 dwSerialNo;
@@ -526,54 +540,64 @@ namespace Win32
 			public uint32 dwDefaultTtl;
 		}
 		[CRepr]
-		public struct DNS_MINFO_DATAW		{
+		public struct DNS_MINFO_DATAW
+		{
 			public PWSTR pNameMailbox;
 			public PWSTR pNameErrorsMailbox;
 		}
 		[CRepr]
-		public struct DNS_MINFO_DATAA		{
+		public struct DNS_MINFO_DATAA
+		{
 			public PSTR pNameMailbox;
 			public PSTR pNameErrorsMailbox;
 		}
 		[CRepr]
-		public struct DNS_MX_DATAW		{
+		public struct DNS_MX_DATAW
+		{
 			public PWSTR pNameExchange;
 			public uint16 wPreference;
 			public uint16 Pad;
 		}
 		[CRepr]
-		public struct DNS_MX_DATAA		{
+		public struct DNS_MX_DATAA
+		{
 			public PSTR pNameExchange;
 			public uint16 wPreference;
 			public uint16 Pad;
 		}
 		[CRepr]
-		public struct DNS_TXT_DATAW		{
+		public struct DNS_TXT_DATAW
+		{
 			public uint32 dwStringCount;
 			public PWSTR[0] pStringArray;
 		}
 		[CRepr]
-		public struct DNS_TXT_DATAA		{
+		public struct DNS_TXT_DATAA
+		{
 			public uint32 dwStringCount;
 			public PSTR[0] pStringArray;
 		}
 		[CRepr]
-		public struct DNS_NULL_DATA		{
+		public struct DNS_NULL_DATA
+		{
 			public uint32 dwByteCount;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct DNS_WKS_DATA		{
+		public struct DNS_WKS_DATA
+		{
 			public uint32 IpAddress;
 			public uint8 chProtocol;
 			public uint8[0] BitMask;
 		}
 		[CRepr]
-		public struct DNS_AAAA_DATA		{
+		public struct DNS_AAAA_DATA
+		{
 			public IP6_ADDRESS Ip6Address;
 		}
 		[CRepr]
-		public struct DNS_SIG_DATAW		{
+		public struct DNS_SIG_DATAW
+		{
 			public uint16 wTypeCovered;
 			public uint8 chAlgorithm;
 			public uint8 chLabelCount;
@@ -586,7 +610,8 @@ namespace Win32
 			public uint8[0] Signature;
 		}
 		[CRepr]
-		public struct DNS_SIG_DATAA		{
+		public struct DNS_SIG_DATAA
+		{
 			public uint16 wTypeCovered;
 			public uint8 chAlgorithm;
 			public uint8 chLabelCount;
@@ -599,7 +624,8 @@ namespace Win32
 			public uint8[0] Signature;
 		}
 		[CRepr]
-		public struct DNS_KEY_DATA		{
+		public struct DNS_KEY_DATA
+		{
 			public uint16 wFlags;
 			public uint8 chProtocol;
 			public uint8 chAlgorithm;
@@ -608,26 +634,30 @@ namespace Win32
 			public uint8[0] Key;
 		}
 		[CRepr]
-		public struct DNS_DHCID_DATA		{
+		public struct DNS_DHCID_DATA
+		{
 			public uint32 dwByteCount;
 			public uint8[0] DHCID;
 		}
 		[CRepr]
-		public struct DNS_NSEC_DATAW		{
+		public struct DNS_NSEC_DATAW
+		{
 			public PWSTR pNextDomainName;
 			public uint16 wTypeBitMapsLength;
 			public uint16 wPad;
 			public uint8[0] TypeBitMaps;
 		}
 		[CRepr]
-		public struct DNS_NSEC_DATAA		{
+		public struct DNS_NSEC_DATAA
+		{
 			public PSTR pNextDomainName;
 			public uint16 wTypeBitMapsLength;
 			public uint16 wPad;
 			public uint8[0] TypeBitMaps;
 		}
 		[CRepr]
-		public struct DNS_NSEC3_DATA		{
+		public struct DNS_NSEC3_DATA
+		{
 			public uint8 chAlgorithm;
 			public uint8 bFlags;
 			public uint16 wIterations;
@@ -637,7 +667,8 @@ namespace Win32
 			public uint8[0] chData;
 		}
 		[CRepr]
-		public struct DNS_NSEC3PARAM_DATA		{
+		public struct DNS_NSEC3PARAM_DATA
+		{
 			public uint8 chAlgorithm;
 			public uint8 bFlags;
 			public uint16 wIterations;
@@ -646,7 +677,8 @@ namespace Win32
 			public uint8[0] pbSalt;
 		}
 		[CRepr]
-		public struct DNS_TLSA_DATA		{
+		public struct DNS_TLSA_DATA
+		{
 			public uint8 bCertUsage;
 			public uint8 bSelector;
 			public uint8 bMatchingType;
@@ -655,7 +687,8 @@ namespace Win32
 			public uint8[0] bCertificateAssociationData;
 		}
 		[CRepr]
-		public struct DNS_DS_DATA		{
+		public struct DNS_DS_DATA
+		{
 			public uint16 wKeyTag;
 			public uint8 chAlgorithm;
 			public uint8 chDigestType;
@@ -664,13 +697,15 @@ namespace Win32
 			public uint8[0] Digest;
 		}
 		[CRepr]
-		public struct DNS_OPT_DATA		{
+		public struct DNS_OPT_DATA
+		{
 			public uint16 wDataLength;
 			public uint16 wPad;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct DNS_LOC_DATA		{
+		public struct DNS_LOC_DATA
+		{
 			public uint16 wVersion;
 			public uint16 wSize;
 			public uint16 wHorPrec;
@@ -680,19 +715,22 @@ namespace Win32
 			public uint32 dwAltitude;
 		}
 		[CRepr]
-		public struct DNS_NXT_DATAW		{
+		public struct DNS_NXT_DATAW
+		{
 			public PWSTR pNameNext;
 			public uint16 wNumTypes;
 			public uint16[0] wTypes;
 		}
 		[CRepr]
-		public struct DNS_NXT_DATAA		{
+		public struct DNS_NXT_DATAA
+		{
 			public PSTR pNameNext;
 			public uint16 wNumTypes;
 			public uint16[0] wTypes;
 		}
 		[CRepr]
-		public struct DNS_SRV_DATAW		{
+		public struct DNS_SRV_DATAW
+		{
 			public PWSTR pNameTarget;
 			public uint16 wPriority;
 			public uint16 wWeight;
@@ -700,7 +738,8 @@ namespace Win32
 			public uint16 Pad;
 		}
 		[CRepr]
-		public struct DNS_SRV_DATAA		{
+		public struct DNS_SRV_DATAA
+		{
 			public PSTR pNameTarget;
 			public uint16 wPriority;
 			public uint16 wWeight;
@@ -708,7 +747,8 @@ namespace Win32
 			public uint16 Pad;
 		}
 		[CRepr]
-		public struct DNS_NAPTR_DATAW		{
+		public struct DNS_NAPTR_DATAW
+		{
 			public uint16 wOrder;
 			public uint16 wPreference;
 			public PWSTR pFlags;
@@ -717,7 +757,8 @@ namespace Win32
 			public PWSTR pReplacement;
 		}
 		[CRepr]
-		public struct DNS_NAPTR_DATAA		{
+		public struct DNS_NAPTR_DATAA
+		{
 			public uint16 wOrder;
 			public uint16 wPreference;
 			public PSTR pFlags;
@@ -726,12 +767,14 @@ namespace Win32
 			public PSTR pReplacement;
 		}
 		[CRepr]
-		public struct DNS_ATMA_DATA		{
+		public struct DNS_ATMA_DATA
+		{
 			public uint8 AddressType;
 			public uint8[20] Address;
 		}
 		[CRepr]
-		public struct DNS_TKEY_DATAW		{
+		public struct DNS_TKEY_DATAW
+		{
 			public PWSTR pNameAlgorithm;
 			public uint8* pAlgorithmPacket;
 			public uint8* pKey;
@@ -746,7 +789,8 @@ namespace Win32
 			public BOOL bPacketPointers;
 		}
 		[CRepr]
-		public struct DNS_TKEY_DATAA		{
+		public struct DNS_TKEY_DATAA
+		{
 			public PSTR pNameAlgorithm;
 			public uint8* pAlgorithmPacket;
 			public uint8* pKey;
@@ -761,7 +805,8 @@ namespace Win32
 			public BOOL bPacketPointers;
 		}
 		[CRepr]
-		public struct DNS_TSIG_DATAW		{
+		public struct DNS_TSIG_DATAW
+		{
 			public PWSTR pNameAlgorithm;
 			public uint8* pAlgorithmPacket;
 			public uint8* pSignature;
@@ -776,7 +821,8 @@ namespace Win32
 			public BOOL bPacketPointers;
 		}
 		[CRepr]
-		public struct DNS_TSIG_DATAA		{
+		public struct DNS_TSIG_DATAA
+		{
 			public PSTR pNameAlgorithm;
 			public uint8* pAlgorithmPacket;
 			public uint8* pSignature;
@@ -791,12 +837,14 @@ namespace Win32
 			public BOOL bPacketPointers;
 		}
 		[CRepr]
-		public struct DNS_UNKNOWN_DATA		{
+		public struct DNS_UNKNOWN_DATA
+		{
 			public uint32 dwByteCount;
 			public uint8[0] bData;
 		}
 		[CRepr]
-		public struct DNS_WINS_DATA		{
+		public struct DNS_WINS_DATA
+		{
 			public uint32 dwMappingFlag;
 			public uint32 dwLookupTimeout;
 			public uint32 dwCacheTimeout;
@@ -804,25 +852,29 @@ namespace Win32
 			public uint32[0] WinsServers;
 		}
 		[CRepr]
-		public struct DNS_WINSR_DATAW		{
+		public struct DNS_WINSR_DATAW
+		{
 			public uint32 dwMappingFlag;
 			public uint32 dwLookupTimeout;
 			public uint32 dwCacheTimeout;
 			public PWSTR pNameResultDomain;
 		}
 		[CRepr]
-		public struct DNS_WINSR_DATAA		{
+		public struct DNS_WINSR_DATAA
+		{
 			public uint32 dwMappingFlag;
 			public uint32 dwLookupTimeout;
 			public uint32 dwCacheTimeout;
 			public PSTR pNameResultDomain;
 		}
 		[CRepr]
-		public struct DNS_RECORD_FLAGS		{
+		public struct DNS_RECORD_FLAGS
+		{
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct DNS_RECORDW		{
+		public struct DNS_RECORDW
+		{
 			public DNS_RECORDW* pNext;
 			public PWSTR pName;
 			public uint16 wType;
@@ -833,12 +885,14 @@ namespace Win32
 			public _Data_e__Union Data;
 			
 			[CRepr, Union]
-			public struct _Flags_e__Union			{
+			public struct _Flags_e__Union
+			{
 				public uint32 DW;
 				public DNS_RECORD_FLAGS S;
 			}
 			[CRepr, Union]
-			public struct _Data_e__Union			{
+			public struct _Data_e__Union
+			{
 				public DNS_A_DATA A;
 				public DNS_SOA_DATAW SOA;
 				public DNS_SOA_DATAW Soa;
@@ -926,7 +980,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct _DnsRecordOptW		{
+		public struct _DnsRecordOptW
+		{
 			public DNS_RECORDW* pNext;
 			public PWSTR pName;
 			public uint16 wType;
@@ -938,18 +993,21 @@ namespace Win32
 			public _Data_e__Union Data;
 			
 			[CRepr, Union]
-			public struct _Flags_e__Union			{
+			public struct _Flags_e__Union
+			{
 				public uint32 DW;
 				public DNS_RECORD_FLAGS S;
 			}
 			[CRepr, Union]
-			public struct _Data_e__Union			{
+			public struct _Data_e__Union
+			{
 				public DNS_OPT_DATA OPT;
 				public DNS_OPT_DATA Opt;
 			}
 		}
 		[CRepr]
-		public struct DNS_RECORDA		{
+		public struct DNS_RECORDA
+		{
 			public DNS_RECORDA* pNext;
 			public PSTR pName;
 			public uint16 wType;
@@ -960,12 +1018,14 @@ namespace Win32
 			public _Data_e__Union Data;
 			
 			[CRepr, Union]
-			public struct _Flags_e__Union			{
+			public struct _Flags_e__Union
+			{
 				public uint32 DW;
 				public DNS_RECORD_FLAGS S;
 			}
 			[CRepr, Union]
-			public struct _Data_e__Union			{
+			public struct _Data_e__Union
+			{
 				public DNS_A_DATA A;
 				public DNS_SOA_DATAA SOA;
 				public DNS_SOA_DATAA Soa;
@@ -1053,7 +1113,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct _DnsRecordOptA		{
+		public struct _DnsRecordOptA
+		{
 			public DNS_RECORDA* pNext;
 			public PSTR pName;
 			public uint16 wType;
@@ -1065,29 +1126,34 @@ namespace Win32
 			public _Data_e__Union Data;
 			
 			[CRepr, Union]
-			public struct _Flags_e__Union			{
+			public struct _Flags_e__Union
+			{
 				public uint32 DW;
 				public DNS_RECORD_FLAGS S;
 			}
 			[CRepr, Union]
-			public struct _Data_e__Union			{
+			public struct _Data_e__Union
+			{
 				public DNS_OPT_DATA OPT;
 				public DNS_OPT_DATA Opt;
 			}
 		}
 		[CRepr]
-		public struct DNS_RRSET		{
+		public struct DNS_RRSET
+		{
 			public DNS_RECORDA* pFirstRR;
 			public DNS_RECORDA* pLastRR;
 		}
 		[CRepr]
-		public struct DNS_PROXY_INFORMATION		{
+		public struct DNS_PROXY_INFORMATION
+		{
 			public uint32 version;
 			public DNS_PROXY_INFORMATION_TYPE proxyInformationType;
 			public PWSTR proxyName;
 		}
 		[CRepr]
-		public struct DNS_QUERY_RESULT		{
+		public struct DNS_QUERY_RESULT
+		{
 			public uint32 Version;
 			public int32 QueryStatus;
 			public uint64 QueryOptions;
@@ -1095,7 +1161,8 @@ namespace Win32
 			public void* Reserved;
 		}
 		[CRepr]
-		public struct DNS_QUERY_REQUEST		{
+		public struct DNS_QUERY_REQUEST
+		{
 			public uint32 Version;
 			public PWSTR QueryName;
 			public uint16 QueryType;
@@ -1106,27 +1173,32 @@ namespace Win32
 			public void* pQueryContext;
 		}
 		[CRepr]
-		public struct DNS_QUERY_CANCEL		{
+		public struct DNS_QUERY_CANCEL
+		{
 			public CHAR[32] Reserved;
 		}
 		[CRepr]
-		public struct DNS_CUSTOM_SERVER		{
+		public struct DNS_CUSTOM_SERVER
+		{
 			public uint32 dwServerType;
 			public uint64 ullFlags;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public PWSTR pwszTemplate;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public CHAR[32] MaxSa;
 			}
 		}
 		[CRepr]
-		public struct DNS_QUERY_REQUEST3		{
+		public struct DNS_QUERY_REQUEST3
+		{
 			public uint32 Version;
 			public PWSTR QueryName;
 			public uint16 QueryType;
@@ -1141,17 +1213,20 @@ namespace Win32
 			public DNS_CUSTOM_SERVER* pCustomServers;
 		}
 		[CRepr]
-		public struct DNS_APPLICATION_SETTINGS		{
+		public struct DNS_APPLICATION_SETTINGS
+		{
 			public uint32 Version;
 			public uint64 Flags;
 		}
 		[CRepr]
-		public struct DNS_MESSAGE_BUFFER		{
+		public struct DNS_MESSAGE_BUFFER
+		{
 			public DNS_HEADER MessageHead;
 			public CHAR[0] MessageBody;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_PROXY_INFO		{
+		public struct DNS_CONNECTION_PROXY_INFO
+		{
 			public uint32 Version;
 			public PWSTR pwszFriendlyName;
 			public uint32 Flags;
@@ -1159,18 +1234,21 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _DNS_CONNECTION_PROXY_INFO_CONFIG Config;
 				public _DNS_CONNECTION_PROXY_INFO_SCRIPT Script;
 				
 				[CRepr]
-				public struct _DNS_CONNECTION_PROXY_INFO_SCRIPT				{
+				public struct _DNS_CONNECTION_PROXY_INFO_SCRIPT
+				{
 					public PWSTR pwszScript;
 					public PWSTR pwszUsername;
 					public PWSTR pwszPassword;
 				}
 				[CRepr]
-				public struct _DNS_CONNECTION_PROXY_INFO_CONFIG				{
+				public struct _DNS_CONNECTION_PROXY_INFO_CONFIG
+				{
 					public PWSTR pwszServer;
 					public PWSTR pwszUsername;
 					public PWSTR pwszPassword;
@@ -1181,7 +1259,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_PROXY_INFO_EX		{
+		public struct DNS_CONNECTION_PROXY_INFO_EX
+		{
 			public DNS_CONNECTION_PROXY_INFO ProxyInfo;
 			public uint32 dwInterfaceIndex;
 			public PWSTR pwszConnectionName;
@@ -1189,36 +1268,43 @@ namespace Win32
 			public HANDLE hConnection;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_PROXY_ELEMENT		{
+		public struct DNS_CONNECTION_PROXY_ELEMENT
+		{
 			public DNS_CONNECTION_PROXY_TYPE Type;
 			public DNS_CONNECTION_PROXY_INFO Info;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_PROXY_LIST		{
+		public struct DNS_CONNECTION_PROXY_LIST
+		{
 			public uint32 cProxies;
 			public DNS_CONNECTION_PROXY_ELEMENT* pProxies;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_NAME		{
+		public struct DNS_CONNECTION_NAME
+		{
 			public char16[65] wszName;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_NAME_LIST		{
+		public struct DNS_CONNECTION_NAME_LIST
+		{
 			public uint32 cNames;
 			public DNS_CONNECTION_NAME* pNames;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_IFINDEX_ENTRY		{
+		public struct DNS_CONNECTION_IFINDEX_ENTRY
+		{
 			public PWSTR pwszConnectionName;
 			public uint32 dwIfIndex;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_IFINDEX_LIST		{
+		public struct DNS_CONNECTION_IFINDEX_LIST
+		{
 			public DNS_CONNECTION_IFINDEX_ENTRY* pConnectionIfIndexEntries;
 			public uint32 nEntries;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_POLICY_ENTRY		{
+		public struct DNS_CONNECTION_POLICY_ENTRY
+		{
 			public PWSTR pwszHost;
 			public PWSTR pwszAppId;
 			public uint32 cbAppSid;
@@ -1228,12 +1314,14 @@ namespace Win32
 			public uint32 dwPolicyEntryFlags;
 		}
 		[CRepr]
-		public struct DNS_CONNECTION_POLICY_ENTRY_LIST		{
+		public struct DNS_CONNECTION_POLICY_ENTRY_LIST
+		{
 			public DNS_CONNECTION_POLICY_ENTRY* pPolicyEntries;
 			public uint32 nEntries;
 		}
 		[CRepr]
-		public struct DNS_SERVICE_INSTANCE		{
+		public struct DNS_SERVICE_INSTANCE
+		{
 			public PWSTR pszInstanceName;
 			public PWSTR pszHostName;
 			public uint32* ip4Address;
@@ -1247,11 +1335,13 @@ namespace Win32
 			public uint32 dwInterfaceIndex;
 		}
 		[CRepr]
-		public struct DNS_SERVICE_CANCEL		{
+		public struct DNS_SERVICE_CANCEL
+		{
 			public void* reserved;
 		}
 		[CRepr]
-		public struct DNS_SERVICE_BROWSE_REQUEST		{
+		public struct DNS_SERVICE_BROWSE_REQUEST
+		{
 			public uint32 Version;
 			public uint32 InterfaceIndex;
 			public PWSTR QueryName;
@@ -1259,13 +1349,15 @@ namespace Win32
 			public void* pQueryContext;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public PDNS_SERVICE_BROWSE_CALLBACK pBrowseCallback;
 				public PDNS_QUERY_COMPLETION_ROUTINE pBrowseCallbackV2;
 			}
 		}
 		[CRepr]
-		public struct DNS_SERVICE_RESOLVE_REQUEST		{
+		public struct DNS_SERVICE_RESOLVE_REQUEST
+		{
 			public uint32 Version;
 			public uint32 InterfaceIndex;
 			public PWSTR QueryName;
@@ -1273,7 +1365,8 @@ namespace Win32
 			public void* pQueryContext;
 		}
 		[CRepr]
-		public struct DNS_SERVICE_REGISTER_REQUEST		{
+		public struct DNS_SERVICE_REGISTER_REQUEST
+		{
 			public uint32 Version;
 			public uint32 InterfaceIndex;
 			public DNS_SERVICE_INSTANCE* pServiceInstance;
@@ -1283,7 +1376,8 @@ namespace Win32
 			public BOOL unicastEnabled;
 		}
 		[CRepr]
-		public struct MDNS_QUERY_HANDLE		{
+		public struct MDNS_QUERY_HANDLE
+		{
 			public char16[256] nameBuf;
 			public uint16 wType;
 			public void* pSubscription;
@@ -1291,7 +1385,8 @@ namespace Win32
 			public uint32[2] stateNameData;
 		}
 		[CRepr]
-		public struct MDNS_QUERY_REQUEST		{
+		public struct MDNS_QUERY_REQUEST
+		{
 			public uint32 Version;
 			public uint32 ulRefCount;
 			public PWSTR Query;

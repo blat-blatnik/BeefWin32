@@ -100,7 +100,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PSS_PROCESS_INFORMATION		{
+		public struct PSS_PROCESS_INFORMATION
+		{
 			public uint32 ExitStatus;
 			public void* PebBaseAddress;
 			public uint AffinityMask;
@@ -129,33 +130,40 @@ namespace Win32
 			public char16[260] ImageFileName;
 		}
 		[CRepr]
-		public struct PSS_VA_CLONE_INFORMATION		{
+		public struct PSS_VA_CLONE_INFORMATION
+		{
 			public HANDLE VaCloneHandle;
 		}
 		[CRepr]
-		public struct PSS_AUXILIARY_PAGES_INFORMATION		{
+		public struct PSS_AUXILIARY_PAGES_INFORMATION
+		{
 			public uint32 AuxPagesCaptured;
 		}
 		[CRepr]
-		public struct PSS_VA_SPACE_INFORMATION		{
+		public struct PSS_VA_SPACE_INFORMATION
+		{
 			public uint32 RegionCount;
 		}
 		[CRepr]
-		public struct PSS_HANDLE_INFORMATION		{
+		public struct PSS_HANDLE_INFORMATION
+		{
 			public uint32 HandlesCaptured;
 		}
 		[CRepr]
-		public struct PSS_THREAD_INFORMATION		{
+		public struct PSS_THREAD_INFORMATION
+		{
 			public uint32 ThreadsCaptured;
 			public uint32 ContextLength;
 		}
 		[CRepr]
-		public struct PSS_HANDLE_TRACE_INFORMATION		{
+		public struct PSS_HANDLE_TRACE_INFORMATION
+		{
 			public HANDLE SectionHandle;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct PSS_PERFORMANCE_COUNTERS		{
+		public struct PSS_PERFORMANCE_COUNTERS
+		{
 			public uint64 TotalCycleCount;
 			public uint64 TotalWallClockPeriod;
 			public uint64 VaCloneCycleCount;
@@ -170,7 +178,8 @@ namespace Win32
 			public uint64 ThreadsWallClockPeriod;
 		}
 		[CRepr]
-		public struct PSS_AUXILIARY_PAGE_ENTRY		{
+		public struct PSS_AUXILIARY_PAGE_ENTRY
+		{
 			public void* Address;
 			public MEMORY_BASIC_INFORMATION BasicInformation;
 			public FILETIME CaptureTime;
@@ -178,7 +187,8 @@ namespace Win32
 			public uint32 PageSize;
 		}
 		[CRepr]
-		public struct PSS_VA_SPACE_ENTRY		{
+		public struct PSS_VA_SPACE_ENTRY
+		{
 			public void* BaseAddress;
 			public void* AllocationBase;
 			public uint32 AllocationProtect;
@@ -194,7 +204,8 @@ namespace Win32
 			public PWSTR MappedFileName;
 		}
 		[CRepr]
-		public struct PSS_HANDLE_ENTRY		{
+		public struct PSS_HANDLE_ENTRY
+		{
 			public HANDLE Handle;
 			public PSS_HANDLE_FLAGS Flags;
 			public PSS_OBJECT_TYPE ObjectType;
@@ -213,7 +224,8 @@ namespace Win32
 			public _TypeSpecificInformation_e__Union TypeSpecificInformation;
 			
 			[CRepr, Union]
-			public struct _TypeSpecificInformation_e__Union			{
+			public struct _TypeSpecificInformation_e__Union
+			{
 				public _Process_e__Struct Process;
 				public _Thread_e__Struct Thread;
 				public _Mutant_e__Struct Mutant;
@@ -222,17 +234,20 @@ namespace Win32
 				public _Semaphore_e__Struct Semaphore;
 				
 				[CRepr]
-				public struct _Semaphore_e__Struct				{
+				public struct _Semaphore_e__Struct
+				{
 					public int32 CurrentCount;
 					public int32 MaximumCount;
 				}
 				[CRepr]
-				public struct _Event_e__Struct				{
+				public struct _Event_e__Struct
+				{
 					public BOOL ManualReset;
 					public BOOL Signaled;
 				}
 				[CRepr]
-				public struct _Thread_e__Struct				{
+				public struct _Thread_e__Struct
+				{
 					public uint32 ExitStatus;
 					public void* TebBaseAddress;
 					public uint32 ProcessId;
@@ -243,13 +258,15 @@ namespace Win32
 					public void* Win32StartAddress;
 				}
 				[CRepr]
-				public struct _Section_e__Struct				{
+				public struct _Section_e__Struct
+				{
 					public void* BaseAddress;
 					public uint32 AllocationAttributes;
 					public LARGE_INTEGER MaximumSize;
 				}
 				[CRepr]
-				public struct _Process_e__Struct				{
+				public struct _Process_e__Struct
+				{
 					public uint32 ExitStatus;
 					public void* PebBaseAddress;
 					public uint AffinityMask;
@@ -259,7 +276,8 @@ namespace Win32
 					public uint32 Flags;
 				}
 				[CRepr]
-				public struct _Mutant_e__Struct				{
+				public struct _Mutant_e__Struct
+				{
 					public int32 CurrentCount;
 					public BOOL Abandoned;
 					public uint32 OwnerProcessId;
@@ -268,7 +286,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PSS_THREAD_ENTRY		{
+		public struct PSS_THREAD_ENTRY
+		{
 			public uint32 ExitStatus;
 			public void* TebBaseAddress;
 			public uint32 ProcessId;
@@ -290,7 +309,8 @@ namespace Win32
 			public CONTEXT* ContextRecord;
 		}
 		[CRepr]
-		public struct PSS_ALLOCATOR		{
+		public struct PSS_ALLOCATOR
+		{
 			public void* Context;
 			public int AllocRoutine;
 			public int FreeRoutine;

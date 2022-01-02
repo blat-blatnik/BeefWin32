@@ -44,12 +44,14 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct HCN_PORT_RANGE_RESERVATION		{
+		public struct HCN_PORT_RANGE_RESERVATION
+		{
 			public uint16 startingPort;
 			public uint16 endingPort;
 		}
 		[CRepr]
-		public struct HCN_PORT_RANGE_ENTRY		{
+		public struct HCN_PORT_RANGE_ENTRY
+		{
 			public Guid OwningPartitionId;
 			public Guid TargetPartitionId;
 			public HCN_PORT_PROTOCOL Protocol;

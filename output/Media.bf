@@ -130,12 +130,14 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MMTIME		{
+		public struct MMTIME
+		{
 			public uint32 wType;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public uint32 ms;
 				public uint32 sample;
 				public uint32 cb;
@@ -144,7 +146,8 @@ namespace Win32
 				public _midi_e__Struct midi;
 				
 				[CRepr]
-				public struct _smpte_e__Struct				{
+				public struct _smpte_e__Struct
+				{
 					public uint8 hour;
 					public uint8 min;
 					public uint8 sec;
@@ -154,30 +157,35 @@ namespace Win32
 					public uint8[2] pad;
 				}
 				[CRepr]
-				public struct _midi_e__Struct				{
+				public struct _midi_e__Struct
+				{
 					public uint32 songptrpos;
 				}
 			}
 		}
 		[CRepr]
-		public struct TIMECAPS		{
+		public struct TIMECAPS
+		{
 			public uint32 wPeriodMin;
 			public uint32 wPeriodMax;
 		}
 		[CRepr, Union]
-		public struct TIMECODE		{
+		public struct TIMECODE
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint64 qw;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint16 wFrameRate;
 				public uint16 wFrameFract;
 				public uint32 dwFrames;
 			}
 		}
 		[CRepr]
-		public struct TIMECODE_SAMPLE		{
+		public struct TIMECODE_SAMPLE
+		{
 			public int64 qwTick;
 			public TIMECODE timecode;
 			public uint32 dwUser;

@@ -1109,26 +1109,30 @@ namespace Win32
 		[CRepr]
 		public struct _DDFXROP {}
 		[CRepr]
-		public struct DDARGB		{
+		public struct DDARGB
+		{
 			public uint8 blue;
 			public uint8 green;
 			public uint8 red;
 			public uint8 alpha;
 		}
 		[CRepr]
-		public struct DDRGBA		{
+		public struct DDRGBA
+		{
 			public uint8 red;
 			public uint8 green;
 			public uint8 blue;
 			public uint8 alpha;
 		}
 		[CRepr]
-		public struct DDCOLORKEY		{
+		public struct DDCOLORKEY
+		{
 			public uint32 dwColorSpaceLowValue;
 			public uint32 dwColorSpaceHighValue;
 		}
 		[CRepr]
-		public struct DDBLTFX		{
+		public struct DDBLTFX
+		{
 			public uint32 dwSize;
 			public uint32 dwDDFX;
 			public uint32 dwROP;
@@ -1154,68 +1158,80 @@ namespace Win32
 			public DDCOLORKEY ddckSrcColorkey;
 			
 			[CRepr, Union]
-			public struct _Anonymous4_e__Union			{
+			public struct _Anonymous4_e__Union
+			{
 				public uint32 dwAlphaSrcConst;
 				public IDirectDrawSurface* lpDDSAlphaSrc;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 dwZSrcConst;
 				public IDirectDrawSurface* lpDDSZBufferSrc;
 			}
 			[CRepr, Union]
-			public struct _Anonymous5_e__Union			{
+			public struct _Anonymous5_e__Union
+			{
 				public uint32 dwFillColor;
 				public uint32 dwFillDepth;
 				public uint32 dwFillPixel;
 				public IDirectDrawSurface* lpDDSPattern;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 dwZDestConst;
 				public IDirectDrawSurface* lpDDSZBufferDest;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public uint32 dwAlphaDestConst;
 				public IDirectDrawSurface* lpDDSAlphaDest;
 			}
 		}
 		[CRepr]
-		public struct DDSCAPS		{
+		public struct DDSCAPS
+		{
 			public uint32 dwCaps;
 		}
 		[CRepr]
-		public struct DDOSCAPS		{
+		public struct DDOSCAPS
+		{
 			public uint32 dwCaps;
 		}
 		[CRepr]
-		public struct DDSCAPSEX		{
+		public struct DDSCAPSEX
+		{
 			public uint32 dwCaps2;
 			public uint32 dwCaps3;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwCaps4;
 				public uint32 dwVolumeDepth;
 			}
 		}
 		[CRepr]
-		public struct DDSCAPS2		{
+		public struct DDSCAPS2
+		{
 			public uint32 dwCaps;
 			public uint32 dwCaps2;
 			public uint32 dwCaps3;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwCaps4;
 				public uint32 dwVolumeDepth;
 			}
 		}
 		[CRepr]
-		public struct DDCAPS_DX1		{
+		public struct DDCAPS_DX1
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwCaps2;
@@ -1254,7 +1270,8 @@ namespace Win32
 			public uint32 dwReserved3;
 		}
 		[CRepr]
-		public struct DDCAPS_DX3		{
+		public struct DDCAPS_DX3
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwCaps2;
@@ -1308,7 +1325,8 @@ namespace Win32
 			public uint32 dwReserved6;
 		}
 		[CRepr]
-		public struct DDCAPS_DX5		{
+		public struct DDCAPS_DX5
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwCaps2;
@@ -1367,7 +1385,8 @@ namespace Win32
 			public uint32[8] dwNLVBRops;
 		}
 		[CRepr]
-		public struct DDCAPS_DX6		{
+		public struct DDCAPS_DX6
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwCaps2;
@@ -1427,7 +1446,8 @@ namespace Win32
 			public DDSCAPS2 ddsCaps;
 		}
 		[CRepr]
-		public struct DDCAPS_DX7		{
+		public struct DDCAPS_DX7
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwCaps2;
@@ -1487,7 +1507,8 @@ namespace Win32
 			public DDSCAPS2 ddsCaps;
 		}
 		[CRepr]
-		public struct DDPIXELFORMAT		{
+		public struct DDPIXELFORMAT
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwFourCC;
@@ -1498,7 +1519,8 @@ namespace Win32
 			public _Anonymous5_e__Union Anonymous5;
 			
 			[CRepr, Union]
-			public struct _Anonymous5_e__Union			{
+			public struct _Anonymous5_e__Union
+			{
 				public uint32 dwRGBAlphaBitMask;
 				public uint32 dwYUVAlphaBitMask;
 				public uint32 dwLuminanceAlphaBitMask;
@@ -1506,7 +1528,8 @@ namespace Win32
 				public uint32 dwYUVZBitMask;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public uint32 dwGBitMask;
 				public uint32 dwUBitMask;
 				public uint32 dwZBitMask;
@@ -1514,13 +1537,15 @@ namespace Win32
 				public _MultiSampleCaps_e__Struct MultiSampleCaps;
 				
 				[CRepr]
-				public struct _MultiSampleCaps_e__Struct				{
+				public struct _MultiSampleCaps_e__Struct
+				{
 					public uint16 wFlipMSTypes;
 					public uint16 wBltMSTypes;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 dwRGBBitCount;
 				public uint32 dwYUVBitCount;
 				public uint32 dwZBufferBitDepth;
@@ -1530,14 +1555,16 @@ namespace Win32
 				public uint32 dwPrivateFormatBitCount;
 			}
 			[CRepr, Union]
-			public struct _Anonymous4_e__Union			{
+			public struct _Anonymous4_e__Union
+			{
 				public uint32 dwBBitMask;
 				public uint32 dwVBitMask;
 				public uint32 dwStencilBitMask;
 				public uint32 dwBumpLuminanceBitMask;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 dwRBitMask;
 				public uint32 dwYBitMask;
 				public uint32 dwStencilBitDepth;
@@ -1547,7 +1574,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DDOVERLAYFX		{
+		public struct DDOVERLAYFX
+		{
 			public uint32 dwSize;
 			public uint32 dwAlphaEdgeBlendBitDepth;
 			public uint32 dwAlphaEdgeBlend;
@@ -1562,18 +1590,21 @@ namespace Win32
 			public uint32 dwFlags;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 dwAlphaSrcConst;
 				public IDirectDrawSurface* lpDDSAlphaSrc;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 dwAlphaDestConst;
 				public IDirectDrawSurface* lpDDSAlphaDest;
 			}
 		}
 		[CRepr]
-		public struct DDBLTBATCH		{
+		public struct DDBLTBATCH
+		{
 			public RECT* lprDest;
 			public IDirectDrawSurface* lpDDSSrc;
 			public RECT* lprSrc;
@@ -1581,13 +1612,15 @@ namespace Win32
 			public DDBLTFX* lpDDBltFx;
 		}
 		[CRepr]
-		public struct DDGAMMARAMP		{
+		public struct DDGAMMARAMP
+		{
 			public uint16[256] red;
 			public uint16[256] green;
 			public uint16[256] blue;
 		}
 		[CRepr]
-		public struct DDDEVICEIDENTIFIER		{
+		public struct DDDEVICEIDENTIFIER
+		{
 			public CHAR[512] szDriver;
 			public CHAR[512] szDescription;
 			public LARGE_INTEGER liDriverVersion;
@@ -1598,7 +1631,8 @@ namespace Win32
 			public Guid guidDeviceIdentifier;
 		}
 		[CRepr]
-		public struct DDDEVICEIDENTIFIER2		{
+		public struct DDDEVICEIDENTIFIER2
+		{
 			public CHAR[512] szDriver;
 			public CHAR[512] szDescription;
 			public LARGE_INTEGER liDriverVersion;
@@ -1610,7 +1644,8 @@ namespace Win32
 			public uint32 dwWHQLLevel;
 		}
 		[CRepr]
-		public struct DDSURFACEDESC		{
+		public struct DDSURFACEDESC
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwHeight;
@@ -1629,19 +1664,22 @@ namespace Win32
 			public DDSCAPS ddsCaps;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 dwMipMapCount;
 				public uint32 dwZBufferBitDepth;
 				public uint32 dwRefreshRate;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public int32 lPitch;
 				public uint32 dwLinearSize;
 			}
 		}
 		[CRepr]
-		public struct DDSURFACEDESC2		{
+		public struct DDSURFACEDESC2
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwHeight;
@@ -1661,34 +1699,40 @@ namespace Win32
 			public uint32 dwTextureStage;
 			
 			[CRepr, Union]
-			public struct _Anonymous4_e__Union			{
+			public struct _Anonymous4_e__Union
+			{
 				public DDCOLORKEY ddckCKDestOverlay;
 				public uint32 dwEmptyFaceColor;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 dwBackBufferCount;
 				public uint32 dwDepth;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public uint32 dwMipMapCount;
 				public uint32 dwRefreshRate;
 				public uint32 dwSrcVBHandle;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public int32 lPitch;
 				public uint32 dwLinearSize;
 			}
 			[CRepr, Union]
-			public struct _Anonymous5_e__Union			{
+			public struct _Anonymous5_e__Union
+			{
 				public DDPIXELFORMAT ddpfPixelFormat;
 				public uint32 dwFVF;
 			}
 		}
 		[CRepr]
-		public struct DDOPTSURFACEDESC		{
+		public struct DDOPTSURFACEDESC
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public DDSCAPS2 ddSCaps;
@@ -1697,7 +1741,8 @@ namespace Win32
 			public uint32 dwCompressionRatio;
 		}
 		[CRepr]
-		public struct DDCOLORCONTROL		{
+		public struct DDCOLORCONTROL
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public int32 lBrightness;
@@ -1716,7 +1761,8 @@ namespace Win32
 		[CRepr]
 		public struct IDirectDrawVideoPortNotifyVtbl {}
 		[CRepr]
-		public struct DDVIDEOPORTCONNECT		{
+		public struct DDVIDEOPORTCONNECT
+		{
 			public uint32 dwSize;
 			public uint32 dwPortWidth;
 			public Guid guidTypeID;
@@ -1724,7 +1770,8 @@ namespace Win32
 			public uint dwReserved1;
 		}
 		[CRepr]
-		public struct DDVIDEOPORTCAPS		{
+		public struct DDVIDEOPORTCAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwMaxWidth;
@@ -1746,7 +1793,8 @@ namespace Win32
 			public uint16 wNumFilterTapsY;
 		}
 		[CRepr]
-		public struct DDVIDEOPORTDESC		{
+		public struct DDVIDEOPORTDESC
+		{
 			public uint32 dwSize;
 			public uint32 dwFieldWidth;
 			public uint32 dwVBIWidth;
@@ -1760,7 +1808,8 @@ namespace Win32
 			public uint dwReserved3;
 		}
 		[CRepr]
-		public struct DDVIDEOPORTINFO		{
+		public struct DDVIDEOPORTINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwOriginX;
 			public uint32 dwOriginY;
@@ -1776,7 +1825,8 @@ namespace Win32
 			public uint dwReserved2;
 		}
 		[CRepr]
-		public struct DDVIDEOPORTBANDWIDTH		{
+		public struct DDVIDEOPORTBANDWIDTH
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwOverlay;
@@ -1787,7 +1837,8 @@ namespace Win32
 			public uint dwReserved2;
 		}
 		[CRepr]
-		public struct DDVIDEOPORTSTATUS		{
+		public struct DDVIDEOPORTSTATUS
+		{
 			public uint32 dwSize;
 			public BOOL bInUse;
 			public uint32 dwFlags;
@@ -1797,36 +1848,42 @@ namespace Win32
 			public uint dwReserved3;
 		}
 		[CRepr]
-		public struct DDVIDEOPORTNOTIFY		{
+		public struct DDVIDEOPORTNOTIFY
+		{
 			public LARGE_INTEGER ApproximateTimeStamp;
 			public int32 lField;
 			public uint32 dwSurfaceIndex;
 			public int32 lDone;
 		}
 		[CRepr]
-		public struct DDKERNELCAPS		{
+		public struct DDKERNELCAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwIRQCaps;
 		}
 		[CRepr]
-		public struct SURFACEALIGNMENT		{
+		public struct SURFACEALIGNMENT
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Linear_e__Struct Linear;
 				public _Rectangular_e__Struct Rectangular;
 				
 				[CRepr]
-				public struct _Linear_e__Struct				{
+				public struct _Linear_e__Struct
+				{
 					public uint32 dwStartAlignment;
 					public uint32 dwPitchAlignment;
 					public uint32 dwFlags;
 					public uint32 dwReserved2;
 				}
 				[CRepr]
-				public struct _Rectangular_e__Struct				{
+				public struct _Rectangular_e__Struct
+				{
 					public uint32 dwXAlignment;
 					public uint32 dwYAlignment;
 					public uint32 dwFlags;
@@ -1835,7 +1892,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct HEAPALIGNMENT		{
+		public struct HEAPALIGNMENT
+		{
 			public uint32 dwSize;
 			public DDSCAPS ddsCaps;
 			public uint32 dwReserved;
@@ -1848,7 +1906,8 @@ namespace Win32
 			public SURFACEALIGNMENT FlipTarget;
 		}
 		[CRepr]
-		public struct DD_GETHEAPALIGNMENTDATA		{
+		public struct DD_GETHEAPALIGNMENTDATA
+		{
 			public uint dwInstance;
 			public uint32 dwHeap;
 			public HRESULT ddRVal;
@@ -1856,14 +1915,16 @@ namespace Win32
 			public HEAPALIGNMENT Alignment;
 		}
 		[CRepr]
-		public struct VMEML		{
+		public struct VMEML
+		{
 			public VMEML* next;
 			public uint ptr;
 			public uint32 size;
 			public BOOL bDiscardable;
 		}
 		[CRepr]
-		public struct VMEMR		{
+		public struct VMEMR
+		{
 			public VMEMR* next;
 			public VMEMR* prev;
 			public VMEMR* pUp;
@@ -1881,7 +1942,8 @@ namespace Win32
 			public BOOL bDiscardable;
 		}
 		[CRepr]
-		public struct VMEMHEAP		{
+		public struct VMEMHEAP
+		{
 			public uint32 dwFlags;
 			public uint32 stride;
 			public void* freeList;
@@ -1901,7 +1963,8 @@ namespace Win32
 			public uint32 dwAgpCommitMaskSize;
 		}
 		[CRepr]
-		public struct PROCESS_LIST		{
+		public struct PROCESS_LIST
+		{
 			public PROCESS_LIST* lpLink;
 			public uint32 dwProcessId;
 			public uint32 dwRefCnt;
@@ -1909,7 +1972,8 @@ namespace Win32
 			public uint32 dwZDepth;
 		}
 		[CRepr]
-		public struct DDMONITORINFO		{
+		public struct DDMONITORINFO
+		{
 			public uint16 Manufacturer;
 			public uint16 Product;
 			public uint32 SerialNumber;
@@ -1954,19 +2018,22 @@ namespace Win32
 		[CRepr]
 		public struct IDirectDrawGammaControlVtbl {}
 		[CRepr]
-		public struct DD32BITDRIVERDATA		{
+		public struct DD32BITDRIVERDATA
+		{
 			public CHAR[260] szName;
 			public CHAR[64] szEntryPoint;
 			public uint32 dwContext;
 		}
 		[CRepr]
-		public struct DDVERSIONDATA		{
+		public struct DDVERSIONDATA
+		{
 			public uint32 dwHALVersion;
 			public uint dwReserved1;
 			public uint dwReserved2;
 		}
 		[CRepr]
-		public struct VIDMEM		{
+		public struct VIDMEM
+		{
 			public uint32 dwFlags;
 			public uint fpStart;
 			public _Anonymous1_e__Union Anonymous1;
@@ -1975,18 +2042,21 @@ namespace Win32
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint fpEnd;
 				public uint32 dwWidth;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public VMEMHEAP* lpHeap;
 				public uint32 dwHeight;
 			}
 		}
 		[CRepr]
-		public struct VIDMEMINFO		{
+		public struct VIDMEMINFO
+		{
 			public uint fpPrimary;
 			public uint32 dwFlags;
 			public uint32 dwDisplayWidth;
@@ -2002,26 +2072,30 @@ namespace Win32
 			public VIDMEM* pvmList;
 		}
 		[CRepr]
-		public struct HEAPALIAS		{
+		public struct HEAPALIAS
+		{
 			public uint fpVidMem;
 			public void* lpAlias;
 			public uint32 dwAliasSize;
 		}
 		[CRepr]
-		public struct HEAPALIASINFO		{
+		public struct HEAPALIASINFO
+		{
 			public uint32 dwRefCnt;
 			public uint32 dwFlags;
 			public uint32 dwNumHeaps;
 			public HEAPALIAS* lpAliases;
 		}
 		[CRepr]
-		public struct IUNKNOWN_LIST		{
+		public struct IUNKNOWN_LIST
+		{
 			public IUNKNOWN_LIST* lpLink;
 			public Guid* lpGuid;
 			public IUnknown* lpIUnknown;
 		}
 		[CRepr]
-		public struct DDHAL_DDCALLBACKS		{
+		public struct DDHAL_DDCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHAL_DESTROYDRIVER DestroyDriver;
@@ -2036,14 +2110,16 @@ namespace Win32
 			public LPDDHAL_FLIPTOGDISURFACE FlipToGDISurface;
 		}
 		[CRepr]
-		public struct DDHAL_DDPALETTECALLBACKS		{
+		public struct DDHAL_DDPALETTECALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHALPALCB_DESTROYPALETTE DestroyPalette;
 			public LPDDHALPALCB_SETENTRIES SetEntries;
 		}
 		[CRepr]
-		public struct DDHAL_DDSURFACECALLBACKS		{
+		public struct DDHAL_DDSURFACECALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHALSURFCB_DESTROYSURFACE DestroySurface;
@@ -2062,7 +2138,8 @@ namespace Win32
 			public LPDDHALSURFCB_SETPALETTE SetPalette;
 		}
 		[CRepr]
-		public struct DDHAL_DDMISCELLANEOUSCALLBACKS		{
+		public struct DDHAL_DDMISCELLANEOUSCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHAL_GETAVAILDRIVERMEMORY GetAvailDriverMemory;
@@ -2071,7 +2148,8 @@ namespace Win32
 			public LPDDHALSURFCB_GETBLTSTATUS GetSysmemBltStatus;
 		}
 		[CRepr]
-		public struct DDHAL_DDMISCELLANEOUS2CALLBACKS		{
+		public struct DDHAL_DDMISCELLANEOUS2CALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public void* Reserved;
@@ -2080,7 +2158,8 @@ namespace Win32
 			public LPDDHAL_DESTROYDDLOCAL DestroyDDLocal;
 		}
 		[CRepr]
-		public struct DDHAL_DDEXEBUFCALLBACKS		{
+		public struct DDHAL_DDEXEBUFCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHALEXEBUFCB_CANCREATEEXEBUF CanCreateExecuteBuffer;
@@ -2090,7 +2169,8 @@ namespace Win32
 			public LPDDHALEXEBUFCB_UNLOCKEXEBUF UnlockExecuteBuffer;
 		}
 		[CRepr]
-		public struct DDHAL_DDVIDEOPORTCALLBACKS		{
+		public struct DDHAL_DDVIDEOPORTCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHALVPORTCB_CANCREATEVIDEOPORT CanCreateVideoPort;
@@ -2111,20 +2191,23 @@ namespace Win32
 			public LPDDHALVPORTCB_COLORCONTROL ColorControl;
 		}
 		[CRepr]
-		public struct DDHAL_DDCOLORCONTROLCALLBACKS		{
+		public struct DDHAL_DDCOLORCONTROLCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHALCOLORCB_COLORCONTROL ColorControl;
 		}
 		[CRepr]
-		public struct DDHAL_DDKERNELCALLBACKS		{
+		public struct DDHAL_DDKERNELCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHALKERNELCB_SYNCSURFACE SyncSurfaceData;
 			public LPDDHALKERNELCB_SYNCVIDEOPORT SyncVideoPortData;
 		}
 		[CRepr]
-		public struct DDHAL_DDMOTIONCOMPCALLBACKS		{
+		public struct DDHAL_DDMOTIONCOMPCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public LPDDHALMOCOMPCB_GETGUIDS GetMoCompGuids;
@@ -2139,7 +2222,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_DESTROY DestroyMoComp;
 		}
 		[CRepr]
-		public struct DDNONLOCALVIDMEMCAPS		{
+		public struct DDNONLOCALVIDMEMCAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwNLVBCaps;
 			public uint32 dwNLVBCaps2;
@@ -2148,19 +2232,22 @@ namespace Win32
 			public uint32[8] dwNLVBRops;
 		}
 		[CRepr]
-		public struct DDMORESURFACECAPS		{
+		public struct DDMORESURFACECAPS
+		{
 			public uint32 dwSize;
 			public DDSCAPSEX ddsCapsMore;
 			public ExtendedHeapRestrictions[0] ddsExtendedHeapRestrictions;
 			
 			[CRepr]
-			public struct ExtendedHeapRestrictions			{
+			public struct ExtendedHeapRestrictions
+			{
 				public DDSCAPSEX ddsCapsEx;
 				public DDSCAPSEX ddsCapsExAlt;
 			}
 		}
 		[CRepr]
-		public struct DDSTEREOMODE		{
+		public struct DDSTEREOMODE
+		{
 			public uint32 dwSize;
 			public uint32 dwHeight;
 			public uint32 dwWidth;
@@ -2169,14 +2256,16 @@ namespace Win32
 			public BOOL bSupported;
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWPALETTE_INT		{
+		public struct DDRAWI_DDRAWPALETTE_INT
+		{
 			public void* lpVtbl;
 			public DDRAWI_DDRAWPALETTE_LCL* lpLcl;
 			public DDRAWI_DDRAWPALETTE_INT* lpLink;
 			public uint32 dwIntRefCnt;
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWPALETTE_GBL		{
+		public struct DDRAWI_DDRAWPALETTE_GBL
+		{
 			public uint32 dwRefCnt;
 			public uint32 dwFlags;
 			public DDRAWI_DIRECTDRAW_LCL* lpDD_lcl;
@@ -2189,13 +2278,15 @@ namespace Win32
 			public uint32 dwHandle;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint dwReserved1;
 				public HPALETTE hHELGDIPalette;
 			}
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWPALETTE_LCL		{
+		public struct DDRAWI_DDRAWPALETTE_LCL
+		{
 			public uint32 lpPalMore;
 			public DDRAWI_DDRAWPALETTE_GBL* lpGbl;
 			public uint dwUnused0;
@@ -2208,14 +2299,16 @@ namespace Win32
 			public uint dwDDRAWReserved3;
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWCLIPPER_INT		{
+		public struct DDRAWI_DDRAWCLIPPER_INT
+		{
 			public void* lpVtbl;
 			public DDRAWI_DDRAWCLIPPER_LCL* lpLcl;
 			public DDRAWI_DDRAWCLIPPER_INT* lpLink;
 			public uint32 dwIntRefCnt;
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWCLIPPER_GBL		{
+		public struct DDRAWI_DDRAWCLIPPER_GBL
+		{
 			public uint32 dwRefCnt;
 			public uint32 dwFlags;
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
@@ -2225,7 +2318,8 @@ namespace Win32
 			public RGNDATA* lpStaticClipList;
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWCLIPPER_LCL		{
+		public struct DDRAWI_DDRAWCLIPPER_LCL
+		{
 			public uint32 lpClipMore;
 			public DDRAWI_DDRAWCLIPPER_GBL* lpGbl;
 			public DDRAWI_DIRECTDRAW_LCL* lpDD_lcl;
@@ -2236,21 +2330,24 @@ namespace Win32
 			public IUnknown* pAddrefedThisOwner;
 		}
 		[CRepr]
-		public struct ATTACHLIST		{
+		public struct ATTACHLIST
+		{
 			public uint32 dwFlags;
 			public ATTACHLIST* lpLink;
 			public DDRAWI_DDRAWSURFACE_LCL* lpAttached;
 			public DDRAWI_DDRAWSURFACE_INT* lpIAttached;
 		}
 		[CRepr]
-		public struct DBLNODE		{
+		public struct DBLNODE
+		{
 			public DBLNODE* next;
 			public DBLNODE* prev;
 			public DDRAWI_DDRAWSURFACE_LCL* object;
 			public DDRAWI_DDRAWSURFACE_INT* object_int;
 		}
 		[CRepr]
-		public struct ACCESSRECTLIST		{
+		public struct ACCESSRECTLIST
+		{
 			public ACCESSRECTLIST* lpLink;
 			public RECT rDest;
 			public DDRAWI_DIRECTDRAW_LCL* lpOwner;
@@ -2259,14 +2356,16 @@ namespace Win32
 			public HEAPALIASINFO* lpHeapAliasInfo;
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWSURFACE_INT		{
+		public struct DDRAWI_DDRAWSURFACE_INT
+		{
 			public void* lpVtbl;
 			public DDRAWI_DDRAWSURFACE_LCL* lpLcl;
 			public DDRAWI_DDRAWSURFACE_INT* lpLink;
 			public uint32 dwIntRefCnt;
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWSURFACE_GBL		{
+		public struct DDRAWI_DDRAWSURFACE_GBL
+		{
 			public uint32 dwRefCnt;
 			public uint32 dwGlobalFlags;
 			public _Anonymous1_e__Union Anonymous1;
@@ -2281,29 +2380,34 @@ namespace Win32
 			public DDPIXELFORMAT ddpfSurface;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public DDRAWI_DIRECTDRAW_GBL* lpDD;
 				public void* lpDDHandle;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public ACCESSRECTLIST* lpRectList;
 				public uint32 dwBlockSizeY;
 				public int32 lSlicePitch;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public VMEMHEAP* lpVidMemHeap;
 				public uint32 dwBlockSizeX;
 			}
 			[CRepr, Union]
-			public struct _Anonymous4_e__Union			{
+			public struct _Anonymous4_e__Union
+			{
 				public int32 lPitch;
 				public uint32 dwLinearSize;
 			}
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWSURFACE_GBL_MORE		{
+		public struct DDRAWI_DDRAWSURFACE_GBL_MORE
+		{
 			public uint32 dwSize;
 			public _Anonymous_e__Union Anonymous;
 			public uint32* pPageTable;
@@ -2325,13 +2429,15 @@ namespace Win32
 			public uint fpAliasOfVidMem;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwPhysicalPageTable;
 				public uint fpPhysicalVidMem;
 			}
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWSURFACE_MORE		{
+		public struct DDRAWI_DDRAWSURFACE_MORE
+		{
 			public uint32 dwSize;
 			public IUNKNOWN_LIST* lpIUnknowns;
 			public DDRAWI_DIRECTDRAW_LCL* lpDD_lcl;
@@ -2365,7 +2471,8 @@ namespace Win32
 			public void* lpVB;
 		}
 		[CRepr]
-		public struct DDRAWI_DDRAWSURFACE_LCL		{
+		public struct DDRAWI_DDRAWSURFACE_LCL
+		{
 			public DDRAWI_DDRAWSURFACE_MORE* lpSurfMore;
 			public DDRAWI_DDRAWSURFACE_GBL* lpGbl;
 			public uint hDDSurface;
@@ -2395,18 +2502,21 @@ namespace Win32
 			public int32 lOverlayY;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public DDRAWI_DDRAWCLIPPER_LCL* lpDDClipper;
 				public DDRAWI_DDRAWCLIPPER_INT* lp16DDClipper;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public DDRAWI_DDRAWPALETTE_INT* lpDDPalette;
 				public DDRAWI_DDRAWPALETTE_INT* lp16DDPalette;
 			}
 		}
 		[CRepr]
-		public struct DDHALMODEINFO		{
+		public struct DDHALMODEINFO
+		{
 			public uint32 dwWidth;
 			public uint32 dwHeight;
 			public int32 lPitch;
@@ -2419,14 +2529,16 @@ namespace Win32
 			public uint32 dwAlphaBitMask;
 		}
 		[CRepr]
-		public struct DDRAWI_DIRECTDRAW_INT		{
+		public struct DDRAWI_DIRECTDRAW_INT
+		{
 			public void* lpVtbl;
 			public DDRAWI_DIRECTDRAW_LCL* lpLcl;
 			public DDRAWI_DIRECTDRAW_INT* lpLink;
 			public uint32 dwIntRefCnt;
 		}
 		[CRepr]
-		public struct DDHAL_CALLBACKS		{
+		public struct DDHAL_CALLBACKS
+		{
 			public DDHAL_DDCALLBACKS cbDDCallbacks;
 			public DDHAL_DDSURFACECALLBACKS cbDDSurfaceCallbacks;
 			public DDHAL_DDPALETTECALLBACKS cbDDPaletteCallbacks;
@@ -2451,7 +2563,8 @@ namespace Win32
 			public DDHAL_DDMOTIONCOMPCALLBACKS HALDDMotionComp;
 		}
 		[CRepr]
-		public struct DDCORECAPS		{
+		public struct DDCORECAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwCaps2;
@@ -2505,7 +2618,8 @@ namespace Win32
 			public uint32 dwSVBCaps2;
 		}
 		[CRepr]
-		public struct DDRAWI_DIRECTDRAW_GBL		{
+		public struct DDRAWI_DIRECTDRAW_GBL
+		{
 			public uint32 dwRefCnt;
 			public uint32 dwFlags;
 			public uint fpPrimaryOrig;
@@ -2578,7 +2692,8 @@ namespace Win32
 			public DDSCAPSEX ddsCapsMore;
 		}
 		[CRepr]
-		public struct DDRAWI_DIRECTDRAW_LCL		{
+		public struct DDRAWI_DIRECTDRAW_LCL
+		{
 			public uint32 lpDDMore;
 			public DDRAWI_DIRECTDRAW_GBL* lpGbl;
 			public uint32 dwUnused0;
@@ -2607,7 +2722,8 @@ namespace Win32
 			public LPDDGAMMACALIBRATORPROC lpGammaCalibrator;
 		}
 		[CRepr]
-		public struct DDRAWI_DDVIDEOPORT_INT		{
+		public struct DDRAWI_DDVIDEOPORT_INT
+		{
 			public void* lpVtbl;
 			public DDRAWI_DDVIDEOPORT_LCL* lpLcl;
 			public DDRAWI_DDVIDEOPORT_INT* lpLink;
@@ -2615,7 +2731,8 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DDRAWI_DDVIDEOPORT_LCL		{
+		public struct DDRAWI_DDVIDEOPORT_LCL
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDVIDEOPORTDESC ddvpDesc;
 			public DDVIDEOPORTINFO ddvpInfo;
@@ -2640,14 +2757,16 @@ namespace Win32
 			public DDRAWI_DDVIDEOPORT_INT* lpVPNotify;
 		}
 		[CRepr]
-		public struct DDRAWI_DDMOTIONCOMP_INT		{
+		public struct DDRAWI_DDMOTIONCOMP_INT
+		{
 			public void* lpVtbl;
 			public DDRAWI_DDMOTIONCOMP_LCL* lpLcl;
 			public DDRAWI_DDMOTIONCOMP_INT* lpLink;
 			public uint32 dwIntRefCnt;
 		}
 		[CRepr]
-		public struct DDRAWI_DDMOTIONCOMP_LCL		{
+		public struct DDRAWI_DDMOTIONCOMP_LCL
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public Guid guid;
 			public uint32 dwUncompWidth;
@@ -2665,7 +2784,8 @@ namespace Win32
 			public void* lpDriverReserved3;
 		}
 		[CRepr]
-		public struct DDHALINFO		{
+		public struct DDHALINFO
+		{
 			public uint32 dwSize;
 			public DDHAL_DDCALLBACKS* lpDDCallbacks;
 			public DDHAL_DDSURFACECALLBACKS* lpDDSurfaceCallbacks;
@@ -2686,14 +2806,16 @@ namespace Win32
 			public DDHAL_DDEXEBUFCALLBACKS* lpDDExeBufCallbacks;
 		}
 		[CRepr]
-		public struct DDHALDDRAWFNS		{
+		public struct DDHALDDRAWFNS
+		{
 			public uint32 dwSize;
 			public LPDDHAL_SETINFO lpSetInfo;
 			public LPDDHAL_VIDMEMALLOC lpVidMemAlloc;
 			public LPDDHAL_VIDMEMFREE lpVidMemFree;
 		}
 		[CRepr]
-		public struct DDHAL_BLTDATA		{
+		public struct DDHAL_BLTDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDDestSurface;
 			public RECTL rDest;
@@ -2711,7 +2833,8 @@ namespace Win32
 			public RECT* prDestRects;
 		}
 		[CRepr]
-		public struct DDHAL_LOCKDATA		{
+		public struct DDHAL_LOCKDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public uint32 bHasRect;
@@ -2722,14 +2845,16 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DDHAL_UNLOCKDATA		{
+		public struct DDHAL_UNLOCKDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public HRESULT ddRVal;
 			public LPDDHALSURFCB_UNLOCK Unlock;
 		}
 		[CRepr]
-		public struct DDHAL_UPDATEOVERLAYDATA		{
+		public struct DDHAL_UPDATEOVERLAYDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDDestSurface;
 			public RECTL rDest;
@@ -2741,7 +2866,8 @@ namespace Win32
 			public LPDDHALSURFCB_UPDATEOVERLAY UpdateOverlay;
 		}
 		[CRepr]
-		public struct DDHAL_SETOVERLAYPOSITIONDATA		{
+		public struct DDHAL_SETOVERLAYPOSITIONDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSrcSurface;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDDestSurface;
@@ -2751,7 +2877,8 @@ namespace Win32
 			public LPDDHALSURFCB_SETOVERLAYPOSITION SetOverlayPosition;
 		}
 		[CRepr]
-		public struct DDHAL_SETPALETTEDATA		{
+		public struct DDHAL_SETPALETTEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public DDRAWI_DDRAWPALETTE_GBL* lpDDPalette;
@@ -2760,7 +2887,8 @@ namespace Win32
 			public BOOL Attach;
 		}
 		[CRepr]
-		public struct DDHAL_FLIPDATA		{
+		public struct DDHAL_FLIPDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpSurfCurr;
 			public DDRAWI_DDRAWSURFACE_LCL* lpSurfTarg;
@@ -2771,21 +2899,24 @@ namespace Win32
 			public DDRAWI_DDRAWSURFACE_LCL* lpSurfTargLeft;
 		}
 		[CRepr]
-		public struct DDHAL_DESTROYSURFACEDATA		{
+		public struct DDHAL_DESTROYSURFACEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public HRESULT ddRVal;
 			public LPDDHALSURFCB_DESTROYSURFACE DestroySurface;
 		}
 		[CRepr]
-		public struct DDHAL_SETCLIPLISTDATA		{
+		public struct DDHAL_SETCLIPLISTDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public HRESULT ddRVal;
 			public LPDDHALSURFCB_SETCLIPLIST SetClipList;
 		}
 		[CRepr]
-		public struct DDHAL_ADDATTACHEDSURFACEDATA		{
+		public struct DDHAL_ADDATTACHEDSURFACEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public DDRAWI_DDRAWSURFACE_LCL* lpSurfAttached;
@@ -2793,7 +2924,8 @@ namespace Win32
 			public LPDDHALSURFCB_ADDATTACHEDSURFACE AddAttachedSurface;
 		}
 		[CRepr]
-		public struct DDHAL_SETCOLORKEYDATA		{
+		public struct DDHAL_SETCOLORKEYDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public uint32 dwFlags;
@@ -2802,7 +2934,8 @@ namespace Win32
 			public LPDDHALSURFCB_SETCOLORKEY SetColorKey;
 		}
 		[CRepr]
-		public struct DDHAL_GETBLTSTATUSDATA		{
+		public struct DDHAL_GETBLTSTATUSDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public uint32 dwFlags;
@@ -2810,7 +2943,8 @@ namespace Win32
 			public LPDDHALSURFCB_GETBLTSTATUS GetBltStatus;
 		}
 		[CRepr]
-		public struct DDHAL_GETFLIPSTATUSDATA		{
+		public struct DDHAL_GETFLIPSTATUSDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public uint32 dwFlags;
@@ -2818,14 +2952,16 @@ namespace Win32
 			public LPDDHALSURFCB_GETFLIPSTATUS GetFlipStatus;
 		}
 		[CRepr]
-		public struct DDHAL_DESTROYPALETTEDATA		{
+		public struct DDHAL_DESTROYPALETTEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWPALETTE_GBL* lpDDPalette;
 			public HRESULT ddRVal;
 			public LPDDHALPALCB_DESTROYPALETTE DestroyPalette;
 		}
 		[CRepr]
-		public struct DDHAL_SETENTRIESDATA		{
+		public struct DDHAL_SETENTRIESDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWPALETTE_GBL* lpDDPalette;
 			public uint32 dwBase;
@@ -2835,7 +2971,8 @@ namespace Win32
 			public LPDDHALPALCB_SETENTRIES SetEntries;
 		}
 		[CRepr]
-		public struct DDHAL_CREATESURFACEDATA		{
+		public struct DDHAL_CREATESURFACEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDSURFACEDESC* lpDDSurfaceDesc;
 			public DDRAWI_DDRAWSURFACE_LCL** lplpSList;
@@ -2844,7 +2981,8 @@ namespace Win32
 			public LPDDHAL_CREATESURFACE CreateSurface;
 		}
 		[CRepr]
-		public struct DDHAL_CANCREATESURFACEDATA		{
+		public struct DDHAL_CANCREATESURFACEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDSURFACEDESC* lpDDSurfaceDesc;
 			public uint32 bIsDifferentPixelFormat;
@@ -2852,7 +2990,8 @@ namespace Win32
 			public LPDDHAL_CANCREATESURFACE CanCreateSurface;
 		}
 		[CRepr]
-		public struct DDHAL_CREATEPALETTEDATA		{
+		public struct DDHAL_CREATEPALETTEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWPALETTE_GBL* lpDDPalette;
 			public PALETTEENTRY* lpColorTable;
@@ -2861,7 +3000,8 @@ namespace Win32
 			public BOOL is_excl;
 		}
 		[CRepr]
-		public struct DDHAL_WAITFORVERTICALBLANKDATA		{
+		public struct DDHAL_WAITFORVERTICALBLANKDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public uint32 dwFlags;
 			public uint32 bIsInVB;
@@ -2870,13 +3010,15 @@ namespace Win32
 			public LPDDHAL_WAITFORVERTICALBLANK WaitForVerticalBlank;
 		}
 		[CRepr]
-		public struct DDHAL_DESTROYDRIVERDATA		{
+		public struct DDHAL_DESTROYDRIVERDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public HRESULT ddRVal;
 			public LPDDHAL_DESTROYDRIVER DestroyDriver;
 		}
 		[CRepr]
-		public struct DDHAL_SETMODEDATA		{
+		public struct DDHAL_SETMODEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public uint32 dwModeIndex;
 			public HRESULT ddRVal;
@@ -2885,7 +3027,8 @@ namespace Win32
 			public BOOL useRefreshRate;
 		}
 		[CRepr]
-		public struct DDHAL_DRVSETCOLORKEYDATA		{
+		public struct DDHAL_DRVSETCOLORKEYDATA
+		{
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public uint32 dwFlags;
 			public DDCOLORKEY ckNew;
@@ -2893,14 +3036,16 @@ namespace Win32
 			public LPDDHAL_SETCOLORKEY SetColorKey;
 		}
 		[CRepr]
-		public struct DDHAL_GETSCANLINEDATA		{
+		public struct DDHAL_GETSCANLINEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public uint32 dwScanLine;
 			public HRESULT ddRVal;
 			public LPDDHAL_GETSCANLINE GetScanLine;
 		}
 		[CRepr]
-		public struct DDHAL_SETEXCLUSIVEMODEDATA		{
+		public struct DDHAL_SETEXCLUSIVEMODEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public uint32 dwEnterExcl;
 			public uint32 dwReserved;
@@ -2908,7 +3053,8 @@ namespace Win32
 			public LPDDHAL_SETEXCLUSIVEMODE SetExclusiveMode;
 		}
 		[CRepr]
-		public struct DDHAL_FLIPTOGDISURFACEDATA		{
+		public struct DDHAL_FLIPTOGDISURFACEDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public uint32 dwToGDI;
 			public uint32 dwReserved;
@@ -2916,14 +3062,16 @@ namespace Win32
 			public LPDDHAL_FLIPTOGDISURFACE FlipToGDISurface;
 		}
 		[CRepr]
-		public struct DDHAL_CANCREATEVPORTDATA		{
+		public struct DDHAL_CANCREATEVPORTDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDVIDEOPORTDESC* lpDDVideoPortDesc;
 			public HRESULT ddRVal;
 			public LPDDHALVPORTCB_CANCREATEVIDEOPORT CanCreateVideoPort;
 		}
 		[CRepr]
-		public struct DDHAL_CREATEVPORTDATA		{
+		public struct DDHAL_CREATEVPORTDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDVIDEOPORTDESC* lpDDVideoPortDesc;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
@@ -2931,7 +3079,8 @@ namespace Win32
 			public LPDDHALVPORTCB_CREATEVIDEOPORT CreateVideoPort;
 		}
 		[CRepr]
-		public struct DDHAL_FLIPVPORTDATA		{
+		public struct DDHAL_FLIPVPORTDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public DDRAWI_DDRAWSURFACE_LCL* lpSurfCurr;
@@ -2940,7 +3089,8 @@ namespace Win32
 			public LPDDHALVPORTCB_FLIP FlipVideoPort;
 		}
 		[CRepr]
-		public struct DDHAL_GETVPORTBANDWIDTHDATA		{
+		public struct DDHAL_GETVPORTBANDWIDTHDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public DDPIXELFORMAT* lpddpfFormat;
@@ -2952,7 +3102,8 @@ namespace Win32
 			public LPDDHALVPORTCB_GETBANDWIDTH GetVideoPortBandwidth;
 		}
 		[CRepr]
-		public struct DDHAL_GETVPORTINPUTFORMATDATA		{
+		public struct DDHAL_GETVPORTINPUTFORMATDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public uint32 dwFlags;
@@ -2962,7 +3113,8 @@ namespace Win32
 			public LPDDHALVPORTCB_GETINPUTFORMATS GetVideoPortInputFormats;
 		}
 		[CRepr]
-		public struct DDHAL_GETVPORTOUTPUTFORMATDATA		{
+		public struct DDHAL_GETVPORTOUTPUTFORMATDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public uint32 dwFlags;
@@ -2973,7 +3125,8 @@ namespace Win32
 			public LPDDHALVPORTCB_GETOUTPUTFORMATS GetVideoPortOutputFormats;
 		}
 		[CRepr]
-		public struct DDHAL_GETVPORTFIELDDATA		{
+		public struct DDHAL_GETVPORTFIELDDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public BOOL bField;
@@ -2981,7 +3134,8 @@ namespace Win32
 			public LPDDHALVPORTCB_GETFIELD GetVideoPortField;
 		}
 		[CRepr]
-		public struct DDHAL_GETVPORTLINEDATA		{
+		public struct DDHAL_GETVPORTLINEDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public uint32 dwLine;
@@ -2989,7 +3143,8 @@ namespace Win32
 			public LPDDHALVPORTCB_GETLINE GetVideoPortLine;
 		}
 		[CRepr]
-		public struct DDHAL_GETVPORTCONNECTDATA		{
+		public struct DDHAL_GETVPORTCONNECTDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public uint32 dwPortId;
 			public DDVIDEOPORTCONNECT* lpConnect;
@@ -2998,21 +3153,24 @@ namespace Win32
 			public LPDDHALVPORTCB_GETVPORTCONNECT GetVideoPortConnectInfo;
 		}
 		[CRepr]
-		public struct DDHAL_DESTROYVPORTDATA		{
+		public struct DDHAL_DESTROYVPORTDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public HRESULT ddRVal;
 			public LPDDHALVPORTCB_DESTROYVPORT DestroyVideoPort;
 		}
 		[CRepr]
-		public struct DDHAL_GETVPORTFLIPSTATUSDATA		{
+		public struct DDHAL_GETVPORTFLIPSTATUSDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public uint fpSurface;
 			public HRESULT ddRVal;
 			public LPDDHALVPORTCB_GETFLIPSTATUS GetVideoPortFlipStatus;
 		}
 		[CRepr]
-		public struct DDHAL_UPDATEVPORTDATA		{
+		public struct DDHAL_UPDATEVPORTDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public DDRAWI_DDRAWSURFACE_INT** lplpDDSurface;
@@ -3025,7 +3183,8 @@ namespace Win32
 			public LPDDHALVPORTCB_UPDATE UpdateVideoPort;
 		}
 		[CRepr]
-		public struct DDHAL_WAITFORVPORTSYNCDATA		{
+		public struct DDHAL_WAITFORVPORTSYNCDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public uint32 dwFlags;
@@ -3035,7 +3194,8 @@ namespace Win32
 			public LPDDHALVPORTCB_WAITFORSYNC WaitForVideoPortSync;
 		}
 		[CRepr]
-		public struct DDHAL_GETVPORTSIGNALDATA		{
+		public struct DDHAL_GETVPORTSIGNALDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public uint32 dwStatus;
@@ -3043,7 +3203,8 @@ namespace Win32
 			public LPDDHALVPORTCB_GETSIGNALSTATUS GetVideoSignalStatus;
 		}
 		[CRepr]
-		public struct DDHAL_VPORTCOLORDATA		{
+		public struct DDHAL_VPORTCOLORDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
 			public uint32 dwFlags;
@@ -3052,7 +3213,8 @@ namespace Win32
 			public LPDDHALVPORTCB_COLORCONTROL ColorControl;
 		}
 		[CRepr]
-		public struct DDHAL_COLORCONTROLDATA		{
+		public struct DDHAL_COLORCONTROLDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
 			public DDCOLORCONTROL* lpColorData;
@@ -3061,7 +3223,8 @@ namespace Win32
 			public LPDDHALCOLORCB_COLORCONTROL ColorControl;
 		}
 		[CRepr]
-		public struct DDHAL_GETDRIVERINFODATA		{
+		public struct DDHAL_GETDRIVERINFODATA
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public Guid guidInfo;
@@ -3072,7 +3235,8 @@ namespace Win32
 			public uint dwContext;
 		}
 		[CRepr]
-		public struct DDHAL_GETAVAILDRIVERMEMORYDATA		{
+		public struct DDHAL_GETAVAILDRIVERMEMORYDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public DDSCAPS DDSCaps;
 			public uint32 dwTotal;
@@ -3082,7 +3246,8 @@ namespace Win32
 			public DDSCAPSEX ddsCapsEx;
 		}
 		[CRepr]
-		public struct DDHAL_UPDATENONLOCALHEAPDATA		{
+		public struct DDHAL_UPDATENONLOCALHEAPDATA
+		{
 			public DDRAWI_DIRECTDRAW_GBL* lpDD;
 			public uint32 dwHeap;
 			public uint fpGARTLin;
@@ -3092,7 +3257,8 @@ namespace Win32
 			public LPDDHAL_UPDATENONLOCALHEAP UpdateNonLocalHeap;
 		}
 		[CRepr]
-		public struct DDHAL_GETHEAPALIGNMENTDATA		{
+		public struct DDHAL_GETHEAPALIGNMENTDATA
+		{
 			public uint dwInstance;
 			public uint32 dwHeap;
 			public HRESULT ddRVal;
@@ -3100,14 +3266,16 @@ namespace Win32
 			public HEAPALIGNMENT Alignment;
 		}
 		[CRepr]
-		public struct DDHAL_CREATESURFACEEXDATA		{
+		public struct DDHAL_CREATESURFACEEXDATA
+		{
 			public uint32 dwFlags;
 			public DDRAWI_DIRECTDRAW_LCL* lpDDLcl;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSLcl;
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DDHAL_GETDRIVERSTATEDATA		{
+		public struct DDHAL_GETDRIVERSTATEDATA
+		{
 			public uint32 dwFlags;
 			public _Anonymous_e__Union Anonymous;
 			public uint32* lpdwStates;
@@ -3115,18 +3283,21 @@ namespace Win32
 			public HRESULT ddRVal;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint dwhContext;
 			}
 		}
 		[CRepr]
-		public struct DDHAL_DESTROYDDLOCALDATA		{
+		public struct DDHAL_DESTROYDDLOCALDATA
+		{
 			public uint32 dwFlags;
 			public DDRAWI_DIRECTDRAW_LCL* pDDLcl;
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DDHAL_SYNCSURFACEDATA		{
+		public struct DDHAL_SYNCSURFACEDATA
+		{
 			public uint32 dwSize;
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDDSurface;
@@ -3144,7 +3315,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DDHAL_SYNCVIDEOPORTDATA		{
+		public struct DDHAL_SYNCVIDEOPORTDATA
+		{
 			public uint32 dwSize;
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDVIDEOPORT_LCL* lpVideoPort;
@@ -3157,7 +3329,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DDHAL_GETMOCOMPGUIDSDATA		{
+		public struct DDHAL_GETMOCOMPGUIDSDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public uint32 dwNumGuids;
 			public Guid* lpGuids;
@@ -3165,7 +3338,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_GETGUIDS GetMoCompGuids;
 		}
 		[CRepr]
-		public struct DDHAL_GETMOCOMPFORMATSDATA		{
+		public struct DDHAL_GETMOCOMPFORMATSDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public Guid* lpGuid;
 			public uint32 dwNumFormats;
@@ -3174,7 +3348,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_GETFORMATS GetMoCompFormats;
 		}
 		[CRepr]
-		public struct DDHAL_CREATEMOCOMPDATA		{
+		public struct DDHAL_CREATEMOCOMPDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDMOTIONCOMP_LCL* lpMoComp;
 			public Guid* lpGuid;
@@ -3187,7 +3362,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_CREATE CreateMoComp;
 		}
 		[CRepr]
-		public struct DDMCCOMPBUFFERINFO		{
+		public struct DDMCCOMPBUFFERINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwNumCompBuffers;
 			public uint32 dwWidthToCreate;
@@ -3197,7 +3373,8 @@ namespace Win32
 			public DDPIXELFORMAT ddPixelFormat;
 		}
 		[CRepr]
-		public struct DDHAL_GETMOCOMPCOMPBUFFDATA		{
+		public struct DDHAL_GETMOCOMPCOMPBUFFDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public Guid* lpGuid;
 			public uint32 dwWidth;
@@ -3209,7 +3386,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_GETCOMPBUFFINFO GetMoCompBuffInfo;
 		}
 		[CRepr]
-		public struct DDHAL_GETINTERNALMOCOMPDATA		{
+		public struct DDHAL_GETINTERNALMOCOMPDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public Guid* lpGuid;
 			public uint32 dwWidth;
@@ -3220,7 +3398,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_GETINTERNALINFO GetInternalMoCompInfo;
 		}
 		[CRepr]
-		public struct DDHAL_BEGINMOCOMPFRAMEDATA		{
+		public struct DDHAL_BEGINMOCOMPFRAMEDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDMOTIONCOMP_LCL* lpMoComp;
 			public DDRAWI_DDRAWSURFACE_LCL* lpDestSurface;
@@ -3232,7 +3411,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_BEGINFRAME BeginMoCompFrame;
 		}
 		[CRepr]
-		public struct DDHAL_ENDMOCOMPFRAMEDATA		{
+		public struct DDHAL_ENDMOCOMPFRAMEDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDMOTIONCOMP_LCL* lpMoComp;
 			public void* lpInputData;
@@ -3241,7 +3421,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_ENDFRAME EndMoCompFrame;
 		}
 		[CRepr]
-		public struct DDMCBUFFERINFO		{
+		public struct DDMCBUFFERINFO
+		{
 			public uint32 dwSize;
 			public DDRAWI_DDRAWSURFACE_LCL* lpCompSurface;
 			public uint32 dwDataOffset;
@@ -3249,7 +3430,8 @@ namespace Win32
 			public void* lpPrivate;
 		}
 		[CRepr]
-		public struct DDHAL_RENDERMOCOMPDATA		{
+		public struct DDHAL_RENDERMOCOMPDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDMOTIONCOMP_LCL* lpMoComp;
 			public uint32 dwNumBuffers;
@@ -3263,7 +3445,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_RENDER RenderMoComp;
 		}
 		[CRepr]
-		public struct DDHAL_QUERYMOCOMPSTATUSDATA		{
+		public struct DDHAL_QUERYMOCOMPSTATUSDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDMOTIONCOMP_LCL* lpMoComp;
 			public DDRAWI_DDRAWSURFACE_LCL* lpSurface;
@@ -3272,7 +3455,8 @@ namespace Win32
 			public LPDDHALMOCOMPCB_QUERYSTATUS QueryMoCompStatus;
 		}
 		[CRepr]
-		public struct DDHAL_DESTROYMOCOMPDATA		{
+		public struct DDHAL_DESTROYMOCOMPDATA
+		{
 			public DDRAWI_DIRECTDRAW_LCL* lpDD;
 			public DDRAWI_DDMOTIONCOMP_LCL* lpMoComp;
 			public HRESULT ddRVal;
@@ -3285,7 +3469,8 @@ namespace Win32
 		[CRepr]
 		public struct _DD_GETVPORTAUTOFLIPSURFACEDATA {}
 		[CRepr]
-		public struct VIDEOMEMORY		{
+		public struct VIDEOMEMORY
+		{
 			public uint32 dwFlags;
 			public uint fpStart;
 			public _Anonymous1_e__Union Anonymous1;
@@ -3294,18 +3479,21 @@ namespace Win32
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint fpEnd;
 				public uint32 dwWidth;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public VMEMHEAP* lpHeap;
 				public uint32 dwHeight;
 			}
 		}
 		[CRepr]
-		public struct VIDEOMEMORYINFO		{
+		public struct VIDEOMEMORYINFO
+		{
 			public uint fpPrimary;
 			public uint32 dwFlags;
 			public uint32 dwDisplayWidth;
@@ -3320,7 +3508,8 @@ namespace Win32
 			public void* pvPrimary;
 		}
 		[CRepr]
-		public struct DD_CALLBACKS		{
+		public struct DD_CALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_DESTROYDRIVER DestroyDriver;
@@ -3334,13 +3523,15 @@ namespace Win32
 			public PDD_MAPMEMORY MapMemory;
 		}
 		[CRepr]
-		public struct DD_MISCELLANEOUSCALLBACKS		{
+		public struct DD_MISCELLANEOUSCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_GETAVAILDRIVERMEMORY GetAvailDriverMemory;
 		}
 		[CRepr]
-		public struct DD_MISCELLANEOUS2CALLBACKS		{
+		public struct DD_MISCELLANEOUS2CALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_ALPHABLT AlphaBlt;
@@ -3349,7 +3540,8 @@ namespace Win32
 			public PDD_DESTROYDDLOCAL DestroyDDLocal;
 		}
 		[CRepr]
-		public struct DD_NTCALLBACKS		{
+		public struct DD_NTCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_FREEDRIVERMEMORY FreeDriverMemory;
@@ -3357,14 +3549,16 @@ namespace Win32
 			public PDD_FLIPTOGDISURFACE FlipToGDISurface;
 		}
 		[CRepr]
-		public struct DD_PALETTECALLBACKS		{
+		public struct DD_PALETTECALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_PALCB_DESTROYPALETTE DestroyPalette;
 			public PDD_PALCB_SETENTRIES SetEntries;
 		}
 		[CRepr]
-		public struct DD_SURFACECALLBACKS		{
+		public struct DD_SURFACECALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_SURFCB_DESTROYSURFACE DestroySurface;
@@ -3383,7 +3577,8 @@ namespace Win32
 			public PDD_SURFCB_SETPALETTE SetPalette;
 		}
 		[CRepr]
-		public struct DD_VIDEOPORTCALLBACKS		{
+		public struct DD_VIDEOPORTCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_VPORTCB_CANCREATEVIDEOPORT CanCreateVideoPort;
@@ -3404,20 +3599,23 @@ namespace Win32
 			public PDD_VPORTCB_COLORCONTROL ColorControl;
 		}
 		[CRepr]
-		public struct DD_COLORCONTROLCALLBACKS		{
+		public struct DD_COLORCONTROLCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_COLORCB_COLORCONTROL ColorControl;
 		}
 		[CRepr]
-		public struct DD_KERNELCALLBACKS		{
+		public struct DD_KERNELCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_KERNELCB_SYNCSURFACE SyncSurfaceData;
 			public PDD_KERNELCB_SYNCVIDEOPORT SyncVideoPortData;
 		}
 		[CRepr]
-		public struct DD_MOTIONCOMPCALLBACKS		{
+		public struct DD_MOTIONCOMPCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_MOCOMPCB_GETGUIDS GetMoCompGuids;
@@ -3432,7 +3630,8 @@ namespace Win32
 			public PDD_MOCOMPCB_DESTROY DestroyMoComp;
 		}
 		[CRepr]
-		public struct DD_NONLOCALVIDMEMCAPS		{
+		public struct DD_NONLOCALVIDMEMCAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwNLVBCaps;
 			public uint32 dwNLVBCaps2;
@@ -3441,33 +3640,40 @@ namespace Win32
 			public uint32[8] dwNLVBRops;
 		}
 		[CRepr]
-		public struct DD_PALETTE_GLOBAL		{
+		public struct DD_PALETTE_GLOBAL
+		{
 			public uint dwReserved1;
 		}
 		[CRepr]
-		public struct DD_PALETTE_LOCAL		{
+		public struct DD_PALETTE_LOCAL
+		{
 			public uint32 dwReserved0;
 			public uint dwReserved1;
 		}
 		[CRepr]
-		public struct DD_CLIPPER_GLOBAL		{
+		public struct DD_CLIPPER_GLOBAL
+		{
 			public uint dwReserved1;
 		}
 		[CRepr]
-		public struct DD_CLIPPER_LOCAL		{
+		public struct DD_CLIPPER_LOCAL
+		{
 			public uint dwReserved1;
 		}
 		[CRepr]
-		public struct DD_ATTACHLIST		{
+		public struct DD_ATTACHLIST
+		{
 			public DD_ATTACHLIST* lpLink;
 			public DD_SURFACE_LOCAL* lpAttached;
 		}
 		[CRepr]
-		public struct DD_SURFACE_INT		{
+		public struct DD_SURFACE_INT
+		{
 			public DD_SURFACE_LOCAL* lpLcl;
 		}
 		[CRepr]
-		public struct DD_SURFACE_GLOBAL		{
+		public struct DD_SURFACE_GLOBAL
+		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			public uint fpVidMem;
@@ -3482,24 +3688,28 @@ namespace Win32
 			public HANDLE hCreatorProcess;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public int32 lPitch;
 				public uint32 dwLinearSize;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 dwBlockSizeY;
 				public int32 lSlicePitch;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public VIDEOMEMORY* lpVidMemHeap;
 				public uint32 dwBlockSizeX;
 				public uint32 dwUserMemSize;
 			}
 		}
 		[CRepr]
-		public struct DD_SURFACE_MORE		{
+		public struct DD_SURFACE_MORE
+		{
 			public uint32 dwMipMapCount;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public uint32 dwOverlayFlags;
@@ -3507,7 +3717,8 @@ namespace Win32
 			public uint32 dwSurfaceHandle;
 		}
 		[CRepr]
-		public struct DD_SURFACE_LOCAL		{
+		public struct DD_SURFACE_LOCAL
+		{
 			public DD_SURFACE_GLOBAL* lpGbl;
 			public uint32 dwFlags;
 			public DDSCAPS ddsCaps;
@@ -3520,18 +3731,21 @@ namespace Win32
 			public RECT rcOverlaySrc;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public DDCOLORKEY ddckCKDestOverlay;
 				public DDCOLORKEY ddckCKDestBlt;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public DDCOLORKEY ddckCKSrcOverlay;
 				public DDCOLORKEY ddckCKSrcBlt;
 			}
 		}
 		[CRepr]
-		public struct DD_MORECAPS		{
+		public struct DD_MORECAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwAlphaCaps;
 			public uint32 dwSVBAlphaCaps;
@@ -3543,7 +3757,8 @@ namespace Win32
 			public uint32 dwSSBFilterCaps;
 		}
 		[CRepr]
-		public struct DDNTCORECAPS		{
+		public struct DDNTCORECAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwCaps;
 			public uint32 dwCaps2;
@@ -3597,7 +3812,8 @@ namespace Win32
 			public uint32 dwSVBCaps2;
 		}
 		[CRepr]
-		public struct DD_D3DBUFCALLBACKS		{
+		public struct DD_D3DBUFCALLBACKS
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PDD_CANCREATESURFACE CanCreateD3DBuffer;
@@ -3607,7 +3823,8 @@ namespace Win32
 			public PDD_SURFCB_UNLOCK UnlockD3DBuffer;
 		}
 		[CRepr]
-		public struct DD_HALINFO_V4		{
+		public struct DD_HALINFO_V4
+		{
 			public uint32 dwSize;
 			public VIDEOMEMORYINFO vmiData;
 			public DDNTCORECAPS ddCaps;
@@ -3615,7 +3832,8 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DD_HALINFO		{
+		public struct DD_HALINFO
+		{
 			public uint32 dwSize;
 			public VIDEOMEMORYINFO vmiData;
 			public DDNTCORECAPS ddCaps;
@@ -3626,18 +3844,21 @@ namespace Win32
 			public DD_D3DBUFCALLBACKS* lpD3DBufCallbacks;
 		}
 		[CRepr]
-		public struct DD_DIRECTDRAW_GLOBAL		{
+		public struct DD_DIRECTDRAW_GLOBAL
+		{
 			public void* dhpdev;
 			public uint dwReserved1;
 			public uint dwReserved2;
 			public DDVIDEOPORTCAPS* lpDDVideoPortCaps;
 		}
 		[CRepr]
-		public struct DD_DIRECTDRAW_LOCAL		{
+		public struct DD_DIRECTDRAW_LOCAL
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpGbl;
 		}
 		[CRepr]
-		public struct DD_VIDEOPORT_LOCAL		{
+		public struct DD_VIDEOPORT_LOCAL
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DDVIDEOPORTDESC ddvpDesc;
 			public DDVIDEOPORTINFO ddvpInfo;
@@ -3650,7 +3871,8 @@ namespace Win32
 			public uint dwReserved3;
 		}
 		[CRepr]
-		public struct DD_MOTIONCOMP_LOCAL		{
+		public struct DD_MOTIONCOMP_LOCAL
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public Guid guid;
 			public uint32 dwUncompWidth;
@@ -3664,19 +3886,22 @@ namespace Win32
 			public void* lpDriverReserved3;
 		}
 		[CRepr]
-		public struct DD_MORESURFACECAPS		{
+		public struct DD_MORESURFACECAPS
+		{
 			public uint32 dwSize;
 			public DDSCAPSEX ddsCapsMore;
 			public NTExtendedHeapRestrictions[0] ddsExtendedHeapRestrictions;
 			
 			[CRepr]
-			public struct NTExtendedHeapRestrictions			{
+			public struct NTExtendedHeapRestrictions
+			{
 				public DDSCAPSEX ddsCapsEx;
 				public DDSCAPSEX ddsCapsExAlt;
 			}
 		}
 		[CRepr]
-		public struct DD_STEREOMODE		{
+		public struct DD_STEREOMODE
+		{
 			public uint32 dwSize;
 			public uint32 dwHeight;
 			public uint32 dwWidth;
@@ -3685,7 +3910,8 @@ namespace Win32
 			public BOOL bSupported;
 		}
 		[CRepr]
-		public struct DD_UPDATENONLOCALHEAPDATA		{
+		public struct DD_UPDATENONLOCALHEAPDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public uint32 dwHeap;
 			public uint fpGARTLin;
@@ -3695,12 +3921,14 @@ namespace Win32
 			public void* UpdateNonLocalHeap;
 		}
 		[CRepr]
-		public struct DD_NTPRIVATEDRIVERCAPS		{
+		public struct DD_NTPRIVATEDRIVERCAPS
+		{
 			public uint32 dwSize;
 			public uint32 dwPrivateCaps;
 		}
 		[CRepr]
-		public struct DD_BLTDATA		{
+		public struct DD_BLTDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDDestSurface;
 			public RECTL rDest;
@@ -3720,7 +3948,8 @@ namespace Win32
 			public DDARGB ddargbScaleFactors;
 		}
 		[CRepr]
-		public struct DD_LOCKDATA		{
+		public struct DD_LOCKDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public uint32 bHasRect;
@@ -3732,14 +3961,16 @@ namespace Win32
 			public uint fpProcess;
 		}
 		[CRepr]
-		public struct DD_UNLOCKDATA		{
+		public struct DD_UNLOCKDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public HRESULT ddRVal;
 			public void* Unlock;
 		}
 		[CRepr]
-		public struct DD_UPDATEOVERLAYDATA		{
+		public struct DD_UPDATEOVERLAYDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDDestSurface;
 			public RECTL rDest;
@@ -3751,7 +3982,8 @@ namespace Win32
 			public void* UpdateOverlay;
 		}
 		[CRepr]
-		public struct DD_SETOVERLAYPOSITIONDATA		{
+		public struct DD_SETOVERLAYPOSITIONDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSrcSurface;
 			public DD_SURFACE_LOCAL* lpDDDestSurface;
@@ -3761,7 +3993,8 @@ namespace Win32
 			public void* SetOverlayPosition;
 		}
 		[CRepr]
-		public struct DD_SETPALETTEDATA		{
+		public struct DD_SETPALETTEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public DD_PALETTE_GLOBAL* lpDDPalette;
@@ -3770,7 +4003,8 @@ namespace Win32
 			public BOOL Attach;
 		}
 		[CRepr]
-		public struct DD_FLIPDATA		{
+		public struct DD_FLIPDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpSurfCurr;
 			public DD_SURFACE_LOCAL* lpSurfTarg;
@@ -3781,21 +4015,24 @@ namespace Win32
 			public DD_SURFACE_LOCAL* lpSurfTargLeft;
 		}
 		[CRepr]
-		public struct DD_DESTROYSURFACEDATA		{
+		public struct DD_DESTROYSURFACEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public HRESULT ddRVal;
 			public void* DestroySurface;
 		}
 		[CRepr]
-		public struct DD_SETCLIPLISTDATA		{
+		public struct DD_SETCLIPLISTDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public HRESULT ddRVal;
 			public void* SetClipList;
 		}
 		[CRepr]
-		public struct DD_ADDATTACHEDSURFACEDATA		{
+		public struct DD_ADDATTACHEDSURFACEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public DD_SURFACE_LOCAL* lpSurfAttached;
@@ -3803,7 +4040,8 @@ namespace Win32
 			public void* AddAttachedSurface;
 		}
 		[CRepr]
-		public struct DD_SETCOLORKEYDATA		{
+		public struct DD_SETCOLORKEYDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public uint32 dwFlags;
@@ -3812,7 +4050,8 @@ namespace Win32
 			public void* SetColorKey;
 		}
 		[CRepr]
-		public struct DD_GETBLTSTATUSDATA		{
+		public struct DD_GETBLTSTATUSDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public uint32 dwFlags;
@@ -3820,7 +4059,8 @@ namespace Win32
 			public void* GetBltStatus;
 		}
 		[CRepr]
-		public struct DD_GETFLIPSTATUSDATA		{
+		public struct DD_GETFLIPSTATUSDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public uint32 dwFlags;
@@ -3828,14 +4068,16 @@ namespace Win32
 			public void* GetFlipStatus;
 		}
 		[CRepr]
-		public struct DD_DESTROYPALETTEDATA		{
+		public struct DD_DESTROYPALETTEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_PALETTE_GLOBAL* lpDDPalette;
 			public HRESULT ddRVal;
 			public void* DestroyPalette;
 		}
 		[CRepr]
-		public struct DD_SETENTRIESDATA		{
+		public struct DD_SETENTRIESDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_PALETTE_GLOBAL* lpDDPalette;
 			public uint32 dwBase;
@@ -3845,7 +4087,8 @@ namespace Win32
 			public void* SetEntries;
 		}
 		[CRepr]
-		public struct DD_CREATESURFACEDATA		{
+		public struct DD_CREATESURFACEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DDSURFACEDESC* lpDDSurfaceDesc;
 			public DD_SURFACE_LOCAL** lplpSList;
@@ -3854,7 +4097,8 @@ namespace Win32
 			public void* CreateSurface;
 		}
 		[CRepr]
-		public struct DD_CANCREATESURFACEDATA		{
+		public struct DD_CANCREATESURFACEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DDSURFACEDESC* lpDDSurfaceDesc;
 			public uint32 bIsDifferentPixelFormat;
@@ -3862,7 +4106,8 @@ namespace Win32
 			public void* CanCreateSurface;
 		}
 		[CRepr]
-		public struct DD_CREATEPALETTEDATA		{
+		public struct DD_CREATEPALETTEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_PALETTE_GLOBAL* lpDDPalette;
 			public PALETTEENTRY* lpColorTable;
@@ -3871,7 +4116,8 @@ namespace Win32
 			public BOOL is_excl;
 		}
 		[CRepr]
-		public struct DD_WAITFORVERTICALBLANKDATA		{
+		public struct DD_WAITFORVERTICALBLANKDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public uint32 dwFlags;
 			public uint32 bIsInVB;
@@ -3880,7 +4126,8 @@ namespace Win32
 			public void* WaitForVerticalBlank;
 		}
 		[CRepr]
-		public struct DD_DRVSETCOLORKEYDATA		{
+		public struct DD_DRVSETCOLORKEYDATA
+		{
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public uint32 dwFlags;
 			public DDCOLORKEY ckNew;
@@ -3888,14 +4135,16 @@ namespace Win32
 			public void* SetColorKey;
 		}
 		[CRepr]
-		public struct DD_GETSCANLINEDATA		{
+		public struct DD_GETSCANLINEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public uint32 dwScanLine;
 			public HRESULT ddRVal;
 			public void* GetScanLine;
 		}
 		[CRepr]
-		public struct DD_MAPMEMORYDATA		{
+		public struct DD_MAPMEMORYDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public BOOL bMap;
 			public HANDLE hProcess;
@@ -3903,14 +4152,16 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_CANCREATEVPORTDATA		{
+		public struct DD_CANCREATEVPORTDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DDVIDEOPORTDESC* lpDDVideoPortDesc;
 			public HRESULT ddRVal;
 			public void* CanCreateVideoPort;
 		}
 		[CRepr]
-		public struct DD_CREATEVPORTDATA		{
+		public struct DD_CREATEVPORTDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DDVIDEOPORTDESC* lpDDVideoPortDesc;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
@@ -3918,7 +4169,8 @@ namespace Win32
 			public void* CreateVideoPort;
 		}
 		[CRepr]
-		public struct DD_FLIPVPORTDATA		{
+		public struct DD_FLIPVPORTDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public DD_SURFACE_LOCAL* lpSurfCurr;
@@ -3927,7 +4179,8 @@ namespace Win32
 			public void* FlipVideoPort;
 		}
 		[CRepr]
-		public struct DD_GETVPORTBANDWIDTHDATA		{
+		public struct DD_GETVPORTBANDWIDTHDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public DDPIXELFORMAT* lpddpfFormat;
@@ -3939,7 +4192,8 @@ namespace Win32
 			public void* GetVideoPortBandwidth;
 		}
 		[CRepr]
-		public struct DD_GETVPORTINPUTFORMATDATA		{
+		public struct DD_GETVPORTINPUTFORMATDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public uint32 dwFlags;
@@ -3949,7 +4203,8 @@ namespace Win32
 			public void* GetVideoPortInputFormats;
 		}
 		[CRepr]
-		public struct DD_GETVPORTOUTPUTFORMATDATA		{
+		public struct DD_GETVPORTOUTPUTFORMATDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public uint32 dwFlags;
@@ -3960,7 +4215,8 @@ namespace Win32
 			public void* GetVideoPortInputFormats;
 		}
 		[CRepr]
-		public struct DD_GETVPORTFIELDDATA		{
+		public struct DD_GETVPORTFIELDDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public BOOL bField;
@@ -3968,7 +4224,8 @@ namespace Win32
 			public void* GetVideoPortField;
 		}
 		[CRepr]
-		public struct DD_GETVPORTLINEDATA		{
+		public struct DD_GETVPORTLINEDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public uint32 dwLine;
@@ -3976,7 +4233,8 @@ namespace Win32
 			public void* GetVideoPortLine;
 		}
 		[CRepr]
-		public struct DD_GETVPORTCONNECTDATA		{
+		public struct DD_GETVPORTCONNECTDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public uint32 dwPortId;
 			public DDVIDEOPORTCONNECT* lpConnect;
@@ -3985,21 +4243,24 @@ namespace Win32
 			public void* GetVideoPortConnectInfo;
 		}
 		[CRepr]
-		public struct DD_DESTROYVPORTDATA		{
+		public struct DD_DESTROYVPORTDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public HRESULT ddRVal;
 			public void* DestroyVideoPort;
 		}
 		[CRepr]
-		public struct DD_GETVPORTFLIPSTATUSDATA		{
+		public struct DD_GETVPORTFLIPSTATUSDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public uint fpSurface;
 			public HRESULT ddRVal;
 			public void* GetVideoPortFlipStatus;
 		}
 		[CRepr]
-		public struct DD_UPDATEVPORTDATA		{
+		public struct DD_UPDATEVPORTDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public DD_SURFACE_INT** lplpDDSurface;
@@ -4012,7 +4273,8 @@ namespace Win32
 			public void* UpdateVideoPort;
 		}
 		[CRepr]
-		public struct DD_WAITFORVPORTSYNCDATA		{
+		public struct DD_WAITFORVPORTSYNCDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public uint32 dwFlags;
@@ -4022,7 +4284,8 @@ namespace Win32
 			public void* UpdateVideoPort;
 		}
 		[CRepr]
-		public struct DD_GETVPORTSIGNALDATA		{
+		public struct DD_GETVPORTSIGNALDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public uint32 dwStatus;
@@ -4030,7 +4293,8 @@ namespace Win32
 			public void* GetVideoSignalStatus;
 		}
 		[CRepr]
-		public struct DD_VPORTCOLORDATA		{
+		public struct DD_VPORTCOLORDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public uint32 dwFlags;
@@ -4039,7 +4303,8 @@ namespace Win32
 			public void* ColorControl;
 		}
 		[CRepr]
-		public struct DD_COLORCONTROLDATA		{
+		public struct DD_COLORCONTROLDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public DDCOLORCONTROL* lpColorData;
@@ -4048,7 +4313,8 @@ namespace Win32
 			public void* ColorControl;
 		}
 		[CRepr]
-		public struct DD_GETDRIVERINFODATA		{
+		public struct DD_GETDRIVERINFODATA
+		{
 			public void* dhpdev;
 			public uint32 dwSize;
 			public uint32 dwFlags;
@@ -4059,7 +4325,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_GETAVAILDRIVERMEMORYDATA		{
+		public struct DD_GETAVAILDRIVERMEMORYDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DDSCAPS DDSCaps;
 			public uint32 dwTotal;
@@ -4068,14 +4335,16 @@ namespace Win32
 			public void* GetAvailDriverMemory;
 		}
 		[CRepr]
-		public struct DD_FREEDRIVERMEMORYDATA		{
+		public struct DD_FREEDRIVERMEMORYDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public HRESULT ddRVal;
 			public void* FreeDriverMemory;
 		}
 		[CRepr]
-		public struct DD_SETEXCLUSIVEMODEDATA		{
+		public struct DD_SETEXCLUSIVEMODEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public uint32 dwEnterExcl;
 			public uint32 dwReserved;
@@ -4083,7 +4352,8 @@ namespace Win32
 			public void* SetExclusiveMode;
 		}
 		[CRepr]
-		public struct DD_FLIPTOGDISURFACEDATA		{
+		public struct DD_FLIPTOGDISURFACEDATA
+		{
 			public DD_DIRECTDRAW_GLOBAL* lpDD;
 			public uint32 dwToGDI;
 			public uint32 dwReserved;
@@ -4091,7 +4361,8 @@ namespace Win32
 			public void* FlipToGDISurface;
 		}
 		[CRepr]
-		public struct DD_SYNCSURFACEDATA		{
+		public struct DD_SYNCSURFACEDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_SURFACE_LOCAL* lpDDSurface;
 			public uint32 dwSurfaceOffset;
@@ -4105,7 +4376,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_SYNCVIDEOPORTDATA		{
+		public struct DD_SYNCVIDEOPORTDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_VIDEOPORT_LOCAL* lpVideoPort;
 			public uint32 dwOriginOffset;
@@ -4117,14 +4389,16 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_GETMOCOMPGUIDSDATA		{
+		public struct DD_GETMOCOMPGUIDSDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public uint32 dwNumGuids;
 			public Guid* lpGuids;
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_GETMOCOMPFORMATSDATA		{
+		public struct DD_GETMOCOMPFORMATSDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public Guid* lpGuid;
 			public uint32 dwNumFormats;
@@ -4132,7 +4406,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_CREATEMOCOMPDATA		{
+		public struct DD_CREATEMOCOMPDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_MOTIONCOMP_LOCAL* lpMoComp;
 			public Guid* lpGuid;
@@ -4144,7 +4419,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DDCOMPBUFFERINFO		{
+		public struct DDCOMPBUFFERINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwNumCompBuffers;
 			public uint32 dwWidthToCreate;
@@ -4154,7 +4430,8 @@ namespace Win32
 			public DDPIXELFORMAT ddPixelFormat;
 		}
 		[CRepr]
-		public struct DD_GETMOCOMPCOMPBUFFDATA		{
+		public struct DD_GETMOCOMPCOMPBUFFDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public Guid* lpGuid;
 			public uint32 dwWidth;
@@ -4165,7 +4442,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_GETINTERNALMOCOMPDATA		{
+		public struct DD_GETINTERNALMOCOMPDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public Guid* lpGuid;
 			public uint32 dwWidth;
@@ -4175,7 +4453,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_BEGINMOCOMPFRAMEDATA		{
+		public struct DD_BEGINMOCOMPFRAMEDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_MOTIONCOMP_LOCAL* lpMoComp;
 			public DD_SURFACE_LOCAL* lpDestSurface;
@@ -4186,7 +4465,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_ENDMOCOMPFRAMEDATA		{
+		public struct DD_ENDMOCOMPFRAMEDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_MOTIONCOMP_LOCAL* lpMoComp;
 			public void* lpInputData;
@@ -4194,7 +4474,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DDMOCOMPBUFFERINFO		{
+		public struct DDMOCOMPBUFFERINFO
+		{
 			public uint32 dwSize;
 			public DD_SURFACE_LOCAL* lpCompSurface;
 			public uint32 dwDataOffset;
@@ -4202,7 +4483,8 @@ namespace Win32
 			public void* lpPrivate;
 		}
 		[CRepr]
-		public struct DD_RENDERMOCOMPDATA		{
+		public struct DD_RENDERMOCOMPDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_MOTIONCOMP_LOCAL* lpMoComp;
 			public uint32 dwNumBuffers;
@@ -4215,7 +4497,8 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_QUERYMOCOMPSTATUSDATA		{
+		public struct DD_QUERYMOCOMPSTATUSDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_MOTIONCOMP_LOCAL* lpMoComp;
 			public DD_SURFACE_LOCAL* lpSurface;
@@ -4223,20 +4506,23 @@ namespace Win32
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_DESTROYMOCOMPDATA		{
+		public struct DD_DESTROYMOCOMPDATA
+		{
 			public DD_DIRECTDRAW_LOCAL* lpDD;
 			public DD_MOTIONCOMP_LOCAL* lpMoComp;
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_CREATESURFACEEXDATA		{
+		public struct DD_CREATESURFACEEXDATA
+		{
 			public uint32 dwFlags;
 			public DD_DIRECTDRAW_LOCAL* lpDDLcl;
 			public DD_SURFACE_LOCAL* lpDDSLcl;
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct DD_GETDRIVERSTATEDATA		{
+		public struct DD_GETDRIVERSTATEDATA
+		{
 			public uint32 dwFlags;
 			public _Anonymous_e__Union Anonymous;
 			public uint32* lpdwStates;
@@ -4244,19 +4530,22 @@ namespace Win32
 			public HRESULT ddRVal;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public DD_DIRECTDRAW_GLOBAL* lpDD;
 				public uint dwhContext;
 			}
 		}
 		[CRepr]
-		public struct DD_DESTROYDDLOCALDATA		{
+		public struct DD_DESTROYDDLOCALDATA
+		{
 			public uint32 dwFlags;
 			public DD_DIRECTDRAW_LOCAL* pDDLcl;
 			public HRESULT ddRVal;
 		}
 		[CRepr]
-		public struct MDL		{
+		public struct MDL
+		{
 			public MDL* MdlNext;
 			public int16 MdlSize;
 			public int16 MdlFlags;
@@ -4270,7 +4559,8 @@ namespace Win32
 			public struct _EPROCESS {}
 		}
 		[CRepr]
-		public struct DDSURFACEDATA		{
+		public struct DDSURFACEDATA
+		{
 			public uint32 ddsCaps;
 			public uint32 dwSurfaceOffset;
 			public uint fpLockPtr;
@@ -4296,7 +4586,8 @@ namespace Win32
 			public uint32 dwDriverReserved4;
 		}
 		[CRepr]
-		public struct DDVIDEOPORTDATA		{
+		public struct DDVIDEOPORTDATA
+		{
 			public uint32 dwVideoPortId;
 			public uint32 dwVPFlags;
 			public uint32 dwOriginOffset;
@@ -4307,89 +4598,107 @@ namespace Win32
 			public uint32 dwDriverReserved3;
 		}
 		[CRepr]
-		public struct DX_IRQDATA		{
+		public struct DX_IRQDATA
+		{
 			public uint32 dwIrqFlags;
 		}
 		[CRepr]
-		public struct DDGETIRQINFO		{
+		public struct DDGETIRQINFO
+		{
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DDENABLEIRQINFO		{
+		public struct DDENABLEIRQINFO
+		{
 			public uint32 dwIRQSources;
 			public uint32 dwLine;
 			public PDX_IRQCALLBACK IRQCallback;
 			public DX_IRQDATA* lpIRQData;
 		}
 		[CRepr]
-		public struct DDSKIPNEXTFIELDINFO		{
+		public struct DDSKIPNEXTFIELDINFO
+		{
 			public DDVIDEOPORTDATA* lpVideoPortData;
 			public uint32 dwSkipFlags;
 		}
 		[CRepr]
-		public struct DDBOBNEXTFIELDINFO		{
+		public struct DDBOBNEXTFIELDINFO
+		{
 			public DDSURFACEDATA* lpSurface;
 		}
 		[CRepr]
-		public struct DDSETSTATEININFO		{
+		public struct DDSETSTATEININFO
+		{
 			public DDSURFACEDATA* lpSurfaceData;
 			public DDVIDEOPORTDATA* lpVideoPortData;
 		}
 		[CRepr]
-		public struct DDSETSTATEOUTINFO		{
+		public struct DDSETSTATEOUTINFO
+		{
 			public BOOL bSoftwareAutoflip;
 			public uint32 dwSurfaceIndex;
 			public uint32 dwVBISurfaceIndex;
 		}
 		[CRepr]
-		public struct DDLOCKININFO		{
+		public struct DDLOCKININFO
+		{
 			public DDSURFACEDATA* lpSurfaceData;
 		}
 		[CRepr]
-		public struct DDLOCKOUTINFO		{
+		public struct DDLOCKOUTINFO
+		{
 			public uint dwSurfacePtr;
 		}
 		[CRepr]
-		public struct DDFLIPOVERLAYINFO		{
+		public struct DDFLIPOVERLAYINFO
+		{
 			public DDSURFACEDATA* lpCurrentSurface;
 			public DDSURFACEDATA* lpTargetSurface;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DDFLIPVIDEOPORTINFO		{
+		public struct DDFLIPVIDEOPORTINFO
+		{
 			public DDVIDEOPORTDATA* lpVideoPortData;
 			public DDSURFACEDATA* lpCurrentSurface;
 			public DDSURFACEDATA* lpTargetSurface;
 			public uint32 dwFlipVPFlags;
 		}
 		[CRepr]
-		public struct DDGETPOLARITYININFO		{
+		public struct DDGETPOLARITYININFO
+		{
 			public DDVIDEOPORTDATA* lpVideoPortData;
 		}
 		[CRepr]
-		public struct DDGETPOLARITYOUTINFO		{
+		public struct DDGETPOLARITYOUTINFO
+		{
 			public uint32 bPolarity;
 		}
 		[CRepr]
-		public struct DDGETCURRENTAUTOFLIPININFO		{
+		public struct DDGETCURRENTAUTOFLIPININFO
+		{
 			public DDVIDEOPORTDATA* lpVideoPortData;
 		}
 		[CRepr]
-		public struct DDGETCURRENTAUTOFLIPOUTINFO		{
+		public struct DDGETCURRENTAUTOFLIPOUTINFO
+		{
 			public uint32 dwSurfaceIndex;
 			public uint32 dwVBISurfaceIndex;
 		}
 		[CRepr]
-		public struct DDGETPREVIOUSAUTOFLIPININFO		{
+		public struct DDGETPREVIOUSAUTOFLIPININFO
+		{
 			public DDVIDEOPORTDATA* lpVideoPortData;
 		}
 		[CRepr]
-		public struct DDGETPREVIOUSAUTOFLIPOUTINFO		{
+		public struct DDGETPREVIOUSAUTOFLIPOUTINFO
+		{
 			public uint32 dwSurfaceIndex;
 			public uint32 dwVBISurfaceIndex;
 		}
 		[CRepr]
-		public struct DDTRANSFERININFO		{
+		public struct DDTRANSFERININFO
+		{
 			public DDSURFACEDATA* lpSurfaceData;
 			public uint32 dwStartLine;
 			public uint32 dwEndLine;
@@ -4398,15 +4707,18 @@ namespace Win32
 			public MDL* lpDestMDL;
 		}
 		[CRepr]
-		public struct DDTRANSFEROUTINFO		{
+		public struct DDTRANSFEROUTINFO
+		{
 			public uint32 dwBufferPolarity;
 		}
 		[CRepr]
-		public struct DDGETTRANSFERSTATUSOUTINFO		{
+		public struct DDGETTRANSFERSTATUSOUTINFO
+		{
 			public uint dwTransferID;
 		}
 		[CRepr]
-		public struct DXAPI_INTERFACE		{
+		public struct DXAPI_INTERFACE
+		{
 			public uint16 Size;
 			public uint16 Version;
 			public void* Context;

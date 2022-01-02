@@ -93,7 +93,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct D3D_SHADER_DATA		{
+		public struct D3D_SHADER_DATA
+		{
 			public void* pBytecode;
 			public uint BytecodeLength;
 		}

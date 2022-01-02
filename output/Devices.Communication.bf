@@ -198,7 +198,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MODEMDEVCAPS		{
+		public struct MODEMDEVCAPS
+		{
 			public uint32 dwActualSize;
 			public uint32 dwRequiredSize;
 			public uint32 dwDevSpecificOffset;
@@ -221,7 +222,8 @@ namespace Win32
 			public uint8[0] abVariablePortion;
 		}
 		[CRepr]
-		public struct MODEMSETTINGS		{
+		public struct MODEMSETTINGS
+		{
 			public uint32 dwActualSize;
 			public uint32 dwRequiredSize;
 			public uint32 dwDevSpecificOffset;
@@ -236,7 +238,8 @@ namespace Win32
 			public uint8[0] abVariablePortion;
 		}
 		[CRepr]
-		public struct COMMPROP		{
+		public struct COMMPROP
+		{
 			public uint16 wPacketLength;
 			public uint16 wPacketVersion;
 			public uint32 dwServiceMask;
@@ -257,13 +260,15 @@ namespace Win32
 			public char16[0] wcProvChar;
 		}
 		[CRepr]
-		public struct COMSTAT		{
+		public struct COMSTAT
+		{
 			public uint32 _bitfield;
 			public uint32 cbInQue;
 			public uint32 cbOutQue;
 		}
 		[CRepr]
-		public struct DCB		{
+		public struct DCB
+		{
 			public uint32 DCBlength;
 			public uint32 BaudRate;
 			public uint32 _bitfield;
@@ -281,7 +286,8 @@ namespace Win32
 			public uint16 wReserved1;
 		}
 		[CRepr]
-		public struct COMMTIMEOUTS		{
+		public struct COMMTIMEOUTS
+		{
 			public uint32 ReadIntervalTimeout;
 			public uint32 ReadTotalTimeoutMultiplier;
 			public uint32 ReadTotalTimeoutConstant;
@@ -289,7 +295,8 @@ namespace Win32
 			public uint32 WriteTotalTimeoutConstant;
 		}
 		[CRepr]
-		public struct COMMCONFIG		{
+		public struct COMMCONFIG
+		{
 			public uint32 dwSize;
 			public uint16 wVersion;
 			public uint16 wReserved;

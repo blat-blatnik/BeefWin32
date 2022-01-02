@@ -8,7 +8,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct IsolatedAppLauncherTelemetryParameters		{
+		public struct IsolatedAppLauncherTelemetryParameters
+		{
 			public BOOL EnableForLaunch;
 			public Guid CorrelationGUID;
 		}

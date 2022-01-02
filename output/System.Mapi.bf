@@ -82,7 +82,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MapiFileDesc		{
+		public struct MapiFileDesc
+		{
 			public uint32 ulReserved;
 			public uint32 flFlags;
 			public uint32 nPosition;
@@ -91,7 +92,8 @@ namespace Win32
 			public void* lpFileType;
 		}
 		[CRepr]
-		public struct MapiFileDescW		{
+		public struct MapiFileDescW
+		{
 			public uint32 ulReserved;
 			public uint32 flFlags;
 			public uint32 nPosition;
@@ -100,7 +102,8 @@ namespace Win32
 			public void* lpFileType;
 		}
 		[CRepr]
-		public struct MapiFileTagExt		{
+		public struct MapiFileTagExt
+		{
 			public uint32 ulReserved;
 			public uint32 cbTag;
 			public uint8* lpTag;
@@ -108,7 +111,8 @@ namespace Win32
 			public uint8* lpEncoding;
 		}
 		[CRepr]
-		public struct MapiRecipDesc		{
+		public struct MapiRecipDesc
+		{
 			public uint32 ulReserved;
 			public uint32 ulRecipClass;
 			public PSTR lpszName;
@@ -117,7 +121,8 @@ namespace Win32
 			public void* lpEntryID;
 		}
 		[CRepr]
-		public struct MapiRecipDescW		{
+		public struct MapiRecipDescW
+		{
 			public uint32 ulReserved;
 			public uint32 ulRecipClass;
 			public PWSTR lpszName;
@@ -126,7 +131,8 @@ namespace Win32
 			public void* lpEntryID;
 		}
 		[CRepr]
-		public struct MapiMessage		{
+		public struct MapiMessage
+		{
 			public uint32 ulReserved;
 			public PSTR lpszSubject;
 			public PSTR lpszNoteText;
@@ -141,7 +147,8 @@ namespace Win32
 			public MapiFileDesc* lpFiles;
 		}
 		[CRepr]
-		public struct MapiMessageW		{
+		public struct MapiMessageW
+		{
 			public uint32 ulReserved;
 			public PWSTR lpszSubject;
 			public PWSTR lpszNoteText;

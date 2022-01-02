@@ -76,55 +76,65 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct RdcNeed		{
+		public struct RdcNeed
+		{
 			public RdcNeedType m_BlockType;
 			public uint64 m_FileOffset;
 			public uint64 m_BlockLength;
 		}
 		[CRepr]
-		public struct RdcBufferPointer		{
+		public struct RdcBufferPointer
+		{
 			public uint32 m_Size;
 			public uint32 m_Used;
 			public uint8* m_Data;
 		}
 		[CRepr]
-		public struct RdcNeedPointer		{
+		public struct RdcNeedPointer
+		{
 			public uint32 m_Size;
 			public uint32 m_Used;
 			public RdcNeed* m_Data;
 		}
 		[CRepr]
-		public struct RdcSignature		{
+		public struct RdcSignature
+		{
 			public uint8[16] m_Signature;
 			public uint16 m_BlockLength;
 		}
 		[CRepr]
-		public struct RdcSignaturePointer		{
+		public struct RdcSignaturePointer
+		{
 			public uint32 m_Size;
 			public uint32 m_Used;
 			public RdcSignature* m_Data;
 		}
 		[CRepr]
-		public struct SimilarityMappedViewInfo		{
+		public struct SimilarityMappedViewInfo
+		{
 			public uint8* m_Data;
 			public uint32 m_Length;
 		}
 		[CRepr]
-		public struct SimilarityData		{
+		public struct SimilarityData
+		{
 			public uint8[16] m_Data;
 		}
 		[CRepr]
-		public struct FindSimilarFileIndexResults		{
+		public struct FindSimilarFileIndexResults
+		{
 			public uint32 m_FileIndex;
 			public uint32 m_MatchCount;
 		}
 		[CRepr]
-		public struct SimilarityDumpData		{
+		public struct SimilarityDumpData
+		{
 			public uint32 m_FileIndex;
 			public SimilarityData m_Data;
 		}
 		[CRepr]
-		public struct SimilarityFileId		{
+		public struct SimilarityFileId
+		{
 			public uint8[32] m_FileId;
 		}
 		

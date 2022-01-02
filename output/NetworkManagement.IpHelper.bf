@@ -813,7 +813,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct ip_option_information		{
+		public struct ip_option_information
+		{
 			public uint8 Ttl;
 			public uint8 Tos;
 			public uint8 Flags;
@@ -821,7 +822,8 @@ namespace Win32
 			public uint8* OptionsData;
 		}
 		[CRepr]
-		public struct ip_option_information32		{
+		public struct ip_option_information32
+		{
 			public uint8 Ttl;
 			public uint8 Tos;
 			public uint8 Flags;
@@ -829,7 +831,8 @@ namespace Win32
 			public uint8* OptionsData;
 		}
 		[CRepr]
-		public struct icmp_echo_reply		{
+		public struct icmp_echo_reply
+		{
 			public uint32 Address;
 			public uint32 Status;
 			public uint32 RoundTripTime;
@@ -839,7 +842,8 @@ namespace Win32
 			public ip_option_information Options;
 		}
 		[CRepr]
-		public struct icmp_echo_reply32		{
+		public struct icmp_echo_reply32
+		{
 			public uint32 Address;
 			public uint32 Status;
 			public uint32 RoundTripTime;
@@ -849,94 +853,111 @@ namespace Win32
 			public ip_option_information32 Options;
 		}
 		[CRepr]
-		public struct IPV6_ADDRESS_EX		{
+		public struct IPV6_ADDRESS_EX
+		{
 			public uint16 sin6_port;
 			public uint32 sin6_flowinfo;
 			public uint16[8] sin6_addr;
 			public uint32 sin6_scope_id;
 		}
 		[CRepr]
-		public struct icmpv6_echo_reply_lh		{
+		public struct icmpv6_echo_reply_lh
+		{
 			public IPV6_ADDRESS_EX Address;
 			public uint32 Status;
 			public uint32 RoundTripTime;
 		}
 		[CRepr]
-		public struct arp_send_reply		{
+		public struct arp_send_reply
+		{
 			public uint32 DestAddress;
 			public uint32 SrcAddress;
 		}
 		[CRepr]
-		public struct tcp_reserve_port_range		{
+		public struct tcp_reserve_port_range
+		{
 			public uint16 UpperRange;
 			public uint16 LowerRange;
 		}
 		[CRepr]
-		public struct IP_ADAPTER_INDEX_MAP		{
+		public struct IP_ADAPTER_INDEX_MAP
+		{
 			public uint32 Index;
 			public char16[128] Name;
 		}
 		[CRepr]
-		public struct IP_INTERFACE_INFO		{
+		public struct IP_INTERFACE_INFO
+		{
 			public int32 NumAdapters;
 			public IP_ADAPTER_INDEX_MAP[0] Adapter;
 		}
 		[CRepr]
-		public struct IP_UNIDIRECTIONAL_ADAPTER_ADDRESS		{
+		public struct IP_UNIDIRECTIONAL_ADAPTER_ADDRESS
+		{
 			public uint32 NumAdapters;
 			public uint32[0] Address;
 		}
 		[CRepr]
-		public struct IP_ADAPTER_ORDER_MAP		{
+		public struct IP_ADAPTER_ORDER_MAP
+		{
 			public uint32 NumAdapters;
 			public uint32[0] AdapterOrder;
 		}
 		[CRepr]
-		public struct IP_MCAST_COUNTER_INFO		{
+		public struct IP_MCAST_COUNTER_INFO
+		{
 			public uint64 InMcastOctets;
 			public uint64 OutMcastOctets;
 			public uint64 InMcastPkts;
 			public uint64 OutMcastPkts;
 		}
 		[CRepr]
-		public struct NET_IF_RCV_ADDRESS_LH		{
+		public struct NET_IF_RCV_ADDRESS_LH
+		{
 			public NET_IF_RCV_ADDRESS_TYPE ifRcvAddressType;
 			public uint16 ifRcvAddressLength;
 			public uint16 ifRcvAddressOffset;
 		}
 		[CRepr]
-		public struct NET_IF_ALIAS_LH		{
+		public struct NET_IF_ALIAS_LH
+		{
 			public uint16 ifAliasLength;
 			public uint16 ifAliasOffset;
 		}
 		[CRepr, Union]
-		public struct NET_LUID_LH		{
+		public struct NET_LUID_LH
+		{
 			public uint64 Value;
 			public _Info_e__Struct Info;
 			
 			[CRepr]
-			public struct _Info_e__Struct			{
+			public struct _Info_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct NET_PHYSICAL_LOCATION_LH		{
+		public struct NET_PHYSICAL_LOCATION_LH
+		{
 			public uint32 BusNumber;
 			public uint32 SlotNumber;
 			public uint32 FunctionNumber;
 		}
 		[CRepr]
-		public struct IF_COUNTED_STRING_LH		{
+		public struct IF_COUNTED_STRING_LH
+		{
 			public uint16 Length;
 			public char16[257] String;
 		}
 		[CRepr]
-		public struct IF_PHYSICAL_ADDRESS_LH		{
+		public struct IF_PHYSICAL_ADDRESS_LH
+		{
 			public uint16 Length;
 			public uint8[32] Address;
 		}
 		[CRepr]
-		public struct NDIS_INTERFACE_INFORMATION		{
+		public struct NDIS_INTERFACE_INFORMATION
+		{
 			public NET_IF_OPER_STATUS ifOperStatus;
 			public uint32 ifOperStatusFlags;
 			public NET_IF_MEDIA_CONNECT_STATE MediaConnectState;
@@ -971,7 +992,8 @@ namespace Win32
 			public uint32 SupportedStatistics;
 		}
 		[CRepr]
-		public struct MIB_IF_ROW2		{
+		public struct MIB_IF_ROW2
+		{
 			public NET_LUID_LH InterfaceLuid;
 			public uint32 InterfaceIndex;
 			public Guid InterfaceGuid;
@@ -1015,17 +1037,20 @@ namespace Win32
 			public uint64 OutQLen;
 			
 			[CRepr]
-			public struct _InterfaceAndOperStatusFlags_e__Struct			{
+			public struct _InterfaceAndOperStatusFlags_e__Struct
+			{
 				public uint8 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct MIB_IF_TABLE2		{
+		public struct MIB_IF_TABLE2
+		{
 			public uint32 NumEntries;
 			public MIB_IF_ROW2[0] Table;
 		}
 		[CRepr]
-		public struct MIB_IPINTERFACE_ROW		{
+		public struct MIB_IPINTERFACE_ROW
+		{
 			public uint16 Family;
 			public NET_LUID_LH InterfaceLuid;
 			public uint32 InterfaceIndex;
@@ -1063,37 +1088,44 @@ namespace Win32
 			public BOOLEAN DisableDefaultRoutes;
 		}
 		[CRepr]
-		public struct MIB_IPINTERFACE_TABLE		{
+		public struct MIB_IPINTERFACE_TABLE
+		{
 			public uint32 NumEntries;
 			public MIB_IPINTERFACE_ROW[0] Table;
 		}
 		[CRepr]
-		public struct MIB_IFSTACK_ROW		{
+		public struct MIB_IFSTACK_ROW
+		{
 			public uint32 HigherLayerInterfaceIndex;
 			public uint32 LowerLayerInterfaceIndex;
 		}
 		[CRepr]
-		public struct MIB_INVERTEDIFSTACK_ROW		{
+		public struct MIB_INVERTEDIFSTACK_ROW
+		{
 			public uint32 LowerLayerInterfaceIndex;
 			public uint32 HigherLayerInterfaceIndex;
 		}
 		[CRepr]
-		public struct MIB_IFSTACK_TABLE		{
+		public struct MIB_IFSTACK_TABLE
+		{
 			public uint32 NumEntries;
 			public MIB_IFSTACK_ROW[0] Table;
 		}
 		[CRepr]
-		public struct MIB_INVERTEDIFSTACK_TABLE		{
+		public struct MIB_INVERTEDIFSTACK_TABLE
+		{
 			public uint32 NumEntries;
 			public MIB_INVERTEDIFSTACK_ROW[0] Table;
 		}
 		[CRepr]
-		public struct MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES		{
+		public struct MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES
+		{
 			public NL_BANDWIDTH_INFORMATION InboundBandwidthInformation;
 			public NL_BANDWIDTH_INFORMATION OutboundBandwidthInformation;
 		}
 		[CRepr]
-		public struct MIB_UNICASTIPADDRESS_ROW		{
+		public struct MIB_UNICASTIPADDRESS_ROW
+		{
 			public SOCKADDR_INET Address;
 			public NET_LUID_LH InterfaceLuid;
 			public uint32 InterfaceIndex;
@@ -1108,41 +1140,48 @@ namespace Win32
 			public LARGE_INTEGER CreationTimeStamp;
 		}
 		[CRepr]
-		public struct MIB_UNICASTIPADDRESS_TABLE		{
+		public struct MIB_UNICASTIPADDRESS_TABLE
+		{
 			public uint32 NumEntries;
 			public MIB_UNICASTIPADDRESS_ROW[0] Table;
 		}
 		[CRepr]
-		public struct MIB_ANYCASTIPADDRESS_ROW		{
+		public struct MIB_ANYCASTIPADDRESS_ROW
+		{
 			public SOCKADDR_INET Address;
 			public NET_LUID_LH InterfaceLuid;
 			public uint32 InterfaceIndex;
 			public SCOPE_ID ScopeId;
 		}
 		[CRepr]
-		public struct MIB_ANYCASTIPADDRESS_TABLE		{
+		public struct MIB_ANYCASTIPADDRESS_TABLE
+		{
 			public uint32 NumEntries;
 			public MIB_ANYCASTIPADDRESS_ROW[0] Table;
 		}
 		[CRepr]
-		public struct MIB_MULTICASTIPADDRESS_ROW		{
+		public struct MIB_MULTICASTIPADDRESS_ROW
+		{
 			public SOCKADDR_INET Address;
 			public uint32 InterfaceIndex;
 			public NET_LUID_LH InterfaceLuid;
 			public SCOPE_ID ScopeId;
 		}
 		[CRepr]
-		public struct MIB_MULTICASTIPADDRESS_TABLE		{
+		public struct MIB_MULTICASTIPADDRESS_TABLE
+		{
 			public uint32 NumEntries;
 			public MIB_MULTICASTIPADDRESS_ROW[0] Table;
 		}
 		[CRepr]
-		public struct IP_ADDRESS_PREFIX		{
+		public struct IP_ADDRESS_PREFIX
+		{
 			public SOCKADDR_INET Prefix;
 			public uint8 PrefixLength;
 		}
 		[CRepr]
-		public struct MIB_IPFORWARD_ROW2		{
+		public struct MIB_IPFORWARD_ROW2
+		{
 			public NET_LUID_LH InterfaceLuid;
 			public uint32 InterfaceIndex;
 			public IP_ADDRESS_PREFIX DestinationPrefix;
@@ -1160,12 +1199,14 @@ namespace Win32
 			public NL_ROUTE_ORIGIN Origin;
 		}
 		[CRepr]
-		public struct MIB_IPFORWARD_TABLE2		{
+		public struct MIB_IPFORWARD_TABLE2
+		{
 			public uint32 NumEntries;
 			public MIB_IPFORWARD_ROW2[0] Table;
 		}
 		[CRepr]
-		public struct MIB_IPPATH_ROW		{
+		public struct MIB_IPPATH_ROW
+		{
 			public SOCKADDR_INET Source;
 			public SOCKADDR_INET Destination;
 			public NET_LUID_LH InterfaceLuid;
@@ -1180,18 +1221,21 @@ namespace Win32
 			public uint64 LinkReceiveSpeed;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 LastReachable;
 				public uint32 LastUnreachable;
 			}
 		}
 		[CRepr]
-		public struct MIB_IPPATH_TABLE		{
+		public struct MIB_IPPATH_TABLE
+		{
 			public uint32 NumEntries;
 			public MIB_IPPATH_ROW[0] Table;
 		}
 		[CRepr]
-		public struct MIB_IPNET_ROW2		{
+		public struct MIB_IPNET_ROW2
+		{
 			public SOCKADDR_INET Address;
 			public uint32 InterfaceIndex;
 			public NET_LUID_LH InterfaceLuid;
@@ -1202,28 +1246,33 @@ namespace Win32
 			public _ReachabilityTime_e__Union ReachabilityTime;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint8 Flags;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint8 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _ReachabilityTime_e__Union			{
+			public struct _ReachabilityTime_e__Union
+			{
 				public uint32 LastReachable;
 				public uint32 LastUnreachable;
 			}
 		}
 		[CRepr]
-		public struct MIB_IPNET_TABLE2		{
+		public struct MIB_IPNET_TABLE2
+		{
 			public uint32 NumEntries;
 			public MIB_IPNET_ROW2[0] Table;
 		}
 		[CRepr]
-		public struct DNS_SETTINGS		{
+		public struct DNS_SETTINGS
+		{
 			public uint32 Version;
 			public uint64 Flags;
 			public PWSTR Hostname;
@@ -1231,7 +1280,8 @@ namespace Win32
 			public PWSTR SearchList;
 		}
 		[CRepr]
-		public struct DNS_SETTINGS2		{
+		public struct DNS_SETTINGS2
+		{
 			public uint32 Version;
 			public uint64 Flags;
 			public PWSTR Hostname;
@@ -1240,23 +1290,27 @@ namespace Win32
 			public uint64 SettingFlags;
 		}
 		[CRepr]
-		public struct DNS_DOH_SERVER_SETTINGS		{
+		public struct DNS_DOH_SERVER_SETTINGS
+		{
 			public PWSTR Template;
 			public uint64 Flags;
 		}
 		[CRepr, Union]
-		public struct DNS_SERVER_PROPERTY_TYPES		{
+		public struct DNS_SERVER_PROPERTY_TYPES
+		{
 			public DNS_DOH_SERVER_SETTINGS* DohSettings;
 		}
 		[CRepr]
-		public struct DNS_SERVER_PROPERTY		{
+		public struct DNS_SERVER_PROPERTY
+		{
 			public uint32 Version;
 			public uint32 ServerIndex;
 			public DNS_SERVER_PROPERTY_TYPE Type;
 			public DNS_SERVER_PROPERTY_TYPES Property;
 		}
 		[CRepr]
-		public struct DNS_INTERFACE_SETTINGS		{
+		public struct DNS_INTERFACE_SETTINGS
+		{
 			public uint32 Version;
 			public uint64 Flags;
 			public PWSTR Domain;
@@ -1269,13 +1323,15 @@ namespace Win32
 			public PWSTR ProfileNameServer;
 		}
 		[CRepr]
-		public struct DNS_INTERFACE_SETTINGS_EX		{
+		public struct DNS_INTERFACE_SETTINGS_EX
+		{
 			public DNS_INTERFACE_SETTINGS SettingsV1;
 			public uint32 DisableUnconstrainedQueries;
 			public PWSTR SupplementalSearchList;
 		}
 		[CRepr]
-		public struct DNS_INTERFACE_SETTINGS3		{
+		public struct DNS_INTERFACE_SETTINGS3
+		{
 			public uint32 Version;
 			public uint64 Flags;
 			public PWSTR Domain;
@@ -1294,16 +1350,19 @@ namespace Win32
 			public DNS_SERVER_PROPERTY* ProfileServerProperties;
 		}
 		[CRepr]
-		public struct MIB_OPAQUE_QUERY		{
+		public struct MIB_OPAQUE_QUERY
+		{
 			public uint32 dwVarId;
 			public uint32[0] rgdwVarIndex;
 		}
 		[CRepr]
-		public struct MIB_IFNUMBER		{
+		public struct MIB_IFNUMBER
+		{
 			public uint32 dwValue;
 		}
 		[CRepr]
-		public struct MIB_IFROW		{
+		public struct MIB_IFROW
+		{
 			public char16[256] wszName;
 			public uint32 dwIndex;
 			public uint32 dwType;
@@ -1330,12 +1389,14 @@ namespace Win32
 			public uint8[256] bDescr;
 		}
 		[CRepr]
-		public struct MIB_IFTABLE		{
+		public struct MIB_IFTABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IFROW[0] table;
 		}
 		[CRepr]
-		public struct MIB_IPADDRROW_XP		{
+		public struct MIB_IPADDRROW_XP
+		{
 			public uint32 dwAddr;
 			public uint32 dwIndex;
 			public uint32 dwMask;
@@ -1345,7 +1406,8 @@ namespace Win32
 			public uint16 wType;
 		}
 		[CRepr]
-		public struct MIB_IPADDRROW_W2K		{
+		public struct MIB_IPADDRROW_W2K
+		{
 			public uint32 dwAddr;
 			public uint32 dwIndex;
 			public uint32 dwMask;
@@ -1355,16 +1417,19 @@ namespace Win32
 			public uint16 unused2;
 		}
 		[CRepr]
-		public struct MIB_IPADDRTABLE		{
+		public struct MIB_IPADDRTABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPADDRROW_XP[0] table;
 		}
 		[CRepr]
-		public struct MIB_IPFORWARDNUMBER		{
+		public struct MIB_IPFORWARDNUMBER
+		{
 			public uint32 dwValue;
 		}
 		[CRepr]
-		public struct MIB_IPFORWARDROW		{
+		public struct MIB_IPFORWARDROW
+		{
 			public uint32 dwForwardDest;
 			public uint32 dwForwardMask;
 			public uint32 dwForwardPolicy;
@@ -1381,23 +1446,27 @@ namespace Win32
 			public uint32 dwForwardMetric5;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 dwForwardType;
 				public MIB_IPFORWARD_TYPE ForwardType;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 dwForwardProto;
 				public NL_ROUTE_PROTOCOL ForwardProto;
 			}
 		}
 		[CRepr]
-		public struct MIB_IPFORWARDTABLE		{
+		public struct MIB_IPFORWARDTABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPFORWARDROW[0] table;
 		}
 		[CRepr]
-		public struct MIB_IPNETROW_LH		{
+		public struct MIB_IPNETROW_LH
+		{
 			public uint32 dwIndex;
 			public uint32 dwPhysAddrLen;
 			public uint8[8] bPhysAddr;
@@ -1405,13 +1474,15 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwType;
 				public MIB_IPNET_TYPE Type;
 			}
 		}
 		[CRepr]
-		public struct MIB_IPNETROW_W2K		{
+		public struct MIB_IPNETROW_W2K
+		{
 			public uint32 dwIndex;
 			public uint32 dwPhysAddrLen;
 			public uint8[8] bPhysAddr;
@@ -1419,12 +1490,14 @@ namespace Win32
 			public uint32 dwType;
 		}
 		[CRepr]
-		public struct MIB_IPNETTABLE		{
+		public struct MIB_IPNETTABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPNETROW_LH[0] table;
 		}
 		[CRepr]
-		public struct MIB_IPSTATS_LH		{
+		public struct MIB_IPSTATS_LH
+		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 dwDefaultTTL;
 			public uint32 dwInReceives;
@@ -1450,13 +1523,15 @@ namespace Win32
 			public uint32 dwNumRoutes;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwForwarding;
 				public MIB_IPSTATS_FORWARDING Forwarding;
 			}
 		}
 		[CRepr]
-		public struct MIB_IPSTATS_W2K		{
+		public struct MIB_IPSTATS_W2K
+		{
 			public uint32 dwForwarding;
 			public uint32 dwDefaultTTL;
 			public uint32 dwInReceives;
@@ -1482,7 +1557,8 @@ namespace Win32
 			public uint32 dwNumRoutes;
 		}
 		[CRepr]
-		public struct MIBICMPSTATS		{
+		public struct MIBICMPSTATS
+		{
 			public uint32 dwMsgs;
 			public uint32 dwErrors;
 			public uint32 dwDestUnreachs;
@@ -1498,41 +1574,48 @@ namespace Win32
 			public uint32 dwAddrMaskReps;
 		}
 		[CRepr]
-		public struct MIBICMPINFO		{
+		public struct MIBICMPINFO
+		{
 			public MIBICMPSTATS icmpInStats;
 			public MIBICMPSTATS icmpOutStats;
 		}
 		[CRepr]
-		public struct MIB_ICMP		{
+		public struct MIB_ICMP
+		{
 			public MIBICMPINFO stats;
 		}
 		[CRepr]
-		public struct MIBICMPSTATS_EX_XPSP1		{
+		public struct MIBICMPSTATS_EX_XPSP1
+		{
 			public uint32 dwMsgs;
 			public uint32 dwErrors;
 			public uint32[256] rgdwTypeCount;
 		}
 		[CRepr]
-		public struct MIB_ICMP_EX_XPSP1		{
+		public struct MIB_ICMP_EX_XPSP1
+		{
 			public MIBICMPSTATS_EX_XPSP1 icmpInStats;
 			public MIBICMPSTATS_EX_XPSP1 icmpOutStats;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_OIF_XP		{
+		public struct MIB_IPMCAST_OIF_XP
+		{
 			public uint32 dwOutIfIndex;
 			public uint32 dwNextHopAddr;
 			public uint32 dwReserved;
 			public uint32 dwReserved1;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_OIF_W2K		{
+		public struct MIB_IPMCAST_OIF_W2K
+		{
 			public uint32 dwOutIfIndex;
 			public uint32 dwNextHopAddr;
 			public void* pvReserved;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_MFE		{
+		public struct MIB_IPMCAST_MFE
+		{
 			public uint32 dwGroup;
 			public uint32 dwSource;
 			public uint32 dwSrcMask;
@@ -1551,12 +1634,14 @@ namespace Win32
 			public MIB_IPMCAST_OIF_XP[0] rgmioOutInfo;
 		}
 		[CRepr]
-		public struct MIB_MFE_TABLE		{
+		public struct MIB_MFE_TABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPMCAST_MFE[0] table;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_OIF_STATS_LH		{
+		public struct MIB_IPMCAST_OIF_STATS_LH
+		{
 			public uint32 dwOutIfIndex;
 			public uint32 dwNextHopAddr;
 			public uint32 dwDialContext;
@@ -1566,7 +1651,8 @@ namespace Win32
 			public uint32 ulOutDiscards;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_OIF_STATS_W2K		{
+		public struct MIB_IPMCAST_OIF_STATS_W2K
+		{
 			public uint32 dwOutIfIndex;
 			public uint32 dwNextHopAddr;
 			public void* pvDialContext;
@@ -1576,7 +1662,8 @@ namespace Win32
 			public uint32 ulOutDiscards;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_MFE_STATS		{
+		public struct MIB_IPMCAST_MFE_STATS
+		{
 			public uint32 dwGroup;
 			public uint32 dwSource;
 			public uint32 dwSrcMask;
@@ -1596,12 +1683,14 @@ namespace Win32
 			public MIB_IPMCAST_OIF_STATS_LH[0] rgmiosOutStats;
 		}
 		[CRepr]
-		public struct MIB_MFE_STATS_TABLE		{
+		public struct MIB_MFE_STATS_TABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPMCAST_MFE_STATS[0] table;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_MFE_STATS_EX_XP		{
+		public struct MIB_IPMCAST_MFE_STATS_EX_XP
+		{
 			public uint32 dwGroup;
 			public uint32 dwSource;
 			public uint32 dwSrcMask;
@@ -1626,16 +1715,19 @@ namespace Win32
 			public MIB_IPMCAST_OIF_STATS_LH[0] rgmiosOutStats;
 		}
 		[CRepr]
-		public struct MIB_MFE_STATS_TABLE_EX_XP		{
+		public struct MIB_MFE_STATS_TABLE_EX_XP
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPMCAST_MFE_STATS_EX_XP*[0] table;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_GLOBAL		{
+		public struct MIB_IPMCAST_GLOBAL
+		{
 			public uint32 dwEnable;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_IF_ENTRY		{
+		public struct MIB_IPMCAST_IF_ENTRY
+		{
 			public uint32 dwIfIndex;
 			public uint32 dwTtl;
 			public uint32 dwProtocol;
@@ -1644,12 +1736,14 @@ namespace Win32
 			public uint32 ulOutMcastOctets;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_IF_TABLE		{
+		public struct MIB_IPMCAST_IF_TABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPMCAST_IF_ENTRY[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCPROW_LH		{
+		public struct MIB_TCPROW_LH
+		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
@@ -1657,13 +1751,15 @@ namespace Win32
 			public uint32 dwRemotePort;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwState;
 				public MIB_TCP_STATE State;
 			}
 		}
 		[CRepr]
-		public struct MIB_TCPROW_W2K		{
+		public struct MIB_TCPROW_W2K
+		{
 			public uint32 dwState;
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
@@ -1671,12 +1767,14 @@ namespace Win32
 			public uint32 dwRemotePort;
 		}
 		[CRepr]
-		public struct MIB_TCPTABLE		{
+		public struct MIB_TCPTABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_TCPROW_LH[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCPROW2		{
+		public struct MIB_TCPROW2
+		{
 			public uint32 dwState;
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
@@ -1686,12 +1784,14 @@ namespace Win32
 			public TCP_CONNECTION_OFFLOAD_STATE dwOffloadState;
 		}
 		[CRepr]
-		public struct MIB_TCPTABLE2		{
+		public struct MIB_TCPTABLE2
+		{
 			public uint32 dwNumEntries;
 			public MIB_TCPROW2[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCPROW_OWNER_PID		{
+		public struct MIB_TCPROW_OWNER_PID
+		{
 			public uint32 dwState;
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
@@ -1700,12 +1800,14 @@ namespace Win32
 			public uint32 dwOwningPid;
 		}
 		[CRepr]
-		public struct MIB_TCPTABLE_OWNER_PID		{
+		public struct MIB_TCPTABLE_OWNER_PID
+		{
 			public uint32 dwNumEntries;
 			public MIB_TCPROW_OWNER_PID[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCPROW_OWNER_MODULE		{
+		public struct MIB_TCPROW_OWNER_MODULE
+		{
 			public uint32 dwState;
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
@@ -1716,12 +1818,14 @@ namespace Win32
 			public uint64[16] OwningModuleInfo;
 		}
 		[CRepr]
-		public struct MIB_TCPTABLE_OWNER_MODULE		{
+		public struct MIB_TCPTABLE_OWNER_MODULE
+		{
 			public uint32 dwNumEntries;
 			public MIB_TCPROW_OWNER_MODULE[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCP6ROW		{
+		public struct MIB_TCP6ROW
+		{
 			public MIB_TCP_STATE State;
 			public IN6_ADDR LocalAddr;
 			public uint32 dwLocalScopeId;
@@ -1731,12 +1835,14 @@ namespace Win32
 			public uint32 dwRemotePort;
 		}
 		[CRepr]
-		public struct MIB_TCP6TABLE		{
+		public struct MIB_TCP6TABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_TCP6ROW[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCP6ROW2		{
+		public struct MIB_TCP6ROW2
+		{
 			public IN6_ADDR LocalAddr;
 			public uint32 dwLocalScopeId;
 			public uint32 dwLocalPort;
@@ -1748,12 +1854,14 @@ namespace Win32
 			public TCP_CONNECTION_OFFLOAD_STATE dwOffloadState;
 		}
 		[CRepr]
-		public struct MIB_TCP6TABLE2		{
+		public struct MIB_TCP6TABLE2
+		{
 			public uint32 dwNumEntries;
 			public MIB_TCP6ROW2[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCP6ROW_OWNER_PID		{
+		public struct MIB_TCP6ROW_OWNER_PID
+		{
 			public uint8[16] ucLocalAddr;
 			public uint32 dwLocalScopeId;
 			public uint32 dwLocalPort;
@@ -1764,12 +1872,14 @@ namespace Win32
 			public uint32 dwOwningPid;
 		}
 		[CRepr]
-		public struct MIB_TCP6TABLE_OWNER_PID		{
+		public struct MIB_TCP6TABLE_OWNER_PID
+		{
 			public uint32 dwNumEntries;
 			public MIB_TCP6ROW_OWNER_PID[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCP6ROW_OWNER_MODULE		{
+		public struct MIB_TCP6ROW_OWNER_MODULE
+		{
 			public uint8[16] ucLocalAddr;
 			public uint32 dwLocalScopeId;
 			public uint32 dwLocalPort;
@@ -1782,12 +1892,14 @@ namespace Win32
 			public uint64[16] OwningModuleInfo;
 		}
 		[CRepr]
-		public struct MIB_TCP6TABLE_OWNER_MODULE		{
+		public struct MIB_TCP6TABLE_OWNER_MODULE
+		{
 			public uint32 dwNumEntries;
 			public MIB_TCP6ROW_OWNER_MODULE[0] table;
 		}
 		[CRepr]
-		public struct MIB_TCPSTATS_LH		{
+		public struct MIB_TCPSTATS_LH
+		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 dwRtoMin;
 			public uint32 dwRtoMax;
@@ -1805,13 +1917,15 @@ namespace Win32
 			public uint32 dwNumConns;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwRtoAlgorithm;
 				public TCP_RTO_ALGORITHM RtoAlgorithm;
 			}
 		}
 		[CRepr]
-		public struct MIB_TCPSTATS_W2K		{
+		public struct MIB_TCPSTATS_W2K
+		{
 			public uint32 dwRtoAlgorithm;
 			public uint32 dwRtoMin;
 			public uint32 dwRtoMax;
@@ -1829,7 +1943,8 @@ namespace Win32
 			public uint32 dwNumConns;
 		}
 		[CRepr]
-		public struct MIB_TCPSTATS2		{
+		public struct MIB_TCPSTATS2
+		{
 			public TCP_RTO_ALGORITHM RtoAlgorithm;
 			public uint32 dwRtoMin;
 			public uint32 dwRtoMax;
@@ -1847,28 +1962,33 @@ namespace Win32
 			public uint32 dwNumConns;
 		}
 		[CRepr]
-		public struct MIB_UDPROW		{
+		public struct MIB_UDPROW
+		{
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
 		}
 		[CRepr]
-		public struct MIB_UDPTABLE		{
+		public struct MIB_UDPTABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_UDPROW[0] table;
 		}
 		[CRepr]
-		public struct MIB_UDPROW_OWNER_PID		{
+		public struct MIB_UDPROW_OWNER_PID
+		{
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
 			public uint32 dwOwningPid;
 		}
 		[CRepr]
-		public struct MIB_UDPTABLE_OWNER_PID		{
+		public struct MIB_UDPTABLE_OWNER_PID
+		{
 			public uint32 dwNumEntries;
 			public MIB_UDPROW_OWNER_PID[0] table;
 		}
 		[CRepr]
-		public struct MIB_UDPROW_OWNER_MODULE		{
+		public struct MIB_UDPROW_OWNER_MODULE
+		{
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
 			public uint32 dwOwningPid;
@@ -1877,23 +1997,27 @@ namespace Win32
 			public uint64[16] OwningModuleInfo;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 dwFlags;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public int32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct MIB_UDPTABLE_OWNER_MODULE		{
+		public struct MIB_UDPTABLE_OWNER_MODULE
+		{
 			public uint32 dwNumEntries;
 			public MIB_UDPROW_OWNER_MODULE[0] table;
 		}
 		[CRepr]
-		public struct MIB_UDPROW2		{
+		public struct MIB_UDPROW2
+		{
 			public uint32 dwLocalAddr;
 			public uint32 dwLocalPort;
 			public uint32 dwOwningPid;
@@ -1904,46 +2028,54 @@ namespace Win32
 			public uint32 dwRemotePort;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 dwFlags;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public int32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct MIB_UDPTABLE2		{
+		public struct MIB_UDPTABLE2
+		{
 			public uint32 dwNumEntries;
 			public MIB_UDPROW2[0] table;
 		}
 		[CRepr]
-		public struct MIB_UDP6ROW		{
+		public struct MIB_UDP6ROW
+		{
 			public IN6_ADDR dwLocalAddr;
 			public uint32 dwLocalScopeId;
 			public uint32 dwLocalPort;
 		}
 		[CRepr]
-		public struct MIB_UDP6TABLE		{
+		public struct MIB_UDP6TABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_UDP6ROW[0] table;
 		}
 		[CRepr]
-		public struct MIB_UDP6ROW_OWNER_PID		{
+		public struct MIB_UDP6ROW_OWNER_PID
+		{
 			public uint8[16] ucLocalAddr;
 			public uint32 dwLocalScopeId;
 			public uint32 dwLocalPort;
 			public uint32 dwOwningPid;
 		}
 		[CRepr]
-		public struct MIB_UDP6TABLE_OWNER_PID		{
+		public struct MIB_UDP6TABLE_OWNER_PID
+		{
 			public uint32 dwNumEntries;
 			public MIB_UDP6ROW_OWNER_PID[0] table;
 		}
 		[CRepr]
-		public struct MIB_UDP6ROW_OWNER_MODULE		{
+		public struct MIB_UDP6ROW_OWNER_MODULE
+		{
 			public uint8[16] ucLocalAddr;
 			public uint32 dwLocalScopeId;
 			public uint32 dwLocalPort;
@@ -1953,23 +2085,27 @@ namespace Win32
 			public uint64[16] OwningModuleInfo;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 dwFlags;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public int32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct MIB_UDP6TABLE_OWNER_MODULE		{
+		public struct MIB_UDP6TABLE_OWNER_MODULE
+		{
 			public uint32 dwNumEntries;
 			public MIB_UDP6ROW_OWNER_MODULE[0] table;
 		}
 		[CRepr]
-		public struct MIB_UDP6ROW2		{
+		public struct MIB_UDP6ROW2
+		{
 			public uint8[16] ucLocalAddr;
 			public uint32 dwLocalScopeId;
 			public uint32 dwLocalPort;
@@ -1982,23 +2118,27 @@ namespace Win32
 			public uint32 dwRemotePort;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 dwFlags;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public int32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct MIB_UDP6TABLE2		{
+		public struct MIB_UDP6TABLE2
+		{
 			public uint32 dwNumEntries;
 			public MIB_UDP6ROW2[0] table;
 		}
 		[CRepr]
-		public struct MIB_UDPSTATS		{
+		public struct MIB_UDPSTATS
+		{
 			public uint32 dwInDatagrams;
 			public uint32 dwNoPorts;
 			public uint32 dwInErrors;
@@ -2006,7 +2146,8 @@ namespace Win32
 			public uint32 dwNumAddrs;
 		}
 		[CRepr]
-		public struct MIB_UDPSTATS2		{
+		public struct MIB_UDPSTATS2
+		{
 			public uint64 dw64InDatagrams;
 			public uint32 dwNoPorts;
 			public uint32 dwInErrors;
@@ -2014,63 +2155,74 @@ namespace Win32
 			public uint32 dwNumAddrs;
 		}
 		[CRepr]
-		public struct TCPIP_OWNER_MODULE_BASIC_INFO		{
+		public struct TCPIP_OWNER_MODULE_BASIC_INFO
+		{
 			public PWSTR pModuleName;
 			public PWSTR pModulePath;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_BOUNDARY		{
+		public struct MIB_IPMCAST_BOUNDARY
+		{
 			public uint32 dwIfIndex;
 			public uint32 dwGroupAddress;
 			public uint32 dwGroupMask;
 			public uint32 dwStatus;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_BOUNDARY_TABLE		{
+		public struct MIB_IPMCAST_BOUNDARY_TABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPMCAST_BOUNDARY[0] table;
 		}
 		[CRepr]
-		public struct MIB_BOUNDARYROW		{
+		public struct MIB_BOUNDARYROW
+		{
 			public uint32 dwGroupAddress;
 			public uint32 dwGroupMask;
 		}
 		[CRepr]
-		public struct MIB_MCAST_LIMIT_ROW		{
+		public struct MIB_MCAST_LIMIT_ROW
+		{
 			public uint32 dwTtl;
 			public uint32 dwRateLimit;
 		}
 		[CRepr]
-		public struct MIB_IPMCAST_SCOPE		{
+		public struct MIB_IPMCAST_SCOPE
+		{
 			public uint32 dwGroupAddress;
 			public uint32 dwGroupMask;
 			public uint16[256] snNameBuffer;
 			public uint32 dwStatus;
 		}
 		[CRepr]
-		public struct MIB_IPDESTROW		{
+		public struct MIB_IPDESTROW
+		{
 			public MIB_IPFORWARDROW ForwardRow;
 			public uint32 dwForwardPreference;
 			public uint32 dwForwardViewSet;
 		}
 		[CRepr]
-		public struct MIB_IPDESTTABLE		{
+		public struct MIB_IPDESTTABLE
+		{
 			public uint32 dwNumEntries;
 			public MIB_IPDESTROW[0] table;
 		}
 		[CRepr]
-		public struct MIB_BEST_IF		{
+		public struct MIB_BEST_IF
+		{
 			public uint32 dwDestAddr;
 			public uint32 dwIfIndex;
 		}
 		[CRepr]
-		public struct MIB_PROXYARP		{
+		public struct MIB_PROXYARP
+		{
 			public uint32 dwAddress;
 			public uint32 dwMask;
 			public uint32 dwIfIndex;
 		}
 		[CRepr]
-		public struct MIB_IFSTATUS		{
+		public struct MIB_IFSTATUS
+		{
 			public uint32 dwIfIndex;
 			public uint32 dwAdminStatus;
 			public uint32 dwOperationalStatus;
@@ -2078,33 +2230,39 @@ namespace Win32
 			public BOOL bMHbeatAlive;
 		}
 		[CRepr]
-		public struct MIB_ROUTESTATE		{
+		public struct MIB_ROUTESTATE
+		{
 			public BOOL bRoutesSetToStack;
 		}
 		[CRepr]
-		public struct MIB_OPAQUE_INFO		{
+		public struct MIB_OPAQUE_INFO
+		{
 			public uint32 dwId;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 ullAlign;
 				public uint8[0] rgbyData;
 			}
 		}
 		[CRepr]
-		public struct IP_ADDRESS_STRING		{
+		public struct IP_ADDRESS_STRING
+		{
 			public CHAR[16] String;
 		}
 		[CRepr]
-		public struct IP_ADDR_STRING		{
+		public struct IP_ADDR_STRING
+		{
 			public IP_ADDR_STRING* Next;
 			public IP_ADDRESS_STRING IpAddress;
 			public IP_ADDRESS_STRING IpMask;
 			public uint32 Context;
 		}
 		[CRepr]
-		public struct IP_ADAPTER_INFO		{
+		public struct IP_ADAPTER_INFO
+		{
 			public IP_ADAPTER_INFO* Next;
 			public uint32 ComboIndex;
 			public CHAR[260] AdapterName;
@@ -2125,7 +2283,8 @@ namespace Win32
 			public int64 LeaseExpires;
 		}
 		[CRepr]
-		public struct IP_ADAPTER_UNICAST_ADDRESS_LH		{
+		public struct IP_ADAPTER_UNICAST_ADDRESS_LH
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_UNICAST_ADDRESS_LH* Next;
 			public SOCKET_ADDRESS Address;
@@ -2138,19 +2297,22 @@ namespace Win32
 			public uint8 OnLinkPrefixLength;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 Flags;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_UNICAST_ADDRESS_XP		{
+		public struct IP_ADAPTER_UNICAST_ADDRESS_XP
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_UNICAST_ADDRESS_XP* Next;
 			public SOCKET_ADDRESS Address;
@@ -2162,133 +2324,155 @@ namespace Win32
 			public uint32 LeaseLifetime;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 Flags;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_ANYCAST_ADDRESS_XP		{
+		public struct IP_ADAPTER_ANYCAST_ADDRESS_XP
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_ANYCAST_ADDRESS_XP* Next;
 			public SOCKET_ADDRESS Address;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 Flags;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_MULTICAST_ADDRESS_XP		{
+		public struct IP_ADAPTER_MULTICAST_ADDRESS_XP
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_MULTICAST_ADDRESS_XP* Next;
 			public SOCKET_ADDRESS Address;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 Flags;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_DNS_SERVER_ADDRESS_XP		{
+		public struct IP_ADAPTER_DNS_SERVER_ADDRESS_XP
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_DNS_SERVER_ADDRESS_XP* Next;
 			public SOCKET_ADDRESS Address;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 Reserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_WINS_SERVER_ADDRESS_LH		{
+		public struct IP_ADAPTER_WINS_SERVER_ADDRESS_LH
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_WINS_SERVER_ADDRESS_LH* Next;
 			public SOCKET_ADDRESS Address;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 Reserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_GATEWAY_ADDRESS_LH		{
+		public struct IP_ADAPTER_GATEWAY_ADDRESS_LH
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_GATEWAY_ADDRESS_LH* Next;
 			public SOCKET_ADDRESS Address;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 Reserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_PREFIX_XP		{
+		public struct IP_ADAPTER_PREFIX_XP
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_PREFIX_XP* Next;
 			public SOCKET_ADDRESS Address;
 			public uint32 PrefixLength;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 Flags;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_DNS_SUFFIX		{
+		public struct IP_ADAPTER_DNS_SUFFIX
+		{
 			public IP_ADAPTER_DNS_SUFFIX* Next;
 			public char16[256] String;
 		}
 		[CRepr]
-		public struct IP_ADAPTER_ADDRESSES_LH		{
+		public struct IP_ADAPTER_ADDRESSES_LH
+		{
 			public _Anonymous1_e__Union Anonymous1;
 			public IP_ADAPTER_ADDRESSES_LH* Next;
 			public PSTR AdapterName;
@@ -2327,29 +2511,34 @@ namespace Win32
 			public IP_ADAPTER_DNS_SUFFIX* FirstDnsSuffix;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 IfIndex;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_ADAPTER_ADDRESSES_XP		{
+		public struct IP_ADAPTER_ADDRESSES_XP
+		{
 			public _Anonymous_e__Union Anonymous;
 			public IP_ADAPTER_ADDRESSES_XP* Next;
 			public PSTR AdapterName;
@@ -2371,26 +2560,30 @@ namespace Win32
 			public IP_ADAPTER_PREFIX_XP* FirstPrefix;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Length;
 					public uint32 IfIndex;
 				}
 			}
 		}
 		[CRepr]
-		public struct IP_PER_ADAPTER_INFO_W2KSP1		{
+		public struct IP_PER_ADAPTER_INFO_W2KSP1
+		{
 			public uint32 AutoconfigEnabled;
 			public uint32 AutoconfigActive;
 			public IP_ADDR_STRING* CurrentDnsServer;
 			public IP_ADDR_STRING DnsServerList;
 		}
 		[CRepr]
-		public struct FIXED_INFO_W2KSP1		{
+		public struct FIXED_INFO_W2KSP1
+		{
 			public CHAR[132] HostName;
 			public CHAR[132] DomainName;
 			public IP_ADDR_STRING* CurrentDnsServer;
@@ -2402,7 +2595,8 @@ namespace Win32
 			public uint32 EnableDns;
 		}
 		[CRepr]
-		public struct ip_interface_name_info_w2ksp1		{
+		public struct ip_interface_name_info_w2ksp1
+		{
 			public uint32 Index;
 			public uint32 MediaType;
 			public uint8 ConnectionType;
@@ -2411,13 +2605,15 @@ namespace Win32
 			public Guid InterfaceGuid;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_SYN_OPTS_ROS_v0		{
+		public struct TCP_ESTATS_SYN_OPTS_ROS_v0
+		{
 			public BOOLEAN ActiveOpen;
 			public uint32 MssRcvd;
 			public uint32 MssSent;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_DATA_ROD_v0		{
+		public struct TCP_ESTATS_DATA_ROD_v0
+		{
 			public uint64 DataBytesOut;
 			public uint64 DataSegsOut;
 			public uint64 DataBytesIn;
@@ -2434,11 +2630,13 @@ namespace Win32
 			public uint64 ThruBytesReceived;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_DATA_RW_v0		{
+		public struct TCP_ESTATS_DATA_RW_v0
+		{
 			public BOOLEAN EnableCollection;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_SND_CONG_ROD_v0		{
+		public struct TCP_ESTATS_SND_CONG_ROD_v0
+		{
 			public uint32 SndLimTransRwin;
 			public uint32 SndLimTimeRwin;
 			public uint SndLimBytesRwin;
@@ -2459,15 +2657,18 @@ namespace Win32
 			public uint32 MinSsthresh;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_SND_CONG_ROS_v0		{
+		public struct TCP_ESTATS_SND_CONG_ROS_v0
+		{
 			public uint32 LimCwnd;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_SND_CONG_RW_v0		{
+		public struct TCP_ESTATS_SND_CONG_RW_v0
+		{
 			public BOOLEAN EnableCollection;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_PATH_ROD_v0		{
+		public struct TCP_ESTATS_PATH_ROD_v0
+		{
 			public uint32 FastRetran;
 			public uint32 Timeouts;
 			public uint32 SubsequentTimeouts;
@@ -2510,22 +2711,26 @@ namespace Win32
 			public uint32 SpuriousRtoDetections;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_PATH_RW_v0		{
+		public struct TCP_ESTATS_PATH_RW_v0
+		{
 			public BOOLEAN EnableCollection;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_SEND_BUFF_ROD_v0		{
+		public struct TCP_ESTATS_SEND_BUFF_ROD_v0
+		{
 			public uint CurRetxQueue;
 			public uint MaxRetxQueue;
 			public uint CurAppWQueue;
 			public uint MaxAppWQueue;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_SEND_BUFF_RW_v0		{
+		public struct TCP_ESTATS_SEND_BUFF_RW_v0
+		{
 			public BOOLEAN EnableCollection;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_REC_ROD_v0		{
+		public struct TCP_ESTATS_REC_ROD_v0
+		{
 			public uint32 CurRwinSent;
 			public uint32 MaxRwinSent;
 			public uint32 MinRwinSent;
@@ -2542,27 +2747,32 @@ namespace Win32
 			public uint8 WinScaleSent;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_REC_RW_v0		{
+		public struct TCP_ESTATS_REC_RW_v0
+		{
 			public BOOLEAN EnableCollection;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_OBS_REC_ROD_v0		{
+		public struct TCP_ESTATS_OBS_REC_ROD_v0
+		{
 			public uint32 CurRwinRcvd;
 			public uint32 MaxRwinRcvd;
 			public uint32 MinRwinRcvd;
 			public uint8 WinScaleRcvd;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_OBS_REC_RW_v0		{
+		public struct TCP_ESTATS_OBS_REC_RW_v0
+		{
 			public BOOLEAN EnableCollection;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_BANDWIDTH_RW_v0		{
+		public struct TCP_ESTATS_BANDWIDTH_RW_v0
+		{
 			public TCP_BOOLEAN_OPTIONAL EnableCollectionOutbound;
 			public TCP_BOOLEAN_OPTIONAL EnableCollectionInbound;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_BANDWIDTH_ROD_v0		{
+		public struct TCP_ESTATS_BANDWIDTH_ROD_v0
+		{
 			public uint64 OutboundBandwidth;
 			public uint64 InboundBandwidth;
 			public uint64 OutboundInstability;
@@ -2571,18 +2781,21 @@ namespace Win32
 			public BOOLEAN InboundBandwidthPeaked;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_FINE_RTT_RW_v0		{
+		public struct TCP_ESTATS_FINE_RTT_RW_v0
+		{
 			public BOOLEAN EnableCollection;
 		}
 		[CRepr]
-		public struct TCP_ESTATS_FINE_RTT_ROD_v0		{
+		public struct TCP_ESTATS_FINE_RTT_ROD_v0
+		{
 			public uint32 RttVar;
 			public uint32 MaxRtt;
 			public uint32 MinRtt;
 			public uint32 SumRtt;
 		}
 		[CRepr]
-		public struct INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES		{
+		public struct INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES
+		{
 			public BOOLEAN PtpV2OverUdpIPv4EventMessageReceive;
 			public BOOLEAN PtpV2OverUdpIPv4AllMessageReceive;
 			public BOOLEAN PtpV2OverUdpIPv4EventMessageTransmit;
@@ -2596,26 +2809,30 @@ namespace Win32
 			public BOOLEAN TaggedTransmit;
 		}
 		[CRepr]
-		public struct INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES		{
+		public struct INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES
+		{
 			public BOOLEAN AllReceive;
 			public BOOLEAN AllTransmit;
 			public BOOLEAN TaggedTransmit;
 		}
 		[CRepr]
-		public struct INTERFACE_TIMESTAMP_CAPABILITIES		{
+		public struct INTERFACE_TIMESTAMP_CAPABILITIES
+		{
 			public uint64 HardwareClockFrequencyHz;
 			public BOOLEAN SupportsCrossTimestamp;
 			public INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES HardwareCapabilities;
 			public INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES SoftwareCapabilities;
 		}
 		[CRepr]
-		public struct INTERFACE_HARDWARE_CROSSTIMESTAMP		{
+		public struct INTERFACE_HARDWARE_CROSSTIMESTAMP
+		{
 			public uint64 SystemTimestamp1;
 			public uint64 HardwareClockTimestamp;
 			public uint64 SystemTimestamp2;
 		}
 		[CRepr]
-		public struct PF_FILTER_DESCRIPTOR		{
+		public struct PF_FILTER_DESCRIPTOR
+		{
 			public uint32 dwFilterFlags;
 			public uint32 dwRule;
 			public PFADDRESSTYPE pfatType;
@@ -2631,12 +2848,14 @@ namespace Win32
 			public uint16 wDstPortHighRange;
 		}
 		[CRepr]
-		public struct PF_FILTER_STATS		{
+		public struct PF_FILTER_STATS
+		{
 			public uint32 dwNumPacketsFiltered;
 			public PF_FILTER_DESCRIPTOR info;
 		}
 		[CRepr]
-		public struct PF_INTERFACE_STATS		{
+		public struct PF_INTERFACE_STATS
+		{
 			public void* pvDriverContext;
 			public uint32 dwFlags;
 			public uint32 dwInDrops;
@@ -2655,13 +2874,15 @@ namespace Win32
 			public PF_FILTER_STATS[0] FilterInfo;
 		}
 		[CRepr]
-		public struct PF_LATEBIND_INFO		{
+		public struct PF_LATEBIND_INFO
+		{
 			public uint8* SrcAddr;
 			public uint8* DstAddr;
 			public uint8* Mask;
 		}
 		[CRepr]
-		public struct PFLOGFRAME		{
+		public struct PFLOGFRAME
+		{
 			public LARGE_INTEGER Timestamp;
 			public PFFRAMETYPE pfeTypeOfFrame;
 			public uint32 dwTotalSizeUsed;

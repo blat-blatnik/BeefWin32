@@ -437,14 +437,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PERF_COUNTERSET_INFO		{
+		public struct PERF_COUNTERSET_INFO
+		{
 			public Guid CounterSetGuid;
 			public Guid ProviderGuid;
 			public uint32 NumCounters;
 			public uint32 InstanceType;
 		}
 		[CRepr]
-		public struct PERF_COUNTER_INFO		{
+		public struct PERF_COUNTER_INFO
+		{
 			public uint32 CounterId;
 			public uint32 Type;
 			public uint64 Attrib;
@@ -454,7 +456,8 @@ namespace Win32
 			public uint32 Offset;
 		}
 		[CRepr]
-		public struct PERF_COUNTERSET_INSTANCE		{
+		public struct PERF_COUNTERSET_INSTANCE
+		{
 			public Guid CounterSetGuid;
 			public uint32 dwSize;
 			public uint32 InstanceId;
@@ -462,7 +465,8 @@ namespace Win32
 			public uint32 InstanceNameSize;
 		}
 		[CRepr]
-		public struct PERF_COUNTER_IDENTITY		{
+		public struct PERF_COUNTER_IDENTITY
+		{
 			public Guid CounterSetGuid;
 			public uint32 BufferSize;
 			public uint32 CounterId;
@@ -472,7 +476,8 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PERF_PROVIDER_CONTEXT		{
+		public struct PERF_PROVIDER_CONTEXT
+		{
 			public uint32 ContextSize;
 			public uint32 Reserved;
 			public PERFLIBREQUEST ControlCallback;
@@ -481,12 +486,14 @@ namespace Win32
 			public void* pMemContext;
 		}
 		[CRepr]
-		public struct PERF_INSTANCE_HEADER		{
+		public struct PERF_INSTANCE_HEADER
+		{
 			public uint32 Size;
 			public uint32 InstanceId;
 		}
 		[CRepr]
-		public struct PERF_COUNTERSET_REG_INFO		{
+		public struct PERF_COUNTERSET_REG_INFO
+		{
 			public Guid CounterSetGuid;
 			public uint32 CounterSetType;
 			public uint32 DetailLevel;
@@ -494,7 +501,8 @@ namespace Win32
 			public uint32 InstanceType;
 		}
 		[CRepr]
-		public struct PERF_COUNTER_REG_INFO		{
+		public struct PERF_COUNTER_REG_INFO
+		{
 			public uint32 CounterId;
 			public uint32 Type;
 			public uint64 Attrib;
@@ -508,17 +516,20 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PERF_STRING_BUFFER_HEADER		{
+		public struct PERF_STRING_BUFFER_HEADER
+		{
 			public uint32 dwSize;
 			public uint32 dwCounters;
 		}
 		[CRepr]
-		public struct PERF_STRING_COUNTER_HEADER		{
+		public struct PERF_STRING_COUNTER_HEADER
+		{
 			public uint32 dwCounterId;
 			public uint32 dwOffset;
 		}
 		[CRepr]
-		public struct PERF_COUNTER_IDENTIFIER		{
+		public struct PERF_COUNTER_IDENTIFIER
+		{
 			public Guid CounterSetGuid;
 			public uint32 Status;
 			public uint32 Size;
@@ -528,7 +539,8 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PERF_DATA_HEADER		{
+		public struct PERF_DATA_HEADER
+		{
 			public uint32 dwTotalSize;
 			public uint32 dwNumCounters;
 			public int64 PerfTimeStamp;
@@ -537,29 +549,34 @@ namespace Win32
 			public SYSTEMTIME SystemTime;
 		}
 		[CRepr]
-		public struct PERF_COUNTER_HEADER		{
+		public struct PERF_COUNTER_HEADER
+		{
 			public uint32 dwStatus;
 			public PerfCounterDataType dwType;
 			public uint32 dwSize;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PERF_MULTI_INSTANCES		{
+		public struct PERF_MULTI_INSTANCES
+		{
 			public uint32 dwTotalSize;
 			public uint32 dwInstances;
 		}
 		[CRepr]
-		public struct PERF_MULTI_COUNTERS		{
+		public struct PERF_MULTI_COUNTERS
+		{
 			public uint32 dwSize;
 			public uint32 dwCounters;
 		}
 		[CRepr]
-		public struct PERF_COUNTER_DATA		{
+		public struct PERF_COUNTER_DATA
+		{
 			public uint32 dwDataSize;
 			public uint32 dwSize;
 		}
 		[CRepr]
-		public struct PERF_DATA_BLOCK		{
+		public struct PERF_DATA_BLOCK
+		{
 			public char16[4] Signature;
 			public uint32 LittleEndian;
 			public uint32 Version;
@@ -576,7 +593,8 @@ namespace Win32
 			public uint32 SystemNameOffset;
 		}
 		[CRepr]
-		public struct PERF_OBJECT_TYPE		{
+		public struct PERF_OBJECT_TYPE
+		{
 			public uint32 TotalByteLength;
 			public uint32 DefinitionLength;
 			public uint32 HeaderLength;
@@ -593,7 +611,8 @@ namespace Win32
 			public LARGE_INTEGER PerfFreq;
 		}
 		[CRepr]
-		public struct PERF_COUNTER_DEFINITION		{
+		public struct PERF_COUNTER_DEFINITION
+		{
 			public uint32 ByteLength;
 			public uint32 CounterNameTitleIndex;
 			public uint32 CounterNameTitle;
@@ -606,7 +625,8 @@ namespace Win32
 			public uint32 CounterOffset;
 		}
 		[CRepr]
-		public struct PERF_INSTANCE_DEFINITION		{
+		public struct PERF_INSTANCE_DEFINITION
+		{
 			public uint32 ByteLength;
 			public uint32 ParentObjectTitleIndex;
 			public uint32 ParentObjectInstance;
@@ -615,11 +635,13 @@ namespace Win32
 			public uint32 NameLength;
 		}
 		[CRepr]
-		public struct PERF_COUNTER_BLOCK		{
+		public struct PERF_COUNTER_BLOCK
+		{
 			public uint32 ByteLength;
 		}
 		[CRepr]
-		public struct PDH_RAW_COUNTER		{
+		public struct PDH_RAW_COUNTER
+		{
 			public uint32 CStatus;
 			public FILETIME TimeStamp;
 			public int64 FirstValue;
@@ -627,22 +649,26 @@ namespace Win32
 			public uint32 MultiCount;
 		}
 		[CRepr]
-		public struct PDH_RAW_COUNTER_ITEM_A		{
+		public struct PDH_RAW_COUNTER_ITEM_A
+		{
 			public PSTR szName;
 			public PDH_RAW_COUNTER RawValue;
 		}
 		[CRepr]
-		public struct PDH_RAW_COUNTER_ITEM_W		{
+		public struct PDH_RAW_COUNTER_ITEM_W
+		{
 			public PWSTR szName;
 			public PDH_RAW_COUNTER RawValue;
 		}
 		[CRepr]
-		public struct PDH_FMT_COUNTERVALUE		{
+		public struct PDH_FMT_COUNTERVALUE
+		{
 			public uint32 CStatus;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public int32 longValue;
 				public double doubleValue;
 				public int64 largeValue;
@@ -651,17 +677,20 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PDH_FMT_COUNTERVALUE_ITEM_A		{
+		public struct PDH_FMT_COUNTERVALUE_ITEM_A
+		{
 			public PSTR szName;
 			public PDH_FMT_COUNTERVALUE FmtValue;
 		}
 		[CRepr]
-		public struct PDH_FMT_COUNTERVALUE_ITEM_W		{
+		public struct PDH_FMT_COUNTERVALUE_ITEM_W
+		{
 			public PWSTR szName;
 			public PDH_FMT_COUNTERVALUE FmtValue;
 		}
 		[CRepr]
-		public struct PDH_STATISTICS		{
+		public struct PDH_STATISTICS
+		{
 			public uint32 dwFormat;
 			public uint32 count;
 			public PDH_FMT_COUNTERVALUE min;
@@ -669,7 +698,8 @@ namespace Win32
 			public PDH_FMT_COUNTERVALUE mean;
 		}
 		[CRepr]
-		public struct PDH_COUNTER_PATH_ELEMENTS_A		{
+		public struct PDH_COUNTER_PATH_ELEMENTS_A
+		{
 			public PSTR szMachineName;
 			public PSTR szObjectName;
 			public PSTR szInstanceName;
@@ -678,7 +708,8 @@ namespace Win32
 			public PSTR szCounterName;
 		}
 		[CRepr]
-		public struct PDH_COUNTER_PATH_ELEMENTS_W		{
+		public struct PDH_COUNTER_PATH_ELEMENTS_W
+		{
 			public PWSTR szMachineName;
 			public PWSTR szObjectName;
 			public PWSTR szInstanceName;
@@ -687,21 +718,24 @@ namespace Win32
 			public PWSTR szCounterName;
 		}
 		[CRepr]
-		public struct PDH_DATA_ITEM_PATH_ELEMENTS_A		{
+		public struct PDH_DATA_ITEM_PATH_ELEMENTS_A
+		{
 			public PSTR szMachineName;
 			public Guid ObjectGUID;
 			public uint32 dwItemId;
 			public PSTR szInstanceName;
 		}
 		[CRepr]
-		public struct PDH_DATA_ITEM_PATH_ELEMENTS_W		{
+		public struct PDH_DATA_ITEM_PATH_ELEMENTS_W
+		{
 			public PWSTR szMachineName;
 			public Guid ObjectGUID;
 			public uint32 dwItemId;
 			public PWSTR szInstanceName;
 		}
 		[CRepr]
-		public struct PDH_COUNTER_INFO_A		{
+		public struct PDH_COUNTER_INFO_A
+		{
 			public uint32 dwLength;
 			public uint32 dwType;
 			public uint32 CVersion;
@@ -716,13 +750,15 @@ namespace Win32
 			public uint32[0] DataBuffer;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public PDH_DATA_ITEM_PATH_ELEMENTS_A DataItemPath;
 				public PDH_COUNTER_PATH_ELEMENTS_A CounterPath;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public PSTR szMachineName;
 					public PSTR szObjectName;
 					public PSTR szInstanceName;
@@ -733,7 +769,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PDH_COUNTER_INFO_W		{
+		public struct PDH_COUNTER_INFO_W
+		{
 			public uint32 dwLength;
 			public uint32 dwType;
 			public uint32 CVersion;
@@ -748,13 +785,15 @@ namespace Win32
 			public uint32[0] DataBuffer;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public PDH_DATA_ITEM_PATH_ELEMENTS_W DataItemPath;
 				public PDH_COUNTER_PATH_ELEMENTS_W CounterPath;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public PWSTR szMachineName;
 					public PWSTR szObjectName;
 					public PWSTR szInstanceName;
@@ -765,20 +804,23 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PDH_TIME_INFO		{
+		public struct PDH_TIME_INFO
+		{
 			public int64 StartTime;
 			public int64 EndTime;
 			public uint32 SampleCount;
 		}
 		[CRepr]
-		public struct PDH_RAW_LOG_RECORD		{
+		public struct PDH_RAW_LOG_RECORD
+		{
 			public uint32 dwStructureSize;
 			public PDH_LOG_TYPE dwRecordType;
 			public uint32 dwItems;
 			public uint8[0] RawBytes;
 		}
 		[CRepr]
-		public struct PDH_LOG_SERVICE_QUERY_INFO_A		{
+		public struct PDH_LOG_SERVICE_QUERY_INFO_A
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwLogQuota;
@@ -790,12 +832,14 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				
 				[CRepr]
-				public struct _Anonymous1_e__Struct				{
+				public struct _Anonymous1_e__Struct
+				{
 					public uint32 PdlAutoNameInterval;
 					public uint32 PdlAutoNameUnits;
 					public PSTR PdlCommandFilename;
@@ -806,7 +850,8 @@ namespace Win32
 					public FILETIME PdlLogEndTime;
 				}
 				[CRepr]
-				public struct _Anonymous2_e__Struct				{
+				public struct _Anonymous2_e__Struct
+				{
 					public uint32 TlNumberOfBuffers;
 					public uint32 TlMinimumBuffers;
 					public uint32 TlMaximumBuffers;
@@ -821,7 +866,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PDH_LOG_SERVICE_QUERY_INFO_W		{
+		public struct PDH_LOG_SERVICE_QUERY_INFO_W
+		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwLogQuota;
@@ -833,12 +879,14 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				
 				[CRepr]
-				public struct _Anonymous1_e__Struct				{
+				public struct _Anonymous1_e__Struct
+				{
 					public uint32 PdlAutoNameInterval;
 					public uint32 PdlAutoNameUnits;
 					public PWSTR PdlCommandFilename;
@@ -849,7 +897,8 @@ namespace Win32
 					public FILETIME PdlLogEndTime;
 				}
 				[CRepr]
-				public struct _Anonymous2_e__Struct				{
+				public struct _Anonymous2_e__Struct
+				{
 					public uint32 TlNumberOfBuffers;
 					public uint32 TlMinimumBuffers;
 					public uint32 TlMaximumBuffers;
@@ -864,7 +913,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PDH_BROWSE_DLG_CONFIG_HW		{
+		public struct PDH_BROWSE_DLG_CONFIG_HW
+		{
 			public uint32 _bitfield;
 			public HWND hWndOwner;
 			public int hDataSource;
@@ -877,7 +927,8 @@ namespace Win32
 			public PWSTR szDialogBoxCaption;
 		}
 		[CRepr]
-		public struct PDH_BROWSE_DLG_CONFIG_HA		{
+		public struct PDH_BROWSE_DLG_CONFIG_HA
+		{
 			public uint32 _bitfield;
 			public HWND hWndOwner;
 			public int hDataSource;
@@ -890,7 +941,8 @@ namespace Win32
 			public PSTR szDialogBoxCaption;
 		}
 		[CRepr]
-		public struct PDH_BROWSE_DLG_CONFIG_W		{
+		public struct PDH_BROWSE_DLG_CONFIG_W
+		{
 			public uint32 _bitfield;
 			public HWND hWndOwner;
 			public PWSTR szDataSource;
@@ -903,7 +955,8 @@ namespace Win32
 			public PWSTR szDialogBoxCaption;
 		}
 		[CRepr]
-		public struct PDH_BROWSE_DLG_CONFIG_A		{
+		public struct PDH_BROWSE_DLG_CONFIG_A
+		{
 			public uint32 _bitfield;
 			public HWND hWndOwner;
 			public PSTR szDataSource;

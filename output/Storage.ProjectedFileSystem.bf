@@ -110,28 +110,33 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PRJ_EXTENDED_INFO		{
+		public struct PRJ_EXTENDED_INFO
+		{
 			public PRJ_EXT_INFO_TYPE InfoType;
 			public uint32 NextInfoOffset;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Symlink_e__Struct Symlink;
 				
 				[CRepr]
-				public struct _Symlink_e__Struct				{
+				public struct _Symlink_e__Struct
+				{
 					public PWSTR TargetName;
 				}
 			}
 		}
 		[CRepr]
-		public struct PRJ_NOTIFICATION_MAPPING		{
+		public struct PRJ_NOTIFICATION_MAPPING
+		{
 			public PRJ_NOTIFY_TYPES NotificationBitMask;
 			public PWSTR NotificationRoot;
 		}
 		[CRepr]
-		public struct PRJ_STARTVIRTUALIZING_OPTIONS		{
+		public struct PRJ_STARTVIRTUALIZING_OPTIONS
+		{
 			public PRJ_STARTVIRTUALIZING_FLAGS Flags;
 			public uint32 PoolThreadCount;
 			public uint32 ConcurrentThreadCount;
@@ -139,17 +144,20 @@ namespace Win32
 			public uint32 NotificationMappingsCount;
 		}
 		[CRepr]
-		public struct PRJ_VIRTUALIZATION_INSTANCE_INFO		{
+		public struct PRJ_VIRTUALIZATION_INSTANCE_INFO
+		{
 			public Guid InstanceID;
 			public uint32 WriteAlignment;
 		}
 		[CRepr]
-		public struct PRJ_PLACEHOLDER_VERSION_INFO		{
+		public struct PRJ_PLACEHOLDER_VERSION_INFO
+		{
 			public uint8[128] ProviderID;
 			public uint8[128] ContentID;
 		}
 		[CRepr]
-		public struct PRJ_FILE_BASIC_INFO		{
+		public struct PRJ_FILE_BASIC_INFO
+		{
 			public BOOLEAN IsDirectory;
 			public int64 FileSize;
 			public LARGE_INTEGER CreationTime;
@@ -159,7 +167,8 @@ namespace Win32
 			public uint32 FileAttributes;
 		}
 		[CRepr]
-		public struct PRJ_PLACEHOLDER_INFO		{
+		public struct PRJ_PLACEHOLDER_INFO
+		{
 			public PRJ_FILE_BASIC_INFO FileBasicInfo;
 			public _EaInformation_e__Struct EaInformation;
 			public _SecurityInformation_e__Struct SecurityInformation;
@@ -168,23 +177,27 @@ namespace Win32
 			public uint8[0] VariableData;
 			
 			[CRepr]
-			public struct _StreamsInformation_e__Struct			{
+			public struct _StreamsInformation_e__Struct
+			{
 				public uint32 StreamsInfoBufferSize;
 				public uint32 OffsetToFirstStreamInfo;
 			}
 			[CRepr]
-			public struct _EaInformation_e__Struct			{
+			public struct _EaInformation_e__Struct
+			{
 				public uint32 EaBufferSize;
 				public uint32 OffsetToFirstEa;
 			}
 			[CRepr]
-			public struct _SecurityInformation_e__Struct			{
+			public struct _SecurityInformation_e__Struct
+			{
 				public uint32 SecurityBufferSize;
 				public uint32 OffsetToSecurityDescriptor;
 			}
 		}
 		[CRepr]
-		public struct PRJ_CALLBACK_DATA		{
+		public struct PRJ_CALLBACK_DATA
+		{
 			public uint32 Size;
 			public PRJ_CALLBACK_DATA_FLAGS Flags;
 			public PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT NamespaceVirtualizationContext;
@@ -198,26 +211,31 @@ namespace Win32
 			public void* InstanceContext;
 		}
 		[CRepr, Union]
-		public struct PRJ_NOTIFICATION_PARAMETERS		{
+		public struct PRJ_NOTIFICATION_PARAMETERS
+		{
 			public _PostCreate_e__Struct PostCreate;
 			public _FileRenamed_e__Struct FileRenamed;
 			public _FileDeletedOnHandleClose_e__Struct FileDeletedOnHandleClose;
 			
 			[CRepr]
-			public struct _FileRenamed_e__Struct			{
+			public struct _FileRenamed_e__Struct
+			{
 				public PRJ_NOTIFY_TYPES NotificationMask;
 			}
 			[CRepr]
-			public struct _FileDeletedOnHandleClose_e__Struct			{
+			public struct _FileDeletedOnHandleClose_e__Struct
+			{
 				public BOOLEAN IsFileModified;
 			}
 			[CRepr]
-			public struct _PostCreate_e__Struct			{
+			public struct _PostCreate_e__Struct
+			{
 				public PRJ_NOTIFY_TYPES NotificationMask;
 			}
 		}
 		[CRepr]
-		public struct PRJ_CALLBACKS		{
+		public struct PRJ_CALLBACKS
+		{
 			public PRJ_START_DIRECTORY_ENUMERATION_CB StartDirectoryEnumerationCallback;
 			public PRJ_END_DIRECTORY_ENUMERATION_CB EndDirectoryEnumerationCallback;
 			public PRJ_GET_DIRECTORY_ENUMERATION_CB GetDirectoryEnumerationCallback;
@@ -228,21 +246,25 @@ namespace Win32
 			public PRJ_CANCEL_COMMAND_CB CancelCommandCallback;
 		}
 		[CRepr]
-		public struct PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS		{
+		public struct PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS
+		{
 			public PRJ_COMPLETE_COMMAND_TYPE CommandType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Notification_e__Struct Notification;
 				public _Enumeration_e__Struct Enumeration;
 				
 				[CRepr]
-				public struct _Enumeration_e__Struct				{
+				public struct _Enumeration_e__Struct
+				{
 					public PRJ_DIR_ENTRY_BUFFER_HANDLE DirEntryBufferHandle;
 				}
 				[CRepr]
-				public struct _Notification_e__Struct				{
+				public struct _Notification_e__Struct
+				{
 					public PRJ_NOTIFY_TYPES NotificationMask;
 				}
 			}

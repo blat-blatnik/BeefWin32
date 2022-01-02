@@ -33,14 +33,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct HEAPLIST32		{
+		public struct HEAPLIST32
+		{
 			public uint dwSize;
 			public uint32 th32ProcessID;
 			public uint th32HeapID;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct HEAPENTRY32		{
+		public struct HEAPENTRY32
+		{
 			public uint dwSize;
 			public HANDLE hHandle;
 			public uint dwAddress;
@@ -52,7 +54,8 @@ namespace Win32
 			public uint th32HeapID;
 		}
 		[CRepr]
-		public struct PROCESSENTRY32W		{
+		public struct PROCESSENTRY32W
+		{
 			public uint32 dwSize;
 			public uint32 cntUsage;
 			public uint32 th32ProcessID;
@@ -65,7 +68,8 @@ namespace Win32
 			public char16[260] szExeFile;
 		}
 		[CRepr]
-		public struct PROCESSENTRY32		{
+		public struct PROCESSENTRY32
+		{
 			public uint32 dwSize;
 			public uint32 cntUsage;
 			public uint32 th32ProcessID;
@@ -78,7 +82,8 @@ namespace Win32
 			public CHAR[260] szExeFile;
 		}
 		[CRepr]
-		public struct THREADENTRY32		{
+		public struct THREADENTRY32
+		{
 			public uint32 dwSize;
 			public uint32 cntUsage;
 			public uint32 th32ThreadID;
@@ -88,7 +93,8 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct MODULEENTRY32W		{
+		public struct MODULEENTRY32W
+		{
 			public uint32 dwSize;
 			public uint32 th32ModuleID;
 			public uint32 th32ProcessID;
@@ -101,7 +107,8 @@ namespace Win32
 			public char16[260] szExePath;
 		}
 		[CRepr]
-		public struct MODULEENTRY32		{
+		public struct MODULEENTRY32
+		{
 			public uint32 dwSize;
 			public uint32 th32ModuleID;
 			public uint32 th32ProcessID;

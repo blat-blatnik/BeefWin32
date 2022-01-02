@@ -5068,19 +5068,22 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CodecAPIEventData		{
+		public struct CodecAPIEventData
+		{
 			public Guid guid;
 			public uint32 dataLength;
 			public uint32[3] reserved;
 		}
 		[CRepr]
-		public struct D3DOVERLAYCAPS		{
+		public struct D3DOVERLAYCAPS
+		{
 			public uint32 Caps;
 			public uint32 MaxOverlayDisplayWidth;
 			public uint32 MaxOverlayDisplayHeight;
 		}
 		[CRepr]
-		public struct D3DCONTENTPROTECTIONCAPS		{
+		public struct D3DCONTENTPROTECTIONCAPS
+		{
 			public uint32 Caps;
 			public Guid KeyExchangeType;
 			public uint32 BufferAlignmentStart;
@@ -5088,29 +5091,34 @@ namespace Win32
 			public uint64 ProtectedMemorySize;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_FORMAT		{
+		public struct D3D12_VIDEO_FORMAT
+		{
 			public DXGI_FORMAT Format;
 			public DXGI_COLOR_SPACE_TYPE ColorSpace;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_SAMPLE		{
+		public struct D3D12_VIDEO_SAMPLE
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public D3D12_VIDEO_FORMAT Format;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_CONFIGURATION		{
+		public struct D3D12_VIDEO_DECODE_CONFIGURATION
+		{
 			public Guid DecodeProfile;
 			public D3D12_BITSTREAM_ENCRYPTION_TYPE BitstreamEncryption;
 			public D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE InterlaceType;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODER_DESC		{
+		public struct D3D12_VIDEO_DECODER_DESC
+		{
 			public uint32 NodeMask;
 			public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODER_HEAP_DESC		{
+		public struct D3D12_VIDEO_DECODER_HEAP_DESC
+		{
 			public uint32 NodeMask;
 			public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 			public uint32 DecodeWidth;
@@ -5121,25 +5129,29 @@ namespace Win32
 			public uint32 MaxDecodePictureBufferCount;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_SIZE_RANGE		{
+		public struct D3D12_VIDEO_SIZE_RANGE
+		{
 			public uint32 MaxWidth;
 			public uint32 MaxHeight;
 			public uint32 MinWidth;
 			public uint32 MinHeight;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_ALPHA_BLENDING		{
+		public struct D3D12_VIDEO_PROCESS_ALPHA_BLENDING
+		{
 			public BOOL Enable;
 			public float Alpha;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_LUMA_KEY		{
+		public struct D3D12_VIDEO_PROCESS_LUMA_KEY
+		{
 			public BOOL Enable;
 			public float Lower;
 			public float Upper;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC		{
+		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC
+		{
 			public DXGI_FORMAT Format;
 			public DXGI_COLOR_SPACE_TYPE ColorSpace;
 			public DXGI_RATIONAL SourceAspectRatio;
@@ -5159,7 +5171,8 @@ namespace Win32
 			public BOOL EnableAutoProcessing;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC		{
+		public struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC
+		{
 			public DXGI_FORMAT Format;
 			public DXGI_COLOR_SPACE_TYPE ColorSpace;
 			public D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE AlphaFillMode;
@@ -5169,7 +5182,8 @@ namespace Win32
 			public BOOL EnableStereo;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 			public uint32 Width;
@@ -5182,35 +5196,41 @@ namespace Win32
 			public D3D12_VIDEO_DECODE_TIER DecodeTier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT
+		{
 			public uint32 NodeIndex;
 			public uint32 ProfileCount;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILES		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILES
+		{
 			public uint32 NodeIndex;
 			public uint32 ProfileCount;
 			public Guid* pProfiles;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_FORMAT_COUNT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_FORMAT_COUNT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 			public uint32 FormatCount;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_FORMATS		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_FORMATS
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 			public uint32 FormatCount;
 			public DXGI_FORMAT* pOutputFormats;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE
+		{
 			public BOOL IOCoherent;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_HISTOGRAM		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_HISTOGRAM
+		{
 			public uint32 NodeIndex;
 			public Guid DecodeProfile;
 			public uint32 Width;
@@ -5221,12 +5241,14 @@ namespace Win32
 			public uint32 CounterBitDepth;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_SCALE_SUPPORT		{
+		public struct D3D12_VIDEO_SCALE_SUPPORT
+		{
 			public D3D12_VIDEO_SIZE_RANGE OutputSizeRange;
 			public D3D12_VIDEO_SCALE_SUPPORT_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_CONVERSION_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_CONVERSION_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 			public D3D12_VIDEO_SAMPLE DecodeSample;
@@ -5237,13 +5259,15 @@ namespace Win32
 			public D3D12_VIDEO_SCALE_SUPPORT ScaleSupport;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODER_HEAP_SIZE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODER_HEAP_SIZE
+		{
 			public D3D12_VIDEO_DECODER_HEAP_DESC VideoDecoderHeapDesc;
 			public uint64 MemoryPoolL0Size;
 			public uint64 MemoryPoolL1Size;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE
+		{
 			public uint32 NodeMask;
 			public D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc;
 			public uint32 NumInputStreamDescs;
@@ -5252,33 +5276,38 @@ namespace Win32
 			public uint64 MemoryPoolL1Size;
 		}
 		[CRepr]
-		public struct D3D12_QUERY_DATA_VIDEO_DECODE_STATISTICS		{
+		public struct D3D12_QUERY_DATA_VIDEO_DECODE_STATISTICS
+		{
 			public uint64 Status;
 			public uint64 NumMacroblocksAffected;
 			public DXGI_RATIONAL FrameRate;
 			public uint32 BitRate;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_FRAME_ARGUMENT		{
+		public struct D3D12_VIDEO_DECODE_FRAME_ARGUMENT
+		{
 			public D3D12_VIDEO_DECODE_ARGUMENT_TYPE Type;
 			public uint32 Size;
 			public void* pData;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_REFERENCE_FRAMES		{
+		public struct D3D12_VIDEO_DECODE_REFERENCE_FRAMES
+		{
 			public uint32 NumTexture2Ds;
 			public ID3D12Resource** ppTexture2Ds;
 			public uint32* pSubresources;
 			public ID3D12VideoDecoderHeap** ppHeaps;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM		{
+		public struct D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM
+		{
 			public ID3D12Resource* pBuffer;
 			public uint64 Offset;
 			public uint64 Size;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS		{
+		public struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS
+		{
 			public BOOL Enable;
 			public ID3D12Resource* pReferenceTexture2D;
 			public uint32 ReferenceSubresource;
@@ -5286,7 +5315,8 @@ namespace Win32
 			public DXGI_COLOR_SPACE_TYPE DecodeColorSpace;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS		{
+		public struct D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS
+		{
 			public uint32 NumFrameArguments;
 			public D3D12_VIDEO_DECODE_FRAME_ARGUMENT[10] FrameArguments;
 			public D3D12_VIDEO_DECODE_REFERENCE_FRAMES ReferenceFrames;
@@ -5294,20 +5324,23 @@ namespace Win32
 			public ID3D12VideoDecoderHeap* pHeap;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS		{
+		public struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS
+		{
 			public ID3D12Resource* pOutputTexture2D;
 			public uint32 OutputSubresource;
 			public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS ConversionArguments;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_FILTER_RANGE		{
+		public struct D3D12_VIDEO_PROCESS_FILTER_RANGE
+		{
 			public int32 Minimum;
 			public int32 Maximum;
 			public int32 Default;
 			public float Multiplier;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_SAMPLE InputSample;
 			public D3D12_VIDEO_FIELD_TYPE InputFieldType;
@@ -5325,12 +5358,14 @@ namespace Win32
 			public D3D12_VIDEO_PROCESS_FILTER_RANGE[32] FilterRangeSupport;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS		{
+		public struct D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS
+		{
 			public uint32 NodeIndex;
 			public uint32 MaxInputStreams;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_PROCESS_REFERENCE_INFO		{
+		public struct D3D12_FEATURE_DATA_VIDEO_PROCESS_REFERENCE_INFO
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS DeinterlaceMode;
 			public D3D12_VIDEO_PROCESS_FILTER_FLAGS Filters;
@@ -5342,7 +5377,8 @@ namespace Win32
 			public uint32 FutureFrames;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_REFERENCE_SET		{
+		public struct D3D12_VIDEO_PROCESS_REFERENCE_SET
+		{
 			public uint32 NumPastFrames;
 			public ID3D12Resource** ppPastFrames;
 			public uint32* pPastSubresources;
@@ -5351,24 +5387,28 @@ namespace Win32
 			public uint32* pFutureSubresources;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_TRANSFORM		{
+		public struct D3D12_VIDEO_PROCESS_TRANSFORM
+		{
 			public RECT SourceRectangle;
 			public RECT DestinationRectangle;
 			public D3D12_VIDEO_PROCESS_ORIENTATION Orientation;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE		{
+		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE
+		{
 			public uint32 OutputIndex;
 			public uint32 InputFrameOrField;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM		{
+		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM
+		{
 			public ID3D12Resource* pTexture2D;
 			public uint32 Subresource;
 			public D3D12_VIDEO_PROCESS_REFERENCE_SET ReferenceSet;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS		{
+		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS
+		{
 			public D3D12_VIDEO_PROCESS_INPUT_STREAM[2] InputStream;
 			public D3D12_VIDEO_PROCESS_TRANSFORM Transform;
 			public D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS Flags;
@@ -5377,22 +5417,26 @@ namespace Win32
 			public D3D12_VIDEO_PROCESS_ALPHA_BLENDING AlphaBlending;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM		{
+		public struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM
+		{
 			public ID3D12Resource* pTexture2D;
 			public uint32 Subresource;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS		{
+		public struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS
+		{
 			public D3D12_VIDEO_PROCESS_OUTPUT_STREAM[2] OutputStream;
 			public RECT TargetRectangle;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM		{
+		public struct D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM
+		{
 			public uint64 Offset;
 			public ID3D12Resource* pBuffer;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1		{
+		public struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1
+		{
 			public BOOL Enable;
 			public ID3D12Resource* pReferenceTexture2D;
 			public uint32 ReferenceSubresource;
@@ -5402,14 +5446,16 @@ namespace Win32
 			public uint32 OutputHeight;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1		{
+		public struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1
+		{
 			public ID3D12Resource* pOutputTexture2D;
 			public uint32 OutputSubresource;
 			public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1 ConversionArguments;
 			public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[4] Histograms;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1		{
+		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1
+		{
 			public D3D12_VIDEO_PROCESS_INPUT_STREAM[2] InputStream;
 			public D3D12_VIDEO_PROCESS_TRANSFORM Transform;
 			public D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS Flags;
@@ -5419,14 +5465,16 @@ namespace Win32
 			public D3D12_VIDEO_FIELD_TYPE FieldType;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_FEATURE_AREA_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_FEATURE_AREA_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public BOOL VideoDecodeSupport;
 			public BOOL VideoProcessSupport;
 			public BOOL VideoEncodeSupport;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR		{
+		public struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR
+		{
 			public uint32 NodeIndex;
 			public DXGI_FORMAT InputFormat;
 			public D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_FLAGS BlockSizeFlags;
@@ -5434,7 +5482,8 @@ namespace Win32
 			public D3D12_VIDEO_SIZE_RANGE SizeRange;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE
+		{
 			public uint32 NodeIndex;
 			public DXGI_FORMAT InputFormat;
 			public D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE BlockSize;
@@ -5447,7 +5496,8 @@ namespace Win32
 			public uint64 MotionEstimatorMemoryPoolL1Size;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_MOTION_ESTIMATOR_DESC		{
+		public struct D3D12_VIDEO_MOTION_ESTIMATOR_DESC
+		{
 			public uint32 NodeMask;
 			public DXGI_FORMAT InputFormat;
 			public D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE BlockSize;
@@ -5455,7 +5505,8 @@ namespace Win32
 			public D3D12_VIDEO_SIZE_RANGE SizeRange;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC		{
+		public struct D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC
+		{
 			public uint32 NodeMask;
 			public DXGI_FORMAT InputFormat;
 			public D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE BlockSize;
@@ -5463,18 +5514,21 @@ namespace Win32
 			public D3D12_VIDEO_SIZE_RANGE SizeRange;
 		}
 		[CRepr]
-		public struct D3D12_RESOURCE_COORDINATE		{
+		public struct D3D12_RESOURCE_COORDINATE
+		{
 			public uint64 X;
 			public uint32 Y;
 			public uint32 Z;
 			public uint32 SubresourceIndex;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT		{
+		public struct D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT
+		{
 			public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_MOTION_ESTIMATOR_INPUT		{
+		public struct D3D12_VIDEO_MOTION_ESTIMATOR_INPUT
+		{
 			public ID3D12Resource* pInputTexture2D;
 			public uint32 InputSubresourceIndex;
 			public ID3D12Resource* pReferenceTexture2D;
@@ -5482,41 +5536,48 @@ namespace Win32
 			public ID3D12VideoMotionVectorHeap* pHintMotionVectorHeap;
 		}
 		[CRepr]
-		public struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT		{
+		public struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT
+		{
 			public ID3D12Resource* pMotionVectorTexture2D;
 			public D3D12_RESOURCE_COORDINATE MotionVectorCoordinate;
 		}
 		[CRepr]
-		public struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT		{
+		public struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT
+		{
 			public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
 			public uint32 PixelWidth;
 			public uint32 PixelHeight;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROTECTED_RESOURCES		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROTECTED_RESOURCES
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 			public D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS SupportFlags;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_PROCESS_PROTECTED_RESOURCES		{
+		public struct D3D12_FEATURE_DATA_VIDEO_PROCESS_PROTECTED_RESOURCES
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS SupportFlags;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_PROTECTED_RESOURCES		{
+		public struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_PROTECTED_RESOURCES
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS SupportFlags;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_DECODER_HEAP_SIZE1		{
+		public struct D3D12_FEATURE_DATA_VIDEO_DECODER_HEAP_SIZE1
+		{
 			public D3D12_VIDEO_DECODER_HEAP_DESC VideoDecoderHeapDesc;
 			public BOOL Protected;
 			public uint64 MemoryPoolL0Size;
 			public uint64 MemoryPoolL1Size;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE1		{
+		public struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE1
+		{
 			public uint32 NodeMask;
 			public D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc;
 			public uint32 NumInputStreamDescs;
@@ -5526,44 +5587,51 @@ namespace Win32
 			public uint64 MemoryPoolL1Size;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT
+		{
 			public uint32 NodeIndex;
 			public uint32 CommandCount;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_EXTENSION_COMMAND_INFO		{
+		public struct D3D12_VIDEO_EXTENSION_COMMAND_INFO
+		{
 			public Guid CommandId;
 			public PWSTR Name;
 			public D3D12_COMMAND_LIST_SUPPORT_FLAGS CommandListSupportFlags;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMANDS		{
+		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMANDS
+		{
 			public uint32 NodeIndex;
 			public uint32 CommandCount;
 			public D3D12_VIDEO_EXTENSION_COMMAND_INFO* pCommandInfos;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_PARAMETER_COUNT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_PARAMETER_COUNT
+		{
 			public Guid CommandId;
 			public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE Stage;
 			public uint32 ParameterCount;
 			public uint32 ParameterPacking;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO		{
+		public struct D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO
+		{
 			public PWSTR Name;
 			public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE Type;
 			public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAGS Flags;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_PARAMETERS		{
+		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_PARAMETERS
+		{
 			public Guid CommandId;
 			public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE Stage;
 			public uint32 ParameterCount;
 			public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO* pParameterInfos;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public Guid CommandId;
 			public void* pInputData;
@@ -5572,7 +5640,8 @@ namespace Win32
 			public uint OutputDataSizeInBytes;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SIZE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SIZE
+		{
 			public uint32 NodeIndex;
 			public Guid CommandId;
 			public void* pCreationParameters;
@@ -5581,18 +5650,21 @@ namespace Win32
 			public uint64 MemoryPoolL1Size;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_EXTENSION_COMMAND_DESC		{
+		public struct D3D12_VIDEO_EXTENSION_COMMAND_DESC
+		{
 			public uint32 NodeMask;
 			public Guid CommandId;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP		{
+		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP
+		{
 			public uint32 ConstantQP_FullIntracodedFrame;
 			public uint32 ConstantQP_InterPredictedFrame_PrevRefOnly;
 			public uint32 ConstantQP_InterPredictedFrame_BiDirectionalRef;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_CBR		{
+		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_CBR
+		{
 			public uint32 InitialQP;
 			public uint32 MinQP;
 			public uint32 MaxQP;
@@ -5602,7 +5674,8 @@ namespace Win32
 			public uint64 InitialVBVFullness;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR		{
+		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR
+		{
 			public uint32 InitialQP;
 			public uint32 MinQP;
 			public uint32 MaxQP;
@@ -5613,7 +5686,8 @@ namespace Win32
 			public uint64 InitialVBVFullness;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_QVBR		{
+		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_QVBR
+		{
 			public uint32 InitialQP;
 			public uint32 MinQP;
 			public uint32 MaxQP;
@@ -5623,12 +5697,14 @@ namespace Win32
 			public uint32 ConstantQualityTarget;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS		{
+		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP* pConfiguration_CQP;
 				public D3D12_VIDEO_ENCODER_RATE_CONTROL_CBR* pConfiguration_CBR;
 				public D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR* pConfiguration_VBR;
@@ -5636,47 +5712,55 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL		{
+		public struct D3D12_VIDEO_ENCODER_RATE_CONTROL
+		{
 			public D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE Mode;
 			public D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAGS Flags;
 			public D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS ConfigParams;
 			public DXGI_RATIONAL TargetFrameRate;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_CODEC		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_CODEC
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public BOOL IsSupported;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PROFILE_DESC		{
+		public struct D3D12_VIDEO_ENCODER_PROFILE_DESC
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_PROFILE_H264* pH264Profile;
 				public D3D12_VIDEO_ENCODER_PROFILE_HEVC* pHEVCProfile;
 			}
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_LEVEL_TIER_CONSTRAINTS_HEVC		{
+		public struct D3D12_VIDEO_ENCODER_LEVEL_TIER_CONSTRAINTS_HEVC
+		{
 			public D3D12_VIDEO_ENCODER_LEVELS_HEVC Level;
 			public D3D12_VIDEO_ENCODER_TIER_HEVC Tier;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_LEVEL_SETTING		{
+		public struct D3D12_VIDEO_ENCODER_LEVEL_SETTING
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_LEVELS_H264* pH264LevelSetting;
 				public D3D12_VIDEO_ENCODER_LEVEL_TIER_CONSTRAINTS_HEVC* pHEVCLevelSetting;
 			}
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public D3D12_VIDEO_ENCODER_PROFILE_DESC Profile;
@@ -5685,23 +5769,27 @@ namespace Win32
 			public D3D12_VIDEO_ENCODER_LEVEL_SETTING MaxSupportedLevel;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC
+		{
 			public uint32 Width;
 			public uint32 Height;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_RATIO_DESC		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_RATIO_DESC
+		{
 			public uint32 WidthRatio;
 			public uint32 HeightRatio;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_OUTPUT_RESOLUTION_RATIOS_COUNT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_OUTPUT_RESOLUTION_RATIOS_COUNT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public uint32 ResolutionRatiosCount;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_OUTPUT_RESOLUTION		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_OUTPUT_RESOLUTION
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public uint32 ResolutionRatiosCount;
@@ -5713,7 +5801,8 @@ namespace Win32
 			public D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_RATIO_DESC* pResolutionRatios;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_INPUT_FORMAT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_INPUT_FORMAT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public D3D12_VIDEO_ENCODER_PROFILE_DESC Profile;
@@ -5721,14 +5810,16 @@ namespace Win32
 			public BOOL IsSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_RATE_CONTROL_MODE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_RATE_CONTROL_MODE
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE RateControlMode;
 			public BOOL IsSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public D3D12_VIDEO_ENCODER_PROFILE_DESC Profile;
@@ -5737,7 +5828,8 @@ namespace Win32
 			public BOOL IsSupported;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public D3D12_VIDEO_ENCODER_PROFILE_DESC Profile;
@@ -5746,7 +5838,8 @@ namespace Win32
 			public BOOL IsSupported;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_HEAP_DESC		{
+		public struct D3D12_VIDEO_ENCODER_HEAP_DESC
+		{
 			public uint32 NodeMask;
 			public D3D12_VIDEO_ENCODER_HEAP_FLAGS Flags;
 			public D3D12_VIDEO_ENCODER_CODEC EncodeCodec;
@@ -5756,19 +5849,22 @@ namespace Win32
 			public D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC* pResolutionList;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_HEAP_SIZE		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_HEAP_SIZE
+		{
 			public D3D12_VIDEO_ENCODER_HEAP_DESC HeapDesc;
 			public BOOL IsSupported;
 			public uint64 MemoryPoolL0Size;
 			public uint64 MemoryPoolL1Size;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264
+		{
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264_FLAGS SupportFlags;
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_SLICES_DEBLOCKING_MODE_FLAGS DisableDeblockingFilterSupportedModes;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC
+		{
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAGS SupportFlags;
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE MinLumaCodingUnitSize;
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE MaxLumaCodingUnitSize;
@@ -5778,18 +5874,21 @@ namespace Win32
 			public uint8 max_transform_hierarchy_depth_intra;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264* pH264Support;
 				public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC* pHEVCSupport;
 			}
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public D3D12_VIDEO_ENCODER_PROFILE_DESC Profile;
@@ -5797,7 +5896,8 @@ namespace Win32
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT CodecSupportLimits;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_H264		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_H264
+		{
 			public uint32 MaxL0ReferencesForP;
 			public uint32 MaxL0ReferencesForB;
 			public uint32 MaxL1ReferencesForB;
@@ -5805,7 +5905,8 @@ namespace Win32
 			public uint32 MaxDPBCapacity;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_HEVC		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_HEVC
+		{
 			public uint32 MaxL0ReferencesForP;
 			public uint32 MaxL0ReferencesForB;
 			public uint32 MaxL1ReferencesForB;
@@ -5813,18 +5914,21 @@ namespace Win32
 			public uint32 MaxDPBCapacity;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_H264* pH264Support;
 				public D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_HEVC* pHEVCSupport;
 			}
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public D3D12_VIDEO_ENCODER_PROFILE_DESC Profile;
@@ -5832,13 +5936,15 @@ namespace Win32
 			public D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT PictureSupport;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264
+		{
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAGS ConfigurationFlags;
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_DIRECT_MODES DirectModeConfig;
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_SLICES_DEBLOCKING_MODES DisableDeblockingFilterConfig;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC
+		{
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAGS ConfigurationFlags;
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE MinLumaCodingUnitSize;
 			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE MaxLumaCodingUnitSize;
@@ -5848,30 +5954,35 @@ namespace Win32
 			public uint8 max_transform_hierarchy_depth_intra;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION		{
+		public struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264* pH264Config;
 				public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC* pHEVCConfig;
 			}
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_INTRA_REFRESH		{
+		public struct D3D12_VIDEO_ENCODER_INTRA_REFRESH
+		{
 			public D3D12_VIDEO_ENCODER_INTRA_REFRESH_MODE Mode;
 			public uint32 IntraRefreshDuration;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS
+		{
 			public uint32 MaxSubregionsNumber;
 			public uint32 MaxIntraRefreshFrameDuration;
 			public uint32 SubregionBlockPixelsSize;
 			public uint32 QPMapRegionPixelsSize;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264		{
+		public struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264
+		{
 			public uint32 GOPLength;
 			public uint32 PPicturePeriod;
 			public uint8 pic_order_cnt_type;
@@ -5879,24 +5990,28 @@ namespace Win32
 			public uint8 log2_max_pic_order_cnt_lsb_minus4;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC		{
+		public struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC
+		{
 			public uint32 GOPLength;
 			public uint32 PPicturePeriod;
 			public uint8 log2_max_pic_order_cnt_lsb_minus4;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE		{
+		public struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264* pH264GroupOfPictures;
 				public D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC* pHEVCGroupOfPictures;
 			}
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public DXGI_FORMAT InputFormat;
@@ -5915,7 +6030,8 @@ namespace Win32
 			public D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS* pResolutionDependentSupport;
 		}
 		[CRepr]
-		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS		{
+		public struct D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS
+		{
 			public uint32 NodeIndex;
 			public D3D12_VIDEO_ENCODER_CODEC Codec;
 			public D3D12_VIDEO_ENCODER_PROFILE_DESC Profile;
@@ -5927,7 +6043,8 @@ namespace Win32
 			public uint32 MaxEncoderOutputMetadataBufferSize;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_DESC		{
+		public struct D3D12_VIDEO_ENCODER_DESC
+		{
 			public uint32 NodeMask;
 			public D3D12_VIDEO_ENCODER_FLAGS Flags;
 			public D3D12_VIDEO_ENCODER_CODEC EncodeCodec;
@@ -5937,7 +6054,8 @@ namespace Win32
 			public D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE MaxMotionEstimationPrecision;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_REFERENCE_PICTURE_DESCRIPTOR_H264		{
+		public struct D3D12_VIDEO_ENCODER_REFERENCE_PICTURE_DESCRIPTOR_H264
+		{
 			public uint32 ReconstructedPictureResourceIndex;
 			public BOOL IsLongTermReference;
 			public uint32 LongTermPictureIdx;
@@ -5946,7 +6064,8 @@ namespace Win32
 			public uint32 TemporalLayerIndex;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_MARKING_OPERATION		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_MARKING_OPERATION
+		{
 			public uint8 memory_management_control_operation;
 			public uint32 difference_of_pic_nums_minus1;
 			public uint32 long_term_pic_num;
@@ -5954,13 +6073,15 @@ namespace Win32
 			public uint32 max_long_term_frame_idx_plus1;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_LIST_MODIFICATION_OPERATION		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_LIST_MODIFICATION_OPERATION
+		{
 			public uint8 modification_of_pic_nums_idc;
 			public uint32 abs_diff_pic_num_minus1;
 			public uint32 long_term_pic_num;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264
+		{
 			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_FLAGS Flags;
 			public D3D12_VIDEO_ENCODER_FRAME_TYPE_H264 FrameType;
 			public uint32 pic_parameter_set_id;
@@ -5985,7 +6106,8 @@ namespace Win32
 			public int8* pRateControlQPMap;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_REFERENCE_PICTURE_DESCRIPTOR_HEVC		{
+		public struct D3D12_VIDEO_ENCODER_REFERENCE_PICTURE_DESCRIPTOR_HEVC
+		{
 			public uint32 ReconstructedPictureResourceIndex;
 			public BOOL IsRefUsedByCurrentPic;
 			public BOOL IsLongTermReference;
@@ -5993,7 +6115,8 @@ namespace Win32
 			public uint32 TemporalLayerIndex;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC
+		{
 			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAGS Flags;
 			public D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC FrameType;
 			public uint32 slice_pic_parameter_set_id;
@@ -6013,35 +6136,41 @@ namespace Win32
 			public int8* pRateControlQPMap;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264* pH264PicData;
 				public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC* pHEVCPicData;
 			}
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODE_REFERENCE_FRAMES		{
+		public struct D3D12_VIDEO_ENCODE_REFERENCE_FRAMES
+		{
 			public uint32 NumTexture2Ds;
 			public ID3D12Resource** ppTexture2Ds;
 			public uint32* pSubresources;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC
+		{
 			public uint32 IntraRefreshFrameIndex;
 			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAGS Flags;
 			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA PictureControlCodecData;
 			public D3D12_VIDEO_ENCODE_REFERENCE_FRAMES ReferenceFrames;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_SLICES		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_SLICES
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 MaxBytesPerSlice;
 				public uint32 NumberOfCodingUnitsPerSlice;
 				public uint32 NumberOfRowsPerSlice;
@@ -6049,18 +6178,21 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA		{
+		public struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA
+		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_SLICES* pSlicesPartition_H264;
 				public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_SLICES* pSlicesPartition_HEVC;
 			}
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC		{
+		public struct D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC
+		{
 			public D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_FLAGS Flags;
 			public D3D12_VIDEO_ENCODER_INTRA_REFRESH IntraRefreshConfig;
 			public D3D12_VIDEO_ENCODER_RATE_CONTROL RateControl;
@@ -6070,7 +6202,8 @@ namespace Win32
 			public D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE CodecGopSequence;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS		{
+		public struct D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS
+		{
 			public D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC SequenceControlDesc;
 			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC PictureControlDesc;
 			public ID3D12Resource* pInputFrame;
@@ -6078,23 +6211,27 @@ namespace Win32
 			public uint32 CurrentFrameBitstreamMetadataSize;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM		{
+		public struct D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM
+		{
 			public ID3D12Resource* pBuffer;
 			public uint64 FrameStartOffset;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE		{
+		public struct D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE
+		{
 			public ID3D12Resource* pReconstructedPicture;
 			public uint32 ReconstructedPictureSubresource;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_FRAME_SUBREGION_METADATA		{
+		public struct D3D12_VIDEO_ENCODER_FRAME_SUBREGION_METADATA
+		{
 			public uint64 bSize;
 			public uint64 bStartOffset;
 			public uint64 bHeaderSize;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS		{
+		public struct D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS
+		{
 			public uint64 AverageQP;
 			public uint64 IntraCodingUnitsCount;
 			public uint64 InterCodingUnitsCount;
@@ -6103,19 +6240,22 @@ namespace Win32
 			public uint64 AverageMotionEstimationYDirection;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_OUTPUT_METADATA		{
+		public struct D3D12_VIDEO_ENCODER_OUTPUT_METADATA
+		{
 			public uint64 EncodeErrorFlags;
 			public D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS EncodeStats;
 			public uint64 EncodedBitstreamWrittenBytesCount;
 			public uint64 WrittenSubregionsCount;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER		{
+		public struct D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER
+		{
 			public ID3D12Resource* pBuffer;
 			public uint64 Offset;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS		{
+		public struct D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS
+		{
 			public D3D12_VIDEO_ENCODER_CODEC EncoderCodec;
 			public D3D12_VIDEO_ENCODER_PROFILE_DESC EncoderProfile;
 			public DXGI_FORMAT EncoderInputFormat;
@@ -6123,17 +6263,20 @@ namespace Win32
 			public D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER HWLayoutMetadata;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS		{
+		public struct D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS
+		{
 			public D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER ResolvedLayoutMetadata;
 		}
 		[CRepr]
-		public struct D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS		{
+		public struct D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS
+		{
 			public D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM Bitstream;
 			public D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE ReconstructedPicture;
 			public D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER EncoderOutputMetadata;
 		}
 		[CRepr]
-		public struct AecQualityMetrics_Struct		{
+		public struct AecQualityMetrics_Struct
+		{
 			public int64 i64Timestamp;
 			public uint8 ConvergenceFlag;
 			public uint8 MicClippedFlag;
@@ -6155,14 +6298,16 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct TOC_DESCRIPTOR		{
+		public struct TOC_DESCRIPTOR
+		{
 			public Guid guidID;
 			public uint16 wStreamNumber;
 			public Guid guidType;
 			public uint16 wLanguageIndex;
 		}
 		[CRepr]
-		public struct TOC_ENTRY_DESCRIPTOR		{
+		public struct TOC_ENTRY_DESCRIPTOR
+		{
 			public uint64 qwStartTime;
 			public uint64 qwEndTime;
 			public uint64 qwStartPacketOffset;
@@ -6170,14 +6315,16 @@ namespace Win32
 			public uint64 qwRepresentativeFrameTime;
 		}
 		[CRepr]
-		public struct DXVA_AYUVsample2		{
+		public struct DXVA_AYUVsample2
+		{
 			public uint8 bCrValue;
 			public uint8 bCbValue;
 			public uint8 bY_Value;
 			public uint8 bSampleAlpha8;
 		}
 		[CRepr]
-		public struct DXVA_BufferDescription		{
+		public struct DXVA_BufferDescription
+		{
 			public uint32 dwTypeIndex;
 			public uint32 dwBufferIndex;
 			public uint32 dwDataOffset;
@@ -6190,7 +6337,8 @@ namespace Win32
 			public uint32 dwReservedBits;
 		}
 		[CRepr]
-		public struct DXVA_ConfigPictureDecode		{
+		public struct DXVA_ConfigPictureDecode
+		{
 			public uint32 dwFunction;
 			public uint32[3] dwReservedBits;
 			public Guid guidConfigBitstreamEncryption;
@@ -6210,7 +6358,8 @@ namespace Win32
 			public uint8 bConfig4GroupedCoefs;
 		}
 		[CRepr]
-		public struct DXVA_PictureParameters		{
+		public struct DXVA_PictureParameters
+		{
 			public uint16 wDecodedPictureIndex;
 			public uint16 wDeblockedPictureIndex;
 			public uint16 wForwardRefPictureIndex;
@@ -6249,13 +6398,15 @@ namespace Win32
 			public uint8 bBitstreamConcealmentMethod;
 		}
 		[CRepr]
-		public struct DXVAUncompDataInfo		{
+		public struct DXVAUncompDataInfo
+		{
 			public uint32 UncompWidth;
 			public uint32 UncompHeight;
 			public D3DFORMAT UncompFormat;
 		}
 		[CRepr]
-		public struct DXVACompBufferInfo		{
+		public struct DXVACompBufferInfo
+		{
 			public uint32 NumCompBuffers;
 			public uint32 WidthToCreate;
 			public uint32 HeightToCreate;
@@ -6265,22 +6416,26 @@ namespace Win32
 			public D3DFORMAT Format;
 		}
 		[CRepr]
-		public struct DXVABufferInfo		{
+		public struct DXVABufferInfo
+		{
 			public void* pCompSurface;
 			public uint32 DataOffset;
 			public uint32 DataSize;
 		}
 		[CRepr]
-		public struct DXVA_ExtendedFormat		{
+		public struct DXVA_ExtendedFormat
+		{
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct DXVA_Frequency		{
+		public struct DXVA_Frequency
+		{
 			public uint32 Numerator;
 			public uint32 Denominator;
 		}
 		[CRepr]
-		public struct DXVA_VideoDesc		{
+		public struct DXVA_VideoDesc
+		{
 			public uint32 Size;
 			public uint32 SampleWidth;
 			public uint32 SampleHeight;
@@ -6290,14 +6445,16 @@ namespace Win32
 			public DXVA_Frequency OutputFrameFreq;
 		}
 		[CRepr]
-		public struct DXVA_VideoSample		{
+		public struct DXVA_VideoSample
+		{
 			public int64 rtStart;
 			public int64 rtEnd;
 			public DXVA_SampleFormat SampleFormat;
 			public void* lpDDSSrcSurface;
 		}
 		[CRepr]
-		public struct DXVA_VideoSample2		{
+		public struct DXVA_VideoSample2
+		{
 			public uint32 Size;
 			public uint32 Reserved;
 			public int64 rtStart;
@@ -6310,7 +6467,8 @@ namespace Win32
 			public DXVA_AYUVsample2[16] Palette;
 		}
 		[CRepr]
-		public struct DXVA_DeinterlaceCaps		{
+		public struct DXVA_DeinterlaceCaps
+		{
 			public uint32 Size;
 			public uint32 NumPreviousOutputFrames;
 			public uint32 InputPool;
@@ -6321,7 +6479,8 @@ namespace Win32
 			public DXVA_DeinterlaceTech DeinterlaceTechnology;
 		}
 		[CRepr]
-		public struct DXVA_VideoSample32		{
+		public struct DXVA_VideoSample32
+		{
 			public int64 rtStart;
 			public int64 rtEnd;
 			public uint32 SampleFormat;
@@ -6332,7 +6491,8 @@ namespace Win32
 			public DXVA_AYUVsample2[16] Palette;
 		}
 		[CRepr]
-		public struct DXVA_DeinterlaceBltEx32		{
+		public struct DXVA_DeinterlaceBltEx32
+		{
 			public uint32 Size;
 			public DXVA_AYUVsample2 BackgroundColor;
 			public RECT rcTarget;
@@ -6344,7 +6504,8 @@ namespace Win32
 			public uint32 DestinationFlags;
 		}
 		[CRepr]
-		public struct DXVA_DeinterlaceBlt		{
+		public struct DXVA_DeinterlaceBlt
+		{
 			public uint32 Size;
 			public uint32 Reserved;
 			public int64 rtTarget;
@@ -6355,7 +6516,8 @@ namespace Win32
 			public DXVA_VideoSample[32] Source;
 		}
 		[CRepr]
-		public struct DXVA_DeinterlaceBltEx		{
+		public struct DXVA_DeinterlaceBltEx
+		{
 			public uint32 Size;
 			public DXVA_AYUVsample2 BackgroundColor;
 			public RECT rcTarget;
@@ -6367,19 +6529,22 @@ namespace Win32
 			public uint32 DestinationFlags;
 		}
 		[CRepr]
-		public struct DXVA_DeinterlaceQueryAvailableModes		{
+		public struct DXVA_DeinterlaceQueryAvailableModes
+		{
 			public uint32 Size;
 			public uint32 NumGuids;
 			public Guid[32] Guids;
 		}
 		[CRepr]
-		public struct DXVA_DeinterlaceQueryModeCaps		{
+		public struct DXVA_DeinterlaceQueryModeCaps
+		{
 			public uint32 Size;
 			public Guid Guid;
 			public DXVA_VideoDesc VideoDesc;
 		}
 		[CRepr]
-		public struct DXVA_ProcAmpControlCaps		{
+		public struct DXVA_ProcAmpControlCaps
+		{
 			public uint32 Size;
 			public uint32 InputPool;
 			public D3DFORMAT d3dOutputFormat;
@@ -6387,20 +6552,23 @@ namespace Win32
 			public uint32 VideoProcessingCaps;
 		}
 		[CRepr]
-		public struct DXVA_ProcAmpControlQueryRange		{
+		public struct DXVA_ProcAmpControlQueryRange
+		{
 			public uint32 Size;
 			public DXVA_ProcAmpControlProp ProcAmpControlProp;
 			public DXVA_VideoDesc VideoDesc;
 		}
 		[CRepr]
-		public struct DXVA_VideoPropertyRange		{
+		public struct DXVA_VideoPropertyRange
+		{
 			public float MinValue;
 			public float MaxValue;
 			public float DefaultValue;
 			public float StepSize;
 		}
 		[CRepr]
-		public struct DXVA_ProcAmpControlBlt		{
+		public struct DXVA_ProcAmpControlBlt
+		{
 			public uint32 Size;
 			public RECT DstRect;
 			public RECT SrcRect;
@@ -6411,11 +6579,13 @@ namespace Win32
 			public float Saturation;
 		}
 		[CRepr]
-		public struct DXVA_COPPSignature		{
+		public struct DXVA_COPPSignature
+		{
 			public uint8[256] Signature;
 		}
 		[CRepr]
-		public struct DXVA_COPPCommand		{
+		public struct DXVA_COPPCommand
+		{
 			public Guid macKDI;
 			public Guid guidCommandID;
 			public uint32 dwSequence;
@@ -6423,7 +6593,8 @@ namespace Win32
 			public uint8[4056] CommandData;
 		}
 		[CRepr]
-		public struct DXVA_COPPStatusInput		{
+		public struct DXVA_COPPStatusInput
+		{
 			public Guid rApp;
 			public Guid guidStatusRequestID;
 			public uint32 dwSequence;
@@ -6431,37 +6602,43 @@ namespace Win32
 			public uint8[4056] StatusData;
 		}
 		[CRepr]
-		public struct DXVA_COPPStatusOutput		{
+		public struct DXVA_COPPStatusOutput
+		{
 			public Guid macKDI;
 			public uint32 cbSizeData;
 			public uint8[4076] COPPStatus;
 		}
 		[CRepr]
-		public struct DXVAHD_RATIONAL		{
+		public struct DXVAHD_RATIONAL
+		{
 			public uint32 Numerator;
 			public uint32 Denominator;
 		}
 		[CRepr]
-		public struct DXVAHD_COLOR_RGBA		{
+		public struct DXVAHD_COLOR_RGBA
+		{
 			public float R;
 			public float G;
 			public float B;
 			public float A;
 		}
 		[CRepr]
-		public struct DXVAHD_COLOR_YCbCrA		{
+		public struct DXVAHD_COLOR_YCbCrA
+		{
 			public float Y;
 			public float Cb;
 			public float Cr;
 			public float A;
 		}
 		[CRepr, Union]
-		public struct DXVAHD_COLOR		{
+		public struct DXVAHD_COLOR
+		{
 			public DXVAHD_COLOR_RGBA RGB;
 			public DXVAHD_COLOR_YCbCrA YCbCr;
 		}
 		[CRepr]
-		public struct DXVAHD_CONTENT_DESC		{
+		public struct DXVAHD_CONTENT_DESC
+		{
 			public DXVAHD_FRAME_FORMAT InputFrameFormat;
 			public DXVAHD_RATIONAL InputFrameRate;
 			public uint32 InputWidth;
@@ -6471,7 +6648,8 @@ namespace Win32
 			public uint32 OutputHeight;
 		}
 		[CRepr]
-		public struct DXVAHD_VPDEVCAPS		{
+		public struct DXVAHD_VPDEVCAPS
+		{
 			public DXVAHD_DEVICE_TYPE DeviceType;
 			public uint32 DeviceCaps;
 			public uint32 FeatureCaps;
@@ -6485,7 +6663,8 @@ namespace Win32
 			public uint32 MaxStreamStates;
 		}
 		[CRepr]
-		public struct DXVAHD_VPCAPS		{
+		public struct DXVAHD_VPCAPS
+		{
 			public Guid VPGuid;
 			public uint32 PastFrames;
 			public uint32 FutureFrames;
@@ -6494,134 +6673,159 @@ namespace Win32
 			public uint32 CustomRateCount;
 		}
 		[CRepr]
-		public struct DXVAHD_CUSTOM_RATE_DATA		{
+		public struct DXVAHD_CUSTOM_RATE_DATA
+		{
 			public DXVAHD_RATIONAL CustomRate;
 			public uint32 OutputFrames;
 			public BOOL InputInterlaced;
 			public uint32 InputFramesOrFields;
 		}
 		[CRepr]
-		public struct DXVAHD_FILTER_RANGE_DATA		{
+		public struct DXVAHD_FILTER_RANGE_DATA
+		{
 			public int32 Minimum;
 			public int32 Maximum;
 			public int32 Default;
 			public float Multiplier;
 		}
 		[CRepr]
-		public struct DXVAHD_BLT_STATE_TARGET_RECT_DATA		{
+		public struct DXVAHD_BLT_STATE_TARGET_RECT_DATA
+		{
 			public BOOL Enable;
 			public RECT TargetRect;
 		}
 		[CRepr]
-		public struct DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA		{
+		public struct DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA
+		{
 			public BOOL YCbCr;
 			public DXVAHD_COLOR BackgroundColor;
 		}
 		[CRepr]
-		public struct DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA		{
+		public struct DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DXVAHD_BLT_STATE_ALPHA_FILL_DATA		{
+		public struct DXVAHD_BLT_STATE_ALPHA_FILL_DATA
+		{
 			public DXVAHD_ALPHA_FILL_MODE Mode;
 			public uint32 StreamNumber;
 		}
 		[CRepr]
-		public struct DXVAHD_BLT_STATE_CONSTRICTION_DATA		{
+		public struct DXVAHD_BLT_STATE_CONSTRICTION_DATA
+		{
 			public BOOL Enable;
 			public SIZE Size;
 		}
 		[CRepr]
-		public struct DXVAHD_BLT_STATE_PRIVATE_DATA		{
+		public struct DXVAHD_BLT_STATE_PRIVATE_DATA
+		{
 			public Guid Guid;
 			public uint32 DataSize;
 			public void* pData;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_D3DFORMAT_DATA		{
+		public struct DXVAHD_STREAM_STATE_D3DFORMAT_DATA
+		{
 			public D3DFORMAT Format;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA		{
+		public struct DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA
+		{
 			public DXVAHD_FRAME_FORMAT FrameFormat;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA		{
+		public struct DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA		{
+		public struct DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA
+		{
 			public BOOL RepeatFrame;
 			public DXVAHD_OUTPUT_RATE OutputRate;
 			public DXVAHD_RATIONAL CustomRate;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_SOURCE_RECT_DATA		{
+		public struct DXVAHD_STREAM_STATE_SOURCE_RECT_DATA
+		{
 			public BOOL Enable;
 			public RECT SourceRect;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA		{
+		public struct DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA
+		{
 			public BOOL Enable;
 			public RECT DestinationRect;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_ALPHA_DATA		{
+		public struct DXVAHD_STREAM_STATE_ALPHA_DATA
+		{
 			public BOOL Enable;
 			public float Alpha;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_PALETTE_DATA		{
+		public struct DXVAHD_STREAM_STATE_PALETTE_DATA
+		{
 			public uint32 Count;
 			public uint32* pEntries;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_LUMA_KEY_DATA		{
+		public struct DXVAHD_STREAM_STATE_LUMA_KEY_DATA
+		{
 			public BOOL Enable;
 			public float Lower;
 			public float Upper;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA		{
+		public struct DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA
+		{
 			public BOOL Enable;
 			public DXVAHD_RATIONAL SourceAspectRatio;
 			public DXVAHD_RATIONAL DestinationAspectRatio;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_FILTER_DATA		{
+		public struct DXVAHD_STREAM_STATE_FILTER_DATA
+		{
 			public BOOL Enable;
 			public int32 Level;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_PRIVATE_DATA		{
+		public struct DXVAHD_STREAM_STATE_PRIVATE_DATA
+		{
 			public Guid Guid;
 			public uint32 DataSize;
 			public void* pData;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_DATA		{
+		public struct DXVAHD_STREAM_DATA
+		{
 			public BOOL Enable;
 			public uint32 OutputIndex;
 			public uint32 InputFrameOrField;
@@ -6632,14 +6836,16 @@ namespace Win32
 			public IDirect3DSurface9** ppFutureSurfaces;
 		}
 		[CRepr]
-		public struct DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA		{
+		public struct DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA
+		{
 			public BOOL Enable;
 			public uint32 ITelecineFlags;
 			public uint32 Frames;
 			public uint32 InputField;
 		}
 		[CRepr]
-		public struct DXVAHDSW_CALLBACKS		{
+		public struct DXVAHDSW_CALLBACKS
+		{
 			public PDXVAHDSW_CreateDevice CreateDevice;
 			public PDXVAHDSW_ProposeVideoPrivateFormat ProposeVideoPrivateFormat;
 			public PDXVAHDSW_GetVideoProcessorDeviceCaps GetVideoProcessorDeviceCaps;
@@ -6658,20 +6864,23 @@ namespace Win32
 			public PDXVAHDSW_DestroyVideoProcessor DestroyVideoProcessor;
 		}
 		[CRepr]
-		public struct DXVAHDETW_CREATEVIDEOPROCESSOR		{
+		public struct DXVAHDETW_CREATEVIDEOPROCESSOR
+		{
 			public uint64 pObject;
 			public uint64 pD3D9Ex;
 			public Guid VPGuid;
 		}
 		[CRepr]
-		public struct DXVAHDETW_VIDEOPROCESSBLTSTATE		{
+		public struct DXVAHDETW_VIDEOPROCESSBLTSTATE
+		{
 			public uint64 pObject;
 			public DXVAHD_BLT_STATE State;
 			public uint32 DataSize;
 			public BOOL SetState;
 		}
 		[CRepr]
-		public struct DXVAHDETW_VIDEOPROCESSSTREAMSTATE		{
+		public struct DXVAHDETW_VIDEOPROCESSSTREAMSTATE
+		{
 			public uint64 pObject;
 			public uint32 StreamNumber;
 			public DXVAHD_STREAM_STATE State;
@@ -6679,7 +6888,8 @@ namespace Win32
 			public BOOL SetState;
 		}
 		[CRepr]
-		public struct DXVAHDETW_VIDEOPROCESSBLTHD		{
+		public struct DXVAHDETW_VIDEOPROCESSBLTHD
+		{
 			public uint64 pObject;
 			public uint64 pOutputSurface;
 			public RECT TargetRect;
@@ -6690,7 +6900,8 @@ namespace Win32
 			public BOOL Enter;
 		}
 		[CRepr]
-		public struct DXVAHDETW_VIDEOPROCESSBLTHD_STREAM		{
+		public struct DXVAHDETW_VIDEOPROCESSBLTHD_STREAM
+		{
 			public uint64 pObject;
 			public uint64 pInputSurface;
 			public RECT SourceRect;
@@ -6705,31 +6916,37 @@ namespace Win32
 			public uint32 FutureFrames;
 		}
 		[CRepr]
-		public struct DXVAHDETW_DESTROYVIDEOPROCESSOR		{
+		public struct DXVAHDETW_DESTROYVIDEOPROCESSOR
+		{
 			public uint64 pObject;
 		}
 		[CRepr]
-		public struct DXVA2_ExtendedFormat		{
+		public struct DXVA2_ExtendedFormat
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DXVA2_Frequency		{
+		public struct DXVA2_Frequency
+		{
 			public uint32 Numerator;
 			public uint32 Denominator;
 		}
 		[CRepr]
-		public struct DXVA2_VideoDesc		{
+		public struct DXVA2_VideoDesc
+		{
 			public uint32 SampleWidth;
 			public uint32 SampleHeight;
 			public DXVA2_ExtendedFormat SampleFormat;
@@ -6740,7 +6957,8 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct DXVA2_VideoProcessorCaps		{
+		public struct DXVA2_VideoProcessorCaps
+		{
 			public uint32 DeviceCaps;
 			public D3DPOOL InputPool;
 			public uint32 NumForwardRefSamples;
@@ -6753,37 +6971,43 @@ namespace Win32
 			public uint32 DetailFilterTechnology;
 		}
 		[CRepr]
-		public struct DXVA2_Fixed32		{
+		public struct DXVA2_Fixed32
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 ll;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 Fraction;
 					public int16 Value;
 				}
 			}
 		}
 		[CRepr]
-		public struct DXVA2_AYUVSample8		{
+		public struct DXVA2_AYUVSample8
+		{
 			public uint8 Cr;
 			public uint8 Cb;
 			public uint8 Y;
 			public uint8 Alpha;
 		}
 		[CRepr]
-		public struct DXVA2_AYUVSample16		{
+		public struct DXVA2_AYUVSample16
+		{
 			public uint16 Cr;
 			public uint16 Cb;
 			public uint16 Y;
 			public uint16 Alpha;
 		}
 		[CRepr]
-		public struct DXVA2_VideoSample		{
+		public struct DXVA2_VideoSample
+		{
 			public int64 Start;
 			public int64 End;
 			public DXVA2_ExtendedFormat SampleFormat;
@@ -6795,27 +7019,31 @@ namespace Win32
 			public uint32 SampleData;
 		}
 		[CRepr]
-		public struct DXVA2_ValueRange		{
+		public struct DXVA2_ValueRange
+		{
 			public DXVA2_Fixed32 MinValue;
 			public DXVA2_Fixed32 MaxValue;
 			public DXVA2_Fixed32 DefaultValue;
 			public DXVA2_Fixed32 StepSize;
 		}
 		[CRepr]
-		public struct DXVA2_ProcAmpValues		{
+		public struct DXVA2_ProcAmpValues
+		{
 			public DXVA2_Fixed32 Brightness;
 			public DXVA2_Fixed32 Contrast;
 			public DXVA2_Fixed32 Hue;
 			public DXVA2_Fixed32 Saturation;
 		}
 		[CRepr]
-		public struct DXVA2_FilterValues		{
+		public struct DXVA2_FilterValues
+		{
 			public DXVA2_Fixed32 Level;
 			public DXVA2_Fixed32 Threshold;
 			public DXVA2_Fixed32 Radius;
 		}
 		[CRepr]
-		public struct DXVA2_VideoProcessBltParams		{
+		public struct DXVA2_VideoProcessBltParams
+		{
 			public int64 TargetFrame;
 			public RECT TargetRect;
 			public SIZE ConstrictionSize;
@@ -6831,7 +7059,8 @@ namespace Win32
 			public uint32 DestData;
 		}
 		[CRepr]
-		public struct DXVA2_ConfigPictureDecode		{
+		public struct DXVA2_ConfigPictureDecode
+		{
 			public Guid guidConfigBitstreamEncryption;
 			public Guid guidConfigMBcontrolEncryption;
 			public Guid guidConfigResidDiffEncryption;
@@ -6851,7 +7080,8 @@ namespace Win32
 			public uint16 ConfigDecoderSpecific;
 		}
 		[CRepr]
-		public struct DXVA2_DecodeBufferDesc		{
+		public struct DXVA2_DecodeBufferDesc
+		{
 			public DXVA2_BufferfType CompressedBufferType;
 			public uint32 BufferIndex;
 			public uint32 DataOffset;
@@ -6865,12 +7095,14 @@ namespace Win32
 			public void* pvPVPState;
 		}
 		[CRepr]
-		public struct DXVA2_AES_CTR_IV		{
+		public struct DXVA2_AES_CTR_IV
+		{
 			public uint64 IV;
 			public uint64 Count;
 		}
 		[CRepr]
-		public struct DXVA2_DecodeExtensionData		{
+		public struct DXVA2_DecodeExtensionData
+		{
 			public uint32 Function;
 			public void* pPrivateInputData;
 			public uint32 PrivateInputDataSize;
@@ -6878,25 +7110,30 @@ namespace Win32
 			public uint32 PrivateOutputDataSize;
 		}
 		[CRepr]
-		public struct DXVA2_DecodeExecuteParams		{
+		public struct DXVA2_DecodeExecuteParams
+		{
 			public uint32 NumCompBuffers;
 			public DXVA2_DecodeBufferDesc* pCompressedBuffers;
 			public DXVA2_DecodeExtensionData* pExtensionData;
 		}
 		[CRepr]
-		public struct OPM_RANDOM_NUMBER		{
+		public struct OPM_RANDOM_NUMBER
+		{
 			public uint8[16] abRandomNumber;
 		}
 		[CRepr]
-		public struct OPM_OMAC		{
+		public struct OPM_OMAC
+		{
 			public uint8[16] abOMAC;
 		}
 		[CRepr]
-		public struct OPM_ENCRYPTED_INITIALIZATION_PARAMETERS		{
+		public struct OPM_ENCRYPTED_INITIALIZATION_PARAMETERS
+		{
 			public uint8[256] abEncryptedInitializationParameters;
 		}
 		[CRepr]
-		public struct OPM_GET_INFO_PARAMETERS		{
+		public struct OPM_GET_INFO_PARAMETERS
+		{
 			public OPM_OMAC omac;
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public Guid guidInformation;
@@ -6905,7 +7142,8 @@ namespace Win32
 			public uint8[4056] abParameters;
 		}
 		[CRepr]
-		public struct OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS		{
+		public struct OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS
+		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public Guid guidInformation;
 			public uint32 ulSequenceNumber;
@@ -6913,11 +7151,13 @@ namespace Win32
 			public uint8[4056] abParameters;
 		}
 		[CRepr]
-		public struct OPM_HDCP_KEY_SELECTION_VECTOR		{
+		public struct OPM_HDCP_KEY_SELECTION_VECTOR
+		{
 			public uint8[5] abKeySelectionVector;
 		}
 		[CRepr]
-		public struct OPM_CONNECTED_HDCP_DEVICE_INFORMATION		{
+		public struct OPM_CONNECTED_HDCP_DEVICE_INFORMATION
+		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public uint32 ulStatusFlags;
 			public uint32 ulHDCPFlags;
@@ -6927,13 +7167,15 @@ namespace Win32
 			public uint8[16] Reserved3;
 		}
 		[CRepr]
-		public struct OPM_REQUESTED_INFORMATION		{
+		public struct OPM_REQUESTED_INFORMATION
+		{
 			public OPM_OMAC omac;
 			public uint32 cbRequestedInformationSize;
 			public uint8[4076] abRequestedInformation;
 		}
 		[CRepr]
-		public struct OPM_STANDARD_INFORMATION		{
+		public struct OPM_STANDARD_INFORMATION
+		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public uint32 ulStatusFlags;
 			public uint32 ulInformation;
@@ -6941,7 +7183,8 @@ namespace Win32
 			public uint32 ulReserved2;
 		}
 		[CRepr]
-		public struct OPM_ACTUAL_OUTPUT_FORMAT		{
+		public struct OPM_ACTUAL_OUTPUT_FORMAT
+		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public uint32 ulStatusFlags;
 			public uint32 ulDisplayWidth;
@@ -6952,7 +7195,8 @@ namespace Win32
 			public uint32 ulFrequencyDenominator;
 		}
 		[CRepr]
-		public struct OPM_ACP_AND_CGMSA_SIGNALING		{
+		public struct OPM_ACP_AND_CGMSA_SIGNALING
+		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public uint32 ulStatusFlags;
 			public uint32 ulAvailableTVProtectionStandards;
@@ -6968,13 +7212,15 @@ namespace Win32
 			public uint32[4] ulReserved3;
 		}
 		[CRepr]
-		public struct OPM_OUTPUT_ID_DATA		{
+		public struct OPM_OUTPUT_ID_DATA
+		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public uint32 ulStatusFlags;
 			public uint64 OutputId;
 		}
 		[CRepr]
-		public struct OPM_CONFIGURE_PARAMETERS		{
+		public struct OPM_CONFIGURE_PARAMETERS
+		{
 			public OPM_OMAC omac;
 			public Guid guidSetting;
 			public uint32 ulSequenceNumber;
@@ -6982,14 +7228,16 @@ namespace Win32
 			public uint8[4056] abParameters;
 		}
 		[CRepr]
-		public struct OPM_SET_PROTECTION_LEVEL_PARAMETERS		{
+		public struct OPM_SET_PROTECTION_LEVEL_PARAMETERS
+		{
 			public uint32 ulProtectionType;
 			public uint32 ulProtectionLevel;
 			public uint32 Reserved;
 			public uint32 Reserved2;
 		}
 		[CRepr]
-		public struct OPM_SET_ACP_AND_CGMSA_SIGNALING_PARAMETERS		{
+		public struct OPM_SET_ACP_AND_CGMSA_SIGNALING_PARAMETERS
+		{
 			public uint32 ulNewTVProtectionStandard;
 			public uint32 ulAspectRatioChangeMask1;
 			public uint32 ulAspectRatioData1;
@@ -7002,42 +7250,50 @@ namespace Win32
 			public uint32 ulReserved3;
 		}
 		[CRepr]
-		public struct OPM_SET_HDCP_SRM_PARAMETERS		{
+		public struct OPM_SET_HDCP_SRM_PARAMETERS
+		{
 			public uint32 ulSRMVersion;
 		}
 		[CRepr]
-		public struct OPM_GET_CODEC_INFO_PARAMETERS		{
+		public struct OPM_GET_CODEC_INFO_PARAMETERS
+		{
 			public uint32 cbVerifier;
 			public uint8[4052] Verifier;
 		}
 		[CRepr]
-		public struct OPM_GET_CODEC_INFO_INFORMATION		{
+		public struct OPM_GET_CODEC_INFO_INFORMATION
+		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public uint32 Merit;
 		}
 		[CRepr]
-		public struct MFT_REGISTER_TYPE_INFO		{
+		public struct MFT_REGISTER_TYPE_INFO
+		{
 			public Guid guidMajorType;
 			public Guid guidSubtype;
 		}
 		[CRepr]
-		public struct MFRatio		{
+		public struct MFRatio
+		{
 			public uint32 Numerator;
 			public uint32 Denominator;
 		}
 		[CRepr]
-		public struct MFOffset		{
+		public struct MFOffset
+		{
 			public uint16 fract;
 			public int16 value;
 		}
 		[CRepr]
-		public struct MFVideoArea		{
+		public struct MFVideoArea
+		{
 			public MFOffset OffsetX;
 			public MFOffset OffsetY;
 			public SIZE Area;
 		}
 		[CRepr]
-		public struct MFVideoInfo		{
+		public struct MFVideoInfo
+		{
 			public uint32 dwWidth;
 			public uint32 dwHeight;
 			public MFRatio PixelAspectRatio;
@@ -7055,38 +7311,44 @@ namespace Win32
 			public uint64 VideoFlags;
 		}
 		[CRepr]
-		public struct MFAYUVSample		{
+		public struct MFAYUVSample
+		{
 			public uint8 bCrValue;
 			public uint8 bCbValue;
 			public uint8 bYValue;
 			public uint8 bSampleAlpha8;
 		}
 		[CRepr]
-		public struct MFARGB		{
+		public struct MFARGB
+		{
 			public uint8 rgbBlue;
 			public uint8 rgbGreen;
 			public uint8 rgbRed;
 			public uint8 rgbAlpha;
 		}
 		[CRepr, Union]
-		public struct MFPaletteEntry		{
+		public struct MFPaletteEntry
+		{
 			public MFARGB ARGB;
 			public MFAYUVSample AYCbCr;
 		}
 		[CRepr]
-		public struct MFVideoSurfaceInfo		{
+		public struct MFVideoSurfaceInfo
+		{
 			public uint32 Format;
 			public uint32 PaletteEntries;
 			public MFPaletteEntry[0] Palette;
 		}
 		[CRepr]
-		public struct MFVideoCompressedInfo		{
+		public struct MFVideoCompressedInfo
+		{
 			public int64 AvgBitrate;
 			public int64 AvgBitErrorRate;
 			public uint32 MaxKeyFrameSpacing;
 		}
 		[CRepr]
-		public struct MFVIDEOFORMAT		{
+		public struct MFVIDEOFORMAT
+		{
 			public uint32 dwSize;
 			public MFVideoInfo videoInfo;
 			public Guid guidFormat;
@@ -7094,7 +7356,8 @@ namespace Win32
 			public MFVideoSurfaceInfo surfaceInfo;
 		}
 		[CRepr]
-		public struct MFT_INPUT_STREAM_INFO		{
+		public struct MFT_INPUT_STREAM_INFO
+		{
 			public int64 hnsMaxLatency;
 			public uint32 dwFlags;
 			public uint32 cbSize;
@@ -7102,35 +7365,41 @@ namespace Win32
 			public uint32 cbAlignment;
 		}
 		[CRepr]
-		public struct MFT_OUTPUT_STREAM_INFO		{
+		public struct MFT_OUTPUT_STREAM_INFO
+		{
 			public uint32 dwFlags;
 			public uint32 cbSize;
 			public uint32 cbAlignment;
 		}
 		[CRepr]
-		public struct MFT_OUTPUT_DATA_BUFFER		{
+		public struct MFT_OUTPUT_DATA_BUFFER
+		{
 			public uint32 dwStreamID;
 			public IMFSample* pSample;
 			public uint32 dwStatus;
 			public IMFCollection* pEvents;
 		}
 		[CRepr]
-		public struct STREAM_MEDIUM		{
+		public struct STREAM_MEDIUM
+		{
 			public Guid gidMedium;
 			public uint32 unMediumInstance;
 		}
 		[CRepr]
-		public struct MFAudioDecoderDegradationInfo		{
+		public struct MFAudioDecoderDegradationInfo
+		{
 			public MFT_AUDIO_DECODER_DEGRADATION_REASON eDegradationReason;
 			public MFT_AUDIO_DECODER_DEGRADATION_TYPE eType;
 		}
 		[CRepr]
-		public struct MFT_STREAM_STATE_PARAM		{
+		public struct MFT_STREAM_STATE_PARAM
+		{
 			public uint32 StreamId;
 			public MF_STREAM_STATE State;
 		}
 		[CRepr]
-		public struct MFCLOCK_PROPERTIES		{
+		public struct MFCLOCK_PROPERTIES
+		{
 			public uint64 qwCorrelationRate;
 			public Guid guidClockId;
 			public uint32 dwClockFlags;
@@ -7139,50 +7408,58 @@ namespace Win32
 			public uint32 dwClockJitter;
 		}
 		[CRepr]
-		public struct MFRR_COMPONENT_HASH_INFO		{
+		public struct MFRR_COMPONENT_HASH_INFO
+		{
 			public uint32 ulReason;
 			public char16[43] rgHeaderHash;
 			public char16[43] rgPublicKeyHash;
 			public char16[260] wszName;
 		}
 		[CRepr]
-		public struct MFRR_COMPONENTS		{
+		public struct MFRR_COMPONENTS
+		{
 			public uint32 dwRRInfoVersion;
 			public uint32 dwRRComponents;
 			public MFRR_COMPONENT_HASH_INFO* pRRComponents;
 		}
 		[CRepr]
-		public struct ASF_FLAT_PICTURE		{
+		public struct ASF_FLAT_PICTURE
+		{
 			public uint8 bPictureType;
 			public uint32 dwDataLen;
 		}
 		[CRepr]
-		public struct ASF_FLAT_SYNCHRONISED_LYRICS		{
+		public struct ASF_FLAT_SYNCHRONISED_LYRICS
+		{
 			public uint8 bTimeStampFormat;
 			public uint8 bContentType;
 			public uint32 dwLyricsLen;
 		}
 		[CRepr]
-		public struct MFTOPONODE_ATTRIBUTE_UPDATE		{
+		public struct MFTOPONODE_ATTRIBUTE_UPDATE
+		{
 			public uint64 NodeId;
 			public Guid guidAttributeKey;
 			public MF_ATTRIBUTE_TYPE attrType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 u32;
 				public uint64 u64;
 				public double d;
 			}
 		}
 		[CRepr]
-		public struct MF_LEAKY_BUCKET_PAIR		{
+		public struct MF_LEAKY_BUCKET_PAIR
+		{
 			public uint32 dwBitrate;
 			public uint32 msBufferWindow;
 		}
 		[CRepr]
-		public struct MFBYTESTREAM_BUFFERING_PARAMS		{
+		public struct MFBYTESTREAM_BUFFERING_PARAMS
+		{
 			public uint64 cbTotalFileSize;
 			public uint64 cbPlayableDataSize;
 			public MF_LEAKY_BUCKET_PAIR* prgBuckets;
@@ -7193,12 +7470,14 @@ namespace Win32
 			public float dRate;
 		}
 		[CRepr]
-		public struct MF_BYTE_STREAM_CACHE_RANGE		{
+		public struct MF_BYTE_STREAM_CACHE_RANGE
+		{
 			public uint64 qwStartOffset;
 			public uint64 qwEndOffset;
 		}
 		[CRepr]
-		public struct MFNetCredentialManagerGetParam		{
+		public struct MFNetCredentialManagerGetParam
+		{
 			public HRESULT hrOp;
 			public BOOL fAllowLoggedOnUser;
 			public BOOL fClearTextPackage;
@@ -7209,13 +7488,15 @@ namespace Win32
 			public int32 nRetries;
 		}
 		[CRepr]
-		public struct MFINPUTTRUSTAUTHORITY_ACCESS_ACTION		{
+		public struct MFINPUTTRUSTAUTHORITY_ACCESS_ACTION
+		{
 			public MFPOLICYMANAGER_ACTION Action;
 			public uint8* pbTicket;
 			public uint32 cbTicket;
 		}
 		[CRepr]
-		public struct MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS		{
+		public struct MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS
+		{
 			public uint32 dwSize;
 			public uint32 dwVer;
 			public uint32 cbSignatureOffset;
@@ -7226,14 +7507,16 @@ namespace Win32
 			public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION[0] rgOutputActions;
 		}
 		[CRepr]
-		public struct MF_TRANSCODE_SINK_INFO		{
+		public struct MF_TRANSCODE_SINK_INFO
+		{
 			public uint32 dwVideoStreamID;
 			public IMFMediaType* pVideoMediaType;
 			public uint32 dwAudioStreamID;
 			public IMFMediaType* pAudioMediaType;
 		}
 		[CRepr]
-		public struct MFT_REGISTRATION_INFO		{
+		public struct MFT_REGISTRATION_INFO
+		{
 			public Guid clsid;
 			public Guid guidCategory;
 			public uint32 uiFlags;
@@ -7244,7 +7527,8 @@ namespace Win32
 			public MFT_REGISTER_TYPE_INFO* pOutTypes;
 		}
 		[CRepr]
-		public struct MFCONTENTPROTECTIONDEVICE_INPUT_DATA		{
+		public struct MFCONTENTPROTECTIONDEVICE_INPUT_DATA
+		{
 			public uint32 HWProtectionFunctionID;
 			public uint32 PrivateDataByteCount;
 			public uint32 HWProtectionDataByteCount;
@@ -7252,7 +7536,8 @@ namespace Win32
 			public uint8[4] InputData;
 		}
 		[CRepr]
-		public struct MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA		{
+		public struct MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA
+		{
 			public uint32 PrivateDataByteCount;
 			public uint32 MaxHWProtectionDataByteCount;
 			public uint32 HWProtectionDataByteCount;
@@ -7262,38 +7547,44 @@ namespace Win32
 			public uint8[4] OutputData;
 		}
 		[CRepr]
-		public struct MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA		{
+		public struct MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA
+		{
 			public uint32 TaskIndex;
 			public char16[260] ClassName;
 			public int32 BasePriority;
 		}
 		[CRepr]
-		public struct MFMediaKeyStatus		{
+		public struct MFMediaKeyStatus
+		{
 			public uint8* pbKeyId;
 			public uint32 cbKeyId;
 			public MF_MEDIAKEY_STATUS eMediaKeyStatus;
 		}
 		[CRepr]
-		public struct MF_VIDEO_SPHERICAL_VIEWDIRECTION		{
+		public struct MF_VIDEO_SPHERICAL_VIEWDIRECTION
+		{
 			public int32 iHeading;
 			public int32 iPitch;
 			public int32 iRoll;
 		}
 		[CRepr]
-		public struct SENSORPROFILEID		{
+		public struct SENSORPROFILEID
+		{
 			public Guid Type;
 			public uint32 Index;
 			public uint32 Unused;
 		}
 		[CRepr]
-		public struct MFCameraIntrinsic_CameraModel		{
+		public struct MFCameraIntrinsic_CameraModel
+		{
 			public float FocalLength_x;
 			public float FocalLength_y;
 			public float PrincipalPoint_x;
 			public float PrincipalPoint_y;
 		}
 		[CRepr]
-		public struct MFCameraIntrinsic_DistortionModel6KT		{
+		public struct MFCameraIntrinsic_DistortionModel6KT
+		{
 			public float Radial_k1;
 			public float Radial_k2;
 			public float Radial_k3;
@@ -7304,7 +7595,8 @@ namespace Win32
 			public float Tangential_p2;
 		}
 		[CRepr]
-		public struct MFCameraIntrinsic_DistortionModelArcTan		{
+		public struct MFCameraIntrinsic_DistortionModelArcTan
+		{
 			public float Radial_k0;
 			public float DistortionCenter_x;
 			public float DistortionCenter_y;
@@ -7312,73 +7604,85 @@ namespace Win32
 			public float Tangential_y;
 		}
 		[CRepr]
-		public struct MFExtendedCameraIntrinsic_IntrinsicModel		{
+		public struct MFExtendedCameraIntrinsic_IntrinsicModel
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public uint32 SplitFrameId;
 			public MFCameraIntrinsic_CameraModel CameraModel;
 		}
 		[CRepr]
-		public struct ASF_INDEX_IDENTIFIER		{
+		public struct ASF_INDEX_IDENTIFIER
+		{
 			public Guid guidIndexType;
 			public uint16 wStreamNumber;
 		}
 		[CRepr]
-		public struct ASF_INDEX_DESCRIPTOR		{
+		public struct ASF_INDEX_DESCRIPTOR
+		{
 			public ASF_INDEX_IDENTIFIER Identifier;
 			public uint16 cPerEntryBytes;
 			public char16[32] szDescription;
 			public uint32 dwInterval;
 		}
 		[CRepr]
-		public struct ASF_MUX_STATISTICS		{
+		public struct ASF_MUX_STATISTICS
+		{
 			public uint32 cFramesWritten;
 			public uint32 cFramesDropped;
 		}
 		[CRepr]
-		public struct MFVideoNormalizedRect		{
+		public struct MFVideoNormalizedRect
+		{
 			public float left;
 			public float top;
 			public float right;
 			public float bottom;
 		}
 		[CRepr]
-		public struct MOVE_RECT		{
+		public struct MOVE_RECT
+		{
 			public POINT SourcePoint;
 			public RECT DestRect;
 		}
 		[CRepr]
-		public struct DIRTYRECT_INFO		{
+		public struct DIRTYRECT_INFO
+		{
 			public uint32 FrameNumber;
 			public uint32 NumDirtyRects;
 			public RECT[0] DirtyRects;
 		}
 		[CRepr]
-		public struct MOVEREGION_INFO		{
+		public struct MOVEREGION_INFO
+		{
 			public uint32 FrameNumber;
 			public uint32 NumMoveRegions;
 			public MOVE_RECT[0] MoveRegions;
 		}
 		[CRepr]
-		public struct ROI_AREA		{
+		public struct ROI_AREA
+		{
 			public RECT rect;
 			public int32 QPDelta;
 		}
 		[CRepr]
-		public struct MACROBLOCK_DATA		{
+		public struct MACROBLOCK_DATA
+		{
 			public uint32 flags;
 			public int16 motionVectorX;
 			public int16 motionVectorY;
 			public int32 QPDelta;
 		}
 		[CRepr]
-		public struct DigitalWindowSetting		{
+		public struct DigitalWindowSetting
+		{
 			public double OriginX;
 			public double OriginY;
 			public double WindowSize;
 		}
 		[CRepr]
-		public struct MFFOLDDOWN_MATRIX		{
+		public struct MFFOLDDOWN_MATRIX
+		{
 			public uint32 cbSize;
 			public uint32 cSrcChannels;
 			public uint32 cDstChannels;
@@ -7386,7 +7690,8 @@ namespace Win32
 			public int32[64] Coeff;
 		}
 		[CRepr]
-		public struct MT_CUSTOM_VIDEO_PRIMARIES		{
+		public struct MT_CUSTOM_VIDEO_PRIMARIES
+		{
 			public float fRx;
 			public float fRy;
 			public float fGx;
@@ -7397,7 +7702,8 @@ namespace Win32
 			public float fWy;
 		}
 		[CRepr]
-		public struct MT_ARBITRARY_HEADER		{
+		public struct MT_ARBITRARY_HEADER
+		{
 			public Guid majortype;
 			public Guid subtype;
 			public BOOL bFixedSizeSamples;
@@ -7406,41 +7712,48 @@ namespace Win32
 			public Guid formattype;
 		}
 		[CRepr]
-		public struct MF_FLOAT2		{
+		public struct MF_FLOAT2
+		{
 			public float x;
 			public float y;
 		}
 		[CRepr]
-		public struct MF_FLOAT3		{
+		public struct MF_FLOAT3
+		{
 			public float x;
 			public float y;
 			public float z;
 		}
 		[CRepr]
-		public struct MF_QUATERNION		{
+		public struct MF_QUATERNION
+		{
 			public float x;
 			public float y;
 			public float z;
 			public float w;
 		}
 		[CRepr]
-		public struct MFCameraExtrinsic_CalibratedTransform		{
+		public struct MFCameraExtrinsic_CalibratedTransform
+		{
 			public Guid CalibrationId;
 			public MF_FLOAT3 Position;
 			public MF_QUATERNION Orientation;
 		}
 		[CRepr]
-		public struct MFCameraExtrinsics		{
+		public struct MFCameraExtrinsics
+		{
 			public uint32 TransformCount;
 			public MFCameraExtrinsic_CalibratedTransform[0] CalibratedTransforms;
 		}
 		[CRepr]
-		public struct MFCameraIntrinsic_PinholeCameraModel		{
+		public struct MFCameraIntrinsic_PinholeCameraModel
+		{
 			public MF_FLOAT2 FocalLength;
 			public MF_FLOAT2 PrincipalPoint;
 		}
 		[CRepr]
-		public struct MFCameraIntrinsic_DistortionModel		{
+		public struct MFCameraIntrinsic_DistortionModel
+		{
 			public float Radial_k1;
 			public float Radial_k2;
 			public float Radial_k3;
@@ -7448,19 +7761,22 @@ namespace Win32
 			public float Tangential_p2;
 		}
 		[CRepr]
-		public struct MFPinholeCameraIntrinsic_IntrinsicModel		{
+		public struct MFPinholeCameraIntrinsic_IntrinsicModel
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public MFCameraIntrinsic_PinholeCameraModel CameraModel;
 			public MFCameraIntrinsic_DistortionModel DistortionModel;
 		}
 		[CRepr]
-		public struct MFPinholeCameraIntrinsics		{
+		public struct MFPinholeCameraIntrinsics
+		{
 			public uint32 IntrinsicModelCount;
 			public MFPinholeCameraIntrinsic_IntrinsicModel[0] IntrinsicModels;
 		}
 		[CRepr]
-		public struct MFMPEG2DLNASINKSTATS		{
+		public struct MFMPEG2DLNASINKSTATS
+		{
 			public uint64 cBytesWritten;
 			public BOOL fPAL;
 			public uint32 fccVideo;
@@ -7477,7 +7793,8 @@ namespace Win32
 			public uint64 cAudioFramesEncoded;
 		}
 		[CRepr]
-		public struct MF_SINK_WRITER_STATISTICS		{
+		public struct MF_SINK_WRITER_STATISTICS
+		{
 			public uint32 cb;
 			public int64 llLastTimestampReceived;
 			public int64 llLastTimestampEncoded;
@@ -7496,7 +7813,8 @@ namespace Win32
 			public uint32 dwAverageSampleRateProcessed;
 		}
 		[CRepr]
-		public struct MFP_EVENT_HEADER		{
+		public struct MFP_EVENT_HEADER
+		{
 			public MFP_EVENT_TYPE eEventType;
 			public HRESULT hrEvent;
 			public IMFPMediaPlayer* pMediaPlayer;
@@ -7504,70 +7822,83 @@ namespace Win32
 			public IPropertyStore* pPropertyStore;
 		}
 		[CRepr]
-		public struct MFP_PLAY_EVENT		{
+		public struct MFP_PLAY_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_PAUSE_EVENT		{
+		public struct MFP_PAUSE_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_STOP_EVENT		{
+		public struct MFP_STOP_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_POSITION_SET_EVENT		{
+		public struct MFP_POSITION_SET_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_RATE_SET_EVENT		{
+		public struct MFP_RATE_SET_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 			public float flRate;
 		}
 		[CRepr]
-		public struct MFP_MEDIAITEM_CREATED_EVENT		{
+		public struct MFP_MEDIAITEM_CREATED_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 			public uint dwUserData;
 		}
 		[CRepr]
-		public struct MFP_MEDIAITEM_SET_EVENT		{
+		public struct MFP_MEDIAITEM_SET_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_FRAME_STEP_EVENT		{
+		public struct MFP_FRAME_STEP_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_MEDIAITEM_CLEARED_EVENT		{
+		public struct MFP_MEDIAITEM_CLEARED_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_MF_EVENT		{
+		public struct MFP_MF_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public uint32 MFEventType;
 			public IMFMediaEvent* pMFMediaEvent;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_ERROR_EVENT		{
+		public struct MFP_ERROR_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 		}
 		[CRepr]
-		public struct MFP_PLAYBACK_ENDED_EVENT		{
+		public struct MFP_PLAYBACK_ENDED_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
-		public struct MFP_ACQUIRE_USER_CREDENTIAL_EVENT		{
+		public struct MFP_ACQUIRE_USER_CREDENTIAL_EVENT
+		{
 			public MFP_EVENT_HEADER header;
 			public uint dwUserData;
 			public BOOL fProceedWithAuthentication;
@@ -7581,7 +7912,8 @@ namespace Win32
 			public IMFNetCredential* pCredential;
 		}
 		[CRepr]
-		public struct DEVICE_INFO		{
+		public struct DEVICE_INFO
+		{
 			public BSTR pFriendlyDeviceName;
 			public BSTR pUniqueDeviceName;
 			public BSTR pManufacturerName;
@@ -7589,7 +7921,8 @@ namespace Win32
 			public BSTR pIconURL;
 		}
 		[CRepr]
-		public struct MFVideoAlphaBitmapParams		{
+		public struct MFVideoAlphaBitmapParams
+		{
 			public uint32 dwFlags;
 			public uint32 clrSrcKey;
 			public RECT rcSrc;
@@ -7598,13 +7931,15 @@ namespace Win32
 			public uint32 dwFilterMode;
 		}
 		[CRepr]
-		public struct MFVideoAlphaBitmap		{
+		public struct MFVideoAlphaBitmap
+		{
 			public BOOL GetBitmapFromDC;
 			public _bitmap_e__Union bitmap;
 			public MFVideoAlphaBitmapParams @params;
 			
 			[CRepr, Union]
-			public struct _bitmap_e__Union			{
+			public struct _bitmap_e__Union
+			{
 				public HDC hdc;
 				public IDirect3DSurface9* pDDS;
 			}

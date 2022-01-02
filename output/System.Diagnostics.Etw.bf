@@ -783,7 +783,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WNODE_HEADER		{
+		public struct WNODE_HEADER
+		{
 			public uint32 BufferSize;
 			public uint32 ProviderId;
 			public _Anonymous1_e__Union Anonymous1;
@@ -793,30 +794,35 @@ namespace Win32
 			public uint32 Flags;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 CountLost;
 				public HANDLE KernelHandle;
 				public LARGE_INTEGER TimeStamp;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint64 HistoricalContext;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Version;
 					public uint32 Linkage;
 				}
 			}
 		}
 		[CRepr]
-		public struct OFFSETINSTANCEDATAANDLENGTH		{
+		public struct OFFSETINSTANCEDATAANDLENGTH
+		{
 			public uint32 OffsetInstanceData;
 			public uint32 LengthInstanceData;
 		}
 		[CRepr]
-		public struct WNODE_ALL_DATA		{
+		public struct WNODE_ALL_DATA
+		{
 			public WNODE_HEADER WnodeHeader;
 			public uint32 DataBlockOffset;
 			public uint32 InstanceCount;
@@ -824,13 +830,15 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 FixedInstanceSize;
 				public OFFSETINSTANCEDATAANDLENGTH[0] OffsetInstanceDataAndLength;
 			}
 		}
 		[CRepr]
-		public struct WNODE_SINGLE_INSTANCE		{
+		public struct WNODE_SINGLE_INSTANCE
+		{
 			public WNODE_HEADER WnodeHeader;
 			public uint32 OffsetInstanceName;
 			public uint32 InstanceIndex;
@@ -839,7 +847,8 @@ namespace Win32
 			public uint8[0] VariableData;
 		}
 		[CRepr]
-		public struct WNODE_SINGLE_ITEM		{
+		public struct WNODE_SINGLE_ITEM
+		{
 			public WNODE_HEADER WnodeHeader;
 			public uint32 OffsetInstanceName;
 			public uint32 InstanceIndex;
@@ -849,7 +858,8 @@ namespace Win32
 			public uint8[0] VariableData;
 		}
 		[CRepr]
-		public struct WNODE_METHOD_ITEM		{
+		public struct WNODE_METHOD_ITEM
+		{
 			public WNODE_HEADER WnodeHeader;
 			public uint32 OffsetInstanceName;
 			public uint32 InstanceIndex;
@@ -859,36 +869,42 @@ namespace Win32
 			public uint8[0] VariableData;
 		}
 		[CRepr]
-		public struct WNODE_EVENT_ITEM		{
+		public struct WNODE_EVENT_ITEM
+		{
 			public WNODE_HEADER WnodeHeader;
 		}
 		[CRepr]
-		public struct WNODE_EVENT_REFERENCE		{
+		public struct WNODE_EVENT_REFERENCE
+		{
 			public WNODE_HEADER WnodeHeader;
 			public Guid TargetGuid;
 			public uint32 TargetDataBlockSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 TargetInstanceIndex;
 				public char16[0] TargetInstanceName;
 			}
 		}
 		[CRepr]
-		public struct WNODE_TOO_SMALL		{
+		public struct WNODE_TOO_SMALL
+		{
 			public WNODE_HEADER WnodeHeader;
 			public uint32 SizeNeeded;
 		}
 		[CRepr]
-		public struct WMIREGGUIDW		{
+		public struct WMIREGGUIDW
+		{
 			public Guid Guid;
 			public uint32 Flags;
 			public uint32 InstanceCount;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 InstanceNameList;
 				public uint32 BaseNameOffset;
 				public uint Pdo;
@@ -896,7 +912,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WMIREGINFOW		{
+		public struct WMIREGINFOW
+		{
 			public uint32 BufferSize;
 			public uint32 NextWmiRegInfo;
 			public uint32 RegistryPath;
@@ -905,7 +922,8 @@ namespace Win32
 			public WMIREGGUIDW[0] WmiRegGuid;
 		}
 		[CRepr]
-		public struct EVENT_TRACE_HEADER		{
+		public struct EVENT_TRACE_HEADER
+		{
 			public uint16 Size;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
@@ -916,53 +934,62 @@ namespace Win32
 			public _Anonymous4_e__Union Anonymous4;
 			
 			[CRepr, Union]
-			public struct _Anonymous4_e__Union			{
+			public struct _Anonymous4_e__Union
+			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public uint64 ProcessorTime;
 				public _Anonymous2_e__Struct Anonymous2;
 				
 				[CRepr]
-				public struct _Anonymous2_e__Struct				{
+				public struct _Anonymous2_e__Struct
+				{
 					public uint32 ClientContext;
 					public uint32 Flags;
 				}
 				[CRepr]
-				public struct _Anonymous1_e__Struct				{
+				public struct _Anonymous1_e__Struct
+				{
 					public uint32 KernelTime;
 					public uint32 UserTime;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 Version;
 				public _Class_e__Struct Class;
 				
 				[CRepr]
-				public struct _Class_e__Struct				{
+				public struct _Class_e__Struct
+				{
 					public uint8 Type;
 					public uint8 Level;
 					public uint16 Version;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint16 FieldTypeFlags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint8 HeaderType;
 					public uint8 MarkerFlags;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public Guid Guid;
 				public uint64 GuidPtr;
 			}
 		}
 		[CRepr]
-		public struct EVENT_INSTANCE_HEADER		{
+		public struct EVENT_INSTANCE_HEADER
+		{
 			public uint16 Size;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
@@ -976,54 +1003,63 @@ namespace Win32
 			public uint64 ParentRegHandle;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public uint64 ProcessorTime;
 				public _Anonymous2_e__Struct Anonymous2;
 				
 				[CRepr]
-				public struct _Anonymous2_e__Struct				{
+				public struct _Anonymous2_e__Struct
+				{
 					public uint32 EventId;
 					public uint32 Flags;
 				}
 				[CRepr]
-				public struct _Anonymous1_e__Struct				{
+				public struct _Anonymous1_e__Struct
+				{
 					public uint32 KernelTime;
 					public uint32 UserTime;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 Version;
 				public _Class_e__Struct Class;
 				
 				[CRepr]
-				public struct _Class_e__Struct				{
+				public struct _Class_e__Struct
+				{
 					public uint8 Type;
 					public uint8 Level;
 					public uint16 Version;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint16 FieldTypeFlags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint8 HeaderType;
 					public uint8 MarkerFlags;
 				}
 			}
 		}
 		[CRepr]
-		public struct MOF_FIELD		{
+		public struct MOF_FIELD
+		{
 			public uint64 DataPtr;
 			public uint32 Length;
 			public uint32 DataType;
 		}
 		[CRepr]
-		public struct TRACE_LOGFILE_HEADER		{
+		public struct TRACE_LOGFILE_HEADER
+		{
 			public uint32 BufferSize;
 			public _Anonymous1_e__Union Anonymous1;
 			public uint32 ProviderVersion;
@@ -1044,12 +1080,14 @@ namespace Win32
 			public uint32 BuffersLost;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public Guid LogInstanceGuid;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 StartBuffers;
 					public uint32 PointerSize;
 					public uint32 EventsLost;
@@ -1057,12 +1095,14 @@ namespace Win32
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 Version;
 				public _VersionDetail_e__Struct VersionDetail;
 				
 				[CRepr]
-				public struct _VersionDetail_e__Struct				{
+				public struct _VersionDetail_e__Struct
+				{
 					public uint8 MajorVersion;
 					public uint8 MinorVersion;
 					public uint8 SubVersion;
@@ -1071,7 +1111,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct TRACE_LOGFILE_HEADER32		{
+		public struct TRACE_LOGFILE_HEADER32
+		{
 			public uint32 BufferSize;
 			public _Anonymous1_e__Union Anonymous1;
 			public uint32 ProviderVersion;
@@ -1092,12 +1133,14 @@ namespace Win32
 			public uint32 BuffersLost;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public Guid LogInstanceGuid;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 StartBuffers;
 					public uint32 PointerSize;
 					public uint32 EventsLost;
@@ -1105,12 +1148,14 @@ namespace Win32
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 Version;
 				public _VersionDetail_e__Struct VersionDetail;
 				
 				[CRepr]
-				public struct _VersionDetail_e__Struct				{
+				public struct _VersionDetail_e__Struct
+				{
 					public uint8 MajorVersion;
 					public uint8 MinorVersion;
 					public uint8 SubVersion;
@@ -1119,7 +1164,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct TRACE_LOGFILE_HEADER64		{
+		public struct TRACE_LOGFILE_HEADER64
+		{
 			public uint32 BufferSize;
 			public _Anonymous1_e__Union Anonymous1;
 			public uint32 ProviderVersion;
@@ -1140,12 +1186,14 @@ namespace Win32
 			public uint32 BuffersLost;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public Guid LogInstanceGuid;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 StartBuffers;
 					public uint32 PointerSize;
 					public uint32 EventsLost;
@@ -1153,12 +1201,14 @@ namespace Win32
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 Version;
 				public _VersionDetail_e__Struct VersionDetail;
 				
 				[CRepr]
-				public struct _VersionDetail_e__Struct				{
+				public struct _VersionDetail_e__Struct
+				{
 					public uint8 MajorVersion;
 					public uint8 MinorVersion;
 					public uint8 SubVersion;
@@ -1167,12 +1217,14 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct EVENT_INSTANCE_INFO		{
+		public struct EVENT_INSTANCE_INFO
+		{
 			public HANDLE RegHandle;
 			public uint32 InstanceId;
 		}
 		[CRepr]
-		public struct EVENT_TRACE_PROPERTIES		{
+		public struct EVENT_TRACE_PROPERTIES
+		{
 			public WNODE_HEADER Wnode;
 			public uint32 BufferSize;
 			public uint32 MinimumBuffers;
@@ -1193,13 +1245,15 @@ namespace Win32
 			public uint32 LoggerNameOffset;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public int32 AgeLimit;
 				public int32 FlushThreshold;
 			}
 		}
 		[CRepr]
-		public struct EVENT_TRACE_PROPERTIES_V2		{
+		public struct EVENT_TRACE_PROPERTIES_V2
+		{
 			public WNODE_HEADER Wnode;
 			public uint32 BufferSize;
 			public uint32 MinimumBuffers;
@@ -1224,38 +1278,45 @@ namespace Win32
 			public _Anonymous3_e__Union Anonymous3;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 V2Options;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 V2Control;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public int32 AgeLimit;
 				public int32 FlushThreshold;
 			}
 		}
 		[CRepr]
-		public struct TRACE_GUID_REGISTRATION		{
+		public struct TRACE_GUID_REGISTRATION
+		{
 			public Guid* Guid;
 			public HANDLE RegHandle;
 		}
 		[CRepr]
-		public struct TRACE_GUID_PROPERTIES		{
+		public struct TRACE_GUID_PROPERTIES
+		{
 			public Guid Guid;
 			public uint32 GuidType;
 			public uint32 LoggerId;
@@ -1264,24 +1325,28 @@ namespace Win32
 			public BOOLEAN IsEnable;
 		}
 		[CRepr]
-		public struct ETW_BUFFER_CONTEXT		{
+		public struct ETW_BUFFER_CONTEXT
+		{
 			public _Anonymous_e__Union Anonymous;
 			public uint16 LoggerId;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint16 ProcessorIndex;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint8 ProcessorNumber;
 					public uint8 Alignment;
 				}
 			}
 		}
 		[CRepr]
-		public struct TRACE_ENABLE_INFO		{
+		public struct TRACE_ENABLE_INFO
+		{
 			public uint32 IsEnabled;
 			public uint8 Level;
 			public uint8 Reserved1;
@@ -1292,19 +1357,22 @@ namespace Win32
 			public uint64 MatchAllKeyword;
 		}
 		[CRepr]
-		public struct TRACE_PROVIDER_INSTANCE_INFO		{
+		public struct TRACE_PROVIDER_INSTANCE_INFO
+		{
 			public uint32 NextOffset;
 			public uint32 EnableCount;
 			public uint32 Pid;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct TRACE_GUID_INFO		{
+		public struct TRACE_GUID_INFO
+		{
 			public uint32 InstanceCount;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PROFILE_SOURCE_INFO		{
+		public struct PROFILE_SOURCE_INFO
+		{
 			public uint32 NextEntryOffset;
 			public uint32 Source;
 			public uint32 MinInterval;
@@ -1313,19 +1381,22 @@ namespace Win32
 			public char16[0] Description;
 		}
 		[CRepr]
-		public struct ETW_PMC_COUNTER_OWNER		{
+		public struct ETW_PMC_COUNTER_OWNER
+		{
 			public ETW_PMC_COUNTER_OWNER_TYPE OwnerType;
 			public uint32 ProfileSource;
 			public uint32 OwnerTag;
 		}
 		[CRepr]
-		public struct ETW_PMC_COUNTER_OWNERSHIP_STATUS		{
+		public struct ETW_PMC_COUNTER_OWNERSHIP_STATUS
+		{
 			public uint32 ProcessorNumber;
 			public uint32 NumberOfCounters;
 			public ETW_PMC_COUNTER_OWNER[0] CounterOwners;
 		}
 		[CRepr]
-		public struct EVENT_TRACE		{
+		public struct EVENT_TRACE
+		{
 			public EVENT_TRACE_HEADER Header;
 			public uint32 InstanceId;
 			public uint32 ParentInstanceId;
@@ -1335,13 +1406,15 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 ClientContext;
 				public ETW_BUFFER_CONTEXT BufferContext;
 			}
 		}
 		[CRepr]
-		public struct EVENT_TRACE_LOGFILEW		{
+		public struct EVENT_TRACE_LOGFILEW
+		{
 			public PWSTR LogFileName;
 			public PWSTR LoggerName;
 			public int64 CurrentTime;
@@ -1358,18 +1431,21 @@ namespace Win32
 			public void* Context;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 LogFileMode;
 				public uint32 ProcessTraceMode;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public PEVENT_CALLBACK EventCallback;
 				public PEVENT_RECORD_CALLBACK EventRecordCallback;
 			}
 		}
 		[CRepr]
-		public struct EVENT_TRACE_LOGFILEA		{
+		public struct EVENT_TRACE_LOGFILEA
+		{
 			public PSTR LogFileName;
 			public PSTR LoggerName;
 			public int64 CurrentTime;
@@ -1386,18 +1462,21 @@ namespace Win32
 			public void* Context;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 LogFileMode;
 				public uint32 ProcessTraceMode;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public PEVENT_CALLBACK EventCallback;
 				public PEVENT_RECORD_CALLBACK EventRecordCallback;
 			}
 		}
 		[CRepr]
-		public struct ENABLE_TRACE_PARAMETERS_V1		{
+		public struct ENABLE_TRACE_PARAMETERS_V1
+		{
 			public uint32 Version;
 			public uint32 EnableProperty;
 			public uint32 ControlFlags;
@@ -1405,7 +1484,8 @@ namespace Win32
 			public EVENT_FILTER_DESCRIPTOR* EnableFilterDesc;
 		}
 		[CRepr]
-		public struct ENABLE_TRACE_PARAMETERS		{
+		public struct ENABLE_TRACE_PARAMETERS
+		{
 			public uint32 Version;
 			public uint32 EnableProperty;
 			public uint32 ControlFlags;
@@ -1414,60 +1494,70 @@ namespace Win32
 			public uint32 FilterDescCount;
 		}
 		[CRepr]
-		public struct CLASSIC_EVENT_ID		{
+		public struct CLASSIC_EVENT_ID
+		{
 			public Guid EventGuid;
 			public uint8 Type;
 			public uint8[7] Reserved;
 		}
 		[CRepr]
-		public struct TRACE_STACK_CACHING_INFO		{
+		public struct TRACE_STACK_CACHING_INFO
+		{
 			public BOOLEAN Enabled;
 			public uint32 CacheSize;
 			public uint32 BucketCount;
 		}
 		[CRepr]
-		public struct TRACE_PROFILE_INTERVAL		{
+		public struct TRACE_PROFILE_INTERVAL
+		{
 			public uint32 Source;
 			public uint32 Interval;
 		}
 		[CRepr]
-		public struct TRACE_VERSION_INFO		{
+		public struct TRACE_VERSION_INFO
+		{
 			public uint32 EtwTraceProcessingVersion;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct TRACE_PERIODIC_CAPTURE_STATE_INFO		{
+		public struct TRACE_PERIODIC_CAPTURE_STATE_INFO
+		{
 			public uint32 CaptureStateFrequencyInSeconds;
 			public uint16 ProviderCount;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct ETW_TRACE_PARTITION_INFORMATION		{
+		public struct ETW_TRACE_PARTITION_INFORMATION
+		{
 			public Guid PartitionId;
 			public Guid ParentId;
 			public int64 QpcOffsetFromRoot;
 			public uint32 PartitionType;
 		}
 		[CRepr]
-		public struct ETW_TRACE_PARTITION_INFORMATION_V2		{
+		public struct ETW_TRACE_PARTITION_INFORMATION_V2
+		{
 			public int64 QpcOffsetFromRoot;
 			public uint32 PartitionType;
 			public PWSTR PartitionId;
 			public PWSTR ParentId;
 		}
 		[CRepr]
-		public struct EVENT_DATA_DESCRIPTOR		{
+		public struct EVENT_DATA_DESCRIPTOR
+		{
 			public uint64 Ptr;
 			public uint32 Size;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Reserved;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint8 Type;
 					public uint8 Reserved1;
 					public uint16 Reserved2;
@@ -1475,7 +1565,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct EVENT_DESCRIPTOR		{
+		public struct EVENT_DESCRIPTOR
+		{
 			public uint16 Id;
 			public uint8 Version;
 			public uint8 Channel;
@@ -1485,13 +1576,15 @@ namespace Win32
 			public uint64 Keyword;
 		}
 		[CRepr]
-		public struct EVENT_FILTER_DESCRIPTOR		{
+		public struct EVENT_FILTER_DESCRIPTOR
+		{
 			public uint64 Ptr;
 			public uint32 Size;
 			public uint32 Type;
 		}
 		[CRepr]
-		public struct EVENT_FILTER_HEADER		{
+		public struct EVENT_FILTER_HEADER
+		{
 			public uint16 Id;
 			public uint8 Version;
 			public uint8[5] Reserved;
@@ -1500,14 +1593,16 @@ namespace Win32
 			public uint32 NextOffset;
 		}
 		[CRepr]
-		public struct EVENT_FILTER_EVENT_ID		{
+		public struct EVENT_FILTER_EVENT_ID
+		{
 			public BOOLEAN FilterIn;
 			public uint8 Reserved;
 			public uint16 Count;
 			public uint16[0] Events;
 		}
 		[CRepr]
-		public struct EVENT_FILTER_EVENT_NAME		{
+		public struct EVENT_FILTER_EVENT_NAME
+		{
 			public uint64 MatchAnyKeyword;
 			public uint64 MatchAllKeyword;
 			public uint8 Level;
@@ -1516,14 +1611,16 @@ namespace Win32
 			public uint8[0] Names;
 		}
 		[CRepr]
-		public struct EVENT_FILTER_LEVEL_KW		{
+		public struct EVENT_FILTER_LEVEL_KW
+		{
 			public uint64 MatchAnyKeyword;
 			public uint64 MatchAllKeyword;
 			public uint8 Level;
 			public BOOLEAN FilterIn;
 		}
 		[CRepr]
-		public struct EVENT_HEADER_EXTENDED_DATA_ITEM		{
+		public struct EVENT_HEADER_EXTENDED_DATA_ITEM
+		{
 			public uint16 Reserved1;
 			public uint16 ExtType;
 			public _Anonymous_e__Struct Anonymous;
@@ -1531,63 +1628,76 @@ namespace Win32
 			public uint64 DataPtr;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint16 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_INSTANCE		{
+		public struct EVENT_EXTENDED_ITEM_INSTANCE
+		{
 			public uint32 InstanceId;
 			public uint32 ParentInstanceId;
 			public Guid ParentGuid;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID		{
+		public struct EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID
+		{
 			public Guid RelatedActivityId;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_TS_ID		{
+		public struct EVENT_EXTENDED_ITEM_TS_ID
+		{
 			public uint32 SessionId;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_STACK_TRACE32		{
+		public struct EVENT_EXTENDED_ITEM_STACK_TRACE32
+		{
 			public uint64 MatchId;
 			public uint32[0] Address;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_STACK_TRACE64		{
+		public struct EVENT_EXTENDED_ITEM_STACK_TRACE64
+		{
 			public uint64 MatchId;
 			public uint64[0] Address;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_STACK_KEY32		{
+		public struct EVENT_EXTENDED_ITEM_STACK_KEY32
+		{
 			public uint64 MatchId;
 			public uint32 StackKey;
 			public uint32 Padding;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_STACK_KEY64		{
+		public struct EVENT_EXTENDED_ITEM_STACK_KEY64
+		{
 			public uint64 MatchId;
 			public uint64 StackKey;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_PEBS_INDEX		{
+		public struct EVENT_EXTENDED_ITEM_PEBS_INDEX
+		{
 			public uint64 PebsIndex;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_PMC_COUNTERS		{
+		public struct EVENT_EXTENDED_ITEM_PMC_COUNTERS
+		{
 			public uint64[0] Counter;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_PROCESS_START_KEY		{
+		public struct EVENT_EXTENDED_ITEM_PROCESS_START_KEY
+		{
 			public uint64 ProcessStartKey;
 		}
 		[CRepr]
-		public struct EVENT_EXTENDED_ITEM_EVENT_KEY		{
+		public struct EVENT_EXTENDED_ITEM_EVENT_KEY
+		{
 			public uint64 Key;
 		}
 		[CRepr]
-		public struct EVENT_HEADER		{
+		public struct EVENT_HEADER
+		{
 			public uint16 Size;
 			public uint16 HeaderType;
 			public uint16 Flags;
@@ -1601,19 +1711,22 @@ namespace Win32
 			public Guid ActivityId;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 ProcessorTime;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 KernelTime;
 					public uint32 UserTime;
 				}
 			}
 		}
 		[CRepr]
-		public struct EVENT_RECORD		{
+		public struct EVENT_RECORD
+		{
 			public EVENT_HEADER EventHeader;
 			public ETW_BUFFER_CONTEXT BufferContext;
 			public uint16 ExtendedDataCount;
@@ -1623,18 +1736,21 @@ namespace Win32
 			public void* UserContext;
 		}
 		[CRepr]
-		public struct EVENT_MAP_ENTRY		{
+		public struct EVENT_MAP_ENTRY
+		{
 			public uint32 OutputOffset;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Value;
 				public uint32 InputOffset;
 			}
 		}
 		[CRepr]
-		public struct EVENT_MAP_INFO		{
+		public struct EVENT_MAP_INFO
+		{
 			public uint32 NameOffset;
 			public MAP_FLAGS Flag;
 			public uint32 EntryCount;
@@ -1642,13 +1758,15 @@ namespace Win32
 			public EVENT_MAP_ENTRY[0] MapEntryArray;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public MAP_VALUETYPE MapEntryValueType;
 				public uint32 FormatStringOffset;
 			}
 		}
 		[CRepr]
-		public struct EVENT_PROPERTY_INFO		{
+		public struct EVENT_PROPERTY_INFO
+		{
 			public PROPERTY_FLAGS Flags;
 			public uint32 NameOffset;
 			public _Anonymous1_e__Union Anonymous1;
@@ -1657,53 +1775,62 @@ namespace Win32
 			public _Anonymous4_e__Union Anonymous4;
 			
 			[CRepr, Union]
-			public struct _Anonymous4_e__Union			{
+			public struct _Anonymous4_e__Union
+			{
 				public uint32 Reserved;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint16 count;
 				public uint16 countPropertyIndex;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public _nonStructType nonStructType;
 				public _structType structType;
 				public _customSchemaType customSchemaType;
 				
 				[CRepr]
-				public struct _customSchemaType				{
+				public struct _customSchemaType
+				{
 					public uint16 InType;
 					public uint16 OutType;
 					public uint32 CustomSchemaOffset;
 				}
 				[CRepr]
-				public struct _nonStructType				{
+				public struct _nonStructType
+				{
 					public uint16 InType;
 					public uint16 OutType;
 					public uint32 MapNameOffset;
 				}
 				[CRepr]
-				public struct _structType				{
+				public struct _structType
+				{
 					public uint16 StructStartIndex;
 					public uint16 NumOfStructMembers;
 					public uint32 padding;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public uint16 length;
 				public uint16 lengthPropertyIndex;
 			}
 		}
 		[CRepr]
-		public struct TRACE_EVENT_INFO		{
+		public struct TRACE_EVENT_INFO
+		{
 			public Guid ProviderGuid;
 			public Guid EventGuid;
 			public EVENT_DESCRIPTOR EventDescriptor;
@@ -1726,40 +1853,47 @@ namespace Win32
 			public EVENT_PROPERTY_INFO[0] EventPropertyInfoArray;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public TEMPLATE_FLAGS Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 EventNameOffset;
 				public uint32 ActivityIDNameOffset;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 EventAttributesOffset;
 				public uint32 RelatedActivityIDNameOffset;
 			}
 		}
 		[CRepr]
-		public struct PROPERTY_DATA_DESCRIPTOR		{
+		public struct PROPERTY_DATA_DESCRIPTOR
+		{
 			public uint64 PropertyName;
 			public uint32 ArrayIndex;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PAYLOAD_FILTER_PREDICATE		{
+		public struct PAYLOAD_FILTER_PREDICATE
+		{
 			public PWSTR FieldName;
 			public uint16 CompareOp;
 			public PWSTR Value;
 		}
 		[CRepr]
-		public struct PROVIDER_FILTER_INFO		{
+		public struct PROVIDER_FILTER_INFO
+		{
 			public uint8 Id;
 			public uint8 Version;
 			public uint32 MessageOffset;
@@ -1768,37 +1902,43 @@ namespace Win32
 			public EVENT_PROPERTY_INFO[0] EventPropertyInfoArray;
 		}
 		[CRepr]
-		public struct PROVIDER_FIELD_INFO		{
+		public struct PROVIDER_FIELD_INFO
+		{
 			public uint32 NameOffset;
 			public uint32 DescriptionOffset;
 			public uint64 Value;
 		}
 		[CRepr]
-		public struct PROVIDER_FIELD_INFOARRAY		{
+		public struct PROVIDER_FIELD_INFOARRAY
+		{
 			public uint32 NumberOfElements;
 			public EVENT_FIELD_TYPE FieldType;
 			public PROVIDER_FIELD_INFO[0] FieldInfoArray;
 		}
 		[CRepr]
-		public struct TRACE_PROVIDER_INFO		{
+		public struct TRACE_PROVIDER_INFO
+		{
 			public Guid ProviderGuid;
 			public uint32 SchemaSource;
 			public uint32 ProviderNameOffset;
 		}
 		[CRepr]
-		public struct PROVIDER_ENUMERATION_INFO		{
+		public struct PROVIDER_ENUMERATION_INFO
+		{
 			public uint32 NumberOfProviders;
 			public uint32 Reserved;
 			public TRACE_PROVIDER_INFO[0] TraceProviderInfoArray;
 		}
 		[CRepr]
-		public struct PROVIDER_EVENT_INFO		{
+		public struct PROVIDER_EVENT_INFO
+		{
 			public uint32 NumberOfEvents;
 			public uint32 Reserved;
 			public EVENT_DESCRIPTOR[0] EventDescriptorsArray;
 		}
 		[CRepr]
-		public struct TDH_CONTEXT		{
+		public struct TDH_CONTEXT
+		{
 			public uint64 ParameterValue;
 			public TDH_CONTEXT_TYPE ParameterType;
 			public uint32 ParameterSize;

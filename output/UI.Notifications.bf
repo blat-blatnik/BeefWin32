@@ -8,7 +8,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NOTIFICATION_USER_INPUT_DATA		{
+		public struct NOTIFICATION_USER_INPUT_DATA
+		{
 			public PWSTR Key;
 			public PWSTR Value;
 		}

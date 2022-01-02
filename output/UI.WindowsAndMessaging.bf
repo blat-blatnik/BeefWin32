@@ -2502,44 +2502,52 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MESSAGE_RESOURCE_ENTRY		{
+		public struct MESSAGE_RESOURCE_ENTRY
+		{
 			public uint16 Length;
 			public uint16 Flags;
 			public uint8[0] Text;
 		}
 		[CRepr]
-		public struct MESSAGE_RESOURCE_BLOCK		{
+		public struct MESSAGE_RESOURCE_BLOCK
+		{
 			public uint32 LowId;
 			public uint32 HighId;
 			public uint32 OffsetToEntries;
 		}
 		[CRepr]
-		public struct MESSAGE_RESOURCE_DATA		{
+		public struct MESSAGE_RESOURCE_DATA
+		{
 			public uint32 NumberOfBlocks;
 			public MESSAGE_RESOURCE_BLOCK[0] Blocks;
 		}
 		[CRepr]
-		public struct CBT_CREATEWNDA		{
+		public struct CBT_CREATEWNDA
+		{
 			public CREATESTRUCTA* lpcs;
 			public HWND hwndInsertAfter;
 		}
 		[CRepr]
-		public struct CBT_CREATEWNDW		{
+		public struct CBT_CREATEWNDW
+		{
 			public CREATESTRUCTW* lpcs;
 			public HWND hwndInsertAfter;
 		}
 		[CRepr]
-		public struct CBTACTIVATESTRUCT		{
+		public struct CBTACTIVATESTRUCT
+		{
 			public BOOL fMouse;
 			public HWND hWndActive;
 		}
 		[CRepr]
-		public struct SHELLHOOKINFO		{
+		public struct SHELLHOOKINFO
+		{
 			public HWND hwnd;
 			public RECT rc;
 		}
 		[CRepr]
-		public struct EVENTMSG		{
+		public struct EVENTMSG
+		{
 			public uint32 message;
 			public uint32 paramL;
 			public uint32 paramH;
@@ -2547,14 +2555,16 @@ namespace Win32
 			public HWND hwnd;
 		}
 		[CRepr]
-		public struct CWPSTRUCT		{
+		public struct CWPSTRUCT
+		{
 			public LPARAM lParam;
 			public WPARAM wParam;
 			public uint32 message;
 			public HWND hwnd;
 		}
 		[CRepr]
-		public struct CWPRETSTRUCT		{
+		public struct CWPRETSTRUCT
+		{
 			public LRESULT lResult;
 			public LPARAM lParam;
 			public WPARAM wParam;
@@ -2562,7 +2572,8 @@ namespace Win32
 			public HWND hwnd;
 		}
 		[CRepr]
-		public struct KBDLLHOOKSTRUCT		{
+		public struct KBDLLHOOKSTRUCT
+		{
 			public uint32 vkCode;
 			public uint32 scanCode;
 			public KBDLLHOOKSTRUCT_FLAGS flags;
@@ -2570,7 +2581,8 @@ namespace Win32
 			public uint dwExtraInfo;
 		}
 		[CRepr]
-		public struct MSLLHOOKSTRUCT		{
+		public struct MSLLHOOKSTRUCT
+		{
 			public POINT pt;
 			public MOUSEHOOKSTRUCTEX_MOUSE_DATA mouseData;
 			public uint32 flags;
@@ -2578,7 +2590,8 @@ namespace Win32
 			public uint dwExtraInfo;
 		}
 		[CRepr]
-		public struct DEBUGHOOKINFO		{
+		public struct DEBUGHOOKINFO
+		{
 			public uint32 idThread;
 			public uint32 idThreadInstaller;
 			public LPARAM lParam;
@@ -2586,26 +2599,30 @@ namespace Win32
 			public int32 code;
 		}
 		[CRepr]
-		public struct MOUSEHOOKSTRUCT		{
+		public struct MOUSEHOOKSTRUCT
+		{
 			public POINT pt;
 			public HWND hwnd;
 			public uint32 wHitTestCode;
 			public uint dwExtraInfo;
 		}
 		[CRepr]
-		public struct MOUSEHOOKSTRUCTEX		{
+		public struct MOUSEHOOKSTRUCTEX
+		{
 			public MOUSEHOOKSTRUCT __AnonymousBase_winuser_L1166_C46;
 			public MOUSEHOOKSTRUCTEX_MOUSE_DATA mouseData;
 		}
 		[CRepr]
-		public struct HARDWAREHOOKSTRUCT		{
+		public struct HARDWAREHOOKSTRUCT
+		{
 			public HWND hwnd;
 			public uint32 message;
 			public WPARAM wParam;
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct WNDCLASSEXA		{
+		public struct WNDCLASSEXA
+		{
 			public uint32 cbSize;
 			public WNDCLASS_STYLES style;
 			public WNDPROC lpfnWndProc;
@@ -2620,7 +2637,8 @@ namespace Win32
 			public HICON hIconSm;
 		}
 		[CRepr]
-		public struct WNDCLASSEXW		{
+		public struct WNDCLASSEXW
+		{
 			public uint32 cbSize;
 			public WNDCLASS_STYLES style;
 			public WNDPROC lpfnWndProc;
@@ -2635,7 +2653,8 @@ namespace Win32
 			public HICON hIconSm;
 		}
 		[CRepr]
-		public struct WNDCLASSA		{
+		public struct WNDCLASSA
+		{
 			public WNDCLASS_STYLES style;
 			public WNDPROC lpfnWndProc;
 			public int32 cbClsExtra;
@@ -2648,7 +2667,8 @@ namespace Win32
 			public PSTR lpszClassName;
 		}
 		[CRepr]
-		public struct WNDCLASSW		{
+		public struct WNDCLASSW
+		{
 			public WNDCLASS_STYLES style;
 			public WNDPROC lpfnWndProc;
 			public int32 cbClsExtra;
@@ -2661,7 +2681,8 @@ namespace Win32
 			public PWSTR lpszClassName;
 		}
 		[CRepr]
-		public struct MSG		{
+		public struct MSG
+		{
 			public HWND hwnd;
 			public uint32 message;
 			public WPARAM wParam;
@@ -2670,7 +2691,8 @@ namespace Win32
 			public POINT pt;
 		}
 		[CRepr]
-		public struct MINMAXINFO		{
+		public struct MINMAXINFO
+		{
 			public POINT ptReserved;
 			public POINT ptMaxSize;
 			public POINT ptMaxPosition;
@@ -2678,13 +2700,15 @@ namespace Win32
 			public POINT ptMaxTrackSize;
 		}
 		[CRepr]
-		public struct MDINEXTMENU		{
+		public struct MDINEXTMENU
+		{
 			public HMENU hmenuIn;
 			public HMENU hmenuNext;
 			public HWND hwndNext;
 		}
 		[CRepr]
-		public struct WINDOWPOS		{
+		public struct WINDOWPOS
+		{
 			public HWND hwnd;
 			public HWND hwndInsertAfter;
 			public int32 x;
@@ -2694,18 +2718,21 @@ namespace Win32
 			public SET_WINDOW_POS_FLAGS flags;
 		}
 		[CRepr]
-		public struct NCCALCSIZE_PARAMS		{
+		public struct NCCALCSIZE_PARAMS
+		{
 			public RECT[3] rgrc;
 			public WINDOWPOS* lppos;
 		}
 		[CRepr]
-		public struct ACCEL		{
+		public struct ACCEL
+		{
 			public uint8 fVirt;
 			public uint16 key;
 			public uint16 cmd;
 		}
 		[CRepr]
-		public struct CREATESTRUCTA		{
+		public struct CREATESTRUCTA
+		{
 			public void* lpCreateParams;
 			public HINSTANCE hInstance;
 			public HMENU hMenu;
@@ -2720,7 +2747,8 @@ namespace Win32
 			public uint32 dwExStyle;
 		}
 		[CRepr]
-		public struct CREATESTRUCTW		{
+		public struct CREATESTRUCTW
+		{
 			public void* lpCreateParams;
 			public HINSTANCE hInstance;
 			public HMENU hMenu;
@@ -2735,7 +2763,8 @@ namespace Win32
 			public uint32 dwExStyle;
 		}
 		[CRepr]
-		public struct WINDOWPLACEMENT		{
+		public struct WINDOWPLACEMENT
+		{
 			public uint32 length;
 			public WINDOWPLACEMENT_FLAGS flags;
 			public SHOW_WINDOW_CMD showCmd;
@@ -2744,12 +2773,14 @@ namespace Win32
 			public RECT rcNormalPosition;
 		}
 		[CRepr]
-		public struct STYLESTRUCT		{
+		public struct STYLESTRUCT
+		{
 			public uint32 styleOld;
 			public uint32 styleNew;
 		}
 		[CRepr]
-		public struct UPDATELAYEREDWINDOWINFO		{
+		public struct UPDATELAYEREDWINDOWINFO
+		{
 			public uint32 cbSize;
 			public HDC hdcDst;
 			public POINT* pptDst;
@@ -2762,7 +2793,8 @@ namespace Win32
 			public RECT* prcDirty;
 		}
 		[CRepr]
-		public struct FLASHWINFO		{
+		public struct FLASHWINFO
+		{
 			public uint32 cbSize;
 			public HWND hwnd;
 			public FLASHWINFO_FLAGS dwFlags;
@@ -2770,7 +2802,8 @@ namespace Win32
 			public uint32 dwTimeout;
 		}
 		[CRepr]
-		public struct DLGTEMPLATE		{
+		public struct DLGTEMPLATE
+		{
 			public uint32 style;
 			public uint32 dwExtendedStyle;
 			public uint16 cdit;
@@ -2780,7 +2813,8 @@ namespace Win32
 			public int16 cy;
 		}
 		[CRepr]
-		public struct DLGITEMTEMPLATE		{
+		public struct DLGITEMTEMPLATE
+		{
 			public uint32 style;
 			public uint32 dwExtendedStyle;
 			public int16 x;
@@ -2790,12 +2824,14 @@ namespace Win32
 			public uint16 id;
 		}
 		[CRepr]
-		public struct TPMPARAMS		{
+		public struct TPMPARAMS
+		{
 			public uint32 cbSize;
 			public RECT rcExclude;
 		}
 		[CRepr]
-		public struct MENUINFO		{
+		public struct MENUINFO
+		{
 			public uint32 cbSize;
 			public MENUINFO_MASK fMask;
 			public MENUINFO_STYLE dwStyle;
@@ -2805,7 +2841,8 @@ namespace Win32
 			public uint dwMenuData;
 		}
 		[CRepr]
-		public struct MENUGETOBJECTINFO		{
+		public struct MENUGETOBJECTINFO
+		{
 			public MENUGETOBJECTINFO_FLAGS dwFlags;
 			public uint32 uPos;
 			public HMENU hmenu;
@@ -2813,7 +2850,8 @@ namespace Win32
 			public void* pvObj;
 		}
 		[CRepr]
-		public struct MENUITEMINFOA		{
+		public struct MENUITEMINFOA
+		{
 			public uint32 cbSize;
 			public MENU_ITEM_MASK fMask;
 			public MENU_ITEM_TYPE fType;
@@ -2828,7 +2866,8 @@ namespace Win32
 			public HBITMAP hbmpItem;
 		}
 		[CRepr]
-		public struct MENUITEMINFOW		{
+		public struct MENUITEMINFOW
+		{
 			public uint32 cbSize;
 			public MENU_ITEM_MASK fMask;
 			public MENU_ITEM_TYPE fType;
@@ -2843,7 +2882,8 @@ namespace Win32
 			public HBITMAP hbmpItem;
 		}
 		[CRepr]
-		public struct DROPSTRUCT		{
+		public struct DROPSTRUCT
+		{
 			public HWND hwndSource;
 			public HWND hwndSink;
 			public uint32 wFmt;
@@ -2852,7 +2892,8 @@ namespace Win32
 			public uint32 dwControlData;
 		}
 		[CRepr]
-		public struct MSGBOXPARAMSA		{
+		public struct MSGBOXPARAMSA
+		{
 			public uint32 cbSize;
 			public HWND hwndOwner;
 			public HINSTANCE hInstance;
@@ -2865,7 +2906,8 @@ namespace Win32
 			public uint32 dwLanguageId;
 		}
 		[CRepr]
-		public struct MSGBOXPARAMSW		{
+		public struct MSGBOXPARAMSW
+		{
 			public uint32 cbSize;
 			public HWND hwndOwner;
 			public HINSTANCE hInstance;
@@ -2878,18 +2920,21 @@ namespace Win32
 			public uint32 dwLanguageId;
 		}
 		[CRepr]
-		public struct MENUITEMTEMPLATEHEADER		{
+		public struct MENUITEMTEMPLATEHEADER
+		{
 			public uint16 versionNumber;
 			public uint16 offset;
 		}
 		[CRepr]
-		public struct MENUITEMTEMPLATE		{
+		public struct MENUITEMTEMPLATE
+		{
 			public uint16 mtOption;
 			public uint16 mtID;
 			public char16[0] mtString;
 		}
 		[CRepr]
-		public struct ICONINFO		{
+		public struct ICONINFO
+		{
 			public BOOL fIcon;
 			public uint32 xHotspot;
 			public uint32 yHotspot;
@@ -2897,7 +2942,8 @@ namespace Win32
 			public HBITMAP hbmColor;
 		}
 		[CRepr]
-		public struct CURSORSHAPE		{
+		public struct CURSORSHAPE
+		{
 			public int32 xHotSpot;
 			public int32 yHotSpot;
 			public int32 cx;
@@ -2907,7 +2953,8 @@ namespace Win32
 			public uint8 BitsPixel;
 		}
 		[CRepr]
-		public struct ICONINFOEXA		{
+		public struct ICONINFOEXA
+		{
 			public uint32 cbSize;
 			public BOOL fIcon;
 			public uint32 xHotspot;
@@ -2919,7 +2966,8 @@ namespace Win32
 			public CHAR[260] szResName;
 		}
 		[CRepr]
-		public struct ICONINFOEXW		{
+		public struct ICONINFOEXW
+		{
 			public uint32 cbSize;
 			public BOOL fIcon;
 			public uint32 xHotspot;
@@ -2931,7 +2979,8 @@ namespace Win32
 			public char16[260] szResName;
 		}
 		[CRepr]
-		public struct SCROLLINFO		{
+		public struct SCROLLINFO
+		{
 			public uint32 cbSize;
 			public SCROLLINFO_MASK fMask;
 			public int32 nMin;
@@ -2941,7 +2990,8 @@ namespace Win32
 			public int32 nTrackPos;
 		}
 		[CRepr]
-		public struct MDICREATESTRUCTA		{
+		public struct MDICREATESTRUCTA
+		{
 			public PSTR szClass;
 			public PSTR szTitle;
 			public HANDLE hOwner;
@@ -2953,7 +3003,8 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct MDICREATESTRUCTW		{
+		public struct MDICREATESTRUCTW
+		{
 			public PWSTR szClass;
 			public PWSTR szTitle;
 			public HANDLE hOwner;
@@ -2965,19 +3016,22 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct CLIENTCREATESTRUCT		{
+		public struct CLIENTCREATESTRUCT
+		{
 			public HANDLE hWindowMenu;
 			public uint32 idFirstChild;
 		}
 		[CRepr]
-		public struct TouchPredictionParameters		{
+		public struct TouchPredictionParameters
+		{
 			public uint32 cbSize;
 			public uint32 dwLatency;
 			public uint32 dwSampleTime;
 			public uint32 bUseHWTimeStamp;
 		}
 		[CRepr]
-		public struct NONCLIENTMETRICSA		{
+		public struct NONCLIENTMETRICSA
+		{
 			public uint32 cbSize;
 			public int32 iBorderWidth;
 			public int32 iScrollWidth;
@@ -2996,7 +3050,8 @@ namespace Win32
 			public int32 iPaddedBorderWidth;
 		}
 		[CRepr]
-		public struct NONCLIENTMETRICSW		{
+		public struct NONCLIENTMETRICSW
+		{
 			public uint32 cbSize;
 			public int32 iBorderWidth;
 			public int32 iScrollWidth;
@@ -3015,7 +3070,8 @@ namespace Win32
 			public int32 iPaddedBorderWidth;
 		}
 		[CRepr]
-		public struct MINIMIZEDMETRICS		{
+		public struct MINIMIZEDMETRICS
+		{
 			public uint32 cbSize;
 			public int32 iWidth;
 			public int32 iHorzGap;
@@ -3023,7 +3079,8 @@ namespace Win32
 			public MINIMIZEDMETRICS_ARRANGE iArrange;
 		}
 		[CRepr]
-		public struct ICONMETRICSA		{
+		public struct ICONMETRICSA
+		{
 			public uint32 cbSize;
 			public int32 iHorzSpacing;
 			public int32 iVertSpacing;
@@ -3031,7 +3088,8 @@ namespace Win32
 			public LOGFONTA lfFont;
 		}
 		[CRepr]
-		public struct ICONMETRICSW		{
+		public struct ICONMETRICSW
+		{
 			public uint32 cbSize;
 			public int32 iHorzSpacing;
 			public int32 iVertSpacing;
@@ -3039,18 +3097,21 @@ namespace Win32
 			public LOGFONTW lfFont;
 		}
 		[CRepr]
-		public struct ANIMATIONINFO		{
+		public struct ANIMATIONINFO
+		{
 			public uint32 cbSize;
 			public int32 iMinAnimate;
 		}
 		[CRepr]
-		public struct AUDIODESCRIPTION		{
+		public struct AUDIODESCRIPTION
+		{
 			public uint32 cbSize;
 			public BOOL Enabled;
 			public uint32 Locale;
 		}
 		[CRepr]
-		public struct GUITHREADINFO		{
+		public struct GUITHREADINFO
+		{
 			public uint32 cbSize;
 			public GUITHREADINFO_FLAGS flags;
 			public HWND hwndActive;
@@ -3062,14 +3123,16 @@ namespace Win32
 			public RECT rcCaret;
 		}
 		[CRepr]
-		public struct CURSORINFO		{
+		public struct CURSORINFO
+		{
 			public uint32 cbSize;
 			public CURSORINFO_FLAGS flags;
 			public HCURSOR hCursor;
 			public POINT ptScreenPos;
 		}
 		[CRepr]
-		public struct WINDOWINFO		{
+		public struct WINDOWINFO
+		{
 			public uint32 cbSize;
 			public RECT rcWindow;
 			public RECT rcClient;
@@ -3082,20 +3145,23 @@ namespace Win32
 			public uint16 wCreatorVersion;
 		}
 		[CRepr]
-		public struct TITLEBARINFO		{
+		public struct TITLEBARINFO
+		{
 			public uint32 cbSize;
 			public RECT rcTitleBar;
 			public uint32[6] rgstate;
 		}
 		[CRepr]
-		public struct TITLEBARINFOEX		{
+		public struct TITLEBARINFOEX
+		{
 			public uint32 cbSize;
 			public RECT rcTitleBar;
 			public uint32[6] rgstate;
 			public RECT[6] rgrect;
 		}
 		[CRepr]
-		public struct MENUBARINFO		{
+		public struct MENUBARINFO
+		{
 			public uint32 cbSize;
 			public RECT rcBar;
 			public HMENU hMenu;
@@ -3103,7 +3169,8 @@ namespace Win32
 			public int32 _bitfield;
 		}
 		[CRepr]
-		public struct SCROLLBARINFO		{
+		public struct SCROLLBARINFO
+		{
 			public uint32 cbSize;
 			public RECT rcScrollBar;
 			public int32 dxyLineButton;
@@ -3113,7 +3180,8 @@ namespace Win32
 			public uint32[6] rgstate;
 		}
 		[CRepr]
-		public struct ALTTABINFO		{
+		public struct ALTTABINFO
+		{
 			public uint32 cbSize;
 			public int32 cItems;
 			public int32 cColumns;
@@ -3125,21 +3193,25 @@ namespace Win32
 			public POINT ptStart;
 		}
 		[CRepr]
-		public struct CHANGEFILTERSTRUCT		{
+		public struct CHANGEFILTERSTRUCT
+		{
 			public uint32 cbSize;
 			public MSGFLTINFO_STATUS ExtStatus;
 		}
 		[CRepr]
-		public struct IndexedResourceQualifier		{
+		public struct IndexedResourceQualifier
+		{
 			public PWSTR name;
 			public PWSTR value;
 		}
 		[CRepr]
-		public struct MrmResourceIndexerHandle		{
+		public struct MrmResourceIndexerHandle
+		{
 			public void* handle;
 		}
 		[CRepr]
-		public struct MrmResourceIndexerMessage		{
+		public struct MrmResourceIndexerMessage
+		{
 			public MrmResourceIndexerMessageSeverity severity;
 			public uint32 id;
 			public PWSTR text;

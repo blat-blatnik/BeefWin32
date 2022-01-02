@@ -223,7 +223,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct LOGCOLORSPACEA		{
+		public struct LOGCOLORSPACEA
+		{
 			public uint32 lcsSignature;
 			public uint32 lcsVersion;
 			public uint32 lcsSize;
@@ -236,7 +237,8 @@ namespace Win32
 			public CHAR[260] lcsFilename;
 		}
 		[CRepr]
-		public struct LOGCOLORSPACEW		{
+		public struct LOGCOLORSPACEW
+		{
 			public uint32 lcsSignature;
 			public uint32 lcsVersion;
 			public uint32 lcsSize;
@@ -249,13 +251,15 @@ namespace Win32
 			public char16[260] lcsFilename;
 		}
 		[CRepr]
-		public struct EMRCREATECOLORSPACE		{
+		public struct EMRCREATECOLORSPACE
+		{
 			public EMR emr;
 			public uint32 ihCS;
 			public LOGCOLORSPACEA lcs;
 		}
 		[CRepr]
-		public struct EMRCREATECOLORSPACEW		{
+		public struct EMRCREATECOLORSPACEW
+		{
 			public EMR emr;
 			public uint32 ihCS;
 			public LOGCOLORSPACEW lcs;
@@ -264,29 +268,34 @@ namespace Win32
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct XYZColorF		{
+		public struct XYZColorF
+		{
 			public float X;
 			public float Y;
 			public float Z;
 		}
 		[CRepr]
-		public struct JChColorF		{
+		public struct JChColorF
+		{
 			public float J;
 			public float C;
 			public float h;
 		}
 		[CRepr]
-		public struct JabColorF		{
+		public struct JabColorF
+		{
 			public float J;
 			public float a;
 			public float b;
 		}
 		[CRepr]
-		public struct GamutShellTriangle		{
+		public struct GamutShellTriangle
+		{
 			public uint32[3] aVertexIndex;
 		}
 		[CRepr]
-		public struct GamutShell		{
+		public struct GamutShell
+		{
 			public float JMin;
 			public float JMax;
 			public uint32 cVertices;
@@ -295,7 +304,8 @@ namespace Win32
 			public GamutShellTriangle* pTriangles;
 		}
 		[CRepr]
-		public struct PrimaryJabColors		{
+		public struct PrimaryJabColors
+		{
 			public JabColorF red;
 			public JabColorF yellow;
 			public JabColorF green;
@@ -306,7 +316,8 @@ namespace Win32
 			public JabColorF white;
 		}
 		[CRepr]
-		public struct PrimaryXYZColors		{
+		public struct PrimaryXYZColors
+		{
 			public XYZColorF red;
 			public XYZColorF yellow;
 			public XYZColorF green;
@@ -317,7 +328,8 @@ namespace Win32
 			public XYZColorF white;
 		}
 		[CRepr]
-		public struct GamutBoundaryDescription		{
+		public struct GamutBoundaryDescription
+		{
 			public PrimaryJabColors* pPrimaries;
 			public uint32 cNeutralSamples;
 			public JabColorF* pNeutralSamples;
@@ -326,12 +338,14 @@ namespace Win32
 			public GamutShell* pPossibleShell;
 		}
 		[CRepr]
-		public struct BlackInformation		{
+		public struct BlackInformation
+		{
 			public BOOL fBlackOnly;
 			public float blackWeight;
 		}
 		[CRepr]
-		public struct NAMED_PROFILE_INFO		{
+		public struct NAMED_PROFILE_INFO
+		{
 			public uint32 dwFlags;
 			public uint32 dwCount;
 			public uint32 dwCountDevCoordinates;
@@ -339,56 +353,66 @@ namespace Win32
 			public int8[32] szSuffix;
 		}
 		[CRepr]
-		public struct GRAYCOLOR		{
+		public struct GRAYCOLOR
+		{
 			public uint16 gray;
 		}
 		[CRepr]
-		public struct RGBCOLOR		{
+		public struct RGBCOLOR
+		{
 			public uint16 red;
 			public uint16 green;
 			public uint16 blue;
 		}
 		[CRepr]
-		public struct CMYKCOLOR		{
+		public struct CMYKCOLOR
+		{
 			public uint16 cyan;
 			public uint16 magenta;
 			public uint16 yellow;
 			public uint16 black;
 		}
 		[CRepr]
-		public struct XYZCOLOR		{
+		public struct XYZCOLOR
+		{
 			public uint16 X;
 			public uint16 Y;
 			public uint16 Z;
 		}
 		[CRepr]
-		public struct YxyCOLOR		{
+		public struct YxyCOLOR
+		{
 			public uint16 Y;
 			public uint16 x;
 			public uint16 y;
 		}
 		[CRepr]
-		public struct LabCOLOR		{
+		public struct LabCOLOR
+		{
 			public uint16 L;
 			public uint16 a;
 			public uint16 b;
 		}
 		[CRepr]
-		public struct GENERIC3CHANNEL		{
+		public struct GENERIC3CHANNEL
+		{
 			public uint16 ch1;
 			public uint16 ch2;
 			public uint16 ch3;
 		}
 		[CRepr]
-		public struct NAMEDCOLOR		{
+		public struct NAMEDCOLOR
+		{
 			public uint32 dwIndex;
 		}
 		[CRepr]
-		public struct HiFiCOLOR		{
+		public struct HiFiCOLOR
+		{
 			public uint8[8] channel;
 		}
 		[CRepr, Union]
-		public struct COLOR		{
+		public struct COLOR
+		{
 			public GRAYCOLOR gray;
 			public RGBCOLOR rgb;
 			public CMYKCOLOR cmyk;
@@ -401,13 +425,15 @@ namespace Win32
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 reserved1;
 				public void* reserved2;
 			}
 		}
 		[CRepr]
-		public struct PROFILEHEADER		{
+		public struct PROFILEHEADER
+		{
 			public uint32 phSize;
 			public uint32 phCMMType;
 			public uint32 phVersion;
@@ -427,13 +453,15 @@ namespace Win32
 			public uint8[44] phReserved;
 		}
 		[CRepr]
-		public struct PROFILE		{
+		public struct PROFILE
+		{
 			public uint32 dwType;
 			public void* pProfileData;
 			public uint32 cbDataSize;
 		}
 		[CRepr]
-		public struct ENUMTYPEA		{
+		public struct ENUMTYPEA
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public uint32 dwFields;
@@ -456,7 +484,8 @@ namespace Win32
 			public uint32 dwDeviceClass;
 		}
 		[CRepr]
-		public struct ENUMTYPEW		{
+		public struct ENUMTYPEW
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public uint32 dwFields;
@@ -479,7 +508,8 @@ namespace Win32
 			public uint32 dwDeviceClass;
 		}
 		[CRepr]
-		public struct COLORMATCHSETUPW		{
+		public struct COLORMATCHSETUPW
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public uint32 dwFlags;
@@ -501,7 +531,8 @@ namespace Win32
 			public LPARAM lParamApplyCallback;
 		}
 		[CRepr]
-		public struct COLORMATCHSETUPA		{
+		public struct COLORMATCHSETUPA
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public uint32 dwFlags;
@@ -523,12 +554,14 @@ namespace Win32
 			public LPARAM lParamApplyCallback;
 		}
 		[CRepr]
-		public struct WCS_DEVICE_VCGT_CAPABILITIES		{
+		public struct WCS_DEVICE_VCGT_CAPABILITIES
+		{
 			public uint32 Size;
 			public BOOL SupportsVcgt;
 		}
 		[CRepr]
-		public struct WCS_DEVICE_MHC2_CAPABILITIES		{
+		public struct WCS_DEVICE_MHC2_CAPABILITIES
+		{
 			public uint32 Size;
 			public BOOL SupportsMhc2;
 			public uint32 RegammaLutEntryCount;

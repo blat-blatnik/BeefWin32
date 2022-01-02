@@ -59,7 +59,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TOUCHINPUT		{
+		public struct TOUCHINPUT
+		{
 			public int32 x;
 			public int32 y;
 			public HANDLE hSource;
@@ -72,7 +73,8 @@ namespace Win32
 			public uint32 cyContact;
 		}
 		[CRepr]
-		public struct GESTUREINFO		{
+		public struct GESTUREINFO
+		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public uint32 dwID;
@@ -84,7 +86,8 @@ namespace Win32
 			public uint32 cbExtraArgs;
 		}
 		[CRepr]
-		public struct GESTURENOTIFYSTRUCT		{
+		public struct GESTURENOTIFYSTRUCT
+		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public HWND hwndTarget;
@@ -92,7 +95,8 @@ namespace Win32
 			public uint32 dwInstanceID;
 		}
 		[CRepr]
-		public struct GESTURECONFIG		{
+		public struct GESTURECONFIG
+		{
 			public GESTURECONFIG_ID dwID;
 			public uint32 dwWant;
 			public uint32 dwBlock;

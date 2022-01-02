@@ -189,7 +189,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PROCESS_HEAP_ENTRY		{
+		public struct PROCESS_HEAP_ENTRY
+		{
 			public void* lpData;
 			public uint32 cbData;
 			public uint8 cbOverhead;
@@ -198,17 +199,20 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Block_e__Struct Block;
 				public _Region_e__Struct Region;
 				
 				[CRepr]
-				public struct _Block_e__Struct				{
+				public struct _Block_e__Struct
+				{
 					public HANDLE hMem;
 					public uint32[3] dwReserved;
 				}
 				[CRepr]
-				public struct _Region_e__Struct				{
+				public struct _Region_e__Struct
+				{
 					public uint32 dwCommittedSize;
 					public uint32 dwUnCommittedSize;
 					public void* lpFirstBlock;
@@ -217,7 +221,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct HEAP_SUMMARY		{
+		public struct HEAP_SUMMARY
+		{
 			public uint32 cb;
 			public uint cbAllocated;
 			public uint cbCommitted;
@@ -225,12 +230,14 @@ namespace Win32
 			public uint cbMaxReserve;
 		}
 		[CRepr]
-		public struct WIN32_MEMORY_RANGE_ENTRY		{
+		public struct WIN32_MEMORY_RANGE_ENTRY
+		{
 			public void* VirtualAddress;
 			public uint NumberOfBytes;
 		}
 		[CRepr]
-		public struct WIN32_MEMORY_REGION_INFORMATION		{
+		public struct WIN32_MEMORY_REGION_INFORMATION
+		{
 			public void* AllocationBase;
 			public uint32 AllocationProtect;
 			public _Anonymous_e__Union Anonymous;
@@ -238,18 +245,21 @@ namespace Win32
 			public uint CommitSize;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct WIN32_MEMORY_PARTITION_INFORMATION		{
+		public struct WIN32_MEMORY_PARTITION_INFORMATION
+		{
 			public uint32 Flags;
 			public uint32 NumaNode;
 			public uint32 Channel;
@@ -269,7 +279,8 @@ namespace Win32
 			public uint32 PartitionId;
 		}
 		[CRepr]
-		public struct MEMORY_BASIC_INFORMATION		{
+		public struct MEMORY_BASIC_INFORMATION
+		{
 			public void* BaseAddress;
 			public void* AllocationBase;
 			public PAGE_PROTECTION_FLAGS AllocationProtect;
@@ -280,7 +291,8 @@ namespace Win32
 			public PAGE_TYPE Type;
 		}
 		[CRepr]
-		public struct MEMORY_BASIC_INFORMATION32		{
+		public struct MEMORY_BASIC_INFORMATION32
+		{
 			public uint32 BaseAddress;
 			public uint32 AllocationBase;
 			public PAGE_PROTECTION_FLAGS AllocationProtect;
@@ -290,7 +302,8 @@ namespace Win32
 			public PAGE_TYPE Type;
 		}
 		[CRepr]
-		public struct MEMORY_BASIC_INFORMATION64		{
+		public struct MEMORY_BASIC_INFORMATION64
+		{
 			public uint64 BaseAddress;
 			public uint64 AllocationBase;
 			public PAGE_PROTECTION_FLAGS AllocationProtect;
@@ -302,17 +315,20 @@ namespace Win32
 			public uint32 __alignment2;
 		}
 		[CRepr]
-		public struct CFG_CALL_TARGET_INFO		{
+		public struct CFG_CALL_TARGET_INFO
+		{
 			public uint Offset;
 			public uint Flags;
 		}
 		[CRepr]
-		public struct MEM_EXTENDED_PARAMETER		{
+		public struct MEM_EXTENDED_PARAMETER
+		{
 			public _Anonymous1_e__Struct Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint64 ULong64;
 				public void* Pointer;
 				public uint Size;
@@ -320,7 +336,8 @@ namespace Win32
 				public uint32 ULong;
 			}
 			[CRepr]
-			public struct _Anonymous1_e__Struct			{
+			public struct _Anonymous1_e__Struct
+			{
 				public uint64 _bitfield;
 			}
 		}

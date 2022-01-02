@@ -588,7 +588,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TRANSPORT_SETTING		{
+		public struct TRANSPORT_SETTING
+		{
 			public TRANSPORT_SETTING_ID SettingId;
 			public uint32* Length;
 			public uint8* Value;

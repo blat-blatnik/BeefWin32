@@ -56,19 +56,22 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct ENUMUILANG		{
+		public struct ENUMUILANG
+		{
 			public uint32 NumOfEnumUILang;
 			public uint32 SizeOfEnumUIBuffer;
 			public uint16* pEnumUIBuffer;
 		}
 		[CRepr]
-		public struct REDIRECTION_FUNCTION_DESCRIPTOR		{
+		public struct REDIRECTION_FUNCTION_DESCRIPTOR
+		{
 			public PSTR DllName;
 			public PSTR FunctionName;
 			public void* RedirectionTarget;
 		}
 		[CRepr]
-		public struct REDIRECTION_DESCRIPTOR		{
+		public struct REDIRECTION_DESCRIPTOR
+		{
 			public uint32 Version;
 			public uint32 FunctionCount;
 			public REDIRECTION_FUNCTION_DESCRIPTOR* Redirections;

@@ -996,7 +996,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WIA_DITHER_PATTERN_DATA		{
+		public struct WIA_DITHER_PATTERN_DATA
+		{
 			public int32 lSize;
 			public BSTR bstrPatternName;
 			public int32 lPatternWidth;
@@ -1005,17 +1006,20 @@ namespace Win32
 			public uint8* pbPattern;
 		}
 		[CRepr]
-		public struct WIA_PROPID_TO_NAME		{
+		public struct WIA_PROPID_TO_NAME
+		{
 			public uint32 propid;
 			public PWSTR pszName;
 		}
 		[CRepr]
-		public struct WIA_FORMAT_INFO		{
+		public struct WIA_FORMAT_INFO
+		{
 			public Guid guidFormatID;
 			public int32 lTymed;
 		}
 		[CRepr]
-		public struct WIA_RAW_HEADER		{
+		public struct WIA_RAW_HEADER
+		{
 			public uint32 Tag;
 			public uint32 Version;
 			public uint32 HeaderSize;
@@ -1037,7 +1041,8 @@ namespace Win32
 			public uint32 PaletteSize;
 		}
 		[CRepr]
-		public struct WIA_BARCODE_INFO		{
+		public struct WIA_BARCODE_INFO
+		{
 			public uint32 Size;
 			public uint32 Type;
 			public uint32 Page;
@@ -1049,7 +1054,8 @@ namespace Win32
 			public char16[0] Text;
 		}
 		[CRepr]
-		public struct WIA_BARCODES		{
+		public struct WIA_BARCODES
+		{
 			public uint32 Tag;
 			public uint32 Version;
 			public uint32 Size;
@@ -1057,11 +1063,13 @@ namespace Win32
 			public WIA_BARCODE_INFO[0] Barcodes;
 		}
 		[CRepr]
-		public struct WIA_PATCH_CODE_INFO		{
+		public struct WIA_PATCH_CODE_INFO
+		{
 			public uint32 Type;
 		}
 		[CRepr]
-		public struct WIA_PATCH_CODES		{
+		public struct WIA_PATCH_CODES
+		{
 			public uint32 Tag;
 			public uint32 Version;
 			public uint32 Size;
@@ -1069,14 +1077,16 @@ namespace Win32
 			public WIA_PATCH_CODE_INFO[0] PatchCodes;
 		}
 		[CRepr]
-		public struct WIA_MICR_INFO		{
+		public struct WIA_MICR_INFO
+		{
 			public uint32 Size;
 			public uint32 Page;
 			public uint32 Length;
 			public char16[0] Text;
 		}
 		[CRepr]
-		public struct WIA_MICR		{
+		public struct WIA_MICR
+		{
 			public uint32 Tag;
 			public uint32 Version;
 			public uint32 Size;
@@ -1086,14 +1096,16 @@ namespace Win32
 			public WIA_MICR_INFO[0] Micr;
 		}
 		[CRepr]
-		public struct WIA_DATA_CALLBACK_HEADER		{
+		public struct WIA_DATA_CALLBACK_HEADER
+		{
 			public int32 lSize;
 			public Guid guidFormatID;
 			public int32 lBufferSize;
 			public int32 lPageCount;
 		}
 		[CRepr]
-		public struct WIA_DATA_TRANSFER_INFO		{
+		public struct WIA_DATA_TRANSFER_INFO
+		{
 			public uint32 ulSize;
 			public uint32 ulSection;
 			public uint32 ulBufferSize;
@@ -1103,7 +1115,8 @@ namespace Win32
 			public uint32 ulReserved3;
 		}
 		[CRepr]
-		public struct WIA_EXTENDED_TRANSFER_INFO		{
+		public struct WIA_EXTENDED_TRANSFER_INFO
+		{
 			public uint32 ulSize;
 			public uint32 ulMinBufferSize;
 			public uint32 ulOptimalBufferSize;
@@ -1111,7 +1124,8 @@ namespace Win32
 			public uint32 ulNumBuffers;
 		}
 		[CRepr]
-		public struct WIA_DEV_CAP		{
+		public struct WIA_DEV_CAP
+		{
 			public Guid guid;
 			public uint32 ulFlags;
 			public BSTR bstrName;
@@ -1120,14 +1134,16 @@ namespace Win32
 			public BSTR bstrCommandline;
 		}
 		[CRepr]
-		public struct WiaTransferParams		{
+		public struct WiaTransferParams
+		{
 			public int32 lMessage;
 			public int32 lPercentComplete;
 			public uint64 ulTransferredBytes;
 			public HRESULT hrErrorStatus;
 		}
 		[CRepr]
-		public struct MINIDRV_TRANSFER_CONTEXT		{
+		public struct MINIDRV_TRANSFER_CONTEXT
+		{
 			public int32 lSize;
 			public int32 lWidthInPixels;
 			public int32 lLines;
@@ -1157,7 +1173,8 @@ namespace Win32
 			public int32 lPrevIfdOffset;
 		}
 		[CRepr]
-		public struct WIA_DEV_CAP_DRV		{
+		public struct WIA_DEV_CAP_DRV
+		{
 			public Guid* guid;
 			public uint32 ulFlags;
 			public PWSTR wszName;
@@ -1165,13 +1182,15 @@ namespace Win32
 			public PWSTR wszIcon;
 		}
 		[CRepr]
-		public struct WIA_PROPERTY_INFO		{
+		public struct WIA_PROPERTY_INFO
+		{
 			public uint32 lAccessFlags;
 			public uint16 vt;
 			public _ValidVal_e__Union ValidVal;
 			
 			[CRepr, Union]
-			public struct _ValidVal_e__Union			{
+			public struct _ValidVal_e__Union
+			{
 				public _Range_e__Struct Range;
 				public _RangeFloat_e__Struct RangeFloat;
 				public _List_e__Struct List;
@@ -1182,47 +1201,55 @@ namespace Win32
 				public _None_e__Struct None;
 				
 				[CRepr]
-				public struct _Flag_e__Struct				{
+				public struct _Flag_e__Struct
+				{
 					public int32 Nom;
 					public int32 ValidBits;
 				}
 				[CRepr]
-				public struct _ListGuid_e__Struct				{
+				public struct _ListGuid_e__Struct
+				{
 					public int32 cNumList;
 					public Guid Nom;
 					public Guid* pList;
 				}
 				[CRepr]
-				public struct _List_e__Struct				{
+				public struct _List_e__Struct
+				{
 					public int32 cNumList;
 					public int32 Nom;
 					public uint8* pList;
 				}
 				[CRepr]
-				public struct _Range_e__Struct				{
+				public struct _Range_e__Struct
+				{
 					public int32 Min;
 					public int32 Nom;
 					public int32 Max;
 					public int32 Inc;
 				}
 				[CRepr]
-				public struct _None_e__Struct				{
+				public struct _None_e__Struct
+				{
 					public int32 Dummy;
 				}
 				[CRepr]
-				public struct _ListFloat_e__Struct				{
+				public struct _ListFloat_e__Struct
+				{
 					public int32 cNumList;
 					public double Nom;
 					public uint8* pList;
 				}
 				[CRepr]
-				public struct _ListBStr_e__Struct				{
+				public struct _ListBStr_e__Struct
+				{
 					public int32 cNumList;
 					public BSTR Nom;
 					public BSTR* pList;
 				}
 				[CRepr]
-				public struct _RangeFloat_e__Struct				{
+				public struct _RangeFloat_e__Struct
+				{
 					public double Min;
 					public double Nom;
 					public double Max;
@@ -1231,27 +1258,31 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WIA_PROPERTY_CONTEXT		{
+		public struct WIA_PROPERTY_CONTEXT
+		{
 			public uint32 cProps;
 			public uint32* pProps;
 			public BOOL* pChanged;
 		}
 		[CRepr]
-		public struct WIAS_CHANGED_VALUE_INFO		{
+		public struct WIAS_CHANGED_VALUE_INFO
+		{
 			public BOOL bChanged;
 			public int32 vt;
 			public _Old_e__Union Old;
 			public _Current_e__Union Current;
 			
 			[CRepr, Union]
-			public struct _Old_e__Union			{
+			public struct _Old_e__Union
+			{
 				public int32 lVal;
 				public float fltVal;
 				public BSTR bstrVal;
 				public Guid guidVal;
 			}
 			[CRepr, Union]
-			public struct _Current_e__Union			{
+			public struct _Current_e__Union
+			{
 				public int32 lVal;
 				public float fltVal;
 				public BSTR bstrVal;
@@ -1259,7 +1290,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WIAS_DOWN_SAMPLE_INFO		{
+		public struct WIAS_DOWN_SAMPLE_INFO
+		{
 			public uint32 ulOriginalWidth;
 			public uint32 ulOriginalHeight;
 			public uint32 ulBitsPerPixel;
@@ -1274,18 +1306,21 @@ namespace Win32
 			public uint8* pDestBuffer;
 		}
 		[CRepr]
-		public struct WIAS_ENDORSER_VALUE		{
+		public struct WIAS_ENDORSER_VALUE
+		{
 			public PWSTR wszTokenName;
 			public PWSTR wszValue;
 		}
 		[CRepr]
-		public struct WIAS_ENDORSER_INFO		{
+		public struct WIAS_ENDORSER_INFO
+		{
 			public uint32 ulPageCount;
 			public uint32 ulNumEndorserValues;
 			public WIAS_ENDORSER_VALUE* pEndorserValues;
 		}
 		[CRepr]
-		public struct DEVICEDIALOGDATA2		{
+		public struct DEVICEDIALOGDATA2
+		{
 			public uint32 cbSize;
 			public IWiaItem2* pIWiaItemRoot;
 			public uint32 dwFlags;
@@ -1297,7 +1332,8 @@ namespace Win32
 			public IWiaItem2* pWiaItem;
 		}
 		[CRepr]
-		public struct DEVICEDIALOGDATA		{
+		public struct DEVICEDIALOGDATA
+		{
 			public uint32 cbSize;
 			public HWND hwndParent;
 			public IWiaItem* pIWiaItemRoot;
@@ -1307,20 +1343,23 @@ namespace Win32
 			public IWiaItem** ppWiaItems;
 		}
 		[CRepr]
-		public struct RANGEVALUE		{
+		public struct RANGEVALUE
+		{
 			public int32 lMin;
 			public int32 lMax;
 			public int32 lStep;
 		}
 		[CRepr]
-		public struct SCANWINDOW		{
+		public struct SCANWINDOW
+		{
 			public int32 xPos;
 			public int32 yPos;
 			public int32 xExtent;
 			public int32 yExtent;
 		}
 		[CRepr]
-		public struct SCANINFO		{
+		public struct SCANINFO
+		{
 			public int32 ADF;
 			public int32 TPA;
 			public int32 Endorser;
@@ -1359,7 +1398,8 @@ namespace Win32
 			public void* pMicroDriverContext;
 		}
 		[CRepr]
-		public struct VAL		{
+		public struct VAL
+		{
 			public int32 lVal;
 			public double dblVal;
 			public Guid* pGuid;
@@ -1371,7 +1411,8 @@ namespace Win32
 			public CHAR[255] szVal;
 		}
 		[CRepr]
-		public struct TWAIN_CAPABILITY		{
+		public struct TWAIN_CAPABILITY
+		{
 			public int32 lSize;
 			public int32 lMSG;
 			public int32 lCapID;

@@ -264,7 +264,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct XAPO_REGISTRATION_PROPERTIES		{
+		public struct XAPO_REGISTRATION_PROPERTIES
+		{
 			public Guid clsid;
 			public char16[256] FriendlyName;
 			public char16[256] CopyrightInfo;
@@ -277,18 +278,21 @@ namespace Win32
 			public uint32 MaxOutputBufferCount;
 		}
 		[CRepr]
-		public struct XAPO_LOCKFORPROCESS_PARAMETERS		{
+		public struct XAPO_LOCKFORPROCESS_PARAMETERS
+		{
 			public WAVEFORMATEX* pFormat;
 			public uint32 MaxFrameCount;
 		}
 		[CRepr]
-		public struct XAPO_PROCESS_BUFFER_PARAMETERS		{
+		public struct XAPO_PROCESS_BUFFER_PARAMETERS
+		{
 			public void* pBuffer;
 			public XAPO_BUFFER_FLAGS BufferFlags;
 			public uint32 ValidFrameCount;
 		}
 		[CRepr]
-		public struct FXEQ_PARAMETERS		{
+		public struct FXEQ_PARAMETERS
+		{
 			public float FrequencyCenter0;
 			public float Gain0;
 			public float Bandwidth0;
@@ -303,61 +307,72 @@ namespace Win32
 			public float Bandwidth3;
 		}
 		[CRepr]
-		public struct FXMASTERINGLIMITER_PARAMETERS		{
+		public struct FXMASTERINGLIMITER_PARAMETERS
+		{
 			public uint32 Release;
 			public uint32 Loudness;
 		}
 		[CRepr]
-		public struct FXREVERB_PARAMETERS		{
+		public struct FXREVERB_PARAMETERS
+		{
 			public float Diffusion;
 			public float RoomSize;
 		}
 		[CRepr]
-		public struct FXECHO_INITDATA		{
+		public struct FXECHO_INITDATA
+		{
 			public float MaxDelay;
 		}
 		[CRepr]
-		public struct FXECHO_PARAMETERS		{
+		public struct FXECHO_PARAMETERS
+		{
 			public float WetDryMix;
 			public float Feedback;
 			public float Delay;
 		}
 		[CRepr]
-		public struct XAUDIO2_VOICE_DETAILS		{
+		public struct XAUDIO2_VOICE_DETAILS
+		{
 			public uint32 CreationFlags;
 			public uint32 ActiveFlags;
 			public uint32 InputChannels;
 			public uint32 InputSampleRate;
 		}
 		[CRepr]
-		public struct XAUDIO2_SEND_DESCRIPTOR		{
+		public struct XAUDIO2_SEND_DESCRIPTOR
+		{
 			public uint32 Flags;
 			public IXAudio2Voice* pOutputVoice;
 		}
 		[CRepr]
-		public struct XAUDIO2_VOICE_SENDS		{
+		public struct XAUDIO2_VOICE_SENDS
+		{
 			public uint32 SendCount;
 			public XAUDIO2_SEND_DESCRIPTOR* pSends;
 		}
 		[CRepr]
-		public struct XAUDIO2_EFFECT_DESCRIPTOR		{
+		public struct XAUDIO2_EFFECT_DESCRIPTOR
+		{
 			public IUnknown* pEffect;
 			public BOOL InitialState;
 			public uint32 OutputChannels;
 		}
 		[CRepr]
-		public struct XAUDIO2_EFFECT_CHAIN		{
+		public struct XAUDIO2_EFFECT_CHAIN
+		{
 			public uint32 EffectCount;
 			public XAUDIO2_EFFECT_DESCRIPTOR* pEffectDescriptors;
 		}
 		[CRepr]
-		public struct XAUDIO2_FILTER_PARAMETERS		{
+		public struct XAUDIO2_FILTER_PARAMETERS
+		{
 			public XAUDIO2_FILTER_TYPE Type;
 			public float Frequency;
 			public float OneOverQ;
 		}
 		[CRepr]
-		public struct XAUDIO2_BUFFER		{
+		public struct XAUDIO2_BUFFER
+		{
 			public uint32 Flags;
 			public uint32 AudioBytes;
 			public uint8* pAudioData;
@@ -369,18 +384,21 @@ namespace Win32
 			public void* pContext;
 		}
 		[CRepr]
-		public struct XAUDIO2_BUFFER_WMA		{
+		public struct XAUDIO2_BUFFER_WMA
+		{
 			public uint32* pDecodedPacketCumulativeBytes;
 			public uint32 PacketCount;
 		}
 		[CRepr]
-		public struct XAUDIO2_VOICE_STATE		{
+		public struct XAUDIO2_VOICE_STATE
+		{
 			public void* pCurrentBufferContext;
 			public uint32 BuffersQueued;
 			public uint64 SamplesPlayed;
 		}
 		[CRepr]
-		public struct XAUDIO2_PERFORMANCE_DATA		{
+		public struct XAUDIO2_PERFORMANCE_DATA
+		{
 			public uint64 AudioCyclesSinceLastQuery;
 			public uint64 TotalCyclesSinceLastQuery;
 			public uint32 MinimumCyclesPerQuantum;
@@ -397,7 +415,8 @@ namespace Win32
 			public uint32 ActiveXmaStreams;
 		}
 		[CRepr]
-		public struct XAUDIO2_DEBUG_CONFIGURATION		{
+		public struct XAUDIO2_DEBUG_CONFIGURATION
+		{
 			public uint32 TraceMask;
 			public uint32 BreakMask;
 			public BOOL LogThreadID;
@@ -406,13 +425,15 @@ namespace Win32
 			public BOOL LogTiming;
 		}
 		[CRepr]
-		public struct XAUDIO2FX_VOLUMEMETER_LEVELS		{
+		public struct XAUDIO2FX_VOLUMEMETER_LEVELS
+		{
 			public float* pPeakLevels;
 			public float* pRMSLevels;
 			public uint32 ChannelCount;
 		}
 		[CRepr]
-		public struct XAUDIO2FX_REVERB_PARAMETERS		{
+		public struct XAUDIO2FX_REVERB_PARAMETERS
+		{
 			public float WetDryMix;
 			public uint32 ReflectionsDelay;
 			public uint8 ReverbDelay;
@@ -439,7 +460,8 @@ namespace Win32
 			public BOOL DisableLateField;
 		}
 		[CRepr]
-		public struct XAUDIO2FX_REVERB_I3DL2_PARAMETERS		{
+		public struct XAUDIO2FX_REVERB_I3DL2_PARAMETERS
+		{
 			public float WetDryMix;
 			public int32 Room;
 			public int32 RoomHF;
@@ -455,33 +477,39 @@ namespace Win32
 			public float HFReference;
 		}
 		[CRepr]
-		public struct HrtfPosition		{
+		public struct HrtfPosition
+		{
 			public float x;
 			public float y;
 			public float z;
 		}
 		[CRepr]
-		public struct HrtfOrientation		{
+		public struct HrtfOrientation
+		{
 			public float[9] element;
 		}
 		[CRepr]
-		public struct HrtfDirectivity		{
+		public struct HrtfDirectivity
+		{
 			public HrtfDirectivityType type;
 			public float scaling;
 		}
 		[CRepr]
-		public struct HrtfDirectivityCardioid		{
+		public struct HrtfDirectivityCardioid
+		{
 			public HrtfDirectivity directivity;
 			public float order;
 		}
 		[CRepr]
-		public struct HrtfDirectivityCone		{
+		public struct HrtfDirectivityCone
+		{
 			public HrtfDirectivity directivity;
 			public float innerAngle;
 			public float outerAngle;
 		}
 		[CRepr]
-		public struct HrtfDistanceDecay		{
+		public struct HrtfDistanceDecay
+		{
 			public HrtfDistanceDecayType type;
 			public float maxGain;
 			public float minGain;
@@ -489,7 +517,8 @@ namespace Win32
 			public float cutoffDistance;
 		}
 		[CRepr]
-		public struct HrtfApoInit		{
+		public struct HrtfApoInit
+		{
 			public HrtfDistanceDecay* distanceDecay;
 			public HrtfDirectivity* directivity;
 		}

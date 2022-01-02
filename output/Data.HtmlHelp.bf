@@ -307,12 +307,14 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct HHN_NOTIFY		{
+		public struct HHN_NOTIFY
+		{
 			public NMHDR hdr;
 			public PSTR pszUrl;
 		}
 		[CRepr]
-		public struct HH_POPUP		{
+		public struct HH_POPUP
+		{
 			public int32 cbStruct;
 			public HINSTANCE hinst;
 			public uint32 idString;
@@ -324,7 +326,8 @@ namespace Win32
 			public int8* pszFont;
 		}
 		[CRepr]
-		public struct HH_AKLINK		{
+		public struct HH_AKLINK
+		{
 			public int32 cbStruct;
 			public BOOL fReserved;
 			public int8* pszKeywords;
@@ -335,7 +338,8 @@ namespace Win32
 			public BOOL fIndexOnFail;
 		}
 		[CRepr]
-		public struct HH_ENUM_IT		{
+		public struct HH_ENUM_IT
+		{
 			public int32 cbStruct;
 			public int32 iType;
 			public PSTR pszCatName;
@@ -343,19 +347,22 @@ namespace Win32
 			public PSTR pszITDescription;
 		}
 		[CRepr]
-		public struct HH_ENUM_CAT		{
+		public struct HH_ENUM_CAT
+		{
 			public int32 cbStruct;
 			public PSTR pszCatName;
 			public PSTR pszCatDescription;
 		}
 		[CRepr]
-		public struct HH_SET_INFOTYPE		{
+		public struct HH_SET_INFOTYPE
+		{
 			public int32 cbStruct;
 			public PSTR pszCatName;
 			public PSTR pszInfoTypeName;
 		}
 		[CRepr]
-		public struct HH_FTS_QUERY		{
+		public struct HH_FTS_QUERY
+		{
 			public int32 cbStruct;
 			public BOOL fUniCodeStrings;
 			public int8* pszSearchQuery;
@@ -366,7 +373,8 @@ namespace Win32
 			public int8* pszWindow;
 		}
 		[CRepr]
-		public struct HH_WINTYPE		{
+		public struct HH_WINTYPE
+		{
 			public int32 cbStruct;
 			public BOOL fUniCodeStrings;
 			public int8* pszType;
@@ -405,19 +413,22 @@ namespace Win32
 			public int8* pszCustomTabs;
 		}
 		[CRepr]
-		public struct HHNTRACK		{
+		public struct HHNTRACK
+		{
 			public NMHDR hdr;
 			public PSTR pszCurUrl;
 			public int32 idAction;
 			public HH_WINTYPE* phhWinType;
 		}
 		[CRepr]
-		public struct HH_GLOBAL_PROPERTY		{
+		public struct HH_GLOBAL_PROPERTY
+		{
 			public HH_GPROPID id;
 			public VARIANT @var;
 		}
 		[CRepr]
-		public struct CProperty		{
+		public struct CProperty
+		{
 			public uint32 dwPropID;
 			public uint32 cbData;
 			public uint32 dwType;
@@ -425,7 +436,8 @@ namespace Win32
 			public BOOL fPersist;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public PWSTR lpszwData;
 				public void* lpvData;
 				public uint32 dwValue;
@@ -438,14 +450,16 @@ namespace Win32
 		[CRepr]
 		public struct IITStopWordList {}
 		[CRepr]
-		public struct ROWSTATUS		{
+		public struct ROWSTATUS
+		{
 			public int32 lRowFirst;
 			public int32 cRows;
 			public int32 cProperties;
 			public int32 cRowsTotal;
 		}
 		[CRepr]
-		public struct COLUMNSTATUS		{
+		public struct COLUMNSTATUS
+		{
 			public int32 cPropCount;
 			public int32 cPropsLoaded;
 		}

@@ -62,54 +62,63 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DFS_TARGET_PRIORITY		{
+		public struct DFS_TARGET_PRIORITY
+		{
 			public DFS_TARGET_PRIORITY_CLASS TargetPriorityClass;
 			public uint16 TargetPriorityRank;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct DFS_INFO_1		{
+		public struct DFS_INFO_1
+		{
 			public PWSTR EntryPath;
 		}
 		[CRepr]
-		public struct DFS_INFO_1_32		{
+		public struct DFS_INFO_1_32
+		{
 			public uint32 EntryPath;
 		}
 		[CRepr]
-		public struct DFS_INFO_2		{
+		public struct DFS_INFO_2
+		{
 			public PWSTR EntryPath;
 			public PWSTR Comment;
 			public uint32 State;
 			public uint32 NumberOfStorages;
 		}
 		[CRepr]
-		public struct DFS_INFO_2_32		{
+		public struct DFS_INFO_2_32
+		{
 			public uint32 EntryPath;
 			public uint32 Comment;
 			public uint32 State;
 			public uint32 NumberOfStorages;
 		}
 		[CRepr]
-		public struct DFS_STORAGE_INFO		{
+		public struct DFS_STORAGE_INFO
+		{
 			public uint32 State;
 			public PWSTR ServerName;
 			public PWSTR ShareName;
 		}
 		[CRepr]
-		public struct DFS_STORAGE_INFO_0_32		{
+		public struct DFS_STORAGE_INFO_0_32
+		{
 			public uint32 State;
 			public uint32 ServerName;
 			public uint32 ShareName;
 		}
 		[CRepr]
-		public struct DFS_STORAGE_INFO_1		{
+		public struct DFS_STORAGE_INFO_1
+		{
 			public uint32 State;
 			public PWSTR ServerName;
 			public PWSTR ShareName;
 			public DFS_TARGET_PRIORITY TargetPriority;
 		}
 		[CRepr]
-		public struct DFS_INFO_3		{
+		public struct DFS_INFO_3
+		{
 			public PWSTR EntryPath;
 			public PWSTR Comment;
 			public uint32 State;
@@ -117,7 +126,8 @@ namespace Win32
 			public DFS_STORAGE_INFO* Storage;
 		}
 		[CRepr]
-		public struct DFS_INFO_3_32		{
+		public struct DFS_INFO_3_32
+		{
 			public uint32 EntryPath;
 			public uint32 Comment;
 			public uint32 State;
@@ -125,7 +135,8 @@ namespace Win32
 			public uint32 Storage;
 		}
 		[CRepr]
-		public struct DFS_INFO_4		{
+		public struct DFS_INFO_4
+		{
 			public PWSTR EntryPath;
 			public PWSTR Comment;
 			public uint32 State;
@@ -135,7 +146,8 @@ namespace Win32
 			public DFS_STORAGE_INFO* Storage;
 		}
 		[CRepr]
-		public struct DFS_INFO_4_32		{
+		public struct DFS_INFO_4_32
+		{
 			public uint32 EntryPath;
 			public uint32 Comment;
 			public uint32 State;
@@ -145,7 +157,8 @@ namespace Win32
 			public uint32 Storage;
 		}
 		[CRepr]
-		public struct DFS_INFO_5		{
+		public struct DFS_INFO_5
+		{
 			public PWSTR EntryPath;
 			public PWSTR Comment;
 			public uint32 State;
@@ -156,7 +169,8 @@ namespace Win32
 			public uint32 NumberOfStorages;
 		}
 		[CRepr]
-		public struct DFS_INFO_6		{
+		public struct DFS_INFO_6
+		{
 			public PWSTR EntryPath;
 			public PWSTR Comment;
 			public uint32 State;
@@ -168,11 +182,13 @@ namespace Win32
 			public DFS_STORAGE_INFO_1* Storage;
 		}
 		[CRepr]
-		public struct DFS_INFO_7		{
+		public struct DFS_INFO_7
+		{
 			public Guid GenerationGuid;
 		}
 		[CRepr]
-		public struct DFS_INFO_8		{
+		public struct DFS_INFO_8
+		{
 			public PWSTR EntryPath;
 			public PWSTR Comment;
 			public uint32 State;
@@ -185,7 +201,8 @@ namespace Win32
 			public uint32 NumberOfStorages;
 		}
 		[CRepr]
-		public struct DFS_INFO_9		{
+		public struct DFS_INFO_9
+		{
 			public PWSTR EntryPath;
 			public PWSTR Comment;
 			public uint32 State;
@@ -199,34 +216,41 @@ namespace Win32
 			public DFS_STORAGE_INFO_1* Storage;
 		}
 		[CRepr]
-		public struct DFS_INFO_50		{
+		public struct DFS_INFO_50
+		{
 			public uint32 NamespaceMajorVersion;
 			public uint32 NamespaceMinorVersion;
 			public uint64 NamespaceCapabilities;
 		}
 		[CRepr]
-		public struct DFS_INFO_100		{
+		public struct DFS_INFO_100
+		{
 			public PWSTR Comment;
 		}
 		[CRepr]
-		public struct DFS_INFO_101		{
+		public struct DFS_INFO_101
+		{
 			public uint32 State;
 		}
 		[CRepr]
-		public struct DFS_INFO_102		{
+		public struct DFS_INFO_102
+		{
 			public uint32 Timeout;
 		}
 		[CRepr]
-		public struct DFS_INFO_103		{
+		public struct DFS_INFO_103
+		{
 			public uint32 PropertyFlagMask;
 			public uint32 PropertyFlags;
 		}
 		[CRepr]
-		public struct DFS_INFO_104		{
+		public struct DFS_INFO_104
+		{
 			public DFS_TARGET_PRIORITY TargetPriority;
 		}
 		[CRepr]
-		public struct DFS_INFO_105		{
+		public struct DFS_INFO_105
+		{
 			public PWSTR Comment;
 			public uint32 State;
 			public uint32 Timeout;
@@ -234,12 +258,14 @@ namespace Win32
 			public uint32 PropertyFlags;
 		}
 		[CRepr]
-		public struct DFS_INFO_106		{
+		public struct DFS_INFO_106
+		{
 			public uint32 State;
 			public DFS_TARGET_PRIORITY TargetPriority;
 		}
 		[CRepr]
-		public struct DFS_INFO_107		{
+		public struct DFS_INFO_107
+		{
 			public PWSTR Comment;
 			public uint32 State;
 			public uint32 Timeout;
@@ -249,31 +275,37 @@ namespace Win32
 			public SECURITY_DESCRIPTOR* pSecurityDescriptor;
 		}
 		[CRepr]
-		public struct DFS_INFO_150		{
+		public struct DFS_INFO_150
+		{
 			public uint32 SdLengthReserved;
 			public SECURITY_DESCRIPTOR* pSecurityDescriptor;
 		}
 		[CRepr]
-		public struct DFS_INFO_200		{
+		public struct DFS_INFO_200
+		{
 			public PWSTR FtDfsName;
 		}
 		[CRepr]
-		public struct DFS_INFO_300		{
+		public struct DFS_INFO_300
+		{
 			public uint32 Flags;
 			public PWSTR DfsName;
 		}
 		[CRepr]
-		public struct DFS_SITENAME_INFO		{
+		public struct DFS_SITENAME_INFO
+		{
 			public uint32 SiteFlags;
 			public PWSTR SiteName;
 		}
 		[CRepr]
-		public struct DFS_SITELIST_INFO		{
+		public struct DFS_SITELIST_INFO
+		{
 			public uint32 cSites;
 			public DFS_SITENAME_INFO[0] Site;
 		}
 		[CRepr]
-		public struct DFS_SUPPORTED_NAMESPACE_VERSION_INFO		{
+		public struct DFS_SUPPORTED_NAMESPACE_VERSION_INFO
+		{
 			public uint32 DomainDfsMajorVersion;
 			public uint32 DomainDfsMinorVersion;
 			public uint64 DomainDfsCapabilities;
@@ -282,7 +314,8 @@ namespace Win32
 			public uint64 StandaloneDfsCapabilities;
 		}
 		[CRepr]
-		public struct DFS_GET_PKT_ENTRY_STATE_ARG		{
+		public struct DFS_GET_PKT_ENTRY_STATE_ARG
+		{
 			public uint16 DfsEntryPathLen;
 			public uint16 ServerNameLen;
 			public uint16 ShareNameLen;

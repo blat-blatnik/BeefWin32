@@ -443,6 +443,7 @@ for filename in filenames:
                         if len(fields) == 0:
                             output.write(' {}\n')
                         else:
+                            output.write('\n')
                             output.write(f'{indent}{{\n')
                             indent += '\t'
                             for field in fields:

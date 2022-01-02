@@ -287,11 +287,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct BOID		{
+		public struct BOID
+		{
 			public uint8[16] rgb;
 		}
 		[CRepr]
-		public struct XACTTRANSINFO		{
+		public struct XACTTRANSINFO
+		{
 			public BOID uow;
 			public int32 isoLevel;
 			public uint32 isoFlags;
@@ -301,7 +303,8 @@ namespace Win32
 			public uint32 grfRMSupportedRetaining;
 		}
 		[CRepr]
-		public struct XACTSTATS		{
+		public struct XACTSTATS
+		{
 			public uint32 cOpen;
 			public uint32 cCommitting;
 			public uint32 cCommitted;
@@ -312,19 +315,22 @@ namespace Win32
 			public FILETIME timeTransactionsUp;
 		}
 		[CRepr]
-		public struct XACTOPT		{
+		public struct XACTOPT
+		{
 			public uint32 ulTimeout;
 			public uint8[40] szDescription;
 		}
 		[CRepr]
-		public struct xid_t		{
+		public struct xid_t
+		{
 			public int32 formatID;
 			public int32 gtrid_length;
 			public int32 bqual_length;
 			public CHAR[128] data;
 		}
 		[CRepr]
-		public struct xa_switch_t		{
+		public struct xa_switch_t
+		{
 			public CHAR[32] name;
 			public int32 flags;
 			public int32 version;
@@ -340,19 +346,22 @@ namespace Win32
 			public int xa_complete_entry;
 		}
 		[CRepr]
-		public struct OLE_TM_CONFIG_PARAMS_V1		{
+		public struct OLE_TM_CONFIG_PARAMS_V1
+		{
 			public uint32 dwVersion;
 			public uint32 dwcConcurrencyHint;
 		}
 		[CRepr]
-		public struct OLE_TM_CONFIG_PARAMS_V2		{
+		public struct OLE_TM_CONFIG_PARAMS_V2
+		{
 			public uint32 dwVersion;
 			public uint32 dwcConcurrencyHint;
 			public APPLICATIONTYPE applicationType;
 			public Guid clusterResourceId;
 		}
 		[CRepr]
-		public struct _ProxyConfigParams		{
+		public struct _ProxyConfigParams
+		{
 			public uint16 wcThreadsMax;
 		}
 		

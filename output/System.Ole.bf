@@ -1246,43 +1246,51 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct _wireSAFEARR_BSTR		{
+		public struct _wireSAFEARR_BSTR
+		{
 			public uint32 Size;
 			public FLAGGED_WORD_BLOB** aBstr;
 		}
 		[CRepr]
-		public struct _wireSAFEARR_UNKNOWN		{
+		public struct _wireSAFEARR_UNKNOWN
+		{
 			public uint32 Size;
 			public IUnknown** apUnknown;
 		}
 		[CRepr]
-		public struct _wireSAFEARR_DISPATCH		{
+		public struct _wireSAFEARR_DISPATCH
+		{
 			public uint32 Size;
 			public IDispatch** apDispatch;
 		}
 		[CRepr]
-		public struct _wireSAFEARR_VARIANT		{
+		public struct _wireSAFEARR_VARIANT
+		{
 			public uint32 Size;
 			public _wireVARIANT** aVariant;
 		}
 		[CRepr]
-		public struct _wireSAFEARR_BRECORD		{
+		public struct _wireSAFEARR_BRECORD
+		{
 			public uint32 Size;
 			public _wireBRECORD** aRecord;
 		}
 		[CRepr]
-		public struct _wireSAFEARR_HAVEIID		{
+		public struct _wireSAFEARR_HAVEIID
+		{
 			public uint32 Size;
 			public IUnknown** apUnknown;
 			public Guid iid;
 		}
 		[CRepr]
-		public struct _wireSAFEARRAY_UNION		{
+		public struct _wireSAFEARRAY_UNION
+		{
 			public uint32 sfType;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct			{
+			public struct _u_e__Struct
+			{
 				public _wireSAFEARR_BSTR BstrStr;
 				public _wireSAFEARR_UNKNOWN UnknownStr;
 				public _wireSAFEARR_DISPATCH DispatchStr;
@@ -1296,7 +1304,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct _wireSAFEARRAY		{
+		public struct _wireSAFEARRAY
+		{
 			public uint16 cDims;
 			public uint16 fFeatures;
 			public uint32 cbElements;
@@ -1305,14 +1314,16 @@ namespace Win32
 			public SAFEARRAYBOUND[0] rgsabound;
 		}
 		[CRepr]
-		public struct _wireBRECORD		{
+		public struct _wireBRECORD
+		{
 			public uint32 fFlags;
 			public uint32 clSize;
 			public IRecordInfo* pRecInfo;
 			public uint8* pRecord;
 		}
 		[CRepr]
-		public struct _wireVARIANT		{
+		public struct _wireVARIANT
+		{
 			public uint32 clSize;
 			public uint32 rpcReserved;
 			public uint16 vt;
@@ -1322,7 +1333,8 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public int64 llVal;
 				public int32 lVal;
 				public uint8 bVal;
@@ -1370,29 +1382,34 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct ARRAYDESC		{
+		public struct ARRAYDESC
+		{
 			public TYPEDESC tdescElem;
 			public uint16 cDims;
 			public SAFEARRAYBOUND[0] rgbounds;
 		}
 		[CRepr]
-		public struct PARAMDESCEX		{
+		public struct PARAMDESCEX
+		{
 			public uint32 cBytes;
 			public VARIANT varDefaultValue;
 		}
 		[CRepr]
-		public struct PARAMDESC		{
+		public struct PARAMDESC
+		{
 			public PARAMDESCEX* pparamdescex;
 			public uint16 wParamFlags;
 		}
 		[CRepr]
-		public struct CLEANLOCALSTORAGE		{
+		public struct CLEANLOCALSTORAGE
+		{
 			public IUnknown* pInterface;
 			public void* pStorage;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct OBJECTDESCRIPTOR		{
+		public struct OBJECTDESCRIPTOR
+		{
 			public uint32 cbSize;
 			public Guid clsid;
 			public uint32 dwDrawAspect;
@@ -1403,7 +1420,8 @@ namespace Win32
 			public uint32 dwSrcOfCopy;
 		}
 		[CRepr]
-		public struct OIFI		{
+		public struct OIFI
+		{
 			public uint32 cb;
 			public BOOL fMDIApp;
 			public HWND hwndFrame;
@@ -1411,18 +1429,21 @@ namespace Win32
 			public uint32 cAccelEntries;
 		}
 		[CRepr]
-		public struct OleMenuGroupWidths		{
+		public struct OleMenuGroupWidths
+		{
 			public int32[6] width;
 		}
 		[CRepr]
-		public struct OLEVERB		{
+		public struct OLEVERB
+		{
 			public int32 lVerb;
 			public PWSTR lpszVerbName;
 			public uint32 fuFlags;
 			public uint32 grfAttribs;
 		}
 		[CRepr]
-		public struct NUMPARSE		{
+		public struct NUMPARSE
+		{
 			public int32 cDig;
 			public uint32 dwInFlags;
 			public uint32 dwOutFlags;
@@ -1431,17 +1452,20 @@ namespace Win32
 			public int32 nPwr10;
 		}
 		[CRepr]
-		public struct UDATE		{
+		public struct UDATE
+		{
 			public SYSTEMTIME st;
 			public uint16 wDayOfYear;
 		}
 		[CRepr]
-		public struct PARAMDATA		{
+		public struct PARAMDATA
+		{
 			public PWSTR szName;
 			public uint16 vt;
 		}
 		[CRepr]
-		public struct METHODDATA		{
+		public struct METHODDATA
+		{
 			public PWSTR szName;
 			public PARAMDATA* ppdata;
 			public int32 dispid;
@@ -1452,30 +1476,35 @@ namespace Win32
 			public uint16 vtReturn;
 		}
 		[CRepr]
-		public struct INTERFACEDATA		{
+		public struct INTERFACEDATA
+		{
 			public METHODDATA* pmethdata;
 			public uint32 cMembers;
 		}
 		[CRepr]
-		public struct LICINFO		{
+		public struct LICINFO
+		{
 			public int32 cbLicInfo;
 			public BOOL fRuntimeKeyAvail;
 			public BOOL fLicVerified;
 		}
 		[CRepr]
-		public struct CONTROLINFO		{
+		public struct CONTROLINFO
+		{
 			public uint32 cb;
 			public HACCEL hAccel;
 			public uint16 cAccel;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct POINTF		{
+		public struct POINTF
+		{
 			public float x;
 			public float y;
 		}
 		[CRepr]
-		public struct PROPPAGEINFO		{
+		public struct PROPPAGEINFO
+		{
 			public uint32 cb;
 			public PWSTR pszTitle;
 			public SIZE size;
@@ -1484,33 +1513,39 @@ namespace Win32
 			public uint32 dwHelpContext;
 		}
 		[CRepr]
-		public struct CAUUID		{
+		public struct CAUUID
+		{
 			public uint32 cElems;
 			public Guid* pElems;
 		}
 		[CRepr]
-		public struct ExtentInfo		{
+		public struct ExtentInfo
+		{
 			public uint32 cb;
 			public uint32 dwExtentMode;
 			public SIZE sizelProposed;
 		}
 		[CRepr]
-		public struct AspectInfo		{
+		public struct AspectInfo
+		{
 			public uint32 cb;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct CALPOLESTR		{
+		public struct CALPOLESTR
+		{
 			public uint32 cElems;
 			public PWSTR* pElems;
 		}
 		[CRepr]
-		public struct CADWORD		{
+		public struct CADWORD
+		{
 			public uint32 cElems;
 			public uint32* pElems;
 		}
 		[CRepr]
-		public struct QACONTAINER		{
+		public struct QACONTAINER
+		{
 			public uint32 cbSize;
 			public IOleClientSite* pClientSite;
 			public IAdviseSinkEx* pAdviseSink;
@@ -1529,7 +1564,8 @@ namespace Win32
 			public IServiceProvider* pServiceProvider;
 		}
 		[CRepr]
-		public struct QACONTROL		{
+		public struct QACONTROL
+		{
 			public uint32 cbSize;
 			public uint32 dwMiscStatus;
 			public uint32 dwViewStatus;
@@ -1538,7 +1574,8 @@ namespace Win32
 			public uint32 dwPointerActivationPolicy;
 		}
 		[CRepr]
-		public struct OCPFIPARAMS		{
+		public struct OCPFIPARAMS
+		{
 			public uint32 cbStructSize;
 			public HWND hWndOwner;
 			public int32 x;
@@ -1552,7 +1589,8 @@ namespace Win32
 			public int32 dispidInitialProperty;
 		}
 		[CRepr]
-		public struct FONTDESC		{
+		public struct FONTDESC
+		{
 			public uint32 cbSizeofstruct;
 			public PWSTR lpstrName;
 			public CY cySize;
@@ -1563,46 +1601,54 @@ namespace Win32
 			public BOOL fStrikethrough;
 		}
 		[CRepr]
-		public struct PICTDESC		{
+		public struct PICTDESC
+		{
 			public uint32 cbSizeofstruct;
 			public uint32 picType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _bmp_e__Struct bmp;
 				public _wmf_e__Struct wmf;
 				public _icon_e__Struct icon;
 				public _emf_e__Struct emf;
 				
 				[CRepr]
-				public struct _icon_e__Struct				{
+				public struct _icon_e__Struct
+				{
 					public HICON hicon;
 				}
 				[CRepr]
-				public struct _bmp_e__Struct				{
+				public struct _bmp_e__Struct
+				{
 					public HBITMAP hbitmap;
 					public HPALETTE hpal;
 				}
 				[CRepr]
-				public struct _wmf_e__Struct				{
+				public struct _wmf_e__Struct
+				{
 					public HMETAFILE hmeta;
 					public int32 xExt;
 					public int32 yExt;
 				}
 				[CRepr]
-				public struct _emf_e__Struct				{
+				public struct _emf_e__Struct
+				{
 					public HENHMETAFILE hemf;
 				}
 			}
 		}
 		[CRepr]
-		public struct PAGERANGE		{
+		public struct PAGERANGE
+		{
 			public int32 nFromPage;
 			public int32 nToPage;
 		}
 		[CRepr]
-		public struct PAGESET		{
+		public struct PAGESET
+		{
 			public uint32 cbStruct;
 			public BOOL fOddPages;
 			public BOOL fEvenPages;
@@ -1610,19 +1656,22 @@ namespace Win32
 			public PAGERANGE[0] rgPages;
 		}
 		[CRepr]
-		public struct OLECMD		{
+		public struct OLECMD
+		{
 			public uint32 cmdID;
 			public uint32 cmdf;
 		}
 		[CRepr]
-		public struct OLECMDTEXT		{
+		public struct OLECMDTEXT
+		{
 			public uint32 cmdtextf;
 			public uint32 cwActual;
 			public uint32 cwBuf;
 			public char16[0] rgwz;
 		}
 		[CRepr]
-		public struct OLEUIINSERTOBJECTW		{
+		public struct OLEUIINSERTOBJECTW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1647,7 +1696,8 @@ namespace Win32
 			public int hMetaPict;
 		}
 		[CRepr]
-		public struct OLEUIINSERTOBJECTA		{
+		public struct OLEUIINSERTOBJECTA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1672,7 +1722,8 @@ namespace Win32
 			public int hMetaPict;
 		}
 		[CRepr]
-		public struct OLEUIPASTEENTRYW		{
+		public struct OLEUIPASTEENTRYW
+		{
 			public FORMATETC fmtetc;
 			public PWSTR lpstrFormatName;
 			public PWSTR lpstrResultText;
@@ -1680,7 +1731,8 @@ namespace Win32
 			public uint32 dwScratchSpace;
 		}
 		[CRepr]
-		public struct OLEUIPASTEENTRYA		{
+		public struct OLEUIPASTEENTRYA
+		{
 			public FORMATETC fmtetc;
 			public PSTR lpstrFormatName;
 			public PSTR lpstrResultText;
@@ -1688,7 +1740,8 @@ namespace Win32
 			public uint32 dwScratchSpace;
 		}
 		[CRepr]
-		public struct OLEUIPASTESPECIALW		{
+		public struct OLEUIPASTESPECIALW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1711,7 +1764,8 @@ namespace Win32
 			public SIZE sizel;
 		}
 		[CRepr]
-		public struct OLEUIPASTESPECIALA		{
+		public struct OLEUIPASTESPECIALA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1734,7 +1788,8 @@ namespace Win32
 			public SIZE sizel;
 		}
 		[CRepr]
-		public struct OLEUIEDITLINKSW		{
+		public struct OLEUIEDITLINKSW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1747,7 +1802,8 @@ namespace Win32
 			public IOleUILinkContainerW* lpOleUILinkContainer;
 		}
 		[CRepr]
-		public struct OLEUIEDITLINKSA		{
+		public struct OLEUIEDITLINKSA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1760,7 +1816,8 @@ namespace Win32
 			public IOleUILinkContainerA* lpOleUILinkContainer;
 		}
 		[CRepr]
-		public struct OLEUICHANGEICONW		{
+		public struct OLEUICHANGEICONW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1776,7 +1833,8 @@ namespace Win32
 			public int32 cchIconExe;
 		}
 		[CRepr]
-		public struct OLEUICHANGEICONA		{
+		public struct OLEUICHANGEICONA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1792,7 +1850,8 @@ namespace Win32
 			public int32 cchIconExe;
 		}
 		[CRepr]
-		public struct OLEUICONVERTW		{
+		public struct OLEUICONVERTW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1817,7 +1876,8 @@ namespace Win32
 			public Guid* lpClsidExclude;
 		}
 		[CRepr]
-		public struct OLEUICONVERTA		{
+		public struct OLEUICONVERTA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1842,7 +1902,8 @@ namespace Win32
 			public Guid* lpClsidExclude;
 		}
 		[CRepr]
-		public struct OLEUIBUSYW		{
+		public struct OLEUIBUSYW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1856,7 +1917,8 @@ namespace Win32
 			public HWND* lphWndDialog;
 		}
 		[CRepr]
-		public struct OLEUIBUSYA		{
+		public struct OLEUIBUSYA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1870,7 +1932,8 @@ namespace Win32
 			public HWND* lphWndDialog;
 		}
 		[CRepr]
-		public struct OLEUICHANGESOURCEW		{
+		public struct OLEUICHANGESOURCEW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1890,7 +1953,8 @@ namespace Win32
 			public PWSTR lpszTo;
 		}
 		[CRepr]
-		public struct OLEUICHANGESOURCEA		{
+		public struct OLEUICHANGESOURCEA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HWND hWndOwner;
@@ -1910,7 +1974,8 @@ namespace Win32
 			public PSTR lpszTo;
 		}
 		[CRepr]
-		public struct OLEUIGNRLPROPSW		{
+		public struct OLEUIGNRLPROPSW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public uint32[2] dwReserved1;
@@ -1920,7 +1985,8 @@ namespace Win32
 			public OLEUIOBJECTPROPSW* lpOP;
 		}
 		[CRepr]
-		public struct OLEUIGNRLPROPSA		{
+		public struct OLEUIGNRLPROPSA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public uint32[2] dwReserved1;
@@ -1930,7 +1996,8 @@ namespace Win32
 			public OLEUIOBJECTPROPSA* lpOP;
 		}
 		[CRepr]
-		public struct OLEUIVIEWPROPSW		{
+		public struct OLEUIVIEWPROPSW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public uint32[2] dwReserved1;
@@ -1942,7 +2009,8 @@ namespace Win32
 			public int32 nScaleMax;
 		}
 		[CRepr]
-		public struct OLEUIVIEWPROPSA		{
+		public struct OLEUIVIEWPROPSA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public uint32[2] dwReserved1;
@@ -1954,7 +2022,8 @@ namespace Win32
 			public int32 nScaleMax;
 		}
 		[CRepr]
-		public struct OLEUILINKPROPSW		{
+		public struct OLEUILINKPROPSW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public uint32[2] dwReserved1;
@@ -1964,7 +2033,8 @@ namespace Win32
 			public OLEUIOBJECTPROPSW* lpOP;
 		}
 		[CRepr]
-		public struct OLEUILINKPROPSA		{
+		public struct OLEUILINKPROPSA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public uint32[2] dwReserved1;
@@ -1974,7 +2044,8 @@ namespace Win32
 			public OLEUIOBJECTPROPSA* lpOP;
 		}
 		[CRepr]
-		public struct OLEUIOBJECTPROPSW		{
+		public struct OLEUIOBJECTPROPSW
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public PROPSHEETHEADERW_V2* lpPS;
@@ -1987,7 +2058,8 @@ namespace Win32
 			public OLEUILINKPROPSW* lpLP;
 		}
 		[CRepr]
-		public struct OLEUIOBJECTPROPSA		{
+		public struct OLEUIOBJECTPROPSA
+		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public PROPSHEETHEADERA_V2* lpPS;

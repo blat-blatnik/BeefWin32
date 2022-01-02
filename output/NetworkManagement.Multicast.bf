@@ -15,30 +15,35 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr, Union]
-		public struct IPNG_ADDRESS		{
+		public struct IPNG_ADDRESS
+		{
 			public uint32 IpAddrV4;
 			public uint8[16] IpAddrV6;
 		}
 		[CRepr]
-		public struct MCAST_CLIENT_UID		{
+		public struct MCAST_CLIENT_UID
+		{
 			public uint8* ClientUID;
 			public uint32 ClientUIDLength;
 		}
 		[CRepr]
-		public struct MCAST_SCOPE_CTX		{
+		public struct MCAST_SCOPE_CTX
+		{
 			public IPNG_ADDRESS ScopeID;
 			public IPNG_ADDRESS Interface;
 			public IPNG_ADDRESS ServerID;
 		}
 		[CRepr]
-		public struct MCAST_SCOPE_ENTRY		{
+		public struct MCAST_SCOPE_ENTRY
+		{
 			public MCAST_SCOPE_CTX ScopeCtx;
 			public IPNG_ADDRESS LastAddr;
 			public uint32 TTL;
 			public UNICODE_STRING ScopeDesc;
 		}
 		[CRepr]
-		public struct MCAST_LEASE_REQUEST		{
+		public struct MCAST_LEASE_REQUEST
+		{
 			public int32 LeaseStartTime;
 			public int32 MaxLeaseStartTime;
 			public uint32 LeaseDuration;
@@ -49,7 +54,8 @@ namespace Win32
 			public uint8* pAddrBuf;
 		}
 		[CRepr]
-		public struct MCAST_LEASE_RESPONSE		{
+		public struct MCAST_LEASE_RESPONSE
+		{
 			public int32 LeaseStartTime;
 			public int32 LeaseEndTime;
 			public IPNG_ADDRESS ServerAddress;

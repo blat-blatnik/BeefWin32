@@ -1968,21 +1968,25 @@ namespace Win32
 		[CRepr]
 		public struct IKsAllocatorEx {}
 		[CRepr]
-		public struct KSPRIORITY		{
+		public struct KSPRIORITY
+		{
 			public uint32 PriorityClass;
 			public uint32 PrioritySubClass;
 		}
 		[CRepr]
-		public struct KSIDENTIFIER		{
+		public struct KSIDENTIFIER
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public int64 Alignment;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public Guid Set;
 					public uint32 Id;
 					public uint32 Flags;
@@ -1990,30 +1994,35 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct KSP_NODE		{
+		public struct KSP_NODE
+		{
 			public KSIDENTIFIER Property;
 			public uint32 NodeId;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSM_NODE		{
+		public struct KSM_NODE
+		{
 			public KSIDENTIFIER Method;
 			public uint32 NodeId;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSE_NODE		{
+		public struct KSE_NODE
+		{
 			public KSIDENTIFIER Event;
 			public uint32 NodeId;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSMULTIPLE_ITEM		{
+		public struct KSMULTIPLE_ITEM
+		{
 			public uint32 Size;
 			public uint32 Count;
 		}
 		[CRepr]
-		public struct KSPROPERTY_DESCRIPTION		{
+		public struct KSPROPERTY_DESCRIPTION
+		{
 			public uint32 AccessFlags;
 			public uint32 DescriptionSize;
 			public KSIDENTIFIER PropTypeSet;
@@ -2021,92 +2030,108 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSPROPERTY_MEMBERSHEADER		{
+		public struct KSPROPERTY_MEMBERSHEADER
+		{
 			public uint32 MembersFlags;
 			public uint32 MembersSize;
 			public uint32 MembersCount;
 			public uint32 Flags;
 		}
 		[CRepr, Union]
-		public struct KSPROPERTY_BOUNDS_LONG		{
+		public struct KSPROPERTY_BOUNDS_LONG
+		{
 			public _Anonymous1_e__Struct Anonymous1;
 			public _Anonymous2_e__Struct Anonymous2;
 			
 			[CRepr]
-			public struct _Anonymous1_e__Struct			{
+			public struct _Anonymous1_e__Struct
+			{
 				public int32 SignedMinimum;
 				public int32 SignedMaximum;
 			}
 			[CRepr]
-			public struct _Anonymous2_e__Struct			{
+			public struct _Anonymous2_e__Struct
+			{
 				public uint32 UnsignedMinimum;
 				public uint32 UnsignedMaximum;
 			}
 		}
 		[CRepr, Union]
-		public struct KSPROPERTY_BOUNDS_LONGLONG		{
+		public struct KSPROPERTY_BOUNDS_LONGLONG
+		{
 			public _Anonymous1_e__Struct Anonymous1;
 			public _Anonymous2_e__Struct Anonymous2;
 			
 			[CRepr]
-			public struct _Anonymous1_e__Struct			{
+			public struct _Anonymous1_e__Struct
+			{
 				public int64 SignedMinimum;
 				public int64 SignedMaximum;
 			}
 			[CRepr]
-			public struct _Anonymous2_e__Struct			{
+			public struct _Anonymous2_e__Struct
+			{
 				public uint64 UnsignedMinimum;
 				public uint64 UnsignedMaximum;
 			}
 		}
 		[CRepr]
-		public struct KSPROPERTY_STEPPING_LONG		{
+		public struct KSPROPERTY_STEPPING_LONG
+		{
 			public uint32 SteppingDelta;
 			public uint32 Reserved;
 			public KSPROPERTY_BOUNDS_LONG Bounds;
 		}
 		[CRepr]
-		public struct KSPROPERTY_STEPPING_LONGLONG		{
+		public struct KSPROPERTY_STEPPING_LONGLONG
+		{
 			public uint64 SteppingDelta;
 			public KSPROPERTY_BOUNDS_LONGLONG Bounds;
 		}
 		[CRepr]
-		public struct KSEVENTDATA		{
+		public struct KSEVENTDATA
+		{
 			public uint32 NotificationType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _EventHandle_e__Struct EventHandle;
 				public _SemaphoreHandle_e__Struct SemaphoreHandle;
 				public _Alignment_e__Struct Alignment;
 				
 				[CRepr]
-				public struct _SemaphoreHandle_e__Struct				{
+				public struct _SemaphoreHandle_e__Struct
+				{
 					public HANDLE Semaphore;
 					public uint32 Reserved;
 					public int32 Adjustment;
 				}
 				[CRepr]
-				public struct _Alignment_e__Struct				{
+				public struct _Alignment_e__Struct
+				{
 					public void* Unused;
 					public int[2] Alignment;
 				}
 				[CRepr]
-				public struct _EventHandle_e__Struct				{
+				public struct _EventHandle_e__Struct
+				{
 					public HANDLE Event;
 					public uint[2] Reserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct KSQUERYBUFFER		{
+		public struct KSQUERYBUFFER
+		{
 			public KSIDENTIFIER Event;
 			public KSEVENTDATA* EventData;
 			public void* Reserved;
 		}
 		[CRepr]
-		public struct KSRELATIVEEVENT		{
+		public struct KSRELATIVEEVENT
+		{
 			public uint32 Size;
 			public uint32 Flags;
 			public _Anonymous_e__Union Anonymous;
@@ -2115,29 +2140,34 @@ namespace Win32
 			public KSEVENTDATA EventData;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public HANDLE ObjectHandle;
 				public void* ObjectPointer;
 			}
 		}
 		[CRepr]
-		public struct KSEVENT_TIME_MARK		{
+		public struct KSEVENT_TIME_MARK
+		{
 			public KSEVENTDATA EventData;
 			public int64 MarkTime;
 		}
 		[CRepr]
-		public struct KSEVENT_TIME_INTERVAL		{
+		public struct KSEVENT_TIME_INTERVAL
+		{
 			public KSEVENTDATA EventData;
 			public int64 TimeBase;
 			public int64 Interval;
 		}
 		[CRepr]
-		public struct KSINTERVAL		{
+		public struct KSINTERVAL
+		{
 			public int64 TimeBase;
 			public int64 Interval;
 		}
 		[CRepr]
-		public struct KSCOMPONENTID		{
+		public struct KSCOMPONENTID
+		{
 			public Guid Manufacturer;
 			public Guid Product;
 			public Guid Component;
@@ -2146,33 +2176,38 @@ namespace Win32
 			public uint32 Revision;
 		}
 		[CRepr]
-		public struct KSPROPERTY_POSITIONS		{
+		public struct KSPROPERTY_POSITIONS
+		{
 			public int64 Current;
 			public int64 Stop;
 			public KS_SEEKING_FLAGS CurrentFlags;
 			public KS_SEEKING_FLAGS StopFlags;
 		}
 		[CRepr]
-		public struct KSPROPERTY_MEDIAAVAILABLE		{
+		public struct KSPROPERTY_MEDIAAVAILABLE
+		{
 			public int64 Earliest;
 			public int64 Latest;
 		}
 		[CRepr]
-		public struct KSP_TIMEFORMAT		{
+		public struct KSP_TIMEFORMAT
+		{
 			public KSIDENTIFIER Property;
 			public Guid SourceFormat;
 			public Guid TargetFormat;
 			public int64 Time;
 		}
 		[CRepr]
-		public struct KSTOPOLOGY_CONNECTION		{
+		public struct KSTOPOLOGY_CONNECTION
+		{
 			public uint32 FromNode;
 			public uint32 FromNodePin;
 			public uint32 ToNode;
 			public uint32 ToNodePin;
 		}
 		[CRepr]
-		public struct KSTOPOLOGY		{
+		public struct KSTOPOLOGY
+		{
 			public uint32 CategoriesCount;
 			public Guid* Categories;
 			public uint32 TopologyNodesCount;
@@ -2183,40 +2218,47 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSNODE_CREATE		{
+		public struct KSNODE_CREATE
+		{
 			public uint32 CreateFlags;
 			public uint32 Node;
 		}
 		[CRepr]
-		public struct KSP_PIN		{
+		public struct KSP_PIN
+		{
 			public KSIDENTIFIER Property;
 			public uint32 PinId;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Reserved;
 				public uint32 Flags;
 			}
 		}
 		[CRepr]
-		public struct KSE_PIN		{
+		public struct KSE_PIN
+		{
 			public KSIDENTIFIER Event;
 			public uint32 PinId;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSPIN_CINSTANCES		{
+		public struct KSPIN_CINSTANCES
+		{
 			public uint32 PossibleCount;
 			public uint32 CurrentCount;
 		}
 		[CRepr, Union]
-		public struct KSDATAFORMAT		{
+		public struct KSDATAFORMAT
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public int64 Alignment;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint32 FormatSize;
 				public uint32 Flags;
 				public uint32 SampleSize;
@@ -2227,13 +2269,15 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct KSATTRIBUTE		{
+		public struct KSATTRIBUTE
+		{
 			public uint32 Size;
 			public uint32 Flags;
 			public Guid Attribute;
 		}
 		[CRepr]
-		public struct KSPIN_CONNECT		{
+		public struct KSPIN_CONNECT
+		{
 			public KSIDENTIFIER Interface;
 			public KSIDENTIFIER Medium;
 			public uint32 PinId;
@@ -2241,13 +2285,15 @@ namespace Win32
 			public KSPRIORITY Priority;
 		}
 		[CRepr]
-		public struct KSPIN_PHYSICALCONNECTION		{
+		public struct KSPIN_PHYSICALCONNECTION
+		{
 			public uint32 Size;
 			public uint32 Pin;
 			public char16[0] SymbolicLinkName;
 		}
 		[CRepr]
-		public struct KSALLOCATOR_FRAMING		{
+		public struct KSALLOCATOR_FRAMING
+		{
 			public _Anonymous1_e__Union Anonymous1;
 			public uint32 PoolType;
 			public uint32 Frames;
@@ -2256,36 +2302,42 @@ namespace Win32
 			public uint32 Reserved;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint32 FileAlignment;
 				public int32 FramePitch;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public uint32 OptionsFlags;
 				public uint32 RequirementsFlags;
 			}
 		}
 		[CRepr]
-		public struct KS_FRAMING_RANGE		{
+		public struct KS_FRAMING_RANGE
+		{
 			public uint32 MinFrameSize;
 			public uint32 MaxFrameSize;
 			public uint32 Stepping;
 		}
 		[CRepr]
-		public struct KS_FRAMING_RANGE_WEIGHTED		{
+		public struct KS_FRAMING_RANGE_WEIGHTED
+		{
 			public KS_FRAMING_RANGE Range;
 			public uint32 InPlaceWeight;
 			public uint32 NotInPlaceWeight;
 		}
 		[CRepr]
-		public struct KS_COMPRESSION		{
+		public struct KS_COMPRESSION
+		{
 			public uint32 RatioNumerator;
 			public uint32 RatioDenominator;
 			public uint32 RatioConstantMargin;
 		}
 		[CRepr]
-		public struct KS_FRAMING_ITEM		{
+		public struct KS_FRAMING_ITEM
+		{
 			public Guid MemoryType;
 			public Guid BusType;
 			public uint32 MemoryFlags;
@@ -2298,13 +2350,15 @@ namespace Win32
 			public KS_FRAMING_RANGE_WEIGHTED FramingRange;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 FileAlignment;
 				public int32 FramePitch;
 			}
 		}
 		[CRepr]
-		public struct KSALLOCATOR_FRAMING_EX		{
+		public struct KSALLOCATOR_FRAMING_EX
+		{
 			public uint32 CountItems;
 			public uint32 PinFlags;
 			public KS_COMPRESSION OutputCompression;
@@ -2312,25 +2366,29 @@ namespace Win32
 			public KS_FRAMING_ITEM[0] FramingItem;
 		}
 		[CRepr]
-		public struct KSSTREAMALLOCATOR_STATUS		{
+		public struct KSSTREAMALLOCATOR_STATUS
+		{
 			public KSALLOCATOR_FRAMING Framing;
 			public uint32 AllocatedFrames;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSSTREAMALLOCATOR_STATUS_EX		{
+		public struct KSSTREAMALLOCATOR_STATUS_EX
+		{
 			public KSALLOCATOR_FRAMING_EX Framing;
 			public uint32 AllocatedFrames;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSTIME		{
+		public struct KSTIME
+		{
 			public int64 Time;
 			public uint32 Numerator;
 			public uint32 Denominator;
 		}
 		[CRepr]
-		public struct KSSTREAM_HEADER		{
+		public struct KSSTREAM_HEADER
+		{
 			public uint32 Size;
 			public uint32 TypeSpecificFlags;
 			public KSTIME PresentationTime;
@@ -2342,7 +2400,8 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSSTREAM_METADATA_INFO		{
+		public struct KSSTREAM_METADATA_INFO
+		{
 			public uint32 BufferSize;
 			public uint32 UsedSize;
 			public void* Data;
@@ -2351,7 +2410,8 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSSTREAM_UVC_METADATATYPE_TIMESTAMP		{
+		public struct KSSTREAM_UVC_METADATATYPE_TIMESTAMP
+		{
 			public uint32 PresentationTimeStamp;
 			public uint32 SourceClockReference;
 			public _Anonymous_e__Union Anonymous;
@@ -2359,44 +2419,52 @@ namespace Win32
 			public uint32 Reserved1;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint16 SCRToken;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct KSSTREAM_UVC_METADATA		{
+		public struct KSSTREAM_UVC_METADATA
+		{
 			public KSSTREAM_UVC_METADATATYPE_TIMESTAMP StartOfFrameTimestamp;
 			public KSSTREAM_UVC_METADATATYPE_TIMESTAMP EndOfFrameTimestamp;
 		}
 		[CRepr]
-		public struct KSPIN_MDL_CACHING_NOTIFICATION		{
+		public struct KSPIN_MDL_CACHING_NOTIFICATION
+		{
 			public KSPIN_MDL_CACHING_EVENT Event;
 			public void* Buffer;
 		}
 		[CRepr]
-		public struct KSPIN_MDL_CACHING_NOTIFICATION32		{
+		public struct KSPIN_MDL_CACHING_NOTIFICATION32
+		{
 			public KSPIN_MDL_CACHING_EVENT Event;
 			public uint32 Buffer;
 		}
 		[CRepr]
-		public struct KSQUALITY_MANAGER		{
+		public struct KSQUALITY_MANAGER
+		{
 			public HANDLE QualityManager;
 			public void* Context;
 		}
 		[CRepr]
-		public struct KSFRAMETIME		{
+		public struct KSFRAMETIME
+		{
 			public int64 Duration;
 			public uint32 FrameFlags;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSRATE		{
+		public struct KSRATE
+		{
 			public int64 PresentationStart;
 			public int64 Duration;
 			public KSIDENTIFIER Interface;
@@ -2404,81 +2472,96 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct KSRATE_CAPABILITY		{
+		public struct KSRATE_CAPABILITY
+		{
 			public KSIDENTIFIER Property;
 			public KSRATE Rate;
 		}
 		[CRepr]
-		public struct KSCLOCK_CREATE		{
+		public struct KSCLOCK_CREATE
+		{
 			public uint32 CreateFlags;
 		}
 		[CRepr]
-		public struct KSCORRELATED_TIME		{
+		public struct KSCORRELATED_TIME
+		{
 			public int64 Time;
 			public int64 SystemTime;
 		}
 		[CRepr]
-		public struct KSRESOLUTION		{
+		public struct KSRESOLUTION
+		{
 			public int64 Granularity;
 			public int64 Error;
 		}
 		[CRepr]
-		public struct KSQUALITY		{
+		public struct KSQUALITY
+		{
 			public void* Context;
 			public uint32 Proportion;
 			public int64 DeltaTime;
 		}
 		[CRepr]
-		public struct KSERROR		{
+		public struct KSERROR
+		{
 			public void* Context;
 			public uint32 Status;
 		}
 		[CRepr]
-		public struct KSPROPERTY_SERIALHDR		{
+		public struct KSPROPERTY_SERIALHDR
+		{
 			public Guid PropertySet;
 			public uint32 Count;
 		}
 		[CRepr]
-		public struct KSPROPERTY_SERIAL		{
+		public struct KSPROPERTY_SERIAL
+		{
 			public KSIDENTIFIER PropTypeSet;
 			public uint32 Id;
 			public uint32 PropertyLength;
 		}
 		[CRepr, Union]
-		public struct MF_MDL_SHARED_PAYLOAD_KEY		{
+		public struct MF_MDL_SHARED_PAYLOAD_KEY
+		{
 			public _combined_e__Struct combined;
 			public Guid GMDLHandle;
 			
 			[CRepr]
-			public struct _combined_e__Struct			{
+			public struct _combined_e__Struct
+			{
 				public uint32 pHandle;
 				public uint32 fHandle;
 				public uint64 uPayload;
 			}
 		}
 		[CRepr]
-		public struct KSMULTIPLE_DATA_PROP		{
+		public struct KSMULTIPLE_DATA_PROP
+		{
 			public KSIDENTIFIER Property;
 			public KSMULTIPLE_ITEM MultipleItem;
 		}
 		[CRepr]
-		public struct KSAUDIO_POSITION		{
+		public struct KSAUDIO_POSITION
+		{
 			public uint64 PlayOffset;
 			public uint64 WriteOffset;
 		}
 		[CRepr]
-		public struct KSAUDIO_PRESENTATION_POSITION		{
+		public struct KSAUDIO_PRESENTATION_POSITION
+		{
 			public uint64 u64PositionInBlocks;
 			public uint64 u64QPCPosition;
 		}
 		[CRepr]
-		public struct _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT		{
+		public struct _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT
+		{
 			public Guid ProcessingMode;
 			public uint32 SamplesPerProcessingPacket;
 			public uint32 ProcessingPacketDurationInHns;
 		}
 		[CRepr]
-		public struct KSAUDIO_PACKETSIZE_CONSTRAINTS		{
+		public struct KSAUDIO_PACKETSIZE_CONSTRAINTS
+		{
 			public uint32 MinPacketPeriodInHns;
 			public uint32 PacketSizeFileAlignment;
 			public uint32 Reserved;
@@ -2486,7 +2569,8 @@ namespace Win32
 			public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[0] ProcessingModeConstraints;
 		}
 		[CRepr]
-		public struct KSAUDIO_PACKETSIZE_CONSTRAINTS2		{
+		public struct KSAUDIO_PACKETSIZE_CONSTRAINTS2
+		{
 			public uint32 MinPacketPeriodInHns;
 			public uint32 PacketSizeFileAlignment;
 			public uint32 MaxPacketSizeInBytes;
@@ -2494,7 +2578,8 @@ namespace Win32
 			public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[0] ProcessingModeConstraints;
 		}
 		[CRepr]
-		public struct KSAUDIO_MICROPHONE_COORDINATES		{
+		public struct KSAUDIO_MICROPHONE_COORDINATES
+		{
 			public uint16 usType;
 			public int16 wXCoord;
 			public int16 wYCoord;
@@ -2503,7 +2588,8 @@ namespace Win32
 			public int16 wHorizontalAngle;
 		}
 		[CRepr]
-		public struct KSAUDIO_MIC_ARRAY_GEOMETRY		{
+		public struct KSAUDIO_MIC_ARRAY_GEOMETRY
+		{
 			public uint16 usVersion;
 			public uint16 usMicArrayType;
 			public int16 wVerticalAngleBegin;
@@ -2516,29 +2602,34 @@ namespace Win32
 			public KSAUDIO_MICROPHONE_COORDINATES[0] KsMicCoord;
 		}
 		[CRepr]
-		public struct DS3DVECTOR		{
+		public struct DS3DVECTOR
+		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			public _Anonymous3_e__Union Anonymous3;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public float y;
 				public float dvY;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public float x;
 				public float dvX;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union			{
+			public struct _Anonymous3_e__Union
+			{
 				public float z;
 				public float dvZ;
 			}
 		}
 		[CRepr]
-		public struct KSDS3D_LISTENER_ALL		{
+		public struct KSDS3D_LISTENER_ALL
+		{
 			public DS3DVECTOR Position;
 			public DS3DVECTOR Velocity;
 			public DS3DVECTOR OrientFront;
@@ -2548,12 +2639,14 @@ namespace Win32
 			public float DopplerFactor;
 		}
 		[CRepr]
-		public struct KSDS3D_LISTENER_ORIENTATION		{
+		public struct KSDS3D_LISTENER_ORIENTATION
+		{
 			public DS3DVECTOR Front;
 			public DS3DVECTOR Top;
 		}
 		[CRepr]
-		public struct KSDS3D_BUFFER_ALL		{
+		public struct KSDS3D_BUFFER_ALL
+		{
 			public DS3DVECTOR Position;
 			public DS3DVECTOR Velocity;
 			public uint32 InsideConeAngle;
@@ -2565,12 +2658,14 @@ namespace Win32
 			public uint32 Mode;
 		}
 		[CRepr]
-		public struct KSDS3D_BUFFER_CONE_ANGLES		{
+		public struct KSDS3D_BUFFER_CONE_ANGLES
+		{
 			public uint32 InsideConeAngle;
 			public uint32 OutsideConeAngle;
 		}
 		[CRepr]
-		public struct KSDS3D_HRTF_PARAMS_MSG		{
+		public struct KSDS3D_HRTF_PARAMS_MSG
+		{
 			public uint32 Size;
 			public uint32 Enabled;
 			public BOOL SwapChannels;
@@ -2579,7 +2674,8 @@ namespace Win32
 			public uint32 FilterSize;
 		}
 		[CRepr]
-		public struct KSDS3D_HRTF_INIT_MSG		{
+		public struct KSDS3D_HRTF_INIT_MSG
+		{
 			public uint32 Size;
 			public KSDS3D_HRTF_FILTER_QUALITY Quality;
 			public float SampleRate;
@@ -2590,14 +2686,16 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSDS3D_HRTF_FILTER_FORMAT_MSG		{
+		public struct KSDS3D_HRTF_FILTER_FORMAT_MSG
+		{
 			public KSDS3D_HRTF_FILTER_METHOD FilterMethod;
 			public KSDS3D_HRTF_COEFF_FORMAT CoeffFormat;
 			public KSDS3D_HRTF_FILTER_VERSION Version;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSDS3D_ITD_PARAMS		{
+		public struct KSDS3D_ITD_PARAMS
+		{
 			public int32 Channel;
 			public float VolSmoothScale;
 			public float TotalDryAttenuation;
@@ -2606,14 +2704,16 @@ namespace Win32
 			public int32 Delay;
 		}
 		[CRepr]
-		public struct KSDS3D_ITD_PARAMS_MSG		{
+		public struct KSDS3D_ITD_PARAMS_MSG
+		{
 			public uint32 Enabled;
 			public KSDS3D_ITD_PARAMS LeftParams;
 			public KSDS3D_ITD_PARAMS RightParams;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSDATARANGE_AUDIO		{
+		public struct KSDATARANGE_AUDIO
+		{
 			public KSDATAFORMAT DataRange;
 			public uint32 MaximumChannels;
 			public uint32 MinimumBitsPerSample;
@@ -2622,61 +2722,71 @@ namespace Win32
 			public uint32 MaximumSampleFrequency;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_BUFFER_PROPERTY		{
+		public struct KSRTAUDIO_BUFFER_PROPERTY
+		{
 			public KSIDENTIFIER Property;
 			public void* BaseAddress;
 			public uint32 RequestedBufferSize;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_BUFFER_PROPERTY32		{
+		public struct KSRTAUDIO_BUFFER_PROPERTY32
+		{
 			public KSIDENTIFIER Property;
 			public uint32 BaseAddress;
 			public uint32 RequestedBufferSize;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION		{
+		public struct KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION
+		{
 			public KSIDENTIFIER Property;
 			public void* BaseAddress;
 			public uint32 RequestedBufferSize;
 			public uint32 NotificationCount;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32		{
+		public struct KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32
+		{
 			public KSIDENTIFIER Property;
 			public uint32 BaseAddress;
 			public uint32 RequestedBufferSize;
 			public uint32 NotificationCount;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_BUFFER		{
+		public struct KSRTAUDIO_BUFFER
+		{
 			public void* BufferAddress;
 			public uint32 ActualBufferSize;
 			public BOOL CallMemoryBarrier;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_BUFFER32		{
+		public struct KSRTAUDIO_BUFFER32
+		{
 			public uint32 BufferAddress;
 			public uint32 ActualBufferSize;
 			public BOOL CallMemoryBarrier;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_HWLATENCY		{
+		public struct KSRTAUDIO_HWLATENCY
+		{
 			public uint32 FifoSize;
 			public uint32 ChipsetDelay;
 			public uint32 CodecDelay;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_HWREGISTER_PROPERTY		{
+		public struct KSRTAUDIO_HWREGISTER_PROPERTY
+		{
 			public KSIDENTIFIER Property;
 			public void* BaseAddress;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_HWREGISTER_PROPERTY32		{
+		public struct KSRTAUDIO_HWREGISTER_PROPERTY32
+		{
 			public KSIDENTIFIER Property;
 			public uint32 BaseAddress;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_HWREGISTER		{
+		public struct KSRTAUDIO_HWREGISTER
+		{
 			public void* Register;
 			public uint32 Width;
 			public uint64 Numerator;
@@ -2684,7 +2794,8 @@ namespace Win32
 			public uint32 Accuracy;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_HWREGISTER32		{
+		public struct KSRTAUDIO_HWREGISTER32
+		{
 			public uint32 Register;
 			public uint32 Width;
 			public uint64 Numerator;
@@ -2692,41 +2803,48 @@ namespace Win32
 			public uint32 Accuracy;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY		{
+		public struct KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY
+		{
 			public KSIDENTIFIER Property;
 			public HANDLE NotificationEvent;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32		{
+		public struct KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32
+		{
 			public KSIDENTIFIER Property;
 			public uint32 NotificationEvent;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_GETREADPACKET_INFO		{
+		public struct KSRTAUDIO_GETREADPACKET_INFO
+		{
 			public uint32 PacketNumber;
 			public uint32 Flags;
 			public uint64 PerformanceCounterValue;
 			public BOOL MoreData;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_SETWRITEPACKET_INFO		{
+		public struct KSRTAUDIO_SETWRITEPACKET_INFO
+		{
 			public uint32 PacketNumber;
 			public uint32 Flags;
 			public uint32 EosPacketLength;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_PACKETVREGISTER_PROPERTY		{
+		public struct KSRTAUDIO_PACKETVREGISTER_PROPERTY
+		{
 			public KSIDENTIFIER Property;
 			public void* BaseAddress;
 		}
 		[CRepr]
-		public struct KSRTAUDIO_PACKETVREGISTER		{
+		public struct KSRTAUDIO_PACKETVREGISTER
+		{
 			public uint64* CompletedPacketCount;
 			public uint64* CompletedPacketQPC;
 			public uint64* CompletedPacketHash;
 		}
 		[CRepr]
-		public struct INTERLEAVED_AUDIO_FORMAT_INFORMATION		{
+		public struct INTERLEAVED_AUDIO_FORMAT_INFORMATION
+		{
 			public uint32 Size;
 			public uint32 PrimaryChannelCount;
 			public uint32 PrimaryChannelStartPosition;
@@ -2736,87 +2854,103 @@ namespace Win32
 			public uint32 InterleavedChannelMask;
 		}
 		[CRepr]
-		public struct KSSOUNDDETECTORPROPERTY		{
+		public struct KSSOUNDDETECTORPROPERTY
+		{
 			public KSIDENTIFIER Property;
 			public Guid EventId;
 		}
 		[CRepr]
-		public struct SOUNDDETECTOR_PATTERNHEADER		{
+		public struct SOUNDDETECTOR_PATTERNHEADER
+		{
 			public uint32 Size;
 			public Guid PatternType;
 		}
 		[CRepr]
-		public struct KSAUDIO_COPY_PROTECTION		{
+		public struct KSAUDIO_COPY_PROTECTION
+		{
 			public BOOL fCopyrighted;
 			public BOOL fOriginal;
 		}
 		[CRepr]
-		public struct KSAUDIO_CHANNEL_CONFIG		{
+		public struct KSAUDIO_CHANNEL_CONFIG
+		{
 			public int32 ActiveSpeakerPositions;
 		}
 		[CRepr]
-		public struct KSAUDIO_DYNAMIC_RANGE		{
+		public struct KSAUDIO_DYNAMIC_RANGE
+		{
 			public uint32 QuietCompression;
 			public uint32 LoudCompression;
 		}
 		[CRepr]
-		public struct KSAUDIO_MIXLEVEL		{
+		public struct KSAUDIO_MIXLEVEL
+		{
 			public BOOL Mute;
 			public int32 Level;
 		}
 		[CRepr]
-		public struct KSAUDIO_MIX_CAPS		{
+		public struct KSAUDIO_MIX_CAPS
+		{
 			public BOOL Mute;
 			public int32 Minimum;
 			public int32 Maximum;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public int32 Reset;
 				public int32 Resolution;
 			}
 		}
 		[CRepr]
-		public struct KSAUDIO_MIXCAP_TABLE		{
+		public struct KSAUDIO_MIXCAP_TABLE
+		{
 			public uint32 InputChannels;
 			public uint32 OutputChannels;
 			public KSAUDIO_MIX_CAPS[0] Capabilities;
 		}
 		[CRepr]
-		public struct KSAUDIO_POSITIONEX		{
+		public struct KSAUDIO_POSITIONEX
+		{
 			public LARGE_INTEGER TimerFrequency;
 			public LARGE_INTEGER TimeStamp1;
 			public KSAUDIO_POSITION Position;
 			public LARGE_INTEGER TimeStamp2;
 		}
 		[CRepr]
-		public struct KSTELEPHONY_CALLCONTROL		{
+		public struct KSTELEPHONY_CALLCONTROL
+		{
 			public TELEPHONY_CALLTYPE CallType;
 			public TELEPHONY_CALLCONTROLOP CallControlOp;
 		}
 		[CRepr]
-		public struct KSTELEPHONY_PROVIDERCHANGE		{
+		public struct KSTELEPHONY_PROVIDERCHANGE
+		{
 			public TELEPHONY_CALLTYPE CallType;
 			public TELEPHONY_PROVIDERCHANGEOP ProviderChangeOp;
 		}
 		[CRepr]
-		public struct KSTELEPHONY_CALLINFO		{
+		public struct KSTELEPHONY_CALLINFO
+		{
 			public TELEPHONY_CALLTYPE CallType;
 			public TELEPHONY_CALLSTATE CallState;
 		}
 		[CRepr]
-		public struct KSTOPOLOGY_ENDPOINTID		{
+		public struct KSTOPOLOGY_ENDPOINTID
+		{
 			public char16[260] TopologyName;
 			public uint32 PinId;
 		}
 		[CRepr]
-		public struct KSTOPOLOGY_ENDPOINTIDPAIR		{
+		public struct KSTOPOLOGY_ENDPOINTIDPAIR
+		{
 			public KSTOPOLOGY_ENDPOINTID RenderEndpoint;
 			public KSTOPOLOGY_ENDPOINTID CaptureEndpoint;
 		}
 		[CRepr]
-		public struct KSWAVETABLE_WAVE_DESC		{
+		public struct KSWAVETABLE_WAVE_DESC
+		{
 			public KSIDENTIFIER Identifier;
 			public uint32 Size;
 			public BOOL Looped;
@@ -2825,11 +2959,13 @@ namespace Win32
 			public KSDATAFORMAT Format;
 		}
 		[CRepr]
-		public struct KSWAVE_COMPATCAPS		{
+		public struct KSWAVE_COMPATCAPS
+		{
 			public uint32 ulDeviceType;
 		}
 		[CRepr]
-		public struct KSWAVE_INPUT_CAPABILITIES		{
+		public struct KSWAVE_INPUT_CAPABILITIES
+		{
 			public uint32 MaximumChannelsPerConnection;
 			public uint32 MinimumBitsPerSample;
 			public uint32 MaximumBitsPerSample;
@@ -2839,7 +2975,8 @@ namespace Win32
 			public uint32 ActiveConnections;
 		}
 		[CRepr]
-		public struct KSWAVE_OUTPUT_CAPABILITIES		{
+		public struct KSWAVE_OUTPUT_CAPABILITIES
+		{
 			public uint32 MaximumChannelsPerConnection;
 			public uint32 MinimumBitsPerSample;
 			public uint32 MaximumBitsPerSample;
@@ -2862,18 +2999,21 @@ namespace Win32
 			public uint32 LargestFreeContiguousSampleMemory;
 		}
 		[CRepr]
-		public struct KSWAVE_VOLUME		{
+		public struct KSWAVE_VOLUME
+		{
 			public int32 LeftAttenuation;
 			public int32 RightAttenuation;
 		}
 		[CRepr]
-		public struct KSWAVE_BUFFER		{
+		public struct KSWAVE_BUFFER
+		{
 			public uint32 Attributes;
 			public uint32 BufferSize;
 			public void* BufferAddress;
 		}
 		[CRepr]
-		public struct KSDATARANGE_MUSIC		{
+		public struct KSDATARANGE_MUSIC
+		{
 			public KSDATAFORMAT DataRange;
 			public Guid Technology;
 			public uint32 Channels;
@@ -2881,106 +3021,125 @@ namespace Win32
 			public uint32 ChannelMask;
 		}
 		[CRepr]
-		public struct LOOPEDSTREAMING_POSITION_EVENT_DATA		{
+		public struct LOOPEDSTREAMING_POSITION_EVENT_DATA
+		{
 			public KSEVENTDATA KsEventData;
 			public uint64 Position;
 		}
 		[CRepr]
-		public struct KSNODEPROPERTY		{
+		public struct KSNODEPROPERTY
+		{
 			public KSIDENTIFIER Property;
 			public uint32 NodeId;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSNODEPROPERTY_AUDIO_CHANNEL		{
+		public struct KSNODEPROPERTY_AUDIO_CHANNEL
+		{
 			public KSNODEPROPERTY NodeProperty;
 			public int32 Channel;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSNODEPROPERTY_AUDIO_DEV_SPECIFIC		{
+		public struct KSNODEPROPERTY_AUDIO_DEV_SPECIFIC
+		{
 			public KSNODEPROPERTY NodeProperty;
 			public uint32 DevSpecificId;
 			public uint32 DeviceInfo;
 			public uint32 Length;
 		}
 		[CRepr]
-		public struct KSNODEPROPERTY_AUDIO_3D_LISTENER		{
+		public struct KSNODEPROPERTY_AUDIO_3D_LISTENER
+		{
 			public KSNODEPROPERTY NodeProperty;
 			public void* ListenerId;
 		}
 		[CRepr]
-		public struct KSNODEPROPERTY_AUDIO_PROPERTY		{
+		public struct KSNODEPROPERTY_AUDIO_PROPERTY
+		{
 			public KSNODEPROPERTY NodeProperty;
 			public void* AppContext;
 			public uint32 Length;
 		}
 		[CRepr]
-		public struct KSMUSICFORMAT		{
+		public struct KSMUSICFORMAT
+		{
 			public uint32 TimeDeltaMs;
 			public uint32 ByteCount;
 		}
 		[CRepr]
-		public struct KSMPEGVID_RECT		{
+		public struct KSMPEGVID_RECT
+		{
 			public uint32 StartX;
 			public uint32 StartY;
 			public uint32 EndX;
 			public uint32 EndY;
 		}
 		[CRepr]
-		public struct KSAC3_ERROR_CONCEALMENT		{
+		public struct KSAC3_ERROR_CONCEALMENT
+		{
 			public BOOL fRepeatPreviousBlock;
 			public BOOL fErrorInCurrentBlock;
 		}
 		[CRepr]
-		public struct KSAC3_ALTERNATE_AUDIO		{
+		public struct KSAC3_ALTERNATE_AUDIO
+		{
 			public BOOL fStereo;
 			public uint32 DualMode;
 		}
 		[CRepr]
-		public struct KSAC3_DOWNMIX		{
+		public struct KSAC3_DOWNMIX
+		{
 			public BOOL fDownMix;
 			public BOOL fDolbySurround;
 		}
 		[CRepr]
-		public struct KSAC3_BIT_STREAM_MODE		{
+		public struct KSAC3_BIT_STREAM_MODE
+		{
 			public int32 BitStreamMode;
 		}
 		[CRepr]
-		public struct KSAC3_DIALOGUE_LEVEL		{
+		public struct KSAC3_DIALOGUE_LEVEL
+		{
 			public uint32 DialogueLevel;
 		}
 		[CRepr]
-		public struct KSAC3_ROOM_TYPE		{
+		public struct KSAC3_ROOM_TYPE
+		{
 			public BOOL fLargeRoom;
 		}
 		[CRepr]
-		public struct KS_DVD_YCrCb		{
+		public struct KS_DVD_YCrCb
+		{
 			public uint8 Reserved;
 			public uint8 Y;
 			public uint8 Cr;
 			public uint8 Cb;
 		}
 		[CRepr]
-		public struct KS_DVD_YUV		{
+		public struct KS_DVD_YUV
+		{
 			public uint8 Reserved;
 			public uint8 Y;
 			public uint8 V;
 			public uint8 U;
 		}
 		[CRepr]
-		public struct KSPROPERTY_SPPAL		{
+		public struct KSPROPERTY_SPPAL
+		{
 			public KS_DVD_YUV[16] sppal;
 		}
 		[CRepr]
-		public struct KS_COLCON		{
+		public struct KS_COLCON
+		{
 			public uint8 _bitfield1;
 			public uint8 _bitfield2;
 			public uint8 _bitfield3;
 			public uint8 _bitfield4;
 		}
 		[CRepr]
-		public struct KSPROPERTY_SPHLI		{
+		public struct KSPROPERTY_SPHLI
+		{
 			public uint16 HLISS;
 			public uint16 Reserved;
 			public uint32 StartPTM;
@@ -2992,49 +3151,58 @@ namespace Win32
 			public KS_COLCON ColCon;
 		}
 		[CRepr]
-		public struct KS_DVDCOPY_CHLGKEY		{
+		public struct KS_DVDCOPY_CHLGKEY
+		{
 			public uint8[10] ChlgKey;
 			public uint8[2] Reserved;
 		}
 		[CRepr]
-		public struct KS_DVDCOPY_BUSKEY		{
+		public struct KS_DVDCOPY_BUSKEY
+		{
 			public uint8[5] BusKey;
 			public uint8[0] Reserved;
 		}
 		[CRepr]
-		public struct KS_DVDCOPY_DISCKEY		{
+		public struct KS_DVDCOPY_DISCKEY
+		{
 			public uint8[2048] DiscKey;
 		}
 		[CRepr]
-		public struct KS_DVDCOPY_REGION		{
+		public struct KS_DVDCOPY_REGION
+		{
 			public uint8 Reserved;
 			public uint8 RegionData;
 			public uint8[2] Reserved2;
 		}
 		[CRepr]
-		public struct KS_DVDCOPY_TITLEKEY		{
+		public struct KS_DVDCOPY_TITLEKEY
+		{
 			public uint32 KeyFlags;
 			public uint32[2] ReservedNT;
 			public uint8[6] TitleKey;
 			public uint8[2] Reserved;
 		}
 		[CRepr]
-		public struct KS_COPY_MACROVISION		{
+		public struct KS_COPY_MACROVISION
+		{
 			public uint32 MACROVISIONLevel;
 		}
 		[CRepr]
-		public struct KS_DVDCOPY_SET_COPY_STATE		{
+		public struct KS_DVDCOPY_SET_COPY_STATE
+		{
 			public uint32 DVDCopyState;
 		}
 		[CRepr]
-		public struct KS_RGBQUAD		{
+		public struct KS_RGBQUAD
+		{
 			public uint8 rgbBlue;
 			public uint8 rgbGreen;
 			public uint8 rgbRed;
 			public uint8 rgbReserved;
 		}
 		[CRepr]
-		public struct KS_BITMAPINFOHEADER		{
+		public struct KS_BITMAPINFOHEADER
+		{
 			public uint32 biSize;
 			public int32 biWidth;
 			public int32 biHeight;
@@ -3048,12 +3216,14 @@ namespace Win32
 			public uint32 biClrImportant;
 		}
 		[CRepr]
-		public struct KS_TRUECOLORINFO		{
+		public struct KS_TRUECOLORINFO
+		{
 			public uint32[3] dwBitMasks;
 			public KS_RGBQUAD[256] bmiColors;
 		}
 		[CRepr]
-		public struct KS_VIDEOINFOHEADER		{
+		public struct KS_VIDEOINFOHEADER
+		{
 			public RECT rcSource;
 			public RECT rcTarget;
 			public uint32 dwBitRate;
@@ -3062,7 +3232,8 @@ namespace Win32
 			public KS_BITMAPINFOHEADER bmiHeader;
 		}
 		[CRepr]
-		public struct KS_VIDEOINFO		{
+		public struct KS_VIDEOINFO
+		{
 			public RECT rcSource;
 			public RECT rcTarget;
 			public uint32 dwBitRate;
@@ -3072,14 +3243,16 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public KS_RGBQUAD[256] bmiColors;
 				public uint32[3] dwBitMasks;
 				public KS_TRUECOLORINFO TrueColorInfo;
 			}
 		}
 		[CRepr]
-		public struct KS_VBIINFOHEADER		{
+		public struct KS_VBIINFOHEADER
+		{
 			public uint32 StartLine;
 			public uint32 EndLine;
 			public uint32 SamplingFrequency;
@@ -3093,7 +3266,8 @@ namespace Win32
 			public uint32 BufferSize;
 		}
 		[CRepr]
-		public struct KS_AnalogVideoInfo		{
+		public struct KS_AnalogVideoInfo
+		{
 			public RECT rcSource;
 			public RECT rcTarget;
 			public uint32 dwActiveWidth;
@@ -3101,14 +3275,16 @@ namespace Win32
 			public int64 AvgTimePerFrame;
 		}
 		[CRepr]
-		public struct KS_TVTUNER_CHANGE_INFO		{
+		public struct KS_TVTUNER_CHANGE_INFO
+		{
 			public uint32 dwFlags;
 			public uint32 dwCountryCode;
 			public uint32 dwAnalogVideoStandard;
 			public uint32 dwChannel;
 		}
 		[CRepr]
-		public struct KS_VIDEOINFOHEADER2		{
+		public struct KS_VIDEOINFOHEADER2
+		{
 			public RECT rcSource;
 			public RECT rcTarget;
 			public uint32 dwBitRate;
@@ -3123,20 +3299,23 @@ namespace Win32
 			public KS_BITMAPINFOHEADER bmiHeader;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwControlFlags;
 				public uint32 dwReserved1;
 			}
 		}
 		[CRepr]
-		public struct KS_MPEG1VIDEOINFO		{
+		public struct KS_MPEG1VIDEOINFO
+		{
 			public KS_VIDEOINFOHEADER hdr;
 			public uint32 dwStartTimeCode;
 			public uint32 cbSequenceHeader;
 			public uint8[0] bSequenceHeader;
 		}
 		[CRepr]
-		public struct KS_MPEGVIDEOINFO2		{
+		public struct KS_MPEGVIDEOINFO2
+		{
 			public KS_VIDEOINFOHEADER2 hdr;
 			public uint32 dwStartTimeCode;
 			public uint32 cbSequenceHeader;
@@ -3146,7 +3325,8 @@ namespace Win32
 			public uint32[0] bSequenceHeader;
 		}
 		[CRepr]
-		public struct KS_H264VIDEOINFO		{
+		public struct KS_H264VIDEOINFO
+		{
 			public uint16 wWidth;
 			public uint16 wHeight;
 			public uint16 wSARwidth;
@@ -3187,49 +3367,58 @@ namespace Win32
 			public uint16 wMaxMBperSecFourResolutionsFullScalability;
 		}
 		[CRepr]
-		public struct KS_MPEAUDIOINFO		{
+		public struct KS_MPEAUDIOINFO
+		{
 			public uint32 dwFlags;
 			public uint32 dwReserved1;
 			public uint32 dwReserved2;
 			public uint32 dwReserved3;
 		}
 		[CRepr]
-		public struct KS_DATAFORMAT_VIDEOINFOHEADER		{
+		public struct KS_DATAFORMAT_VIDEOINFOHEADER
+		{
 			public KSDATAFORMAT DataFormat;
 			public KS_VIDEOINFOHEADER VideoInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATAFORMAT_VIDEOINFOHEADER2		{
+		public struct KS_DATAFORMAT_VIDEOINFOHEADER2
+		{
 			public KSDATAFORMAT DataFormat;
 			public KS_VIDEOINFOHEADER2 VideoInfoHeader2;
 		}
 		[CRepr]
-		public struct KS_DATAFORMAT_MPEGVIDEOINFO2		{
+		public struct KS_DATAFORMAT_MPEGVIDEOINFO2
+		{
 			public KSDATAFORMAT DataFormat;
 			public KS_MPEGVIDEOINFO2 MpegVideoInfoHeader2;
 		}
 		[CRepr]
-		public struct KS_DATAFORMAT_H264VIDEOINFO		{
+		public struct KS_DATAFORMAT_H264VIDEOINFO
+		{
 			public KSDATAFORMAT DataFormat;
 			public KS_H264VIDEOINFO H264VideoInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATAFORMAT_IMAGEINFO		{
+		public struct KS_DATAFORMAT_IMAGEINFO
+		{
 			public KSDATAFORMAT DataFormat;
 			public KS_BITMAPINFOHEADER ImageInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATAFORMAT_VIDEOINFO_PALETTE		{
+		public struct KS_DATAFORMAT_VIDEOINFO_PALETTE
+		{
 			public KSDATAFORMAT DataFormat;
 			public KS_VIDEOINFO VideoInfo;
 		}
 		[CRepr]
-		public struct KS_DATAFORMAT_VBIINFOHEADER		{
+		public struct KS_DATAFORMAT_VBIINFOHEADER
+		{
 			public KSDATAFORMAT DataFormat;
 			public KS_VBIINFOHEADER VBIInfoHeader;
 		}
 		[CRepr]
-		public struct KS_VIDEO_STREAM_CONFIG_CAPS		{
+		public struct KS_VIDEO_STREAM_CONFIG_CAPS
+		{
 			public Guid guid;
 			public uint32 VideoStandard;
 			public SIZE InputSize;
@@ -3253,7 +3442,8 @@ namespace Win32
 			public int32 MaxBitsPerSecond;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_VIDEO		{
+		public struct KS_DATARANGE_VIDEO
+		{
 			public KSDATAFORMAT DataRange;
 			public BOOL bFixedSizeSamples;
 			public BOOL bTemporalCompression;
@@ -3263,7 +3453,8 @@ namespace Win32
 			public KS_VIDEOINFOHEADER VideoInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_VIDEO2		{
+		public struct KS_DATARANGE_VIDEO2
+		{
 			public KSDATAFORMAT DataRange;
 			public BOOL bFixedSizeSamples;
 			public BOOL bTemporalCompression;
@@ -3273,7 +3464,8 @@ namespace Win32
 			public KS_VIDEOINFOHEADER2 VideoInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_MPEG1_VIDEO		{
+		public struct KS_DATARANGE_MPEG1_VIDEO
+		{
 			public KSDATAFORMAT DataRange;
 			public BOOL bFixedSizeSamples;
 			public BOOL bTemporalCompression;
@@ -3283,7 +3475,8 @@ namespace Win32
 			public KS_MPEG1VIDEOINFO VideoInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_MPEG2_VIDEO		{
+		public struct KS_DATARANGE_MPEG2_VIDEO
+		{
 			public KSDATAFORMAT DataRange;
 			public BOOL bFixedSizeSamples;
 			public BOOL bTemporalCompression;
@@ -3293,7 +3486,8 @@ namespace Win32
 			public KS_MPEGVIDEOINFO2 VideoInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_H264_VIDEO		{
+		public struct KS_DATARANGE_H264_VIDEO
+		{
 			public KSDATAFORMAT DataRange;
 			public BOOL bFixedSizeSamples;
 			public BOOL bTemporalCompression;
@@ -3303,13 +3497,15 @@ namespace Win32
 			public KS_H264VIDEOINFO VideoInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_IMAGE		{
+		public struct KS_DATARANGE_IMAGE
+		{
 			public KSDATAFORMAT DataRange;
 			public KS_VIDEO_STREAM_CONFIG_CAPS ConfigCaps;
 			public KS_BITMAPINFOHEADER ImageInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_VIDEO_PALETTE		{
+		public struct KS_DATARANGE_VIDEO_PALETTE
+		{
 			public KSDATAFORMAT DataRange;
 			public BOOL bFixedSizeSamples;
 			public BOOL bTemporalCompression;
@@ -3319,7 +3515,8 @@ namespace Win32
 			public KS_VIDEOINFO VideoInfo;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_VIDEO_VBI		{
+		public struct KS_DATARANGE_VIDEO_VBI
+		{
 			public KSDATAFORMAT DataRange;
 			public BOOL bFixedSizeSamples;
 			public BOOL bTemporalCompression;
@@ -3329,70 +3526,83 @@ namespace Win32
 			public KS_VBIINFOHEADER VBIInfoHeader;
 		}
 		[CRepr]
-		public struct KS_DATARANGE_ANALOGVIDEO		{
+		public struct KS_DATARANGE_ANALOGVIDEO
+		{
 			public KSDATAFORMAT DataRange;
 			public KS_AnalogVideoInfo AnalogVideoInfo;
 		}
 		[CRepr]
-		public struct VBICAP_PROPERTIES_PROTECTION_S		{
+		public struct VBICAP_PROPERTIES_PROTECTION_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StreamIndex;
 			public uint32 Status;
 		}
 		[CRepr]
-		public struct NABTSFEC_BUFFER		{
+		public struct NABTSFEC_BUFFER
+		{
 			public uint32 dataSize;
 			public uint16 groupID;
 			public uint16 Reserved;
 			public uint8[448] data;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_SCANLINES		{
+		public struct VBICODECFILTERING_SCANLINES
+		{
 			public uint32[32] DwordBitArray;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_NABTS_SUBSTREAMS		{
+		public struct VBICODECFILTERING_NABTS_SUBSTREAMS
+		{
 			public uint32[128] SubstreamMask;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_CC_SUBSTREAMS		{
+		public struct VBICODECFILTERING_CC_SUBSTREAMS
+		{
 			public uint32 SubstreamMask;
 		}
 		[CRepr]
-		public struct CC_BYTE_PAIR		{
+		public struct CC_BYTE_PAIR
+		{
 			public uint8[2] Decoded;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct CC_HW_FIELD		{
+		public struct CC_HW_FIELD
+		{
 			public VBICODECFILTERING_SCANLINES ScanlinesRequested;
 			public uint32 fieldFlags;
 			public int64 PictureNumber;
 			public CC_BYTE_PAIR[12] Lines;
 		}
 		[CRepr]
-		public struct NABTS_BUFFER_LINE		{
+		public struct NABTS_BUFFER_LINE
+		{
 			public uint8 Confidence;
 			public uint8[36] Bytes;
 		}
 		[CRepr]
-		public struct NABTS_BUFFER		{
+		public struct NABTS_BUFFER
+		{
 			public VBICODECFILTERING_SCANLINES ScanlinesRequested;
 			public int64 PictureNumber;
 			public NABTS_BUFFER_LINE[11] NabtsLines;
 		}
 		[CRepr]
-		public struct WST_BUFFER_LINE		{
+		public struct WST_BUFFER_LINE
+		{
 			public uint8 Confidence;
 			public uint8[42] Bytes;
 		}
 		[CRepr]
-		public struct WST_BUFFER		{
+		public struct WST_BUFFER
+		{
 			public VBICODECFILTERING_SCANLINES ScanlinesRequested;
 			public WST_BUFFER_LINE[17] WstLines;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_STATISTICS_COMMON		{
+		public struct VBICODECFILTERING_STATISTICS_COMMON
+		{
 			public uint32 InputSRBsProcessed;
 			public uint32 OutputSRBsProcessed;
 			public uint32 SRBsIgnored;
@@ -3409,7 +3619,8 @@ namespace Win32
 			public uint32 BytesOutput;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_STATISTICS_COMMON_PIN		{
+		public struct VBICODECFILTERING_STATISTICS_COMMON_PIN
+		{
 			public uint32 SRBsProcessed;
 			public uint32 SRBsIgnored;
 			public uint32 SRBsMissing;
@@ -3420,7 +3631,8 @@ namespace Win32
 			public uint32 BytesOutput;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_STATISTICS_NABTS		{
+		public struct VBICODECFILTERING_STATISTICS_NABTS
+		{
 			public VBICODECFILTERING_STATISTICS_COMMON Common;
 			public uint32 FECBundleBadLines;
 			public uint32 FECQueueOverflows;
@@ -3431,72 +3643,87 @@ namespace Win32
 			public uint32 FilteredLines;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_STATISTICS_NABTS_PIN		{
+		public struct VBICODECFILTERING_STATISTICS_NABTS_PIN
+		{
 			public VBICODECFILTERING_STATISTICS_COMMON_PIN Common;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_STATISTICS_CC		{
+		public struct VBICODECFILTERING_STATISTICS_CC
+		{
 			public VBICODECFILTERING_STATISTICS_COMMON Common;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_STATISTICS_CC_PIN		{
+		public struct VBICODECFILTERING_STATISTICS_CC_PIN
+		{
 			public VBICODECFILTERING_STATISTICS_COMMON_PIN Common;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_STATISTICS_TELETEXT		{
+		public struct VBICODECFILTERING_STATISTICS_TELETEXT
+		{
 			public VBICODECFILTERING_STATISTICS_COMMON Common;
 		}
 		[CRepr]
-		public struct VBICODECFILTERING_STATISTICS_TELETEXT_PIN		{
+		public struct VBICODECFILTERING_STATISTICS_TELETEXT_PIN
+		{
 			public VBICODECFILTERING_STATISTICS_COMMON_PIN Common;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_SCANLINES_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_SCANLINES_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_SCANLINES Scanlines;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_NABTS_SUBSTREAMS Substreams;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_CC_SUBSTREAMS Substreams;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_STATISTICS_COMMON Statistics;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_STATISTICS_COMMON_PIN Statistics;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_STATISTICS_NABTS Statistics;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_STATISTICS_NABTS_PIN Statistics;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_STATISTICS_CC Statistics;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S		{
+		public struct KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S
+		{
 			public KSIDENTIFIER Property;
 			public VBICODECFILTERING_STATISTICS_CC_PIN Statistics;
 		}
 		[CRepr]
-		public struct VRAM_SURFACE_INFO		{
+		public struct VRAM_SURFACE_INFO
+		{
 			public uint hSurface;
 			public int64 VramPhysicalAddress;
 			public uint32 cbCaptured;
@@ -3507,19 +3734,22 @@ namespace Win32
 			public uint64[16] ullReserved;
 		}
 		[CRepr]
-		public struct VRAM_SURFACE_INFO_PROPERTY_S		{
+		public struct VRAM_SURFACE_INFO_PROPERTY_S
+		{
 			public KSIDENTIFIER Property;
 			public VRAM_SURFACE_INFO* pVramSurfaceInfo;
 		}
 		[CRepr]
-		public struct SECURE_BUFFER_INFO		{
+		public struct SECURE_BUFFER_INFO
+		{
 			public Guid guidBufferIdentifier;
 			public uint32 cbBufferSize;
 			public uint32 cbCaptured;
 			public uint64[16] ullReserved;
 		}
 		[CRepr]
-		public struct KS_FRAME_INFO		{
+		public struct KS_FRAME_INFO
+		{
 			public uint32 ExtendedHeaderSize;
 			public uint32 dwFrameFlags;
 			public int64 PictureNumber;
@@ -3532,24 +3762,28 @@ namespace Win32
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 FrameCompletionNumber;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 Reserved3;
 					public uint32 Reserved4;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public int32 lSurfacePitch;
 				public uint32 Reserved1;
 			}
 		}
 		[CRepr]
-		public struct KS_VBI_FRAME_INFO		{
+		public struct KS_VBI_FRAME_INFO
+		{
 			public uint32 ExtendedHeaderSize;
 			public uint32 dwFrameFlags;
 			public int64 PictureNumber;
@@ -3559,34 +3793,40 @@ namespace Win32
 			public KS_VBIINFOHEADER VBIInfoHeader;
 		}
 		[CRepr]
-		public struct KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S		{
+		public struct KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S
+		{
 			public uint32 CX;
 			public uint32 CY;
 		}
 		[CRepr]
-		public struct KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S		{
+		public struct KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S
+		{
 			public uint32 InterleavedCapSupported;
 		}
 		[CRepr]
-		public struct KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S		{
+		public struct KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S
+		{
 			public uint32 InterleavedCapPossible;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOPROCAMP_S		{
+		public struct KSPROPERTY_VIDEOPROCAMP_S
+		{
 			public KSIDENTIFIER Property;
 			public int32 Value;
 			public uint32 Flags;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOPROCAMP_NODE_S		{
+		public struct KSPROPERTY_VIDEOPROCAMP_NODE_S
+		{
 			public KSP_NODE NodeProperty;
 			public int32 Value;
 			public uint32 Flags;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOPROCAMP_S2		{
+		public struct KSPROPERTY_VIDEOPROCAMP_S2
+		{
 			public KSIDENTIFIER Property;
 			public int32 Value1;
 			public uint32 Flags;
@@ -3594,7 +3834,8 @@ namespace Win32
 			public int32 Value2;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOPROCAMP_NODE_S2		{
+		public struct KSPROPERTY_VIDEOPROCAMP_NODE_S2
+		{
 			public KSP_NODE NodeProperty;
 			public int32 Value1;
 			public uint32 Flags;
@@ -3602,21 +3843,24 @@ namespace Win32
 			public int32 Value2;
 		}
 		[CRepr]
-		public struct KSPROPERTY_SELECTOR_S		{
+		public struct KSPROPERTY_SELECTOR_S
+		{
 			public KSIDENTIFIER Property;
 			public int32 Value;
 			public uint32 Flags;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_SELECTOR_NODE_S		{
+		public struct KSPROPERTY_SELECTOR_NODE_S
+		{
 			public KSP_NODE NodeProperty;
 			public int32 Value;
 			public uint32 Flags;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_CAPS_S		{
+		public struct KSPROPERTY_TUNER_CAPS_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 ModesSupported;
 			public KSIDENTIFIER VideoMedium;
@@ -3624,12 +3868,14 @@ namespace Win32
 			public KSIDENTIFIER RadioAudioMedium;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_IF_MEDIUM_S		{
+		public struct KSPROPERTY_TUNER_IF_MEDIUM_S
+		{
 			public KSIDENTIFIER Property;
 			public KSIDENTIFIER IFMedium;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_MODE_CAPS_S		{
+		public struct KSPROPERTY_TUNER_MODE_CAPS_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 Mode;
 			public uint32 StandardsSupported;
@@ -3641,12 +3887,14 @@ namespace Win32
 			public uint32 Strategy;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_MODE_S		{
+		public struct KSPROPERTY_TUNER_MODE_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 Mode;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_FREQUENCY_S		{
+		public struct KSPROPERTY_TUNER_FREQUENCY_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 Frequency;
 			public uint32 LastFrequency;
@@ -3657,22 +3905,26 @@ namespace Win32
 			public uint32 Country;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_STANDARD_S		{
+		public struct KSPROPERTY_TUNER_STANDARD_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 Standard;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_STANDARD_MODE_S		{
+		public struct KSPROPERTY_TUNER_STANDARD_MODE_S
+		{
 			public KSIDENTIFIER Property;
 			public BOOL AutoDetect;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_INPUT_S		{
+		public struct KSPROPERTY_TUNER_INPUT_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 InputIndex;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_STATUS_S		{
+		public struct KSPROPERTY_TUNER_STATUS_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 CurrentFrequency;
 			public uint32 PLLOffset;
@@ -3680,7 +3932,8 @@ namespace Win32
 			public uint32 Busy;
 		}
 		[CRepr]
-		public struct TUNER_ANALOG_CAPS_S		{
+		public struct TUNER_ANALOG_CAPS_S
+		{
 			public uint32 Mode;
 			public uint32 StandardsSupported;
 			public uint32 MinFrequency;
@@ -3691,7 +3944,8 @@ namespace Win32
 			public uint32 FineTuneSensingRange;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_SCAN_CAPS_S		{
+		public struct KSPROPERTY_TUNER_SCAN_CAPS_S
+		{
 			public KSIDENTIFIER Property;
 			public BOOL fSupportsHardwareAssistedScanning;
 			public uint32 SupportedBroadcastStandards;
@@ -3699,33 +3953,38 @@ namespace Win32
 			public uint32 lengthofBucket;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S		{
+		public struct KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S
+		{
 			public KSIDENTIFIER Property;
 			public Guid NetworkType;
 			public uint32 BufferSize;
 			public void* NetworkTunerCapabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TUNER_SCAN_STATUS_S		{
+		public struct KSPROPERTY_TUNER_SCAN_STATUS_S
+		{
 			public KSIDENTIFIER Property;
 			public _TunerDecoderLockType LockStatus;
 			public uint32 CurrentFrequency;
 		}
 		[CRepr]
-		public struct KSEVENT_TUNER_INITIATE_SCAN_S		{
+		public struct KSEVENT_TUNER_INITIATE_SCAN_S
+		{
 			public KSEVENTDATA EventData;
 			public uint32 StartFrequency;
 			public uint32 EndFrequency;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOENCODER_S		{
+		public struct KSPROPERTY_VIDEOENCODER_S
+		{
 			public KSIDENTIFIER Property;
 			public int32 Value;
 			public uint32 Flags;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEODECODER_CAPS_S		{
+		public struct KSPROPERTY_VIDEODECODER_CAPS_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StandardsSupported;
 			public uint32 Capabilities;
@@ -3733,25 +3992,29 @@ namespace Win32
 			public uint32 HSyncPerVSync;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEODECODER_STATUS_S		{
+		public struct KSPROPERTY_VIDEODECODER_STATUS_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 NumberOfLines;
 			public uint32 SignalLocked;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEODECODER_STATUS2_S		{
+		public struct KSPROPERTY_VIDEODECODER_STATUS2_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 NumberOfLines;
 			public uint32 SignalLocked;
 			public uint32 ChromaLock;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEODECODER_S		{
+		public struct KSPROPERTY_VIDEODECODER_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 Value;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_S_EX		{
+		public struct KSPROPERTY_CAMERACONTROL_S_EX
+		{
 			public KSIDENTIFIER Property;
 			public int32 Value;
 			public uint32 Flags;
@@ -3759,21 +4022,24 @@ namespace Win32
 			public RECT FocusRect;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_S		{
+		public struct KSPROPERTY_CAMERACONTROL_S
+		{
 			public KSIDENTIFIER Property;
 			public int32 Value;
 			public uint32 Flags;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_NODE_S		{
+		public struct KSPROPERTY_CAMERACONTROL_NODE_S
+		{
 			public KSP_NODE NodeProperty;
 			public int32 Value;
 			public uint32 Flags;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_S2		{
+		public struct KSPROPERTY_CAMERACONTROL_S2
+		{
 			public KSIDENTIFIER Property;
 			public int32 Value1;
 			public uint32 Flags;
@@ -3781,7 +4047,8 @@ namespace Win32
 			public int32 Value2;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_NODE_S2		{
+		public struct KSPROPERTY_CAMERACONTROL_NODE_S2
+		{
 			public KSP_NODE NodeProperty;
 			public int32 Value1;
 			public uint32 Flags;
@@ -3789,31 +4056,36 @@ namespace Win32
 			public int32 Value2;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S		{
+		public struct KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S
+		{
 			public KSIDENTIFIER Property;
 			public int32 lOcularFocalLength;
 			public int32 lObjectiveFocalLengthMin;
 			public int32 lObjectiveFocalLengthMax;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S		{
+		public struct KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S
+		{
 			public KSNODEPROPERTY NodeProperty;
 			public int32 lOcularFocalLength;
 			public int32 lObjectiveFocalLengthMin;
 			public int32 lObjectiveFocalLengthMax;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_FLASH_S		{
+		public struct KSPROPERTY_CAMERACONTROL_FLASH_S
+		{
 			public uint32 Flash;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S		{
+		public struct KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S
+		{
 			public uint32 VideoStabilizationMode;
 			public uint32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S		{
+		public struct KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S
+		{
 			public RECT FocusRect;
 			public BOOL AutoFocusLock;
 			public BOOL AutoExposureLock;
@@ -3821,18 +4093,21 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 Capabilities;
 				public uint32 Configuration;
 			}
 		}
 		[CRepr]
-		public struct KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S		{
+		public struct KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S
+		{
 			public uint32 Capabilities;
 			public uint32 Reserved0;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_HEADER		{
+		public struct KSCAMERA_EXTENDEDPROP_HEADER
+		{
 			public uint32 Version;
 			public uint32 PinId;
 			public uint32 Size;
@@ -3841,11 +4116,13 @@ namespace Win32
 			public uint64 Capability;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_VALUE		{
+		public struct KSCAMERA_EXTENDEDPROP_VALUE
+		{
 			public _Value_e__Union Value;
 			
 			[CRepr, Union]
-			public struct _Value_e__Union			{
+			public struct _Value_e__Union
+			{
 				public double dbl;
 				public uint64 ull;
 				public uint32 ul;
@@ -3855,7 +4132,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct KSCAMERA_MAXVIDEOFPS_FORPHOTORES		{
+		public struct KSCAMERA_MAXVIDEOFPS_FORPHOTORES
+		{
 			public uint32 PhotoResWidth;
 			public uint32 PhotoResHeight;
 			public uint32 PreviewFPSNum;
@@ -3864,14 +4142,16 @@ namespace Win32
 			public uint32 CaptureFPSDenom;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_PHOTOMODE		{
+		public struct KSCAMERA_EXTENDEDPROP_PHOTOMODE
+		{
 			public uint32 RequestedHistoryFrames;
 			public uint32 MaxHistoryFrames;
 			public uint32 SubMode;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING		{
+		public struct KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING
+		{
 			public uint32 Mode;
 			public int32 Min;
 			public int32 Max;
@@ -3880,7 +4160,8 @@ namespace Win32
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_EVCOMPENSATION		{
+		public struct KSCAMERA_EXTENDEDPROP_EVCOMPENSATION
+		{
 			public uint32 Mode;
 			public int32 Min;
 			public int32 Max;
@@ -3888,43 +4169,50 @@ namespace Win32
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_FIELDOFVIEW		{
+		public struct KSCAMERA_EXTENDEDPROP_FIELDOFVIEW
+		{
 			public uint32 NormalizedFocalLengthX;
 			public uint32 NormalizedFocalLengthY;
 			public uint32 Flag;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_CAMERAOFFSET		{
+		public struct KSCAMERA_EXTENDEDPROP_CAMERAOFFSET
+		{
 			public int32 PitchAngle;
 			public int32 YawAngle;
 			public uint32 Flag;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_METADATAINFO		{
+		public struct KSCAMERA_EXTENDEDPROP_METADATAINFO
+		{
 			public int32 BufferAlignment;
 			public uint32 MaxMetadataBufferSize;
 		}
 		[CRepr]
-		public struct KSCAMERA_METADATA_ITEMHEADER		{
+		public struct KSCAMERA_METADATA_ITEMHEADER
+		{
 			public uint32 MetadataId;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct KSCAMERA_METADATA_PHOTOCONFIRMATION		{
+		public struct KSCAMERA_METADATA_PHOTOCONFIRMATION
+		{
 			public KSCAMERA_METADATA_ITEMHEADER Header;
 			public uint32 PhotoConfirmationIndex;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_METADATA_FRAMEILLUMINATION		{
+		public struct KSCAMERA_METADATA_FRAMEILLUMINATION
+		{
 			public KSCAMERA_METADATA_ITEMHEADER Header;
 			public uint32 Flags;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_METADATA_CAPTURESTATS		{
+		public struct KSCAMERA_METADATA_CAPTURESTATS
+		{
 			public KSCAMERA_METADATA_ITEMHEADER Header;
 			public uint32 Flags;
 			public uint32 Reserved;
@@ -3942,85 +4230,99 @@ namespace Win32
 			public uint64 SensorFramerate;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER		{
+		public struct KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER
+		{
 			public uint32 Size;
 			public uint32 ConfigCapCount;
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS		{
+		public struct KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS
+		{
 			public uint32 ControlId;
 			public uint32 MaxNumberOfROIs;
 			public uint64 Capability;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER		{
+		public struct KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER
+		{
 			public uint32 Size;
 			public uint32 ControlCount;
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL		{
+		public struct KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL
+		{
 			public uint32 ControlId;
 			public uint32 ROICount;
 			public uint32 Result;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_ROI_INFO		{
+		public struct KSCAMERA_EXTENDEDPROP_ROI_INFO
+		{
 			public RECT Region;
 			public uint64 Flags;
 			public int32 Weight;
 			public int32 RegionOfInterestType;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE		{
+		public struct KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE
+		{
 			public KSCAMERA_EXTENDEDPROP_ROI_INFO ROIInfo;
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE		{
+		public struct KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE
+		{
 			public KSCAMERA_EXTENDEDPROP_ROI_INFO ROIInfo;
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_ROI_FOCUS		{
+		public struct KSCAMERA_EXTENDEDPROP_ROI_FOCUS
+		{
 			public KSCAMERA_EXTENDEDPROP_ROI_INFO ROIInfo;
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER		{
+		public struct KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER
+		{
 			public uint32 Size;
 			public uint32 Type;
 			public uint64 Flags;
 		}
 		[CRepr]
-		public struct KSCAMERA_PERFRAMESETTING_CAP_HEADER		{
+		public struct KSCAMERA_PERFRAMESETTING_CAP_HEADER
+		{
 			public uint32 Size;
 			public uint32 ItemCount;
 			public uint64 Flags;
 		}
 		[CRepr]
-		public struct KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM		{
+		public struct KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM
+		{
 			public uint32 Size;
 			public uint32 Reserved;
 			public Guid Id;
 		}
 		[CRepr]
-		public struct KSCAMERA_PERFRAMESETTING_ITEM_HEADER		{
+		public struct KSCAMERA_PERFRAMESETTING_ITEM_HEADER
+		{
 			public uint32 Size;
 			public uint32 Type;
 			public uint64 Flags;
 		}
 		[CRepr]
-		public struct KSCAMERA_PERFRAMESETTING_FRAME_HEADER		{
+		public struct KSCAMERA_PERFRAMESETTING_FRAME_HEADER
+		{
 			public uint32 Size;
 			public uint32 Id;
 			public uint32 ItemCount;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_PERFRAMESETTING_HEADER		{
+		public struct KSCAMERA_PERFRAMESETTING_HEADER
+		{
 			public uint32 Size;
 			public uint32 FrameCount;
 			public Guid Id;
@@ -4029,24 +4331,28 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING		{
+		public struct KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING
+		{
 			public int32 OriginX;
 			public int32 OriginY;
 			public int32 WindowSize;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_METADATA_DIGITALWINDOW		{
+		public struct KSCAMERA_METADATA_DIGITALWINDOW
+		{
 			public KSCAMERA_METADATA_ITEMHEADER Header;
 			public KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING Window;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER		{
+		public struct KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER
+		{
 			public uint32 Size;
 			public uint32 Count;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS		{
+		public struct KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS
+		{
 			public int32 ResolutionX;
 			public int32 ResolutionY;
 			public int32 PorchTop;
@@ -4059,20 +4365,23 @@ namespace Win32
 			public int32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS		{
+		public struct KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS
+		{
 			public SIZE Resolution;
 			public _MaxFrameRate_e__Struct MaxFrameRate;
 			public SIZE MaskResolution;
 			public Guid SubType;
 			
 			[CRepr]
-			public struct _MaxFrameRate_e__Struct			{
+			public struct _MaxFrameRate_e__Struct
+			{
 				public int32 Numerator;
 				public int32 Denominator;
 			}
 		}
 		[CRepr]
-		public struct KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK		{
+		public struct KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK
+		{
 			public KSCAMERA_METADATA_ITEMHEADER Header;
 			public RECT MaskCoverageBoundingBox;
 			public SIZE MaskResolution;
@@ -4080,13 +4389,15 @@ namespace Win32
 			public uint8[0] MaskData;
 		}
 		[CRepr]
-		public struct KSCAMERA_EXTENDEDPROP_PROFILE		{
+		public struct KSCAMERA_EXTENDEDPROP_PROFILE
+		{
 			public Guid ProfileId;
 			public uint32 Index;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSCAMERA_PROFILE_MEDIAINFO		{
+		public struct KSCAMERA_PROFILE_MEDIAINFO
+		{
 			public _Resolution_e__Struct Resolution;
 			public _MaxFrameRate_e__Struct MaxFrameRate;
 			public uint64 Flags;
@@ -4096,61 +4407,71 @@ namespace Win32
 			public uint32 Data3;
 			
 			[CRepr]
-			public struct _Resolution_e__Struct			{
+			public struct _Resolution_e__Struct
+			{
 				public uint32 X;
 				public uint32 Y;
 			}
 			[CRepr]
-			public struct _MaxFrameRate_e__Struct			{
+			public struct _MaxFrameRate_e__Struct
+			{
 				public uint32 Numerator;
 				public uint32 Denominator;
 			}
 		}
 		[CRepr]
-		public struct KSCAMERA_PROFILE_PININFO		{
+		public struct KSCAMERA_PROFILE_PININFO
+		{
 			public Guid PinCategory;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 MediaInfoCount;
 			public KSCAMERA_PROFILE_MEDIAINFO* MediaInfos;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Reserved;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 PinIndex;
 					public uint16 ProfileSensorType;
 				}
 			}
 		}
 		[CRepr]
-		public struct KSCAMERA_PROFILE_INFO		{
+		public struct KSCAMERA_PROFILE_INFO
+		{
 			public Guid ProfileId;
 			public uint32 Index;
 			public uint32 PinCount;
 			public KSCAMERA_PROFILE_PININFO* Pins;
 		}
 		[CRepr]
-		public struct KSCAMERA_PROFILE_CONCURRENCYINFO		{
+		public struct KSCAMERA_PROFILE_CONCURRENCYINFO
+		{
 			public Guid ReferenceGuid;
 			public uint32 Reserved;
 			public uint32 ProfileCount;
 			public KSCAMERA_PROFILE_INFO* Profiles;
 		}
 		[CRepr]
-		public struct KSDEVICE_PROFILE_INFO		{
+		public struct KSDEVICE_PROFILE_INFO
+		{
 			public uint32 Type;
 			public uint32 Size;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Camera_e__Struct Camera;
 				
 				[CRepr]
-				public struct _Camera_e__Struct				{
+				public struct _Camera_e__Struct
+				{
 					public KSCAMERA_PROFILE_INFO Info;
 					public uint32 Reserved;
 					public uint32 ConcurrencyCount;
@@ -4159,19 +4480,22 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WNF_KSCAMERA_STREAMSTATE_INFO		{
+		public struct WNF_KSCAMERA_STREAMSTATE_INFO
+		{
 			public uint32 ProcessId;
 			public uint32 SessionId;
 			public uint32 StreamState;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER		{
+		public struct KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER
+		{
 			public uint32 Size;
 			public KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE Type;
 		}
 		[CRepr]
-		public struct KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO		{
+		public struct KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO
+		{
 			public uint32 MetadataItems;
 			public uint32 Size;
 			public BOOL PTZStatus;
@@ -4180,12 +4504,14 @@ namespace Win32
 			public BOOL Reserved;
 		}
 		[CRepr]
-		public struct KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO		{
+		public struct KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO
+		{
 			public KSCAMERA_METADATA_ITEMHEADER Header;
 			public char16[0] EventFilter;
 		}
 		[CRepr]
-		public struct DEVCAPS		{
+		public struct DEVCAPS
+		{
 			public int32 CanRecord;
 			public int32 CanRecordStrobe;
 			public int32 HasAudio;
@@ -4211,12 +4537,14 @@ namespace Win32
 			public int32 SimulatedHardware;
 		}
 		[CRepr]
-		public struct KSPROPERTY_EXTDEVICE_S		{
+		public struct KSPROPERTY_EXTDEVICE_S
+		{
 			public KSIDENTIFIER Property;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public DEVCAPS Capabilities;
 				public uint32 DevPort;
 				public uint32 PowerState;
@@ -4225,7 +4553,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct TRANSPORTSTATUS		{
+		public struct TRANSPORTSTATUS
+		{
 			public int32 Mode;
 			public int32 LastError;
 			public int32 RecordInhibit;
@@ -4241,7 +4570,8 @@ namespace Win32
 			public int32 NotifyOn;
 		}
 		[CRepr]
-		public struct TRANSPORTBASICPARMS		{
+		public struct TRANSPORTBASICPARMS
+		{
 			public int32 TimeFormat;
 			public int32 TimeReference;
 			public int32 Superimpose;
@@ -4274,12 +4604,14 @@ namespace Win32
 			public int32 TimerStopTime;
 		}
 		[CRepr]
-		public struct TRANSPORTVIDEOPARMS		{
+		public struct TRANSPORTVIDEOPARMS
+		{
 			public int32 OutputMode;
 			public int32 Input;
 		}
 		[CRepr]
-		public struct TRANSPORTAUDIOPARMS		{
+		public struct TRANSPORTAUDIOPARMS
+		{
 			public int32 EnableOutput;
 			public int32 EnableRecord;
 			public int32 EnableSelsync;
@@ -4287,23 +4619,27 @@ namespace Win32
 			public int32 MonitorSource;
 		}
 		[CRepr]
-		public struct MEDIUM_INFO		{
+		public struct MEDIUM_INFO
+		{
 			public BOOL MediaPresent;
 			public uint32 MediaType;
 			public BOOL RecordInhibit;
 		}
 		[CRepr]
-		public struct TRANSPORT_STATE		{
+		public struct TRANSPORT_STATE
+		{
 			public uint32 Mode;
 			public uint32 State;
 		}
 		[CRepr]
-		public struct KSPROPERTY_EXTXPORT_S		{
+		public struct KSPROPERTY_EXTXPORT_S
+		{
 			public KSIDENTIFIER Property;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public uint32 Capabilities;
 				public uint32 SignalMode;
 				public uint32 LoadMedium;
@@ -4315,12 +4651,14 @@ namespace Win32
 				public _RawAVC_e__Struct RawAVC;
 				
 				[CRepr]
-				public struct _RawAVC_e__Struct				{
+				public struct _RawAVC_e__Struct
+				{
 					public uint32 PayloadSize;
 					public uint8[512] Payload;
 				}
 				[CRepr]
-				public struct _Timecode_e__Struct				{
+				public struct _Timecode_e__Struct
+				{
 					public uint8 frame;
 					public uint8 second;
 					public uint8 minute;
@@ -4329,12 +4667,14 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct KSPROPERTY_EXTXPORT_NODE_S		{
+		public struct KSPROPERTY_EXTXPORT_NODE_S
+		{
 			public KSP_NODE NodeProperty;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public uint32 Capabilities;
 				public uint32 SignalMode;
 				public uint32 LoadMedium;
@@ -4346,12 +4686,14 @@ namespace Win32
 				public _RawAVC_e__Struct RawAVC;
 				
 				[CRepr]
-				public struct _RawAVC_e__Struct				{
+				public struct _RawAVC_e__Struct
+				{
 					public uint32 PayloadSize;
 					public uint8[512] Payload;
 				}
 				[CRepr]
-				public struct _Timecode_e__Struct				{
+				public struct _Timecode_e__Struct
+				{
 					public uint8 frame;
 					public uint8 second;
 					public uint8 minute;
@@ -4360,23 +4702,27 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct KSPROPERTY_TIMECODE_S		{
+		public struct KSPROPERTY_TIMECODE_S
+		{
 			public KSIDENTIFIER Property;
 			public TIMECODE_SAMPLE TimecodeSamp;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TIMECODE_NODE_S		{
+		public struct KSPROPERTY_TIMECODE_NODE_S
+		{
 			public KSP_NODE NodeProperty;
 			public TIMECODE_SAMPLE TimecodeSamp;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CROSSBAR_CAPS_S		{
+		public struct KSPROPERTY_CROSSBAR_CAPS_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 NumberOfInputs;
 			public uint32 NumberOfOutputs;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CROSSBAR_PININFO_S		{
+		public struct KSPROPERTY_CROSSBAR_PININFO_S
+		{
 			public KSIDENTIFIER Property;
 			public KSPIN_DATAFLOW Direction;
 			public uint32 Index;
@@ -4385,32 +4731,37 @@ namespace Win32
 			public KSIDENTIFIER Medium;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CROSSBAR_ROUTE_S		{
+		public struct KSPROPERTY_CROSSBAR_ROUTE_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 IndexInputPin;
 			public uint32 IndexOutputPin;
 			public uint32 CanRoute;
 		}
 		[CRepr]
-		public struct KSPROPERTY_CROSSBAR_ACTIVE_S		{
+		public struct KSPROPERTY_CROSSBAR_ACTIVE_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 IndexInputPin;
 			public uint32 Active;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TVAUDIO_CAPS_S		{
+		public struct KSPROPERTY_TVAUDIO_CAPS_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 Capabilities;
 			public KSIDENTIFIER InputMedium;
 			public KSIDENTIFIER OutputMedium;
 		}
 		[CRepr]
-		public struct KSPROPERTY_TVAUDIO_S		{
+		public struct KSPROPERTY_TVAUDIO_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 Mode;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S		{
+		public struct KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StreamIndex;
 			public int32 DefaultKeyFrameRate;
@@ -4420,39 +4771,45 @@ namespace Win32
 			public int32 Capabilities;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOCOMPRESSION_S		{
+		public struct KSPROPERTY_VIDEOCOMPRESSION_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StreamIndex;
 			public int32 Value;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOCOMPRESSION_S1		{
+		public struct KSPROPERTY_VIDEOCOMPRESSION_S1
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StreamIndex;
 			public int32 Value;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct KSDISPLAYCHANGE		{
+		public struct KSDISPLAYCHANGE
+		{
 			public uint32 PelsWidth;
 			public uint32 PelsHeight;
 			public uint32 BitsPerPel;
 			public char16[0] DeviceID;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOCONTROL_CAPS_S		{
+		public struct KSPROPERTY_VIDEOCONTROL_CAPS_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StreamIndex;
 			public uint32 VideoControlCaps;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOCONTROL_MODE_S		{
+		public struct KSPROPERTY_VIDEOCONTROL_MODE_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StreamIndex;
 			public int32 Mode;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S		{
+		public struct KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StreamIndex;
 			public uint32 RangeIndex;
@@ -4461,21 +4818,24 @@ namespace Win32
 			public int64 CurrentMaxAvailableFrameRate;
 		}
 		[CRepr]
-		public struct KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S		{
+		public struct KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S
+		{
 			public KSIDENTIFIER Property;
 			public uint32 StreamIndex;
 			public uint32 RangeIndex;
 			public SIZE Dimensions;
 		}
 		[CRepr]
-		public struct KSPROPERTY_DROPPEDFRAMES_CURRENT_S		{
+		public struct KSPROPERTY_DROPPEDFRAMES_CURRENT_S
+		{
 			public KSIDENTIFIER Property;
 			public int64 PictureNumber;
 			public int64 DropCount;
 			public uint32 AverageFrameSize;
 		}
 		[CRepr]
-		public struct KS_AMVPDIMINFO		{
+		public struct KS_AMVPDIMINFO
+		{
 			public uint32 dwFieldWidth;
 			public uint32 dwFieldHeight;
 			public uint32 dwVBIWidth;
@@ -4483,7 +4843,8 @@ namespace Win32
 			public RECT rcValidRegion;
 		}
 		[CRepr]
-		public struct KS_AMVPDATAINFO		{
+		public struct KS_AMVPDATAINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwMicrosecondsPerField;
 			public KS_AMVPDIMINFO amvpDimInfo;
@@ -4499,46 +4860,54 @@ namespace Win32
 			public uint32 dwReserved1;
 		}
 		[CRepr]
-		public struct KS_AMVPSIZE		{
+		public struct KS_AMVPSIZE
+		{
 			public uint32 dwWidth;
 			public uint32 dwHeight;
 		}
 		[CRepr]
-		public struct KSVPMAXPIXELRATE		{
+		public struct KSVPMAXPIXELRATE
+		{
 			public KS_AMVPSIZE Size;
 			public uint32 MaxPixelsPerSecond;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct KSVPSIZE_PROP		{
+		public struct KSVPSIZE_PROP
+		{
 			public KSIDENTIFIER Property;
 			public KS_AMVPSIZE Size;
 		}
 		[CRepr]
-		public struct KSVPSURFACEPARAMS		{
+		public struct KSVPSURFACEPARAMS
+		{
 			public uint32 dwPitch;
 			public uint32 dwXOrigin;
 			public uint32 dwYOrigin;
 		}
 		[CRepr]
-		public struct KSGOP_USERDATA		{
+		public struct KSGOP_USERDATA
+		{
 			public uint32 sc;
 			public uint32 reserved1;
 			public uint8 cFields;
 			public CHAR[3] l21Data;
 		}
 		[CRepr]
-		public struct KS_AM_SimpleRateChange		{
+		public struct KS_AM_SimpleRateChange
+		{
 			public int64 StartTime;
 			public int32 Rate;
 		}
 		[CRepr]
-		public struct KS_AM_ExactRateChange		{
+		public struct KS_AM_ExactRateChange
+		{
 			public int64 OutputZeroTime;
 			public int32 Rate;
 		}
 		[CRepr]
-		public struct KSJACK_DESCRIPTION		{
+		public struct KSJACK_DESCRIPTION
+		{
 			public uint32 ChannelMapping;
 			public uint32 Color;
 			public EPcxConnectionType ConnectionType;
@@ -4548,7 +4917,8 @@ namespace Win32
 			public BOOL IsConnected;
 		}
 		[CRepr]
-		public struct KSJACK_SINK_INFORMATION		{
+		public struct KSJACK_SINK_INFORMATION
+		{
 			public KSJACK_SINK_CONNECTIONTYPE ConnType;
 			public uint16 ManufacturerId;
 			public uint16 ProductId;
@@ -4560,39 +4930,46 @@ namespace Win32
 			public LUID PortId;
 		}
 		[CRepr]
-		public struct KSJACK_DESCRIPTION2		{
+		public struct KSJACK_DESCRIPTION2
+		{
 			public uint32 DeviceStateInfo;
 			public uint32 JackCapabilities;
 		}
 		[CRepr]
-		public struct KSAUDIOENGINE_DESCRIPTOR		{
+		public struct KSAUDIOENGINE_DESCRIPTOR
+		{
 			public uint32 nHostPinId;
 			public uint32 nOffloadPinId;
 			public uint32 nLoopbackPinId;
 		}
 		[CRepr]
-		public struct KSAUDIOENGINE_BUFFER_SIZE_RANGE		{
+		public struct KSAUDIOENGINE_BUFFER_SIZE_RANGE
+		{
 			public uint32 MinBufferBytes;
 			public uint32 MaxBufferBytes;
 		}
 		[CRepr]
-		public struct KSAUDIOENGINE_VOLUMELEVEL		{
+		public struct KSAUDIOENGINE_VOLUMELEVEL
+		{
 			public int32 TargetVolume;
 			public AUDIO_CURVE_TYPE CurveType;
 			public uint64 CurveDuration;
 		}
 		[CRepr]
-		public struct KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE		{
+		public struct KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE
+		{
 			public KSATTRIBUTE AttributeHeader;
 			public Guid SignalProcessingMode;
 		}
 		[CRepr]
-		public struct AUDIORESOURCEMANAGEMENT_RESOURCEGROUP		{
+		public struct AUDIORESOURCEMANAGEMENT_RESOURCEGROUP
+		{
 			public BOOL ResourceGroupAcquired;
 			public char16[256] ResourceGroupName;
 		}
 		[CRepr]
-		public struct KSAUDIOMODULE_DESCRIPTOR		{
+		public struct KSAUDIOMODULE_DESCRIPTOR
+		{
 			public Guid ClassId;
 			public uint32 InstanceId;
 			public uint32 VersionMajor;
@@ -4600,22 +4977,26 @@ namespace Win32
 			public char16[128] Name;
 		}
 		[CRepr]
-		public struct KSAUDIOMODULE_PROPERTY		{
+		public struct KSAUDIOMODULE_PROPERTY
+		{
 			public KSIDENTIFIER Property;
 			public Guid ClassId;
 			public uint32 InstanceId;
 		}
 		[CRepr]
-		public struct KSAUDIOMODULE_NOTIFICATION		{
+		public struct KSAUDIOMODULE_NOTIFICATION
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _ProviderId_e__Struct ProviderId;
 				public int64 Alignment;
 				
 				[CRepr]
-				public struct _ProviderId_e__Struct				{
+				public struct _ProviderId_e__Struct
+				{
 					public Guid DeviceId;
 					public Guid ClassId;
 					public uint32 InstanceId;
@@ -4624,19 +5005,22 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct OPTIMAL_WEIGHT_TOTALS		{
+		public struct OPTIMAL_WEIGHT_TOTALS
+		{
 			public int64 MinTotalNominator;
 			public int64 MaxTotalNominator;
 			public int64 TotalDenominator;
 		}
 		[CRepr]
-		public struct PIPE_DIMENSIONS		{
+		public struct PIPE_DIMENSIONS
+		{
 			public KS_COMPRESSION AllocatorPin;
 			public KS_COMPRESSION MaxExpansionPin;
 			public KS_COMPRESSION EndPin;
 		}
 		[CRepr]
-		public struct PIPE_TERMINATION		{
+		public struct PIPE_TERMINATION
+		{
 			public uint32 Flags;
 			public uint32 OutsideFactors;
 			public uint32 Weigth;
@@ -4645,7 +5029,8 @@ namespace Win32
 			public KS_COMPRESSION Compression;
 		}
 		[CRepr]
-		public struct ALLOCATOR_PROPERTIES_EX		{
+		public struct ALLOCATOR_PROPERTIES_EX
+		{
 			public int32 cBuffers;
 			public int32 cbBuffer;
 			public int32 cbAlign;

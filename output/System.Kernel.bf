@@ -93,116 +93,138 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SLIST_ENTRY		{
+		public struct SLIST_ENTRY
+		{
 			public SLIST_ENTRY* Next;
 		}
 		[CRepr, Union]
-		public struct SLIST_HEADER		{
+		public struct SLIST_HEADER
+		{
 			public _Anonymous_e__Struct Anonymous;
 			public _HeaderArm64_e__Struct HeaderArm64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct			{
+			public struct _Anonymous_e__Struct
+			{
 				public uint64 Alignment;
 				public uint64 Region;
 			}
 			[CRepr]
-			public struct _HeaderArm64_e__Struct			{
+			public struct _HeaderArm64_e__Struct
+			{
 				public uint64 _bitfield1;
 				public uint64 _bitfield2;
 			}
 		}
 		[CRepr]
-		public struct QUAD		{
+		public struct QUAD
+		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public int64 UseThisFieldToCopy;
 				public double DoNotUseThisField;
 			}
 		}
 		[CRepr]
-		public struct PROCESSOR_NUMBER		{
+		public struct PROCESSOR_NUMBER
+		{
 			public uint16 Group;
 			public uint8 Number;
 			public uint8 Reserved;
 		}
 		[CRepr]
-		public struct STRING		{
+		public struct STRING
+		{
 			public uint16 Length;
 			public uint16 MaximumLength;
 			public PSTR Buffer;
 		}
 		[CRepr]
-		public struct CSTRING		{
+		public struct CSTRING
+		{
 			public uint16 Length;
 			public uint16 MaximumLength;
 			public PSTR Buffer;
 		}
 		[CRepr]
-		public struct LIST_ENTRY		{
+		public struct LIST_ENTRY
+		{
 			public LIST_ENTRY* Flink;
 			public LIST_ENTRY* Blink;
 		}
 		[CRepr]
-		public struct SINGLE_LIST_ENTRY		{
+		public struct SINGLE_LIST_ENTRY
+		{
 			public SINGLE_LIST_ENTRY* Next;
 		}
 		[CRepr]
-		public struct RTL_BALANCED_NODE		{
+		public struct RTL_BALANCED_NODE
+		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint8 _bitfield;
 				public uint ParentValue;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public RTL_BALANCED_NODE*[2] Children;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public RTL_BALANCED_NODE* Left;
 					public RTL_BALANCED_NODE* Right;
 				}
 			}
 		}
 		[CRepr]
-		public struct LIST_ENTRY32		{
+		public struct LIST_ENTRY32
+		{
 			public uint32 Flink;
 			public uint32 Blink;
 		}
 		[CRepr]
-		public struct LIST_ENTRY64		{
+		public struct LIST_ENTRY64
+		{
 			public uint64 Flink;
 			public uint64 Blink;
 		}
 		[CRepr]
-		public struct SINGLE_LIST_ENTRY32		{
+		public struct SINGLE_LIST_ENTRY32
+		{
 			public uint32 Next;
 		}
 		[CRepr]
-		public struct WNF_STATE_NAME		{
+		public struct WNF_STATE_NAME
+		{
 			public uint32[2] Data;
 		}
 		[CRepr]
-		public struct STRING32		{
+		public struct STRING32
+		{
 			public uint16 Length;
 			public uint16 MaximumLength;
 			public uint32 Buffer;
 		}
 		[CRepr]
-		public struct STRING64		{
+		public struct STRING64
+		{
 			public uint16 Length;
 			public uint16 MaximumLength;
 			public uint64 Buffer;
 		}
 		[CRepr]
-		public struct OBJECT_ATTRIBUTES64		{
+		public struct OBJECT_ATTRIBUTES64
+		{
 			public uint32 Length;
 			public uint64 RootDirectory;
 			public uint64 ObjectName;
@@ -211,7 +233,8 @@ namespace Win32
 			public uint64 SecurityQualityOfService;
 		}
 		[CRepr]
-		public struct OBJECT_ATTRIBUTES32		{
+		public struct OBJECT_ATTRIBUTES32
+		{
 			public uint32 Length;
 			public uint32 RootDirectory;
 			public uint32 ObjectName;
@@ -220,17 +243,20 @@ namespace Win32
 			public uint32 SecurityQualityOfService;
 		}
 		[CRepr]
-		public struct OBJECTID		{
+		public struct OBJECTID
+		{
 			public Guid Lineage;
 			public uint32 Uniquifier;
 		}
 		[CRepr]
-		public struct EXCEPTION_REGISTRATION_RECORD		{
+		public struct EXCEPTION_REGISTRATION_RECORD
+		{
 			public EXCEPTION_REGISTRATION_RECORD* Next;
 			public EXCEPTION_ROUTINE Handler;
 		}
 		[CRepr]
-		public struct NT_TIB		{
+		public struct NT_TIB
+		{
 			public EXCEPTION_REGISTRATION_RECORD* ExceptionList;
 			public void* StackBase;
 			public void* StackLimit;
@@ -240,13 +266,15 @@ namespace Win32
 			public NT_TIB* Self;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public void* FiberData;
 				public uint32 Version;
 			}
 		}
 		[CRepr]
-		public struct FLOATING_SAVE_AREA		{
+		public struct FLOATING_SAVE_AREA
+		{
 			public uint32 ControlWord;
 			public uint32 StatusWord;
 			public uint32 TagWord;

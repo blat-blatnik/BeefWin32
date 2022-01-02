@@ -1564,7 +1564,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct IBidiRequestVtbl		{
+		public struct IBidiRequestVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1575,11 +1576,13 @@ namespace Win32
 			public int GetEnumCount;
 		}
 		[CRepr]
-		public struct IBidiRequest		{
+		public struct IBidiRequest
+		{
 			public IBidiRequestVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IBidiRequestContainerVtbl		{
+		public struct IBidiRequestContainerVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1588,11 +1591,13 @@ namespace Win32
 			public int GetRequestCount;
 		}
 		[CRepr]
-		public struct IBidiRequestContainer		{
+		public struct IBidiRequestContainer
+		{
 			public IBidiRequestContainerVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IBidiSplVtbl		{
+		public struct IBidiSplVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1602,11 +1607,13 @@ namespace Win32
 			public int MultiSendRecv;
 		}
 		[CRepr]
-		public struct IBidiSpl		{
+		public struct IBidiSpl
+		{
 			public IBidiSplVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IBidiSpl2Vtbl		{
+		public struct IBidiSpl2Vtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1616,11 +1623,13 @@ namespace Win32
 			public int SendRecvXMLStream;
 		}
 		[CRepr]
-		public struct IBidiSpl2		{
+		public struct IBidiSpl2
+		{
 			public IBidiSpl2Vtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct __MIDL___MIDL_itf_imgerror_0000_0000_0001		{
+		public struct __MIDL___MIDL_itf_imgerror_0000_0000_0001
+		{
 			public BSTR description;
 			public Guid guid;
 			public uint32 helpContext;
@@ -1634,7 +1643,8 @@ namespace Win32
 			public uint32 exceptionID;
 		}
 		[CRepr]
-		public struct IImgErrorInfoVtbl		{
+		public struct IImgErrorInfoVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1652,11 +1662,13 @@ namespace Win32
 			public int DetachErrorInfo;
 		}
 		[CRepr]
-		public struct IImgErrorInfo		{
+		public struct IImgErrorInfo
+		{
 			public IImgErrorInfoVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IImgCreateErrorInfoVtbl		{
+		public struct IImgCreateErrorInfoVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1668,11 +1680,13 @@ namespace Win32
 			public int AttachToErrorInfo;
 		}
 		[CRepr]
-		public struct IImgCreateErrorInfo		{
+		public struct IImgCreateErrorInfo
+		{
 			public IImgCreateErrorInfoVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintReadStreamVtbl		{
+		public struct IPrintReadStreamVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1680,11 +1694,13 @@ namespace Win32
 			public int ReadBytes;
 		}
 		[CRepr]
-		public struct IPrintReadStream		{
+		public struct IPrintReadStream
+		{
 			public IPrintReadStreamVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintWriteStreamVtbl		{
+		public struct IPrintWriteStreamVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1692,22 +1708,26 @@ namespace Win32
 			public int Close;
 		}
 		[CRepr]
-		public struct IPrintWriteStream		{
+		public struct IPrintWriteStream
+		{
 			public IPrintWriteStreamVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintWriteStreamFlushVtbl		{
+		public struct IPrintWriteStreamFlushVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
 			public int FlushData;
 		}
 		[CRepr]
-		public struct IPrintWriteStreamFlush		{
+		public struct IPrintWriteStreamFlush
+		{
 			public IPrintWriteStreamFlushVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IInterFilterCommunicatorVtbl		{
+		public struct IInterFilterCommunicatorVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1715,11 +1735,13 @@ namespace Win32
 			public int RequestWriter;
 		}
 		[CRepr]
-		public struct IInterFilterCommunicator		{
+		public struct IInterFilterCommunicator
+		{
 			public IInterFilterCommunicatorVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintPipelineManagerControlVtbl		{
+		public struct IPrintPipelineManagerControlVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1727,11 +1749,13 @@ namespace Win32
 			public int FilterFinished;
 		}
 		[CRepr]
-		public struct IPrintPipelineManagerControl		{
+		public struct IPrintPipelineManagerControl
+		{
 			public IPrintPipelineManagerControlVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintPipelinePropertyBagVtbl		{
+		public struct IPrintPipelinePropertyBagVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1740,33 +1764,39 @@ namespace Win32
 			public int DeleteProperty;
 		}
 		[CRepr]
-		public struct IPrintPipelinePropertyBag		{
+		public struct IPrintPipelinePropertyBag
+		{
 			public IPrintPipelinePropertyBagVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintPipelineProgressReportVtbl		{
+		public struct IPrintPipelineProgressReportVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
 			public int ReportProgress;
 		}
 		[CRepr]
-		public struct IPrintPipelineProgressReport		{
+		public struct IPrintPipelineProgressReport
+		{
 			public IPrintPipelineProgressReportVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintClassObjectFactoryVtbl		{
+		public struct IPrintClassObjectFactoryVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
 			public int GetPrintClassObject;
 		}
 		[CRepr]
-		public struct IPrintClassObjectFactory		{
+		public struct IPrintClassObjectFactory
+		{
 			public IPrintClassObjectFactoryVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintPipelineFilterVtbl		{
+		public struct IPrintPipelineFilterVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1775,22 +1805,26 @@ namespace Win32
 			public int StartOperation;
 		}
 		[CRepr]
-		public struct IPrintPipelineFilter		{
+		public struct IPrintPipelineFilter
+		{
 			public IPrintPipelineFilterVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IXpsDocumentProviderVtbl		{
+		public struct IXpsDocumentProviderVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
 			public int GetXpsPart;
 		}
 		[CRepr]
-		public struct IXpsDocumentProvider		{
+		public struct IXpsDocumentProvider
+		{
 			public IXpsDocumentProviderVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IXpsDocumentConsumerVtbl		{
+		public struct IXpsDocumentConsumerVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1803,11 +1837,13 @@ namespace Win32
 			public int GetNewEmptyPart;
 		}
 		[CRepr]
-		public struct IXpsDocumentConsumer		{
+		public struct IXpsDocumentConsumer
+		{
 			public IXpsDocumentConsumerVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IXpsDocumentVtbl		{
+		public struct IXpsDocumentVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1815,11 +1851,13 @@ namespace Win32
 			public int SetThumbnail;
 		}
 		[CRepr]
-		public struct IXpsDocument		{
+		public struct IXpsDocument
+		{
 			public IXpsDocumentVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IFixedDocumentSequenceVtbl		{
+		public struct IFixedDocumentSequenceVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1828,11 +1866,13 @@ namespace Win32
 			public int SetPrintTicket;
 		}
 		[CRepr]
-		public struct IFixedDocumentSequence		{
+		public struct IFixedDocumentSequence
+		{
 			public IFixedDocumentSequenceVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IFixedDocumentVtbl		{
+		public struct IFixedDocumentVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1841,11 +1881,13 @@ namespace Win32
 			public int SetPrintTicket;
 		}
 		[CRepr]
-		public struct IFixedDocument		{
+		public struct IFixedDocument
+		{
 			public IFixedDocumentVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartBaseVtbl		{
+		public struct IPartBaseVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1855,11 +1897,13 @@ namespace Win32
 			public int SetPartCompression;
 		}
 		[CRepr]
-		public struct IPartBase		{
+		public struct IPartBase
+		{
 			public IPartBaseVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IFixedPageVtbl		{
+		public struct IFixedPageVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1876,11 +1920,13 @@ namespace Win32
 			public int GetXpsPartIterator;
 		}
 		[CRepr]
-		public struct IFixedPage		{
+		public struct IFixedPage
+		{
 			public IFixedPageVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartImageVtbl		{
+		public struct IPartImageVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1892,11 +1938,13 @@ namespace Win32
 			public int SetImageContent;
 		}
 		[CRepr]
-		public struct IPartImage		{
+		public struct IPartImage
+		{
 			public IPartImageVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartFontVtbl		{
+		public struct IPartFontVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1909,11 +1957,13 @@ namespace Win32
 			public int SetFontOptions;
 		}
 		[CRepr]
-		public struct IPartFont		{
+		public struct IPartFont
+		{
 			public IPartFontVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartFont2Vtbl		{
+		public struct IPartFont2Vtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1927,11 +1977,13 @@ namespace Win32
 			public int GetFontRestriction;
 		}
 		[CRepr]
-		public struct IPartFont2		{
+		public struct IPartFont2
+		{
 			public IPartFont2Vtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartThumbnailVtbl		{
+		public struct IPartThumbnailVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1943,11 +1995,13 @@ namespace Win32
 			public int SetThumbnailContent;
 		}
 		[CRepr]
-		public struct IPartThumbnail		{
+		public struct IPartThumbnail
+		{
 			public IPartThumbnailVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartPrintTicketVtbl		{
+		public struct IPartPrintTicketVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1957,11 +2011,13 @@ namespace Win32
 			public int SetPartCompression;
 		}
 		[CRepr]
-		public struct IPartPrintTicket		{
+		public struct IPartPrintTicket
+		{
 			public IPartPrintTicketVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartColorProfileVtbl		{
+		public struct IPartColorProfileVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1971,11 +2027,13 @@ namespace Win32
 			public int SetPartCompression;
 		}
 		[CRepr]
-		public struct IPartColorProfile		{
+		public struct IPartColorProfile
+		{
 			public IPartColorProfileVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartResourceDictionaryVtbl		{
+		public struct IPartResourceDictionaryVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1985,11 +2043,13 @@ namespace Win32
 			public int SetPartCompression;
 		}
 		[CRepr]
-		public struct IPartResourceDictionary		{
+		public struct IPartResourceDictionary
+		{
 			public IPartResourceDictionaryVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IXpsPartIteratorVtbl		{
+		public struct IXpsPartIteratorVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
@@ -1999,33 +2059,39 @@ namespace Win32
 			public int Next;
 		}
 		[CRepr]
-		public struct IXpsPartIterator		{
+		public struct IXpsPartIterator
+		{
 			public IXpsPartIteratorVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPrintReadStreamFactoryVtbl		{
+		public struct IPrintReadStreamFactoryVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
 			public int GetStream;
 		}
 		[CRepr]
-		public struct IPrintReadStreamFactory		{
+		public struct IPrintReadStreamFactory
+		{
 			public IPrintReadStreamFactoryVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct IPartDiscardControlVtbl		{
+		public struct IPartDiscardControlVtbl
+		{
 			public int QueryInterface;
 			public int AddRef;
 			public int Release;
 			public int GetDiscardProperties;
 		}
 		[CRepr]
-		public struct IPartDiscardControl		{
+		public struct IPartDiscardControl
+		{
 			public IPartDiscardControlVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct OPTPARAM		{
+		public struct OPTPARAM
+		{
 			public uint16 cbSize;
 			public uint8 Flags;
 			public uint8 Style;
@@ -2035,7 +2101,8 @@ namespace Win32
 			public uint[2] dwReserved;
 		}
 		[CRepr]
-		public struct OPTCOMBO		{
+		public struct OPTCOMBO
+		{
 			public uint16 cbSize;
 			public uint8 Flags;
 			public uint16 cListItem;
@@ -2044,7 +2111,8 @@ namespace Win32
 			public uint32[3] dwReserved;
 		}
 		[CRepr]
-		public struct OPTTYPE		{
+		public struct OPTTYPE
+		{
 			public uint16 cbSize;
 			public uint8 Type;
 			public uint8 Flags;
@@ -2056,7 +2124,8 @@ namespace Win32
 			public uint[3] dwReserved;
 		}
 		[CRepr]
-		public struct EXTPUSH		{
+		public struct EXTPUSH
+		{
 			public uint16 cbSize;
 			public uint16 Flags;
 			public int8* pTitle;
@@ -2066,18 +2135,21 @@ namespace Win32
 			public uint[3] dwReserved;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public uint16 DlgTemplateID;
 				public HANDLE hDlgTemplate;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public DLGPROC DlgProc;
 				public FARPROC pfnCallBack;
 			}
 		}
 		[CRepr]
-		public struct EXTCHKBOX		{
+		public struct EXTCHKBOX
+		{
 			public uint16 cbSize;
 			public uint16 Flags;
 			public int8* pTitle;
@@ -2088,7 +2160,8 @@ namespace Win32
 			public uint[2] dwReserved;
 		}
 		[CRepr]
-		public struct OIEXT		{
+		public struct OIEXT
+		{
 			public uint16 cbSize;
 			public uint16 Flags;
 			public HINSTANCE hInstCaller;
@@ -2096,7 +2169,8 @@ namespace Win32
 			public uint[4] dwReserved;
 		}
 		[CRepr]
-		public struct OPTITEM		{
+		public struct OPTITEM
+		{
 			public uint16 cbSize;
 			public uint8 Level;
 			public uint8 DlgPageIdx;
@@ -2114,18 +2188,21 @@ namespace Win32
 			public uint[3] dwReserved;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union			{
+			public struct _Anonymous2_e__Union
+			{
 				public EXTCHKBOX* pExtChkBox;
 				public EXTPUSH* pExtPush;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union			{
+			public struct _Anonymous1_e__Union
+			{
 				public int32 Sel;
 				public int8* pSel;
 			}
 		}
 		[CRepr]
-		public struct CPSUICBPARAM		{
+		public struct CPSUICBPARAM
+		{
 			public uint16 cbSize;
 			public uint16 Reason;
 			public HWND hDlg;
@@ -2138,13 +2215,15 @@ namespace Win32
 			public uint Result;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public int32 OldSel;
 				public int8* pOldSel;
 			}
 		}
 		[CRepr]
-		public struct DLGPAGE		{
+		public struct DLGPAGE
+		{
 			public uint16 cbSize;
 			public uint16 Flags;
 			public DLGPROC DlgProc;
@@ -2153,13 +2232,15 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint16 DlgTemplateID;
 				public HANDLE hDlgTemplate;
 			}
 		}
 		[CRepr]
-		public struct COMPROPSHEETUI		{
+		public struct COMPROPSHEETUI
+		{
 			public uint16 cbSize;
 			public uint16 Flags;
 			public HINSTANCE hInstCaller;
@@ -2178,14 +2259,16 @@ namespace Win32
 			public uint[4] dwReserved;
 		}
 		[CRepr]
-		public struct SETRESULT_INFO		{
+		public struct SETRESULT_INFO
+		{
 			public uint16 cbSize;
 			public uint16 wReserved;
 			public HANDLE hSetResult;
 			public LRESULT Result;
 		}
 		[CRepr]
-		public struct INSERTPSUIPAGE_INFO		{
+		public struct INSERTPSUIPAGE_INFO
+		{
 			public uint16 cbSize;
 			public uint8 Type;
 			public uint8 Mode;
@@ -2194,7 +2277,8 @@ namespace Win32
 			public uint dwData3;
 		}
 		[CRepr]
-		public struct PSPINFO		{
+		public struct PSPINFO
+		{
 			public uint16 cbSize;
 			public uint16 wReserved;
 			public HANDLE hComPropSheet;
@@ -2202,12 +2286,14 @@ namespace Win32
 			public PFNCOMPROPSHEET pfnComPropSheet;
 		}
 		[CRepr]
-		public struct CPSUIDATABLOCK		{
+		public struct CPSUIDATABLOCK
+		{
 			public uint32 cbData;
 			public uint8* pbData;
 		}
 		[CRepr]
-		public struct PROPSHEETUI_INFO		{
+		public struct PROPSHEETUI_INFO
+		{
 			public uint16 cbSize;
 			public uint16 Version;
 			public uint16 Flags;
@@ -2219,7 +2305,8 @@ namespace Win32
 			public uint Result;
 		}
 		[CRepr]
-		public struct PROPSHEETUI_GETICON_INFO		{
+		public struct PROPSHEETUI_GETICON_INFO
+		{
 			public uint16 cbSize;
 			public uint16 Flags;
 			public uint16 cxIcon;
@@ -2227,7 +2314,8 @@ namespace Win32
 			public HICON hIcon;
 		}
 		[CRepr]
-		public struct PROPSHEETUI_INFO_HEADER		{
+		public struct PROPSHEETUI_INFO_HEADER
+		{
 			public uint16 cbSize;
 			public uint16 Flags;
 			public int8* pTitle;
@@ -2236,27 +2324,31 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public HICON hIcon;
 				public uint IconID;
 			}
 		}
 		[CRepr]
-		public struct PRINTER_INFO_1A		{
+		public struct PRINTER_INFO_1A
+		{
 			public uint32 Flags;
 			public PSTR pDescription;
 			public PSTR pName;
 			public PSTR pComment;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_1W		{
+		public struct PRINTER_INFO_1W
+		{
 			public uint32 Flags;
 			public PWSTR pDescription;
 			public PWSTR pName;
 			public PWSTR pComment;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_2A		{
+		public struct PRINTER_INFO_2A
+		{
 			public PSTR pServerName;
 			public PSTR pPrinterName;
 			public PSTR pShareName;
@@ -2280,7 +2372,8 @@ namespace Win32
 			public uint32 AveragePPM;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_2W		{
+		public struct PRINTER_INFO_2W
+		{
 			public PWSTR pServerName;
 			public PWSTR pPrinterName;
 			public PWSTR pShareName;
@@ -2304,23 +2397,27 @@ namespace Win32
 			public uint32 AveragePPM;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_3		{
+		public struct PRINTER_INFO_3
+		{
 			public SECURITY_DESCRIPTOR* pSecurityDescriptor;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_4A		{
+		public struct PRINTER_INFO_4A
+		{
 			public PSTR pPrinterName;
 			public PSTR pServerName;
 			public uint32 Attributes;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_4W		{
+		public struct PRINTER_INFO_4W
+		{
 			public PWSTR pPrinterName;
 			public PWSTR pServerName;
 			public uint32 Attributes;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_5A		{
+		public struct PRINTER_INFO_5A
+		{
 			public PSTR pPrinterName;
 			public PSTR pPortName;
 			public uint32 Attributes;
@@ -2328,7 +2425,8 @@ namespace Win32
 			public uint32 TransmissionRetryTimeout;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_5W		{
+		public struct PRINTER_INFO_5W
+		{
 			public PWSTR pPrinterName;
 			public PWSTR pPortName;
 			public uint32 Attributes;
@@ -2336,37 +2434,45 @@ namespace Win32
 			public uint32 TransmissionRetryTimeout;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_6		{
+		public struct PRINTER_INFO_6
+		{
 			public uint32 dwStatus;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_7A		{
+		public struct PRINTER_INFO_7A
+		{
 			public PSTR pszObjectGUID;
 			public uint32 dwAction;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_7W		{
+		public struct PRINTER_INFO_7W
+		{
 			public PWSTR pszObjectGUID;
 			public uint32 dwAction;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_8A		{
+		public struct PRINTER_INFO_8A
+		{
 			public DEVMODEA* pDevMode;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_8W		{
+		public struct PRINTER_INFO_8W
+		{
 			public DEVMODEW* pDevMode;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_9A		{
+		public struct PRINTER_INFO_9A
+		{
 			public DEVMODEA* pDevMode;
 		}
 		[CRepr]
-		public struct PRINTER_INFO_9W		{
+		public struct PRINTER_INFO_9W
+		{
 			public DEVMODEW* pDevMode;
 		}
 		[CRepr]
-		public struct JOB_INFO_1A		{
+		public struct JOB_INFO_1A
+		{
 			public uint32 JobId;
 			public PSTR pPrinterName;
 			public PSTR pMachineName;
@@ -2382,7 +2488,8 @@ namespace Win32
 			public SYSTEMTIME Submitted;
 		}
 		[CRepr]
-		public struct JOB_INFO_1W		{
+		public struct JOB_INFO_1W
+		{
 			public uint32 JobId;
 			public PWSTR pPrinterName;
 			public PWSTR pMachineName;
@@ -2398,7 +2505,8 @@ namespace Win32
 			public SYSTEMTIME Submitted;
 		}
 		[CRepr]
-		public struct JOB_INFO_2A		{
+		public struct JOB_INFO_2A
+		{
 			public uint32 JobId;
 			public PSTR pPrinterName;
 			public PSTR pMachineName;
@@ -2424,7 +2532,8 @@ namespace Win32
 			public uint32 PagesPrinted;
 		}
 		[CRepr]
-		public struct JOB_INFO_2W		{
+		public struct JOB_INFO_2W
+		{
 			public uint32 JobId;
 			public PWSTR pPrinterName;
 			public PWSTR pMachineName;
@@ -2450,13 +2559,15 @@ namespace Win32
 			public uint32 PagesPrinted;
 		}
 		[CRepr]
-		public struct JOB_INFO_3		{
+		public struct JOB_INFO_3
+		{
 			public uint32 JobId;
 			public uint32 NextJobId;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct JOB_INFO_4A		{
+		public struct JOB_INFO_4A
+		{
 			public uint32 JobId;
 			public PSTR pPrinterName;
 			public PSTR pMachineName;
@@ -2483,7 +2594,8 @@ namespace Win32
 			public int32 SizeHigh;
 		}
 		[CRepr]
-		public struct JOB_INFO_4W		{
+		public struct JOB_INFO_4W
+		{
 			public uint32 JobId;
 			public PWSTR pPrinterName;
 			public PWSTR pMachineName;
@@ -2510,25 +2622,30 @@ namespace Win32
 			public int32 SizeHigh;
 		}
 		[CRepr]
-		public struct ADDJOB_INFO_1A		{
+		public struct ADDJOB_INFO_1A
+		{
 			public PSTR Path;
 			public uint32 JobId;
 		}
 		[CRepr]
-		public struct ADDJOB_INFO_1W		{
+		public struct ADDJOB_INFO_1W
+		{
 			public PWSTR Path;
 			public uint32 JobId;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_1A		{
+		public struct DRIVER_INFO_1A
+		{
 			public PSTR pName;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_1W		{
+		public struct DRIVER_INFO_1W
+		{
 			public PWSTR pName;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_2A		{
+		public struct DRIVER_INFO_2A
+		{
 			public uint32 cVersion;
 			public PSTR pName;
 			public PSTR pEnvironment;
@@ -2537,7 +2654,8 @@ namespace Win32
 			public PSTR pConfigFile;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_2W		{
+		public struct DRIVER_INFO_2W
+		{
 			public uint32 cVersion;
 			public PWSTR pName;
 			public PWSTR pEnvironment;
@@ -2546,7 +2664,8 @@ namespace Win32
 			public PWSTR pConfigFile;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_3A		{
+		public struct DRIVER_INFO_3A
+		{
 			public uint32 cVersion;
 			public PSTR pName;
 			public PSTR pEnvironment;
@@ -2559,7 +2678,8 @@ namespace Win32
 			public PSTR pDefaultDataType;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_3W		{
+		public struct DRIVER_INFO_3W
+		{
 			public uint32 cVersion;
 			public PWSTR pName;
 			public PWSTR pEnvironment;
@@ -2572,7 +2692,8 @@ namespace Win32
 			public PWSTR pDefaultDataType;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_4A		{
+		public struct DRIVER_INFO_4A
+		{
 			public uint32 cVersion;
 			public PSTR pName;
 			public PSTR pEnvironment;
@@ -2586,7 +2707,8 @@ namespace Win32
 			public PSTR pszzPreviousNames;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_4W		{
+		public struct DRIVER_INFO_4W
+		{
 			public uint32 cVersion;
 			public PWSTR pName;
 			public PWSTR pEnvironment;
@@ -2600,7 +2722,8 @@ namespace Win32
 			public PWSTR pszzPreviousNames;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_5A		{
+		public struct DRIVER_INFO_5A
+		{
 			public uint32 cVersion;
 			public PSTR pName;
 			public PSTR pEnvironment;
@@ -2612,7 +2735,8 @@ namespace Win32
 			public uint32 dwDriverVersion;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_5W		{
+		public struct DRIVER_INFO_5W
+		{
 			public uint32 cVersion;
 			public PWSTR pName;
 			public PWSTR pEnvironment;
@@ -2624,7 +2748,8 @@ namespace Win32
 			public uint32 dwDriverVersion;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_6A		{
+		public struct DRIVER_INFO_6A
+		{
 			public uint32 cVersion;
 			public PSTR pName;
 			public PSTR pEnvironment;
@@ -2644,7 +2769,8 @@ namespace Win32
 			public PSTR pszProvider;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_6W		{
+		public struct DRIVER_INFO_6W
+		{
 			public uint32 cVersion;
 			public PWSTR pName;
 			public PWSTR pEnvironment;
@@ -2664,7 +2790,8 @@ namespace Win32
 			public PWSTR pszProvider;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_8A		{
+		public struct DRIVER_INFO_8A
+		{
 			public uint32 cVersion;
 			public PSTR pName;
 			public PSTR pEnvironment;
@@ -2692,7 +2819,8 @@ namespace Win32
 			public uint64 dwlMinInboxDriverVerVersion;
 		}
 		[CRepr]
-		public struct DRIVER_INFO_8W		{
+		public struct DRIVER_INFO_8W
+		{
 			public uint32 cVersion;
 			public PWSTR pName;
 			public PWSTR pEnvironment;
@@ -2720,33 +2848,38 @@ namespace Win32
 			public uint64 dwlMinInboxDriverVerVersion;
 		}
 		[CRepr]
-		public struct DOC_INFO_1A		{
+		public struct DOC_INFO_1A
+		{
 			public PSTR pDocName;
 			public PSTR pOutputFile;
 			public PSTR pDatatype;
 		}
 		[CRepr]
-		public struct DOC_INFO_1W		{
+		public struct DOC_INFO_1W
+		{
 			public PWSTR pDocName;
 			public PWSTR pOutputFile;
 			public PWSTR pDatatype;
 		}
 		[CRepr]
-		public struct FORM_INFO_1A		{
+		public struct FORM_INFO_1A
+		{
 			public uint32 Flags;
 			public PSTR pName;
 			public SIZE Size;
 			public RECTL ImageableArea;
 		}
 		[CRepr]
-		public struct FORM_INFO_1W		{
+		public struct FORM_INFO_1W
+		{
 			public uint32 Flags;
 			public PWSTR pName;
 			public SIZE Size;
 			public RECTL ImageableArea;
 		}
 		[CRepr]
-		public struct FORM_INFO_2A		{
+		public struct FORM_INFO_2A
+		{
 			public uint32 Flags;
 			public PSTR pName;
 			public SIZE Size;
@@ -2759,7 +2892,8 @@ namespace Win32
 			public uint16 wLangId;
 		}
 		[CRepr]
-		public struct FORM_INFO_2W		{
+		public struct FORM_INFO_2W
+		{
 			public uint32 Flags;
 			public PWSTR pName;
 			public SIZE Size;
@@ -2772,7 +2906,8 @@ namespace Win32
 			public uint16 wLangId;
 		}
 		[CRepr]
-		public struct DOC_INFO_2A		{
+		public struct DOC_INFO_2A
+		{
 			public PSTR pDocName;
 			public PSTR pOutputFile;
 			public PSTR pDatatype;
@@ -2780,7 +2915,8 @@ namespace Win32
 			public uint32 JobId;
 		}
 		[CRepr]
-		public struct DOC_INFO_2W		{
+		public struct DOC_INFO_2W
+		{
 			public PWSTR pDocName;
 			public PWSTR pOutputFile;
 			public PWSTR pDatatype;
@@ -2788,36 +2924,42 @@ namespace Win32
 			public uint32 JobId;
 		}
 		[CRepr]
-		public struct DOC_INFO_3A		{
+		public struct DOC_INFO_3A
+		{
 			public PSTR pDocName;
 			public PSTR pOutputFile;
 			public PSTR pDatatype;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DOC_INFO_3W		{
+		public struct DOC_INFO_3W
+		{
 			public PWSTR pDocName;
 			public PWSTR pOutputFile;
 			public PWSTR pDatatype;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct PRINTPROCESSOR_INFO_1A		{
+		public struct PRINTPROCESSOR_INFO_1A
+		{
 			public PSTR pName;
 		}
 		[CRepr]
-		public struct PRINTPROCESSOR_INFO_1W		{
+		public struct PRINTPROCESSOR_INFO_1W
+		{
 			public PWSTR pName;
 		}
 		[CRepr]
-		public struct PRINTPROCESSOR_CAPS_1		{
+		public struct PRINTPROCESSOR_CAPS_1
+		{
 			public uint32 dwLevel;
 			public uint32 dwNupOptions;
 			public uint32 dwPageOrderFlags;
 			public uint32 dwNumberOfCopies;
 		}
 		[CRepr]
-		public struct PRINTPROCESSOR_CAPS_2		{
+		public struct PRINTPROCESSOR_CAPS_2
+		{
 			public uint32 dwLevel;
 			public uint32 dwNupOptions;
 			public uint32 dwPageOrderFlags;
@@ -2829,15 +2971,18 @@ namespace Win32
 			public uint32 dwScalingCaps;
 		}
 		[CRepr]
-		public struct PORT_INFO_1A		{
+		public struct PORT_INFO_1A
+		{
 			public PSTR pName;
 		}
 		[CRepr]
-		public struct PORT_INFO_1W		{
+		public struct PORT_INFO_1W
+		{
 			public PWSTR pName;
 		}
 		[CRepr]
-		public struct PORT_INFO_2A		{
+		public struct PORT_INFO_2A
+		{
 			public PSTR pPortName;
 			public PSTR pMonitorName;
 			public PSTR pDescription;
@@ -2845,7 +2990,8 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PORT_INFO_2W		{
+		public struct PORT_INFO_2W
+		{
 			public PWSTR pPortName;
 			public PWSTR pMonitorName;
 			public PWSTR pDescription;
@@ -2853,59 +2999,70 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PORT_INFO_3A		{
+		public struct PORT_INFO_3A
+		{
 			public uint32 dwStatus;
 			public PSTR pszStatus;
 			public uint32 dwSeverity;
 		}
 		[CRepr]
-		public struct PORT_INFO_3W		{
+		public struct PORT_INFO_3W
+		{
 			public uint32 dwStatus;
 			public PWSTR pszStatus;
 			public uint32 dwSeverity;
 		}
 		[CRepr]
-		public struct MONITOR_INFO_1A		{
+		public struct MONITOR_INFO_1A
+		{
 			public PSTR pName;
 		}
 		[CRepr]
-		public struct MONITOR_INFO_1W		{
+		public struct MONITOR_INFO_1W
+		{
 			public PWSTR pName;
 		}
 		[CRepr]
-		public struct MONITOR_INFO_2A		{
+		public struct MONITOR_INFO_2A
+		{
 			public PSTR pName;
 			public PSTR pEnvironment;
 			public PSTR pDLLName;
 		}
 		[CRepr]
-		public struct MONITOR_INFO_2W		{
+		public struct MONITOR_INFO_2W
+		{
 			public PWSTR pName;
 			public PWSTR pEnvironment;
 			public PWSTR pDLLName;
 		}
 		[CRepr]
-		public struct DATATYPES_INFO_1A		{
+		public struct DATATYPES_INFO_1A
+		{
 			public PSTR pName;
 		}
 		[CRepr]
-		public struct DATATYPES_INFO_1W		{
+		public struct DATATYPES_INFO_1W
+		{
 			public PWSTR pName;
 		}
 		[CRepr]
-		public struct PRINTER_DEFAULTSA		{
+		public struct PRINTER_DEFAULTSA
+		{
 			public PSTR pDatatype;
 			public DEVMODEA* pDevMode;
 			public uint32 DesiredAccess;
 		}
 		[CRepr]
-		public struct PRINTER_DEFAULTSW		{
+		public struct PRINTER_DEFAULTSW
+		{
 			public PWSTR pDatatype;
 			public DEVMODEW* pDevMode;
 			public uint32 DesiredAccess;
 		}
 		[CRepr]
-		public struct PRINTER_ENUM_VALUESA		{
+		public struct PRINTER_ENUM_VALUESA
+		{
 			public PSTR pValueName;
 			public uint32 cbValueName;
 			public uint32 dwType;
@@ -2913,7 +3070,8 @@ namespace Win32
 			public uint32 cbData;
 		}
 		[CRepr]
-		public struct PRINTER_ENUM_VALUESW		{
+		public struct PRINTER_ENUM_VALUESW
+		{
 			public PWSTR pValueName;
 			public uint32 cbValueName;
 			public uint32 dwType;
@@ -2921,7 +3079,8 @@ namespace Win32
 			public uint32 cbData;
 		}
 		[CRepr]
-		public struct PRINTER_NOTIFY_OPTIONS_TYPE		{
+		public struct PRINTER_NOTIFY_OPTIONS_TYPE
+		{
 			public uint16 Type;
 			public uint16 Reserved0;
 			public uint32 Reserved1;
@@ -2930,14 +3089,16 @@ namespace Win32
 			public uint16* pFields;
 		}
 		[CRepr]
-		public struct PRINTER_NOTIFY_OPTIONS		{
+		public struct PRINTER_NOTIFY_OPTIONS
+		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 Count;
 			public PRINTER_NOTIFY_OPTIONS_TYPE* pTypes;
 		}
 		[CRepr]
-		public struct PRINTER_NOTIFY_INFO_DATA		{
+		public struct PRINTER_NOTIFY_INFO_DATA
+		{
 			public uint16 Type;
 			public uint16 Field;
 			public uint32 Reserved;
@@ -2945,36 +3106,42 @@ namespace Win32
 			public _NotifyData_e__Union NotifyData;
 			
 			[CRepr, Union]
-			public struct _NotifyData_e__Union			{
+			public struct _NotifyData_e__Union
+			{
 				public uint32[2] adwData;
 				public _Data_e__Struct Data;
 				
 				[CRepr]
-				public struct _Data_e__Struct				{
+				public struct _Data_e__Struct
+				{
 					public uint32 cbBuf;
 					public void* pBuf;
 				}
 			}
 		}
 		[CRepr]
-		public struct PRINTER_NOTIFY_INFO		{
+		public struct PRINTER_NOTIFY_INFO
+		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 Count;
 			public PRINTER_NOTIFY_INFO_DATA[0] aData;
 		}
 		[CRepr]
-		public struct BINARY_CONTAINER		{
+		public struct BINARY_CONTAINER
+		{
 			public uint32 cbBuf;
 			public uint8* pData;
 		}
 		[CRepr]
-		public struct BIDI_DATA		{
+		public struct BIDI_DATA
+		{
 			public uint32 dwBidiType;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public BOOL bData;
 				public int32 iData;
 				public PWSTR sData;
@@ -2983,93 +3150,109 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct BIDI_REQUEST_DATA		{
+		public struct BIDI_REQUEST_DATA
+		{
 			public uint32 dwReqNumber;
 			public PWSTR pSchema;
 			public BIDI_DATA data;
 		}
 		[CRepr]
-		public struct BIDI_REQUEST_CONTAINER		{
+		public struct BIDI_REQUEST_CONTAINER
+		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 Count;
 			public BIDI_REQUEST_DATA[0] aData;
 		}
 		[CRepr]
-		public struct BIDI_RESPONSE_DATA		{
+		public struct BIDI_RESPONSE_DATA
+		{
 			public uint32 dwResult;
 			public uint32 dwReqNumber;
 			public PWSTR pSchema;
 			public BIDI_DATA data;
 		}
 		[CRepr]
-		public struct BIDI_RESPONSE_CONTAINER		{
+		public struct BIDI_RESPONSE_CONTAINER
+		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 Count;
 			public BIDI_RESPONSE_DATA[0] aData;
 		}
 		[CRepr]
-		public struct PROVIDOR_INFO_1A		{
+		public struct PROVIDOR_INFO_1A
+		{
 			public PSTR pName;
 			public PSTR pEnvironment;
 			public PSTR pDLLName;
 		}
 		[CRepr]
-		public struct PROVIDOR_INFO_1W		{
+		public struct PROVIDOR_INFO_1W
+		{
 			public PWSTR pName;
 			public PWSTR pEnvironment;
 			public PWSTR pDLLName;
 		}
 		[CRepr]
-		public struct PROVIDOR_INFO_2A		{
+		public struct PROVIDOR_INFO_2A
+		{
 			public PSTR pOrder;
 		}
 		[CRepr]
-		public struct PROVIDOR_INFO_2W		{
+		public struct PROVIDOR_INFO_2W
+		{
 			public PWSTR pOrder;
 		}
 		[CRepr]
-		public struct PRINTER_OPTIONSA		{
+		public struct PRINTER_OPTIONSA
+		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct PRINTER_OPTIONSW		{
+		public struct PRINTER_OPTIONSW
+		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct PRINTER_CONNECTION_INFO_1A		{
+		public struct PRINTER_CONNECTION_INFO_1A
+		{
 			public uint32 dwFlags;
 			public PSTR pszDriverName;
 		}
 		[CRepr]
-		public struct PRINTER_CONNECTION_INFO_1W		{
+		public struct PRINTER_CONNECTION_INFO_1W
+		{
 			public uint32 dwFlags;
 			public PWSTR pszDriverName;
 		}
 		[CRepr]
-		public struct CORE_PRINTER_DRIVERA		{
+		public struct CORE_PRINTER_DRIVERA
+		{
 			public Guid CoreDriverGUID;
 			public FILETIME ftDriverDate;
 			public uint64 dwlDriverVersion;
 			public CHAR[260] szPackageID;
 		}
 		[CRepr]
-		public struct CORE_PRINTER_DRIVERW		{
+		public struct CORE_PRINTER_DRIVERW
+		{
 			public Guid CoreDriverGUID;
 			public FILETIME ftDriverDate;
 			public uint64 dwlDriverVersion;
 			public char16[260] szPackageID;
 		}
 		[CRepr]
-		public struct PrintPropertyValue		{
+		public struct PrintPropertyValue
+		{
 			public EPrintPropertyType ePropertyType;
 			public _value_e__Union value;
 			
 			[CRepr, Union]
-			public struct _value_e__Union			{
+			public struct _value_e__Union
+			{
 				public uint8 propertyByte;
 				public PWSTR propertyString;
 				public int32 propertyInt32;
@@ -3077,45 +3260,53 @@ namespace Win32
 				public _propertyBlob_e__Struct propertyBlob;
 				
 				[CRepr]
-				public struct _propertyBlob_e__Struct				{
+				public struct _propertyBlob_e__Struct
+				{
 					public uint32 cbBuf;
 					public void* pBuf;
 				}
 			}
 		}
 		[CRepr]
-		public struct PrintNamedProperty		{
+		public struct PrintNamedProperty
+		{
 			public PWSTR propertyName;
 			public PrintPropertyValue propertyValue;
 		}
 		[CRepr]
-		public struct PrintPropertiesCollection		{
+		public struct PrintPropertiesCollection
+		{
 			public uint32 numberOfProperties;
 			public PrintNamedProperty* propertiesCollection;
 		}
 		[CRepr]
-		public struct PRINT_EXECUTION_DATA		{
+		public struct PRINT_EXECUTION_DATA
+		{
 			public PRINT_EXECUTION_CONTEXT context;
 			public uint32 clientAppPID;
 		}
 		[CRepr]
-		public struct MxdcEscapeHeader		{
+		public struct MxdcEscapeHeader
+		{
 			public uint32 cbInput;
 			public uint32 cbOutput;
 			public uint32 opCode;
 		}
 		[CRepr]
-		public struct MxdcGetFileNameData		{
+		public struct MxdcGetFileNameData
+		{
 			public uint32 cbOutput;
 			public char16[0] wszData;
 		}
 		[CRepr]
-		public struct MxdcS0PageData		{
+		public struct MxdcS0PageData
+		{
 			public uint32 dwSize;
 			public uint8[0] bData;
 		}
 		[CRepr]
-		public struct MxdcXpsS0PageResource		{
+		public struct MxdcXpsS0PageResource
+		{
 			public uint32 dwSize;
 			public uint32 dwResourceType;
 			public uint8[260] szUri;
@@ -3123,34 +3314,40 @@ namespace Win32
 			public uint8[0] bData;
 		}
 		[CRepr]
-		public struct MxdcPrintTicketPassthrough		{
+		public struct MxdcPrintTicketPassthrough
+		{
 			public uint32 dwDataSize;
 			public uint8[0] bData;
 		}
 		[CRepr]
-		public struct MxdcPrintTicketEscape		{
+		public struct MxdcPrintTicketEscape
+		{
 			public MxdcEscapeHeader mxdcEscape;
 			public MxdcPrintTicketPassthrough printTicketData;
 		}
 		[CRepr]
-		public struct MxdcS0PagePassthroughEscape		{
+		public struct MxdcS0PagePassthroughEscape
+		{
 			public MxdcEscapeHeader mxdcEscape;
 			public MxdcS0PageData xpsS0PageData;
 		}
 		[CRepr]
-		public struct MxdcS0PageResourceEscape		{
+		public struct MxdcS0PageResourceEscape
+		{
 			public MxdcEscapeHeader mxdcEscape;
 			public MxdcXpsS0PageResource xpsS0PageResourcePassthrough;
 		}
 		[CRepr]
-		public struct DEVICEPROPERTYHEADER		{
+		public struct DEVICEPROPERTYHEADER
+		{
 			public uint16 cbSize;
 			public uint16 Flags;
 			public HANDLE hPrinter;
 			public int8* pszPrinterName;
 		}
 		[CRepr]
-		public struct DOCUMENTPROPERTYHEADER		{
+		public struct DOCUMENTPROPERTYHEADER
+		{
 			public uint16 cbSize;
 			public uint16 Reserved;
 			public HANDLE hPrinter;
@@ -3161,7 +3358,8 @@ namespace Win32
 			public uint32 fMode;
 		}
 		[CRepr]
-		public struct DEVQUERYPRINT_INFO		{
+		public struct DEVQUERYPRINT_INFO
+		{
 			public uint16 cbSize;
 			public uint16 Level;
 			public HANDLE hPrinter;
@@ -3171,12 +3369,14 @@ namespace Win32
 			public uint32 cchNeeded;
 		}
 		[CRepr]
-		public struct DRIVER_UPGRADE_INFO_1		{
+		public struct DRIVER_UPGRADE_INFO_1
+		{
 			public int8* pPrinterName;
 			public int8* pOldDriverDirectory;
 		}
 		[CRepr]
-		public struct DRIVER_UPGRADE_INFO_2		{
+		public struct DRIVER_UPGRADE_INFO_2
+		{
 			public int8* pPrinterName;
 			public int8* pOldDriverDirectory;
 			public uint32 cVersion;
@@ -3192,7 +3392,8 @@ namespace Win32
 			public int8* pszzPreviousNames;
 		}
 		[CRepr]
-		public struct DOCEVENT_FILTER		{
+		public struct DOCEVENT_FILTER
+		{
 			public uint32 cbSize;
 			public uint32 cElementsAllocated;
 			public uint32 cElementsNeeded;
@@ -3200,26 +3401,30 @@ namespace Win32
 			public uint32[0] aDocEventCall;
 		}
 		[CRepr]
-		public struct DOCEVENT_CREATEDCPRE		{
+		public struct DOCEVENT_CREATEDCPRE
+		{
 			public PWSTR pszDriver;
 			public PWSTR pszDevice;
 			public DEVMODEW* pdm;
 			public BOOL bIC;
 		}
 		[CRepr]
-		public struct DOCEVENT_ESCAPE		{
+		public struct DOCEVENT_ESCAPE
+		{
 			public int32 iEscape;
 			public int32 cjInput;
 			public void* pvInData;
 		}
 		[CRepr]
-		public struct PRINTER_EVENT_ATTRIBUTES_INFO		{
+		public struct PRINTER_EVENT_ATTRIBUTES_INFO
+		{
 			public uint32 cbSize;
 			public uint32 dwOldAttributes;
 			public uint32 dwNewAttributes;
 		}
 		[CRepr]
-		public struct ATTRIBUTE_INFO_1		{
+		public struct ATTRIBUTE_INFO_1
+		{
 			public uint32 dwJobNumberOfPagesPerSide;
 			public uint32 dwDrvNumberOfPagesPerSide;
 			public uint32 dwNupBorderFlags;
@@ -3229,7 +3434,8 @@ namespace Win32
 			public uint32 dwDrvNumberOfCopies;
 		}
 		[CRepr]
-		public struct ATTRIBUTE_INFO_2		{
+		public struct ATTRIBUTE_INFO_2
+		{
 			public uint32 dwJobNumberOfPagesPerSide;
 			public uint32 dwDrvNumberOfPagesPerSide;
 			public uint32 dwNupBorderFlags;
@@ -3240,7 +3446,8 @@ namespace Win32
 			public uint32 dwColorOptimization;
 		}
 		[CRepr]
-		public struct ATTRIBUTE_INFO_3		{
+		public struct ATTRIBUTE_INFO_3
+		{
 			public uint32 dwJobNumberOfPagesPerSide;
 			public uint32 dwDrvNumberOfPagesPerSide;
 			public uint32 dwNupBorderFlags;
@@ -3253,7 +3460,8 @@ namespace Win32
 			public int16 dmYResolution;
 		}
 		[CRepr]
-		public struct ATTRIBUTE_INFO_4		{
+		public struct ATTRIBUTE_INFO_4
+		{
 			public uint32 dwJobNumberOfPagesPerSide;
 			public uint32 dwDrvNumberOfPagesPerSide;
 			public uint32 dwNupBorderFlags;
@@ -3271,23 +3479,27 @@ namespace Win32
 			public uint32 dwScalingPercentY;
 		}
 		[CRepr]
-		public struct PSCRIPT5_PRIVATE_DEVMODE		{
+		public struct PSCRIPT5_PRIVATE_DEVMODE
+		{
 			public uint16[57] wReserved;
 			public uint16 wSize;
 		}
 		[CRepr]
-		public struct UNIDRV_PRIVATE_DEVMODE		{
+		public struct UNIDRV_PRIVATE_DEVMODE
+		{
 			public uint16[4] wReserved;
 			public uint16 wSize;
 		}
 		[CRepr]
-		public struct PUBLISHERINFO		{
+		public struct PUBLISHERINFO
+		{
 			public uint32 dwMode;
 			public uint16 wMinoutlinePPEM;
 			public uint16 wMaxbitmapPPEM;
 		}
 		[CRepr]
-		public struct OEMDMPARAM		{
+		public struct OEMDMPARAM
+		{
 			public uint32 cbSize;
 			public void* pdriverobj;
 			public HANDLE hPrinter;
@@ -3299,20 +3511,23 @@ namespace Win32
 			public uint32 cbBufSize;
 		}
 		[CRepr]
-		public struct OEM_DMEXTRAHEADER		{
+		public struct OEM_DMEXTRAHEADER
+		{
 			public uint32 dwSize;
 			public uint32 dwSignature;
 			public uint32 dwVersion;
 		}
 		[CRepr]
-		public struct USERDATA		{
+		public struct USERDATA
+		{
 			public uint32 dwSize;
 			public uint dwItemID;
 			public PSTR pKeyWordName;
 			public uint32[8] dwReserved;
 		}
 		[CRepr]
-		public struct SIMULATE_CAPS_1		{
+		public struct SIMULATE_CAPS_1
+		{
 			public uint32 dwLevel;
 			public uint32 dwPageOrderFlags;
 			public uint32 dwNumberOfCopies;
@@ -3320,17 +3535,20 @@ namespace Win32
 			public uint32 dwNupOptions;
 		}
 		[CRepr]
-		public struct OEMUIPROCS		{
+		public struct OEMUIPROCS
+		{
 			public PFN_DrvGetDriverSetting DrvGetDriverSetting;
 			public PFN_DrvUpdateUISetting DrvUpdateUISetting;
 		}
 		[CRepr]
-		public struct OEMUIOBJ		{
+		public struct OEMUIOBJ
+		{
 			public uint32 cbSize;
 			public OEMUIPROCS* pOemUIProcs;
 		}
 		[CRepr]
-		public struct OEMCUIPPARAM		{
+		public struct OEMCUIPPARAM
+		{
 			public uint32 cbSize;
 			public OEMUIOBJ* poemuiobj;
 			public HANDLE hPrinter;
@@ -3348,7 +3566,8 @@ namespace Win32
 			public OEMCUIPCALLBACK OEMCUIPCallback;
 		}
 		[CRepr]
-		public struct OEMUIPSPARAM		{
+		public struct OEMUIPSPARAM
+		{
 			public uint32 cbSize;
 			public OEMUIOBJ* poemuiobj;
 			public HANDLE hPrinter;
@@ -3362,18 +3581,21 @@ namespace Win32
 			public void* pOemEntry;
 		}
 		[CRepr]
-		public struct CUSTOMSIZEPARAM		{
+		public struct CUSTOMSIZEPARAM
+		{
 			public int32 dwOrder;
 			public int32 lMinVal;
 			public int32 lMaxVal;
 		}
 		[CRepr]
-		public struct PRINT_FEATURE_OPTION		{
+		public struct PRINT_FEATURE_OPTION
+		{
 			public PSTR pszFeature;
 			public PSTR pszOption;
 		}
 		[CRepr]
-		public struct UNIFM_HDR		{
+		public struct UNIFM_HDR
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public uint32 ulDefaultCodepage;
@@ -3386,12 +3608,14 @@ namespace Win32
 			public uint32[2] dwReserved;
 		}
 		[CRepr]
-		public struct INVOC		{
+		public struct INVOC
+		{
 			public uint32 dwCount;
 			public uint32 loOffset;
 		}
 		[CRepr]
-		public struct UNIDRVINFO		{
+		public struct UNIDRVINFO
+		{
 			public uint32 dwSize;
 			public uint32 flGenFlags;
 			public uint16 wType;
@@ -3407,7 +3631,8 @@ namespace Win32
 			public uint16[4] wReserved;
 		}
 		[CRepr]
-		public struct PRINTIFI32		{
+		public struct PRINTIFI32
+		{
 			public uint32 cjThis;
 			public uint32 cjIfiExtra;
 			public int32 dpwszFamilyName;
@@ -3469,7 +3694,8 @@ namespace Win32
 			public PANOSE panose;
 		}
 		[CRepr]
-		public struct EXTTEXTMETRIC		{
+		public struct EXTTEXTMETRIC
+		{
 			public int16 emSize;
 			public int16 emPointSize;
 			public int16 emOrientation;
@@ -3498,25 +3724,29 @@ namespace Win32
 			public uint16 emKernTracks;
 		}
 		[CRepr]
-		public struct WIDTHRUN		{
+		public struct WIDTHRUN
+		{
 			public uint16 wStartGlyph;
 			public uint16 wGlyphCount;
 			public uint32 loCharWidthOffset;
 		}
 		[CRepr]
-		public struct WIDTHTABLE		{
+		public struct WIDTHTABLE
+		{
 			public uint32 dwSize;
 			public uint32 dwRunNum;
 			public WIDTHRUN[0] WidthRun;
 		}
 		[CRepr]
-		public struct KERNDATA		{
+		public struct KERNDATA
+		{
 			public uint32 dwSize;
 			public uint32 dwKernPairNum;
 			public FD_KERNINGPAIR[0] KernPair;
 		}
 		[CRepr]
-		public struct UNI_GLYPHSETDATA		{
+		public struct UNI_GLYPHSETDATA
+		{
 			public uint32 dwSize;
 			public uint32 dwVersion;
 			public uint32 dwFlags;
@@ -3530,37 +3760,43 @@ namespace Win32
 			public uint32[2] dwReserved;
 		}
 		[CRepr]
-		public struct UNI_CODEPAGEINFO		{
+		public struct UNI_CODEPAGEINFO
+		{
 			public uint32 dwCodePage;
 			public INVOC SelectSymbolSet;
 			public INVOC UnSelectSymbolSet;
 		}
 		[CRepr]
-		public struct GLYPHRUN		{
+		public struct GLYPHRUN
+		{
 			public char16 wcLow;
 			public uint16 wGlyphCount;
 		}
 		[CRepr]
-		public struct TRANSDATA		{
+		public struct TRANSDATA
+		{
 			public uint8 ubCodePageID;
 			public uint8 ubType;
 			public _uCode_e__Union uCode;
 			
 			[CRepr, Union]
-			public struct _uCode_e__Union			{
+			public struct _uCode_e__Union
+			{
 				public int16 sCode;
 				public uint8 ubCode;
 				public uint8[2] ubPairs;
 			}
 		}
 		[CRepr]
-		public struct MAPTABLE		{
+		public struct MAPTABLE
+		{
 			public uint32 dwSize;
 			public uint32 dwGlyphNum;
 			public TRANSDATA[0] Trans;
 		}
 		[CRepr]
-		public struct UFF_FILEHEADER		{
+		public struct UFF_FILEHEADER
+		{
 			public uint32 dwSignature;
 			public uint32 dwVersion;
 			public uint32 dwSize;
@@ -3572,7 +3808,8 @@ namespace Win32
 			public uint32[4] dwReserved;
 		}
 		[CRepr]
-		public struct UFF_FONTDIRECTORY		{
+		public struct UFF_FONTDIRECTORY
+		{
 			public uint32 dwSignature;
 			public uint16 wSize;
 			public uint16 wFontID;
@@ -3586,7 +3823,8 @@ namespace Win32
 			public uint32 offVarData;
 		}
 		[CRepr]
-		public struct DATA_HEADER		{
+		public struct DATA_HEADER
+		{
 			public uint32 dwSignature;
 			public uint16 wSize;
 			public uint16 wDataID;
@@ -3594,7 +3832,8 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct OEMFONTINSTPARAM		{
+		public struct OEMFONTINSTPARAM
+		{
 			public uint32 cbSize;
 			public HANDLE hPrinter;
 			public HANDLE hModule;
@@ -3603,7 +3842,8 @@ namespace Win32
 			public PWSTR pFontInstallerName;
 		}
 		[CRepr]
-		public struct PORT_DATA_1		{
+		public struct PORT_DATA_1
+		{
 			public char16[64] sztPortName;
 			public uint32 dwVersion;
 			public uint32 dwProtocol;
@@ -3620,7 +3860,8 @@ namespace Win32
 			public uint32 dwSNMPDevIndex;
 		}
 		[CRepr]
-		public struct PORT_DATA_2		{
+		public struct PORT_DATA_2
+		{
 			public char16[64] sztPortName;
 			public uint32 dwVersion;
 			public uint32 dwProtocol;
@@ -3637,25 +3878,29 @@ namespace Win32
 			public uint32 dwPortMonitorMibIndex;
 		}
 		[CRepr]
-		public struct PORT_DATA_LIST_1		{
+		public struct PORT_DATA_LIST_1
+		{
 			public uint32 dwVersion;
 			public uint32 cPortData;
 			public PORT_DATA_2[0] pPortData;
 		}
 		[CRepr]
-		public struct DELETE_PORT_DATA_1		{
+		public struct DELETE_PORT_DATA_1
+		{
 			public char16[64] psztPortName;
 			public uint8[98] Reserved;
 			public uint32 dwVersion;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct CONFIG_INFO_DATA_1		{
+		public struct CONFIG_INFO_DATA_1
+		{
 			public uint8[128] Reserved;
 			public uint32 dwVersion;
 		}
 		[CRepr]
-		public struct BranchOfficeJobDataPrinted		{
+		public struct BranchOfficeJobDataPrinted
+		{
 			public uint32 Status;
 			public PWSTR pDocumentName;
 			public PWSTR pUserName;
@@ -3666,7 +3911,8 @@ namespace Win32
 			public uint32 TotalPages;
 		}
 		[CRepr]
-		public struct BranchOfficeJobDataError		{
+		public struct BranchOfficeJobDataError
+		{
 			public uint32 LastError;
 			public PWSTR pDocumentName;
 			public PWSTR pUserName;
@@ -3681,7 +3927,8 @@ namespace Win32
 			public PWSTR pErrorDescription;
 		}
 		[CRepr]
-		public struct BranchOfficeJobDataRendered		{
+		public struct BranchOfficeJobDataRendered
+		{
 			public int64 Size;
 			public uint32 ICMMethod;
 			public int16 Color;
@@ -3691,23 +3938,27 @@ namespace Win32
 			public int16 TTOption;
 		}
 		[CRepr]
-		public struct BranchOfficeJobDataPipelineFailed		{
+		public struct BranchOfficeJobDataPipelineFailed
+		{
 			public PWSTR pDocumentName;
 			public PWSTR pPrinterName;
 			public PWSTR pExtraErrorInfo;
 		}
 		[CRepr]
-		public struct BranchOfficeLogOfflineFileFull		{
+		public struct BranchOfficeLogOfflineFileFull
+		{
 			public PWSTR pMachineName;
 		}
 		[CRepr]
-		public struct BranchOfficeJobData		{
+		public struct BranchOfficeJobData
+		{
 			public EBranchOfficeJobEventType eEventType;
 			public uint32 JobId;
 			public _JobInfo_e__Union JobInfo;
 			
 			[CRepr, Union]
-			public struct _JobInfo_e__Union			{
+			public struct _JobInfo_e__Union
+			{
 				public BranchOfficeJobDataPrinted LogJobPrinted;
 				public BranchOfficeJobDataRendered LogJobRendered;
 				public BranchOfficeJobDataError LogJobError;
@@ -3716,18 +3967,21 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct BranchOfficeJobDataContainer		{
+		public struct BranchOfficeJobDataContainer
+		{
 			public uint32 cJobDataEntries;
 			public BranchOfficeJobData[0] JobData;
 		}
 		[CRepr]
-		public struct PRINTER_NOTIFY_INIT		{
+		public struct PRINTER_NOTIFY_INIT
+		{
 			public uint32 Size;
 			public uint32 Reserved;
 			public uint32 PollTime;
 		}
 		[CRepr]
-		public struct SPLCLIENT_INFO_1		{
+		public struct SPLCLIENT_INFO_1
+		{
 			public uint32 dwSize;
 			public PWSTR pMachineName;
 			public PWSTR pUserName;
@@ -3737,19 +3991,23 @@ namespace Win32
 			public uint16 wProcessorArchitecture;
 		}
 		[CRepr]
-		public struct _SPLCLIENT_INFO_2_V1		{
+		public struct _SPLCLIENT_INFO_2_V1
+		{
 			public uint hSplPrinter;
 		}
 		[CRepr]
-		public struct _SPLCLIENT_INFO_2_V2		{
+		public struct _SPLCLIENT_INFO_2_V2
+		{
 			public uint64 hSplPrinter;
 		}
 		[CRepr]
-		public struct _SPLCLIENT_INFO_2_V3		{
+		public struct _SPLCLIENT_INFO_2_V3
+		{
 			public uint64 hSplPrinter;
 		}
 		[CRepr]
-		public struct SPLCLIENT_INFO_3_VISTA		{
+		public struct SPLCLIENT_INFO_3_VISTA
+		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public uint32 dwSize;
@@ -3762,7 +4020,8 @@ namespace Win32
 			public uint64 hSplPrinter;
 		}
 		[CRepr]
-		public struct PRINTPROVIDOR		{
+		public struct PRINTPROVIDOR
+		{
 			public int fpOpenPrinter;
 			public int fpSetJob;
 			public int fpGetJob;
@@ -3871,7 +4130,8 @@ namespace Win32
 			public int fpIppSetPrinterAttributes;
 		}
 		[CRepr]
-		public struct PRINTPROCESSOROPENDATA		{
+		public struct PRINTPROCESSOROPENDATA
+		{
 			public DEVMODEA* pDevMode;
 			public PWSTR pDatatype;
 			public PWSTR pParameters;
@@ -3881,7 +4141,8 @@ namespace Win32
 			public PWSTR pPrinterName;
 		}
 		[CRepr]
-		public struct MONITORREG		{
+		public struct MONITORREG
+		{
 			public uint32 cbSize;
 			public int fpCreateKey;
 			public int fpOpenKey;
@@ -3895,7 +4156,8 @@ namespace Win32
 			public int fpQueryValue;
 		}
 		[CRepr]
-		public struct MONITORINIT		{
+		public struct MONITORINIT
+		{
 			public uint32 cbSize;
 			public HANDLE hSpooler;
 			public HKEY hckRegistryRoot;
@@ -3904,7 +4166,8 @@ namespace Win32
 			public PWSTR pszServerName;
 		}
 		[CRepr]
-		public struct MONITOR		{
+		public struct MONITOR
+		{
 			public int pfnEnumPorts;
 			public int pfnOpenPort;
 			public int pfnOpenPortEx;
@@ -3924,12 +4187,14 @@ namespace Win32
 			public int pfnXcvClosePort;
 		}
 		[CRepr]
-		public struct MONITOREX		{
+		public struct MONITOREX
+		{
 			public uint32 dwMonitorSize;
 			public MONITOR Monitor;
 		}
 		[CRepr]
-		public struct MONITOR2		{
+		public struct MONITOR2
+		{
 			public uint32 cbSize;
 			public int pfnEnumPorts;
 			public int pfnOpenPort;
@@ -3955,21 +4220,24 @@ namespace Win32
 			public int pfnPowerEvent;
 		}
 		[CRepr]
-		public struct MONITORUI		{
+		public struct MONITORUI
+		{
 			public uint32 dwMonitorUISize;
 			public int pfnAddPortUI;
 			public int pfnConfigurePortUI;
 			public int pfnDeletePortUI;
 		}
 		[CRepr]
-		public struct NOTIFICATION_CONFIG_1		{
+		public struct NOTIFICATION_CONFIG_1
+		{
 			public uint32 cbSize;
 			public uint32 fdwFlags;
 			public ROUTER_NOTIFY_CALLBACK pfnNotifyCallback;
 			public void* pContext;
 		}
 		[CRepr]
-		public struct MESSAGEBOX_PARAMS		{
+		public struct MESSAGEBOX_PARAMS
+		{
 			public uint32 cbSize;
 			public PWSTR pTitle;
 			public PWSTR pMessage;
@@ -3978,7 +4246,8 @@ namespace Win32
 			public BOOL bWait;
 		}
 		[CRepr]
-		public struct SHOWUIPARAMS		{
+		public struct SHOWUIPARAMS
+		{
 			public UI_TYPE UIType;
 			public MESSAGEBOX_PARAMS MessageBoxParams;
 		}

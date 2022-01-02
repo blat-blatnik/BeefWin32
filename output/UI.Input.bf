@@ -62,14 +62,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct RAWINPUTHEADER		{
+		public struct RAWINPUTHEADER
+		{
 			public uint32 dwType;
 			public uint32 dwSize;
 			public HANDLE hDevice;
 			public WPARAM wParam;
 		}
 		[CRepr]
-		public struct RAWMOUSE		{
+		public struct RAWMOUSE
+		{
 			public uint16 usFlags;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 ulRawButtons;
@@ -78,19 +80,22 @@ namespace Win32
 			public uint32 ulExtraInformation;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 ulButtons;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint16 usButtonFlags;
 					public uint16 usButtonData;
 				}
 			}
 		}
 		[CRepr]
-		public struct RAWKEYBOARD		{
+		public struct RAWKEYBOARD
+		{
 			public uint16 MakeCode;
 			public uint16 Flags;
 			public uint16 Reserved;
@@ -99,32 +104,37 @@ namespace Win32
 			public uint32 ExtraInformation;
 		}
 		[CRepr]
-		public struct RAWHID		{
+		public struct RAWHID
+		{
 			public uint32 dwSizeHid;
 			public uint32 dwCount;
 			public uint8[0] bRawData;
 		}
 		[CRepr]
-		public struct RAWINPUT		{
+		public struct RAWINPUT
+		{
 			public RAWINPUTHEADER header;
 			public _data_e__Union data;
 			
 			[CRepr, Union]
-			public struct _data_e__Union			{
+			public struct _data_e__Union
+			{
 				public RAWMOUSE mouse;
 				public RAWKEYBOARD keyboard;
 				public RAWHID hid;
 			}
 		}
 		[CRepr]
-		public struct RID_DEVICE_INFO_MOUSE		{
+		public struct RID_DEVICE_INFO_MOUSE
+		{
 			public uint32 dwId;
 			public uint32 dwNumberOfButtons;
 			public uint32 dwSampleRate;
 			public BOOL fHasHorizontalWheel;
 		}
 		[CRepr]
-		public struct RID_DEVICE_INFO_KEYBOARD		{
+		public struct RID_DEVICE_INFO_KEYBOARD
+		{
 			public uint32 dwType;
 			public uint32 dwSubType;
 			public uint32 dwKeyboardMode;
@@ -133,7 +143,8 @@ namespace Win32
 			public uint32 dwNumberOfKeysTotal;
 		}
 		[CRepr]
-		public struct RID_DEVICE_INFO_HID		{
+		public struct RID_DEVICE_INFO_HID
+		{
 			public uint32 dwVendorId;
 			public uint32 dwProductId;
 			public uint32 dwVersionNumber;
@@ -141,32 +152,37 @@ namespace Win32
 			public uint16 usUsage;
 		}
 		[CRepr]
-		public struct RID_DEVICE_INFO		{
+		public struct RID_DEVICE_INFO
+		{
 			public uint32 cbSize;
 			public RID_DEVICE_INFO_TYPE dwType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public RID_DEVICE_INFO_MOUSE mouse;
 				public RID_DEVICE_INFO_KEYBOARD keyboard;
 				public RID_DEVICE_INFO_HID hid;
 			}
 		}
 		[CRepr]
-		public struct RAWINPUTDEVICE		{
+		public struct RAWINPUTDEVICE
+		{
 			public uint16 usUsagePage;
 			public uint16 usUsage;
 			public RAWINPUTDEVICE_FLAGS dwFlags;
 			public HWND hwndTarget;
 		}
 		[CRepr]
-		public struct RAWINPUTDEVICELIST		{
+		public struct RAWINPUTDEVICELIST
+		{
 			public HANDLE hDevice;
 			public RID_DEVICE_INFO_TYPE dwType;
 		}
 		[CRepr]
-		public struct INPUT_MESSAGE_SOURCE		{
+		public struct INPUT_MESSAGE_SOURCE
+		{
 			public INPUT_MESSAGE_DEVICE_TYPE deviceType;
 			public INPUT_MESSAGE_ORIGIN_ID originId;
 		}

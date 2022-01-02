@@ -296,40 +296,48 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SERVICE_TRIGGER_CUSTOM_STATE_ID		{
+		public struct SERVICE_TRIGGER_CUSTOM_STATE_ID
+		{
 			public uint32[2] Data;
 		}
 		[CRepr]
-		public struct SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM		{
+		public struct SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM
+		{
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union			{
+			public struct _u_e__Union
+			{
 				public SERVICE_TRIGGER_CUSTOM_STATE_ID CustomStateId;
 				public _s_e__Struct s;
 				
 				[CRepr]
-				public struct _s_e__Struct				{
+				public struct _s_e__Struct
+				{
 					public uint32 DataOffset;
 					public uint8[0] Data;
 				}
 			}
 		}
 		[CRepr]
-		public struct SERVICE_DESCRIPTIONA		{
+		public struct SERVICE_DESCRIPTIONA
+		{
 			public PSTR lpDescription;
 		}
 		[CRepr]
-		public struct SERVICE_DESCRIPTIONW		{
+		public struct SERVICE_DESCRIPTIONW
+		{
 			public PWSTR lpDescription;
 		}
 		[CRepr]
-		public struct SC_ACTION		{
+		public struct SC_ACTION
+		{
 			public SC_ACTION_TYPE Type;
 			public uint32 Delay;
 		}
 		[CRepr]
-		public struct SERVICE_FAILURE_ACTIONSA		{
+		public struct SERVICE_FAILURE_ACTIONSA
+		{
 			public uint32 dwResetPeriod;
 			public PSTR lpRebootMsg;
 			public PSTR lpCommand;
@@ -337,7 +345,8 @@ namespace Win32
 			public SC_ACTION* lpsaActions;
 		}
 		[CRepr]
-		public struct SERVICE_FAILURE_ACTIONSW		{
+		public struct SERVICE_FAILURE_ACTIONSW
+		{
 			public uint32 dwResetPeriod;
 			public PWSTR lpRebootMsg;
 			public PWSTR lpCommand;
@@ -345,37 +354,45 @@ namespace Win32
 			public SC_ACTION* lpsaActions;
 		}
 		[CRepr]
-		public struct SERVICE_DELAYED_AUTO_START_INFO		{
+		public struct SERVICE_DELAYED_AUTO_START_INFO
+		{
 			public BOOL fDelayedAutostart;
 		}
 		[CRepr]
-		public struct SERVICE_FAILURE_ACTIONS_FLAG		{
+		public struct SERVICE_FAILURE_ACTIONS_FLAG
+		{
 			public BOOL fFailureActionsOnNonCrashFailures;
 		}
 		[CRepr]
-		public struct SERVICE_SID_INFO		{
+		public struct SERVICE_SID_INFO
+		{
 			public uint32 dwServiceSidType;
 		}
 		[CRepr]
-		public struct SERVICE_REQUIRED_PRIVILEGES_INFOA		{
+		public struct SERVICE_REQUIRED_PRIVILEGES_INFOA
+		{
 			public PSTR pmszRequiredPrivileges;
 		}
 		[CRepr]
-		public struct SERVICE_REQUIRED_PRIVILEGES_INFOW		{
+		public struct SERVICE_REQUIRED_PRIVILEGES_INFOW
+		{
 			public PWSTR pmszRequiredPrivileges;
 		}
 		[CRepr]
-		public struct SERVICE_PRESHUTDOWN_INFO		{
+		public struct SERVICE_PRESHUTDOWN_INFO
+		{
 			public uint32 dwPreshutdownTimeout;
 		}
 		[CRepr]
-		public struct SERVICE_TRIGGER_SPECIFIC_DATA_ITEM		{
+		public struct SERVICE_TRIGGER_SPECIFIC_DATA_ITEM
+		{
 			public SERVICE_TRIGGER_SPECIFIC_DATA_ITEM_DATA_TYPE dwDataType;
 			public uint32 cbData;
 			public uint8* pData;
 		}
 		[CRepr]
-		public struct SERVICE_TRIGGER		{
+		public struct SERVICE_TRIGGER
+		{
 			public SERVICE_TRIGGER_TYPE dwTriggerType;
 			public SERVICE_TRIGGER_ACTION dwAction;
 			public Guid* pTriggerSubtype;
@@ -383,27 +400,32 @@ namespace Win32
 			public SERVICE_TRIGGER_SPECIFIC_DATA_ITEM* pDataItems;
 		}
 		[CRepr]
-		public struct SERVICE_TRIGGER_INFO		{
+		public struct SERVICE_TRIGGER_INFO
+		{
 			public uint32 cTriggers;
 			public SERVICE_TRIGGER* pTriggers;
 			public uint8* pReserved;
 		}
 		[CRepr]
-		public struct SERVICE_PREFERRED_NODE_INFO		{
+		public struct SERVICE_PREFERRED_NODE_INFO
+		{
 			public uint16 usPreferredNode;
 			public BOOLEAN fDelete;
 		}
 		[CRepr]
-		public struct SERVICE_TIMECHANGE_INFO		{
+		public struct SERVICE_TIMECHANGE_INFO
+		{
 			public LARGE_INTEGER liNewTime;
 			public LARGE_INTEGER liOldTime;
 		}
 		[CRepr]
-		public struct SERVICE_LAUNCH_PROTECTED_INFO		{
+		public struct SERVICE_LAUNCH_PROTECTED_INFO
+		{
 			public uint32 dwLaunchProtected;
 		}
 		[CRepr]
-		public struct SERVICE_STATUS		{
+		public struct SERVICE_STATUS
+		{
 			public ENUM_SERVICE_TYPE dwServiceType;
 			public SERVICE_STATUS_CURRENT_STATE dwCurrentState;
 			public uint32 dwControlsAccepted;
@@ -413,7 +435,8 @@ namespace Win32
 			public uint32 dwWaitHint;
 		}
 		[CRepr]
-		public struct SERVICE_STATUS_PROCESS		{
+		public struct SERVICE_STATUS_PROCESS
+		{
 			public ENUM_SERVICE_TYPE dwServiceType;
 			public SERVICE_STATUS_CURRENT_STATE dwCurrentState;
 			public uint32 dwControlsAccepted;
@@ -425,43 +448,50 @@ namespace Win32
 			public SERVICE_RUNS_IN_PROCESS dwServiceFlags;
 		}
 		[CRepr]
-		public struct ENUM_SERVICE_STATUSA		{
+		public struct ENUM_SERVICE_STATUSA
+		{
 			public PSTR lpServiceName;
 			public PSTR lpDisplayName;
 			public SERVICE_STATUS ServiceStatus;
 		}
 		[CRepr]
-		public struct ENUM_SERVICE_STATUSW		{
+		public struct ENUM_SERVICE_STATUSW
+		{
 			public PWSTR lpServiceName;
 			public PWSTR lpDisplayName;
 			public SERVICE_STATUS ServiceStatus;
 		}
 		[CRepr]
-		public struct ENUM_SERVICE_STATUS_PROCESSA		{
+		public struct ENUM_SERVICE_STATUS_PROCESSA
+		{
 			public PSTR lpServiceName;
 			public PSTR lpDisplayName;
 			public SERVICE_STATUS_PROCESS ServiceStatusProcess;
 		}
 		[CRepr]
-		public struct ENUM_SERVICE_STATUS_PROCESSW		{
+		public struct ENUM_SERVICE_STATUS_PROCESSW
+		{
 			public PWSTR lpServiceName;
 			public PWSTR lpDisplayName;
 			public SERVICE_STATUS_PROCESS ServiceStatusProcess;
 		}
 		[CRepr]
-		public struct QUERY_SERVICE_LOCK_STATUSA		{
+		public struct QUERY_SERVICE_LOCK_STATUSA
+		{
 			public uint32 fIsLocked;
 			public PSTR lpLockOwner;
 			public uint32 dwLockDuration;
 		}
 		[CRepr]
-		public struct QUERY_SERVICE_LOCK_STATUSW		{
+		public struct QUERY_SERVICE_LOCK_STATUSW
+		{
 			public uint32 fIsLocked;
 			public PWSTR lpLockOwner;
 			public uint32 dwLockDuration;
 		}
 		[CRepr]
-		public struct QUERY_SERVICE_CONFIGA		{
+		public struct QUERY_SERVICE_CONFIGA
+		{
 			public ENUM_SERVICE_TYPE dwServiceType;
 			public SERVICE_START_TYPE dwStartType;
 			public SERVICE_ERROR dwErrorControl;
@@ -473,7 +503,8 @@ namespace Win32
 			public PSTR lpDisplayName;
 		}
 		[CRepr]
-		public struct QUERY_SERVICE_CONFIGW		{
+		public struct QUERY_SERVICE_CONFIGW
+		{
 			public ENUM_SERVICE_TYPE dwServiceType;
 			public SERVICE_START_TYPE dwStartType;
 			public SERVICE_ERROR dwErrorControl;
@@ -485,17 +516,20 @@ namespace Win32
 			public PWSTR lpDisplayName;
 		}
 		[CRepr]
-		public struct SERVICE_TABLE_ENTRYA		{
+		public struct SERVICE_TABLE_ENTRYA
+		{
 			public PSTR lpServiceName;
 			public LPSERVICE_MAIN_FUNCTIONA lpServiceProc;
 		}
 		[CRepr]
-		public struct SERVICE_TABLE_ENTRYW		{
+		public struct SERVICE_TABLE_ENTRYW
+		{
 			public PWSTR lpServiceName;
 			public LPSERVICE_MAIN_FUNCTIONW lpServiceProc;
 		}
 		[CRepr]
-		public struct SERVICE_NOTIFY_1		{
+		public struct SERVICE_NOTIFY_1
+		{
 			public uint32 dwVersion;
 			public PFN_SC_NOTIFY_CALLBACK pfnNotifyCallback;
 			public void* pContext;
@@ -503,7 +537,8 @@ namespace Win32
 			public SERVICE_STATUS_PROCESS ServiceStatus;
 		}
 		[CRepr]
-		public struct SERVICE_NOTIFY_2A		{
+		public struct SERVICE_NOTIFY_2A
+		{
 			public uint32 dwVersion;
 			public PFN_SC_NOTIFY_CALLBACK pfnNotifyCallback;
 			public void* pContext;
@@ -513,7 +548,8 @@ namespace Win32
 			public PSTR pszServiceNames;
 		}
 		[CRepr]
-		public struct SERVICE_NOTIFY_2W		{
+		public struct SERVICE_NOTIFY_2W
+		{
 			public uint32 dwVersion;
 			public PFN_SC_NOTIFY_CALLBACK pfnNotifyCallback;
 			public void* pContext;
@@ -523,19 +559,22 @@ namespace Win32
 			public PWSTR pszServiceNames;
 		}
 		[CRepr]
-		public struct SERVICE_CONTROL_STATUS_REASON_PARAMSA		{
+		public struct SERVICE_CONTROL_STATUS_REASON_PARAMSA
+		{
 			public uint32 dwReason;
 			public PSTR pszComment;
 			public SERVICE_STATUS_PROCESS ServiceStatus;
 		}
 		[CRepr]
-		public struct SERVICE_CONTROL_STATUS_REASON_PARAMSW		{
+		public struct SERVICE_CONTROL_STATUS_REASON_PARAMSW
+		{
 			public uint32 dwReason;
 			public PWSTR pszComment;
 			public SERVICE_STATUS_PROCESS ServiceStatus;
 		}
 		[CRepr]
-		public struct SERVICE_START_REASON		{
+		public struct SERVICE_START_REASON
+		{
 			public uint32 dwReason;
 		}
 		[CRepr]

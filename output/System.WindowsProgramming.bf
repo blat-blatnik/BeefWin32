@@ -793,11 +793,13 @@ namespace Win32
 		[CRepr]
 		public struct _D3DHAL_GLOBALDRIVERDATA {}
 		[CRepr]
-		public struct IMAGE_THUNK_DATA64		{
+		public struct IMAGE_THUNK_DATA64
+		{
 			public _u1_e__Union u1;
 			
 			[CRepr, Union]
-			public struct _u1_e__Union			{
+			public struct _u1_e__Union
+			{
 				public uint64 ForwarderString;
 				public uint64 Function;
 				public uint64 Ordinal;
@@ -805,11 +807,13 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IMAGE_THUNK_DATA32		{
+		public struct IMAGE_THUNK_DATA32
+		{
 			public _u1_e__Union u1;
 			
 			[CRepr, Union]
-			public struct _u1_e__Union			{
+			public struct _u1_e__Union
+			{
 				public uint32 ForwarderString;
 				public uint32 Function;
 				public uint32 Ordinal;
@@ -817,7 +821,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IMAGE_DELAYLOAD_DESCRIPTOR		{
+		public struct IMAGE_DELAYLOAD_DESCRIPTOR
+		{
 			public _Attributes_e__Union Attributes;
 			public uint32 DllNameRVA;
 			public uint32 ModuleHandleRVA;
@@ -828,23 +833,27 @@ namespace Win32
 			public uint32 TimeDateStamp;
 			
 			[CRepr, Union]
-			public struct _Attributes_e__Union			{
+			public struct _Attributes_e__Union
+			{
 				public uint32 AllAttributes;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG		{
+		public struct CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG
+		{
 			public uint32 Size;
 			public PWSTR TriggerId;
 		}
 		[CRepr]
-		public struct JIT_DEBUG_INFO		{
+		public struct JIT_DEBUG_INFO
+		{
 			public uint32 dwSize;
 			public uint32 dwProcessorArchitecture;
 			public uint32 dwThreadID;
@@ -854,19 +863,22 @@ namespace Win32
 			public uint64 lpContextRecord;
 		}
 		[CRepr]
-		public struct HW_PROFILE_INFOA		{
+		public struct HW_PROFILE_INFOA
+		{
 			public uint32 dwDockInfo;
 			public CHAR[39] szHwProfileGuid;
 			public CHAR[80] szHwProfileName;
 		}
 		[CRepr]
-		public struct HW_PROFILE_INFOW		{
+		public struct HW_PROFILE_INFOW
+		{
 			public uint32 dwDockInfo;
 			public char16[39] szHwProfileGuid;
 			public char16[80] szHwProfileName;
 		}
 		[CRepr]
-		public struct ACTCTX_SECTION_KEYED_DATA_2600		{
+		public struct ACTCTX_SECTION_KEYED_DATA_2600
+		{
 			public uint32 cbSize;
 			public uint32 ulDataFormatVersion;
 			public void* lpData;
@@ -879,7 +891,8 @@ namespace Win32
 			public uint32 ulAssemblyRosterIndex;
 		}
 		[CRepr]
-		public struct ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA		{
+		public struct ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA
+		{
 			public void* lpInformation;
 			public void* lpSectionBase;
 			public uint32 ulSectionLength;
@@ -887,25 +900,30 @@ namespace Win32
 			public uint32 ulSectionGlobalDataLength;
 		}
 		[CRepr]
-		public struct ACTIVATION_CONTEXT_BASIC_INFORMATION		{
+		public struct ACTIVATION_CONTEXT_BASIC_INFORMATION
+		{
 			public HANDLE hActCtx;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct FILE_CASE_SENSITIVE_INFO		{
+		public struct FILE_CASE_SENSITIVE_INFO
+		{
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct FILE_DISPOSITION_INFO_EX		{
+		public struct FILE_DISPOSITION_INFO_EX
+		{
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct CLIENT_ID		{
+		public struct CLIENT_ID
+		{
 			public HANDLE UniqueProcess;
 			public HANDLE UniqueThread;
 		}
 		[CRepr]
-		public struct LDR_DATA_TABLE_ENTRY		{
+		public struct LDR_DATA_TABLE_ENTRY
+		{
 			public void*[2] Reserved1;
 			public LIST_ENTRY InMemoryOrderLinks;
 			public void*[2] Reserved2;
@@ -918,13 +936,15 @@ namespace Win32
 			public uint32 TimeDateStamp;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 CheckSum;
 				public void* Reserved6;
 			}
 		}
 		[CRepr]
-		public struct OBJECT_ATTRIBUTES		{
+		public struct OBJECT_ATTRIBUTES
+		{
 			public uint32 Length;
 			public HANDLE RootDirectory;
 			public UNICODE_STRING* ObjectName;
@@ -933,18 +953,21 @@ namespace Win32
 			public void* SecurityQualityOfService;
 		}
 		[CRepr]
-		public struct IO_STATUS_BLOCK		{
+		public struct IO_STATUS_BLOCK
+		{
 			public _Anonymous_e__Union Anonymous;
 			public uint Information;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public NTSTATUS Status;
 				public void* Pointer;
 			}
 		}
 		[CRepr]
-		public struct SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION		{
+		public struct SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION
+		{
 			public LARGE_INTEGER IdleTime;
 			public LARGE_INTEGER KernelTime;
 			public LARGE_INTEGER UserTime;
@@ -952,7 +975,8 @@ namespace Win32
 			public uint32 Reserved2;
 		}
 		[CRepr]
-		public struct SYSTEM_PROCESS_INFORMATION		{
+		public struct SYSTEM_PROCESS_INFORMATION
+		{
 			public uint32 NextEntryOffset;
 			public uint32 NumberOfThreads;
 			public uint8[48] Reserved1;
@@ -978,7 +1002,8 @@ namespace Win32
 			public LARGE_INTEGER[6] Reserved7;
 		}
 		[CRepr]
-		public struct SYSTEM_THREAD_INFORMATION		{
+		public struct SYSTEM_THREAD_INFORMATION
+		{
 			public LARGE_INTEGER[3] Reserved1;
 			public uint32 Reserved2;
 			public void* StartAddress;
@@ -990,53 +1015,64 @@ namespace Win32
 			public uint32 WaitReason;
 		}
 		[CRepr]
-		public struct SYSTEM_REGISTRY_QUOTA_INFORMATION		{
+		public struct SYSTEM_REGISTRY_QUOTA_INFORMATION
+		{
 			public uint32 RegistryQuotaAllowed;
 			public uint32 RegistryQuotaUsed;
 			public void* Reserved1;
 		}
 		[CRepr]
-		public struct SYSTEM_BASIC_INFORMATION		{
+		public struct SYSTEM_BASIC_INFORMATION
+		{
 			public uint8[24] Reserved1;
 			public void*[4] Reserved2;
 			public int8 NumberOfProcessors;
 		}
 		[CRepr]
-		public struct SYSTEM_TIMEOFDAY_INFORMATION		{
+		public struct SYSTEM_TIMEOFDAY_INFORMATION
+		{
 			public uint8[48] Reserved1;
 		}
 		[CRepr]
-		public struct SYSTEM_PERFORMANCE_INFORMATION		{
+		public struct SYSTEM_PERFORMANCE_INFORMATION
+		{
 			public uint8[312] Reserved1;
 		}
 		[CRepr]
-		public struct SYSTEM_EXCEPTION_INFORMATION		{
+		public struct SYSTEM_EXCEPTION_INFORMATION
+		{
 			public uint8[16] Reserved1;
 		}
 		[CRepr]
-		public struct SYSTEM_LOOKASIDE_INFORMATION		{
+		public struct SYSTEM_LOOKASIDE_INFORMATION
+		{
 			public uint8[32] Reserved1;
 		}
 		[CRepr]
-		public struct SYSTEM_INTERRUPT_INFORMATION		{
+		public struct SYSTEM_INTERRUPT_INFORMATION
+		{
 			public uint8[24] Reserved1;
 		}
 		[CRepr]
-		public struct SYSTEM_POLICY_INFORMATION		{
+		public struct SYSTEM_POLICY_INFORMATION
+		{
 			public void*[2] Reserved1;
 			public uint32[3] Reserved2;
 		}
 		[CRepr]
-		public struct THREAD_NAME_INFORMATION		{
+		public struct THREAD_NAME_INFORMATION
+		{
 			public UNICODE_STRING ThreadName;
 		}
 		[CRepr]
-		public struct SYSTEM_CODEINTEGRITY_INFORMATION		{
+		public struct SYSTEM_CODEINTEGRITY_INFORMATION
+		{
 			public uint32 Length;
 			public uint32 CodeIntegrityOptions;
 		}
 		[CRepr]
-		public struct PUBLIC_OBJECT_BASIC_INFORMATION		{
+		public struct PUBLIC_OBJECT_BASIC_INFORMATION
+		{
 			public uint32 Attributes;
 			public uint32 GrantedAccess;
 			public uint32 HandleCount;
@@ -1044,25 +1080,29 @@ namespace Win32
 			public uint32[10] Reserved;
 		}
 		[CRepr]
-		public struct PUBLIC_OBJECT_TYPE_INFORMATION		{
+		public struct PUBLIC_OBJECT_TYPE_INFORMATION
+		{
 			public UNICODE_STRING TypeName;
 			public uint32[22] Reserved;
 		}
 		[CRepr]
-		public struct KEY_VALUE_ENTRY		{
+		public struct KEY_VALUE_ENTRY
+		{
 			public UNICODE_STRING* ValueName;
 			public uint32 DataLength;
 			public uint32 DataOffset;
 			public uint32 Type;
 		}
 		[CRepr]
-		public struct WINSTATIONINFORMATIONW		{
+		public struct WINSTATIONINFORMATIONW
+		{
 			public uint8[70] Reserved2;
 			public uint32 LogonId;
 			public uint8[1140] Reserved3;
 		}
 		[CRepr]
-		public struct FEATURE_ERROR		{
+		public struct FEATURE_ERROR
+		{
 			public HRESULT hr;
 			public uint16 lineNumber;
 			public PSTR file;
@@ -1079,7 +1119,8 @@ namespace Win32
 			public PSTR originName;
 		}
 		[CRepr]
-		public struct DCICMD		{
+		public struct DCICMD
+		{
 			public uint32 dwCommand;
 			public uint32 dwParam1;
 			public uint32 dwParam2;
@@ -1087,7 +1128,8 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct DCICREATEINPUT		{
+		public struct DCICREATEINPUT
+		{
 			public DCICMD cmd;
 			public uint32 dwCompression;
 			public uint32[3] dwMask;
@@ -1098,7 +1140,8 @@ namespace Win32
 			public void* lpSurface;
 		}
 		[CRepr]
-		public struct DCISURFACEINFO		{
+		public struct DCISURFACEINFO
+		{
 			public uint32 dwSize;
 			public uint32 dwDCICaps;
 			public uint32 dwCompression;
@@ -1118,7 +1161,8 @@ namespace Win32
 			public int DestroySurface;
 		}
 		[CRepr]
-		public struct DCIENUMINPUT		{
+		public struct DCIENUMINPUT
+		{
 			public DCICMD cmd;
 			public RECT rSrc;
 			public RECT rDst;
@@ -1126,40 +1170,47 @@ namespace Win32
 			public void* lpContext;
 		}
 		[CRepr]
-		public struct DCIOFFSCREEN		{
+		public struct DCIOFFSCREEN
+		{
 			public DCISURFACEINFO dciInfo;
 			public int Draw;
 			public int SetClipList;
 			public int SetDestination;
 		}
 		[CRepr]
-		public struct DCIOVERLAY		{
+		public struct DCIOVERLAY
+		{
 			public DCISURFACEINFO dciInfo;
 			public uint32 dwChromakeyValue;
 			public uint32 dwChromakeyMask;
 		}
 		[CRepr]
-		public struct STRENTRYA		{
+		public struct STRENTRYA
+		{
 			public PSTR pszName;
 			public PSTR pszValue;
 		}
 		[CRepr]
-		public struct STRENTRYW		{
+		public struct STRENTRYW
+		{
 			public PWSTR pszName;
 			public PWSTR pszValue;
 		}
 		[CRepr]
-		public struct STRTABLEA		{
+		public struct STRTABLEA
+		{
 			public uint32 cEntries;
 			public STRENTRYA* pse;
 		}
 		[CRepr]
-		public struct STRTABLEW		{
+		public struct STRTABLEW
+		{
 			public uint32 cEntries;
 			public STRENTRYW* pse;
 		}
 		[CRepr]
-		public struct CABINFOA		{
+		public struct CABINFOA
+		{
 			public PSTR pszCab;
 			public PSTR pszInf;
 			public PSTR pszSection;
@@ -1167,7 +1218,8 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct CABINFOW		{
+		public struct CABINFOW
+		{
 			public PWSTR pszCab;
 			public PWSTR pszInf;
 			public PWSTR pszSection;
@@ -1175,7 +1227,8 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct PERUSERSECTIONA		{
+		public struct PERUSERSECTIONA
+		{
 			public CHAR[59] szGUID;
 			public CHAR[128] szDispName;
 			public CHAR[10] szLocale;
@@ -1186,7 +1239,8 @@ namespace Win32
 			public BOOL bRollback;
 		}
 		[CRepr]
-		public struct PERUSERSECTIONW		{
+		public struct PERUSERSECTIONW
+		{
 			public char16[59] szGUID;
 			public char16[128] szDispName;
 			public char16[10] szLocale;
@@ -1197,7 +1251,8 @@ namespace Win32
 			public BOOL bRollback;
 		}
 		[CRepr]
-		public struct IMESTRUCT		{
+		public struct IMESTRUCT
+		{
 			public uint32 fnc;
 			public WPARAM wParam;
 			public uint32 wCount;
@@ -1208,7 +1263,8 @@ namespace Win32
 			public LPARAM lParam3;
 		}
 		[CRepr]
-		public struct UNDETERMINESTRUCT		{
+		public struct UNDETERMINESTRUCT
+		{
 			public uint32 dwSize;
 			public uint32 uDefIMESize;
 			public uint32 uDefIMEPos;
@@ -1225,7 +1281,8 @@ namespace Win32
 			public uint32 uYomiDelimPos;
 		}
 		[CRepr]
-		public struct STRINGEXSTRUCT		{
+		public struct STRINGEXSTRUCT
+		{
 			public uint32 dwSize;
 			public uint32 uDeterminePos;
 			public uint32 uDetermineDelimPos;
@@ -1233,7 +1290,8 @@ namespace Win32
 			public uint32 uYomiDelimPos;
 		}
 		[CRepr]
-		public struct DATETIME		{
+		public struct DATETIME
+		{
 			public uint16 year;
 			public uint16 month;
 			public uint16 day;
@@ -1242,7 +1300,8 @@ namespace Win32
 			public uint16 sec;
 		}
 		[CRepr]
-		public struct IMEPROA		{
+		public struct IMEPROA
+		{
 			public HWND hWnd;
 			public DATETIME InstDate;
 			public uint32 wVersion;
@@ -1251,7 +1310,8 @@ namespace Win32
 			public uint8[30] szOptions;
 		}
 		[CRepr]
-		public struct IMEPROW		{
+		public struct IMEPROW
+		{
 			public HWND hWnd;
 			public DATETIME InstDate;
 			public uint32 wVersion;
@@ -1260,7 +1320,8 @@ namespace Win32
 			public char16[30] szOptions;
 		}
 		[CRepr]
-		public struct JAVA_TRUST		{
+		public struct JAVA_TRUST
+		{
 			public uint32 cbSize;
 			public uint32 flag;
 			public BOOL fAllActiveXPermissions;
@@ -1275,40 +1336,47 @@ namespace Win32
 			public HRESULT hVerify;
 		}
 		[CRepr]
-		public struct TDIEntityID		{
+		public struct TDIEntityID
+		{
 			public TDIENTITY_ENTITY_TYPE tei_entity;
 			public uint32 tei_instance;
 		}
 		[CRepr]
-		public struct TDIObjectID		{
+		public struct TDIObjectID
+		{
 			public TDIEntityID toi_entity;
 			public uint32 toi_class;
 			public uint32 toi_type;
 			public uint32 toi_id;
 		}
 		[CRepr]
-		public struct tcp_request_query_information_ex_xp		{
+		public struct tcp_request_query_information_ex_xp
+		{
 			public TDIObjectID ID;
 			public uint[2] Context;
 		}
 		[CRepr]
-		public struct tcp_request_query_information_ex32_xp		{
+		public struct tcp_request_query_information_ex32_xp
+		{
 			public TDIObjectID ID;
 			public uint32[4] Context;
 		}
 		[CRepr]
-		public struct tcp_request_query_information_ex_w2k		{
+		public struct tcp_request_query_information_ex_w2k
+		{
 			public TDIObjectID ID;
 			public uint8[16] Context;
 		}
 		[CRepr]
-		public struct tcp_request_set_information_ex		{
+		public struct tcp_request_set_information_ex
+		{
 			public TDIObjectID ID;
 			public uint32 BufferSize;
 			public uint8[0] Buffer;
 		}
 		[CRepr]
-		public struct TDI_TL_IO_CONTROL_ENDPOINT		{
+		public struct TDI_TL_IO_CONTROL_ENDPOINT
+		{
 			public TDI_TL_IO_CONTROL_TYPE Type;
 			public uint32 Level;
 			public _Anonymous_e__Union Anonymous;
@@ -1318,38 +1386,44 @@ namespace Win32
 			public uint32 OutputBufferLength;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 IoControlCode;
 				public uint32 OptionName;
 			}
 		}
 		[CRepr]
-		public struct WLDP_HOST_INFORMATION		{
+		public struct WLDP_HOST_INFORMATION
+		{
 			public uint32 dwRevision;
 			public WLDP_HOST_ID dwHostId;
 			public PWSTR szSource;
 			public HANDLE hSource;
 		}
 		[CRepr]
-		public struct WLDP_DEVICE_SECURITY_INFORMATION		{
+		public struct WLDP_DEVICE_SECURITY_INFORMATION
+		{
 			public uint32 UnlockIdSize;
 			public uint8* UnlockId;
 			public uint32 ManufacturerIDLength;
 			public PWSTR ManufacturerID;
 		}
 		[CRepr]
-		public struct DELAYLOAD_PROC_DESCRIPTOR		{
+		public struct DELAYLOAD_PROC_DESCRIPTOR
+		{
 			public uint32 ImportDescribedByName;
 			public _Description_e__Union Description;
 			
 			[CRepr, Union]
-			public struct _Description_e__Union			{
+			public struct _Description_e__Union
+			{
 				public PSTR Name;
 				public uint32 Ordinal;
 			}
 		}
 		[CRepr]
-		public struct DELAYLOAD_INFO		{
+		public struct DELAYLOAD_INFO
+		{
 			public uint32 Size;
 			public IMAGE_DELAYLOAD_DESCRIPTOR* DelayloadDescriptor;
 			public IMAGE_THUNK_DATA64* ThunkAddress;

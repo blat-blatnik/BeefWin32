@@ -85,12 +85,14 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MANAGEMENT_SERVICE_INFO		{
+		public struct MANAGEMENT_SERVICE_INFO
+		{
 			public PWSTR pszMDMServiceUri;
 			public PWSTR pszAuthenticationUri;
 		}
 		[CRepr]
-		public struct MANAGEMENT_REGISTRATION_INFO		{
+		public struct MANAGEMENT_REGISTRATION_INFO
+		{
 			public BOOL fDeviceRegisteredWithManagement;
 			public uint32 dwDeviceRegistionKind;
 			public PWSTR pszUPN;

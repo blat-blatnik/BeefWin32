@@ -81,7 +81,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SW_DEVICE_CREATE_INFO		{
+		public struct SW_DEVICE_CREATE_INFO
+		{
 			public uint32 cbSize;
 			public PWSTR pszInstanceId;
 			public PWSTR pszzHardwareIds;

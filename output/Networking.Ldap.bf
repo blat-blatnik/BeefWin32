@@ -234,7 +234,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct ldap		{
+		public struct ldap
+		{
 			public _ld_sb_e__Struct ld_sb;
 			public PSTR ld_host;
 			public uint32 ld_version;
@@ -253,7 +254,8 @@ namespace Win32
 			public uint32 ld_options;
 			
 			[CRepr]
-			public struct _ld_sb_e__Struct			{
+			public struct _ld_sb_e__Struct
+			{
 				public uint sb_sd;
 				public uint8[41] Reserved1;
 				public uint sb_naddr;
@@ -261,17 +263,20 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct LDAP_TIMEVAL		{
+		public struct LDAP_TIMEVAL
+		{
 			public int32 tv_sec;
 			public int32 tv_usec;
 		}
 		[CRepr]
-		public struct LDAP_BERVAL		{
+		public struct LDAP_BERVAL
+		{
 			public uint32 bv_len;
 			public PSTR bv_val;
 		}
 		[CRepr]
-		public struct LDAPMessage		{
+		public struct LDAPMessage
+		{
 			public uint32 lm_msgid;
 			public uint32 lm_msgtype;
 			public void* lm_ber;
@@ -287,53 +292,62 @@ namespace Win32
 			public BOOLEAN ConnectionReferenced;
 		}
 		[CRepr]
-		public struct ldapcontrolA		{
+		public struct ldapcontrolA
+		{
 			public PSTR ldctl_oid;
 			public LDAP_BERVAL ldctl_value;
 			public BOOLEAN ldctl_iscritical;
 		}
 		[CRepr]
-		public struct ldapcontrolW		{
+		public struct ldapcontrolW
+		{
 			public PWSTR ldctl_oid;
 			public LDAP_BERVAL ldctl_value;
 			public BOOLEAN ldctl_iscritical;
 		}
 		[CRepr]
-		public struct ldapmodW		{
+		public struct ldapmodW
+		{
 			public uint32 mod_op;
 			public PWSTR mod_type;
 			public _mod_vals_e__Union mod_vals;
 			
 			[CRepr, Union]
-			public struct _mod_vals_e__Union			{
+			public struct _mod_vals_e__Union
+			{
 				public PWSTR* modv_strvals;
 				public LDAP_BERVAL** modv_bvals;
 			}
 		}
 		[CRepr]
-		public struct ldapmodA		{
+		public struct ldapmodA
+		{
 			public uint32 mod_op;
 			public PSTR mod_type;
 			public _mod_vals_e__Union mod_vals;
 			
 			[CRepr, Union]
-			public struct _mod_vals_e__Union			{
+			public struct _mod_vals_e__Union
+			{
 				public PSTR* modv_strvals;
 				public LDAP_BERVAL** modv_bvals;
 			}
 		}
 		[CRepr]
-		public struct berelement		{
+		public struct berelement
+		{
 			public PSTR opaque;
 		}
 		[CRepr]
-		public struct ldap_version_info		{
+		public struct ldap_version_info
+		{
 			public uint32 lv_size;
 			public uint32 lv_major;
 			public uint32 lv_minor;
 		}
 		[CRepr]
-		public struct ldapapiinfoA		{
+		public struct ldapapiinfoA
+		{
 			public int32 ldapai_info_version;
 			public int32 ldapai_api_version;
 			public int32 ldapai_protocol_version;
@@ -342,7 +356,8 @@ namespace Win32
 			public int32 ldapai_vendor_version;
 		}
 		[CRepr]
-		public struct ldapapiinfoW		{
+		public struct ldapapiinfoW
+		{
 			public int32 ldapai_info_version;
 			public int32 ldapai_api_version;
 			public int32 ldapai_protocol_version;
@@ -351,13 +366,15 @@ namespace Win32
 			public int32 ldapai_vendor_version;
 		}
 		[CRepr]
-		public struct LDAPAPIFeatureInfoA		{
+		public struct LDAPAPIFeatureInfoA
+		{
 			public int32 ldapaif_info_version;
 			public PSTR ldapaif_name;
 			public int32 ldapaif_version;
 		}
 		[CRepr]
-		public struct LDAPAPIFeatureInfoW		{
+		public struct LDAPAPIFeatureInfoW
+		{
 			public int32 ldapaif_info_version;
 			public PWSTR ldapaif_name;
 			public int32 ldapaif_version;
@@ -365,19 +382,22 @@ namespace Win32
 		[CRepr]
 		public struct ldapsearch {}
 		[CRepr]
-		public struct ldapsortkeyW		{
+		public struct ldapsortkeyW
+		{
 			public PWSTR sk_attrtype;
 			public PWSTR sk_matchruleoid;
 			public BOOLEAN sk_reverseorder;
 		}
 		[CRepr]
-		public struct ldapsortkeyA		{
+		public struct ldapsortkeyA
+		{
 			public PSTR sk_attrtype;
 			public PSTR sk_matchruleoid;
 			public BOOLEAN sk_reverseorder;
 		}
 		[CRepr]
-		public struct ldapvlvinfo		{
+		public struct ldapvlvinfo
+		{
 			public int32 ldvlv_version;
 			public uint32 ldvlv_before_count;
 			public uint32 ldvlv_after_count;
@@ -388,7 +408,8 @@ namespace Win32
 			public void* ldvlv_extradata;
 		}
 		[CRepr]
-		public struct LDAP_REFERRAL_CALLBACK		{
+		public struct LDAP_REFERRAL_CALLBACK
+		{
 			public uint32 SizeOfCallbacks;
 			public QUERYFORCONNECTION QueryForConnection;
 			public NOTIFYOFNEWCONNECTION NotifyRoutine;

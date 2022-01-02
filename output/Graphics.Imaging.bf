@@ -781,14 +781,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WICRect		{
+		public struct WICRect
+		{
 			public int32 X;
 			public int32 Y;
 			public int32 Width;
 			public int32 Height;
 		}
 		[CRepr]
-		public struct WICBitmapPattern		{
+		public struct WICBitmapPattern
+		{
 			public ULARGE_INTEGER Position;
 			public uint32 Length;
 			public uint8* Pattern;
@@ -796,7 +798,8 @@ namespace Win32
 			public BOOL EndOfStream;
 		}
 		[CRepr]
-		public struct WICImageParameters		{
+		public struct WICImageParameters
+		{
 			public D2D1_PIXEL_FORMAT PixelFormat;
 			public float DpiX;
 			public float DpiY;
@@ -806,20 +809,23 @@ namespace Win32
 			public uint32 PixelHeight;
 		}
 		[CRepr]
-		public struct WICBitmapPlaneDescription		{
+		public struct WICBitmapPlaneDescription
+		{
 			public Guid Format;
 			public uint32 Width;
 			public uint32 Height;
 		}
 		[CRepr]
-		public struct WICBitmapPlane		{
+		public struct WICBitmapPlane
+		{
 			public Guid Format;
 			public uint8* pbBuffer;
 			public uint32 cbStride;
 			public uint32 cbBufferSize;
 		}
 		[CRepr]
-		public struct WICJpegFrameHeader		{
+		public struct WICJpegFrameHeader
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public WICJpegTransferMatrix TransferMatrix;
@@ -830,7 +836,8 @@ namespace Win32
 			public uint32 QuantizationTableIndices;
 		}
 		[CRepr]
-		public struct WICJpegScanHeader		{
+		public struct WICJpegScanHeader
+		{
 			public uint32 cComponents;
 			public uint32 RestartInterval;
 			public uint32 ComponentSelectors;
@@ -841,7 +848,8 @@ namespace Win32
 			public uint8 SuccessiveApproximationLow;
 		}
 		[CRepr]
-		public struct WICRawCapabilitiesInfo		{
+		public struct WICRawCapabilitiesInfo
+		{
 			public uint32 cbSize;
 			public uint32 CodecMajorVersion;
 			public uint32 CodecMinorVersion;
@@ -862,17 +870,20 @@ namespace Win32
 			public WICRawCapabilities RenderModeSupport;
 		}
 		[CRepr]
-		public struct WICRawToneCurvePoint		{
+		public struct WICRawToneCurvePoint
+		{
 			public double Input;
 			public double Output;
 		}
 		[CRepr]
-		public struct WICRawToneCurve		{
+		public struct WICRawToneCurve
+		{
 			public uint32 cPoints;
 			public WICRawToneCurvePoint[0] aPoints;
 		}
 		[CRepr]
-		public struct WICDdsParameters		{
+		public struct WICDdsParameters
+		{
 			public uint32 Width;
 			public uint32 Height;
 			public uint32 Depth;
@@ -883,14 +894,16 @@ namespace Win32
 			public WICDdsAlphaMode AlphaMode;
 		}
 		[CRepr]
-		public struct WICDdsFormatInfo		{
+		public struct WICDdsFormatInfo
+		{
 			public DXGI_FORMAT DxgiFormat;
 			public uint32 BytesPerBlock;
 			public uint32 BlockWidth;
 			public uint32 BlockHeight;
 		}
 		[CRepr]
-		public struct WICMetadataPattern		{
+		public struct WICMetadataPattern
+		{
 			public ULARGE_INTEGER Position;
 			public uint32 Length;
 			public uint8* Pattern;
@@ -898,7 +911,8 @@ namespace Win32
 			public ULARGE_INTEGER DataOffset;
 		}
 		[CRepr]
-		public struct WICMetadataHeader		{
+		public struct WICMetadataHeader
+		{
 			public ULARGE_INTEGER Position;
 			public uint32 Length;
 			public uint8* Header;

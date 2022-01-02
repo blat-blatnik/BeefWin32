@@ -16,7 +16,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CORRELATION_VECTOR		{
+		public struct CORRELATION_VECTOR
+		{
 			public CHAR Version;
 			public CHAR[129] Vector;
 		}

@@ -40,7 +40,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct COMPRESS_ALLOCATION_ROUTINES		{
+		public struct COMPRESS_ALLOCATION_ROUTINES
+		{
 			public PFN_COMPRESS_ALLOCATE Allocate;
 			public PFN_COMPRESS_FREE Free;
 			public void* UserContext;

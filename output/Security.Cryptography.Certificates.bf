@@ -1761,17 +1761,20 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CSEDB_RSTMAPW		{
+		public struct CSEDB_RSTMAPW
+		{
 			public PWSTR pwszDatabaseName;
 			public PWSTR pwszNewDatabaseName;
 		}
 		[CRepr]
-		public struct CERTTRANSBLOB		{
+		public struct CERTTRANSBLOB
+		{
 			public uint32 cb;
 			public uint8* pb;
 		}
 		[CRepr]
-		public struct CERTVIEWRESTRICTION		{
+		public struct CERTVIEWRESTRICTION
+		{
 			public uint32 ColumnIndex;
 			public int32 SeekOperator;
 			public int32 SortOrder;
@@ -1779,7 +1782,8 @@ namespace Win32
 			public uint32 cbValue;
 		}
 		[CRepr]
-		public struct CAINFO		{
+		public struct CAINFO
+		{
 			public uint32 cbSize;
 			public ENUM_CATYPES CAType;
 			public uint32 cCASignatureCerts;

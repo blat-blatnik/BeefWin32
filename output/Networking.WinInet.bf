@@ -1165,49 +1165,57 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct INTERNET_ASYNC_RESULT		{
+		public struct INTERNET_ASYNC_RESULT
+		{
 			public uint dwResult;
 			public uint32 dwError;
 		}
 		[CRepr]
-		public struct INTERNET_DIAGNOSTIC_SOCKET_INFO		{
+		public struct INTERNET_DIAGNOSTIC_SOCKET_INFO
+		{
 			public uint Socket;
 			public uint32 SourcePort;
 			public uint32 DestPort;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct INTERNET_PROXY_INFO		{
+		public struct INTERNET_PROXY_INFO
+		{
 			public INTERNET_ACCESS_TYPE dwAccessType;
 			public int8* lpszProxy;
 			public int8* lpszProxyBypass;
 		}
 		[CRepr]
-		public struct INTERNET_PER_CONN_OPTIONA		{
+		public struct INTERNET_PER_CONN_OPTIONA
+		{
 			public INTERNET_PER_CONN dwOption;
 			public _Value_e__Union Value;
 			
 			[CRepr, Union]
-			public struct _Value_e__Union			{
+			public struct _Value_e__Union
+			{
 				public uint32 dwValue;
 				public PSTR pszValue;
 				public FILETIME ftValue;
 			}
 		}
 		[CRepr]
-		public struct INTERNET_PER_CONN_OPTIONW		{
+		public struct INTERNET_PER_CONN_OPTIONW
+		{
 			public INTERNET_PER_CONN dwOption;
 			public _Value_e__Union Value;
 			
 			[CRepr, Union]
-			public struct _Value_e__Union			{
+			public struct _Value_e__Union
+			{
 				public uint32 dwValue;
 				public PWSTR pszValue;
 				public FILETIME ftValue;
 			}
 		}
 		[CRepr]
-		public struct INTERNET_PER_CONN_OPTION_LISTA		{
+		public struct INTERNET_PER_CONN_OPTION_LISTA
+		{
 			public uint32 dwSize;
 			public PSTR pszConnection;
 			public uint32 dwOptionCount;
@@ -1215,7 +1223,8 @@ namespace Win32
 			public INTERNET_PER_CONN_OPTIONA* pOptions;
 		}
 		[CRepr]
-		public struct INTERNET_PER_CONN_OPTION_LISTW		{
+		public struct INTERNET_PER_CONN_OPTION_LISTW
+		{
 			public uint32 dwSize;
 			public PWSTR pszConnection;
 			public uint32 dwOptionCount;
@@ -1223,17 +1232,20 @@ namespace Win32
 			public INTERNET_PER_CONN_OPTIONW* pOptions;
 		}
 		[CRepr]
-		public struct INTERNET_VERSION_INFO		{
+		public struct INTERNET_VERSION_INFO
+		{
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
 		}
 		[CRepr]
-		public struct INTERNET_CONNECTED_INFO		{
+		public struct INTERNET_CONNECTED_INFO
+		{
 			public INTERNET_STATE dwConnectedState;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct URL_COMPONENTSA		{
+		public struct URL_COMPONENTSA
+		{
 			public uint32 dwStructSize;
 			public PSTR lpszScheme;
 			public uint32 dwSchemeLength;
@@ -1251,7 +1263,8 @@ namespace Win32
 			public uint32 dwExtraInfoLength;
 		}
 		[CRepr]
-		public struct URL_COMPONENTSW		{
+		public struct URL_COMPONENTSW
+		{
 			public uint32 dwStructSize;
 			public PWSTR lpszScheme;
 			public uint32 dwSchemeLength;
@@ -1269,7 +1282,8 @@ namespace Win32
 			public uint32 dwExtraInfoLength;
 		}
 		[CRepr]
-		public struct INTERNET_CERTIFICATE_INFO		{
+		public struct INTERNET_CERTIFICATE_INFO
+		{
 			public FILETIME ftExpiry;
 			public FILETIME ftStart;
 			public int8* lpszSubjectInfo;
@@ -1280,7 +1294,8 @@ namespace Win32
 			public uint32 dwKeySize;
 		}
 		[CRepr]
-		public struct INTERNET_BUFFERSA		{
+		public struct INTERNET_BUFFERSA
+		{
 			public uint32 dwStructSize;
 			public INTERNET_BUFFERSA* Next;
 			public PSTR lpcszHeader;
@@ -1293,7 +1308,8 @@ namespace Win32
 			public uint32 dwOffsetHigh;
 		}
 		[CRepr]
-		public struct INTERNET_BUFFERSW		{
+		public struct INTERNET_BUFFERSW
+		{
 			public uint32 dwStructSize;
 			public INTERNET_BUFFERSW* Next;
 			public PWSTR lpcszHeader;
@@ -1306,7 +1322,8 @@ namespace Win32
 			public uint32 dwOffsetHigh;
 		}
 		[CRepr]
-		public struct IncomingCookieState		{
+		public struct IncomingCookieState
+		{
 			public int32 cSession;
 			public int32 cPersistent;
 			public int32 cAccepted;
@@ -1316,25 +1333,29 @@ namespace Win32
 			public PSTR pszLocation;
 		}
 		[CRepr]
-		public struct OutgoingCookieState		{
+		public struct OutgoingCookieState
+		{
 			public int32 cSent;
 			public int32 cSuppressed;
 			public PSTR pszLocation;
 		}
 		[CRepr]
-		public struct InternetCookieHistory		{
+		public struct InternetCookieHistory
+		{
 			public BOOL fAccepted;
 			public BOOL fLeashed;
 			public BOOL fDowngraded;
 			public BOOL fRejected;
 		}
 		[CRepr]
-		public struct CookieDecision		{
+		public struct CookieDecision
+		{
 			public uint32 dwCookieState;
 			public BOOL fAllowSession;
 		}
 		[CRepr]
-		public struct GOPHER_FIND_DATAA		{
+		public struct GOPHER_FIND_DATAA
+		{
 			public CHAR[129] DisplayString;
 			public GOPHER_TYPE GopherType;
 			public uint32 SizeLow;
@@ -1343,7 +1364,8 @@ namespace Win32
 			public CHAR[654] Locator;
 		}
 		[CRepr]
-		public struct GOPHER_FIND_DATAW		{
+		public struct GOPHER_FIND_DATAW
+		{
 			public char16[129] DisplayString;
 			public GOPHER_TYPE GopherType;
 			public uint32 SizeLow;
@@ -1352,41 +1374,50 @@ namespace Win32
 			public char16[654] Locator;
 		}
 		[CRepr]
-		public struct GOPHER_ADMIN_ATTRIBUTE_TYPE		{
+		public struct GOPHER_ADMIN_ATTRIBUTE_TYPE
+		{
 			public int8* Comment;
 			public int8* EmailAddress;
 		}
 		[CRepr]
-		public struct GOPHER_MOD_DATE_ATTRIBUTE_TYPE		{
+		public struct GOPHER_MOD_DATE_ATTRIBUTE_TYPE
+		{
 			public FILETIME DateAndTime;
 		}
 		[CRepr]
-		public struct GOPHER_TTL_ATTRIBUTE_TYPE		{
+		public struct GOPHER_TTL_ATTRIBUTE_TYPE
+		{
 			public uint32 Ttl;
 		}
 		[CRepr]
-		public struct GOPHER_SCORE_ATTRIBUTE_TYPE		{
+		public struct GOPHER_SCORE_ATTRIBUTE_TYPE
+		{
 			public int32 Score;
 		}
 		[CRepr]
-		public struct GOPHER_SCORE_RANGE_ATTRIBUTE_TYPE		{
+		public struct GOPHER_SCORE_RANGE_ATTRIBUTE_TYPE
+		{
 			public int32 LowerBound;
 			public int32 UpperBound;
 		}
 		[CRepr]
-		public struct GOPHER_SITE_ATTRIBUTE_TYPE		{
+		public struct GOPHER_SITE_ATTRIBUTE_TYPE
+		{
 			public int8* Site;
 		}
 		[CRepr]
-		public struct GOPHER_ORGANIZATION_ATTRIBUTE_TYPE		{
+		public struct GOPHER_ORGANIZATION_ATTRIBUTE_TYPE
+		{
 			public int8* Organization;
 		}
 		[CRepr]
-		public struct GOPHER_LOCATION_ATTRIBUTE_TYPE		{
+		public struct GOPHER_LOCATION_ATTRIBUTE_TYPE
+		{
 			public int8* Location;
 		}
 		[CRepr]
-		public struct GOPHER_GEOGRAPHICAL_LOCATION_ATTRIBUTE_TYPE		{
+		public struct GOPHER_GEOGRAPHICAL_LOCATION_ATTRIBUTE_TYPE
+		{
 			public int32 DegreesNorth;
 			public int32 MinutesNorth;
 			public int32 SecondsNorth;
@@ -1395,49 +1426,59 @@ namespace Win32
 			public int32 SecondsEast;
 		}
 		[CRepr]
-		public struct GOPHER_TIMEZONE_ATTRIBUTE_TYPE		{
+		public struct GOPHER_TIMEZONE_ATTRIBUTE_TYPE
+		{
 			public int32 Zone;
 		}
 		[CRepr]
-		public struct GOPHER_PROVIDER_ATTRIBUTE_TYPE		{
+		public struct GOPHER_PROVIDER_ATTRIBUTE_TYPE
+		{
 			public int8* Provider;
 		}
 		[CRepr]
-		public struct GOPHER_VERSION_ATTRIBUTE_TYPE		{
+		public struct GOPHER_VERSION_ATTRIBUTE_TYPE
+		{
 			public int8* Version;
 		}
 		[CRepr]
-		public struct GOPHER_ABSTRACT_ATTRIBUTE_TYPE		{
+		public struct GOPHER_ABSTRACT_ATTRIBUTE_TYPE
+		{
 			public int8* ShortAbstract;
 			public int8* AbstractFile;
 		}
 		[CRepr]
-		public struct GOPHER_VIEW_ATTRIBUTE_TYPE		{
+		public struct GOPHER_VIEW_ATTRIBUTE_TYPE
+		{
 			public int8* ContentType;
 			public int8* Language;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct GOPHER_VERONICA_ATTRIBUTE_TYPE		{
+		public struct GOPHER_VERONICA_ATTRIBUTE_TYPE
+		{
 			public BOOL TreeWalk;
 		}
 		[CRepr]
-		public struct GOPHER_ASK_ATTRIBUTE_TYPE		{
+		public struct GOPHER_ASK_ATTRIBUTE_TYPE
+		{
 			public int8* QuestionType;
 			public int8* QuestionText;
 		}
 		[CRepr]
-		public struct GOPHER_UNKNOWN_ATTRIBUTE_TYPE		{
+		public struct GOPHER_UNKNOWN_ATTRIBUTE_TYPE
+		{
 			public int8* Text;
 		}
 		[CRepr]
-		public struct GOPHER_ATTRIBUTE_TYPE		{
+		public struct GOPHER_ATTRIBUTE_TYPE
+		{
 			public uint32 CategoryId;
 			public uint32 AttributeId;
 			public _AttributeType_e__Union AttributeType;
 			
 			[CRepr, Union]
-			public struct _AttributeType_e__Union			{
+			public struct _AttributeType_e__Union
+			{
 				public GOPHER_ADMIN_ATTRIBUTE_TYPE Admin;
 				public GOPHER_MOD_DATE_ATTRIBUTE_TYPE ModDate;
 				public GOPHER_TTL_ATTRIBUTE_TYPE Ttl;
@@ -1458,7 +1499,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct INTERNET_COOKIE2		{
+		public struct INTERNET_COOKIE2
+		{
 			public PWSTR pwszName;
 			public PWSTR pwszValue;
 			public PWSTR pwszDomain;
@@ -1468,14 +1510,16 @@ namespace Win32
 			public BOOL fExpiresSet;
 		}
 		[CRepr]
-		public struct INTERNET_AUTH_NOTIFY_DATA		{
+		public struct INTERNET_AUTH_NOTIFY_DATA
+		{
 			public uint32 cbStruct;
 			public uint32 dwOptions;
 			public PFN_AUTH_NOTIFY pfnNotify;
 			public uint dwContext;
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_ENTRY_INFOA		{
+		public struct INTERNET_CACHE_ENTRY_INFOA
+		{
 			public uint32 dwStructSize;
 			public PSTR lpszSourceUrlName;
 			public PSTR lpszLocalFileName;
@@ -1494,13 +1538,15 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwReserved;
 				public uint32 dwExemptDelta;
 			}
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_ENTRY_INFOW		{
+		public struct INTERNET_CACHE_ENTRY_INFOW
+		{
 			public uint32 dwStructSize;
 			public PWSTR lpszSourceUrlName;
 			public PWSTR lpszLocalFileName;
@@ -1519,18 +1565,21 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwReserved;
 				public uint32 dwExemptDelta;
 			}
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_TIMESTAMPS		{
+		public struct INTERNET_CACHE_TIMESTAMPS
+		{
 			public FILETIME ftExpires;
 			public FILETIME ftLastModified;
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_GROUP_INFOA		{
+		public struct INTERNET_CACHE_GROUP_INFOA
+		{
 			public uint32 dwGroupSize;
 			public uint32 dwGroupFlags;
 			public uint32 dwGroupType;
@@ -1540,7 +1589,8 @@ namespace Win32
 			public CHAR[120] szGroupName;
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_GROUP_INFOW		{
+		public struct INTERNET_CACHE_GROUP_INFOW
+		{
 			public uint32 dwGroupSize;
 			public uint32 dwGroupFlags;
 			public uint32 dwGroupType;
@@ -1550,7 +1600,8 @@ namespace Win32
 			public char16[120] szGroupName;
 		}
 		[CRepr]
-		public struct AutoProxyHelperVtbl		{
+		public struct AutoProxyHelperVtbl
+		{
 			public int IsResolvable;
 			public int GetIPAddress;
 			public int ResolveHostName;
@@ -1562,22 +1613,26 @@ namespace Win32
 			public int SortIpList;
 		}
 		[CRepr]
-		public struct AUTO_PROXY_SCRIPT_BUFFER		{
+		public struct AUTO_PROXY_SCRIPT_BUFFER
+		{
 			public uint32 dwStructSize;
 			public PSTR lpszScriptBuffer;
 			public uint32 dwScriptBufferSize;
 		}
 		[CRepr]
-		public struct AutoProxyHelperFunctions		{
+		public struct AutoProxyHelperFunctions
+		{
 			public AutoProxyHelperVtbl* lpVtbl;
 		}
 		[CRepr]
-		public struct INTERNET_PREFETCH_STATUS		{
+		public struct INTERNET_PREFETCH_STATUS
+		{
 			public uint32 dwStatus;
 			public uint32 dwSize;
 		}
 		[CRepr]
-		public struct INTERNET_SECURITY_INFO		{
+		public struct INTERNET_SECURITY_INFO
+		{
 			public uint32 dwSize;
 			public CERT_CONTEXT* pCertificate;
 			public CERT_CHAIN_CONTEXT* pcCertChain;
@@ -1587,24 +1642,28 @@ namespace Win32
 			public SecPkgContext_Bindings channelBindingToken;
 		}
 		[CRepr]
-		public struct INTERNET_SECURITY_CONNECTION_INFO		{
+		public struct INTERNET_SECURITY_CONNECTION_INFO
+		{
 			public uint32 dwSize;
 			public BOOL fSecure;
 			public SecPkgContext_ConnectionInfo connectionInfo;
 			public SecPkgContext_CipherInfo cipherInfo;
 		}
 		[CRepr]
-		public struct INTERNET_DOWNLOAD_MODE_HANDLE		{
+		public struct INTERNET_DOWNLOAD_MODE_HANDLE
+		{
 			public PWSTR pcwszFileName;
 			public HANDLE* phFile;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_TIMES		{
+		public struct HTTP_REQUEST_TIMES
+		{
 			public uint32 cTimes;
 			public uint64[32] rgTimes;
 		}
 		[CRepr]
-		public struct INTERNET_SERVER_CONNECTION_STATE		{
+		public struct INTERNET_SERVER_CONNECTION_STATE
+		{
 			public PWSTR lpcwszHostName;
 			public BOOL fProxy;
 			public uint32 dwCounter;
@@ -1615,12 +1674,14 @@ namespace Win32
 			public uint32 dwWaiters;
 		}
 		[CRepr]
-		public struct INTERNET_END_BROWSER_SESSION_DATA		{
+		public struct INTERNET_END_BROWSER_SESSION_DATA
+		{
 			public void* lpBuffer;
 			public uint32 dwBufferLength;
 		}
 		[CRepr]
-		public struct INTERNET_CALLBACK_COOKIE		{
+		public struct INTERNET_CALLBACK_COOKIE
+		{
 			public PWSTR pcwszName;
 			public PWSTR pcwszValue;
 			public PWSTR pcwszDomain;
@@ -1629,7 +1690,8 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct INTERNET_CREDENTIALS		{
+		public struct INTERNET_CREDENTIALS
+		{
 			public PWSTR lpcwszHostName;
 			public uint32 dwPort;
 			public uint32 dwScheme;
@@ -1639,29 +1701,34 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public void* pAuthIdentityOpaque;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public PWSTR lpcwszUserName;
 					public PWSTR lpcwszPassword;
 				}
 			}
 		}
 		[CRepr]
-		public struct HTTP_PUSH_TRANSPORT_SETTING		{
+		public struct HTTP_PUSH_TRANSPORT_SETTING
+		{
 			public Guid TransportSettingId;
 			public Guid BrokerEventId;
 		}
 		[CRepr]
-		public struct HTTP_PUSH_NOTIFICATION_STATUS		{
+		public struct HTTP_PUSH_NOTIFICATION_STATUS
+		{
 			public BOOL ChannelStatusValid;
 			public uint32 ChannelStatus;
 		}
 		[CRepr]
-		public struct INTERNET_COOKIE		{
+		public struct INTERNET_COOKIE
+		{
 			public uint32 cbSize;
 			public PSTR pszName;
 			public PSTR pszData;
@@ -1673,7 +1740,8 @@ namespace Win32
 			public PSTR pszP3PPolicy;
 		}
 		[CRepr]
-		public struct COOKIE_DLG_INFO		{
+		public struct COOKIE_DLG_INFO
+		{
 			public PWSTR pszServer;
 			public INTERNET_COOKIE* pic;
 			public uint32 dwStopWarning;
@@ -1683,17 +1751,20 @@ namespace Win32
 			public uint32 dwOperation;
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_CONFIG_PATH_ENTRYA		{
+		public struct INTERNET_CACHE_CONFIG_PATH_ENTRYA
+		{
 			public CHAR[260] CachePath;
 			public uint32 dwCacheSize;
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_CONFIG_PATH_ENTRYW		{
+		public struct INTERNET_CACHE_CONFIG_PATH_ENTRYW
+		{
 			public char16[260] CachePath;
 			public uint32 dwCacheSize;
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_CONFIG_INFOA		{
+		public struct INTERNET_CACHE_CONFIG_INFOA
+		{
 			public uint32 dwStructSize;
 			public uint32 dwContainer;
 			public uint32 dwQuota;
@@ -1706,19 +1777,22 @@ namespace Win32
 			public uint32 dwExemptUsage;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public INTERNET_CACHE_CONFIG_PATH_ENTRYA[0] CachePaths;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public CHAR[260] CachePath;
 					public uint32 dwCacheSize;
 				}
 			}
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_CONFIG_INFOW		{
+		public struct INTERNET_CACHE_CONFIG_INFOW
+		{
 			public uint32 dwStructSize;
 			public uint32 dwContainer;
 			public uint32 dwQuota;
@@ -1731,19 +1805,22 @@ namespace Win32
 			public uint32 dwExemptUsage;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Anonymous_e__Struct Anonymous;
 				public INTERNET_CACHE_CONFIG_PATH_ENTRYW[0] CachePaths;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct				{
+				public struct _Anonymous_e__Struct
+				{
 					public char16[260] CachePath;
 					public uint32 dwCacheSize;
 				}
 			}
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_CONTAINER_INFOA		{
+		public struct INTERNET_CACHE_CONTAINER_INFOA
+		{
 			public uint32 dwCacheVersion;
 			public PSTR lpszName;
 			public PSTR lpszCachePrefix;
@@ -1751,7 +1828,8 @@ namespace Win32
 			public PSTR lpszVolumeTitle;
 		}
 		[CRepr]
-		public struct INTERNET_CACHE_CONTAINER_INFOW		{
+		public struct INTERNET_CACHE_CONTAINER_INFOW
+		{
 			public uint32 dwCacheVersion;
 			public PWSTR lpszName;
 			public PWSTR lpszCachePrefix;
@@ -1759,28 +1837,33 @@ namespace Win32
 			public PWSTR lpszVolumeTitle;
 		}
 		[CRepr]
-		public struct APP_CACHE_DOWNLOAD_ENTRY		{
+		public struct APP_CACHE_DOWNLOAD_ENTRY
+		{
 			public PWSTR pwszUrl;
 			public uint32 dwEntryType;
 		}
 		[CRepr]
-		public struct APP_CACHE_DOWNLOAD_LIST		{
+		public struct APP_CACHE_DOWNLOAD_LIST
+		{
 			public uint32 dwEntryCount;
 			public APP_CACHE_DOWNLOAD_ENTRY* pEntries;
 		}
 		[CRepr]
-		public struct APP_CACHE_GROUP_INFO		{
+		public struct APP_CACHE_GROUP_INFO
+		{
 			public PWSTR pwszManifestUrl;
 			public FILETIME ftLastAccessTime;
 			public uint64 ullSize;
 		}
 		[CRepr]
-		public struct APP_CACHE_GROUP_LIST		{
+		public struct APP_CACHE_GROUP_LIST
+		{
 			public uint32 dwAppCacheGroupCount;
 			public APP_CACHE_GROUP_INFO* pAppCacheGroups;
 		}
 		[CRepr]
-		public struct URLCACHE_ENTRY_INFO		{
+		public struct URLCACHE_ENTRY_INFO
+		{
 			public PWSTR pwszSourceUrlName;
 			public PWSTR pwszLocalFileName;
 			public uint32 dwCacheEntryType;
@@ -1798,7 +1881,8 @@ namespace Win32
 			public uint32 cbExtraDataSize;
 		}
 		[CRepr]
-		public struct WININET_PROXY_INFO		{
+		public struct WININET_PROXY_INFO
+		{
 			public BOOL fProxy;
 			public BOOL fBypass;
 			public INTERNET_SCHEME ProxyScheme;
@@ -1806,19 +1890,22 @@ namespace Win32
 			public uint16 ProxyPort;
 		}
 		[CRepr]
-		public struct WININET_PROXY_INFO_LIST		{
+		public struct WININET_PROXY_INFO_LIST
+		{
 			public uint32 dwProxyInfoCount;
 			public WININET_PROXY_INFO* pProxyInfo;
 		}
 		[CRepr]
-		public struct HTTP_WEB_SOCKET_ASYNC_RESULT		{
+		public struct HTTP_WEB_SOCKET_ASYNC_RESULT
+		{
 			public INTERNET_ASYNC_RESULT AsyncResult;
 			public HTTP_WEB_SOCKET_OPERATION Operation;
 			public HTTP_WEB_SOCKET_BUFFER_TYPE BufferType;
 			public uint32 dwBytesTransferred;
 		}
 		[CRepr]
-		public struct ProofOfPossessionCookieInfo		{
+		public struct ProofOfPossessionCookieInfo
+		{
 			public PWSTR name;
 			public PWSTR data;
 			public uint32 flags;

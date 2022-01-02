@@ -741,27 +741,31 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct RADIUS_ATTRIBUTE		{
+		public struct RADIUS_ATTRIBUTE
+		{
 			public uint32 dwAttrType;
 			public RADIUS_DATA_TYPE fDataType;
 			public uint32 cbDataLength;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public uint32 dwValue;
 				public uint8* lpValue;
 			}
 		}
 		[CRepr]
-		public struct RADIUS_VSA_FORMAT		{
+		public struct RADIUS_VSA_FORMAT
+		{
 			public uint8[4] VendorId;
 			public uint8 VendorType;
 			public uint8 VendorLength;
 			public uint8[0] AttributeSpecific;
 		}
 		[CRepr]
-		public struct RADIUS_ATTRIBUTE_ARRAY		{
+		public struct RADIUS_ATTRIBUTE_ARRAY
+		{
 			public uint32 cbSize;
 			public int Add;
 			public RADIUS_ATTRIBUTE********** AttributeAt;
@@ -771,7 +775,8 @@ namespace Win32
 			public int SetAt;
 		}
 		[CRepr]
-		public struct RADIUS_EXTENSION_CONTROL_BLOCK		{
+		public struct RADIUS_EXTENSION_CONTROL_BLOCK
+		{
 			public uint32 cbSize;
 			public uint32 dwVersion;
 			public RADIUS_EXTENSION_POINT repPoint;

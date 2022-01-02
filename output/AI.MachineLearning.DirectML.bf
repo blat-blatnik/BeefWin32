@@ -318,7 +318,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DML_BUFFER_TENSOR_DESC		{
+		public struct DML_BUFFER_TENSOR_DESC
+		{
 			public DML_TENSOR_DATA_TYPE DataType;
 			public DML_TENSOR_FLAGS Flags;
 			public uint32 DimensionCount;
@@ -328,22 +329,26 @@ namespace Win32
 			public uint32 GuaranteedBaseOffsetAlignment;
 		}
 		[CRepr]
-		public struct DML_TENSOR_DESC		{
+		public struct DML_TENSOR_DESC
+		{
 			public DML_TENSOR_TYPE Type;
 			public void* Desc;
 		}
 		[CRepr]
-		public struct DML_SCALE_BIAS		{
+		public struct DML_SCALE_BIAS
+		{
 			public float Scale;
 			public float Bias;
 		}
 		[CRepr]
-		public struct DML_SIZE_2D		{
+		public struct DML_SIZE_2D
+		{
 			public uint32 Width;
 			public uint32 Height;
 		}
 		[CRepr, Union]
-		public struct DML_SCALAR_UNION		{
+		public struct DML_SCALAR_UNION
+		{
 			public uint8[8] Bytes;
 			public int8 Int8;
 			public uint8 UInt8;
@@ -357,61 +362,71 @@ namespace Win32
 			public double Float64;
 		}
 		[CRepr]
-		public struct DML_OPERATOR_DESC		{
+		public struct DML_OPERATOR_DESC
+		{
 			public DML_OPERATOR_TYPE Type;
 			public void* Desc;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ABS_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ABS_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ACOS_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ACOS_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ADD_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ADD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ADD1_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ADD1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_OPERATOR_DESC* FusedActivation;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ASIN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ASIN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ATAN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ATAN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_CEIL_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_CEIL_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_CLIP_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_CLIP_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
@@ -419,272 +434,317 @@ namespace Win32
 			public float Max;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_COS_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_COS_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_EXP_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_EXP_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOG_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOG_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_MAX_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_MAX_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_MEAN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_MEAN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_MIN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_MIN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_POW_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_POW_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* ExponentTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 			public float Exponent;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_RECIP_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_RECIP_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_SIN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_SIN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_SQRT_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_SQRT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_TAN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_TAN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 			public float Min;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* ScaleTensor;
 			public DML_TENSOR_DESC* ZeroPointTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* ScaleTensor;
 			public DML_TENSOR_DESC* ZeroPointTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_ELU_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_ELU_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Alpha;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_HARDMAX_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_HARDMAX_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC		{
-			public DML_TENSOR_DESC* InputTensor;
-			public DML_TENSOR_DESC* OutputTensor;
-			public float Alpha;
-			public float Beta;
-		}
-		[CRepr]
-		public struct DML_ACTIVATION_IDENTITY_OPERATOR_DESC		{
-			public DML_TENSOR_DESC* InputTensor;
-			public DML_TENSOR_DESC* OutputTensor;
-		}
-		[CRepr]
-		public struct DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC		{
-			public DML_TENSOR_DESC* InputTensor;
-			public DML_TENSOR_DESC* OutputTensor;
-			public float Alpha;
-		}
-		[CRepr]
-		public struct DML_ACTIVATION_LINEAR_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Alpha;
 			public float Beta;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_IDENTITY_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC
+		{
+			public DML_TENSOR_DESC* InputTensor;
+			public DML_TENSOR_DESC* OutputTensor;
+			public float Alpha;
+		}
+		[CRepr]
+		public struct DML_ACTIVATION_LINEAR_OPERATOR_DESC
+		{
+			public DML_TENSOR_DESC* InputTensor;
+			public DML_TENSOR_DESC* OutputTensor;
+			public float Alpha;
+			public float Beta;
+		}
+		[CRepr]
+		public struct DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC
+		{
+			public DML_TENSOR_DESC* InputTensor;
+			public DML_TENSOR_DESC* OutputTensor;
+		}
+		[CRepr]
+		public struct DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* SlopeTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Alpha;
 			public float Beta;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_RELU_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_RELU_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Alpha;
 			public float Gamma;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Alpha;
 			public float Beta;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_SIGMOID_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_SIGMOID_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_SOFTMAX_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_SOFTMAX_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Steepness;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_TANH_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_TANH_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Alpha;
 		}
 		[CRepr]
-		public struct DML_CONVOLUTION_OPERATOR_DESC		{
+		public struct DML_CONVOLUTION_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* FilterTensor;
 			public DML_TENSOR_DESC* BiasTensor;
@@ -701,7 +761,8 @@ namespace Win32
 			public DML_OPERATOR_DESC* FusedActivation;
 		}
 		[CRepr]
-		public struct DML_GEMM_OPERATOR_DESC		{
+		public struct DML_GEMM_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* CTensor;
@@ -713,7 +774,8 @@ namespace Win32
 			public DML_OPERATOR_DESC* FusedActivation;
 		}
 		[CRepr]
-		public struct DML_REDUCE_OPERATOR_DESC		{
+		public struct DML_REDUCE_OPERATOR_DESC
+		{
 			public DML_REDUCE_FUNCTION Function;
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
@@ -721,7 +783,8 @@ namespace Win32
 			public uint32* Axes;
 		}
 		[CRepr]
-		public struct DML_AVERAGE_POOLING_OPERATOR_DESC		{
+		public struct DML_AVERAGE_POOLING_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 DimensionCount;
@@ -732,7 +795,8 @@ namespace Win32
 			public BOOL IncludePadding;
 		}
 		[CRepr]
-		public struct DML_LP_POOLING_OPERATOR_DESC		{
+		public struct DML_LP_POOLING_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 DimensionCount;
@@ -743,7 +807,8 @@ namespace Win32
 			public uint32 P;
 		}
 		[CRepr]
-		public struct DML_MAX_POOLING_OPERATOR_DESC		{
+		public struct DML_MAX_POOLING_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 DimensionCount;
@@ -753,7 +818,8 @@ namespace Win32
 			public uint32* EndPadding;
 		}
 		[CRepr]
-		public struct DML_ROI_POOLING_OPERATOR_DESC		{
+		public struct DML_ROI_POOLING_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* ROITensor;
 			public DML_TENSOR_DESC* OutputTensor;
@@ -761,7 +827,8 @@ namespace Win32
 			public DML_SIZE_2D PooledSize;
 		}
 		[CRepr]
-		public struct DML_SLICE_OPERATOR_DESC		{
+		public struct DML_SLICE_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 DimensionCount;
@@ -770,26 +837,30 @@ namespace Win32
 			public uint32* Strides;
 		}
 		[CRepr]
-		public struct DML_CAST_OPERATOR_DESC		{
+		public struct DML_CAST_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_SPLIT_OPERATOR_DESC		{
+		public struct DML_SPLIT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public uint32 OutputCount;
 			public DML_TENSOR_DESC* OutputTensors;
 			public uint32 Axis;
 		}
 		[CRepr]
-		public struct DML_JOIN_OPERATOR_DESC		{
+		public struct DML_JOIN_OPERATOR_DESC
+		{
 			public uint32 InputCount;
 			public DML_TENSOR_DESC* InputTensors;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 Axis;
 		}
 		[CRepr]
-		public struct DML_PADDING_OPERATOR_DESC		{
+		public struct DML_PADDING_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_PADDING_MODE PaddingMode;
@@ -799,7 +870,8 @@ namespace Win32
 			public uint32* EndPadding;
 		}
 		[CRepr]
-		public struct DML_VALUE_SCALE_2D_OPERATOR_DESC		{
+		public struct DML_VALUE_SCALE_2D_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Scale;
@@ -807,14 +879,16 @@ namespace Win32
 			public float* Bias;
 		}
 		[CRepr]
-		public struct DML_UPSAMPLE_2D_OPERATOR_DESC		{
+		public struct DML_UPSAMPLE_2D_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SIZE_2D ScaleSize;
 			public DML_INTERPOLATION_MODE InterpolationMode;
 		}
 		[CRepr]
-		public struct DML_GATHER_OPERATOR_DESC		{
+		public struct DML_GATHER_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* IndicesTensor;
 			public DML_TENSOR_DESC* OutputTensor;
@@ -822,26 +896,30 @@ namespace Win32
 			public uint32 IndexDimensions;
 		}
 		[CRepr]
-		public struct DML_SPACE_TO_DEPTH_OPERATOR_DESC		{
+		public struct DML_SPACE_TO_DEPTH_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 BlockSize;
 		}
 		[CRepr]
-		public struct DML_DEPTH_TO_SPACE_OPERATOR_DESC		{
+		public struct DML_DEPTH_TO_SPACE_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 BlockSize;
 		}
 		[CRepr]
-		public struct DML_TILE_OPERATOR_DESC		{
+		public struct DML_TILE_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 RepeatsCount;
 			public uint32* Repeats;
 		}
 		[CRepr]
-		public struct DML_TOP_K_OPERATOR_DESC		{
+		public struct DML_TOP_K_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputValueTensor;
 			public DML_TENSOR_DESC* OutputIndexTensor;
@@ -849,7 +927,8 @@ namespace Win32
 			public uint32 K;
 		}
 		[CRepr]
-		public struct DML_BATCH_NORMALIZATION_OPERATOR_DESC		{
+		public struct DML_BATCH_NORMALIZATION_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* MeanTensor;
 			public DML_TENSOR_DESC* VarianceTensor;
@@ -861,7 +940,8 @@ namespace Win32
 			public DML_OPERATOR_DESC* FusedActivation;
 		}
 		[CRepr]
-		public struct DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC		{
+		public struct DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* ScaleTensor;
 			public DML_TENSOR_DESC* BiasTensor;
@@ -872,7 +952,8 @@ namespace Win32
 			public DML_OPERATOR_DESC* FusedActivation;
 		}
 		[CRepr]
-		public struct DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC		{
+		public struct DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public BOOL CrossChannel;
@@ -882,7 +963,8 @@ namespace Win32
 			public float Bias;
 		}
 		[CRepr]
-		public struct DML_LP_NORMALIZATION_OPERATOR_DESC		{
+		public struct DML_LP_NORMALIZATION_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 Axis;
@@ -890,7 +972,8 @@ namespace Win32
 			public uint32 P;
 		}
 		[CRepr]
-		public struct DML_RNN_OPERATOR_DESC		{
+		public struct DML_RNN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* WeightTensor;
 			public DML_TENSOR_DESC* RecurrenceTensor;
@@ -904,7 +987,8 @@ namespace Win32
 			public DML_RECURRENT_NETWORK_DIRECTION Direction;
 		}
 		[CRepr]
-		public struct DML_LSTM_OPERATOR_DESC		{
+		public struct DML_LSTM_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* WeightTensor;
 			public DML_TENSOR_DESC* RecurrenceTensor;
@@ -924,7 +1008,8 @@ namespace Win32
 			public BOOL CoupleInputForget;
 		}
 		[CRepr]
-		public struct DML_GRU_OPERATOR_DESC		{
+		public struct DML_GRU_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* WeightTensor;
 			public DML_TENSOR_DESC* RecurrenceTensor;
@@ -939,73 +1024,85 @@ namespace Win32
 			public BOOL LinearBeforeReset;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_SIGN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_SIGN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ERF_OPERATOR_DESC		{
-			public DML_TENSOR_DESC* InputTensor;
-			public DML_TENSOR_DESC* OutputTensor;
-			public DML_SCALE_BIAS* ScaleBias;
-		}
-		[CRepr]
-		public struct DML_ELEMENT_WISE_SINH_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ERF_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_COSH_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_SINH_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_TANH_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_COSH_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ASINH_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_TANH_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ASINH_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ATANH_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_SCALE_BIAS* ScaleBias;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_IF_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ATANH_OPERATOR_DESC
+		{
+			public DML_TENSOR_DESC* InputTensor;
+			public DML_TENSOR_DESC* OutputTensor;
+			public DML_SCALE_BIAS* ScaleBias;
+		}
+		[CRepr]
+		public struct DML_ELEMENT_WISE_IF_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ConditionTensor;
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_SHRINK_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_SHRINK_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Bias;
 			public float Threshold;
 		}
 		[CRepr]
-		public struct DML_MAX_POOLING1_OPERATOR_DESC		{
+		public struct DML_MAX_POOLING1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_TENSOR_DESC* OutputIndicesTensor;
@@ -1016,19 +1113,22 @@ namespace Win32
 			public uint32* EndPadding;
 		}
 		[CRepr]
-		public struct DML_MAX_UNPOOLING_OPERATOR_DESC		{
+		public struct DML_MAX_UNPOOLING_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* IndicesTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_DIAGONAL_MATRIX_OPERATOR_DESC		{
+		public struct DML_DIAGONAL_MATRIX_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* OutputTensor;
 			public int32 Offset;
 			public float Value;
 		}
 		[CRepr]
-		public struct DML_SCATTER_OPERATOR_DESC		{
+		public struct DML_SCATTER_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* IndicesTensor;
 			public DML_TENSOR_DESC* UpdatesTensor;
@@ -1036,14 +1136,16 @@ namespace Win32
 			public uint32 Axis;
 		}
 		[CRepr]
-		public struct DML_ONE_HOT_OPERATOR_DESC		{
+		public struct DML_ONE_HOT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* IndicesTensor;
 			public DML_TENSOR_DESC* ValuesTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 Axis;
 		}
 		[CRepr]
-		public struct DML_RESAMPLE_OPERATOR_DESC		{
+		public struct DML_RESAMPLE_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_INTERPOLATION_MODE InterpolationMode;
@@ -1051,56 +1153,65 @@ namespace Win32
 			public float* Scales;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ROUND_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ROUND_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_ROUNDING_MODE RoundingMode;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_IS_INFINITY_MODE InfinityMode;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_FILL_VALUE_CONSTANT_OPERATOR_DESC		{
+		public struct DML_FILL_VALUE_CONSTANT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_TENSOR_DATA_TYPE ValueDataType;
 			public DML_SCALAR_UNION Value;
 		}
 		[CRepr]
-		public struct DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC		{
+		public struct DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_TENSOR_DATA_TYPE ValueDataType;
 			public DML_SCALAR_UNION ValueStart;
 			public DML_SCALAR_UNION ValueDelta;
 		}
 		[CRepr]
-		public struct DML_CUMULATIVE_SUMMATION_OPERATOR_DESC		{
+		public struct DML_CUMULATIVE_SUMMATION_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 Axis;
@@ -1108,21 +1219,24 @@ namespace Win32
 			public BOOL HasExclusiveSum;
 		}
 		[CRepr]
-		public struct DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC		{
+		public struct DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* SequenceLengthsTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 Axis;
 		}
 		[CRepr]
-		public struct DML_GATHER_ELEMENTS_OPERATOR_DESC		{
+		public struct DML_GATHER_ELEMENTS_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* IndicesTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 Axis;
 		}
 		[CRepr]
-		public struct DML_GATHER_ND_OPERATOR_DESC		{
+		public struct DML_GATHER_ND_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* IndicesTensor;
 			public DML_TENSOR_DESC* OutputTensor;
@@ -1130,7 +1244,8 @@ namespace Win32
 			public uint32 IndicesDimensionCount;
 		}
 		[CRepr]
-		public struct DML_SCATTER_ND_OPERATOR_DESC		{
+		public struct DML_SCATTER_ND_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* IndicesTensor;
 			public DML_TENSOR_DESC* UpdatesTensor;
@@ -1139,7 +1254,8 @@ namespace Win32
 			public uint32 IndicesDimensionCount;
 		}
 		[CRepr]
-		public struct DML_MAX_POOLING2_OPERATOR_DESC		{
+		public struct DML_MAX_POOLING2_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_TENSOR_DESC* OutputIndicesTensor;
@@ -1151,7 +1267,8 @@ namespace Win32
 			public uint32* Dilations;
 		}
 		[CRepr]
-		public struct DML_SLICE1_OPERATOR_DESC		{
+		public struct DML_SLICE1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 DimensionCount;
@@ -1160,7 +1277,8 @@ namespace Win32
 			public int32* InputWindowStrides;
 		}
 		[CRepr]
-		public struct DML_TOP_K1_OPERATOR_DESC		{
+		public struct DML_TOP_K1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputValueTensor;
 			public DML_TENSOR_DESC* OutputIndexTensor;
@@ -1169,21 +1287,24 @@ namespace Win32
 			public DML_AXIS_DIRECTION AxisDirection;
 		}
 		[CRepr]
-		public struct DML_DEPTH_TO_SPACE1_OPERATOR_DESC		{
+		public struct DML_DEPTH_TO_SPACE1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 BlockSize;
 			public DML_DEPTH_SPACE_ORDER Order;
 		}
 		[CRepr]
-		public struct DML_SPACE_TO_DEPTH1_OPERATOR_DESC		{
+		public struct DML_SPACE_TO_DEPTH1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 BlockSize;
 			public DML_DEPTH_SPACE_ORDER Order;
 		}
 		[CRepr]
-		public struct DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC		{
+		public struct DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* ScaleTensor;
 			public DML_TENSOR_DESC* BiasTensor;
@@ -1195,7 +1316,8 @@ namespace Win32
 			public DML_OPERATOR_DESC* FusedActivation;
 		}
 		[CRepr]
-		public struct DML_RESAMPLE1_OPERATOR_DESC		{
+		public struct DML_RESAMPLE1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_INTERPOLATION_MODE InterpolationMode;
@@ -1205,7 +1327,8 @@ namespace Win32
 			public float* OutputPixelOffsets;
 		}
 		[CRepr]
-		public struct DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC		{
+		public struct DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* AZeroPointTensor;
 			public DML_TENSOR_DESC* BTensor;
@@ -1213,7 +1336,8 @@ namespace Win32
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC		{
+		public struct DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* AScaleTensor;
 			public DML_TENSOR_DESC* AZeroPointTensor;
@@ -1225,7 +1349,8 @@ namespace Win32
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_CONVOLUTION_INTEGER_OPERATOR_DESC		{
+		public struct DML_CONVOLUTION_INTEGER_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* InputZeroPointTensor;
 			public DML_TENSOR_DESC* FilterTensor;
@@ -1239,7 +1364,8 @@ namespace Win32
 			public uint32 GroupCount;
 		}
 		[CRepr]
-		public struct DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC		{
+		public struct DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* InputScaleTensor;
 			public DML_TENSOR_DESC* InputZeroPointTensor;
@@ -1258,59 +1384,69 @@ namespace Win32
 			public uint32 GroupCount;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_CELU_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_CELU_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public float Alpha;
 		}
 		[CRepr]
-		public struct DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC		{
+		public struct DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* InputGradientTensor;
 			public DML_TENSOR_DESC* OutputGradientTensor;
 		}
 		[CRepr]
-		public struct DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC		{
+		public struct DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputGradientTensor;
 			public DML_TENSOR_DESC* OutputGradientTensor;
 			public uint32 DimensionCount;
@@ -1321,7 +1457,8 @@ namespace Win32
 			public BOOL IncludePadding;
 		}
 		[CRepr]
-		public struct DML_MAX_POOLING_GRAD_OPERATOR_DESC		{
+		public struct DML_MAX_POOLING_GRAD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* InputGradientTensor;
 			public DML_TENSOR_DESC* OutputGradientTensor;
@@ -1333,20 +1470,23 @@ namespace Win32
 			public uint32* Dilations;
 		}
 		[CRepr]
-		public struct DML_RANDOM_GENERATOR_OPERATOR_DESC		{
+		public struct DML_RANDOM_GENERATOR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputStateTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_TENSOR_DESC* OutputStateTensor;
 			public DML_RANDOM_GENERATOR_TYPE Type;
 		}
 		[CRepr]
-		public struct DML_NONZERO_COORDINATES_OPERATOR_DESC		{
+		public struct DML_NONZERO_COORDINATES_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputCountTensor;
 			public DML_TENSOR_DESC* OutputCoordinatesTensor;
 		}
 		[CRepr]
-		public struct DML_RESAMPLE_GRAD_OPERATOR_DESC		{
+		public struct DML_RESAMPLE_GRAD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputGradientTensor;
 			public DML_TENSOR_DESC* OutputGradientTensor;
 			public DML_INTERPOLATION_MODE InterpolationMode;
@@ -1356,7 +1496,8 @@ namespace Win32
 			public float* OutputPixelOffsets;
 		}
 		[CRepr]
-		public struct DML_SLICE_GRAD_OPERATOR_DESC		{
+		public struct DML_SLICE_GRAD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputGradientTensor;
 			public DML_TENSOR_DESC* OutputGradientTensor;
 			public uint32 DimensionCount;
@@ -1365,7 +1506,8 @@ namespace Win32
 			public int32* InputWindowStrides;
 		}
 		[CRepr]
-		public struct DML_ADAM_OPTIMIZER_OPERATOR_DESC		{
+		public struct DML_ADAM_OPTIMIZER_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputParametersTensor;
 			public DML_TENSOR_DESC* InputFirstMomentTensor;
 			public DML_TENSOR_DESC* InputSecondMomentTensor;
@@ -1380,7 +1522,8 @@ namespace Win32
 			public float Epsilon;
 		}
 		[CRepr]
-		public struct DML_ARGMIN_OPERATOR_DESC		{
+		public struct DML_ARGMIN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 AxisCount;
@@ -1388,7 +1531,8 @@ namespace Win32
 			public DML_AXIS_DIRECTION AxisDirection;
 		}
 		[CRepr]
-		public struct DML_ARGMAX_OPERATOR_DESC		{
+		public struct DML_ARGMAX_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 AxisCount;
@@ -1396,7 +1540,8 @@ namespace Win32
 			public DML_AXIS_DIRECTION AxisDirection;
 		}
 		[CRepr]
-		public struct DML_ROI_ALIGN_OPERATOR_DESC		{
+		public struct DML_ROI_ALIGN_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* ROITensor;
 			public DML_TENSOR_DESC* BatchIndicesTensor;
@@ -1410,7 +1555,8 @@ namespace Win32
 			public uint32 MaximumSamplesPerOutput;
 		}
 		[CRepr]
-		public struct DML_GATHER_ND1_OPERATOR_DESC		{
+		public struct DML_GATHER_ND1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* IndicesTensor;
 			public DML_TENSOR_DESC* OutputTensor;
@@ -1419,13 +1565,15 @@ namespace Win32
 			public uint32 BatchDimensionCount;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* InputGradientTensor;
 			public DML_TENSOR_DESC* OutputGradientTensor;
@@ -1433,13 +1581,15 @@ namespace Win32
 			public float Max;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* BTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC		{
+		public struct DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* InputGradientTensor;
 			public DML_TENSOR_DESC* OutputGradientTensor;
@@ -1450,7 +1600,8 @@ namespace Win32
 			public float Bias;
 		}
 		[CRepr]
-		public struct DML_CUMULATIVE_PRODUCT_OPERATOR_DESC		{
+		public struct DML_CUMULATIVE_PRODUCT_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public uint32 Axis;
@@ -1458,7 +1609,8 @@ namespace Win32
 			public BOOL HasExclusiveProduct;
 		}
 		[CRepr]
-		public struct DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC		{
+		public struct DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* InputGradientTensor;
 			public DML_TENSOR_DESC* MeanTensor;
@@ -1470,7 +1622,8 @@ namespace Win32
 			public float Epsilon;
 		}
 		[CRepr]
-		public struct DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC		{
+		public struct DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* ATensor;
 			public DML_TENSOR_DESC* AScaleTensor;
 			public DML_TENSOR_DESC* AZeroPointTensor;
@@ -1482,14 +1635,16 @@ namespace Win32
 			public DML_TENSOR_DESC* OutputTensor;
 		}
 		[CRepr]
-		public struct DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC		{
+		public struct DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* OutputTensor;
 			public DML_TENSOR_DESC* OutputScaleTensor;
 			public DML_TENSOR_DESC* OutputZeroPointTensor;
 		}
 		[CRepr]
-		public struct DML_ROI_ALIGN1_OPERATOR_DESC		{
+		public struct DML_ROI_ALIGN1_OPERATOR_DESC
+		{
 			public DML_TENSOR_DESC* InputTensor;
 			public DML_TENSOR_DESC* ROITensor;
 			public DML_TENSOR_DESC* BatchIndicesTensor;
@@ -1506,72 +1661,85 @@ namespace Win32
 			public BOOL AlignRegionsToCorners;
 		}
 		[CRepr]
-		public struct DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT		{
+		public struct DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT
+		{
 			public DML_TENSOR_DATA_TYPE DataType;
 		}
 		[CRepr]
-		public struct DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT		{
+		public struct DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT
+		{
 			public BOOL IsSupported;
 		}
 		[CRepr]
-		public struct DML_FEATURE_QUERY_FEATURE_LEVELS		{
+		public struct DML_FEATURE_QUERY_FEATURE_LEVELS
+		{
 			public uint32 RequestedFeatureLevelCount;
 			public DML_FEATURE_LEVEL* RequestedFeatureLevels;
 		}
 		[CRepr]
-		public struct DML_FEATURE_DATA_FEATURE_LEVELS		{
+		public struct DML_FEATURE_DATA_FEATURE_LEVELS
+		{
 			public DML_FEATURE_LEVEL MaxSupportedFeatureLevel;
 		}
 		[CRepr]
-		public struct DML_BINDING_TABLE_DESC		{
+		public struct DML_BINDING_TABLE_DESC
+		{
 			public IDMLDispatchable* Dispatchable;
 			public D3D12_CPU_DESCRIPTOR_HANDLE CPUDescriptorHandle;
 			public D3D12_GPU_DESCRIPTOR_HANDLE GPUDescriptorHandle;
 			public uint32 SizeInDescriptors;
 		}
 		[CRepr]
-		public struct DML_BINDING_PROPERTIES		{
+		public struct DML_BINDING_PROPERTIES
+		{
 			public uint32 RequiredDescriptorCount;
 			public uint64 TemporaryResourceSize;
 			public uint64 PersistentResourceSize;
 		}
 		[CRepr]
-		public struct DML_BINDING_DESC		{
+		public struct DML_BINDING_DESC
+		{
 			public DML_BINDING_TYPE Type;
 			public void* Desc;
 		}
 		[CRepr]
-		public struct DML_BUFFER_BINDING		{
+		public struct DML_BUFFER_BINDING
+		{
 			public ID3D12Resource* Buffer;
 			public uint64 Offset;
 			public uint64 SizeInBytes;
 		}
 		[CRepr]
-		public struct DML_BUFFER_ARRAY_BINDING		{
+		public struct DML_BUFFER_ARRAY_BINDING
+		{
 			public uint32 BindingCount;
 			public DML_BUFFER_BINDING* Bindings;
 		}
 		[CRepr]
-		public struct DML_GRAPH_EDGE_DESC		{
+		public struct DML_GRAPH_EDGE_DESC
+		{
 			public DML_GRAPH_EDGE_TYPE Type;
 			public void* Desc;
 		}
 		[CRepr]
-		public struct DML_INPUT_GRAPH_EDGE_DESC		{
+		public struct DML_INPUT_GRAPH_EDGE_DESC
+		{
 			public uint32 GraphInputIndex;
 			public uint32 ToNodeIndex;
 			public uint32 ToNodeInputIndex;
 			public PSTR Name;
 		}
 		[CRepr]
-		public struct DML_OUTPUT_GRAPH_EDGE_DESC		{
+		public struct DML_OUTPUT_GRAPH_EDGE_DESC
+		{
 			public uint32 FromNodeIndex;
 			public uint32 FromNodeOutputIndex;
 			public uint32 GraphOutputIndex;
 			public PSTR Name;
 		}
 		[CRepr]
-		public struct DML_INTERMEDIATE_GRAPH_EDGE_DESC		{
+		public struct DML_INTERMEDIATE_GRAPH_EDGE_DESC
+		{
 			public uint32 FromNodeIndex;
 			public uint32 FromNodeOutputIndex;
 			public uint32 ToNodeIndex;
@@ -1579,17 +1747,20 @@ namespace Win32
 			public PSTR Name;
 		}
 		[CRepr]
-		public struct DML_GRAPH_NODE_DESC		{
+		public struct DML_GRAPH_NODE_DESC
+		{
 			public DML_GRAPH_NODE_TYPE Type;
 			public void* Desc;
 		}
 		[CRepr]
-		public struct DML_OPERATOR_GRAPH_NODE_DESC		{
+		public struct DML_OPERATOR_GRAPH_NODE_DESC
+		{
 			public IDMLOperator* Operator;
 			public PSTR Name;
 		}
 		[CRepr]
-		public struct DML_GRAPH_DESC		{
+		public struct DML_GRAPH_DESC
+		{
 			public uint32 InputCount;
 			public uint32 OutputCount;
 			public uint32 NodeCount;

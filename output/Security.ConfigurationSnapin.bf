@@ -61,29 +61,34 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SCESVC_CONFIGURATION_LINE		{
+		public struct SCESVC_CONFIGURATION_LINE
+		{
 			public int8* Key;
 			public int8* Value;
 			public uint32 ValueLen;
 		}
 		[CRepr]
-		public struct SCESVC_CONFIGURATION_INFO		{
+		public struct SCESVC_CONFIGURATION_INFO
+		{
 			public uint32 Count;
 			public SCESVC_CONFIGURATION_LINE* Lines;
 		}
 		[CRepr]
-		public struct SCESVC_ANALYSIS_LINE		{
+		public struct SCESVC_ANALYSIS_LINE
+		{
 			public int8* Key;
 			public uint8* Value;
 			public uint32 ValueLen;
 		}
 		[CRepr]
-		public struct SCESVC_ANALYSIS_INFO		{
+		public struct SCESVC_ANALYSIS_INFO
+		{
 			public uint32 Count;
 			public SCESVC_ANALYSIS_LINE* Lines;
 		}
 		[CRepr]
-		public struct SCESVC_CALLBACK_INFO		{
+		public struct SCESVC_CALLBACK_INFO
+		{
 			public void* sceHandle;
 			public PFSCE_QUERY_INFO pfQueryInfo;
 			public PFSCE_SET_INFO pfSetInfo;

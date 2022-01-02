@@ -98,13 +98,15 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct ERF		{
+		public struct ERF
+		{
 			public int32 erfOper;
 			public int32 erfType;
 			public BOOL fError;
 		}
 		[CRepr]
-		public struct CCAB		{
+		public struct CCAB
+		{
 			public uint32 cb;
 			public uint32 cbFolderThresh;
 			public uint32 cbReserveCFHeader;
@@ -119,7 +121,8 @@ namespace Win32
 			public CHAR[256] szCabPath;
 		}
 		[CRepr]
-		public struct FDICABINETINFO		{
+		public struct FDICABINETINFO
+		{
 			public int32 cbCabinet;
 			public uint16 cFolders;
 			public uint16 cFiles;
@@ -130,19 +133,22 @@ namespace Win32
 			public BOOL hasnext;
 		}
 		[CRepr]
-		public struct FDIDECRYPT		{
+		public struct FDIDECRYPT
+		{
 			public FDIDECRYPTTYPE fdidt;
 			public void* pvUser;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _cabinet_e__Struct cabinet;
 				public _folder_e__Struct folder;
 				public _decrypt_e__Struct decrypt;
 				
 				[CRepr]
-				public struct _decrypt_e__Struct				{
+				public struct _decrypt_e__Struct
+				{
 					public void* pDataReserve;
 					public uint16 cbDataReserve;
 					public void* pbData;
@@ -151,14 +157,16 @@ namespace Win32
 					public uint16 cbPartial;
 				}
 				[CRepr]
-				public struct _cabinet_e__Struct				{
+				public struct _cabinet_e__Struct
+				{
 					public void* pHeaderReserve;
 					public uint16 cbHeaderReserve;
 					public uint16 setID;
 					public int32 iCabinet;
 				}
 				[CRepr]
-				public struct _folder_e__Struct				{
+				public struct _folder_e__Struct
+				{
 					public void* pFolderReserve;
 					public uint16 cbFolderReserve;
 					public uint16 iFolder;
@@ -166,7 +174,8 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FDINOTIFICATION		{
+		public struct FDINOTIFICATION
+		{
 			public int32 cb;
 			public PSTR psz1;
 			public PSTR psz2;
@@ -182,7 +191,8 @@ namespace Win32
 			public FDIERROR fdie;
 		}
 		[CRepr]
-		public struct FDISPILLFILE		{
+		public struct FDISPILLFILE
+		{
 			public CHAR[2] ach;
 			public int32 cbFile;
 		}

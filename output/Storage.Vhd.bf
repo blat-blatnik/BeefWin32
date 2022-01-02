@@ -289,34 +289,40 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct VIRTUAL_STORAGE_TYPE		{
+		public struct VIRTUAL_STORAGE_TYPE
+		{
 			public uint32 DeviceId;
 			public Guid VendorId;
 		}
 		[CRepr]
-		public struct OPEN_VIRTUAL_DISK_PARAMETERS		{
+		public struct OPEN_VIRTUAL_DISK_PARAMETERS
+		{
 			public OPEN_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				public _Version2_e__Struct Version2;
 				public _Version3_e__Struct Version3;
 				
 				[CRepr]
-				public struct _Version3_e__Struct				{
+				public struct _Version3_e__Struct
+				{
 					public BOOL GetInfoOnly;
 					public BOOL ReadOnly;
 					public Guid ResiliencyGuid;
 					public Guid SnapshotId;
 				}
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public uint32 RWDepth;
 				}
 				[CRepr]
-				public struct _Version2_e__Struct				{
+				public struct _Version2_e__Struct
+				{
 					public BOOL GetInfoOnly;
 					public BOOL ReadOnly;
 					public Guid ResiliencyGuid;
@@ -324,19 +330,22 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CREATE_VIRTUAL_DISK_PARAMETERS		{
+		public struct CREATE_VIRTUAL_DISK_PARAMETERS
+		{
 			public CREATE_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				public _Version2_e__Struct Version2;
 				public _Version3_e__Struct Version3;
 				public _Version4_e__Struct Version4;
 				
 				[CRepr]
-				public struct _Version4_e__Struct				{
+				public struct _Version4_e__Struct
+				{
 					public Guid UniqueId;
 					public uint64 MaximumSize;
 					public uint32 BlockSizeInBytes;
@@ -354,7 +363,8 @@ namespace Win32
 					public uint64 DataAlignment;
 				}
 				[CRepr]
-				public struct _Version2_e__Struct				{
+				public struct _Version2_e__Struct
+				{
 					public Guid UniqueId;
 					public uint64 MaximumSize;
 					public uint32 BlockSizeInBytes;
@@ -368,7 +378,8 @@ namespace Win32
 					public Guid ResiliencyGuid;
 				}
 				[CRepr]
-				public struct _Version3_e__Struct				{
+				public struct _Version3_e__Struct
+				{
 					public Guid UniqueId;
 					public uint64 MaximumSize;
 					public uint32 BlockSizeInBytes;
@@ -384,7 +395,8 @@ namespace Win32
 					public VIRTUAL_STORAGE_TYPE BackingStorageType;
 				}
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public Guid UniqueId;
 					public uint64 MaximumSize;
 					public uint32 BlockSizeInBytes;
@@ -395,34 +407,40 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct ATTACH_VIRTUAL_DISK_PARAMETERS		{
+		public struct ATTACH_VIRTUAL_DISK_PARAMETERS
+		{
 			public ATTACH_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				public _Version2_e__Struct Version2;
 				
 				[CRepr]
-				public struct _Version2_e__Struct				{
+				public struct _Version2_e__Struct
+				{
 					public uint64 RestrictedOffset;
 					public uint64 RestrictedLength;
 				}
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public uint32 Reserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct STORAGE_DEPENDENCY_INFO_TYPE_1		{
+		public struct STORAGE_DEPENDENCY_INFO_TYPE_1
+		{
 			public DEPENDENT_DISK_FLAG DependencyTypeFlags;
 			public uint32 ProviderSpecificFlags;
 			public VIRTUAL_STORAGE_TYPE VirtualStorageType;
 		}
 		[CRepr]
-		public struct STORAGE_DEPENDENCY_INFO_TYPE_2		{
+		public struct STORAGE_DEPENDENCY_INFO_TYPE_2
+		{
 			public DEPENDENT_DISK_FLAG DependencyTypeFlags;
 			public uint32 ProviderSpecificFlags;
 			public VIRTUAL_STORAGE_TYPE VirtualStorageType;
@@ -433,24 +451,28 @@ namespace Win32
 			public PWSTR DependentVolumeRelativePath;
 		}
 		[CRepr]
-		public struct STORAGE_DEPENDENCY_INFO		{
+		public struct STORAGE_DEPENDENCY_INFO
+		{
 			public STORAGE_DEPENDENCY_INFO_VERSION Version;
 			public uint32 NumberEntries;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public STORAGE_DEPENDENCY_INFO_TYPE_1[0] Version1Entries;
 				public STORAGE_DEPENDENCY_INFO_TYPE_2[0] Version2Entries;
 			}
 		}
 		[CRepr]
-		public struct GET_VIRTUAL_DISK_INFO		{
+		public struct GET_VIRTUAL_DISK_INFO
+		{
 			public GET_VIRTUAL_DISK_INFO_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Size_e__Struct Size;
 				public Guid Identifier;
 				public _ParentLocation_e__Struct ParentLocation;
@@ -468,38 +490,44 @@ namespace Win32
 				public _ChangeTrackingState_e__Struct ChangeTrackingState;
 				
 				[CRepr]
-				public struct _PhysicalDisk_e__Struct				{
+				public struct _PhysicalDisk_e__Struct
+				{
 					public uint32 LogicalSectorSize;
 					public uint32 PhysicalSectorSize;
 					public BOOL IsRemote;
 				}
 				[CRepr]
-				public struct _Size_e__Struct				{
+				public struct _Size_e__Struct
+				{
 					public uint64 VirtualSize;
 					public uint64 PhysicalSize;
 					public uint32 BlockSize;
 					public uint32 SectorSize;
 				}
 				[CRepr]
-				public struct _ChangeTrackingState_e__Struct				{
+				public struct _ChangeTrackingState_e__Struct
+				{
 					public BOOL Enabled;
 					public BOOL NewerChanges;
 					public char16[0] MostRecentId;
 				}
 				[CRepr]
-				public struct _ParentLocation_e__Struct				{
+				public struct _ParentLocation_e__Struct
+				{
 					public BOOL ParentResolved;
 					public char16[0] ParentLocationBuffer;
 				}
 			}
 		}
 		[CRepr]
-		public struct SET_VIRTUAL_DISK_INFO		{
+		public struct SET_VIRTUAL_DISK_INFO
+		{
 			public SET_VIRTUAL_DISK_INFO_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public PWSTR ParentFilePath;
 				public Guid UniqueIdentifier;
 				public _ParentPathWithDepthInfo_e__Struct ParentPathWithDepthInfo;
@@ -509,185 +537,220 @@ namespace Win32
 				public _ParentLocator_e__Struct ParentLocator;
 				
 				[CRepr]
-				public struct _ParentPathWithDepthInfo_e__Struct				{
+				public struct _ParentPathWithDepthInfo_e__Struct
+				{
 					public uint32 ChildDepth;
 					public PWSTR ParentFilePath;
 				}
 				[CRepr]
-				public struct _ParentLocator_e__Struct				{
+				public struct _ParentLocator_e__Struct
+				{
 					public Guid LinkageId;
 					public PWSTR ParentFilePath;
 				}
 			}
 		}
 		[CRepr]
-		public struct VIRTUAL_DISK_PROGRESS		{
+		public struct VIRTUAL_DISK_PROGRESS
+		{
 			public uint32 OperationStatus;
 			public uint64 CurrentValue;
 			public uint64 CompletionValue;
 		}
 		[CRepr]
-		public struct COMPACT_VIRTUAL_DISK_PARAMETERS		{
+		public struct COMPACT_VIRTUAL_DISK_PARAMETERS
+		{
 			public COMPACT_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public uint32 Reserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct MERGE_VIRTUAL_DISK_PARAMETERS		{
+		public struct MERGE_VIRTUAL_DISK_PARAMETERS
+		{
 			public MERGE_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				public _Version2_e__Struct Version2;
 				
 				[CRepr]
-				public struct _Version2_e__Struct				{
+				public struct _Version2_e__Struct
+				{
 					public uint32 MergeSourceDepth;
 					public uint32 MergeTargetDepth;
 				}
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public uint32 MergeDepth;
 				}
 			}
 		}
 		[CRepr]
-		public struct EXPAND_VIRTUAL_DISK_PARAMETERS		{
+		public struct EXPAND_VIRTUAL_DISK_PARAMETERS
+		{
 			public EXPAND_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public uint64 NewSize;
 				}
 			}
 		}
 		[CRepr]
-		public struct RESIZE_VIRTUAL_DISK_PARAMETERS		{
+		public struct RESIZE_VIRTUAL_DISK_PARAMETERS
+		{
 			public RESIZE_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public uint64 NewSize;
 				}
 			}
 		}
 		[CRepr]
-		public struct MIRROR_VIRTUAL_DISK_PARAMETERS		{
+		public struct MIRROR_VIRTUAL_DISK_PARAMETERS
+		{
 			public MIRROR_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public PWSTR MirrorVirtualDiskPath;
 				}
 			}
 		}
 		[CRepr]
-		public struct QUERY_CHANGES_VIRTUAL_DISK_RANGE		{
+		public struct QUERY_CHANGES_VIRTUAL_DISK_RANGE
+		{
 			public uint64 ByteOffset;
 			public uint64 ByteLength;
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct TAKE_SNAPSHOT_VHDSET_PARAMETERS		{
+		public struct TAKE_SNAPSHOT_VHDSET_PARAMETERS
+		{
 			public TAKE_SNAPSHOT_VHDSET_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public Guid SnapshotId;
 				}
 			}
 		}
 		[CRepr]
-		public struct DELETE_SNAPSHOT_VHDSET_PARAMETERS		{
+		public struct DELETE_SNAPSHOT_VHDSET_PARAMETERS
+		{
 			public DELETE_SNAPSHOT_VHDSET_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public Guid SnapshotId;
 				}
 			}
 		}
 		[CRepr]
-		public struct MODIFY_VHDSET_PARAMETERS		{
+		public struct MODIFY_VHDSET_PARAMETERS
+		{
 			public MODIFY_VHDSET_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _SnapshotPath_e__Struct SnapshotPath;
 				public Guid SnapshotId;
 				public PWSTR DefaultFilePath;
 				
 				[CRepr]
-				public struct _SnapshotPath_e__Struct				{
+				public struct _SnapshotPath_e__Struct
+				{
 					public Guid SnapshotId;
 					public PWSTR SnapshotFilePath;
 				}
 			}
 		}
 		[CRepr]
-		public struct APPLY_SNAPSHOT_VHDSET_PARAMETERS		{
+		public struct APPLY_SNAPSHOT_VHDSET_PARAMETERS
+		{
 			public APPLY_SNAPSHOT_VHDSET_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public Guid SnapshotId;
 					public Guid LeafSnapshotId;
 				}
 			}
 		}
 		[CRepr]
-		public struct RAW_SCSI_VIRTUAL_DISK_PARAMETERS		{
+		public struct RAW_SCSI_VIRTUAL_DISK_PARAMETERS
+		{
 			public RAW_SCSI_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public BOOL RSVDHandle;
 					public uint8 DataIn;
 					public uint8 CdbLength;
@@ -701,16 +764,19 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct RAW_SCSI_VIRTUAL_DISK_RESPONSE		{
+		public struct RAW_SCSI_VIRTUAL_DISK_RESPONSE
+		{
 			public RAW_SCSI_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public uint8 ScsiStatus;
 					public uint8 SenseInfoLength;
 					public uint32 DataTransferLength;
@@ -718,16 +784,19 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FORK_VIRTUAL_DISK_PARAMETERS		{
+		public struct FORK_VIRTUAL_DISK_PARAMETERS
+		{
 			public FORK_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union			{
+			public struct _Anonymous_e__Union
+			{
 				public _Version1_e__Struct Version1;
 				
 				[CRepr]
-				public struct _Version1_e__Struct				{
+				public struct _Version1_e__Struct
+				{
 					public PWSTR ForkedVirtualDiskPath;
 				}
 			}

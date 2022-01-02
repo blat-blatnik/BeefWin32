@@ -804,7 +804,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct XML_ERROR		{
+		public struct XML_ERROR
+		{
 			public uint32 _nLine;
 			public BSTR _pchBuf;
 			public uint32 _cchBuf;
@@ -815,7 +816,8 @@ namespace Win32
 			public uint32 _reserved2;
 		}
 		[CRepr]
-		public struct __msxml6_ReferenceRemainingTypes__		{
+		public struct __msxml6_ReferenceRemainingTypes__
+		{
 			public DOMNodeType __tagDomNodeType__;
 			public DOMNodeType __domNodeType__;
 			public SERVERXMLHTTP_OPTION __serverXmlHttpOptionEnum__;
@@ -840,7 +842,8 @@ namespace Win32
 			public SCHEMATYPEVARIETY __schemaTypeVariety__;
 		}
 		[CRepr]
-		public struct XHR_COOKIE		{
+		public struct XHR_COOKIE
+		{
 			public PWSTR pwszUrl;
 			public PWSTR pwszName;
 			public PWSTR pwszValue;
@@ -849,7 +852,8 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct XHR_CERT		{
+		public struct XHR_CERT
+		{
 			public uint32 cbCert;
 			public uint8* pbCert;
 		}

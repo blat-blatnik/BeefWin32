@@ -431,14 +431,16 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct GLOBAL_MACHINE_POWER_POLICY		{
+		public struct GLOBAL_MACHINE_POWER_POLICY
+		{
 			public uint32 Revision;
 			public SYSTEM_POWER_STATE LidOpenWakeAc;
 			public SYSTEM_POWER_STATE LidOpenWakeDc;
 			public uint32 BroadcastCapacityResolution;
 		}
 		[CRepr]
-		public struct GLOBAL_USER_POWER_POLICY		{
+		public struct GLOBAL_USER_POWER_POLICY
+		{
 			public uint32 Revision;
 			public POWER_ACTION_POLICY PowerButtonAc;
 			public POWER_ACTION_POLICY PowerButtonDc;
@@ -450,12 +452,14 @@ namespace Win32
 			public uint32 GlobalFlags;
 		}
 		[CRepr]
-		public struct GLOBAL_POWER_POLICY		{
+		public struct GLOBAL_POWER_POLICY
+		{
 			public GLOBAL_USER_POWER_POLICY user;
 			public GLOBAL_MACHINE_POWER_POLICY mach;
 		}
 		[CRepr]
-		public struct MACHINE_POWER_POLICY		{
+		public struct MACHINE_POWER_POLICY
+		{
 			public uint32 Revision;
 			public SYSTEM_POWER_STATE MinSleepAc;
 			public SYSTEM_POWER_STATE MinSleepDc;
@@ -472,13 +476,15 @@ namespace Win32
 			public POWER_ACTION_POLICY OverThrottledDc;
 		}
 		[CRepr]
-		public struct MACHINE_PROCESSOR_POWER_POLICY		{
+		public struct MACHINE_PROCESSOR_POWER_POLICY
+		{
 			public uint32 Revision;
 			public PROCESSOR_POWER_POLICY ProcessorPolicyAc;
 			public PROCESSOR_POWER_POLICY ProcessorPolicyDc;
 		}
 		[CRepr]
-		public struct USER_POWER_POLICY		{
+		public struct USER_POWER_POLICY
+		{
 			public uint32 Revision;
 			public POWER_ACTION_POLICY IdleAc;
 			public POWER_ACTION_POLICY IdleDc;
@@ -503,17 +509,20 @@ namespace Win32
 			public uint8 ForcedThrottleDc;
 		}
 		[CRepr]
-		public struct POWER_POLICY		{
+		public struct POWER_POLICY
+		{
 			public USER_POWER_POLICY user;
 			public MACHINE_POWER_POLICY mach;
 		}
 		[CRepr]
-		public struct DEVICE_NOTIFY_SUBSCRIBE_PARAMETERS		{
+		public struct DEVICE_NOTIFY_SUBSCRIBE_PARAMETERS
+		{
 			public PDEVICE_NOTIFY_CALLBACK_ROUTINE Callback;
 			public void* Context;
 		}
 		[CRepr]
-		public struct THERMAL_EVENT		{
+		public struct THERMAL_EVENT
+		{
 			public uint32 Version;
 			public uint32 Size;
 			public uint32 Type;
@@ -522,13 +531,15 @@ namespace Win32
 			public PWSTR Initiator;
 		}
 		[CRepr]
-		public struct BATTERY_QUERY_INFORMATION		{
+		public struct BATTERY_QUERY_INFORMATION
+		{
 			public uint32 BatteryTag;
 			public BATTERY_QUERY_INFORMATION_LEVEL InformationLevel;
 			public uint32 AtRate;
 		}
 		[CRepr]
-		public struct BATTERY_INFORMATION		{
+		public struct BATTERY_INFORMATION
+		{
 			public uint32 Capabilities;
 			public uint8 Technology;
 			public uint8[3] Reserved;
@@ -541,28 +552,33 @@ namespace Win32
 			public uint32 CycleCount;
 		}
 		[CRepr]
-		public struct BATTERY_CHARGING_SOURCE		{
+		public struct BATTERY_CHARGING_SOURCE
+		{
 			public BATTERY_CHARGING_SOURCE_TYPE Type;
 			public uint32 MaxCurrent;
 		}
 		[CRepr]
-		public struct BATTERY_CHARGING_SOURCE_INFORMATION		{
+		public struct BATTERY_CHARGING_SOURCE_INFORMATION
+		{
 			public BATTERY_CHARGING_SOURCE_TYPE Type;
 			public BOOLEAN SourceOnline;
 		}
 		[CRepr]
-		public struct BATTERY_SET_INFORMATION		{
+		public struct BATTERY_SET_INFORMATION
+		{
 			public uint32 BatteryTag;
 			public BATTERY_SET_INFORMATION_LEVEL InformationLevel;
 			public uint8[0] Buffer;
 		}
 		[CRepr]
-		public struct BATTERY_CHARGER_STATUS		{
+		public struct BATTERY_CHARGER_STATUS
+		{
 			public BATTERY_CHARGING_SOURCE_TYPE Type;
 			public uint32[0] VaData;
 		}
 		[CRepr]
-		public struct BATTERY_USB_CHARGER_STATUS		{
+		public struct BATTERY_USB_CHARGER_STATUS
+		{
 			public BATTERY_CHARGING_SOURCE_TYPE Type;
 			public uint32 Reserved;
 			public uint32 Flags;
@@ -574,7 +590,8 @@ namespace Win32
 			public Guid OemCharger;
 		}
 		[CRepr]
-		public struct BATTERY_WAIT_STATUS		{
+		public struct BATTERY_WAIT_STATUS
+		{
 			public uint32 BatteryTag;
 			public uint32 Timeout;
 			public uint32 PowerState;
@@ -582,20 +599,23 @@ namespace Win32
 			public uint32 HighCapacity;
 		}
 		[CRepr]
-		public struct BATTERY_STATUS		{
+		public struct BATTERY_STATUS
+		{
 			public uint32 PowerState;
 			public uint32 Capacity;
 			public uint32 Voltage;
 			public int32 Rate;
 		}
 		[CRepr]
-		public struct BATTERY_MANUFACTURE_DATE		{
+		public struct BATTERY_MANUFACTURE_DATE
+		{
 			public uint8 Day;
 			public uint8 Month;
 			public uint16 Year;
 		}
 		[CRepr]
-		public struct THERMAL_INFORMATION		{
+		public struct THERMAL_INFORMATION
+		{
 			public uint32 ThermalStamp;
 			public uint32 ThermalConstant1;
 			public uint32 ThermalConstant2;
@@ -608,13 +628,15 @@ namespace Win32
 			public uint32[10] ActiveTripPoint;
 		}
 		[CRepr]
-		public struct THERMAL_WAIT_READ		{
+		public struct THERMAL_WAIT_READ
+		{
 			public uint32 Timeout;
 			public uint32 LowTemperature;
 			public uint32 HighTemperature;
 		}
 		[CRepr]
-		public struct THERMAL_POLICY		{
+		public struct THERMAL_POLICY
+		{
 			public uint32 Version;
 			public BOOLEAN WaitForUpdate;
 			public BOOLEAN Hibernate;
@@ -626,25 +648,29 @@ namespace Win32
 			public BOOLEAN OverThrottled;
 		}
 		[CRepr]
-		public struct PROCESSOR_OBJECT_INFO		{
+		public struct PROCESSOR_OBJECT_INFO
+		{
 			public uint32 PhysicalID;
 			public uint32 PBlkAddress;
 			public uint8 PBlkLength;
 		}
 		[CRepr]
-		public struct PROCESSOR_OBJECT_INFO_EX		{
+		public struct PROCESSOR_OBJECT_INFO_EX
+		{
 			public uint32 PhysicalID;
 			public uint32 PBlkAddress;
 			public uint8 PBlkLength;
 			public uint32 InitialApicId;
 		}
 		[CRepr]
-		public struct WAKE_ALARM_INFORMATION		{
+		public struct WAKE_ALARM_INFORMATION
+		{
 			public uint32 TimerIdentifier;
 			public uint32 Timeout;
 		}
 		[CRepr]
-		public struct ACPI_REAL_TIME		{
+		public struct ACPI_REAL_TIME
+		{
 			public uint16 Year;
 			public uint8 Month;
 			public uint8 Day;
@@ -658,20 +684,24 @@ namespace Win32
 			public uint8[3] Reserved1;
 		}
 		[CRepr]
-		public struct EMI_VERSION		{
+		public struct EMI_VERSION
+		{
 			public uint16 EmiVersion;
 		}
 		[CRepr]
-		public struct EMI_METADATA_SIZE		{
+		public struct EMI_METADATA_SIZE
+		{
 			public uint32 MetadataSize;
 		}
 		[CRepr]
-		public struct EMI_CHANNEL_MEASUREMENT_DATA		{
+		public struct EMI_CHANNEL_MEASUREMENT_DATA
+		{
 			public uint64 AbsoluteEnergy;
 			public uint64 AbsoluteTime;
 		}
 		[CRepr]
-		public struct EMI_METADATA_V1		{
+		public struct EMI_METADATA_V1
+		{
 			public EMI_MEASUREMENT_UNIT MeasurementUnit;
 			public char16[16] HardwareOEM;
 			public char16[16] HardwareModel;
@@ -680,13 +710,15 @@ namespace Win32
 			public char16[0] MeteredHardwareName;
 		}
 		[CRepr]
-		public struct EMI_CHANNEL_V2		{
+		public struct EMI_CHANNEL_V2
+		{
 			public EMI_MEASUREMENT_UNIT MeasurementUnit;
 			public uint16 ChannelNameSize;
 			public char16[0] ChannelName;
 		}
 		[CRepr]
-		public struct EMI_METADATA_V2		{
+		public struct EMI_METADATA_V2
+		{
 			public char16[16] HardwareOEM;
 			public char16[16] HardwareModel;
 			public uint16 HardwareRevision;
@@ -694,11 +726,13 @@ namespace Win32
 			public EMI_CHANNEL_V2[0] Channels;
 		}
 		[CRepr]
-		public struct EMI_MEASUREMENT_DATA_V2		{
+		public struct EMI_MEASUREMENT_DATA_V2
+		{
 			public EMI_CHANNEL_MEASUREMENT_DATA[0] ChannelData;
 		}
 		[CRepr]
-		public struct CM_POWER_DATA		{
+		public struct CM_POWER_DATA
+		{
 			public uint32 PD_Size;
 			public DEVICE_POWER_STATE PD_MostRecentPowerState;
 			public uint32 PD_Capabilities;
@@ -709,7 +743,8 @@ namespace Win32
 			public SYSTEM_POWER_STATE PD_DeepestSystemWake;
 		}
 		[CRepr]
-		public struct SET_POWER_SETTING_VALUE		{
+		public struct SET_POWER_SETTING_VALUE
+		{
 			public uint32 Version;
 			public Guid Guid;
 			public SYSTEM_POWER_CONDITION PowerCondition;
@@ -717,18 +752,21 @@ namespace Win32
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct BATTERY_REPORTING_SCALE		{
+		public struct BATTERY_REPORTING_SCALE
+		{
 			public uint32 Granularity;
 			public uint32 Capacity;
 		}
 		[CRepr]
-		public struct POWER_ACTION_POLICY		{
+		public struct POWER_ACTION_POLICY
+		{
 			public POWER_ACTION Action;
 			public uint32 Flags;
 			public POWER_ACTION_POLICY_EVENT_CODE EventCode;
 		}
 		[CRepr]
-		public struct SYSTEM_POWER_LEVEL		{
+		public struct SYSTEM_POWER_LEVEL
+		{
 			public BOOLEAN Enable;
 			public uint8[3] Spare;
 			public uint32 BatteryLevel;
@@ -736,7 +774,8 @@ namespace Win32
 			public SYSTEM_POWER_STATE MinSystemState;
 		}
 		[CRepr]
-		public struct SYSTEM_POWER_POLICY		{
+		public struct SYSTEM_POWER_POLICY
+		{
 			public uint32 Revision;
 			public POWER_ACTION_POLICY PowerButton;
 			public POWER_ACTION_POLICY SleepButton;
@@ -767,7 +806,8 @@ namespace Win32
 			public POWER_ACTION_POLICY OverThrottled;
 		}
 		[CRepr]
-		public struct PROCESSOR_POWER_POLICY_INFO		{
+		public struct PROCESSOR_POWER_POLICY_INFO
+		{
 			public uint32 TimeCheck;
 			public uint32 DemoteLimit;
 			public uint32 PromoteLimit;
@@ -777,7 +817,8 @@ namespace Win32
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct PROCESSOR_POWER_POLICY		{
+		public struct PROCESSOR_POWER_POLICY
+		{
 			public uint32 Revision;
 			public uint8 DynamicThrottle;
 			public uint8[3] Spare;
@@ -786,7 +827,8 @@ namespace Win32
 			public PROCESSOR_POWER_POLICY_INFO[3] Policy;
 		}
 		[CRepr]
-		public struct ADMINISTRATOR_POWER_POLICY		{
+		public struct ADMINISTRATOR_POWER_POLICY
+		{
 			public SYSTEM_POWER_STATE MinSleep;
 			public SYSTEM_POWER_STATE MaxSleep;
 			public uint32 MinVideoTimeout;
@@ -795,7 +837,8 @@ namespace Win32
 			public uint32 MaxSpindownTimeout;
 		}
 		[CRepr]
-		public struct SYSTEM_POWER_CAPABILITIES		{
+		public struct SYSTEM_POWER_CAPABILITIES
+		{
 			public BOOLEAN PowerButtonPresent;
 			public BOOLEAN SleepButtonPresent;
 			public BOOLEAN LidPresent;
@@ -831,7 +874,8 @@ namespace Win32
 			public SYSTEM_POWER_STATE DefaultLowLatencyWake;
 		}
 		[CRepr]
-		public struct SYSTEM_BATTERY_STATE		{
+		public struct SYSTEM_BATTERY_STATE
+		{
 			public BOOLEAN AcOnLine;
 			public BOOLEAN BatteryPresent;
 			public BOOLEAN Charging;
@@ -846,13 +890,15 @@ namespace Win32
 			public uint32 DefaultAlert2;
 		}
 		[CRepr]
-		public struct POWERBROADCAST_SETTING		{
+		public struct POWERBROADCAST_SETTING
+		{
 			public Guid PowerSetting;
 			public uint32 DataLength;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct SYSTEM_POWER_STATUS		{
+		public struct SYSTEM_POWER_STATUS
+		{
 			public uint8 ACLineStatus;
 			public uint8 BatteryFlag;
 			public uint8 BatteryLifePercent;

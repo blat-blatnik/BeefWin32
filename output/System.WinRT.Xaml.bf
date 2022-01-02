@@ -20,7 +20,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TrackerHandle__		{
+		public struct TrackerHandle__
+		{
 			public int32 unused;
 		}
 		

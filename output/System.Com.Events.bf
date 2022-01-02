@@ -17,7 +17,8 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct COMEVENTSYSCHANGEINFO		{
+		public struct COMEVENTSYSCHANGEINFO
+		{
 			public uint32 cbSize;
 			public EOC_ChangeType changeType;
 			public BSTR objectId;
