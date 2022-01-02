@@ -4,7 +4,7 @@
 
 This is a **mostly untested work in progress**. Use at your own peril.
 
-**Note** Currently, this will not work with Beef 0.43.1 or prior. The blockers are already fixed, but until Beef 0.43.2 releases you will need to use a nightly build from December 17, 2021 onwards. You can get nightly builds [here](https://nightly.beeflang.org/index.html).
+**Note** Currently, this will not work with Beef 0.43.1 or prior. The blockers are already fixed, but until Beef 0.43.2 releases you will need to use a nightly build from January 1, 2022 onwards. You can get nightly builds [here](https://nightly.beeflang.org/index.html).
 
 ## Current state
 
