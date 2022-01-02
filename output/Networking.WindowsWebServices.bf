@@ -189,9 +189,7 @@ namespace Win32
 			COMPRESS_EMPTY_ELEMENTS = 17,
 			EMIT_UNCOMPRESSED_EMPTY_ELEMENTS = 18,
 		}
-		public enum WS_XML_BUFFER_PROPERTY_ID
-		{
-		}
+		public enum WS_XML_BUFFER_PROPERTY_ID {}
 		public enum WS_XML_TEXT_TYPE : int32
 		{
 			UTF8 = 1,
@@ -632,9 +630,7 @@ namespace Win32
 			LAX_WITH_TIMESTAMP_FIRST = 3,
 			LAX_WITH_TIMESTAMP_LAST = 4,
 		}
-		public enum WS_SECURITY_ALGORITHM_PROPERTY_ID
-		{
-		}
+		public enum WS_SECURITY_ALGORITHM_PROPERTY_ID {}
 		public enum WS_SECURITY_ALGORITHM_ID : int32
 		{
 			DEFAULT = 0,

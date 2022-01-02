@@ -368,35 +368,35 @@ for filename in filenames:
                     name = replace_type_name(type['Name'], namespace_name)
                     base_type = replace_type_name(type['IntegerBase'])
                     values = type['Values']
-                    if len(values) == 0:
-                        x = 123
                     value_values = [value['Value'] for value in values]
                     if len(set(value_values)) != len(value_values):
                         output.write(f'{indent}[AllowDuplicates]\n')
                     if base_type is not None:
-                        output.write(f'{indent}public enum {name} : {base_type}\n')
+                        output.write(f'{indent}public enum {name} : {base_type}')
                     else:
-                        output.write(f'{indent}public enum {name}\n')
-                    output.write(f'{indent}{{\n')
-                    indent += '\t'
-
-                    common_prefix = find_common_enum_prefix(name, [value['Name'] for value in values])
-                    for value in values:
-                        # Sometimes stripping the prefix leaves names that start with numbers - we prefix those with '_'.
-                        value_name = value['Name'].removeprefix(common_prefix)
-                        if value_name[0].isnumeric():
-                            value_name = f'_{value_name}'
-                        value_name = replace_name(value_name)
-                        if value_name == 'void':
-                            # There is ONE enum value that when stripped is just 'void'..
-                            value_name = '@void'
-                        if base_type is not None and base_type == 'uint64':
-                            output.write(f'{indent}{value_name} = {value["Value"]}uL,\n')
-                        else:
-                            output.write(f'{indent}{value_name} = {value["Value"]},\n')
-                    
-                    indent = indent[:-1]
-                    output.write(f'{indent}}}\n')
+                        output.write(f'{indent}public enum {name}')
+                    if len(values) == 0:
+                        output.write(' {}\n')
+                    else:
+                        output.write('\n')
+                        output.write(f'{indent}{{\n')
+                        indent += '\t'
+                        common_prefix = find_common_enum_prefix(name, [value['Name'] for value in values])
+                        for value in values:
+                            # Sometimes stripping the prefix leaves names that start with numbers - we prefix those with '_'.
+                            value_name = value['Name'].removeprefix(common_prefix)
+                            if value_name[0].isnumeric():
+                                value_name = f'_{value_name}'
+                            value_name = replace_name(value_name)
+                            if value_name == 'void':
+                                # There is ONE enum value that when stripped is just 'void'..
+                                value_name = '@void'
+                            if base_type is not None and base_type == 'uint64':
+                                output.write(f'{indent}{value_name} = {value["Value"]}uL,\n')
+                            else:
+                                output.write(f'{indent}{value_name} = {value["Value"]},\n')
+                        indent = indent[:-1]
+                        output.write(f'{indent}}}\n')
 
                 output.write(f'{indent}\n')
 
